@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/DatafeedSubscriptionState.h>
 #include <aws/ec2/model/SpotInstanceStateFault.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The AWS account ID of the account.</p>
      */
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
+    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
      * <p>The AWS account ID of the account.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The AWS account ID of the account.</p>
      */
-    inline SpotDatafeedSubscription& WithOwnerId(Aws::String&& value) { SetOwnerId(value); return *this;}
+    inline SpotDatafeedSubscription& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID of the account.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket where the Spot instance data feed is located.</p>
      */
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * <p>The Amazon S3 bucket where the Spot instance data feed is located.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket where the Spot instance data feed is located.</p>
      */
-    inline SpotDatafeedSubscription& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline SpotDatafeedSubscription& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 bucket where the Spot instance data feed is located.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The prefix that is prepended to data feed files.</p>
      */
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * <p>The prefix that is prepended to data feed files.</p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>The prefix that is prepended to data feed files.</p>
      */
-    inline SpotDatafeedSubscription& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
+    inline SpotDatafeedSubscription& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The prefix that is prepended to data feed files.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>The state of the Spot instance data feed subscription.</p>
      */
-    inline void SetState(DatafeedSubscriptionState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(DatafeedSubscriptionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the Spot instance data feed subscription.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>The state of the Spot instance data feed subscription.</p>
      */
-    inline SpotDatafeedSubscription& WithState(DatafeedSubscriptionState&& value) { SetState(value); return *this;}
+    inline SpotDatafeedSubscription& WithState(DatafeedSubscriptionState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The fault codes for the Spot instance request, if any.</p>
@@ -191,7 +192,7 @@ namespace Model
     /**
      * <p>The fault codes for the Spot instance request, if any.</p>
      */
-    inline void SetFault(SpotInstanceStateFault&& value) { m_faultHasBeenSet = true; m_fault = value; }
+    inline void SetFault(SpotInstanceStateFault&& value) { m_faultHasBeenSet = true; m_fault = std::move(value); }
 
     /**
      * <p>The fault codes for the Spot instance request, if any.</p>
@@ -201,7 +202,7 @@ namespace Model
     /**
      * <p>The fault codes for the Spot instance request, if any.</p>
      */
-    inline SpotDatafeedSubscription& WithFault(SpotInstanceStateFault&& value) { SetFault(value); return *this;}
+    inline SpotDatafeedSubscription& WithFault(SpotInstanceStateFault&& value) { SetFault(std::move(value)); return *this;}
 
   private:
     Aws::String m_ownerId;

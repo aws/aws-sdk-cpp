@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The ID of the new association.</p>
      */
-    inline void SetNewAssociationId(Aws::String&& value) { m_newAssociationId = value; }
+    inline void SetNewAssociationId(Aws::String&& value) { m_newAssociationId = std::move(value); }
 
     /**
      * <p>The ID of the new association.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The ID of the new association.</p>
      */
-    inline ReplaceNetworkAclAssociationResponse& WithNewAssociationId(Aws::String&& value) { SetNewAssociationId(value); return *this;}
+    inline ReplaceNetworkAclAssociationResponse& WithNewAssociationId(Aws::String&& value) { SetNewAssociationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the new association.</p>
@@ -88,13 +89,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ReplaceNetworkAclAssociationResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ReplaceNetworkAclAssociationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ReplaceNetworkAclAssociationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_newAssociationId;

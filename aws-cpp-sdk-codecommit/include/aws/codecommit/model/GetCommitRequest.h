@@ -16,6 +16,7 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/CodeCommitRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The name of the repository to which the commit was made.</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The name of the repository to which the commit was made.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The name of the repository to which the commit was made.</p>
      */
-    inline GetCommitRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline GetCommitRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the repository to which the commit was made.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The commit ID.</p>
      */
-    inline void SetCommitId(Aws::String&& value) { m_commitIdHasBeenSet = true; m_commitId = value; }
+    inline void SetCommitId(Aws::String&& value) { m_commitIdHasBeenSet = true; m_commitId = std::move(value); }
 
     /**
      * <p>The commit ID.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The commit ID.</p>
      */
-    inline GetCommitRequest& WithCommitId(Aws::String&& value) { SetCommitId(value); return *this;}
+    inline GetCommitRequest& WithCommitId(Aws::String&& value) { SetCommitId(std::move(value)); return *this;}
 
     /**
      * <p>The commit ID.</p>

@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>Descriptive label that is associated with a scaling policy. Policy names do
      * not need to be unique.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Descriptive label that is associated with a scaling policy. Policy names do
@@ -72,7 +73,7 @@ namespace Model
      * <p>Descriptive label that is associated with a scaling policy. Policy names do
      * not need to be unique.</p>
      */
-    inline DeleteScalingPolicyRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline DeleteScalingPolicyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with a scaling policy. Policy names do
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to be deleted.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet to be deleted.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to be deleted.</p>
      */
-    inline DeleteScalingPolicyRequest& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline DeleteScalingPolicyRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet to be deleted.</p>

@@ -18,6 +18,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/cloudfront/model/ActiveTrustedSigners.h>
 #include <aws/cloudfront/model/DistributionConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * The identifier for the distribution. For example: EDFDVBD632BHDS5.
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * The identifier for the distribution. For example: EDFDVBD632BHDS5.
@@ -75,7 +76,7 @@ namespace Model
     /**
      * The identifier for the distribution. For example: EDFDVBD632BHDS5.
      */
-    inline Distribution& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline Distribution& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * The identifier for the distribution. For example: EDFDVBD632BHDS5.
@@ -101,7 +102,7 @@ namespace Model
      * status is Deployed, the distribution's information is fully propagated
      * throughout the Amazon CloudFront system.
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * This response element indicates the current status of the distribution. When the
@@ -122,7 +123,7 @@ namespace Model
      * status is Deployed, the distribution's information is fully propagated
      * throughout the Amazon CloudFront system.
      */
-    inline Distribution& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline Distribution& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * This response element indicates the current status of the distribution. When the
@@ -144,7 +145,7 @@ namespace Model
     /**
      * The date and time the distribution was last modified.
      */
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
 
     /**
      * The date and time the distribution was last modified.
@@ -154,7 +155,7 @@ namespace Model
     /**
      * The date and time the distribution was last modified.
      */
-    inline Distribution& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(value); return *this;}
+    inline Distribution& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
     /**
      * The number of invalidation batches currently in progress.
@@ -187,7 +188,7 @@ namespace Model
      * The domain name corresponding to the distribution. For example:
      * d604721fxaaqy9.cloudfront.net.
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * The domain name corresponding to the distribution. For example:
@@ -205,7 +206,7 @@ namespace Model
      * The domain name corresponding to the distribution. For example:
      * d604721fxaaqy9.cloudfront.net.
      */
-    inline Distribution& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline Distribution& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * The domain name corresponding to the distribution. For example:
@@ -247,7 +248,7 @@ namespace Model
      * KeyPairId element appears for a Signer, that signer can't create working signed
      * URLs.
      */
-    inline void SetActiveTrustedSigners(ActiveTrustedSigners&& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = value; }
+    inline void SetActiveTrustedSigners(ActiveTrustedSigners&& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = std::move(value); }
 
     /**
      * CloudFront automatically adds this element to the response only if you've set up
@@ -271,7 +272,7 @@ namespace Model
      * KeyPairId element appears for a Signer, that signer can't create working signed
      * URLs.
      */
-    inline Distribution& WithActiveTrustedSigners(ActiveTrustedSigners&& value) { SetActiveTrustedSigners(value); return *this;}
+    inline Distribution& WithActiveTrustedSigners(ActiveTrustedSigners&& value) { SetActiveTrustedSigners(std::move(value)); return *this;}
 
     /**
      * The current configuration information for the distribution.
@@ -286,7 +287,7 @@ namespace Model
     /**
      * The current configuration information for the distribution.
      */
-    inline void SetDistributionConfig(DistributionConfig&& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
+    inline void SetDistributionConfig(DistributionConfig&& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = std::move(value); }
 
     /**
      * The current configuration information for the distribution.
@@ -296,7 +297,7 @@ namespace Model
     /**
      * The current configuration information for the distribution.
      */
-    inline Distribution& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(value); return *this;}
+    inline Distribution& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(std::move(value)); return *this;}
 
   private:
     Aws::String m_id;

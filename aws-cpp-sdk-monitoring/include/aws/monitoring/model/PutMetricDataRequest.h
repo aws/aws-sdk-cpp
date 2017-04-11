@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/monitoring/model/MetricDatum.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
      * Amazon Web Services products.</p>
      */
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
      * <p>The namespace for the metric data.</p> <p>You cannot specify a namespace that
@@ -79,7 +80,7 @@ namespace Model
      * begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
      * Amazon Web Services products.</p>
      */
-    inline PutMetricDataRequest& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
+    inline PutMetricDataRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
      * <p>The namespace for the metric data.</p> <p>You cannot specify a namespace that
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The data for the metric.</p>
      */
-    inline void SetMetricData(Aws::Vector<MetricDatum>&& value) { m_metricDataHasBeenSet = true; m_metricData = value; }
+    inline void SetMetricData(Aws::Vector<MetricDatum>&& value) { m_metricDataHasBeenSet = true; m_metricData = std::move(value); }
 
     /**
      * <p>The data for the metric.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The data for the metric.</p>
      */
-    inline PutMetricDataRequest& WithMetricData(Aws::Vector<MetricDatum>&& value) { SetMetricData(value); return *this;}
+    inline PutMetricDataRequest& WithMetricData(Aws::Vector<MetricDatum>&& value) { SetMetricData(std::move(value)); return *this;}
 
     /**
      * <p>The data for the metric.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The data for the metric.</p>
      */
-    inline PutMetricDataRequest& AddMetricData(MetricDatum&& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(value); return *this; }
+    inline PutMetricDataRequest& AddMetricData(MetricDatum&& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_namespace;

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/TimeRange.h>
 #include <aws/codedeploy/model/DeploymentStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
      * user or AWS account.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
@@ -76,7 +77,7 @@ namespace Model
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
      * user or AWS account.</p>
      */
-    inline ListDeploymentsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline ListDeploymentsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The name of an existing deployment group for the specified application.</p>
      */
-    inline void SetDeploymentGroupName(Aws::String&& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
+    inline void SetDeploymentGroupName(Aws::String&& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = std::move(value); }
 
     /**
      * <p>The name of an existing deployment group for the specified application.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The name of an existing deployment group for the specified application.</p>
      */
-    inline ListDeploymentsRequest& WithDeploymentGroupName(Aws::String&& value) { SetDeploymentGroupName(value); return *this;}
+    inline ListDeploymentsRequest& WithDeploymentGroupName(Aws::String&& value) { SetDeploymentGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of an existing deployment group for the specified application.</p>
@@ -150,7 +151,7 @@ namespace Model
      * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
      * Include stopped deployments in the resulting list.</p> </li> </ul>
      */
-    inline void SetIncludeOnlyStatuses(Aws::Vector<DeploymentStatus>&& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses = value; }
+    inline void SetIncludeOnlyStatuses(Aws::Vector<DeploymentStatus>&& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses = std::move(value); }
 
     /**
      * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
@@ -172,7 +173,7 @@ namespace Model
      * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
      * Include stopped deployments in the resulting list.</p> </li> </ul>
      */
-    inline ListDeploymentsRequest& WithIncludeOnlyStatuses(Aws::Vector<DeploymentStatus>&& value) { SetIncludeOnlyStatuses(value); return *this;}
+    inline ListDeploymentsRequest& WithIncludeOnlyStatuses(Aws::Vector<DeploymentStatus>&& value) { SetIncludeOnlyStatuses(std::move(value)); return *this;}
 
     /**
      * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
@@ -194,7 +195,7 @@ namespace Model
      * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
      * Include stopped deployments in the resulting list.</p> </li> </ul>
      */
-    inline ListDeploymentsRequest& AddIncludeOnlyStatuses(DeploymentStatus&& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses.push_back(value); return *this; }
+    inline ListDeploymentsRequest& AddIncludeOnlyStatuses(DeploymentStatus&& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A time range (start and end) for returning a subset of the list of
@@ -212,7 +213,7 @@ namespace Model
      * <p>A time range (start and end) for returning a subset of the list of
      * deployments.</p>
      */
-    inline void SetCreateTimeRange(TimeRange&& value) { m_createTimeRangeHasBeenSet = true; m_createTimeRange = value; }
+    inline void SetCreateTimeRange(TimeRange&& value) { m_createTimeRangeHasBeenSet = true; m_createTimeRange = std::move(value); }
 
     /**
      * <p>A time range (start and end) for returning a subset of the list of
@@ -224,7 +225,7 @@ namespace Model
      * <p>A time range (start and end) for returning a subset of the list of
      * deployments.</p>
      */
-    inline ListDeploymentsRequest& WithCreateTimeRange(TimeRange&& value) { SetCreateTimeRange(value); return *this;}
+    inline ListDeploymentsRequest& WithCreateTimeRange(TimeRange&& value) { SetCreateTimeRange(std::move(value)); return *this;}
 
     /**
      * <p>An identifier returned from the previous list deployments call. It can be
@@ -242,7 +243,7 @@ namespace Model
      * <p>An identifier returned from the previous list deployments call. It can be
      * used to return the next set of deployments in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>An identifier returned from the previous list deployments call. It can be
@@ -260,7 +261,7 @@ namespace Model
      * <p>An identifier returned from the previous list deployments call. It can be
      * used to return the next set of deployments in the list.</p>
      */
-    inline ListDeploymentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListDeploymentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An identifier returned from the previous list deployments call. It can be

@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>The position of the current <a>ApiKeys</a> resource to get information
      * about.</p>
      */
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = value; }
+    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
      * <p>The position of the current <a>ApiKeys</a> resource to get information
@@ -77,7 +78,7 @@ namespace Model
      * <p>The position of the current <a>ApiKeys</a> resource to get information
      * about.</p>
      */
-    inline GetApiKeysRequest& WithPosition(Aws::String&& value) { SetPosition(value); return *this;}
+    inline GetApiKeysRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
      * <p>The position of the current <a>ApiKeys</a> resource to get information
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The name of queried API keys.</p>
      */
-    inline void SetNameQuery(Aws::String&& value) { m_nameQueryHasBeenSet = true; m_nameQuery = value; }
+    inline void SetNameQuery(Aws::String&& value) { m_nameQueryHasBeenSet = true; m_nameQuery = std::move(value); }
 
     /**
      * <p>The name of queried API keys.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The name of queried API keys.</p>
      */
-    inline GetApiKeysRequest& WithNameQuery(Aws::String&& value) { SetNameQuery(value); return *this;}
+    inline GetApiKeysRequest& WithNameQuery(Aws::String&& value) { SetNameQuery(std::move(value)); return *this;}
 
     /**
      * <p>The name of queried API keys.</p>
@@ -151,7 +152,7 @@ namespace Model
      * <p>The identifier of a customer in AWS Marketplace or an external system, such
      * as a developer portal.</p>
      */
-    inline void SetCustomerId(Aws::String&& value) { m_customerIdHasBeenSet = true; m_customerId = value; }
+    inline void SetCustomerId(Aws::String&& value) { m_customerIdHasBeenSet = true; m_customerId = std::move(value); }
 
     /**
      * <p>The identifier of a customer in AWS Marketplace or an external system, such
@@ -169,7 +170,7 @@ namespace Model
      * <p>The identifier of a customer in AWS Marketplace or an external system, such
      * as a developer portal.</p>
      */
-    inline GetApiKeysRequest& WithCustomerId(Aws::String&& value) { SetCustomerId(value); return *this;}
+    inline GetApiKeysRequest& WithCustomerId(Aws::String&& value) { SetCustomerId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of a customer in AWS Marketplace or an external system, such

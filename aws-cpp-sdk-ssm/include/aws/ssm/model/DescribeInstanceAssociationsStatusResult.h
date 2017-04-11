@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/InstanceAssociationStatusInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>Status information about the association.</p>
      */
-    inline void SetInstanceAssociationStatusInfos(Aws::Vector<InstanceAssociationStatusInfo>&& value) { m_instanceAssociationStatusInfos = value; }
+    inline void SetInstanceAssociationStatusInfos(Aws::Vector<InstanceAssociationStatusInfo>&& value) { m_instanceAssociationStatusInfos = std::move(value); }
 
     /**
      * <p>Status information about the association.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Status information about the association.</p>
      */
-    inline DescribeInstanceAssociationsStatusResult& WithInstanceAssociationStatusInfos(Aws::Vector<InstanceAssociationStatusInfo>&& value) { SetInstanceAssociationStatusInfos(value); return *this;}
+    inline DescribeInstanceAssociationsStatusResult& WithInstanceAssociationStatusInfos(Aws::Vector<InstanceAssociationStatusInfo>&& value) { SetInstanceAssociationStatusInfos(std::move(value)); return *this;}
 
     /**
      * <p>Status information about the association.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Status information about the association.</p>
      */
-    inline DescribeInstanceAssociationsStatusResult& AddInstanceAssociationStatusInfos(InstanceAssociationStatusInfo&& value) { m_instanceAssociationStatusInfos.push_back(value); return *this; }
+    inline DescribeInstanceAssociationsStatusResult& AddInstanceAssociationStatusInfos(InstanceAssociationStatusInfo&& value) { m_instanceAssociationStatusInfos.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -92,7 +93,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -110,7 +111,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline DescribeInstanceAssociationsStatusResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeInstanceAssociationsStatusResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no

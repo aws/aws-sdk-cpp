@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the record.</p>
      */
-    inline void SetRecordId(Aws::String&& value) { m_recordId = value; }
+    inline void SetRecordId(Aws::String&& value) { m_recordId = std::move(value); }
 
     /**
      * <p>The ID of the record.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the record.</p>
      */
-    inline PutRecordResult& WithRecordId(Aws::String&& value) { SetRecordId(value); return *this;}
+    inline PutRecordResult& WithRecordId(Aws::String&& value) { SetRecordId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the record.</p>

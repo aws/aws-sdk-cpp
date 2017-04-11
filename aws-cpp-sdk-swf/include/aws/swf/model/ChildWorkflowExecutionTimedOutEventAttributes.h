@@ -17,6 +17,7 @@
 #include <aws/swf/model/WorkflowExecution.h>
 #include <aws/swf/model/WorkflowType.h>
 #include <aws/swf/model/WorkflowExecutionTimeoutType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The child workflow execution that timed out.</p>
      */
-    inline void SetWorkflowExecution(WorkflowExecution&& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = value; }
+    inline void SetWorkflowExecution(WorkflowExecution&& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = std::move(value); }
 
     /**
      * <p>The child workflow execution that timed out.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The child workflow execution that timed out.</p>
      */
-    inline ChildWorkflowExecutionTimedOutEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(value); return *this;}
+    inline ChildWorkflowExecutionTimedOutEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(std::move(value)); return *this;}
 
     /**
      * <p>The type of the child workflow execution.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The type of the child workflow execution.</p>
      */
-    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
+    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::move(value); }
 
     /**
      * <p>The type of the child workflow execution.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The type of the child workflow execution.</p>
      */
-    inline ChildWorkflowExecutionTimedOutEventAttributes& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(value); return *this;}
+    inline ChildWorkflowExecutionTimedOutEventAttributes& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
 
     /**
      * <p>The type of the timeout that caused the child workflow execution to time
@@ -112,7 +113,7 @@ namespace Model
      * <p>The type of the timeout that caused the child workflow execution to time
      * out.</p>
      */
-    inline void SetTimeoutType(WorkflowExecutionTimeoutType&& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = value; }
+    inline void SetTimeoutType(WorkflowExecutionTimeoutType&& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = std::move(value); }
 
     /**
      * <p>The type of the timeout that caused the child workflow execution to time
@@ -124,7 +125,7 @@ namespace Model
      * <p>The type of the timeout that caused the child workflow execution to time
      * out.</p>
      */
-    inline ChildWorkflowExecutionTimedOutEventAttributes& WithTimeoutType(WorkflowExecutionTimeoutType&& value) { SetTimeoutType(value); return *this;}
+    inline ChildWorkflowExecutionTimedOutEventAttributes& WithTimeoutType(WorkflowExecutionTimeoutType&& value) { SetTimeoutType(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event

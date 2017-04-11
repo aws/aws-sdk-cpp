@@ -16,6 +16,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/BatchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.
      * </p>
      */
-    inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = value; }
+    inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::move(value); }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.
@@ -67,7 +68,7 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.
      * </p>
      */
-    inline DeleteJobQueueRequest& WithJobQueue(Aws::String&& value) { SetJobQueue(value); return *this;}
+    inline DeleteJobQueueRequest& WithJobQueue(Aws::String&& value) { SetJobQueue(std::move(value)); return *this;}
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.

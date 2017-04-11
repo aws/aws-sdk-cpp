@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the virtual private gateway.</p>
      */
-    inline void SetVpnGatewayId(Aws::String&& value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId = value; }
+    inline void SetVpnGatewayId(Aws::String&& value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId = std::move(value); }
 
     /**
      * <p>The ID of the virtual private gateway.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The ID of the virtual private gateway.</p>
      */
-    inline DeleteVpnGatewayRequest& WithVpnGatewayId(Aws::String&& value) { SetVpnGatewayId(value); return *this;}
+    inline DeleteVpnGatewayRequest& WithVpnGatewayId(Aws::String&& value) { SetVpnGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the virtual private gateway.</p>

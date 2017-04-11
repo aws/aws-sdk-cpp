@@ -18,6 +18,7 @@
 #include <aws/codebuild/model/ProjectSortByType.h>
 #include <aws/codebuild/model/SortOrderType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -71,7 +72,7 @@ namespace Model
      * name.</p> </li> </ul> <p>Use <code>sortOrder</code> to specify in what order to
      * list the build project names based on the preceding criteria.</p>
      */
-    inline void SetSortBy(ProjectSortByType&& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline void SetSortBy(ProjectSortByType&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
      * <p>The criterion to be used to list build project names. Valid values
@@ -95,7 +96,7 @@ namespace Model
      * name.</p> </li> </ul> <p>Use <code>sortOrder</code> to specify in what order to
      * list the build project names based on the preceding criteria.</p>
      */
-    inline ListProjectsRequest& WithSortBy(ProjectSortByType&& value) { SetSortBy(value); return *this;}
+    inline ListProjectsRequest& WithSortBy(ProjectSortByType&& value) { SetSortBy(std::move(value)); return *this;}
 
     /**
      * <p>The order in which to list build projects. Valid values include:</p> <ul>
@@ -122,7 +123,7 @@ namespace Model
      * in descending order.</p> </li> </ul> <p>Use <code>sortBy</code> to specify the
      * criterion to be used to list build project names.</p>
      */
-    inline void SetSortOrder(SortOrderType&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline void SetSortOrder(SortOrderType&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
      * <p>The order in which to list build projects. Valid values include:</p> <ul>
@@ -140,7 +141,7 @@ namespace Model
      * in descending order.</p> </li> </ul> <p>Use <code>sortBy</code> to specify the
      * criterion to be used to list build project names.</p>
      */
-    inline ListProjectsRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(value); return *this;}
+    inline ListProjectsRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(std::move(value)); return *this;}
 
     /**
      * <p>During a previous call, if there are more than 100 items in the list, only
@@ -170,7 +171,7 @@ namespace Model
      * keep calling this operation with each subsequent next token that is returned,
      * until no more next tokens are returned.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>During a previous call, if there are more than 100 items in the list, only
@@ -200,7 +201,7 @@ namespace Model
      * keep calling this operation with each subsequent next token that is returned,
      * until no more next tokens are returned.</p>
      */
-    inline ListProjectsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListProjectsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>During a previous call, if there are more than 100 items in the list, only

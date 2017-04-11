@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/RouteTable.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Information about one or more route tables.</p>
      */
-    inline void SetRouteTables(Aws::Vector<RouteTable>&& value) { m_routeTables = value; }
+    inline void SetRouteTables(Aws::Vector<RouteTable>&& value) { m_routeTables = std::move(value); }
 
     /**
      * <p>Information about one or more route tables.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Information about one or more route tables.</p>
      */
-    inline DescribeRouteTablesResponse& WithRouteTables(Aws::Vector<RouteTable>&& value) { SetRouteTables(value); return *this;}
+    inline DescribeRouteTablesResponse& WithRouteTables(Aws::Vector<RouteTable>&& value) { SetRouteTables(std::move(value)); return *this;}
 
     /**
      * <p>Information about one or more route tables.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>Information about one or more route tables.</p>
      */
-    inline DescribeRouteTablesResponse& AddRouteTables(RouteTable&& value) { m_routeTables.push_back(value); return *this; }
+    inline DescribeRouteTablesResponse& AddRouteTables(RouteTable&& value) { m_routeTables.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -88,13 +89,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeRouteTablesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeRouteTablesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeRouteTablesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<RouteTable> m_routeTables;

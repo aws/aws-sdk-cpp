@@ -17,6 +17,7 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/TemplateStage.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
      * is no default value.</p>
      */
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
+    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
      * <p>The name or the unique stack ID that is associated with the stack, which are
@@ -93,7 +94,7 @@ namespace Model
      * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
      * is no default value.</p>
      */
-    inline GetTemplateRequest& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
+    inline GetTemplateRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name or the unique stack ID that is associated with the stack, which are
@@ -123,7 +124,7 @@ namespace Model
      * CloudFormation returns the associated template. If you specify a name, you must
      * also specify the <code>StackName</code>.</p>
      */
-    inline void SetChangeSetName(Aws::String&& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = value; }
+    inline void SetChangeSetName(Aws::String&& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = std::move(value); }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of a change set for which AWS
@@ -144,7 +145,7 @@ namespace Model
      * CloudFormation returns the associated template. If you specify a name, you must
      * also specify the <code>StackName</code>.</p>
      */
-    inline GetTemplateRequest& WithChangeSetName(Aws::String&& value) { SetChangeSetName(value); return *this;}
+    inline GetTemplateRequest& WithChangeSetName(Aws::String&& value) { SetChangeSetName(std::move(value)); return *this;}
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of a change set for which AWS
@@ -184,7 +185,7 @@ namespace Model
      * <code>Processed</code> return the same template. By default, AWS CloudFormation
      * specifies <code>Original</code>. </p>
      */
-    inline void SetTemplateStage(TemplateStage&& value) { m_templateStageHasBeenSet = true; m_templateStage = value; }
+    inline void SetTemplateStage(TemplateStage&& value) { m_templateStageHasBeenSet = true; m_templateStage = std::move(value); }
 
     /**
      * <p>For templates that include transforms, the stage of the template that AWS
@@ -206,7 +207,7 @@ namespace Model
      * <code>Processed</code> return the same template. By default, AWS CloudFormation
      * specifies <code>Original</code>. </p>
      */
-    inline GetTemplateRequest& WithTemplateStage(TemplateStage&& value) { SetTemplateStage(value); return *this;}
+    inline GetTemplateRequest& WithTemplateStage(TemplateStage&& value) { SetTemplateStage(std::move(value)); return *this;}
 
   private:
     Aws::String m_stackName;

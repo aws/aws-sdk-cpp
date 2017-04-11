@@ -17,6 +17,7 @@
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * information. If you do not specify any names, AWS Config returns status
      * information for all AWS managed Config rules that you use.</p>
      */
-    inline void SetConfigRuleNames(Aws::Vector<Aws::String>&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = value; }
+    inline void SetConfigRuleNames(Aws::Vector<Aws::String>&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = std::move(value); }
 
     /**
      * <p>The name of the AWS managed Config rules for which you want status
@@ -72,7 +73,7 @@ namespace Model
      * information. If you do not specify any names, AWS Config returns status
      * information for all AWS managed Config rules that you use.</p>
      */
-    inline DescribeConfigRuleEvaluationStatusRequest& WithConfigRuleNames(Aws::Vector<Aws::String>&& value) { SetConfigRuleNames(value); return *this;}
+    inline DescribeConfigRuleEvaluationStatusRequest& WithConfigRuleNames(Aws::Vector<Aws::String>&& value) { SetConfigRuleNames(std::move(value)); return *this;}
 
     /**
      * <p>The name of the AWS managed Config rules for which you want status
@@ -86,7 +87,7 @@ namespace Model
      * information. If you do not specify any names, AWS Config returns status
      * information for all AWS managed Config rules that you use.</p>
      */
-    inline DescribeConfigRuleEvaluationStatusRequest& AddConfigRuleNames(Aws::String&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
+    inline DescribeConfigRuleEvaluationStatusRequest& AddConfigRuleNames(Aws::String&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The name of the AWS managed Config rules for which you want status
@@ -111,7 +112,7 @@ namespace Model
      * <p>The <code>NextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>NextToken</code> string returned on a previous page that you use to
@@ -129,7 +130,7 @@ namespace Model
      * <p>The <code>NextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
-    inline DescribeConfigRuleEvaluationStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeConfigRuleEvaluationStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>NextToken</code> string returned on a previous page that you use to

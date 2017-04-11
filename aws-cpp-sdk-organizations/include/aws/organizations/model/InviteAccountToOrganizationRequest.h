@@ -17,6 +17,7 @@
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/organizations/model/HandshakeParty.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -76,7 +77,7 @@ namespace Model
      * specify the email address that is associated with the account.</p> <p>
      * <code>--target id=bill@example.com,type=EMAIL</code> </p>
      */
-    inline void SetTarget(HandshakeParty&& value) { m_targetHasBeenSet = true; m_target = value; }
+    inline void SetTarget(HandshakeParty&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
      * <p>The identifier (ID) of the AWS account that you want to invite to join your
@@ -104,7 +105,7 @@ namespace Model
      * specify the email address that is associated with the account.</p> <p>
      * <code>--target id=bill@example.com,type=EMAIL</code> </p>
      */
-    inline InviteAccountToOrganizationRequest& WithTarget(HandshakeParty&& value) { SetTarget(value); return *this;}
+    inline InviteAccountToOrganizationRequest& WithTarget(HandshakeParty&& value) { SetTarget(std::move(value)); return *this;}
 
     /**
      * <p>Additional information that you want to include in the generated email to the
@@ -122,7 +123,7 @@ namespace Model
      * <p>Additional information that you want to include in the generated email to the
      * recipient account owner.</p>
      */
-    inline void SetNotes(Aws::String&& value) { m_notesHasBeenSet = true; m_notes = value; }
+    inline void SetNotes(Aws::String&& value) { m_notesHasBeenSet = true; m_notes = std::move(value); }
 
     /**
      * <p>Additional information that you want to include in the generated email to the
@@ -140,7 +141,7 @@ namespace Model
      * <p>Additional information that you want to include in the generated email to the
      * recipient account owner.</p>
      */
-    inline InviteAccountToOrganizationRequest& WithNotes(Aws::String&& value) { SetNotes(value); return *this;}
+    inline InviteAccountToOrganizationRequest& WithNotes(Aws::String&& value) { SetNotes(std::move(value)); return *this;}
 
     /**
      * <p>Additional information that you want to include in the generated email to the

@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/CookiePreference.h>
 #include <aws/cloudfront/model/Headers.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
     /**
      * A complex type that specifies how CloudFront handles cookies.
      */
-    inline void SetCookies(CookiePreference&& value) { m_cookiesHasBeenSet = true; m_cookies = value; }
+    inline void SetCookies(CookiePreference&& value) { m_cookiesHasBeenSet = true; m_cookies = std::move(value); }
 
     /**
      * A complex type that specifies how CloudFront handles cookies.
@@ -90,7 +91,7 @@ namespace Model
     /**
      * A complex type that specifies how CloudFront handles cookies.
      */
-    inline ForwardedValues& WithCookies(CookiePreference&& value) { SetCookies(value); return *this;}
+    inline ForwardedValues& WithCookies(CookiePreference&& value) { SetCookies(std::move(value)); return *this;}
 
     /**
      * A complex type that specifies the Headers, if any, that you want CloudFront to
@@ -108,7 +109,7 @@ namespace Model
      * A complex type that specifies the Headers, if any, that you want CloudFront to
      * vary upon for this cache behavior.
      */
-    inline void SetHeaders(Headers&& value) { m_headersHasBeenSet = true; m_headers = value; }
+    inline void SetHeaders(Headers&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
 
     /**
      * A complex type that specifies the Headers, if any, that you want CloudFront to
@@ -120,7 +121,7 @@ namespace Model
      * A complex type that specifies the Headers, if any, that you want CloudFront to
      * vary upon for this cache behavior.
      */
-    inline ForwardedValues& WithHeaders(Headers&& value) { SetHeaders(value); return *this;}
+    inline ForwardedValues& WithHeaders(Headers&& value) { SetHeaders(std::move(value)); return *this;}
 
   private:
     bool m_queryString;

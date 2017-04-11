@@ -21,6 +21,7 @@
 #include <aws/s3/model/StorageClass.h>
 #include <aws/s3/model/RequestCharged.h>
 #include <aws/s3/model/ReplicationStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
     inline void SetAcceptRanges(const Aws::String& value) { m_acceptRanges = value; }
 
     
-    inline void SetAcceptRanges(Aws::String&& value) { m_acceptRanges = value; }
+    inline void SetAcceptRanges(Aws::String&& value) { m_acceptRanges = std::move(value); }
 
     
     inline void SetAcceptRanges(const char* value) { m_acceptRanges.assign(value); }
@@ -79,7 +80,7 @@ namespace Model
     inline HeadObjectResult& WithAcceptRanges(const Aws::String& value) { SetAcceptRanges(value); return *this;}
 
     
-    inline HeadObjectResult& WithAcceptRanges(Aws::String&& value) { SetAcceptRanges(value); return *this;}
+    inline HeadObjectResult& WithAcceptRanges(Aws::String&& value) { SetAcceptRanges(std::move(value)); return *this;}
 
     
     inline HeadObjectResult& WithAcceptRanges(const char* value) { SetAcceptRanges(value); return *this;}
@@ -106,7 +107,7 @@ namespace Model
      * providing object expiration information. The value of the rule-id is URL
      * encoded.
      */
-    inline void SetExpiration(Aws::String&& value) { m_expiration = value; }
+    inline void SetExpiration(Aws::String&& value) { m_expiration = std::move(value); }
 
     /**
      * If the object expiration is configured (see PUT Bucket lifecycle), the response
@@ -130,7 +131,7 @@ namespace Model
      * providing object expiration information. The value of the rule-id is URL
      * encoded.
      */
-    inline HeadObjectResult& WithExpiration(Aws::String&& value) { SetExpiration(value); return *this;}
+    inline HeadObjectResult& WithExpiration(Aws::String&& value) { SetExpiration(std::move(value)); return *this;}
 
     /**
      * If the object expiration is configured (see PUT Bucket lifecycle), the response
@@ -156,7 +157,7 @@ namespace Model
      * Provides information about object restoration operation and expiration time of
      * the restored object copy.
      */
-    inline void SetRestore(Aws::String&& value) { m_restore = value; }
+    inline void SetRestore(Aws::String&& value) { m_restore = std::move(value); }
 
     /**
      * Provides information about object restoration operation and expiration time of
@@ -174,7 +175,7 @@ namespace Model
      * Provides information about object restoration operation and expiration time of
      * the restored object copy.
      */
-    inline HeadObjectResult& WithRestore(Aws::String&& value) { SetRestore(value); return *this;}
+    inline HeadObjectResult& WithRestore(Aws::String&& value) { SetRestore(std::move(value)); return *this;}
 
     /**
      * Provides information about object restoration operation and expiration time of
@@ -195,7 +196,7 @@ namespace Model
     /**
      * Last modified date of the object
      */
-    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModified = value; }
+    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModified = std::move(value); }
 
     /**
      * Last modified date of the object
@@ -205,7 +206,7 @@ namespace Model
     /**
      * Last modified date of the object
      */
-    inline HeadObjectResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(value); return *this;}
+    inline HeadObjectResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 
     /**
      * Size of the body in bytes.
@@ -238,7 +239,7 @@ namespace Model
      * An ETag is an opaque identifier assigned by a web server to a specific version
      * of a resource found at a URL
      */
-    inline void SetETag(Aws::String&& value) { m_eTag = value; }
+    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
 
     /**
      * An ETag is an opaque identifier assigned by a web server to a specific version
@@ -256,7 +257,7 @@ namespace Model
      * An ETag is an opaque identifier assigned by a web server to a specific version
      * of a resource found at a URL
      */
-    inline HeadObjectResult& WithETag(Aws::String&& value) { SetETag(value); return *this;}
+    inline HeadObjectResult& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
      * An ETag is an opaque identifier assigned by a web server to a specific version
@@ -301,7 +302,7 @@ namespace Model
     /**
      * Version of the object.
      */
-    inline void SetVersionId(Aws::String&& value) { m_versionId = value; }
+    inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
 
     /**
      * Version of the object.
@@ -316,7 +317,7 @@ namespace Model
     /**
      * Version of the object.
      */
-    inline HeadObjectResult& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
+    inline HeadObjectResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
      * Version of the object.
@@ -336,7 +337,7 @@ namespace Model
     /**
      * Specifies caching behavior along the request/reply chain.
      */
-    inline void SetCacheControl(Aws::String&& value) { m_cacheControl = value; }
+    inline void SetCacheControl(Aws::String&& value) { m_cacheControl = std::move(value); }
 
     /**
      * Specifies caching behavior along the request/reply chain.
@@ -351,7 +352,7 @@ namespace Model
     /**
      * Specifies caching behavior along the request/reply chain.
      */
-    inline HeadObjectResult& WithCacheControl(Aws::String&& value) { SetCacheControl(value); return *this;}
+    inline HeadObjectResult& WithCacheControl(Aws::String&& value) { SetCacheControl(std::move(value)); return *this;}
 
     /**
      * Specifies caching behavior along the request/reply chain.
@@ -371,7 +372,7 @@ namespace Model
     /**
      * Specifies presentational information for the object.
      */
-    inline void SetContentDisposition(Aws::String&& value) { m_contentDisposition = value; }
+    inline void SetContentDisposition(Aws::String&& value) { m_contentDisposition = std::move(value); }
 
     /**
      * Specifies presentational information for the object.
@@ -386,7 +387,7 @@ namespace Model
     /**
      * Specifies presentational information for the object.
      */
-    inline HeadObjectResult& WithContentDisposition(Aws::String&& value) { SetContentDisposition(value); return *this;}
+    inline HeadObjectResult& WithContentDisposition(Aws::String&& value) { SetContentDisposition(std::move(value)); return *this;}
 
     /**
      * Specifies presentational information for the object.
@@ -412,7 +413,7 @@ namespace Model
      * decoding mechanisms must be applied to obtain the media-type referenced by the
      * Content-Type header field.
      */
-    inline void SetContentEncoding(Aws::String&& value) { m_contentEncoding = value; }
+    inline void SetContentEncoding(Aws::String&& value) { m_contentEncoding = std::move(value); }
 
     /**
      * Specifies what content encodings have been applied to the object and thus what
@@ -433,7 +434,7 @@ namespace Model
      * decoding mechanisms must be applied to obtain the media-type referenced by the
      * Content-Type header field.
      */
-    inline HeadObjectResult& WithContentEncoding(Aws::String&& value) { SetContentEncoding(value); return *this;}
+    inline HeadObjectResult& WithContentEncoding(Aws::String&& value) { SetContentEncoding(std::move(value)); return *this;}
 
     /**
      * Specifies what content encodings have been applied to the object and thus what
@@ -455,7 +456,7 @@ namespace Model
     /**
      * The language the content is in.
      */
-    inline void SetContentLanguage(Aws::String&& value) { m_contentLanguage = value; }
+    inline void SetContentLanguage(Aws::String&& value) { m_contentLanguage = std::move(value); }
 
     /**
      * The language the content is in.
@@ -470,7 +471,7 @@ namespace Model
     /**
      * The language the content is in.
      */
-    inline HeadObjectResult& WithContentLanguage(Aws::String&& value) { SetContentLanguage(value); return *this;}
+    inline HeadObjectResult& WithContentLanguage(Aws::String&& value) { SetContentLanguage(std::move(value)); return *this;}
 
     /**
      * The language the content is in.
@@ -490,7 +491,7 @@ namespace Model
     /**
      * A standard MIME type describing the format of the object data.
      */
-    inline void SetContentType(Aws::String&& value) { m_contentType = value; }
+    inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
 
     /**
      * A standard MIME type describing the format of the object data.
@@ -505,7 +506,7 @@ namespace Model
     /**
      * A standard MIME type describing the format of the object data.
      */
-    inline HeadObjectResult& WithContentType(Aws::String&& value) { SetContentType(value); return *this;}
+    inline HeadObjectResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
     /**
      * A standard MIME type describing the format of the object data.
@@ -525,7 +526,7 @@ namespace Model
     /**
      * The date and time at which the object is no longer cacheable.
      */
-    inline void SetExpires(Aws::Utils::DateTime&& value) { m_expires = value; }
+    inline void SetExpires(Aws::Utils::DateTime&& value) { m_expires = std::move(value); }
 
     /**
      * The date and time at which the object is no longer cacheable.
@@ -535,7 +536,7 @@ namespace Model
     /**
      * The date and time at which the object is no longer cacheable.
      */
-    inline HeadObjectResult& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(value); return *this;}
+    inline HeadObjectResult& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(std::move(value)); return *this;}
 
     /**
      * If the bucket is configured as a website, redirects requests for this object to
@@ -556,7 +557,7 @@ namespace Model
      * another object in the same bucket or to an external URL. Amazon S3 stores the
      * value of this header in the object metadata.
      */
-    inline void SetWebsiteRedirectLocation(Aws::String&& value) { m_websiteRedirectLocation = value; }
+    inline void SetWebsiteRedirectLocation(Aws::String&& value) { m_websiteRedirectLocation = std::move(value); }
 
     /**
      * If the bucket is configured as a website, redirects requests for this object to
@@ -577,7 +578,7 @@ namespace Model
      * another object in the same bucket or to an external URL. Amazon S3 stores the
      * value of this header in the object metadata.
      */
-    inline HeadObjectResult& WithWebsiteRedirectLocation(Aws::String&& value) { SetWebsiteRedirectLocation(value); return *this;}
+    inline HeadObjectResult& WithWebsiteRedirectLocation(Aws::String&& value) { SetWebsiteRedirectLocation(std::move(value)); return *this;}
 
     /**
      * If the bucket is configured as a website, redirects requests for this object to
@@ -602,7 +603,7 @@ namespace Model
      * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
      * AES256, aws:kms).
      */
-    inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryption = value; }
+    inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryption = std::move(value); }
 
     /**
      * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
@@ -614,7 +615,7 @@ namespace Model
      * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
      * AES256, aws:kms).
      */
-    inline HeadObjectResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(value); return *this;}
+    inline HeadObjectResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
     /**
      * A map of metadata to store with the object in S3.
@@ -629,7 +630,7 @@ namespace Model
     /**
      * A map of metadata to store with the object in S3.
      */
-    inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadata = value; }
+    inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadata = std::move(value); }
 
     /**
      * A map of metadata to store with the object in S3.
@@ -639,42 +640,42 @@ namespace Model
     /**
      * A map of metadata to store with the object in S3.
      */
-    inline HeadObjectResult& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(value); return *this;}
+    inline HeadObjectResult& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
 
     /**
      * A map of metadata to store with the object in S3.
      */
-    inline HeadObjectResult& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadata[key] = value; return *this; }
+    inline HeadObjectResult& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadata.emplace(key, value); return *this; }
 
     /**
      * A map of metadata to store with the object in S3.
      */
-    inline HeadObjectResult& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadata[key] = value; return *this; }
+    inline HeadObjectResult& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
      * A map of metadata to store with the object in S3.
      */
-    inline HeadObjectResult& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadata[key] = value; return *this; }
+    inline HeadObjectResult& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
      * A map of metadata to store with the object in S3.
      */
-    inline HeadObjectResult& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadata[key] = value; return *this; }
+    inline HeadObjectResult& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * A map of metadata to store with the object in S3.
      */
-    inline HeadObjectResult& AddMetadata(const char* key, Aws::String&& value) { m_metadata[key] = value; return *this; }
+    inline HeadObjectResult& AddMetadata(const char* key, Aws::String&& value) { m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
      * A map of metadata to store with the object in S3.
      */
-    inline HeadObjectResult& AddMetadata(Aws::String&& key, const char* value) { m_metadata[key] = value; return *this; }
+    inline HeadObjectResult& AddMetadata(Aws::String&& key, const char* value) { m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
      * A map of metadata to store with the object in S3.
      */
-    inline HeadObjectResult& AddMetadata(const char* key, const char* value) { m_metadata[key] = value; return *this; }
+    inline HeadObjectResult& AddMetadata(const char* key, const char* value) { m_metadata.emplace(key, value); return *this; }
 
     /**
      * If server-side encryption with a customer-provided encryption key was requested,
@@ -692,7 +693,7 @@ namespace Model
      * If server-side encryption with a customer-provided encryption key was requested,
      * the response will include this header confirming the encryption algorithm used.
      */
-    inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithm = value; }
+    inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithm = std::move(value); }
 
     /**
      * If server-side encryption with a customer-provided encryption key was requested,
@@ -710,7 +711,7 @@ namespace Model
      * If server-side encryption with a customer-provided encryption key was requested,
      * the response will include this header confirming the encryption algorithm used.
      */
-    inline HeadObjectResult& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(value); return *this;}
+    inline HeadObjectResult& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(std::move(value)); return *this;}
 
     /**
      * If server-side encryption with a customer-provided encryption key was requested,
@@ -737,7 +738,7 @@ namespace Model
      * the response will include this header to provide round trip message integrity
      * verification of the customer-provided encryption key.
      */
-    inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5 = value; }
+    inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5 = std::move(value); }
 
     /**
      * If server-side encryption with a customer-provided encryption key was requested,
@@ -758,7 +759,7 @@ namespace Model
      * the response will include this header to provide round trip message integrity
      * verification of the customer-provided encryption key.
      */
-    inline HeadObjectResult& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(value); return *this;}
+    inline HeadObjectResult& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
      * If server-side encryption with a customer-provided encryption key was requested,
@@ -783,7 +784,7 @@ namespace Model
      * If present, specifies the ID of the AWS Key Management Service (KMS) master
      * encryption key that was used for the object.
      */
-    inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = value; }
+    inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = std::move(value); }
 
     /**
      * If present, specifies the ID of the AWS Key Management Service (KMS) master
@@ -801,7 +802,7 @@ namespace Model
      * If present, specifies the ID of the AWS Key Management Service (KMS) master
      * encryption key that was used for the object.
      */
-    inline HeadObjectResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(value); return *this;}
+    inline HeadObjectResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
      * If present, specifies the ID of the AWS Key Management Service (KMS) master
@@ -816,13 +817,13 @@ namespace Model
     inline void SetStorageClass(const StorageClass& value) { m_storageClass = value; }
 
     
-    inline void SetStorageClass(StorageClass&& value) { m_storageClass = value; }
+    inline void SetStorageClass(StorageClass&& value) { m_storageClass = std::move(value); }
 
     
     inline HeadObjectResult& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     
-    inline HeadObjectResult& WithStorageClass(StorageClass&& value) { SetStorageClass(value); return *this;}
+    inline HeadObjectResult& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
@@ -831,13 +832,13 @@ namespace Model
     inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
 
     
-    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = value; }
+    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = std::move(value); }
 
     
     inline HeadObjectResult& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
 
     
-    inline HeadObjectResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(value); return *this;}
+    inline HeadObjectResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
     
     inline const ReplicationStatus& GetReplicationStatus() const{ return m_replicationStatus; }
@@ -846,13 +847,13 @@ namespace Model
     inline void SetReplicationStatus(const ReplicationStatus& value) { m_replicationStatus = value; }
 
     
-    inline void SetReplicationStatus(ReplicationStatus&& value) { m_replicationStatus = value; }
+    inline void SetReplicationStatus(ReplicationStatus&& value) { m_replicationStatus = std::move(value); }
 
     
     inline HeadObjectResult& WithReplicationStatus(const ReplicationStatus& value) { SetReplicationStatus(value); return *this;}
 
     
-    inline HeadObjectResult& WithReplicationStatus(ReplicationStatus&& value) { SetReplicationStatus(value); return *this;}
+    inline HeadObjectResult& WithReplicationStatus(ReplicationStatus&& value) { SetReplicationStatus(std::move(value)); return *this;}
 
     /**
      * The count of parts this object has.

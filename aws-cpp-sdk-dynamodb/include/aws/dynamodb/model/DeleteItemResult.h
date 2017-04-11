@@ -19,6 +19,7 @@
 #include <aws/dynamodb/model/ItemCollectionMetrics.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/AttributeValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -71,7 +72,7 @@ namespace Model
      * appears in the response only if <code>ReturnValues</code> was specified as
      * <code>ALL_OLD</code> in the request.</p>
      */
-    inline void SetAttributes(Aws::Map<Aws::String, AttributeValue>&& value) { m_attributes = value; }
+    inline void SetAttributes(Aws::Map<Aws::String, AttributeValue>&& value) { m_attributes = std::move(value); }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
@@ -87,7 +88,7 @@ namespace Model
      * appears in the response only if <code>ReturnValues</code> was specified as
      * <code>ALL_OLD</code> in the request.</p>
      */
-    inline DeleteItemResult& WithAttributes(Aws::Map<Aws::String, AttributeValue>&& value) { SetAttributes(value); return *this;}
+    inline DeleteItemResult& WithAttributes(Aws::Map<Aws::String, AttributeValue>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
@@ -95,7 +96,7 @@ namespace Model
      * appears in the response only if <code>ReturnValues</code> was specified as
      * <code>ALL_OLD</code> in the request.</p>
      */
-    inline DeleteItemResult& AddAttributes(const Aws::String& key, const AttributeValue& value) { m_attributes[key] = value; return *this; }
+    inline DeleteItemResult& AddAttributes(const Aws::String& key, const AttributeValue& value) { m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
@@ -103,7 +104,7 @@ namespace Model
      * appears in the response only if <code>ReturnValues</code> was specified as
      * <code>ALL_OLD</code> in the request.</p>
      */
-    inline DeleteItemResult& AddAttributes(Aws::String&& key, const AttributeValue& value) { m_attributes[key] = value; return *this; }
+    inline DeleteItemResult& AddAttributes(Aws::String&& key, const AttributeValue& value) { m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
@@ -111,7 +112,7 @@ namespace Model
      * appears in the response only if <code>ReturnValues</code> was specified as
      * <code>ALL_OLD</code> in the request.</p>
      */
-    inline DeleteItemResult& AddAttributes(const Aws::String& key, AttributeValue&& value) { m_attributes[key] = value; return *this; }
+    inline DeleteItemResult& AddAttributes(const Aws::String& key, AttributeValue&& value) { m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
@@ -119,7 +120,7 @@ namespace Model
      * appears in the response only if <code>ReturnValues</code> was specified as
      * <code>ALL_OLD</code> in the request.</p>
      */
-    inline DeleteItemResult& AddAttributes(Aws::String&& key, AttributeValue&& value) { m_attributes[key] = value; return *this; }
+    inline DeleteItemResult& AddAttributes(Aws::String&& key, AttributeValue&& value) { m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
@@ -127,7 +128,7 @@ namespace Model
      * appears in the response only if <code>ReturnValues</code> was specified as
      * <code>ALL_OLD</code> in the request.</p>
      */
-    inline DeleteItemResult& AddAttributes(const char* key, AttributeValue&& value) { m_attributes[key] = value; return *this; }
+    inline DeleteItemResult& AddAttributes(const char* key, AttributeValue&& value) { m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
@@ -135,7 +136,7 @@ namespace Model
      * appears in the response only if <code>ReturnValues</code> was specified as
      * <code>ALL_OLD</code> in the request.</p>
      */
-    inline DeleteItemResult& AddAttributes(const char* key, const AttributeValue& value) { m_attributes[key] = value; return *this; }
+    inline DeleteItemResult& AddAttributes(const char* key, const AttributeValue& value) { m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>The capacity units consumed by the <code>DeleteItem</code> operation. The
@@ -171,7 +172,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline void SetConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity = value; }
+    inline void SetConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity = std::move(value); }
 
     /**
      * <p>The capacity units consumed by the <code>DeleteItem</code> operation. The
@@ -195,7 +196,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline DeleteItemResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(value); return *this;}
+    inline DeleteItemResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(std::move(value)); return *this;}
 
     /**
      * <p>Information about item collections, if any, that were affected by the
@@ -255,7 +256,7 @@ namespace Model
      * change over time; therefore, do not rely on the precision or accuracy of the
      * estimate.</p> </li> </ul>
      */
-    inline void SetItemCollectionMetrics(ItemCollectionMetrics&& value) { m_itemCollectionMetrics = value; }
+    inline void SetItemCollectionMetrics(ItemCollectionMetrics&& value) { m_itemCollectionMetrics = std::move(value); }
 
     /**
      * <p>Information about item collections, if any, that were affected by the
@@ -295,7 +296,7 @@ namespace Model
      * change over time; therefore, do not rely on the precision or accuracy of the
      * estimate.</p> </li> </ul>
      */
-    inline DeleteItemResult& WithItemCollectionMetrics(ItemCollectionMetrics&& value) { SetItemCollectionMetrics(value); return *this;}
+    inline DeleteItemResult& WithItemCollectionMetrics(ItemCollectionMetrics&& value) { SetItemCollectionMetrics(std::move(value)); return *this;}
 
   private:
     Aws::Map<Aws::String, AttributeValue> m_attributes;

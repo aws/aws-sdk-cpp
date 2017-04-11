@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/model/InventoryConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * If sent in the request, the marker that is used as a starting point for this
      * inventory configuration list response.
      */
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = value; }
+    inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = std::move(value); }
 
     /**
      * If sent in the request, the marker that is used as a starting point for this
@@ -75,7 +76,7 @@ namespace Model
      * If sent in the request, the marker that is used as a starting point for this
      * inventory configuration list response.
      */
-    inline ListBucketInventoryConfigurationsResult& WithContinuationToken(Aws::String&& value) { SetContinuationToken(value); return *this;}
+    inline ListBucketInventoryConfigurationsResult& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
      * If sent in the request, the marker that is used as a starting point for this
@@ -96,7 +97,7 @@ namespace Model
     /**
      * The list of inventory configurations for a bucket.
      */
-    inline void SetInventoryConfigurationList(Aws::Vector<InventoryConfiguration>&& value) { m_inventoryConfigurationList = value; }
+    inline void SetInventoryConfigurationList(Aws::Vector<InventoryConfiguration>&& value) { m_inventoryConfigurationList = std::move(value); }
 
     /**
      * The list of inventory configurations for a bucket.
@@ -106,7 +107,7 @@ namespace Model
     /**
      * The list of inventory configurations for a bucket.
      */
-    inline ListBucketInventoryConfigurationsResult& WithInventoryConfigurationList(Aws::Vector<InventoryConfiguration>&& value) { SetInventoryConfigurationList(value); return *this;}
+    inline ListBucketInventoryConfigurationsResult& WithInventoryConfigurationList(Aws::Vector<InventoryConfiguration>&& value) { SetInventoryConfigurationList(std::move(value)); return *this;}
 
     /**
      * The list of inventory configurations for a bucket.
@@ -116,7 +117,7 @@ namespace Model
     /**
      * The list of inventory configurations for a bucket.
      */
-    inline ListBucketInventoryConfigurationsResult& AddInventoryConfigurationList(InventoryConfiguration&& value) { m_inventoryConfigurationList.push_back(value); return *this; }
+    inline ListBucketInventoryConfigurationsResult& AddInventoryConfigurationList(InventoryConfiguration&& value) { m_inventoryConfigurationList.push_back(std::move(value)); return *this; }
 
     /**
      * Indicates whether the returned list of inventory configurations is truncated in
@@ -155,7 +156,7 @@ namespace Model
      * NextContinuationToken from this response to continue the listing in a subsequent
      * request. The continuation token is an opaque value that Amazon S3 understands.
      */
-    inline void SetNextContinuationToken(Aws::String&& value) { m_nextContinuationToken = value; }
+    inline void SetNextContinuationToken(Aws::String&& value) { m_nextContinuationToken = std::move(value); }
 
     /**
      * The marker used to continue this inventory configuration listing. Use the
@@ -176,7 +177,7 @@ namespace Model
      * NextContinuationToken from this response to continue the listing in a subsequent
      * request. The continuation token is an opaque value that Amazon S3 understands.
      */
-    inline ListBucketInventoryConfigurationsResult& WithNextContinuationToken(Aws::String&& value) { SetNextContinuationToken(value); return *this;}
+    inline ListBucketInventoryConfigurationsResult& WithNextContinuationToken(Aws::String&& value) { SetNextContinuationToken(std::move(value)); return *this;}
 
     /**
      * The marker used to continue this inventory configuration listing. Use the

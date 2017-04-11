@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/Build.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Object that contains the updated build record.</p>
      */
-    inline void SetBuild(Build&& value) { m_build = value; }
+    inline void SetBuild(Build&& value) { m_build = std::move(value); }
 
     /**
      * <p>Object that contains the updated build record.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Object that contains the updated build record.</p>
      */
-    inline UpdateBuildResult& WithBuild(Build&& value) { SetBuild(value); return *this;}
+    inline UpdateBuildResult& WithBuild(Build&& value) { SetBuild(std::move(value)); return *this;}
 
   private:
     Build m_build;

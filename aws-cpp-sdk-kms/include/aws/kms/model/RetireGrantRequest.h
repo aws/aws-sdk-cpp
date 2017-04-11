@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/kms/KMSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>Token that identifies the grant to be retired.</p>
      */
-    inline void SetGrantToken(Aws::String&& value) { m_grantTokenHasBeenSet = true; m_grantToken = value; }
+    inline void SetGrantToken(Aws::String&& value) { m_grantTokenHasBeenSet = true; m_grantToken = std::move(value); }
 
     /**
      * <p>Token that identifies the grant to be retired.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Token that identifies the grant to be retired.</p>
      */
-    inline RetireGrantRequest& WithGrantToken(Aws::String&& value) { SetGrantToken(value); return *this;}
+    inline RetireGrantRequest& WithGrantToken(Aws::String&& value) { SetGrantToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that identifies the grant to be retired.</p>
@@ -92,7 +93,7 @@ namespace Model
      * <p>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
      * </li> </ul>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name of the CMK associated with the grant. Example:</p>
@@ -116,7 +117,7 @@ namespace Model
      * <p>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
      * </li> </ul>
      */
-    inline RetireGrantRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline RetireGrantRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name of the CMK associated with the grant. Example:</p>
@@ -148,7 +149,7 @@ namespace Model
      * Example - 0123456789012345678901234567890123456789012345678901234567890123</p>
      * </li> </ul>
      */
-    inline void SetGrantId(Aws::String&& value) { m_grantIdHasBeenSet = true; m_grantId = value; }
+    inline void SetGrantId(Aws::String&& value) { m_grantIdHasBeenSet = true; m_grantId = std::move(value); }
 
     /**
      * <p>Unique identifier of the grant to retire. The grant ID is returned in the
@@ -172,7 +173,7 @@ namespace Model
      * Example - 0123456789012345678901234567890123456789012345678901234567890123</p>
      * </li> </ul>
      */
-    inline RetireGrantRequest& WithGrantId(Aws::String&& value) { SetGrantId(value); return *this;}
+    inline RetireGrantRequest& WithGrantId(Aws::String&& value) { SetGrantId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier of the grant to retire. The grant ID is returned in the

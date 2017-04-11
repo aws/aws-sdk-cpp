@@ -16,6 +16,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/InspectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ARN specifying the resource group that you want to describe.</p>
      */
-    inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = value; }
+    inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = std::move(value); }
 
     /**
      * <p>The ARN specifying the resource group that you want to describe.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ARN specifying the resource group that you want to describe.</p>
      */
-    inline DescribeResourceGroupRequest& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(value); return *this;}
+    inline DescribeResourceGroupRequest& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN specifying the resource group that you want to describe.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/model/ResourceGroup.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Information about the resource group.</p>
      */
-    inline void SetResourceGroup(ResourceGroup&& value) { m_resourceGroup = value; }
+    inline void SetResourceGroup(ResourceGroup&& value) { m_resourceGroup = std::move(value); }
 
     /**
      * <p>Information about the resource group.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Information about the resource group.</p>
      */
-    inline DescribeResourceGroupResult& WithResourceGroup(ResourceGroup&& value) { SetResourceGroup(value); return *this;}
+    inline DescribeResourceGroupResult& WithResourceGroup(ResourceGroup&& value) { SetResourceGroup(std::move(value)); return *this;}
 
   private:
     ResourceGroup m_resourceGroup;

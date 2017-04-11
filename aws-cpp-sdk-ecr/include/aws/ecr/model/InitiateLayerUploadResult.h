@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The upload ID for the layer upload. This parameter is passed to further
      * <a>UploadLayerPart</a> and <a>CompleteLayerUpload</a> operations.</p>
      */
-    inline void SetUploadId(Aws::String&& value) { m_uploadId = value; }
+    inline void SetUploadId(Aws::String&& value) { m_uploadId = std::move(value); }
 
     /**
      * <p>The upload ID for the layer upload. This parameter is passed to further
@@ -73,7 +74,7 @@ namespace Model
      * <p>The upload ID for the layer upload. This parameter is passed to further
      * <a>UploadLayerPart</a> and <a>CompleteLayerUpload</a> operations.</p>
      */
-    inline InitiateLayerUploadResult& WithUploadId(Aws::String&& value) { SetUploadId(value); return *this;}
+    inline InitiateLayerUploadResult& WithUploadId(Aws::String&& value) { SetUploadId(std::move(value)); return *this;}
 
     /**
      * <p>The upload ID for the layer upload. This parameter is passed to further

@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
      */
-    inline void SetSAMLProviderArn(Aws::String&& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = value; }
+    inline void SetSAMLProviderArn(Aws::String&& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
      */
-    inline DeleteSAMLProviderRequest& WithSAMLProviderArn(Aws::String&& value) { SetSAMLProviderArn(value); return *this;}
+    inline DeleteSAMLProviderRequest& WithSAMLProviderArn(Aws::String&& value) { SetSAMLProviderArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>

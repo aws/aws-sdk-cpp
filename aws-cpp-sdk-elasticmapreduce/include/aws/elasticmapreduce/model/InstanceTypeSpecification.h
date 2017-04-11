@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
 #include <aws/elasticmapreduce/model/EbsBlockDevice.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
-    inline InstanceTypeSpecification& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
+    inline InstanceTypeSpecification& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
@@ -124,7 +125,7 @@ namespace Model
      * <p>The bid price for each EC2 Spot instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
-    inline void SetBidPrice(Aws::String&& value) { m_bidPriceHasBeenSet = true; m_bidPrice = value; }
+    inline void SetBidPrice(Aws::String&& value) { m_bidPriceHasBeenSet = true; m_bidPrice = std::move(value); }
 
     /**
      * <p>The bid price for each EC2 Spot instance type as defined by
@@ -142,7 +143,7 @@ namespace Model
      * <p>The bid price for each EC2 Spot instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
-    inline InstanceTypeSpecification& WithBidPrice(Aws::String&& value) { SetBidPrice(value); return *this;}
+    inline InstanceTypeSpecification& WithBidPrice(Aws::String&& value) { SetBidPrice(std::move(value)); return *this;}
 
     /**
      * <p>The bid price for each EC2 Spot instance type as defined by
@@ -190,7 +191,7 @@ namespace Model
      * instances, which can include configurations for applications and software
      * bundled with Amazon EMR.</p>
      */
-    inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
+    inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
 
     /**
      * <p>A configuration classification that applies when provisioning cluster
@@ -204,7 +205,7 @@ namespace Model
      * instances, which can include configurations for applications and software
      * bundled with Amazon EMR.</p>
      */
-    inline InstanceTypeSpecification& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(value); return *this;}
+    inline InstanceTypeSpecification& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(std::move(value)); return *this;}
 
     /**
      * <p>A configuration classification that applies when provisioning cluster
@@ -218,7 +219,7 @@ namespace Model
      * instances, which can include configurations for applications and software
      * bundled with Amazon EMR.</p>
      */
-    inline InstanceTypeSpecification& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
+    inline InstanceTypeSpecification& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
@@ -236,7 +237,7 @@ namespace Model
      * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
      * instance as defined by <code>InstanceType</code>.</p>
      */
-    inline void SetEbsBlockDevices(Aws::Vector<EbsBlockDevice>&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices = value; }
+    inline void SetEbsBlockDevices(Aws::Vector<EbsBlockDevice>&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices = std::move(value); }
 
     /**
      * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
@@ -248,7 +249,7 @@ namespace Model
      * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
      * instance as defined by <code>InstanceType</code>.</p>
      */
-    inline InstanceTypeSpecification& WithEbsBlockDevices(Aws::Vector<EbsBlockDevice>&& value) { SetEbsBlockDevices(value); return *this;}
+    inline InstanceTypeSpecification& WithEbsBlockDevices(Aws::Vector<EbsBlockDevice>&& value) { SetEbsBlockDevices(std::move(value)); return *this;}
 
     /**
      * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
@@ -260,7 +261,7 @@ namespace Model
      * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
      * instance as defined by <code>InstanceType</code>.</p>
      */
-    inline InstanceTypeSpecification& AddEbsBlockDevices(EbsBlockDevice&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices.push_back(value); return *this; }
+    inline InstanceTypeSpecification& AddEbsBlockDevices(EbsBlockDevice&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code>

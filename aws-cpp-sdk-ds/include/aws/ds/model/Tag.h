@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>Required name of the tag. The string value can be Unicode characters and
@@ -90,7 +91,7 @@ namespace Model
      * letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
      */
-    inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>Required name of the tag. The string value can be Unicode characters and
@@ -122,7 +123,7 @@ namespace Model
      * '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The optional value of the tag. The string value can be Unicode characters.
@@ -146,7 +147,7 @@ namespace Model
      * '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
      */
-    inline Tag& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The optional value of the tag. The string value can be Unicode characters.

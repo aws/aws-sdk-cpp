@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datapipeline/model/PipelineObject.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>An array of object definitions.</p>
      */
-    inline void SetPipelineObjects(Aws::Vector<PipelineObject>&& value) { m_pipelineObjects = value; }
+    inline void SetPipelineObjects(Aws::Vector<PipelineObject>&& value) { m_pipelineObjects = std::move(value); }
 
     /**
      * <p>An array of object definitions.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>An array of object definitions.</p>
      */
-    inline DescribeObjectsResult& WithPipelineObjects(Aws::Vector<PipelineObject>&& value) { SetPipelineObjects(value); return *this;}
+    inline DescribeObjectsResult& WithPipelineObjects(Aws::Vector<PipelineObject>&& value) { SetPipelineObjects(std::move(value)); return *this;}
 
     /**
      * <p>An array of object definitions.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>An array of object definitions.</p>
      */
-    inline DescribeObjectsResult& AddPipelineObjects(PipelineObject&& value) { m_pipelineObjects.push_back(value); return *this; }
+    inline DescribeObjectsResult& AddPipelineObjects(PipelineObject&& value) { m_pipelineObjects.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The starting point for the next page of results. To view the next page of
@@ -100,7 +101,7 @@ namespace Model
      * results, call <code>DescribeObjects</code> again with this marker value. If the
      * value is null, there are no more results.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>The starting point for the next page of results. To view the next page of
@@ -121,7 +122,7 @@ namespace Model
      * results, call <code>DescribeObjects</code> again with this marker value. If the
      * value is null, there are no more results.</p>
      */
-    inline DescribeObjectsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeObjectsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>The starting point for the next page of results. To view the next page of

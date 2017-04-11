@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/VpnGateway.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Information about the virtual private gateway.</p>
      */
-    inline void SetVpnGateway(VpnGateway&& value) { m_vpnGateway = value; }
+    inline void SetVpnGateway(VpnGateway&& value) { m_vpnGateway = std::move(value); }
 
     /**
      * <p>Information about the virtual private gateway.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Information about the virtual private gateway.</p>
      */
-    inline CreateVpnGatewayResponse& WithVpnGateway(VpnGateway&& value) { SetVpnGateway(value); return *this;}
+    inline CreateVpnGatewayResponse& WithVpnGateway(VpnGateway&& value) { SetVpnGateway(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -77,13 +78,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CreateVpnGatewayResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CreateVpnGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CreateVpnGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     VpnGateway m_vpnGateway;

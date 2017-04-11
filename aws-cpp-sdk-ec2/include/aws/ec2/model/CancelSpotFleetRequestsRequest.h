@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The IDs of the Spot fleet requests.</p>
      */
-    inline void SetSpotFleetRequestIds(Aws::Vector<Aws::String>&& value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds = value; }
+    inline void SetSpotFleetRequestIds(Aws::Vector<Aws::String>&& value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds = std::move(value); }
 
     /**
      * <p>The IDs of the Spot fleet requests.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The IDs of the Spot fleet requests.</p>
      */
-    inline CancelSpotFleetRequestsRequest& WithSpotFleetRequestIds(Aws::Vector<Aws::String>&& value) { SetSpotFleetRequestIds(value); return *this;}
+    inline CancelSpotFleetRequestsRequest& WithSpotFleetRequestIds(Aws::Vector<Aws::String>&& value) { SetSpotFleetRequestIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the Spot fleet requests.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The IDs of the Spot fleet requests.</p>
      */
-    inline CancelSpotFleetRequestsRequest& AddSpotFleetRequestIds(Aws::String&& value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds.push_back(value); return *this; }
+    inline CancelSpotFleetRequestsRequest& AddSpotFleetRequestIds(Aws::String&& value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the Spot fleet requests.</p>

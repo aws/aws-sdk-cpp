@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/Option.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>Specifies the name of the option group.</p>
      */
-    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
+    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
      * <p>Specifies the name of the option group.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>Specifies the name of the option group.</p>
      */
-    inline OptionGroup& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
+    inline OptionGroup& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the option group.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>Provides a description of the option group.</p>
      */
-    inline void SetOptionGroupDescription(Aws::String&& value) { m_optionGroupDescriptionHasBeenSet = true; m_optionGroupDescription = value; }
+    inline void SetOptionGroupDescription(Aws::String&& value) { m_optionGroupDescriptionHasBeenSet = true; m_optionGroupDescription = std::move(value); }
 
     /**
      * <p>Provides a description of the option group.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>Provides a description of the option group.</p>
      */
-    inline OptionGroup& WithOptionGroupDescription(Aws::String&& value) { SetOptionGroupDescription(value); return *this;}
+    inline OptionGroup& WithOptionGroupDescription(Aws::String&& value) { SetOptionGroupDescription(std::move(value)); return *this;}
 
     /**
      * <p>Provides a description of the option group.</p>
@@ -134,7 +135,7 @@ namespace Model
      * <p>Indicates the name of the engine that this option group can be applied
      * to.</p>
      */
-    inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
+    inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
      * <p>Indicates the name of the engine that this option group can be applied
@@ -152,7 +153,7 @@ namespace Model
      * <p>Indicates the name of the engine that this option group can be applied
      * to.</p>
      */
-    inline OptionGroup& WithEngineName(Aws::String&& value) { SetEngineName(value); return *this;}
+    inline OptionGroup& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
      * <p>Indicates the name of the engine that this option group can be applied
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>Indicates the major engine version associated with this option group.</p>
      */
-    inline void SetMajorEngineVersion(Aws::String&& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = value; }
+    inline void SetMajorEngineVersion(Aws::String&& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = std::move(value); }
 
     /**
      * <p>Indicates the major engine version associated with this option group.</p>
@@ -188,7 +189,7 @@ namespace Model
     /**
      * <p>Indicates the major engine version associated with this option group.</p>
      */
-    inline OptionGroup& WithMajorEngineVersion(Aws::String&& value) { SetMajorEngineVersion(value); return *this;}
+    inline OptionGroup& WithMajorEngineVersion(Aws::String&& value) { SetMajorEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>Indicates the major engine version associated with this option group.</p>
@@ -208,7 +209,7 @@ namespace Model
     /**
      * <p>Indicates what options are available in the option group.</p>
      */
-    inline void SetOptions(Aws::Vector<Option>&& value) { m_optionsHasBeenSet = true; m_options = value; }
+    inline void SetOptions(Aws::Vector<Option>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     /**
      * <p>Indicates what options are available in the option group.</p>
@@ -218,7 +219,7 @@ namespace Model
     /**
      * <p>Indicates what options are available in the option group.</p>
      */
-    inline OptionGroup& WithOptions(Aws::Vector<Option>&& value) { SetOptions(value); return *this;}
+    inline OptionGroup& WithOptions(Aws::Vector<Option>&& value) { SetOptions(std::move(value)); return *this;}
 
     /**
      * <p>Indicates what options are available in the option group.</p>
@@ -228,7 +229,7 @@ namespace Model
     /**
      * <p>Indicates what options are available in the option group.</p>
      */
-    inline OptionGroup& AddOptions(Option&& value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
+    inline OptionGroup& AddOptions(Option&& value) { m_optionsHasBeenSet = true; m_options.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Indicates whether this option group can be applied to both VPC and non-VPC
@@ -279,7 +280,7 @@ namespace Model
      * option group can only be applied to instances that are in the VPC indicated by
      * this field. </p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this
@@ -309,7 +310,7 @@ namespace Model
      * option group can only be applied to instances that are in the VPC indicated by
      * this field. </p>
      */
-    inline OptionGroup& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline OptionGroup& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this
@@ -334,7 +335,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the option group.</p>
      */
-    inline void SetOptionGroupArn(Aws::String&& value) { m_optionGroupArnHasBeenSet = true; m_optionGroupArn = value; }
+    inline void SetOptionGroupArn(Aws::String&& value) { m_optionGroupArnHasBeenSet = true; m_optionGroupArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the option group.</p>
@@ -349,7 +350,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the option group.</p>
      */
-    inline OptionGroup& WithOptionGroupArn(Aws::String&& value) { SetOptionGroupArn(value); return *this;}
+    inline OptionGroup& WithOptionGroupArn(Aws::String&& value) { SetOptionGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the option group.</p>

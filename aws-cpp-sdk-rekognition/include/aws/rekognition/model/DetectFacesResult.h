@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/model/OrientationCorrection.h>
 #include <aws/rekognition/model/FaceDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>Details of each face found in the image. </p>
      */
-    inline void SetFaceDetails(Aws::Vector<FaceDetail>&& value) { m_faceDetails = value; }
+    inline void SetFaceDetails(Aws::Vector<FaceDetail>&& value) { m_faceDetails = std::move(value); }
 
     /**
      * <p>Details of each face found in the image. </p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Details of each face found in the image. </p>
      */
-    inline DetectFacesResult& WithFaceDetails(Aws::Vector<FaceDetail>&& value) { SetFaceDetails(value); return *this;}
+    inline DetectFacesResult& WithFaceDetails(Aws::Vector<FaceDetail>&& value) { SetFaceDetails(std::move(value)); return *this;}
 
     /**
      * <p>Details of each face found in the image. </p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Details of each face found in the image. </p>
      */
-    inline DetectFacesResult& AddFaceDetails(FaceDetail&& value) { m_faceDetails.push_back(value); return *this; }
+    inline DetectFacesResult& AddFaceDetails(FaceDetail&& value) { m_faceDetails.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The algorithm detects the image orientation. If it detects that the image was
@@ -113,7 +114,7 @@ namespace Model
      * orientation field, Amazon Rekognition does not perform orientation correction
      * and the value of OrientationCorrection will be nil.</p> </note>
      */
-    inline void SetOrientationCorrection(OrientationCorrection&& value) { m_orientationCorrection = value; }
+    inline void SetOrientationCorrection(OrientationCorrection&& value) { m_orientationCorrection = std::move(value); }
 
     /**
      * <p>The algorithm detects the image orientation. If it detects that the image was
@@ -139,7 +140,7 @@ namespace Model
      * orientation field, Amazon Rekognition does not perform orientation correction
      * and the value of OrientationCorrection will be nil.</p> </note>
      */
-    inline DetectFacesResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(value); return *this;}
+    inline DetectFacesResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(std::move(value)); return *this;}
 
   private:
     Aws::Vector<FaceDetail> m_faceDetails;

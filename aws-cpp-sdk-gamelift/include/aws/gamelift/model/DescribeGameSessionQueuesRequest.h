@@ -17,6 +17,7 @@
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>List of queue names to retrieve information for. To request settings for all
      * queues, leave this parameter empty.</p>
      */
-    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = value; }
+    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
 
     /**
      * <p>List of queue names to retrieve information for. To request settings for all
@@ -64,7 +65,7 @@ namespace Model
      * <p>List of queue names to retrieve information for. To request settings for all
      * queues, leave this parameter empty.</p>
      */
-    inline DescribeGameSessionQueuesRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(value); return *this;}
+    inline DescribeGameSessionQueuesRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
 
     /**
      * <p>List of queue names to retrieve information for. To request settings for all
@@ -76,7 +77,7 @@ namespace Model
      * <p>List of queue names to retrieve information for. To request settings for all
      * queues, leave this parameter empty.</p>
      */
-    inline DescribeGameSessionQueuesRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
+    inline DescribeGameSessionQueuesRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
 
     /**
      * <p>List of queue names to retrieve information for. To request settings for all
@@ -121,7 +122,7 @@ namespace Model
      * the token that is returned with a previous call to this action. To specify the
      * start of the result set, do not specify a value.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
@@ -142,7 +143,7 @@ namespace Model
      * the token that is returned with a previous call to this action. To specify the
      * start of the result set, do not specify a value.</p>
      */
-    inline DescribeGameSessionQueuesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeGameSessionQueuesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use

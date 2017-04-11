@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The ARN of the schema that contains the facet.</p>
      */
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
+    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
 
     /**
      * <p>The ARN of the schema that contains the facet.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The ARN of the schema that contains the facet.</p>
      */
-    inline SchemaFacet& WithSchemaArn(Aws::String&& value) { SetSchemaArn(value); return *this;}
+    inline SchemaFacet& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the schema that contains the facet.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The name of the facet.</p>
      */
-    inline void SetFacetName(Aws::String&& value) { m_facetNameHasBeenSet = true; m_facetName = value; }
+    inline void SetFacetName(Aws::String&& value) { m_facetNameHasBeenSet = true; m_facetName = std::move(value); }
 
     /**
      * <p>The name of the facet.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The name of the facet.</p>
      */
-    inline SchemaFacet& WithFacetName(Aws::String&& value) { SetFacetName(value); return *this;}
+    inline SchemaFacet& WithFacetName(Aws::String&& value) { SetFacetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the facet.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/TrafficPolicyInstance.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A complex type that contains settings for the traffic policy instance.</p>
      */
-    inline void SetTrafficPolicyInstance(TrafficPolicyInstance&& value) { m_trafficPolicyInstance = value; }
+    inline void SetTrafficPolicyInstance(TrafficPolicyInstance&& value) { m_trafficPolicyInstance = std::move(value); }
 
     /**
      * <p>A complex type that contains settings for the traffic policy instance.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A complex type that contains settings for the traffic policy instance.</p>
      */
-    inline GetTrafficPolicyInstanceResult& WithTrafficPolicyInstance(TrafficPolicyInstance&& value) { SetTrafficPolicyInstance(value); return *this;}
+    inline GetTrafficPolicyInstanceResult& WithTrafficPolicyInstance(TrafficPolicyInstance&& value) { SetTrafficPolicyInstance(std::move(value)); return *this;}
 
   private:
     TrafficPolicyInstance m_trafficPolicyInstance;

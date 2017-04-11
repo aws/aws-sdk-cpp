@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/email/model/CustomMailFromStatus.h>
 #include <aws/email/model/BehaviorOnMXFailure.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The custom MAIL FROM domain that the identity is configured to use.</p>
      */
-    inline void SetMailFromDomain(Aws::String&& value) { m_mailFromDomainHasBeenSet = true; m_mailFromDomain = value; }
+    inline void SetMailFromDomain(Aws::String&& value) { m_mailFromDomainHasBeenSet = true; m_mailFromDomain = std::move(value); }
 
     /**
      * <p>The custom MAIL FROM domain that the identity is configured to use.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The custom MAIL FROM domain that the identity is configured to use.</p>
      */
-    inline IdentityMailFromDomainAttributes& WithMailFromDomain(Aws::String&& value) { SetMailFromDomain(value); return *this;}
+    inline IdentityMailFromDomainAttributes& WithMailFromDomain(Aws::String&& value) { SetMailFromDomain(std::move(value)); return *this;}
 
     /**
      * <p>The custom MAIL FROM domain that the identity is configured to use.</p>
@@ -109,7 +110,7 @@ namespace Model
      * the verified identity sends an email. All other states indicate that Amazon SES
      * takes the action described by <code>BehaviorOnMXFailure</code>.</p>
      */
-    inline void SetMailFromDomainStatus(CustomMailFromStatus&& value) { m_mailFromDomainStatusHasBeenSet = true; m_mailFromDomainStatus = value; }
+    inline void SetMailFromDomainStatus(CustomMailFromStatus&& value) { m_mailFromDomainStatusHasBeenSet = true; m_mailFromDomainStatus = std::move(value); }
 
     /**
      * <p>The state that indicates whether Amazon SES has successfully read the MX
@@ -127,7 +128,7 @@ namespace Model
      * the verified identity sends an email. All other states indicate that Amazon SES
      * takes the action described by <code>BehaviorOnMXFailure</code>.</p>
      */
-    inline IdentityMailFromDomainAttributes& WithMailFromDomainStatus(CustomMailFromStatus&& value) { SetMailFromDomainStatus(value); return *this;}
+    inline IdentityMailFromDomainAttributes& WithMailFromDomainStatus(CustomMailFromStatus&& value) { SetMailFromDomainStatus(std::move(value)); return *this;}
 
     /**
      * <p>The action that Amazon SES takes if it cannot successfully read the required
@@ -166,7 +167,7 @@ namespace Model
      * this behavior are <code>Pending</code>, <code>Failed</code>, and
      * <code>TemporaryFailure</code>.</p>
      */
-    inline void SetBehaviorOnMXFailure(BehaviorOnMXFailure&& value) { m_behaviorOnMXFailureHasBeenSet = true; m_behaviorOnMXFailure = value; }
+    inline void SetBehaviorOnMXFailure(BehaviorOnMXFailure&& value) { m_behaviorOnMXFailureHasBeenSet = true; m_behaviorOnMXFailure = std::move(value); }
 
     /**
      * <p>The action that Amazon SES takes if it cannot successfully read the required
@@ -192,7 +193,7 @@ namespace Model
      * this behavior are <code>Pending</code>, <code>Failed</code>, and
      * <code>TemporaryFailure</code>.</p>
      */
-    inline IdentityMailFromDomainAttributes& WithBehaviorOnMXFailure(BehaviorOnMXFailure&& value) { SetBehaviorOnMXFailure(value); return *this;}
+    inline IdentityMailFromDomainAttributes& WithBehaviorOnMXFailure(BehaviorOnMXFailure&& value) { SetBehaviorOnMXFailure(std::move(value)); return *this;}
 
   private:
     Aws::String m_mailFromDomain;

@@ -16,6 +16,7 @@
 #include <aws/sts/STS_EXPORTS.h>
 #include <aws/sts/STSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -110,7 +111,7 @@ namespace Model
      * spaces. You can also include underscores or any of the following characters:
      * =,.@-</p>
      */
-    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
+    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
 
     /**
      * <p>The identification number of the MFA device that is associated with the IAM
@@ -155,7 +156,7 @@ namespace Model
      * spaces. You can also include underscores or any of the following characters:
      * =,.@-</p>
      */
-    inline GetSessionTokenRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(value); return *this;}
+    inline GetSessionTokenRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
 
     /**
      * <p>The identification number of the MFA device that is associated with the IAM
@@ -203,7 +204,7 @@ namespace Model
      * <p>The format for this parameter, as described by its regex pattern, is a
      * sequence of six numeric digits.</p>
      */
-    inline void SetTokenCode(Aws::String&& value) { m_tokenCodeHasBeenSet = true; m_tokenCode = value; }
+    inline void SetTokenCode(Aws::String&& value) { m_tokenCodeHasBeenSet = true; m_tokenCode = std::move(value); }
 
     /**
      * <p>The value provided by the MFA device, if MFA is required. If any policy
@@ -236,7 +237,7 @@ namespace Model
      * <p>The format for this parameter, as described by its regex pattern, is a
      * sequence of six numeric digits.</p>
      */
-    inline GetSessionTokenRequest& WithTokenCode(Aws::String&& value) { SetTokenCode(value); return *this;}
+    inline GetSessionTokenRequest& WithTokenCode(Aws::String&& value) { SetTokenCode(std::move(value)); return *this;}
 
     /**
      * <p>The value provided by the MFA device, if MFA is required. If any policy

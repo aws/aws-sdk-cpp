@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/CacheCluster.h>
 #include <aws/elasticache/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,13 +48,13 @@ namespace Model
     inline void SetCacheCluster(const CacheCluster& value) { m_cacheCluster = value; }
 
     
-    inline void SetCacheCluster(CacheCluster&& value) { m_cacheCluster = value; }
+    inline void SetCacheCluster(CacheCluster&& value) { m_cacheCluster = std::move(value); }
 
     
     inline RebootCacheClusterResult& WithCacheCluster(const CacheCluster& value) { SetCacheCluster(value); return *this;}
 
     
-    inline RebootCacheClusterResult& WithCacheCluster(CacheCluster&& value) { SetCacheCluster(value); return *this;}
+    inline RebootCacheClusterResult& WithCacheCluster(CacheCluster&& value) { SetCacheCluster(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -62,13 +63,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline RebootCacheClusterResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline RebootCacheClusterResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline RebootCacheClusterResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     CacheCluster m_cacheCluster;

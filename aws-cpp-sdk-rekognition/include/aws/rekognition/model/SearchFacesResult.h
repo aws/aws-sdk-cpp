@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/model/FaceMatch.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>ID of the face that was searched for matches in a collection.</p>
      */
-    inline void SetSearchedFaceId(Aws::String&& value) { m_searchedFaceId = value; }
+    inline void SetSearchedFaceId(Aws::String&& value) { m_searchedFaceId = std::move(value); }
 
     /**
      * <p>ID of the face that was searched for matches in a collection.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>ID of the face that was searched for matches in a collection.</p>
      */
-    inline SearchFacesResult& WithSearchedFaceId(Aws::String&& value) { SetSearchedFaceId(value); return *this;}
+    inline SearchFacesResult& WithSearchedFaceId(Aws::String&& value) { SetSearchedFaceId(std::move(value)); return *this;}
 
     /**
      * <p>ID of the face that was searched for matches in a collection.</p>
@@ -92,7 +93,7 @@ namespace Model
      * <p>An array of faces that matched the input face, along with the confidence in
      * the match.</p>
      */
-    inline void SetFaceMatches(Aws::Vector<FaceMatch>&& value) { m_faceMatches = value; }
+    inline void SetFaceMatches(Aws::Vector<FaceMatch>&& value) { m_faceMatches = std::move(value); }
 
     /**
      * <p>An array of faces that matched the input face, along with the confidence in
@@ -104,7 +105,7 @@ namespace Model
      * <p>An array of faces that matched the input face, along with the confidence in
      * the match.</p>
      */
-    inline SearchFacesResult& WithFaceMatches(Aws::Vector<FaceMatch>&& value) { SetFaceMatches(value); return *this;}
+    inline SearchFacesResult& WithFaceMatches(Aws::Vector<FaceMatch>&& value) { SetFaceMatches(std::move(value)); return *this;}
 
     /**
      * <p>An array of faces that matched the input face, along with the confidence in
@@ -116,7 +117,7 @@ namespace Model
      * <p>An array of faces that matched the input face, along with the confidence in
      * the match.</p>
      */
-    inline SearchFacesResult& AddFaceMatches(FaceMatch&& value) { m_faceMatches.push_back(value); return *this; }
+    inline SearchFacesResult& AddFaceMatches(FaceMatch&& value) { m_faceMatches.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_searchedFaceId;

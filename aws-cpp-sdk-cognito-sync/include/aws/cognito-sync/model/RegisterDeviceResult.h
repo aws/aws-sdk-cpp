@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The unique ID generated for this device by Cognito.</p>
      */
-    inline void SetDeviceId(Aws::String&& value) { m_deviceId = value; }
+    inline void SetDeviceId(Aws::String&& value) { m_deviceId = std::move(value); }
 
     /**
      * <p>The unique ID generated for this device by Cognito.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The unique ID generated for this device by Cognito.</p>
      */
-    inline RegisterDeviceResult& WithDeviceId(Aws::String&& value) { SetDeviceId(value); return *this;}
+    inline RegisterDeviceResult& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
 
     /**
      * <p>The unique ID generated for this device by Cognito.</p>

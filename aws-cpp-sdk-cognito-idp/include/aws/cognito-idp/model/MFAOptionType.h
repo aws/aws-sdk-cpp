@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/DeliveryMediumType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The delivery medium (email message or SMS message) to send the MFA code.</p>
      */
-    inline void SetDeliveryMedium(DeliveryMediumType&& value) { m_deliveryMediumHasBeenSet = true; m_deliveryMedium = value; }
+    inline void SetDeliveryMedium(DeliveryMediumType&& value) { m_deliveryMediumHasBeenSet = true; m_deliveryMedium = std::move(value); }
 
     /**
      * <p>The delivery medium (email message or SMS message) to send the MFA code.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The delivery medium (email message or SMS message) to send the MFA code.</p>
      */
-    inline MFAOptionType& WithDeliveryMedium(DeliveryMediumType&& value) { SetDeliveryMedium(value); return *this;}
+    inline MFAOptionType& WithDeliveryMedium(DeliveryMediumType&& value) { SetDeliveryMedium(std::move(value)); return *this;}
 
     /**
      * <p>The attribute name of the MFA option type.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The attribute name of the MFA option type.</p>
      */
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
      * <p>The attribute name of the MFA option type.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The attribute name of the MFA option type.</p>
      */
-    inline MFAOptionType& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
+    inline MFAOptionType& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
      * <p>The attribute name of the MFA option type.</p>

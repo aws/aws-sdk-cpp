@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/Policy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The policies.</p>
      */
-    inline void SetPolicies(Aws::Vector<Policy>&& value) { m_policies = value; }
+    inline void SetPolicies(Aws::Vector<Policy>&& value) { m_policies = std::move(value); }
 
     /**
      * <p>The policies.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The policies.</p>
      */
-    inline ListPrincipalPoliciesResult& WithPolicies(Aws::Vector<Policy>&& value) { SetPolicies(value); return *this;}
+    inline ListPrincipalPoliciesResult& WithPolicies(Aws::Vector<Policy>&& value) { SetPolicies(std::move(value)); return *this;}
 
     /**
      * <p>The policies.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The policies.</p>
      */
-    inline ListPrincipalPoliciesResult& AddPolicies(Policy&& value) { m_policies.push_back(value); return *this; }
+    inline ListPrincipalPoliciesResult& AddPolicies(Policy&& value) { m_policies.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The marker for the next set of results, or null if there are no additional
@@ -98,7 +99,7 @@ namespace Model
      * <p>The marker for the next set of results, or null if there are no additional
      * results.</p>
      */
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
      * <p>The marker for the next set of results, or null if there are no additional
@@ -116,7 +117,7 @@ namespace Model
      * <p>The marker for the next set of results, or null if there are no additional
      * results.</p>
      */
-    inline ListPrincipalPoliciesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
+    inline ListPrincipalPoliciesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>The marker for the next set of results, or null if there are no additional

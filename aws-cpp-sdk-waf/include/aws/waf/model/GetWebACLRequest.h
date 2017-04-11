@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/WAFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
      * <a>ListWebACLs</a>.</p>
      */
-    inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
+    inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
 
     /**
      * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get.
@@ -75,7 +76,7 @@ namespace Model
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
      * <a>ListWebACLs</a>.</p>
      */
-    inline GetWebACLRequest& WithWebACLId(Aws::String&& value) { SetWebACLId(value); return *this;}
+    inline GetWebACLRequest& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get.

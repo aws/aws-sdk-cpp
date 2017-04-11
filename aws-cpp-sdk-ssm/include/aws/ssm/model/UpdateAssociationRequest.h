@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm/model/InstanceAssociationOutputLocation.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The ID of the association you want to update. </p>
      */
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
 
     /**
      * <p>The ID of the association you want to update. </p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The ID of the association you want to update. </p>
      */
-    inline UpdateAssociationRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(value); return *this;}
+    inline UpdateAssociationRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the association you want to update. </p>
@@ -92,7 +93,7 @@ namespace Model
      * parameter using Parameter Store, you can reference the parameter using
      * {{ssm:parameter-name}}</p>
      */
-    inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>The parameters you want to update for the association. If you create a
@@ -106,49 +107,49 @@ namespace Model
      * parameter using Parameter Store, you can reference the parameter using
      * {{ssm:parameter-name}}</p>
      */
-    inline UpdateAssociationRequest& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(value); return *this;}
+    inline UpdateAssociationRequest& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>The parameters you want to update for the association. If you create a
      * parameter using Parameter Store, you can reference the parameter using
      * {{ssm:parameter-name}}</p>
      */
-    inline UpdateAssociationRequest& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline UpdateAssociationRequest& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>The parameters you want to update for the association. If you create a
      * parameter using Parameter Store, you can reference the parameter using
      * {{ssm:parameter-name}}</p>
      */
-    inline UpdateAssociationRequest& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline UpdateAssociationRequest& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The parameters you want to update for the association. If you create a
      * parameter using Parameter Store, you can reference the parameter using
      * {{ssm:parameter-name}}</p>
      */
-    inline UpdateAssociationRequest& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline UpdateAssociationRequest& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The parameters you want to update for the association. If you create a
      * parameter using Parameter Store, you can reference the parameter using
      * {{ssm:parameter-name}}</p>
      */
-    inline UpdateAssociationRequest& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline UpdateAssociationRequest& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The parameters you want to update for the association. If you create a
      * parameter using Parameter Store, you can reference the parameter using
      * {{ssm:parameter-name}}</p>
      */
-    inline UpdateAssociationRequest& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline UpdateAssociationRequest& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The parameters you want to update for the association. If you create a
      * parameter using Parameter Store, you can reference the parameter using
      * {{ssm:parameter-name}}</p>
      */
-    inline UpdateAssociationRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline UpdateAssociationRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>The document version you want update for the association. </p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>The document version you want update for the association. </p>
      */
-    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
      * <p>The document version you want update for the association. </p>
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>The document version you want update for the association. </p>
      */
-    inline UpdateAssociationRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(value); return *this;}
+    inline UpdateAssociationRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
      * <p>The document version you want update for the association. </p>
@@ -210,7 +211,7 @@ namespace Model
      * thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10
      * ? * SUN *) to run every Sunday at 10 a.m.</p>
      */
-    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
+    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
 
     /**
      * <p>The cron expression used to schedule the association that you want to update.
@@ -237,7 +238,7 @@ namespace Model
      * thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10
      * ? * SUN *) to run every Sunday at 10 a.m.</p>
      */
-    inline UpdateAssociationRequest& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(value); return *this;}
+    inline UpdateAssociationRequest& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
      * <p>The cron expression used to schedule the association that you want to update.
@@ -270,7 +271,7 @@ namespace Model
      * \"OutputS3BucketName\": \"bucket name\", \"OutputS3KeyPrefix\": \"folder name\"
      * } }"</code> </p>
      */
-    inline void SetOutputLocation(InstanceAssociationOutputLocation&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
+    inline void SetOutputLocation(InstanceAssociationOutputLocation&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
 
     /**
      * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
@@ -286,7 +287,7 @@ namespace Model
      * \"OutputS3BucketName\": \"bucket name\", \"OutputS3KeyPrefix\": \"folder name\"
      * } }"</code> </p>
      */
-    inline UpdateAssociationRequest& WithOutputLocation(InstanceAssociationOutputLocation&& value) { SetOutputLocation(value); return *this;}
+    inline UpdateAssociationRequest& WithOutputLocation(InstanceAssociationOutputLocation&& value) { SetOutputLocation(std::move(value)); return *this;}
 
   private:
     Aws::String m_associationId;

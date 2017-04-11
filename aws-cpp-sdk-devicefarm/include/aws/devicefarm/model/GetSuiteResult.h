@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/Suite.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>A collection of one or more tests.</p>
      */
-    inline void SetSuite(Suite&& value) { m_suite = value; }
+    inline void SetSuite(Suite&& value) { m_suite = std::move(value); }
 
     /**
      * <p>A collection of one or more tests.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>A collection of one or more tests.</p>
      */
-    inline GetSuiteResult& WithSuite(Suite&& value) { SetSuite(value); return *this;}
+    inline GetSuiteResult& WithSuite(Suite&& value) { SetSuite(std::move(value)); return *this;}
 
   private:
     Suite m_suite;

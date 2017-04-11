@@ -16,6 +16,7 @@
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/events/CloudWatchEventsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
      * pattern.</p> </xhtml>
      */
-    inline void SetEventPattern(Aws::String&& value) { m_eventPatternHasBeenSet = true; m_eventPattern = value; }
+    inline void SetEventPattern(Aws::String&& value) { m_eventPatternHasBeenSet = true; m_eventPattern = std::move(value); }
 
     /**
      * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
@@ -69,7 +70,7 @@ namespace Model
      * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
      * pattern.</p> </xhtml>
      */
-    inline TestEventPatternRequest& WithEventPattern(Aws::String&& value) { SetEventPattern(value); return *this;}
+    inline TestEventPatternRequest& WithEventPattern(Aws::String&& value) { SetEventPattern(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
@@ -96,7 +97,7 @@ namespace Model
      * pattern.</simpara> </zonbook> <xhtml> <p>The event, in JSON format, to test
      * against the event pattern.</p> </xhtml>
      */
-    inline void SetEvent(Aws::String&& value) { m_eventHasBeenSet = true; m_event = value; }
+    inline void SetEvent(Aws::String&& value) { m_eventHasBeenSet = true; m_event = std::move(value); }
 
     /**
      * <zonbook> <simpara>The event, in JSON format, to test against the event
@@ -117,7 +118,7 @@ namespace Model
      * pattern.</simpara> </zonbook> <xhtml> <p>The event, in JSON format, to test
      * against the event pattern.</p> </xhtml>
      */
-    inline TestEventPatternRequest& WithEvent(Aws::String&& value) { SetEvent(value); return *this;}
+    inline TestEventPatternRequest& WithEvent(Aws::String&& value) { SetEvent(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The event, in JSON format, to test against the event

@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
      * <p>The name of the replication group (console: cluster) whose automatic failover
      * is being tested by this operation.</p>
      */
-    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
+    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::move(value); }
 
     /**
      * <p>The name of the replication group (console: cluster) whose automatic failover
@@ -71,7 +72,7 @@ namespace Model
      * <p>The name of the replication group (console: cluster) whose automatic failover
      * is being tested by this operation.</p>
      */
-    inline TestFailoverRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(value); return *this;}
+    inline TestFailoverRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(std::move(value)); return *this;}
 
     /**
      * <p>The name of the replication group (console: cluster) whose automatic failover
@@ -98,7 +99,7 @@ namespace Model
      * group on which automatic failover is to be tested. You may test automatic
      * failover on up to 5 node groups in any rolling 24-hour period.</p>
      */
-    inline void SetNodeGroupId(Aws::String&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
+    inline void SetNodeGroupId(Aws::String&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = std::move(value); }
 
     /**
      * <p>The name of the node group (called shard in the console) in this replication
@@ -119,7 +120,7 @@ namespace Model
      * group on which automatic failover is to be tested. You may test automatic
      * failover on up to 5 node groups in any rolling 24-hour period.</p>
      */
-    inline TestFailoverRequest& WithNodeGroupId(Aws::String&& value) { SetNodeGroupId(value); return *this;}
+    inline TestFailoverRequest& WithNodeGroupId(Aws::String&& value) { SetNodeGroupId(std::move(value)); return *this;}
 
     /**
      * <p>The name of the node group (called shard in the console) in this replication

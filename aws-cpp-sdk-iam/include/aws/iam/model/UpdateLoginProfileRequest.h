@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the user whose password you want to update.</p> <p>This parameter
@@ -83,7 +84,7 @@ namespace Model
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
-    inline UpdateLoginProfileRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline UpdateLoginProfileRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the user whose password you want to update.</p> <p>This parameter
@@ -133,7 +134,7 @@ namespace Model
      * setting a password policy on the AWS account. For more information, see
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = value; }
+    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
     /**
      * <p>The new password for the specified IAM user.</p> <p>The <a
@@ -175,7 +176,7 @@ namespace Model
      * setting a password policy on the AWS account. For more information, see
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
-    inline UpdateLoginProfileRequest& WithPassword(Aws::String&& value) { SetPassword(value); return *this;}
+    inline UpdateLoginProfileRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     /**
      * <p>The new password for the specified IAM user.</p> <p>The <a

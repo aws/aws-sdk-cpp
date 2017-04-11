@@ -16,6 +16,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The unique Trust ID of the trust relationship to verify.</p>
      */
-    inline void SetTrustId(Aws::String&& value) { m_trustIdHasBeenSet = true; m_trustId = value; }
+    inline void SetTrustId(Aws::String&& value) { m_trustIdHasBeenSet = true; m_trustId = std::move(value); }
 
     /**
      * <p>The unique Trust ID of the trust relationship to verify.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The unique Trust ID of the trust relationship to verify.</p>
      */
-    inline VerifyTrustRequest& WithTrustId(Aws::String&& value) { SetTrustId(value); return *this;}
+    inline VerifyTrustRequest& WithTrustId(Aws::String&& value) { SetTrustId(std::move(value)); return *this;}
 
     /**
      * <p>The unique Trust ID of the trust relationship to verify.</p>

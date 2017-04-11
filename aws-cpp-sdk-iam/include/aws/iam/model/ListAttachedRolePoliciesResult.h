@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/model/ResponseMetadata.h>
 #include <aws/iam/model/AttachedPolicy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>A list of the attached policies.</p>
      */
-    inline void SetAttachedPolicies(Aws::Vector<AttachedPolicy>&& value) { m_attachedPolicies = value; }
+    inline void SetAttachedPolicies(Aws::Vector<AttachedPolicy>&& value) { m_attachedPolicies = std::move(value); }
 
     /**
      * <p>A list of the attached policies.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>A list of the attached policies.</p>
      */
-    inline ListAttachedRolePoliciesResult& WithAttachedPolicies(Aws::Vector<AttachedPolicy>&& value) { SetAttachedPolicies(value); return *this;}
+    inline ListAttachedRolePoliciesResult& WithAttachedPolicies(Aws::Vector<AttachedPolicy>&& value) { SetAttachedPolicies(std::move(value)); return *this;}
 
     /**
      * <p>A list of the attached policies.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>A list of the attached policies.</p>
      */
-    inline ListAttachedRolePoliciesResult& AddAttachedPolicies(AttachedPolicy&& value) { m_attachedPolicies.push_back(value); return *this; }
+    inline ListAttachedRolePoliciesResult& AddAttachedPolicies(AttachedPolicy&& value) { m_attachedPolicies.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
@@ -135,7 +136,7 @@ namespace Model
      * and contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -156,7 +157,7 @@ namespace Model
      * and contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.</p>
      */
-    inline ListAttachedRolePoliciesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListAttachedRolePoliciesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -172,13 +173,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListAttachedRolePoliciesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListAttachedRolePoliciesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListAttachedRolePoliciesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<AttachedPolicy> m_attachedPolicies;

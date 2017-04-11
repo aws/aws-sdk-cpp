@@ -16,6 +16,7 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/states/SFNRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The name of the activity to create. This name must be unique for your AWS
      * account and region.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the activity to create. This name must be unique for your AWS
@@ -69,7 +70,7 @@ namespace Model
      * <p>The name of the activity to create. This name must be unique for your AWS
      * account and region.</p>
      */
-    inline CreateActivityRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateActivityRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the activity to create. This name must be unique for your AWS

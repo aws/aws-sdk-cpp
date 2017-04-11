@@ -16,6 +16,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The schema name.</p>
      */
-    inline void SetSchemaName(Aws::String&& value) { m_schemaNameHasBeenSet = true; m_schemaName = value; }
+    inline void SetSchemaName(Aws::String&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::move(value); }
 
     /**
      * <p>The schema name.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The schema name.</p>
      */
-    inline TableStatistics& WithSchemaName(Aws::String&& value) { SetSchemaName(value); return *this;}
+    inline TableStatistics& WithSchemaName(Aws::String&& value) { SetSchemaName(std::move(value)); return *this;}
 
     /**
      * <p>The schema name.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The name of the table.</p>
      */
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
+    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
      * <p>The name of the table.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The name of the table.</p>
      */
-    inline TableStatistics& WithTableName(Aws::String&& value) { SetTableName(value); return *this;}
+    inline TableStatistics& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the table.</p>
@@ -205,7 +206,7 @@ namespace Model
     /**
      * <p>The last time the table was updated.</p>
      */
-    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
+    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
 
     /**
      * <p>The last time the table was updated.</p>
@@ -215,7 +216,7 @@ namespace Model
     /**
      * <p>The last time the table was updated.</p>
      */
-    inline TableStatistics& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(value); return *this;}
+    inline TableStatistics& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
 
     /**
      * <p>The state of the table.</p>
@@ -230,7 +231,7 @@ namespace Model
     /**
      * <p>The state of the table.</p>
      */
-    inline void SetTableState(Aws::String&& value) { m_tableStateHasBeenSet = true; m_tableState = value; }
+    inline void SetTableState(Aws::String&& value) { m_tableStateHasBeenSet = true; m_tableState = std::move(value); }
 
     /**
      * <p>The state of the table.</p>
@@ -245,7 +246,7 @@ namespace Model
     /**
      * <p>The state of the table.</p>
      */
-    inline TableStatistics& WithTableState(Aws::String&& value) { SetTableState(value); return *this;}
+    inline TableStatistics& WithTableState(Aws::String&& value) { SetTableState(std::move(value)); return *this;}
 
     /**
      * <p>The state of the table.</p>

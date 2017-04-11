@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter
      * is optional.)</p>
      */
-    inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = value; }
+    inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter
@@ -76,7 +77,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter
      * is optional.)</p>
      */
-    inline ListEventSourceMappingsRequest& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(value); return *this;}
+    inline ListEventSourceMappingsRequest& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter
@@ -124,7 +125,7 @@ namespace Model
      * applies only to the ARN. If you specify only the function name, it is limited to
      * 64 character in length. </p>
      */
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
      * <p>The name of the Lambda function.</p> <p> You can specify the function name
@@ -166,7 +167,7 @@ namespace Model
      * applies only to the ARN. If you specify only the function name, it is limited to
      * 64 character in length. </p>
      */
-    inline ListEventSourceMappingsRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
+    inline ListEventSourceMappingsRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Lambda function.</p> <p> You can specify the function name
@@ -201,7 +202,7 @@ namespace Model
      * <code>ListEventSourceMappings</code> operation. If present, specifies to
      * continue the list from where the returning call left off. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>Optional string. An opaque pagination token returned from a previous
@@ -222,7 +223,7 @@ namespace Model
      * <code>ListEventSourceMappings</code> operation. If present, specifies to
      * continue the list from where the returning call left off. </p>
      */
-    inline ListEventSourceMappingsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListEventSourceMappingsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Optional string. An opaque pagination token returned from a previous

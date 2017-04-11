@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/devicefarm/model/DevicePlatform.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The AWS account number specified in the <code>AccountSettings</code>
      * container.</p>
      */
-    inline void SetAwsAccountNumber(Aws::String&& value) { m_awsAccountNumberHasBeenSet = true; m_awsAccountNumber = value; }
+    inline void SetAwsAccountNumber(Aws::String&& value) { m_awsAccountNumberHasBeenSet = true; m_awsAccountNumber = std::move(value); }
 
     /**
      * <p>The AWS account number specified in the <code>AccountSettings</code>
@@ -80,7 +81,7 @@ namespace Model
      * <p>The AWS account number specified in the <code>AccountSettings</code>
      * container.</p>
      */
-    inline AccountSettings& WithAwsAccountNumber(Aws::String&& value) { SetAwsAccountNumber(value); return *this;}
+    inline AccountSettings& WithAwsAccountNumber(Aws::String&& value) { SetAwsAccountNumber(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account number specified in the <code>AccountSettings</code>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>Returns the unmetered devices you have purchased or want to purchase.</p>
      */
-    inline void SetUnmeteredDevices(Aws::Map<DevicePlatform, int>&& value) { m_unmeteredDevicesHasBeenSet = true; m_unmeteredDevices = value; }
+    inline void SetUnmeteredDevices(Aws::Map<DevicePlatform, int>&& value) { m_unmeteredDevicesHasBeenSet = true; m_unmeteredDevices = std::move(value); }
 
     /**
      * <p>Returns the unmetered devices you have purchased or want to purchase.</p>
@@ -111,17 +112,17 @@ namespace Model
     /**
      * <p>Returns the unmetered devices you have purchased or want to purchase.</p>
      */
-    inline AccountSettings& WithUnmeteredDevices(Aws::Map<DevicePlatform, int>&& value) { SetUnmeteredDevices(value); return *this;}
+    inline AccountSettings& WithUnmeteredDevices(Aws::Map<DevicePlatform, int>&& value) { SetUnmeteredDevices(std::move(value)); return *this;}
 
     /**
      * <p>Returns the unmetered devices you have purchased or want to purchase.</p>
      */
-    inline AccountSettings& AddUnmeteredDevices(const DevicePlatform& key, int value) { m_unmeteredDevicesHasBeenSet = true; m_unmeteredDevices[key] = value; return *this; }
+    inline AccountSettings& AddUnmeteredDevices(const DevicePlatform& key, int value) { m_unmeteredDevicesHasBeenSet = true; m_unmeteredDevices.emplace(key, value); return *this; }
 
     /**
      * <p>Returns the unmetered devices you have purchased or want to purchase.</p>
      */
-    inline AccountSettings& AddUnmeteredDevices(DevicePlatform&& key, int value) { m_unmeteredDevicesHasBeenSet = true; m_unmeteredDevices[key] = value; return *this; }
+    inline AccountSettings& AddUnmeteredDevices(DevicePlatform&& key, int value) { m_unmeteredDevicesHasBeenSet = true; m_unmeteredDevices.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Returns the unmetered remote access devices you have purchased or want to
@@ -139,7 +140,7 @@ namespace Model
      * <p>Returns the unmetered remote access devices you have purchased or want to
      * purchase.</p>
      */
-    inline void SetUnmeteredRemoteAccessDevices(Aws::Map<DevicePlatform, int>&& value) { m_unmeteredRemoteAccessDevicesHasBeenSet = true; m_unmeteredRemoteAccessDevices = value; }
+    inline void SetUnmeteredRemoteAccessDevices(Aws::Map<DevicePlatform, int>&& value) { m_unmeteredRemoteAccessDevicesHasBeenSet = true; m_unmeteredRemoteAccessDevices = std::move(value); }
 
     /**
      * <p>Returns the unmetered remote access devices you have purchased or want to
@@ -151,19 +152,19 @@ namespace Model
      * <p>Returns the unmetered remote access devices you have purchased or want to
      * purchase.</p>
      */
-    inline AccountSettings& WithUnmeteredRemoteAccessDevices(Aws::Map<DevicePlatform, int>&& value) { SetUnmeteredRemoteAccessDevices(value); return *this;}
+    inline AccountSettings& WithUnmeteredRemoteAccessDevices(Aws::Map<DevicePlatform, int>&& value) { SetUnmeteredRemoteAccessDevices(std::move(value)); return *this;}
 
     /**
      * <p>Returns the unmetered remote access devices you have purchased or want to
      * purchase.</p>
      */
-    inline AccountSettings& AddUnmeteredRemoteAccessDevices(const DevicePlatform& key, int value) { m_unmeteredRemoteAccessDevicesHasBeenSet = true; m_unmeteredRemoteAccessDevices[key] = value; return *this; }
+    inline AccountSettings& AddUnmeteredRemoteAccessDevices(const DevicePlatform& key, int value) { m_unmeteredRemoteAccessDevicesHasBeenSet = true; m_unmeteredRemoteAccessDevices.emplace(key, value); return *this; }
 
     /**
      * <p>Returns the unmetered remote access devices you have purchased or want to
      * purchase.</p>
      */
-    inline AccountSettings& AddUnmeteredRemoteAccessDevices(DevicePlatform&& key, int value) { m_unmeteredRemoteAccessDevicesHasBeenSet = true; m_unmeteredRemoteAccessDevices[key] = value; return *this; }
+    inline AccountSettings& AddUnmeteredRemoteAccessDevices(DevicePlatform&& key, int value) { m_unmeteredRemoteAccessDevicesHasBeenSet = true; m_unmeteredRemoteAccessDevices.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The maximum number of minutes a test run will execute before it times

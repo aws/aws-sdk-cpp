@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/ResponseMetadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
      * <code>Default</code>).</p>
      */
-    inline void SetTerminationPolicyTypes(Aws::Vector<Aws::String>&& value) { m_terminationPolicyTypes = value; }
+    inline void SetTerminationPolicyTypes(Aws::Vector<Aws::String>&& value) { m_terminationPolicyTypes = std::move(value); }
 
     /**
      * <p>The termination policies supported by Auto Scaling
@@ -85,7 +86,7 @@ namespace Model
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
      * <code>Default</code>).</p>
      */
-    inline DescribeTerminationPolicyTypesResult& WithTerminationPolicyTypes(Aws::Vector<Aws::String>&& value) { SetTerminationPolicyTypes(value); return *this;}
+    inline DescribeTerminationPolicyTypesResult& WithTerminationPolicyTypes(Aws::Vector<Aws::String>&& value) { SetTerminationPolicyTypes(std::move(value)); return *this;}
 
     /**
      * <p>The termination policies supported by Auto Scaling
@@ -101,7 +102,7 @@ namespace Model
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
      * <code>Default</code>).</p>
      */
-    inline DescribeTerminationPolicyTypesResult& AddTerminationPolicyTypes(Aws::String&& value) { m_terminationPolicyTypes.push_back(value); return *this; }
+    inline DescribeTerminationPolicyTypesResult& AddTerminationPolicyTypes(Aws::String&& value) { m_terminationPolicyTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The termination policies supported by Auto Scaling
@@ -118,13 +119,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeTerminationPolicyTypesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeTerminationPolicyTypesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeTerminationPolicyTypesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_terminationPolicyTypes;

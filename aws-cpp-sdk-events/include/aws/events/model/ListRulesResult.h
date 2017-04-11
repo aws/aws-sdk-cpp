@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/events/model/Rule.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <zonbook> <simpara>The rules that match the specified criteria.</simpara>
      * </zonbook> <xhtml> <p>The rules that match the specified criteria.</p> </xhtml>
      */
-    inline void SetRules(Aws::Vector<Rule>&& value) { m_rules = value; }
+    inline void SetRules(Aws::Vector<Rule>&& value) { m_rules = std::move(value); }
 
     /**
      * <zonbook> <simpara>The rules that match the specified criteria.</simpara>
@@ -69,7 +70,7 @@ namespace Model
      * <zonbook> <simpara>The rules that match the specified criteria.</simpara>
      * </zonbook> <xhtml> <p>The rules that match the specified criteria.</p> </xhtml>
      */
-    inline ListRulesResult& WithRules(Aws::Vector<Rule>&& value) { SetRules(value); return *this;}
+    inline ListRulesResult& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The rules that match the specified criteria.</simpara>
@@ -81,7 +82,7 @@ namespace Model
      * <zonbook> <simpara>The rules that match the specified criteria.</simpara>
      * </zonbook> <xhtml> <p>The rules that match the specified criteria.</p> </xhtml>
      */
-    inline ListRulesResult& AddRules(Rule&& value) { m_rules.push_back(value); return *this; }
+    inline ListRulesResult& AddRules(Rule&& value) { m_rules.push_back(std::move(value)); return *this; }
 
     /**
      * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
@@ -105,7 +106,7 @@ namespace Model
      * <p>Indicates whether there are additional results to retrieve. If there are no
      * more results, the value is null.</p> </xhtml>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
@@ -129,7 +130,7 @@ namespace Model
      * <p>Indicates whether there are additional results to retrieve. If there are no
      * more results, the value is null.</p> </xhtml>
      */
-    inline ListRulesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListRulesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>Indicates whether there are additional results to retrieve.

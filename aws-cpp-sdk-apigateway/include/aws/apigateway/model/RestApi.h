@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The API's identifier. This identifier is unique across all of your APIs in
      * Amazon API Gateway.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The API's identifier. This identifier is unique across all of your APIs in
@@ -81,7 +82,7 @@ namespace Model
      * <p>The API's identifier. This identifier is unique across all of your APIs in
      * Amazon API Gateway.</p>
      */
-    inline RestApi& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline RestApi& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The API's identifier. This identifier is unique across all of your APIs in
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The API's name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The API's name.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>The API's name.</p>
      */
-    inline RestApi& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline RestApi& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The API's name.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The API's description.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The API's description.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>The API's description.</p>
      */
-    inline RestApi& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline RestApi& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The API's description.</p>
@@ -172,7 +173,7 @@ namespace Model
     /**
      * <p>The timestamp when the API was created.</p>
      */
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
 
     /**
      * <p>The timestamp when the API was created.</p>
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p>The timestamp when the API was created.</p>
      */
-    inline RestApi& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
+    inline RestApi& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
     /**
      * <p>A version identifier for the API.</p>
@@ -197,7 +198,7 @@ namespace Model
     /**
      * <p>A version identifier for the API.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>A version identifier for the API.</p>
@@ -212,7 +213,7 @@ namespace Model
     /**
      * <p>A version identifier for the API.</p>
      */
-    inline RestApi& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline RestApi& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>A version identifier for the API.</p>
@@ -235,7 +236,7 @@ namespace Model
      * <p>The warning messages reported when <code>failonwarnings</code> is turned on
      * during API import.</p>
      */
-    inline void SetWarnings(Aws::Vector<Aws::String>&& value) { m_warningsHasBeenSet = true; m_warnings = value; }
+    inline void SetWarnings(Aws::Vector<Aws::String>&& value) { m_warningsHasBeenSet = true; m_warnings = std::move(value); }
 
     /**
      * <p>The warning messages reported when <code>failonwarnings</code> is turned on
@@ -247,7 +248,7 @@ namespace Model
      * <p>The warning messages reported when <code>failonwarnings</code> is turned on
      * during API import.</p>
      */
-    inline RestApi& WithWarnings(Aws::Vector<Aws::String>&& value) { SetWarnings(value); return *this;}
+    inline RestApi& WithWarnings(Aws::Vector<Aws::String>&& value) { SetWarnings(std::move(value)); return *this;}
 
     /**
      * <p>The warning messages reported when <code>failonwarnings</code> is turned on
@@ -259,7 +260,7 @@ namespace Model
      * <p>The warning messages reported when <code>failonwarnings</code> is turned on
      * during API import.</p>
      */
-    inline RestApi& AddWarnings(Aws::String&& value) { m_warningsHasBeenSet = true; m_warnings.push_back(value); return *this; }
+    inline RestApi& AddWarnings(Aws::String&& value) { m_warningsHasBeenSet = true; m_warnings.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The warning messages reported when <code>failonwarnings</code> is turned on
@@ -283,7 +284,7 @@ namespace Model
      * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
      * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
      */
-    inline void SetBinaryMediaTypes(Aws::Vector<Aws::String>&& value) { m_binaryMediaTypesHasBeenSet = true; m_binaryMediaTypes = value; }
+    inline void SetBinaryMediaTypes(Aws::Vector<Aws::String>&& value) { m_binaryMediaTypesHasBeenSet = true; m_binaryMediaTypes = std::move(value); }
 
     /**
      * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
@@ -295,7 +296,7 @@ namespace Model
      * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
      * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
      */
-    inline RestApi& WithBinaryMediaTypes(Aws::Vector<Aws::String>&& value) { SetBinaryMediaTypes(value); return *this;}
+    inline RestApi& WithBinaryMediaTypes(Aws::Vector<Aws::String>&& value) { SetBinaryMediaTypes(std::move(value)); return *this;}
 
     /**
      * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
@@ -307,7 +308,7 @@ namespace Model
      * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
      * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
      */
-    inline RestApi& AddBinaryMediaTypes(Aws::String&& value) { m_binaryMediaTypesHasBeenSet = true; m_binaryMediaTypes.push_back(value); return *this; }
+    inline RestApi& AddBinaryMediaTypes(Aws::String&& value) { m_binaryMediaTypesHasBeenSet = true; m_binaryMediaTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of binary media types supported by the <a>RestApi</a>. By default,

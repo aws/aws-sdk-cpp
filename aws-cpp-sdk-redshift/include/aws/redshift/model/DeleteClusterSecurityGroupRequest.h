@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of the cluster security group to be deleted.</p>
      */
-    inline void SetClusterSecurityGroupName(Aws::String&& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
+    inline void SetClusterSecurityGroupName(Aws::String&& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = std::move(value); }
 
     /**
      * <p>The name of the cluster security group to be deleted.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the cluster security group to be deleted.</p>
      */
-    inline DeleteClusterSecurityGroupRequest& WithClusterSecurityGroupName(Aws::String&& value) { SetClusterSecurityGroupName(value); return *this;}
+    inline DeleteClusterSecurityGroupRequest& WithClusterSecurityGroupName(Aws::String&& value) { SetClusterSecurityGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cluster security group to be deleted.</p>

@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
 
     
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = value; }
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
 
     
     inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
@@ -61,7 +62,7 @@ namespace Model
     inline DescribeWorkingStorageResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     
-    inline DescribeWorkingStorageResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline DescribeWorkingStorageResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     
     inline DescribeWorkingStorageResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
@@ -88,7 +89,7 @@ namespace Model
      * maximum length of 300). If no local disks are configured as working storage,
      * then the DiskIds array is empty.</p>
      */
-    inline void SetDiskIds(Aws::Vector<Aws::String>&& value) { m_diskIds = value; }
+    inline void SetDiskIds(Aws::Vector<Aws::String>&& value) { m_diskIds = std::move(value); }
 
     /**
      * <p>An array of the gateway's local disk IDs that are configured as working
@@ -104,7 +105,7 @@ namespace Model
      * maximum length of 300). If no local disks are configured as working storage,
      * then the DiskIds array is empty.</p>
      */
-    inline DescribeWorkingStorageResult& WithDiskIds(Aws::Vector<Aws::String>&& value) { SetDiskIds(value); return *this;}
+    inline DescribeWorkingStorageResult& WithDiskIds(Aws::Vector<Aws::String>&& value) { SetDiskIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of the gateway's local disk IDs that are configured as working
@@ -120,7 +121,7 @@ namespace Model
      * maximum length of 300). If no local disks are configured as working storage,
      * then the DiskIds array is empty.</p>
      */
-    inline DescribeWorkingStorageResult& AddDiskIds(Aws::String&& value) { m_diskIds.push_back(value); return *this; }
+    inline DescribeWorkingStorageResult& AddDiskIds(Aws::String&& value) { m_diskIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of the gateway's local disk IDs that are configured as working

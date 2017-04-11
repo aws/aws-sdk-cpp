@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The user pool ID for the user pool that the users are being imported
      * into.</p>
      */
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
+    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
      * <p>The user pool ID for the user pool that the users are being imported
@@ -73,7 +74,7 @@ namespace Model
      * <p>The user pool ID for the user pool that the users are being imported
      * into.</p>
      */
-    inline ListUserImportJobsRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(value); return *this;}
+    inline ListUserImportJobsRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
      * <p>The user pool ID for the user pool that the users are being imported
@@ -112,7 +113,7 @@ namespace Model
      * <p>An identifier that was returned from the previous call to ListUserImportJobs,
      * which can be used to return the next set of import jobs in the list.</p>
      */
-    inline void SetPaginationToken(Aws::String&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = value; }
+    inline void SetPaginationToken(Aws::String&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::move(value); }
 
     /**
      * <p>An identifier that was returned from the previous call to ListUserImportJobs,
@@ -130,7 +131,7 @@ namespace Model
      * <p>An identifier that was returned from the previous call to ListUserImportJobs,
      * which can be used to return the next set of import jobs in the list.</p>
      */
-    inline ListUserImportJobsRequest& WithPaginationToken(Aws::String&& value) { SetPaginationToken(value); return *this;}
+    inline ListUserImportJobsRequest& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
 
     /**
      * <p>An identifier that was returned from the previous call to ListUserImportJobs,

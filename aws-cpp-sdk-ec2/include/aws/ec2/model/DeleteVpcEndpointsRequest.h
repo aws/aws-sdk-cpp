@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>One or more endpoint IDs.</p>
      */
-    inline void SetVpcEndpointIds(Aws::Vector<Aws::String>&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = value; }
+    inline void SetVpcEndpointIds(Aws::Vector<Aws::String>&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = std::move(value); }
 
     /**
      * <p>One or more endpoint IDs.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>One or more endpoint IDs.</p>
      */
-    inline DeleteVpcEndpointsRequest& WithVpcEndpointIds(Aws::Vector<Aws::String>&& value) { SetVpcEndpointIds(value); return *this;}
+    inline DeleteVpcEndpointsRequest& WithVpcEndpointIds(Aws::Vector<Aws::String>&& value) { SetVpcEndpointIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more endpoint IDs.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>One or more endpoint IDs.</p>
      */
-    inline DeleteVpcEndpointsRequest& AddVpcEndpointIds(Aws::String&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
+    inline DeleteVpcEndpointsRequest& AddVpcEndpointIds(Aws::String&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more endpoint IDs.</p>

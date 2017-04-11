@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sdb/model/UpdateCondition.h>
 #include <aws/sdb/model/Attribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * The name of the domain in which to perform the operation.
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * The name of the domain in which to perform the operation.
@@ -68,7 +69,7 @@ namespace Model
     /**
      * The name of the domain in which to perform the operation.
      */
-    inline DeleteAttributesRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DeleteAttributesRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * The name of the domain in which to perform the operation.
@@ -91,7 +92,7 @@ namespace Model
      * The name of the item. Similar to rows on a spreadsheet, items represent
      * individual objects that contain one or more value-attribute pairs.
      */
-    inline void SetItemName(Aws::String&& value) { m_itemNameHasBeenSet = true; m_itemName = value; }
+    inline void SetItemName(Aws::String&& value) { m_itemNameHasBeenSet = true; m_itemName = std::move(value); }
 
     /**
      * The name of the item. Similar to rows on a spreadsheet, items represent
@@ -109,7 +110,7 @@ namespace Model
      * The name of the item. Similar to rows on a spreadsheet, items represent
      * individual objects that contain one or more value-attribute pairs.
      */
-    inline DeleteAttributesRequest& WithItemName(Aws::String&& value) { SetItemName(value); return *this;}
+    inline DeleteAttributesRequest& WithItemName(Aws::String&& value) { SetItemName(std::move(value)); return *this;}
 
     /**
      * The name of the item. Similar to rows on a spreadsheet, items represent
@@ -133,7 +134,7 @@ namespace Model
      * A list of Attributes. Similar to columns on a spreadsheet, attributes represent
      * categories of data that can be assigned to items.
      */
-    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * A list of Attributes. Similar to columns on a spreadsheet, attributes represent
@@ -145,7 +146,7 @@ namespace Model
      * A list of Attributes. Similar to columns on a spreadsheet, attributes represent
      * categories of data that can be assigned to items.
      */
-    inline DeleteAttributesRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(value); return *this;}
+    inline DeleteAttributesRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * A list of Attributes. Similar to columns on a spreadsheet, attributes represent
@@ -157,7 +158,7 @@ namespace Model
      * A list of Attributes. Similar to columns on a spreadsheet, attributes represent
      * categories of data that can be assigned to items.
      */
-    inline DeleteAttributesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+    inline DeleteAttributesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
     /**
      * The update condition which, if specified, determines whether the specified
@@ -178,7 +179,7 @@ namespace Model
      * attributes will be deleted or not. The update condition must be satisfied in
      * order for this request to be processed and the attributes to be deleted.
      */
-    inline void SetExpected(UpdateCondition&& value) { m_expectedHasBeenSet = true; m_expected = value; }
+    inline void SetExpected(UpdateCondition&& value) { m_expectedHasBeenSet = true; m_expected = std::move(value); }
 
     /**
      * The update condition which, if specified, determines whether the specified
@@ -192,7 +193,7 @@ namespace Model
      * attributes will be deleted or not. The update condition must be satisfied in
      * order for this request to be processed and the attributes to be deleted.
      */
-    inline DeleteAttributesRequest& WithExpected(UpdateCondition&& value) { SetExpected(value); return *this;}
+    inline DeleteAttributesRequest& WithExpected(UpdateCondition&& value) { SetExpected(std::move(value)); return *this;}
 
   private:
     Aws::String m_domainName;

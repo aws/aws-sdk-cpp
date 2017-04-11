@@ -16,6 +16,7 @@
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/cloudhsm/CloudHSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ARN of the HSM to delete.</p>
      */
-    inline void SetHsmArn(Aws::String&& value) { m_hsmArnHasBeenSet = true; m_hsmArn = value; }
+    inline void SetHsmArn(Aws::String&& value) { m_hsmArnHasBeenSet = true; m_hsmArn = std::move(value); }
 
     /**
      * <p>The ARN of the HSM to delete.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ARN of the HSM to delete.</p>
      */
-    inline DeleteHsmRequest& WithHsmArn(Aws::String&& value) { SetHsmArn(value); return *this;}
+    inline DeleteHsmRequest& WithHsmArn(Aws::String&& value) { SetHsmArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the HSM to delete.</p>

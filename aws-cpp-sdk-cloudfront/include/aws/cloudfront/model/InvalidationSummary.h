@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * The unique ID for an invalidation request.
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * The unique ID for an invalidation request.
@@ -73,7 +74,7 @@ namespace Model
     /**
      * The unique ID for an invalidation request.
      */
-    inline InvalidationSummary& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline InvalidationSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * The unique ID for an invalidation request.
@@ -87,13 +88,13 @@ namespace Model
     inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
 
     
     inline InvalidationSummary& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
 
     
-    inline InvalidationSummary& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(value); return *this;}
+    inline InvalidationSummary& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
     /**
      * The status of an invalidation request.
@@ -108,7 +109,7 @@ namespace Model
     /**
      * The status of an invalidation request.
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * The status of an invalidation request.
@@ -123,7 +124,7 @@ namespace Model
     /**
      * The status of an invalidation request.
      */
-    inline InvalidationSummary& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline InvalidationSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * The status of an invalidation request.

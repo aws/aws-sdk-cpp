@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * <p>The base path name that callers of the API must provide as part of the URL
      * after the domain name.</p>
      */
-    inline void SetBasePath(Aws::String&& value) { m_basePath = value; }
+    inline void SetBasePath(Aws::String&& value) { m_basePath = std::move(value); }
 
     /**
      * <p>The base path name that callers of the API must provide as part of the URL
@@ -83,7 +84,7 @@ namespace Model
      * <p>The base path name that callers of the API must provide as part of the URL
      * after the domain name.</p>
      */
-    inline GetBasePathMappingResult& WithBasePath(Aws::String&& value) { SetBasePath(value); return *this;}
+    inline GetBasePathMappingResult& WithBasePath(Aws::String&& value) { SetBasePath(std::move(value)); return *this;}
 
     /**
      * <p>The base path name that callers of the API must provide as part of the URL
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The name of the API.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiId = std::move(value); }
 
     /**
      * <p>The name of the API.</p>
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>The name of the API.</p>
      */
-    inline GetBasePathMappingResult& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline GetBasePathMappingResult& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The name of the API.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>The name of the API's stage.</p>
      */
-    inline void SetStage(Aws::String&& value) { m_stage = value; }
+    inline void SetStage(Aws::String&& value) { m_stage = std::move(value); }
 
     /**
      * <p>The name of the API's stage.</p>
@@ -154,7 +155,7 @@ namespace Model
     /**
      * <p>The name of the API's stage.</p>
      */
-    inline GetBasePathMappingResult& WithStage(Aws::String&& value) { SetStage(value); return *this;}
+    inline GetBasePathMappingResult& WithStage(Aws::String&& value) { SetStage(std::move(value)); return *this;}
 
     /**
      * <p>The name of the API's stage.</p>

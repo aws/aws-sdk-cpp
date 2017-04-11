@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/WAFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <code>RuleId</code> is returned by <a>CreateRule</a> and by
      * <a>ListRules</a>.</p>
      */
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
+    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
 
     /**
      * <p>The <code>RuleId</code> of the <a>Rule</a> that you want to get.
@@ -75,7 +76,7 @@ namespace Model
      * <code>RuleId</code> is returned by <a>CreateRule</a> and by
      * <a>ListRules</a>.</p>
      */
-    inline GetRuleRequest& WithRuleId(Aws::String&& value) { SetRuleId(value); return *this;}
+    inline GetRuleRequest& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>RuleId</code> of the <a>Rule</a> that you want to get.

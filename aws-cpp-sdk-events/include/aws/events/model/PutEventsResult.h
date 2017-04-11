@@ -16,6 +16,7 @@
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/events/model/PutEventsResultEntry.h>
+#include <utility>
 
 namespace Aws
 {
@@ -89,7 +90,7 @@ namespace Model
      * event ID in it. Otherwise, you can use the error code and error message to
      * identify the problem with the entry.</p> </xhtml>
      */
-    inline void SetEntries(Aws::Vector<PutEventsResultEntry>&& value) { m_entries = value; }
+    inline void SetEntries(Aws::Vector<PutEventsResultEntry>&& value) { m_entries = std::move(value); }
 
     /**
      * <zonbook> <simpara>The successfully and unsuccessfully ingested events results.
@@ -111,7 +112,7 @@ namespace Model
      * event ID in it. Otherwise, you can use the error code and error message to
      * identify the problem with the entry.</p> </xhtml>
      */
-    inline PutEventsResult& WithEntries(Aws::Vector<PutEventsResultEntry>&& value) { SetEntries(value); return *this;}
+    inline PutEventsResult& WithEntries(Aws::Vector<PutEventsResultEntry>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The successfully and unsuccessfully ingested events results.
@@ -133,7 +134,7 @@ namespace Model
      * event ID in it. Otherwise, you can use the error code and error message to
      * identify the problem with the entry.</p> </xhtml>
      */
-    inline PutEventsResult& AddEntries(PutEventsResultEntry&& value) { m_entries.push_back(value); return *this; }
+    inline PutEventsResult& AddEntries(PutEventsResultEntry&& value) { m_entries.push_back(std::move(value)); return *this; }
 
   private:
     int m_failedEntryCount;

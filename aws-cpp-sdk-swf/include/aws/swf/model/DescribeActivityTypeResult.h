@@ -16,6 +16,7 @@
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/swf/model/ActivityTypeInfo.h>
 #include <aws/swf/model/ActivityTypeConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -76,7 +77,7 @@ namespace Model
      * but is still in use. You should keep workers supporting this type running. You
      * cannot create new tasks of this type. </li> </ul>
      */
-    inline void SetTypeInfo(ActivityTypeInfo&& value) { m_typeInfo = value; }
+    inline void SetTypeInfo(ActivityTypeInfo&& value) { m_typeInfo = std::move(value); }
 
     /**
      * <p>General information about the activity type.</p> <p>The status of activity
@@ -98,7 +99,7 @@ namespace Model
      * but is still in use. You should keep workers supporting this type running. You
      * cannot create new tasks of this type. </li> </ul>
      */
-    inline DescribeActivityTypeResult& WithTypeInfo(ActivityTypeInfo&& value) { SetTypeInfo(value); return *this;}
+    inline DescribeActivityTypeResult& WithTypeInfo(ActivityTypeInfo&& value) { SetTypeInfo(std::move(value)); return *this;}
 
     /**
      * <p>The configuration settings registered with the activity type.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The configuration settings registered with the activity type.</p>
      */
-    inline void SetConfiguration(ActivityTypeConfiguration&& value) { m_configuration = value; }
+    inline void SetConfiguration(ActivityTypeConfiguration&& value) { m_configuration = std::move(value); }
 
     /**
      * <p>The configuration settings registered with the activity type.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The configuration settings registered with the activity type.</p>
      */
-    inline DescribeActivityTypeResult& WithConfiguration(ActivityTypeConfiguration&& value) { SetConfiguration(value); return *this;}
+    inline DescribeActivityTypeResult& WithConfiguration(ActivityTypeConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
   private:
     ActivityTypeInfo m_typeInfo;

@@ -16,6 +16,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/InspectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>Application ARN that you want to update.</p>
      */
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
+    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
 
     /**
      * <p>Application ARN that you want to update.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Application ARN that you want to update.</p>
      */
-    inline UpdateApplicationRequest& WithApplicationArn(Aws::String&& value) { SetApplicationArn(value); return *this;}
+    inline UpdateApplicationRequest& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
 
     /**
      * <p>Application ARN that you want to update.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>Application name that you want to update.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>Application name that you want to update.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>Application name that you want to update.</p>
      */
-    inline UpdateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline UpdateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>Application name that you want to update.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The resource group ARN that you want to update.</p>
      */
-    inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = value; }
+    inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = std::move(value); }
 
     /**
      * <p>The resource group ARN that you want to update.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The resource group ARN that you want to update.</p>
      */
-    inline UpdateApplicationRequest& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(value); return *this;}
+    inline UpdateApplicationRequest& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The resource group ARN that you want to update.</p>

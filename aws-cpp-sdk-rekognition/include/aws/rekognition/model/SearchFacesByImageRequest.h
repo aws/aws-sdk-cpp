@@ -17,6 +17,7 @@
 #include <aws/rekognition/RekognitionRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/model/Image.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>ID of the collection to search.</p>
      */
-    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
+    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::move(value); }
 
     /**
      * <p>ID of the collection to search.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>ID of the collection to search.</p>
      */
-    inline SearchFacesByImageRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(value); return *this;}
+    inline SearchFacesByImageRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(std::move(value)); return *this;}
 
     /**
      * <p>ID of the collection to search.</p>
@@ -78,13 +79,13 @@ namespace Model
     inline void SetImage(const Image& value) { m_imageHasBeenSet = true; m_image = value; }
 
     
-    inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = value; }
+    inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     
     inline SearchFacesByImageRequest& WithImage(const Image& value) { SetImage(value); return *this;}
 
     
-    inline SearchFacesByImageRequest& WithImage(Image&& value) { SetImage(value); return *this;}
+    inline SearchFacesByImageRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
 
     /**
      * <p>Maximum number of faces to return. The operation returns the maximum number

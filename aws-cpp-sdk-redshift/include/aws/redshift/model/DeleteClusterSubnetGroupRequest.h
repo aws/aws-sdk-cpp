@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of the cluster subnet group name to be deleted.</p>
      */
-    inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
+    inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = std::move(value); }
 
     /**
      * <p>The name of the cluster subnet group name to be deleted.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the cluster subnet group name to be deleted.</p>
      */
-    inline DeleteClusterSubnetGroupRequest& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(value); return *this;}
+    inline DeleteClusterSubnetGroupRequest& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cluster subnet group name to be deleted.</p>

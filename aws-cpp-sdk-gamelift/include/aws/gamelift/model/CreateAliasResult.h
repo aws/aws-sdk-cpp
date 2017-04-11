@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/Alias.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Object that describes the newly created alias record.</p>
      */
-    inline void SetAlias(Alias&& value) { m_alias = value; }
+    inline void SetAlias(Alias&& value) { m_alias = std::move(value); }
 
     /**
      * <p>Object that describes the newly created alias record.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Object that describes the newly created alias record.</p>
      */
-    inline CreateAliasResult& WithAlias(Alias&& value) { SetAlias(value); return *this;}
+    inline CreateAliasResult& WithAlias(Alias&& value) { SetAlias(std::move(value)); return *this;}
 
   private:
     Alias m_alias;

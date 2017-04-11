@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/InstanceInformationFilter.h>
 #include <aws/ssm/model/InstanceInformationStringFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>One or more filters. Use a filter to return a more specific list of
      * instances.</p>
      */
-    inline void SetInstanceInformationFilterList(Aws::Vector<InstanceInformationFilter>&& value) { m_instanceInformationFilterListHasBeenSet = true; m_instanceInformationFilterList = value; }
+    inline void SetInstanceInformationFilterList(Aws::Vector<InstanceInformationFilter>&& value) { m_instanceInformationFilterListHasBeenSet = true; m_instanceInformationFilterList = std::move(value); }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
@@ -66,7 +67,7 @@ namespace Model
      * <p>One or more filters. Use a filter to return a more specific list of
      * instances.</p>
      */
-    inline DescribeInstanceInformationRequest& WithInstanceInformationFilterList(Aws::Vector<InstanceInformationFilter>&& value) { SetInstanceInformationFilterList(value); return *this;}
+    inline DescribeInstanceInformationRequest& WithInstanceInformationFilterList(Aws::Vector<InstanceInformationFilter>&& value) { SetInstanceInformationFilterList(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
@@ -78,7 +79,7 @@ namespace Model
      * <p>One or more filters. Use a filter to return a more specific list of
      * instances.</p>
      */
-    inline DescribeInstanceInformationRequest& AddInstanceInformationFilterList(InstanceInformationFilter&& value) { m_instanceInformationFilterListHasBeenSet = true; m_instanceInformationFilterList.push_back(value); return *this; }
+    inline DescribeInstanceInformationRequest& AddInstanceInformationFilterList(InstanceInformationFilter&& value) { m_instanceInformationFilterListHasBeenSet = true; m_instanceInformationFilterList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
@@ -96,7 +97,7 @@ namespace Model
      * <p>One or more filters. Use a filter to return a more specific list of
      * instances.</p>
      */
-    inline void SetFilters(Aws::Vector<InstanceInformationStringFilter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<InstanceInformationStringFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
@@ -108,7 +109,7 @@ namespace Model
      * <p>One or more filters. Use a filter to return a more specific list of
      * instances.</p>
      */
-    inline DescribeInstanceInformationRequest& WithFilters(Aws::Vector<InstanceInformationStringFilter>&& value) { SetFilters(value); return *this;}
+    inline DescribeInstanceInformationRequest& WithFilters(Aws::Vector<InstanceInformationStringFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
@@ -120,7 +121,7 @@ namespace Model
      * <p>One or more filters. Use a filter to return a more specific list of
      * instances.</p>
      */
-    inline DescribeInstanceInformationRequest& AddFilters(InstanceInformationStringFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeInstanceInformationRequest& AddFilters(InstanceInformationStringFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
@@ -159,7 +160,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -177,7 +178,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline DescribeInstanceInformationRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeInstanceInformationRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

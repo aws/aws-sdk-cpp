@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * create a cluster named <code>default</code>. Up to 255 letters (uppercase and
      * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
+    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
 
     /**
      * <p>The name of your cluster. If you do not specify a name for your cluster, you
@@ -75,7 +76,7 @@ namespace Model
      * create a cluster named <code>default</code>. Up to 255 letters (uppercase and
      * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
-    inline CreateClusterRequest& WithClusterName(Aws::String&& value) { SetClusterName(value); return *this;}
+    inline CreateClusterRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
 
     /**
      * <p>The name of your cluster. If you do not specify a name for your cluster, you

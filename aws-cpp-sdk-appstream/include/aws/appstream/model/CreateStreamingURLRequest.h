@@ -16,6 +16,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/AppStreamRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The stack for which the URL is generated.</p>
      */
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
+    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
      * <p>The stack for which the URL is generated.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The stack for which the URL is generated.</p>
      */
-    inline CreateStreamingURLRequest& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
+    inline CreateStreamingURLRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>The stack for which the URL is generated.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The fleet for which the URL is generated.</p>
      */
-    inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = value; }
+    inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = std::move(value); }
 
     /**
      * <p>The fleet for which the URL is generated.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The fleet for which the URL is generated.</p>
      */
-    inline CreateStreamingURLRequest& WithFleetName(Aws::String&& value) { SetFleetName(value); return *this;}
+    inline CreateStreamingURLRequest& WithFleetName(Aws::String&& value) { SetFleetName(std::move(value)); return *this;}
 
     /**
      * <p>The fleet for which the URL is generated.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>A unique user ID for whom the URL is generated.</p>
      */
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = value; }
+    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
      * <p>A unique user ID for whom the URL is generated.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>A unique user ID for whom the URL is generated.</p>
      */
-    inline CreateStreamingURLRequest& WithUserId(Aws::String&& value) { SetUserId(value); return *this;}
+    inline CreateStreamingURLRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
      * <p>A unique user ID for whom the URL is generated.</p>
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p>The ID of the application that must be launched after the session starts.</p>
      */
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
+    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
      * <p>The ID of the application that must be launched after the session starts.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>The ID of the application that must be launched after the session starts.</p>
      */
-    inline CreateStreamingURLRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(value); return *this;}
+    inline CreateStreamingURLRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the application that must be launched after the session starts.</p>
@@ -206,7 +207,7 @@ namespace Model
     /**
      * <p>The sessionContext of the streaming URL.</p>
      */
-    inline void SetSessionContext(Aws::String&& value) { m_sessionContextHasBeenSet = true; m_sessionContext = value; }
+    inline void SetSessionContext(Aws::String&& value) { m_sessionContextHasBeenSet = true; m_sessionContext = std::move(value); }
 
     /**
      * <p>The sessionContext of the streaming URL.</p>
@@ -221,7 +222,7 @@ namespace Model
     /**
      * <p>The sessionContext of the streaming URL.</p>
      */
-    inline CreateStreamingURLRequest& WithSessionContext(Aws::String&& value) { SetSessionContext(value); return *this;}
+    inline CreateStreamingURLRequest& WithSessionContext(Aws::String&& value) { SetSessionContext(std::move(value)); return *this;}
 
     /**
      * <p>The sessionContext of the streaming URL.</p>

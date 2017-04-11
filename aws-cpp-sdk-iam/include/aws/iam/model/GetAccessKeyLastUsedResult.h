@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/model/AccessKeyLastUsed.h>
 #include <aws/iam/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The name of the AWS IAM user that owns this access key.</p> <p/>
      */
-    inline void SetUserName(Aws::String&& value) { m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userName = std::move(value); }
 
     /**
      * <p>The name of the AWS IAM user that owns this access key.</p> <p/>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The name of the AWS IAM user that owns this access key.</p> <p/>
      */
-    inline GetAccessKeyLastUsedResult& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline GetAccessKeyLastUsedResult& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the AWS IAM user that owns this access key.</p> <p/>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>Contains information about the last time the access key was used.</p>
      */
-    inline void SetAccessKeyLastUsed(AccessKeyLastUsed&& value) { m_accessKeyLastUsed = value; }
+    inline void SetAccessKeyLastUsed(AccessKeyLastUsed&& value) { m_accessKeyLastUsed = std::move(value); }
 
     /**
      * <p>Contains information about the last time the access key was used.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>Contains information about the last time the access key was used.</p>
      */
-    inline GetAccessKeyLastUsedResult& WithAccessKeyLastUsed(AccessKeyLastUsed&& value) { SetAccessKeyLastUsed(value); return *this;}
+    inline GetAccessKeyLastUsedResult& WithAccessKeyLastUsed(AccessKeyLastUsed&& value) { SetAccessKeyLastUsed(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -115,13 +116,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline GetAccessKeyLastUsedResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline GetAccessKeyLastUsedResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline GetAccessKeyLastUsedResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_userName;

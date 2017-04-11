@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/ParameterConstraints.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name that is associated with the parameter.</p>
      */
-    inline void SetParameterKey(Aws::String&& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = value; }
+    inline void SetParameterKey(Aws::String&& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = std::move(value); }
 
     /**
      * <p>The name that is associated with the parameter.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name that is associated with the parameter.</p>
      */
-    inline ParameterDeclaration& WithParameterKey(Aws::String&& value) { SetParameterKey(value); return *this;}
+    inline ParameterDeclaration& WithParameterKey(Aws::String&& value) { SetParameterKey(std::move(value)); return *this;}
 
     /**
      * <p>The name that is associated with the parameter.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The default value of the parameter.</p>
      */
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
 
     /**
      * <p>The default value of the parameter.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The default value of the parameter.</p>
      */
-    inline ParameterDeclaration& WithDefaultValue(Aws::String&& value) { SetDefaultValue(value); return *this;}
+    inline ParameterDeclaration& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
 
     /**
      * <p>The default value of the parameter.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The type of parameter.</p>
      */
-    inline void SetParameterType(Aws::String&& value) { m_parameterTypeHasBeenSet = true; m_parameterType = value; }
+    inline void SetParameterType(Aws::String&& value) { m_parameterTypeHasBeenSet = true; m_parameterType = std::move(value); }
 
     /**
      * <p>The type of parameter.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>The type of parameter.</p>
      */
-    inline ParameterDeclaration& WithParameterType(Aws::String&& value) { SetParameterType(value); return *this;}
+    inline ParameterDeclaration& WithParameterType(Aws::String&& value) { SetParameterType(std::move(value)); return *this;}
 
     /**
      * <p>The type of parameter.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>The description that is associate with the parameter.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description that is associate with the parameter.</p>
@@ -198,7 +199,7 @@ namespace Model
     /**
      * <p>The description that is associate with the parameter.</p>
      */
-    inline ParameterDeclaration& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline ParameterDeclaration& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description that is associate with the parameter.</p>
@@ -218,7 +219,7 @@ namespace Model
     /**
      * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
      */
-    inline void SetParameterConstraints(ParameterConstraints&& value) { m_parameterConstraintsHasBeenSet = true; m_parameterConstraints = value; }
+    inline void SetParameterConstraints(ParameterConstraints&& value) { m_parameterConstraintsHasBeenSet = true; m_parameterConstraints = std::move(value); }
 
     /**
      * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
@@ -228,7 +229,7 @@ namespace Model
     /**
      * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
      */
-    inline ParameterDeclaration& WithParameterConstraints(ParameterConstraints&& value) { SetParameterConstraints(value); return *this;}
+    inline ParameterDeclaration& WithParameterConstraints(ParameterConstraints&& value) { SetParameterConstraints(std::move(value)); return *this;}
 
   private:
     Aws::String m_parameterKey;

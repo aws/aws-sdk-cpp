@@ -18,6 +18,7 @@
 #include <aws/organizations/model/CreateAccountState.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/organizations/model/CreateAccountFailureReason.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,7 +73,7 @@ namespace Model
      * for an create account request ID string requires "car-" followed by from 8 to 32
      * lower-case letters or digits.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) that references this request. You get this value
@@ -99,7 +100,7 @@ namespace Model
      * for an create account request ID string requires "car-" followed by from 8 to 32
      * lower-case letters or digits.</p>
      */
-    inline CreateAccountStatus& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline CreateAccountStatus& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) that references this request. You get this value
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The account name given to the account when it was created.</p>
      */
-    inline void SetAccountName(Aws::String&& value) { m_accountNameHasBeenSet = true; m_accountName = value; }
+    inline void SetAccountName(Aws::String&& value) { m_accountNameHasBeenSet = true; m_accountName = std::move(value); }
 
     /**
      * <p>The account name given to the account when it was created.</p>
@@ -138,7 +139,7 @@ namespace Model
     /**
      * <p>The account name given to the account when it was created.</p>
      */
-    inline CreateAccountStatus& WithAccountName(Aws::String&& value) { SetAccountName(value); return *this;}
+    inline CreateAccountStatus& WithAccountName(Aws::String&& value) { SetAccountName(std::move(value)); return *this;}
 
     /**
      * <p>The account name given to the account when it was created.</p>
@@ -158,7 +159,7 @@ namespace Model
     /**
      * <p>The status of the request.</p>
      */
-    inline void SetState(CreateAccountState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(CreateAccountState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The status of the request.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>The status of the request.</p>
      */
-    inline CreateAccountStatus& WithState(CreateAccountState&& value) { SetState(value); return *this;}
+    inline CreateAccountStatus& WithState(CreateAccountState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The date and time that the request was made for the account creation.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>The date and time that the request was made for the account creation.</p>
      */
-    inline void SetRequestedTimestamp(Aws::Utils::DateTime&& value) { m_requestedTimestampHasBeenSet = true; m_requestedTimestamp = value; }
+    inline void SetRequestedTimestamp(Aws::Utils::DateTime&& value) { m_requestedTimestampHasBeenSet = true; m_requestedTimestamp = std::move(value); }
 
     /**
      * <p>The date and time that the request was made for the account creation.</p>
@@ -193,7 +194,7 @@ namespace Model
     /**
      * <p>The date and time that the request was made for the account creation.</p>
      */
-    inline CreateAccountStatus& WithRequestedTimestamp(Aws::Utils::DateTime&& value) { SetRequestedTimestamp(value); return *this;}
+    inline CreateAccountStatus& WithRequestedTimestamp(Aws::Utils::DateTime&& value) { SetRequestedTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The date and time that the account was created and the request completed.</p>
@@ -208,7 +209,7 @@ namespace Model
     /**
      * <p>The date and time that the account was created and the request completed.</p>
      */
-    inline void SetCompletedTimestamp(Aws::Utils::DateTime&& value) { m_completedTimestampHasBeenSet = true; m_completedTimestamp = value; }
+    inline void SetCompletedTimestamp(Aws::Utils::DateTime&& value) { m_completedTimestampHasBeenSet = true; m_completedTimestamp = std::move(value); }
 
     /**
      * <p>The date and time that the account was created and the request completed.</p>
@@ -218,7 +219,7 @@ namespace Model
     /**
      * <p>The date and time that the account was created and the request completed.</p>
      */
-    inline CreateAccountStatus& WithCompletedTimestamp(Aws::Utils::DateTime&& value) { SetCompletedTimestamp(value); return *this;}
+    inline CreateAccountStatus& WithCompletedTimestamp(Aws::Utils::DateTime&& value) { SetCompletedTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>If the account was created successfully, the unique identifier (ID) of the
@@ -239,7 +240,7 @@ namespace Model
      * new account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> for an account ID string requires exactly 12 digits.</p>
      */
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>If the account was created successfully, the unique identifier (ID) of the
@@ -260,7 +261,7 @@ namespace Model
      * new account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> for an account ID string requires exactly 12 digits.</p>
      */
-    inline CreateAccountStatus& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline CreateAccountStatus& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>If the account was created successfully, the unique identifier (ID) of the
@@ -282,7 +283,7 @@ namespace Model
     /**
      * <p>If the request failed, a description of the reason for the failure.</p>
      */
-    inline void SetFailureReason(CreateAccountFailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
+    inline void SetFailureReason(CreateAccountFailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
     /**
      * <p>If the request failed, a description of the reason for the failure.</p>
@@ -292,7 +293,7 @@ namespace Model
     /**
      * <p>If the request failed, a description of the reason for the failure.</p>
      */
-    inline CreateAccountStatus& WithFailureReason(CreateAccountFailureReason&& value) { SetFailureReason(value); return *this;}
+    inline CreateAccountStatus& WithFailureReason(CreateAccountFailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
 
   private:
     Aws::String m_id;

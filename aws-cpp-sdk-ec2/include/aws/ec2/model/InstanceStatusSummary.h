@@ -18,6 +18,7 @@
 #include <aws/ec2/model/SummaryStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/InstanceStatusDetails.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The status.</p>
      */
-    inline void SetStatus(SummaryStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(SummaryStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The status.</p>
      */
-    inline InstanceStatusSummary& WithStatus(SummaryStatus&& value) { SetStatus(value); return *this;}
+    inline InstanceStatusSummary& WithStatus(SummaryStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The system instance health or application instance health.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The system instance health or application instance health.</p>
      */
-    inline void SetDetails(Aws::Vector<InstanceStatusDetails>&& value) { m_detailsHasBeenSet = true; m_details = value; }
+    inline void SetDetails(Aws::Vector<InstanceStatusDetails>&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
      * <p>The system instance health or application instance health.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The system instance health or application instance health.</p>
      */
-    inline InstanceStatusSummary& WithDetails(Aws::Vector<InstanceStatusDetails>&& value) { SetDetails(value); return *this;}
+    inline InstanceStatusSummary& WithDetails(Aws::Vector<InstanceStatusDetails>&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
      * <p>The system instance health or application instance health.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The system instance health or application instance health.</p>
      */
-    inline InstanceStatusSummary& AddDetails(InstanceStatusDetails&& value) { m_detailsHasBeenSet = true; m_details.push_back(value); return *this; }
+    inline InstanceStatusSummary& AddDetails(InstanceStatusDetails&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
 
   private:
     SummaryStatus m_status;

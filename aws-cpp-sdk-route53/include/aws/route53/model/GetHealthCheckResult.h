@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/HealthCheck.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>A complex type that contains information about one health check that is
      * associated with the current AWS account.</p>
      */
-    inline void SetHealthCheck(HealthCheck&& value) { m_healthCheck = value; }
+    inline void SetHealthCheck(HealthCheck&& value) { m_healthCheck = std::move(value); }
 
     /**
      * <p>A complex type that contains information about one health check that is
@@ -73,7 +74,7 @@ namespace Model
      * <p>A complex type that contains information about one health check that is
      * associated with the current AWS account.</p>
      */
-    inline GetHealthCheckResult& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(value); return *this;}
+    inline GetHealthCheckResult& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(std::move(value)); return *this;}
 
   private:
     HealthCheck m_healthCheck;

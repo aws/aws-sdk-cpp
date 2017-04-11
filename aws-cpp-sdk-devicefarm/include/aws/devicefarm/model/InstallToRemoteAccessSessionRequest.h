@@ -16,6 +16,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/DeviceFarmRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the remote access session about which you
      * are requesting information.</p>
      */
-    inline void SetRemoteAccessSessionArn(Aws::String&& value) { m_remoteAccessSessionArnHasBeenSet = true; m_remoteAccessSessionArn = value; }
+    inline void SetRemoteAccessSessionArn(Aws::String&& value) { m_remoteAccessSessionArnHasBeenSet = true; m_remoteAccessSessionArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the remote access session about which you
@@ -74,7 +75,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the remote access session about which you
      * are requesting information.</p>
      */
-    inline InstallToRemoteAccessSessionRequest& WithRemoteAccessSessionArn(Aws::String&& value) { SetRemoteAccessSessionArn(value); return *this;}
+    inline InstallToRemoteAccessSessionRequest& WithRemoteAccessSessionArn(Aws::String&& value) { SetRemoteAccessSessionArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the remote access session about which you
@@ -98,7 +99,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the app about which you are requesting
      * information.</p>
      */
-    inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = value; }
+    inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the app about which you are requesting
@@ -116,7 +117,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the app about which you are requesting
      * information.</p>
      */
-    inline InstallToRemoteAccessSessionRequest& WithAppArn(Aws::String&& value) { SetAppArn(value); return *this;}
+    inline InstallToRemoteAccessSessionRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the app about which you are requesting

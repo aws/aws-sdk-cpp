@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/ec2/model/Scope.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The Availability Zone for the modified Reserved Instances.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone for the modified Reserved Instances.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The Availability Zone for the modified Reserved Instances.</p>
      */
-    inline ReservedInstancesConfiguration& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline ReservedInstancesConfiguration& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone for the modified Reserved Instances.</p>
@@ -100,7 +101,7 @@ namespace Model
      * <p>The network platform of the modified Reserved Instances, which is either
      * EC2-Classic or EC2-VPC.</p>
      */
-    inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
      * <p>The network platform of the modified Reserved Instances, which is either
@@ -118,7 +119,7 @@ namespace Model
      * <p>The network platform of the modified Reserved Instances, which is either
      * EC2-Classic or EC2-VPC.</p>
      */
-    inline ReservedInstancesConfiguration& WithPlatform(Aws::String&& value) { SetPlatform(value); return *this;}
+    inline ReservedInstancesConfiguration& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
      * <p>The network platform of the modified Reserved Instances, which is either
@@ -154,7 +155,7 @@ namespace Model
     /**
      * <p>The instance type for the modified Reserved Instances.</p>
      */
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type for the modified Reserved Instances.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>The instance type for the modified Reserved Instances.</p>
      */
-    inline ReservedInstancesConfiguration& WithInstanceType(InstanceType&& value) { SetInstanceType(value); return *this;}
+    inline ReservedInstancesConfiguration& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>Whether the Reserved Instance is applied to instances in a region or
@@ -182,7 +183,7 @@ namespace Model
      * <p>Whether the Reserved Instance is applied to instances in a region or
      * instances in a specific Availability Zone.</p>
      */
-    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
      * <p>Whether the Reserved Instance is applied to instances in a region or
@@ -194,7 +195,7 @@ namespace Model
      * <p>Whether the Reserved Instance is applied to instances in a region or
      * instances in a specific Availability Zone.</p>
      */
-    inline ReservedInstancesConfiguration& WithScope(Scope&& value) { SetScope(value); return *this;}
+    inline ReservedInstancesConfiguration& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 
   private:
     Aws::String m_availabilityZone;

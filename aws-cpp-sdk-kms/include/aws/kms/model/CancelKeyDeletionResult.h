@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The unique identifier of the master key for which deletion is canceled.</p>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
 
     /**
      * <p>The unique identifier of the master key for which deletion is canceled.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The unique identifier of the master key for which deletion is canceled.</p>
      */
-    inline CancelKeyDeletionResult& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline CancelKeyDeletionResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the master key for which deletion is canceled.</p>

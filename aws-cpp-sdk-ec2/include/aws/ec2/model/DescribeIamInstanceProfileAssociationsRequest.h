@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>One or more IAM instance profile associations.</p>
      */
-    inline void SetAssociationIds(Aws::Vector<Aws::String>&& value) { m_associationIdsHasBeenSet = true; m_associationIds = value; }
+    inline void SetAssociationIds(Aws::Vector<Aws::String>&& value) { m_associationIdsHasBeenSet = true; m_associationIds = std::move(value); }
 
     /**
      * <p>One or more IAM instance profile associations.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>One or more IAM instance profile associations.</p>
      */
-    inline DescribeIamInstanceProfileAssociationsRequest& WithAssociationIds(Aws::Vector<Aws::String>&& value) { SetAssociationIds(value); return *this;}
+    inline DescribeIamInstanceProfileAssociationsRequest& WithAssociationIds(Aws::Vector<Aws::String>&& value) { SetAssociationIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more IAM instance profile associations.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>One or more IAM instance profile associations.</p>
      */
-    inline DescribeIamInstanceProfileAssociationsRequest& AddAssociationIds(Aws::String&& value) { m_associationIdsHasBeenSet = true; m_associationIds.push_back(value); return *this; }
+    inline DescribeIamInstanceProfileAssociationsRequest& AddAssociationIds(Aws::String&& value) { m_associationIdsHasBeenSet = true; m_associationIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more IAM instance profile associations.</p>
@@ -101,7 +102,7 @@ namespace Model
      * association (<code>associating</code> | <code>associated</code> |
      * <code>disassociating</code> | <code>disassociated</code>).</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-id</code> - The ID of
@@ -117,7 +118,7 @@ namespace Model
      * association (<code>associating</code> | <code>associated</code> |
      * <code>disassociating</code> | <code>disassociated</code>).</p> </li> </ul>
      */
-    inline DescribeIamInstanceProfileAssociationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeIamInstanceProfileAssociationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-id</code> - The ID of
@@ -133,7 +134,7 @@ namespace Model
      * association (<code>associating</code> | <code>associated</code> |
      * <code>disassociating</code> | <code>disassociated</code>).</p> </li> </ul>
      */
-    inline DescribeIamInstanceProfileAssociationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeIamInstanceProfileAssociationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p>The token to request the next page of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token to request the next page of results.</p>
@@ -184,7 +185,7 @@ namespace Model
     /**
      * <p>The token to request the next page of results.</p>
      */
-    inline DescribeIamInstanceProfileAssociationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeIamInstanceProfileAssociationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to request the next page of results.</p>

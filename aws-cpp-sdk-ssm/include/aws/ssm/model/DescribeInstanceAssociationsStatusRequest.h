@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The instance IDs for which you want association status information.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The instance IDs for which you want association status information.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The instance IDs for which you want association status information.</p>
      */
-    inline DescribeInstanceAssociationsStatusRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline DescribeInstanceAssociationsStatusRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The instance IDs for which you want association status information.</p>
@@ -107,7 +108,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -125,7 +126,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline DescribeInstanceAssociationsStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeInstanceAssociationsStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

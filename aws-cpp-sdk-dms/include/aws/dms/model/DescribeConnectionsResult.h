@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/model/Connection.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -86,7 +87,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline DescribeConnectionsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeConnectionsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>A description of the connections.</p>
      */
-    inline void SetConnections(Aws::Vector<Connection>&& value) { m_connections = value; }
+    inline void SetConnections(Aws::Vector<Connection>&& value) { m_connections = std::move(value); }
 
     /**
      * <p>A description of the connections.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>A description of the connections.</p>
      */
-    inline DescribeConnectionsResult& WithConnections(Aws::Vector<Connection>&& value) { SetConnections(value); return *this;}
+    inline DescribeConnectionsResult& WithConnections(Aws::Vector<Connection>&& value) { SetConnections(std::move(value)); return *this;}
 
     /**
      * <p>A description of the connections.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>A description of the connections.</p>
      */
-    inline DescribeConnectionsResult& AddConnections(Connection&& value) { m_connections.push_back(value); return *this; }
+    inline DescribeConnectionsResult& AddConnections(Connection&& value) { m_connections.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_marker;

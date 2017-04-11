@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of the security Group from which to revoke the ingress rule.</p>
      */
-    inline void SetClusterSecurityGroupName(Aws::String&& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
+    inline void SetClusterSecurityGroupName(Aws::String&& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = std::move(value); }
 
     /**
      * <p>The name of the security Group from which to revoke the ingress rule.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the security Group from which to revoke the ingress rule.</p>
      */
-    inline RevokeClusterSecurityGroupIngressRequest& WithClusterSecurityGroupName(Aws::String&& value) { SetClusterSecurityGroupName(value); return *this;}
+    inline RevokeClusterSecurityGroupIngressRequest& WithClusterSecurityGroupName(Aws::String&& value) { SetClusterSecurityGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the security Group from which to revoke the ingress rule.</p>
@@ -97,7 +98,7 @@ namespace Model
      * specified, <code>EC2SecurityGroupName</code> and
      * <code>EC2SecurityGroupOwnerId</code> cannot be provided. </p>
      */
-    inline void SetCIDRIP(Aws::String&& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = value; }
+    inline void SetCIDRIP(Aws::String&& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = std::move(value); }
 
     /**
      * <p>The IP range for which to revoke access. This range must be a valid Classless
@@ -121,7 +122,7 @@ namespace Model
      * specified, <code>EC2SecurityGroupName</code> and
      * <code>EC2SecurityGroupOwnerId</code> cannot be provided. </p>
      */
-    inline RevokeClusterSecurityGroupIngressRequest& WithCIDRIP(Aws::String&& value) { SetCIDRIP(value); return *this;}
+    inline RevokeClusterSecurityGroupIngressRequest& WithCIDRIP(Aws::String&& value) { SetCIDRIP(std::move(value)); return *this;}
 
     /**
      * <p>The IP range for which to revoke access. This range must be a valid Classless
@@ -153,7 +154,7 @@ namespace Model
      * <code>EC2SecurityGroupOwnerId</code> must also be provided and
      * <code>CIDRIP</code> cannot be provided. </p>
      */
-    inline void SetEC2SecurityGroupName(Aws::String&& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = value; }
+    inline void SetEC2SecurityGroupName(Aws::String&& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = std::move(value); }
 
     /**
      * <p>The name of the EC2 Security Group whose access is to be revoked. If
@@ -177,7 +178,7 @@ namespace Model
      * <code>EC2SecurityGroupOwnerId</code> must also be provided and
      * <code>CIDRIP</code> cannot be provided. </p>
      */
-    inline RevokeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupName(Aws::String&& value) { SetEC2SecurityGroupName(value); return *this;}
+    inline RevokeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupName(Aws::String&& value) { SetEC2SecurityGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the EC2 Security Group whose access is to be revoked. If
@@ -212,7 +213,7 @@ namespace Model
      * <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code>
      * cannot be provided. </p> <p>Example: <code>111122223333</code> </p>
      */
-    inline void SetEC2SecurityGroupOwnerId(Aws::String&& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = value; }
+    inline void SetEC2SecurityGroupOwnerId(Aws::String&& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = std::move(value); }
 
     /**
      * <p>The AWS account number of the owner of the security group specified in the
@@ -239,7 +240,7 @@ namespace Model
      * <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code>
      * cannot be provided. </p> <p>Example: <code>111122223333</code> </p>
      */
-    inline RevokeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(Aws::String&& value) { SetEC2SecurityGroupOwnerId(value); return *this;}
+    inline RevokeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(Aws::String&& value) { SetEC2SecurityGroupOwnerId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account number of the owner of the security group specified in the

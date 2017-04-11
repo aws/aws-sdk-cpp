@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The name of the RDS event notification subscription you want to add a source
      * identifier to.</p>
      */
-    inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
+    inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = std::move(value); }
 
     /**
      * <p>The name of the RDS event notification subscription you want to add a source
@@ -74,7 +75,7 @@ namespace Model
      * <p>The name of the RDS event notification subscription you want to add a source
      * identifier to.</p>
      */
-    inline AddSourceIdentifierToSubscriptionRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(value); return *this;}
+    inline AddSourceIdentifierToSubscriptionRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the RDS event notification subscription you want to add a source
@@ -122,7 +123,7 @@ namespace Model
      * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
      * supplied.</p> </li> </ul>
      */
-    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
+    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the event source to be added. An identifier must begin with
@@ -164,7 +165,7 @@ namespace Model
      * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
      * supplied.</p> </li> </ul>
      */
-    inline AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(value); return *this;}
+    inline AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the event source to be added. An identifier must begin with

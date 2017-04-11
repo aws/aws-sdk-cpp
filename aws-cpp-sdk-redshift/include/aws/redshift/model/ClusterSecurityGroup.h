@@ -20,6 +20,7 @@
 #include <aws/redshift/model/EC2SecurityGroup.h>
 #include <aws/redshift/model/IPRange.h>
 #include <aws/redshift/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * <p>The name of the cluster security group to which the operation was
      * applied.</p>
      */
-    inline void SetClusterSecurityGroupName(Aws::String&& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
+    inline void SetClusterSecurityGroupName(Aws::String&& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = std::move(value); }
 
     /**
      * <p>The name of the cluster security group to which the operation was
@@ -84,7 +85,7 @@ namespace Model
      * <p>The name of the cluster security group to which the operation was
      * applied.</p>
      */
-    inline ClusterSecurityGroup& WithClusterSecurityGroupName(Aws::String&& value) { SetClusterSecurityGroupName(value); return *this;}
+    inline ClusterSecurityGroup& WithClusterSecurityGroupName(Aws::String&& value) { SetClusterSecurityGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cluster security group to which the operation was
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>A description of the security group.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description of the security group.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>A description of the security group.</p>
      */
-    inline ClusterSecurityGroup& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline ClusterSecurityGroup& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description of the security group.</p>
@@ -143,7 +144,7 @@ namespace Model
      * <p>A list of EC2 security groups that are permitted to access clusters
      * associated with this cluster security group.</p>
      */
-    inline void SetEC2SecurityGroups(Aws::Vector<EC2SecurityGroup>&& value) { m_eC2SecurityGroupsHasBeenSet = true; m_eC2SecurityGroups = value; }
+    inline void SetEC2SecurityGroups(Aws::Vector<EC2SecurityGroup>&& value) { m_eC2SecurityGroupsHasBeenSet = true; m_eC2SecurityGroups = std::move(value); }
 
     /**
      * <p>A list of EC2 security groups that are permitted to access clusters
@@ -155,7 +156,7 @@ namespace Model
      * <p>A list of EC2 security groups that are permitted to access clusters
      * associated with this cluster security group.</p>
      */
-    inline ClusterSecurityGroup& WithEC2SecurityGroups(Aws::Vector<EC2SecurityGroup>&& value) { SetEC2SecurityGroups(value); return *this;}
+    inline ClusterSecurityGroup& WithEC2SecurityGroups(Aws::Vector<EC2SecurityGroup>&& value) { SetEC2SecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of EC2 security groups that are permitted to access clusters
@@ -167,7 +168,7 @@ namespace Model
      * <p>A list of EC2 security groups that are permitted to access clusters
      * associated with this cluster security group.</p>
      */
-    inline ClusterSecurityGroup& AddEC2SecurityGroups(EC2SecurityGroup&& value) { m_eC2SecurityGroupsHasBeenSet = true; m_eC2SecurityGroups.push_back(value); return *this; }
+    inline ClusterSecurityGroup& AddEC2SecurityGroups(EC2SecurityGroup&& value) { m_eC2SecurityGroupsHasBeenSet = true; m_eC2SecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of IP ranges (CIDR blocks) that are permitted to access clusters
@@ -185,7 +186,7 @@ namespace Model
      * <p>A list of IP ranges (CIDR blocks) that are permitted to access clusters
      * associated with this cluster security group.</p>
      */
-    inline void SetIPRanges(Aws::Vector<IPRange>&& value) { m_iPRangesHasBeenSet = true; m_iPRanges = value; }
+    inline void SetIPRanges(Aws::Vector<IPRange>&& value) { m_iPRangesHasBeenSet = true; m_iPRanges = std::move(value); }
 
     /**
      * <p>A list of IP ranges (CIDR blocks) that are permitted to access clusters
@@ -197,7 +198,7 @@ namespace Model
      * <p>A list of IP ranges (CIDR blocks) that are permitted to access clusters
      * associated with this cluster security group.</p>
      */
-    inline ClusterSecurityGroup& WithIPRanges(Aws::Vector<IPRange>&& value) { SetIPRanges(value); return *this;}
+    inline ClusterSecurityGroup& WithIPRanges(Aws::Vector<IPRange>&& value) { SetIPRanges(std::move(value)); return *this;}
 
     /**
      * <p>A list of IP ranges (CIDR blocks) that are permitted to access clusters
@@ -209,7 +210,7 @@ namespace Model
      * <p>A list of IP ranges (CIDR blocks) that are permitted to access clusters
      * associated with this cluster security group.</p>
      */
-    inline ClusterSecurityGroup& AddIPRanges(IPRange&& value) { m_iPRangesHasBeenSet = true; m_iPRanges.push_back(value); return *this; }
+    inline ClusterSecurityGroup& AddIPRanges(IPRange&& value) { m_iPRangesHasBeenSet = true; m_iPRanges.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of tags for the cluster security group.</p>
@@ -224,7 +225,7 @@ namespace Model
     /**
      * <p>The list of tags for the cluster security group.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The list of tags for the cluster security group.</p>
@@ -234,7 +235,7 @@ namespace Model
     /**
      * <p>The list of tags for the cluster security group.</p>
      */
-    inline ClusterSecurityGroup& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline ClusterSecurityGroup& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The list of tags for the cluster security group.</p>
@@ -244,7 +245,7 @@ namespace Model
     /**
      * <p>The list of tags for the cluster security group.</p>
      */
-    inline ClusterSecurityGroup& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline ClusterSecurityGroup& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_clusterSecurityGroupName;

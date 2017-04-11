@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sqs/model/QueueAttributeName.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>The URL of the Amazon SQS queue whose attributes are set.</p> <p>Queue URLs
      * are case-sensitive.</p>
      */
-    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
+    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::move(value); }
 
     /**
      * <p>The URL of the Amazon SQS queue whose attributes are set.</p> <p>Queue URLs
@@ -76,7 +77,7 @@ namespace Model
      * <p>The URL of the Amazon SQS queue whose attributes are set.</p> <p>Queue URLs
      * are case-sensitive.</p>
      */
-    inline SetQueueAttributesRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
+    inline SetQueueAttributesRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL of the Amazon SQS queue whose attributes are set.</p> <p>Queue URLs
@@ -295,7 +296,7 @@ namespace Model
      * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
      * </p> </li> </ul>
      */
-    inline void SetAttributes(Aws::Map<QueueAttributeName, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Map<QueueAttributeName, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>A map of attributes to set.</p> <p>The following lists the names,
@@ -437,7 +438,7 @@ namespace Model
      * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
      * </p> </li> </ul>
      */
-    inline SetQueueAttributesRequest& WithAttributes(Aws::Map<QueueAttributeName, Aws::String>&& value) { SetAttributes(value); return *this;}
+    inline SetQueueAttributesRequest& WithAttributes(Aws::Map<QueueAttributeName, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>A map of attributes to set.</p> <p>The following lists the names,
@@ -508,7 +509,7 @@ namespace Model
      * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
      * </p> </li> </ul>
      */
-    inline SetQueueAttributesRequest& AddAttributes(const QueueAttributeName& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline SetQueueAttributesRequest& AddAttributes(const QueueAttributeName& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>A map of attributes to set.</p> <p>The following lists the names,
@@ -579,7 +580,7 @@ namespace Model
      * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
      * </p> </li> </ul>
      */
-    inline SetQueueAttributesRequest& AddAttributes(QueueAttributeName&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline SetQueueAttributesRequest& AddAttributes(QueueAttributeName&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of attributes to set.</p> <p>The following lists the names,
@@ -650,7 +651,7 @@ namespace Model
      * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
      * </p> </li> </ul>
      */
-    inline SetQueueAttributesRequest& AddAttributes(const QueueAttributeName& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline SetQueueAttributesRequest& AddAttributes(const QueueAttributeName& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of attributes to set.</p> <p>The following lists the names,
@@ -721,7 +722,7 @@ namespace Model
      * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
      * </p> </li> </ul>
      */
-    inline SetQueueAttributesRequest& AddAttributes(QueueAttributeName&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline SetQueueAttributesRequest& AddAttributes(QueueAttributeName&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A map of attributes to set.</p> <p>The following lists the names,
@@ -792,7 +793,7 @@ namespace Model
      * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
      * </p> </li> </ul>
      */
-    inline SetQueueAttributesRequest& AddAttributes(QueueAttributeName&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline SetQueueAttributesRequest& AddAttributes(QueueAttributeName&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of attributes to set.</p> <p>The following lists the names,
@@ -863,7 +864,7 @@ namespace Model
      * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
      * </p> </li> </ul>
      */
-    inline SetQueueAttributesRequest& AddAttributes(const QueueAttributeName& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline SetQueueAttributesRequest& AddAttributes(const QueueAttributeName& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
   private:
     Aws::String m_queueUrl;

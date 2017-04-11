@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The attack type, for example, SNMP reflection or SYN flood.</p>
      */
-    inline void SetVectorType(Aws::String&& value) { m_vectorTypeHasBeenSet = true; m_vectorType = value; }
+    inline void SetVectorType(Aws::String&& value) { m_vectorTypeHasBeenSet = true; m_vectorType = std::move(value); }
 
     /**
      * <p>The attack type, for example, SNMP reflection or SYN flood.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The attack type, for example, SNMP reflection or SYN flood.</p>
      */
-    inline AttackVectorDescription& WithVectorType(Aws::String&& value) { SetVectorType(value); return *this;}
+    inline AttackVectorDescription& WithVectorType(Aws::String&& value) { SetVectorType(std::move(value)); return *this;}
 
     /**
      * <p>The attack type, for example, SNMP reflection or SYN flood.</p>

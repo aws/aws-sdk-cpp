@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/waf/model/SizeConstraintSetUpdate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * want to update. <code>SizeConstraintSetId</code> is returned by
      * <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
      */
-    inline void SetSizeConstraintSetId(Aws::String&& value) { m_sizeConstraintSetIdHasBeenSet = true; m_sizeConstraintSetId = value; }
+    inline void SetSizeConstraintSetId(Aws::String&& value) { m_sizeConstraintSetIdHasBeenSet = true; m_sizeConstraintSetId = std::move(value); }
 
     /**
      * <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you
@@ -77,7 +78,7 @@ namespace Model
      * want to update. <code>SizeConstraintSetId</code> is returned by
      * <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
      */
-    inline UpdateSizeConstraintSetRequest& WithSizeConstraintSetId(Aws::String&& value) { SetSizeConstraintSetId(value); return *this;}
+    inline UpdateSizeConstraintSetRequest& WithSizeConstraintSetId(Aws::String&& value) { SetSizeConstraintSetId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
+    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline UpdateSizeConstraintSetRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(value); return *this;}
+    inline UpdateSizeConstraintSetRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -155,7 +156,7 @@ namespace Model
      * <code>Size</code> </p> </li> <li> <p> <a>FieldToMatch</a>: Contains
      * <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
-    inline void SetUpdates(Aws::Vector<SizeConstraintSetUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = value; }
+    inline void SetUpdates(Aws::Vector<SizeConstraintSetUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = std::move(value); }
 
     /**
      * <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to
@@ -179,7 +180,7 @@ namespace Model
      * <code>Size</code> </p> </li> <li> <p> <a>FieldToMatch</a>: Contains
      * <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
-    inline UpdateSizeConstraintSetRequest& WithUpdates(Aws::Vector<SizeConstraintSetUpdate>&& value) { SetUpdates(value); return *this;}
+    inline UpdateSizeConstraintSetRequest& WithUpdates(Aws::Vector<SizeConstraintSetUpdate>&& value) { SetUpdates(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to
@@ -203,7 +204,7 @@ namespace Model
      * <code>Size</code> </p> </li> <li> <p> <a>FieldToMatch</a>: Contains
      * <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
-    inline UpdateSizeConstraintSetRequest& AddUpdates(SizeConstraintSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
+    inline UpdateSizeConstraintSetRequest& AddUpdates(SizeConstraintSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_sizeConstraintSetId;

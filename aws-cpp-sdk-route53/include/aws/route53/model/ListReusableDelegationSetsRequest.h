@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -73,7 +74,7 @@ namespace Model
      * the value that you specified in the <code>marker</code> parameter in the
      * previous request.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>If you're making the second or subsequent call to
@@ -97,7 +98,7 @@ namespace Model
      * the value that you specified in the <code>marker</code> parameter in the
      * previous request.</p>
      */
-    inline ListReusableDelegationSetsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListReusableDelegationSetsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>If you're making the second or subsequent call to
@@ -123,7 +124,7 @@ namespace Model
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
      * request that produced the current response.</p>
      */
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
@@ -141,7 +142,7 @@ namespace Model
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
      * request that produced the current response.</p>
      */
-    inline ListReusableDelegationSetsRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
+    inline ListReusableDelegationSetsRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the

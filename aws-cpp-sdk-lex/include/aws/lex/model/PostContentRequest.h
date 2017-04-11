@@ -17,6 +17,7 @@
 #include <aws/lex/LexRuntimeServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,7 +48,7 @@ namespace Model
     /**
      * <p>Name of the Amazon Lex bot.</p>
      */
-    inline void SetBotName(Aws::String&& value) { m_botNameHasBeenSet = true; m_botName = value; }
+    inline void SetBotName(Aws::String&& value) { m_botNameHasBeenSet = true; m_botName = std::move(value); }
 
     /**
      * <p>Name of the Amazon Lex bot.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Name of the Amazon Lex bot.</p>
      */
-    inline PostContentRequest& WithBotName(Aws::String&& value) { SetBotName(value); return *this;}
+    inline PostContentRequest& WithBotName(Aws::String&& value) { SetBotName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the Amazon Lex bot.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>Alias of the Amazon Lex bot.</p>
      */
-    inline void SetBotAlias(Aws::String&& value) { m_botAliasHasBeenSet = true; m_botAlias = value; }
+    inline void SetBotAlias(Aws::String&& value) { m_botAliasHasBeenSet = true; m_botAlias = std::move(value); }
 
     /**
      * <p>Alias of the Amazon Lex bot.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>Alias of the Amazon Lex bot.</p>
      */
-    inline PostContentRequest& WithBotAlias(Aws::String&& value) { SetBotAlias(value); return *this;}
+    inline PostContentRequest& WithBotAlias(Aws::String&& value) { SetBotAlias(std::move(value)); return *this;}
 
     /**
      * <p>Alias of the Amazon Lex bot.</p>
@@ -144,7 +145,7 @@ namespace Model
      * different devices, you might choose device-specific identifier, such as device
      * ID, or some globally unique identifier. </p> </li> </ul>
      */
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = value; }
+    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
      * <p>ID of the client application user. Typically, each of your application users
@@ -186,7 +187,7 @@ namespace Model
      * different devices, you might choose device-specific identifier, such as device
      * ID, or some globally unique identifier. </p> </li> </ul>
      */
-    inline PostContentRequest& WithUserId(Aws::String&& value) { SetUserId(value); return *this;}
+    inline PostContentRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
      * <p>ID of the client application user. Typically, each of your application users
@@ -317,7 +318,7 @@ namespace Model
      * configured for the intent Amazon Lex simply returns the session attributes to
      * the client application. </p> </note>
      */
-    inline void SetSessionAttributes(Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = value; }
+    inline void SetSessionAttributes(Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = std::move(value); }
 
     /**
      * <p>You pass this value in the <code>x-amz-lex-session-attributes</code> HTTP
@@ -434,7 +435,7 @@ namespace Model
      * configured for the intent Amazon Lex simply returns the session attributes to
      * the client application. </p> </note>
      */
-    inline PostContentRequest& WithSessionAttributes(Aws::String&& value) { SetSessionAttributes(value); return *this;}
+    inline PostContentRequest& WithSessionAttributes(Aws::String&& value) { SetSessionAttributes(std::move(value)); return *this;}
 
     /**
      * <p>You pass this value in the <code>x-amz-lex-session-attributes</code> HTTP
@@ -524,7 +525,7 @@ namespace Model
      * charset=utf-8</p> </li> <li> <p>audio/ * (defaults to mpeg)</p> </li> </ul> </li>
      * </ul>
      */
-    inline void SetAccept(Aws::String&& value) { m_acceptHasBeenSet = true; m_accept = value; }
+    inline void SetAccept(Aws::String&& value) { m_acceptHasBeenSet = true; m_accept = std::move(value); }
 
     /**
      * <p> You pass this value as the <code>Accept</code> HTTP header. </p> <p> The
@@ -575,7 +576,7 @@ namespace Model
      * charset=utf-8</p> </li> <li> <p>audio/ * (defaults to mpeg)</p> </li> </ul> </li>
      * </ul>
      */
-    inline PostContentRequest& WithAccept(Aws::String&& value) { SetAccept(value); return *this;}
+    inline PostContentRequest& WithAccept(Aws::String&& value) { SetAccept(std::move(value)); return *this;}
 
     /**
      * <p> You pass this value as the <code>Accept</code> HTTP header. </p> <p> The

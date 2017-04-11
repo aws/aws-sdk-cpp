@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/CreateVolumePermission.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>Adds a specific AWS account ID or group to a volume's list of create volume
      * permissions.</p>
      */
-    inline void SetAdd(Aws::Vector<CreateVolumePermission>&& value) { m_addHasBeenSet = true; m_add = value; }
+    inline void SetAdd(Aws::Vector<CreateVolumePermission>&& value) { m_addHasBeenSet = true; m_add = std::move(value); }
 
     /**
      * <p>Adds a specific AWS account ID or group to a volume's list of create volume
@@ -76,7 +77,7 @@ namespace Model
      * <p>Adds a specific AWS account ID or group to a volume's list of create volume
      * permissions.</p>
      */
-    inline CreateVolumePermissionModifications& WithAdd(Aws::Vector<CreateVolumePermission>&& value) { SetAdd(value); return *this;}
+    inline CreateVolumePermissionModifications& WithAdd(Aws::Vector<CreateVolumePermission>&& value) { SetAdd(std::move(value)); return *this;}
 
     /**
      * <p>Adds a specific AWS account ID or group to a volume's list of create volume
@@ -88,7 +89,7 @@ namespace Model
      * <p>Adds a specific AWS account ID or group to a volume's list of create volume
      * permissions.</p>
      */
-    inline CreateVolumePermissionModifications& AddAdd(CreateVolumePermission&& value) { m_addHasBeenSet = true; m_add.push_back(value); return *this; }
+    inline CreateVolumePermissionModifications& AddAdd(CreateVolumePermission&& value) { m_addHasBeenSet = true; m_add.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Removes a specific AWS account ID or group from a volume's list of create
@@ -106,7 +107,7 @@ namespace Model
      * <p>Removes a specific AWS account ID or group from a volume's list of create
      * volume permissions.</p>
      */
-    inline void SetRemove(Aws::Vector<CreateVolumePermission>&& value) { m_removeHasBeenSet = true; m_remove = value; }
+    inline void SetRemove(Aws::Vector<CreateVolumePermission>&& value) { m_removeHasBeenSet = true; m_remove = std::move(value); }
 
     /**
      * <p>Removes a specific AWS account ID or group from a volume's list of create
@@ -118,7 +119,7 @@ namespace Model
      * <p>Removes a specific AWS account ID or group from a volume's list of create
      * volume permissions.</p>
      */
-    inline CreateVolumePermissionModifications& WithRemove(Aws::Vector<CreateVolumePermission>&& value) { SetRemove(value); return *this;}
+    inline CreateVolumePermissionModifications& WithRemove(Aws::Vector<CreateVolumePermission>&& value) { SetRemove(std::move(value)); return *this;}
 
     /**
      * <p>Removes a specific AWS account ID or group from a volume's list of create
@@ -130,7 +131,7 @@ namespace Model
      * <p>Removes a specific AWS account ID or group from a volume's list of create
      * volume permissions.</p>
      */
-    inline CreateVolumePermissionModifications& AddRemove(CreateVolumePermission&& value) { m_removeHasBeenSet = true; m_remove.push_back(value); return *this; }
+    inline CreateVolumePermissionModifications& AddRemove(CreateVolumePermission&& value) { m_removeHasBeenSet = true; m_remove.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<CreateVolumePermission> m_add;

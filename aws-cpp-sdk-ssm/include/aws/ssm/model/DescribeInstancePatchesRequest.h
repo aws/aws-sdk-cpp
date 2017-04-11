@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/PatchOrchestratorFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The ID of the instance whose patch state information should be retrieved.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance whose patch state information should be retrieved.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ID of the instance whose patch state information should be retrieved.</p>
      */
-    inline DescribeInstancePatchesRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline DescribeInstancePatchesRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance whose patch state information should be retrieved.</p>
@@ -88,7 +89,7 @@ namespace Model
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string, 1 ≤
      * length ≤ 128)</p> <p>Values (array of strings 1 ≤ length ≤ 256)</p>
      */
-    inline void SetFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string, 1 ≤
@@ -100,7 +101,7 @@ namespace Model
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string, 1 ≤
      * length ≤ 128)</p> <p>Values (array of strings 1 ≤ length ≤ 256)</p>
      */
-    inline DescribeInstancePatchesRequest& WithFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { SetFilters(value); return *this;}
+    inline DescribeInstancePatchesRequest& WithFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string, 1 ≤
@@ -112,7 +113,7 @@ namespace Model
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string, 1 ≤
      * length ≤ 128)</p> <p>Values (array of strings 1 ≤ length ≤ 256)</p>
      */
-    inline DescribeInstancePatchesRequest& AddFilters(PatchOrchestratorFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeInstancePatchesRequest& AddFilters(PatchOrchestratorFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -130,7 +131,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -148,7 +149,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline DescribeInstancePatchesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeInstancePatchesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

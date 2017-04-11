@@ -19,6 +19,7 @@
 #include <aws/redshift/model/SourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The identifier for the source of the event.</p>
      */
-    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
+    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
 
     /**
      * <p>The identifier for the source of the event.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The identifier for the source of the event.</p>
      */
-    inline Event& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(value); return *this;}
+    inline Event& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the source of the event.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The source type for this event.</p>
      */
-    inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
      * <p>The source type for this event.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The source type for this event.</p>
      */
-    inline Event& WithSourceType(SourceType&& value) { SetSourceType(value); return *this;}
+    inline Event& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
 
     /**
      * <p>The text of this event.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The text of this event.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The text of this event.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The text of this event.</p>
      */
-    inline Event& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline Event& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The text of this event.</p>
@@ -160,7 +161,7 @@ namespace Model
      * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
      * Monitoring, Security</p>
      */
-    inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
+    inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::move(value); }
 
     /**
      * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
@@ -172,7 +173,7 @@ namespace Model
      * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
      * Monitoring, Security</p>
      */
-    inline Event& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(value); return *this;}
+    inline Event& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(std::move(value)); return *this;}
 
     /**
      * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
@@ -184,7 +185,7 @@ namespace Model
      * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
      * Monitoring, Security</p>
      */
-    inline Event& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
+    inline Event& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
@@ -205,7 +206,7 @@ namespace Model
     /**
      * <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
      */
-    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = value; }
+    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
 
     /**
      * <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
@@ -220,7 +221,7 @@ namespace Model
     /**
      * <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
      */
-    inline Event& WithSeverity(Aws::String&& value) { SetSeverity(value); return *this;}
+    inline Event& WithSeverity(Aws::String&& value) { SetSeverity(std::move(value)); return *this;}
 
     /**
      * <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
@@ -240,7 +241,7 @@ namespace Model
     /**
      * <p>The date and time of the event.</p>
      */
-    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = value; }
+    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
 
     /**
      * <p>The date and time of the event.</p>
@@ -250,7 +251,7 @@ namespace Model
     /**
      * <p>The date and time of the event.</p>
      */
-    inline Event& WithDate(Aws::Utils::DateTime&& value) { SetDate(value); return *this;}
+    inline Event& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the event.</p>
@@ -265,7 +266,7 @@ namespace Model
     /**
      * <p>The identifier of the event.</p>
      */
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
+    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
 
     /**
      * <p>The identifier of the event.</p>
@@ -280,7 +281,7 @@ namespace Model
     /**
      * <p>The identifier of the event.</p>
      */
-    inline Event& WithEventId(Aws::String&& value) { SetEventId(value); return *this;}
+    inline Event& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the event.</p>

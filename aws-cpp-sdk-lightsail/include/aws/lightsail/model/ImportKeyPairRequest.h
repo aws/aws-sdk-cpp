@@ -16,6 +16,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the key pair for which you want to import the public key.</p>
      */
-    inline void SetKeyPairName(Aws::String&& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = value; }
+    inline void SetKeyPairName(Aws::String&& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = std::move(value); }
 
     /**
      * <p>The name of the key pair for which you want to import the public key.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the key pair for which you want to import the public key.</p>
      */
-    inline ImportKeyPairRequest& WithKeyPairName(Aws::String&& value) { SetKeyPairName(value); return *this;}
+    inline ImportKeyPairRequest& WithKeyPairName(Aws::String&& value) { SetKeyPairName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the key pair for which you want to import the public key.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
      */
-    inline void SetPublicKeyBase64(Aws::String&& value) { m_publicKeyBase64HasBeenSet = true; m_publicKeyBase64 = value; }
+    inline void SetPublicKeyBase64(Aws::String&& value) { m_publicKeyBase64HasBeenSet = true; m_publicKeyBase64 = std::move(value); }
 
     /**
      * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
      */
-    inline ImportKeyPairRequest& WithPublicKeyBase64(Aws::String&& value) { SetPublicKeyBase64(value); return *this;}
+    inline ImportKeyPairRequest& WithPublicKeyBase64(Aws::String&& value) { SetPublicKeyBase64(std::move(value)); return *this;}
 
     /**
      * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>

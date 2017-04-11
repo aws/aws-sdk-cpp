@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/SubnetIpv6CidrBlockAssociation.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The ID of the subnet.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetId = std::move(value); }
 
     /**
      * <p>The ID of the subnet.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The ID of the subnet.</p>
      */
-    inline DisassociateSubnetCidrBlockResponse& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+    inline DisassociateSubnetCidrBlockResponse& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the subnet.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>Information about the IPv6 CIDR block association.</p>
      */
-    inline void SetIpv6CidrBlockAssociation(SubnetIpv6CidrBlockAssociation&& value) { m_ipv6CidrBlockAssociation = value; }
+    inline void SetIpv6CidrBlockAssociation(SubnetIpv6CidrBlockAssociation&& value) { m_ipv6CidrBlockAssociation = std::move(value); }
 
     /**
      * <p>Information about the IPv6 CIDR block association.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>Information about the IPv6 CIDR block association.</p>
      */
-    inline DisassociateSubnetCidrBlockResponse& WithIpv6CidrBlockAssociation(SubnetIpv6CidrBlockAssociation&& value) { SetIpv6CidrBlockAssociation(value); return *this;}
+    inline DisassociateSubnetCidrBlockResponse& WithIpv6CidrBlockAssociation(SubnetIpv6CidrBlockAssociation&& value) { SetIpv6CidrBlockAssociation(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -108,13 +109,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DisassociateSubnetCidrBlockResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DisassociateSubnetCidrBlockResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DisassociateSubnetCidrBlockResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_subnetId;

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/model/ReviewPolicyLevel.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The unique identifier of the HIT to retrieve review results for.</p>
      */
-    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
+    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = std::move(value); }
 
     /**
      * <p>The unique identifier of the HIT to retrieve review results for.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The unique identifier of the HIT to retrieve review results for.</p>
      */
-    inline ListReviewPolicyResultsForHITRequest& WithHITId(Aws::String&& value) { SetHITId(value); return *this;}
+    inline ListReviewPolicyResultsForHITRequest& WithHITId(Aws::String&& value) { SetHITId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the HIT to retrieve review results for.</p>
@@ -91,7 +92,7 @@ namespace Model
      * omitted, the default behavior is to retrieve all data for both policy levels.
      * For a list of all the described policies, see Review Policies. </p>
      */
-    inline void SetPolicyLevels(Aws::Vector<ReviewPolicyLevel>&& value) { m_policyLevelsHasBeenSet = true; m_policyLevels = value; }
+    inline void SetPolicyLevels(Aws::Vector<ReviewPolicyLevel>&& value) { m_policyLevelsHasBeenSet = true; m_policyLevels = std::move(value); }
 
     /**
      * <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If
@@ -105,7 +106,7 @@ namespace Model
      * omitted, the default behavior is to retrieve all data for both policy levels.
      * For a list of all the described policies, see Review Policies. </p>
      */
-    inline ListReviewPolicyResultsForHITRequest& WithPolicyLevels(Aws::Vector<ReviewPolicyLevel>&& value) { SetPolicyLevels(value); return *this;}
+    inline ListReviewPolicyResultsForHITRequest& WithPolicyLevels(Aws::Vector<ReviewPolicyLevel>&& value) { SetPolicyLevels(std::move(value)); return *this;}
 
     /**
      * <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If
@@ -119,7 +120,7 @@ namespace Model
      * omitted, the default behavior is to retrieve all data for both policy levels.
      * For a list of all the described policies, see Review Policies. </p>
      */
-    inline ListReviewPolicyResultsForHITRequest& AddPolicyLevels(ReviewPolicyLevel&& value) { m_policyLevelsHasBeenSet = true; m_policyLevels.push_back(value); return *this; }
+    inline ListReviewPolicyResultsForHITRequest& AddPolicyLevels(ReviewPolicyLevel&& value) { m_policyLevelsHasBeenSet = true; m_policyLevels.push_back(std::move(value)); return *this; }
 
     /**
      * <p> Specify if the operation should retrieve a list of the actions taken
@@ -170,7 +171,7 @@ namespace Model
     /**
      * <p>Pagination token</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Pagination token</p>
@@ -185,7 +186,7 @@ namespace Model
     /**
      * <p>Pagination token</p>
      */
-    inline ListReviewPolicyResultsForHITRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListReviewPolicyResultsForHITRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Pagination token</p>

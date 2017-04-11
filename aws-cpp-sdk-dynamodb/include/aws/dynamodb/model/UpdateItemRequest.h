@@ -24,6 +24,7 @@
 #include <aws/dynamodb/model/AttributeValue.h>
 #include <aws/dynamodb/model/AttributeValueUpdate.h>
 #include <aws/dynamodb/model/ExpectedAttributeValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name of the table containing the item to update.</p>
      */
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
+    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
      * <p>The name of the table containing the item to update.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name of the table containing the item to update.</p>
      */
-    inline UpdateItemRequest& WithTableName(Aws::String&& value) { SetTableName(value); return *this;}
+    inline UpdateItemRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the table containing the item to update.</p>
@@ -107,7 +108,7 @@ namespace Model
      * only need to provide a value for the partition key. For a composite primary key,
      * you must provide values for both the partition key and the sort key.</p>
      */
-    inline void SetKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
@@ -125,7 +126,7 @@ namespace Model
      * only need to provide a value for the partition key. For a composite primary key,
      * you must provide values for both the partition key and the sort key.</p>
      */
-    inline UpdateItemRequest& WithKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetKey(value); return *this;}
+    inline UpdateItemRequest& WithKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
@@ -134,7 +135,7 @@ namespace Model
      * only need to provide a value for the partition key. For a composite primary key,
      * you must provide values for both the partition key and the sort key.</p>
      */
-    inline UpdateItemRequest& AddKey(const Aws::String& key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
+    inline UpdateItemRequest& AddKey(const Aws::String& key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key.emplace(key, value); return *this; }
 
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
@@ -143,7 +144,7 @@ namespace Model
      * only need to provide a value for the partition key. For a composite primary key,
      * you must provide values for both the partition key and the sort key.</p>
      */
-    inline UpdateItemRequest& AddKey(Aws::String&& key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
+    inline UpdateItemRequest& AddKey(Aws::String&& key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
@@ -152,7 +153,7 @@ namespace Model
      * only need to provide a value for the partition key. For a composite primary key,
      * you must provide values for both the partition key and the sort key.</p>
      */
-    inline UpdateItemRequest& AddKey(const Aws::String& key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
+    inline UpdateItemRequest& AddKey(const Aws::String& key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
@@ -161,7 +162,7 @@ namespace Model
      * only need to provide a value for the partition key. For a composite primary key,
      * you must provide values for both the partition key and the sort key.</p>
      */
-    inline UpdateItemRequest& AddKey(Aws::String&& key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
+    inline UpdateItemRequest& AddKey(Aws::String&& key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
@@ -170,7 +171,7 @@ namespace Model
      * only need to provide a value for the partition key. For a composite primary key,
      * you must provide values for both the partition key and the sort key.</p>
      */
-    inline UpdateItemRequest& AddKey(const char* key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
+    inline UpdateItemRequest& AddKey(const char* key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
@@ -179,7 +180,7 @@ namespace Model
      * only need to provide a value for the partition key. For a composite primary key,
      * you must provide values for both the partition key and the sort key.</p>
      */
-    inline UpdateItemRequest& AddKey(const char* key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
+    inline UpdateItemRequest& AddKey(const char* key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key.emplace(key, value); return *this; }
 
     /**
      * <p>This is a legacy parameter. Use <code>UpdateExpression</code> instead. For
@@ -203,7 +204,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline void SetAttributeUpdates(Aws::Map<Aws::String, AttributeValueUpdate>&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates = value; }
+    inline void SetAttributeUpdates(Aws::Map<Aws::String, AttributeValueUpdate>&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates = std::move(value); }
 
     /**
      * <p>This is a legacy parameter. Use <code>UpdateExpression</code> instead. For
@@ -219,7 +220,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& WithAttributeUpdates(Aws::Map<Aws::String, AttributeValueUpdate>&& value) { SetAttributeUpdates(value); return *this;}
+    inline UpdateItemRequest& WithAttributeUpdates(Aws::Map<Aws::String, AttributeValueUpdate>&& value) { SetAttributeUpdates(std::move(value)); return *this;}
 
     /**
      * <p>This is a legacy parameter. Use <code>UpdateExpression</code> instead. For
@@ -227,7 +228,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddAttributeUpdates(const Aws::String& key, const AttributeValueUpdate& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates[key] = value; return *this; }
+    inline UpdateItemRequest& AddAttributeUpdates(const Aws::String& key, const AttributeValueUpdate& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.emplace(key, value); return *this; }
 
     /**
      * <p>This is a legacy parameter. Use <code>UpdateExpression</code> instead. For
@@ -235,7 +236,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddAttributeUpdates(Aws::String&& key, const AttributeValueUpdate& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates[key] = value; return *this; }
+    inline UpdateItemRequest& AddAttributeUpdates(Aws::String&& key, const AttributeValueUpdate& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>This is a legacy parameter. Use <code>UpdateExpression</code> instead. For
@@ -243,7 +244,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddAttributeUpdates(const Aws::String& key, AttributeValueUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates[key] = value; return *this; }
+    inline UpdateItemRequest& AddAttributeUpdates(const Aws::String& key, AttributeValueUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>This is a legacy parameter. Use <code>UpdateExpression</code> instead. For
@@ -251,7 +252,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddAttributeUpdates(Aws::String&& key, AttributeValueUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates[key] = value; return *this; }
+    inline UpdateItemRequest& AddAttributeUpdates(Aws::String&& key, AttributeValueUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>This is a legacy parameter. Use <code>UpdateExpression</code> instead. For
@@ -259,7 +260,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddAttributeUpdates(const char* key, AttributeValueUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates[key] = value; return *this; }
+    inline UpdateItemRequest& AddAttributeUpdates(const char* key, AttributeValueUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>This is a legacy parameter. Use <code>UpdateExpression</code> instead. For
@@ -267,7 +268,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddAttributeUpdates(const char* key, const AttributeValueUpdate& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates[key] = value; return *this; }
+    inline UpdateItemRequest& AddAttributeUpdates(const char* key, const AttributeValueUpdate& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.emplace(key, value); return *this; }
 
     /**
      * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
@@ -291,7 +292,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline void SetExpected(Aws::Map<Aws::String, ExpectedAttributeValue>&& value) { m_expectedHasBeenSet = true; m_expected = value; }
+    inline void SetExpected(Aws::Map<Aws::String, ExpectedAttributeValue>&& value) { m_expectedHasBeenSet = true; m_expected = std::move(value); }
 
     /**
      * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
@@ -307,7 +308,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& WithExpected(Aws::Map<Aws::String, ExpectedAttributeValue>&& value) { SetExpected(value); return *this;}
+    inline UpdateItemRequest& WithExpected(Aws::Map<Aws::String, ExpectedAttributeValue>&& value) { SetExpected(std::move(value)); return *this;}
 
     /**
      * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
@@ -315,7 +316,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpected(const Aws::String& key, const ExpectedAttributeValue& value) { m_expectedHasBeenSet = true; m_expected[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpected(const Aws::String& key, const ExpectedAttributeValue& value) { m_expectedHasBeenSet = true; m_expected.emplace(key, value); return *this; }
 
     /**
      * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
@@ -323,7 +324,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpected(Aws::String&& key, const ExpectedAttributeValue& value) { m_expectedHasBeenSet = true; m_expected[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpected(Aws::String&& key, const ExpectedAttributeValue& value) { m_expectedHasBeenSet = true; m_expected.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
@@ -331,7 +332,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpected(const Aws::String& key, ExpectedAttributeValue&& value) { m_expectedHasBeenSet = true; m_expected[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpected(const Aws::String& key, ExpectedAttributeValue&& value) { m_expectedHasBeenSet = true; m_expected.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
@@ -339,7 +340,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpected(Aws::String&& key, ExpectedAttributeValue&& value) { m_expectedHasBeenSet = true; m_expected[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpected(Aws::String&& key, ExpectedAttributeValue&& value) { m_expectedHasBeenSet = true; m_expected.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
@@ -347,7 +348,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpected(const char* key, ExpectedAttributeValue&& value) { m_expectedHasBeenSet = true; m_expected[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpected(const char* key, ExpectedAttributeValue&& value) { m_expectedHasBeenSet = true; m_expected.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>This is a legacy parameter. Use <code>ConditionExpresssion</code> instead.
@@ -355,7 +356,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpected(const char* key, const ExpectedAttributeValue& value) { m_expectedHasBeenSet = true; m_expected[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpected(const char* key, const ExpectedAttributeValue& value) { m_expectedHasBeenSet = true; m_expected.emplace(key, value); return *this; }
 
     /**
      * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
@@ -379,7 +380,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline void SetConditionalOperator(ConditionalOperator&& value) { m_conditionalOperatorHasBeenSet = true; m_conditionalOperator = value; }
+    inline void SetConditionalOperator(ConditionalOperator&& value) { m_conditionalOperatorHasBeenSet = true; m_conditionalOperator = std::move(value); }
 
     /**
      * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
@@ -395,7 +396,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& WithConditionalOperator(ConditionalOperator&& value) { SetConditionalOperator(value); return *this;}
+    inline UpdateItemRequest& WithConditionalOperator(ConditionalOperator&& value) { SetConditionalOperator(std::move(value)); return *this;}
 
     /**
      * <p>Use <code>ReturnValues</code> if you want to get the item attributes as they
@@ -455,7 +456,7 @@ namespace Model
      * processing overhead of receiving a larger response. No Read Capacity Units are
      * consumed.</p> <p>Values returned are strongly consistent</p>
      */
-    inline void SetReturnValues(ReturnValue&& value) { m_returnValuesHasBeenSet = true; m_returnValues = value; }
+    inline void SetReturnValues(ReturnValue&& value) { m_returnValuesHasBeenSet = true; m_returnValues = std::move(value); }
 
     /**
      * <p>Use <code>ReturnValues</code> if you want to get the item attributes as they
@@ -495,7 +496,7 @@ namespace Model
      * processing overhead of receiving a larger response. No Read Capacity Units are
      * consumed.</p> <p>Values returned are strongly consistent</p>
      */
-    inline UpdateItemRequest& WithReturnValues(ReturnValue&& value) { SetReturnValues(value); return *this;}
+    inline UpdateItemRequest& WithReturnValues(ReturnValue&& value) { SetReturnValues(std::move(value)); return *this;}
 
     
     inline const ReturnConsumedCapacity& GetReturnConsumedCapacity() const{ return m_returnConsumedCapacity; }
@@ -504,13 +505,13 @@ namespace Model
     inline void SetReturnConsumedCapacity(const ReturnConsumedCapacity& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = value; }
 
     
-    inline void SetReturnConsumedCapacity(ReturnConsumedCapacity&& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = value; }
+    inline void SetReturnConsumedCapacity(ReturnConsumedCapacity&& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = std::move(value); }
 
     
     inline UpdateItemRequest& WithReturnConsumedCapacity(const ReturnConsumedCapacity& value) { SetReturnConsumedCapacity(value); return *this;}
 
     
-    inline UpdateItemRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(value); return *this;}
+    inline UpdateItemRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(std::move(value)); return *this;}
 
     /**
      * <p>Determines whether item collection metrics are returned. If set to
@@ -534,7 +535,7 @@ namespace Model
      * any, that were modified during the operation are returned in the response. If
      * set to <code>NONE</code> (the default), no statistics are returned.</p>
      */
-    inline void SetReturnItemCollectionMetrics(ReturnItemCollectionMetrics&& value) { m_returnItemCollectionMetricsHasBeenSet = true; m_returnItemCollectionMetrics = value; }
+    inline void SetReturnItemCollectionMetrics(ReturnItemCollectionMetrics&& value) { m_returnItemCollectionMetricsHasBeenSet = true; m_returnItemCollectionMetrics = std::move(value); }
 
     /**
      * <p>Determines whether item collection metrics are returned. If set to
@@ -550,7 +551,7 @@ namespace Model
      * any, that were modified during the operation are returned in the response. If
      * set to <code>NONE</code> (the default), no statistics are returned.</p>
      */
-    inline UpdateItemRequest& WithReturnItemCollectionMetrics(ReturnItemCollectionMetrics&& value) { SetReturnItemCollectionMetrics(value); return *this;}
+    inline UpdateItemRequest& WithReturnItemCollectionMetrics(ReturnItemCollectionMetrics&& value) { SetReturnItemCollectionMetrics(std::move(value)); return *this;}
 
     /**
      * <p>An expression that defines one or more attributes to be updated, the action
@@ -733,7 +734,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
      * Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline void SetUpdateExpression(Aws::String&& value) { m_updateExpressionHasBeenSet = true; m_updateExpression = value; }
+    inline void SetUpdateExpression(Aws::String&& value) { m_updateExpressionHasBeenSet = true; m_updateExpression = std::move(value); }
 
     /**
      * <p>An expression that defines one or more attributes to be updated, the action
@@ -916,7 +917,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
      * Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& WithUpdateExpression(Aws::String&& value) { SetUpdateExpression(value); return *this;}
+    inline UpdateItemRequest& WithUpdateExpression(Aws::String&& value) { SetUpdateExpression(std::move(value)); return *this;}
 
     /**
      * <p>An expression that defines one or more attributes to be updated, the action
@@ -1019,7 +1020,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline void SetConditionExpression(Aws::String&& value) { m_conditionExpressionHasBeenSet = true; m_conditionExpression = value; }
+    inline void SetConditionExpression(Aws::String&& value) { m_conditionExpressionHasBeenSet = true; m_conditionExpression = std::move(value); }
 
     /**
      * <p>A condition that must be satisfied in order for a conditional update to
@@ -1061,7 +1062,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& WithConditionExpression(Aws::String&& value) { SetConditionExpression(value); return *this;}
+    inline UpdateItemRequest& WithConditionExpression(Aws::String&& value) { SetConditionExpression(std::move(value)); return *this;}
 
     /**
      * <p>A condition that must be satisfied in order for a conditional update to
@@ -1156,7 +1157,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline void SetExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = value; }
+    inline void SetExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = std::move(value); }
 
     /**
      * <p>One or more substitution tokens for attribute names in an expression. The
@@ -1210,7 +1211,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& WithExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { SetExpressionAttributeNames(value); return *this;}
+    inline UpdateItemRequest& WithExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { SetExpressionAttributeNames(std::move(value)); return *this;}
 
     /**
      * <p>One or more substitution tokens for attribute names in an expression. The
@@ -1237,7 +1238,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpressionAttributeNames(const Aws::String& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpressionAttributeNames(const Aws::String& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
 
     /**
      * <p>One or more substitution tokens for attribute names in an expression. The
@@ -1264,7 +1265,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpressionAttributeNames(Aws::String&& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpressionAttributeNames(Aws::String&& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>One or more substitution tokens for attribute names in an expression. The
@@ -1291,7 +1292,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpressionAttributeNames(const Aws::String& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpressionAttributeNames(const Aws::String& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>One or more substitution tokens for attribute names in an expression. The
@@ -1318,7 +1319,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpressionAttributeNames(Aws::String&& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpressionAttributeNames(Aws::String&& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>One or more substitution tokens for attribute names in an expression. The
@@ -1345,7 +1346,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpressionAttributeNames(const char* key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpressionAttributeNames(const char* key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>One or more substitution tokens for attribute names in an expression. The
@@ -1372,7 +1373,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpressionAttributeNames(Aws::String&& key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpressionAttributeNames(Aws::String&& key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>One or more substitution tokens for attribute names in an expression. The
@@ -1399,7 +1400,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpressionAttributeNames(const char* key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpressionAttributeNames(const char* key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
 
     /**
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
@@ -1450,7 +1451,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline void SetExpressionAttributeValues(Aws::Map<Aws::String, AttributeValue>&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues = value; }
+    inline void SetExpressionAttributeValues(Aws::Map<Aws::String, AttributeValue>&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues = std::move(value); }
 
     /**
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
@@ -1484,7 +1485,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& WithExpressionAttributeValues(Aws::Map<Aws::String, AttributeValue>&& value) { SetExpressionAttributeValues(value); return *this;}
+    inline UpdateItemRequest& WithExpressionAttributeValues(Aws::Map<Aws::String, AttributeValue>&& value) { SetExpressionAttributeValues(std::move(value)); return *this;}
 
     /**
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
@@ -1501,7 +1502,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpressionAttributeValues(const Aws::String& key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpressionAttributeValues(const Aws::String& key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }
 
     /**
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
@@ -1518,7 +1519,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpressionAttributeValues(Aws::String&& key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpressionAttributeValues(Aws::String&& key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
@@ -1535,7 +1536,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpressionAttributeValues(const Aws::String& key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpressionAttributeValues(const Aws::String& key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
@@ -1552,7 +1553,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpressionAttributeValues(Aws::String&& key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpressionAttributeValues(Aws::String&& key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
@@ -1569,7 +1570,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpressionAttributeValues(const char* key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpressionAttributeValues(const char* key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
@@ -1586,7 +1587,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline UpdateItemRequest& AddExpressionAttributeValues(const char* key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues[key] = value; return *this; }
+    inline UpdateItemRequest& AddExpressionAttributeValues(const char* key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }
 
   private:
     Aws::String m_tableName;

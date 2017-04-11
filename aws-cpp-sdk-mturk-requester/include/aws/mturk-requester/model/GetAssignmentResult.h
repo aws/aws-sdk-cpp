@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/model/Assignment.h>
 #include <aws/mturk-requester/model/HIT.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p> The assignment. The response includes one Assignment element. </p>
      */
-    inline void SetAssignment(Assignment&& value) { m_assignment = value; }
+    inline void SetAssignment(Assignment&& value) { m_assignment = std::move(value); }
 
     /**
      * <p> The assignment. The response includes one Assignment element. </p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p> The assignment. The response includes one Assignment element. </p>
      */
-    inline GetAssignmentResult& WithAssignment(Assignment&& value) { SetAssignment(value); return *this;}
+    inline GetAssignmentResult& WithAssignment(Assignment&& value) { SetAssignment(std::move(value)); return *this;}
 
     /**
      * <p> The HIT associated with this assignment. The response includes one HIT
@@ -81,7 +82,7 @@ namespace Model
      * <p> The HIT associated with this assignment. The response includes one HIT
      * element.</p>
      */
-    inline void SetHIT(HIT&& value) { m_hIT = value; }
+    inline void SetHIT(HIT&& value) { m_hIT = std::move(value); }
 
     /**
      * <p> The HIT associated with this assignment. The response includes one HIT
@@ -93,7 +94,7 @@ namespace Model
      * <p> The HIT associated with this assignment. The response includes one HIT
      * element.</p>
      */
-    inline GetAssignmentResult& WithHIT(HIT&& value) { SetHIT(value); return *this;}
+    inline GetAssignmentResult& WithHIT(HIT&& value) { SetHIT(std::move(value)); return *this;}
 
   private:
     Assignment m_assignment;

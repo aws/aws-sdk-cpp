@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the S3 bucket where the disk image is located.</p>
      */
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
+    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
      * <p>The name of the S3 bucket where the disk image is located.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the S3 bucket where the disk image is located.</p>
      */
-    inline UserBucket& WithS3Bucket(Aws::String&& value) { SetS3Bucket(value); return *this;}
+    inline UserBucket& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
      * <p>The name of the S3 bucket where the disk image is located.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The file name of the disk image.</p>
      */
-    inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
+    inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::move(value); }
 
     /**
      * <p>The file name of the disk image.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The file name of the disk image.</p>
      */
-    inline UserBucket& WithS3Key(Aws::String&& value) { SetS3Key(value); return *this;}
+    inline UserBucket& WithS3Key(Aws::String&& value) { SetS3Key(std::move(value)); return *this;}
 
     /**
      * <p>The file name of the disk image.</p>

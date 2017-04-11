@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>The identifier to be assigned to the new HSM client certificate that the
      * cluster will use to connect to the HSM to use the database encryption keys.</p>
      */
-    inline void SetHsmClientCertificateIdentifier(Aws::String&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
+    inline void SetHsmClientCertificateIdentifier(Aws::String&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = std::move(value); }
 
     /**
      * <p>The identifier to be assigned to the new HSM client certificate that the
@@ -76,7 +77,7 @@ namespace Model
      * <p>The identifier to be assigned to the new HSM client certificate that the
      * cluster will use to connect to the HSM to use the database encryption keys.</p>
      */
-    inline CreateHsmClientCertificateRequest& WithHsmClientCertificateIdentifier(Aws::String&& value) { SetHsmClientCertificateIdentifier(value); return *this;}
+    inline CreateHsmClientCertificateRequest& WithHsmClientCertificateIdentifier(Aws::String&& value) { SetHsmClientCertificateIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier to be assigned to the new HSM client certificate that the
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>A list of tag instances.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of tag instances.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>A list of tag instances.</p>
      */
-    inline CreateHsmClientCertificateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline CreateHsmClientCertificateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of tag instances.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>A list of tag instances.</p>
      */
-    inline CreateHsmClientCertificateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateHsmClientCertificateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_hsmClientCertificateIdentifier;

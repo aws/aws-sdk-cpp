@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/ResponseMetadata.h>
 #include <aws/elasticloadbalancingv2/model/LoadBalancerAttribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>Information about the load balancer attributes.</p>
      */
-    inline void SetAttributes(Aws::Vector<LoadBalancerAttribute>&& value) { m_attributes = value; }
+    inline void SetAttributes(Aws::Vector<LoadBalancerAttribute>&& value) { m_attributes = std::move(value); }
 
     /**
      * <p>Information about the load balancer attributes.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Information about the load balancer attributes.</p>
      */
-    inline DescribeLoadBalancerAttributesResult& WithAttributes(Aws::Vector<LoadBalancerAttribute>&& value) { SetAttributes(value); return *this;}
+    inline DescribeLoadBalancerAttributesResult& WithAttributes(Aws::Vector<LoadBalancerAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Information about the load balancer attributes.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Information about the load balancer attributes.</p>
      */
-    inline DescribeLoadBalancerAttributesResult& AddAttributes(LoadBalancerAttribute&& value) { m_attributes.push_back(value); return *this; }
+    inline DescribeLoadBalancerAttributesResult& AddAttributes(LoadBalancerAttribute&& value) { m_attributes.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -83,13 +84,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeLoadBalancerAttributesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeLoadBalancerAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeLoadBalancerAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<LoadBalancerAttribute> m_attributes;

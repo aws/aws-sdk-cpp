@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/VPC.h>
 #include <aws/route53/model/HostedZoneConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
      * to the set of <code>NameServers</code> that <code>CreateHostedZone</code>
      * returns in the DelegationSet element.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the domain. For resource record types that include a domain name,
@@ -121,7 +122,7 @@ namespace Model
      * to the set of <code>NameServers</code> that <code>CreateHostedZone</code>
      * returns in the DelegationSet element.</p>
      */
-    inline CreateHostedZoneRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateHostedZoneRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain. For resource record types that include a domain name,
@@ -156,7 +157,7 @@ namespace Model
      * this parameter, your newly created hosted can't be resolved anywhere other than
      * the given VPC.</p>
      */
-    inline void SetVPC(VPC&& value) { m_vPCHasBeenSet = true; m_vPC = value; }
+    inline void SetVPC(VPC&& value) { m_vPCHasBeenSet = true; m_vPC = std::move(value); }
 
     /**
      * <p>The VPC that you want your hosted zone to be associated with. By providing
@@ -170,7 +171,7 @@ namespace Model
      * this parameter, your newly created hosted can't be resolved anywhere other than
      * the given VPC.</p>
      */
-    inline CreateHostedZoneRequest& WithVPC(VPC&& value) { SetVPC(value); return *this;}
+    inline CreateHostedZoneRequest& WithVPC(VPC&& value) { SetVPC(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that identifies the request and that allows failed
@@ -200,7 +201,7 @@ namespace Model
      * <code>CallerReference</code> can be any unique string, for example, a date/time
      * stamp.</p>
      */
-    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
+    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
@@ -230,7 +231,7 @@ namespace Model
      * <code>CallerReference</code> can be any unique string, for example, a date/time
      * stamp.</p>
      */
-    inline CreateHostedZoneRequest& WithCallerReference(Aws::String&& value) { SetCallerReference(value); return *this;}
+    inline CreateHostedZoneRequest& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that identifies the request and that allows failed
@@ -261,7 +262,7 @@ namespace Model
      * hosted zone. If you don't want to specify a comment, omit both the
      * <code>HostedZoneConfig</code> and <code>Comment</code> elements.</p>
      */
-    inline void SetHostedZoneConfig(HostedZoneConfig&& value) { m_hostedZoneConfigHasBeenSet = true; m_hostedZoneConfig = value; }
+    inline void SetHostedZoneConfig(HostedZoneConfig&& value) { m_hostedZoneConfigHasBeenSet = true; m_hostedZoneConfig = std::move(value); }
 
     /**
      * <p> (Optional) A complex type that contains an optional comment about your
@@ -275,7 +276,7 @@ namespace Model
      * hosted zone. If you don't want to specify a comment, omit both the
      * <code>HostedZoneConfig</code> and <code>Comment</code> elements.</p>
      */
-    inline CreateHostedZoneRequest& WithHostedZoneConfig(HostedZoneConfig&& value) { SetHostedZoneConfig(value); return *this;}
+    inline CreateHostedZoneRequest& WithHostedZoneConfig(HostedZoneConfig&& value) { SetHostedZoneConfig(std::move(value)); return *this;}
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
@@ -305,7 +306,7 @@ namespace Model
      * </dd> <dt>Default</dt> <dd> <p>None</p> </dd> <dt>Parent</dt> <dd> <p>
      * <code>CreatedHostedZoneRequest</code> </p> </dd> </dl>
      */
-    inline void SetDelegationSetId(Aws::String&& value) { m_delegationSetIdHasBeenSet = true; m_delegationSetId = value; }
+    inline void SetDelegationSetId(Aws::String&& value) { m_delegationSetIdHasBeenSet = true; m_delegationSetId = std::move(value); }
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
@@ -335,7 +336,7 @@ namespace Model
      * </dd> <dt>Default</dt> <dd> <p>None</p> </dd> <dt>Parent</dt> <dd> <p>
      * <code>CreatedHostedZoneRequest</code> </p> </dd> </dl>
      */
-    inline CreateHostedZoneRequest& WithDelegationSetId(Aws::String&& value) { SetDelegationSetId(value); return *this;}
+    inline CreateHostedZoneRequest& WithDelegationSetId(Aws::String&& value) { SetDelegationSetId(std::move(value)); return *this;}
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the

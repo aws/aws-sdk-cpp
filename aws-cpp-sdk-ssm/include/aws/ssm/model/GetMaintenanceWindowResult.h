@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The ID of the created Maintenance Window.</p>
      */
-    inline void SetWindowId(Aws::String&& value) { m_windowId = value; }
+    inline void SetWindowId(Aws::String&& value) { m_windowId = std::move(value); }
 
     /**
      * <p>The ID of the created Maintenance Window.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The ID of the created Maintenance Window.</p>
      */
-    inline GetMaintenanceWindowResult& WithWindowId(Aws::String&& value) { SetWindowId(value); return *this;}
+    inline GetMaintenanceWindowResult& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the created Maintenance Window.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The name of the Maintenance Window.</p>
      */
-    inline void SetName(Aws::String&& value) { m_name = value; }
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
      * <p>The name of the Maintenance Window.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The name of the Maintenance Window.</p>
      */
-    inline GetMaintenanceWindowResult& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline GetMaintenanceWindowResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Maintenance Window.</p>
@@ -126,7 +127,7 @@ namespace Model
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
      * expression.</p>
      */
-    inline void SetSchedule(Aws::String&& value) { m_schedule = value; }
+    inline void SetSchedule(Aws::String&& value) { m_schedule = std::move(value); }
 
     /**
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
@@ -144,7 +145,7 @@ namespace Model
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
      * expression.</p>
      */
-    inline GetMaintenanceWindowResult& WithSchedule(Aws::String&& value) { SetSchedule(value); return *this;}
+    inline GetMaintenanceWindowResult& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
 
     /**
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
@@ -231,7 +232,7 @@ namespace Model
     /**
      * <p>The date the Maintenance Window was created.</p>
      */
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = value; }
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
 
     /**
      * <p>The date the Maintenance Window was created.</p>
@@ -241,7 +242,7 @@ namespace Model
     /**
      * <p>The date the Maintenance Window was created.</p>
      */
-    inline GetMaintenanceWindowResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
+    inline GetMaintenanceWindowResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
     /**
      * <p>The date the Maintenance Window was last modified.</p>
@@ -256,7 +257,7 @@ namespace Model
     /**
      * <p>The date the Maintenance Window was last modified.</p>
      */
-    inline void SetModifiedDate(Aws::Utils::DateTime&& value) { m_modifiedDate = value; }
+    inline void SetModifiedDate(Aws::Utils::DateTime&& value) { m_modifiedDate = std::move(value); }
 
     /**
      * <p>The date the Maintenance Window was last modified.</p>
@@ -266,7 +267,7 @@ namespace Model
     /**
      * <p>The date the Maintenance Window was last modified.</p>
      */
-    inline GetMaintenanceWindowResult& WithModifiedDate(Aws::Utils::DateTime&& value) { SetModifiedDate(value); return *this;}
+    inline GetMaintenanceWindowResult& WithModifiedDate(Aws::Utils::DateTime&& value) { SetModifiedDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_windowId;

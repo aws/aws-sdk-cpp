@@ -16,6 +16,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/NetworkProfileType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the network profile.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the network profile.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the network profile.</p>
      */
-    inline NetworkProfile& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline NetworkProfile& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the network profile.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The name of the network profile.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the network profile.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The name of the network profile.</p>
      */
-    inline NetworkProfile& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline NetworkProfile& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the network profile.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The description of the network profile.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the network profile.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The description of the network profile.</p>
      */
-    inline NetworkProfile& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline NetworkProfile& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the network profile.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>The type of network profile. Valid values are listed below.</p>
      */
-    inline void SetType(NetworkProfileType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(NetworkProfileType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of network profile. Valid values are listed below.</p>
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>The type of network profile. Valid values are listed below.</p>
      */
-    inline NetworkProfile& WithType(NetworkProfileType&& value) { SetType(value); return *this;}
+    inline NetworkProfile& WithType(NetworkProfileType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The data throughput rate in bits per second, as an integer from 0 to

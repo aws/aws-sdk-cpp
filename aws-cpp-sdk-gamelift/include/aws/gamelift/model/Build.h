@@ -18,6 +18,7 @@
 #include <aws/gamelift/model/BuildStatus.h>
 #include <aws/gamelift/model/OperatingSystem.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Unique identifier for a build.</p>
      */
-    inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
+    inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = std::move(value); }
 
     /**
      * <p>Unique identifier for a build.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>Unique identifier for a build.</p>
      */
-    inline Build& WithBuildId(Aws::String&& value) { SetBuildId(value); return *this;}
+    inline Build& WithBuildId(Aws::String&& value) { SetBuildId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a build.</p>
@@ -101,7 +102,7 @@ namespace Model
      * <p>Descriptive label that is associated with a build. Build names do not need to
      * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Descriptive label that is associated with a build. Build names do not need to
@@ -119,7 +120,7 @@ namespace Model
      * <p>Descriptive label that is associated with a build. Build names do not need to
      * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
-    inline Build& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Build& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with a build. Build names do not need to
@@ -146,7 +147,7 @@ namespace Model
      * unique. This value can be set using <a>CreateBuild</a> or
      * <a>UpdateBuild</a>.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>Version that is associated with this build. Version strings do not need to be
@@ -167,7 +168,7 @@ namespace Model
      * unique. This value can be set using <a>CreateBuild</a> or
      * <a>UpdateBuild</a>.</p>
      */
-    inline Build& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline Build& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>Version that is associated with this build. Version strings do not need to be
@@ -210,7 +211,7 @@ namespace Model
      * <li> <p> <b>FAILED</b> – The game build upload failed. You cannot create new
      * fleets for this build. </p> </li> </ul>
      */
-    inline void SetStatus(BuildStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(BuildStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Current status of the build.</p> <p>Possible build statuses include the
@@ -234,7 +235,7 @@ namespace Model
      * <li> <p> <b>FAILED</b> – The game build upload failed. You cannot create new
      * fleets for this build. </p> </li> </ul>
      */
-    inline Build& WithStatus(BuildStatus&& value) { SetStatus(value); return *this;}
+    inline Build& WithStatus(BuildStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>File size of the uploaded game build, expressed in bytes. When the build
@@ -273,7 +274,7 @@ namespace Model
      * value determines the type of fleet resources that you can use for this
      * build.</p>
      */
-    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
+    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
 
     /**
      * <p>Operating system that the game server binaries are built to run on. This
@@ -287,7 +288,7 @@ namespace Model
      * value determines the type of fleet resources that you can use for this
      * build.</p>
      */
-    inline Build& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(value); return *this;}
+    inline Build& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
@@ -305,7 +306,7 @@ namespace Model
      * <p>Time stamp indicating when this data object was created. Format is a number
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
@@ -317,7 +318,7 @@ namespace Model
      * <p>Time stamp indicating when this data object was created. Format is a number
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
-    inline Build& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
+    inline Build& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
   private:
     Aws::String m_buildId;

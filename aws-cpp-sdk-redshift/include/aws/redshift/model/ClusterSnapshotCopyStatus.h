@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The destination region that snapshots are automatically copied to when
      * cross-region snapshot copy is enabled.</p>
      */
-    inline void SetDestinationRegion(Aws::String&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = value; }
+    inline void SetDestinationRegion(Aws::String&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = std::move(value); }
 
     /**
      * <p>The destination region that snapshots are automatically copied to when
@@ -81,7 +82,7 @@ namespace Model
      * <p>The destination region that snapshots are automatically copied to when
      * cross-region snapshot copy is enabled.</p>
      */
-    inline ClusterSnapshotCopyStatus& WithDestinationRegion(Aws::String&& value) { SetDestinationRegion(value); return *this;}
+    inline ClusterSnapshotCopyStatus& WithDestinationRegion(Aws::String&& value) { SetDestinationRegion(std::move(value)); return *this;}
 
     /**
      * <p>The destination region that snapshots are automatically copied to when
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>The name of the snapshot copy grant.</p>
      */
-    inline void SetSnapshotCopyGrantName(Aws::String&& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = value; }
+    inline void SetSnapshotCopyGrantName(Aws::String&& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = std::move(value); }
 
     /**
      * <p>The name of the snapshot copy grant.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>The name of the snapshot copy grant.</p>
      */
-    inline ClusterSnapshotCopyStatus& WithSnapshotCopyGrantName(Aws::String&& value) { SetSnapshotCopyGrantName(value); return *this;}
+    inline ClusterSnapshotCopyStatus& WithSnapshotCopyGrantName(Aws::String&& value) { SetSnapshotCopyGrantName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the snapshot copy grant.</p>

@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/SSHPublicKey.h>
 #include <aws/iam/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Contains information about the SSH public key.</p>
      */
-    inline void SetSSHPublicKey(SSHPublicKey&& value) { m_sSHPublicKey = value; }
+    inline void SetSSHPublicKey(SSHPublicKey&& value) { m_sSHPublicKey = std::move(value); }
 
     /**
      * <p>Contains information about the SSH public key.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Contains information about the SSH public key.</p>
      */
-    inline UploadSSHPublicKeyResult& WithSSHPublicKey(SSHPublicKey&& value) { SetSSHPublicKey(value); return *this;}
+    inline UploadSSHPublicKeyResult& WithSSHPublicKey(SSHPublicKey&& value) { SetSSHPublicKey(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -78,13 +79,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline UploadSSHPublicKeyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline UploadSSHPublicKeyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline UploadSSHPublicKeyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     SSHPublicKey m_sSHPublicKey;

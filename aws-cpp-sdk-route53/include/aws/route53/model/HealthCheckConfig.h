@@ -20,6 +20,7 @@
 #include <aws/route53/model/AlarmIdentifier.h>
 #include <aws/route53/model/InsufficientDataHealthStatus.h>
 #include <aws/route53/model/HealthCheckRegion.h>
+#include <utility>
 
 namespace Aws
 {
@@ -147,7 +148,7 @@ namespace Model
      * <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit
      * <code>IPAddress</code>.</p>
      */
-    inline void SetIPAddress(Aws::String&& value) { m_iPAddressHasBeenSet = true; m_iPAddress = value; }
+    inline void SetIPAddress(Aws::String&& value) { m_iPAddressHasBeenSet = true; m_iPAddress = std::move(value); }
 
     /**
      * <p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to
@@ -246,7 +247,7 @@ namespace Model
      * <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit
      * <code>IPAddress</code>.</p>
      */
-    inline HealthCheckConfig& WithIPAddress(Aws::String&& value) { SetIPAddress(value); return *this;}
+    inline HealthCheckConfig& WithIPAddress(Aws::String&& value) { SetIPAddress(std::move(value)); return *this;}
 
     /**
      * <p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to
@@ -411,7 +412,7 @@ namespace Model
      * how Amazon Route 53 determines whether an endpoint is healthy, see the
      * introduction to this topic.</p>
      */
-    inline void SetType(HealthCheckType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(HealthCheckType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of health check that you want to create, which indicates how Amazon
@@ -485,7 +486,7 @@ namespace Model
      * how Amazon Route 53 determines whether an endpoint is healthy, see the
      * introduction to this topic.</p>
      */
-    inline HealthCheckConfig& WithType(HealthCheckType&& value) { SetType(value); return *this;}
+    inline HealthCheckConfig& WithType(HealthCheckType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The path, if any, that you want Amazon Route 53 to request when performing
@@ -509,7 +510,7 @@ namespace Model
      * HTTP status code of 2xx or 3xx when the endpoint is healthy, for example, the
      * file /docs/route53-health-check.html. </p>
      */
-    inline void SetResourcePath(Aws::String&& value) { m_resourcePathHasBeenSet = true; m_resourcePath = value; }
+    inline void SetResourcePath(Aws::String&& value) { m_resourcePathHasBeenSet = true; m_resourcePath = std::move(value); }
 
     /**
      * <p>The path, if any, that you want Amazon Route 53 to request when performing
@@ -533,7 +534,7 @@ namespace Model
      * HTTP status code of 2xx or 3xx when the endpoint is healthy, for example, the
      * file /docs/route53-health-check.html. </p>
      */
-    inline HealthCheckConfig& WithResourcePath(Aws::String&& value) { SetResourcePath(value); return *this;}
+    inline HealthCheckConfig& WithResourcePath(Aws::String&& value) { SetResourcePath(std::move(value)); return *this;}
 
     /**
      * <p>The path, if any, that you want Amazon Route 53 to request when performing
@@ -703,7 +704,7 @@ namespace Model
      * <code>Type</code> is <code>TCP</code>, Amazon Route 53 doesn't pass a
      * <code>Host</code> header.</p>
      */
-    inline void SetFullyQualifiedDomainName(Aws::String&& value) { m_fullyQualifiedDomainNameHasBeenSet = true; m_fullyQualifiedDomainName = value; }
+    inline void SetFullyQualifiedDomainName(Aws::String&& value) { m_fullyQualifiedDomainNameHasBeenSet = true; m_fullyQualifiedDomainName = std::move(value); }
 
     /**
      * <p>Amazon Route 53 behavior depends on whether you specify a value for
@@ -865,7 +866,7 @@ namespace Model
      * <code>Type</code> is <code>TCP</code>, Amazon Route 53 doesn't pass a
      * <code>Host</code> header.</p>
      */
-    inline HealthCheckConfig& WithFullyQualifiedDomainName(Aws::String&& value) { SetFullyQualifiedDomainName(value); return *this;}
+    inline HealthCheckConfig& WithFullyQualifiedDomainName(Aws::String&& value) { SetFullyQualifiedDomainName(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Route 53 behavior depends on whether you specify a value for
@@ -949,7 +950,7 @@ namespace Model
      * Route 53 considers case when searching for <code>SearchString</code> in the
      * response body. </p>
      */
-    inline void SetSearchString(Aws::String&& value) { m_searchStringHasBeenSet = true; m_searchString = value; }
+    inline void SetSearchString(Aws::String&& value) { m_searchStringHasBeenSet = true; m_searchString = std::move(value); }
 
     /**
      * <p>If the value of Type is <code>HTTP_STR_MATCH</code> or
@@ -979,7 +980,7 @@ namespace Model
      * Route 53 considers case when searching for <code>SearchString</code> in the
      * response body. </p>
      */
-    inline HealthCheckConfig& WithSearchString(Aws::String&& value) { SetSearchString(value); return *this;}
+    inline HealthCheckConfig& WithSearchString(Aws::String&& value) { SetSearchString(std::move(value)); return *this;}
 
     /**
      * <p>If the value of Type is <code>HTTP_STR_MATCH</code> or
@@ -1166,7 +1167,7 @@ namespace Model
      * <code>ChildHealthCheck</code> element for each health check that you want to
      * associate with a <code>CALCULATED</code> health check.</p>
      */
-    inline void SetChildHealthChecks(Aws::Vector<Aws::String>&& value) { m_childHealthChecksHasBeenSet = true; m_childHealthChecks = value; }
+    inline void SetChildHealthChecks(Aws::Vector<Aws::String>&& value) { m_childHealthChecksHasBeenSet = true; m_childHealthChecks = std::move(value); }
 
     /**
      * <p>(CALCULATED Health Checks Only) A complex type that contains one
@@ -1180,7 +1181,7 @@ namespace Model
      * <code>ChildHealthCheck</code> element for each health check that you want to
      * associate with a <code>CALCULATED</code> health check.</p>
      */
-    inline HealthCheckConfig& WithChildHealthChecks(Aws::Vector<Aws::String>&& value) { SetChildHealthChecks(value); return *this;}
+    inline HealthCheckConfig& WithChildHealthChecks(Aws::Vector<Aws::String>&& value) { SetChildHealthChecks(std::move(value)); return *this;}
 
     /**
      * <p>(CALCULATED Health Checks Only) A complex type that contains one
@@ -1194,7 +1195,7 @@ namespace Model
      * <code>ChildHealthCheck</code> element for each health check that you want to
      * associate with a <code>CALCULATED</code> health check.</p>
      */
-    inline HealthCheckConfig& AddChildHealthChecks(Aws::String&& value) { m_childHealthChecksHasBeenSet = true; m_childHealthChecks.push_back(value); return *this; }
+    inline HealthCheckConfig& AddChildHealthChecks(Aws::String&& value) { m_childHealthChecksHasBeenSet = true; m_childHealthChecks.push_back(std::move(value)); return *this; }
 
     /**
      * <p>(CALCULATED Health Checks Only) A complex type that contains one
@@ -1312,7 +1313,7 @@ namespace Model
      * are always checking the endpoint (for example, if you replace three regions with
      * four different regions). </p>
      */
-    inline void SetRegions(Aws::Vector<HealthCheckRegion>&& value) { m_regionsHasBeenSet = true; m_regions = value; }
+    inline void SetRegions(Aws::Vector<HealthCheckRegion>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
 
     /**
      * <p>A complex type that contains one <code>Region</code> element for each region
@@ -1338,7 +1339,7 @@ namespace Model
      * are always checking the endpoint (for example, if you replace three regions with
      * four different regions). </p>
      */
-    inline HealthCheckConfig& WithRegions(Aws::Vector<HealthCheckRegion>&& value) { SetRegions(value); return *this;}
+    inline HealthCheckConfig& WithRegions(Aws::Vector<HealthCheckRegion>&& value) { SetRegions(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that contains one <code>Region</code> element for each region
@@ -1364,7 +1365,7 @@ namespace Model
      * are always checking the endpoint (for example, if you replace three regions with
      * four different regions). </p>
      */
-    inline HealthCheckConfig& AddRegions(HealthCheckRegion&& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+    inline HealthCheckConfig& AddRegions(HealthCheckRegion&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A complex type that identifies the CloudWatch alarm that you want Amazon
@@ -1385,7 +1386,7 @@ namespace Model
      * Route 53 health checkers to use to determine whether this health check is
      * healthy.</p>
      */
-    inline void SetAlarmIdentifier(AlarmIdentifier&& value) { m_alarmIdentifierHasBeenSet = true; m_alarmIdentifier = value; }
+    inline void SetAlarmIdentifier(AlarmIdentifier&& value) { m_alarmIdentifierHasBeenSet = true; m_alarmIdentifier = std::move(value); }
 
     /**
      * <p>A complex type that identifies the CloudWatch alarm that you want Amazon
@@ -1399,7 +1400,7 @@ namespace Model
      * Route 53 health checkers to use to determine whether this health check is
      * healthy.</p>
      */
-    inline HealthCheckConfig& WithAlarmIdentifier(AlarmIdentifier&& value) { SetAlarmIdentifier(value); return *this;}
+    inline HealthCheckConfig& WithAlarmIdentifier(AlarmIdentifier&& value) { SetAlarmIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>When CloudWatch has insufficient data about the metric to determine the alarm
@@ -1438,7 +1439,7 @@ namespace Model
      * For new health checks that have no last known status, the default status for the
      * health check is healthy.</p> </li> </ul>
      */
-    inline void SetInsufficientDataHealthStatus(InsufficientDataHealthStatus&& value) { m_insufficientDataHealthStatusHasBeenSet = true; m_insufficientDataHealthStatus = value; }
+    inline void SetInsufficientDataHealthStatus(InsufficientDataHealthStatus&& value) { m_insufficientDataHealthStatusHasBeenSet = true; m_insufficientDataHealthStatus = std::move(value); }
 
     /**
      * <p>When CloudWatch has insufficient data about the metric to determine the alarm
@@ -1464,7 +1465,7 @@ namespace Model
      * For new health checks that have no last known status, the default status for the
      * health check is healthy.</p> </li> </ul>
      */
-    inline HealthCheckConfig& WithInsufficientDataHealthStatus(InsufficientDataHealthStatus&& value) { SetInsufficientDataHealthStatus(value); return *this;}
+    inline HealthCheckConfig& WithInsufficientDataHealthStatus(InsufficientDataHealthStatus&& value) { SetInsufficientDataHealthStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_iPAddress;

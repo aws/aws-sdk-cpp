@@ -17,6 +17,7 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The name or the unique stack ID that is associated with the stack.</p>
      */
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
+    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
      * <p>The name or the unique stack ID that is associated with the stack.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The name or the unique stack ID that is associated with the stack.</p>
      */
-    inline DeleteStackRequest& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
+    inline DeleteStackRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name or the unique stack ID that is associated with the stack.</p>
@@ -101,7 +102,7 @@ namespace Model
      * resources.</p> <p>Retaining resources is useful when you cannot delete a
      * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
      */
-    inline void SetRetainResources(Aws::Vector<Aws::String>&& value) { m_retainResourcesHasBeenSet = true; m_retainResources = value; }
+    inline void SetRetainResources(Aws::Vector<Aws::String>&& value) { m_retainResourcesHasBeenSet = true; m_retainResources = std::move(value); }
 
     /**
      * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
@@ -119,7 +120,7 @@ namespace Model
      * resources.</p> <p>Retaining resources is useful when you cannot delete a
      * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
      */
-    inline DeleteStackRequest& WithRetainResources(Aws::Vector<Aws::String>&& value) { SetRetainResources(value); return *this;}
+    inline DeleteStackRequest& WithRetainResources(Aws::Vector<Aws::String>&& value) { SetRetainResources(std::move(value)); return *this;}
 
     /**
      * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
@@ -137,7 +138,7 @@ namespace Model
      * resources.</p> <p>Retaining resources is useful when you cannot delete a
      * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
      */
-    inline DeleteStackRequest& AddRetainResources(Aws::String&& value) { m_retainResourcesHasBeenSet = true; m_retainResources.push_back(value); return *this; }
+    inline DeleteStackRequest& AddRetainResources(Aws::String&& value) { m_retainResourcesHasBeenSet = true; m_retainResources.push_back(std::move(value)); return *this; }
 
     /**
      * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
@@ -176,7 +177,7 @@ namespace Model
      * with the stack. If no role is available, AWS CloudFormation uses a temporary
      * session that is generated from your user credentials.</p>
      */
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
@@ -206,7 +207,7 @@ namespace Model
      * with the stack. If no role is available, AWS CloudFormation uses a temporary
      * session that is generated from your user credentials.</p>
      */
-    inline DeleteStackRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+    inline DeleteStackRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)

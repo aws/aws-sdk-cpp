@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/CreateAccountState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
      * <p>A list of one or more states that you want included in the response. If this
      * parameter is not present, then all requests are included in the response.</p>
      */
-    inline void SetStates(Aws::Vector<CreateAccountState>&& value) { m_statesHasBeenSet = true; m_states = value; }
+    inline void SetStates(Aws::Vector<CreateAccountState>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
 
     /**
      * <p>A list of one or more states that you want included in the response. If this
@@ -65,7 +66,7 @@ namespace Model
      * <p>A list of one or more states that you want included in the response. If this
      * parameter is not present, then all requests are included in the response.</p>
      */
-    inline ListCreateAccountStatusRequest& WithStates(Aws::Vector<CreateAccountState>&& value) { SetStates(value); return *this;}
+    inline ListCreateAccountStatusRequest& WithStates(Aws::Vector<CreateAccountState>&& value) { SetStates(std::move(value)); return *this;}
 
     /**
      * <p>A list of one or more states that you want included in the response. If this
@@ -77,7 +78,7 @@ namespace Model
      * <p>A list of one or more states that you want included in the response. If this
      * parameter is not present, then all requests are included in the response.</p>
      */
-    inline ListCreateAccountStatusRequest& AddStates(CreateAccountState&& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
+    inline ListCreateAccountStatusRequest& AddStates(CreateAccountState&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a
@@ -101,7 +102,7 @@ namespace Model
      * the value of the previous call's <code>NextToken</code> response to indicate
      * where the output should continue from.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a
@@ -125,7 +126,7 @@ namespace Model
      * the value of the previous call's <code>NextToken</code> response to indicate
      * where the output should continue from.</p>
      */
-    inline ListCreateAccountStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListCreateAccountStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a

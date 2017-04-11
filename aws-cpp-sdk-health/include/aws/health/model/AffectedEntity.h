@@ -18,6 +18,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/health/model/EntityStatusCode.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,7 +73,7 @@ namespace Model
      * <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code>
      * </p>
      */
-    inline void SetEntityArn(Aws::String&& value) { m_entityArnHasBeenSet = true; m_entityArn = value; }
+    inline void SetEntityArn(Aws::String&& value) { m_entityArnHasBeenSet = true; m_entityArn = std::move(value); }
 
     /**
      * <p>The unique identifier for the entity. Format:
@@ -99,7 +100,7 @@ namespace Model
      * <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code>
      * </p>
      */
-    inline AffectedEntity& WithEntityArn(Aws::String&& value) { SetEntityArn(value); return *this;}
+    inline AffectedEntity& WithEntityArn(Aws::String&& value) { SetEntityArn(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the entity. Format:
@@ -132,7 +133,7 @@ namespace Model
      * </code>. Example:
      * <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>
      */
-    inline void SetEventArn(Aws::String&& value) { m_eventArnHasBeenSet = true; m_eventArn = value; }
+    inline void SetEventArn(Aws::String&& value) { m_eventArnHasBeenSet = true; m_eventArn = std::move(value); }
 
     /**
      * <p>The unique identifier for the event. Format:
@@ -156,7 +157,7 @@ namespace Model
      * </code>. Example:
      * <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>
      */
-    inline AffectedEntity& WithEventArn(Aws::String&& value) { SetEventArn(value); return *this;}
+    inline AffectedEntity& WithEventArn(Aws::String&& value) { SetEventArn(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the event. Format:
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p>The ID of the affected entity.</p>
      */
-    inline void SetEntityValue(Aws::String&& value) { m_entityValueHasBeenSet = true; m_entityValue = value; }
+    inline void SetEntityValue(Aws::String&& value) { m_entityValueHasBeenSet = true; m_entityValue = std::move(value); }
 
     /**
      * <p>The ID of the affected entity.</p>
@@ -194,7 +195,7 @@ namespace Model
     /**
      * <p>The ID of the affected entity.</p>
      */
-    inline AffectedEntity& WithEntityValue(Aws::String&& value) { SetEntityValue(value); return *this;}
+    inline AffectedEntity& WithEntityValue(Aws::String&& value) { SetEntityValue(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the affected entity.</p>
@@ -214,7 +215,7 @@ namespace Model
     /**
      * <p>The 12-digit AWS account number that contains the affected entity.</p>
      */
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
+    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
      * <p>The 12-digit AWS account number that contains the affected entity.</p>
@@ -229,7 +230,7 @@ namespace Model
     /**
      * <p>The 12-digit AWS account number that contains the affected entity.</p>
      */
-    inline AffectedEntity& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(value); return *this;}
+    inline AffectedEntity& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The 12-digit AWS account number that contains the affected entity.</p>
@@ -249,7 +250,7 @@ namespace Model
     /**
      * <p>The most recent time that the entity was updated.</p>
      */
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
+    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
 
     /**
      * <p>The most recent time that the entity was updated.</p>
@@ -259,7 +260,7 @@ namespace Model
     /**
      * <p>The most recent time that the entity was updated.</p>
      */
-    inline AffectedEntity& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(value); return *this;}
+    inline AffectedEntity& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
     /**
      * <p>The most recent status of the entity affected by the event. The possible
@@ -280,7 +281,7 @@ namespace Model
      * values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and
      * <code>UNKNOWN</code>.</p>
      */
-    inline void SetStatusCode(EntityStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline void SetStatusCode(EntityStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
 
     /**
      * <p>The most recent status of the entity affected by the event. The possible
@@ -294,7 +295,7 @@ namespace Model
      * values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and
      * <code>UNKNOWN</code>.</p>
      */
-    inline AffectedEntity& WithStatusCode(EntityStatusCode&& value) { SetStatusCode(value); return *this;}
+    inline AffectedEntity& WithStatusCode(EntityStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
 
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
@@ -309,7 +310,7 @@ namespace Model
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
      */
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
@@ -319,42 +320,42 @@ namespace Model
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
      */
-    inline AffectedEntity& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(value); return *this;}
+    inline AffectedEntity& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
      */
-    inline AffectedEntity& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline AffectedEntity& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
      */
-    inline AffectedEntity& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline AffectedEntity& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
      */
-    inline AffectedEntity& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline AffectedEntity& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
      */
-    inline AffectedEntity& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline AffectedEntity& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
      */
-    inline AffectedEntity& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline AffectedEntity& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
      */
-    inline AffectedEntity& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline AffectedEntity& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
      */
-    inline AffectedEntity& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline AffectedEntity& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
     Aws::String m_entityArn;

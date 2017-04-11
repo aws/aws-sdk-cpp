@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -82,7 +83,7 @@ namespace Model
      * <p>The ID of the resource. For example, ami-1a2b3c4d. You can specify more than
      * one resource ID.</p>
      */
-    inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = value; }
+    inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
      * <p>The ID of the resource. For example, ami-1a2b3c4d. You can specify more than
@@ -94,7 +95,7 @@ namespace Model
      * <p>The ID of the resource. For example, ami-1a2b3c4d. You can specify more than
      * one resource ID.</p>
      */
-    inline DeleteTagsRequest& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(value); return *this;}
+    inline DeleteTagsRequest& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the resource. For example, ami-1a2b3c4d. You can specify more than
@@ -106,7 +107,7 @@ namespace Model
      * <p>The ID of the resource. For example, ami-1a2b3c4d. You can specify more than
      * one resource ID.</p>
      */
-    inline DeleteTagsRequest& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
+    inline DeleteTagsRequest& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ID of the resource. For example, ami-1a2b3c4d. You can specify more than
@@ -136,7 +137,7 @@ namespace Model
      * empty string as the value, we delete the key only if its value is an empty
      * string.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>One or more tags to delete. If you omit the <code>value</code> parameter, we
@@ -152,7 +153,7 @@ namespace Model
      * empty string as the value, we delete the key only if its value is an empty
      * string.</p>
      */
-    inline DeleteTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline DeleteTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>One or more tags to delete. If you omit the <code>value</code> parameter, we
@@ -168,7 +169,7 @@ namespace Model
      * empty string as the value, we delete the key only if its value is an empty
      * string.</p>
      */
-    inline DeleteTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline DeleteTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

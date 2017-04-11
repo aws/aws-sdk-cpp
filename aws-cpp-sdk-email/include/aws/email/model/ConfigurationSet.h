@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
      * (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the configuration set. The name must:</p> <ul> <li> <p>Contain
@@ -90,7 +91,7 @@ namespace Model
      * only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
      * (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
      */
-    inline ConfigurationSet& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ConfigurationSet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the configuration set. The name must:</p> <ul> <li> <p>Contain

@@ -16,6 +16,7 @@
 #include <aws/sts/STS_EXPORTS.h>
 #include <aws/sts/STSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
      */
-    inline AssumeRoleWithSAMLRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline AssumeRoleWithSAMLRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
@@ -88,7 +89,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the
      * IdP.</p>
      */
-    inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
+    inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the
@@ -106,7 +107,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the
      * IdP.</p>
      */
-    inline AssumeRoleWithSAMLRequest& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(value); return *this;}
+    inline AssumeRoleWithSAMLRequest& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the
@@ -136,7 +137,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring
      * a Relying Party and Adding Claims</a> in the <i>Using IAM</i> guide. </p>
      */
-    inline void SetSAMLAssertion(Aws::String&& value) { m_sAMLAssertionHasBeenSet = true; m_sAMLAssertion = value; }
+    inline void SetSAMLAssertion(Aws::String&& value) { m_sAMLAssertionHasBeenSet = true; m_sAMLAssertion = std::move(value); }
 
     /**
      * <p>The base-64 encoded SAML authentication response provided by the IdP.</p>
@@ -160,7 +161,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring
      * a Relying Party and Adding Claims</a> in the <i>Using IAM</i> guide. </p>
      */
-    inline AssumeRoleWithSAMLRequest& WithSAMLAssertion(Aws::String&& value) { SetSAMLAssertion(value); return *this;}
+    inline AssumeRoleWithSAMLRequest& WithSAMLAssertion(Aws::String&& value) { SetSAMLAssertion(std::move(value)); return *this;}
 
     /**
      * <p>The base-64 encoded SAML authentication response provided by the IdP.</p>
@@ -240,7 +241,7 @@ namespace Model
      * size limit the policy is, with 100% equaling the maximum allowed size.</p>
      * </note>
      */
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
+    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
      * <p>An IAM policy in JSON format.</p> <p>The policy parameter is optional. If you
@@ -312,7 +313,7 @@ namespace Model
      * size limit the policy is, with 100% equaling the maximum allowed size.</p>
      * </note>
      */
-    inline AssumeRoleWithSAMLRequest& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
+    inline AssumeRoleWithSAMLRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
      * <p>An IAM policy in JSON format.</p> <p>The policy parameter is optional. If you

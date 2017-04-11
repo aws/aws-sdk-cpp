@@ -17,6 +17,7 @@
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/EncodingType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,7 +48,7 @@ namespace Model
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
@@ -56,7 +57,7 @@ namespace Model
     inline ListMultipartUploadsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     
-    inline ListMultipartUploadsRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline ListMultipartUploadsRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     
     inline ListMultipartUploadsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
@@ -74,7 +75,7 @@ namespace Model
     /**
      * Character you use to group keys.
      */
-    inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
+    inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::move(value); }
 
     /**
      * Character you use to group keys.
@@ -89,7 +90,7 @@ namespace Model
     /**
      * Character you use to group keys.
      */
-    inline ListMultipartUploadsRequest& WithDelimiter(Aws::String&& value) { SetDelimiter(value); return *this;}
+    inline ListMultipartUploadsRequest& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
     /**
      * Character you use to group keys.
@@ -103,13 +104,13 @@ namespace Model
     inline void SetEncodingType(const EncodingType& value) { m_encodingTypeHasBeenSet = true; m_encodingType = value; }
 
     
-    inline void SetEncodingType(EncodingType&& value) { m_encodingTypeHasBeenSet = true; m_encodingType = value; }
+    inline void SetEncodingType(EncodingType&& value) { m_encodingTypeHasBeenSet = true; m_encodingType = std::move(value); }
 
     
     inline ListMultipartUploadsRequest& WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
 
     
-    inline ListMultipartUploadsRequest& WithEncodingType(EncodingType&& value) { SetEncodingType(value); return *this;}
+    inline ListMultipartUploadsRequest& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
 
     /**
      * Together with upload-id-marker, this parameter specifies the multipart upload
@@ -127,7 +128,7 @@ namespace Model
      * Together with upload-id-marker, this parameter specifies the multipart upload
      * after which listing should begin.
      */
-    inline void SetKeyMarker(Aws::String&& value) { m_keyMarkerHasBeenSet = true; m_keyMarker = value; }
+    inline void SetKeyMarker(Aws::String&& value) { m_keyMarkerHasBeenSet = true; m_keyMarker = std::move(value); }
 
     /**
      * Together with upload-id-marker, this parameter specifies the multipart upload
@@ -145,7 +146,7 @@ namespace Model
      * Together with upload-id-marker, this parameter specifies the multipart upload
      * after which listing should begin.
      */
-    inline ListMultipartUploadsRequest& WithKeyMarker(Aws::String&& value) { SetKeyMarker(value); return *this;}
+    inline ListMultipartUploadsRequest& WithKeyMarker(Aws::String&& value) { SetKeyMarker(std::move(value)); return *this;}
 
     /**
      * Together with upload-id-marker, this parameter specifies the multipart upload
@@ -190,7 +191,7 @@ namespace Model
      * Lists in-progress uploads only for those keys that begin with the specified
      * prefix.
      */
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * Lists in-progress uploads only for those keys that begin with the specified
@@ -208,7 +209,7 @@ namespace Model
      * Lists in-progress uploads only for those keys that begin with the specified
      * prefix.
      */
-    inline ListMultipartUploadsRequest& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
+    inline ListMultipartUploadsRequest& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * Lists in-progress uploads only for those keys that begin with the specified
@@ -235,7 +236,7 @@ namespace Model
      * should begin. If key-marker is not specified, the upload-id-marker parameter is
      * ignored.
      */
-    inline void SetUploadIdMarker(Aws::String&& value) { m_uploadIdMarkerHasBeenSet = true; m_uploadIdMarker = value; }
+    inline void SetUploadIdMarker(Aws::String&& value) { m_uploadIdMarkerHasBeenSet = true; m_uploadIdMarker = std::move(value); }
 
     /**
      * Together with key-marker, specifies the multipart upload after which listing
@@ -256,7 +257,7 @@ namespace Model
      * should begin. If key-marker is not specified, the upload-id-marker parameter is
      * ignored.
      */
-    inline ListMultipartUploadsRequest& WithUploadIdMarker(Aws::String&& value) { SetUploadIdMarker(value); return *this;}
+    inline ListMultipartUploadsRequest& WithUploadIdMarker(Aws::String&& value) { SetUploadIdMarker(std::move(value)); return *this;}
 
     /**
      * Together with key-marker, specifies the multipart upload after which listing

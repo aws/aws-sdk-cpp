@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/NetworkProfile.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The network profile that is returned by the create network profile
      * request.</p>
      */
-    inline void SetNetworkProfile(NetworkProfile&& value) { m_networkProfile = value; }
+    inline void SetNetworkProfile(NetworkProfile&& value) { m_networkProfile = std::move(value); }
 
     /**
      * <p>The network profile that is returned by the create network profile
@@ -67,7 +68,7 @@ namespace Model
      * <p>The network profile that is returned by the create network profile
      * request.</p>
      */
-    inline CreateNetworkProfileResult& WithNetworkProfile(NetworkProfile&& value) { SetNetworkProfile(value); return *this;}
+    inline CreateNetworkProfileResult& WithNetworkProfile(NetworkProfile&& value) { SetNetworkProfile(std::move(value)); return *this;}
 
   private:
     NetworkProfile m_networkProfile;

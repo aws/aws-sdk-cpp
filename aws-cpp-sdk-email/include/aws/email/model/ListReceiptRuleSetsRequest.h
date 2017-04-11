@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to
      * indicate the position in the receipt rule set list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to
@@ -78,7 +79,7 @@ namespace Model
      * <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to
      * indicate the position in the receipt rule set list.</p>
      */
-    inline ListReceiptRuleSetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListReceiptRuleSetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to

@@ -16,6 +16,7 @@
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/machinelearning/MachineLearningRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>DataSource</code> during creation.</p>
      */
-    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
+    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
 
     /**
      * <p>The ID assigned to the <code>DataSource</code> during creation.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>DataSource</code> during creation.</p>
      */
-    inline UpdateDataSourceRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(value); return *this;}
+    inline UpdateDataSourceRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID assigned to the <code>DataSource</code> during creation.</p>
@@ -86,7 +87,7 @@ namespace Model
      * <p>A new user-supplied name or description of the <code>DataSource</code> that
      * will replace the current description. </p>
      */
-    inline void SetDataSourceName(Aws::String&& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = value; }
+    inline void SetDataSourceName(Aws::String&& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = std::move(value); }
 
     /**
      * <p>A new user-supplied name or description of the <code>DataSource</code> that
@@ -104,7 +105,7 @@ namespace Model
      * <p>A new user-supplied name or description of the <code>DataSource</code> that
      * will replace the current description. </p>
      */
-    inline UpdateDataSourceRequest& WithDataSourceName(Aws::String&& value) { SetDataSourceName(value); return *this;}
+    inline UpdateDataSourceRequest& WithDataSourceName(Aws::String&& value) { SetDataSourceName(std::move(value)); return *this;}
 
     /**
      * <p>A new user-supplied name or description of the <code>DataSource</code> that

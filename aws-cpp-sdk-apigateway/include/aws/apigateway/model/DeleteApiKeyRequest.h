@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The identifier of the <a>ApiKey</a> resource to be deleted.</p>
      */
-    inline void SetApiKey(Aws::String&& value) { m_apiKeyHasBeenSet = true; m_apiKey = value; }
+    inline void SetApiKey(Aws::String&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::move(value); }
 
     /**
      * <p>The identifier of the <a>ApiKey</a> resource to be deleted.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The identifier of the <a>ApiKey</a> resource to be deleted.</p>
      */
-    inline DeleteApiKeyRequest& WithApiKey(Aws::String&& value) { SetApiKey(value); return *this;}
+    inline DeleteApiKeyRequest& WithApiKey(Aws::String&& value) { SetApiKey(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the <a>ApiKey</a> resource to be deleted.</p>

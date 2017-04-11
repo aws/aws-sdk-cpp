@@ -18,6 +18,7 @@
 #include <aws/config/model/ResourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The type of resources that you want AWS Config to list in the response.</p>
      */
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of resources that you want AWS Config to list in the response.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The type of resources that you want AWS Config to list in the response.</p>
      */
-    inline ListDiscoveredResourcesRequest& WithResourceType(ResourceType&& value) { SetResourceType(value); return *this;}
+    inline ListDiscoveredResourcesRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of only those resources that you want AWS Config to list in the
@@ -84,7 +85,7 @@ namespace Model
      * response. If you do not specify this parameter, AWS Config lists all resources
      * of the specified type that it has discovered.</p>
      */
-    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
+    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
 
     /**
      * <p>The IDs of only those resources that you want AWS Config to list in the
@@ -98,7 +99,7 @@ namespace Model
      * response. If you do not specify this parameter, AWS Config lists all resources
      * of the specified type that it has discovered.</p>
      */
-    inline ListDiscoveredResourcesRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(value); return *this;}
+    inline ListDiscoveredResourcesRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of only those resources that you want AWS Config to list in the
@@ -112,7 +113,7 @@ namespace Model
      * response. If you do not specify this parameter, AWS Config lists all resources
      * of the specified type that it has discovered.</p>
      */
-    inline ListDiscoveredResourcesRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
+    inline ListDiscoveredResourcesRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of only those resources that you want AWS Config to list in the
@@ -140,7 +141,7 @@ namespace Model
      * the response. If you do not specify this parameter, AWS Config lists all
      * resources of the specified type that it has discovered.</p>
      */
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
+    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
     /**
      * <p>The custom name of only those resources that you want AWS Config to list in
@@ -161,7 +162,7 @@ namespace Model
      * the response. If you do not specify this parameter, AWS Config lists all
      * resources of the specified type that it has discovered.</p>
      */
-    inline ListDiscoveredResourcesRequest& WithResourceName(Aws::String&& value) { SetResourceName(value); return *this;}
+    inline ListDiscoveredResourcesRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
     /**
      * <p>The custom name of only those resources that you want AWS Config to list in
@@ -225,7 +226,7 @@ namespace Model
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
@@ -243,7 +244,7 @@ namespace Model
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
-    inline ListDiscoveredResourcesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListDiscoveredResourcesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> string returned on a previous page that you use to

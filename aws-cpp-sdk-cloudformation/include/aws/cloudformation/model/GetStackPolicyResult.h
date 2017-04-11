@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
      * Guide.)</p>
      */
-    inline void SetStackPolicyBody(Aws::String&& value) { m_stackPolicyBody = value; }
+    inline void SetStackPolicyBody(Aws::String&& value) { m_stackPolicyBody = std::move(value); }
 
     /**
      * <p>Structure containing the stack policy body. (For more information, go to <a
@@ -92,7 +93,7 @@ namespace Model
      * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
      * Guide.)</p>
      */
-    inline GetStackPolicyResult& WithStackPolicyBody(Aws::String&& value) { SetStackPolicyBody(value); return *this;}
+    inline GetStackPolicyResult& WithStackPolicyBody(Aws::String&& value) { SetStackPolicyBody(std::move(value)); return *this;}
 
     /**
      * <p>Structure containing the stack policy body. (For more information, go to <a
@@ -109,13 +110,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline GetStackPolicyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline GetStackPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline GetStackPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_stackPolicyBody;

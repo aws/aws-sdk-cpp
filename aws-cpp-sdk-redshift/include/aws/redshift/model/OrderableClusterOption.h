@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/AvailabilityZone.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The version of the orderable cluster.</p>
      */
-    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = value; }
+    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = std::move(value); }
 
     /**
      * <p>The version of the orderable cluster.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The version of the orderable cluster.</p>
      */
-    inline OrderableClusterOption& WithClusterVersion(Aws::String&& value) { SetClusterVersion(value); return *this;}
+    inline OrderableClusterOption& WithClusterVersion(Aws::String&& value) { SetClusterVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the orderable cluster.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The cluster type, for example <code>multi-node</code>. </p>
      */
-    inline void SetClusterType(Aws::String&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
+    inline void SetClusterType(Aws::String&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = std::move(value); }
 
     /**
      * <p>The cluster type, for example <code>multi-node</code>. </p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The cluster type, for example <code>multi-node</code>. </p>
      */
-    inline OrderableClusterOption& WithClusterType(Aws::String&& value) { SetClusterType(value); return *this;}
+    inline OrderableClusterOption& WithClusterType(Aws::String&& value) { SetClusterType(std::move(value)); return *this;}
 
     /**
      * <p>The cluster type, for example <code>multi-node</code>. </p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The node type for the orderable cluster.</p>
      */
-    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
+    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
     /**
      * <p>The node type for the orderable cluster.</p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>The node type for the orderable cluster.</p>
      */
-    inline OrderableClusterOption& WithNodeType(Aws::String&& value) { SetNodeType(value); return *this;}
+    inline OrderableClusterOption& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
 
     /**
      * <p>The node type for the orderable cluster.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>A list of availability zones for the orderable cluster.</p>
      */
-    inline void SetAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
+    inline void SetAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
      * <p>A list of availability zones for the orderable cluster.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>A list of availability zones for the orderable cluster.</p>
      */
-    inline OrderableClusterOption& WithAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { SetAvailabilityZones(value); return *this;}
+    inline OrderableClusterOption& WithAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
      * <p>A list of availability zones for the orderable cluster.</p>
@@ -186,7 +187,7 @@ namespace Model
     /**
      * <p>A list of availability zones for the orderable cluster.</p>
      */
-    inline OrderableClusterOption& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+    inline OrderableClusterOption& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_clusterVersion;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/InstanceSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Information about the instance.</p>
      */
-    inline void SetInstanceSummary(InstanceSummary&& value) { m_instanceSummary = value; }
+    inline void SetInstanceSummary(InstanceSummary&& value) { m_instanceSummary = std::move(value); }
 
     /**
      * <p>Information about the instance.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Information about the instance.</p>
      */
-    inline GetDeploymentInstanceResult& WithInstanceSummary(InstanceSummary&& value) { SetInstanceSummary(value); return *this;}
+    inline GetDeploymentInstanceResult& WithInstanceSummary(InstanceSummary&& value) { SetInstanceSummary(std::move(value)); return *this;}
 
   private:
     InstanceSummary m_instanceSummary;

@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/ELBInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>An array containing information about the load balancer in Elastic Load
      * Balancing to use in a blue/green deployment.</p>
      */
-    inline void SetElbInfoList(Aws::Vector<ELBInfo>&& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList = value; }
+    inline void SetElbInfoList(Aws::Vector<ELBInfo>&& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList = std::move(value); }
 
     /**
      * <p>An array containing information about the load balancer in Elastic Load
@@ -73,7 +74,7 @@ namespace Model
      * <p>An array containing information about the load balancer in Elastic Load
      * Balancing to use in a blue/green deployment.</p>
      */
-    inline LoadBalancerInfo& WithElbInfoList(Aws::Vector<ELBInfo>&& value) { SetElbInfoList(value); return *this;}
+    inline LoadBalancerInfo& WithElbInfoList(Aws::Vector<ELBInfo>&& value) { SetElbInfoList(std::move(value)); return *this;}
 
     /**
      * <p>An array containing information about the load balancer in Elastic Load
@@ -85,7 +86,7 @@ namespace Model
      * <p>An array containing information about the load balancer in Elastic Load
      * Balancing to use in a blue/green deployment.</p>
      */
-    inline LoadBalancerInfo& AddElbInfoList(ELBInfo&& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList.push_back(value); return *this; }
+    inline LoadBalancerInfo& AddElbInfoList(ELBInfo&& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ELBInfo> m_elbInfoList;

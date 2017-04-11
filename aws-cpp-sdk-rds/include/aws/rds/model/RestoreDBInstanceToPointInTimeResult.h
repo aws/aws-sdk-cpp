@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/DBInstance.h>
 #include <aws/rds/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,13 +48,13 @@ namespace Model
     inline void SetDBInstance(const DBInstance& value) { m_dBInstance = value; }
 
     
-    inline void SetDBInstance(DBInstance&& value) { m_dBInstance = value; }
+    inline void SetDBInstance(DBInstance&& value) { m_dBInstance = std::move(value); }
 
     
     inline RestoreDBInstanceToPointInTimeResult& WithDBInstance(const DBInstance& value) { SetDBInstance(value); return *this;}
 
     
-    inline RestoreDBInstanceToPointInTimeResult& WithDBInstance(DBInstance&& value) { SetDBInstance(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeResult& WithDBInstance(DBInstance&& value) { SetDBInstance(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -62,13 +63,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline RestoreDBInstanceToPointInTimeResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline RestoreDBInstanceToPointInTimeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     DBInstance m_dBInstance;

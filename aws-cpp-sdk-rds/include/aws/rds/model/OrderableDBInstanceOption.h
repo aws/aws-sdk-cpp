@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/AvailabilityZone.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The engine type of the orderable DB instance.</p>
      */
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The engine type of the orderable DB instance.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The engine type of the orderable DB instance.</p>
      */
-    inline OrderableDBInstanceOption& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
+    inline OrderableDBInstanceOption& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The engine type of the orderable DB instance.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The engine version of the orderable DB instance.</p>
      */
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>The engine version of the orderable DB instance.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The engine version of the orderable DB instance.</p>
      */
-    inline OrderableDBInstanceOption& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
+    inline OrderableDBInstanceOption& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The engine version of the orderable DB instance.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The DB instance class for the orderable DB instance.</p>
      */
-    inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
+    inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
      * <p>The DB instance class for the orderable DB instance.</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>The DB instance class for the orderable DB instance.</p>
      */
-    inline OrderableDBInstanceOption& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(value); return *this;}
+    inline OrderableDBInstanceOption& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
      * <p>The DB instance class for the orderable DB instance.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>The license model for the orderable DB instance.</p>
      */
-    inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
+    inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
     /**
      * <p>The license model for the orderable DB instance.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>The license model for the orderable DB instance.</p>
      */
-    inline OrderableDBInstanceOption& WithLicenseModel(Aws::String&& value) { SetLicenseModel(value); return *this;}
+    inline OrderableDBInstanceOption& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
     /**
      * <p>The license model for the orderable DB instance.</p>
@@ -203,7 +204,7 @@ namespace Model
     /**
      * <p>A list of Availability Zones for the orderable DB instance.</p>
      */
-    inline void SetAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
+    inline void SetAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
      * <p>A list of Availability Zones for the orderable DB instance.</p>
@@ -213,7 +214,7 @@ namespace Model
     /**
      * <p>A list of Availability Zones for the orderable DB instance.</p>
      */
-    inline OrderableDBInstanceOption& WithAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { SetAvailabilityZones(value); return *this;}
+    inline OrderableDBInstanceOption& WithAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
      * <p>A list of Availability Zones for the orderable DB instance.</p>
@@ -223,7 +224,7 @@ namespace Model
     /**
      * <p>A list of Availability Zones for the orderable DB instance.</p>
      */
-    inline OrderableDBInstanceOption& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+    inline OrderableDBInstanceOption& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Indicates whether this orderable DB instance is multi-AZ capable.</p>
@@ -298,7 +299,7 @@ namespace Model
     /**
      * <p>Indicates the storage type for this orderable DB instance.</p>
      */
-    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
      * <p>Indicates the storage type for this orderable DB instance.</p>
@@ -313,7 +314,7 @@ namespace Model
     /**
      * <p>Indicates the storage type for this orderable DB instance.</p>
      */
-    inline OrderableDBInstanceOption& WithStorageType(Aws::String&& value) { SetStorageType(value); return *this;}
+    inline OrderableDBInstanceOption& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
      * <p>Indicates the storage type for this orderable DB instance.</p>

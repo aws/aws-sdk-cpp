@@ -17,6 +17,7 @@
 #include <aws/email/SESRequest.h>
 #include <aws/email/model/IdentityType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>The type of the identities to list. Possible values are "EmailAddress" and
      * "Domain". If this parameter is omitted, then all identities will be listed.</p>
      */
-    inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
+    inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
 
     /**
      * <p>The type of the identities to list. Possible values are "EmailAddress" and
@@ -71,7 +72,7 @@ namespace Model
      * <p>The type of the identities to list. Possible values are "EmailAddress" and
      * "Domain". If this parameter is omitted, then all identities will be listed.</p>
      */
-    inline ListIdentitiesRequest& WithIdentityType(IdentityType&& value) { SetIdentityType(value); return *this;}
+    inline ListIdentitiesRequest& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
 
     /**
      * <p>The token to use for pagination.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The token to use for pagination.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use for pagination.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The token to use for pagination.</p>
      */
-    inline ListIdentitiesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListIdentitiesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use for pagination.</p>

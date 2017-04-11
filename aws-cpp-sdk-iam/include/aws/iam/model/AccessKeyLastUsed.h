@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
      * tracking this information on April 22nd, 2015.</p> </li> <li> <p>There is no
      * sign-in data associated with the user</p> </li> </ul>
      */
-    inline void SetLastUsedDate(Aws::Utils::DateTime&& value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = value; }
+    inline void SetLastUsedDate(Aws::Utils::DateTime&& value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = std::move(value); }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -97,7 +98,7 @@ namespace Model
      * tracking this information on April 22nd, 2015.</p> </li> <li> <p>There is no
      * sign-in data associated with the user</p> </li> </ul>
      */
-    inline AccessKeyLastUsed& WithLastUsedDate(Aws::Utils::DateTime&& value) { SetLastUsedDate(value); return *this;}
+    inline AccessKeyLastUsed& WithLastUsedDate(Aws::Utils::DateTime&& value) { SetLastUsedDate(std::move(value)); return *this;}
 
     /**
      * <p>The name of the AWS service with which this access key was most recently
@@ -124,7 +125,7 @@ namespace Model
      * not since IAM started tracking this information on April 22nd, 2015.</p> </li>
      * <li> <p>There is no sign-in data associated with the user</p> </li> </ul>
      */
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
+    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
      * <p>The name of the AWS service with which this access key was most recently
@@ -151,7 +152,7 @@ namespace Model
      * not since IAM started tracking this information on April 22nd, 2015.</p> </li>
      * <li> <p>There is no sign-in data associated with the user</p> </li> </ul>
      */
-    inline AccessKeyLastUsed& WithServiceName(Aws::String&& value) { SetServiceName(value); return *this;}
+    inline AccessKeyLastUsed& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the AWS service with which this access key was most recently
@@ -196,7 +197,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a> in the Amazon Web Services General Reference.</p>
      */
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = value; }
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
      * <p>The AWS region where this access key was most recently used. This field is
@@ -232,7 +233,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a> in the Amazon Web Services General Reference.</p>
      */
-    inline AccessKeyLastUsed& WithRegion(Aws::String&& value) { SetRegion(value); return *this;}
+    inline AccessKeyLastUsed& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
      * <p>The AWS region where this access key was most recently used. This field is

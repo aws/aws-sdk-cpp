@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/elasticloadbalancingv2/model/LoadBalancerStateEnum.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * route traffic, its state is <code>active</code>. If the load balancer could not
      * be set up, its state is <code>failed</code>.</p>
      */
-    inline void SetCode(LoadBalancerStateEnum&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(LoadBalancerStateEnum&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>The state code. The initial state of the load balancer is
@@ -86,7 +87,7 @@ namespace Model
      * route traffic, its state is <code>active</code>. If the load balancer could not
      * be set up, its state is <code>failed</code>.</p>
      */
-    inline LoadBalancerState& WithCode(LoadBalancerStateEnum&& value) { SetCode(value); return *this;}
+    inline LoadBalancerState& WithCode(LoadBalancerStateEnum&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>A description of the state.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>A description of the state.</p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p>A description of the state.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>A description of the state.</p>
      */
-    inline LoadBalancerState& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline LoadBalancerState& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p>A description of the state.</p>

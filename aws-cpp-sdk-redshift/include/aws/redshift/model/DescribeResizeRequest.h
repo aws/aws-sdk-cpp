@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * This parameter is case-sensitive.</p> <p>By default, resize operations for all
      * clusters defined for an AWS account are returned.</p>
      */
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     /**
      * <p>The unique identifier of a cluster whose resize progress you are requesting.
@@ -80,7 +81,7 @@ namespace Model
      * This parameter is case-sensitive.</p> <p>By default, resize operations for all
      * clusters defined for an AWS account are returned.</p>
      */
-    inline DescribeResizeRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
+    inline DescribeResizeRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of a cluster whose resize progress you are requesting.

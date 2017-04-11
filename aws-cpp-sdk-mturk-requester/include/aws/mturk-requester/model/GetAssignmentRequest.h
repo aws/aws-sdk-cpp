@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ID of the Assignment to be retrieved.</p>
      */
-    inline void SetAssignmentId(Aws::String&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = value; }
+    inline void SetAssignmentId(Aws::String&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = std::move(value); }
 
     /**
      * <p>The ID of the Assignment to be retrieved.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID of the Assignment to be retrieved.</p>
      */
-    inline GetAssignmentRequest& WithAssignmentId(Aws::String&& value) { SetAssignmentId(value); return *this;}
+    inline GetAssignmentRequest& WithAssignmentId(Aws::String&& value) { SetAssignmentId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Assignment to be retrieved.</p>

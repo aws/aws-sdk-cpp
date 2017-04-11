@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The current name of the application you want to change.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The current name of the application you want to change.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The current name of the application you want to change.</p>
      */
-    inline UpdateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline UpdateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The current name of the application you want to change.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The new name to give the application.</p>
      */
-    inline void SetNewApplicationName(Aws::String&& value) { m_newApplicationNameHasBeenSet = true; m_newApplicationName = value; }
+    inline void SetNewApplicationName(Aws::String&& value) { m_newApplicationNameHasBeenSet = true; m_newApplicationName = std::move(value); }
 
     /**
      * <p>The new name to give the application.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The new name to give the application.</p>
      */
-    inline UpdateApplicationRequest& WithNewApplicationName(Aws::String&& value) { SetNewApplicationName(value); return *this;}
+    inline UpdateApplicationRequest& WithNewApplicationName(Aws::String&& value) { SetNewApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The new name to give the application.</p>

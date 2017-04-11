@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/UlimitName.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The <code>type</code> of the <code>ulimit</code>.</p>
      */
-    inline void SetName(UlimitName&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(UlimitName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The <code>type</code> of the <code>ulimit</code>.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The <code>type</code> of the <code>ulimit</code>.</p>
      */
-    inline Ulimit& WithName(UlimitName&& value) { SetName(value); return *this;}
+    inline Ulimit& WithName(UlimitName&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The soft limit for the ulimit type.</p>

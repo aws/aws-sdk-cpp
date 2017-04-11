@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/batch/model/CEState.h>
 #include <aws/batch/model/ComputeResourceUpdate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The name or full Amazon Resource Name (ARN) of the compute environment to
      * update.</p>
      */
-    inline void SetComputeEnvironment(Aws::String&& value) { m_computeEnvironmentHasBeenSet = true; m_computeEnvironment = value; }
+    inline void SetComputeEnvironment(Aws::String&& value) { m_computeEnvironmentHasBeenSet = true; m_computeEnvironment = std::move(value); }
 
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the compute environment to
@@ -69,7 +70,7 @@ namespace Model
      * <p>The name or full Amazon Resource Name (ARN) of the compute environment to
      * update.</p>
      */
-    inline UpdateComputeEnvironmentRequest& WithComputeEnvironment(Aws::String&& value) { SetComputeEnvironment(value); return *this;}
+    inline UpdateComputeEnvironmentRequest& WithComputeEnvironment(Aws::String&& value) { SetComputeEnvironment(std::move(value)); return *this;}
 
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the compute environment to
@@ -96,7 +97,7 @@ namespace Model
      * <code>ENABLED</code> state can accept jobs from a queue and scale in or out
      * automatically based on the workload demand of its associated queues.</p>
      */
-    inline void SetState(CEState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(CEState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the compute environment. Compute environments in the
@@ -110,7 +111,7 @@ namespace Model
      * <code>ENABLED</code> state can accept jobs from a queue and scale in or out
      * automatically based on the workload demand of its associated queues.</p>
      */
-    inline UpdateComputeEnvironmentRequest& WithState(CEState&& value) { SetState(value); return *this;}
+    inline UpdateComputeEnvironmentRequest& WithState(CEState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>Details of the compute resources managed by the compute environment. Required
@@ -128,7 +129,7 @@ namespace Model
      * <p>Details of the compute resources managed by the compute environment. Required
      * for a managed compute environment.</p>
      */
-    inline void SetComputeResources(ComputeResourceUpdate&& value) { m_computeResourcesHasBeenSet = true; m_computeResources = value; }
+    inline void SetComputeResources(ComputeResourceUpdate&& value) { m_computeResourcesHasBeenSet = true; m_computeResources = std::move(value); }
 
     /**
      * <p>Details of the compute resources managed by the compute environment. Required
@@ -140,7 +141,7 @@ namespace Model
      * <p>Details of the compute resources managed by the compute environment. Required
      * for a managed compute environment.</p>
      */
-    inline UpdateComputeEnvironmentRequest& WithComputeResources(ComputeResourceUpdate&& value) { SetComputeResources(value); return *this;}
+    inline UpdateComputeEnvironmentRequest& WithComputeResources(ComputeResourceUpdate&& value) { SetComputeResources(std::move(value)); return *this;}
 
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows AWS
@@ -158,7 +159,7 @@ namespace Model
      * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows AWS
      * Batch to make calls to ECS, Auto Scaling, and EC2 on your behalf.</p>
      */
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows AWS
@@ -176,7 +177,7 @@ namespace Model
      * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows AWS
      * Batch to make calls to ECS, Auto Scaling, and EC2 on your behalf.</p>
      */
-    inline UpdateComputeEnvironmentRequest& WithServiceRole(Aws::String&& value) { SetServiceRole(value); return *this;}
+    inline UpdateComputeEnvironmentRequest& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows AWS

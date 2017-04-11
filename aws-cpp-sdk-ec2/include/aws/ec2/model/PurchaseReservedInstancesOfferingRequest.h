@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ReservedInstanceLimitPrice.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The ID of the Reserved Instance offering to purchase.</p>
      */
-    inline void SetReservedInstancesOfferingId(Aws::String&& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = value; }
+    inline void SetReservedInstancesOfferingId(Aws::String&& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = std::move(value); }
 
     /**
      * <p>The ID of the Reserved Instance offering to purchase.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The ID of the Reserved Instance offering to purchase.</p>
      */
-    inline PurchaseReservedInstancesOfferingRequest& WithReservedInstancesOfferingId(Aws::String&& value) { SetReservedInstancesOfferingId(value); return *this;}
+    inline PurchaseReservedInstancesOfferingRequest& WithReservedInstancesOfferingId(Aws::String&& value) { SetReservedInstancesOfferingId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Reserved Instance offering to purchase.</p>
@@ -135,7 +136,7 @@ namespace Model
      * order and ensure that the Reserved Instances are not purchased at unexpected
      * prices.</p>
      */
-    inline void SetLimitPrice(ReservedInstanceLimitPrice&& value) { m_limitPriceHasBeenSet = true; m_limitPrice = value; }
+    inline void SetLimitPrice(ReservedInstanceLimitPrice&& value) { m_limitPriceHasBeenSet = true; m_limitPrice = std::move(value); }
 
     /**
      * <p>Specified for Reserved Instance Marketplace offerings to limit the total
@@ -149,7 +150,7 @@ namespace Model
      * order and ensure that the Reserved Instances are not purchased at unexpected
      * prices.</p>
      */
-    inline PurchaseReservedInstancesOfferingRequest& WithLimitPrice(ReservedInstanceLimitPrice&& value) { SetLimitPrice(value); return *this;}
+    inline PurchaseReservedInstancesOfferingRequest& WithLimitPrice(ReservedInstanceLimitPrice&& value) { SetLimitPrice(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

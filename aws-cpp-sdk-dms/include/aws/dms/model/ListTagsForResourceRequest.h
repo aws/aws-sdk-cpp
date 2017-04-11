@@ -16,6 +16,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/dms/DatabaseMigrationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the AWS DMS
      * resource.</p>
      */
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the AWS DMS
@@ -72,7 +73,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the AWS DMS
      * resource.</p>
      */
-    inline ListTagsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(value); return *this;}
+    inline ListTagsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the AWS DMS

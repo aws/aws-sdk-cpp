@@ -16,6 +16,7 @@
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
      * predefined Amazon S3 groups: <code>AllUsers</code>,
      * <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li> </ul>
      */
-    inline void SetGranteeType(Aws::String&& value) { m_granteeTypeHasBeenSet = true; m_granteeType = value; }
+    inline void SetGranteeType(Aws::String&& value) { m_granteeTypeHasBeenSet = true; m_granteeType = std::move(value); }
 
     /**
      * <p>The type of value that appears in the Grantee object:</p> <ul> <li> <p>
@@ -114,7 +115,7 @@ namespace Model
      * predefined Amazon S3 groups: <code>AllUsers</code>,
      * <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li> </ul>
      */
-    inline Permission& WithGranteeType(Aws::String&& value) { SetGranteeType(value); return *this;}
+    inline Permission& WithGranteeType(Aws::String&& value) { SetGranteeType(std::move(value)); return *this;}
 
     /**
      * <p>The type of value that appears in the Grantee object:</p> <ul> <li> <p>
@@ -150,7 +151,7 @@ namespace Model
      * for an AWS account, an origin access identity for a CloudFront distribution, the
      * registered email address of an AWS account, or a predefined Amazon S3 group.</p>
      */
-    inline void SetGrantee(Aws::String&& value) { m_granteeHasBeenSet = true; m_grantee = value; }
+    inline void SetGrantee(Aws::String&& value) { m_granteeHasBeenSet = true; m_grantee = std::move(value); }
 
     /**
      * <p>The AWS user or group that you want to have access to transcoded files and
@@ -174,7 +175,7 @@ namespace Model
      * for an AWS account, an origin access identity for a CloudFront distribution, the
      * registered email address of an AWS account, or a predefined Amazon S3 group.</p>
      */
-    inline Permission& WithGrantee(Aws::String&& value) { SetGrantee(value); return *this;}
+    inline Permission& WithGrantee(Aws::String&& value) { SetGrantee(std::move(value)); return *this;}
 
     /**
      * <p>The AWS user or group that you want to have access to transcoded files and
@@ -224,7 +225,7 @@ namespace Model
      * READ_ACP, and WRITE_ACP permissions for the thumbnails that Elastic Transcoder
      * adds to the Amazon S3 bucket.</p> </li> </ul>
      */
-    inline void SetAccess(Aws::Vector<Aws::String>&& value) { m_accessHasBeenSet = true; m_access = value; }
+    inline void SetAccess(Aws::Vector<Aws::String>&& value) { m_accessHasBeenSet = true; m_access = std::move(value); }
 
     /**
      * <p> The permission that you want to give to the AWS user that is listed in
@@ -252,7 +253,7 @@ namespace Model
      * READ_ACP, and WRITE_ACP permissions for the thumbnails that Elastic Transcoder
      * adds to the Amazon S3 bucket.</p> </li> </ul>
      */
-    inline Permission& WithAccess(Aws::Vector<Aws::String>&& value) { SetAccess(value); return *this;}
+    inline Permission& WithAccess(Aws::Vector<Aws::String>&& value) { SetAccess(std::move(value)); return *this;}
 
     /**
      * <p> The permission that you want to give to the AWS user that is listed in
@@ -280,7 +281,7 @@ namespace Model
      * READ_ACP, and WRITE_ACP permissions for the thumbnails that Elastic Transcoder
      * adds to the Amazon S3 bucket.</p> </li> </ul>
      */
-    inline Permission& AddAccess(Aws::String&& value) { m_accessHasBeenSet = true; m_access.push_back(value); return *this; }
+    inline Permission& AddAccess(Aws::String&& value) { m_accessHasBeenSet = true; m_access.push_back(std::move(value)); return *this; }
 
     /**
      * <p> The permission that you want to give to the AWS user that is listed in

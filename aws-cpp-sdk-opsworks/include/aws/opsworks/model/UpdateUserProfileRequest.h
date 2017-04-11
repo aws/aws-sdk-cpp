@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The user IAM ARN. This can also be a federated user's ARN.</p>
      */
-    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
+    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::move(value); }
 
     /**
      * <p>The user IAM ARN. This can also be a federated user's ARN.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The user IAM ARN. This can also be a federated user's ARN.</p>
      */
-    inline UpdateUserProfileRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(value); return *this;}
+    inline UpdateUserProfileRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(std::move(value)); return *this;}
 
     /**
      * <p>The user IAM ARN. This can also be a federated user's ARN.</p>
@@ -95,7 +96,7 @@ namespace Model
      * <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks
      * generates one from the IAM user name. </p>
      */
-    inline void SetSshUsername(Aws::String&& value) { m_sshUsernameHasBeenSet = true; m_sshUsername = value; }
+    inline void SetSshUsername(Aws::String&& value) { m_sshUsernameHasBeenSet = true; m_sshUsername = std::move(value); }
 
     /**
      * <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9],
@@ -122,7 +123,7 @@ namespace Model
      * <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks
      * generates one from the IAM user name. </p>
      */
-    inline UpdateUserProfileRequest& WithSshUsername(Aws::String&& value) { SetSshUsername(value); return *this;}
+    inline UpdateUserProfileRequest& WithSshUsername(Aws::String&& value) { SetSshUsername(std::move(value)); return *this;}
 
     /**
      * <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9],
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>The user's new SSH public key.</p>
      */
-    inline void SetSshPublicKey(Aws::String&& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = value; }
+    inline void SetSshPublicKey(Aws::String&& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = std::move(value); }
 
     /**
      * <p>The user's new SSH public key.</p>
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>The user's new SSH public key.</p>
      */
-    inline UpdateUserProfileRequest& WithSshPublicKey(Aws::String&& value) { SetSshPublicKey(value); return *this;}
+    inline UpdateUserProfileRequest& WithSshPublicKey(Aws::String&& value) { SetSshPublicKey(std::move(value)); return *this;}
 
     /**
      * <p>The user's new SSH public key.</p>

@@ -16,6 +16,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/Disk.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The disks attached to the instance.</p>
      */
-    inline void SetDisks(Aws::Vector<Disk>&& value) { m_disksHasBeenSet = true; m_disks = value; }
+    inline void SetDisks(Aws::Vector<Disk>&& value) { m_disksHasBeenSet = true; m_disks = std::move(value); }
 
     /**
      * <p>The disks attached to the instance.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The disks attached to the instance.</p>
      */
-    inline InstanceHardware& WithDisks(Aws::Vector<Disk>&& value) { SetDisks(value); return *this;}
+    inline InstanceHardware& WithDisks(Aws::Vector<Disk>&& value) { SetDisks(std::move(value)); return *this;}
 
     /**
      * <p>The disks attached to the instance.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The disks attached to the instance.</p>
      */
-    inline InstanceHardware& AddDisks(Disk&& value) { m_disksHasBeenSet = true; m_disks.push_back(value); return *this; }
+    inline InstanceHardware& AddDisks(Disk&& value) { m_disksHasBeenSet = true; m_disks.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>

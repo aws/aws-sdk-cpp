@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The identifier of the client certificate.</p>
      */
-    inline void SetClientCertificateId(Aws::String&& value) { m_clientCertificateId = value; }
+    inline void SetClientCertificateId(Aws::String&& value) { m_clientCertificateId = std::move(value); }
 
     /**
      * <p>The identifier of the client certificate.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The identifier of the client certificate.</p>
      */
-    inline GenerateClientCertificateResult& WithClientCertificateId(Aws::String&& value) { SetClientCertificateId(value); return *this;}
+    inline GenerateClientCertificateResult& WithClientCertificateId(Aws::String&& value) { SetClientCertificateId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the client certificate.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The description of the client certificate.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
      * <p>The description of the client certificate.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The description of the client certificate.</p>
      */
-    inline GenerateClientCertificateResult& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline GenerateClientCertificateResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the client certificate.</p>
@@ -137,7 +138,7 @@ namespace Model
      * <p>The PEM-encoded public key of the client certificate, which can be used to
      * configure certificate authentication in the integration endpoint .</p>
      */
-    inline void SetPemEncodedCertificate(Aws::String&& value) { m_pemEncodedCertificate = value; }
+    inline void SetPemEncodedCertificate(Aws::String&& value) { m_pemEncodedCertificate = std::move(value); }
 
     /**
      * <p>The PEM-encoded public key of the client certificate, which can be used to
@@ -155,7 +156,7 @@ namespace Model
      * <p>The PEM-encoded public key of the client certificate, which can be used to
      * configure certificate authentication in the integration endpoint .</p>
      */
-    inline GenerateClientCertificateResult& WithPemEncodedCertificate(Aws::String&& value) { SetPemEncodedCertificate(value); return *this;}
+    inline GenerateClientCertificateResult& WithPemEncodedCertificate(Aws::String&& value) { SetPemEncodedCertificate(std::move(value)); return *this;}
 
     /**
      * <p>The PEM-encoded public key of the client certificate, which can be used to
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>The timestamp when the client certificate was created.</p>
      */
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = value; }
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
 
     /**
      * <p>The timestamp when the client certificate was created.</p>
@@ -186,7 +187,7 @@ namespace Model
     /**
      * <p>The timestamp when the client certificate was created.</p>
      */
-    inline GenerateClientCertificateResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
+    inline GenerateClientCertificateResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
     /**
      * <p>The timestamp when the client certificate will expire.</p>
@@ -201,7 +202,7 @@ namespace Model
     /**
      * <p>The timestamp when the client certificate will expire.</p>
      */
-    inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDate = value; }
+    inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDate = std::move(value); }
 
     /**
      * <p>The timestamp when the client certificate will expire.</p>
@@ -211,7 +212,7 @@ namespace Model
     /**
      * <p>The timestamp when the client certificate will expire.</p>
      */
-    inline GenerateClientCertificateResult& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(value); return *this;}
+    inline GenerateClientCertificateResult& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_clientCertificateId;

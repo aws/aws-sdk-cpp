@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/PatchBaselineIdentity.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>An array of PatchBaselineIdentity elements.</p>
      */
-    inline void SetBaselineIdentities(Aws::Vector<PatchBaselineIdentity>&& value) { m_baselineIdentities = value; }
+    inline void SetBaselineIdentities(Aws::Vector<PatchBaselineIdentity>&& value) { m_baselineIdentities = std::move(value); }
 
     /**
      * <p>An array of PatchBaselineIdentity elements.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>An array of PatchBaselineIdentity elements.</p>
      */
-    inline DescribePatchBaselinesResult& WithBaselineIdentities(Aws::Vector<PatchBaselineIdentity>&& value) { SetBaselineIdentities(value); return *this;}
+    inline DescribePatchBaselinesResult& WithBaselineIdentities(Aws::Vector<PatchBaselineIdentity>&& value) { SetBaselineIdentities(std::move(value)); return *this;}
 
     /**
      * <p>An array of PatchBaselineIdentity elements.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>An array of PatchBaselineIdentity elements.</p>
      */
-    inline DescribePatchBaselinesResult& AddBaselineIdentities(PatchBaselineIdentity&& value) { m_baselineIdentities.push_back(value); return *this; }
+    inline DescribePatchBaselinesResult& AddBaselineIdentities(PatchBaselineIdentity&& value) { m_baselineIdentities.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -92,7 +93,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -110,7 +111,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline DescribePatchBaselinesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribePatchBaselinesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no

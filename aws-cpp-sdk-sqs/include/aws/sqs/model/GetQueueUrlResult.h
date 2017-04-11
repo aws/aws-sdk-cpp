@@ -16,6 +16,7 @@
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sqs/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The URL of the queue.</p>
      */
-    inline void SetQueueUrl(Aws::String&& value) { m_queueUrl = value; }
+    inline void SetQueueUrl(Aws::String&& value) { m_queueUrl = std::move(value); }
 
     /**
      * <p>The URL of the queue.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The URL of the queue.</p>
      */
-    inline GetQueueUrlResult& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
+    inline GetQueueUrlResult& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL of the queue.</p>
@@ -89,13 +90,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline GetQueueUrlResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline GetQueueUrlResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline GetQueueUrlResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_queueUrl;

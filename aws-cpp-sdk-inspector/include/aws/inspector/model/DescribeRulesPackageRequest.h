@@ -16,6 +16,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/InspectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ARN specifying the rules package that you want to describe.</p>
      */
-    inline void SetRulesPackageArn(Aws::String&& value) { m_rulesPackageArnHasBeenSet = true; m_rulesPackageArn = value; }
+    inline void SetRulesPackageArn(Aws::String&& value) { m_rulesPackageArnHasBeenSet = true; m_rulesPackageArn = std::move(value); }
 
     /**
      * <p>The ARN specifying the rules package that you want to describe.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ARN specifying the rules package that you want to describe.</p>
      */
-    inline DescribeRulesPackageRequest& WithRulesPackageArn(Aws::String&& value) { SetRulesPackageArn(value); return *this;}
+    inline DescribeRulesPackageRequest& WithRulesPackageArn(Aws::String&& value) { SetRulesPackageArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN specifying the rules package that you want to describe.</p>

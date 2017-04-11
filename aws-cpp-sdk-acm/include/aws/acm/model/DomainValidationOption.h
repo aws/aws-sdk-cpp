@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>A fully qualified domain name (FQDN) in the certificate request.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>A fully qualified domain name (FQDN) in the certificate request.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>A fully qualified domain name (FQDN) in the certificate request.</p>
      */
-    inline DomainValidationOption& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DomainValidationOption& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>A fully qualified domain name (FQDN) in the certificate request.</p>
@@ -120,7 +121,7 @@ namespace Model
      * <li> <p>postmaster@example.com</p> </li> <li> <p>webmaster@example.com</p> </li>
      * </ul>
      */
-    inline void SetValidationDomain(Aws::String&& value) { m_validationDomainHasBeenSet = true; m_validationDomain = value; }
+    inline void SetValidationDomain(Aws::String&& value) { m_validationDomainHasBeenSet = true; m_validationDomain = std::move(value); }
 
     /**
      * <p>The domain name that you want ACM to use to send you validation emails. This
@@ -162,7 +163,7 @@ namespace Model
      * <li> <p>postmaster@example.com</p> </li> <li> <p>webmaster@example.com</p> </li>
      * </ul>
      */
-    inline DomainValidationOption& WithValidationDomain(Aws::String&& value) { SetValidationDomain(value); return *this;}
+    inline DomainValidationOption& WithValidationDomain(Aws::String&& value) { SetValidationDomain(std::move(value)); return *this;}
 
     /**
      * <p>The domain name that you want ACM to use to send you validation emails. This

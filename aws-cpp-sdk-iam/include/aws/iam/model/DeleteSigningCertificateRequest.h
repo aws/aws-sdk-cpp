@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the user the signing certificate belongs to.</p> <p>This
@@ -89,7 +90,7 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-</p>
      */
-    inline DeleteSigningCertificateRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline DeleteSigningCertificateRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the user the signing certificate belongs to.</p> <p>This
@@ -122,7 +123,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of
      * characters that can be upper- or lower-cased letters or digits.</p>
      */
-    inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
+    inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::move(value); }
 
     /**
      * <p>The ID of the signing certificate to delete.</p> <p>The format of this
@@ -146,7 +147,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of
      * characters that can be upper- or lower-cased letters or digits.</p>
      */
-    inline DeleteSigningCertificateRequest& WithCertificateId(Aws::String&& value) { SetCertificateId(value); return *this;}
+    inline DeleteSigningCertificateRequest& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the signing certificate to delete.</p> <p>The format of this

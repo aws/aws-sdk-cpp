@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/application-autoscaling/model/ScalableDimension.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
-    inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
+    inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
 
     /**
      * <p>The namespace of the AWS service. For more information, see <a
@@ -71,7 +72,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
-    inline DescribeScalableTargetsRequest& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(value); return *this;}
+    inline DescribeScalableTargetsRequest& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the resource associated with the scalable target. This
@@ -128,7 +129,7 @@ namespace Model
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
      * </li> </ul>
      */
-    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
+    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
 
     /**
      * <p>The identifier of the resource associated with the scalable target. This
@@ -166,7 +167,7 @@ namespace Model
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
      * </li> </ul>
      */
-    inline DescribeScalableTargetsRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(value); return *this;}
+    inline DescribeScalableTargetsRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the resource associated with the scalable target. This
@@ -204,7 +205,7 @@ namespace Model
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
      * </li> </ul>
      */
-    inline DescribeScalableTargetsRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
+    inline DescribeScalableTargetsRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The identifier of the resource associated with the scalable target. This
@@ -265,7 +266,7 @@ namespace Model
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
      * AppStream 2.0 fleet.</p> </li> </ul>
      */
-    inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
+    inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
 
     /**
      * <p>The scalable dimension associated with the scalable target. This string
@@ -293,7 +294,7 @@ namespace Model
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
      * AppStream 2.0 fleet.</p> </li> </ul>
      */
-    inline DescribeScalableTargetsRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(value); return *this;}
+    inline DescribeScalableTargetsRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of scalable target results. This value can be between 1
@@ -341,7 +342,7 @@ namespace Model
     /**
      * <p>The token for the next set of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of results.</p>
@@ -356,7 +357,7 @@ namespace Model
     /**
      * <p>The token for the next set of results.</p>
      */
-    inline DescribeScalableTargetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeScalableTargetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of results.</p>

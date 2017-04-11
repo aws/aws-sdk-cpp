@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/DocumentDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>A description of the document that was updated.</p>
      */
-    inline void SetDocumentDescription(DocumentDescription&& value) { m_documentDescription = value; }
+    inline void SetDocumentDescription(DocumentDescription&& value) { m_documentDescription = std::move(value); }
 
     /**
      * <p>A description of the document that was updated.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>A description of the document that was updated.</p>
      */
-    inline UpdateDocumentResult& WithDocumentDescription(DocumentDescription&& value) { SetDocumentDescription(value); return *this;}
+    inline UpdateDocumentResult& WithDocumentDescription(DocumentDescription&& value) { SetDocumentDescription(std::move(value)); return *this;}
 
   private:
     DocumentDescription m_documentDescription;

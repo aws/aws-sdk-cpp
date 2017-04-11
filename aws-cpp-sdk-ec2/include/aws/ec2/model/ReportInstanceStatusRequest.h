@@ -20,6 +20,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ReportInstanceReasonCodes.h>
+#include <utility>
 
 namespace Aws
 {
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>One or more instances.</p>
      */
-    inline void SetInstances(Aws::Vector<Aws::String>&& value) { m_instancesHasBeenSet = true; m_instances = value; }
+    inline void SetInstances(Aws::Vector<Aws::String>&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
 
     /**
      * <p>One or more instances.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>One or more instances.</p>
      */
-    inline ReportInstanceStatusRequest& WithInstances(Aws::Vector<Aws::String>&& value) { SetInstances(value); return *this;}
+    inline ReportInstanceStatusRequest& WithInstances(Aws::Vector<Aws::String>&& value) { SetInstances(std::move(value)); return *this;}
 
     /**
      * <p>One or more instances.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>One or more instances.</p>
      */
-    inline ReportInstanceStatusRequest& AddInstances(Aws::String&& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
+    inline ReportInstanceStatusRequest& AddInstances(Aws::String&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more instances.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The status of all instances listed.</p>
      */
-    inline void SetStatus(ReportStatusType&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ReportStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of all instances listed.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The status of all instances listed.</p>
      */
-    inline ReportInstanceStatusRequest& WithStatus(ReportStatusType&& value) { SetStatus(value); return *this;}
+    inline ReportInstanceStatusRequest& WithStatus(ReportStatusType&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The time at which the reported instance health state began.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The time at which the reported instance health state began.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The time at which the reported instance health state began.</p>
@@ -157,7 +158,7 @@ namespace Model
     /**
      * <p>The time at which the reported instance health state began.</p>
      */
-    inline ReportInstanceStatusRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline ReportInstanceStatusRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The time at which the reported instance health state ended.</p>
@@ -172,7 +173,7 @@ namespace Model
     /**
      * <p>The time at which the reported instance health state ended.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The time at which the reported instance health state ended.</p>
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p>The time at which the reported instance health state ended.</p>
      */
-    inline ReportInstanceStatusRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline ReportInstanceStatusRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>One or more reason codes that describes the health state of your
@@ -239,7 +240,7 @@ namespace Model
      * problems.</p> </li> <li> <p> <code>other</code>: [explain using the description
      * parameter]</p> </li> </ul>
      */
-    inline void SetReasonCodes(Aws::Vector<ReportInstanceReasonCodes>&& value) { m_reasonCodesHasBeenSet = true; m_reasonCodes = value; }
+    inline void SetReasonCodes(Aws::Vector<ReportInstanceReasonCodes>&& value) { m_reasonCodesHasBeenSet = true; m_reasonCodes = std::move(value); }
 
     /**
      * <p>One or more reason codes that describes the health state of your
@@ -277,7 +278,7 @@ namespace Model
      * problems.</p> </li> <li> <p> <code>other</code>: [explain using the description
      * parameter]</p> </li> </ul>
      */
-    inline ReportInstanceStatusRequest& WithReasonCodes(Aws::Vector<ReportInstanceReasonCodes>&& value) { SetReasonCodes(value); return *this;}
+    inline ReportInstanceStatusRequest& WithReasonCodes(Aws::Vector<ReportInstanceReasonCodes>&& value) { SetReasonCodes(std::move(value)); return *this;}
 
     /**
      * <p>One or more reason codes that describes the health state of your
@@ -315,7 +316,7 @@ namespace Model
      * problems.</p> </li> <li> <p> <code>other</code>: [explain using the description
      * parameter]</p> </li> </ul>
      */
-    inline ReportInstanceStatusRequest& AddReasonCodes(ReportInstanceReasonCodes&& value) { m_reasonCodesHasBeenSet = true; m_reasonCodes.push_back(value); return *this; }
+    inline ReportInstanceStatusRequest& AddReasonCodes(ReportInstanceReasonCodes&& value) { m_reasonCodesHasBeenSet = true; m_reasonCodes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Descriptive text about the health state of your instance.</p>
@@ -330,7 +331,7 @@ namespace Model
     /**
      * <p>Descriptive text about the health state of your instance.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Descriptive text about the health state of your instance.</p>
@@ -345,7 +346,7 @@ namespace Model
     /**
      * <p>Descriptive text about the health state of your instance.</p>
      */
-    inline ReportInstanceStatusRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline ReportInstanceStatusRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive text about the health state of your instance.</p>

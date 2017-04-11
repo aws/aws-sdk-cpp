@@ -20,6 +20,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/kinesis/model/Shard.h>
 #include <aws/kinesis/model/EnhancedMetrics.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The name of the stream being described.</p>
      */
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
 
     /**
      * <p>The name of the stream being described.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The name of the stream being described.</p>
      */
-    inline StreamDescription& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
+    inline StreamDescription& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the stream being described.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the stream being described.</p>
      */
-    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
+    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the stream being described.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the stream being described.</p>
      */
-    inline StreamDescription& WithStreamARN(Aws::String&& value) { SetStreamARN(value); return *this;}
+    inline StreamDescription& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the stream being described.</p>
@@ -165,7 +166,7 @@ namespace Model
      * continue to work while the stream is in the <code>UPDATING</code> state.</p>
      * </li> </ul>
      */
-    inline void SetStreamStatus(StreamStatus&& value) { m_streamStatusHasBeenSet = true; m_streamStatus = value; }
+    inline void SetStreamStatus(StreamStatus&& value) { m_streamStatusHasBeenSet = true; m_streamStatus = std::move(value); }
 
     /**
      * <p>The current status of the stream being described. The stream status is one of
@@ -197,7 +198,7 @@ namespace Model
      * continue to work while the stream is in the <code>UPDATING</code> state.</p>
      * </li> </ul>
      */
-    inline StreamDescription& WithStreamStatus(StreamStatus&& value) { SetStreamStatus(value); return *this;}
+    inline StreamDescription& WithStreamStatus(StreamStatus&& value) { SetStreamStatus(std::move(value)); return *this;}
 
     /**
      * <p>The shards that comprise the stream.</p>
@@ -212,7 +213,7 @@ namespace Model
     /**
      * <p>The shards that comprise the stream.</p>
      */
-    inline void SetShards(Aws::Vector<Shard>&& value) { m_shardsHasBeenSet = true; m_shards = value; }
+    inline void SetShards(Aws::Vector<Shard>&& value) { m_shardsHasBeenSet = true; m_shards = std::move(value); }
 
     /**
      * <p>The shards that comprise the stream.</p>
@@ -222,7 +223,7 @@ namespace Model
     /**
      * <p>The shards that comprise the stream.</p>
      */
-    inline StreamDescription& WithShards(Aws::Vector<Shard>&& value) { SetShards(value); return *this;}
+    inline StreamDescription& WithShards(Aws::Vector<Shard>&& value) { SetShards(std::move(value)); return *this;}
 
     /**
      * <p>The shards that comprise the stream.</p>
@@ -232,7 +233,7 @@ namespace Model
     /**
      * <p>The shards that comprise the stream.</p>
      */
-    inline StreamDescription& AddShards(Shard&& value) { m_shardsHasBeenSet = true; m_shards.push_back(value); return *this; }
+    inline StreamDescription& AddShards(Shard&& value) { m_shardsHasBeenSet = true; m_shards.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If set to <code>true</code>, more shards in the stream are available to
@@ -280,7 +281,7 @@ namespace Model
     /**
      * <p>The approximate time that the stream was created.</p>
      */
-    inline void SetStreamCreationTimestamp(Aws::Utils::DateTime&& value) { m_streamCreationTimestampHasBeenSet = true; m_streamCreationTimestamp = value; }
+    inline void SetStreamCreationTimestamp(Aws::Utils::DateTime&& value) { m_streamCreationTimestampHasBeenSet = true; m_streamCreationTimestamp = std::move(value); }
 
     /**
      * <p>The approximate time that the stream was created.</p>
@@ -290,7 +291,7 @@ namespace Model
     /**
      * <p>The approximate time that the stream was created.</p>
      */
-    inline StreamDescription& WithStreamCreationTimestamp(Aws::Utils::DateTime&& value) { SetStreamCreationTimestamp(value); return *this;}
+    inline StreamDescription& WithStreamCreationTimestamp(Aws::Utils::DateTime&& value) { SetStreamCreationTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>Represents the current enhanced monitoring settings of the stream.</p>
@@ -305,7 +306,7 @@ namespace Model
     /**
      * <p>Represents the current enhanced monitoring settings of the stream.</p>
      */
-    inline void SetEnhancedMonitoring(Aws::Vector<EnhancedMetrics>&& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring = value; }
+    inline void SetEnhancedMonitoring(Aws::Vector<EnhancedMetrics>&& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring = std::move(value); }
 
     /**
      * <p>Represents the current enhanced monitoring settings of the stream.</p>
@@ -315,7 +316,7 @@ namespace Model
     /**
      * <p>Represents the current enhanced monitoring settings of the stream.</p>
      */
-    inline StreamDescription& WithEnhancedMonitoring(Aws::Vector<EnhancedMetrics>&& value) { SetEnhancedMonitoring(value); return *this;}
+    inline StreamDescription& WithEnhancedMonitoring(Aws::Vector<EnhancedMetrics>&& value) { SetEnhancedMonitoring(std::move(value)); return *this;}
 
     /**
      * <p>Represents the current enhanced monitoring settings of the stream.</p>
@@ -325,7 +326,7 @@ namespace Model
     /**
      * <p>Represents the current enhanced monitoring settings of the stream.</p>
      */
-    inline StreamDescription& AddEnhancedMonitoring(EnhancedMetrics&& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring.push_back(value); return *this; }
+    inline StreamDescription& AddEnhancedMonitoring(EnhancedMetrics&& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_streamName;

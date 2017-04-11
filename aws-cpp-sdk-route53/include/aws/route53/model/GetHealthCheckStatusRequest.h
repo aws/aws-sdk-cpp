@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * <code>GetHealthCheckStatus</code> to get the status of a calculated health
      * check.</p> </note>
      */
-    inline void SetHealthCheckId(Aws::String&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = value; }
+    inline void SetHealthCheckId(Aws::String&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = std::move(value); }
 
     /**
      * <p>The ID for the health check for which you want the current status. When you
@@ -101,7 +102,7 @@ namespace Model
      * <code>GetHealthCheckStatus</code> to get the status of a calculated health
      * check.</p> </note>
      */
-    inline GetHealthCheckStatusRequest& WithHealthCheckId(Aws::String&& value) { SetHealthCheckId(value); return *this;}
+    inline GetHealthCheckStatusRequest& WithHealthCheckId(Aws::String&& value) { SetHealthCheckId(std::move(value)); return *this;}
 
     /**
      * <p>The ID for the health check for which you want the current status. When you

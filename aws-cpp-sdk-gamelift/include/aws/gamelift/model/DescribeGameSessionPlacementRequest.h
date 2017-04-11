@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>Unique identifier for a game session placement to retrieve.</p>
      */
-    inline void SetPlacementId(Aws::String&& value) { m_placementIdHasBeenSet = true; m_placementId = value; }
+    inline void SetPlacementId(Aws::String&& value) { m_placementIdHasBeenSet = true; m_placementId = std::move(value); }
 
     /**
      * <p>Unique identifier for a game session placement to retrieve.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Unique identifier for a game session placement to retrieve.</p>
      */
-    inline DescribeGameSessionPlacementRequest& WithPlacementId(Aws::String&& value) { SetPlacementId(value); return *this;}
+    inline DescribeGameSessionPlacementRequest& WithPlacementId(Aws::String&& value) { SetPlacementId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a game session placement to retrieve.</p>

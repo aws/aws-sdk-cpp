@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -87,7 +88,7 @@ namespace Model
      * CloudFrontOriginAccessIdentityConfig is different from the original request,
      * CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists error.
      */
-    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
+    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
 
     /**
      * A unique number that ensures the request can't be replayed. If the
@@ -132,7 +133,7 @@ namespace Model
      * CloudFrontOriginAccessIdentityConfig is different from the original request,
      * CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists error.
      */
-    inline CloudFrontOriginAccessIdentityConfig& WithCallerReference(Aws::String&& value) { SetCallerReference(value); return *this;}
+    inline CloudFrontOriginAccessIdentityConfig& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
 
     /**
      * A unique number that ensures the request can't be replayed. If the
@@ -162,7 +163,7 @@ namespace Model
     /**
      * Any comments you want to include about the origin access identity.
      */
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
+    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
      * Any comments you want to include about the origin access identity.
@@ -177,7 +178,7 @@ namespace Model
     /**
      * Any comments you want to include about the origin access identity.
      */
-    inline CloudFrontOriginAccessIdentityConfig& WithComment(Aws::String&& value) { SetComment(value); return *this;}
+    inline CloudFrontOriginAccessIdentityConfig& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
      * Any comments you want to include about the origin access identity.

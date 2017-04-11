@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/kms/KMSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -81,7 +82,7 @@ namespace Model
      * truncated results. Set it to the value of <code>NextMarker</code> from the
      * truncated response you just received.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>Use this parameter in a subsequent request after you receive a response with
@@ -102,7 +103,7 @@ namespace Model
      * truncated results. Set it to the value of <code>NextMarker</code> from the
      * truncated response you just received.</p>
      */
-    inline ListKeysRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListKeysRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter in a subsequent request after you receive a response with

@@ -19,6 +19,7 @@
 #include <aws/elasticbeanstalk/model/S3Location.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticbeanstalk/model/ConfigurationOptionSetting.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The name of your custom platform.</p>
      */
-    inline void SetPlatformName(Aws::String&& value) { m_platformNameHasBeenSet = true; m_platformName = value; }
+    inline void SetPlatformName(Aws::String&& value) { m_platformNameHasBeenSet = true; m_platformName = std::move(value); }
 
     /**
      * <p>The name of your custom platform.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of your custom platform.</p>
      */
-    inline CreatePlatformVersionRequest& WithPlatformName(Aws::String&& value) { SetPlatformName(value); return *this;}
+    inline CreatePlatformVersionRequest& WithPlatformName(Aws::String&& value) { SetPlatformName(std::move(value)); return *this;}
 
     /**
      * <p>The name of your custom platform.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The number, such as 1.0.2, for the new platform version.</p>
      */
-    inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
+    inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
      * <p>The number, such as 1.0.2, for the new platform version.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The number, such as 1.0.2, for the new platform version.</p>
      */
-    inline CreatePlatformVersionRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(value); return *this;}
+    inline CreatePlatformVersionRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
      * <p>The number, such as 1.0.2, for the new platform version.</p>
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>The location of the platform definition archive in Amazon S3.</p>
      */
-    inline void SetPlatformDefinitionBundle(S3Location&& value) { m_platformDefinitionBundleHasBeenSet = true; m_platformDefinitionBundle = value; }
+    inline void SetPlatformDefinitionBundle(S3Location&& value) { m_platformDefinitionBundleHasBeenSet = true; m_platformDefinitionBundle = std::move(value); }
 
     /**
      * <p>The location of the platform definition archive in Amazon S3.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The location of the platform definition archive in Amazon S3.</p>
      */
-    inline CreatePlatformVersionRequest& WithPlatformDefinitionBundle(S3Location&& value) { SetPlatformDefinitionBundle(value); return *this;}
+    inline CreatePlatformVersionRequest& WithPlatformDefinitionBundle(S3Location&& value) { SetPlatformDefinitionBundle(std::move(value)); return *this;}
 
     /**
      * <p>The name of the builder environment.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>The name of the builder environment.</p>
      */
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
+    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
 
     /**
      * <p>The name of the builder environment.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>The name of the builder environment.</p>
      */
-    inline CreatePlatformVersionRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
+    inline CreatePlatformVersionRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the builder environment.</p>
@@ -186,7 +187,7 @@ namespace Model
     /**
      * <p>The configuration option settings to apply to the builder environment.</p>
      */
-    inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
+    inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = std::move(value); }
 
     /**
      * <p>The configuration option settings to apply to the builder environment.</p>
@@ -196,7 +197,7 @@ namespace Model
     /**
      * <p>The configuration option settings to apply to the builder environment.</p>
      */
-    inline CreatePlatformVersionRequest& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(value); return *this;}
+    inline CreatePlatformVersionRequest& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(std::move(value)); return *this;}
 
     /**
      * <p>The configuration option settings to apply to the builder environment.</p>
@@ -206,7 +207,7 @@ namespace Model
     /**
      * <p>The configuration option settings to apply to the builder environment.</p>
      */
-    inline CreatePlatformVersionRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
+    inline CreatePlatformVersionRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_platformName;

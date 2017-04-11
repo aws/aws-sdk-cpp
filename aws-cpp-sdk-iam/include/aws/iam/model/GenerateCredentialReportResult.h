@@ -17,6 +17,7 @@
 #include <aws/iam/model/ReportStateType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Information about the state of the credential report.</p>
      */
-    inline void SetState(ReportStateType&& value) { m_state = value; }
+    inline void SetState(ReportStateType&& value) { m_state = std::move(value); }
 
     /**
      * <p>Information about the state of the credential report.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Information about the state of the credential report.</p>
      */
-    inline GenerateCredentialReportResult& WithState(ReportStateType&& value) { SetState(value); return *this;}
+    inline GenerateCredentialReportResult& WithState(ReportStateType&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>Information about the credential report.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>Information about the credential report.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
      * <p>Information about the credential report.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>Information about the credential report.</p>
      */
-    inline GenerateCredentialReportResult& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline GenerateCredentialReportResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Information about the credential report.</p>
@@ -114,13 +115,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline GenerateCredentialReportResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline GenerateCredentialReportResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline GenerateCredentialReportResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     ReportStateType m_state;

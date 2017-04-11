@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/model/NetworkProtocol.h>
+#include <utility>
 
 namespace Aws
 {
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The protocol. </p>
      */
-    inline void SetProtocol(NetworkProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline void SetProtocol(NetworkProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol. </p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The protocol. </p>
      */
-    inline PortInfo& WithProtocol(NetworkProtocol&& value) { SetProtocol(value); return *this;}
+    inline PortInfo& WithProtocol(NetworkProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
   private:
     int m_fromPort;

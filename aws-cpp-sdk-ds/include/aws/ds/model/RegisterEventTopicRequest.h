@@ -16,6 +16,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The Directory ID that will publish status messages to the SNS topic.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>The Directory ID that will publish status messages to the SNS topic.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The Directory ID that will publish status messages to the SNS topic.</p>
      */
-    inline RegisterEventTopicRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline RegisterEventTopicRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>The Directory ID that will publish status messages to the SNS topic.</p>
@@ -89,7 +90,7 @@ namespace Model
      * <p>The SNS topic name to which the directory will publish status messages. This
      * SNS topic must be in the same region as the specified Directory ID.</p>
      */
-    inline void SetTopicName(Aws::String&& value) { m_topicNameHasBeenSet = true; m_topicName = value; }
+    inline void SetTopicName(Aws::String&& value) { m_topicNameHasBeenSet = true; m_topicName = std::move(value); }
 
     /**
      * <p>The SNS topic name to which the directory will publish status messages. This
@@ -107,7 +108,7 @@ namespace Model
      * <p>The SNS topic name to which the directory will publish status messages. This
      * SNS topic must be in the same region as the specified Directory ID.</p>
      */
-    inline RegisterEventTopicRequest& WithTopicName(Aws::String&& value) { SetTopicName(value); return *this;}
+    inline RegisterEventTopicRequest& WithTopicName(Aws::String&& value) { SetTopicName(std::move(value)); return *this;}
 
     /**
      * <p>The SNS topic name to which the directory will publish status messages. This

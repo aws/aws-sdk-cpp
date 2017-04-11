@@ -17,6 +17,7 @@
 #include <aws/cloudfront/CloudFrontRequest.h>
 #include <aws/cloudfront/model/DistributionConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * The distribution's configuration information.
      */
-    inline void SetDistributionConfig(DistributionConfig&& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
+    inline void SetDistributionConfig(DistributionConfig&& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = std::move(value); }
 
     /**
      * The distribution's configuration information.
@@ -62,7 +63,7 @@ namespace Model
     /**
      * The distribution's configuration information.
      */
-    inline UpdateDistribution2016_01_28Request& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(value); return *this;}
+    inline UpdateDistribution2016_01_28Request& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(std::move(value)); return *this;}
 
     /**
      * The distribution's id.
@@ -77,7 +78,7 @@ namespace Model
     /**
      * The distribution's id.
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * The distribution's id.
@@ -92,7 +93,7 @@ namespace Model
     /**
      * The distribution's id.
      */
-    inline UpdateDistribution2016_01_28Request& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline UpdateDistribution2016_01_28Request& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * The distribution's id.
@@ -115,7 +116,7 @@ namespace Model
      * The value of the ETag header you received when retrieving the distribution's
      * configuration. For example: E2QWRUHAPOMQZL.
      */
-    inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
+    inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
 
     /**
      * The value of the ETag header you received when retrieving the distribution's
@@ -133,7 +134,7 @@ namespace Model
      * The value of the ETag header you received when retrieving the distribution's
      * configuration. For example: E2QWRUHAPOMQZL.
      */
-    inline UpdateDistribution2016_01_28Request& WithIfMatch(Aws::String&& value) { SetIfMatch(value); return *this;}
+    inline UpdateDistribution2016_01_28Request& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
 
     /**
      * The value of the ETag header you received when retrieving the distribution's

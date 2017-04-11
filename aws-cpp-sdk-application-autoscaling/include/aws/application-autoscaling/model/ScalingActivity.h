@@ -19,6 +19,7 @@
 #include <aws/application-autoscaling/model/ScalableDimension.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/application-autoscaling/model/ScalingActivityStatusCode.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The unique identifier of the scaling activity.</p>
      */
-    inline void SetActivityId(Aws::String&& value) { m_activityIdHasBeenSet = true; m_activityId = value; }
+    inline void SetActivityId(Aws::String&& value) { m_activityIdHasBeenSet = true; m_activityId = std::move(value); }
 
     /**
      * <p>The unique identifier of the scaling activity.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The unique identifier of the scaling activity.</p>
      */
-    inline ScalingActivity& WithActivityId(Aws::String&& value) { SetActivityId(value); return *this;}
+    inline ScalingActivity& WithActivityId(Aws::String&& value) { SetActivityId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the scaling activity.</p>
@@ -101,7 +102,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
-    inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
+    inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
 
     /**
      * <p>The namespace of the AWS service. For more information, see <a
@@ -115,7 +116,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
-    inline ScalingActivity& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(value); return *this;}
+    inline ScalingActivity& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the resource associated with the scaling activity. This
@@ -169,7 +170,7 @@ namespace Model
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
      * </li> </ul>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The identifier of the resource associated with the scaling activity. This
@@ -223,7 +224,7 @@ namespace Model
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
      * </li> </ul>
      */
-    inline ScalingActivity& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline ScalingActivity& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the resource associated with the scaling activity. This
@@ -280,7 +281,7 @@ namespace Model
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
      * AppStream 2.0 fleet.</p> </li> </ul>
      */
-    inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
+    inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
 
     /**
      * <p>The scalable dimension. This string consists of the service namespace,
@@ -306,7 +307,7 @@ namespace Model
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
      * AppStream 2.0 fleet.</p> </li> </ul>
      */
-    inline ScalingActivity& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(value); return *this;}
+    inline ScalingActivity& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 
     /**
      * <p>A simple description of what action the scaling activity intends to
@@ -324,7 +325,7 @@ namespace Model
      * <p>A simple description of what action the scaling activity intends to
      * accomplish.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A simple description of what action the scaling activity intends to
@@ -342,7 +343,7 @@ namespace Model
      * <p>A simple description of what action the scaling activity intends to
      * accomplish.</p>
      */
-    inline ScalingActivity& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline ScalingActivity& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A simple description of what action the scaling activity intends to
@@ -363,7 +364,7 @@ namespace Model
     /**
      * <p>A simple description of what caused the scaling activity to happen.</p>
      */
-    inline void SetCause(Aws::String&& value) { m_causeHasBeenSet = true; m_cause = value; }
+    inline void SetCause(Aws::String&& value) { m_causeHasBeenSet = true; m_cause = std::move(value); }
 
     /**
      * <p>A simple description of what caused the scaling activity to happen.</p>
@@ -378,7 +379,7 @@ namespace Model
     /**
      * <p>A simple description of what caused the scaling activity to happen.</p>
      */
-    inline ScalingActivity& WithCause(Aws::String&& value) { SetCause(value); return *this;}
+    inline ScalingActivity& WithCause(Aws::String&& value) { SetCause(std::move(value)); return *this;}
 
     /**
      * <p>A simple description of what caused the scaling activity to happen.</p>
@@ -398,7 +399,7 @@ namespace Model
     /**
      * <p>The Unix timestamp for when the scaling activity began.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The Unix timestamp for when the scaling activity began.</p>
@@ -408,7 +409,7 @@ namespace Model
     /**
      * <p>The Unix timestamp for when the scaling activity began.</p>
      */
-    inline ScalingActivity& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline ScalingActivity& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The Unix timestamp for when the scaling activity ended.</p>
@@ -423,7 +424,7 @@ namespace Model
     /**
      * <p>The Unix timestamp for when the scaling activity ended.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The Unix timestamp for when the scaling activity ended.</p>
@@ -433,7 +434,7 @@ namespace Model
     /**
      * <p>The Unix timestamp for when the scaling activity ended.</p>
      */
-    inline ScalingActivity& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline ScalingActivity& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>Indicates the status of the scaling activity.</p>
@@ -448,7 +449,7 @@ namespace Model
     /**
      * <p>Indicates the status of the scaling activity.</p>
      */
-    inline void SetStatusCode(ScalingActivityStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline void SetStatusCode(ScalingActivityStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
 
     /**
      * <p>Indicates the status of the scaling activity.</p>
@@ -458,7 +459,7 @@ namespace Model
     /**
      * <p>Indicates the status of the scaling activity.</p>
      */
-    inline ScalingActivity& WithStatusCode(ScalingActivityStatusCode&& value) { SetStatusCode(value); return *this;}
+    inline ScalingActivity& WithStatusCode(ScalingActivityStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
 
     /**
      * <p>A simple message about the current status of the scaling activity.</p>
@@ -473,7 +474,7 @@ namespace Model
     /**
      * <p>A simple message about the current status of the scaling activity.</p>
      */
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
 
     /**
      * <p>A simple message about the current status of the scaling activity.</p>
@@ -488,7 +489,7 @@ namespace Model
     /**
      * <p>A simple message about the current status of the scaling activity.</p>
      */
-    inline ScalingActivity& WithStatusMessage(Aws::String&& value) { SetStatusMessage(value); return *this;}
+    inline ScalingActivity& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
      * <p>A simple message about the current status of the scaling activity.</p>
@@ -508,7 +509,7 @@ namespace Model
     /**
      * <p>The details about the scaling activity.</p>
      */
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = value; }
+    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
      * <p>The details about the scaling activity.</p>
@@ -523,7 +524,7 @@ namespace Model
     /**
      * <p>The details about the scaling activity.</p>
      */
-    inline ScalingActivity& WithDetails(Aws::String&& value) { SetDetails(value); return *this;}
+    inline ScalingActivity& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
      * <p>The details about the scaling activity.</p>

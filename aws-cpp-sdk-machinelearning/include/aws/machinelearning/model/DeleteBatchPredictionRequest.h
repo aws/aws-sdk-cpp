@@ -16,6 +16,7 @@
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/machinelearning/MachineLearningRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>A user-supplied ID that uniquely identifies the
      * <code>BatchPrediction</code>.</p>
      */
-    inline void SetBatchPredictionId(Aws::String&& value) { m_batchPredictionIdHasBeenSet = true; m_batchPredictionId = value; }
+    inline void SetBatchPredictionId(Aws::String&& value) { m_batchPredictionIdHasBeenSet = true; m_batchPredictionId = std::move(value); }
 
     /**
      * <p>A user-supplied ID that uniquely identifies the
@@ -69,7 +70,7 @@ namespace Model
      * <p>A user-supplied ID that uniquely identifies the
      * <code>BatchPrediction</code>.</p>
      */
-    inline DeleteBatchPredictionRequest& WithBatchPredictionId(Aws::String&& value) { SetBatchPredictionId(value); return *this;}
+    inline DeleteBatchPredictionRequest& WithBatchPredictionId(Aws::String&& value) { SetBatchPredictionId(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied ID that uniquely identifies the

@@ -17,6 +17,7 @@
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/model/OrderBy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
      * <p>The name of the log group.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline DescribeLogStreamsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
+    inline DescribeLogStreamsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the log group.</p>
@@ -87,7 +88,7 @@ namespace Model
      * <p>The prefix to match.</p> <p>You cannot specify this parameter if
      * <code>orderBy</code> is <code>LastEventTime</code>.</p>
      */
-    inline void SetLogStreamNamePrefix(Aws::String&& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = value; }
+    inline void SetLogStreamNamePrefix(Aws::String&& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = std::move(value); }
 
     /**
      * <p>The prefix to match.</p> <p>You cannot specify this parameter if
@@ -105,7 +106,7 @@ namespace Model
      * <p>The prefix to match.</p> <p>You cannot specify this parameter if
      * <code>orderBy</code> is <code>LastEventTime</code>.</p>
      */
-    inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(Aws::String&& value) { SetLogStreamNamePrefix(value); return *this;}
+    inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(Aws::String&& value) { SetLogStreamNamePrefix(std::move(value)); return *this;}
 
     /**
      * <p>The prefix to match.</p> <p>You cannot specify this parameter if
@@ -138,7 +139,7 @@ namespace Model
      * you order the results by event time, you cannot specify the
      * <code>logStreamNamePrefix</code> parameter.</p>
      */
-    inline void SetOrderBy(OrderBy&& value) { m_orderByHasBeenSet = true; m_orderBy = value; }
+    inline void SetOrderBy(OrderBy&& value) { m_orderByHasBeenSet = true; m_orderBy = std::move(value); }
 
     /**
      * <p>If the value is <code>LogStreamName</code>, the results are ordered by log
@@ -156,7 +157,7 @@ namespace Model
      * you order the results by event time, you cannot specify the
      * <code>logStreamNamePrefix</code> parameter.</p>
      */
-    inline DescribeLogStreamsRequest& WithOrderBy(OrderBy&& value) { SetOrderBy(value); return *this;}
+    inline DescribeLogStreamsRequest& WithOrderBy(OrderBy&& value) { SetOrderBy(std::move(value)); return *this;}
 
     /**
      * <p>If the value is true, results are returned in descending order. If the value
@@ -195,7 +196,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -213,7 +214,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline DescribeLogStreamsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeLogStreamsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

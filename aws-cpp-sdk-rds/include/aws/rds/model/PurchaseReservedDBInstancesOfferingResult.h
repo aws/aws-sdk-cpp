@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/ReservedDBInstance.h>
 #include <aws/rds/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,13 +48,13 @@ namespace Model
     inline void SetReservedDBInstance(const ReservedDBInstance& value) { m_reservedDBInstance = value; }
 
     
-    inline void SetReservedDBInstance(ReservedDBInstance&& value) { m_reservedDBInstance = value; }
+    inline void SetReservedDBInstance(ReservedDBInstance&& value) { m_reservedDBInstance = std::move(value); }
 
     
     inline PurchaseReservedDBInstancesOfferingResult& WithReservedDBInstance(const ReservedDBInstance& value) { SetReservedDBInstance(value); return *this;}
 
     
-    inline PurchaseReservedDBInstancesOfferingResult& WithReservedDBInstance(ReservedDBInstance&& value) { SetReservedDBInstance(value); return *this;}
+    inline PurchaseReservedDBInstancesOfferingResult& WithReservedDBInstance(ReservedDBInstance&& value) { SetReservedDBInstance(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -62,13 +63,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline PurchaseReservedDBInstancesOfferingResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline PurchaseReservedDBInstancesOfferingResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline PurchaseReservedDBInstancesOfferingResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     ReservedDBInstance m_reservedDBInstance;

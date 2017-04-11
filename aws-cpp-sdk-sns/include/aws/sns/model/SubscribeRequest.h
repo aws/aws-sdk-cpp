@@ -16,6 +16,7 @@
 #include <aws/sns/SNS_EXPORTS.h>
 #include <aws/sns/SNSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The ARN of the topic you want to subscribe to.</p>
      */
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
 
     /**
      * <p>The ARN of the topic you want to subscribe to.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The ARN of the topic you want to subscribe to.</p>
      */
-    inline SubscribeRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
+    inline SubscribeRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the topic you want to subscribe to.</p>
@@ -118,7 +119,7 @@ namespace Model
      * <li> <p> <code>lambda</code> -- delivery of JSON-encoded message to an AWS
      * Lambda function.</p> </li> </ul>
      */
-    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
@@ -163,7 +164,7 @@ namespace Model
      * <li> <p> <code>lambda</code> -- delivery of JSON-encoded message to an AWS
      * Lambda function.</p> </li> </ul>
      */
-    inline SubscribeRequest& WithProtocol(Aws::String&& value) { SetProtocol(value); return *this;}
+    inline SubscribeRequest& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
      * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
@@ -226,7 +227,7 @@ namespace Model
      * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
      * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
      */
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
+    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
@@ -274,7 +275,7 @@ namespace Model
      * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
      * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
      */
-    inline SubscribeRequest& WithEndpoint(Aws::String&& value) { SetEndpoint(value); return *this;}
+    inline SubscribeRequest& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by

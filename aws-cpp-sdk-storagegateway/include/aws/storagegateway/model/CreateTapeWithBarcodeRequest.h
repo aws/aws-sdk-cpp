@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * associate the virtual tape with. Use the <a>ListGateways</a> operation to return
      * a list of gateways for your account and region.</p>
      */
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
@@ -78,7 +79,7 @@ namespace Model
      * associate the virtual tape with. Use the <a>ListGateways</a> operation to return
      * a list of gateways for your account and region.</p>
      */
-    inline CreateTapeWithBarcodeRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline CreateTapeWithBarcodeRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The barcode that you want to assign to the tape.</p>
      */
-    inline void SetTapeBarcode(Aws::String&& value) { m_tapeBarcodeHasBeenSet = true; m_tapeBarcode = value; }
+    inline void SetTapeBarcode(Aws::String&& value) { m_tapeBarcodeHasBeenSet = true; m_tapeBarcode = std::move(value); }
 
     /**
      * <p>The barcode that you want to assign to the tape.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The barcode that you want to assign to the tape.</p>
      */
-    inline CreateTapeWithBarcodeRequest& WithTapeBarcode(Aws::String&& value) { SetTapeBarcode(value); return *this;}
+    inline CreateTapeWithBarcodeRequest& WithTapeBarcode(Aws::String&& value) { SetTapeBarcode(std::move(value)); return *this;}
 
     /**
      * <p>The barcode that you want to assign to the tape.</p>

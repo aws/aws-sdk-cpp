@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * sequentially. A shard iterator specifies this position using the sequence number
      * of a data record in a shard.</p>
      */
-    inline void SetShardIterator(Aws::String&& value) { m_shardIterator = value; }
+    inline void SetShardIterator(Aws::String&& value) { m_shardIterator = std::move(value); }
 
     /**
      * <p>The position in the shard from which to start reading data records
@@ -85,7 +86,7 @@ namespace Model
      * sequentially. A shard iterator specifies this position using the sequence number
      * of a data record in a shard.</p>
      */
-    inline GetShardIteratorResult& WithShardIterator(Aws::String&& value) { SetShardIterator(value); return *this;}
+    inline GetShardIteratorResult& WithShardIterator(Aws::String&& value) { SetShardIterator(std::move(value)); return *this;}
 
     /**
      * <p>The position in the shard from which to start reading data records

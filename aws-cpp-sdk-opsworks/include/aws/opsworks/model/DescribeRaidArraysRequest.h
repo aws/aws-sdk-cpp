@@ -17,6 +17,7 @@
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * returns descriptions of the RAID arrays associated with the specified instance.
      * </p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code>
@@ -76,7 +77,7 @@ namespace Model
      * returns descriptions of the RAID arrays associated with the specified instance.
      * </p>
      */
-    inline DescribeRaidArraysRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline DescribeRaidArraysRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
      * <p>The stack ID.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
-    inline DescribeRaidArraysRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline DescribeRaidArraysRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>The stack ID.</p>
@@ -139,7 +140,7 @@ namespace Model
      * <code>DescribeRaidArrays</code> returns descriptions of the specified arrays.
      * Otherwise, it returns a description of every array.</p>
      */
-    inline void SetRaidArrayIds(Aws::Vector<Aws::String>&& value) { m_raidArrayIdsHasBeenSet = true; m_raidArrayIds = value; }
+    inline void SetRaidArrayIds(Aws::Vector<Aws::String>&& value) { m_raidArrayIdsHasBeenSet = true; m_raidArrayIds = std::move(value); }
 
     /**
      * <p>An array of RAID array IDs. If you use this parameter,
@@ -153,7 +154,7 @@ namespace Model
      * <code>DescribeRaidArrays</code> returns descriptions of the specified arrays.
      * Otherwise, it returns a description of every array.</p>
      */
-    inline DescribeRaidArraysRequest& WithRaidArrayIds(Aws::Vector<Aws::String>&& value) { SetRaidArrayIds(value); return *this;}
+    inline DescribeRaidArraysRequest& WithRaidArrayIds(Aws::Vector<Aws::String>&& value) { SetRaidArrayIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of RAID array IDs. If you use this parameter,
@@ -167,7 +168,7 @@ namespace Model
      * <code>DescribeRaidArrays</code> returns descriptions of the specified arrays.
      * Otherwise, it returns a description of every array.</p>
      */
-    inline DescribeRaidArraysRequest& AddRaidArrayIds(Aws::String&& value) { m_raidArrayIdsHasBeenSet = true; m_raidArrayIds.push_back(value); return *this; }
+    inline DescribeRaidArraysRequest& AddRaidArrayIds(Aws::String&& value) { m_raidArrayIdsHasBeenSet = true; m_raidArrayIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of RAID array IDs. If you use this parameter,

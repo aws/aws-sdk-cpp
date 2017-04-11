@@ -16,6 +16,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/BatchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
      * <p>The name or Amazon Resource Name (ARN) of the compute environment to delete.
      * </p>
      */
-    inline void SetComputeEnvironment(Aws::String&& value) { m_computeEnvironmentHasBeenSet = true; m_computeEnvironment = value; }
+    inline void SetComputeEnvironment(Aws::String&& value) { m_computeEnvironmentHasBeenSet = true; m_computeEnvironment = std::move(value); }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the compute environment to delete.
@@ -67,7 +68,7 @@ namespace Model
      * <p>The name or Amazon Resource Name (ARN) of the compute environment to delete.
      * </p>
      */
-    inline DeleteComputeEnvironmentRequest& WithComputeEnvironment(Aws::String&& value) { SetComputeEnvironment(value); return *this;}
+    inline DeleteComputeEnvironmentRequest& WithComputeEnvironment(Aws::String&& value) { SetComputeEnvironment(std::move(value)); return *this;}
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the compute environment to delete.

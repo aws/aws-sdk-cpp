@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -85,7 +86,7 @@ namespace Model
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
      * cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
      */
-    inline void SetCacheNodeIdsToRemove(Aws::Vector<Aws::String>&& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove = value; }
+    inline void SetCacheNodeIdsToRemove(Aws::Vector<Aws::String>&& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove = std::move(value); }
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
@@ -97,7 +98,7 @@ namespace Model
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
      * cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
      */
-    inline PendingModifiedValues& WithCacheNodeIdsToRemove(Aws::Vector<Aws::String>&& value) { SetCacheNodeIdsToRemove(value); return *this;}
+    inline PendingModifiedValues& WithCacheNodeIdsToRemove(Aws::Vector<Aws::String>&& value) { SetCacheNodeIdsToRemove(std::move(value)); return *this;}
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
@@ -109,7 +110,7 @@ namespace Model
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
      * cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
      */
-    inline PendingModifiedValues& AddCacheNodeIdsToRemove(Aws::String&& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove.push_back(value); return *this; }
+    inline PendingModifiedValues& AddCacheNodeIdsToRemove(Aws::String&& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The new cache engine version that the cache cluster runs.</p>
      */
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>The new cache engine version that the cache cluster runs.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>The new cache engine version that the cache cluster runs.</p>
      */
-    inline PendingModifiedValues& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
+    inline PendingModifiedValues& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The new cache engine version that the cache cluster runs.</p>
@@ -168,7 +169,7 @@ namespace Model
      * <p>The cache node type that this cache cluster or replication group is scaled
      * to.</p>
      */
-    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
+    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::move(value); }
 
     /**
      * <p>The cache node type that this cache cluster or replication group is scaled
@@ -186,7 +187,7 @@ namespace Model
      * <p>The cache node type that this cache cluster or replication group is scaled
      * to.</p>
      */
-    inline PendingModifiedValues& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(value); return *this;}
+    inline PendingModifiedValues& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(std::move(value)); return *this;}
 
     /**
      * <p>The cache node type that this cache cluster or replication group is scaled

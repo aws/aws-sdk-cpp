@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
      */
-    inline void SetTapeARN(Aws::String&& value) { m_tapeARNHasBeenSet = true; m_tapeARN = value; }
+    inline void SetTapeARN(Aws::String&& value) { m_tapeARNHasBeenSet = true; m_tapeARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
      */
-    inline TapeRecoveryPointInfo& WithTapeARN(Aws::String&& value) { SetTapeARN(value); return *this;}
+    inline TapeRecoveryPointInfo& WithTapeARN(Aws::String&& value) { SetTapeARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
@@ -98,7 +99,7 @@ namespace Model
      * later recovery.</p> <p>The string format of the tape recovery point time is in
      * the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
-    inline void SetTapeRecoveryPointTime(Aws::Utils::DateTime&& value) { m_tapeRecoveryPointTimeHasBeenSet = true; m_tapeRecoveryPointTime = value; }
+    inline void SetTapeRecoveryPointTime(Aws::Utils::DateTime&& value) { m_tapeRecoveryPointTimeHasBeenSet = true; m_tapeRecoveryPointTime = std::move(value); }
 
     /**
      * <p>The time when the point-in-time view of the virtual tape was replicated for
@@ -112,7 +113,7 @@ namespace Model
      * later recovery.</p> <p>The string format of the tape recovery point time is in
      * the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
-    inline TapeRecoveryPointInfo& WithTapeRecoveryPointTime(Aws::Utils::DateTime&& value) { SetTapeRecoveryPointTime(value); return *this;}
+    inline TapeRecoveryPointInfo& WithTapeRecoveryPointTime(Aws::Utils::DateTime&& value) { SetTapeRecoveryPointTime(std::move(value)); return *this;}
 
     /**
      * <p>The size, in bytes, of the virtual tapes to recover.</p>
@@ -136,7 +137,7 @@ namespace Model
     inline void SetTapeStatus(const Aws::String& value) { m_tapeStatusHasBeenSet = true; m_tapeStatus = value; }
 
     
-    inline void SetTapeStatus(Aws::String&& value) { m_tapeStatusHasBeenSet = true; m_tapeStatus = value; }
+    inline void SetTapeStatus(Aws::String&& value) { m_tapeStatusHasBeenSet = true; m_tapeStatus = std::move(value); }
 
     
     inline void SetTapeStatus(const char* value) { m_tapeStatusHasBeenSet = true; m_tapeStatus.assign(value); }
@@ -145,7 +146,7 @@ namespace Model
     inline TapeRecoveryPointInfo& WithTapeStatus(const Aws::String& value) { SetTapeStatus(value); return *this;}
 
     
-    inline TapeRecoveryPointInfo& WithTapeStatus(Aws::String&& value) { SetTapeStatus(value); return *this;}
+    inline TapeRecoveryPointInfo& WithTapeStatus(Aws::String&& value) { SetTapeStatus(std::move(value)); return *this;}
 
     
     inline TapeRecoveryPointInfo& WithTapeStatus(const char* value) { SetTapeStatus(value); return *this;}

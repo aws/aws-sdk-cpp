@@ -16,6 +16,7 @@
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The canonical name of the alias.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The canonical name of the alias.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The canonical name of the alias.</p>
      */
-    inline Alias& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Alias& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The canonical name of the alias.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>A list of names for the alias, including the canonical name.</p>
      */
-    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = value; }
+    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
 
     /**
      * <p>A list of names for the alias, including the canonical name.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>A list of names for the alias, including the canonical name.</p>
      */
-    inline Alias& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(value); return *this;}
+    inline Alias& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of names for the alias, including the canonical name.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>A list of names for the alias, including the canonical name.</p>
      */
-    inline Alias& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
+    inline Alias& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of names for the alias, including the canonical name.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The type of the alias.</p>
      */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of the alias.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The type of the alias.</p>
      */
-    inline Alias& WithType(Aws::String&& value) { SetType(value); return *this;}
+    inline Alias& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The type of the alias.</p>

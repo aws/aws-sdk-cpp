@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>A unique identifier for the trust relationship that was created.</p>
      */
-    inline void SetTrustId(Aws::String&& value) { m_trustId = value; }
+    inline void SetTrustId(Aws::String&& value) { m_trustId = std::move(value); }
 
     /**
      * <p>A unique identifier for the trust relationship that was created.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>A unique identifier for the trust relationship that was created.</p>
      */
-    inline CreateTrustResult& WithTrustId(Aws::String&& value) { SetTrustId(value); return *this;}
+    inline CreateTrustResult& WithTrustId(Aws::String&& value) { SetTrustId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the trust relationship that was created.</p>

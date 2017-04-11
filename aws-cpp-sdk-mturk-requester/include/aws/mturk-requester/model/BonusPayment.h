@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ID of the Worker to whom the bonus was paid.</p>
      */
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
+    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
 
     /**
      * <p>The ID of the Worker to whom the bonus was paid.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ID of the Worker to whom the bonus was paid.</p>
      */
-    inline BonusPayment& WithWorkerId(Aws::String&& value) { SetWorkerId(value); return *this;}
+    inline BonusPayment& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Worker to whom the bonus was paid.</p>
@@ -87,7 +88,7 @@ namespace Model
     inline void SetBonusAmount(const Aws::String& value) { m_bonusAmountHasBeenSet = true; m_bonusAmount = value; }
 
     
-    inline void SetBonusAmount(Aws::String&& value) { m_bonusAmountHasBeenSet = true; m_bonusAmount = value; }
+    inline void SetBonusAmount(Aws::String&& value) { m_bonusAmountHasBeenSet = true; m_bonusAmount = std::move(value); }
 
     
     inline void SetBonusAmount(const char* value) { m_bonusAmountHasBeenSet = true; m_bonusAmount.assign(value); }
@@ -96,7 +97,7 @@ namespace Model
     inline BonusPayment& WithBonusAmount(const Aws::String& value) { SetBonusAmount(value); return *this;}
 
     
-    inline BonusPayment& WithBonusAmount(Aws::String&& value) { SetBonusAmount(value); return *this;}
+    inline BonusPayment& WithBonusAmount(Aws::String&& value) { SetBonusAmount(std::move(value)); return *this;}
 
     
     inline BonusPayment& WithBonusAmount(const char* value) { SetBonusAmount(value); return *this;}
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The ID of the assignment associated with this bonus payment.</p>
      */
-    inline void SetAssignmentId(Aws::String&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = value; }
+    inline void SetAssignmentId(Aws::String&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = std::move(value); }
 
     /**
      * <p>The ID of the assignment associated with this bonus payment.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The ID of the assignment associated with this bonus payment.</p>
      */
-    inline BonusPayment& WithAssignmentId(Aws::String&& value) { SetAssignmentId(value); return *this;}
+    inline BonusPayment& WithAssignmentId(Aws::String&& value) { SetAssignmentId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the assignment associated with this bonus payment.</p>
@@ -149,7 +150,7 @@ namespace Model
     /**
      * <p>The Reason text given when the bonus was granted, if any.</p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p>The Reason text given when the bonus was granted, if any.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>The Reason text given when the bonus was granted, if any.</p>
      */
-    inline BonusPayment& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline BonusPayment& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p>The Reason text given when the bonus was granted, if any.</p>
@@ -184,7 +185,7 @@ namespace Model
     /**
      * <p>The date and time of when the bonus was granted.</p>
      */
-    inline void SetGrantTime(Aws::Utils::DateTime&& value) { m_grantTimeHasBeenSet = true; m_grantTime = value; }
+    inline void SetGrantTime(Aws::Utils::DateTime&& value) { m_grantTimeHasBeenSet = true; m_grantTime = std::move(value); }
 
     /**
      * <p>The date and time of when the bonus was granted.</p>
@@ -194,7 +195,7 @@ namespace Model
     /**
      * <p>The date and time of when the bonus was granted.</p>
      */
-    inline BonusPayment& WithGrantTime(Aws::Utils::DateTime&& value) { SetGrantTime(value); return *this;}
+    inline BonusPayment& WithGrantTime(Aws::Utils::DateTime&& value) { SetGrantTime(std::move(value)); return *this;}
 
   private:
     Aws::String m_workerId;

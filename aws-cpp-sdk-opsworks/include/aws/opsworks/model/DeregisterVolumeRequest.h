@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * the instance when you registered the volume with the stack, not the Amazon EC2
      * volume ID.</p>
      */
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     /**
      * <p>The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to
@@ -75,7 +76,7 @@ namespace Model
      * the instance when you registered the volume with the stack, not the Amazon EC2
      * volume ID.</p>
      */
-    inline DeregisterVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
+    inline DeregisterVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to

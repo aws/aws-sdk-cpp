@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mturk-requester/model/AssignmentStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p> A unique identifier for the assignment.</p>
      */
-    inline void SetAssignmentId(Aws::String&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = value; }
+    inline void SetAssignmentId(Aws::String&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = std::move(value); }
 
     /**
      * <p> A unique identifier for the assignment.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p> A unique identifier for the assignment.</p>
      */
-    inline Assignment& WithAssignmentId(Aws::String&& value) { SetAssignmentId(value); return *this;}
+    inline Assignment& WithAssignmentId(Aws::String&& value) { SetAssignmentId(std::move(value)); return *this;}
 
     /**
      * <p> A unique identifier for the assignment.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p> The ID of the Worker who accepted the HIT.</p>
      */
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
+    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
 
     /**
      * <p> The ID of the Worker who accepted the HIT.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p> The ID of the Worker who accepted the HIT.</p>
      */
-    inline Assignment& WithWorkerId(Aws::String&& value) { SetWorkerId(value); return *this;}
+    inline Assignment& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
 
     /**
      * <p> The ID of the Worker who accepted the HIT.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p> The ID of the HIT.</p>
      */
-    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
+    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = std::move(value); }
 
     /**
      * <p> The ID of the HIT.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p> The ID of the HIT.</p>
      */
-    inline Assignment& WithHITId(Aws::String&& value) { SetHITId(value); return *this;}
+    inline Assignment& WithHITId(Aws::String&& value) { SetHITId(std::move(value)); return *this;}
 
     /**
      * <p> The ID of the HIT.</p>
@@ -165,7 +166,7 @@ namespace Model
     /**
      * <p> The status of the assignment.</p>
      */
-    inline void SetAssignmentStatus(AssignmentStatus&& value) { m_assignmentStatusHasBeenSet = true; m_assignmentStatus = value; }
+    inline void SetAssignmentStatus(AssignmentStatus&& value) { m_assignmentStatusHasBeenSet = true; m_assignmentStatus = std::move(value); }
 
     /**
      * <p> The status of the assignment.</p>
@@ -175,7 +176,7 @@ namespace Model
     /**
      * <p> The status of the assignment.</p>
      */
-    inline Assignment& WithAssignmentStatus(AssignmentStatus&& value) { SetAssignmentStatus(value); return *this;}
+    inline Assignment& WithAssignmentStatus(AssignmentStatus&& value) { SetAssignmentStatus(std::move(value)); return *this;}
 
     /**
      * <p> If results have been submitted, AutoApprovalTime is the date and time the
@@ -205,7 +206,7 @@ namespace Model
      * HIT. This value is omitted from the assignment if the Worker has not yet
      * submitted results.</p>
      */
-    inline void SetAutoApprovalTime(Aws::Utils::DateTime&& value) { m_autoApprovalTimeHasBeenSet = true; m_autoApprovalTime = value; }
+    inline void SetAutoApprovalTime(Aws::Utils::DateTime&& value) { m_autoApprovalTimeHasBeenSet = true; m_autoApprovalTime = std::move(value); }
 
     /**
      * <p> If results have been submitted, AutoApprovalTime is the date and time the
@@ -225,7 +226,7 @@ namespace Model
      * HIT. This value is omitted from the assignment if the Worker has not yet
      * submitted results.</p>
      */
-    inline Assignment& WithAutoApprovalTime(Aws::Utils::DateTime&& value) { SetAutoApprovalTime(value); return *this;}
+    inline Assignment& WithAutoApprovalTime(Aws::Utils::DateTime&& value) { SetAutoApprovalTime(std::move(value)); return *this;}
 
     /**
      * <p> The date and time the Worker accepted the assignment.</p>
@@ -240,7 +241,7 @@ namespace Model
     /**
      * <p> The date and time the Worker accepted the assignment.</p>
      */
-    inline void SetAcceptTime(Aws::Utils::DateTime&& value) { m_acceptTimeHasBeenSet = true; m_acceptTime = value; }
+    inline void SetAcceptTime(Aws::Utils::DateTime&& value) { m_acceptTimeHasBeenSet = true; m_acceptTime = std::move(value); }
 
     /**
      * <p> The date and time the Worker accepted the assignment.</p>
@@ -250,7 +251,7 @@ namespace Model
     /**
      * <p> The date and time the Worker accepted the assignment.</p>
      */
-    inline Assignment& WithAcceptTime(Aws::Utils::DateTime&& value) { SetAcceptTime(value); return *this;}
+    inline Assignment& WithAcceptTime(Aws::Utils::DateTime&& value) { SetAcceptTime(std::move(value)); return *this;}
 
     /**
      * <p> If the Worker has submitted results, SubmitTime is the date and time the
@@ -271,7 +272,7 @@ namespace Model
      * assignment was submitted. This value is omitted from the assignment if the
      * Worker has not yet submitted results.</p>
      */
-    inline void SetSubmitTime(Aws::Utils::DateTime&& value) { m_submitTimeHasBeenSet = true; m_submitTime = value; }
+    inline void SetSubmitTime(Aws::Utils::DateTime&& value) { m_submitTimeHasBeenSet = true; m_submitTime = std::move(value); }
 
     /**
      * <p> If the Worker has submitted results, SubmitTime is the date and time the
@@ -285,7 +286,7 @@ namespace Model
      * assignment was submitted. This value is omitted from the assignment if the
      * Worker has not yet submitted results.</p>
      */
-    inline Assignment& WithSubmitTime(Aws::Utils::DateTime&& value) { SetSubmitTime(value); return *this;}
+    inline Assignment& WithSubmitTime(Aws::Utils::DateTime&& value) { SetSubmitTime(std::move(value)); return *this;}
 
     /**
      * <p> If the Worker has submitted results and the Requester has approved the
@@ -309,7 +310,7 @@ namespace Model
      * This value is omitted from the assignment if the Requester has not yet approved
      * the results.</p>
      */
-    inline void SetApprovalTime(Aws::Utils::DateTime&& value) { m_approvalTimeHasBeenSet = true; m_approvalTime = value; }
+    inline void SetApprovalTime(Aws::Utils::DateTime&& value) { m_approvalTimeHasBeenSet = true; m_approvalTime = std::move(value); }
 
     /**
      * <p> If the Worker has submitted results and the Requester has approved the
@@ -325,7 +326,7 @@ namespace Model
      * This value is omitted from the assignment if the Requester has not yet approved
      * the results.</p>
      */
-    inline Assignment& WithApprovalTime(Aws::Utils::DateTime&& value) { SetApprovalTime(value); return *this;}
+    inline Assignment& WithApprovalTime(Aws::Utils::DateTime&& value) { SetApprovalTime(std::move(value)); return *this;}
 
     /**
      * <p> If the Worker has submitted results and the Requester has rejected the
@@ -346,7 +347,7 @@ namespace Model
      * results, RejectionTime is the date and time the Requester rejected the
      * results.</p>
      */
-    inline void SetRejectionTime(Aws::Utils::DateTime&& value) { m_rejectionTimeHasBeenSet = true; m_rejectionTime = value; }
+    inline void SetRejectionTime(Aws::Utils::DateTime&& value) { m_rejectionTimeHasBeenSet = true; m_rejectionTime = std::move(value); }
 
     /**
      * <p> If the Worker has submitted results and the Requester has rejected the
@@ -360,7 +361,7 @@ namespace Model
      * results, RejectionTime is the date and time the Requester rejected the
      * results.</p>
      */
-    inline Assignment& WithRejectionTime(Aws::Utils::DateTime&& value) { SetRejectionTime(value); return *this;}
+    inline Assignment& WithRejectionTime(Aws::Utils::DateTime&& value) { SetRejectionTime(std::move(value)); return *this;}
 
     /**
      * <p> The date and time of the deadline for the assignment. This value is derived
@@ -381,7 +382,7 @@ namespace Model
      * from the deadline specification for the HIT and the date and time the Worker
      * accepted the HIT.</p>
      */
-    inline void SetDeadline(Aws::Utils::DateTime&& value) { m_deadlineHasBeenSet = true; m_deadline = value; }
+    inline void SetDeadline(Aws::Utils::DateTime&& value) { m_deadlineHasBeenSet = true; m_deadline = std::move(value); }
 
     /**
      * <p> The date and time of the deadline for the assignment. This value is derived
@@ -395,7 +396,7 @@ namespace Model
      * from the deadline specification for the HIT and the date and time the Worker
      * accepted the HIT.</p>
      */
-    inline Assignment& WithDeadline(Aws::Utils::DateTime&& value) { SetDeadline(value); return *this;}
+    inline Assignment& WithDeadline(Aws::Utils::DateTime&& value) { SetDeadline(std::move(value)); return *this;}
 
     /**
      * <p> The Worker's answers submitted for the HIT contained in a
@@ -419,7 +420,7 @@ namespace Model
      * does not provide any answers, Answer may contain a QuestionFormAnswers document,
      * or Answer may be empty.</p>
      */
-    inline void SetAnswer(Aws::String&& value) { m_answerHasBeenSet = true; m_answer = value; }
+    inline void SetAnswer(Aws::String&& value) { m_answerHasBeenSet = true; m_answer = std::move(value); }
 
     /**
      * <p> The Worker's answers submitted for the HIT contained in a
@@ -443,7 +444,7 @@ namespace Model
      * does not provide any answers, Answer may contain a QuestionFormAnswers document,
      * or Answer may be empty.</p>
      */
-    inline Assignment& WithAnswer(Aws::String&& value) { SetAnswer(value); return *this;}
+    inline Assignment& WithAnswer(Aws::String&& value) { SetAnswer(std::move(value)); return *this;}
 
     /**
      * <p> The Worker's answers submitted for the HIT contained in a
@@ -472,7 +473,7 @@ namespace Model
      * operation or the RejectAssignment operation, if the Requester approved or
      * rejected the assignment and specified feedback.</p>
      */
-    inline void SetRequesterFeedback(Aws::String&& value) { m_requesterFeedbackHasBeenSet = true; m_requesterFeedback = value; }
+    inline void SetRequesterFeedback(Aws::String&& value) { m_requesterFeedbackHasBeenSet = true; m_requesterFeedback = std::move(value); }
 
     /**
      * <p> The feedback string included with the call to the ApproveAssignment
@@ -493,7 +494,7 @@ namespace Model
      * operation or the RejectAssignment operation, if the Requester approved or
      * rejected the assignment and specified feedback.</p>
      */
-    inline Assignment& WithRequesterFeedback(Aws::String&& value) { SetRequesterFeedback(value); return *this;}
+    inline Assignment& WithRequesterFeedback(Aws::String&& value) { SetRequesterFeedback(std::move(value)); return *this;}
 
     /**
      * <p> The feedback string included with the call to the ApproveAssignment

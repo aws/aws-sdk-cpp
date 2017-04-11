@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The private IPv4 addresses.</p>
      */
-    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
+    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
 
     /**
      * <p>The private IPv4 addresses.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The private IPv4 addresses.</p>
      */
-    inline PrivateIpAddressSpecification& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(value); return *this;}
+    inline PrivateIpAddressSpecification& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>The private IPv4 addresses.</p>

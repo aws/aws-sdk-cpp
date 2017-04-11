@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/model/ConnectionState.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The AWS account that will own the new connection.</p>
      */
-    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccount = value; }
+    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccount = std::move(value); }
 
     /**
      * <p>The AWS account that will own the new connection.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The AWS account that will own the new connection.</p>
      */
-    inline DisassociateConnectionFromLagResult& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(value); return *this;}
+    inline DisassociateConnectionFromLagResult& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account that will own the new connection.</p>
@@ -89,7 +90,7 @@ namespace Model
     inline void SetConnectionId(const Aws::String& value) { m_connectionId = value; }
 
     
-    inline void SetConnectionId(Aws::String&& value) { m_connectionId = value; }
+    inline void SetConnectionId(Aws::String&& value) { m_connectionId = std::move(value); }
 
     
     inline void SetConnectionId(const char* value) { m_connectionId.assign(value); }
@@ -98,7 +99,7 @@ namespace Model
     inline DisassociateConnectionFromLagResult& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
 
     
-    inline DisassociateConnectionFromLagResult& WithConnectionId(Aws::String&& value) { SetConnectionId(value); return *this;}
+    inline DisassociateConnectionFromLagResult& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     
     inline DisassociateConnectionFromLagResult& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
@@ -110,7 +111,7 @@ namespace Model
     inline void SetConnectionName(const Aws::String& value) { m_connectionName = value; }
 
     
-    inline void SetConnectionName(Aws::String&& value) { m_connectionName = value; }
+    inline void SetConnectionName(Aws::String&& value) { m_connectionName = std::move(value); }
 
     
     inline void SetConnectionName(const char* value) { m_connectionName.assign(value); }
@@ -119,7 +120,7 @@ namespace Model
     inline DisassociateConnectionFromLagResult& WithConnectionName(const Aws::String& value) { SetConnectionName(value); return *this;}
 
     
-    inline DisassociateConnectionFromLagResult& WithConnectionName(Aws::String&& value) { SetConnectionName(value); return *this;}
+    inline DisassociateConnectionFromLagResult& WithConnectionName(Aws::String&& value) { SetConnectionName(std::move(value)); return *this;}
 
     
     inline DisassociateConnectionFromLagResult& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
@@ -131,13 +132,13 @@ namespace Model
     inline void SetConnectionState(const ConnectionState& value) { m_connectionState = value; }
 
     
-    inline void SetConnectionState(ConnectionState&& value) { m_connectionState = value; }
+    inline void SetConnectionState(ConnectionState&& value) { m_connectionState = std::move(value); }
 
     
     inline DisassociateConnectionFromLagResult& WithConnectionState(const ConnectionState& value) { SetConnectionState(value); return *this;}
 
     
-    inline DisassociateConnectionFromLagResult& WithConnectionState(ConnectionState&& value) { SetConnectionState(value); return *this;}
+    inline DisassociateConnectionFromLagResult& WithConnectionState(ConnectionState&& value) { SetConnectionState(std::move(value)); return *this;}
 
     
     inline const Aws::String& GetRegion() const{ return m_region; }
@@ -146,7 +147,7 @@ namespace Model
     inline void SetRegion(const Aws::String& value) { m_region = value; }
 
     
-    inline void SetRegion(Aws::String&& value) { m_region = value; }
+    inline void SetRegion(Aws::String&& value) { m_region = std::move(value); }
 
     
     inline void SetRegion(const char* value) { m_region.assign(value); }
@@ -155,7 +156,7 @@ namespace Model
     inline DisassociateConnectionFromLagResult& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     
-    inline DisassociateConnectionFromLagResult& WithRegion(Aws::String&& value) { SetRegion(value); return *this;}
+    inline DisassociateConnectionFromLagResult& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     
     inline DisassociateConnectionFromLagResult& WithRegion(const char* value) { SetRegion(value); return *this;}
@@ -167,7 +168,7 @@ namespace Model
     inline void SetLocation(const Aws::String& value) { m_location = value; }
 
     
-    inline void SetLocation(Aws::String&& value) { m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
 
     
     inline void SetLocation(const char* value) { m_location.assign(value); }
@@ -176,7 +177,7 @@ namespace Model
     inline DisassociateConnectionFromLagResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     
-    inline DisassociateConnectionFromLagResult& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline DisassociateConnectionFromLagResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     
     inline DisassociateConnectionFromLagResult& WithLocation(const char* value) { SetLocation(value); return *this;}
@@ -197,7 +198,7 @@ namespace Model
      * <p>Bandwidth of the connection.</p> <p>Example: 1Gbps (for regular connections),
      * or 500Mbps (for hosted connections)</p> <p>Default: None</p>
      */
-    inline void SetBandwidth(Aws::String&& value) { m_bandwidth = value; }
+    inline void SetBandwidth(Aws::String&& value) { m_bandwidth = std::move(value); }
 
     /**
      * <p>Bandwidth of the connection.</p> <p>Example: 1Gbps (for regular connections),
@@ -215,7 +216,7 @@ namespace Model
      * <p>Bandwidth of the connection.</p> <p>Example: 1Gbps (for regular connections),
      * or 500Mbps (for hosted connections)</p> <p>Default: None</p>
      */
-    inline DisassociateConnectionFromLagResult& WithBandwidth(Aws::String&& value) { SetBandwidth(value); return *this;}
+    inline DisassociateConnectionFromLagResult& WithBandwidth(Aws::String&& value) { SetBandwidth(std::move(value)); return *this;}
 
     /**
      * <p>Bandwidth of the connection.</p> <p>Example: 1Gbps (for regular connections),
@@ -248,7 +249,7 @@ namespace Model
      * <p>The name of the AWS Direct Connect service provider associated with the
      * connection.</p>
      */
-    inline void SetPartnerName(Aws::String&& value) { m_partnerName = value; }
+    inline void SetPartnerName(Aws::String&& value) { m_partnerName = std::move(value); }
 
     /**
      * <p>The name of the AWS Direct Connect service provider associated with the
@@ -266,7 +267,7 @@ namespace Model
      * <p>The name of the AWS Direct Connect service provider associated with the
      * connection.</p>
      */
-    inline DisassociateConnectionFromLagResult& WithPartnerName(Aws::String&& value) { SetPartnerName(value); return *this;}
+    inline DisassociateConnectionFromLagResult& WithPartnerName(Aws::String&& value) { SetPartnerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the AWS Direct Connect service provider associated with the
@@ -290,7 +291,7 @@ namespace Model
      * <p>The time of the most recent call to <a>DescribeLoa</a> for this
      * connection.</p>
      */
-    inline void SetLoaIssueTime(Aws::Utils::DateTime&& value) { m_loaIssueTime = value; }
+    inline void SetLoaIssueTime(Aws::Utils::DateTime&& value) { m_loaIssueTime = std::move(value); }
 
     /**
      * <p>The time of the most recent call to <a>DescribeLoa</a> for this
@@ -302,7 +303,7 @@ namespace Model
      * <p>The time of the most recent call to <a>DescribeLoa</a> for this
      * connection.</p>
      */
-    inline DisassociateConnectionFromLagResult& WithLoaIssueTime(Aws::Utils::DateTime&& value) { SetLoaIssueTime(value); return *this;}
+    inline DisassociateConnectionFromLagResult& WithLoaIssueTime(Aws::Utils::DateTime&& value) { SetLoaIssueTime(std::move(value)); return *this;}
 
     
     inline const Aws::String& GetLagId() const{ return m_lagId; }
@@ -311,7 +312,7 @@ namespace Model
     inline void SetLagId(const Aws::String& value) { m_lagId = value; }
 
     
-    inline void SetLagId(Aws::String&& value) { m_lagId = value; }
+    inline void SetLagId(Aws::String&& value) { m_lagId = std::move(value); }
 
     
     inline void SetLagId(const char* value) { m_lagId.assign(value); }
@@ -320,7 +321,7 @@ namespace Model
     inline DisassociateConnectionFromLagResult& WithLagId(const Aws::String& value) { SetLagId(value); return *this;}
 
     
-    inline DisassociateConnectionFromLagResult& WithLagId(Aws::String&& value) { SetLagId(value); return *this;}
+    inline DisassociateConnectionFromLagResult& WithLagId(Aws::String&& value) { SetLagId(std::move(value)); return *this;}
 
     
     inline DisassociateConnectionFromLagResult& WithLagId(const char* value) { SetLagId(value); return *this;}
@@ -341,7 +342,7 @@ namespace Model
      * <p>The Direct Connection endpoint which the physical connection terminates
      * on.</p>
      */
-    inline void SetAwsDevice(Aws::String&& value) { m_awsDevice = value; }
+    inline void SetAwsDevice(Aws::String&& value) { m_awsDevice = std::move(value); }
 
     /**
      * <p>The Direct Connection endpoint which the physical connection terminates
@@ -359,7 +360,7 @@ namespace Model
      * <p>The Direct Connection endpoint which the physical connection terminates
      * on.</p>
      */
-    inline DisassociateConnectionFromLagResult& WithAwsDevice(Aws::String&& value) { SetAwsDevice(value); return *this;}
+    inline DisassociateConnectionFromLagResult& WithAwsDevice(Aws::String&& value) { SetAwsDevice(std::move(value)); return *this;}
 
     /**
      * <p>The Direct Connection endpoint which the physical connection terminates

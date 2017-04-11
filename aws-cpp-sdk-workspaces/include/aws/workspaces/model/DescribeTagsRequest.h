@@ -16,6 +16,7 @@
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/WorkSpacesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The resource ID of the request.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The resource ID of the request.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The resource ID of the request.</p>
      */
-    inline DescribeTagsRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline DescribeTagsRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The resource ID of the request.</p>

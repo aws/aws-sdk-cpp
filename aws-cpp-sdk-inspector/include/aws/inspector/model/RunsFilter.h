@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector/model/TimestampRange.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * wildcard specified for this data type property must match the value of the
      * <b>runName</b> property of the <a>Run</a> data type.</p>
      */
-    inline void SetRunNamePatterns(Aws::Vector<Aws::String>&& value) { m_runNamePatternsHasBeenSet = true; m_runNamePatterns = value; }
+    inline void SetRunNamePatterns(Aws::Vector<Aws::String>&& value) { m_runNamePatternsHasBeenSet = true; m_runNamePatterns = std::move(value); }
 
     /**
      * <p>For a record to match a filter, an explicit value or a string containing a
@@ -77,7 +78,7 @@ namespace Model
      * wildcard specified for this data type property must match the value of the
      * <b>runName</b> property of the <a>Run</a> data type.</p>
      */
-    inline RunsFilter& WithRunNamePatterns(Aws::Vector<Aws::String>&& value) { SetRunNamePatterns(value); return *this;}
+    inline RunsFilter& WithRunNamePatterns(Aws::Vector<Aws::String>&& value) { SetRunNamePatterns(std::move(value)); return *this;}
 
     /**
      * <p>For a record to match a filter, an explicit value or a string containing a
@@ -91,7 +92,7 @@ namespace Model
      * wildcard specified for this data type property must match the value of the
      * <b>runName</b> property of the <a>Run</a> data type.</p>
      */
-    inline RunsFilter& AddRunNamePatterns(Aws::String&& value) { m_runNamePatternsHasBeenSet = true; m_runNamePatterns.push_back(value); return *this; }
+    inline RunsFilter& AddRunNamePatterns(Aws::String&& value) { m_runNamePatternsHasBeenSet = true; m_runNamePatterns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>For a record to match a filter, an explicit value or a string containing a
@@ -119,7 +120,7 @@ namespace Model
      * property must be the exact match of the value of the <b>runState</b> property of
      * the <a>Run</a> data type.</p>
      */
-    inline void SetRunStates(Aws::Vector<Aws::String>&& value) { m_runStatesHasBeenSet = true; m_runStates = value; }
+    inline void SetRunStates(Aws::Vector<Aws::String>&& value) { m_runStatesHasBeenSet = true; m_runStates = std::move(value); }
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -133,7 +134,7 @@ namespace Model
      * property must be the exact match of the value of the <b>runState</b> property of
      * the <a>Run</a> data type.</p>
      */
-    inline RunsFilter& WithRunStates(Aws::Vector<Aws::String>&& value) { SetRunStates(value); return *this;}
+    inline RunsFilter& WithRunStates(Aws::Vector<Aws::String>&& value) { SetRunStates(std::move(value)); return *this;}
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -147,7 +148,7 @@ namespace Model
      * property must be the exact match of the value of the <b>runState</b> property of
      * the <a>Run</a> data type.</p>
      */
-    inline RunsFilter& AddRunStates(Aws::String&& value) { m_runStatesHasBeenSet = true; m_runStates.push_back(value); return *this; }
+    inline RunsFilter& AddRunStates(Aws::String&& value) { m_runStatesHasBeenSet = true; m_runStates.push_back(std::move(value)); return *this; }
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -175,7 +176,7 @@ namespace Model
      * property must match a list of values of the <b>rulesPackages</b> property of the
      * <a>Run</a> data type.</p>
      */
-    inline void SetRulesPackages(Aws::Vector<Aws::String>&& value) { m_rulesPackagesHasBeenSet = true; m_rulesPackages = value; }
+    inline void SetRulesPackages(Aws::Vector<Aws::String>&& value) { m_rulesPackagesHasBeenSet = true; m_rulesPackages = std::move(value); }
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -189,7 +190,7 @@ namespace Model
      * property must match a list of values of the <b>rulesPackages</b> property of the
      * <a>Run</a> data type.</p>
      */
-    inline RunsFilter& WithRulesPackages(Aws::Vector<Aws::String>&& value) { SetRulesPackages(value); return *this;}
+    inline RunsFilter& WithRulesPackages(Aws::Vector<Aws::String>&& value) { SetRulesPackages(std::move(value)); return *this;}
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -203,7 +204,7 @@ namespace Model
      * property must match a list of values of the <b>rulesPackages</b> property of the
      * <a>Run</a> data type.</p>
      */
-    inline RunsFilter& AddRulesPackages(Aws::String&& value) { m_rulesPackagesHasBeenSet = true; m_rulesPackages.push_back(value); return *this; }
+    inline RunsFilter& AddRulesPackages(Aws::String&& value) { m_rulesPackagesHasBeenSet = true; m_rulesPackages.push_back(std::move(value)); return *this; }
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -234,7 +235,7 @@ namespace Model
      * maximum values of the <b>creationTime</b> property of the <a>Run</a> data
      * type.</p>
      */
-    inline void SetCreationTime(TimestampRange&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(TimestampRange&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -250,7 +251,7 @@ namespace Model
      * maximum values of the <b>creationTime</b> property of the <a>Run</a> data
      * type.</p>
      */
-    inline RunsFilter& WithCreationTime(TimestampRange&& value) { SetCreationTime(value); return *this;}
+    inline RunsFilter& WithCreationTime(TimestampRange&& value) { SetCreationTime(std::move(value)); return *this;}
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -274,7 +275,7 @@ namespace Model
      * maximum values of the <b>completionTime</b> property of the <a>Run</a> data
      * type.</p>
      */
-    inline void SetCompletionTime(TimestampRange&& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
+    inline void SetCompletionTime(TimestampRange&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::move(value); }
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -290,7 +291,7 @@ namespace Model
      * maximum values of the <b>completionTime</b> property of the <a>Run</a> data
      * type.</p>
      */
-    inline RunsFilter& WithCompletionTime(TimestampRange&& value) { SetCompletionTime(value); return *this;}
+    inline RunsFilter& WithCompletionTime(TimestampRange&& value) { SetCompletionTime(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_runNamePatterns;

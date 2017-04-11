@@ -17,6 +17,7 @@
 #include <aws/codebuild/CodeBuildRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The names of the build projects.</p>
      */
-    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = value; }
+    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
 
     /**
      * <p>The names of the build projects.</p>
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The names of the build projects.</p>
      */
-    inline BatchGetProjectsRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(value); return *this;}
+    inline BatchGetProjectsRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
 
     /**
      * <p>The names of the build projects.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The names of the build projects.</p>
      */
-    inline BatchGetProjectsRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
+    inline BatchGetProjectsRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of the build projects.</p>

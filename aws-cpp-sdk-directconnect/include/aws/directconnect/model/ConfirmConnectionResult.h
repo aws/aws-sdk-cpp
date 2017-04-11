@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/model/ConnectionState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,13 +53,13 @@ namespace Model
     inline void SetConnectionState(const ConnectionState& value) { m_connectionState = value; }
 
     
-    inline void SetConnectionState(ConnectionState&& value) { m_connectionState = value; }
+    inline void SetConnectionState(ConnectionState&& value) { m_connectionState = std::move(value); }
 
     
     inline ConfirmConnectionResult& WithConnectionState(const ConnectionState& value) { SetConnectionState(value); return *this;}
 
     
-    inline ConfirmConnectionResult& WithConnectionState(ConnectionState&& value) { SetConnectionState(value); return *this;}
+    inline ConfirmConnectionResult& WithConnectionState(ConnectionState&& value) { SetConnectionState(std::move(value)); return *this;}
 
   private:
     ConnectionState m_connectionState;

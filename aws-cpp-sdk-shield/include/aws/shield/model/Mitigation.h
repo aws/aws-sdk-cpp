@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The name of the mitigation taken for this attack.</p>
      */
-    inline void SetMitigationName(Aws::String&& value) { m_mitigationNameHasBeenSet = true; m_mitigationName = value; }
+    inline void SetMitigationName(Aws::String&& value) { m_mitigationNameHasBeenSet = true; m_mitigationName = std::move(value); }
 
     /**
      * <p>The name of the mitigation taken for this attack.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of the mitigation taken for this attack.</p>
      */
-    inline Mitigation& WithMitigationName(Aws::String&& value) { SetMitigationName(value); return *this;}
+    inline Mitigation& WithMitigationName(Aws::String&& value) { SetMitigationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the mitigation taken for this attack.</p>

@@ -17,6 +17,7 @@
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/apigateway/model/DocumentationPartType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>[Required] The identifier of the API of the to-be-retrieved documentation
      * parts.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>[Required] The identifier of the API of the to-be-retrieved documentation
@@ -78,7 +79,7 @@ namespace Model
      * <p>[Required] The identifier of the API of the to-be-retrieved documentation
      * parts.</p>
      */
-    inline GetDocumentationPartsRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline GetDocumentationPartsRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>[Required] The identifier of the API of the to-be-retrieved documentation
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The type of API entities of the to-be-retrieved documentation parts. </p>
      */
-    inline void SetType(DocumentationPartType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(DocumentationPartType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of API entities of the to-be-retrieved documentation parts. </p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The type of API entities of the to-be-retrieved documentation parts. </p>
      */
-    inline GetDocumentationPartsRequest& WithType(DocumentationPartType&& value) { SetType(value); return *this;}
+    inline GetDocumentationPartsRequest& WithType(DocumentationPartType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The name of API entities of the to-be-retrieved documentation parts.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The name of API entities of the to-be-retrieved documentation parts.</p>
      */
-    inline void SetNameQuery(Aws::String&& value) { m_nameQueryHasBeenSet = true; m_nameQuery = value; }
+    inline void SetNameQuery(Aws::String&& value) { m_nameQueryHasBeenSet = true; m_nameQuery = std::move(value); }
 
     /**
      * <p>The name of API entities of the to-be-retrieved documentation parts.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>The name of API entities of the to-be-retrieved documentation parts.</p>
      */
-    inline GetDocumentationPartsRequest& WithNameQuery(Aws::String&& value) { SetNameQuery(value); return *this;}
+    inline GetDocumentationPartsRequest& WithNameQuery(Aws::String&& value) { SetNameQuery(std::move(value)); return *this;}
 
     /**
      * <p>The name of API entities of the to-be-retrieved documentation parts.</p>
@@ -159,7 +160,7 @@ namespace Model
     /**
      * <p>The path of API entities of the to-be-retrieved documentation parts.</p>
      */
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>The path of API entities of the to-be-retrieved documentation parts.</p>
@@ -174,7 +175,7 @@ namespace Model
     /**
      * <p>The path of API entities of the to-be-retrieved documentation parts.</p>
      */
-    inline GetDocumentationPartsRequest& WithPath(Aws::String&& value) { SetPath(value); return *this;}
+    inline GetDocumentationPartsRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>The path of API entities of the to-be-retrieved documentation parts.</p>
@@ -197,7 +198,7 @@ namespace Model
      * <p>The position of the to-be-retrieved documentation part in the
      * <a>DocumentationParts</a> collection.</p>
      */
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = value; }
+    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
      * <p>The position of the to-be-retrieved documentation part in the
@@ -215,7 +216,7 @@ namespace Model
      * <p>The position of the to-be-retrieved documentation part in the
      * <a>DocumentationParts</a> collection.</p>
      */
-    inline GetDocumentationPartsRequest& WithPosition(Aws::String&& value) { SetPosition(value); return *this;}
+    inline GetDocumentationPartsRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
      * <p>The position of the to-be-retrieved documentation part in the

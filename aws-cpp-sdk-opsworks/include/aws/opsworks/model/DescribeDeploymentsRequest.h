@@ -17,6 +17,7 @@
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The stack ID. If you include this parameter, <code>DescribeDeployments</code>
      * returns a description of the commands associated with the specified stack.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
      * <p>The stack ID. If you include this parameter, <code>DescribeDeployments</code>
@@ -70,7 +71,7 @@ namespace Model
      * <p>The stack ID. If you include this parameter, <code>DescribeDeployments</code>
      * returns a description of the commands associated with the specified stack.</p>
      */
-    inline DescribeDeploymentsRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline DescribeDeploymentsRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>The stack ID. If you include this parameter, <code>DescribeDeployments</code>
@@ -94,7 +95,7 @@ namespace Model
      * <p>The app ID. If you include this parameter, <code>DescribeDeployments</code>
      * returns a description of the commands associated with the specified app.</p>
      */
-    inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = value; }
+    inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
 
     /**
      * <p>The app ID. If you include this parameter, <code>DescribeDeployments</code>
@@ -112,7 +113,7 @@ namespace Model
      * <p>The app ID. If you include this parameter, <code>DescribeDeployments</code>
      * returns a description of the commands associated with the specified app.</p>
      */
-    inline DescribeDeploymentsRequest& WithAppId(Aws::String&& value) { SetAppId(value); return *this;}
+    inline DescribeDeploymentsRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
 
     /**
      * <p>The app ID. If you include this parameter, <code>DescribeDeployments</code>
@@ -139,7 +140,7 @@ namespace Model
      * <code>DescribeDeployments</code> returns a description of the specified
      * deployments. Otherwise, it returns a description of every deployment.</p>
      */
-    inline void SetDeploymentIds(Aws::Vector<Aws::String>&& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds = value; }
+    inline void SetDeploymentIds(Aws::Vector<Aws::String>&& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds = std::move(value); }
 
     /**
      * <p>An array of deployment IDs to be described. If you include this parameter,
@@ -153,7 +154,7 @@ namespace Model
      * <code>DescribeDeployments</code> returns a description of the specified
      * deployments. Otherwise, it returns a description of every deployment.</p>
      */
-    inline DescribeDeploymentsRequest& WithDeploymentIds(Aws::Vector<Aws::String>&& value) { SetDeploymentIds(value); return *this;}
+    inline DescribeDeploymentsRequest& WithDeploymentIds(Aws::Vector<Aws::String>&& value) { SetDeploymentIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of deployment IDs to be described. If you include this parameter,
@@ -167,7 +168,7 @@ namespace Model
      * <code>DescribeDeployments</code> returns a description of the specified
      * deployments. Otherwise, it returns a description of every deployment.</p>
      */
-    inline DescribeDeploymentsRequest& AddDeploymentIds(Aws::String&& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(value); return *this; }
+    inline DescribeDeploymentsRequest& AddDeploymentIds(Aws::String&& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of deployment IDs to be described. If you include this parameter,

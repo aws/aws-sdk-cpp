@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <code>DescribeNodeAssociationStatus</code> API call to get the status of the
      * association request. </p>
      */
-    inline void SetNodeAssociationStatusToken(Aws::String&& value) { m_nodeAssociationStatusToken = value; }
+    inline void SetNodeAssociationStatusToken(Aws::String&& value) { m_nodeAssociationStatusToken = std::move(value); }
 
     /**
      * <p>Contains a token which can be passed to the
@@ -79,7 +80,7 @@ namespace Model
      * <code>DescribeNodeAssociationStatus</code> API call to get the status of the
      * association request. </p>
      */
-    inline AssociateNodeResult& WithNodeAssociationStatusToken(Aws::String&& value) { SetNodeAssociationStatusToken(value); return *this;}
+    inline AssociateNodeResult& WithNodeAssociationStatusToken(Aws::String&& value) { SetNodeAssociationStatusToken(std::move(value)); return *this;}
 
     /**
      * <p>Contains a token which can be passed to the

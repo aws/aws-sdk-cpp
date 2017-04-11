@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The content in a document that you want to update.</p>
      */
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = value; }
+    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
      * <p>The content in a document that you want to update.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The content in a document that you want to update.</p>
      */
-    inline UpdateDocumentRequest& WithContent(Aws::String&& value) { SetContent(value); return *this;}
+    inline UpdateDocumentRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
      * <p>The content in a document that you want to update.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The name of the document that you want to update.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the document that you want to update.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The name of the document that you want to update.</p>
      */
-    inline UpdateDocumentRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateDocumentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the document that you want to update.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The version of the document that you want to update.</p>
      */
-    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
      * <p>The version of the document that you want to update.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The version of the document that you want to update.</p>
      */
-    inline UpdateDocumentRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(value); return *this;}
+    inline UpdateDocumentRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the document that you want to update.</p>

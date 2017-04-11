@@ -16,6 +16,7 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/CodeCommitRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>The name of the repository that contains the branch for which you want to
      * retrieve information.</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The name of the repository that contains the branch for which you want to
@@ -72,7 +73,7 @@ namespace Model
      * <p>The name of the repository that contains the branch for which you want to
      * retrieve information.</p>
      */
-    inline GetBranchRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline GetBranchRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the repository that contains the branch for which you want to
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The name of the branch for which you want to retrieve information.</p>
      */
-    inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
+    inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
 
     /**
      * <p>The name of the branch for which you want to retrieve information.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The name of the branch for which you want to retrieve information.</p>
      */
-    inline GetBranchRequest& WithBranchName(Aws::String&& value) { SetBranchName(value); return *this;}
+    inline GetBranchRequest& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the branch for which you want to retrieve information.</p>

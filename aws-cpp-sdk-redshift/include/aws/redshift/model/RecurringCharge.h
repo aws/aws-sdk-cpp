@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The frequency at which the recurring charge amount is applied.</p>
      */
-    inline void SetRecurringChargeFrequency(Aws::String&& value) { m_recurringChargeFrequencyHasBeenSet = true; m_recurringChargeFrequency = value; }
+    inline void SetRecurringChargeFrequency(Aws::String&& value) { m_recurringChargeFrequencyHasBeenSet = true; m_recurringChargeFrequency = std::move(value); }
 
     /**
      * <p>The frequency at which the recurring charge amount is applied.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The frequency at which the recurring charge amount is applied.</p>
      */
-    inline RecurringCharge& WithRecurringChargeFrequency(Aws::String&& value) { SetRecurringChargeFrequency(value); return *this;}
+    inline RecurringCharge& WithRecurringChargeFrequency(Aws::String&& value) { SetRecurringChargeFrequency(std::move(value)); return *this;}
 
     /**
      * <p>The frequency at which the recurring charge amount is applied.</p>

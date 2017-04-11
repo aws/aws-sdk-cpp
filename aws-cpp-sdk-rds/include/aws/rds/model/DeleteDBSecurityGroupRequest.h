@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> <li> <p>Must not be "Default"</p> </li> </ul>
      */
-    inline void SetDBSecurityGroupName(Aws::String&& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
+    inline void SetDBSecurityGroupName(Aws::String&& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = std::move(value); }
 
     /**
      * <p>The name of the DB security group to delete.</p> <note> <p>You cannot delete
@@ -92,7 +93,7 @@ namespace Model
      * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> <li> <p>Must not be "Default"</p> </li> </ul>
      */
-    inline DeleteDBSecurityGroupRequest& WithDBSecurityGroupName(Aws::String&& value) { SetDBSecurityGroupName(value); return *this;}
+    inline DeleteDBSecurityGroupRequest& WithDBSecurityGroupName(Aws::String&& value) { SetDBSecurityGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB security group to delete.</p> <note> <p>You cannot delete

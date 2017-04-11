@@ -17,6 +17,7 @@
 #include <aws/rekognition/model/ComparedSourceImageFace.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/model/CompareFacesMatch.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The face from the source image that was used for comparison.</p>
      */
-    inline void SetSourceImageFace(ComparedSourceImageFace&& value) { m_sourceImageFace = value; }
+    inline void SetSourceImageFace(ComparedSourceImageFace&& value) { m_sourceImageFace = std::move(value); }
 
     /**
      * <p>The face from the source image that was used for comparison.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The face from the source image that was used for comparison.</p>
      */
-    inline CompareFacesResult& WithSourceImageFace(ComparedSourceImageFace&& value) { SetSourceImageFace(value); return *this;}
+    inline CompareFacesResult& WithSourceImageFace(ComparedSourceImageFace&& value) { SetSourceImageFace(std::move(value)); return *this;}
 
     /**
      * <p>Provides an array of <code>CompareFacesMatch</code> objects. Each object
@@ -88,7 +89,7 @@ namespace Model
      * the similarity between the face in the bounding box and the face in the source
      * image.</p>
      */
-    inline void SetFaceMatches(Aws::Vector<CompareFacesMatch>&& value) { m_faceMatches = value; }
+    inline void SetFaceMatches(Aws::Vector<CompareFacesMatch>&& value) { m_faceMatches = std::move(value); }
 
     /**
      * <p>Provides an array of <code>CompareFacesMatch</code> objects. Each object
@@ -104,7 +105,7 @@ namespace Model
      * the similarity between the face in the bounding box and the face in the source
      * image.</p>
      */
-    inline CompareFacesResult& WithFaceMatches(Aws::Vector<CompareFacesMatch>&& value) { SetFaceMatches(value); return *this;}
+    inline CompareFacesResult& WithFaceMatches(Aws::Vector<CompareFacesMatch>&& value) { SetFaceMatches(std::move(value)); return *this;}
 
     /**
      * <p>Provides an array of <code>CompareFacesMatch</code> objects. Each object
@@ -120,7 +121,7 @@ namespace Model
      * the similarity between the face in the bounding box and the face in the source
      * image.</p>
      */
-    inline CompareFacesResult& AddFaceMatches(CompareFacesMatch&& value) { m_faceMatches.push_back(value); return *this; }
+    inline CompareFacesResult& AddFaceMatches(CompareFacesMatch&& value) { m_faceMatches.push_back(std::move(value)); return *this; }
 
   private:
     ComparedSourceImageFace m_sourceImageFace;

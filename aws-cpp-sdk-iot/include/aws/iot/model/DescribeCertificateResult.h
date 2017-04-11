@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/model/CertificateDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The description of the certificate.</p>
      */
-    inline void SetCertificateDescription(CertificateDescription&& value) { m_certificateDescription = value; }
+    inline void SetCertificateDescription(CertificateDescription&& value) { m_certificateDescription = std::move(value); }
 
     /**
      * <p>The description of the certificate.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The description of the certificate.</p>
      */
-    inline DescribeCertificateResult& WithCertificateDescription(CertificateDescription&& value) { SetCertificateDescription(value); return *this;}
+    inline DescribeCertificateResult& WithCertificateDescription(CertificateDescription&& value) { SetCertificateDescription(std::move(value)); return *this;}
 
   private:
     CertificateDescription m_certificateDescription;

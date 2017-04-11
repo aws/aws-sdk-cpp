@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/model/Op.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -71,7 +72,7 @@ namespace Model
      * contexts. Attempts to apply an unsupported operation on a resource will return
      * an error message.</p>
      */
-    inline void SetOp(Op&& value) { m_opHasBeenSet = true; m_op = value; }
+    inline void SetOp(Op&& value) { m_opHasBeenSet = true; m_op = std::move(value); }
 
     /**
      * <p>An update operation to be performed with this PATCH request. The valid value
@@ -89,7 +90,7 @@ namespace Model
      * contexts. Attempts to apply an unsupported operation on a resource will return
      * an error message.</p>
      */
-    inline PatchOperation& WithOp(Op&& value) { SetOp(value); return *this;}
+    inline PatchOperation& WithOp(Op&& value) { SetOp(std::move(value)); return *this;}
 
     /**
      * <p>The <code>op</code> operation's target, as identified by a <a
@@ -134,7 +135,7 @@ namespace Model
      * above. Each <code>op</code> operation can have only one <code>path</code>
      * associated with it.</p>
      */
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>The <code>op</code> operation's target, as identified by a <a
@@ -179,7 +180,7 @@ namespace Model
      * above. Each <code>op</code> operation can have only one <code>path</code>
      * associated with it.</p>
      */
-    inline PatchOperation& WithPath(Aws::String&& value) { SetPath(value); return *this;}
+    inline PatchOperation& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>The <code>op</code> operation's target, as identified by a <a
@@ -209,7 +210,7 @@ namespace Model
     /**
      * <p>The new target value of the update operation. </p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The new target value of the update operation. </p>
@@ -224,7 +225,7 @@ namespace Model
     /**
      * <p>The new target value of the update operation. </p>
      */
-    inline PatchOperation& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline PatchOperation& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The new target value of the update operation. </p>
@@ -244,7 +245,7 @@ namespace Model
     /**
      * <p> Not supported.</p>
      */
-    inline void SetFrom(Aws::String&& value) { m_fromHasBeenSet = true; m_from = value; }
+    inline void SetFrom(Aws::String&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
 
     /**
      * <p> Not supported.</p>
@@ -259,7 +260,7 @@ namespace Model
     /**
      * <p> Not supported.</p>
      */
-    inline PatchOperation& WithFrom(Aws::String&& value) { SetFrom(value); return *this;}
+    inline PatchOperation& WithFrom(Aws::String&& value) { SetFrom(std::move(value)); return *this;}
 
     /**
      * <p> Not supported.</p>

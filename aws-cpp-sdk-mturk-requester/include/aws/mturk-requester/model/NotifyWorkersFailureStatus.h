@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/model/NotifyWorkersFailureCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p> Encoded value for the failure type. </p>
      */
-    inline void SetNotifyWorkersFailureCode(NotifyWorkersFailureCode&& value) { m_notifyWorkersFailureCodeHasBeenSet = true; m_notifyWorkersFailureCode = value; }
+    inline void SetNotifyWorkersFailureCode(NotifyWorkersFailureCode&& value) { m_notifyWorkersFailureCodeHasBeenSet = true; m_notifyWorkersFailureCode = std::move(value); }
 
     /**
      * <p> Encoded value for the failure type. </p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p> Encoded value for the failure type. </p>
      */
-    inline NotifyWorkersFailureStatus& WithNotifyWorkersFailureCode(NotifyWorkersFailureCode&& value) { SetNotifyWorkersFailureCode(value); return *this;}
+    inline NotifyWorkersFailureStatus& WithNotifyWorkersFailureCode(NotifyWorkersFailureCode&& value) { SetNotifyWorkersFailureCode(std::move(value)); return *this;}
 
     /**
      * <p> A message detailing the reason the Worker could not be notified. </p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p> A message detailing the reason the Worker could not be notified. </p>
      */
-    inline void SetNotifyWorkersFailureMessage(Aws::String&& value) { m_notifyWorkersFailureMessageHasBeenSet = true; m_notifyWorkersFailureMessage = value; }
+    inline void SetNotifyWorkersFailureMessage(Aws::String&& value) { m_notifyWorkersFailureMessageHasBeenSet = true; m_notifyWorkersFailureMessage = std::move(value); }
 
     /**
      * <p> A message detailing the reason the Worker could not be notified. </p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p> A message detailing the reason the Worker could not be notified. </p>
      */
-    inline NotifyWorkersFailureStatus& WithNotifyWorkersFailureMessage(Aws::String&& value) { SetNotifyWorkersFailureMessage(value); return *this;}
+    inline NotifyWorkersFailureStatus& WithNotifyWorkersFailureMessage(Aws::String&& value) { SetNotifyWorkersFailureMessage(std::move(value)); return *this;}
 
     /**
      * <p> A message detailing the reason the Worker could not be notified. </p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p> The ID of the Worker.</p>
      */
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
+    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
 
     /**
      * <p> The ID of the Worker.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p> The ID of the Worker.</p>
      */
-    inline NotifyWorkersFailureStatus& WithWorkerId(Aws::String&& value) { SetWorkerId(value); return *this;}
+    inline NotifyWorkersFailureStatus& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
 
     /**
      * <p> The ID of the Worker.</p>

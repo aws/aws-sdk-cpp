@@ -17,6 +17,7 @@
 #include <aws/cloudsearch/CloudSearchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudsearch/model/ScalingParameters.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
@@ -60,7 +61,7 @@ namespace Model
     inline UpdateScalingParametersRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     
-    inline UpdateScalingParametersRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline UpdateScalingParametersRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     
     inline UpdateScalingParametersRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
@@ -72,13 +73,13 @@ namespace Model
     inline void SetScalingParameters(const ScalingParameters& value) { m_scalingParametersHasBeenSet = true; m_scalingParameters = value; }
 
     
-    inline void SetScalingParameters(ScalingParameters&& value) { m_scalingParametersHasBeenSet = true; m_scalingParameters = value; }
+    inline void SetScalingParameters(ScalingParameters&& value) { m_scalingParametersHasBeenSet = true; m_scalingParameters = std::move(value); }
 
     
     inline UpdateScalingParametersRequest& WithScalingParameters(const ScalingParameters& value) { SetScalingParameters(value); return *this;}
 
     
-    inline UpdateScalingParametersRequest& WithScalingParameters(ScalingParameters&& value) { SetScalingParameters(value); return *this;}
+    inline UpdateScalingParametersRequest& WithScalingParameters(ScalingParameters&& value) { SetScalingParameters(std::move(value)); return *this;}
 
   private:
     Aws::String m_domainName;

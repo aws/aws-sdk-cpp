@@ -20,6 +20,7 @@
 #include <aws/gamelift/model/GameProperty.h>
 #include <aws/gamelift/model/PlayerLatency.h>
 #include <aws/gamelift/model/DesiredPlayerSession.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * reused unless you are resubmitting a cancelled or timed-out placement
      * request.</p>
      */
-    inline void SetPlacementId(Aws::String&& value) { m_placementIdHasBeenSet = true; m_placementId = value; }
+    inline void SetPlacementId(Aws::String&& value) { m_placementIdHasBeenSet = true; m_placementId = std::move(value); }
 
     /**
      * <p>Unique identifier to assign to the new game session placement. This value is
@@ -85,7 +86,7 @@ namespace Model
      * reused unless you are resubmitting a cancelled or timed-out placement
      * request.</p>
      */
-    inline StartGameSessionPlacementRequest& WithPlacementId(Aws::String&& value) { SetPlacementId(value); return *this;}
+    inline StartGameSessionPlacementRequest& WithPlacementId(Aws::String&& value) { SetPlacementId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier to assign to the new game session placement. This value is
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>Name of the queue to use to place the new game session.</p>
      */
-    inline void SetGameSessionQueueName(Aws::String&& value) { m_gameSessionQueueNameHasBeenSet = true; m_gameSessionQueueName = value; }
+    inline void SetGameSessionQueueName(Aws::String&& value) { m_gameSessionQueueNameHasBeenSet = true; m_gameSessionQueueName = std::move(value); }
 
     /**
      * <p>Name of the queue to use to place the new game session.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>Name of the queue to use to place the new game session.</p>
      */
-    inline StartGameSessionPlacementRequest& WithGameSessionQueueName(Aws::String&& value) { SetGameSessionQueueName(value); return *this;}
+    inline StartGameSessionPlacementRequest& WithGameSessionQueueName(Aws::String&& value) { SetGameSessionQueueName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the queue to use to place the new game session.</p>
@@ -146,7 +147,7 @@ namespace Model
      * <p>Set of developer-defined properties for a game session. These properties are
      * passed to the server process hosting the game session.</p>
      */
-    inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
+    inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::move(value); }
 
     /**
      * <p>Set of developer-defined properties for a game session. These properties are
@@ -158,7 +159,7 @@ namespace Model
      * <p>Set of developer-defined properties for a game session. These properties are
      * passed to the server process hosting the game session.</p>
      */
-    inline StartGameSessionPlacementRequest& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(value); return *this;}
+    inline StartGameSessionPlacementRequest& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(std::move(value)); return *this;}
 
     /**
      * <p>Set of developer-defined properties for a game session. These properties are
@@ -170,7 +171,7 @@ namespace Model
      * <p>Set of developer-defined properties for a game session. These properties are
      * passed to the server process hosting the game session.</p>
      */
-    inline StartGameSessionPlacementRequest& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
+    inline StartGameSessionPlacementRequest& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Maximum number of players that can be connected simultaneously to the game
@@ -206,7 +207,7 @@ namespace Model
      * <p>Descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
-    inline void SetGameSessionName(Aws::String&& value) { m_gameSessionNameHasBeenSet = true; m_gameSessionName = value; }
+    inline void SetGameSessionName(Aws::String&& value) { m_gameSessionNameHasBeenSet = true; m_gameSessionName = std::move(value); }
 
     /**
      * <p>Descriptive label that is associated with a game session. Session names do
@@ -224,7 +225,7 @@ namespace Model
      * <p>Descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
-    inline StartGameSessionPlacementRequest& WithGameSessionName(Aws::String&& value) { SetGameSessionName(value); return *this;}
+    inline StartGameSessionPlacementRequest& WithGameSessionName(Aws::String&& value) { SetGameSessionName(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with a game session. Session names do
@@ -254,7 +255,7 @@ namespace Model
      * relevant when requesting player sessions. Latency information provided for
      * player IDs not included in <i>DesiredPlayerSessions</i> are ignored.</p>
      */
-    inline void SetPlayerLatencies(Aws::Vector<PlayerLatency>&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies = value; }
+    inline void SetPlayerLatencies(Aws::Vector<PlayerLatency>&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies = std::move(value); }
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
@@ -270,7 +271,7 @@ namespace Model
      * relevant when requesting player sessions. Latency information provided for
      * player IDs not included in <i>DesiredPlayerSessions</i> are ignored.</p>
      */
-    inline StartGameSessionPlacementRequest& WithPlayerLatencies(Aws::Vector<PlayerLatency>&& value) { SetPlayerLatencies(value); return *this;}
+    inline StartGameSessionPlacementRequest& WithPlayerLatencies(Aws::Vector<PlayerLatency>&& value) { SetPlayerLatencies(std::move(value)); return *this;}
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
@@ -286,7 +287,7 @@ namespace Model
      * relevant when requesting player sessions. Latency information provided for
      * player IDs not included in <i>DesiredPlayerSessions</i> are ignored.</p>
      */
-    inline StartGameSessionPlacementRequest& AddPlayerLatencies(PlayerLatency&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies.push_back(value); return *this; }
+    inline StartGameSessionPlacementRequest& AddPlayerLatencies(PlayerLatency&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Set of information on each player to create a player session for.</p>
@@ -301,7 +302,7 @@ namespace Model
     /**
      * <p>Set of information on each player to create a player session for.</p>
      */
-    inline void SetDesiredPlayerSessions(Aws::Vector<DesiredPlayerSession>&& value) { m_desiredPlayerSessionsHasBeenSet = true; m_desiredPlayerSessions = value; }
+    inline void SetDesiredPlayerSessions(Aws::Vector<DesiredPlayerSession>&& value) { m_desiredPlayerSessionsHasBeenSet = true; m_desiredPlayerSessions = std::move(value); }
 
     /**
      * <p>Set of information on each player to create a player session for.</p>
@@ -311,7 +312,7 @@ namespace Model
     /**
      * <p>Set of information on each player to create a player session for.</p>
      */
-    inline StartGameSessionPlacementRequest& WithDesiredPlayerSessions(Aws::Vector<DesiredPlayerSession>&& value) { SetDesiredPlayerSessions(value); return *this;}
+    inline StartGameSessionPlacementRequest& WithDesiredPlayerSessions(Aws::Vector<DesiredPlayerSession>&& value) { SetDesiredPlayerSessions(std::move(value)); return *this;}
 
     /**
      * <p>Set of information on each player to create a player session for.</p>
@@ -321,7 +322,7 @@ namespace Model
     /**
      * <p>Set of information on each player to create a player session for.</p>
      */
-    inline StartGameSessionPlacementRequest& AddDesiredPlayerSessions(DesiredPlayerSession&& value) { m_desiredPlayerSessionsHasBeenSet = true; m_desiredPlayerSessions.push_back(value); return *this; }
+    inline StartGameSessionPlacementRequest& AddDesiredPlayerSessions(DesiredPlayerSession&& value) { m_desiredPlayerSessionsHasBeenSet = true; m_desiredPlayerSessions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_placementId;

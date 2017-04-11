@@ -16,6 +16,7 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>A list of build IDs, with each build ID representing a single build.</p>
      */
-    inline void SetIds(Aws::Vector<Aws::String>&& value) { m_ids = value; }
+    inline void SetIds(Aws::Vector<Aws::String>&& value) { m_ids = std::move(value); }
 
     /**
      * <p>A list of build IDs, with each build ID representing a single build.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>A list of build IDs, with each build ID representing a single build.</p>
      */
-    inline ListBuildsResult& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(value); return *this;}
+    inline ListBuildsResult& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of build IDs, with each build ID representing a single build.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>A list of build IDs, with each build ID representing a single build.</p>
      */
-    inline ListBuildsResult& AddIds(Aws::String&& value) { m_ids.push_back(value); return *this; }
+    inline ListBuildsResult& AddIds(Aws::String&& value) { m_ids.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of build IDs, with each build ID representing a single build.</p>
@@ -102,7 +103,7 @@ namespace Model
      * batch of items in the list, call this operation again, adding the next token to
      * the call.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If there are more than 100 items in the list, only the first 100 items are
@@ -126,7 +127,7 @@ namespace Model
      * batch of items in the list, call this operation again, adding the next token to
      * the call.</p>
      */
-    inline ListBuildsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListBuildsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If there are more than 100 items in the list, only the first 100 items are

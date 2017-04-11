@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/model/Domain.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about your get domain
      * request.</p>
      */
-    inline void SetDomain(Domain&& value) { m_domain = value; }
+    inline void SetDomain(Domain&& value) { m_domain = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about your get domain
@@ -67,7 +68,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about your get domain
      * request.</p>
      */
-    inline GetDomainResult& WithDomain(Domain&& value) { SetDomain(value); return *this;}
+    inline GetDomainResult& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
 
   private:
     Domain m_domain;

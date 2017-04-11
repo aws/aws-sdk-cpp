@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/health/Health_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * </code>. Example:
      * <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>
      */
-    inline void SetEventArn(Aws::String&& value) { m_eventArnHasBeenSet = true; m_eventArn = value; }
+    inline void SetEventArn(Aws::String&& value) { m_eventArnHasBeenSet = true; m_eventArn = std::move(value); }
 
     /**
      * <p>The unique identifier for the event. Format:
@@ -90,7 +91,7 @@ namespace Model
      * </code>. Example:
      * <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>
      */
-    inline EventDetailsErrorItem& WithEventArn(Aws::String&& value) { SetEventArn(value); return *this;}
+    inline EventDetailsErrorItem& WithEventArn(Aws::String&& value) { SetEventArn(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the event. Format:
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The name of the error.</p>
      */
-    inline void SetErrorName(Aws::String&& value) { m_errorNameHasBeenSet = true; m_errorName = value; }
+    inline void SetErrorName(Aws::String&& value) { m_errorNameHasBeenSet = true; m_errorName = std::move(value); }
 
     /**
      * <p>The name of the error.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The name of the error.</p>
      */
-    inline EventDetailsErrorItem& WithErrorName(Aws::String&& value) { SetErrorName(value); return *this;}
+    inline EventDetailsErrorItem& WithErrorName(Aws::String&& value) { SetErrorName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the error.</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>A message that describes the error.</p>
      */
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
      * <p>A message that describes the error.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>A message that describes the error.</p>
      */
-    inline EventDetailsErrorItem& WithErrorMessage(Aws::String&& value) { SetErrorMessage(value); return *this;}
+    inline EventDetailsErrorItem& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
      * <p>A message that describes the error.</p>

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,7 +73,7 @@ namespace Model
      * copy or restore the manual DB cluster snapshot. For more information, see the
      * <a>ModifyDBSnapshotAttribute</a> API action.</p>
      */
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
      * <p>The name of the manual DB snapshot attribute.</p> <p>The attribute named
@@ -96,7 +97,7 @@ namespace Model
      * copy or restore the manual DB cluster snapshot. For more information, see the
      * <a>ModifyDBSnapshotAttribute</a> API action.</p>
      */
-    inline DBSnapshotAttribute& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
+    inline DBSnapshotAttribute& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the manual DB snapshot attribute.</p> <p>The attribute named
@@ -134,7 +135,7 @@ namespace Model
      * then the manual DB snapshot is public and available for any AWS account to copy
      * or restore.</p>
      */
-    inline void SetAttributeValues(Aws::Vector<Aws::String>&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues = value; }
+    inline void SetAttributeValues(Aws::Vector<Aws::String>&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues = std::move(value); }
 
     /**
      * <p>The value or values for the manual DB snapshot attribute.</p> <p>If the
@@ -154,7 +155,7 @@ namespace Model
      * then the manual DB snapshot is public and available for any AWS account to copy
      * or restore.</p>
      */
-    inline DBSnapshotAttribute& WithAttributeValues(Aws::Vector<Aws::String>&& value) { SetAttributeValues(value); return *this;}
+    inline DBSnapshotAttribute& WithAttributeValues(Aws::Vector<Aws::String>&& value) { SetAttributeValues(std::move(value)); return *this;}
 
     /**
      * <p>The value or values for the manual DB snapshot attribute.</p> <p>If the
@@ -174,7 +175,7 @@ namespace Model
      * then the manual DB snapshot is public and available for any AWS account to copy
      * or restore.</p>
      */
-    inline DBSnapshotAttribute& AddAttributeValues(Aws::String&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(value); return *this; }
+    inline DBSnapshotAttribute& AddAttributeValues(Aws::String&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The value or values for the manual DB snapshot attribute.</p> <p>If the

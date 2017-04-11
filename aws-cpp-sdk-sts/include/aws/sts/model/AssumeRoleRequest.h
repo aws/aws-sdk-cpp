@@ -16,6 +16,7 @@
 #include <aws/sts/STS_EXPORTS.h>
 #include <aws/sts/STSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the role to assume.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role to assume.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the role to assume.</p>
      */
-    inline AssumeRoleRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline AssumeRoleRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role to assume.</p>
@@ -115,7 +116,7 @@ namespace Model
      * with no spaces. You can also include underscores or any of the following
      * characters: =,.@-</p>
      */
-    inline void SetRoleSessionName(Aws::String&& value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName = value; }
+    inline void SetRoleSessionName(Aws::String&& value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName = std::move(value); }
 
     /**
      * <p>An identifier for the assumed role session.</p> <p>Use the role session name
@@ -160,7 +161,7 @@ namespace Model
      * with no spaces. You can also include underscores or any of the following
      * characters: =,.@-</p>
      */
-    inline AssumeRoleRequest& WithRoleSessionName(Aws::String&& value) { SetRoleSessionName(value); return *this;}
+    inline AssumeRoleRequest& WithRoleSessionName(Aws::String&& value) { SetRoleSessionName(std::move(value)); return *this;}
 
     /**
      * <p>An identifier for the assumed role session.</p> <p>Use the role session name
@@ -247,7 +248,7 @@ namespace Model
      * size limit the policy is, with 100% equaling the maximum allowed size.</p>
      * </note>
      */
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
+    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
      * <p>An IAM policy in JSON format.</p> <p>This parameter is optional. If you pass
@@ -319,7 +320,7 @@ namespace Model
      * size limit the policy is, with 100% equaling the maximum allowed size.</p>
      * </note>
      */
-    inline AssumeRoleRequest& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
+    inline AssumeRoleRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
      * <p>An IAM policy in JSON format.</p> <p>This parameter is optional. If you pass
@@ -439,7 +440,7 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include underscores or any
      * of the following characters: =,.@:\/-</p>
      */
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
+    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
 
     /**
      * <p>A unique identifier that is used by third parties when assuming roles in
@@ -490,7 +491,7 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include underscores or any
      * of the following characters: =,.@:\/-</p>
      */
-    inline AssumeRoleRequest& WithExternalId(Aws::String&& value) { SetExternalId(value); return *this;}
+    inline AssumeRoleRequest& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier that is used by third parties when assuming roles in
@@ -546,7 +547,7 @@ namespace Model
      * consisting of upper- and lower-case alphanumeric characters with no spaces. You
      * can also include underscores or any of the following characters: =,.@-</p>
      */
-    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
+    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
 
     /**
      * <p>The identification number of the MFA device that is associated with the user
@@ -585,7 +586,7 @@ namespace Model
      * consisting of upper- and lower-case alphanumeric characters with no spaces. You
      * can also include underscores or any of the following characters: =,.@-</p>
      */
-    inline AssumeRoleRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(value); return *this;}
+    inline AssumeRoleRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
 
     /**
      * <p>The identification number of the MFA device that is associated with the user
@@ -628,7 +629,7 @@ namespace Model
      * denied" error.</p> <p>The format for this parameter, as described by its regex
      * pattern, is a sequence of six numeric digits.</p>
      */
-    inline void SetTokenCode(Aws::String&& value) { m_tokenCodeHasBeenSet = true; m_tokenCode = value; }
+    inline void SetTokenCode(Aws::String&& value) { m_tokenCodeHasBeenSet = true; m_tokenCode = std::move(value); }
 
     /**
      * <p>The value provided by the MFA device, if the trust policy of the role being
@@ -658,7 +659,7 @@ namespace Model
      * denied" error.</p> <p>The format for this parameter, as described by its regex
      * pattern, is a sequence of six numeric digits.</p>
      */
-    inline AssumeRoleRequest& WithTokenCode(Aws::String&& value) { SetTokenCode(value); return *this;}
+    inline AssumeRoleRequest& WithTokenCode(Aws::String&& value) { SetTokenCode(std::move(value)); return *this;}
 
     /**
      * <p>The value provided by the MFA device, if the trust policy of the role being

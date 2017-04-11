@@ -16,6 +16,7 @@
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,19 +55,19 @@ namespace Model
     inline void SetElasticsearchVersions(const Aws::Vector<Aws::String>& value) { m_elasticsearchVersions = value; }
 
     
-    inline void SetElasticsearchVersions(Aws::Vector<Aws::String>&& value) { m_elasticsearchVersions = value; }
+    inline void SetElasticsearchVersions(Aws::Vector<Aws::String>&& value) { m_elasticsearchVersions = std::move(value); }
 
     
     inline ListElasticsearchVersionsResult& WithElasticsearchVersions(const Aws::Vector<Aws::String>& value) { SetElasticsearchVersions(value); return *this;}
 
     
-    inline ListElasticsearchVersionsResult& WithElasticsearchVersions(Aws::Vector<Aws::String>&& value) { SetElasticsearchVersions(value); return *this;}
+    inline ListElasticsearchVersionsResult& WithElasticsearchVersions(Aws::Vector<Aws::String>&& value) { SetElasticsearchVersions(std::move(value)); return *this;}
 
     
     inline ListElasticsearchVersionsResult& AddElasticsearchVersions(const Aws::String& value) { m_elasticsearchVersions.push_back(value); return *this; }
 
     
-    inline ListElasticsearchVersionsResult& AddElasticsearchVersions(Aws::String&& value) { m_elasticsearchVersions.push_back(value); return *this; }
+    inline ListElasticsearchVersionsResult& AddElasticsearchVersions(Aws::String&& value) { m_elasticsearchVersions.push_back(std::move(value)); return *this; }
 
     
     inline ListElasticsearchVersionsResult& AddElasticsearchVersions(const char* value) { m_elasticsearchVersions.push_back(value); return *this; }
@@ -78,7 +79,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
@@ -87,7 +88,7 @@ namespace Model
     inline ListElasticsearchVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     
-    inline ListElasticsearchVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListElasticsearchVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     
     inline ListElasticsearchVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

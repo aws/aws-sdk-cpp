@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/Tag.h>
 #include <aws/s3/model/LifecycleRuleAndOperator.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * Prefix identifying one or more objects to which the rule applies.
      */
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * Prefix identifying one or more objects to which the rule applies.
@@ -76,7 +77,7 @@ namespace Model
     /**
      * Prefix identifying one or more objects to which the rule applies.
      */
-    inline LifecycleRuleFilter& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
+    inline LifecycleRuleFilter& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * Prefix identifying one or more objects to which the rule applies.
@@ -96,7 +97,7 @@ namespace Model
     /**
      * This tag must exist in the object's tag set in order for the rule to apply.
      */
-    inline void SetTag(Tag&& value) { m_tagHasBeenSet = true; m_tag = value; }
+    inline void SetTag(Tag&& value) { m_tagHasBeenSet = true; m_tag = std::move(value); }
 
     /**
      * This tag must exist in the object's tag set in order for the rule to apply.
@@ -106,7 +107,7 @@ namespace Model
     /**
      * This tag must exist in the object's tag set in order for the rule to apply.
      */
-    inline LifecycleRuleFilter& WithTag(Tag&& value) { SetTag(value); return *this;}
+    inline LifecycleRuleFilter& WithTag(Tag&& value) { SetTag(std::move(value)); return *this;}
 
     
     inline const LifecycleRuleAndOperator& GetAnd() const{ return m_and; }
@@ -115,13 +116,13 @@ namespace Model
     inline void SetAnd(const LifecycleRuleAndOperator& value) { m_andHasBeenSet = true; m_and = value; }
 
     
-    inline void SetAnd(LifecycleRuleAndOperator&& value) { m_andHasBeenSet = true; m_and = value; }
+    inline void SetAnd(LifecycleRuleAndOperator&& value) { m_andHasBeenSet = true; m_and = std::move(value); }
 
     
     inline LifecycleRuleFilter& WithAnd(const LifecycleRuleAndOperator& value) { SetAnd(value); return *this;}
 
     
-    inline LifecycleRuleFilter& WithAnd(LifecycleRuleAndOperator&& value) { SetAnd(value); return *this;}
+    inline LifecycleRuleFilter& WithAnd(LifecycleRuleAndOperator&& value) { SetAnd(std::move(value)); return *this;}
 
   private:
     Aws::String m_prefix;

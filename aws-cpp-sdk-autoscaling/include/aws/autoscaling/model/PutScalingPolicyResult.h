@@ -16,6 +16,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/autoscaling/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p>
      */
-    inline void SetPolicyARN(Aws::String&& value) { m_policyARN = value; }
+    inline void SetPolicyARN(Aws::String&& value) { m_policyARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p>
      */
-    inline PutScalingPolicyResult& WithPolicyARN(Aws::String&& value) { SetPolicyARN(value); return *this;}
+    inline PutScalingPolicyResult& WithPolicyARN(Aws::String&& value) { SetPolicyARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p>
@@ -87,13 +88,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline PutScalingPolicyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline PutScalingPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline PutScalingPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_policyARN;

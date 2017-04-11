@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -83,7 +84,7 @@ namespace Model
      * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
      * gateways.</p>
      */
-    inline void SetInternetGatewayIds(Aws::Vector<Aws::String>&& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds = value; }
+    inline void SetInternetGatewayIds(Aws::Vector<Aws::String>&& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds = std::move(value); }
 
     /**
      * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
@@ -95,7 +96,7 @@ namespace Model
      * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
      * gateways.</p>
      */
-    inline DescribeInternetGatewaysRequest& WithInternetGatewayIds(Aws::Vector<Aws::String>&& value) { SetInternetGatewayIds(value); return *this;}
+    inline DescribeInternetGatewaysRequest& WithInternetGatewayIds(Aws::Vector<Aws::String>&& value) { SetInternetGatewayIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
@@ -107,7 +108,7 @@ namespace Model
      * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
      * gateways.</p>
      */
-    inline DescribeInternetGatewaysRequest& AddInternetGatewayIds(Aws::String&& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds.push_back(value); return *this; }
+    inline DescribeInternetGatewaysRequest& AddInternetGatewayIds(Aws::String&& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more Internet gateway IDs.</p> <p>Default: Describes all your Internet
@@ -182,7 +183,7 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
@@ -228,7 +229,7 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> </ul>
      */
-    inline DescribeInternetGatewaysRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeInternetGatewaysRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
@@ -274,7 +275,7 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> </ul>
      */
-    inline DescribeInternetGatewaysRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeInternetGatewaysRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

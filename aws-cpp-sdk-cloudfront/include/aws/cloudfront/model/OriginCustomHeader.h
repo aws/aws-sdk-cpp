@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * The header's name.
      */
-    inline void SetHeaderName(Aws::String&& value) { m_headerNameHasBeenSet = true; m_headerName = value; }
+    inline void SetHeaderName(Aws::String&& value) { m_headerNameHasBeenSet = true; m_headerName = std::move(value); }
 
     /**
      * The header's name.
@@ -73,7 +74,7 @@ namespace Model
     /**
      * The header's name.
      */
-    inline OriginCustomHeader& WithHeaderName(Aws::String&& value) { SetHeaderName(value); return *this;}
+    inline OriginCustomHeader& WithHeaderName(Aws::String&& value) { SetHeaderName(std::move(value)); return *this;}
 
     /**
      * The header's name.
@@ -93,7 +94,7 @@ namespace Model
     /**
      * The header's value.
      */
-    inline void SetHeaderValue(Aws::String&& value) { m_headerValueHasBeenSet = true; m_headerValue = value; }
+    inline void SetHeaderValue(Aws::String&& value) { m_headerValueHasBeenSet = true; m_headerValue = std::move(value); }
 
     /**
      * The header's value.
@@ -108,7 +109,7 @@ namespace Model
     /**
      * The header's value.
      */
-    inline OriginCustomHeader& WithHeaderValue(Aws::String&& value) { SetHeaderValue(value); return *this;}
+    inline OriginCustomHeader& WithHeaderValue(Aws::String&& value) { SetHeaderValue(std::move(value)); return *this;}
 
     /**
      * The header's value.

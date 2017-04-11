@@ -16,6 +16,7 @@
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elastictranscoder/model/Encryption.h>
+#include <utility>
 
 namespace Aws
 {
@@ -91,7 +92,7 @@ namespace Model
      * <code>fmp4</code> captions have an extension of <code>.ismt</code> </p> </li>
      * </ul>
      */
-    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = value; }
+    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
      * <p>The format you specify determines whether Elastic Transcoder generates an
@@ -139,7 +140,7 @@ namespace Model
      * <code>fmp4</code> captions have an extension of <code>.ismt</code> </p> </li>
      * </ul>
      */
-    inline CaptionFormat& WithFormat(Aws::String&& value) { SetFormat(value); return *this;}
+    inline CaptionFormat& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
 
     /**
      * <p>The format you specify determines whether Elastic Transcoder generates an
@@ -206,7 +207,7 @@ namespace Model
      * English (en), the name of the first caption file is be
      * Sydney-en-sunrise00000.srt.</p>
      */
-    inline void SetPattern(Aws::String&& value) { m_patternHasBeenSet = true; m_pattern = value; }
+    inline void SetPattern(Aws::String&& value) { m_patternHasBeenSet = true; m_pattern = std::move(value); }
 
     /**
      * <p>The prefix for caption filenames, in the form
@@ -257,7 +258,7 @@ namespace Model
      * English (en), the name of the first caption file is be
      * Sydney-en-sunrise00000.srt.</p>
      */
-    inline CaptionFormat& WithPattern(Aws::String&& value) { SetPattern(value); return *this;}
+    inline CaptionFormat& WithPattern(Aws::String&& value) { SetPattern(std::move(value)); return *this;}
 
     /**
      * <p>The prefix for caption filenames, in the form
@@ -292,7 +293,7 @@ namespace Model
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
      * your caption formats.</p>
      */
-    inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
+    inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
 
     /**
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
@@ -304,7 +305,7 @@ namespace Model
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
      * your caption formats.</p>
      */
-    inline CaptionFormat& WithEncryption(Encryption&& value) { SetEncryption(value); return *this;}
+    inline CaptionFormat& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
 
   private:
     Aws::String m_format;

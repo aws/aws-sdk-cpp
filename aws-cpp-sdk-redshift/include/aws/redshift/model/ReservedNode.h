@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/RecurringCharge.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The unique identifier for the reservation.</p>
      */
-    inline void SetReservedNodeId(Aws::String&& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = value; }
+    inline void SetReservedNodeId(Aws::String&& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = std::move(value); }
 
     /**
      * <p>The unique identifier for the reservation.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The unique identifier for the reservation.</p>
      */
-    inline ReservedNode& WithReservedNodeId(Aws::String&& value) { SetReservedNodeId(value); return *this;}
+    inline ReservedNode& WithReservedNodeId(Aws::String&& value) { SetReservedNodeId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the reservation.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The identifier for the reserved node offering.</p>
      */
-    inline void SetReservedNodeOfferingId(Aws::String&& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = value; }
+    inline void SetReservedNodeOfferingId(Aws::String&& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = std::move(value); }
 
     /**
      * <p>The identifier for the reserved node offering.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The identifier for the reserved node offering.</p>
      */
-    inline ReservedNode& WithReservedNodeOfferingId(Aws::String&& value) { SetReservedNodeOfferingId(value); return *this;}
+    inline ReservedNode& WithReservedNodeOfferingId(Aws::String&& value) { SetReservedNodeOfferingId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the reserved node offering.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>The node type of the reserved node.</p>
      */
-    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
+    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
     /**
      * <p>The node type of the reserved node.</p>
@@ -149,7 +150,7 @@ namespace Model
     /**
      * <p>The node type of the reserved node.</p>
      */
-    inline ReservedNode& WithNodeType(Aws::String&& value) { SetNodeType(value); return *this;}
+    inline ReservedNode& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
 
     /**
      * <p>The node type of the reserved node.</p>
@@ -172,7 +173,7 @@ namespace Model
      * <p>The time the reservation started. You purchase a reserved node offering for a
      * duration. This is the start time of that duration.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The time the reservation started. You purchase a reserved node offering for a
@@ -184,7 +185,7 @@ namespace Model
      * <p>The time the reservation started. You purchase a reserved node offering for a
      * duration. This is the start time of that duration.</p>
      */
-    inline ReservedNode& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline ReservedNode& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The duration of the node reservation in seconds.</p>
@@ -244,7 +245,7 @@ namespace Model
     /**
      * <p>The currency code for the reserved cluster.</p>
      */
-    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
+    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
      * <p>The currency code for the reserved cluster.</p>
@@ -259,7 +260,7 @@ namespace Model
     /**
      * <p>The currency code for the reserved cluster.</p>
      */
-    inline ReservedNode& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(value); return *this;}
+    inline ReservedNode& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
      * <p>The currency code for the reserved cluster.</p>
@@ -309,7 +310,7 @@ namespace Model
      * use.</p> </li> <li> <p>payment-failed-Payment failed for the purchase
      * attempt.</p> </li> </ul>
      */
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the reserved compute node.</p> <p>Possible Values:</p> <ul> <li>
@@ -339,7 +340,7 @@ namespace Model
      * use.</p> </li> <li> <p>payment-failed-Payment failed for the purchase
      * attempt.</p> </li> </ul>
      */
-    inline ReservedNode& WithState(Aws::String&& value) { SetState(value); return *this;}
+    inline ReservedNode& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The state of the reserved compute node.</p> <p>Possible Values:</p> <ul> <li>
@@ -367,7 +368,7 @@ namespace Model
      * <p>The anticipated utilization of the reserved node, as defined in the reserved
      * node offering.</p>
      */
-    inline void SetOfferingType(Aws::String&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
+    inline void SetOfferingType(Aws::String&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::move(value); }
 
     /**
      * <p>The anticipated utilization of the reserved node, as defined in the reserved
@@ -385,7 +386,7 @@ namespace Model
      * <p>The anticipated utilization of the reserved node, as defined in the reserved
      * node offering.</p>
      */
-    inline ReservedNode& WithOfferingType(Aws::String&& value) { SetOfferingType(value); return *this;}
+    inline ReservedNode& WithOfferingType(Aws::String&& value) { SetOfferingType(std::move(value)); return *this;}
 
     /**
      * <p>The anticipated utilization of the reserved node, as defined in the reserved
@@ -406,7 +407,7 @@ namespace Model
     /**
      * <p>The recurring charges for the reserved node.</p>
      */
-    inline void SetRecurringCharges(Aws::Vector<RecurringCharge>&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
+    inline void SetRecurringCharges(Aws::Vector<RecurringCharge>&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = std::move(value); }
 
     /**
      * <p>The recurring charges for the reserved node.</p>
@@ -416,7 +417,7 @@ namespace Model
     /**
      * <p>The recurring charges for the reserved node.</p>
      */
-    inline ReservedNode& WithRecurringCharges(Aws::Vector<RecurringCharge>&& value) { SetRecurringCharges(value); return *this;}
+    inline ReservedNode& WithRecurringCharges(Aws::Vector<RecurringCharge>&& value) { SetRecurringCharges(std::move(value)); return *this;}
 
     /**
      * <p>The recurring charges for the reserved node.</p>
@@ -426,7 +427,7 @@ namespace Model
     /**
      * <p>The recurring charges for the reserved node.</p>
      */
-    inline ReservedNode& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
+    inline ReservedNode& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_reservedNodeId;

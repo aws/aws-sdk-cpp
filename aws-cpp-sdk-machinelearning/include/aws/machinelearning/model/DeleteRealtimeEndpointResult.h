@@ -16,6 +16,7 @@
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/machinelearning/model/RealtimeEndpointInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * value should be identical to the value of the <code>MLModelId</code> in the
      * request.</p>
      */
-    inline void SetMLModelId(Aws::String&& value) { m_mLModelId = value; }
+    inline void SetMLModelId(Aws::String&& value) { m_mLModelId = std::move(value); }
 
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This
@@ -88,7 +89,7 @@ namespace Model
      * value should be identical to the value of the <code>MLModelId</code> in the
      * request.</p>
      */
-    inline DeleteRealtimeEndpointResult& WithMLModelId(Aws::String&& value) { SetMLModelId(value); return *this;}
+    inline DeleteRealtimeEndpointResult& WithMLModelId(Aws::String&& value) { SetMLModelId(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The endpoint information of the <code>MLModel</code> </p>
      */
-    inline void SetRealtimeEndpointInfo(RealtimeEndpointInfo&& value) { m_realtimeEndpointInfo = value; }
+    inline void SetRealtimeEndpointInfo(RealtimeEndpointInfo&& value) { m_realtimeEndpointInfo = std::move(value); }
 
     /**
      * <p>The endpoint information of the <code>MLModel</code> </p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>The endpoint information of the <code>MLModel</code> </p>
      */
-    inline DeleteRealtimeEndpointResult& WithRealtimeEndpointInfo(RealtimeEndpointInfo&& value) { SetRealtimeEndpointInfo(value); return *this;}
+    inline DeleteRealtimeEndpointResult& WithRealtimeEndpointInfo(RealtimeEndpointInfo&& value) { SetRealtimeEndpointInfo(std::move(value)); return *this;}
 
   private:
     Aws::String m_mLModelId;

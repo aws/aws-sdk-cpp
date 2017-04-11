@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The description of the thing type.</p>
      */
-    inline void SetThingTypeDescription(Aws::String&& value) { m_thingTypeDescriptionHasBeenSet = true; m_thingTypeDescription = value; }
+    inline void SetThingTypeDescription(Aws::String&& value) { m_thingTypeDescriptionHasBeenSet = true; m_thingTypeDescription = std::move(value); }
 
     /**
      * <p>The description of the thing type.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The description of the thing type.</p>
      */
-    inline ThingTypeProperties& WithThingTypeDescription(Aws::String&& value) { SetThingTypeDescription(value); return *this;}
+    inline ThingTypeProperties& WithThingTypeDescription(Aws::String&& value) { SetThingTypeDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the thing type.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>A list of searchable thing attribute names.</p>
      */
-    inline void SetSearchableAttributes(Aws::Vector<Aws::String>&& value) { m_searchableAttributesHasBeenSet = true; m_searchableAttributes = value; }
+    inline void SetSearchableAttributes(Aws::Vector<Aws::String>&& value) { m_searchableAttributesHasBeenSet = true; m_searchableAttributes = std::move(value); }
 
     /**
      * <p>A list of searchable thing attribute names.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>A list of searchable thing attribute names.</p>
      */
-    inline ThingTypeProperties& WithSearchableAttributes(Aws::Vector<Aws::String>&& value) { SetSearchableAttributes(value); return *this;}
+    inline ThingTypeProperties& WithSearchableAttributes(Aws::Vector<Aws::String>&& value) { SetSearchableAttributes(std::move(value)); return *this;}
 
     /**
      * <p>A list of searchable thing attribute names.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>A list of searchable thing attribute names.</p>
      */
-    inline ThingTypeProperties& AddSearchableAttributes(Aws::String&& value) { m_searchableAttributesHasBeenSet = true; m_searchableAttributes.push_back(value); return *this; }
+    inline ThingTypeProperties& AddSearchableAttributes(Aws::String&& value) { m_searchableAttributesHasBeenSet = true; m_searchableAttributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of searchable thing attribute names.</p>

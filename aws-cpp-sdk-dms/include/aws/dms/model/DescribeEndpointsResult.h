@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/model/Endpoint.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -86,7 +87,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline DescribeEndpointsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeEndpointsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>Endpoint description.</p>
      */
-    inline void SetEndpoints(Aws::Vector<Endpoint>&& value) { m_endpoints = value; }
+    inline void SetEndpoints(Aws::Vector<Endpoint>&& value) { m_endpoints = std::move(value); }
 
     /**
      * <p>Endpoint description.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>Endpoint description.</p>
      */
-    inline DescribeEndpointsResult& WithEndpoints(Aws::Vector<Endpoint>&& value) { SetEndpoints(value); return *this;}
+    inline DescribeEndpointsResult& WithEndpoints(Aws::Vector<Endpoint>&& value) { SetEndpoints(std::move(value)); return *this;}
 
     /**
      * <p>Endpoint description.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>Endpoint description.</p>
      */
-    inline DescribeEndpointsResult& AddEndpoints(Endpoint&& value) { m_endpoints.push_back(value); return *this; }
+    inline DescribeEndpointsResult& AddEndpoints(Endpoint&& value) { m_endpoints.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_marker;

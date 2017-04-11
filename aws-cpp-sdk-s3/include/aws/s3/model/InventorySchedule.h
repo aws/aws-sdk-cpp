@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/InventoryFrequency.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * Specifies how frequently inventory results are produced.
      */
-    inline void SetFrequency(InventoryFrequency&& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
+    inline void SetFrequency(InventoryFrequency&& value) { m_frequencyHasBeenSet = true; m_frequency = std::move(value); }
 
     /**
      * Specifies how frequently inventory results are produced.
@@ -62,7 +63,7 @@ namespace Model
     /**
      * Specifies how frequently inventory results are produced.
      */
-    inline InventorySchedule& WithFrequency(InventoryFrequency&& value) { SetFrequency(value); return *this;}
+    inline InventorySchedule& WithFrequency(InventoryFrequency&& value) { SetFrequency(std::move(value)); return *this;}
 
   private:
     InventoryFrequency m_frequency;

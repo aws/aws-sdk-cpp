@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/DistributionList.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * The DistributionList type.
      */
-    inline void SetDistributionList(DistributionList&& value) { m_distributionList = value; }
+    inline void SetDistributionList(DistributionList&& value) { m_distributionList = std::move(value); }
 
     /**
      * The DistributionList type.
@@ -67,7 +68,7 @@ namespace Model
     /**
      * The DistributionList type.
      */
-    inline ListDistributions2016_01_28Result& WithDistributionList(DistributionList&& value) { SetDistributionList(value); return *this;}
+    inline ListDistributions2016_01_28Result& WithDistributionList(DistributionList&& value) { SetDistributionList(std::move(value)); return *this;}
 
   private:
     DistributionList m_distributionList;

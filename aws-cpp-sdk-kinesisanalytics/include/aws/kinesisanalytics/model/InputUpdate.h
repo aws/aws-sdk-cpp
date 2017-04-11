@@ -19,6 +19,7 @@
 #include <aws/kinesisanalytics/model/KinesisFirehoseInputUpdate.h>
 #include <aws/kinesisanalytics/model/InputSchemaUpdate.h>
 #include <aws/kinesisanalytics/model/InputParallelismUpdate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>Input ID of the application input to be updated.</p>
      */
-    inline void SetInputId(Aws::String&& value) { m_inputIdHasBeenSet = true; m_inputId = value; }
+    inline void SetInputId(Aws::String&& value) { m_inputIdHasBeenSet = true; m_inputId = std::move(value); }
 
     /**
      * <p>Input ID of the application input to be updated.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>Input ID of the application input to be updated.</p>
      */
-    inline InputUpdate& WithInputId(Aws::String&& value) { SetInputId(value); return *this;}
+    inline InputUpdate& WithInputId(Aws::String&& value) { SetInputId(std::move(value)); return *this;}
 
     /**
      * <p>Input ID of the application input to be updated.</p>
@@ -99,7 +100,7 @@ namespace Model
      * <p>Name prefix for in-application stream(s) that Kinesis Analytics creates for
      * the specific streaming source.</p>
      */
-    inline void SetNamePrefixUpdate(Aws::String&& value) { m_namePrefixUpdateHasBeenSet = true; m_namePrefixUpdate = value; }
+    inline void SetNamePrefixUpdate(Aws::String&& value) { m_namePrefixUpdateHasBeenSet = true; m_namePrefixUpdate = std::move(value); }
 
     /**
      * <p>Name prefix for in-application stream(s) that Kinesis Analytics creates for
@@ -117,7 +118,7 @@ namespace Model
      * <p>Name prefix for in-application stream(s) that Kinesis Analytics creates for
      * the specific streaming source.</p>
      */
-    inline InputUpdate& WithNamePrefixUpdate(Aws::String&& value) { SetNamePrefixUpdate(value); return *this;}
+    inline InputUpdate& WithNamePrefixUpdate(Aws::String&& value) { SetNamePrefixUpdate(std::move(value)); return *this;}
 
     /**
      * <p>Name prefix for in-application stream(s) that Kinesis Analytics creates for
@@ -141,7 +142,7 @@ namespace Model
      * <p>If a Amazon Kinesis stream is the streaming source to be updated, provides an
      * updated stream ARN and IAM role ARN.</p>
      */
-    inline void SetKinesisStreamsInputUpdate(KinesisStreamsInputUpdate&& value) { m_kinesisStreamsInputUpdateHasBeenSet = true; m_kinesisStreamsInputUpdate = value; }
+    inline void SetKinesisStreamsInputUpdate(KinesisStreamsInputUpdate&& value) { m_kinesisStreamsInputUpdateHasBeenSet = true; m_kinesisStreamsInputUpdate = std::move(value); }
 
     /**
      * <p>If a Amazon Kinesis stream is the streaming source to be updated, provides an
@@ -153,7 +154,7 @@ namespace Model
      * <p>If a Amazon Kinesis stream is the streaming source to be updated, provides an
      * updated stream ARN and IAM role ARN.</p>
      */
-    inline InputUpdate& WithKinesisStreamsInputUpdate(KinesisStreamsInputUpdate&& value) { SetKinesisStreamsInputUpdate(value); return *this;}
+    inline InputUpdate& WithKinesisStreamsInputUpdate(KinesisStreamsInputUpdate&& value) { SetKinesisStreamsInputUpdate(std::move(value)); return *this;}
 
     /**
      * <p>If an Amazon Kinesis Firehose delivery stream is the streaming source to be
@@ -174,7 +175,7 @@ namespace Model
      * updated, provides an updated stream Amazon Resource Name (ARN) and IAM role
      * ARN.</p>
      */
-    inline void SetKinesisFirehoseInputUpdate(KinesisFirehoseInputUpdate&& value) { m_kinesisFirehoseInputUpdateHasBeenSet = true; m_kinesisFirehoseInputUpdate = value; }
+    inline void SetKinesisFirehoseInputUpdate(KinesisFirehoseInputUpdate&& value) { m_kinesisFirehoseInputUpdateHasBeenSet = true; m_kinesisFirehoseInputUpdate = std::move(value); }
 
     /**
      * <p>If an Amazon Kinesis Firehose delivery stream is the streaming source to be
@@ -188,7 +189,7 @@ namespace Model
      * updated, provides an updated stream Amazon Resource Name (ARN) and IAM role
      * ARN.</p>
      */
-    inline InputUpdate& WithKinesisFirehoseInputUpdate(KinesisFirehoseInputUpdate&& value) { SetKinesisFirehoseInputUpdate(value); return *this;}
+    inline InputUpdate& WithKinesisFirehoseInputUpdate(KinesisFirehoseInputUpdate&& value) { SetKinesisFirehoseInputUpdate(std::move(value)); return *this;}
 
     /**
      * <p>Describes the data format on the streaming source, and how record elements on
@@ -209,7 +210,7 @@ namespace Model
      * the streaming source map to columns of the in-application stream that is
      * created.</p>
      */
-    inline void SetInputSchemaUpdate(InputSchemaUpdate&& value) { m_inputSchemaUpdateHasBeenSet = true; m_inputSchemaUpdate = value; }
+    inline void SetInputSchemaUpdate(InputSchemaUpdate&& value) { m_inputSchemaUpdateHasBeenSet = true; m_inputSchemaUpdate = std::move(value); }
 
     /**
      * <p>Describes the data format on the streaming source, and how record elements on
@@ -223,7 +224,7 @@ namespace Model
      * the streaming source map to columns of the in-application stream that is
      * created.</p>
      */
-    inline InputUpdate& WithInputSchemaUpdate(InputSchemaUpdate&& value) { SetInputSchemaUpdate(value); return *this;}
+    inline InputUpdate& WithInputSchemaUpdate(InputSchemaUpdate&& value) { SetInputSchemaUpdate(std::move(value)); return *this;}
 
     /**
      * <p>Describes the parallelism updates (the number in-application streams Kinesis
@@ -241,7 +242,7 @@ namespace Model
      * <p>Describes the parallelism updates (the number in-application streams Kinesis
      * Analytics creates for the specific streaming source).</p>
      */
-    inline void SetInputParallelismUpdate(InputParallelismUpdate&& value) { m_inputParallelismUpdateHasBeenSet = true; m_inputParallelismUpdate = value; }
+    inline void SetInputParallelismUpdate(InputParallelismUpdate&& value) { m_inputParallelismUpdateHasBeenSet = true; m_inputParallelismUpdate = std::move(value); }
 
     /**
      * <p>Describes the parallelism updates (the number in-application streams Kinesis
@@ -253,7 +254,7 @@ namespace Model
      * <p>Describes the parallelism updates (the number in-application streams Kinesis
      * Analytics creates for the specific streaming source).</p>
      */
-    inline InputUpdate& WithInputParallelismUpdate(InputParallelismUpdate&& value) { SetInputParallelismUpdate(value); return *this;}
+    inline InputUpdate& WithInputParallelismUpdate(InputParallelismUpdate&& value) { SetInputParallelismUpdate(std::move(value)); return *this;}
 
   private:
     Aws::String m_inputId;

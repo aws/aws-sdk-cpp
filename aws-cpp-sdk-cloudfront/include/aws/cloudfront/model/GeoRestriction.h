@@ -17,6 +17,7 @@
 #include <aws/cloudfront/model/GeoRestrictionType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
      * whitelist: The Location elements specify the countries in which you want
      * CloudFront to distribute your content.
      */
-    inline void SetRestrictionType(GeoRestrictionType&& value) { m_restrictionTypeHasBeenSet = true; m_restrictionType = value; }
+    inline void SetRestrictionType(GeoRestrictionType&& value) { m_restrictionTypeHasBeenSet = true; m_restrictionType = std::move(value); }
 
     /**
      * The method that you want to use to restrict distribution of your content by
@@ -99,7 +100,7 @@ namespace Model
      * whitelist: The Location elements specify the countries in which you want
      * CloudFront to distribute your content.
      */
-    inline GeoRestriction& WithRestrictionType(GeoRestrictionType&& value) { SetRestrictionType(value); return *this;}
+    inline GeoRestriction& WithRestrictionType(GeoRestrictionType&& value) { SetRestrictionType(std::move(value)); return *this;}
 
     /**
      * When geo restriction is enabled, this is the number of countries in your
@@ -159,7 +160,7 @@ namespace Model
      * Organization for Standardization website. You can also refer to the country list
      * in the CloudFront console, which includes both country names and codes.
      */
-    inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+    inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * A complex type that contains a Location element for each country in which you
@@ -185,7 +186,7 @@ namespace Model
      * Organization for Standardization website. You can also refer to the country list
      * in the CloudFront console, which includes both country names and codes.
      */
-    inline GeoRestriction& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(value); return *this;}
+    inline GeoRestriction& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * A complex type that contains a Location element for each country in which you
@@ -211,7 +212,7 @@ namespace Model
      * Organization for Standardization website. You can also refer to the country list
      * in the CloudFront console, which includes both country names and codes.
      */
-    inline GeoRestriction& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+    inline GeoRestriction& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
     /**
      * A complex type that contains a Location element for each country in which you

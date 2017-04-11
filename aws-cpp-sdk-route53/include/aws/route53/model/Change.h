@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/ChangeAction.h>
 #include <aws/route53/model/ResourceRecordSet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -140,7 +141,7 @@ namespace Model
      * failover, geolocation, latency, and weighted resource record sets)</p> </li>
      * </ul>
      */
-    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = value; }
+    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>The action to perform:</p> <ul> <li> <p> <code>CREATE</code>: Creates a
@@ -204,7 +205,7 @@ namespace Model
      * failover, geolocation, latency, and weighted resource record sets)</p> </li>
      * </ul>
      */
-    inline Change& WithAction(ChangeAction&& value) { SetAction(value); return *this;}
+    inline Change& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
 
     /**
      * <p>Information about the resource record set to create, delete, or update.</p>
@@ -219,7 +220,7 @@ namespace Model
     /**
      * <p>Information about the resource record set to create, delete, or update.</p>
      */
-    inline void SetResourceRecordSet(ResourceRecordSet&& value) { m_resourceRecordSetHasBeenSet = true; m_resourceRecordSet = value; }
+    inline void SetResourceRecordSet(ResourceRecordSet&& value) { m_resourceRecordSetHasBeenSet = true; m_resourceRecordSet = std::move(value); }
 
     /**
      * <p>Information about the resource record set to create, delete, or update.</p>
@@ -229,7 +230,7 @@ namespace Model
     /**
      * <p>Information about the resource record set to create, delete, or update.</p>
      */
-    inline Change& WithResourceRecordSet(ResourceRecordSet&& value) { SetResourceRecordSet(value); return *this;}
+    inline Change& WithResourceRecordSet(ResourceRecordSet&& value) { SetResourceRecordSet(std::move(value)); return *this;}
 
   private:
     ChangeAction m_action;

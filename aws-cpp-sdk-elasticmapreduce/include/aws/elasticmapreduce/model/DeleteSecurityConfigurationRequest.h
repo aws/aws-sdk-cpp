@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/EMRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the security configuration.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the security configuration.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the security configuration.</p>
      */
-    inline DeleteSecurityConfigurationRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline DeleteSecurityConfigurationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the security configuration.</p>

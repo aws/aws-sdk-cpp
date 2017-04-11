@@ -16,6 +16,7 @@
 #include <aws/cloudsearchdomain/CloudSearchDomain_EXPORTS.h>
 #include <aws/cloudsearchdomain/model/SuggestStatus.h>
 #include <aws/cloudsearchdomain/model/SuggestModel.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * (<code>rid</code>) and how long it took to process the request
      * (<code>timems</code>).</p>
      */
-    inline void SetStatus(SuggestStatus&& value) { m_status = value; }
+    inline void SetStatus(SuggestStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The status of a <code>SuggestRequest</code>. Contains the resource ID
@@ -79,7 +80,7 @@ namespace Model
      * (<code>rid</code>) and how long it took to process the request
      * (<code>timems</code>).</p>
      */
-    inline SuggestResult& WithStatus(SuggestStatus&& value) { SetStatus(value); return *this;}
+    inline SuggestResult& WithStatus(SuggestStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Container for the matching search suggestion information.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>Container for the matching search suggestion information.</p>
      */
-    inline void SetSuggest(SuggestModel&& value) { m_suggest = value; }
+    inline void SetSuggest(SuggestModel&& value) { m_suggest = std::move(value); }
 
     /**
      * <p>Container for the matching search suggestion information.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>Container for the matching search suggestion information.</p>
      */
-    inline SuggestResult& WithSuggest(SuggestModel&& value) { SetSuggest(value); return *this;}
+    inline SuggestResult& WithSuggest(SuggestModel&& value) { SetSuggest(std::move(value)); return *this;}
 
   private:
     SuggestStatus m_status;

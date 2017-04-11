@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttachmentStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline InternetGatewayAttachment& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline InternetGatewayAttachment& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The current state of the attachment.</p>
      */
-    inline void SetState(AttachmentStatus&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(AttachmentStatus&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The current state of the attachment.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The current state of the attachment.</p>
      */
-    inline InternetGatewayAttachment& WithState(AttachmentStatus&& value) { SetState(value); return *this;}
+    inline InternetGatewayAttachment& WithState(AttachmentStatus&& value) { SetState(std::move(value)); return *this;}
 
   private:
     Aws::String m_vpcId;

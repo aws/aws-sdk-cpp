@@ -16,6 +16,7 @@
 #include <aws/sns/SNS_EXPORTS.h>
 #include <aws/sns/SNSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The ARN of the topic you want to delete.</p>
      */
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
 
     /**
      * <p>The ARN of the topic you want to delete.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ARN of the topic you want to delete.</p>
      */
-    inline DeleteTopicRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
+    inline DeleteTopicRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the topic you want to delete.</p>

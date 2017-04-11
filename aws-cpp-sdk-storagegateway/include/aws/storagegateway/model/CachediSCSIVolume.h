@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/model/VolumeiSCSIAttributes.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the storage volume.</p>
      */
-    inline void SetVolumeARN(Aws::String&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
+    inline void SetVolumeARN(Aws::String&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the storage volume.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the storage volume.</p>
      */
-    inline CachediSCSIVolume& WithVolumeARN(Aws::String&& value) { SetVolumeARN(value); return *this;}
+    inline CachediSCSIVolume& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the storage volume.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
      */
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     /**
      * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
      */
-    inline CachediSCSIVolume& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
+    inline CachediSCSIVolume& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
@@ -131,7 +132,7 @@ namespace Model
      * <p>One of the VolumeType enumeration values that describes the type of the
      * volume.</p>
      */
-    inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
+    inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
      * <p>One of the VolumeType enumeration values that describes the type of the
@@ -149,7 +150,7 @@ namespace Model
      * <p>One of the VolumeType enumeration values that describes the type of the
      * volume.</p>
      */
-    inline CachediSCSIVolume& WithVolumeType(Aws::String&& value) { SetVolumeType(value); return *this;}
+    inline CachediSCSIVolume& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
 
     /**
      * <p>One of the VolumeType enumeration values that describes the type of the
@@ -173,7 +174,7 @@ namespace Model
      * <p>One of the VolumeStatus values that indicates the state of the storage
      * volume.</p>
      */
-    inline void SetVolumeStatus(Aws::String&& value) { m_volumeStatusHasBeenSet = true; m_volumeStatus = value; }
+    inline void SetVolumeStatus(Aws::String&& value) { m_volumeStatusHasBeenSet = true; m_volumeStatus = std::move(value); }
 
     /**
      * <p>One of the VolumeStatus values that indicates the state of the storage
@@ -191,7 +192,7 @@ namespace Model
      * <p>One of the VolumeStatus values that indicates the state of the storage
      * volume.</p>
      */
-    inline CachediSCSIVolume& WithVolumeStatus(Aws::String&& value) { SetVolumeStatus(value); return *this;}
+    inline CachediSCSIVolume& WithVolumeStatus(Aws::String&& value) { SetVolumeStatus(std::move(value)); return *this;}
 
     /**
      * <p>One of the VolumeStatus values that indicates the state of the storage
@@ -254,7 +255,7 @@ namespace Model
      * <p>If the cached volume was created from a snapshot, this field contains the
      * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
      */
-    inline void SetSourceSnapshotId(Aws::String&& value) { m_sourceSnapshotIdHasBeenSet = true; m_sourceSnapshotId = value; }
+    inline void SetSourceSnapshotId(Aws::String&& value) { m_sourceSnapshotIdHasBeenSet = true; m_sourceSnapshotId = std::move(value); }
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
@@ -272,7 +273,7 @@ namespace Model
      * <p>If the cached volume was created from a snapshot, this field contains the
      * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
      */
-    inline CachediSCSIVolume& WithSourceSnapshotId(Aws::String&& value) { SetSourceSnapshotId(value); return *this;}
+    inline CachediSCSIVolume& WithSourceSnapshotId(Aws::String&& value) { SetSourceSnapshotId(std::move(value)); return *this;}
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
@@ -296,7 +297,7 @@ namespace Model
      * <p>An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI
      * attributes for one stored volume.</p>
      */
-    inline void SetVolumeiSCSIAttributes(VolumeiSCSIAttributes&& value) { m_volumeiSCSIAttributesHasBeenSet = true; m_volumeiSCSIAttributes = value; }
+    inline void SetVolumeiSCSIAttributes(VolumeiSCSIAttributes&& value) { m_volumeiSCSIAttributesHasBeenSet = true; m_volumeiSCSIAttributes = std::move(value); }
 
     /**
      * <p>An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI
@@ -308,7 +309,7 @@ namespace Model
      * <p>An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI
      * attributes for one stored volume.</p>
      */
-    inline CachediSCSIVolume& WithVolumeiSCSIAttributes(VolumeiSCSIAttributes&& value) { SetVolumeiSCSIAttributes(value); return *this;}
+    inline CachediSCSIVolume& WithVolumeiSCSIAttributes(VolumeiSCSIAttributes&& value) { SetVolumeiSCSIAttributes(std::move(value)); return *this;}
 
     
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
@@ -317,13 +318,13 @@ namespace Model
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
 
     
     inline CachediSCSIVolume& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
 
     
-    inline CachediSCSIVolume& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
+    inline CachediSCSIVolume& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_volumeARN;

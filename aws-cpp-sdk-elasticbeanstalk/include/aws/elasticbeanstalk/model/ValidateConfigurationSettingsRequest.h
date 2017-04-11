@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticbeanstalk/model/ConfigurationOptionSetting.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>The name of the application that the configuration template or environment
      * belongs to.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of the application that the configuration template or environment
@@ -77,7 +78,7 @@ namespace Model
      * <p>The name of the application that the configuration template or environment
      * belongs to.</p>
      */
-    inline ValidateConfigurationSettingsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline ValidateConfigurationSettingsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the application that the configuration template or environment
@@ -101,7 +102,7 @@ namespace Model
      * <p>The name of the configuration template to validate the settings against.</p>
      * <p>Condition: You cannot specify both this and an environment name.</p>
      */
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
+    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
      * <p>The name of the configuration template to validate the settings against.</p>
@@ -119,7 +120,7 @@ namespace Model
      * <p>The name of the configuration template to validate the settings against.</p>
      * <p>Condition: You cannot specify both this and an environment name.</p>
      */
-    inline ValidateConfigurationSettingsRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(value); return *this;}
+    inline ValidateConfigurationSettingsRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the configuration template to validate the settings against.</p>
@@ -146,7 +147,7 @@ namespace Model
      * <p>Condition: You cannot specify both this and a configuration template
      * name.</p>
      */
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
+    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
 
     /**
      * <p>The name of the environment to validate the settings against.</p>
@@ -167,7 +168,7 @@ namespace Model
      * <p>Condition: You cannot specify both this and a configuration template
      * name.</p>
      */
-    inline ValidateConfigurationSettingsRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
+    inline ValidateConfigurationSettingsRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the environment to validate the settings against.</p>
@@ -189,7 +190,7 @@ namespace Model
     /**
      * <p>A list of the options and desired values to evaluate.</p>
      */
-    inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
+    inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = std::move(value); }
 
     /**
      * <p>A list of the options and desired values to evaluate.</p>
@@ -199,7 +200,7 @@ namespace Model
     /**
      * <p>A list of the options and desired values to evaluate.</p>
      */
-    inline ValidateConfigurationSettingsRequest& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(value); return *this;}
+    inline ValidateConfigurationSettingsRequest& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(std::move(value)); return *this;}
 
     /**
      * <p>A list of the options and desired values to evaluate.</p>
@@ -209,7 +210,7 @@ namespace Model
     /**
      * <p>A list of the options and desired values to evaluate.</p>
      */
-    inline ValidateConfigurationSettingsRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
+    inline ValidateConfigurationSettingsRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_applicationName;

@@ -16,6 +16,7 @@
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The name of the policy. This name must be unique within the set of policies
      * for this load balancer.</p>
      */
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
      * <p>The name of the policy. This name must be unique within the set of policies
@@ -81,7 +82,7 @@ namespace Model
      * <p>The name of the policy. This name must be unique within the set of policies
      * for this load balancer.</p>
      */
-    inline LBCookieStickinessPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
+    inline LBCookieStickinessPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the policy. This name must be unique within the set of policies

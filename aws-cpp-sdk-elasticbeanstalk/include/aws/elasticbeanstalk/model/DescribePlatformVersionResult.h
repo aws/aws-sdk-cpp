@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/model/PlatformDescription.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>Detailed information about the version of the platform.</p>
      */
-    inline void SetPlatformDescription(PlatformDescription&& value) { m_platformDescription = value; }
+    inline void SetPlatformDescription(PlatformDescription&& value) { m_platformDescription = std::move(value); }
 
     /**
      * <p>Detailed information about the version of the platform.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Detailed information about the version of the platform.</p>
      */
-    inline DescribePlatformVersionResult& WithPlatformDescription(PlatformDescription&& value) { SetPlatformDescription(value); return *this;}
+    inline DescribePlatformVersionResult& WithPlatformDescription(PlatformDescription&& value) { SetPlatformDescription(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -72,13 +73,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribePlatformVersionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribePlatformVersionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribePlatformVersionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     PlatformDescription m_platformDescription;

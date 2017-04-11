@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/lex/model/DialogState.h>
 #include <aws/lex/model/ResponseCard.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The current user intent that Amazon Lex is aware of.</p>
      */
-    inline void SetIntentName(Aws::String&& value) { m_intentName = value; }
+    inline void SetIntentName(Aws::String&& value) { m_intentName = std::move(value); }
 
     /**
      * <p>The current user intent that Amazon Lex is aware of.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The current user intent that Amazon Lex is aware of.</p>
      */
-    inline PostTextResult& WithIntentName(Aws::String&& value) { SetIntentName(value); return *this;}
+    inline PostTextResult& WithIntentName(Aws::String&& value) { SetIntentName(std::move(value)); return *this;}
 
     /**
      * <p>The current user intent that Amazon Lex is aware of.</p>
@@ -93,7 +94,7 @@ namespace Model
      * <p> The intent slots (name/value pairs) that Amazon Lex detected so far from the
      * user input in the conversation. </p>
      */
-    inline void SetSlots(Aws::Map<Aws::String, Aws::String>&& value) { m_slots = value; }
+    inline void SetSlots(Aws::Map<Aws::String, Aws::String>&& value) { m_slots = std::move(value); }
 
     /**
      * <p> The intent slots (name/value pairs) that Amazon Lex detected so far from the
@@ -105,49 +106,49 @@ namespace Model
      * <p> The intent slots (name/value pairs) that Amazon Lex detected so far from the
      * user input in the conversation. </p>
      */
-    inline PostTextResult& WithSlots(Aws::Map<Aws::String, Aws::String>&& value) { SetSlots(value); return *this;}
+    inline PostTextResult& WithSlots(Aws::Map<Aws::String, Aws::String>&& value) { SetSlots(std::move(value)); return *this;}
 
     /**
      * <p> The intent slots (name/value pairs) that Amazon Lex detected so far from the
      * user input in the conversation. </p>
      */
-    inline PostTextResult& AddSlots(const Aws::String& key, const Aws::String& value) { m_slots[key] = value; return *this; }
+    inline PostTextResult& AddSlots(const Aws::String& key, const Aws::String& value) { m_slots.emplace(key, value); return *this; }
 
     /**
      * <p> The intent slots (name/value pairs) that Amazon Lex detected so far from the
      * user input in the conversation. </p>
      */
-    inline PostTextResult& AddSlots(Aws::String&& key, const Aws::String& value) { m_slots[key] = value; return *this; }
+    inline PostTextResult& AddSlots(Aws::String&& key, const Aws::String& value) { m_slots.emplace(std::move(key), value); return *this; }
 
     /**
      * <p> The intent slots (name/value pairs) that Amazon Lex detected so far from the
      * user input in the conversation. </p>
      */
-    inline PostTextResult& AddSlots(const Aws::String& key, Aws::String&& value) { m_slots[key] = value; return *this; }
+    inline PostTextResult& AddSlots(const Aws::String& key, Aws::String&& value) { m_slots.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p> The intent slots (name/value pairs) that Amazon Lex detected so far from the
      * user input in the conversation. </p>
      */
-    inline PostTextResult& AddSlots(Aws::String&& key, Aws::String&& value) { m_slots[key] = value; return *this; }
+    inline PostTextResult& AddSlots(Aws::String&& key, Aws::String&& value) { m_slots.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p> The intent slots (name/value pairs) that Amazon Lex detected so far from the
      * user input in the conversation. </p>
      */
-    inline PostTextResult& AddSlots(const char* key, Aws::String&& value) { m_slots[key] = value; return *this; }
+    inline PostTextResult& AddSlots(const char* key, Aws::String&& value) { m_slots.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p> The intent slots (name/value pairs) that Amazon Lex detected so far from the
      * user input in the conversation. </p>
      */
-    inline PostTextResult& AddSlots(Aws::String&& key, const char* value) { m_slots[key] = value; return *this; }
+    inline PostTextResult& AddSlots(Aws::String&& key, const char* value) { m_slots.emplace(std::move(key), value); return *this; }
 
     /**
      * <p> The intent slots (name/value pairs) that Amazon Lex detected so far from the
      * user input in the conversation. </p>
      */
-    inline PostTextResult& AddSlots(const char* key, const char* value) { m_slots[key] = value; return *this; }
+    inline PostTextResult& AddSlots(const char* key, const char* value) { m_slots.emplace(key, value); return *this; }
 
     /**
      * <p>A map of key-value pairs representing the session-specific context
@@ -165,7 +166,7 @@ namespace Model
      * <p>A map of key-value pairs representing the session-specific context
      * information.</p>
      */
-    inline void SetSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_sessionAttributes = value; }
+    inline void SetSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_sessionAttributes = std::move(value); }
 
     /**
      * <p>A map of key-value pairs representing the session-specific context
@@ -177,49 +178,49 @@ namespace Model
      * <p>A map of key-value pairs representing the session-specific context
      * information.</p>
      */
-    inline PostTextResult& WithSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetSessionAttributes(value); return *this;}
+    inline PostTextResult& WithSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetSessionAttributes(std::move(value)); return *this;}
 
     /**
      * <p>A map of key-value pairs representing the session-specific context
      * information.</p>
      */
-    inline PostTextResult& AddSessionAttributes(const Aws::String& key, const Aws::String& value) { m_sessionAttributes[key] = value; return *this; }
+    inline PostTextResult& AddSessionAttributes(const Aws::String& key, const Aws::String& value) { m_sessionAttributes.emplace(key, value); return *this; }
 
     /**
      * <p>A map of key-value pairs representing the session-specific context
      * information.</p>
      */
-    inline PostTextResult& AddSessionAttributes(Aws::String&& key, const Aws::String& value) { m_sessionAttributes[key] = value; return *this; }
+    inline PostTextResult& AddSessionAttributes(Aws::String&& key, const Aws::String& value) { m_sessionAttributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of key-value pairs representing the session-specific context
      * information.</p>
      */
-    inline PostTextResult& AddSessionAttributes(const Aws::String& key, Aws::String&& value) { m_sessionAttributes[key] = value; return *this; }
+    inline PostTextResult& AddSessionAttributes(const Aws::String& key, Aws::String&& value) { m_sessionAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of key-value pairs representing the session-specific context
      * information.</p>
      */
-    inline PostTextResult& AddSessionAttributes(Aws::String&& key, Aws::String&& value) { m_sessionAttributes[key] = value; return *this; }
+    inline PostTextResult& AddSessionAttributes(Aws::String&& key, Aws::String&& value) { m_sessionAttributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A map of key-value pairs representing the session-specific context
      * information.</p>
      */
-    inline PostTextResult& AddSessionAttributes(const char* key, Aws::String&& value) { m_sessionAttributes[key] = value; return *this; }
+    inline PostTextResult& AddSessionAttributes(const char* key, Aws::String&& value) { m_sessionAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of key-value pairs representing the session-specific context
      * information.</p>
      */
-    inline PostTextResult& AddSessionAttributes(Aws::String&& key, const char* value) { m_sessionAttributes[key] = value; return *this; }
+    inline PostTextResult& AddSessionAttributes(Aws::String&& key, const char* value) { m_sessionAttributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of key-value pairs representing the session-specific context
      * information.</p>
      */
-    inline PostTextResult& AddSessionAttributes(const char* key, const char* value) { m_sessionAttributes[key] = value; return *this; }
+    inline PostTextResult& AddSessionAttributes(const char* key, const char* value) { m_sessionAttributes.emplace(key, value); return *this; }
 
     /**
      * <p> A message to convey to the user. It can come from the bot's configuration or
@@ -267,7 +268,7 @@ namespace Model
      * the code hook returns a message, Amazon Lex passes it as-is in its response to
      * the client. </p>
      */
-    inline void SetMessage(Aws::String&& value) { m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
 
     /**
      * <p> A message to convey to the user. It can come from the bot's configuration or
@@ -315,7 +316,7 @@ namespace Model
      * the code hook returns a message, Amazon Lex passes it as-is in its response to
      * the client. </p>
      */
-    inline PostTextResult& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline PostTextResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p> A message to convey to the user. It can come from the bot's configuration or
@@ -424,7 +425,7 @@ namespace Model
      * times Amazon Lex can prompt a user for specific information), or the Lambda
      * function failed to fulfill the intent. </p> </li> </ul>
      */
-    inline void SetDialogState(DialogState&& value) { m_dialogState = value; }
+    inline void SetDialogState(DialogState&& value) { m_dialogState = std::move(value); }
 
     /**
      * <p> Identifies the current state of the user interaction. Amazon Lex returns one
@@ -486,7 +487,7 @@ namespace Model
      * times Amazon Lex can prompt a user for specific information), or the Lambda
      * function failed to fulfill the intent. </p> </li> </ul>
      */
-    inline PostTextResult& WithDialogState(DialogState&& value) { SetDialogState(value); return *this;}
+    inline PostTextResult& WithDialogState(DialogState&& value) { SetDialogState(std::move(value)); return *this;}
 
     /**
      * <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the
@@ -504,7 +505,7 @@ namespace Model
      * <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the
      * name of the slot for which Amazon Lex is eliciting a value. </p>
      */
-    inline void SetSlotToElicit(Aws::String&& value) { m_slotToElicit = value; }
+    inline void SetSlotToElicit(Aws::String&& value) { m_slotToElicit = std::move(value); }
 
     /**
      * <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the
@@ -522,7 +523,7 @@ namespace Model
      * <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the
      * name of the slot for which Amazon Lex is eliciting a value. </p>
      */
-    inline PostTextResult& WithSlotToElicit(Aws::String&& value) { SetSlotToElicit(value); return *this;}
+    inline PostTextResult& WithSlotToElicit(Aws::String&& value) { SetSlotToElicit(std::move(value)); return *this;}
 
     /**
      * <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the
@@ -552,7 +553,7 @@ namespace Model
      * choose the settings button next to a slot) or from a code hook (Lambda
      * function). </p>
      */
-    inline void SetResponseCard(ResponseCard&& value) { m_responseCard = value; }
+    inline void SetResponseCard(ResponseCard&& value) { m_responseCard = std::move(value); }
 
     /**
      * <p>Represents the options that the user has to respond to the current prompt.
@@ -568,7 +569,7 @@ namespace Model
      * choose the settings button next to a slot) or from a code hook (Lambda
      * function). </p>
      */
-    inline PostTextResult& WithResponseCard(ResponseCard&& value) { SetResponseCard(value); return *this;}
+    inline PostTextResult& WithResponseCard(ResponseCard&& value) { SetResponseCard(std::move(value)); return *this;}
 
   private:
     Aws::String m_intentName;

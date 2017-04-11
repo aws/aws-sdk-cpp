@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/NetworkProfile.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of the available network profiles.</p>
      */
-    inline void SetNetworkProfiles(Aws::Vector<NetworkProfile>&& value) { m_networkProfiles = value; }
+    inline void SetNetworkProfiles(Aws::Vector<NetworkProfile>&& value) { m_networkProfiles = std::move(value); }
 
     /**
      * <p>A list of the available network profiles.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of the available network profiles.</p>
      */
-    inline ListNetworkProfilesResult& WithNetworkProfiles(Aws::Vector<NetworkProfile>&& value) { SetNetworkProfiles(value); return *this;}
+    inline ListNetworkProfilesResult& WithNetworkProfiles(Aws::Vector<NetworkProfile>&& value) { SetNetworkProfiles(std::move(value)); return *this;}
 
     /**
      * <p>A list of the available network profiles.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of the available network profiles.</p>
      */
-    inline ListNetworkProfilesResult& AddNetworkProfiles(NetworkProfile&& value) { m_networkProfiles.push_back(value); return *this; }
+    inline ListNetworkProfilesResult& AddNetworkProfiles(NetworkProfile&& value) { m_networkProfiles.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -92,7 +93,7 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -110,7 +111,7 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
      */
-    inline ListNetworkProfilesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListNetworkProfilesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,

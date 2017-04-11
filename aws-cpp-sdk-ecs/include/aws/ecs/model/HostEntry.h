@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
      */
-    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
+    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
 
     /**
      * <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
      */
-    inline HostEntry& WithHostname(Aws::String&& value) { SetHostname(value); return *this;}
+    inline HostEntry& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
 
     /**
      * <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
      */
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
+    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
      * <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
      */
-    inline HostEntry& WithIpAddress(Aws::String&& value) { SetIpAddress(value); return *this;}
+    inline HostEntry& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>

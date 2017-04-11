@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/apigateway/model/UsagePlan.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     inline void SetPosition(const Aws::String& value) { m_position = value; }
 
     
-    inline void SetPosition(Aws::String&& value) { m_position = value; }
+    inline void SetPosition(Aws::String&& value) { m_position = std::move(value); }
 
     
     inline void SetPosition(const char* value) { m_position.assign(value); }
@@ -65,7 +66,7 @@ namespace Model
     inline GetUsagePlansResult& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
 
     
-    inline GetUsagePlansResult& WithPosition(Aws::String&& value) { SetPosition(value); return *this;}
+    inline GetUsagePlansResult& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     
     inline GetUsagePlansResult& WithPosition(const char* value) { SetPosition(value); return *this;}
@@ -86,7 +87,7 @@ namespace Model
      * <p>Gets the current item when enumerating the collection of
      * <a>UsagePlan</a>.</p>
      */
-    inline void SetItems(Aws::Vector<UsagePlan>&& value) { m_items = value; }
+    inline void SetItems(Aws::Vector<UsagePlan>&& value) { m_items = std::move(value); }
 
     /**
      * <p>Gets the current item when enumerating the collection of
@@ -98,7 +99,7 @@ namespace Model
      * <p>Gets the current item when enumerating the collection of
      * <a>UsagePlan</a>.</p>
      */
-    inline GetUsagePlansResult& WithItems(Aws::Vector<UsagePlan>&& value) { SetItems(value); return *this;}
+    inline GetUsagePlansResult& WithItems(Aws::Vector<UsagePlan>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * <p>Gets the current item when enumerating the collection of
@@ -110,7 +111,7 @@ namespace Model
      * <p>Gets the current item when enumerating the collection of
      * <a>UsagePlan</a>.</p>
      */
-    inline GetUsagePlansResult& AddItems(UsagePlan&& value) { m_items.push_back(value); return *this; }
+    inline GetUsagePlansResult& AddItems(UsagePlan&& value) { m_items.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_position;

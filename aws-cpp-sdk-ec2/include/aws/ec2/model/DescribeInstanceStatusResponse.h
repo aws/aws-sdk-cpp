@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/InstanceStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>One or more instance status descriptions.</p>
      */
-    inline void SetInstanceStatuses(Aws::Vector<InstanceStatus>&& value) { m_instanceStatuses = value; }
+    inline void SetInstanceStatuses(Aws::Vector<InstanceStatus>&& value) { m_instanceStatuses = std::move(value); }
 
     /**
      * <p>One or more instance status descriptions.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>One or more instance status descriptions.</p>
      */
-    inline DescribeInstanceStatusResponse& WithInstanceStatuses(Aws::Vector<InstanceStatus>&& value) { SetInstanceStatuses(value); return *this;}
+    inline DescribeInstanceStatusResponse& WithInstanceStatuses(Aws::Vector<InstanceStatus>&& value) { SetInstanceStatuses(std::move(value)); return *this;}
 
     /**
      * <p>One or more instance status descriptions.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>One or more instance status descriptions.</p>
      */
-    inline DescribeInstanceStatusResponse& AddInstanceStatuses(InstanceStatus&& value) { m_instanceStatuses.push_back(value); return *this; }
+    inline DescribeInstanceStatusResponse& AddInstanceStatuses(InstanceStatus&& value) { m_instanceStatuses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -98,7 +99,7 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -116,7 +117,7 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline DescribeInstanceStatusResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeInstanceStatusResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -131,13 +132,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeInstanceStatusResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeInstanceStatusResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeInstanceStatusResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<InstanceStatus> m_instanceStatuses;

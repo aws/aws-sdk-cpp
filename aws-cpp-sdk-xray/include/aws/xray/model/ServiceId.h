@@ -16,6 +16,7 @@
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p></p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline ServiceId& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ServiceId& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p></p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = value; }
+    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
 
     /**
      * <p></p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline ServiceId& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(value); return *this;}
+    inline ServiceId& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
 
     /**
      * <p></p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline ServiceId& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
+    inline ServiceId& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
 
     /**
      * <p></p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p></p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline ServiceId& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline ServiceId& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p></p>
@@ -167,7 +168,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p></p>
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline ServiceId& WithType(Aws::String&& value) { SetType(value); return *this;}
+    inline ServiceId& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p></p>

@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/RaidArray.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>A <code>RaidArrays</code> object that describes the specified RAID
      * arrays.</p>
      */
-    inline void SetRaidArrays(Aws::Vector<RaidArray>&& value) { m_raidArrays = value; }
+    inline void SetRaidArrays(Aws::Vector<RaidArray>&& value) { m_raidArrays = std::move(value); }
 
     /**
      * <p>A <code>RaidArrays</code> object that describes the specified RAID
@@ -74,7 +75,7 @@ namespace Model
      * <p>A <code>RaidArrays</code> object that describes the specified RAID
      * arrays.</p>
      */
-    inline DescribeRaidArraysResult& WithRaidArrays(Aws::Vector<RaidArray>&& value) { SetRaidArrays(value); return *this;}
+    inline DescribeRaidArraysResult& WithRaidArrays(Aws::Vector<RaidArray>&& value) { SetRaidArrays(std::move(value)); return *this;}
 
     /**
      * <p>A <code>RaidArrays</code> object that describes the specified RAID
@@ -86,7 +87,7 @@ namespace Model
      * <p>A <code>RaidArrays</code> object that describes the specified RAID
      * arrays.</p>
      */
-    inline DescribeRaidArraysResult& AddRaidArrays(RaidArray&& value) { m_raidArrays.push_back(value); return *this; }
+    inline DescribeRaidArraysResult& AddRaidArrays(RaidArray&& value) { m_raidArrays.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<RaidArray> m_raidArrays;

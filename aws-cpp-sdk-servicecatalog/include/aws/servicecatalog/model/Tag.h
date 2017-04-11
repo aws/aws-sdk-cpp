@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>The <code>ProvisioningArtifactParameter.TagKey</code> parameter from
      * <a>DescribeProvisioningParameters</a>.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The <code>ProvisioningArtifactParameter.TagKey</code> parameter from
@@ -79,7 +80,7 @@ namespace Model
      * <p>The <code>ProvisioningArtifactParameter.TagKey</code> parameter from
      * <a>DescribeProvisioningParameters</a>.</p>
      */
-    inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ProvisioningArtifactParameter.TagKey</code> parameter from
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The esired value for this key.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The esired value for this key.</p>
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>The esired value for this key.</p>
      */
-    inline Tag& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The esired value for this key.</p>

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/application-autoscaling/model/ScalableTarget.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The list of scalable targets that matches the request parameters.</p>
      */
-    inline void SetScalableTargets(Aws::Vector<ScalableTarget>&& value) { m_scalableTargets = value; }
+    inline void SetScalableTargets(Aws::Vector<ScalableTarget>&& value) { m_scalableTargets = std::move(value); }
 
     /**
      * <p>The list of scalable targets that matches the request parameters.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The list of scalable targets that matches the request parameters.</p>
      */
-    inline DescribeScalableTargetsResult& WithScalableTargets(Aws::Vector<ScalableTarget>&& value) { SetScalableTargets(value); return *this;}
+    inline DescribeScalableTargetsResult& WithScalableTargets(Aws::Vector<ScalableTarget>&& value) { SetScalableTargets(std::move(value)); return *this;}
 
     /**
      * <p>The list of scalable targets that matches the request parameters.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The list of scalable targets that matches the request parameters.</p>
      */
-    inline DescribeScalableTargetsResult& AddScalableTargets(ScalableTarget&& value) { m_scalableTargets.push_back(value); return *this; }
+    inline DescribeScalableTargetsResult& AddScalableTargets(ScalableTarget&& value) { m_scalableTargets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token required to get the next set of results. This value is
@@ -92,7 +93,7 @@ namespace Model
      * <p>The token required to get the next set of results. This value is
      * <code>null</code> if there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token required to get the next set of results. This value is
@@ -110,7 +111,7 @@ namespace Model
      * <p>The token required to get the next set of results. This value is
      * <code>null</code> if there are no more results to return.</p>
      */
-    inline DescribeScalableTargetsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeScalableTargetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token required to get the next set of results. This value is

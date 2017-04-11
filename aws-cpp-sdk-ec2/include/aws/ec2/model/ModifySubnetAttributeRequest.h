@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttributeBooleanValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The ID of the subnet.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>The ID of the subnet.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The ID of the subnet.</p>
      */
-    inline ModifySubnetAttributeRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+    inline ModifySubnetAttributeRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the subnet.</p>
@@ -99,7 +100,7 @@ namespace Model
      * network interface that's created when launching an instance into the subnet (the
      * instance therefore receives a public IPv4 address).</p>
      */
-    inline void SetMapPublicIpOnLaunch(AttributeBooleanValue&& value) { m_mapPublicIpOnLaunchHasBeenSet = true; m_mapPublicIpOnLaunch = value; }
+    inline void SetMapPublicIpOnLaunch(AttributeBooleanValue&& value) { m_mapPublicIpOnLaunchHasBeenSet = true; m_mapPublicIpOnLaunch = std::move(value); }
 
     /**
      * <p>Specify <code>true</code> to indicate that network interfaces created in the
@@ -115,7 +116,7 @@ namespace Model
      * network interface that's created when launching an instance into the subnet (the
      * instance therefore receives a public IPv4 address).</p>
      */
-    inline ModifySubnetAttributeRequest& WithMapPublicIpOnLaunch(AttributeBooleanValue&& value) { SetMapPublicIpOnLaunch(value); return *this;}
+    inline ModifySubnetAttributeRequest& WithMapPublicIpOnLaunch(AttributeBooleanValue&& value) { SetMapPublicIpOnLaunch(std::move(value)); return *this;}
 
     /**
      * <p>Specify <code>true</code> to indicate that network interfaces created in the
@@ -148,7 +149,7 @@ namespace Model
      * receives an IPv6 address if it's created using version <code>2016-11-15</code>
      * or later of the Amazon EC2 API.</p>
      */
-    inline void SetAssignIpv6AddressOnCreation(AttributeBooleanValue&& value) { m_assignIpv6AddressOnCreationHasBeenSet = true; m_assignIpv6AddressOnCreation = value; }
+    inline void SetAssignIpv6AddressOnCreation(AttributeBooleanValue&& value) { m_assignIpv6AddressOnCreationHasBeenSet = true; m_assignIpv6AddressOnCreation = std::move(value); }
 
     /**
      * <p>Specify <code>true</code> to indicate that network interfaces created in the
@@ -170,7 +171,7 @@ namespace Model
      * receives an IPv6 address if it's created using version <code>2016-11-15</code>
      * or later of the Amazon EC2 API.</p>
      */
-    inline ModifySubnetAttributeRequest& WithAssignIpv6AddressOnCreation(AttributeBooleanValue&& value) { SetAssignIpv6AddressOnCreation(value); return *this;}
+    inline ModifySubnetAttributeRequest& WithAssignIpv6AddressOnCreation(AttributeBooleanValue&& value) { SetAssignIpv6AddressOnCreation(std::move(value)); return *this;}
 
   private:
     Aws::String m_subnetId;

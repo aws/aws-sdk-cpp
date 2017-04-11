@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The type of resource.</p>
      */
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = value; }
+    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
      * <p>The type of resource.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The type of resource.</p>
      */
-    inline IdFormat& WithResource(Aws::String&& value) { SetResource(value); return *this;}
+    inline IdFormat& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
 
     /**
      * <p>The type of resource.</p>
@@ -119,7 +120,7 @@ namespace Model
      * IDs. If a deadline is not yet available for this resource type, this field is
      * not returned.</p>
      */
-    inline void SetDeadline(Aws::Utils::DateTime&& value) { m_deadlineHasBeenSet = true; m_deadline = value; }
+    inline void SetDeadline(Aws::Utils::DateTime&& value) { m_deadlineHasBeenSet = true; m_deadline = std::move(value); }
 
     /**
      * <p>The date in UTC at which you are permanently switched over to using longer
@@ -133,7 +134,7 @@ namespace Model
      * IDs. If a deadline is not yet available for this resource type, this field is
      * not returned.</p>
      */
-    inline IdFormat& WithDeadline(Aws::Utils::DateTime&& value) { SetDeadline(value); return *this;}
+    inline IdFormat& WithDeadline(Aws::Utils::DateTime&& value) { SetDeadline(std::move(value)); return *this;}
 
   private:
     Aws::String m_resource;

@@ -16,6 +16,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/RekognitionRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>ID of the collection from which to list the faces.</p>
      */
-    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
+    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::move(value); }
 
     /**
      * <p>ID of the collection from which to list the faces.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>ID of the collection from which to list the faces.</p>
      */
-    inline ListFacesRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(value); return *this;}
+    inline ListFacesRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(std::move(value)); return *this;}
 
     /**
      * <p>ID of the collection from which to list the faces.</p>
@@ -89,7 +90,7 @@ namespace Model
      * retrieve), Amazon Rekognition returns a pagination token in the response. You
      * can use this pagination token to retrieve the next set of faces.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>If the previous response was incomplete (because there is more data to
@@ -110,7 +111,7 @@ namespace Model
      * retrieve), Amazon Rekognition returns a pagination token in the response. You
      * can use this pagination token to retrieve the next set of faces.</p>
      */
-    inline ListFacesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListFacesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the previous response was incomplete (because there is more data to

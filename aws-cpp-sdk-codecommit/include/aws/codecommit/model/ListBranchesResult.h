@@ -16,6 +16,7 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The list of branch names.</p>
      */
-    inline void SetBranches(Aws::Vector<Aws::String>&& value) { m_branches = value; }
+    inline void SetBranches(Aws::Vector<Aws::String>&& value) { m_branches = std::move(value); }
 
     /**
      * <p>The list of branch names.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The list of branch names.</p>
      */
-    inline ListBranchesResult& WithBranches(Aws::Vector<Aws::String>&& value) { SetBranches(value); return *this;}
+    inline ListBranchesResult& WithBranches(Aws::Vector<Aws::String>&& value) { SetBranches(std::move(value)); return *this;}
 
     /**
      * <p>The list of branch names.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The list of branch names.</p>
      */
-    inline ListBranchesResult& AddBranches(Aws::String&& value) { m_branches.push_back(value); return *this; }
+    inline ListBranchesResult& AddBranches(Aws::String&& value) { m_branches.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of branch names.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>An enumeration token that returns the batch of the results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>An enumeration token that returns the batch of the results.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>An enumeration token that returns the batch of the results.</p>
      */
-    inline ListBranchesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListBranchesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An enumeration token that returns the batch of the results.</p>

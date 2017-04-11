@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/ClusterParameterGroup.h>
 #include <aws/redshift/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,13 +48,13 @@ namespace Model
     inline void SetClusterParameterGroup(const ClusterParameterGroup& value) { m_clusterParameterGroup = value; }
 
     
-    inline void SetClusterParameterGroup(ClusterParameterGroup&& value) { m_clusterParameterGroup = value; }
+    inline void SetClusterParameterGroup(ClusterParameterGroup&& value) { m_clusterParameterGroup = std::move(value); }
 
     
     inline CreateClusterParameterGroupResult& WithClusterParameterGroup(const ClusterParameterGroup& value) { SetClusterParameterGroup(value); return *this;}
 
     
-    inline CreateClusterParameterGroupResult& WithClusterParameterGroup(ClusterParameterGroup&& value) { SetClusterParameterGroup(value); return *this;}
+    inline CreateClusterParameterGroupResult& WithClusterParameterGroup(ClusterParameterGroup&& value) { SetClusterParameterGroup(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -62,13 +63,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CreateClusterParameterGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CreateClusterParameterGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CreateClusterParameterGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     ClusterParameterGroup m_clusterParameterGroup;

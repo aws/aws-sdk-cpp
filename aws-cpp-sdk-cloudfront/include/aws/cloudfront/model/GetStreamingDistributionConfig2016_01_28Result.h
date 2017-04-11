@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/StreamingDistributionConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * The streaming distribution's configuration information.
      */
-    inline void SetStreamingDistributionConfig(StreamingDistributionConfig&& value) { m_streamingDistributionConfig = value; }
+    inline void SetStreamingDistributionConfig(StreamingDistributionConfig&& value) { m_streamingDistributionConfig = std::move(value); }
 
     /**
      * The streaming distribution's configuration information.
@@ -68,7 +69,7 @@ namespace Model
     /**
      * The streaming distribution's configuration information.
      */
-    inline GetStreamingDistributionConfig2016_01_28Result& WithStreamingDistributionConfig(StreamingDistributionConfig&& value) { SetStreamingDistributionConfig(value); return *this;}
+    inline GetStreamingDistributionConfig2016_01_28Result& WithStreamingDistributionConfig(StreamingDistributionConfig&& value) { SetStreamingDistributionConfig(std::move(value)); return *this;}
 
     /**
      * The current version of the configuration. For example: E2QWRUHAPOMQZL.
@@ -83,7 +84,7 @@ namespace Model
     /**
      * The current version of the configuration. For example: E2QWRUHAPOMQZL.
      */
-    inline void SetETag(Aws::String&& value) { m_eTag = value; }
+    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
 
     /**
      * The current version of the configuration. For example: E2QWRUHAPOMQZL.
@@ -98,7 +99,7 @@ namespace Model
     /**
      * The current version of the configuration. For example: E2QWRUHAPOMQZL.
      */
-    inline GetStreamingDistributionConfig2016_01_28Result& WithETag(Aws::String&& value) { SetETag(value); return *this;}
+    inline GetStreamingDistributionConfig2016_01_28Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
      * The current version of the configuration. For example: E2QWRUHAPOMQZL.

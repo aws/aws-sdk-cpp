@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/RecordError.h>
 #include <aws/servicecatalog/model/RecordTag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The identifier of the ProvisionedProduct object record.</p>
      */
-    inline void SetRecordId(Aws::String&& value) { m_recordIdHasBeenSet = true; m_recordId = value; }
+    inline void SetRecordId(Aws::String&& value) { m_recordIdHasBeenSet = true; m_recordId = std::move(value); }
 
     /**
      * <p>The identifier of the ProvisionedProduct object record.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The identifier of the ProvisionedProduct object record.</p>
      */
-    inline RecordDetail& WithRecordId(Aws::String&& value) { SetRecordId(value); return *this;}
+    inline RecordDetail& WithRecordId(Aws::String&& value) { SetRecordId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the ProvisionedProduct object record.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The user-friendly name of the ProvisionedProduct object.</p>
      */
-    inline void SetProvisionedProductName(Aws::String&& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = value; }
+    inline void SetProvisionedProductName(Aws::String&& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = std::move(value); }
 
     /**
      * <p>The user-friendly name of the ProvisionedProduct object.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The user-friendly name of the ProvisionedProduct object.</p>
      */
-    inline RecordDetail& WithProvisionedProductName(Aws::String&& value) { SetProvisionedProductName(value); return *this;}
+    inline RecordDetail& WithProvisionedProductName(Aws::String&& value) { SetProvisionedProductName(std::move(value)); return *this;}
 
     /**
      * <p>The user-friendly name of the ProvisionedProduct object.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The status of the ProvisionedProduct object.</p>
      */
-    inline void SetStatus(RecordStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(RecordStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the ProvisionedProduct object.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The status of the ProvisionedProduct object.</p>
      */
-    inline RecordDetail& WithStatus(RecordStatus&& value) { SetStatus(value); return *this;}
+    inline RecordDetail& WithStatus(RecordStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The UTC timestamp of the creation time.</p>
@@ -157,7 +158,7 @@ namespace Model
     /**
      * <p>The UTC timestamp of the creation time.</p>
      */
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
      * <p>The UTC timestamp of the creation time.</p>
@@ -167,7 +168,7 @@ namespace Model
     /**
      * <p>The UTC timestamp of the creation time.</p>
      */
-    inline RecordDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(value); return *this;}
+    inline RecordDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
     /**
      * <p>The time when the record for the ProvisionedProduct object was last
@@ -185,7 +186,7 @@ namespace Model
      * <p>The time when the record for the ProvisionedProduct object was last
      * updated.</p>
      */
-    inline void SetUpdatedTime(Aws::Utils::DateTime&& value) { m_updatedTimeHasBeenSet = true; m_updatedTime = value; }
+    inline void SetUpdatedTime(Aws::Utils::DateTime&& value) { m_updatedTimeHasBeenSet = true; m_updatedTime = std::move(value); }
 
     /**
      * <p>The time when the record for the ProvisionedProduct object was last
@@ -197,7 +198,7 @@ namespace Model
      * <p>The time when the record for the ProvisionedProduct object was last
      * updated.</p>
      */
-    inline RecordDetail& WithUpdatedTime(Aws::Utils::DateTime&& value) { SetUpdatedTime(value); return *this;}
+    inline RecordDetail& WithUpdatedTime(Aws::Utils::DateTime&& value) { SetUpdatedTime(std::move(value)); return *this;}
 
     /**
      * <p>The type of the ProvisionedProduct object.</p>
@@ -212,7 +213,7 @@ namespace Model
     /**
      * <p>The type of the ProvisionedProduct object.</p>
      */
-    inline void SetProvisionedProductType(Aws::String&& value) { m_provisionedProductTypeHasBeenSet = true; m_provisionedProductType = value; }
+    inline void SetProvisionedProductType(Aws::String&& value) { m_provisionedProductTypeHasBeenSet = true; m_provisionedProductType = std::move(value); }
 
     /**
      * <p>The type of the ProvisionedProduct object.</p>
@@ -227,7 +228,7 @@ namespace Model
     /**
      * <p>The type of the ProvisionedProduct object.</p>
      */
-    inline RecordDetail& WithProvisionedProductType(Aws::String&& value) { SetProvisionedProductType(value); return *this;}
+    inline RecordDetail& WithProvisionedProductType(Aws::String&& value) { SetProvisionedProductType(std::move(value)); return *this;}
 
     /**
      * <p>The type of the ProvisionedProduct object.</p>
@@ -247,7 +248,7 @@ namespace Model
     /**
      * <p>The record type for this record.</p>
      */
-    inline void SetRecordType(Aws::String&& value) { m_recordTypeHasBeenSet = true; m_recordType = value; }
+    inline void SetRecordType(Aws::String&& value) { m_recordTypeHasBeenSet = true; m_recordType = std::move(value); }
 
     /**
      * <p>The record type for this record.</p>
@@ -262,7 +263,7 @@ namespace Model
     /**
      * <p>The record type for this record.</p>
      */
-    inline RecordDetail& WithRecordType(Aws::String&& value) { SetRecordType(value); return *this;}
+    inline RecordDetail& WithRecordType(Aws::String&& value) { SetRecordType(std::move(value)); return *this;}
 
     /**
      * <p>The record type for this record.</p>
@@ -282,7 +283,7 @@ namespace Model
     /**
      * <p>The identifier of the ProvisionedProduct object.</p>
      */
-    inline void SetProvisionedProductId(Aws::String&& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = value; }
+    inline void SetProvisionedProductId(Aws::String&& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = std::move(value); }
 
     /**
      * <p>The identifier of the ProvisionedProduct object.</p>
@@ -297,7 +298,7 @@ namespace Model
     /**
      * <p>The identifier of the ProvisionedProduct object.</p>
      */
-    inline RecordDetail& WithProvisionedProductId(Aws::String&& value) { SetProvisionedProductId(value); return *this;}
+    inline RecordDetail& WithProvisionedProductId(Aws::String&& value) { SetProvisionedProductId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the ProvisionedProduct object.</p>
@@ -317,7 +318,7 @@ namespace Model
     /**
      * <p>The product identifier.</p>
      */
-    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = value; }
+    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
 
     /**
      * <p>The product identifier.</p>
@@ -332,7 +333,7 @@ namespace Model
     /**
      * <p>The product identifier.</p>
      */
-    inline RecordDetail& WithProductId(Aws::String&& value) { SetProductId(value); return *this;}
+    inline RecordDetail& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
 
     /**
      * <p>The product identifier.</p>
@@ -352,7 +353,7 @@ namespace Model
     /**
      * <p>The provisioning artifact identifier for this product.</p>
      */
-    inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
+    inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
 
     /**
      * <p>The provisioning artifact identifier for this product.</p>
@@ -367,7 +368,7 @@ namespace Model
     /**
      * <p>The provisioning artifact identifier for this product.</p>
      */
-    inline RecordDetail& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(value); return *this;}
+    inline RecordDetail& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
 
     /**
      * <p>The provisioning artifact identifier for this product.</p>
@@ -387,7 +388,7 @@ namespace Model
     /**
      * <p>The identifier of the path for this product's provisioning.</p>
      */
-    inline void SetPathId(Aws::String&& value) { m_pathIdHasBeenSet = true; m_pathId = value; }
+    inline void SetPathId(Aws::String&& value) { m_pathIdHasBeenSet = true; m_pathId = std::move(value); }
 
     /**
      * <p>The identifier of the path for this product's provisioning.</p>
@@ -402,7 +403,7 @@ namespace Model
     /**
      * <p>The identifier of the path for this product's provisioning.</p>
      */
-    inline RecordDetail& WithPathId(Aws::String&& value) { SetPathId(value); return *this;}
+    inline RecordDetail& WithPathId(Aws::String&& value) { SetPathId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the path for this product's provisioning.</p>
@@ -422,7 +423,7 @@ namespace Model
     /**
      * <p>A list of errors that occurred while processing the request.</p>
      */
-    inline void SetRecordErrors(Aws::Vector<RecordError>&& value) { m_recordErrorsHasBeenSet = true; m_recordErrors = value; }
+    inline void SetRecordErrors(Aws::Vector<RecordError>&& value) { m_recordErrorsHasBeenSet = true; m_recordErrors = std::move(value); }
 
     /**
      * <p>A list of errors that occurred while processing the request.</p>
@@ -432,7 +433,7 @@ namespace Model
     /**
      * <p>A list of errors that occurred while processing the request.</p>
      */
-    inline RecordDetail& WithRecordErrors(Aws::Vector<RecordError>&& value) { SetRecordErrors(value); return *this;}
+    inline RecordDetail& WithRecordErrors(Aws::Vector<RecordError>&& value) { SetRecordErrors(std::move(value)); return *this;}
 
     /**
      * <p>A list of errors that occurred while processing the request.</p>
@@ -442,7 +443,7 @@ namespace Model
     /**
      * <p>A list of errors that occurred while processing the request.</p>
      */
-    inline RecordDetail& AddRecordErrors(RecordError&& value) { m_recordErrorsHasBeenSet = true; m_recordErrors.push_back(value); return *this; }
+    inline RecordDetail& AddRecordErrors(RecordError&& value) { m_recordErrorsHasBeenSet = true; m_recordErrors.push_back(std::move(value)); return *this; }
 
     /**
      * <p>List of tags associated with this record.</p>
@@ -457,7 +458,7 @@ namespace Model
     /**
      * <p>List of tags associated with this record.</p>
      */
-    inline void SetRecordTags(Aws::Vector<RecordTag>&& value) { m_recordTagsHasBeenSet = true; m_recordTags = value; }
+    inline void SetRecordTags(Aws::Vector<RecordTag>&& value) { m_recordTagsHasBeenSet = true; m_recordTags = std::move(value); }
 
     /**
      * <p>List of tags associated with this record.</p>
@@ -467,7 +468,7 @@ namespace Model
     /**
      * <p>List of tags associated with this record.</p>
      */
-    inline RecordDetail& WithRecordTags(Aws::Vector<RecordTag>&& value) { SetRecordTags(value); return *this;}
+    inline RecordDetail& WithRecordTags(Aws::Vector<RecordTag>&& value) { SetRecordTags(std::move(value)); return *this;}
 
     /**
      * <p>List of tags associated with this record.</p>
@@ -477,7 +478,7 @@ namespace Model
     /**
      * <p>List of tags associated with this record.</p>
      */
-    inline RecordDetail& AddRecordTags(RecordTag&& value) { m_recordTagsHasBeenSet = true; m_recordTags.push_back(value); return *this; }
+    inline RecordDetail& AddRecordTags(RecordTag&& value) { m_recordTagsHasBeenSet = true; m_recordTags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_recordId;

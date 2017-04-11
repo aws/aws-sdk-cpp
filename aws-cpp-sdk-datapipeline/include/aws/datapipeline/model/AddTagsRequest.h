@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datapipeline/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
-    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
+    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::move(value); }
 
     /**
      * <p>The ID of the pipeline.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
-    inline AddTagsRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
+    inline AddTagsRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the pipeline.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The tags to add, as key/value pairs.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags to add, as key/value pairs.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The tags to add, as key/value pairs.</p>
      */
-    inline AddTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline AddTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags to add, as key/value pairs.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The tags to add, as key/value pairs.</p>
      */
-    inline AddTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline AddTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_pipelineId;

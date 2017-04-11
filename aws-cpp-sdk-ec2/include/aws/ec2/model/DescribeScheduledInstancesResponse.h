@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/ScheduledInstance.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>The token required to retrieve the next set of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token required to retrieve the next set of results. This value is
@@ -82,7 +83,7 @@ namespace Model
      * <p>The token required to retrieve the next set of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline DescribeScheduledInstancesResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeScheduledInstancesResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token required to retrieve the next set of results. This value is
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>Information about the Scheduled Instances.</p>
      */
-    inline void SetScheduledInstanceSet(Aws::Vector<ScheduledInstance>&& value) { m_scheduledInstanceSet = value; }
+    inline void SetScheduledInstanceSet(Aws::Vector<ScheduledInstance>&& value) { m_scheduledInstanceSet = std::move(value); }
 
     /**
      * <p>Information about the Scheduled Instances.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>Information about the Scheduled Instances.</p>
      */
-    inline DescribeScheduledInstancesResponse& WithScheduledInstanceSet(Aws::Vector<ScheduledInstance>&& value) { SetScheduledInstanceSet(value); return *this;}
+    inline DescribeScheduledInstancesResponse& WithScheduledInstanceSet(Aws::Vector<ScheduledInstance>&& value) { SetScheduledInstanceSet(std::move(value)); return *this;}
 
     /**
      * <p>Information about the Scheduled Instances.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>Information about the Scheduled Instances.</p>
      */
-    inline DescribeScheduledInstancesResponse& AddScheduledInstanceSet(ScheduledInstance&& value) { m_scheduledInstanceSet.push_back(value); return *this; }
+    inline DescribeScheduledInstancesResponse& AddScheduledInstanceSet(ScheduledInstance&& value) { m_scheduledInstanceSet.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -132,13 +133,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeScheduledInstancesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeScheduledInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeScheduledInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_nextToken;

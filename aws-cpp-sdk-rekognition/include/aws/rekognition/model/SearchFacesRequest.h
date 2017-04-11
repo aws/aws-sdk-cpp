@@ -16,6 +16,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/RekognitionRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>ID of the collection the face belongs to.</p>
      */
-    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
+    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::move(value); }
 
     /**
      * <p>ID of the collection the face belongs to.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>ID of the collection the face belongs to.</p>
      */
-    inline SearchFacesRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(value); return *this;}
+    inline SearchFacesRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(std::move(value)); return *this;}
 
     /**
      * <p>ID of the collection the face belongs to.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>ID of a face to find matches for in the collection.</p>
      */
-    inline void SetFaceId(Aws::String&& value) { m_faceIdHasBeenSet = true; m_faceId = value; }
+    inline void SetFaceId(Aws::String&& value) { m_faceIdHasBeenSet = true; m_faceId = std::move(value); }
 
     /**
      * <p>ID of a face to find matches for in the collection.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>ID of a face to find matches for in the collection.</p>
      */
-    inline SearchFacesRequest& WithFaceId(Aws::String&& value) { SetFaceId(value); return *this;}
+    inline SearchFacesRequest& WithFaceId(Aws::String&& value) { SetFaceId(std::move(value)); return *this;}
 
     /**
      * <p>ID of a face to find matches for in the collection.</p>

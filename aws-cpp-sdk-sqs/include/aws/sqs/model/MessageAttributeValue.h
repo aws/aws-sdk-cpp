@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
      * Printable Characters</a>.</p>
      */
-    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
+    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
 
     /**
      * <p>Strings are Unicode with UTF-8 binary encoding. For a list of code values,
@@ -101,7 +102,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
      * Printable Characters</a>.</p>
      */
-    inline MessageAttributeValue& WithStringValue(Aws::String&& value) { SetStringValue(value); return *this;}
+    inline MessageAttributeValue& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
 
     /**
      * <p>Strings are Unicode with UTF-8 binary encoding. For a list of code values,
@@ -127,7 +128,7 @@ namespace Model
      * <p>Binary type attributes can store any binary data, such as compressed data,
      * encrypted data, or images.</p>
      */
-    inline void SetBinaryValue(Aws::Utils::ByteBuffer&& value) { m_binaryValueHasBeenSet = true; m_binaryValue = value; }
+    inline void SetBinaryValue(Aws::Utils::ByteBuffer&& value) { m_binaryValueHasBeenSet = true; m_binaryValue = std::move(value); }
 
     /**
      * <p>Binary type attributes can store any binary data, such as compressed data,
@@ -139,7 +140,7 @@ namespace Model
      * <p>Binary type attributes can store any binary data, such as compressed data,
      * encrypted data, or images.</p>
      */
-    inline MessageAttributeValue& WithBinaryValue(Aws::Utils::ByteBuffer&& value) { SetBinaryValue(value); return *this;}
+    inline MessageAttributeValue& WithBinaryValue(Aws::Utils::ByteBuffer&& value) { SetBinaryValue(std::move(value)); return *this;}
 
     /**
      * <p>Not implemented. Reserved for future use.</p>
@@ -154,7 +155,7 @@ namespace Model
     /**
      * <p>Not implemented. Reserved for future use.</p>
      */
-    inline void SetStringListValues(Aws::Vector<Aws::String>&& value) { m_stringListValuesHasBeenSet = true; m_stringListValues = value; }
+    inline void SetStringListValues(Aws::Vector<Aws::String>&& value) { m_stringListValuesHasBeenSet = true; m_stringListValues = std::move(value); }
 
     /**
      * <p>Not implemented. Reserved for future use.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>Not implemented. Reserved for future use.</p>
      */
-    inline MessageAttributeValue& WithStringListValues(Aws::Vector<Aws::String>&& value) { SetStringListValues(value); return *this;}
+    inline MessageAttributeValue& WithStringListValues(Aws::Vector<Aws::String>&& value) { SetStringListValues(std::move(value)); return *this;}
 
     /**
      * <p>Not implemented. Reserved for future use.</p>
@@ -174,7 +175,7 @@ namespace Model
     /**
      * <p>Not implemented. Reserved for future use.</p>
      */
-    inline MessageAttributeValue& AddStringListValues(Aws::String&& value) { m_stringListValuesHasBeenSet = true; m_stringListValues.push_back(value); return *this; }
+    inline MessageAttributeValue& AddStringListValues(Aws::String&& value) { m_stringListValuesHasBeenSet = true; m_stringListValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Not implemented. Reserved for future use.</p>
@@ -194,7 +195,7 @@ namespace Model
     /**
      * <p>Not implemented. Reserved for future use.</p>
      */
-    inline void SetBinaryListValues(Aws::Vector<Aws::Utils::ByteBuffer>&& value) { m_binaryListValuesHasBeenSet = true; m_binaryListValues = value; }
+    inline void SetBinaryListValues(Aws::Vector<Aws::Utils::ByteBuffer>&& value) { m_binaryListValuesHasBeenSet = true; m_binaryListValues = std::move(value); }
 
     /**
      * <p>Not implemented. Reserved for future use.</p>
@@ -204,7 +205,7 @@ namespace Model
     /**
      * <p>Not implemented. Reserved for future use.</p>
      */
-    inline MessageAttributeValue& WithBinaryListValues(Aws::Vector<Aws::Utils::ByteBuffer>&& value) { SetBinaryListValues(value); return *this;}
+    inline MessageAttributeValue& WithBinaryListValues(Aws::Vector<Aws::Utils::ByteBuffer>&& value) { SetBinaryListValues(std::move(value)); return *this;}
 
     /**
      * <p>Not implemented. Reserved for future use.</p>
@@ -214,7 +215,7 @@ namespace Model
     /**
      * <p>Not implemented. Reserved for future use.</p>
      */
-    inline MessageAttributeValue& AddBinaryListValues(Aws::Utils::ByteBuffer&& value) { m_binaryListValuesHasBeenSet = true; m_binaryListValues.push_back(value); return *this; }
+    inline MessageAttributeValue& AddBinaryListValues(Aws::Utils::ByteBuffer&& value) { m_binaryListValuesHasBeenSet = true; m_binaryListValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Amazon SQS supports the following logical data types: <code>String</code>,
@@ -247,7 +248,7 @@ namespace Model
      * Attribute Data Types and Validation</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
      */
-    inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
+    inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
 
     /**
      * <p>Amazon SQS supports the following logical data types: <code>String</code>,
@@ -280,7 +281,7 @@ namespace Model
      * Attribute Data Types and Validation</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
      */
-    inline MessageAttributeValue& WithDataType(Aws::String&& value) { SetDataType(value); return *this;}
+    inline MessageAttributeValue& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
 
     /**
      * <p>Amazon SQS supports the following logical data types: <code>String</code>,

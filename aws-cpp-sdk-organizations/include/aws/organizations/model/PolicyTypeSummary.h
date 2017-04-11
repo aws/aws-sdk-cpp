@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/model/PolicyType.h>
 #include <aws/organizations/model/PolicyTypeStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The name of the policy type.</p>
      */
-    inline void SetType(PolicyType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(PolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The name of the policy type.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the policy type.</p>
      */
-    inline PolicyTypeSummary& WithType(PolicyType&& value) { SetType(value); return *this;}
+    inline PolicyTypeSummary& WithType(PolicyType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The status of the policy type as it relates to the associated root. To attach
@@ -89,7 +90,7 @@ namespace Model
      * a policy of the specified type to a root or to an OU or account in that root, it
      * must be available in the organization and enabled for that root.</p>
      */
-    inline void SetStatus(PolicyTypeStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(PolicyTypeStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the policy type as it relates to the associated root. To attach
@@ -103,7 +104,7 @@ namespace Model
      * a policy of the specified type to a root or to an OU or account in that root, it
      * must be available in the organization and enabled for that root.</p>
      */
-    inline PolicyTypeSummary& WithStatus(PolicyTypeStatus&& value) { SetStatus(value); return *this;}
+    inline PolicyTypeSummary& WithStatus(PolicyTypeStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     PolicyType m_type;

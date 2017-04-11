@@ -16,6 +16,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/BatchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     /**
      * <p>Job IDs to be terminated. Up to 100 jobs can be specified.</p>
      */
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
      * <p>Job IDs to be terminated. Up to 100 jobs can be specified.</p>
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>Job IDs to be terminated. Up to 100 jobs can be specified.</p>
      */
-    inline TerminateJobRequest& WithJobId(Aws::String&& value) { SetJobId(value); return *this;}
+    inline TerminateJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
      * <p>Job IDs to be terminated. Up to 100 jobs can be specified.</p>
@@ -87,7 +88,7 @@ namespace Model
      * This message is returned by future <a>DescribeJobs</a> operations on the job.
      * This message is also recorded in the AWS Batch activity logs. </p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p>A message to attach to the job that explains the reason for cancelling it.
@@ -108,7 +109,7 @@ namespace Model
      * This message is returned by future <a>DescribeJobs</a> operations on the job.
      * This message is also recorded in the AWS Batch activity logs. </p>
      */
-    inline TerminateJobRequest& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline TerminateJobRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p>A message to attach to the job that explains the reason for cancelling it.

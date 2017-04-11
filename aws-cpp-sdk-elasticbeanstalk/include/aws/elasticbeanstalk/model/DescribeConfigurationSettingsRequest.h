@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The application for the environment or configuration template.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The application for the environment or configuration template.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The application for the environment or configuration template.</p>
      */
-    inline DescribeConfigurationSettingsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline DescribeConfigurationSettingsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The application for the environment or configuration template.</p>
@@ -104,7 +105,7 @@ namespace Model
      * AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error.
      * </p>
      */
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
+    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
      * <p>The name of the configuration template to describe.</p> <p> Conditional: You
@@ -134,7 +135,7 @@ namespace Model
      * AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error.
      * </p>
      */
-    inline DescribeConfigurationSettingsRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(value); return *this;}
+    inline DescribeConfigurationSettingsRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the configuration template to describe.</p> <p> Conditional: You
@@ -171,7 +172,7 @@ namespace Model
      * not specify either, AWS Elastic Beanstalk returns
      * <code>MissingRequiredParameter</code> error. </p>
      */
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
+    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
 
     /**
      * <p>The name of the environment to describe.</p> <p> Condition: You must specify
@@ -198,7 +199,7 @@ namespace Model
      * not specify either, AWS Elastic Beanstalk returns
      * <code>MissingRequiredParameter</code> error. </p>
      */
-    inline DescribeConfigurationSettingsRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
+    inline DescribeConfigurationSettingsRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the environment to describe.</p> <p> Condition: You must specify

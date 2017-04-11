@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/cloudsearch/model/AnalysisScheme.h>
 #include <aws/cloudsearch/model/OptionStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,13 +56,13 @@ namespace Model
     inline void SetOptions(const AnalysisScheme& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     
-    inline void SetOptions(AnalysisScheme&& value) { m_optionsHasBeenSet = true; m_options = value; }
+    inline void SetOptions(AnalysisScheme&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     
     inline AnalysisSchemeStatus& WithOptions(const AnalysisScheme& value) { SetOptions(value); return *this;}
 
     
-    inline AnalysisSchemeStatus& WithOptions(AnalysisScheme&& value) { SetOptions(value); return *this;}
+    inline AnalysisSchemeStatus& WithOptions(AnalysisScheme&& value) { SetOptions(std::move(value)); return *this;}
 
     
     inline const OptionStatus& GetStatus() const{ return m_status; }
@@ -70,13 +71,13 @@ namespace Model
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     
-    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     
     inline AnalysisSchemeStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
 
     
-    inline AnalysisSchemeStatus& WithStatus(OptionStatus&& value) { SetStatus(value); return *this;}
+    inline AnalysisSchemeStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     AnalysisScheme m_options;

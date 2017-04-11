@@ -16,6 +16,7 @@
 #include <aws/importexport/ImportExport_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
@@ -63,7 +64,7 @@ namespace Model
     inline Artifact& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     
-    inline Artifact& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline Artifact& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     
     inline Artifact& WithDescription(const char* value) { SetDescription(value); return *this;}
@@ -75,7 +76,7 @@ namespace Model
     inline void SetURL(const Aws::String& value) { m_uRLHasBeenSet = true; m_uRL = value; }
 
     
-    inline void SetURL(Aws::String&& value) { m_uRLHasBeenSet = true; m_uRL = value; }
+    inline void SetURL(Aws::String&& value) { m_uRLHasBeenSet = true; m_uRL = std::move(value); }
 
     
     inline void SetURL(const char* value) { m_uRLHasBeenSet = true; m_uRL.assign(value); }
@@ -84,7 +85,7 @@ namespace Model
     inline Artifact& WithURL(const Aws::String& value) { SetURL(value); return *this;}
 
     
-    inline Artifact& WithURL(Aws::String&& value) { SetURL(value); return *this;}
+    inline Artifact& WithURL(Aws::String&& value) { SetURL(std::move(value)); return *this;}
 
     
     inline Artifact& WithURL(const char* value) { SetURL(value); return *this;}

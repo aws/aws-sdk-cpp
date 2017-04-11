@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lex/model/DialogState.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>Content type as specified in the <code>Accept</code> HTTP header in the
      * request.</p>
      */
-    inline void SetContentType(Aws::String&& value) { m_contentType = value; }
+    inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
 
     /**
      * <p>Content type as specified in the <code>Accept</code> HTTP header in the
@@ -79,7 +80,7 @@ namespace Model
      * <p>Content type as specified in the <code>Accept</code> HTTP header in the
      * request.</p>
      */
-    inline PostContentResult& WithContentType(Aws::String&& value) { SetContentType(value); return *this;}
+    inline PostContentResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
     /**
      * <p>Content type as specified in the <code>Accept</code> HTTP header in the
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>Current user intent that Amazon Lex is aware of.</p>
      */
-    inline void SetIntentName(Aws::String&& value) { m_intentName = value; }
+    inline void SetIntentName(Aws::String&& value) { m_intentName = std::move(value); }
 
     /**
      * <p>Current user intent that Amazon Lex is aware of.</p>
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>Current user intent that Amazon Lex is aware of.</p>
      */
-    inline PostContentResult& WithIntentName(Aws::String&& value) { SetIntentName(value); return *this;}
+    inline PostContentResult& WithIntentName(Aws::String&& value) { SetIntentName(std::move(value)); return *this;}
 
     /**
      * <p>Current user intent that Amazon Lex is aware of.</p>
@@ -138,7 +139,7 @@ namespace Model
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
      * the user input during the conversation.</p>
      */
-    inline void SetSlots(Aws::String&& value) { m_slots = value; }
+    inline void SetSlots(Aws::String&& value) { m_slots = std::move(value); }
 
     /**
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
@@ -156,7 +157,7 @@ namespace Model
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
      * the user input during the conversation.</p>
      */
-    inline PostContentResult& WithSlots(Aws::String&& value) { SetSlots(value); return *this;}
+    inline PostContentResult& WithSlots(Aws::String&& value) { SetSlots(std::move(value)); return *this;}
 
     /**
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
@@ -180,7 +181,7 @@ namespace Model
      * <p> Map of key/value pairs representing the session-specific context
      * information. </p>
      */
-    inline void SetSessionAttributes(Aws::String&& value) { m_sessionAttributes = value; }
+    inline void SetSessionAttributes(Aws::String&& value) { m_sessionAttributes = std::move(value); }
 
     /**
      * <p> Map of key/value pairs representing the session-specific context
@@ -198,7 +199,7 @@ namespace Model
      * <p> Map of key/value pairs representing the session-specific context
      * information. </p>
      */
-    inline PostContentResult& WithSessionAttributes(Aws::String&& value) { SetSessionAttributes(value); return *this;}
+    inline PostContentResult& WithSessionAttributes(Aws::String&& value) { SetSessionAttributes(std::move(value)); return *this;}
 
     /**
      * <p> Map of key/value pairs representing the session-specific context
@@ -252,7 +253,7 @@ namespace Model
      * the code hook returns a message, Amazon Lex passes it as-is in its response to
      * the client. </p>
      */
-    inline void SetMessage(Aws::String&& value) { m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
 
     /**
      * <p> Message to convey to the user. It can come from the bot's configuration or a
@@ -300,7 +301,7 @@ namespace Model
      * the code hook returns a message, Amazon Lex passes it as-is in its response to
      * the client. </p>
      */
-    inline PostContentResult& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline PostContentResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p> Message to convey to the user. It can come from the bot's configuration or a
@@ -412,7 +413,7 @@ namespace Model
      * specific information), or if the Lambda function fails to fulfill the intent.
      * </p> </li> </ul>
      */
-    inline void SetDialogState(DialogState&& value) { m_dialogState = value; }
+    inline void SetDialogState(DialogState&& value) { m_dialogState = std::move(value); }
 
     /**
      * <p>Identifies the current state of the user interaction. Amazon Lex returns one
@@ -476,7 +477,7 @@ namespace Model
      * specific information), or if the Lambda function fails to fulfill the intent.
      * </p> </li> </ul>
      */
-    inline PostContentResult& WithDialogState(DialogState&& value) { SetDialogState(value); return *this;}
+    inline PostContentResult& WithDialogState(DialogState&& value) { SetDialogState(std::move(value)); return *this;}
 
     /**
      * <p> If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns
@@ -494,7 +495,7 @@ namespace Model
      * <p> If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns
      * the name of the slot for which Amazon Lex is eliciting a value. </p>
      */
-    inline void SetSlotToElicit(Aws::String&& value) { m_slotToElicit = value; }
+    inline void SetSlotToElicit(Aws::String&& value) { m_slotToElicit = std::move(value); }
 
     /**
      * <p> If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns
@@ -512,7 +513,7 @@ namespace Model
      * <p> If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns
      * the name of the slot for which Amazon Lex is eliciting a value. </p>
      */
-    inline PostContentResult& WithSlotToElicit(Aws::String&& value) { SetSlotToElicit(value); return *this;}
+    inline PostContentResult& WithSlotToElicit(Aws::String&& value) { SetSlotToElicit(std::move(value)); return *this;}
 
     /**
      * <p> If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns
@@ -533,7 +534,7 @@ namespace Model
     /**
      * <p>Transcript of the voice input to the operation.</p>
      */
-    inline void SetInputTranscript(Aws::String&& value) { m_inputTranscript = value; }
+    inline void SetInputTranscript(Aws::String&& value) { m_inputTranscript = std::move(value); }
 
     /**
      * <p>Transcript of the voice input to the operation.</p>
@@ -548,7 +549,7 @@ namespace Model
     /**
      * <p>Transcript of the voice input to the operation.</p>
      */
-    inline PostContentResult& WithInputTranscript(Aws::String&& value) { SetInputTranscript(value); return *this;}
+    inline PostContentResult& WithInputTranscript(Aws::String&& value) { SetInputTranscript(std::move(value)); return *this;}
 
     /**
      * <p>Transcript of the voice input to the operation.</p>

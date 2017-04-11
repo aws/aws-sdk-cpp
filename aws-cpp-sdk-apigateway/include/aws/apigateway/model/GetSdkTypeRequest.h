@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The identifier of the queried <a>SdkType</a> instance.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The identifier of the queried <a>SdkType</a> instance.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The identifier of the queried <a>SdkType</a> instance.</p>
      */
-    inline GetSdkTypeRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline GetSdkTypeRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the queried <a>SdkType</a> instance.</p>

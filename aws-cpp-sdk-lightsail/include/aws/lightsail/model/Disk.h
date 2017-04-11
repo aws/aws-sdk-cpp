@@ -18,6 +18,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lightsail/model/ResourceLocation.h>
 #include <aws/lightsail/model/ResourceType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the disk.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the disk.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the disk.</p>
      */
-    inline Disk& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Disk& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the disk.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the disk.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the disk.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the disk.</p>
      */
-    inline Disk& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Disk& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the disk.</p>
@@ -135,7 +136,7 @@ namespace Model
      * questions about an instance or another resource in Lightsail. This code enables
      * our support team to look up your Lightsail information more easily.</p>
      */
-    inline void SetSupportCode(Aws::String&& value) { m_supportCodeHasBeenSet = true; m_supportCode = value; }
+    inline void SetSupportCode(Aws::String&& value) { m_supportCodeHasBeenSet = true; m_supportCode = std::move(value); }
 
     /**
      * <p>The support code. Include this code in your email to support when you have
@@ -156,7 +157,7 @@ namespace Model
      * questions about an instance or another resource in Lightsail. This code enables
      * our support team to look up your Lightsail information more easily.</p>
      */
-    inline Disk& WithSupportCode(Aws::String&& value) { SetSupportCode(value); return *this;}
+    inline Disk& WithSupportCode(Aws::String&& value) { SetSupportCode(std::move(value)); return *this;}
 
     /**
      * <p>The support code. Include this code in your email to support when you have
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>The date when the disk was created.</p>
      */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
      * <p>The date when the disk was created.</p>
@@ -188,7 +189,7 @@ namespace Model
     /**
      * <p>The date when the disk was created.</p>
      */
-    inline Disk& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
+    inline Disk& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
      * <p>The region and Availability Zone where the disk is located.</p>
@@ -203,7 +204,7 @@ namespace Model
     /**
      * <p>The region and Availability Zone where the disk is located.</p>
      */
-    inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = value; }
+    inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
      * <p>The region and Availability Zone where the disk is located.</p>
@@ -213,7 +214,7 @@ namespace Model
     /**
      * <p>The region and Availability Zone where the disk is located.</p>
      */
-    inline Disk& WithLocation(ResourceLocation&& value) { SetLocation(value); return *this;}
+    inline Disk& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * <p>The resource type of the disk. </p>
@@ -228,7 +229,7 @@ namespace Model
     /**
      * <p>The resource type of the disk. </p>
      */
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The resource type of the disk. </p>
@@ -238,7 +239,7 @@ namespace Model
     /**
      * <p>The resource type of the disk. </p>
      */
-    inline Disk& WithResourceType(ResourceType&& value) { SetResourceType(value); return *this;}
+    inline Disk& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The size of the disk in GB.</p>
@@ -316,7 +317,7 @@ namespace Model
     /**
      * <p>The disk path.</p>
      */
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>The disk path.</p>
@@ -331,7 +332,7 @@ namespace Model
     /**
      * <p>The disk path.</p>
      */
-    inline Disk& WithPath(Aws::String&& value) { SetPath(value); return *this;}
+    inline Disk& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>The disk path.</p>
@@ -351,7 +352,7 @@ namespace Model
     /**
      * <p>The resources to which the disk is attached.</p>
      */
-    inline void SetAttachedTo(Aws::String&& value) { m_attachedToHasBeenSet = true; m_attachedTo = value; }
+    inline void SetAttachedTo(Aws::String&& value) { m_attachedToHasBeenSet = true; m_attachedTo = std::move(value); }
 
     /**
      * <p>The resources to which the disk is attached.</p>
@@ -366,7 +367,7 @@ namespace Model
     /**
      * <p>The resources to which the disk is attached.</p>
      */
-    inline Disk& WithAttachedTo(Aws::String&& value) { SetAttachedTo(value); return *this;}
+    inline Disk& WithAttachedTo(Aws::String&& value) { SetAttachedTo(std::move(value)); return *this;}
 
     /**
      * <p>The resources to which the disk is attached.</p>
@@ -401,7 +402,7 @@ namespace Model
     /**
      * <p>The attachment state of the disk.</p>
      */
-    inline void SetAttachmentState(Aws::String&& value) { m_attachmentStateHasBeenSet = true; m_attachmentState = value; }
+    inline void SetAttachmentState(Aws::String&& value) { m_attachmentStateHasBeenSet = true; m_attachmentState = std::move(value); }
 
     /**
      * <p>The attachment state of the disk.</p>
@@ -416,7 +417,7 @@ namespace Model
     /**
      * <p>The attachment state of the disk.</p>
      */
-    inline Disk& WithAttachmentState(Aws::String&& value) { SetAttachmentState(value); return *this;}
+    inline Disk& WithAttachmentState(Aws::String&& value) { SetAttachmentState(std::move(value)); return *this;}
 
     /**
      * <p>The attachment state of the disk.</p>

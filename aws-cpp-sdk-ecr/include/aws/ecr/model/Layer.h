@@ -16,6 +16,7 @@
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecr/model/LayerAvailability.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The <code>sha256</code> digest of the image layer.</p>
      */
-    inline void SetLayerDigest(Aws::String&& value) { m_layerDigestHasBeenSet = true; m_layerDigest = value; }
+    inline void SetLayerDigest(Aws::String&& value) { m_layerDigestHasBeenSet = true; m_layerDigest = std::move(value); }
 
     /**
      * <p>The <code>sha256</code> digest of the image layer.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The <code>sha256</code> digest of the image layer.</p>
      */
-    inline Layer& WithLayerDigest(Aws::String&& value) { SetLayerDigest(value); return *this;}
+    inline Layer& WithLayerDigest(Aws::String&& value) { SetLayerDigest(std::move(value)); return *this;}
 
     /**
      * <p>The <code>sha256</code> digest of the image layer.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The availability status of the image layer.</p>
      */
-    inline void SetLayerAvailability(LayerAvailability&& value) { m_layerAvailabilityHasBeenSet = true; m_layerAvailability = value; }
+    inline void SetLayerAvailability(LayerAvailability&& value) { m_layerAvailabilityHasBeenSet = true; m_layerAvailability = std::move(value); }
 
     /**
      * <p>The availability status of the image layer.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The availability status of the image layer.</p>
      */
-    inline Layer& WithLayerAvailability(LayerAvailability&& value) { SetLayerAvailability(value); return *this;}
+    inline Layer& WithLayerAvailability(LayerAvailability&& value) { SetLayerAvailability(std::move(value)); return *this;}
 
     /**
      * <p>The size, in bytes, of the image layer.</p>
@@ -138,7 +139,7 @@ namespace Model
      * <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or
      * <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
      */
-    inline void SetMediaType(Aws::String&& value) { m_mediaTypeHasBeenSet = true; m_mediaType = value; }
+    inline void SetMediaType(Aws::String&& value) { m_mediaTypeHasBeenSet = true; m_mediaType = std::move(value); }
 
     /**
      * <p>The media type of the layer, such as
@@ -159,7 +160,7 @@ namespace Model
      * <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or
      * <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
      */
-    inline Layer& WithMediaType(Aws::String&& value) { SetMediaType(value); return *this;}
+    inline Layer& WithMediaType(Aws::String&& value) { SetMediaType(std::move(value)); return *this;}
 
     /**
      * <p>The media type of the layer, such as

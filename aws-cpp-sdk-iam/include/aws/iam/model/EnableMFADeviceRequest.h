@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: =,.@-</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the IAM user for whom you want to enable the MFA device.</p>
@@ -89,7 +90,7 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: =,.@-</p>
      */
-    inline EnableMFADeviceRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline EnableMFADeviceRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IAM user for whom you want to enable the MFA device.</p>
@@ -125,7 +126,7 @@ namespace Model
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: =/:,.@-</p>
      */
-    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
+    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
@@ -152,7 +153,7 @@ namespace Model
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: =/:,.@-</p>
      */
-    inline EnableMFADeviceRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(value); return *this;}
+    inline EnableMFADeviceRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
@@ -179,7 +180,7 @@ namespace Model
      * <p>An authentication code emitted by the device.</p> <p>The format for this
      * parameter is a string of 6 digits.</p>
      */
-    inline void SetAuthenticationCode1(Aws::String&& value) { m_authenticationCode1HasBeenSet = true; m_authenticationCode1 = value; }
+    inline void SetAuthenticationCode1(Aws::String&& value) { m_authenticationCode1HasBeenSet = true; m_authenticationCode1 = std::move(value); }
 
     /**
      * <p>An authentication code emitted by the device.</p> <p>The format for this
@@ -197,7 +198,7 @@ namespace Model
      * <p>An authentication code emitted by the device.</p> <p>The format for this
      * parameter is a string of 6 digits.</p>
      */
-    inline EnableMFADeviceRequest& WithAuthenticationCode1(Aws::String&& value) { SetAuthenticationCode1(value); return *this;}
+    inline EnableMFADeviceRequest& WithAuthenticationCode1(Aws::String&& value) { SetAuthenticationCode1(std::move(value)); return *this;}
 
     /**
      * <p>An authentication code emitted by the device.</p> <p>The format for this
@@ -221,7 +222,7 @@ namespace Model
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
      * this parameter is a string of 6 digits.</p>
      */
-    inline void SetAuthenticationCode2(Aws::String&& value) { m_authenticationCode2HasBeenSet = true; m_authenticationCode2 = value; }
+    inline void SetAuthenticationCode2(Aws::String&& value) { m_authenticationCode2HasBeenSet = true; m_authenticationCode2 = std::move(value); }
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
@@ -239,7 +240,7 @@ namespace Model
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
      * this parameter is a string of 6 digits.</p>
      */
-    inline EnableMFADeviceRequest& WithAuthenticationCode2(Aws::String&& value) { SetAuthenticationCode2(value); return *this;}
+    inline EnableMFADeviceRequest& WithAuthenticationCode2(Aws::String&& value) { SetAuthenticationCode2(std::move(value)); return *this;}
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for

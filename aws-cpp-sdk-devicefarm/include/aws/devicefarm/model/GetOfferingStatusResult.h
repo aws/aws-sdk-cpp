@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/OfferingStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>When specified, gets the offering status for the current period.</p>
      */
-    inline void SetCurrent(Aws::Map<Aws::String, OfferingStatus>&& value) { m_current = value; }
+    inline void SetCurrent(Aws::Map<Aws::String, OfferingStatus>&& value) { m_current = std::move(value); }
 
     /**
      * <p>When specified, gets the offering status for the current period.</p>
@@ -70,37 +71,37 @@ namespace Model
     /**
      * <p>When specified, gets the offering status for the current period.</p>
      */
-    inline GetOfferingStatusResult& WithCurrent(Aws::Map<Aws::String, OfferingStatus>&& value) { SetCurrent(value); return *this;}
+    inline GetOfferingStatusResult& WithCurrent(Aws::Map<Aws::String, OfferingStatus>&& value) { SetCurrent(std::move(value)); return *this;}
 
     /**
      * <p>When specified, gets the offering status for the current period.</p>
      */
-    inline GetOfferingStatusResult& AddCurrent(const Aws::String& key, const OfferingStatus& value) { m_current[key] = value; return *this; }
+    inline GetOfferingStatusResult& AddCurrent(const Aws::String& key, const OfferingStatus& value) { m_current.emplace(key, value); return *this; }
 
     /**
      * <p>When specified, gets the offering status for the current period.</p>
      */
-    inline GetOfferingStatusResult& AddCurrent(Aws::String&& key, const OfferingStatus& value) { m_current[key] = value; return *this; }
+    inline GetOfferingStatusResult& AddCurrent(Aws::String&& key, const OfferingStatus& value) { m_current.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>When specified, gets the offering status for the current period.</p>
      */
-    inline GetOfferingStatusResult& AddCurrent(const Aws::String& key, OfferingStatus&& value) { m_current[key] = value; return *this; }
+    inline GetOfferingStatusResult& AddCurrent(const Aws::String& key, OfferingStatus&& value) { m_current.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>When specified, gets the offering status for the current period.</p>
      */
-    inline GetOfferingStatusResult& AddCurrent(Aws::String&& key, OfferingStatus&& value) { m_current[key] = value; return *this; }
+    inline GetOfferingStatusResult& AddCurrent(Aws::String&& key, OfferingStatus&& value) { m_current.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>When specified, gets the offering status for the current period.</p>
      */
-    inline GetOfferingStatusResult& AddCurrent(const char* key, OfferingStatus&& value) { m_current[key] = value; return *this; }
+    inline GetOfferingStatusResult& AddCurrent(const char* key, OfferingStatus&& value) { m_current.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>When specified, gets the offering status for the current period.</p>
      */
-    inline GetOfferingStatusResult& AddCurrent(const char* key, const OfferingStatus& value) { m_current[key] = value; return *this; }
+    inline GetOfferingStatusResult& AddCurrent(const char* key, const OfferingStatus& value) { m_current.emplace(key, value); return *this; }
 
     /**
      * <p>When specified, gets the offering status for the next period.</p>
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>When specified, gets the offering status for the next period.</p>
      */
-    inline void SetNextPeriod(Aws::Map<Aws::String, OfferingStatus>&& value) { m_nextPeriod = value; }
+    inline void SetNextPeriod(Aws::Map<Aws::String, OfferingStatus>&& value) { m_nextPeriod = std::move(value); }
 
     /**
      * <p>When specified, gets the offering status for the next period.</p>
@@ -125,37 +126,37 @@ namespace Model
     /**
      * <p>When specified, gets the offering status for the next period.</p>
      */
-    inline GetOfferingStatusResult& WithNextPeriod(Aws::Map<Aws::String, OfferingStatus>&& value) { SetNextPeriod(value); return *this;}
+    inline GetOfferingStatusResult& WithNextPeriod(Aws::Map<Aws::String, OfferingStatus>&& value) { SetNextPeriod(std::move(value)); return *this;}
 
     /**
      * <p>When specified, gets the offering status for the next period.</p>
      */
-    inline GetOfferingStatusResult& AddNextPeriod(const Aws::String& key, const OfferingStatus& value) { m_nextPeriod[key] = value; return *this; }
+    inline GetOfferingStatusResult& AddNextPeriod(const Aws::String& key, const OfferingStatus& value) { m_nextPeriod.emplace(key, value); return *this; }
 
     /**
      * <p>When specified, gets the offering status for the next period.</p>
      */
-    inline GetOfferingStatusResult& AddNextPeriod(Aws::String&& key, const OfferingStatus& value) { m_nextPeriod[key] = value; return *this; }
+    inline GetOfferingStatusResult& AddNextPeriod(Aws::String&& key, const OfferingStatus& value) { m_nextPeriod.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>When specified, gets the offering status for the next period.</p>
      */
-    inline GetOfferingStatusResult& AddNextPeriod(const Aws::String& key, OfferingStatus&& value) { m_nextPeriod[key] = value; return *this; }
+    inline GetOfferingStatusResult& AddNextPeriod(const Aws::String& key, OfferingStatus&& value) { m_nextPeriod.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>When specified, gets the offering status for the next period.</p>
      */
-    inline GetOfferingStatusResult& AddNextPeriod(Aws::String&& key, OfferingStatus&& value) { m_nextPeriod[key] = value; return *this; }
+    inline GetOfferingStatusResult& AddNextPeriod(Aws::String&& key, OfferingStatus&& value) { m_nextPeriod.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>When specified, gets the offering status for the next period.</p>
      */
-    inline GetOfferingStatusResult& AddNextPeriod(const char* key, OfferingStatus&& value) { m_nextPeriod[key] = value; return *this; }
+    inline GetOfferingStatusResult& AddNextPeriod(const char* key, OfferingStatus&& value) { m_nextPeriod.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>When specified, gets the offering status for the next period.</p>
      */
-    inline GetOfferingStatusResult& AddNextPeriod(const char* key, const OfferingStatus& value) { m_nextPeriod[key] = value; return *this; }
+    inline GetOfferingStatusResult& AddNextPeriod(const char* key, const OfferingStatus& value) { m_nextPeriod.emplace(key, value); return *this; }
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -173,7 +174,7 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -191,7 +192,7 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
      */
-    inline GetOfferingStatusResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline GetOfferingStatusResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,

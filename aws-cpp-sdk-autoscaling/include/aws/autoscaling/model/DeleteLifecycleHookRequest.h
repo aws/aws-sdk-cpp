@@ -16,6 +16,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The name of the lifecycle hook.</p>
      */
-    inline void SetLifecycleHookName(Aws::String&& value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName = value; }
+    inline void SetLifecycleHookName(Aws::String&& value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName = std::move(value); }
 
     /**
      * <p>The name of the lifecycle hook.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The name of the lifecycle hook.</p>
      */
-    inline DeleteLifecycleHookRequest& WithLifecycleHookName(Aws::String&& value) { SetLifecycleHookName(value); return *this;}
+    inline DeleteLifecycleHookRequest& WithLifecycleHookName(Aws::String&& value) { SetLifecycleHookName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the lifecycle hook.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group for the lifecycle hook.</p>
      */
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
 
     /**
      * <p>The name of the Auto Scaling group for the lifecycle hook.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group for the lifecycle hook.</p>
      */
-    inline DeleteLifecycleHookRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
+    inline DeleteLifecycleHookRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Auto Scaling group for the lifecycle hook.</p>

@@ -17,6 +17,7 @@
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/TopicRulePayload.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The name of the rule.</p>
      */
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
+    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
 
     /**
      * <p>The name of the rule.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The name of the rule.</p>
      */
-    inline CreateTopicRuleRequest& WithRuleName(Aws::String&& value) { SetRuleName(value); return *this;}
+    inline CreateTopicRuleRequest& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the rule.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The rule payload.</p>
      */
-    inline void SetTopicRulePayload(TopicRulePayload&& value) { m_topicRulePayloadHasBeenSet = true; m_topicRulePayload = value; }
+    inline void SetTopicRulePayload(TopicRulePayload&& value) { m_topicRulePayloadHasBeenSet = true; m_topicRulePayload = std::move(value); }
 
     /**
      * <p>The rule payload.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The rule payload.</p>
      */
-    inline CreateTopicRuleRequest& WithTopicRulePayload(TopicRulePayload&& value) { SetTopicRulePayload(value); return *this;}
+    inline CreateTopicRuleRequest& WithTopicRulePayload(TopicRulePayload&& value) { SetTopicRulePayload(std::move(value)); return *this;}
 
   private:
     Aws::String m_ruleName;

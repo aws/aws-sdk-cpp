@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>A deployment ID associated with the applicable IAM user or AWS account.</p>
      */
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
+    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
      * <p>A deployment ID associated with the applicable IAM user or AWS account.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>A deployment ID associated with the applicable IAM user or AWS account.</p>
      */
-    inline GetDeploymentRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
+    inline GetDeploymentRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
      * <p>A deployment ID associated with the applicable IAM user or AWS account.</p>

@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/CurrencyCodeValues.h>
+#include <utility>
 
 namespace Aws
 {
@@ -95,7 +96,7 @@ namespace Model
      * <p>The currency for transacting the Reserved Instance resale. At this time, the
      * only supported currency is <code>USD</code>.</p>
      */
-    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
+    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
      * <p>The currency for transacting the Reserved Instance resale. At this time, the
@@ -107,7 +108,7 @@ namespace Model
      * <p>The currency for transacting the Reserved Instance resale. At this time, the
      * only supported currency is <code>USD</code>.</p>
      */
-    inline PriceSchedule& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(value); return *this;}
+    inline PriceSchedule& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
      * <p>The current price schedule, as determined by the term remaining for the

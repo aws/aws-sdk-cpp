@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/glacier/model/VaultAccessPolicy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>Contains the returned vault access policy as a JSON string.</p>
      */
-    inline void SetPolicy(VaultAccessPolicy&& value) { m_policy = value; }
+    inline void SetPolicy(VaultAccessPolicy&& value) { m_policy = std::move(value); }
 
     /**
      * <p>Contains the returned vault access policy as a JSON string.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Contains the returned vault access policy as a JSON string.</p>
      */
-    inline GetVaultAccessPolicyResult& WithPolicy(VaultAccessPolicy&& value) { SetPolicy(value); return *this;}
+    inline GetVaultAccessPolicyResult& WithPolicy(VaultAccessPolicy&& value) { SetPolicy(std::move(value)); return *this;}
 
   private:
     VaultAccessPolicy m_policy;

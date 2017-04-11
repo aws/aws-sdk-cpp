@@ -16,6 +16,7 @@
 #include <aws/cur/CostandUsageReportService_EXPORTS.h>
 #include <aws/cur/CostandUsageReportServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -45,7 +46,7 @@ namespace Model
     inline void SetReportName(const Aws::String& value) { m_reportNameHasBeenSet = true; m_reportName = value; }
 
     
-    inline void SetReportName(Aws::String&& value) { m_reportNameHasBeenSet = true; m_reportName = value; }
+    inline void SetReportName(Aws::String&& value) { m_reportNameHasBeenSet = true; m_reportName = std::move(value); }
 
     
     inline void SetReportName(const char* value) { m_reportNameHasBeenSet = true; m_reportName.assign(value); }
@@ -54,7 +55,7 @@ namespace Model
     inline DeleteReportDefinitionRequest& WithReportName(const Aws::String& value) { SetReportName(value); return *this;}
 
     
-    inline DeleteReportDefinitionRequest& WithReportName(Aws::String&& value) { SetReportName(value); return *this;}
+    inline DeleteReportDefinitionRequest& WithReportName(Aws::String&& value) { SetReportName(std::move(value)); return *this;}
 
     
     inline DeleteReportDefinitionRequest& WithReportName(const char* value) { SetReportName(value); return *this;}

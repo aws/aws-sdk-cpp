@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/BucketLocationConstraint.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * Specifies the region where the bucket will be created. If you don't specify a
      * region, the bucket will be created in US Standard.
      */
-    inline void SetLocationConstraint(BucketLocationConstraint&& value) { m_locationConstraintHasBeenSet = true; m_locationConstraint = value; }
+    inline void SetLocationConstraint(BucketLocationConstraint&& value) { m_locationConstraintHasBeenSet = true; m_locationConstraint = std::move(value); }
 
     /**
      * Specifies the region where the bucket will be created. If you don't specify a
@@ -67,7 +68,7 @@ namespace Model
      * Specifies the region where the bucket will be created. If you don't specify a
      * region, the bucket will be created in US Standard.
      */
-    inline CreateBucketConfiguration& WithLocationConstraint(BucketLocationConstraint&& value) { SetLocationConstraint(value); return *this;}
+    inline CreateBucketConfiguration& WithLocationConstraint(BucketLocationConstraint&& value) { SetLocationConstraint(std::move(value)); return *this;}
 
   private:
     BucketLocationConstraint m_locationConstraint;

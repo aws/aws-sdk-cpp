@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/model/JobStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The status information for the third party job, if any.</p>
      */
-    inline void SetStatus(JobStatus&& value) { m_status = value; }
+    inline void SetStatus(JobStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The status information for the third party job, if any.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The status information for the third party job, if any.</p>
      */
-    inline AcknowledgeThirdPartyJobResult& WithStatus(JobStatus&& value) { SetStatus(value); return *this;}
+    inline AcknowledgeThirdPartyJobResult& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     JobStatus m_status;

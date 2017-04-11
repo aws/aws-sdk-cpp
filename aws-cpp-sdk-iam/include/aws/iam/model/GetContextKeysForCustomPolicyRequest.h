@@ -17,6 +17,7 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * Supplement character set (through \u00FF). It also includes the special
      * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
-    inline void SetPolicyInputList(Aws::Vector<Aws::String>&& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
+    inline void SetPolicyInputList(Aws::Vector<Aws::String>&& value) { m_policyInputListHasBeenSet = true; m_policyInputList = std::move(value); }
 
     /**
      * <p>A list of policies for which you want the list of context keys referenced in
@@ -101,7 +102,7 @@ namespace Model
      * Supplement character set (through \u00FF). It also includes the special
      * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
-    inline GetContextKeysForCustomPolicyRequest& WithPolicyInputList(Aws::Vector<Aws::String>&& value) { SetPolicyInputList(value); return *this;}
+    inline GetContextKeysForCustomPolicyRequest& WithPolicyInputList(Aws::Vector<Aws::String>&& value) { SetPolicyInputList(std::move(value)); return *this;}
 
     /**
      * <p>A list of policies for which you want the list of context keys referenced in
@@ -127,7 +128,7 @@ namespace Model
      * Supplement character set (through \u00FF). It also includes the special
      * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
-    inline GetContextKeysForCustomPolicyRequest& AddPolicyInputList(Aws::String&& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
+    inline GetContextKeysForCustomPolicyRequest& AddPolicyInputList(Aws::String&& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of policies for which you want the list of context keys referenced in

@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the user the signing certificate is for.</p> <p>This parameter
@@ -83,7 +84,7 @@ namespace Model
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
-    inline UploadSigningCertificateRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline UploadSigningCertificateRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the user the signing certificate is for.</p> <p>This parameter
@@ -124,7 +125,7 @@ namespace Model
      * Supplement character set (through \u00FF). It also includes the special
      * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
-    inline void SetCertificateBody(Aws::String&& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
+    inline void SetCertificateBody(Aws::String&& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = std::move(value); }
 
     /**
      * <p>The contents of the signing certificate.</p> <p>The <a
@@ -157,7 +158,7 @@ namespace Model
      * Supplement character set (through \u00FF). It also includes the special
      * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
-    inline UploadSigningCertificateRequest& WithCertificateBody(Aws::String&& value) { SetCertificateBody(value); return *this;}
+    inline UploadSigningCertificateRequest& WithCertificateBody(Aws::String&& value) { SetCertificateBody(std::move(value)); return *this;}
 
     /**
      * <p>The contents of the signing certificate.</p> <p>The <a

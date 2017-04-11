@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/Instance.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>An array of key-value pairs containing information about your instances.</p>
      */
-    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instances = value; }
+    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instances = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about your instances.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>An array of key-value pairs containing information about your instances.</p>
      */
-    inline GetInstancesResult& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(value); return *this;}
+    inline GetInstancesResult& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(std::move(value)); return *this;}
 
     /**
      * <p>An array of key-value pairs containing information about your instances.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>An array of key-value pairs containing information about your instances.</p>
      */
-    inline GetInstancesResult& AddInstances(Instance&& value) { m_instances.push_back(value); return *this; }
+    inline GetInstancesResult& AddInstances(Instance&& value) { m_instances.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A token used for advancing to the next page of results from your get
@@ -92,7 +93,7 @@ namespace Model
      * <p>A token used for advancing to the next page of results from your get
      * instances request.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>A token used for advancing to the next page of results from your get
@@ -110,7 +111,7 @@ namespace Model
      * <p>A token used for advancing to the next page of results from your get
      * instances request.</p>
      */
-    inline GetInstancesResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline GetInstancesResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>A token used for advancing to the next page of results from your get

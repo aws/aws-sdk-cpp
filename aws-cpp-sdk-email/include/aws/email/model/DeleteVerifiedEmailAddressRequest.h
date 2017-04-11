@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>An email address to be removed from the list of verified addresses.</p>
      */
-    inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
+    inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
 
     /**
      * <p>An email address to be removed from the list of verified addresses.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>An email address to be removed from the list of verified addresses.</p>
      */
-    inline DeleteVerifiedEmailAddressRequest& WithEmailAddress(Aws::String&& value) { SetEmailAddress(value); return *this;}
+    inline DeleteVerifiedEmailAddressRequest& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
 
     /**
      * <p>An email address to be removed from the list of verified addresses.</p>

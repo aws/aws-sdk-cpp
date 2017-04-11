@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name of the application associated with the configuration.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of the application associated with the configuration.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name of the application associated with the configuration.</p>
      */
-    inline SourceConfiguration& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline SourceConfiguration& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the application associated with the configuration.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The name of the configuration template.</p>
      */
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
+    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
      * <p>The name of the configuration template.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The name of the configuration template.</p>
      */
-    inline SourceConfiguration& WithTemplateName(Aws::String&& value) { SetTemplateName(value); return *this;}
+    inline SourceConfiguration& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the configuration template.</p>

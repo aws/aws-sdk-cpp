@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window.</p>
      */
-    inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
+    inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = std::move(value); }
 
     /**
      * <p>The ID of the Maintenance Window.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window.</p>
      */
-    inline MaintenanceWindowIdentity& WithWindowId(Aws::String&& value) { SetWindowId(value); return *this;}
+    inline MaintenanceWindowIdentity& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Maintenance Window.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The name of the Maintenance Window.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the Maintenance Window.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The name of the Maintenance Window.</p>
      */
-    inline MaintenanceWindowIdentity& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline MaintenanceWindowIdentity& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Maintenance Window.</p>

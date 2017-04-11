@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
      * operation to return a list of gateway volumes.</p>
      */
-    inline void SetVolumeARN(Aws::String&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
+    inline void SetVolumeARN(Aws::String&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
@@ -73,7 +74,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
      * operation to return a list of gateway volumes.</p>
      */
-    inline DeleteVolumeRequest& WithVolumeARN(Aws::String&& value) { SetVolumeARN(value); return *this;}
+    inline DeleteVolumeRequest& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>

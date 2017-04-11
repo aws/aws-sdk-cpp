@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The ID of the instance to unlink from the VPC.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance to unlink from the VPC.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The ID of the instance to unlink from the VPC.</p>
      */
-    inline DetachClassicLinkVpcRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline DetachClassicLinkVpcRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance to unlink from the VPC.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The ID of the VPC to which the instance is linked.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC to which the instance is linked.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The ID of the VPC to which the instance is linked.</p>
      */
-    inline DetachClassicLinkVpcRequest& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline DetachClassicLinkVpcRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC to which the instance is linked.</p>

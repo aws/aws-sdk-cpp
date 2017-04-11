@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/dms/model/ReplicationInstance.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The modified replication instance.</p>
      */
-    inline void SetReplicationInstance(ReplicationInstance&& value) { m_replicationInstance = value; }
+    inline void SetReplicationInstance(ReplicationInstance&& value) { m_replicationInstance = std::move(value); }
 
     /**
      * <p>The modified replication instance.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The modified replication instance.</p>
      */
-    inline ModifyReplicationInstanceResult& WithReplicationInstance(ReplicationInstance&& value) { SetReplicationInstance(value); return *this;}
+    inline ModifyReplicationInstanceResult& WithReplicationInstance(ReplicationInstance&& value) { SetReplicationInstance(std::move(value)); return *this;}
 
   private:
     ReplicationInstance m_replicationInstance;

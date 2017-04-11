@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/Bundle.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>An array of key-value pairs that contains information about the available
      * bundles.</p>
      */
-    inline void SetBundles(Aws::Vector<Bundle>&& value) { m_bundles = value; }
+    inline void SetBundles(Aws::Vector<Bundle>&& value) { m_bundles = std::move(value); }
 
     /**
      * <p>An array of key-value pairs that contains information about the available
@@ -69,7 +70,7 @@ namespace Model
      * <p>An array of key-value pairs that contains information about the available
      * bundles.</p>
      */
-    inline GetBundlesResult& WithBundles(Aws::Vector<Bundle>&& value) { SetBundles(value); return *this;}
+    inline GetBundlesResult& WithBundles(Aws::Vector<Bundle>&& value) { SetBundles(std::move(value)); return *this;}
 
     /**
      * <p>An array of key-value pairs that contains information about the available
@@ -81,7 +82,7 @@ namespace Model
      * <p>An array of key-value pairs that contains information about the available
      * bundles.</p>
      */
-    inline GetBundlesResult& AddBundles(Bundle&& value) { m_bundles.push_back(value); return *this; }
+    inline GetBundlesResult& AddBundles(Bundle&& value) { m_bundles.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A token used for advancing to the next page of results from your get active
@@ -99,7 +100,7 @@ namespace Model
      * <p>A token used for advancing to the next page of results from your get active
      * names request.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>A token used for advancing to the next page of results from your get active
@@ -117,7 +118,7 @@ namespace Model
      * <p>A token used for advancing to the next page of results from your get active
      * names request.</p>
      */
-    inline GetBundlesResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline GetBundlesResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>A token used for advancing to the next page of results from your get active

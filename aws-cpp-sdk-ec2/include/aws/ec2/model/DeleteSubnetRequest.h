@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the subnet.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>The ID of the subnet.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The ID of the subnet.</p>
      */
-    inline DeleteSubnetRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+    inline DeleteSubnetRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the subnet.</p>

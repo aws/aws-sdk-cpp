@@ -17,6 +17,7 @@
 #include <aws/lightsail/model/InstanceMetricName.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/MetricDatapoint.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The metric name to return data for. </p>
      */
-    inline void SetMetricName(InstanceMetricName&& value) { m_metricName = value; }
+    inline void SetMetricName(InstanceMetricName&& value) { m_metricName = std::move(value); }
 
     /**
      * <p>The metric name to return data for. </p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The metric name to return data for. </p>
      */
-    inline GetInstanceMetricDataResult& WithMetricName(InstanceMetricName&& value) { SetMetricName(value); return *this;}
+    inline GetInstanceMetricDataResult& WithMetricName(InstanceMetricName&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -82,7 +83,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * get instance metric data request.</p>
      */
-    inline void SetMetricData(Aws::Vector<MetricDatapoint>&& value) { m_metricData = value; }
+    inline void SetMetricData(Aws::Vector<MetricDatapoint>&& value) { m_metricData = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -94,7 +95,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * get instance metric data request.</p>
      */
-    inline GetInstanceMetricDataResult& WithMetricData(Aws::Vector<MetricDatapoint>&& value) { SetMetricData(value); return *this;}
+    inline GetInstanceMetricDataResult& WithMetricData(Aws::Vector<MetricDatapoint>&& value) { SetMetricData(std::move(value)); return *this;}
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -106,7 +107,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * get instance metric data request.</p>
      */
-    inline GetInstanceMetricDataResult& AddMetricData(MetricDatapoint&& value) { m_metricData.push_back(value); return *this; }
+    inline GetInstanceMetricDataResult& AddMetricData(MetricDatapoint&& value) { m_metricData.push_back(std::move(value)); return *this; }
 
   private:
     InstanceMetricName m_metricName;

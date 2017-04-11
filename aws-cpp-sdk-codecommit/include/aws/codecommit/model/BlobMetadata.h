@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The full ID of the blob.</p>
      */
-    inline void SetBlobId(Aws::String&& value) { m_blobIdHasBeenSet = true; m_blobId = value; }
+    inline void SetBlobId(Aws::String&& value) { m_blobIdHasBeenSet = true; m_blobId = std::move(value); }
 
     /**
      * <p>The full ID of the blob.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The full ID of the blob.</p>
      */
-    inline BlobMetadata& WithBlobId(Aws::String&& value) { SetBlobId(value); return *this;}
+    inline BlobMetadata& WithBlobId(Aws::String&& value) { SetBlobId(std::move(value)); return *this;}
 
     /**
      * <p>The full ID of the blob.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The path to the blob and any associated file name, if any.</p>
      */
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>The path to the blob and any associated file name, if any.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The path to the blob and any associated file name, if any.</p>
      */
-    inline BlobMetadata& WithPath(Aws::String&& value) { SetPath(value); return *this;}
+    inline BlobMetadata& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>The path to the blob and any associated file name, if any.</p>
@@ -139,7 +140,7 @@ namespace Model
      * <code>160000</code> indicates a submodule</p> </li> <li> <p> <code>120000</code>
      * indicates a symlink</p> </li> </ul>
      */
-    inline void SetMode(Aws::String&& value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline void SetMode(Aws::String&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
      * <p>The file mode permissions of the blob. File mode permission codes
@@ -166,7 +167,7 @@ namespace Model
      * <code>160000</code> indicates a submodule</p> </li> <li> <p> <code>120000</code>
      * indicates a symlink</p> </li> </ul>
      */
-    inline BlobMetadata& WithMode(Aws::String&& value) { SetMode(value); return *this;}
+    inline BlobMetadata& WithMode(Aws::String&& value) { SetMode(std::move(value)); return *this;}
 
     /**
      * <p>The file mode permissions of the blob. File mode permission codes

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/config/model/ComplianceType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The name of the AWS Config rule for which you want compliance
      * information.</p>
      */
-    inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
+    inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
 
     /**
      * <p>The name of the AWS Config rule for which you want compliance
@@ -74,7 +75,7 @@ namespace Model
      * <p>The name of the AWS Config rule for which you want compliance
      * information.</p>
      */
-    inline GetComplianceDetailsByConfigRuleRequest& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(value); return *this;}
+    inline GetComplianceDetailsByConfigRuleRequest& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the AWS Config rule for which you want compliance
@@ -101,7 +102,7 @@ namespace Model
      * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
      * <code>NOT_APPLICABLE</code>.</p>
      */
-    inline void SetComplianceTypes(Aws::Vector<ComplianceType>&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes = value; }
+    inline void SetComplianceTypes(Aws::Vector<ComplianceType>&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes = std::move(value); }
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
@@ -115,7 +116,7 @@ namespace Model
      * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
      * <code>NOT_APPLICABLE</code>.</p>
      */
-    inline GetComplianceDetailsByConfigRuleRequest& WithComplianceTypes(Aws::Vector<ComplianceType>&& value) { SetComplianceTypes(value); return *this;}
+    inline GetComplianceDetailsByConfigRuleRequest& WithComplianceTypes(Aws::Vector<ComplianceType>&& value) { SetComplianceTypes(std::move(value)); return *this;}
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
@@ -129,7 +130,7 @@ namespace Model
      * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
      * <code>NOT_APPLICABLE</code>.</p>
      */
-    inline GetComplianceDetailsByConfigRuleRequest& AddComplianceTypes(ComplianceType&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes.push_back(value); return *this; }
+    inline GetComplianceDetailsByConfigRuleRequest& AddComplianceTypes(ComplianceType&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The maximum number of evaluation results returned on each page. The default
@@ -168,7 +169,7 @@ namespace Model
      * <p>The <code>NextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>NextToken</code> string returned on a previous page that you use to
@@ -186,7 +187,7 @@ namespace Model
      * <p>The <code>NextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
-    inline GetComplianceDetailsByConfigRuleRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline GetComplianceDetailsByConfigRuleRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>NextToken</code> string returned on a previous page that you use to

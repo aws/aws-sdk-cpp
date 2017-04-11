@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/TargetDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
-    inline void SetTargetGroupArn(Aws::String&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
+    inline void SetTargetGroupArn(Aws::String&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
-    inline DescribeTargetHealthRequest& WithTargetGroupArn(Aws::String&& value) { SetTargetGroupArn(value); return *this;}
+    inline DescribeTargetHealthRequest& WithTargetGroupArn(Aws::String&& value) { SetTargetGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The targets.</p>
      */
-    inline void SetTargets(Aws::Vector<TargetDescription>&& value) { m_targetsHasBeenSet = true; m_targets = value; }
+    inline void SetTargets(Aws::Vector<TargetDescription>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
      * <p>The targets.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The targets.</p>
      */
-    inline DescribeTargetHealthRequest& WithTargets(Aws::Vector<TargetDescription>&& value) { SetTargets(value); return *this;}
+    inline DescribeTargetHealthRequest& WithTargets(Aws::Vector<TargetDescription>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
      * <p>The targets.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The targets.</p>
      */
-    inline DescribeTargetHealthRequest& AddTargets(TargetDescription&& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+    inline DescribeTargetHealthRequest& AddTargets(TargetDescription&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_targetGroupArn;

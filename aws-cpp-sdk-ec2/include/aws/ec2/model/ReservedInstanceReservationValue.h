@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ReservationValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
      */
-    inline void SetReservedInstanceId(Aws::String&& value) { m_reservedInstanceIdHasBeenSet = true; m_reservedInstanceId = value; }
+    inline void SetReservedInstanceId(Aws::String&& value) { m_reservedInstanceIdHasBeenSet = true; m_reservedInstanceId = std::move(value); }
 
     /**
      * <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
      */
-    inline ReservedInstanceReservationValue& WithReservedInstanceId(Aws::String&& value) { SetReservedInstanceId(value); return *this;}
+    inline ReservedInstanceReservationValue& WithReservedInstanceId(Aws::String&& value) { SetReservedInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
@@ -99,7 +100,7 @@ namespace Model
      * <p>The total value of the Convertible Reserved Instance that you are
      * exchanging.</p>
      */
-    inline void SetReservationValue(ReservationValue&& value) { m_reservationValueHasBeenSet = true; m_reservationValue = value; }
+    inline void SetReservationValue(ReservationValue&& value) { m_reservationValueHasBeenSet = true; m_reservationValue = std::move(value); }
 
     /**
      * <p>The total value of the Convertible Reserved Instance that you are
@@ -111,7 +112,7 @@ namespace Model
      * <p>The total value of the Convertible Reserved Instance that you are
      * exchanging.</p>
      */
-    inline ReservedInstanceReservationValue& WithReservationValue(ReservationValue&& value) { SetReservationValue(value); return *this;}
+    inline ReservedInstanceReservationValue& WithReservationValue(ReservationValue&& value) { SetReservationValue(std::move(value)); return *this;}
 
   private:
     Aws::String m_reservedInstanceId;

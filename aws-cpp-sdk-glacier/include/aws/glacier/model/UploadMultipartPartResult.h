@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
      */
-    inline void SetChecksum(Aws::String&& value) { m_checksum = value; }
+    inline void SetChecksum(Aws::String&& value) { m_checksum = std::move(value); }
 
     /**
      * <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
      */
-    inline UploadMultipartPartResult& WithChecksum(Aws::String&& value) { SetChecksum(value); return *this;}
+    inline UploadMultipartPartResult& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
 
     /**
      * <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>

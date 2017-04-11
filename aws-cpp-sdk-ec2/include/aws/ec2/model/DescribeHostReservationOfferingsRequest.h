@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the reservation offering.</p>
      */
-    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
+    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::move(value); }
 
     /**
      * <p>The ID of the reservation offering.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the reservation offering.</p>
      */
-    inline DescribeHostReservationOfferingsRequest& WithOfferingId(Aws::String&& value) { SetOfferingId(value); return *this;}
+    inline DescribeHostReservationOfferingsRequest& WithOfferingId(Aws::String&& value) { SetOfferingId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the reservation offering.</p>
@@ -150,7 +151,7 @@ namespace Model
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> </ul>
      */
-    inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
@@ -166,7 +167,7 @@ namespace Model
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> </ul>
      */
-    inline DescribeHostReservationOfferingsRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(value); return *this;}
+    inline DescribeHostReservationOfferingsRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
@@ -182,7 +183,7 @@ namespace Model
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> </ul>
      */
-    inline DescribeHostReservationOfferingsRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
+    inline DescribeHostReservationOfferingsRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The maximum number of results to return for the request in a single page. The
@@ -224,7 +225,7 @@ namespace Model
     /**
      * <p>The token to use to retrieve the next page of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use to retrieve the next page of results.</p>
@@ -239,7 +240,7 @@ namespace Model
     /**
      * <p>The token to use to retrieve the next page of results.</p>
      */
-    inline DescribeHostReservationOfferingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeHostReservationOfferingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use to retrieve the next page of results.</p>

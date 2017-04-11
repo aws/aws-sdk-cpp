@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/batch/model/ContainerProperties.h>
 #include <aws/batch/model/RetryStrategy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The name of the job definition to register. </p>
      */
-    inline void SetJobDefinitionName(Aws::String&& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = value; }
+    inline void SetJobDefinitionName(Aws::String&& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = std::move(value); }
 
     /**
      * <p>The name of the job definition to register. </p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The name of the job definition to register. </p>
      */
-    inline RegisterJobDefinitionRequest& WithJobDefinitionName(Aws::String&& value) { SetJobDefinitionName(value); return *this;}
+    inline RegisterJobDefinitionRequest& WithJobDefinitionName(Aws::String&& value) { SetJobDefinitionName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the job definition to register. </p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The type of job definition.</p>
      */
-    inline void SetType(JobDefinitionType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(JobDefinitionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of job definition.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The type of job definition.</p>
      */
-    inline RegisterJobDefinitionRequest& WithType(JobDefinitionType&& value) { SetType(value); return *this;}
+    inline RegisterJobDefinitionRequest& WithType(JobDefinitionType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>Default parameter substitution placeholders to set in the job definition.
@@ -119,7 +120,7 @@ namespace Model
      * <code>SubmitJob</code> request override any corresponding parameter defaults
      * from the job definition.</p>
      */
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>Default parameter substitution placeholders to set in the job definition.
@@ -135,7 +136,7 @@ namespace Model
      * <code>SubmitJob</code> request override any corresponding parameter defaults
      * from the job definition.</p>
      */
-    inline RegisterJobDefinitionRequest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(value); return *this;}
+    inline RegisterJobDefinitionRequest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>Default parameter substitution placeholders to set in the job definition.
@@ -143,7 +144,7 @@ namespace Model
      * <code>SubmitJob</code> request override any corresponding parameter defaults
      * from the job definition.</p>
      */
-    inline RegisterJobDefinitionRequest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline RegisterJobDefinitionRequest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>Default parameter substitution placeholders to set in the job definition.
@@ -151,7 +152,7 @@ namespace Model
      * <code>SubmitJob</code> request override any corresponding parameter defaults
      * from the job definition.</p>
      */
-    inline RegisterJobDefinitionRequest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline RegisterJobDefinitionRequest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Default parameter substitution placeholders to set in the job definition.
@@ -159,7 +160,7 @@ namespace Model
      * <code>SubmitJob</code> request override any corresponding parameter defaults
      * from the job definition.</p>
      */
-    inline RegisterJobDefinitionRequest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline RegisterJobDefinitionRequest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Default parameter substitution placeholders to set in the job definition.
@@ -167,7 +168,7 @@ namespace Model
      * <code>SubmitJob</code> request override any corresponding parameter defaults
      * from the job definition.</p>
      */
-    inline RegisterJobDefinitionRequest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline RegisterJobDefinitionRequest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Default parameter substitution placeholders to set in the job definition.
@@ -175,7 +176,7 @@ namespace Model
      * <code>SubmitJob</code> request override any corresponding parameter defaults
      * from the job definition.</p>
      */
-    inline RegisterJobDefinitionRequest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline RegisterJobDefinitionRequest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Default parameter substitution placeholders to set in the job definition.
@@ -183,7 +184,7 @@ namespace Model
      * <code>SubmitJob</code> request override any corresponding parameter defaults
      * from the job definition.</p>
      */
-    inline RegisterJobDefinitionRequest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline RegisterJobDefinitionRequest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Default parameter substitution placeholders to set in the job definition.
@@ -191,7 +192,7 @@ namespace Model
      * <code>SubmitJob</code> request override any corresponding parameter defaults
      * from the job definition.</p>
      */
-    inline RegisterJobDefinitionRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline RegisterJobDefinitionRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>An object with various properties specific for container-based jobs. This
@@ -212,7 +213,7 @@ namespace Model
      * parameter is required if the <code>type</code> parameter is
      * <code>container</code>.</p>
      */
-    inline void SetContainerProperties(ContainerProperties&& value) { m_containerPropertiesHasBeenSet = true; m_containerProperties = value; }
+    inline void SetContainerProperties(ContainerProperties&& value) { m_containerPropertiesHasBeenSet = true; m_containerProperties = std::move(value); }
 
     /**
      * <p>An object with various properties specific for container-based jobs. This
@@ -226,7 +227,7 @@ namespace Model
      * parameter is required if the <code>type</code> parameter is
      * <code>container</code>.</p>
      */
-    inline RegisterJobDefinitionRequest& WithContainerProperties(ContainerProperties&& value) { SetContainerProperties(value); return *this;}
+    inline RegisterJobDefinitionRequest& WithContainerProperties(ContainerProperties&& value) { SetContainerProperties(std::move(value)); return *this;}
 
     /**
      * <p>The retry strategy to use for failed jobs that are submitted with this job
@@ -247,7 +248,7 @@ namespace Model
      * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
      * operation overrides the retry strategy defined here.</p>
      */
-    inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
+    inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = std::move(value); }
 
     /**
      * <p>The retry strategy to use for failed jobs that are submitted with this job
@@ -261,7 +262,7 @@ namespace Model
      * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
      * operation overrides the retry strategy defined here.</p>
      */
-    inline RegisterJobDefinitionRequest& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(value); return *this;}
+    inline RegisterJobDefinitionRequest& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
 
   private:
     Aws::String m_jobDefinitionName;

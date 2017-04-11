@@ -19,6 +19,7 @@
 #include <aws/ec2/model/FlowLogsResourceType.h>
 #include <aws/ec2/model/TrafficType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
      * Maximum of 1000 resources</p>
      */
-    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
+    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
 
     /**
      * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
@@ -71,7 +72,7 @@ namespace Model
      * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
      * Maximum of 1000 resources</p>
      */
-    inline CreateFlowLogsRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(value); return *this;}
+    inline CreateFlowLogsRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
@@ -83,7 +84,7 @@ namespace Model
      * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
      * Maximum of 1000 resources</p>
      */
-    inline CreateFlowLogsRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
+    inline CreateFlowLogsRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The type of resource on which to create the flow log.</p>
      */
-    inline void SetResourceType(FlowLogsResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(FlowLogsResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of resource on which to create the flow log.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The type of resource on which to create the flow log.</p>
      */
-    inline CreateFlowLogsRequest& WithResourceType(FlowLogsResourceType&& value) { SetResourceType(value); return *this;}
+    inline CreateFlowLogsRequest& WithResourceType(FlowLogsResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The type of traffic to log.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The type of traffic to log.</p>
      */
-    inline void SetTrafficType(TrafficType&& value) { m_trafficTypeHasBeenSet = true; m_trafficType = value; }
+    inline void SetTrafficType(TrafficType&& value) { m_trafficTypeHasBeenSet = true; m_trafficType = std::move(value); }
 
     /**
      * <p>The type of traffic to log.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>The type of traffic to log.</p>
      */
-    inline CreateFlowLogsRequest& WithTrafficType(TrafficType&& value) { SetTrafficType(value); return *this;}
+    inline CreateFlowLogsRequest& WithTrafficType(TrafficType&& value) { SetTrafficType(std::move(value)); return *this;}
 
     /**
      * <p>The name of the CloudWatch log group.</p>
@@ -154,7 +155,7 @@ namespace Model
     /**
      * <p>The name of the CloudWatch log group.</p>
      */
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
      * <p>The name of the CloudWatch log group.</p>
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p>The name of the CloudWatch log group.</p>
      */
-    inline CreateFlowLogsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
+    inline CreateFlowLogsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the CloudWatch log group.</p>
@@ -192,7 +193,7 @@ namespace Model
      * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
      * log group.</p>
      */
-    inline void SetDeliverLogsPermissionArn(Aws::String&& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = value; }
+    inline void SetDeliverLogsPermissionArn(Aws::String&& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = std::move(value); }
 
     /**
      * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
@@ -210,7 +211,7 @@ namespace Model
      * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
      * log group.</p>
      */
-    inline CreateFlowLogsRequest& WithDeliverLogsPermissionArn(Aws::String&& value) { SetDeliverLogsPermissionArn(value); return *this;}
+    inline CreateFlowLogsRequest& WithDeliverLogsPermissionArn(Aws::String&& value) { SetDeliverLogsPermissionArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
@@ -240,7 +241,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -264,7 +265,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
-    inline CreateFlowLogsRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline CreateFlowLogsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of

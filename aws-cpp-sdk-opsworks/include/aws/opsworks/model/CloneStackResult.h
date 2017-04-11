@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The cloned stack ID.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackId = std::move(value); }
 
     /**
      * <p>The cloned stack ID.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The cloned stack ID.</p>
      */
-    inline CloneStackResult& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline CloneStackResult& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>The cloned stack ID.</p>

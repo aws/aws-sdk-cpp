@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/GeoLocationDetails.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>A complex type that contains the codes and full continent, country, and
      * subdivision names for the specified geolocation code.</p>
      */
-    inline void SetGeoLocationDetails(GeoLocationDetails&& value) { m_geoLocationDetails = value; }
+    inline void SetGeoLocationDetails(GeoLocationDetails&& value) { m_geoLocationDetails = std::move(value); }
 
     /**
      * <p>A complex type that contains the codes and full continent, country, and
@@ -73,7 +74,7 @@ namespace Model
      * <p>A complex type that contains the codes and full continent, country, and
      * subdivision names for the specified geolocation code.</p>
      */
-    inline GetGeoLocationResult& WithGeoLocationDetails(GeoLocationDetails&& value) { SetGeoLocationDetails(value); return *this;}
+    inline GetGeoLocationResult& WithGeoLocationDetails(GeoLocationDetails&& value) { SetGeoLocationDetails(std::move(value)); return *this;}
 
   private:
     GeoLocationDetails m_geoLocationDetails;

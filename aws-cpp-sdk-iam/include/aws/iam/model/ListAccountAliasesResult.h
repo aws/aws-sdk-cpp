@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>A list of aliases associated with the account. AWS supports only one alias
      * per account.</p>
      */
-    inline void SetAccountAliases(Aws::Vector<Aws::String>&& value) { m_accountAliases = value; }
+    inline void SetAccountAliases(Aws::Vector<Aws::String>&& value) { m_accountAliases = std::move(value); }
 
     /**
      * <p>A list of aliases associated with the account. AWS supports only one alias
@@ -75,7 +76,7 @@ namespace Model
      * <p>A list of aliases associated with the account. AWS supports only one alias
      * per account.</p>
      */
-    inline ListAccountAliasesResult& WithAccountAliases(Aws::Vector<Aws::String>&& value) { SetAccountAliases(value); return *this;}
+    inline ListAccountAliasesResult& WithAccountAliases(Aws::Vector<Aws::String>&& value) { SetAccountAliases(std::move(value)); return *this;}
 
     /**
      * <p>A list of aliases associated with the account. AWS supports only one alias
@@ -87,7 +88,7 @@ namespace Model
      * <p>A list of aliases associated with the account. AWS supports only one alias
      * per account.</p>
      */
-    inline ListAccountAliasesResult& AddAccountAliases(Aws::String&& value) { m_accountAliases.push_back(value); return *this; }
+    inline ListAccountAliasesResult& AddAccountAliases(Aws::String&& value) { m_accountAliases.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of aliases associated with the account. AWS supports only one alias
@@ -147,7 +148,7 @@ namespace Model
      * and contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -168,7 +169,7 @@ namespace Model
      * and contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.</p>
      */
-    inline ListAccountAliasesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListAccountAliasesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -184,13 +185,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListAccountAliasesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListAccountAliasesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListAccountAliasesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_accountAliases;

@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/WAFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * <code>NextMarker</code> from the previous response to get information about
      * another batch of <code>XssMatchSets</code>.</p>
      */
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::move(value); }
 
     /**
      * <p>If you specify a value for <code>Limit</code> and you have more
@@ -103,7 +104,7 @@ namespace Model
      * <code>NextMarker</code> from the previous response to get information about
      * another batch of <code>XssMatchSets</code>.</p>
      */
-    inline ListXssMatchSetsRequest& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
+    inline ListXssMatchSetsRequest& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>If you specify a value for <code>Limit</code> and you have more

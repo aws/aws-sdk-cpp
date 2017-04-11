@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -76,7 +77,7 @@ namespace Model
      * to the ARN. If you specify only the function name, it is limited to 64 character
      * in length. </p>
      */
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
      * <p>The Lambda function name.</p> <p> You can specify a function name (for
@@ -112,7 +113,7 @@ namespace Model
      * to the ARN. If you specify only the function name, it is limited to 64 character
      * in length. </p>
      */
-    inline GetFunctionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
+    inline GetFunctionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>The Lambda function name.</p> <p> You can specify a function name (for
@@ -157,7 +158,7 @@ namespace Model
      * parameter, the API uses unqualified function ARN and returns information about
      * the <code>$LATEST</code> version of the Lambda function.</p>
      */
-    inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
+    inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
 
     /**
      * <p>Using this optional parameter to specify a function version or an alias name.
@@ -190,7 +191,7 @@ namespace Model
      * parameter, the API uses unqualified function ARN and returns information about
      * the <code>$LATEST</code> version of the Lambda function.</p>
      */
-    inline GetFunctionRequest& WithQualifier(Aws::String&& value) { SetQualifier(value); return *this;}
+    inline GetFunctionRequest& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
 
     /**
      * <p>Using this optional parameter to specify a function version or an alias name.

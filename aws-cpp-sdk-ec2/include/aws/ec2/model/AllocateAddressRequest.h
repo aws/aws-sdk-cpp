@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/model/DomainType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
      * <p>Set to <code>vpc</code> to allocate the address for use with instances in a
      * VPC.</p> <p>Default: The address is for use with instances in EC2-Classic.</p>
      */
-    inline void SetDomain(DomainType&& value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline void SetDomain(DomainType&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>Set to <code>vpc</code> to allocate the address for use with instances in a
@@ -92,7 +93,7 @@ namespace Model
      * <p>Set to <code>vpc</code> to allocate the address for use with instances in a
      * VPC.</p> <p>Default: The address is for use with instances in EC2-Classic.</p>
      */
-    inline AllocateAddressRequest& WithDomain(DomainType&& value) { SetDomain(value); return *this;}
+    inline AllocateAddressRequest& WithDomain(DomainType&& value) { SetDomain(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

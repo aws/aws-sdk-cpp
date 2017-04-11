@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/es/model/StorageTypeLimit.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     inline void SetStorageTypeName(const Aws::String& value) { m_storageTypeNameHasBeenSet = true; m_storageTypeName = value; }
 
     
-    inline void SetStorageTypeName(Aws::String&& value) { m_storageTypeNameHasBeenSet = true; m_storageTypeName = value; }
+    inline void SetStorageTypeName(Aws::String&& value) { m_storageTypeNameHasBeenSet = true; m_storageTypeName = std::move(value); }
 
     
     inline void SetStorageTypeName(const char* value) { m_storageTypeNameHasBeenSet = true; m_storageTypeName.assign(value); }
@@ -62,7 +63,7 @@ namespace Model
     inline StorageType& WithStorageTypeName(const Aws::String& value) { SetStorageTypeName(value); return *this;}
 
     
-    inline StorageType& WithStorageTypeName(Aws::String&& value) { SetStorageTypeName(value); return *this;}
+    inline StorageType& WithStorageTypeName(Aws::String&& value) { SetStorageTypeName(std::move(value)); return *this;}
 
     
     inline StorageType& WithStorageTypeName(const char* value) { SetStorageTypeName(value); return *this;}
@@ -74,7 +75,7 @@ namespace Model
     inline void SetStorageSubTypeName(const Aws::String& value) { m_storageSubTypeNameHasBeenSet = true; m_storageSubTypeName = value; }
 
     
-    inline void SetStorageSubTypeName(Aws::String&& value) { m_storageSubTypeNameHasBeenSet = true; m_storageSubTypeName = value; }
+    inline void SetStorageSubTypeName(Aws::String&& value) { m_storageSubTypeNameHasBeenSet = true; m_storageSubTypeName = std::move(value); }
 
     
     inline void SetStorageSubTypeName(const char* value) { m_storageSubTypeNameHasBeenSet = true; m_storageSubTypeName.assign(value); }
@@ -83,7 +84,7 @@ namespace Model
     inline StorageType& WithStorageSubTypeName(const Aws::String& value) { SetStorageSubTypeName(value); return *this;}
 
     
-    inline StorageType& WithStorageSubTypeName(Aws::String&& value) { SetStorageSubTypeName(value); return *this;}
+    inline StorageType& WithStorageSubTypeName(Aws::String&& value) { SetStorageSubTypeName(std::move(value)); return *this;}
 
     
     inline StorageType& WithStorageSubTypeName(const char* value) { SetStorageSubTypeName(value); return *this;}
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>List of limits that are applicable for given storage type. </p>
      */
-    inline void SetStorageTypeLimits(Aws::Vector<StorageTypeLimit>&& value) { m_storageTypeLimitsHasBeenSet = true; m_storageTypeLimits = value; }
+    inline void SetStorageTypeLimits(Aws::Vector<StorageTypeLimit>&& value) { m_storageTypeLimitsHasBeenSet = true; m_storageTypeLimits = std::move(value); }
 
     /**
      * <p>List of limits that are applicable for given storage type. </p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>List of limits that are applicable for given storage type. </p>
      */
-    inline StorageType& WithStorageTypeLimits(Aws::Vector<StorageTypeLimit>&& value) { SetStorageTypeLimits(value); return *this;}
+    inline StorageType& WithStorageTypeLimits(Aws::Vector<StorageTypeLimit>&& value) { SetStorageTypeLimits(std::move(value)); return *this;}
 
     /**
      * <p>List of limits that are applicable for given storage type. </p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>List of limits that are applicable for given storage type. </p>
      */
-    inline StorageType& AddStorageTypeLimits(StorageTypeLimit&& value) { m_storageTypeLimitsHasBeenSet = true; m_storageTypeLimits.push_back(value); return *this; }
+    inline StorageType& AddStorageTypeLimits(StorageTypeLimit&& value) { m_storageTypeLimitsHasBeenSet = true; m_storageTypeLimits.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_storageTypeName;

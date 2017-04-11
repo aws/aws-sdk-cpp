@@ -16,6 +16,7 @@
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/shield/ShieldRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call
      * to <code>ListProtections</code>. Pass null if this is the first call.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call
@@ -69,7 +70,7 @@ namespace Model
      * <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call
      * to <code>ListProtections</code>. Pass null if this is the first call.</p>
      */
-    inline ListProtectionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListProtectionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call

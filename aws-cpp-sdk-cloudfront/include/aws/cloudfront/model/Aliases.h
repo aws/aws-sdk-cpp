@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
      * Optional: A complex type that contains CNAME elements, if any, for this
      * distribution. If Quantity is 0, you can omit Items.
      */
-    inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+    inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * Optional: A complex type that contains CNAME elements, if any, for this
@@ -89,7 +90,7 @@ namespace Model
      * Optional: A complex type that contains CNAME elements, if any, for this
      * distribution. If Quantity is 0, you can omit Items.
      */
-    inline Aliases& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(value); return *this;}
+    inline Aliases& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * Optional: A complex type that contains CNAME elements, if any, for this
@@ -101,7 +102,7 @@ namespace Model
      * Optional: A complex type that contains CNAME elements, if any, for this
      * distribution. If Quantity is 0, you can omit Items.
      */
-    inline Aliases& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+    inline Aliases& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
     /**
      * Optional: A complex type that contains CNAME elements, if any, for this

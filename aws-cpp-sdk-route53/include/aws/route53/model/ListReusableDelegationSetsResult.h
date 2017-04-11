@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/DelegationSet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>A complex type that contains one <code>DelegationSet</code> element for each
      * reusable delegation set that was created by the current AWS account.</p>
      */
-    inline void SetDelegationSets(Aws::Vector<DelegationSet>&& value) { m_delegationSets = value; }
+    inline void SetDelegationSets(Aws::Vector<DelegationSet>&& value) { m_delegationSets = std::move(value); }
 
     /**
      * <p>A complex type that contains one <code>DelegationSet</code> element for each
@@ -75,7 +76,7 @@ namespace Model
      * <p>A complex type that contains one <code>DelegationSet</code> element for each
      * reusable delegation set that was created by the current AWS account.</p>
      */
-    inline ListReusableDelegationSetsResult& WithDelegationSets(Aws::Vector<DelegationSet>&& value) { SetDelegationSets(value); return *this;}
+    inline ListReusableDelegationSetsResult& WithDelegationSets(Aws::Vector<DelegationSet>&& value) { SetDelegationSets(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that contains one <code>DelegationSet</code> element for each
@@ -87,7 +88,7 @@ namespace Model
      * <p>A complex type that contains one <code>DelegationSet</code> element for each
      * reusable delegation set that was created by the current AWS account.</p>
      */
-    inline ListReusableDelegationSetsResult& AddDelegationSets(DelegationSet&& value) { m_delegationSets.push_back(value); return *this; }
+    inline ListReusableDelegationSetsResult& AddDelegationSets(DelegationSet&& value) { m_delegationSets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>For the second and subsequent calls to
@@ -111,7 +112,7 @@ namespace Model
      * you specified for the marker parameter in the request that produced the current
      * response.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>For the second and subsequent calls to
@@ -135,7 +136,7 @@ namespace Model
      * you specified for the marker parameter in the request that produced the current
      * response.</p>
      */
-    inline ListReusableDelegationSetsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListReusableDelegationSetsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>For the second and subsequent calls to
@@ -197,7 +198,7 @@ namespace Model
      * <code>ListReusableDelegationSets</code> again and specify the value of
      * <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
@@ -224,7 +225,7 @@ namespace Model
      * <code>ListReusableDelegationSets</code> again and specify the value of
      * <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
-    inline ListReusableDelegationSetsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
+    inline ListReusableDelegationSetsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
@@ -254,7 +255,7 @@ namespace Model
      * call to <code>ListReusableDelegationSets</code> that produced the current
      * response.</p>
      */
-    inline void SetMaxItems(Aws::String&& value) { m_maxItems = value; }
+    inline void SetMaxItems(Aws::String&& value) { m_maxItems = std::move(value); }
 
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
@@ -275,7 +276,7 @@ namespace Model
      * call to <code>ListReusableDelegationSets</code> that produced the current
      * response.</p>
      */
-    inline ListReusableDelegationSetsResult& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
+    inline ListReusableDelegationSetsResult& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the

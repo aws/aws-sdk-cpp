@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/email/model/ReceiptIpFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -73,7 +74,7 @@ namespace Model
      * dashes (-).</p> </li> <li> <p>Start and end with a letter or number.</p> </li>
      * <li> <p>Contain less than 64 characters.</p> </li> </ul>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the IP address filter. The name must:</p> <ul> <li> <p>Contain
@@ -97,7 +98,7 @@ namespace Model
      * dashes (-).</p> </li> <li> <p>Start and end with a letter or number.</p> </li>
      * <li> <p>Contain less than 64 characters.</p> </li> </ul>
      */
-    inline ReceiptFilter& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ReceiptFilter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IP address filter. The name must:</p> <ul> <li> <p>Contain
@@ -123,7 +124,7 @@ namespace Model
      * <p>A structure that provides the IP addresses to block or allow, and whether to
      * block or allow incoming mail from them.</p>
      */
-    inline void SetIpFilter(ReceiptIpFilter&& value) { m_ipFilterHasBeenSet = true; m_ipFilter = value; }
+    inline void SetIpFilter(ReceiptIpFilter&& value) { m_ipFilterHasBeenSet = true; m_ipFilter = std::move(value); }
 
     /**
      * <p>A structure that provides the IP addresses to block or allow, and whether to
@@ -135,7 +136,7 @@ namespace Model
      * <p>A structure that provides the IP addresses to block or allow, and whether to
      * block or allow incoming mail from them.</p>
      */
-    inline ReceiptFilter& WithIpFilter(ReceiptIpFilter&& value) { SetIpFilter(value); return *this;}
+    inline ReceiptFilter& WithIpFilter(ReceiptIpFilter&& value) { SetIpFilter(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

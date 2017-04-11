@@ -19,6 +19,7 @@
 #include <aws/ssm/model/PatchFilterGroup.h>
 #include <aws/ssm/model/PatchRuleGroup.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 #include <aws/core/utils/UUID.h>
 
 namespace Aws
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of the patch baseline.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the patch baseline.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the patch baseline.</p>
      */
-    inline CreatePatchBaselineRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreatePatchBaselineRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the patch baseline.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>A set of global filters used to exclude patches from the baseline.</p>
      */
-    inline void SetGlobalFilters(PatchFilterGroup&& value) { m_globalFiltersHasBeenSet = true; m_globalFilters = value; }
+    inline void SetGlobalFilters(PatchFilterGroup&& value) { m_globalFiltersHasBeenSet = true; m_globalFilters = std::move(value); }
 
     /**
      * <p>A set of global filters used to exclude patches from the baseline.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>A set of global filters used to exclude patches from the baseline.</p>
      */
-    inline CreatePatchBaselineRequest& WithGlobalFilters(PatchFilterGroup&& value) { SetGlobalFilters(value); return *this;}
+    inline CreatePatchBaselineRequest& WithGlobalFilters(PatchFilterGroup&& value) { SetGlobalFilters(std::move(value)); return *this;}
 
     /**
      * <p>A set of rules used to include patches in the baseline.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>A set of rules used to include patches in the baseline.</p>
      */
-    inline void SetApprovalRules(PatchRuleGroup&& value) { m_approvalRulesHasBeenSet = true; m_approvalRules = value; }
+    inline void SetApprovalRules(PatchRuleGroup&& value) { m_approvalRulesHasBeenSet = true; m_approvalRules = std::move(value); }
 
     /**
      * <p>A set of rules used to include patches in the baseline.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>A set of rules used to include patches in the baseline.</p>
      */
-    inline CreatePatchBaselineRequest& WithApprovalRules(PatchRuleGroup&& value) { SetApprovalRules(value); return *this;}
+    inline CreatePatchBaselineRequest& WithApprovalRules(PatchRuleGroup&& value) { SetApprovalRules(std::move(value)); return *this;}
 
     /**
      * <p>A list of explicitly approved patches for the baseline.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>A list of explicitly approved patches for the baseline.</p>
      */
-    inline void SetApprovedPatches(Aws::Vector<Aws::String>&& value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches = value; }
+    inline void SetApprovedPatches(Aws::Vector<Aws::String>&& value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches = std::move(value); }
 
     /**
      * <p>A list of explicitly approved patches for the baseline.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>A list of explicitly approved patches for the baseline.</p>
      */
-    inline CreatePatchBaselineRequest& WithApprovedPatches(Aws::Vector<Aws::String>&& value) { SetApprovedPatches(value); return *this;}
+    inline CreatePatchBaselineRequest& WithApprovedPatches(Aws::Vector<Aws::String>&& value) { SetApprovedPatches(std::move(value)); return *this;}
 
     /**
      * <p>A list of explicitly approved patches for the baseline.</p>
@@ -157,7 +158,7 @@ namespace Model
     /**
      * <p>A list of explicitly approved patches for the baseline.</p>
      */
-    inline CreatePatchBaselineRequest& AddApprovedPatches(Aws::String&& value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches.push_back(value); return *this; }
+    inline CreatePatchBaselineRequest& AddApprovedPatches(Aws::String&& value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of explicitly approved patches for the baseline.</p>
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>A list of explicitly rejected patches for the baseline.</p>
      */
-    inline void SetRejectedPatches(Aws::Vector<Aws::String>&& value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches = value; }
+    inline void SetRejectedPatches(Aws::Vector<Aws::String>&& value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches = std::move(value); }
 
     /**
      * <p>A list of explicitly rejected patches for the baseline.</p>
@@ -187,7 +188,7 @@ namespace Model
     /**
      * <p>A list of explicitly rejected patches for the baseline.</p>
      */
-    inline CreatePatchBaselineRequest& WithRejectedPatches(Aws::Vector<Aws::String>&& value) { SetRejectedPatches(value); return *this;}
+    inline CreatePatchBaselineRequest& WithRejectedPatches(Aws::Vector<Aws::String>&& value) { SetRejectedPatches(std::move(value)); return *this;}
 
     /**
      * <p>A list of explicitly rejected patches for the baseline.</p>
@@ -197,7 +198,7 @@ namespace Model
     /**
      * <p>A list of explicitly rejected patches for the baseline.</p>
      */
-    inline CreatePatchBaselineRequest& AddRejectedPatches(Aws::String&& value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches.push_back(value); return *this; }
+    inline CreatePatchBaselineRequest& AddRejectedPatches(Aws::String&& value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of explicitly rejected patches for the baseline.</p>
@@ -217,7 +218,7 @@ namespace Model
     /**
      * <p>A description of the patch baseline.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description of the patch baseline.</p>
@@ -232,7 +233,7 @@ namespace Model
     /**
      * <p>A description of the patch baseline.</p>
      */
-    inline CreatePatchBaselineRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreatePatchBaselineRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description of the patch baseline.</p>
@@ -252,7 +253,7 @@ namespace Model
     /**
      * <p>Caller-provided idempotency token.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Caller-provided idempotency token.</p>
@@ -267,7 +268,7 @@ namespace Model
     /**
      * <p>Caller-provided idempotency token.</p>
      */
-    inline CreatePatchBaselineRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline CreatePatchBaselineRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Caller-provided idempotency token.</p>

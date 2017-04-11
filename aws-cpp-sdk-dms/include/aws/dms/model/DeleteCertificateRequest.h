@@ -16,6 +16,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/dms/DatabaseMigrationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>
      */
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>
      */
-    inline DeleteCertificateRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
+    inline DeleteCertificateRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>

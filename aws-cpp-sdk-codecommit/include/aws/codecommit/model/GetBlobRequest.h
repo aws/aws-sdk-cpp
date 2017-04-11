@@ -16,6 +16,7 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/CodeCommitRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The name of the repository that contains the blob.</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The name of the repository that contains the blob.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The name of the repository that contains the blob.</p>
      */
-    inline GetBlobRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline GetBlobRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the repository that contains the blob.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The ID of the blob, which is its SHA-1 pointer.</p>
      */
-    inline void SetBlobId(Aws::String&& value) { m_blobIdHasBeenSet = true; m_blobId = value; }
+    inline void SetBlobId(Aws::String&& value) { m_blobIdHasBeenSet = true; m_blobId = std::move(value); }
 
     /**
      * <p>The ID of the blob, which is its SHA-1 pointer.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The ID of the blob, which is its SHA-1 pointer.</p>
      */
-    inline GetBlobRequest& WithBlobId(Aws::String&& value) { SetBlobId(value); return *this;}
+    inline GetBlobRequest& WithBlobId(Aws::String&& value) { SetBlobId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the blob, which is its SHA-1 pointer.</p>

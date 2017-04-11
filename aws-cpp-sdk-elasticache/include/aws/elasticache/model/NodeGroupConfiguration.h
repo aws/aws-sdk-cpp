@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * range from 0 to 16,383. The string is in the format
      * <code>startkey-endkey</code>.</p> <p>Example: <code>"0-3999"</code> </p>
      */
-    inline void SetSlots(Aws::String&& value) { m_slotsHasBeenSet = true; m_slots = value; }
+    inline void SetSlots(Aws::String&& value) { m_slotsHasBeenSet = true; m_slots = std::move(value); }
 
     /**
      * <p>A string that specifies the keyspace for a particular node group. Keyspaces
@@ -90,7 +91,7 @@ namespace Model
      * range from 0 to 16,383. The string is in the format
      * <code>startkey-endkey</code>.</p> <p>Example: <code>"0-3999"</code> </p>
      */
-    inline NodeGroupConfiguration& WithSlots(Aws::String&& value) { SetSlots(value); return *this;}
+    inline NodeGroupConfiguration& WithSlots(Aws::String&& value) { SetSlots(std::move(value)); return *this;}
 
     /**
      * <p>A string that specifies the keyspace for a particular node group. Keyspaces
@@ -130,7 +131,7 @@ namespace Model
      * <p>The Availability Zone where the primary node of this node group (shard) is
      * launched.</p>
      */
-    inline void SetPrimaryAvailabilityZone(Aws::String&& value) { m_primaryAvailabilityZoneHasBeenSet = true; m_primaryAvailabilityZone = value; }
+    inline void SetPrimaryAvailabilityZone(Aws::String&& value) { m_primaryAvailabilityZoneHasBeenSet = true; m_primaryAvailabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone where the primary node of this node group (shard) is
@@ -148,7 +149,7 @@ namespace Model
      * <p>The Availability Zone where the primary node of this node group (shard) is
      * launched.</p>
      */
-    inline NodeGroupConfiguration& WithPrimaryAvailabilityZone(Aws::String&& value) { SetPrimaryAvailabilityZone(value); return *this;}
+    inline NodeGroupConfiguration& WithPrimaryAvailabilityZone(Aws::String&& value) { SetPrimaryAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone where the primary node of this node group (shard) is
@@ -178,7 +179,7 @@ namespace Model
      * <code>ReplicaCount</code> or <code>ReplicasPerNodeGroup</code> if not
      * specified.</p>
      */
-    inline void SetReplicaAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_replicaAvailabilityZonesHasBeenSet = true; m_replicaAvailabilityZones = value; }
+    inline void SetReplicaAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_replicaAvailabilityZonesHasBeenSet = true; m_replicaAvailabilityZones = std::move(value); }
 
     /**
      * <p>A list of Availability Zones to be used for the read replicas. The number of
@@ -194,7 +195,7 @@ namespace Model
      * <code>ReplicaCount</code> or <code>ReplicasPerNodeGroup</code> if not
      * specified.</p>
      */
-    inline NodeGroupConfiguration& WithReplicaAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetReplicaAvailabilityZones(value); return *this;}
+    inline NodeGroupConfiguration& WithReplicaAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetReplicaAvailabilityZones(std::move(value)); return *this;}
 
     /**
      * <p>A list of Availability Zones to be used for the read replicas. The number of
@@ -210,7 +211,7 @@ namespace Model
      * <code>ReplicaCount</code> or <code>ReplicasPerNodeGroup</code> if not
      * specified.</p>
      */
-    inline NodeGroupConfiguration& AddReplicaAvailabilityZones(Aws::String&& value) { m_replicaAvailabilityZonesHasBeenSet = true; m_replicaAvailabilityZones.push_back(value); return *this; }
+    inline NodeGroupConfiguration& AddReplicaAvailabilityZones(Aws::String&& value) { m_replicaAvailabilityZonesHasBeenSet = true; m_replicaAvailabilityZones.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of Availability Zones to be used for the read replicas. The number of

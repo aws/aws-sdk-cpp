@@ -17,6 +17,7 @@
 #include <aws/glacier/GlacierRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The name of the vault.</p>
      */
-    inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
+    inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = std::move(value); }
 
     /**
      * <p>The name of the vault.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The name of the vault.</p>
      */
-    inline UploadArchiveRequest& WithVaultName(Aws::String&& value) { SetVaultName(value); return *this;}
+    inline UploadArchiveRequest& WithVaultName(Aws::String&& value) { SetVaultName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the vault.</p>
@@ -97,7 +98,7 @@ namespace Model
      * associated with the credentials used to sign the request. If you use an account
      * ID, do not include any hyphens ('-') in the ID. </p>
      */
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
@@ -124,7 +125,7 @@ namespace Model
      * associated with the credentials used to sign the request. If you use an account
      * ID, do not include any hyphens ('-') in the ID. </p>
      */
-    inline UploadArchiveRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline UploadArchiveRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>The optional description of the archive you are uploading.</p>
      */
-    inline void SetArchiveDescription(Aws::String&& value) { m_archiveDescriptionHasBeenSet = true; m_archiveDescription = value; }
+    inline void SetArchiveDescription(Aws::String&& value) { m_archiveDescriptionHasBeenSet = true; m_archiveDescription = std::move(value); }
 
     /**
      * <p>The optional description of the archive you are uploading.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>The optional description of the archive you are uploading.</p>
      */
-    inline UploadArchiveRequest& WithArchiveDescription(Aws::String&& value) { SetArchiveDescription(value); return *this;}
+    inline UploadArchiveRequest& WithArchiveDescription(Aws::String&& value) { SetArchiveDescription(std::move(value)); return *this;}
 
     /**
      * <p>The optional description of the archive you are uploading.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>The SHA256 tree hash of the data being uploaded.</p>
      */
-    inline void SetChecksum(Aws::String&& value) { m_checksumHasBeenSet = true; m_checksum = value; }
+    inline void SetChecksum(Aws::String&& value) { m_checksumHasBeenSet = true; m_checksum = std::move(value); }
 
     /**
      * <p>The SHA256 tree hash of the data being uploaded.</p>
@@ -198,7 +199,7 @@ namespace Model
     /**
      * <p>The SHA256 tree hash of the data being uploaded.</p>
      */
-    inline UploadArchiveRequest& WithChecksum(Aws::String&& value) { SetChecksum(value); return *this;}
+    inline UploadArchiveRequest& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
 
     /**
      * <p>The SHA256 tree hash of the data being uploaded.</p>

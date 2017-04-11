@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ds/model/DirectorySize.h>
 #include <aws/ds/model/DirectoryConnectSettings.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>The fully-qualified name of the on-premises directory, such as
      * <code>corp.example.com</code>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The fully-qualified name of the on-premises directory, such as
@@ -75,7 +76,7 @@ namespace Model
      * <p>The fully-qualified name of the on-premises directory, such as
      * <code>corp.example.com</code>.</p>
      */
-    inline ConnectDirectoryRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ConnectDirectoryRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The fully-qualified name of the on-premises directory, such as
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The NetBIOS name of the on-premises directory, such as <code>CORP</code>.</p>
      */
-    inline void SetShortName(Aws::String&& value) { m_shortNameHasBeenSet = true; m_shortName = value; }
+    inline void SetShortName(Aws::String&& value) { m_shortNameHasBeenSet = true; m_shortName = std::move(value); }
 
     /**
      * <p>The NetBIOS name of the on-premises directory, such as <code>CORP</code>.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The NetBIOS name of the on-premises directory, such as <code>CORP</code>.</p>
      */
-    inline ConnectDirectoryRequest& WithShortName(Aws::String&& value) { SetShortName(value); return *this;}
+    inline ConnectDirectoryRequest& WithShortName(Aws::String&& value) { SetShortName(std::move(value)); return *this;}
 
     /**
      * <p>The NetBIOS name of the on-premises directory, such as <code>CORP</code>.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The password for the on-premises user account.</p>
      */
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = value; }
+    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
     /**
      * <p>The password for the on-premises user account.</p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>The password for the on-premises user account.</p>
      */
-    inline ConnectDirectoryRequest& WithPassword(Aws::String&& value) { SetPassword(value); return *this;}
+    inline ConnectDirectoryRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     /**
      * <p>The password for the on-premises user account.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>A textual description for the directory.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A textual description for the directory.</p>
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>A textual description for the directory.</p>
      */
-    inline ConnectDirectoryRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline ConnectDirectoryRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A textual description for the directory.</p>
@@ -201,7 +202,7 @@ namespace Model
     /**
      * <p>The size of the directory.</p>
      */
-    inline void SetSize(DirectorySize&& value) { m_sizeHasBeenSet = true; m_size = value; }
+    inline void SetSize(DirectorySize&& value) { m_sizeHasBeenSet = true; m_size = std::move(value); }
 
     /**
      * <p>The size of the directory.</p>
@@ -211,7 +212,7 @@ namespace Model
     /**
      * <p>The size of the directory.</p>
      */
-    inline ConnectDirectoryRequest& WithSize(DirectorySize&& value) { SetSize(value); return *this;}
+    inline ConnectDirectoryRequest& WithSize(DirectorySize&& value) { SetSize(std::move(value)); return *this;}
 
     /**
      * <p>A <a>DirectoryConnectSettings</a> object that contains additional information
@@ -229,7 +230,7 @@ namespace Model
      * <p>A <a>DirectoryConnectSettings</a> object that contains additional information
      * for the operation.</p>
      */
-    inline void SetConnectSettings(DirectoryConnectSettings&& value) { m_connectSettingsHasBeenSet = true; m_connectSettings = value; }
+    inline void SetConnectSettings(DirectoryConnectSettings&& value) { m_connectSettingsHasBeenSet = true; m_connectSettings = std::move(value); }
 
     /**
      * <p>A <a>DirectoryConnectSettings</a> object that contains additional information
@@ -241,7 +242,7 @@ namespace Model
      * <p>A <a>DirectoryConnectSettings</a> object that contains additional information
      * for the operation.</p>
      */
-    inline ConnectDirectoryRequest& WithConnectSettings(DirectoryConnectSettings&& value) { SetConnectSettings(value); return *this;}
+    inline ConnectDirectoryRequest& WithConnectSettings(DirectoryConnectSettings&& value) { SetConnectSettings(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

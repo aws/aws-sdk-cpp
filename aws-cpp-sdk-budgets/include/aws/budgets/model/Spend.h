@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     inline void SetAmount(const Aws::String& value) { m_amountHasBeenSet = true; m_amount = value; }
 
     
-    inline void SetAmount(Aws::String&& value) { m_amountHasBeenSet = true; m_amount = value; }
+    inline void SetAmount(Aws::String&& value) { m_amountHasBeenSet = true; m_amount = std::move(value); }
 
     
     inline void SetAmount(const char* value) { m_amountHasBeenSet = true; m_amount.assign(value); }
@@ -60,7 +61,7 @@ namespace Model
     inline Spend& WithAmount(const Aws::String& value) { SetAmount(value); return *this;}
 
     
-    inline Spend& WithAmount(Aws::String&& value) { SetAmount(value); return *this;}
+    inline Spend& WithAmount(Aws::String&& value) { SetAmount(std::move(value)); return *this;}
 
     
     inline Spend& WithAmount(const char* value) { SetAmount(value); return *this;}
@@ -72,7 +73,7 @@ namespace Model
     inline void SetUnit(const Aws::String& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     
-    inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
     
     inline void SetUnit(const char* value) { m_unitHasBeenSet = true; m_unit.assign(value); }
@@ -81,7 +82,7 @@ namespace Model
     inline Spend& WithUnit(const Aws::String& value) { SetUnit(value); return *this;}
 
     
-    inline Spend& WithUnit(Aws::String&& value) { SetUnit(value); return *this;}
+    inline Spend& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
 
     
     inline Spend& WithUnit(const char* value) { SetUnit(value); return *this;}

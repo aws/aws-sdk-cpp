@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The CA certificate ARN.</p>
      */
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArn = value; }
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArn = std::move(value); }
 
     /**
      * <p>The CA certificate ARN.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The CA certificate ARN.</p>
      */
-    inline RegisterCACertificateResult& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
+    inline RegisterCACertificateResult& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>The CA certificate ARN.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The CA certificate identifier.</p>
      */
-    inline void SetCertificateId(Aws::String&& value) { m_certificateId = value; }
+    inline void SetCertificateId(Aws::String&& value) { m_certificateId = std::move(value); }
 
     /**
      * <p>The CA certificate identifier.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The CA certificate identifier.</p>
      */
-    inline RegisterCACertificateResult& WithCertificateId(Aws::String&& value) { SetCertificateId(value); return *this;}
+    inline RegisterCACertificateResult& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
 
     /**
      * <p>The CA certificate identifier.</p>

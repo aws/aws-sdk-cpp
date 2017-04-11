@@ -17,6 +17,7 @@
 #include <aws/swf/model/WorkflowExecution.h>
 #include <aws/swf/model/WorkflowType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The child workflow execution that was canceled.</p>
      */
-    inline void SetWorkflowExecution(WorkflowExecution&& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = value; }
+    inline void SetWorkflowExecution(WorkflowExecution&& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = std::move(value); }
 
     /**
      * <p>The child workflow execution that was canceled.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The child workflow execution that was canceled.</p>
      */
-    inline ChildWorkflowExecutionCanceledEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(value); return *this;}
+    inline ChildWorkflowExecutionCanceledEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(std::move(value)); return *this;}
 
     /**
      * <p>The type of the child workflow execution.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The type of the child workflow execution.</p>
      */
-    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
+    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::move(value); }
 
     /**
      * <p>The type of the child workflow execution.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The type of the child workflow execution.</p>
      */
-    inline ChildWorkflowExecutionCanceledEventAttributes& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(value); return *this;}
+    inline ChildWorkflowExecutionCanceledEventAttributes& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
 
     /**
      * <p>Details of the cancellation (if provided).</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>Details of the cancellation (if provided).</p>
      */
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = value; }
+    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
      * <p>Details of the cancellation (if provided).</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>Details of the cancellation (if provided).</p>
      */
-    inline ChildWorkflowExecutionCanceledEventAttributes& WithDetails(Aws::String&& value) { SetDetails(value); return *this;}
+    inline ChildWorkflowExecutionCanceledEventAttributes& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
      * <p>Details of the cancellation (if provided).</p>

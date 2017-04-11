@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/email/model/ResponseMetadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>A list of email addresses that have been verified.</p>
      */
-    inline void SetVerifiedEmailAddresses(Aws::Vector<Aws::String>&& value) { m_verifiedEmailAddresses = value; }
+    inline void SetVerifiedEmailAddresses(Aws::Vector<Aws::String>&& value) { m_verifiedEmailAddresses = std::move(value); }
 
     /**
      * <p>A list of email addresses that have been verified.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>A list of email addresses that have been verified.</p>
      */
-    inline ListVerifiedEmailAddressesResult& WithVerifiedEmailAddresses(Aws::Vector<Aws::String>&& value) { SetVerifiedEmailAddresses(value); return *this;}
+    inline ListVerifiedEmailAddressesResult& WithVerifiedEmailAddresses(Aws::Vector<Aws::String>&& value) { SetVerifiedEmailAddresses(std::move(value)); return *this;}
 
     /**
      * <p>A list of email addresses that have been verified.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>A list of email addresses that have been verified.</p>
      */
-    inline ListVerifiedEmailAddressesResult& AddVerifiedEmailAddresses(Aws::String&& value) { m_verifiedEmailAddresses.push_back(value); return *this; }
+    inline ListVerifiedEmailAddressesResult& AddVerifiedEmailAddresses(Aws::String&& value) { m_verifiedEmailAddresses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of email addresses that have been verified.</p>
@@ -94,13 +95,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListVerifiedEmailAddressesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListVerifiedEmailAddressesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListVerifiedEmailAddressesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_verifiedEmailAddresses;

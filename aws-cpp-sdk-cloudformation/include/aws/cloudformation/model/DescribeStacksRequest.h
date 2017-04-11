@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
      * is no default value.</p>
      */
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
+    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
      * <p>The name or the unique stack ID that is associated with the stack, which are
@@ -92,7 +93,7 @@ namespace Model
      * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
      * is no default value.</p>
      */
-    inline DescribeStacksRequest& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
+    inline DescribeStacksRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name or the unique stack ID that is associated with the stack, which are
@@ -119,7 +120,7 @@ namespace Model
      * <p>A string that identifies the next page of stacks that you want to
      * retrieve.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>A string that identifies the next page of stacks that you want to
@@ -137,7 +138,7 @@ namespace Model
      * <p>A string that identifies the next page of stacks that you want to
      * retrieve.</p>
      */
-    inline DescribeStacksRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeStacksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A string that identifies the next page of stacks that you want to

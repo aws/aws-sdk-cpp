@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iam/model/ContextKeyTypeEnum.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * <p>The full name of a condition context key, including the service prefix. For
      * example, <code>aws:SourceIp</code> or <code>s3:VersionId</code>.</p>
      */
-    inline void SetContextKeyName(Aws::String&& value) { m_contextKeyNameHasBeenSet = true; m_contextKeyName = value; }
+    inline void SetContextKeyName(Aws::String&& value) { m_contextKeyNameHasBeenSet = true; m_contextKeyName = std::move(value); }
 
     /**
      * <p>The full name of a condition context key, including the service prefix. For
@@ -87,7 +88,7 @@ namespace Model
      * <p>The full name of a condition context key, including the service prefix. For
      * example, <code>aws:SourceIp</code> or <code>s3:VersionId</code>.</p>
      */
-    inline ContextEntry& WithContextKeyName(Aws::String&& value) { SetContextKeyName(value); return *this;}
+    inline ContextEntry& WithContextKeyName(Aws::String&& value) { SetContextKeyName(std::move(value)); return *this;}
 
     /**
      * <p>The full name of a condition context key, including the service prefix. For
@@ -114,7 +115,7 @@ namespace Model
      * to provide to the simulation for use when the key is referenced by a
      * <code>Condition</code> element in an input policy.</p>
      */
-    inline void SetContextKeyValues(Aws::Vector<Aws::String>&& value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues = value; }
+    inline void SetContextKeyValues(Aws::Vector<Aws::String>&& value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues = std::move(value); }
 
     /**
      * <p>The value (or values, if the condition context key supports multiple values)
@@ -128,7 +129,7 @@ namespace Model
      * to provide to the simulation for use when the key is referenced by a
      * <code>Condition</code> element in an input policy.</p>
      */
-    inline ContextEntry& WithContextKeyValues(Aws::Vector<Aws::String>&& value) { SetContextKeyValues(value); return *this;}
+    inline ContextEntry& WithContextKeyValues(Aws::Vector<Aws::String>&& value) { SetContextKeyValues(std::move(value)); return *this;}
 
     /**
      * <p>The value (or values, if the condition context key supports multiple values)
@@ -142,7 +143,7 @@ namespace Model
      * to provide to the simulation for use when the key is referenced by a
      * <code>Condition</code> element in an input policy.</p>
      */
-    inline ContextEntry& AddContextKeyValues(Aws::String&& value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues.push_back(value); return *this; }
+    inline ContextEntry& AddContextKeyValues(Aws::String&& value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The value (or values, if the condition context key supports multiple values)
@@ -167,7 +168,7 @@ namespace Model
      * <p>The data type of the value (or values) specified in the
      * <code>ContextKeyValues</code> parameter.</p>
      */
-    inline void SetContextKeyType(ContextKeyTypeEnum&& value) { m_contextKeyTypeHasBeenSet = true; m_contextKeyType = value; }
+    inline void SetContextKeyType(ContextKeyTypeEnum&& value) { m_contextKeyTypeHasBeenSet = true; m_contextKeyType = std::move(value); }
 
     /**
      * <p>The data type of the value (or values) specified in the
@@ -179,7 +180,7 @@ namespace Model
      * <p>The data type of the value (or values) specified in the
      * <code>ContextKeyValues</code> parameter.</p>
      */
-    inline ContextEntry& WithContextKeyType(ContextKeyTypeEnum&& value) { SetContextKeyType(value); return *this;}
+    inline ContextEntry& WithContextKeyType(ContextKeyTypeEnum&& value) { SetContextKeyType(std::move(value)); return *this;}
 
   private:
     Aws::String m_contextKeyName;

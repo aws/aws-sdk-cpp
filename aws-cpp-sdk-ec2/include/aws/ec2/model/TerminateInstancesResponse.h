@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/InstanceStateChange.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Information about one or more terminated instances.</p>
      */
-    inline void SetTerminatingInstances(Aws::Vector<InstanceStateChange>&& value) { m_terminatingInstances = value; }
+    inline void SetTerminatingInstances(Aws::Vector<InstanceStateChange>&& value) { m_terminatingInstances = std::move(value); }
 
     /**
      * <p>Information about one or more terminated instances.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Information about one or more terminated instances.</p>
      */
-    inline TerminateInstancesResponse& WithTerminatingInstances(Aws::Vector<InstanceStateChange>&& value) { SetTerminatingInstances(value); return *this;}
+    inline TerminateInstancesResponse& WithTerminatingInstances(Aws::Vector<InstanceStateChange>&& value) { SetTerminatingInstances(std::move(value)); return *this;}
 
     /**
      * <p>Information about one or more terminated instances.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>Information about one or more terminated instances.</p>
      */
-    inline TerminateInstancesResponse& AddTerminatingInstances(InstanceStateChange&& value) { m_terminatingInstances.push_back(value); return *this; }
+    inline TerminateInstancesResponse& AddTerminatingInstances(InstanceStateChange&& value) { m_terminatingInstances.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -88,13 +89,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline TerminateInstancesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline TerminateInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline TerminateInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<InstanceStateChange> m_terminatingInstances;

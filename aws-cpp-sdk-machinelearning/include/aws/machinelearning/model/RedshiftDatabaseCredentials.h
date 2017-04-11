@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
+    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
@@ -60,7 +61,7 @@ namespace Model
     inline RedshiftDatabaseCredentials& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     
-    inline RedshiftDatabaseCredentials& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
+    inline RedshiftDatabaseCredentials& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     
     inline RedshiftDatabaseCredentials& WithUsername(const char* value) { SetUsername(value); return *this;}
@@ -72,7 +73,7 @@ namespace Model
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = value; }
+    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
     
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
@@ -81,7 +82,7 @@ namespace Model
     inline RedshiftDatabaseCredentials& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
     
-    inline RedshiftDatabaseCredentials& WithPassword(Aws::String&& value) { SetPassword(value); return *this;}
+    inline RedshiftDatabaseCredentials& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     
     inline RedshiftDatabaseCredentials& WithPassword(const char* value) { SetPassword(value); return *this;}

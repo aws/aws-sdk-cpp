@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/machinelearning/model/EntityStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * should be identical to the value of the <code>BatchPredictionID</code> in the
      * request.</p>
      */
-    inline void SetBatchPredictionId(Aws::String&& value) { m_batchPredictionId = value; }
+    inline void SetBatchPredictionId(Aws::String&& value) { m_batchPredictionId = std::move(value); }
 
     /**
      * <p>An ID assigned to the <code>BatchPrediction</code> at creation. This value
@@ -87,7 +88,7 @@ namespace Model
      * should be identical to the value of the <code>BatchPredictionID</code> in the
      * request.</p>
      */
-    inline GetBatchPredictionResult& WithBatchPredictionId(Aws::String&& value) { SetBatchPredictionId(value); return *this;}
+    inline GetBatchPredictionResult& WithBatchPredictionId(Aws::String&& value) { SetBatchPredictionId(std::move(value)); return *this;}
 
     /**
      * <p>An ID assigned to the <code>BatchPrediction</code> at creation. This value
@@ -112,7 +113,7 @@ namespace Model
      * <p>The ID of the <code>MLModel</code> that generated predictions for the
      * <code>BatchPrediction</code> request.</p>
      */
-    inline void SetMLModelId(Aws::String&& value) { m_mLModelId = value; }
+    inline void SetMLModelId(Aws::String&& value) { m_mLModelId = std::move(value); }
 
     /**
      * <p>The ID of the <code>MLModel</code> that generated predictions for the
@@ -130,7 +131,7 @@ namespace Model
      * <p>The ID of the <code>MLModel</code> that generated predictions for the
      * <code>BatchPrediction</code> request.</p>
      */
-    inline GetBatchPredictionResult& WithMLModelId(Aws::String&& value) { SetMLModelId(value); return *this;}
+    inline GetBatchPredictionResult& WithMLModelId(Aws::String&& value) { SetMLModelId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the <code>MLModel</code> that generated predictions for the
@@ -154,7 +155,7 @@ namespace Model
      * <p>The ID of the <code>DataSource</code> that was used to create the
      * <code>BatchPrediction</code>. </p>
      */
-    inline void SetBatchPredictionDataSourceId(Aws::String&& value) { m_batchPredictionDataSourceId = value; }
+    inline void SetBatchPredictionDataSourceId(Aws::String&& value) { m_batchPredictionDataSourceId = std::move(value); }
 
     /**
      * <p>The ID of the <code>DataSource</code> that was used to create the
@@ -172,7 +173,7 @@ namespace Model
      * <p>The ID of the <code>DataSource</code> that was used to create the
      * <code>BatchPrediction</code>. </p>
      */
-    inline GetBatchPredictionResult& WithBatchPredictionDataSourceId(Aws::String&& value) { SetBatchPredictionDataSourceId(value); return *this;}
+    inline GetBatchPredictionResult& WithBatchPredictionDataSourceId(Aws::String&& value) { SetBatchPredictionDataSourceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the <code>DataSource</code> that was used to create the
@@ -196,7 +197,7 @@ namespace Model
      * <p>The location of the data file or directory in Amazon Simple Storage Service
      * (Amazon S3).</p>
      */
-    inline void SetInputDataLocationS3(Aws::String&& value) { m_inputDataLocationS3 = value; }
+    inline void SetInputDataLocationS3(Aws::String&& value) { m_inputDataLocationS3 = std::move(value); }
 
     /**
      * <p>The location of the data file or directory in Amazon Simple Storage Service
@@ -214,7 +215,7 @@ namespace Model
      * <p>The location of the data file or directory in Amazon Simple Storage Service
      * (Amazon S3).</p>
      */
-    inline GetBatchPredictionResult& WithInputDataLocationS3(Aws::String&& value) { SetInputDataLocationS3(value); return *this;}
+    inline GetBatchPredictionResult& WithInputDataLocationS3(Aws::String&& value) { SetInputDataLocationS3(std::move(value)); return *this;}
 
     /**
      * <p>The location of the data file or directory in Amazon Simple Storage Service
@@ -241,7 +242,7 @@ namespace Model
      * account type can be either an AWS root account or an AWS Identity and Access
      * Management (IAM) user account.</p>
      */
-    inline void SetCreatedByIamUser(Aws::String&& value) { m_createdByIamUser = value; }
+    inline void SetCreatedByIamUser(Aws::String&& value) { m_createdByIamUser = std::move(value); }
 
     /**
      * <p>The AWS user account that invoked the <code>BatchPrediction</code>. The
@@ -262,7 +263,7 @@ namespace Model
      * account type can be either an AWS root account or an AWS Identity and Access
      * Management (IAM) user account.</p>
      */
-    inline GetBatchPredictionResult& WithCreatedByIamUser(Aws::String&& value) { SetCreatedByIamUser(value); return *this;}
+    inline GetBatchPredictionResult& WithCreatedByIamUser(Aws::String&& value) { SetCreatedByIamUser(std::move(value)); return *this;}
 
     /**
      * <p>The AWS user account that invoked the <code>BatchPrediction</code>. The
@@ -287,7 +288,7 @@ namespace Model
      * <p>The time when the <code>BatchPrediction</code> was created. The time is
      * expressed in epoch time.</p>
      */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = value; }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
 
     /**
      * <p>The time when the <code>BatchPrediction</code> was created. The time is
@@ -299,7 +300,7 @@ namespace Model
      * <p>The time when the <code>BatchPrediction</code> was created. The time is
      * expressed in epoch time.</p>
      */
-    inline GetBatchPredictionResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
+    inline GetBatchPredictionResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
      * <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is
@@ -317,7 +318,7 @@ namespace Model
      * <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is
      * expressed in epoch time.</p>
      */
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = value; }
+    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = std::move(value); }
 
     /**
      * <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is
@@ -329,7 +330,7 @@ namespace Model
      * <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is
      * expressed in epoch time.</p>
      */
-    inline GetBatchPredictionResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(value); return *this;}
+    inline GetBatchPredictionResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
@@ -344,7 +345,7 @@ namespace Model
     /**
      * <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_name = value; }
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
      * <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
@@ -359,7 +360,7 @@ namespace Model
     /**
      * <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
      */
-    inline GetBatchPredictionResult& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline GetBatchPredictionResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
@@ -400,7 +401,7 @@ namespace Model
      * prediction process completed successfully.</li> <li> <code>DELETED</code> - The
      * <code>BatchPrediction</code> is marked as deleted. It is not usable.</li> </ul>
      */
-    inline void SetStatus(EntityStatus&& value) { m_status = value; }
+    inline void SetStatus(EntityStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The status of the <code>BatchPrediction</code>, which can be one of the
@@ -424,7 +425,7 @@ namespace Model
      * prediction process completed successfully.</li> <li> <code>DELETED</code> - The
      * <code>BatchPrediction</code> is marked as deleted. It is not usable.</li> </ul>
      */
-    inline GetBatchPredictionResult& WithStatus(EntityStatus&& value) { SetStatus(value); return *this;}
+    inline GetBatchPredictionResult& WithStatus(EntityStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The location of an Amazon S3 bucket or directory to receive the operation
@@ -442,7 +443,7 @@ namespace Model
      * <p>The location of an Amazon S3 bucket or directory to receive the operation
      * results.</p>
      */
-    inline void SetOutputUri(Aws::String&& value) { m_outputUri = value; }
+    inline void SetOutputUri(Aws::String&& value) { m_outputUri = std::move(value); }
 
     /**
      * <p>The location of an Amazon S3 bucket or directory to receive the operation
@@ -460,7 +461,7 @@ namespace Model
      * <p>The location of an Amazon S3 bucket or directory to receive the operation
      * results.</p>
      */
-    inline GetBatchPredictionResult& WithOutputUri(Aws::String&& value) { SetOutputUri(value); return *this;}
+    inline GetBatchPredictionResult& WithOutputUri(Aws::String&& value) { SetOutputUri(std::move(value)); return *this;}
 
     /**
      * <p>The location of an Amazon S3 bucket or directory to receive the operation
@@ -484,7 +485,7 @@ namespace Model
      * <p>A link to the file that contains logs of the
      * <code>CreateBatchPrediction</code> operation.</p>
      */
-    inline void SetLogUri(Aws::String&& value) { m_logUri = value; }
+    inline void SetLogUri(Aws::String&& value) { m_logUri = std::move(value); }
 
     /**
      * <p>A link to the file that contains logs of the
@@ -502,7 +503,7 @@ namespace Model
      * <p>A link to the file that contains logs of the
      * <code>CreateBatchPrediction</code> operation.</p>
      */
-    inline GetBatchPredictionResult& WithLogUri(Aws::String&& value) { SetLogUri(value); return *this;}
+    inline GetBatchPredictionResult& WithLogUri(Aws::String&& value) { SetLogUri(std::move(value)); return *this;}
 
     /**
      * <p>A link to the file that contains logs of the
@@ -526,7 +527,7 @@ namespace Model
      * <p>A description of the most recent details about processing the batch
      * prediction request.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
 
     /**
      * <p>A description of the most recent details about processing the batch
@@ -544,7 +545,7 @@ namespace Model
      * <p>A description of the most recent details about processing the batch
      * prediction request.</p>
      */
-    inline GetBatchPredictionResult& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline GetBatchPredictionResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>A description of the most recent details about processing the batch
@@ -598,7 +599,7 @@ namespace Model
      * <code>FinishedAt</code> is only available when the <code>BatchPrediction</code>
      * is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
      */
-    inline void SetFinishedAt(Aws::Utils::DateTime&& value) { m_finishedAt = value; }
+    inline void SetFinishedAt(Aws::Utils::DateTime&& value) { m_finishedAt = std::move(value); }
 
     /**
      * <p>The epoch time when Amazon Machine Learning marked the
@@ -614,7 +615,7 @@ namespace Model
      * <code>FinishedAt</code> is only available when the <code>BatchPrediction</code>
      * is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
      */
-    inline GetBatchPredictionResult& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(value); return *this;}
+    inline GetBatchPredictionResult& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(std::move(value)); return *this;}
 
     /**
      * <p>The epoch time when Amazon Machine Learning marked the
@@ -638,7 +639,7 @@ namespace Model
      * isn't available if the <code>BatchPrediction</code> is in the
      * <code>PENDING</code> state.</p>
      */
-    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAt = value; }
+    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAt = std::move(value); }
 
     /**
      * <p>The epoch time when Amazon Machine Learning marked the
@@ -654,7 +655,7 @@ namespace Model
      * isn't available if the <code>BatchPrediction</code> is in the
      * <code>PENDING</code> state.</p>
      */
-    inline GetBatchPredictionResult& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(value); return *this;}
+    inline GetBatchPredictionResult& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
 
     /**
      * <p>The number of total records that Amazon Machine Learning saw while processing

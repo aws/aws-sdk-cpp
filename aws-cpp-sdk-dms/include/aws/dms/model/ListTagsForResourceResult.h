@@ -16,6 +16,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>A list of tags for the resource.</p>
      */
-    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagList = value; }
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagList = std::move(value); }
 
     /**
      * <p>A list of tags for the resource.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>A list of tags for the resource.</p>
      */
-    inline ListTagsForResourceResult& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(value); return *this;}
+    inline ListTagsForResourceResult& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
 
     /**
      * <p>A list of tags for the resource.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>A list of tags for the resource.</p>
      */
-    inline ListTagsForResourceResult& AddTagList(Tag&& value) { m_tagList.push_back(value); return *this; }
+    inline ListTagsForResourceResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Tag> m_tagList;

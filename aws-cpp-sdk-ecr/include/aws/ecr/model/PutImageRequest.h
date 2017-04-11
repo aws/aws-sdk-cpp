@@ -16,6 +16,7 @@
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/ecr/ECRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * in which to put the image. If you do not specify a registry, the default
      * registry is assumed.</p>
      */
-    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
+    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
@@ -75,7 +76,7 @@ namespace Model
      * in which to put the image. If you do not specify a registry, the default
      * registry is assumed.</p>
      */
-    inline PutImageRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(value); return *this;}
+    inline PutImageRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The name of the repository in which to put the image.</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The name of the repository in which to put the image.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The name of the repository in which to put the image.</p>
      */
-    inline PutImageRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline PutImageRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the repository in which to put the image.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The image manifest corresponding to the image to be uploaded.</p>
      */
-    inline void SetImageManifest(Aws::String&& value) { m_imageManifestHasBeenSet = true; m_imageManifest = value; }
+    inline void SetImageManifest(Aws::String&& value) { m_imageManifestHasBeenSet = true; m_imageManifest = std::move(value); }
 
     /**
      * <p>The image manifest corresponding to the image to be uploaded.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The image manifest corresponding to the image to be uploaded.</p>
      */
-    inline PutImageRequest& WithImageManifest(Aws::String&& value) { SetImageManifest(value); return *this;}
+    inline PutImageRequest& WithImageManifest(Aws::String&& value) { SetImageManifest(std::move(value)); return *this;}
 
     /**
      * <p>The image manifest corresponding to the image to be uploaded.</p>
@@ -170,7 +171,7 @@ namespace Model
      * <p>The tag to associate with the image. This parameter is required for images
      * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
      */
-    inline void SetImageTag(Aws::String&& value) { m_imageTagHasBeenSet = true; m_imageTag = value; }
+    inline void SetImageTag(Aws::String&& value) { m_imageTagHasBeenSet = true; m_imageTag = std::move(value); }
 
     /**
      * <p>The tag to associate with the image. This parameter is required for images
@@ -188,7 +189,7 @@ namespace Model
      * <p>The tag to associate with the image. This parameter is required for images
      * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
      */
-    inline PutImageRequest& WithImageTag(Aws::String&& value) { SetImageTag(value); return *this;}
+    inline PutImageRequest& WithImageTag(Aws::String&& value) { SetImageTag(std::move(value)); return *this;}
 
     /**
      * <p>The tag to associate with the image. This parameter is required for images

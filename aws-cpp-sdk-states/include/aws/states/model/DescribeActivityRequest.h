@@ -16,6 +16,7 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/states/SFNRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
      */
-    inline void SetActivityArn(Aws::String&& value) { m_activityArnHasBeenSet = true; m_activityArn = value; }
+    inline void SetActivityArn(Aws::String&& value) { m_activityArnHasBeenSet = true; m_activityArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
      */
-    inline DescribeActivityRequest& WithActivityArn(Aws::String&& value) { SetActivityArn(value); return *this;}
+    inline DescribeActivityRequest& WithActivityArn(Aws::String&& value) { SetActivityArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the activity to describe.</p>

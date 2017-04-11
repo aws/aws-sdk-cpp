@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The certificate signing request (CSR).</p>
      */
-    inline void SetCertificateSigningRequest(Aws::String&& value) { m_certificateSigningRequestHasBeenSet = true; m_certificateSigningRequest = value; }
+    inline void SetCertificateSigningRequest(Aws::String&& value) { m_certificateSigningRequestHasBeenSet = true; m_certificateSigningRequest = std::move(value); }
 
     /**
      * <p>The certificate signing request (CSR).</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The certificate signing request (CSR).</p>
      */
-    inline CreateCertificateFromCsrRequest& WithCertificateSigningRequest(Aws::String&& value) { SetCertificateSigningRequest(value); return *this;}
+    inline CreateCertificateFromCsrRequest& WithCertificateSigningRequest(Aws::String&& value) { SetCertificateSigningRequest(std::move(value)); return *this;}
 
     /**
      * <p>The certificate signing request (CSR).</p>

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/InstanceSnapshot.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * get instance snapshots request.</p>
      */
-    inline void SetInstanceSnapshots(Aws::Vector<InstanceSnapshot>&& value) { m_instanceSnapshots = value; }
+    inline void SetInstanceSnapshots(Aws::Vector<InstanceSnapshot>&& value) { m_instanceSnapshots = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -69,7 +70,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * get instance snapshots request.</p>
      */
-    inline GetInstanceSnapshotsResult& WithInstanceSnapshots(Aws::Vector<InstanceSnapshot>&& value) { SetInstanceSnapshots(value); return *this;}
+    inline GetInstanceSnapshotsResult& WithInstanceSnapshots(Aws::Vector<InstanceSnapshot>&& value) { SetInstanceSnapshots(std::move(value)); return *this;}
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -81,7 +82,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * get instance snapshots request.</p>
      */
-    inline GetInstanceSnapshotsResult& AddInstanceSnapshots(InstanceSnapshot&& value) { m_instanceSnapshots.push_back(value); return *this; }
+    inline GetInstanceSnapshotsResult& AddInstanceSnapshots(InstanceSnapshot&& value) { m_instanceSnapshots.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A token used for advancing to the next page of results from your get instance
@@ -99,7 +100,7 @@ namespace Model
      * <p>A token used for advancing to the next page of results from your get instance
      * snapshots request.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>A token used for advancing to the next page of results from your get instance
@@ -117,7 +118,7 @@ namespace Model
      * <p>A token used for advancing to the next page of results from your get instance
      * snapshots request.</p>
      */
-    inline GetInstanceSnapshotsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline GetInstanceSnapshotsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>A token used for advancing to the next page of results from your get instance

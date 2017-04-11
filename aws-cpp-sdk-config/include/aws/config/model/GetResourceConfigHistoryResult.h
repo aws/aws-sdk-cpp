@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/config/model/ConfigurationItem.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>A list that contains the configuration history of one or more resources.</p>
      */
-    inline void SetConfigurationItems(Aws::Vector<ConfigurationItem>&& value) { m_configurationItems = value; }
+    inline void SetConfigurationItems(Aws::Vector<ConfigurationItem>&& value) { m_configurationItems = std::move(value); }
 
     /**
      * <p>A list that contains the configuration history of one or more resources.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>A list that contains the configuration history of one or more resources.</p>
      */
-    inline GetResourceConfigHistoryResult& WithConfigurationItems(Aws::Vector<ConfigurationItem>&& value) { SetConfigurationItems(value); return *this;}
+    inline GetResourceConfigHistoryResult& WithConfigurationItems(Aws::Vector<ConfigurationItem>&& value) { SetConfigurationItems(std::move(value)); return *this;}
 
     /**
      * <p>A list that contains the configuration history of one or more resources.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>A list that contains the configuration history of one or more resources.</p>
      */
-    inline GetResourceConfigHistoryResult& AddConfigurationItems(ConfigurationItem&& value) { m_configurationItems.push_back(value); return *this; }
+    inline GetResourceConfigHistoryResult& AddConfigurationItems(ConfigurationItem&& value) { m_configurationItems.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The string that you use in a subsequent request to get the next page of
@@ -98,7 +99,7 @@ namespace Model
      * <p>The string that you use in a subsequent request to get the next page of
      * results in a paginated response.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The string that you use in a subsequent request to get the next page of
@@ -116,7 +117,7 @@ namespace Model
      * <p>The string that you use in a subsequent request to get the next page of
      * results in a paginated response.</p>
      */
-    inline GetResourceConfigHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline GetResourceConfigHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The string that you use in a subsequent request to get the next page of

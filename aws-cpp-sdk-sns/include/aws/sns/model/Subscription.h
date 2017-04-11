@@ -16,6 +16,7 @@
 #include <aws/sns/SNS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The subscription's ARN.</p>
      */
-    inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
+    inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = std::move(value); }
 
     /**
      * <p>The subscription's ARN.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The subscription's ARN.</p>
      */
-    inline Subscription& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(value); return *this;}
+    inline Subscription& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(std::move(value)); return *this;}
 
     /**
      * <p>The subscription's ARN.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The subscription's owner.</p>
      */
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = value; }
+    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
      * <p>The subscription's owner.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The subscription's owner.</p>
      */
-    inline Subscription& WithOwner(Aws::String&& value) { SetOwner(value); return *this;}
+    inline Subscription& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
      * <p>The subscription's owner.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The subscription's protocol.</p>
      */
-    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The subscription's protocol.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>The subscription's protocol.</p>
      */
-    inline Subscription& WithProtocol(Aws::String&& value) { SetProtocol(value); return *this;}
+    inline Subscription& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
      * <p>The subscription's protocol.</p>
@@ -165,7 +166,7 @@ namespace Model
     /**
      * <p>The subscription's endpoint (format depends on the protocol).</p>
      */
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
+    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
      * <p>The subscription's endpoint (format depends on the protocol).</p>
@@ -180,7 +181,7 @@ namespace Model
     /**
      * <p>The subscription's endpoint (format depends on the protocol).</p>
      */
-    inline Subscription& WithEndpoint(Aws::String&& value) { SetEndpoint(value); return *this;}
+    inline Subscription& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
 
     /**
      * <p>The subscription's endpoint (format depends on the protocol).</p>
@@ -200,7 +201,7 @@ namespace Model
     /**
      * <p>The ARN of the subscription's topic.</p>
      */
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
 
     /**
      * <p>The ARN of the subscription's topic.</p>
@@ -215,7 +216,7 @@ namespace Model
     /**
      * <p>The ARN of the subscription's topic.</p>
      */
-    inline Subscription& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
+    inline Subscription& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the subscription's topic.</p>

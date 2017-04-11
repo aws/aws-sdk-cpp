@@ -19,6 +19,7 @@
 #include <aws/gamelift/model/ScalingAdjustmentType.h>
 #include <aws/gamelift/model/ComparisonOperatorType.h>
 #include <aws/gamelift/model/MetricName.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * <p>Unique identifier for a fleet that is associated with this scaling
      * policy.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet that is associated with this scaling
@@ -83,7 +84,7 @@ namespace Model
      * <p>Unique identifier for a fleet that is associated with this scaling
      * policy.</p>
      */
-    inline ScalingPolicy& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline ScalingPolicy& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet that is associated with this scaling
@@ -107,7 +108,7 @@ namespace Model
      * <p>Descriptive label that is associated with a scaling policy. Policy names do
      * not need to be unique.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Descriptive label that is associated with a scaling policy. Policy names do
@@ -125,7 +126,7 @@ namespace Model
      * <p>Descriptive label that is associated with a scaling policy. Policy names do
      * not need to be unique.</p>
      */
-    inline ScalingPolicy& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ScalingPolicy& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with a scaling policy. Policy names do
@@ -173,7 +174,7 @@ namespace Model
      * deleted.</p> </li> <li> <p> <b>ERROR</b> – An error occurred in creating the
      * policy. It should be removed and recreated.</p> </li> </ul>
      */
-    inline void SetStatus(ScalingStatusType&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ScalingStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Current status of the scaling policy. The scaling policy is only in force
@@ -201,7 +202,7 @@ namespace Model
      * deleted.</p> </li> <li> <p> <b>ERROR</b> – An error occurred in creating the
      * policy. It should be removed and recreated.</p> </li> </ul>
      */
-    inline ScalingPolicy& WithStatus(ScalingStatusType&& value) { SetStatus(value); return *this;}
+    inline ScalingPolicy& WithStatus(ScalingStatusType&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
@@ -252,7 +253,7 @@ namespace Model
      * the current instance count by the scaling adjustment, read as a percentage.
      * Positive values scale up while negative values scale down.</p> </li> </ul>
      */
-    inline void SetScalingAdjustmentType(ScalingAdjustmentType&& value) { m_scalingAdjustmentTypeHasBeenSet = true; m_scalingAdjustmentType = value; }
+    inline void SetScalingAdjustmentType(ScalingAdjustmentType&& value) { m_scalingAdjustmentTypeHasBeenSet = true; m_scalingAdjustmentType = std::move(value); }
 
     /**
      * <p>Type of adjustment to make to a fleet's instance count (see
@@ -276,7 +277,7 @@ namespace Model
      * the current instance count by the scaling adjustment, read as a percentage.
      * Positive values scale up while negative values scale down.</p> </li> </ul>
      */
-    inline ScalingPolicy& WithScalingAdjustmentType(ScalingAdjustmentType&& value) { SetScalingAdjustmentType(value); return *this;}
+    inline ScalingPolicy& WithScalingAdjustmentType(ScalingAdjustmentType&& value) { SetScalingAdjustmentType(std::move(value)); return *this;}
 
     /**
      * <p>Comparison operator to use when measuring a metric against the threshold
@@ -294,7 +295,7 @@ namespace Model
      * <p>Comparison operator to use when measuring a metric against the threshold
      * value.</p>
      */
-    inline void SetComparisonOperator(ComparisonOperatorType&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline void SetComparisonOperator(ComparisonOperatorType&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
 
     /**
      * <p>Comparison operator to use when measuring a metric against the threshold
@@ -306,7 +307,7 @@ namespace Model
      * <p>Comparison operator to use when measuring a metric against the threshold
      * value.</p>
      */
-    inline ScalingPolicy& WithComparisonOperator(ComparisonOperatorType&& value) { SetComparisonOperator(value); return *this;}
+    inline ScalingPolicy& WithComparisonOperator(ComparisonOperatorType&& value) { SetComparisonOperator(std::move(value)); return *this;}
 
     /**
      * <p>Metric value used to trigger a scaling event.</p>
@@ -402,7 +403,7 @@ namespace Model
      * <b>IdleInstances</b> – number of instances not currently running a game
      * session.</p> </li> </ul>
      */
-    inline void SetMetricName(MetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline void SetMetricName(MetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
      * <p>Name of the Amazon GameLift-defined metric that is used to trigger an
@@ -444,7 +445,7 @@ namespace Model
      * <b>IdleInstances</b> – number of instances not currently running a game
      * session.</p> </li> </ul>
      */
-    inline ScalingPolicy& WithMetricName(MetricName&& value) { SetMetricName(value); return *this;}
+    inline ScalingPolicy& WithMetricName(MetricName&& value) { SetMetricName(std::move(value)); return *this;}
 
   private:
     Aws::String m_fleetId;

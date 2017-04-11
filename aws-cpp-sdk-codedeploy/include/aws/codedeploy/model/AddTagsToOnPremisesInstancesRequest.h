@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/Tag.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * values are both required. Keys cannot be null or empty strings. Value-only tags
      * are not allowed.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and
@@ -74,7 +75,7 @@ namespace Model
      * values are both required. Keys cannot be null or empty strings. Value-only tags
      * are not allowed.</p>
      */
-    inline AddTagsToOnPremisesInstancesRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline AddTagsToOnPremisesInstancesRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and
@@ -88,7 +89,7 @@ namespace Model
      * values are both required. Keys cannot be null or empty strings. Value-only tags
      * are not allowed.</p>
      */
-    inline AddTagsToOnPremisesInstancesRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline AddTagsToOnPremisesInstancesRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of the on-premises instances to which to add tags.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The names of the on-premises instances to which to add tags.</p>
      */
-    inline void SetInstanceNames(Aws::Vector<Aws::String>&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = value; }
+    inline void SetInstanceNames(Aws::Vector<Aws::String>&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = std::move(value); }
 
     /**
      * <p>The names of the on-premises instances to which to add tags.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The names of the on-premises instances to which to add tags.</p>
      */
-    inline AddTagsToOnPremisesInstancesRequest& WithInstanceNames(Aws::Vector<Aws::String>&& value) { SetInstanceNames(value); return *this;}
+    inline AddTagsToOnPremisesInstancesRequest& WithInstanceNames(Aws::Vector<Aws::String>&& value) { SetInstanceNames(std::move(value)); return *this;}
 
     /**
      * <p>The names of the on-premises instances to which to add tags.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The names of the on-premises instances to which to add tags.</p>
      */
-    inline AddTagsToOnPremisesInstancesRequest& AddInstanceNames(Aws::String&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
+    inline AddTagsToOnPremisesInstancesRequest& AddInstanceNames(Aws::String&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of the on-premises instances to which to add tags.</p>

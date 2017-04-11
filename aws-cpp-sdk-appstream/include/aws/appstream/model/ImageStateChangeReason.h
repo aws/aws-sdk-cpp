@@ -16,6 +16,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/model/ImageStateChangeReasonCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The state change reason code of the image.</p>
      */
-    inline void SetCode(ImageStateChangeReasonCode&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(ImageStateChangeReasonCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>The state change reason code of the image.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The state change reason code of the image.</p>
      */
-    inline ImageStateChangeReason& WithCode(ImageStateChangeReasonCode&& value) { SetCode(value); return *this;}
+    inline ImageStateChangeReason& WithCode(ImageStateChangeReasonCode&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>The state change reason message to the end user.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The state change reason message to the end user.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The state change reason message to the end user.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The state change reason message to the end user.</p>
      */
-    inline ImageStateChangeReason& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline ImageStateChangeReason& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The state change reason message to the end user.</p>

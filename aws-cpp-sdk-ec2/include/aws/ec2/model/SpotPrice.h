@@ -19,6 +19,7 @@
 #include <aws/ec2/model/RIProductDescription.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
      */
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
      */
-    inline SpotPrice& WithInstanceType(InstanceType&& value) { SetInstanceType(value); return *this;}
+    inline SpotPrice& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>A general description of the AMI.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>A general description of the AMI.</p>
      */
-    inline void SetProductDescription(RIProductDescription&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
+    inline void SetProductDescription(RIProductDescription&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = std::move(value); }
 
     /**
      * <p>A general description of the AMI.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>A general description of the AMI.</p>
      */
-    inline SpotPrice& WithProductDescription(RIProductDescription&& value) { SetProductDescription(value); return *this;}
+    inline SpotPrice& WithProductDescription(RIProductDescription&& value) { SetProductDescription(std::move(value)); return *this;}
 
     /**
      * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
      */
-    inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
+    inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::move(value); }
 
     /**
      * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
      */
-    inline SpotPrice& WithSpotPrice(Aws::String&& value) { SetSpotPrice(value); return *this;}
+    inline SpotPrice& WithSpotPrice(Aws::String&& value) { SetSpotPrice(std::move(value)); return *this;}
 
     /**
      * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
@@ -151,7 +152,7 @@ namespace Model
      * <p>The date and time the request was created, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
      * <p>The date and time the request was created, in UTC format (for example,
@@ -163,7 +164,7 @@ namespace Model
      * <p>The date and time the request was created, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline SpotPrice& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
+    inline SpotPrice& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone.</p>
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>The Availability Zone.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone.</p>
@@ -193,7 +194,7 @@ namespace Model
     /**
      * <p>The Availability Zone.</p>
      */
-    inline SpotPrice& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline SpotPrice& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone.</p>

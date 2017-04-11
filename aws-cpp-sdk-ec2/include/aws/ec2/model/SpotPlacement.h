@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Tenancy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * Availability Zones, separate them using commas; for example, "us-west-2a,
      * us-west-2b".</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone.</p> <p>[Spot fleet only] To specify multiple
@@ -87,7 +88,7 @@ namespace Model
      * Availability Zones, separate them using commas; for example, "us-west-2a,
      * us-west-2b".</p>
      */
-    inline SpotPlacement& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline SpotPlacement& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone.</p> <p>[Spot fleet only] To specify multiple
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The name of the placement group (for cluster instances).</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>The name of the placement group (for cluster instances).</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The name of the placement group (for cluster instances).</p>
      */
-    inline SpotPlacement& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
+    inline SpotPlacement& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the placement group (for cluster instances).</p>
@@ -150,7 +151,7 @@ namespace Model
      * instance with a tenancy of <code>dedicated</code> runs on single-tenant
      * hardware. The <code>host</code> tenancy is not supported for Spot instances.</p>
      */
-    inline void SetTenancy(Tenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
+    inline void SetTenancy(Tenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
 
     /**
      * <p>The tenancy of the instance (if the instance is running in a VPC). An
@@ -164,7 +165,7 @@ namespace Model
      * instance with a tenancy of <code>dedicated</code> runs on single-tenant
      * hardware. The <code>host</code> tenancy is not supported for Spot instances.</p>
      */
-    inline SpotPlacement& WithTenancy(Tenancy&& value) { SetTenancy(value); return *this;}
+    inline SpotPlacement& WithTenancy(Tenancy&& value) { SetTenancy(std::move(value)); return *this;}
 
   private:
     Aws::String m_availabilityZone;

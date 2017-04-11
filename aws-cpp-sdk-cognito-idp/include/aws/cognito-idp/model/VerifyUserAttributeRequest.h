@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Represents the access token of the request to verify user attributes.</p>
      */
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
+    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
      * <p>Represents the access token of the request to verify user attributes.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Represents the access token of the request to verify user attributes.</p>
      */
-    inline VerifyUserAttributeRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(value); return *this;}
+    inline VerifyUserAttributeRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
      * <p>Represents the access token of the request to verify user attributes.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The attribute name in the request to verify user attributes.</p>
      */
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
      * <p>The attribute name in the request to verify user attributes.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The attribute name in the request to verify user attributes.</p>
      */
-    inline VerifyUserAttributeRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
+    inline VerifyUserAttributeRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
      * <p>The attribute name in the request to verify user attributes.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The verification code in the request to verify user attributes.</p>
      */
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>The verification code in the request to verify user attributes.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The verification code in the request to verify user attributes.</p>
      */
-    inline VerifyUserAttributeRequest& WithCode(Aws::String&& value) { SetCode(value); return *this;}
+    inline VerifyUserAttributeRequest& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>The verification code in the request to verify user attributes.</p>

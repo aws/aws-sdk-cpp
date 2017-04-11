@@ -16,6 +16,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/AppStreamRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the fleet whose associated stacks are listed.</p>
      */
-    inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = value; }
+    inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = std::move(value); }
 
     /**
      * <p>The name of the fleet whose associated stacks are listed.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the fleet whose associated stacks are listed.</p>
      */
-    inline ListAssociatedStacksRequest& WithFleetName(Aws::String&& value) { SetFleetName(value); return *this;}
+    inline ListAssociatedStacksRequest& WithFleetName(Aws::String&& value) { SetFleetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the fleet whose associated stacks are listed.</p>
@@ -86,7 +87,7 @@ namespace Model
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If this value is null, it retrieves the first page.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
@@ -104,7 +105,7 @@ namespace Model
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If this value is null, it retrieves the first page.</p>
      */
-    inline ListAssociatedStacksRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListAssociatedStacksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this

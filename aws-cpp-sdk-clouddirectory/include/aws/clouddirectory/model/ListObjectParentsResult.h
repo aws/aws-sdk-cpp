@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>Parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
-    inline void SetParents(Aws::Map<Aws::String, Aws::String>&& value) { m_parents = value; }
+    inline void SetParents(Aws::Map<Aws::String, Aws::String>&& value) { m_parents = std::move(value); }
 
     /**
      * <p>Parent structure, which is a map with key as the
@@ -68,49 +69,49 @@ namespace Model
      * <p>Parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
-    inline ListObjectParentsResult& WithParents(Aws::Map<Aws::String, Aws::String>&& value) { SetParents(value); return *this;}
+    inline ListObjectParentsResult& WithParents(Aws::Map<Aws::String, Aws::String>&& value) { SetParents(std::move(value)); return *this;}
 
     /**
      * <p>Parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
-    inline ListObjectParentsResult& AddParents(const Aws::String& key, const Aws::String& value) { m_parents[key] = value; return *this; }
+    inline ListObjectParentsResult& AddParents(const Aws::String& key, const Aws::String& value) { m_parents.emplace(key, value); return *this; }
 
     /**
      * <p>Parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
-    inline ListObjectParentsResult& AddParents(Aws::String&& key, const Aws::String& value) { m_parents[key] = value; return *this; }
+    inline ListObjectParentsResult& AddParents(Aws::String&& key, const Aws::String& value) { m_parents.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
-    inline ListObjectParentsResult& AddParents(const Aws::String& key, Aws::String&& value) { m_parents[key] = value; return *this; }
+    inline ListObjectParentsResult& AddParents(const Aws::String& key, Aws::String&& value) { m_parents.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
-    inline ListObjectParentsResult& AddParents(Aws::String&& key, Aws::String&& value) { m_parents[key] = value; return *this; }
+    inline ListObjectParentsResult& AddParents(Aws::String&& key, Aws::String&& value) { m_parents.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
-    inline ListObjectParentsResult& AddParents(const char* key, Aws::String&& value) { m_parents[key] = value; return *this; }
+    inline ListObjectParentsResult& AddParents(const char* key, Aws::String&& value) { m_parents.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
-    inline ListObjectParentsResult& AddParents(Aws::String&& key, const char* value) { m_parents[key] = value; return *this; }
+    inline ListObjectParentsResult& AddParents(Aws::String&& key, const char* value) { m_parents.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
-    inline ListObjectParentsResult& AddParents(const char* key, const char* value) { m_parents[key] = value; return *this; }
+    inline ListObjectParentsResult& AddParents(const char* key, const char* value) { m_parents.emplace(key, value); return *this; }
 
     /**
      * <p>The pagination token.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline ListObjectParentsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListObjectParentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>

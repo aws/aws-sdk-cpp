@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>Unique identifier for a fleet alias. Specify the alias you want to
      * delete.</p>
      */
-    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
+    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet alias. Specify the alias you want to
@@ -72,7 +73,7 @@ namespace Model
      * <p>Unique identifier for a fleet alias. Specify the alias you want to
      * delete.</p>
      */
-    inline DeleteAliasRequest& WithAliasId(Aws::String&& value) { SetAliasId(value); return *this;}
+    inline DeleteAliasRequest& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet alias. Specify the alias you want to

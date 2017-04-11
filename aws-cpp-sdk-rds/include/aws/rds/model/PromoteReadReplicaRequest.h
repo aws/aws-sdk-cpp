@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
-    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
+    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
@@ -98,7 +99,7 @@ namespace Model
      * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
-    inline PromoteReadReplicaRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(value); return *this;}
+    inline PromoteReadReplicaRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
@@ -177,7 +178,7 @@ namespace Model
      * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
      * </ul>
      */
-    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
+    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
      * <p> The daily time range during which automated backups are created if automated
@@ -222,7 +223,7 @@ namespace Model
      * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
      * </ul>
      */
-    inline PromoteReadReplicaRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(value); return *this;}
+    inline PromoteReadReplicaRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
      * <p> The daily time range during which automated backups are created if automated

@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/AttributeKey.h>
 #include <aws/clouddirectory/model/TypedAttributeValueRange.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The key of the attribute the attribute range covers.</p>
      */
-    inline void SetAttributeKey(AttributeKey&& value) { m_attributeKeyHasBeenSet = true; m_attributeKey = value; }
+    inline void SetAttributeKey(AttributeKey&& value) { m_attributeKeyHasBeenSet = true; m_attributeKey = std::move(value); }
 
     /**
      * <p>The key of the attribute the attribute range covers.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The key of the attribute the attribute range covers.</p>
      */
-    inline ObjectAttributeRange& WithAttributeKey(AttributeKey&& value) { SetAttributeKey(value); return *this;}
+    inline ObjectAttributeRange& WithAttributeKey(AttributeKey&& value) { SetAttributeKey(std::move(value)); return *this;}
 
     /**
      * <p>The range of attribute values being selected.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The range of attribute values being selected.</p>
      */
-    inline void SetRange(TypedAttributeValueRange&& value) { m_rangeHasBeenSet = true; m_range = value; }
+    inline void SetRange(TypedAttributeValueRange&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
 
     /**
      * <p>The range of attribute values being selected.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The range of attribute values being selected.</p>
      */
-    inline ObjectAttributeRange& WithRange(TypedAttributeValueRange&& value) { SetRange(value); return *this;}
+    inline ObjectAttributeRange& WithRange(TypedAttributeValueRange&& value) { SetRange(std::move(value)); return *this;}
 
   private:
     AttributeKey m_attributeKey;

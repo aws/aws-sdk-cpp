@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/ChangeAction.h>
 #include <aws/waf/model/SizeConstraint.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * <a>SizeConstraintSet</a>. Use <code>DELETE</code> to remove a
      * <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.</p>
      */
-    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = value; }
+    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>Specify <code>INSERT</code> to add a <a>SizeConstraintSetUpdate</a> to a
@@ -80,7 +81,7 @@ namespace Model
      * <a>SizeConstraintSet</a>. Use <code>DELETE</code> to remove a
      * <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.</p>
      */
-    inline SizeConstraintSetUpdate& WithAction(ChangeAction&& value) { SetAction(value); return *this;}
+    inline SizeConstraintSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
 
     /**
      * <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses
@@ -110,7 +111,7 @@ namespace Model
      * <code>FieldToMatch</code>". If that expression is true, the
      * <code>SizeConstraint</code> is considered to match.</p>
      */
-    inline void SetSizeConstraint(SizeConstraint&& value) { m_sizeConstraintHasBeenSet = true; m_sizeConstraint = value; }
+    inline void SetSizeConstraint(SizeConstraint&& value) { m_sizeConstraintHasBeenSet = true; m_sizeConstraint = std::move(value); }
 
     /**
      * <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses
@@ -130,7 +131,7 @@ namespace Model
      * <code>FieldToMatch</code>". If that expression is true, the
      * <code>SizeConstraint</code> is considered to match.</p>
      */
-    inline SizeConstraintSetUpdate& WithSizeConstraint(SizeConstraint&& value) { SetSizeConstraint(value); return *this;}
+    inline SizeConstraintSetUpdate& WithSizeConstraint(SizeConstraint&& value) { SetSizeConstraint(std::move(value)); return *this;}
 
   private:
     ChangeAction m_action;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/model/Change.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p> <i>Optional:</i> Any comments you want to include about a change batch
      * request.</p>
      */
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
+    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
      * <p> <i>Optional:</i> Any comments you want to include about a change batch
@@ -80,7 +81,7 @@ namespace Model
      * <p> <i>Optional:</i> Any comments you want to include about a change batch
      * request.</p>
      */
-    inline ChangeBatch& WithComment(Aws::String&& value) { SetComment(value); return *this;}
+    inline ChangeBatch& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
      * <p> <i>Optional:</i> Any comments you want to include about a change batch
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>Information about the changes to make to the record sets.</p>
      */
-    inline void SetChanges(Aws::Vector<Change>&& value) { m_changesHasBeenSet = true; m_changes = value; }
+    inline void SetChanges(Aws::Vector<Change>&& value) { m_changesHasBeenSet = true; m_changes = std::move(value); }
 
     /**
      * <p>Information about the changes to make to the record sets.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>Information about the changes to make to the record sets.</p>
      */
-    inline ChangeBatch& WithChanges(Aws::Vector<Change>&& value) { SetChanges(value); return *this;}
+    inline ChangeBatch& WithChanges(Aws::Vector<Change>&& value) { SetChanges(std::move(value)); return *this;}
 
     /**
      * <p>Information about the changes to make to the record sets.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>Information about the changes to make to the record sets.</p>
      */
-    inline ChangeBatch& AddChanges(Change&& value) { m_changesHasBeenSet = true; m_changes.push_back(value); return *this; }
+    inline ChangeBatch& AddChanges(Change&& value) { m_changesHasBeenSet = true; m_changes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_comment;

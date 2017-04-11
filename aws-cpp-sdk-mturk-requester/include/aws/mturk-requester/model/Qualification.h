@@ -18,6 +18,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/mturk-requester/model/Locale.h>
 #include <aws/mturk-requester/model/QualificationStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p> The ID of the Qualification type for the Qualification.</p>
      */
-    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
+    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = std::move(value); }
 
     /**
      * <p> The ID of the Qualification type for the Qualification.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p> The ID of the Qualification type for the Qualification.</p>
      */
-    inline Qualification& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(value); return *this;}
+    inline Qualification& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(std::move(value)); return *this;}
 
     /**
      * <p> The ID of the Qualification type for the Qualification.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p> The ID of the Worker who possesses the Qualification. </p>
      */
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
+    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
 
     /**
      * <p> The ID of the Worker who possesses the Qualification. </p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p> The ID of the Worker who possesses the Qualification. </p>
      */
-    inline Qualification& WithWorkerId(Aws::String&& value) { SetWorkerId(value); return *this;}
+    inline Qualification& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
 
     /**
      * <p> The ID of the Worker who possesses the Qualification. </p>
@@ -140,7 +141,7 @@ namespace Model
      * Qualification request, GrantTime is the date and time of the last call to the
      * AcceptQualificationRequest operation.</p>
      */
-    inline void SetGrantTime(Aws::Utils::DateTime&& value) { m_grantTimeHasBeenSet = true; m_grantTime = value; }
+    inline void SetGrantTime(Aws::Utils::DateTime&& value) { m_grantTimeHasBeenSet = true; m_grantTime = std::move(value); }
 
     /**
      * <p> The date and time the Qualification was granted to the Worker. If the
@@ -156,7 +157,7 @@ namespace Model
      * Qualification request, GrantTime is the date and time of the last call to the
      * AcceptQualificationRequest operation.</p>
      */
-    inline Qualification& WithGrantTime(Aws::Utils::DateTime&& value) { SetGrantTime(value); return *this;}
+    inline Qualification& WithGrantTime(Aws::Utils::DateTime&& value) { SetGrantTime(std::move(value)); return *this;}
 
     /**
      * <p> The value (score) of the Qualification, if the Qualification has an integer
@@ -183,13 +184,13 @@ namespace Model
     inline void SetLocaleValue(const Locale& value) { m_localeValueHasBeenSet = true; m_localeValue = value; }
 
     
-    inline void SetLocaleValue(Locale&& value) { m_localeValueHasBeenSet = true; m_localeValue = value; }
+    inline void SetLocaleValue(Locale&& value) { m_localeValueHasBeenSet = true; m_localeValue = std::move(value); }
 
     
     inline Qualification& WithLocaleValue(const Locale& value) { SetLocaleValue(value); return *this;}
 
     
-    inline Qualification& WithLocaleValue(Locale&& value) { SetLocaleValue(value); return *this;}
+    inline Qualification& WithLocaleValue(Locale&& value) { SetLocaleValue(std::move(value)); return *this;}
 
     /**
      * <p> The status of the Qualification. Valid values are Granted | Revoked.</p>
@@ -204,7 +205,7 @@ namespace Model
     /**
      * <p> The status of the Qualification. Valid values are Granted | Revoked.</p>
      */
-    inline void SetStatus(QualificationStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(QualificationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p> The status of the Qualification. Valid values are Granted | Revoked.</p>
@@ -214,7 +215,7 @@ namespace Model
     /**
      * <p> The status of the Qualification. Valid values are Granted | Revoked.</p>
      */
-    inline Qualification& WithStatus(QualificationStatus&& value) { SetStatus(value); return *this;}
+    inline Qualification& WithStatus(QualificationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_qualificationTypeId;

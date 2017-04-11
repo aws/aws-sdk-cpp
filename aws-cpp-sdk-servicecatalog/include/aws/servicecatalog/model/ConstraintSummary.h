@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The type of the constraint. </p>
      */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of the constraint. </p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The type of the constraint. </p>
      */
-    inline ConstraintSummary& WithType(Aws::String&& value) { SetType(value); return *this;}
+    inline ConstraintSummary& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The type of the constraint. </p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The text description of the constraint.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The text description of the constraint.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The text description of the constraint.</p>
      */
-    inline ConstraintSummary& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline ConstraintSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The text description of the constraint.</p>

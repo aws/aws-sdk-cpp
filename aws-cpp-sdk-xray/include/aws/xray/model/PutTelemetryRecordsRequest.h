@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/xray/model/TelemetryRecord.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline void SetTelemetryRecords(Aws::Vector<TelemetryRecord>&& value) { m_telemetryRecordsHasBeenSet = true; m_telemetryRecords = value; }
+    inline void SetTelemetryRecords(Aws::Vector<TelemetryRecord>&& value) { m_telemetryRecordsHasBeenSet = true; m_telemetryRecords = std::move(value); }
 
     /**
      * <p></p>
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline PutTelemetryRecordsRequest& WithTelemetryRecords(Aws::Vector<TelemetryRecord>&& value) { SetTelemetryRecords(value); return *this;}
+    inline PutTelemetryRecordsRequest& WithTelemetryRecords(Aws::Vector<TelemetryRecord>&& value) { SetTelemetryRecords(std::move(value)); return *this;}
 
     /**
      * <p></p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline PutTelemetryRecordsRequest& AddTelemetryRecords(TelemetryRecord&& value) { m_telemetryRecordsHasBeenSet = true; m_telemetryRecords.push_back(value); return *this; }
+    inline PutTelemetryRecordsRequest& AddTelemetryRecords(TelemetryRecord&& value) { m_telemetryRecordsHasBeenSet = true; m_telemetryRecords.push_back(std::move(value)); return *this; }
 
     /**
      * <p></p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline void SetEC2InstanceId(Aws::String&& value) { m_eC2InstanceIdHasBeenSet = true; m_eC2InstanceId = value; }
+    inline void SetEC2InstanceId(Aws::String&& value) { m_eC2InstanceIdHasBeenSet = true; m_eC2InstanceId = std::move(value); }
 
     /**
      * <p></p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline PutTelemetryRecordsRequest& WithEC2InstanceId(Aws::String&& value) { SetEC2InstanceId(value); return *this;}
+    inline PutTelemetryRecordsRequest& WithEC2InstanceId(Aws::String&& value) { SetEC2InstanceId(std::move(value)); return *this;}
 
     /**
      * <p></p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
+    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
 
     /**
      * <p></p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline PutTelemetryRecordsRequest& WithHostname(Aws::String&& value) { SetHostname(value); return *this;}
+    inline PutTelemetryRecordsRequest& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
 
     /**
      * <p></p>
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
+    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
 
     /**
      * <p></p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline PutTelemetryRecordsRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(value); return *this;}
+    inline PutTelemetryRecordsRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
      * <p></p>

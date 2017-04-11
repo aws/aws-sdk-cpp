@@ -18,6 +18,7 @@
 #include <aws/cognito-idp/model/AttributeDataType.h>
 #include <aws/cognito-idp/model/NumberAttributeConstraintsType.h>
 #include <aws/cognito-idp/model/StringAttributeConstraintsType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>A schema attribute of the name type.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>A schema attribute of the name type.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>A schema attribute of the name type.</p>
      */
-    inline SchemaAttributeType& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline SchemaAttributeType& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A schema attribute of the name type.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The attribute data type.</p>
      */
-    inline void SetAttributeDataType(AttributeDataType&& value) { m_attributeDataTypeHasBeenSet = true; m_attributeDataType = value; }
+    inline void SetAttributeDataType(AttributeDataType&& value) { m_attributeDataTypeHasBeenSet = true; m_attributeDataType = std::move(value); }
 
     /**
      * <p>The attribute data type.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The attribute data type.</p>
      */
-    inline SchemaAttributeType& WithAttributeDataType(AttributeDataType&& value) { SetAttributeDataType(value); return *this;}
+    inline SchemaAttributeType& WithAttributeDataType(AttributeDataType&& value) { SetAttributeDataType(std::move(value)); return *this;}
 
     /**
      * <p>Specifies whether the attribute type is developer only.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>Specifies the constraints for an attribute of the number type.</p>
      */
-    inline void SetNumberAttributeConstraints(NumberAttributeConstraintsType&& value) { m_numberAttributeConstraintsHasBeenSet = true; m_numberAttributeConstraints = value; }
+    inline void SetNumberAttributeConstraints(NumberAttributeConstraintsType&& value) { m_numberAttributeConstraintsHasBeenSet = true; m_numberAttributeConstraints = std::move(value); }
 
     /**
      * <p>Specifies the constraints for an attribute of the number type.</p>
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>Specifies the constraints for an attribute of the number type.</p>
      */
-    inline SchemaAttributeType& WithNumberAttributeConstraints(NumberAttributeConstraintsType&& value) { SetNumberAttributeConstraints(value); return *this;}
+    inline SchemaAttributeType& WithNumberAttributeConstraints(NumberAttributeConstraintsType&& value) { SetNumberAttributeConstraints(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the constraints for an attribute of the string type.</p>
@@ -196,7 +197,7 @@ namespace Model
     /**
      * <p>Specifies the constraints for an attribute of the string type.</p>
      */
-    inline void SetStringAttributeConstraints(StringAttributeConstraintsType&& value) { m_stringAttributeConstraintsHasBeenSet = true; m_stringAttributeConstraints = value; }
+    inline void SetStringAttributeConstraints(StringAttributeConstraintsType&& value) { m_stringAttributeConstraintsHasBeenSet = true; m_stringAttributeConstraints = std::move(value); }
 
     /**
      * <p>Specifies the constraints for an attribute of the string type.</p>
@@ -206,7 +207,7 @@ namespace Model
     /**
      * <p>Specifies the constraints for an attribute of the string type.</p>
      */
-    inline SchemaAttributeType& WithStringAttributeConstraints(StringAttributeConstraintsType&& value) { SetStringAttributeConstraints(value); return *this;}
+    inline SchemaAttributeType& WithStringAttributeConstraints(StringAttributeConstraintsType&& value) { SetStringAttributeConstraints(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

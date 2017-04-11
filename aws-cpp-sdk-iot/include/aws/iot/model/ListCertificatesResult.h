@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/Certificate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The descriptions of the certificates.</p>
      */
-    inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificates = value; }
+    inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificates = std::move(value); }
 
     /**
      * <p>The descriptions of the certificates.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The descriptions of the certificates.</p>
      */
-    inline ListCertificatesResult& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(value); return *this;}
+    inline ListCertificatesResult& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(std::move(value)); return *this;}
 
     /**
      * <p>The descriptions of the certificates.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The descriptions of the certificates.</p>
      */
-    inline ListCertificatesResult& AddCertificates(Certificate&& value) { m_certificates.push_back(value); return *this; }
+    inline ListCertificatesResult& AddCertificates(Certificate&& value) { m_certificates.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The marker for the next set of results, or null if there are no additional
@@ -97,7 +98,7 @@ namespace Model
      * <p>The marker for the next set of results, or null if there are no additional
      * results.</p>
      */
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
      * <p>The marker for the next set of results, or null if there are no additional
@@ -115,7 +116,7 @@ namespace Model
      * <p>The marker for the next set of results, or null if there are no additional
      * results.</p>
      */
-    inline ListCertificatesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
+    inline ListCertificatesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>The marker for the next set of results, or null if there are no additional

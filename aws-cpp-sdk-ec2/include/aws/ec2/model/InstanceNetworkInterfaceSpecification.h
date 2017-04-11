@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/PrivateIpAddressSpecification.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
 
     /**
      * <p>The ID of the network interface.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
-    inline InstanceNetworkInterfaceSpecification& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(value); return *this;}
+    inline InstanceNetworkInterfaceSpecification& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the network interface.</p>
@@ -121,7 +122,7 @@ namespace Model
      * <p>The ID of the subnet associated with the network string. Applies only if
      * creating a network interface when launching an instance.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>The ID of the subnet associated with the network string. Applies only if
@@ -139,7 +140,7 @@ namespace Model
      * <p>The ID of the subnet associated with the network string. Applies only if
      * creating a network interface when launching an instance.</p>
      */
-    inline InstanceNetworkInterfaceSpecification& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+    inline InstanceNetworkInterfaceSpecification& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the subnet associated with the network string. Applies only if
@@ -163,7 +164,7 @@ namespace Model
      * <p>The description of the network interface. Applies only if creating a network
      * interface when launching an instance.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the network interface. Applies only if creating a network
@@ -181,7 +182,7 @@ namespace Model
      * <p>The description of the network interface. Applies only if creating a network
      * interface when launching an instance.</p>
      */
-    inline InstanceNetworkInterfaceSpecification& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline InstanceNetworkInterfaceSpecification& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the network interface. Applies only if creating a network
@@ -208,7 +209,7 @@ namespace Model
      * network interface when launching an instance. You cannot specify this option if
      * you're launching more than one instance in a <a>RunInstances</a> request.</p>
      */
-    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
+    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
 
     /**
      * <p>The private IPv4 address of the network interface. Applies only if creating a
@@ -229,7 +230,7 @@ namespace Model
      * network interface when launching an instance. You cannot specify this option if
      * you're launching more than one instance in a <a>RunInstances</a> request.</p>
      */
-    inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(value); return *this;}
+    inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>The private IPv4 address of the network interface. Applies only if creating a
@@ -254,7 +255,7 @@ namespace Model
      * <p>The IDs of the security groups for the network interface. Applies only if
      * creating a network interface when launching an instance.</p>
      */
-    inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = value; }
+    inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
      * <p>The IDs of the security groups for the network interface. Applies only if
@@ -266,7 +267,7 @@ namespace Model
      * <p>The IDs of the security groups for the network interface. Applies only if
      * creating a network interface when launching an instance.</p>
      */
-    inline InstanceNetworkInterfaceSpecification& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(value); return *this;}
+    inline InstanceNetworkInterfaceSpecification& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the security groups for the network interface. Applies only if
@@ -278,7 +279,7 @@ namespace Model
      * <p>The IDs of the security groups for the network interface. Applies only if
      * creating a network interface when launching an instance.</p>
      */
-    inline InstanceNetworkInterfaceSpecification& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
+    inline InstanceNetworkInterfaceSpecification& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the security groups for the network interface. Applies only if
@@ -329,7 +330,7 @@ namespace Model
      * option if you're launching more than one instance in a <a>RunInstances</a>
      * request.</p>
      */
-    inline void SetPrivateIpAddresses(Aws::Vector<PrivateIpAddressSpecification>&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
+    inline void SetPrivateIpAddresses(Aws::Vector<PrivateIpAddressSpecification>&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = std::move(value); }
 
     /**
      * <p>One or more private IPv4 addresses to assign to the network interface. Only
@@ -345,7 +346,7 @@ namespace Model
      * option if you're launching more than one instance in a <a>RunInstances</a>
      * request.</p>
      */
-    inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddresses(Aws::Vector<PrivateIpAddressSpecification>&& value) { SetPrivateIpAddresses(value); return *this;}
+    inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddresses(Aws::Vector<PrivateIpAddressSpecification>&& value) { SetPrivateIpAddresses(std::move(value)); return *this;}
 
     /**
      * <p>One or more private IPv4 addresses to assign to the network interface. Only
@@ -361,7 +362,7 @@ namespace Model
      * option if you're launching more than one instance in a <a>RunInstances</a>
      * request.</p>
      */
-    inline InstanceNetworkInterfaceSpecification& AddPrivateIpAddresses(PrivateIpAddressSpecification&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
+    inline InstanceNetworkInterfaceSpecification& AddPrivateIpAddresses(PrivateIpAddressSpecification&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The number of secondary private IPv4 addresses. You can't specify this option
@@ -436,7 +437,7 @@ namespace Model
      * same request. You cannot specify this option if you've specified a minimum
      * number of instances to launch.</p>
      */
-    inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+    inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
 
     /**
      * <p>One or more IPv6 addresses to assign to the network interface. You cannot
@@ -452,7 +453,7 @@ namespace Model
      * same request. You cannot specify this option if you've specified a minimum
      * number of instances to launch.</p>
      */
-    inline InstanceNetworkInterfaceSpecification& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(value); return *this;}
+    inline InstanceNetworkInterfaceSpecification& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
 
     /**
      * <p>One or more IPv6 addresses to assign to the network interface. You cannot
@@ -468,7 +469,7 @@ namespace Model
      * same request. You cannot specify this option if you've specified a minimum
      * number of instances to launch.</p>
      */
-    inline InstanceNetworkInterfaceSpecification& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+    inline InstanceNetworkInterfaceSpecification& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A number of IPv6 addresses to assign to the network interface. Amazon EC2

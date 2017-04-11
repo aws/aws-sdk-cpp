@@ -17,6 +17,7 @@
 #include <aws/elasticmapreduce/EMRRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * identifier is returned by <a>RunJobFlow</a> and can also be obtained from
      * <a>DescribeJobFlows</a> . </p>
      */
-    inline void SetJobFlowIds(Aws::Vector<Aws::String>&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = value; }
+    inline void SetJobFlowIds(Aws::Vector<Aws::String>&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = std::move(value); }
 
     /**
      * <p> A list of strings that uniquely identify the clusters to protect. This
@@ -73,7 +74,7 @@ namespace Model
      * identifier is returned by <a>RunJobFlow</a> and can also be obtained from
      * <a>DescribeJobFlows</a> . </p>
      */
-    inline SetTerminationProtectionRequest& WithJobFlowIds(Aws::Vector<Aws::String>&& value) { SetJobFlowIds(value); return *this;}
+    inline SetTerminationProtectionRequest& WithJobFlowIds(Aws::Vector<Aws::String>&& value) { SetJobFlowIds(std::move(value)); return *this;}
 
     /**
      * <p> A list of strings that uniquely identify the clusters to protect. This
@@ -87,7 +88,7 @@ namespace Model
      * identifier is returned by <a>RunJobFlow</a> and can also be obtained from
      * <a>DescribeJobFlows</a> . </p>
      */
-    inline SetTerminationProtectionRequest& AddJobFlowIds(Aws::String&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
+    inline SetTerminationProtectionRequest& AddJobFlowIds(Aws::String&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p> A list of strings that uniquely identify the clusters to protect. This

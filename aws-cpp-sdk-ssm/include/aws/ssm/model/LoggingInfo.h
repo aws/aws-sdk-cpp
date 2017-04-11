@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of an Amazon S3 bucket where execution logs are stored .</p>
      */
-    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
+    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
 
     /**
      * <p>The name of an Amazon S3 bucket where execution logs are stored .</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The name of an Amazon S3 bucket where execution logs are stored .</p>
      */
-    inline LoggingInfo& WithS3BucketName(Aws::String&& value) { SetS3BucketName(value); return *this;}
+    inline LoggingInfo& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
 
     /**
      * <p>The name of an Amazon S3 bucket where execution logs are stored .</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>(Optional) The Amazon S3 bucket subfolder. </p>
      */
-    inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = value; }
+    inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = std::move(value); }
 
     /**
      * <p>(Optional) The Amazon S3 bucket subfolder. </p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>(Optional) The Amazon S3 bucket subfolder. </p>
      */
-    inline LoggingInfo& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(value); return *this;}
+    inline LoggingInfo& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) The Amazon S3 bucket subfolder. </p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The region where the Amazon S3 bucket is located.</p>
      */
-    inline void SetS3Region(Aws::String&& value) { m_s3RegionHasBeenSet = true; m_s3Region = value; }
+    inline void SetS3Region(Aws::String&& value) { m_s3RegionHasBeenSet = true; m_s3Region = std::move(value); }
 
     /**
      * <p>The region where the Amazon S3 bucket is located.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The region where the Amazon S3 bucket is located.</p>
      */
-    inline LoggingInfo& WithS3Region(Aws::String&& value) { SetS3Region(value); return *this;}
+    inline LoggingInfo& WithS3Region(Aws::String&& value) { SetS3Region(std::move(value)); return *this;}
 
     /**
      * <p>The region where the Amazon S3 bucket is located.</p>

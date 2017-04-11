@@ -16,6 +16,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * A value to use for the field if the field isn't specified for a document.
      */
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
 
     /**
      * A value to use for the field if the field isn't specified for a document.
@@ -76,7 +77,7 @@ namespace Model
     /**
      * A value to use for the field if the field isn't specified for a document.
      */
-    inline TextOptions& WithDefaultValue(Aws::String&& value) { SetDefaultValue(value); return *this;}
+    inline TextOptions& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
 
     /**
      * A value to use for the field if the field isn't specified for a document.
@@ -90,7 +91,7 @@ namespace Model
     inline void SetSourceField(const Aws::String& value) { m_sourceFieldHasBeenSet = true; m_sourceField = value; }
 
     
-    inline void SetSourceField(Aws::String&& value) { m_sourceFieldHasBeenSet = true; m_sourceField = value; }
+    inline void SetSourceField(Aws::String&& value) { m_sourceFieldHasBeenSet = true; m_sourceField = std::move(value); }
 
     
     inline void SetSourceField(const char* value) { m_sourceFieldHasBeenSet = true; m_sourceField.assign(value); }
@@ -99,7 +100,7 @@ namespace Model
     inline TextOptions& WithSourceField(const Aws::String& value) { SetSourceField(value); return *this;}
 
     
-    inline TextOptions& WithSourceField(Aws::String&& value) { SetSourceField(value); return *this;}
+    inline TextOptions& WithSourceField(Aws::String&& value) { SetSourceField(std::move(value)); return *this;}
 
     
     inline TextOptions& WithSourceField(const char* value) { SetSourceField(value); return *this;}
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>The name of an analysis scheme for a <code>text</code> field.</p>
      */
-    inline void SetAnalysisScheme(Aws::String&& value) { m_analysisSchemeHasBeenSet = true; m_analysisScheme = value; }
+    inline void SetAnalysisScheme(Aws::String&& value) { m_analysisSchemeHasBeenSet = true; m_analysisScheme = std::move(value); }
 
     /**
      * <p>The name of an analysis scheme for a <code>text</code> field.</p>
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>The name of an analysis scheme for a <code>text</code> field.</p>
      */
-    inline TextOptions& WithAnalysisScheme(Aws::String&& value) { SetAnalysisScheme(value); return *this;}
+    inline TextOptions& WithAnalysisScheme(Aws::String&& value) { SetAnalysisScheme(std::move(value)); return *this;}
 
     /**
      * <p>The name of an analysis scheme for a <code>text</code> field.</p>

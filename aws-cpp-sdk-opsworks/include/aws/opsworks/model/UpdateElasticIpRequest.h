@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The address.</p>
      */
-    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
+    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = std::move(value); }
 
     /**
      * <p>The address.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The address.</p>
      */
-    inline UpdateElasticIpRequest& WithElasticIp(Aws::String&& value) { SetElasticIp(value); return *this;}
+    inline UpdateElasticIpRequest& WithElasticIp(Aws::String&& value) { SetElasticIp(std::move(value)); return *this;}
 
     /**
      * <p>The address.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The new name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The new name.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The new name.</p>
      */
-    inline UpdateElasticIpRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateElasticIpRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The new name.</p>

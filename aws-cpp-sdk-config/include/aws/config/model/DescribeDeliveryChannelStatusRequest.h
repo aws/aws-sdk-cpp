@@ -17,6 +17,7 @@
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>A list of delivery channel names.</p>
      */
-    inline void SetDeliveryChannelNames(Aws::Vector<Aws::String>&& value) { m_deliveryChannelNamesHasBeenSet = true; m_deliveryChannelNames = value; }
+    inline void SetDeliveryChannelNames(Aws::Vector<Aws::String>&& value) { m_deliveryChannelNamesHasBeenSet = true; m_deliveryChannelNames = std::move(value); }
 
     /**
      * <p>A list of delivery channel names.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>A list of delivery channel names.</p>
      */
-    inline DescribeDeliveryChannelStatusRequest& WithDeliveryChannelNames(Aws::Vector<Aws::String>&& value) { SetDeliveryChannelNames(value); return *this;}
+    inline DescribeDeliveryChannelStatusRequest& WithDeliveryChannelNames(Aws::Vector<Aws::String>&& value) { SetDeliveryChannelNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of delivery channel names.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>A list of delivery channel names.</p>
      */
-    inline DescribeDeliveryChannelStatusRequest& AddDeliveryChannelNames(Aws::String&& value) { m_deliveryChannelNamesHasBeenSet = true; m_deliveryChannelNames.push_back(value); return *this; }
+    inline DescribeDeliveryChannelStatusRequest& AddDeliveryChannelNames(Aws::String&& value) { m_deliveryChannelNamesHasBeenSet = true; m_deliveryChannelNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of delivery channel names.</p>

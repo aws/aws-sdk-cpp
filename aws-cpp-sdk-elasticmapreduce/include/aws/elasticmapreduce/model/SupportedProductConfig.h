@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the product configuration.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the product configuration.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the product configuration.</p>
      */
-    inline SupportedProductConfig& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline SupportedProductConfig& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the product configuration.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The list of user-supplied arguments.</p>
      */
-    inline void SetArgs(Aws::Vector<Aws::String>&& value) { m_argsHasBeenSet = true; m_args = value; }
+    inline void SetArgs(Aws::Vector<Aws::String>&& value) { m_argsHasBeenSet = true; m_args = std::move(value); }
 
     /**
      * <p>The list of user-supplied arguments.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The list of user-supplied arguments.</p>
      */
-    inline SupportedProductConfig& WithArgs(Aws::Vector<Aws::String>&& value) { SetArgs(value); return *this;}
+    inline SupportedProductConfig& WithArgs(Aws::Vector<Aws::String>&& value) { SetArgs(std::move(value)); return *this;}
 
     /**
      * <p>The list of user-supplied arguments.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The list of user-supplied arguments.</p>
      */
-    inline SupportedProductConfig& AddArgs(Aws::String&& value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
+    inline SupportedProductConfig& AddArgs(Aws::String&& value) { m_argsHasBeenSet = true; m_args.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of user-supplied arguments.</p>

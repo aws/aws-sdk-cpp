@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ARN specifying the resource group that is created.</p>
      */
-    inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArn = value; }
+    inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArn = std::move(value); }
 
     /**
      * <p>The ARN specifying the resource group that is created.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ARN specifying the resource group that is created.</p>
      */
-    inline CreateResourceGroupResult& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(value); return *this;}
+    inline CreateResourceGroupResult& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN specifying the resource group that is created.</p>

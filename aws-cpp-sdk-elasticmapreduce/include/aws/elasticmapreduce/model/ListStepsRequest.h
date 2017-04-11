@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/StepState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The identifier of the cluster for which to list the steps.</p>
      */
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
 
     /**
      * <p>The identifier of the cluster for which to list the steps.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The identifier of the cluster for which to list the steps.</p>
      */
-    inline ListStepsRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+    inline ListStepsRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the cluster for which to list the steps.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The filter to limit the step list based on certain states.</p>
      */
-    inline void SetStepStates(Aws::Vector<StepState>&& value) { m_stepStatesHasBeenSet = true; m_stepStates = value; }
+    inline void SetStepStates(Aws::Vector<StepState>&& value) { m_stepStatesHasBeenSet = true; m_stepStates = std::move(value); }
 
     /**
      * <p>The filter to limit the step list based on certain states.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The filter to limit the step list based on certain states.</p>
      */
-    inline ListStepsRequest& WithStepStates(Aws::Vector<StepState>&& value) { SetStepStates(value); return *this;}
+    inline ListStepsRequest& WithStepStates(Aws::Vector<StepState>&& value) { SetStepStates(std::move(value)); return *this;}
 
     /**
      * <p>The filter to limit the step list based on certain states.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The filter to limit the step list based on certain states.</p>
      */
-    inline ListStepsRequest& AddStepStates(StepState&& value) { m_stepStatesHasBeenSet = true; m_stepStates.push_back(value); return *this; }
+    inline ListStepsRequest& AddStepStates(StepState&& value) { m_stepStatesHasBeenSet = true; m_stepStates.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The filter to limit the step list based on the identifier of the steps.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The filter to limit the step list based on the identifier of the steps.</p>
      */
-    inline void SetStepIds(Aws::Vector<Aws::String>&& value) { m_stepIdsHasBeenSet = true; m_stepIds = value; }
+    inline void SetStepIds(Aws::Vector<Aws::String>&& value) { m_stepIdsHasBeenSet = true; m_stepIds = std::move(value); }
 
     /**
      * <p>The filter to limit the step list based on the identifier of the steps.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The filter to limit the step list based on the identifier of the steps.</p>
      */
-    inline ListStepsRequest& WithStepIds(Aws::Vector<Aws::String>&& value) { SetStepIds(value); return *this;}
+    inline ListStepsRequest& WithStepIds(Aws::Vector<Aws::String>&& value) { SetStepIds(std::move(value)); return *this;}
 
     /**
      * <p>The filter to limit the step list based on the identifier of the steps.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The filter to limit the step list based on the identifier of the steps.</p>
      */
-    inline ListStepsRequest& AddStepIds(Aws::String&& value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(value); return *this; }
+    inline ListStepsRequest& AddStepIds(Aws::String&& value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The filter to limit the step list based on the identifier of the steps.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
-    inline ListStepsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListStepsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>

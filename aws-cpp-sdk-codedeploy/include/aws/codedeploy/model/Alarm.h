@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can
      * be used only once in a list of alarms.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can
@@ -77,7 +78,7 @@ namespace Model
      * <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can
      * be used only once in a list of alarms.</p>
      */
-    inline Alarm& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Alarm& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can

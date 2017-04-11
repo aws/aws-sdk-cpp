@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/model/PolicyParameter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p> Name of a Review Policy: SimplePlurality/2011-09-01 or
      * ScoreMyKnownAnswers/2011-09-01 </p>
      */
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
      * <p> Name of a Review Policy: SimplePlurality/2011-09-01 or
@@ -80,7 +81,7 @@ namespace Model
      * <p> Name of a Review Policy: SimplePlurality/2011-09-01 or
      * ScoreMyKnownAnswers/2011-09-01 </p>
      */
-    inline ReviewPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
+    inline ReviewPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
      * <p> Name of a Review Policy: SimplePlurality/2011-09-01 or
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>Name of the parameter from the Review policy.</p>
      */
-    inline void SetParameters(Aws::Vector<PolicyParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetParameters(Aws::Vector<PolicyParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>Name of the parameter from the Review policy.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>Name of the parameter from the Review policy.</p>
      */
-    inline ReviewPolicy& WithParameters(Aws::Vector<PolicyParameter>&& value) { SetParameters(value); return *this;}
+    inline ReviewPolicy& WithParameters(Aws::Vector<PolicyParameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>Name of the parameter from the Review policy.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>Name of the parameter from the Review policy.</p>
      */
-    inline ReviewPolicy& AddParameters(PolicyParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
+    inline ReviewPolicy& AddParameters(PolicyParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_policyName;

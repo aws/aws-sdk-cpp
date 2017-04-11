@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/apigateway/model/PutMode.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>[Required] The identifier of an API of the to-be-imported documentation
      * parts.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>[Required] The identifier of an API of the to-be-imported documentation
@@ -77,7 +78,7 @@ namespace Model
      * <p>[Required] The identifier of an API of the to-be-imported documentation
      * parts.</p>
      */
-    inline ImportDocumentationPartsRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline ImportDocumentationPartsRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>[Required] The identifier of an API of the to-be-imported documentation
@@ -107,7 +108,7 @@ namespace Model
      * (<code>MERGE</code>) the new definition into the existing one. The default value
      * is <code>MERGE</code>.</p>
      */
-    inline void SetMode(PutMode&& value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline void SetMode(PutMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
      * <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>)
@@ -123,7 +124,7 @@ namespace Model
      * (<code>MERGE</code>) the new definition into the existing one. The default value
      * is <code>MERGE</code>.</p>
      */
-    inline ImportDocumentationPartsRequest& WithMode(PutMode&& value) { SetMode(value); return *this;}
+    inline ImportDocumentationPartsRequest& WithMode(PutMode&& value) { SetMode(std::move(value)); return *this;}
 
     /**
      * <p>A query parameter to specify whether to rollback the documentation

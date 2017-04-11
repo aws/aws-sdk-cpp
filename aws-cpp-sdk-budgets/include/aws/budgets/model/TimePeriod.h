@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,13 +52,13 @@ namespace Model
     inline void SetStart(const Aws::Utils::DateTime& value) { m_startHasBeenSet = true; m_start = value; }
 
     
-    inline void SetStart(Aws::Utils::DateTime&& value) { m_startHasBeenSet = true; m_start = value; }
+    inline void SetStart(Aws::Utils::DateTime&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
 
     
     inline TimePeriod& WithStart(const Aws::Utils::DateTime& value) { SetStart(value); return *this;}
 
     
-    inline TimePeriod& WithStart(Aws::Utils::DateTime&& value) { SetStart(value); return *this;}
+    inline TimePeriod& WithStart(Aws::Utils::DateTime&& value) { SetStart(std::move(value)); return *this;}
 
     
     inline const Aws::Utils::DateTime& GetEnd() const{ return m_end; }
@@ -66,13 +67,13 @@ namespace Model
     inline void SetEnd(const Aws::Utils::DateTime& value) { m_endHasBeenSet = true; m_end = value; }
 
     
-    inline void SetEnd(Aws::Utils::DateTime&& value) { m_endHasBeenSet = true; m_end = value; }
+    inline void SetEnd(Aws::Utils::DateTime&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
 
     
     inline TimePeriod& WithEnd(const Aws::Utils::DateTime& value) { SetEnd(value); return *this;}
 
     
-    inline TimePeriod& WithEnd(Aws::Utils::DateTime&& value) { SetEnd(value); return *this;}
+    inline TimePeriod& WithEnd(Aws::Utils::DateTime&& value) { SetEnd(std::move(value)); return *this;}
 
   private:
     Aws::Utils::DateTime m_start;

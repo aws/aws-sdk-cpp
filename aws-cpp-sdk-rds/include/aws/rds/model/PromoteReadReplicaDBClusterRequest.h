@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-replica1</code> </p>
      */
-    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
+    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the DB cluster Read Replica to promote. This parameter is
@@ -92,7 +93,7 @@ namespace Model
      * a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-replica1</code> </p>
      */
-    inline PromoteReadReplicaDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(value); return *this;}
+    inline PromoteReadReplicaDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the DB cluster Read Replica to promote. This parameter is

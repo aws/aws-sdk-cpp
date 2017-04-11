@@ -22,6 +22,7 @@
 #include <aws/ec2/model/InstanceBlockDeviceMapping.h>
 #include <aws/ec2/model/ProductCode.h>
 #include <aws/ec2/model/GroupIdentifier.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline DescribeInstanceAttributeResponse& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The instance type.</p>
      */
-    inline void SetInstanceType(AttributeValue&& value) { m_instanceType = value; }
+    inline void SetInstanceType(AttributeValue&& value) { m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The instance type.</p>
      */
-    inline DescribeInstanceAttributeResponse& WithInstanceType(AttributeValue&& value) { SetInstanceType(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithInstanceType(AttributeValue&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The kernel ID.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The kernel ID.</p>
      */
-    inline void SetKernelId(AttributeValue&& value) { m_kernelId = value; }
+    inline void SetKernelId(AttributeValue&& value) { m_kernelId = std::move(value); }
 
     /**
      * <p>The kernel ID.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>The kernel ID.</p>
      */
-    inline DescribeInstanceAttributeResponse& WithKernelId(AttributeValue&& value) { SetKernelId(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithKernelId(AttributeValue&& value) { SetKernelId(std::move(value)); return *this;}
 
     /**
      * <p>The RAM disk ID.</p>
@@ -149,7 +150,7 @@ namespace Model
     /**
      * <p>The RAM disk ID.</p>
      */
-    inline void SetRamdiskId(AttributeValue&& value) { m_ramdiskId = value; }
+    inline void SetRamdiskId(AttributeValue&& value) { m_ramdiskId = std::move(value); }
 
     /**
      * <p>The RAM disk ID.</p>
@@ -159,7 +160,7 @@ namespace Model
     /**
      * <p>The RAM disk ID.</p>
      */
-    inline DescribeInstanceAttributeResponse& WithRamdiskId(AttributeValue&& value) { SetRamdiskId(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithRamdiskId(AttributeValue&& value) { SetRamdiskId(std::move(value)); return *this;}
 
     /**
      * <p>The user data.</p>
@@ -174,7 +175,7 @@ namespace Model
     /**
      * <p>The user data.</p>
      */
-    inline void SetUserData(AttributeValue&& value) { m_userData = value; }
+    inline void SetUserData(AttributeValue&& value) { m_userData = std::move(value); }
 
     /**
      * <p>The user data.</p>
@@ -184,7 +185,7 @@ namespace Model
     /**
      * <p>The user data.</p>
      */
-    inline DescribeInstanceAttributeResponse& WithUserData(AttributeValue&& value) { SetUserData(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithUserData(AttributeValue&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
      * <p>If the value is <code>true</code>, you can't terminate the instance through
@@ -202,7 +203,7 @@ namespace Model
      * <p>If the value is <code>true</code>, you can't terminate the instance through
      * the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
      */
-    inline void SetDisableApiTermination(AttributeBooleanValue&& value) { m_disableApiTermination = value; }
+    inline void SetDisableApiTermination(AttributeBooleanValue&& value) { m_disableApiTermination = std::move(value); }
 
     /**
      * <p>If the value is <code>true</code>, you can't terminate the instance through
@@ -214,7 +215,7 @@ namespace Model
      * <p>If the value is <code>true</code>, you can't terminate the instance through
      * the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
      */
-    inline DescribeInstanceAttributeResponse& WithDisableApiTermination(AttributeBooleanValue&& value) { SetDisableApiTermination(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithDisableApiTermination(AttributeBooleanValue&& value) { SetDisableApiTermination(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
@@ -232,7 +233,7 @@ namespace Model
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
      * from the instance (using the operating system command for system shutdown).</p>
      */
-    inline void SetInstanceInitiatedShutdownBehavior(AttributeValue&& value) { m_instanceInitiatedShutdownBehavior = value; }
+    inline void SetInstanceInitiatedShutdownBehavior(AttributeValue&& value) { m_instanceInitiatedShutdownBehavior = std::move(value); }
 
     /**
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
@@ -244,7 +245,7 @@ namespace Model
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
      * from the instance (using the operating system command for system shutdown).</p>
      */
-    inline DescribeInstanceAttributeResponse& WithInstanceInitiatedShutdownBehavior(AttributeValue&& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithInstanceInitiatedShutdownBehavior(AttributeValue&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
 
     /**
      * <p>The name of the root device (for example, <code>/dev/sda1</code> or
@@ -262,7 +263,7 @@ namespace Model
      * <p>The name of the root device (for example, <code>/dev/sda1</code> or
      * <code>/dev/xvda</code>).</p>
      */
-    inline void SetRootDeviceName(AttributeValue&& value) { m_rootDeviceName = value; }
+    inline void SetRootDeviceName(AttributeValue&& value) { m_rootDeviceName = std::move(value); }
 
     /**
      * <p>The name of the root device (for example, <code>/dev/sda1</code> or
@@ -274,7 +275,7 @@ namespace Model
      * <p>The name of the root device (for example, <code>/dev/sda1</code> or
      * <code>/dev/xvda</code>).</p>
      */
-    inline DescribeInstanceAttributeResponse& WithRootDeviceName(AttributeValue&& value) { SetRootDeviceName(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithRootDeviceName(AttributeValue&& value) { SetRootDeviceName(std::move(value)); return *this;}
 
     /**
      * <p>The block device mapping of the instance.</p>
@@ -289,7 +290,7 @@ namespace Model
     /**
      * <p>The block device mapping of the instance.</p>
      */
-    inline void SetBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMapping>&& value) { m_blockDeviceMappings = value; }
+    inline void SetBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMapping>&& value) { m_blockDeviceMappings = std::move(value); }
 
     /**
      * <p>The block device mapping of the instance.</p>
@@ -299,7 +300,7 @@ namespace Model
     /**
      * <p>The block device mapping of the instance.</p>
      */
-    inline DescribeInstanceAttributeResponse& WithBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMapping>&& value) { SetBlockDeviceMappings(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
      * <p>The block device mapping of the instance.</p>
@@ -309,7 +310,7 @@ namespace Model
     /**
      * <p>The block device mapping of the instance.</p>
      */
-    inline DescribeInstanceAttributeResponse& AddBlockDeviceMappings(InstanceBlockDeviceMapping&& value) { m_blockDeviceMappings.push_back(value); return *this; }
+    inline DescribeInstanceAttributeResponse& AddBlockDeviceMappings(InstanceBlockDeviceMapping&& value) { m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of product codes.</p>
@@ -324,7 +325,7 @@ namespace Model
     /**
      * <p>A list of product codes.</p>
      */
-    inline void SetProductCodes(Aws::Vector<ProductCode>&& value) { m_productCodes = value; }
+    inline void SetProductCodes(Aws::Vector<ProductCode>&& value) { m_productCodes = std::move(value); }
 
     /**
      * <p>A list of product codes.</p>
@@ -334,7 +335,7 @@ namespace Model
     /**
      * <p>A list of product codes.</p>
      */
-    inline DescribeInstanceAttributeResponse& WithProductCodes(Aws::Vector<ProductCode>&& value) { SetProductCodes(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithProductCodes(Aws::Vector<ProductCode>&& value) { SetProductCodes(std::move(value)); return *this;}
 
     /**
      * <p>A list of product codes.</p>
@@ -344,7 +345,7 @@ namespace Model
     /**
      * <p>A list of product codes.</p>
      */
-    inline DescribeInstanceAttributeResponse& AddProductCodes(ProductCode&& value) { m_productCodes.push_back(value); return *this; }
+    inline DescribeInstanceAttributeResponse& AddProductCodes(ProductCode&& value) { m_productCodes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Indicates whether the instance is optimized for EBS I/O.</p>
@@ -359,7 +360,7 @@ namespace Model
     /**
      * <p>Indicates whether the instance is optimized for EBS I/O.</p>
      */
-    inline void SetEbsOptimized(AttributeBooleanValue&& value) { m_ebsOptimized = value; }
+    inline void SetEbsOptimized(AttributeBooleanValue&& value) { m_ebsOptimized = std::move(value); }
 
     /**
      * <p>Indicates whether the instance is optimized for EBS I/O.</p>
@@ -369,7 +370,7 @@ namespace Model
     /**
      * <p>Indicates whether the instance is optimized for EBS I/O.</p>
      */
-    inline DescribeInstanceAttributeResponse& WithEbsOptimized(AttributeBooleanValue&& value) { SetEbsOptimized(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithEbsOptimized(AttributeBooleanValue&& value) { SetEbsOptimized(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
@@ -387,7 +388,7 @@ namespace Model
      * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
      * interface is enabled.</p>
      */
-    inline void SetSriovNetSupport(AttributeValue&& value) { m_sriovNetSupport = value; }
+    inline void SetSriovNetSupport(AttributeValue&& value) { m_sriovNetSupport = std::move(value); }
 
     /**
      * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
@@ -399,7 +400,7 @@ namespace Model
      * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
      * interface is enabled.</p>
      */
-    inline DescribeInstanceAttributeResponse& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether enhanced networking with ENA is enabled.</p>
@@ -414,7 +415,7 @@ namespace Model
     /**
      * <p>Indicates whether enhanced networking with ENA is enabled.</p>
      */
-    inline void SetEnaSupport(AttributeBooleanValue&& value) { m_enaSupport = value; }
+    inline void SetEnaSupport(AttributeBooleanValue&& value) { m_enaSupport = std::move(value); }
 
     /**
      * <p>Indicates whether enhanced networking with ENA is enabled.</p>
@@ -424,7 +425,7 @@ namespace Model
     /**
      * <p>Indicates whether enhanced networking with ENA is enabled.</p>
      */
-    inline DescribeInstanceAttributeResponse& WithEnaSupport(AttributeBooleanValue&& value) { SetEnaSupport(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithEnaSupport(AttributeBooleanValue&& value) { SetEnaSupport(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether source/destination checking is enabled. A value of
@@ -448,7 +449,7 @@ namespace Model
      * checking is disabled. This value must be <code>false</code> for a NAT instance
      * to perform NAT.</p>
      */
-    inline void SetSourceDestCheck(AttributeBooleanValue&& value) { m_sourceDestCheck = value; }
+    inline void SetSourceDestCheck(AttributeBooleanValue&& value) { m_sourceDestCheck = std::move(value); }
 
     /**
      * <p>Indicates whether source/destination checking is enabled. A value of
@@ -464,7 +465,7 @@ namespace Model
      * checking is disabled. This value must be <code>false</code> for a NAT instance
      * to perform NAT.</p>
      */
-    inline DescribeInstanceAttributeResponse& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
 
     /**
      * <p>The security groups associated with the instance.</p>
@@ -479,7 +480,7 @@ namespace Model
     /**
      * <p>The security groups associated with the instance.</p>
      */
-    inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groups = value; }
+    inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groups = std::move(value); }
 
     /**
      * <p>The security groups associated with the instance.</p>
@@ -489,7 +490,7 @@ namespace Model
     /**
      * <p>The security groups associated with the instance.</p>
      */
-    inline DescribeInstanceAttributeResponse& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
      * <p>The security groups associated with the instance.</p>
@@ -499,7 +500,7 @@ namespace Model
     /**
      * <p>The security groups associated with the instance.</p>
      */
-    inline DescribeInstanceAttributeResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(value); return *this; }
+    inline DescribeInstanceAttributeResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -508,13 +509,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeInstanceAttributeResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeInstanceAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_instanceId;

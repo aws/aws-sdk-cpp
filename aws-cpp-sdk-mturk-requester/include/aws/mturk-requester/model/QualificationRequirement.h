@@ -18,6 +18,7 @@
 #include <aws/mturk-requester/model/Comparator.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/model/Locale.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p> The ID of the Qualification type for the requirement.</p>
      */
-    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
+    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = std::move(value); }
 
     /**
      * <p> The ID of the Qualification type for the requirement.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p> The ID of the Qualification type for the requirement.</p>
      */
-    inline QualificationRequirement& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(value); return *this;}
+    inline QualificationRequirement& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(std::move(value)); return *this;}
 
     /**
      * <p> The ID of the Qualification type for the requirement.</p>
@@ -118,7 +119,7 @@ namespace Model
      * can also test if a Qualification Exists or DoesNotExist in the user's profile,
      * regardless of its value. </p>
      */
-    inline void SetComparator(Comparator&& value) { m_comparatorHasBeenSet = true; m_comparator = value; }
+    inline void SetComparator(Comparator&& value) { m_comparatorHasBeenSet = true; m_comparator = std::move(value); }
 
     /**
      * <p>The kind of comparison to make against a Qualification's value. You can
@@ -142,7 +143,7 @@ namespace Model
      * can also test if a Qualification Exists or DoesNotExist in the user's profile,
      * regardless of its value. </p>
      */
-    inline QualificationRequirement& WithComparator(Comparator&& value) { SetComparator(value); return *this;}
+    inline QualificationRequirement& WithComparator(Comparator&& value) { SetComparator(std::move(value)); return *this;}
 
     /**
      * <p> The integer value to compare against the Qualification's value. IntegerValue
@@ -172,7 +173,7 @@ namespace Model
      * using the In or the NotIn comparator, you can use up to 15 IntegerValue elements
      * in a QualificationRequirement data structure. </p>
      */
-    inline void SetIntegerValues(Aws::Vector<int>&& value) { m_integerValuesHasBeenSet = true; m_integerValues = value; }
+    inline void SetIntegerValues(Aws::Vector<int>&& value) { m_integerValuesHasBeenSet = true; m_integerValues = std::move(value); }
 
     /**
      * <p> The integer value to compare against the Qualification's value. IntegerValue
@@ -192,7 +193,7 @@ namespace Model
      * using the In or the NotIn comparator, you can use up to 15 IntegerValue elements
      * in a QualificationRequirement data structure. </p>
      */
-    inline QualificationRequirement& WithIntegerValues(Aws::Vector<int>&& value) { SetIntegerValues(value); return *this;}
+    inline QualificationRequirement& WithIntegerValues(Aws::Vector<int>&& value) { SetIntegerValues(std::move(value)); return *this;}
 
     /**
      * <p> The integer value to compare against the Qualification's value. IntegerValue
@@ -238,7 +239,7 @@ namespace Model
      * In or the NotIn comparator, you can use up to 30 LocaleValue elements in a
      * QualificationRequirement data structure. </p>
      */
-    inline void SetLocaleValues(Aws::Vector<Locale>&& value) { m_localeValuesHasBeenSet = true; m_localeValues = value; }
+    inline void SetLocaleValues(Aws::Vector<Locale>&& value) { m_localeValuesHasBeenSet = true; m_localeValues = std::move(value); }
 
     /**
      * <p> The locale value to compare against the Qualification's value. The local
@@ -262,7 +263,7 @@ namespace Model
      * In or the NotIn comparator, you can use up to 30 LocaleValue elements in a
      * QualificationRequirement data structure. </p>
      */
-    inline QualificationRequirement& WithLocaleValues(Aws::Vector<Locale>&& value) { SetLocaleValues(value); return *this;}
+    inline QualificationRequirement& WithLocaleValues(Aws::Vector<Locale>&& value) { SetLocaleValues(std::move(value)); return *this;}
 
     /**
      * <p> The locale value to compare against the Qualification's value. The local
@@ -286,7 +287,7 @@ namespace Model
      * In or the NotIn comparator, you can use up to 30 LocaleValue elements in a
      * QualificationRequirement data structure. </p>
      */
-    inline QualificationRequirement& AddLocaleValues(Locale&& value) { m_localeValuesHasBeenSet = true; m_localeValues.push_back(value); return *this; }
+    inline QualificationRequirement& AddLocaleValues(Locale&& value) { m_localeValuesHasBeenSet = true; m_localeValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p> If true, the question data for the HIT will not be shown when a Worker whose

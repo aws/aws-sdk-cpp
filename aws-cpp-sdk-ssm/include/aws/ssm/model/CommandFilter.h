@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/CommandFilterKey.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of the filter. For example, requested date and time.</p>
      */
-    inline void SetKey(CommandFilterKey&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(CommandFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The name of the filter. For example, requested date and time.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the filter. For example, requested date and time.</p>
      */
-    inline CommandFilter& WithKey(CommandFilterKey&& value) { SetKey(value); return *this;}
+    inline CommandFilter& WithKey(CommandFilterKey&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The filter value. For example: June 30, 2015.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The filter value. For example: June 30, 2015.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The filter value. For example: June 30, 2015.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The filter value. For example: June 30, 2015.</p>
      */
-    inline CommandFilter& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline CommandFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The filter value. For example: June 30, 2015.</p>

@@ -17,6 +17,7 @@
 #include <aws/kinesisanalytics/KinesisAnalyticsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesisanalytics/model/Input.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>Name of your existing Amazon Kinesis Analytics application to which you want
      * to add the streaming source.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>Name of your existing Amazon Kinesis Analytics application to which you want
@@ -73,7 +74,7 @@ namespace Model
      * <p>Name of your existing Amazon Kinesis Analytics application to which you want
      * to add the streaming source.</p>
      */
-    inline AddApplicationInputRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline AddApplicationInputRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>Name of your existing Amazon Kinesis Analytics application to which you want
@@ -109,13 +110,13 @@ namespace Model
     inline void SetInput(const Input& value) { m_inputHasBeenSet = true; m_input = value; }
 
     
-    inline void SetInput(Input&& value) { m_inputHasBeenSet = true; m_input = value; }
+    inline void SetInput(Input&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     
     inline AddApplicationInputRequest& WithInput(const Input& value) { SetInput(value); return *this;}
 
     
-    inline AddApplicationInputRequest& WithInput(Input&& value) { SetInput(value); return *this;}
+    inline AddApplicationInputRequest& WithInput(Input&& value) { SetInput(std::move(value)); return *this;}
 
   private:
     Aws::String m_applicationName;

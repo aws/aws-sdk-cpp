@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The identifier of the API Key.</p>
      */
-    inline void SetId(Aws::String&& value) { m_id = value; }
+    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
      * <p>The identifier of the API Key.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The identifier of the API Key.</p>
      */
-    inline UpdateApiKeyResult& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline UpdateApiKeyResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the API Key.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The value of the API Key.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_value = std::move(value); }
 
     /**
      * <p>The value of the API Key.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The value of the API Key.</p>
      */
-    inline UpdateApiKeyResult& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline UpdateApiKeyResult& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the API Key.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>The name of the API Key.</p>
      */
-    inline void SetName(Aws::String&& value) { m_name = value; }
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
      * <p>The name of the API Key.</p>
@@ -149,7 +150,7 @@ namespace Model
     /**
      * <p>The name of the API Key.</p>
      */
-    inline UpdateApiKeyResult& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateApiKeyResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the API Key.</p>
@@ -172,7 +173,7 @@ namespace Model
      * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
      * Marketplace.</p>
      */
-    inline void SetCustomerId(Aws::String&& value) { m_customerId = value; }
+    inline void SetCustomerId(Aws::String&& value) { m_customerId = std::move(value); }
 
     /**
      * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
@@ -190,7 +191,7 @@ namespace Model
      * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
      * Marketplace.</p>
      */
-    inline UpdateApiKeyResult& WithCustomerId(Aws::String&& value) { SetCustomerId(value); return *this;}
+    inline UpdateApiKeyResult& WithCustomerId(Aws::String&& value) { SetCustomerId(std::move(value)); return *this;}
 
     /**
      * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
@@ -211,7 +212,7 @@ namespace Model
     /**
      * <p>The description of the API Key.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
      * <p>The description of the API Key.</p>
@@ -226,7 +227,7 @@ namespace Model
     /**
      * <p>The description of the API Key.</p>
      */
-    inline UpdateApiKeyResult& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline UpdateApiKeyResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the API Key.</p>
@@ -261,7 +262,7 @@ namespace Model
     /**
      * <p>The timestamp when the API Key was created.</p>
      */
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = value; }
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
 
     /**
      * <p>The timestamp when the API Key was created.</p>
@@ -271,7 +272,7 @@ namespace Model
     /**
      * <p>The timestamp when the API Key was created.</p>
      */
-    inline UpdateApiKeyResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
+    inline UpdateApiKeyResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
     /**
      * <p>The timestamp when the API Key was last updated.</p>
@@ -286,7 +287,7 @@ namespace Model
     /**
      * <p>The timestamp when the API Key was last updated.</p>
      */
-    inline void SetLastUpdatedDate(Aws::Utils::DateTime&& value) { m_lastUpdatedDate = value; }
+    inline void SetLastUpdatedDate(Aws::Utils::DateTime&& value) { m_lastUpdatedDate = std::move(value); }
 
     /**
      * <p>The timestamp when the API Key was last updated.</p>
@@ -296,7 +297,7 @@ namespace Model
     /**
      * <p>The timestamp when the API Key was last updated.</p>
      */
-    inline UpdateApiKeyResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(value); return *this;}
+    inline UpdateApiKeyResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 
     /**
      * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
@@ -314,7 +315,7 @@ namespace Model
      * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
      * resource.</p>
      */
-    inline void SetStageKeys(Aws::Vector<Aws::String>&& value) { m_stageKeys = value; }
+    inline void SetStageKeys(Aws::Vector<Aws::String>&& value) { m_stageKeys = std::move(value); }
 
     /**
      * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
@@ -326,7 +327,7 @@ namespace Model
      * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
      * resource.</p>
      */
-    inline UpdateApiKeyResult& WithStageKeys(Aws::Vector<Aws::String>&& value) { SetStageKeys(value); return *this;}
+    inline UpdateApiKeyResult& WithStageKeys(Aws::Vector<Aws::String>&& value) { SetStageKeys(std::move(value)); return *this;}
 
     /**
      * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
@@ -338,7 +339,7 @@ namespace Model
      * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
      * resource.</p>
      */
-    inline UpdateApiKeyResult& AddStageKeys(Aws::String&& value) { m_stageKeys.push_back(value); return *this; }
+    inline UpdateApiKeyResult& AddStageKeys(Aws::String&& value) { m_stageKeys.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>

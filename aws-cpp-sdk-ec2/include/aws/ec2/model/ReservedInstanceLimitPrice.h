@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/CurrencyCodeValues.h>
+#include <utility>
 
 namespace Aws
 {
@@ -81,7 +82,7 @@ namespace Model
      * <p>The currency in which the <code>limitPrice</code> amount is specified. At
      * this time, the only supported currency is <code>USD</code>.</p>
      */
-    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
+    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
      * <p>The currency in which the <code>limitPrice</code> amount is specified. At
@@ -93,7 +94,7 @@ namespace Model
      * <p>The currency in which the <code>limitPrice</code> amount is specified. At
      * this time, the only supported currency is <code>USD</code>.</p>
      */
-    inline ReservedInstanceLimitPrice& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(value); return *this;}
+    inline ReservedInstanceLimitPrice& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
   private:
     double m_amount;

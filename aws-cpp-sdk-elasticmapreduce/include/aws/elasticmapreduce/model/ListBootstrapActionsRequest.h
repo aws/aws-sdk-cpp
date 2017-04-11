@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/EMRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The cluster identifier for the bootstrap actions to list.</p>
      */
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
 
     /**
      * <p>The cluster identifier for the bootstrap actions to list.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The cluster identifier for the bootstrap actions to list.</p>
      */
-    inline ListBootstrapActionsRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+    inline ListBootstrapActionsRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The cluster identifier for the bootstrap actions to list.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
-    inline ListBootstrapActionsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListBootstrapActionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>

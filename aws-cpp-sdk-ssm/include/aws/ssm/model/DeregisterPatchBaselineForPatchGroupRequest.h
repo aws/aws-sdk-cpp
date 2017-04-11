@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ID of the patch baseline to deregister the patch group from.</p>
      */
-    inline void SetBaselineId(Aws::String&& value) { m_baselineIdHasBeenSet = true; m_baselineId = value; }
+    inline void SetBaselineId(Aws::String&& value) { m_baselineIdHasBeenSet = true; m_baselineId = std::move(value); }
 
     /**
      * <p>The ID of the patch baseline to deregister the patch group from.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID of the patch baseline to deregister the patch group from.</p>
      */
-    inline DeregisterPatchBaselineForPatchGroupRequest& WithBaselineId(Aws::String&& value) { SetBaselineId(value); return *this;}
+    inline DeregisterPatchBaselineForPatchGroupRequest& WithBaselineId(Aws::String&& value) { SetBaselineId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the patch baseline to deregister the patch group from.</p>
@@ -86,7 +87,7 @@ namespace Model
      * <p>The name of the patch group that should be deregistered from the patch
      * baseline.</p>
      */
-    inline void SetPatchGroup(Aws::String&& value) { m_patchGroupHasBeenSet = true; m_patchGroup = value; }
+    inline void SetPatchGroup(Aws::String&& value) { m_patchGroupHasBeenSet = true; m_patchGroup = std::move(value); }
 
     /**
      * <p>The name of the patch group that should be deregistered from the patch
@@ -104,7 +105,7 @@ namespace Model
      * <p>The name of the patch group that should be deregistered from the patch
      * baseline.</p>
      */
-    inline DeregisterPatchBaselineForPatchGroupRequest& WithPatchGroup(Aws::String&& value) { SetPatchGroup(value); return *this;}
+    inline DeregisterPatchBaselineForPatchGroupRequest& WithPatchGroup(Aws::String&& value) { SetPatchGroup(std::move(value)); return *this;}
 
     /**
      * <p>The name of the patch group that should be deregistered from the patch

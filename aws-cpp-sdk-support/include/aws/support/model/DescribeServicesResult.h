@@ -16,6 +16,7 @@
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/support/model/Service.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A JSON-formatted list of AWS services.</p>
      */
-    inline void SetServices(Aws::Vector<Service>&& value) { m_services = value; }
+    inline void SetServices(Aws::Vector<Service>&& value) { m_services = std::move(value); }
 
     /**
      * <p>A JSON-formatted list of AWS services.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A JSON-formatted list of AWS services.</p>
      */
-    inline DescribeServicesResult& WithServices(Aws::Vector<Service>&& value) { SetServices(value); return *this;}
+    inline DescribeServicesResult& WithServices(Aws::Vector<Service>&& value) { SetServices(std::move(value)); return *this;}
 
     /**
      * <p>A JSON-formatted list of AWS services.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>A JSON-formatted list of AWS services.</p>
      */
-    inline DescribeServicesResult& AddServices(Service&& value) { m_services.push_back(value); return *this; }
+    inline DescribeServicesResult& AddServices(Service&& value) { m_services.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Service> m_services;

@@ -16,6 +16,7 @@
 #include <aws/polly/Polly_EXPORTS.h>
 #include <aws/polly/PollyRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up
      * to 20 characters long. </p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Name of the lexicon. The name must follow the regular express format
@@ -73,7 +74,7 @@ namespace Model
      * [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up
      * to 20 characters long. </p>
      */
-    inline PutLexiconRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline PutLexiconRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the lexicon. The name must follow the regular express format
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>Content of the PLS lexicon as string data.</p>
      */
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = value; }
+    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
      * <p>Content of the PLS lexicon as string data.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>Content of the PLS lexicon as string data.</p>
      */
-    inline PutLexiconRequest& WithContent(Aws::String&& value) { SetContent(value); return *this;}
+    inline PutLexiconRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
      * <p>Content of the PLS lexicon as string data.</p>

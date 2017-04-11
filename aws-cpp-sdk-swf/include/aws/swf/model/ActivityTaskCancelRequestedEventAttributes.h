@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The unique ID of the task.</p>
      */
-    inline void SetActivityId(Aws::String&& value) { m_activityIdHasBeenSet = true; m_activityId = value; }
+    inline void SetActivityId(Aws::String&& value) { m_activityIdHasBeenSet = true; m_activityId = std::move(value); }
 
     /**
      * <p>The unique ID of the task.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The unique ID of the task.</p>
      */
-    inline ActivityTaskCancelRequestedEventAttributes& WithActivityId(Aws::String&& value) { SetActivityId(value); return *this;}
+    inline ActivityTaskCancelRequestedEventAttributes& WithActivityId(Aws::String&& value) { SetActivityId(std::move(value)); return *this;}
 
     /**
      * <p>The unique ID of the task.</p>

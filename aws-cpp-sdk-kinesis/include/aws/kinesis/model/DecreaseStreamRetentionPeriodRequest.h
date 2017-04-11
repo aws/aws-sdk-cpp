@@ -16,6 +16,7 @@
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/kinesis/KinesisRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of the stream to modify.</p>
      */
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
 
     /**
      * <p>The name of the stream to modify.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the stream to modify.</p>
      */
-    inline DecreaseStreamRetentionPeriodRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
+    inline DecreaseStreamRetentionPeriodRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the stream to modify.</p>

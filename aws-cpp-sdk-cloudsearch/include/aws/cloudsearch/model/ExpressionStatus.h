@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/cloudsearch/model/Expression.h>
 #include <aws/cloudsearch/model/OptionStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>The expression that is evaluated for sorting while processing a search
      * request.</p>
      */
-    inline void SetOptions(Expression&& value) { m_optionsHasBeenSet = true; m_options = value; }
+    inline void SetOptions(Expression&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     /**
      * <p>The expression that is evaluated for sorting while processing a search
@@ -76,7 +77,7 @@ namespace Model
      * <p>The expression that is evaluated for sorting while processing a search
      * request.</p>
      */
-    inline ExpressionStatus& WithOptions(Expression&& value) { SetOptions(value); return *this;}
+    inline ExpressionStatus& WithOptions(Expression&& value) { SetOptions(std::move(value)); return *this;}
 
     
     inline const OptionStatus& GetStatus() const{ return m_status; }
@@ -85,13 +86,13 @@ namespace Model
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     
-    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     
     inline ExpressionStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
 
     
-    inline ExpressionStatus& WithStatus(OptionStatus&& value) { SetStatus(value); return *this;}
+    inline ExpressionStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     Expression m_options;

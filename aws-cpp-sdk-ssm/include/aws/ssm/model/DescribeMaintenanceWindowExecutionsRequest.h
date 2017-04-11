@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/MaintenanceWindowFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window whose executions should be retrieved.</p>
      */
-    inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
+    inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = std::move(value); }
 
     /**
      * <p>The ID of the Maintenance Window whose executions should be retrieved.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window whose executions should be retrieved.</p>
      */
-    inline DescribeMaintenanceWindowExecutionsRequest& WithWindowId(Aws::String&& value) { SetWindowId(value); return *this;}
+    inline DescribeMaintenanceWindowExecutionsRequest& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Maintenance Window whose executions should be retrieved.</p>
@@ -94,7 +95,7 @@ namespace Model
      * supported Keys are <code>ExecutedBefore</code> and <code>ExecutedAfter</code>
      * with the value being a date/time string such as 2016-11-04T05:00:00Z.</p>
      */
-    inline void SetFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string, 1 ≤
@@ -110,7 +111,7 @@ namespace Model
      * supported Keys are <code>ExecutedBefore</code> and <code>ExecutedAfter</code>
      * with the value being a date/time string such as 2016-11-04T05:00:00Z.</p>
      */
-    inline DescribeMaintenanceWindowExecutionsRequest& WithFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { SetFilters(value); return *this;}
+    inline DescribeMaintenanceWindowExecutionsRequest& WithFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string, 1 ≤
@@ -126,7 +127,7 @@ namespace Model
      * supported Keys are <code>ExecutedBefore</code> and <code>ExecutedAfter</code>
      * with the value being a date/time string such as 2016-11-04T05:00:00Z.</p>
      */
-    inline DescribeMaintenanceWindowExecutionsRequest& AddFilters(MaintenanceWindowFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeMaintenanceWindowExecutionsRequest& AddFilters(MaintenanceWindowFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
@@ -165,7 +166,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -183,7 +184,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline DescribeMaintenanceWindowExecutionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeMaintenanceWindowExecutionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

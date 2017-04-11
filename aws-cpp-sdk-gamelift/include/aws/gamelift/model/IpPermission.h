@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/IpProtocol.h>
+#include <utility>
 
 namespace Aws
 {
@@ -100,7 +101,7 @@ namespace Model
      * Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the
      * shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
      */
-    inline void SetIpRange(Aws::String&& value) { m_ipRangeHasBeenSet = true; m_ipRange = value; }
+    inline void SetIpRange(Aws::String&& value) { m_ipRangeHasBeenSet = true; m_ipRange = std::move(value); }
 
     /**
      * <p>Range of allowed IP addresses. This value must be expressed in CIDR notation.
@@ -121,7 +122,7 @@ namespace Model
      * Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the
      * shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
      */
-    inline IpPermission& WithIpRange(Aws::String&& value) { SetIpRange(value); return *this;}
+    inline IpPermission& WithIpRange(Aws::String&& value) { SetIpRange(std::move(value)); return *this;}
 
     /**
      * <p>Range of allowed IP addresses. This value must be expressed in CIDR notation.
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>Network communication protocol used by the fleet.</p>
      */
-    inline void SetProtocol(IpProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline void SetProtocol(IpProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>Network communication protocol used by the fleet.</p>
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p>Network communication protocol used by the fleet.</p>
      */
-    inline IpPermission& WithProtocol(IpProtocol&& value) { SetProtocol(value); return *this;}
+    inline IpPermission& WithProtocol(IpProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
   private:
     int m_fromPort;

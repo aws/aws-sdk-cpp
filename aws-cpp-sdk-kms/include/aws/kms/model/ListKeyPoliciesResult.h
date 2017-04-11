@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>A list of policy names. Currently, there is only one policy and it is named
      * "Default".</p>
      */
-    inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNames = value; }
+    inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNames = std::move(value); }
 
     /**
      * <p>A list of policy names. Currently, there is only one policy and it is named
@@ -68,7 +69,7 @@ namespace Model
      * <p>A list of policy names. Currently, there is only one policy and it is named
      * "Default".</p>
      */
-    inline ListKeyPoliciesResult& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(value); return *this;}
+    inline ListKeyPoliciesResult& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of policy names. Currently, there is only one policy and it is named
@@ -80,7 +81,7 @@ namespace Model
      * <p>A list of policy names. Currently, there is only one policy and it is named
      * "Default".</p>
      */
-    inline ListKeyPoliciesResult& AddPolicyNames(Aws::String&& value) { m_policyNames.push_back(value); return *this; }
+    inline ListKeyPoliciesResult& AddPolicyNames(Aws::String&& value) { m_policyNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of policy names. Currently, there is only one policy and it is named
@@ -104,7 +105,7 @@ namespace Model
      * <p>When <code>Truncated</code> is true, this element is present and contains the
      * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
      */
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
      * <p>When <code>Truncated</code> is true, this element is present and contains the
@@ -122,7 +123,7 @@ namespace Model
      * <p>When <code>Truncated</code> is true, this element is present and contains the
      * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
      */
-    inline ListKeyPoliciesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
+    inline ListKeyPoliciesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>When <code>Truncated</code> is true, this element is present and contains the

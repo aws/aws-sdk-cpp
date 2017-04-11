@@ -16,6 +16,7 @@
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -95,7 +96,7 @@ namespace Model
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default
      * value is 1 day (86400 seconds).</p> </li> </ul>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
@@ -146,7 +147,7 @@ namespace Model
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default
      * value is 1 day (86400 seconds).</p> </li> </ul>
      */
-    inline TargetGroupAttribute& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline TargetGroupAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>The value of the attribute.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of the attribute.</p>
@@ -193,7 +194,7 @@ namespace Model
     /**
      * <p>The value of the attribute.</p>
      */
-    inline TargetGroupAttribute& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline TargetGroupAttribute& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the attribute.</p>

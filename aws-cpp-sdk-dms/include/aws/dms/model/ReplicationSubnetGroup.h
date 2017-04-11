@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/model/Subnet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The identifier of the replication instance subnet group.</p>
      */
-    inline void SetReplicationSubnetGroupIdentifier(Aws::String&& value) { m_replicationSubnetGroupIdentifierHasBeenSet = true; m_replicationSubnetGroupIdentifier = value; }
+    inline void SetReplicationSubnetGroupIdentifier(Aws::String&& value) { m_replicationSubnetGroupIdentifierHasBeenSet = true; m_replicationSubnetGroupIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the replication instance subnet group.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The identifier of the replication instance subnet group.</p>
      */
-    inline ReplicationSubnetGroup& WithReplicationSubnetGroupIdentifier(Aws::String&& value) { SetReplicationSubnetGroupIdentifier(value); return *this;}
+    inline ReplicationSubnetGroup& WithReplicationSubnetGroupIdentifier(Aws::String&& value) { SetReplicationSubnetGroupIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the replication instance subnet group.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The description of the replication subnet group.</p>
      */
-    inline void SetReplicationSubnetGroupDescription(Aws::String&& value) { m_replicationSubnetGroupDescriptionHasBeenSet = true; m_replicationSubnetGroupDescription = value; }
+    inline void SetReplicationSubnetGroupDescription(Aws::String&& value) { m_replicationSubnetGroupDescriptionHasBeenSet = true; m_replicationSubnetGroupDescription = std::move(value); }
 
     /**
      * <p>The description of the replication subnet group.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The description of the replication subnet group.</p>
      */
-    inline ReplicationSubnetGroup& WithReplicationSubnetGroupDescription(Aws::String&& value) { SetReplicationSubnetGroupDescription(value); return *this;}
+    inline ReplicationSubnetGroup& WithReplicationSubnetGroupDescription(Aws::String&& value) { SetReplicationSubnetGroupDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the replication subnet group.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline ReplicationSubnetGroup& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline ReplicationSubnetGroup& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>The status of the subnet group.</p>
      */
-    inline void SetSubnetGroupStatus(Aws::String&& value) { m_subnetGroupStatusHasBeenSet = true; m_subnetGroupStatus = value; }
+    inline void SetSubnetGroupStatus(Aws::String&& value) { m_subnetGroupStatusHasBeenSet = true; m_subnetGroupStatus = std::move(value); }
 
     /**
      * <p>The status of the subnet group.</p>
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>The status of the subnet group.</p>
      */
-    inline ReplicationSubnetGroup& WithSubnetGroupStatus(Aws::String&& value) { SetSubnetGroupStatus(value); return *this;}
+    inline ReplicationSubnetGroup& WithSubnetGroupStatus(Aws::String&& value) { SetSubnetGroupStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the subnet group.</p>
@@ -198,7 +199,7 @@ namespace Model
     /**
      * <p>The subnets that are in the subnet group.</p>
      */
-    inline void SetSubnets(Aws::Vector<Subnet>&& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
+    inline void SetSubnets(Aws::Vector<Subnet>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
     /**
      * <p>The subnets that are in the subnet group.</p>
@@ -208,7 +209,7 @@ namespace Model
     /**
      * <p>The subnets that are in the subnet group.</p>
      */
-    inline ReplicationSubnetGroup& WithSubnets(Aws::Vector<Subnet>&& value) { SetSubnets(value); return *this;}
+    inline ReplicationSubnetGroup& WithSubnets(Aws::Vector<Subnet>&& value) { SetSubnets(std::move(value)); return *this;}
 
     /**
      * <p>The subnets that are in the subnet group.</p>
@@ -218,7 +219,7 @@ namespace Model
     /**
      * <p>The subnets that are in the subnet group.</p>
      */
-    inline ReplicationSubnetGroup& AddSubnets(Subnet&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+    inline ReplicationSubnetGroup& AddSubnets(Subnet&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_replicationSubnetGroupIdentifier;

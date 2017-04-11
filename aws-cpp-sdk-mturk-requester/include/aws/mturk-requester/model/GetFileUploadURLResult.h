@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
      */
-    inline void SetFileUploadURL(Aws::String&& value) { m_fileUploadURL = value; }
+    inline void SetFileUploadURL(Aws::String&& value) { m_fileUploadURL = std::move(value); }
 
     /**
      * <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
      */
-    inline GetFileUploadURLResult& WithFileUploadURL(Aws::String&& value) { SetFileUploadURL(value); return *this;}
+    inline GetFileUploadURLResult& WithFileUploadURL(Aws::String&& value) { SetFileUploadURL(std::move(value)); return *this;}
 
     /**
      * <p> A temporary URL for the file that the Worker uploaded for the answer. </p>

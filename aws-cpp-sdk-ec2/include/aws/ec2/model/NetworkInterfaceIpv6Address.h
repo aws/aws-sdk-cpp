@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The IPv6 address.</p>
      */
-    inline void SetIpv6Address(Aws::String&& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = value; }
+    inline void SetIpv6Address(Aws::String&& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = std::move(value); }
 
     /**
      * <p>The IPv6 address.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The IPv6 address.</p>
      */
-    inline NetworkInterfaceIpv6Address& WithIpv6Address(Aws::String&& value) { SetIpv6Address(value); return *this;}
+    inline NetworkInterfaceIpv6Address& WithIpv6Address(Aws::String&& value) { SetIpv6Address(std::move(value)); return *this;}
 
     /**
      * <p>The IPv6 address.</p>

@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/XssMatchSet.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>An <a>XssMatchSet</a>.</p>
      */
-    inline void SetXssMatchSet(XssMatchSet&& value) { m_xssMatchSet = value; }
+    inline void SetXssMatchSet(XssMatchSet&& value) { m_xssMatchSet = std::move(value); }
 
     /**
      * <p>An <a>XssMatchSet</a>.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>An <a>XssMatchSet</a>.</p>
      */
-    inline CreateXssMatchSetResult& WithXssMatchSet(XssMatchSet&& value) { SetXssMatchSet(value); return *this;}
+    inline CreateXssMatchSetResult& WithXssMatchSet(XssMatchSet&& value) { SetXssMatchSet(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -93,7 +94,7 @@ namespace Model
      * status of the request. For more information, see
      * <a>GetChangeTokenStatus</a>.</p>
      */
-    inline void SetChangeToken(Aws::String&& value) { m_changeToken = value; }
+    inline void SetChangeToken(Aws::String&& value) { m_changeToken = std::move(value); }
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -117,7 +118,7 @@ namespace Model
      * status of the request. For more information, see
      * <a>GetChangeTokenStatus</a>.</p>
      */
-    inline CreateXssMatchSetResult& WithChangeToken(Aws::String&& value) { SetChangeToken(value); return *this;}
+    inline CreateXssMatchSetResult& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the

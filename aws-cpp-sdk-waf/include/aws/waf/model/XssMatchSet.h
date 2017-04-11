@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/waf/model/XssMatchTuple.h>
+#include <utility>
 
 namespace Aws
 {
@@ -85,7 +86,7 @@ namespace Model
      * <a>DeleteXssMatchSet</a>).</p> <p> <code>XssMatchSetId</code> is returned by
      * <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
      */
-    inline void SetXssMatchSetId(Aws::String&& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = value; }
+    inline void SetXssMatchSetId(Aws::String&& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = std::move(value); }
 
     /**
      * <p>A unique identifier for an <code>XssMatchSet</code>. You use
@@ -121,7 +122,7 @@ namespace Model
      * <a>DeleteXssMatchSet</a>).</p> <p> <code>XssMatchSetId</code> is returned by
      * <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
      */
-    inline XssMatchSet& WithXssMatchSetId(Aws::String&& value) { SetXssMatchSetId(value); return *this;}
+    inline XssMatchSet& WithXssMatchSetId(Aws::String&& value) { SetXssMatchSetId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for an <code>XssMatchSet</code>. You use
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>The name, if any, of the <code>XssMatchSet</code>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name, if any, of the <code>XssMatchSet</code>.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>The name, if any, of the <code>XssMatchSet</code>.</p>
      */
-    inline XssMatchSet& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline XssMatchSet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name, if any, of the <code>XssMatchSet</code>.</p>
@@ -186,7 +187,7 @@ namespace Model
      * <p>Specifies the parts of web requests that you want to inspect for cross-site
      * scripting attacks.</p>
      */
-    inline void SetXssMatchTuples(Aws::Vector<XssMatchTuple>&& value) { m_xssMatchTuplesHasBeenSet = true; m_xssMatchTuples = value; }
+    inline void SetXssMatchTuples(Aws::Vector<XssMatchTuple>&& value) { m_xssMatchTuplesHasBeenSet = true; m_xssMatchTuples = std::move(value); }
 
     /**
      * <p>Specifies the parts of web requests that you want to inspect for cross-site
@@ -198,7 +199,7 @@ namespace Model
      * <p>Specifies the parts of web requests that you want to inspect for cross-site
      * scripting attacks.</p>
      */
-    inline XssMatchSet& WithXssMatchTuples(Aws::Vector<XssMatchTuple>&& value) { SetXssMatchTuples(value); return *this;}
+    inline XssMatchSet& WithXssMatchTuples(Aws::Vector<XssMatchTuple>&& value) { SetXssMatchTuples(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the parts of web requests that you want to inspect for cross-site
@@ -210,7 +211,7 @@ namespace Model
      * <p>Specifies the parts of web requests that you want to inspect for cross-site
      * scripting attacks.</p>
      */
-    inline XssMatchSet& AddXssMatchTuples(XssMatchTuple&& value) { m_xssMatchTuplesHasBeenSet = true; m_xssMatchTuples.push_back(value); return *this; }
+    inline XssMatchSet& AddXssMatchTuples(XssMatchTuple&& value) { m_xssMatchTuplesHasBeenSet = true; m_xssMatchTuples.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_xssMatchSetId;

@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -45,7 +46,7 @@ namespace Model
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
@@ -54,7 +55,7 @@ namespace Model
     inline SetLocalConsolePasswordRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     
-    inline SetLocalConsolePasswordRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline SetLocalConsolePasswordRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     
     inline SetLocalConsolePasswordRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The password you want to set for your VM local console.</p>
      */
-    inline void SetLocalConsolePassword(Aws::String&& value) { m_localConsolePasswordHasBeenSet = true; m_localConsolePassword = value; }
+    inline void SetLocalConsolePassword(Aws::String&& value) { m_localConsolePasswordHasBeenSet = true; m_localConsolePassword = std::move(value); }
 
     /**
      * <p>The password you want to set for your VM local console.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The password you want to set for your VM local console.</p>
      */
-    inline SetLocalConsolePasswordRequest& WithLocalConsolePassword(Aws::String&& value) { SetLocalConsolePassword(value); return *this;}
+    inline SetLocalConsolePasswordRequest& WithLocalConsolePassword(Aws::String&& value) { SetLocalConsolePassword(std::move(value)); return *this;}
 
     /**
      * <p>The password you want to set for your VM local console.</p>

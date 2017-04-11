@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
+    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
 
     
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
@@ -57,7 +58,7 @@ namespace Model
     inline ResponseMetadata& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     
-    inline ResponseMetadata& WithRequestId(Aws::String&& value) { SetRequestId(value); return *this;}
+    inline ResponseMetadata& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     
     inline ResponseMetadata& WithRequestId(const char* value) { SetRequestId(value); return *this;}

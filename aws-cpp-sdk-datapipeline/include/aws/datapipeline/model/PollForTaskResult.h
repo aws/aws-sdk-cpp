@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 #include <aws/datapipeline/model/TaskObject.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a>
      * and <a>SetTaskStatus</a>.</p>
      */
-    inline void SetTaskObject(TaskObject&& value) { m_taskObject = value; }
+    inline void SetTaskObject(TaskObject&& value) { m_taskObject = std::move(value); }
 
     /**
      * <p>The information needed to complete the task that is being assigned to the
@@ -87,7 +88,7 @@ namespace Model
      * runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a>
      * and <a>SetTaskStatus</a>.</p>
      */
-    inline PollForTaskResult& WithTaskObject(TaskObject&& value) { SetTaskObject(value); return *this;}
+    inline PollForTaskResult& WithTaskObject(TaskObject&& value) { SetTaskObject(std::move(value)); return *this;}
 
   private:
     TaskObject m_taskObject;

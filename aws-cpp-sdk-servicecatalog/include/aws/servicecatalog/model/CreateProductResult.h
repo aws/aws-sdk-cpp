@@ -18,6 +18,7 @@
 #include <aws/servicecatalog/model/ProvisioningArtifactDetail.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The resulting detailed product view information.</p>
      */
-    inline void SetProductViewDetail(ProductViewDetail&& value) { m_productViewDetail = value; }
+    inline void SetProductViewDetail(ProductViewDetail&& value) { m_productViewDetail = std::move(value); }
 
     /**
      * <p>The resulting detailed product view information.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The resulting detailed product view information.</p>
      */
-    inline CreateProductResult& WithProductViewDetail(ProductViewDetail&& value) { SetProductViewDetail(value); return *this;}
+    inline CreateProductResult& WithProductViewDetail(ProductViewDetail&& value) { SetProductViewDetail(std::move(value)); return *this;}
 
     /**
      * <p>The resulting detailed provisioning artifact information.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The resulting detailed provisioning artifact information.</p>
      */
-    inline void SetProvisioningArtifactDetail(ProvisioningArtifactDetail&& value) { m_provisioningArtifactDetail = value; }
+    inline void SetProvisioningArtifactDetail(ProvisioningArtifactDetail&& value) { m_provisioningArtifactDetail = std::move(value); }
 
     /**
      * <p>The resulting detailed provisioning artifact information.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The resulting detailed provisioning artifact information.</p>
      */
-    inline CreateProductResult& WithProvisioningArtifactDetail(ProvisioningArtifactDetail&& value) { SetProvisioningArtifactDetail(value); return *this;}
+    inline CreateProductResult& WithProvisioningArtifactDetail(ProvisioningArtifactDetail&& value) { SetProvisioningArtifactDetail(std::move(value)); return *this;}
 
     /**
      * <p>Tags successfully associated with the new product.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>Tags successfully associated with the new product.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
      * <p>Tags successfully associated with the new product.</p>
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>Tags successfully associated with the new product.</p>
      */
-    inline CreateProductResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline CreateProductResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Tags successfully associated with the new product.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>Tags successfully associated with the new product.</p>
      */
-    inline CreateProductResult& AddTags(Tag&& value) { m_tags.push_back(value); return *this; }
+    inline CreateProductResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
   private:
     ProductViewDetail m_productViewDetail;

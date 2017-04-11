@@ -17,6 +17,7 @@
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>An array of IAM or federated user ARNs that identify the users to be
      * described.</p>
      */
-    inline void SetIamUserArns(Aws::Vector<Aws::String>&& value) { m_iamUserArnsHasBeenSet = true; m_iamUserArns = value; }
+    inline void SetIamUserArns(Aws::Vector<Aws::String>&& value) { m_iamUserArnsHasBeenSet = true; m_iamUserArns = std::move(value); }
 
     /**
      * <p>An array of IAM or federated user ARNs that identify the users to be
@@ -64,7 +65,7 @@ namespace Model
      * <p>An array of IAM or federated user ARNs that identify the users to be
      * described.</p>
      */
-    inline DescribeUserProfilesRequest& WithIamUserArns(Aws::Vector<Aws::String>&& value) { SetIamUserArns(value); return *this;}
+    inline DescribeUserProfilesRequest& WithIamUserArns(Aws::Vector<Aws::String>&& value) { SetIamUserArns(std::move(value)); return *this;}
 
     /**
      * <p>An array of IAM or federated user ARNs that identify the users to be
@@ -76,7 +77,7 @@ namespace Model
      * <p>An array of IAM or federated user ARNs that identify the users to be
      * described.</p>
      */
-    inline DescribeUserProfilesRequest& AddIamUserArns(Aws::String&& value) { m_iamUserArnsHasBeenSet = true; m_iamUserArns.push_back(value); return *this; }
+    inline DescribeUserProfilesRequest& AddIamUserArns(Aws::String&& value) { m_iamUserArnsHasBeenSet = true; m_iamUserArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of IAM or federated user ARNs that identify the users to be

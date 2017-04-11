@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
      * object.</p>
      */
-    inline void SetAttachedPolicyIds(Aws::Vector<Aws::String>&& value) { m_attachedPolicyIds = value; }
+    inline void SetAttachedPolicyIds(Aws::Vector<Aws::String>&& value) { m_attachedPolicyIds = std::move(value); }
 
     /**
      * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
@@ -68,7 +69,7 @@ namespace Model
      * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
      * object.</p>
      */
-    inline ListObjectPoliciesResult& WithAttachedPolicyIds(Aws::Vector<Aws::String>&& value) { SetAttachedPolicyIds(value); return *this;}
+    inline ListObjectPoliciesResult& WithAttachedPolicyIds(Aws::Vector<Aws::String>&& value) { SetAttachedPolicyIds(std::move(value)); return *this;}
 
     /**
      * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
@@ -80,7 +81,7 @@ namespace Model
      * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
      * object.</p>
      */
-    inline ListObjectPoliciesResult& AddAttachedPolicyIds(Aws::String&& value) { m_attachedPolicyIds.push_back(value); return *this; }
+    inline ListObjectPoliciesResult& AddAttachedPolicyIds(Aws::String&& value) { m_attachedPolicyIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline ListObjectPoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListObjectPoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>

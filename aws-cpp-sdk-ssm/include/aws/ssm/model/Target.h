@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>User-defined criteria for sending commands that target instances that meet
@@ -105,7 +106,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
-    inline Target& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline Target& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>User-defined criteria for sending commands that target instances that meet
@@ -151,7 +152,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
+    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
@@ -175,7 +176,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
-    inline Target& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
+    inline Target& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
@@ -199,7 +200,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
-    inline Target& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    inline Target& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you

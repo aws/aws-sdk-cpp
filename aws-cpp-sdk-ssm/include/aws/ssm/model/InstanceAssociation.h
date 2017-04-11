@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The association ID.</p>
      */
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
 
     /**
      * <p>The association ID.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The association ID.</p>
      */
-    inline InstanceAssociation& WithAssociationId(Aws::String&& value) { SetAssociationId(value); return *this;}
+    inline InstanceAssociation& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
      * <p>The association ID.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The instance ID.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
-    inline InstanceAssociation& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline InstanceAssociation& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The instance ID.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The content of the association document for the instance(s).</p>
      */
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = value; }
+    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
      * <p>The content of the association document for the instance(s).</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The content of the association document for the instance(s).</p>
      */
-    inline InstanceAssociation& WithContent(Aws::String&& value) { SetContent(value); return *this;}
+    inline InstanceAssociation& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
      * <p>The content of the association document for the instance(s).</p>

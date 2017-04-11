@@ -16,6 +16,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/ArtifactType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The artifact's ARN.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The artifact's ARN.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The artifact's ARN.</p>
      */
-    inline Artifact& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Artifact& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The artifact's ARN.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The artifact's name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The artifact's name.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The artifact's name.</p>
      */
-    inline Artifact& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Artifact& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The artifact's name.</p>
@@ -191,7 +192,7 @@ namespace Model
      * <p>APPLICATION_CRASH_REPORT: The application crash report output type.</p> </li>
      * <li> <p>XCTEST_LOG: The XCode test output type.</p> </li> </ul>
      */
-    inline void SetType(ArtifactType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(ArtifactType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The artifact's type.</p> <p>Allowed values include the following:</p> <ul>
@@ -243,7 +244,7 @@ namespace Model
      * <p>APPLICATION_CRASH_REPORT: The application crash report output type.</p> </li>
      * <li> <p>XCTEST_LOG: The XCode test output type.</p> </li> </ul>
      */
-    inline Artifact& WithType(ArtifactType&& value) { SetType(value); return *this;}
+    inline Artifact& WithType(ArtifactType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The artifact's file extension.</p>
@@ -258,7 +259,7 @@ namespace Model
     /**
      * <p>The artifact's file extension.</p>
      */
-    inline void SetExtension(Aws::String&& value) { m_extensionHasBeenSet = true; m_extension = value; }
+    inline void SetExtension(Aws::String&& value) { m_extensionHasBeenSet = true; m_extension = std::move(value); }
 
     /**
      * <p>The artifact's file extension.</p>
@@ -273,7 +274,7 @@ namespace Model
     /**
      * <p>The artifact's file extension.</p>
      */
-    inline Artifact& WithExtension(Aws::String&& value) { SetExtension(value); return *this;}
+    inline Artifact& WithExtension(Aws::String&& value) { SetExtension(std::move(value)); return *this;}
 
     /**
      * <p>The artifact's file extension.</p>
@@ -296,7 +297,7 @@ namespace Model
      * <p>The pre-signed Amazon S3 URL that can be used with a corresponding GET
      * request to download the artifact's file.</p>
      */
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = value; }
+    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
      * <p>The pre-signed Amazon S3 URL that can be used with a corresponding GET
@@ -314,7 +315,7 @@ namespace Model
      * <p>The pre-signed Amazon S3 URL that can be used with a corresponding GET
      * request to download the artifact's file.</p>
      */
-    inline Artifact& WithUrl(Aws::String&& value) { SetUrl(value); return *this;}
+    inline Artifact& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
      * <p>The pre-signed Amazon S3 URL that can be used with a corresponding GET

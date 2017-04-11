@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The ID of the virtual interface.</p> <p>Example: dxvif-123dfg56</p>
      * <p>Default: None</p>
      */
-    inline void SetVirtualInterfaceId(Aws::String&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = value; }
+    inline void SetVirtualInterfaceId(Aws::String&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = std::move(value); }
 
     /**
      * <p>The ID of the virtual interface.</p> <p>Example: dxvif-123dfg56</p>
@@ -73,7 +74,7 @@ namespace Model
      * <p>The ID of the virtual interface.</p> <p>Example: dxvif-123dfg56</p>
      * <p>Default: None</p>
      */
-    inline AssociateVirtualInterfaceRequest& WithVirtualInterfaceId(Aws::String&& value) { SetVirtualInterfaceId(value); return *this;}
+    inline AssociateVirtualInterfaceRequest& WithVirtualInterfaceId(Aws::String&& value) { SetVirtualInterfaceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the virtual interface.</p> <p>Example: dxvif-123dfg56</p>
@@ -97,7 +98,7 @@ namespace Model
      * <p>The ID of the LAG or connection with which to associate the virtual
      * interface.</p> <p>Example: dxlag-abc123 or dxcon-abc123</p> <p>Default: None</p>
      */
-    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
+    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
     /**
      * <p>The ID of the LAG or connection with which to associate the virtual
@@ -115,7 +116,7 @@ namespace Model
      * <p>The ID of the LAG or connection with which to associate the virtual
      * interface.</p> <p>Example: dxlag-abc123 or dxcon-abc123</p> <p>Default: None</p>
      */
-    inline AssociateVirtualInterfaceRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(value); return *this;}
+    inline AssociateVirtualInterfaceRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the LAG or connection with which to associate the virtual

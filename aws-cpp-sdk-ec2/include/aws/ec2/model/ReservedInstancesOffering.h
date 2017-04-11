@@ -26,6 +26,7 @@
 #include <aws/ec2/model/Scope.h>
 #include <aws/ec2/model/RecurringCharge.h>
 #include <aws/ec2/model/PricingDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
      * made.</p>
      */
-    inline void SetReservedInstancesOfferingId(Aws::String&& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = value; }
+    inline void SetReservedInstancesOfferingId(Aws::String&& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = std::move(value); }
 
     /**
      * <p>The ID of the Reserved Instance offering. This is the offering ID used in
@@ -96,7 +97,7 @@ namespace Model
      * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
      * made.</p>
      */
-    inline ReservedInstancesOffering& WithReservedInstancesOfferingId(Aws::String&& value) { SetReservedInstancesOfferingId(value); return *this;}
+    inline ReservedInstancesOffering& WithReservedInstancesOfferingId(Aws::String&& value) { SetReservedInstancesOfferingId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Reserved Instance offering. This is the offering ID used in
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The instance type on which the Reserved Instance can be used.</p>
      */
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type on which the Reserved Instance can be used.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The instance type on which the Reserved Instance can be used.</p>
      */
-    inline ReservedInstancesOffering& WithInstanceType(InstanceType&& value) { SetInstanceType(value); return *this;}
+    inline ReservedInstancesOffering& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
@@ -158,7 +159,7 @@ namespace Model
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
      */
-    inline ReservedInstancesOffering& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline ReservedInstancesOffering& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
@@ -223,7 +224,7 @@ namespace Model
     /**
      * <p>The Reserved Instance product platform description.</p>
      */
-    inline void SetProductDescription(RIProductDescription&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
+    inline void SetProductDescription(RIProductDescription&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = std::move(value); }
 
     /**
      * <p>The Reserved Instance product platform description.</p>
@@ -233,7 +234,7 @@ namespace Model
     /**
      * <p>The Reserved Instance product platform description.</p>
      */
-    inline ReservedInstancesOffering& WithProductDescription(RIProductDescription&& value) { SetProductDescription(value); return *this;}
+    inline ReservedInstancesOffering& WithProductDescription(RIProductDescription&& value) { SetProductDescription(std::move(value)); return *this;}
 
     /**
      * <p>The tenancy of the instance.</p>
@@ -248,7 +249,7 @@ namespace Model
     /**
      * <p>The tenancy of the instance.</p>
      */
-    inline void SetInstanceTenancy(Tenancy&& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
+    inline void SetInstanceTenancy(Tenancy&& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = std::move(value); }
 
     /**
      * <p>The tenancy of the instance.</p>
@@ -258,7 +259,7 @@ namespace Model
     /**
      * <p>The tenancy of the instance.</p>
      */
-    inline ReservedInstancesOffering& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(value); return *this;}
+    inline ReservedInstancesOffering& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(std::move(value)); return *this;}
 
     /**
      * <p>The currency of the Reserved Instance offering you are purchasing. It's
@@ -279,7 +280,7 @@ namespace Model
      * specified using ISO 4217 standard currency codes. At this time, the only
      * supported currency is <code>USD</code>.</p>
      */
-    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
+    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
      * <p>The currency of the Reserved Instance offering you are purchasing. It's
@@ -293,7 +294,7 @@ namespace Model
      * specified using ISO 4217 standard currency codes. At this time, the only
      * supported currency is <code>USD</code>.</p>
      */
-    inline ReservedInstancesOffering& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(value); return *this;}
+    inline ReservedInstancesOffering& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
      * <p>The Reserved Instance offering type.</p>
@@ -308,7 +309,7 @@ namespace Model
     /**
      * <p>The Reserved Instance offering type.</p>
      */
-    inline void SetOfferingType(OfferingTypeValues&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
+    inline void SetOfferingType(OfferingTypeValues&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::move(value); }
 
     /**
      * <p>The Reserved Instance offering type.</p>
@@ -318,7 +319,7 @@ namespace Model
     /**
      * <p>The Reserved Instance offering type.</p>
      */
-    inline ReservedInstancesOffering& WithOfferingType(OfferingTypeValues&& value) { SetOfferingType(value); return *this;}
+    inline ReservedInstancesOffering& WithOfferingType(OfferingTypeValues&& value) { SetOfferingType(std::move(value)); return *this;}
 
     /**
      * <p>The recurring charge tag assigned to the resource.</p>
@@ -333,7 +334,7 @@ namespace Model
     /**
      * <p>The recurring charge tag assigned to the resource.</p>
      */
-    inline void SetRecurringCharges(Aws::Vector<RecurringCharge>&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
+    inline void SetRecurringCharges(Aws::Vector<RecurringCharge>&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = std::move(value); }
 
     /**
      * <p>The recurring charge tag assigned to the resource.</p>
@@ -343,7 +344,7 @@ namespace Model
     /**
      * <p>The recurring charge tag assigned to the resource.</p>
      */
-    inline ReservedInstancesOffering& WithRecurringCharges(Aws::Vector<RecurringCharge>&& value) { SetRecurringCharges(value); return *this;}
+    inline ReservedInstancesOffering& WithRecurringCharges(Aws::Vector<RecurringCharge>&& value) { SetRecurringCharges(std::move(value)); return *this;}
 
     /**
      * <p>The recurring charge tag assigned to the resource.</p>
@@ -353,7 +354,7 @@ namespace Model
     /**
      * <p>The recurring charge tag assigned to the resource.</p>
      */
-    inline ReservedInstancesOffering& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
+    inline ReservedInstancesOffering& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Indicates whether the offering is available through the Reserved Instance
@@ -389,7 +390,7 @@ namespace Model
     /**
      * <p>The pricing details of the Reserved Instance offering.</p>
      */
-    inline void SetPricingDetails(Aws::Vector<PricingDetail>&& value) { m_pricingDetailsHasBeenSet = true; m_pricingDetails = value; }
+    inline void SetPricingDetails(Aws::Vector<PricingDetail>&& value) { m_pricingDetailsHasBeenSet = true; m_pricingDetails = std::move(value); }
 
     /**
      * <p>The pricing details of the Reserved Instance offering.</p>
@@ -399,7 +400,7 @@ namespace Model
     /**
      * <p>The pricing details of the Reserved Instance offering.</p>
      */
-    inline ReservedInstancesOffering& WithPricingDetails(Aws::Vector<PricingDetail>&& value) { SetPricingDetails(value); return *this;}
+    inline ReservedInstancesOffering& WithPricingDetails(Aws::Vector<PricingDetail>&& value) { SetPricingDetails(std::move(value)); return *this;}
 
     /**
      * <p>The pricing details of the Reserved Instance offering.</p>
@@ -409,7 +410,7 @@ namespace Model
     /**
      * <p>The pricing details of the Reserved Instance offering.</p>
      */
-    inline ReservedInstancesOffering& AddPricingDetails(PricingDetail&& value) { m_pricingDetailsHasBeenSet = true; m_pricingDetails.push_back(value); return *this; }
+    inline ReservedInstancesOffering& AddPricingDetails(PricingDetail&& value) { m_pricingDetailsHasBeenSet = true; m_pricingDetails.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If <code>convertible</code> it can be exchanged for Reserved Instances of the
@@ -430,7 +431,7 @@ namespace Model
      * same or higher monetary value, with different configurations. If
      * <code>standard</code>, it is not possible to perform an exchange.</p>
      */
-    inline void SetOfferingClass(OfferingClassType&& value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
+    inline void SetOfferingClass(OfferingClassType&& value) { m_offeringClassHasBeenSet = true; m_offeringClass = std::move(value); }
 
     /**
      * <p>If <code>convertible</code> it can be exchanged for Reserved Instances of the
@@ -444,7 +445,7 @@ namespace Model
      * same or higher monetary value, with different configurations. If
      * <code>standard</code>, it is not possible to perform an exchange.</p>
      */
-    inline ReservedInstancesOffering& WithOfferingClass(OfferingClassType&& value) { SetOfferingClass(value); return *this;}
+    inline ReservedInstancesOffering& WithOfferingClass(OfferingClassType&& value) { SetOfferingClass(std::move(value)); return *this;}
 
     /**
      * <p>Whether the Reserved Instance is applied to instances in a region or an
@@ -462,7 +463,7 @@ namespace Model
      * <p>Whether the Reserved Instance is applied to instances in a region or an
      * Availability Zone.</p>
      */
-    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
      * <p>Whether the Reserved Instance is applied to instances in a region or an
@@ -474,7 +475,7 @@ namespace Model
      * <p>Whether the Reserved Instance is applied to instances in a region or an
      * Availability Zone.</p>
      */
-    inline ReservedInstancesOffering& WithScope(Scope&& value) { SetScope(value); return *this;}
+    inline ReservedInstancesOffering& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 
   private:
     Aws::String m_reservedInstancesOfferingId;

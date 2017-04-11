@@ -17,6 +17,7 @@
 #include <aws/elasticmapreduce/model/JobFlowExecutionState.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The state of the job flow.</p>
      */
-    inline void SetState(JobFlowExecutionState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(JobFlowExecutionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the job flow.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The state of the job flow.</p>
      */
-    inline JobFlowExecutionStatusDetail& WithState(JobFlowExecutionState&& value) { SetState(value); return *this;}
+    inline JobFlowExecutionStatusDetail& WithState(JobFlowExecutionState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The creation date and time of the job flow.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The creation date and time of the job flow.</p>
      */
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
+    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
 
     /**
      * <p>The creation date and time of the job flow.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The creation date and time of the job flow.</p>
      */
-    inline JobFlowExecutionStatusDetail& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(value); return *this;}
+    inline JobFlowExecutionStatusDetail& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
 
     /**
      * <p>The start date and time of the job flow.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The start date and time of the job flow.</p>
      */
-    inline void SetStartDateTime(Aws::Utils::DateTime&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
+    inline void SetStartDateTime(Aws::Utils::DateTime&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = std::move(value); }
 
     /**
      * <p>The start date and time of the job flow.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The start date and time of the job flow.</p>
      */
-    inline JobFlowExecutionStatusDetail& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(value); return *this;}
+    inline JobFlowExecutionStatusDetail& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(std::move(value)); return *this;}
 
     /**
      * <p>The date and time when the job flow was ready to start running bootstrap
@@ -136,7 +137,7 @@ namespace Model
      * <p>The date and time when the job flow was ready to start running bootstrap
      * actions.</p>
      */
-    inline void SetReadyDateTime(Aws::Utils::DateTime&& value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = value; }
+    inline void SetReadyDateTime(Aws::Utils::DateTime&& value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = std::move(value); }
 
     /**
      * <p>The date and time when the job flow was ready to start running bootstrap
@@ -148,7 +149,7 @@ namespace Model
      * <p>The date and time when the job flow was ready to start running bootstrap
      * actions.</p>
      */
-    inline JobFlowExecutionStatusDetail& WithReadyDateTime(Aws::Utils::DateTime&& value) { SetReadyDateTime(value); return *this;}
+    inline JobFlowExecutionStatusDetail& WithReadyDateTime(Aws::Utils::DateTime&& value) { SetReadyDateTime(std::move(value)); return *this;}
 
     /**
      * <p>The completion date and time of the job flow.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>The completion date and time of the job flow.</p>
      */
-    inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
+    inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::move(value); }
 
     /**
      * <p>The completion date and time of the job flow.</p>
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>The completion date and time of the job flow.</p>
      */
-    inline JobFlowExecutionStatusDetail& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(value); return *this;}
+    inline JobFlowExecutionStatusDetail& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(std::move(value)); return *this;}
 
     /**
      * <p>Description of the job flow last changed state.</p>
@@ -188,7 +189,7 @@ namespace Model
     /**
      * <p>Description of the job flow last changed state.</p>
      */
-    inline void SetLastStateChangeReason(Aws::String&& value) { m_lastStateChangeReasonHasBeenSet = true; m_lastStateChangeReason = value; }
+    inline void SetLastStateChangeReason(Aws::String&& value) { m_lastStateChangeReasonHasBeenSet = true; m_lastStateChangeReason = std::move(value); }
 
     /**
      * <p>Description of the job flow last changed state.</p>
@@ -203,7 +204,7 @@ namespace Model
     /**
      * <p>Description of the job flow last changed state.</p>
      */
-    inline JobFlowExecutionStatusDetail& WithLastStateChangeReason(Aws::String&& value) { SetLastStateChangeReason(value); return *this;}
+    inline JobFlowExecutionStatusDetail& WithLastStateChangeReason(Aws::String&& value) { SetLastStateChangeReason(std::move(value)); return *this;}
 
     /**
      * <p>Description of the job flow last changed state.</p>

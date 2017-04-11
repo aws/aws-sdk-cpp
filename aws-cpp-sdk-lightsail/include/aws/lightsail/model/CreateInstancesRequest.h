@@ -17,6 +17,7 @@
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * using quotation marks and commas, for example:
      * <code>["MyFirstInstance","MySecondInstance"]</code> </p>
      */
-    inline void SetInstanceNames(Aws::Vector<Aws::String>&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = value; }
+    inline void SetInstanceNames(Aws::Vector<Aws::String>&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = std::move(value); }
 
     /**
      * <p>The names to use for your new Lightsail instances. Separate multiple values
@@ -69,7 +70,7 @@ namespace Model
      * using quotation marks and commas, for example:
      * <code>["MyFirstInstance","MySecondInstance"]</code> </p>
      */
-    inline CreateInstancesRequest& WithInstanceNames(Aws::Vector<Aws::String>&& value) { SetInstanceNames(value); return *this;}
+    inline CreateInstancesRequest& WithInstanceNames(Aws::Vector<Aws::String>&& value) { SetInstanceNames(std::move(value)); return *this;}
 
     /**
      * <p>The names to use for your new Lightsail instances. Separate multiple values
@@ -83,7 +84,7 @@ namespace Model
      * using quotation marks and commas, for example:
      * <code>["MyFirstInstance","MySecondInstance"]</code> </p>
      */
-    inline CreateInstancesRequest& AddInstanceNames(Aws::String&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
+    inline CreateInstancesRequest& AddInstanceNames(Aws::String&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names to use for your new Lightsail instances. Separate multiple values
@@ -108,7 +109,7 @@ namespace Model
      * <p>The Availability Zone in which to create your instance. Use the following
      * format: <code>us-east-1a</code> (case sensitive).</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone in which to create your instance. Use the following
@@ -126,7 +127,7 @@ namespace Model
      * <p>The Availability Zone in which to create your instance. Use the following
      * format: <code>us-east-1a</code> (case sensitive).</p>
      */
-    inline CreateInstancesRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline CreateInstancesRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone in which to create your instance. Use the following
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The name for your custom image.</p>
      */
-    inline void SetCustomImageName(Aws::String&& value) { m_customImageNameHasBeenSet = true; m_customImageName = value; }
+    inline void SetCustomImageName(Aws::String&& value) { m_customImageNameHasBeenSet = true; m_customImageName = std::move(value); }
 
     /**
      * <p>The name for your custom image.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>The name for your custom image.</p>
      */
-    inline CreateInstancesRequest& WithCustomImageName(Aws::String&& value) { SetCustomImageName(value); return *this;}
+    inline CreateInstancesRequest& WithCustomImageName(Aws::String&& value) { SetCustomImageName(std::move(value)); return *this;}
 
     /**
      * <p>The name for your custom image.</p>
@@ -191,7 +192,7 @@ namespace Model
      * blueprints operation to return a list of available images (or
      * <i>blueprints</i>).</p>
      */
-    inline void SetBlueprintId(Aws::String&& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = value; }
+    inline void SetBlueprintId(Aws::String&& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = std::move(value); }
 
     /**
      * <p>The ID for a virtual private server image (e.g.,
@@ -215,7 +216,7 @@ namespace Model
      * blueprints operation to return a list of available images (or
      * <i>blueprints</i>).</p>
      */
-    inline CreateInstancesRequest& WithBlueprintId(Aws::String&& value) { SetBlueprintId(value); return *this;}
+    inline CreateInstancesRequest& WithBlueprintId(Aws::String&& value) { SetBlueprintId(std::move(value)); return *this;}
 
     /**
      * <p>The ID for a virtual private server image (e.g.,
@@ -241,7 +242,7 @@ namespace Model
      * <p>The bundle of specification information for your virtual private server (or
      * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
      */
-    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
+    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
@@ -259,7 +260,7 @@ namespace Model
      * <p>The bundle of specification information for your virtual private server (or
      * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
      */
-    inline CreateInstancesRequest& WithBundleId(Aws::String&& value) { SetBundleId(value); return *this;}
+    inline CreateInstancesRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
@@ -301,7 +302,7 @@ namespace Model
      * href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev
      * Guide</a>.</p> </note>
      */
-    inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = value; }
+    inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
      * <p>A launch script you can create that configures a server with additional user
@@ -337,7 +338,7 @@ namespace Model
      * href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev
      * Guide</a>.</p> </note>
      */
-    inline CreateInstancesRequest& WithUserData(Aws::String&& value) { SetUserData(value); return *this;}
+    inline CreateInstancesRequest& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
      * <p>A launch script you can create that configures a server with additional user
@@ -364,7 +365,7 @@ namespace Model
     /**
      * <p>The name of your key pair.</p>
      */
-    inline void SetKeyPairName(Aws::String&& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = value; }
+    inline void SetKeyPairName(Aws::String&& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = std::move(value); }
 
     /**
      * <p>The name of your key pair.</p>
@@ -379,7 +380,7 @@ namespace Model
     /**
      * <p>The name of your key pair.</p>
      */
-    inline CreateInstancesRequest& WithKeyPairName(Aws::String&& value) { SetKeyPairName(value); return *this;}
+    inline CreateInstancesRequest& WithKeyPairName(Aws::String&& value) { SetKeyPairName(std::move(value)); return *this;}
 
     /**
      * <p>The name of your key pair.</p>

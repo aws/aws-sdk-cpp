@@ -16,6 +16,7 @@
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/SnowballRequest.h>
 #include <aws/snowball/model/Address.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The address that you want the Snowball shipped to.</p>
      */
-    inline void SetAddress(Address&& value) { m_addressHasBeenSet = true; m_address = value; }
+    inline void SetAddress(Address&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
 
     /**
      * <p>The address that you want the Snowball shipped to.</p>
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The address that you want the Snowball shipped to.</p>
      */
-    inline CreateAddressRequest& WithAddress(Address&& value) { SetAddress(value); return *this;}
+    inline CreateAddressRequest& WithAddress(Address&& value) { SetAddress(std::move(value)); return *this;}
 
   private:
     Address m_address;

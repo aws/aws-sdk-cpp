@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/batch/model/JobDefinition.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The list of job definitions. </p>
      */
-    inline void SetJobDefinitions(Aws::Vector<JobDefinition>&& value) { m_jobDefinitions = value; }
+    inline void SetJobDefinitions(Aws::Vector<JobDefinition>&& value) { m_jobDefinitions = std::move(value); }
 
     /**
      * <p>The list of job definitions. </p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The list of job definitions. </p>
      */
-    inline DescribeJobDefinitionsResult& WithJobDefinitions(Aws::Vector<JobDefinition>&& value) { SetJobDefinitions(value); return *this;}
+    inline DescribeJobDefinitionsResult& WithJobDefinitions(Aws::Vector<JobDefinition>&& value) { SetJobDefinitions(std::move(value)); return *this;}
 
     /**
      * <p>The list of job definitions. </p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The list of job definitions. </p>
      */
-    inline DescribeJobDefinitionsResult& AddJobDefinitions(JobDefinition&& value) { m_jobDefinitions.push_back(value); return *this; }
+    inline DescribeJobDefinitionsResult& AddJobDefinitions(JobDefinition&& value) { m_jobDefinitions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -101,7 +102,7 @@ namespace Model
      * value can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -128,7 +129,7 @@ namespace Model
      * value can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline DescribeJobDefinitionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeJobDefinitionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value to include in a future

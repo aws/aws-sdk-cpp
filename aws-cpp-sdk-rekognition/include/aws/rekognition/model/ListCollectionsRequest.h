@@ -16,6 +16,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/RekognitionRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>Pagination token from the previous response.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Pagination token from the previous response.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Pagination token from the previous response.</p>
      */
-    inline ListCollectionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListCollectionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Pagination token from the previous response.</p>

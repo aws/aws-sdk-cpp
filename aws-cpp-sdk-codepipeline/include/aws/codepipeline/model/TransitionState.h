@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The ID of the user who last changed the transition state.</p>
      */
-    inline void SetLastChangedBy(Aws::String&& value) { m_lastChangedByHasBeenSet = true; m_lastChangedBy = value; }
+    inline void SetLastChangedBy(Aws::String&& value) { m_lastChangedByHasBeenSet = true; m_lastChangedBy = std::move(value); }
 
     /**
      * <p>The ID of the user who last changed the transition state.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The ID of the user who last changed the transition state.</p>
      */
-    inline TransitionState& WithLastChangedBy(Aws::String&& value) { SetLastChangedBy(value); return *this;}
+    inline TransitionState& WithLastChangedBy(Aws::String&& value) { SetLastChangedBy(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the user who last changed the transition state.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The timestamp when the transition state was last changed.</p>
      */
-    inline void SetLastChangedAt(Aws::Utils::DateTime&& value) { m_lastChangedAtHasBeenSet = true; m_lastChangedAt = value; }
+    inline void SetLastChangedAt(Aws::Utils::DateTime&& value) { m_lastChangedAtHasBeenSet = true; m_lastChangedAt = std::move(value); }
 
     /**
      * <p>The timestamp when the transition state was last changed.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The timestamp when the transition state was last changed.</p>
      */
-    inline TransitionState& WithLastChangedAt(Aws::Utils::DateTime&& value) { SetLastChangedAt(value); return *this;}
+    inline TransitionState& WithLastChangedAt(Aws::Utils::DateTime&& value) { SetLastChangedAt(std::move(value)); return *this;}
 
     /**
      * <p>The user-specified reason why the transition between two stages of a pipeline
@@ -139,7 +140,7 @@ namespace Model
      * <p>The user-specified reason why the transition between two stages of a pipeline
      * was disabled.</p>
      */
-    inline void SetDisabledReason(Aws::String&& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = value; }
+    inline void SetDisabledReason(Aws::String&& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = std::move(value); }
 
     /**
      * <p>The user-specified reason why the transition between two stages of a pipeline
@@ -157,7 +158,7 @@ namespace Model
      * <p>The user-specified reason why the transition between two stages of a pipeline
      * was disabled.</p>
      */
-    inline TransitionState& WithDisabledReason(Aws::String&& value) { SetDisabledReason(value); return *this;}
+    inline TransitionState& WithDisabledReason(Aws::String&& value) { SetDisabledReason(std::move(value)); return *this;}
 
     /**
      * <p>The user-specified reason why the transition between two stages of a pipeline

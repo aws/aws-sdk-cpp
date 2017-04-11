@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/UserType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The user returned in the request to create a new user.</p>
      */
-    inline void SetUser(UserType&& value) { m_user = value; }
+    inline void SetUser(UserType&& value) { m_user = std::move(value); }
 
     /**
      * <p>The user returned in the request to create a new user.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The user returned in the request to create a new user.</p>
      */
-    inline AdminCreateUserResult& WithUser(UserType&& value) { SetUser(value); return *this;}
+    inline AdminCreateUserResult& WithUser(UserType&& value) { SetUser(std::move(value)); return *this;}
 
   private:
     UserType m_user;

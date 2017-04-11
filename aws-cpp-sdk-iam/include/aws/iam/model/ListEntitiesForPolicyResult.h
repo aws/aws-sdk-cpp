@@ -20,6 +20,7 @@
 #include <aws/iam/model/PolicyGroup.h>
 #include <aws/iam/model/PolicyUser.h>
 #include <aws/iam/model/PolicyRole.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>A list of IAM groups that the policy is attached to.</p>
      */
-    inline void SetPolicyGroups(Aws::Vector<PolicyGroup>&& value) { m_policyGroups = value; }
+    inline void SetPolicyGroups(Aws::Vector<PolicyGroup>&& value) { m_policyGroups = std::move(value); }
 
     /**
      * <p>A list of IAM groups that the policy is attached to.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>A list of IAM groups that the policy is attached to.</p>
      */
-    inline ListEntitiesForPolicyResult& WithPolicyGroups(Aws::Vector<PolicyGroup>&& value) { SetPolicyGroups(value); return *this;}
+    inline ListEntitiesForPolicyResult& WithPolicyGroups(Aws::Vector<PolicyGroup>&& value) { SetPolicyGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of IAM groups that the policy is attached to.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>A list of IAM groups that the policy is attached to.</p>
      */
-    inline ListEntitiesForPolicyResult& AddPolicyGroups(PolicyGroup&& value) { m_policyGroups.push_back(value); return *this; }
+    inline ListEntitiesForPolicyResult& AddPolicyGroups(PolicyGroup&& value) { m_policyGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of IAM users that the policy is attached to.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>A list of IAM users that the policy is attached to.</p>
      */
-    inline void SetPolicyUsers(Aws::Vector<PolicyUser>&& value) { m_policyUsers = value; }
+    inline void SetPolicyUsers(Aws::Vector<PolicyUser>&& value) { m_policyUsers = std::move(value); }
 
     /**
      * <p>A list of IAM users that the policy is attached to.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>A list of IAM users that the policy is attached to.</p>
      */
-    inline ListEntitiesForPolicyResult& WithPolicyUsers(Aws::Vector<PolicyUser>&& value) { SetPolicyUsers(value); return *this;}
+    inline ListEntitiesForPolicyResult& WithPolicyUsers(Aws::Vector<PolicyUser>&& value) { SetPolicyUsers(std::move(value)); return *this;}
 
     /**
      * <p>A list of IAM users that the policy is attached to.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>A list of IAM users that the policy is attached to.</p>
      */
-    inline ListEntitiesForPolicyResult& AddPolicyUsers(PolicyUser&& value) { m_policyUsers.push_back(value); return *this; }
+    inline ListEntitiesForPolicyResult& AddPolicyUsers(PolicyUser&& value) { m_policyUsers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of IAM roles that the policy is attached to.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>A list of IAM roles that the policy is attached to.</p>
      */
-    inline void SetPolicyRoles(Aws::Vector<PolicyRole>&& value) { m_policyRoles = value; }
+    inline void SetPolicyRoles(Aws::Vector<PolicyRole>&& value) { m_policyRoles = std::move(value); }
 
     /**
      * <p>A list of IAM roles that the policy is attached to.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>A list of IAM roles that the policy is attached to.</p>
      */
-    inline ListEntitiesForPolicyResult& WithPolicyRoles(Aws::Vector<PolicyRole>&& value) { SetPolicyRoles(value); return *this;}
+    inline ListEntitiesForPolicyResult& WithPolicyRoles(Aws::Vector<PolicyRole>&& value) { SetPolicyRoles(std::move(value)); return *this;}
 
     /**
      * <p>A list of IAM roles that the policy is attached to.</p>
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p>A list of IAM roles that the policy is attached to.</p>
      */
-    inline ListEntitiesForPolicyResult& AddPolicyRoles(PolicyRole&& value) { m_policyRoles.push_back(value); return *this; }
+    inline ListEntitiesForPolicyResult& AddPolicyRoles(PolicyRole&& value) { m_policyRoles.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
@@ -207,7 +208,7 @@ namespace Model
      * and contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -228,7 +229,7 @@ namespace Model
      * and contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.</p>
      */
-    inline ListEntitiesForPolicyResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListEntitiesForPolicyResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -244,13 +245,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListEntitiesForPolicyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListEntitiesForPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListEntitiesForPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<PolicyGroup> m_policyGroups;

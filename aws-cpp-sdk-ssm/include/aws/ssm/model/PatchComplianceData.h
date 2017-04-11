@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/PatchComplianceDataState.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The title of the patch.</p>
      */
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = value; }
+    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
      * <p>The title of the patch.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The title of the patch.</p>
      */
-    inline PatchComplianceData& WithTitle(Aws::String&& value) { SetTitle(value); return *this;}
+    inline PatchComplianceData& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
      * <p>The title of the patch.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The Microsoft Knowledge Base ID of the patch.</p>
      */
-    inline void SetKBId(Aws::String&& value) { m_kBIdHasBeenSet = true; m_kBId = value; }
+    inline void SetKBId(Aws::String&& value) { m_kBIdHasBeenSet = true; m_kBId = std::move(value); }
 
     /**
      * <p>The Microsoft Knowledge Base ID of the patch.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The Microsoft Knowledge Base ID of the patch.</p>
      */
-    inline PatchComplianceData& WithKBId(Aws::String&& value) { SetKBId(value); return *this;}
+    inline PatchComplianceData& WithKBId(Aws::String&& value) { SetKBId(std::move(value)); return *this;}
 
     /**
      * <p>The Microsoft Knowledge Base ID of the patch.</p>
@@ -132,7 +133,7 @@ namespace Model
      * <p>The classification of the patch (for example, SecurityUpdates, Updates,
      * CriticalUpdates).</p>
      */
-    inline void SetClassification(Aws::String&& value) { m_classificationHasBeenSet = true; m_classification = value; }
+    inline void SetClassification(Aws::String&& value) { m_classificationHasBeenSet = true; m_classification = std::move(value); }
 
     /**
      * <p>The classification of the patch (for example, SecurityUpdates, Updates,
@@ -150,7 +151,7 @@ namespace Model
      * <p>The classification of the patch (for example, SecurityUpdates, Updates,
      * CriticalUpdates).</p>
      */
-    inline PatchComplianceData& WithClassification(Aws::String&& value) { SetClassification(value); return *this;}
+    inline PatchComplianceData& WithClassification(Aws::String&& value) { SetClassification(std::move(value)); return *this;}
 
     /**
      * <p>The classification of the patch (for example, SecurityUpdates, Updates,
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>The severity of the patch (for example, Critical, Important, Moderate).</p>
      */
-    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = value; }
+    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
 
     /**
      * <p>The severity of the patch (for example, Critical, Important, Moderate).</p>
@@ -186,7 +187,7 @@ namespace Model
     /**
      * <p>The severity of the patch (for example, Critical, Important, Moderate).</p>
      */
-    inline PatchComplianceData& WithSeverity(Aws::String&& value) { SetSeverity(value); return *this;}
+    inline PatchComplianceData& WithSeverity(Aws::String&& value) { SetSeverity(std::move(value)); return *this;}
 
     /**
      * <p>The severity of the patch (for example, Critical, Important, Moderate).</p>
@@ -209,7 +210,7 @@ namespace Model
      * <p>The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING,
      * NOT_APPLICABLE or FAILED).</p>
      */
-    inline void SetState(PatchComplianceDataState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(PatchComplianceDataState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING,
@@ -221,7 +222,7 @@ namespace Model
      * <p>The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING,
      * NOT_APPLICABLE or FAILED).</p>
      */
-    inline PatchComplianceData& WithState(PatchComplianceDataState&& value) { SetState(value); return *this;}
+    inline PatchComplianceData& WithState(PatchComplianceDataState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The date/time the patch was installed on the instance.</p>
@@ -236,7 +237,7 @@ namespace Model
     /**
      * <p>The date/time the patch was installed on the instance.</p>
      */
-    inline void SetInstalledTime(Aws::Utils::DateTime&& value) { m_installedTimeHasBeenSet = true; m_installedTime = value; }
+    inline void SetInstalledTime(Aws::Utils::DateTime&& value) { m_installedTimeHasBeenSet = true; m_installedTime = std::move(value); }
 
     /**
      * <p>The date/time the patch was installed on the instance.</p>
@@ -246,7 +247,7 @@ namespace Model
     /**
      * <p>The date/time the patch was installed on the instance.</p>
      */
-    inline PatchComplianceData& WithInstalledTime(Aws::Utils::DateTime&& value) { SetInstalledTime(value); return *this;}
+    inline PatchComplianceData& WithInstalledTime(Aws::Utils::DateTime&& value) { SetInstalledTime(std::move(value)); return *this;}
 
   private:
     Aws::String m_title;

@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/EMRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The identifier of the cluster to describe.</p>
      */
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
 
     /**
      * <p>The identifier of the cluster to describe.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The identifier of the cluster to describe.</p>
      */
-    inline DescribeClusterRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+    inline DescribeClusterRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the cluster to describe.</p>

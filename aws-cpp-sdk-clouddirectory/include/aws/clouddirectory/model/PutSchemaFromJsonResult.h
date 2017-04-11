@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ARN of the schema to update.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
      * <p>The ARN of the schema to update.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ARN of the schema to update.</p>
      */
-    inline PutSchemaFromJsonResult& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline PutSchemaFromJsonResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the schema to update.</p>

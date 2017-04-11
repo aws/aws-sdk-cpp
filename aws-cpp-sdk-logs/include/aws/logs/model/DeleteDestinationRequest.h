@@ -16,6 +16,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the destination.</p>
      */
-    inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
+    inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = std::move(value); }
 
     /**
      * <p>The name of the destination.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the destination.</p>
      */
-    inline DeleteDestinationRequest& WithDestinationName(Aws::String&& value) { SetDestinationName(value); return *this;}
+    inline DeleteDestinationRequest& WithDestinationName(Aws::String&& value) { SetDestinationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the destination.</p>

@@ -16,6 +16,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/model/AttemptContainerDetail.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>Details about the container in this job attempt.</p>
      */
-    inline void SetContainer(AttemptContainerDetail&& value) { m_containerHasBeenSet = true; m_container = value; }
+    inline void SetContainer(AttemptContainerDetail&& value) { m_containerHasBeenSet = true; m_container = std::move(value); }
 
     /**
      * <p>Details about the container in this job attempt.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Details about the container in this job attempt.</p>
      */
-    inline AttemptDetail& WithContainer(AttemptContainerDetail&& value) { SetContainer(value); return *this;}
+    inline AttemptDetail& WithContainer(AttemptContainerDetail&& value) { SetContainer(std::move(value)); return *this;}
 
     /**
      * <p>The Unix timestamp for when the attempt was started (when the task
@@ -127,7 +128,7 @@ namespace Model
      * <p>A short, human-readable string to provide additional details about the
      * current status of the job attempt.</p>
      */
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
 
     /**
      * <p>A short, human-readable string to provide additional details about the
@@ -145,7 +146,7 @@ namespace Model
      * <p>A short, human-readable string to provide additional details about the
      * current status of the job attempt.</p>
      */
-    inline AttemptDetail& WithStatusReason(Aws::String&& value) { SetStatusReason(value); return *this;}
+    inline AttemptDetail& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
      * <p>A short, human-readable string to provide additional details about the

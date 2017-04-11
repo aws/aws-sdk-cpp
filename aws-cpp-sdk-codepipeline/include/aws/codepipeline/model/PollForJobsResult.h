@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codepipeline/model/Job.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Information about the jobs to take action on.</p>
      */
-    inline void SetJobs(Aws::Vector<Job>&& value) { m_jobs = value; }
+    inline void SetJobs(Aws::Vector<Job>&& value) { m_jobs = std::move(value); }
 
     /**
      * <p>Information about the jobs to take action on.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Information about the jobs to take action on.</p>
      */
-    inline PollForJobsResult& WithJobs(Aws::Vector<Job>&& value) { SetJobs(value); return *this;}
+    inline PollForJobsResult& WithJobs(Aws::Vector<Job>&& value) { SetJobs(std::move(value)); return *this;}
 
     /**
      * <p>Information about the jobs to take action on.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>Information about the jobs to take action on.</p>
      */
-    inline PollForJobsResult& AddJobs(Job&& value) { m_jobs.push_back(value); return *this; }
+    inline PollForJobsResult& AddJobs(Job&& value) { m_jobs.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Job> m_jobs;

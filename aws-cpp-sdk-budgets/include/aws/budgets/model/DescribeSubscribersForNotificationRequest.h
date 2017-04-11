@@ -17,6 +17,7 @@
 #include <aws/budgets/BudgetsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/budgets/model/Notification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
@@ -55,7 +56,7 @@ namespace Model
     inline DescribeSubscribersForNotificationRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     
-    inline DescribeSubscribersForNotificationRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline DescribeSubscribersForNotificationRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     
     inline DescribeSubscribersForNotificationRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
@@ -67,7 +68,7 @@ namespace Model
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
 
     
-    inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
+    inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
 
     
     inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
@@ -76,7 +77,7 @@ namespace Model
     inline DescribeSubscribersForNotificationRequest& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
 
     
-    inline DescribeSubscribersForNotificationRequest& WithBudgetName(Aws::String&& value) { SetBudgetName(value); return *this;}
+    inline DescribeSubscribersForNotificationRequest& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
 
     
     inline DescribeSubscribersForNotificationRequest& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
@@ -88,13 +89,13 @@ namespace Model
     inline void SetNotification(const Notification& value) { m_notificationHasBeenSet = true; m_notification = value; }
 
     
-    inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = value; }
+    inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
 
     
     inline DescribeSubscribersForNotificationRequest& WithNotification(const Notification& value) { SetNotification(value); return *this;}
 
     
-    inline DescribeSubscribersForNotificationRequest& WithNotification(Notification&& value) { SetNotification(value); return *this;}
+    inline DescribeSubscribersForNotificationRequest& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
 
     
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -112,7 +113,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
@@ -121,7 +122,7 @@ namespace Model
     inline DescribeSubscribersForNotificationRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     
-    inline DescribeSubscribersForNotificationRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeSubscribersForNotificationRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     
     inline DescribeSubscribersForNotificationRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}

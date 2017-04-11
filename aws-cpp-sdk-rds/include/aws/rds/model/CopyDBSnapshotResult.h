@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/DBSnapshot.h>
 #include <aws/rds/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,13 +48,13 @@ namespace Model
     inline void SetDBSnapshot(const DBSnapshot& value) { m_dBSnapshot = value; }
 
     
-    inline void SetDBSnapshot(DBSnapshot&& value) { m_dBSnapshot = value; }
+    inline void SetDBSnapshot(DBSnapshot&& value) { m_dBSnapshot = std::move(value); }
 
     
     inline CopyDBSnapshotResult& WithDBSnapshot(const DBSnapshot& value) { SetDBSnapshot(value); return *this;}
 
     
-    inline CopyDBSnapshotResult& WithDBSnapshot(DBSnapshot&& value) { SetDBSnapshot(value); return *this;}
+    inline CopyDBSnapshotResult& WithDBSnapshot(DBSnapshot&& value) { SetDBSnapshot(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -62,13 +63,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CopyDBSnapshotResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CopyDBSnapshotResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CopyDBSnapshotResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     DBSnapshot m_dBSnapshot;

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * <p>Must not be "Default"</p> </li> </ul> <p>Example:
      * <code>mysecuritygroup</code> </p>
      */
-    inline void SetDBSecurityGroupName(Aws::String&& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
+    inline void SetDBSecurityGroupName(Aws::String&& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = std::move(value); }
 
     /**
      * <p>The name for the DB security group. This value is stored as a lowercase
@@ -100,7 +101,7 @@ namespace Model
      * <p>Must not be "Default"</p> </li> </ul> <p>Example:
      * <code>mysecuritygroup</code> </p>
      */
-    inline CreateDBSecurityGroupRequest& WithDBSecurityGroupName(Aws::String&& value) { SetDBSecurityGroupName(value); return *this;}
+    inline CreateDBSecurityGroupRequest& WithDBSecurityGroupName(Aws::String&& value) { SetDBSecurityGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name for the DB security group. This value is stored as a lowercase
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>The description for the DB security group.</p>
      */
-    inline void SetDBSecurityGroupDescription(Aws::String&& value) { m_dBSecurityGroupDescriptionHasBeenSet = true; m_dBSecurityGroupDescription = value; }
+    inline void SetDBSecurityGroupDescription(Aws::String&& value) { m_dBSecurityGroupDescriptionHasBeenSet = true; m_dBSecurityGroupDescription = std::move(value); }
 
     /**
      * <p>The description for the DB security group.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The description for the DB security group.</p>
      */
-    inline CreateDBSecurityGroupRequest& WithDBSecurityGroupDescription(Aws::String&& value) { SetDBSecurityGroupDescription(value); return *this;}
+    inline CreateDBSecurityGroupRequest& WithDBSecurityGroupDescription(Aws::String&& value) { SetDBSecurityGroupDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description for the DB security group.</p>
@@ -154,19 +155,19 @@ namespace Model
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     
     inline CreateDBSecurityGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     
-    inline CreateDBSecurityGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline CreateDBSecurityGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     
     inline CreateDBSecurityGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     
-    inline CreateDBSecurityGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateDBSecurityGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_dBSecurityGroupName;

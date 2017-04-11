@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The identifier of the cache security group.</p>
      */
-    inline void SetSecurityGroupId(Aws::String&& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = value; }
+    inline void SetSecurityGroupId(Aws::String&& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = std::move(value); }
 
     /**
      * <p>The identifier of the cache security group.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The identifier of the cache security group.</p>
      */
-    inline SecurityGroupMembership& WithSecurityGroupId(Aws::String&& value) { SetSecurityGroupId(value); return *this;}
+    inline SecurityGroupMembership& WithSecurityGroupId(Aws::String&& value) { SetSecurityGroupId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the cache security group.</p>
@@ -101,7 +102,7 @@ namespace Model
      * whenever a cache security group is modified, or when the cache security groups
      * assigned to a cache cluster are modified.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the cache security group membership. The status changes
@@ -122,7 +123,7 @@ namespace Model
      * whenever a cache security group is modified, or when the cache security groups
      * assigned to a cache cluster are modified.</p>
      */
-    inline SecurityGroupMembership& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline SecurityGroupMembership& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the cache security group membership. The status changes

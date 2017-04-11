@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appstream/model/ComputeCapacity.h>
 #include <aws/appstream/model/VpcConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A unique identifier for the fleet.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>A unique identifier for the fleet.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A unique identifier for the fleet.</p>
      */
-    inline CreateFleetRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateFleetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the fleet.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>Unique name of the image used by the fleet.</p>
      */
-    inline void SetImageName(Aws::String&& value) { m_imageNameHasBeenSet = true; m_imageName = value; }
+    inline void SetImageName(Aws::String&& value) { m_imageNameHasBeenSet = true; m_imageName = std::move(value); }
 
     /**
      * <p>Unique name of the image used by the fleet.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>Unique name of the image used by the fleet.</p>
      */
-    inline CreateFleetRequest& WithImageName(Aws::String&& value) { SetImageName(value); return *this;}
+    inline CreateFleetRequest& WithImageName(Aws::String&& value) { SetImageName(std::move(value)); return *this;}
 
     /**
      * <p>Unique name of the image used by the fleet.</p>
@@ -127,7 +128,7 @@ namespace Model
      * <p>The instance type of compute resources for the fleet. Fleet instances are
      * launched from this instance type.</p>
      */
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type of compute resources for the fleet. Fleet instances are
@@ -145,7 +146,7 @@ namespace Model
      * <p>The instance type of compute resources for the fleet. Fleet instances are
      * launched from this instance type.</p>
      */
-    inline CreateFleetRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
+    inline CreateFleetRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The instance type of compute resources for the fleet. Fleet instances are
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>The parameters for the capacity allocated to the fleet.</p>
      */
-    inline void SetComputeCapacity(ComputeCapacity&& value) { m_computeCapacityHasBeenSet = true; m_computeCapacity = value; }
+    inline void SetComputeCapacity(ComputeCapacity&& value) { m_computeCapacityHasBeenSet = true; m_computeCapacity = std::move(value); }
 
     /**
      * <p>The parameters for the capacity allocated to the fleet.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>The parameters for the capacity allocated to the fleet.</p>
      */
-    inline CreateFleetRequest& WithComputeCapacity(ComputeCapacity&& value) { SetComputeCapacity(value); return *this;}
+    inline CreateFleetRequest& WithComputeCapacity(ComputeCapacity&& value) { SetComputeCapacity(std::move(value)); return *this;}
 
     /**
      * <p>The VPC configuration for the fleet.</p>
@@ -191,7 +192,7 @@ namespace Model
     /**
      * <p>The VPC configuration for the fleet.</p>
      */
-    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
 
     /**
      * <p>The VPC configuration for the fleet.</p>
@@ -201,7 +202,7 @@ namespace Model
     /**
      * <p>The VPC configuration for the fleet.</p>
      */
-    inline CreateFleetRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(value); return *this;}
+    inline CreateFleetRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
     /**
      * <p>The maximum time up to which a streaming session can run.</p>
@@ -252,7 +253,7 @@ namespace Model
     /**
      * <p>The description of the fleet.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the fleet.</p>
@@ -267,7 +268,7 @@ namespace Model
     /**
      * <p>The description of the fleet.</p>
      */
-    inline CreateFleetRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateFleetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the fleet.</p>
@@ -287,7 +288,7 @@ namespace Model
     /**
      * <p>The display name of the fleet.</p>
      */
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
      * <p>The display name of the fleet.</p>
@@ -302,7 +303,7 @@ namespace Model
     /**
      * <p>The display name of the fleet.</p>
      */
-    inline CreateFleetRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(value); return *this;}
+    inline CreateFleetRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
      * <p>The display name of the fleet.</p>

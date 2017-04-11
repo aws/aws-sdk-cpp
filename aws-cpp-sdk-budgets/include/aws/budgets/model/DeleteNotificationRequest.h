@@ -17,6 +17,7 @@
 #include <aws/budgets/BudgetsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/budgets/model/Notification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
@@ -55,7 +56,7 @@ namespace Model
     inline DeleteNotificationRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     
-    inline DeleteNotificationRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline DeleteNotificationRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     
     inline DeleteNotificationRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
@@ -67,7 +68,7 @@ namespace Model
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
 
     
-    inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
+    inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
 
     
     inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
@@ -76,7 +77,7 @@ namespace Model
     inline DeleteNotificationRequest& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
 
     
-    inline DeleteNotificationRequest& WithBudgetName(Aws::String&& value) { SetBudgetName(value); return *this;}
+    inline DeleteNotificationRequest& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
 
     
     inline DeleteNotificationRequest& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
@@ -88,13 +89,13 @@ namespace Model
     inline void SetNotification(const Notification& value) { m_notificationHasBeenSet = true; m_notification = value; }
 
     
-    inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = value; }
+    inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
 
     
     inline DeleteNotificationRequest& WithNotification(const Notification& value) { SetNotification(value); return *this;}
 
     
-    inline DeleteNotificationRequest& WithNotification(Notification&& value) { SetNotification(value); return *this;}
+    inline DeleteNotificationRequest& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
 
   private:
     Aws::String m_accountId;

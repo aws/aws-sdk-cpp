@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/InternetGateway.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Information about the Internet gateway.</p>
      */
-    inline void SetInternetGateway(InternetGateway&& value) { m_internetGateway = value; }
+    inline void SetInternetGateway(InternetGateway&& value) { m_internetGateway = std::move(value); }
 
     /**
      * <p>Information about the Internet gateway.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Information about the Internet gateway.</p>
      */
-    inline CreateInternetGatewayResponse& WithInternetGateway(InternetGateway&& value) { SetInternetGateway(value); return *this;}
+    inline CreateInternetGatewayResponse& WithInternetGateway(InternetGateway&& value) { SetInternetGateway(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -77,13 +78,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CreateInternetGatewayResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CreateInternetGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CreateInternetGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     InternetGateway m_internetGateway;

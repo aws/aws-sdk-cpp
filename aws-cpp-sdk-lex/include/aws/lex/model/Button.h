@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lex/LexRuntimeService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>Text that is visible to the user on the button.</p>
      */
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = value; }
+    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
 
     /**
      * <p>Text that is visible to the user on the button.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>Text that is visible to the user on the button.</p>
      */
-    inline Button& WithText(Aws::String&& value) { SetText(value); return *this;}
+    inline Button& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
 
     /**
      * <p>Text that is visible to the user on the button.</p>
@@ -98,7 +99,7 @@ namespace Model
      * consider button text "NYC." When the user chooses the button, the value sent can
      * be "New York City."</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value sent to Amazon Lex when a user chooses the button. For example,
@@ -119,7 +120,7 @@ namespace Model
      * consider button text "NYC." When the user chooses the button, the value sent can
      * be "New York City."</p>
      */
-    inline Button& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Button& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value sent to Amazon Lex when a user chooses the button. For example,

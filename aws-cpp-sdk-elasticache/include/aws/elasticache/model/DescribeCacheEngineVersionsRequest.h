@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>The cache engine to return. Valid values: <code>memcached</code> |
      * <code>redis</code> </p>
      */
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The cache engine to return. Valid values: <code>memcached</code> |
@@ -75,7 +76,7 @@ namespace Model
      * <p>The cache engine to return. Valid values: <code>memcached</code> |
      * <code>redis</code> </p>
      */
-    inline DescribeCacheEngineVersionsRequest& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
+    inline DescribeCacheEngineVersionsRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The cache engine to return. Valid values: <code>memcached</code> |
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code> </p>
      */
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code> </p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code> </p>
      */
-    inline DescribeCacheEngineVersionsRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
+    inline DescribeCacheEngineVersionsRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code> </p>
@@ -146,7 +147,7 @@ namespace Model
      * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
      * two consecutive hyphens</p> </li> </ul>
      */
-    inline void SetCacheParameterGroupFamily(Aws::String&& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
+    inline void SetCacheParameterGroupFamily(Aws::String&& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = std::move(value); }
 
     /**
      * <p>The name of a specific cache parameter group family to return details
@@ -176,7 +177,7 @@ namespace Model
      * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
      * two consecutive hyphens</p> </li> </ul>
      */
-    inline DescribeCacheEngineVersionsRequest& WithCacheParameterGroupFamily(Aws::String&& value) { SetCacheParameterGroupFamily(value); return *this;}
+    inline DescribeCacheEngineVersionsRequest& WithCacheParameterGroupFamily(Aws::String&& value) { SetCacheParameterGroupFamily(std::move(value)); return *this;}
 
     /**
      * <p>The name of a specific cache parameter group family to return details
@@ -234,7 +235,7 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
@@ -258,7 +259,7 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.</p>
      */
-    inline DescribeCacheEngineVersionsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeCacheEngineVersionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for

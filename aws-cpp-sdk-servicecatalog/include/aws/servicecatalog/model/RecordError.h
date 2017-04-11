@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The numeric value of the error.</p>
      */
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>The numeric value of the error.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The numeric value of the error.</p>
      */
-    inline RecordError& WithCode(Aws::String&& value) { SetCode(value); return *this;}
+    inline RecordError& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>The numeric value of the error.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The text description of the error.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The text description of the error.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The text description of the error.</p>
      */
-    inline RecordError& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline RecordError& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The text description of the error.</p>

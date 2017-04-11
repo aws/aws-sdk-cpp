@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The Berkshelf version.</p>
      */
-    inline void SetBerkshelfVersion(Aws::String&& value) { m_berkshelfVersionHasBeenSet = true; m_berkshelfVersion = value; }
+    inline void SetBerkshelfVersion(Aws::String&& value) { m_berkshelfVersionHasBeenSet = true; m_berkshelfVersion = std::move(value); }
 
     /**
      * <p>The Berkshelf version.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The Berkshelf version.</p>
      */
-    inline ChefConfiguration& WithBerkshelfVersion(Aws::String&& value) { SetBerkshelfVersion(value); return *this;}
+    inline ChefConfiguration& WithBerkshelfVersion(Aws::String&& value) { SetBerkshelfVersion(std::move(value)); return *this;}
 
     /**
      * <p>The Berkshelf version.</p>

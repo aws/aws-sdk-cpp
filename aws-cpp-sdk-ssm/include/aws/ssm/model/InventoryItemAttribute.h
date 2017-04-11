@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/InventoryAttributeDataType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Name of the inventory item attribute.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Name of the inventory item attribute.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>Name of the inventory item attribute.</p>
      */
-    inline InventoryItemAttribute& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline InventoryItemAttribute& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the inventory item attribute.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The data type of the inventory item attribute. </p>
      */
-    inline void SetDataType(InventoryAttributeDataType&& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
+    inline void SetDataType(InventoryAttributeDataType&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
 
     /**
      * <p>The data type of the inventory item attribute. </p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The data type of the inventory item attribute. </p>
      */
-    inline InventoryItemAttribute& WithDataType(InventoryAttributeDataType&& value) { SetDataType(value); return *this;}
+    inline InventoryItemAttribute& WithDataType(InventoryAttributeDataType&& value) { SetDataType(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

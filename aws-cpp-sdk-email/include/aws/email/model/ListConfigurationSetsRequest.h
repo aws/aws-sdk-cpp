@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * to indicate the position of the configuration set in the configuration set
      * list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>A token returned from a previous call to <code>ListConfigurationSets</code>
@@ -84,7 +85,7 @@ namespace Model
      * to indicate the position of the configuration set in the configuration set
      * list.</p>
      */
-    inline ListConfigurationSetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListConfigurationSetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A token returned from a previous call to <code>ListConfigurationSets</code>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
      * (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the literal string
      * quotarnquot.</p>
      */
-    inline void SetTimerId(Aws::String&& value) { m_timerIdHasBeenSet = true; m_timerId = value; }
+    inline void SetTimerId(Aws::String&& value) { m_timerIdHasBeenSet = true; m_timerId = std::move(value); }
 
     /**
      * <p><b>Required.</b> The unique ID of the timer.</p> <p>The specified string must
@@ -107,7 +108,7 @@ namespace Model
      * (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the literal string
      * quotarnquot.</p>
      */
-    inline StartTimerDecisionAttributes& WithTimerId(Aws::String&& value) { SetTimerId(value); return *this;}
+    inline StartTimerDecisionAttributes& WithTimerId(Aws::String&& value) { SetTimerId(std::move(value)); return *this;}
 
     /**
      * <p><b>Required.</b> The unique ID of the timer.</p> <p>The specified string must
@@ -134,7 +135,7 @@ namespace Model
      * <p><i>Optional.</i> Data attached to the event that can be used by the decider
      * in subsequent workflow tasks.</p>
      */
-    inline void SetControl(Aws::String&& value) { m_controlHasBeenSet = true; m_control = value; }
+    inline void SetControl(Aws::String&& value) { m_controlHasBeenSet = true; m_control = std::move(value); }
 
     /**
      * <p><i>Optional.</i> Data attached to the event that can be used by the decider
@@ -152,7 +153,7 @@ namespace Model
      * <p><i>Optional.</i> Data attached to the event that can be used by the decider
      * in subsequent workflow tasks.</p>
      */
-    inline StartTimerDecisionAttributes& WithControl(Aws::String&& value) { SetControl(value); return *this;}
+    inline StartTimerDecisionAttributes& WithControl(Aws::String&& value) { SetControl(std::move(value)); return *this;}
 
     /**
      * <p><i>Optional.</i> Data attached to the event that can be used by the decider
@@ -176,7 +177,7 @@ namespace Model
      * <p><b>Required.</b> The duration to wait before firing the timer.</p> <p>The
      * duration is specified in seconds; an integer greater than or equal to 0.</p>
      */
-    inline void SetStartToFireTimeout(Aws::String&& value) { m_startToFireTimeoutHasBeenSet = true; m_startToFireTimeout = value; }
+    inline void SetStartToFireTimeout(Aws::String&& value) { m_startToFireTimeoutHasBeenSet = true; m_startToFireTimeout = std::move(value); }
 
     /**
      * <p><b>Required.</b> The duration to wait before firing the timer.</p> <p>The
@@ -194,7 +195,7 @@ namespace Model
      * <p><b>Required.</b> The duration to wait before firing the timer.</p> <p>The
      * duration is specified in seconds; an integer greater than or equal to 0.</p>
      */
-    inline StartTimerDecisionAttributes& WithStartToFireTimeout(Aws::String&& value) { SetStartToFireTimeout(value); return *this;}
+    inline StartTimerDecisionAttributes& WithStartToFireTimeout(Aws::String&& value) { SetStartToFireTimeout(std::move(value)); return *this;}
 
     /**
      * <p><b>Required.</b> The duration to wait before firing the timer.</p> <p>The

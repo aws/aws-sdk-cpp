@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
 
     /**
      * <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p>
@@ -96,7 +97,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
-    inline CertificateSummary& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
+    inline CertificateSummary& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p>
@@ -123,7 +124,7 @@ namespace Model
      * <p>Fully qualified domain name (FQDN), such as www.example.com or example.com,
      * for the certificate.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>Fully qualified domain name (FQDN), such as www.example.com or example.com,
@@ -141,7 +142,7 @@ namespace Model
      * <p>Fully qualified domain name (FQDN), such as www.example.com or example.com,
      * for the certificate.</p>
      */
-    inline CertificateSummary& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline CertificateSummary& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>Fully qualified domain name (FQDN), such as www.example.com or example.com,

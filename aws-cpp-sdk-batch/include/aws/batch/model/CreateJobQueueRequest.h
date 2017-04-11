@@ -19,6 +19,7 @@
 #include <aws/batch/model/JQState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/batch/model/ComputeEnvironmentOrder.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The name of the job queue.</p>
      */
-    inline void SetJobQueueName(Aws::String&& value) { m_jobQueueNameHasBeenSet = true; m_jobQueueName = value; }
+    inline void SetJobQueueName(Aws::String&& value) { m_jobQueueNameHasBeenSet = true; m_jobQueueName = std::move(value); }
 
     /**
      * <p>The name of the job queue.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name of the job queue.</p>
      */
-    inline CreateJobQueueRequest& WithJobQueueName(Aws::String&& value) { SetJobQueueName(value); return *this;}
+    inline CreateJobQueueRequest& WithJobQueueName(Aws::String&& value) { SetJobQueueName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the job queue.</p>
@@ -87,7 +88,7 @@ namespace Model
      * <p>The state of the job queue. If the job queue state is <code>ENABLED</code>,
      * it is able to accept jobs.</p>
      */
-    inline void SetState(JQState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(JQState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the job queue. If the job queue state is <code>ENABLED</code>,
@@ -99,7 +100,7 @@ namespace Model
      * <p>The state of the job queue. If the job queue state is <code>ENABLED</code>,
      * it is able to accept jobs.</p>
      */
-    inline CreateJobQueueRequest& WithState(JQState&& value) { SetState(value); return *this;}
+    inline CreateJobQueueRequest& WithState(JQState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The priority of the job queue. Job queues with a higher priority (or a lower
@@ -156,7 +157,7 @@ namespace Model
      * the <code>VALID</code> state before you can associate them with a job queue. You
      * can associate up to 3 compute environments with a job queue.</p>
      */
-    inline void SetComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = value; }
+    inline void SetComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = std::move(value); }
 
     /**
      * <p>The set of compute environments mapped to a job queue and their order
@@ -174,7 +175,7 @@ namespace Model
      * the <code>VALID</code> state before you can associate them with a job queue. You
      * can associate up to 3 compute environments with a job queue.</p>
      */
-    inline CreateJobQueueRequest& WithComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { SetComputeEnvironmentOrder(value); return *this;}
+    inline CreateJobQueueRequest& WithComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { SetComputeEnvironmentOrder(std::move(value)); return *this;}
 
     /**
      * <p>The set of compute environments mapped to a job queue and their order
@@ -192,7 +193,7 @@ namespace Model
      * the <code>VALID</code> state before you can associate them with a job queue. You
      * can associate up to 3 compute environments with a job queue.</p>
      */
-    inline CreateJobQueueRequest& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(value); return *this; }
+    inline CreateJobQueueRequest& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_jobQueueName;

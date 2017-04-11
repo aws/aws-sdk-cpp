@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/TrafficPolicy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>A list that contains one <code>TrafficPolicy</code> element for each traffic
      * policy version that is associated with the specified traffic policy.</p>
      */
-    inline void SetTrafficPolicies(Aws::Vector<TrafficPolicy>&& value) { m_trafficPolicies = value; }
+    inline void SetTrafficPolicies(Aws::Vector<TrafficPolicy>&& value) { m_trafficPolicies = std::move(value); }
 
     /**
      * <p>A list that contains one <code>TrafficPolicy</code> element for each traffic
@@ -75,7 +76,7 @@ namespace Model
      * <p>A list that contains one <code>TrafficPolicy</code> element for each traffic
      * policy version that is associated with the specified traffic policy.</p>
      */
-    inline ListTrafficPolicyVersionsResult& WithTrafficPolicies(Aws::Vector<TrafficPolicy>&& value) { SetTrafficPolicies(value); return *this;}
+    inline ListTrafficPolicyVersionsResult& WithTrafficPolicies(Aws::Vector<TrafficPolicy>&& value) { SetTrafficPolicies(std::move(value)); return *this;}
 
     /**
      * <p>A list that contains one <code>TrafficPolicy</code> element for each traffic
@@ -87,7 +88,7 @@ namespace Model
      * <p>A list that contains one <code>TrafficPolicy</code> element for each traffic
      * policy version that is associated with the specified traffic policy.</p>
      */
-    inline ListTrafficPolicyVersionsResult& AddTrafficPolicies(TrafficPolicy&& value) { m_trafficPolicies.push_back(value); return *this; }
+    inline ListTrafficPolicyVersionsResult& AddTrafficPolicies(TrafficPolicy&& value) { m_trafficPolicies.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A flag that indicates whether there are more traffic policies to be listed.
@@ -147,7 +148,7 @@ namespace Model
      * <code>TrafficPolicyVersionMarker</code> request parameter.</p> <p>This element
      * is present only if <code>IsTruncated</code> is <code>true</code>.</p>
      */
-    inline void SetTrafficPolicyVersionMarker(Aws::String&& value) { m_trafficPolicyVersionMarker = value; }
+    inline void SetTrafficPolicyVersionMarker(Aws::String&& value) { m_trafficPolicyVersionMarker = std::move(value); }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
@@ -180,7 +181,7 @@ namespace Model
      * <code>TrafficPolicyVersionMarker</code> request parameter.</p> <p>This element
      * is present only if <code>IsTruncated</code> is <code>true</code>.</p>
      */
-    inline ListTrafficPolicyVersionsResult& WithTrafficPolicyVersionMarker(Aws::String&& value) { SetTrafficPolicyVersionMarker(value); return *this;}
+    inline ListTrafficPolicyVersionsResult& WithTrafficPolicyVersionMarker(Aws::String&& value) { SetTrafficPolicyVersionMarker(std::move(value)); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
@@ -212,7 +213,7 @@ namespace Model
      * call to <code>ListTrafficPolicyVersions</code> that produced the current
      * response.</p>
      */
-    inline void SetMaxItems(Aws::String&& value) { m_maxItems = value; }
+    inline void SetMaxItems(Aws::String&& value) { m_maxItems = std::move(value); }
 
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
@@ -233,7 +234,7 @@ namespace Model
      * call to <code>ListTrafficPolicyVersions</code> that produced the current
      * response.</p>
      */
-    inline ListTrafficPolicyVersionsResult& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
+    inline ListTrafficPolicyVersionsResult& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the

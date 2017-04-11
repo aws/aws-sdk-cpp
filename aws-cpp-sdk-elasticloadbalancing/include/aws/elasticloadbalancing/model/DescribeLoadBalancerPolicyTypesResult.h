@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancing/model/ResponseMetadata.h>
 #include <aws/elasticloadbalancing/model/PolicyTypeDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Information about the policy types.</p>
      */
-    inline void SetPolicyTypeDescriptions(Aws::Vector<PolicyTypeDescription>&& value) { m_policyTypeDescriptions = value; }
+    inline void SetPolicyTypeDescriptions(Aws::Vector<PolicyTypeDescription>&& value) { m_policyTypeDescriptions = std::move(value); }
 
     /**
      * <p>Information about the policy types.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Information about the policy types.</p>
      */
-    inline DescribeLoadBalancerPolicyTypesResult& WithPolicyTypeDescriptions(Aws::Vector<PolicyTypeDescription>&& value) { SetPolicyTypeDescriptions(value); return *this;}
+    inline DescribeLoadBalancerPolicyTypesResult& WithPolicyTypeDescriptions(Aws::Vector<PolicyTypeDescription>&& value) { SetPolicyTypeDescriptions(std::move(value)); return *this;}
 
     /**
      * <p>Information about the policy types.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>Information about the policy types.</p>
      */
-    inline DescribeLoadBalancerPolicyTypesResult& AddPolicyTypeDescriptions(PolicyTypeDescription&& value) { m_policyTypeDescriptions.push_back(value); return *this; }
+    inline DescribeLoadBalancerPolicyTypesResult& AddPolicyTypeDescriptions(PolicyTypeDescription&& value) { m_policyTypeDescriptions.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -89,13 +90,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeLoadBalancerPolicyTypesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeLoadBalancerPolicyTypesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeLoadBalancerPolicyTypesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<PolicyTypeDescription> m_policyTypeDescriptions;

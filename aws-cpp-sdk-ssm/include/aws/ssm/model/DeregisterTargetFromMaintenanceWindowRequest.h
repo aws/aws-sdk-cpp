@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window the target should be removed from.</p>
      */
-    inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
+    inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = std::move(value); }
 
     /**
      * <p>The ID of the Maintenance Window the target should be removed from.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window the target should be removed from.</p>
      */
-    inline DeregisterTargetFromMaintenanceWindowRequest& WithWindowId(Aws::String&& value) { SetWindowId(value); return *this;}
+    inline DeregisterTargetFromMaintenanceWindowRequest& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Maintenance Window the target should be removed from.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The ID of the target definition to remove.</p>
      */
-    inline void SetWindowTargetId(Aws::String&& value) { m_windowTargetIdHasBeenSet = true; m_windowTargetId = value; }
+    inline void SetWindowTargetId(Aws::String&& value) { m_windowTargetIdHasBeenSet = true; m_windowTargetId = std::move(value); }
 
     /**
      * <p>The ID of the target definition to remove.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The ID of the target definition to remove.</p>
      */
-    inline DeregisterTargetFromMaintenanceWindowRequest& WithWindowTargetId(Aws::String&& value) { SetWindowTargetId(value); return *this;}
+    inline DeregisterTargetFromMaintenanceWindowRequest& WithWindowTargetId(Aws::String&& value) { SetWindowTargetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the target definition to remove.</p>

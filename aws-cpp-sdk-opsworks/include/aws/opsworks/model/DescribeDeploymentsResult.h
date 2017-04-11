@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/Deployment.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>An array of <code>Deployment</code> objects that describe the
      * deployments.</p>
      */
-    inline void SetDeployments(Aws::Vector<Deployment>&& value) { m_deployments = value; }
+    inline void SetDeployments(Aws::Vector<Deployment>&& value) { m_deployments = std::move(value); }
 
     /**
      * <p>An array of <code>Deployment</code> objects that describe the
@@ -74,7 +75,7 @@ namespace Model
      * <p>An array of <code>Deployment</code> objects that describe the
      * deployments.</p>
      */
-    inline DescribeDeploymentsResult& WithDeployments(Aws::Vector<Deployment>&& value) { SetDeployments(value); return *this;}
+    inline DescribeDeploymentsResult& WithDeployments(Aws::Vector<Deployment>&& value) { SetDeployments(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>Deployment</code> objects that describe the
@@ -86,7 +87,7 @@ namespace Model
      * <p>An array of <code>Deployment</code> objects that describe the
      * deployments.</p>
      */
-    inline DescribeDeploymentsResult& AddDeployments(Deployment&& value) { m_deployments.push_back(value); return *this; }
+    inline DescribeDeploymentsResult& AddDeployments(Deployment&& value) { m_deployments.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Deployment> m_deployments;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudsearch/model/ResponseMetadata.h>
 #include <aws/cloudsearch/model/AnalysisSchemeStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The analysis scheme descriptions.</p>
      */
-    inline void SetAnalysisSchemes(Aws::Vector<AnalysisSchemeStatus>&& value) { m_analysisSchemes = value; }
+    inline void SetAnalysisSchemes(Aws::Vector<AnalysisSchemeStatus>&& value) { m_analysisSchemes = std::move(value); }
 
     /**
      * <p>The analysis scheme descriptions.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The analysis scheme descriptions.</p>
      */
-    inline DescribeAnalysisSchemesResult& WithAnalysisSchemes(Aws::Vector<AnalysisSchemeStatus>&& value) { SetAnalysisSchemes(value); return *this;}
+    inline DescribeAnalysisSchemesResult& WithAnalysisSchemes(Aws::Vector<AnalysisSchemeStatus>&& value) { SetAnalysisSchemes(std::move(value)); return *this;}
 
     /**
      * <p>The analysis scheme descriptions.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>The analysis scheme descriptions.</p>
      */
-    inline DescribeAnalysisSchemesResult& AddAnalysisSchemes(AnalysisSchemeStatus&& value) { m_analysisSchemes.push_back(value); return *this; }
+    inline DescribeAnalysisSchemesResult& AddAnalysisSchemes(AnalysisSchemeStatus&& value) { m_analysisSchemes.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -90,13 +91,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeAnalysisSchemesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeAnalysisSchemesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeAnalysisSchemesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<AnalysisSchemeStatus> m_analysisSchemes;

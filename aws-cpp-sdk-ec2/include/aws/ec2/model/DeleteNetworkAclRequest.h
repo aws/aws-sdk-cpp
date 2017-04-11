@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the network ACL.</p>
      */
-    inline void SetNetworkAclId(Aws::String&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = value; }
+    inline void SetNetworkAclId(Aws::String&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = std::move(value); }
 
     /**
      * <p>The ID of the network ACL.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The ID of the network ACL.</p>
      */
-    inline DeleteNetworkAclRequest& WithNetworkAclId(Aws::String&& value) { SetNetworkAclId(value); return *this;}
+    inline DeleteNetworkAclRequest& WithNetworkAclId(Aws::String&& value) { SetNetworkAclId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the network ACL.</p>

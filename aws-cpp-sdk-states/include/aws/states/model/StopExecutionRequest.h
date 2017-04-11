@@ -16,6 +16,7 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/states/SFNRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
      */
-    inline void SetExecutionArn(Aws::String&& value) { m_executionArnHasBeenSet = true; m_executionArn = value; }
+    inline void SetExecutionArn(Aws::String&& value) { m_executionArnHasBeenSet = true; m_executionArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
      */
-    inline StopExecutionRequest& WithExecutionArn(Aws::String&& value) { SetExecutionArn(value); return *this;}
+    inline StopExecutionRequest& WithExecutionArn(Aws::String&& value) { SetExecutionArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>An arbitrary error code that identifies the cause of the termination.</p>
      */
-    inline void SetError(Aws::String&& value) { m_errorHasBeenSet = true; m_error = value; }
+    inline void SetError(Aws::String&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
 
     /**
      * <p>An arbitrary error code that identifies the cause of the termination.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>An arbitrary error code that identifies the cause of the termination.</p>
      */
-    inline StopExecutionRequest& WithError(Aws::String&& value) { SetError(value); return *this;}
+    inline StopExecutionRequest& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
 
     /**
      * <p>An arbitrary error code that identifies the cause of the termination.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>A more detailed explanation of the cause of the termination.</p>
      */
-    inline void SetCause(Aws::String&& value) { m_causeHasBeenSet = true; m_cause = value; }
+    inline void SetCause(Aws::String&& value) { m_causeHasBeenSet = true; m_cause = std::move(value); }
 
     /**
      * <p>A more detailed explanation of the cause of the termination.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>A more detailed explanation of the cause of the termination.</p>
      */
-    inline StopExecutionRequest& WithCause(Aws::String&& value) { SetCause(value); return *this;}
+    inline StopExecutionRequest& WithCause(Aws::String&& value) { SetCause(std::move(value)); return *this;}
 
     /**
      * <p>A more detailed explanation of the cause of the termination.</p>

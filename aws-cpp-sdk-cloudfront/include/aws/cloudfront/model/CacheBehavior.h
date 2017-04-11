@@ -19,6 +19,7 @@
 #include <aws/cloudfront/model/TrustedSigners.h>
 #include <aws/cloudfront/model/ViewerProtocolPolicy.h>
 #include <aws/cloudfront/model/AllowedMethods.h>
+#include <utility>
 
 namespace Aws
 {
@@ -93,7 +94,7 @@ namespace Model
      * the path pattern for any cache behaviors, CloudFront applies the behavior in the
      * default cache behavior.
      */
-    inline void SetPathPattern(Aws::String&& value) { m_pathPatternHasBeenSet = true; m_pathPattern = value; }
+    inline void SetPathPattern(Aws::String&& value) { m_pathPatternHasBeenSet = true; m_pathPattern = std::move(value); }
 
     /**
      * The pattern (for example, images/ *.jpg) that specifies which requests you want
@@ -126,7 +127,7 @@ namespace Model
      * the path pattern for any cache behaviors, CloudFront applies the behavior in the
      * default cache behavior.
      */
-    inline CacheBehavior& WithPathPattern(Aws::String&& value) { SetPathPattern(value); return *this;}
+    inline CacheBehavior& WithPathPattern(Aws::String&& value) { SetPathPattern(std::move(value)); return *this;}
 
     /**
      * The pattern (for example, images/ *.jpg) that specifies which requests you want
@@ -158,7 +159,7 @@ namespace Model
      * when a request matches the path pattern either for a cache behavior or for the
      * default cache behavior.
      */
-    inline void SetTargetOriginId(Aws::String&& value) { m_targetOriginIdHasBeenSet = true; m_targetOriginId = value; }
+    inline void SetTargetOriginId(Aws::String&& value) { m_targetOriginIdHasBeenSet = true; m_targetOriginId = std::move(value); }
 
     /**
      * The value of ID for the origin that you want CloudFront to route requests to
@@ -179,7 +180,7 @@ namespace Model
      * when a request matches the path pattern either for a cache behavior or for the
      * default cache behavior.
      */
-    inline CacheBehavior& WithTargetOriginId(Aws::String&& value) { SetTargetOriginId(value); return *this;}
+    inline CacheBehavior& WithTargetOriginId(Aws::String&& value) { SetTargetOriginId(std::move(value)); return *this;}
 
     /**
      * The value of ID for the origin that you want CloudFront to route requests to
@@ -204,7 +205,7 @@ namespace Model
      * A complex type that specifies how CloudFront handles query strings, cookies and
      * headers.
      */
-    inline void SetForwardedValues(ForwardedValues&& value) { m_forwardedValuesHasBeenSet = true; m_forwardedValues = value; }
+    inline void SetForwardedValues(ForwardedValues&& value) { m_forwardedValuesHasBeenSet = true; m_forwardedValues = std::move(value); }
 
     /**
      * A complex type that specifies how CloudFront handles query strings, cookies and
@@ -216,7 +217,7 @@ namespace Model
      * A complex type that specifies how CloudFront handles query strings, cookies and
      * headers.
      */
-    inline CacheBehavior& WithForwardedValues(ForwardedValues&& value) { SetForwardedValues(value); return *this;}
+    inline CacheBehavior& WithForwardedValues(ForwardedValues&& value) { SetForwardedValues(std::move(value)); return *this;}
 
     /**
      * A complex type that specifies the AWS accounts, if any, that you want to allow
@@ -261,7 +262,7 @@ namespace Model
      * change Quantity as applicable, and specify all of the trusted signers that you
      * want to include in the updated distribution.
      */
-    inline void SetTrustedSigners(TrustedSigners&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = value; }
+    inline void SetTrustedSigners(TrustedSigners&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = std::move(value); }
 
     /**
      * A complex type that specifies the AWS accounts, if any, that you want to allow
@@ -291,7 +292,7 @@ namespace Model
      * change Quantity as applicable, and specify all of the trusted signers that you
      * want to include in the updated distribution.
      */
-    inline CacheBehavior& WithTrustedSigners(TrustedSigners&& value) { SetTrustedSigners(value); return *this;}
+    inline CacheBehavior& WithTrustedSigners(TrustedSigners&& value) { SetTrustedSigners(std::move(value)); return *this;}
 
     /**
      * Use this element to specify the protocol that users can use to access the files
@@ -324,7 +325,7 @@ namespace Model
      * status code of 301 (Moved Permanently) and the HTTPS URL, specify
      * redirect-to-https. The viewer then resubmits the request using the HTTPS URL.
      */
-    inline void SetViewerProtocolPolicy(ViewerProtocolPolicy&& value) { m_viewerProtocolPolicyHasBeenSet = true; m_viewerProtocolPolicy = value; }
+    inline void SetViewerProtocolPolicy(ViewerProtocolPolicy&& value) { m_viewerProtocolPolicyHasBeenSet = true; m_viewerProtocolPolicy = std::move(value); }
 
     /**
      * Use this element to specify the protocol that users can use to access the files
@@ -346,7 +347,7 @@ namespace Model
      * status code of 301 (Moved Permanently) and the HTTPS URL, specify
      * redirect-to-https. The viewer then resubmits the request using the HTTPS URL.
      */
-    inline CacheBehavior& WithViewerProtocolPolicy(ViewerProtocolPolicy&& value) { SetViewerProtocolPolicy(value); return *this;}
+    inline CacheBehavior& WithViewerProtocolPolicy(ViewerProtocolPolicy&& value) { SetViewerProtocolPolicy(std::move(value)); return *this;}
 
     /**
      * The minimum amount of time that you want objects to stay in CloudFront caches
@@ -376,13 +377,13 @@ namespace Model
     inline void SetAllowedMethods(const AllowedMethods& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods = value; }
 
     
-    inline void SetAllowedMethods(AllowedMethods&& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods = value; }
+    inline void SetAllowedMethods(AllowedMethods&& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods = std::move(value); }
 
     
     inline CacheBehavior& WithAllowedMethods(const AllowedMethods& value) { SetAllowedMethods(value); return *this;}
 
     
-    inline CacheBehavior& WithAllowedMethods(AllowedMethods&& value) { SetAllowedMethods(value); return *this;}
+    inline CacheBehavior& WithAllowedMethods(AllowedMethods&& value) { SetAllowedMethods(std::move(value)); return *this;}
 
     /**
      * Indicates whether you want to distribute media files in Microsoft Smooth

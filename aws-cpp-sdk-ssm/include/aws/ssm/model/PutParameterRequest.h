@@ -17,6 +17,7 @@
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/ParameterType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The name of the parameter that you want to add to the system.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the parameter that you want to add to the system.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name of the parameter that you want to add to the system.</p>
      */
-    inline PutParameterRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline PutParameterRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the parameter that you want to add to the system.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>Information about the parameter that you want to add to the system</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Information about the parameter that you want to add to the system</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>Information about the parameter that you want to add to the system</p>
      */
-    inline PutParameterRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline PutParameterRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Information about the parameter that you want to add to the system</p>
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>The parameter value that you want to add to the system.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The parameter value that you want to add to the system.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>The parameter value that you want to add to the system.</p>
      */
-    inline PutParameterRequest& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline PutParameterRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The parameter value that you want to add to the system.</p>
@@ -154,7 +155,7 @@ namespace Model
     /**
      * <p>The type of parameter that you want to add to the system.</p>
      */
-    inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of parameter that you want to add to the system.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>The type of parameter that you want to add to the system.</p>
      */
-    inline PutParameterRequest& WithType(ParameterType&& value) { SetType(value); return *this;}
+    inline PutParameterRequest& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The parameter key ID that you want to add to the system.</p>
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p>The parameter key ID that you want to add to the system.</p>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>The parameter key ID that you want to add to the system.</p>
@@ -194,7 +195,7 @@ namespace Model
     /**
      * <p>The parameter key ID that you want to add to the system.</p>
      */
-    inline PutParameterRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline PutParameterRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The parameter key ID that you want to add to the system.</p>

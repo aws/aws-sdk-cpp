@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/model/ScalingAction.h>
 #include <aws/elasticmapreduce/model/ScalingTrigger.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * <p>The name used to identify an automatic scaling rule. Rule names must be
      * unique within a scaling policy.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name used to identify an automatic scaling rule. Rule names must be
@@ -83,7 +84,7 @@ namespace Model
      * <p>The name used to identify an automatic scaling rule. Rule names must be
      * unique within a scaling policy.</p>
      */
-    inline ScalingRule& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ScalingRule& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name used to identify an automatic scaling rule. Rule names must be
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>A friendly, more verbose description of the automatic scaling rule.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A friendly, more verbose description of the automatic scaling rule.</p>
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>A friendly, more verbose description of the automatic scaling rule.</p>
      */
-    inline ScalingRule& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline ScalingRule& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A friendly, more verbose description of the automatic scaling rule.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>The conditions that trigger an automatic scaling activity.</p>
      */
-    inline void SetAction(ScalingAction&& value) { m_actionHasBeenSet = true; m_action = value; }
+    inline void SetAction(ScalingAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>The conditions that trigger an automatic scaling activity.</p>
@@ -149,7 +150,7 @@ namespace Model
     /**
      * <p>The conditions that trigger an automatic scaling activity.</p>
      */
-    inline ScalingRule& WithAction(ScalingAction&& value) { SetAction(value); return *this;}
+    inline ScalingRule& WithAction(ScalingAction&& value) { SetAction(std::move(value)); return *this;}
 
     /**
      * <p>The CloudWatch alarm definition that determines when automatic scaling
@@ -167,7 +168,7 @@ namespace Model
      * <p>The CloudWatch alarm definition that determines when automatic scaling
      * activity is triggered.</p>
      */
-    inline void SetTrigger(ScalingTrigger&& value) { m_triggerHasBeenSet = true; m_trigger = value; }
+    inline void SetTrigger(ScalingTrigger&& value) { m_triggerHasBeenSet = true; m_trigger = std::move(value); }
 
     /**
      * <p>The CloudWatch alarm definition that determines when automatic scaling
@@ -179,7 +180,7 @@ namespace Model
      * <p>The CloudWatch alarm definition that determines when automatic scaling
      * activity is triggered.</p>
      */
-    inline ScalingRule& WithTrigger(ScalingTrigger&& value) { SetTrigger(value); return *this;}
+    inline ScalingRule& WithTrigger(ScalingTrigger&& value) { SetTrigger(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

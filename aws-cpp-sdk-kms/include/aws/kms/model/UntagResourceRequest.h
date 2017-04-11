@@ -17,6 +17,7 @@
 #include <aws/kms/KMSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>A unique identifier for the CMK from which you are removing tags. You can use
@@ -94,7 +95,7 @@ namespace Model
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul>
      */
-    inline UntagResourceRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline UntagResourceRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the CMK from which you are removing tags. You can use
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
      */
-    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
+    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
      * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
      */
-    inline UntagResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
+    inline UntagResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
      * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
      */
-    inline UntagResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+    inline UntagResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>

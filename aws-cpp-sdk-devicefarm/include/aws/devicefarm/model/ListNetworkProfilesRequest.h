@@ -17,6 +17,7 @@
 #include <aws/devicefarm/DeviceFarmRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/NetworkProfileType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the project for which you want to list
      * network profiles.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the project for which you want to list
@@ -70,7 +71,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the project for which you want to list
      * network profiles.</p>
      */
-    inline ListNetworkProfilesRequest& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline ListNetworkProfilesRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the project for which you want to list
@@ -94,7 +95,7 @@ namespace Model
      * <p>The type of network profile you wish to return information about. Valid
      * values are listed below.</p>
      */
-    inline void SetType(NetworkProfileType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(NetworkProfileType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of network profile you wish to return information about. Valid
@@ -106,7 +107,7 @@ namespace Model
      * <p>The type of network profile you wish to return information about. Valid
      * values are listed below.</p>
      */
-    inline ListNetworkProfilesRequest& WithType(NetworkProfileType&& value) { SetType(value); return *this;}
+    inline ListNetworkProfilesRequest& WithType(NetworkProfileType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -124,7 +125,7 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -142,7 +143,7 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
      */
-    inline ListNetworkProfilesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListNetworkProfilesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,

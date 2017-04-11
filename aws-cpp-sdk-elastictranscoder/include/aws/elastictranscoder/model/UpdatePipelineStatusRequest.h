@@ -16,6 +16,7 @@
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/elastictranscoder/ElasticTranscoderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The identifier of the pipeline to update.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The identifier of the pipeline to update.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The identifier of the pipeline to update.</p>
      */
-    inline UpdatePipelineStatusRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline UpdatePipelineStatusRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the pipeline to update.</p>
@@ -91,7 +92,7 @@ namespace Model
      * The pipeline is processing jobs.</p> </li> <li> <p> <code>Paused</code>: The
      * pipeline is not currently processing jobs.</p> </li> </ul>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The desired status of the pipeline:</p> <ul> <li> <p> <code>Active</code>:
@@ -112,7 +113,7 @@ namespace Model
      * The pipeline is processing jobs.</p> </li> <li> <p> <code>Paused</code>: The
      * pipeline is not currently processing jobs.</p> </li> </ul>
      */
-    inline UpdatePipelineStatusRequest& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline UpdatePipelineStatusRequest& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The desired status of the pipeline:</p> <ul> <li> <p> <code>Active</code>:

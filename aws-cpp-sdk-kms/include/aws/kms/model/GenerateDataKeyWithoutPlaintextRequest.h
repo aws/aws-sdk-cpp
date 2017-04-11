@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/kms/model/DataKeySpec.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
      * </p> </li> </ul>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>The identifier of the CMK under which to generate and encrypt the data
@@ -114,7 +115,7 @@ namespace Model
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
      * </p> </li> </ul>
      */
-    inline GenerateDataKeyWithoutPlaintextRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline GenerateDataKeyWithoutPlaintextRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the CMK under which to generate and encrypt the data
@@ -151,7 +152,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
-    inline void SetEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = value; }
+    inline void SetEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = std::move(value); }
 
     /**
      * <p>A set of key-value pairs that represents additional authenticated data.</p>
@@ -167,7 +168,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
-    inline GenerateDataKeyWithoutPlaintextRequest& WithEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContext(value); return *this;}
+    inline GenerateDataKeyWithoutPlaintextRequest& WithEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContext(std::move(value)); return *this;}
 
     /**
      * <p>A set of key-value pairs that represents additional authenticated data.</p>
@@ -175,7 +176,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
-    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const Aws::String& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
+    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const Aws::String& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, value); return *this; }
 
     /**
      * <p>A set of key-value pairs that represents additional authenticated data.</p>
@@ -183,7 +184,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
-    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(Aws::String&& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
+    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(Aws::String&& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A set of key-value pairs that represents additional authenticated data.</p>
@@ -191,7 +192,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
-    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const Aws::String& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
+    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const Aws::String& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A set of key-value pairs that represents additional authenticated data.</p>
@@ -199,7 +200,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
-    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(Aws::String&& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
+    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(Aws::String&& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A set of key-value pairs that represents additional authenticated data.</p>
@@ -207,7 +208,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
-    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const char* key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
+    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const char* key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A set of key-value pairs that represents additional authenticated data.</p>
@@ -215,7 +216,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
-    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(Aws::String&& key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
+    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(Aws::String&& key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A set of key-value pairs that represents additional authenticated data.</p>
@@ -223,7 +224,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
-    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const char* key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
+    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const char* key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, value); return *this; }
 
     /**
      * <p>The length of the data encryption key. Use <code>AES_128</code> to generate a
@@ -244,7 +245,7 @@ namespace Model
      * 128-bit symmetric key, or <code>AES_256</code> to generate a 256-bit symmetric
      * key.</p>
      */
-    inline void SetKeySpec(DataKeySpec&& value) { m_keySpecHasBeenSet = true; m_keySpec = value; }
+    inline void SetKeySpec(DataKeySpec&& value) { m_keySpecHasBeenSet = true; m_keySpec = std::move(value); }
 
     /**
      * <p>The length of the data encryption key. Use <code>AES_128</code> to generate a
@@ -258,7 +259,7 @@ namespace Model
      * 128-bit symmetric key, or <code>AES_256</code> to generate a 256-bit symmetric
      * key.</p>
      */
-    inline GenerateDataKeyWithoutPlaintextRequest& WithKeySpec(DataKeySpec&& value) { SetKeySpec(value); return *this;}
+    inline GenerateDataKeyWithoutPlaintextRequest& WithKeySpec(DataKeySpec&& value) { SetKeySpec(std::move(value)); return *this;}
 
     /**
      * <p>The length of the data encryption key in bytes. For example, use the value 64
@@ -303,7 +304,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
-    inline void SetGrantTokens(Aws::Vector<Aws::String>&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
+    inline void SetGrantTokens(Aws::Vector<Aws::String>&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = std::move(value); }
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
@@ -317,7 +318,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
-    inline GenerateDataKeyWithoutPlaintextRequest& WithGrantTokens(Aws::Vector<Aws::String>&& value) { SetGrantTokens(value); return *this;}
+    inline GenerateDataKeyWithoutPlaintextRequest& WithGrantTokens(Aws::Vector<Aws::String>&& value) { SetGrantTokens(std::move(value)); return *this;}
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
@@ -331,7 +332,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
-    inline GenerateDataKeyWithoutPlaintextRequest& AddGrantTokens(Aws::String&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
+    inline GenerateDataKeyWithoutPlaintextRequest& AddGrantTokens(Aws::String&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a

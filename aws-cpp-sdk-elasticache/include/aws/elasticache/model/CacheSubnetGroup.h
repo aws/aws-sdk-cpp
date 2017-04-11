@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/Subnet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the cache subnet group.</p>
      */
-    inline void SetCacheSubnetGroupName(Aws::String&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
+    inline void SetCacheSubnetGroupName(Aws::String&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = std::move(value); }
 
     /**
      * <p>The name of the cache subnet group.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The name of the cache subnet group.</p>
      */
-    inline CacheSubnetGroup& WithCacheSubnetGroupName(Aws::String&& value) { SetCacheSubnetGroupName(value); return *this;}
+    inline CacheSubnetGroup& WithCacheSubnetGroupName(Aws::String&& value) { SetCacheSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cache subnet group.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The description of the cache subnet group.</p>
      */
-    inline void SetCacheSubnetGroupDescription(Aws::String&& value) { m_cacheSubnetGroupDescriptionHasBeenSet = true; m_cacheSubnetGroupDescription = value; }
+    inline void SetCacheSubnetGroupDescription(Aws::String&& value) { m_cacheSubnetGroupDescriptionHasBeenSet = true; m_cacheSubnetGroupDescription = std::move(value); }
 
     /**
      * <p>The description of the cache subnet group.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The description of the cache subnet group.</p>
      */
-    inline CacheSubnetGroup& WithCacheSubnetGroupDescription(Aws::String&& value) { SetCacheSubnetGroupDescription(value); return *this;}
+    inline CacheSubnetGroup& WithCacheSubnetGroupDescription(Aws::String&& value) { SetCacheSubnetGroupDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the cache subnet group.</p>
@@ -136,7 +137,7 @@ namespace Model
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet
      * group.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet
@@ -154,7 +155,7 @@ namespace Model
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet
      * group.</p>
      */
-    inline CacheSubnetGroup& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline CacheSubnetGroup& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet
@@ -175,7 +176,7 @@ namespace Model
     /**
      * <p>A list of subnets associated with the cache subnet group.</p>
      */
-    inline void SetSubnets(Aws::Vector<Subnet>&& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
+    inline void SetSubnets(Aws::Vector<Subnet>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
     /**
      * <p>A list of subnets associated with the cache subnet group.</p>
@@ -185,7 +186,7 @@ namespace Model
     /**
      * <p>A list of subnets associated with the cache subnet group.</p>
      */
-    inline CacheSubnetGroup& WithSubnets(Aws::Vector<Subnet>&& value) { SetSubnets(value); return *this;}
+    inline CacheSubnetGroup& WithSubnets(Aws::Vector<Subnet>&& value) { SetSubnets(std::move(value)); return *this;}
 
     /**
      * <p>A list of subnets associated with the cache subnet group.</p>
@@ -195,7 +196,7 @@ namespace Model
     /**
      * <p>A list of subnets associated with the cache subnet group.</p>
      */
-    inline CacheSubnetGroup& AddSubnets(Subnet&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+    inline CacheSubnetGroup& AddSubnets(Subnet&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_cacheSubnetGroupName;

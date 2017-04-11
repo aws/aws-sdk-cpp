@@ -21,6 +21,7 @@
 #include <aws/lambda/model/VpcConfig.h>
 #include <aws/lambda/model/DeadLetterConfig.h>
 #include <aws/lambda/model/Environment.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * Function names are used to specify functions to other AWS Lambda API operations,
      * such as <a>Invoke</a>. </p>
      */
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
      * <p>The name you want to assign to the function you are uploading. The function
@@ -87,7 +88,7 @@ namespace Model
      * Function names are used to specify functions to other AWS Lambda API operations,
      * such as <a>Invoke</a>. </p>
      */
-    inline CreateFunctionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
+    inline CreateFunctionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>The name you want to assign to the function you are uploading. The function
@@ -125,7 +126,7 @@ namespace Model
      * Existing functions will be supported until early 2017, but we recommend you
      * migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>
      */
-    inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
+    inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
 
     /**
      * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
@@ -145,7 +146,7 @@ namespace Model
      * Existing functions will be supported until early 2017, but we recommend you
      * migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>
      */
-    inline CreateFunctionRequest& WithRuntime(Runtime&& value) { SetRuntime(value); return *this;}
+    inline CreateFunctionRequest& WithRuntime(Runtime&& value) { SetRuntime(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it
@@ -172,7 +173,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
      * Lambda: How it Works</a>. </p>
      */
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = value; }
+    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it
@@ -199,7 +200,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
      * Lambda: How it Works</a>. </p>
      */
-    inline CreateFunctionRequest& WithRole(Aws::String&& value) { SetRole(value); return *this;}
+    inline CreateFunctionRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it
@@ -238,7 +239,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/lambda/latest/dg/java-programming-model-handler-types.html">Lambda
      * Function Handler (Java)</a>. </p>
      */
-    inline void SetHandler(Aws::String&& value) { m_handlerHasBeenSet = true; m_handler = value; }
+    inline void SetHandler(Aws::String&& value) { m_handlerHasBeenSet = true; m_handler = std::move(value); }
 
     /**
      * <p>The function within your code that Lambda calls to begin execution. For
@@ -268,7 +269,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/lambda/latest/dg/java-programming-model-handler-types.html">Lambda
      * Function Handler (Java)</a>. </p>
      */
-    inline CreateFunctionRequest& WithHandler(Aws::String&& value) { SetHandler(value); return *this;}
+    inline CreateFunctionRequest& WithHandler(Aws::String&& value) { SetHandler(std::move(value)); return *this;}
 
     /**
      * <p>The function within your code that Lambda calls to begin execution. For
@@ -293,7 +294,7 @@ namespace Model
     /**
      * <p>The code for the Lambda function.</p>
      */
-    inline void SetCode(FunctionCode&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(FunctionCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>The code for the Lambda function.</p>
@@ -303,7 +304,7 @@ namespace Model
     /**
      * <p>The code for the Lambda function.</p>
      */
-    inline CreateFunctionRequest& WithCode(FunctionCode&& value) { SetCode(value); return *this;}
+    inline CreateFunctionRequest& WithCode(FunctionCode&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>A short, user-defined function description. Lambda does not use this value.
@@ -321,7 +322,7 @@ namespace Model
      * <p>A short, user-defined function description. Lambda does not use this value.
      * Assign a meaningful description as you see fit.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A short, user-defined function description. Lambda does not use this value.
@@ -339,7 +340,7 @@ namespace Model
      * <p>A short, user-defined function description. Lambda does not use this value.
      * Assign a meaningful description as you see fit.</p>
      */
-    inline CreateFunctionRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateFunctionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A short, user-defined function description. Lambda does not use this value.
@@ -438,7 +439,7 @@ namespace Model
      * belong to the same VPC. You must provide at least one security group and one
      * subnet ID.</p>
      */
-    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
 
     /**
      * <p>If your Lambda function accesses resources in a VPC, you provide this
@@ -454,7 +455,7 @@ namespace Model
      * belong to the same VPC. You must provide at least one security group and one
      * subnet ID.</p>
      */
-    inline CreateFunctionRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(value); return *this;}
+    inline CreateFunctionRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
     /**
      * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
@@ -472,7 +473,7 @@ namespace Model
      * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
      * Amazon SQS queue or Amazon SNS topic. </p>
      */
-    inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
+    inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = std::move(value); }
 
     /**
      * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
@@ -484,7 +485,7 @@ namespace Model
      * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
      * Amazon SQS queue or Amazon SNS topic. </p>
      */
-    inline CreateFunctionRequest& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(value); return *this;}
+    inline CreateFunctionRequest& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
 
     
     inline const Environment& GetEnvironment() const{ return m_environment; }
@@ -493,13 +494,13 @@ namespace Model
     inline void SetEnvironment(const Environment& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
     
-    inline void SetEnvironment(Environment&& value) { m_environmentHasBeenSet = true; m_environment = value; }
+    inline void SetEnvironment(Environment&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
     
     inline CreateFunctionRequest& WithEnvironment(const Environment& value) { SetEnvironment(value); return *this;}
 
     
-    inline CreateFunctionRequest& WithEnvironment(Environment&& value) { SetEnvironment(value); return *this;}
+    inline CreateFunctionRequest& WithEnvironment(Environment&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
@@ -520,7 +521,7 @@ namespace Model
      * environment variables. If not provided, AWS Lambda will use a default service
      * key.</p>
      */
-    inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = value; }
+    inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
@@ -541,7 +542,7 @@ namespace Model
      * environment variables. If not provided, AWS Lambda will use a default service
      * key.</p>
      */
-    inline CreateFunctionRequest& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(value); return *this;}
+    inline CreateFunctionRequest& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's

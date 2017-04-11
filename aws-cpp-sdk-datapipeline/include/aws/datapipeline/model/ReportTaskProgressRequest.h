@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datapipeline/model/Field.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The ID of the task assigned to the task runner. This value is provided in the
      * response for <a>PollForTask</a>.</p>
      */
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
+    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
 
     /**
      * <p>The ID of the task assigned to the task runner. This value is provided in the
@@ -74,7 +75,7 @@ namespace Model
      * <p>The ID of the task assigned to the task runner. This value is provided in the
      * response for <a>PollForTask</a>.</p>
      */
-    inline ReportTaskProgressRequest& WithTaskId(Aws::String&& value) { SetTaskId(value); return *this;}
+    inline ReportTaskProgressRequest& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the task assigned to the task runner. This value is provided in the
@@ -98,7 +99,7 @@ namespace Model
      * <p>Key-value pairs that define the properties of the ReportTaskProgressInput
      * object.</p>
      */
-    inline void SetFields(Aws::Vector<Field>&& value) { m_fieldsHasBeenSet = true; m_fields = value; }
+    inline void SetFields(Aws::Vector<Field>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
 
     /**
      * <p>Key-value pairs that define the properties of the ReportTaskProgressInput
@@ -110,7 +111,7 @@ namespace Model
      * <p>Key-value pairs that define the properties of the ReportTaskProgressInput
      * object.</p>
      */
-    inline ReportTaskProgressRequest& WithFields(Aws::Vector<Field>&& value) { SetFields(value); return *this;}
+    inline ReportTaskProgressRequest& WithFields(Aws::Vector<Field>&& value) { SetFields(std::move(value)); return *this;}
 
     /**
      * <p>Key-value pairs that define the properties of the ReportTaskProgressInput
@@ -122,7 +123,7 @@ namespace Model
      * <p>Key-value pairs that define the properties of the ReportTaskProgressInput
      * object.</p>
      */
-    inline ReportTaskProgressRequest& AddFields(Field&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
+    inline ReportTaskProgressRequest& AddFields(Field&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_taskId;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/cognito-sync/model/IdentityPoolUsage.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * Information about the usage of the identity pool.
      */
-    inline void SetIdentityPoolUsage(IdentityPoolUsage&& value) { m_identityPoolUsage = value; }
+    inline void SetIdentityPoolUsage(IdentityPoolUsage&& value) { m_identityPoolUsage = std::move(value); }
 
     /**
      * Information about the usage of the identity pool.
@@ -68,7 +69,7 @@ namespace Model
     /**
      * Information about the usage of the identity pool.
      */
-    inline DescribeIdentityPoolUsageResult& WithIdentityPoolUsage(IdentityPoolUsage&& value) { SetIdentityPoolUsage(value); return *this;}
+    inline DescribeIdentityPoolUsageResult& WithIdentityPoolUsage(IdentityPoolUsage&& value) { SetIdentityPoolUsage(std::move(value)); return *this;}
 
   private:
     IdentityPoolUsage m_identityPoolUsage;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The name of the field. The possible values are <code>host-header</code> and
      * <code>path-pattern</code>.</p>
      */
-    inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = value; }
+    inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
 
     /**
      * <p>The name of the field. The possible values are <code>host-header</code> and
@@ -81,7 +82,7 @@ namespace Model
      * <p>The name of the field. The possible values are <code>host-header</code> and
      * <code>path-pattern</code>.</p>
      */
-    inline RuleCondition& WithField(Aws::String&& value) { SetField(value); return *this;}
+    inline RuleCondition& WithField(Aws::String&& value) { SetField(std::move(value)); return *this;}
 
     /**
      * <p>The name of the field. The possible values are <code>host-header</code> and
@@ -141,7 +142,7 @@ namespace Model
      * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
      * </ul>
      */
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
+    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <p>The condition value.</p> <p>If the field name is <code>host-header</code>,
@@ -177,7 +178,7 @@ namespace Model
      * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
      * </ul>
      */
-    inline RuleCondition& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
+    inline RuleCondition& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <p>The condition value.</p> <p>If the field name is <code>host-header</code>,
@@ -213,7 +214,7 @@ namespace Model
      * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
      * </ul>
      */
-    inline RuleCondition& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    inline RuleCondition& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The condition value.</p> <p>If the field name is <code>host-header</code>,

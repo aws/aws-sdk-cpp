@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/cognito-identity/model/RoleMapping.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
-    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = std::move(value); }
 
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
-    inline SetIdentityPoolRolesRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
+    inline SetIdentityPoolRolesRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(std::move(value)); return *this;}
 
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
@@ -95,7 +96,7 @@ namespace Model
      * either "authenticated" or "unauthenticated" and the value will be the Role
      * ARN.</p>
      */
-    inline void SetRoles(Aws::Map<Aws::String, Aws::String>&& value) { m_rolesHasBeenSet = true; m_roles = value; }
+    inline void SetRoles(Aws::Map<Aws::String, Aws::String>&& value) { m_rolesHasBeenSet = true; m_roles = std::move(value); }
 
     /**
      * <p>The map of roles associated with this pool. For a given role, the key will be
@@ -109,56 +110,56 @@ namespace Model
      * either "authenticated" or "unauthenticated" and the value will be the Role
      * ARN.</p>
      */
-    inline SetIdentityPoolRolesRequest& WithRoles(Aws::Map<Aws::String, Aws::String>&& value) { SetRoles(value); return *this;}
+    inline SetIdentityPoolRolesRequest& WithRoles(Aws::Map<Aws::String, Aws::String>&& value) { SetRoles(std::move(value)); return *this;}
 
     /**
      * <p>The map of roles associated with this pool. For a given role, the key will be
      * either "authenticated" or "unauthenticated" and the value will be the Role
      * ARN.</p>
      */
-    inline SetIdentityPoolRolesRequest& AddRoles(const Aws::String& key, const Aws::String& value) { m_rolesHasBeenSet = true; m_roles[key] = value; return *this; }
+    inline SetIdentityPoolRolesRequest& AddRoles(const Aws::String& key, const Aws::String& value) { m_rolesHasBeenSet = true; m_roles.emplace(key, value); return *this; }
 
     /**
      * <p>The map of roles associated with this pool. For a given role, the key will be
      * either "authenticated" or "unauthenticated" and the value will be the Role
      * ARN.</p>
      */
-    inline SetIdentityPoolRolesRequest& AddRoles(Aws::String&& key, const Aws::String& value) { m_rolesHasBeenSet = true; m_roles[key] = value; return *this; }
+    inline SetIdentityPoolRolesRequest& AddRoles(Aws::String&& key, const Aws::String& value) { m_rolesHasBeenSet = true; m_roles.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The map of roles associated with this pool. For a given role, the key will be
      * either "authenticated" or "unauthenticated" and the value will be the Role
      * ARN.</p>
      */
-    inline SetIdentityPoolRolesRequest& AddRoles(const Aws::String& key, Aws::String&& value) { m_rolesHasBeenSet = true; m_roles[key] = value; return *this; }
+    inline SetIdentityPoolRolesRequest& AddRoles(const Aws::String& key, Aws::String&& value) { m_rolesHasBeenSet = true; m_roles.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The map of roles associated with this pool. For a given role, the key will be
      * either "authenticated" or "unauthenticated" and the value will be the Role
      * ARN.</p>
      */
-    inline SetIdentityPoolRolesRequest& AddRoles(Aws::String&& key, Aws::String&& value) { m_rolesHasBeenSet = true; m_roles[key] = value; return *this; }
+    inline SetIdentityPoolRolesRequest& AddRoles(Aws::String&& key, Aws::String&& value) { m_rolesHasBeenSet = true; m_roles.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The map of roles associated with this pool. For a given role, the key will be
      * either "authenticated" or "unauthenticated" and the value will be the Role
      * ARN.</p>
      */
-    inline SetIdentityPoolRolesRequest& AddRoles(const char* key, Aws::String&& value) { m_rolesHasBeenSet = true; m_roles[key] = value; return *this; }
+    inline SetIdentityPoolRolesRequest& AddRoles(const char* key, Aws::String&& value) { m_rolesHasBeenSet = true; m_roles.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The map of roles associated with this pool. For a given role, the key will be
      * either "authenticated" or "unauthenticated" and the value will be the Role
      * ARN.</p>
      */
-    inline SetIdentityPoolRolesRequest& AddRoles(Aws::String&& key, const char* value) { m_rolesHasBeenSet = true; m_roles[key] = value; return *this; }
+    inline SetIdentityPoolRolesRequest& AddRoles(Aws::String&& key, const char* value) { m_rolesHasBeenSet = true; m_roles.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The map of roles associated with this pool. For a given role, the key will be
      * either "authenticated" or "unauthenticated" and the value will be the Role
      * ARN.</p>
      */
-    inline SetIdentityPoolRolesRequest& AddRoles(const char* key, const char* value) { m_rolesHasBeenSet = true; m_roles[key] = value; return *this; }
+    inline SetIdentityPoolRolesRequest& AddRoles(const char* key, const char* value) { m_rolesHasBeenSet = true; m_roles.emplace(key, value); return *this; }
 
     /**
      * <p>How users for a specific identity provider are to mapped to roles. This is a
@@ -185,7 +186,7 @@ namespace Model
      * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
      * to 25 rules can be specified per identity provider.</p>
      */
-    inline void SetRoleMappings(Aws::Map<Aws::String, RoleMapping>&& value) { m_roleMappingsHasBeenSet = true; m_roleMappings = value; }
+    inline void SetRoleMappings(Aws::Map<Aws::String, RoleMapping>&& value) { m_roleMappingsHasBeenSet = true; m_roleMappings = std::move(value); }
 
     /**
      * <p>How users for a specific identity provider are to mapped to roles. This is a
@@ -203,7 +204,7 @@ namespace Model
      * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
      * to 25 rules can be specified per identity provider.</p>
      */
-    inline SetIdentityPoolRolesRequest& WithRoleMappings(Aws::Map<Aws::String, RoleMapping>&& value) { SetRoleMappings(value); return *this;}
+    inline SetIdentityPoolRolesRequest& WithRoleMappings(Aws::Map<Aws::String, RoleMapping>&& value) { SetRoleMappings(std::move(value)); return *this;}
 
     /**
      * <p>How users for a specific identity provider are to mapped to roles. This is a
@@ -212,7 +213,7 @@ namespace Model
      * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
      * to 25 rules can be specified per identity provider.</p>
      */
-    inline SetIdentityPoolRolesRequest& AddRoleMappings(const Aws::String& key, const RoleMapping& value) { m_roleMappingsHasBeenSet = true; m_roleMappings[key] = value; return *this; }
+    inline SetIdentityPoolRolesRequest& AddRoleMappings(const Aws::String& key, const RoleMapping& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(key, value); return *this; }
 
     /**
      * <p>How users for a specific identity provider are to mapped to roles. This is a
@@ -221,7 +222,7 @@ namespace Model
      * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
      * to 25 rules can be specified per identity provider.</p>
      */
-    inline SetIdentityPoolRolesRequest& AddRoleMappings(Aws::String&& key, const RoleMapping& value) { m_roleMappingsHasBeenSet = true; m_roleMappings[key] = value; return *this; }
+    inline SetIdentityPoolRolesRequest& AddRoleMappings(Aws::String&& key, const RoleMapping& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>How users for a specific identity provider are to mapped to roles. This is a
@@ -230,7 +231,7 @@ namespace Model
      * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
      * to 25 rules can be specified per identity provider.</p>
      */
-    inline SetIdentityPoolRolesRequest& AddRoleMappings(const Aws::String& key, RoleMapping&& value) { m_roleMappingsHasBeenSet = true; m_roleMappings[key] = value; return *this; }
+    inline SetIdentityPoolRolesRequest& AddRoleMappings(const Aws::String& key, RoleMapping&& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>How users for a specific identity provider are to mapped to roles. This is a
@@ -239,7 +240,7 @@ namespace Model
      * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
      * to 25 rules can be specified per identity provider.</p>
      */
-    inline SetIdentityPoolRolesRequest& AddRoleMappings(Aws::String&& key, RoleMapping&& value) { m_roleMappingsHasBeenSet = true; m_roleMappings[key] = value; return *this; }
+    inline SetIdentityPoolRolesRequest& AddRoleMappings(Aws::String&& key, RoleMapping&& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>How users for a specific identity provider are to mapped to roles. This is a
@@ -248,7 +249,7 @@ namespace Model
      * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
      * to 25 rules can be specified per identity provider.</p>
      */
-    inline SetIdentityPoolRolesRequest& AddRoleMappings(const char* key, RoleMapping&& value) { m_roleMappingsHasBeenSet = true; m_roleMappings[key] = value; return *this; }
+    inline SetIdentityPoolRolesRequest& AddRoleMappings(const char* key, RoleMapping&& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>How users for a specific identity provider are to mapped to roles. This is a
@@ -257,7 +258,7 @@ namespace Model
      * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
      * to 25 rules can be specified per identity provider.</p>
      */
-    inline SetIdentityPoolRolesRequest& AddRoleMappings(const char* key, const RoleMapping& value) { m_roleMappingsHasBeenSet = true; m_roleMappings[key] = value; return *this; }
+    inline SetIdentityPoolRolesRequest& AddRoleMappings(const char* key, const RoleMapping& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(key, value); return *this; }
 
   private:
     Aws::String m_identityPoolId;

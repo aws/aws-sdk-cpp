@@ -16,6 +16,7 @@
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/cloudhsm/CloudHSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The label for the client.</p>
      */
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = value; }
+    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
 
     /**
      * <p>The label for the client.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The label for the client.</p>
      */
-    inline CreateLunaClientRequest& WithLabel(Aws::String&& value) { SetLabel(value); return *this;}
+    inline CreateLunaClientRequest& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
 
     /**
      * <p>The label for the client.</p>
@@ -90,7 +91,7 @@ namespace Model
      * <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the
      * HSMs used by this client.</p>
      */
-    inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = value; }
+    inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
 
     /**
      * <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the
@@ -108,7 +109,7 @@ namespace Model
      * <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the
      * HSMs used by this client.</p>
      */
-    inline CreateLunaClientRequest& WithCertificate(Aws::String&& value) { SetCertificate(value); return *this;}
+    inline CreateLunaClientRequest& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
 
     /**
      * <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the

@@ -17,6 +17,7 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,7 +73,7 @@ namespace Model
      * submit a URL that has already been used for an OpenID Connect provider in the
      * AWS account, you will get an error.</p>
      */
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = value; }
+    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
      * <p>The URL of the identity provider. The URL must begin with "https://" and
@@ -108,7 +109,7 @@ namespace Model
      * submit a URL that has already been used for an OpenID Connect provider in the
      * AWS account, you will get an error.</p>
      */
-    inline CreateOpenIDConnectProviderRequest& WithUrl(Aws::String&& value) { SetUrl(value); return *this;}
+    inline CreateOpenIDConnectProviderRequest& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL of the identity provider. The URL must begin with "https://" and
@@ -159,7 +160,7 @@ namespace Model
      * for a client ID. The <code>CreateOpenIDConnectProviderRequest</code> action
      * accepts client IDs up to 255 characters long.</p>
      */
-    inline void SetClientIDList(Aws::Vector<Aws::String>&& value) { m_clientIDListHasBeenSet = true; m_clientIDList = value; }
+    inline void SetClientIDList(Aws::Vector<Aws::String>&& value) { m_clientIDListHasBeenSet = true; m_clientIDList = std::move(value); }
 
     /**
      * <p>A list of client IDs (also known as audiences). When a mobile or web app
@@ -185,7 +186,7 @@ namespace Model
      * for a client ID. The <code>CreateOpenIDConnectProviderRequest</code> action
      * accepts client IDs up to 255 characters long.</p>
      */
-    inline CreateOpenIDConnectProviderRequest& WithClientIDList(Aws::Vector<Aws::String>&& value) { SetClientIDList(value); return *this;}
+    inline CreateOpenIDConnectProviderRequest& WithClientIDList(Aws::Vector<Aws::String>&& value) { SetClientIDList(std::move(value)); return *this;}
 
     /**
      * <p>A list of client IDs (also known as audiences). When a mobile or web app
@@ -211,7 +212,7 @@ namespace Model
      * for a client ID. The <code>CreateOpenIDConnectProviderRequest</code> action
      * accepts client IDs up to 255 characters long.</p>
      */
-    inline CreateOpenIDConnectProviderRequest& AddClientIDList(Aws::String&& value) { m_clientIDListHasBeenSet = true; m_clientIDList.push_back(value); return *this; }
+    inline CreateOpenIDConnectProviderRequest& AddClientIDList(Aws::String&& value) { m_clientIDListHasBeenSet = true; m_clientIDList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of client IDs (also known as audiences). When a mobile or web app
@@ -284,7 +285,7 @@ namespace Model
      * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
-    inline void SetThumbprintList(Aws::Vector<Aws::String>&& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList = value; }
+    inline void SetThumbprintList(Aws::Vector<Aws::String>&& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList = std::move(value); }
 
     /**
      * <p>A list of server certificate thumbprints for the OpenID Connect (OIDC)
@@ -324,7 +325,7 @@ namespace Model
      * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
-    inline CreateOpenIDConnectProviderRequest& WithThumbprintList(Aws::Vector<Aws::String>&& value) { SetThumbprintList(value); return *this;}
+    inline CreateOpenIDConnectProviderRequest& WithThumbprintList(Aws::Vector<Aws::String>&& value) { SetThumbprintList(std::move(value)); return *this;}
 
     /**
      * <p>A list of server certificate thumbprints for the OpenID Connect (OIDC)
@@ -364,7 +365,7 @@ namespace Model
      * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
-    inline CreateOpenIDConnectProviderRequest& AddThumbprintList(Aws::String&& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(value); return *this; }
+    inline CreateOpenIDConnectProviderRequest& AddThumbprintList(Aws::String&& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of server certificate thumbprints for the OpenID Connect (OIDC)

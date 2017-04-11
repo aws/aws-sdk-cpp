@@ -16,6 +16,7 @@
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/cognito-sync/CognitoSyncRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * A pagination token for obtaining the next page of results.
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * A pagination token for obtaining the next page of results.
@@ -70,7 +71,7 @@ namespace Model
     /**
      * A pagination token for obtaining the next page of results.
      */
-    inline ListIdentityPoolUsageRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListIdentityPoolUsageRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * A pagination token for obtaining the next page of results.

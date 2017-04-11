@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: =,.@-</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the IAM user to create a password for. The user must already
@@ -89,7 +90,7 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: =,.@-</p>
      */
-    inline CreateLoginProfileRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline CreateLoginProfileRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IAM user to create a password for. The user must already
@@ -137,7 +138,7 @@ namespace Model
      * restrict the ability to enter certain characters because they have special
      * meaning within that tool.</p>
      */
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = value; }
+    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
     /**
      * <p>The new password for the user.</p> <p>The <a
@@ -176,7 +177,7 @@ namespace Model
      * restrict the ability to enter certain characters because they have special
      * meaning within that tool.</p>
      */
-    inline CreateLoginProfileRequest& WithPassword(Aws::String&& value) { SetPassword(value); return *this;}
+    inline CreateLoginProfileRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     /**
      * <p>The new password for the user.</p> <p>The <a

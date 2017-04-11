@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/shield/model/AttackDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The attack that is described.</p>
      */
-    inline void SetAttack(AttackDetail&& value) { m_attack = value; }
+    inline void SetAttack(AttackDetail&& value) { m_attack = std::move(value); }
 
     /**
      * <p>The attack that is described.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The attack that is described.</p>
      */
-    inline DescribeAttackResult& WithAttack(AttackDetail&& value) { SetAttack(value); return *this;}
+    inline DescribeAttackResult& WithAttack(AttackDetail&& value) { SetAttack(std::move(value)); return *this;}
 
   private:
     AttackDetail m_attack;

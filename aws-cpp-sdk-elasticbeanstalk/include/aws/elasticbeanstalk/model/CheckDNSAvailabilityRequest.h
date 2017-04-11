@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The prefix used when this CNAME is reserved.</p>
      */
-    inline void SetCNAMEPrefix(Aws::String&& value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix = value; }
+    inline void SetCNAMEPrefix(Aws::String&& value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix = std::move(value); }
 
     /**
      * <p>The prefix used when this CNAME is reserved.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The prefix used when this CNAME is reserved.</p>
      */
-    inline CheckDNSAvailabilityRequest& WithCNAMEPrefix(Aws::String&& value) { SetCNAMEPrefix(value); return *this;}
+    inline CheckDNSAvailabilityRequest& WithCNAMEPrefix(Aws::String&& value) { SetCNAMEPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The prefix used when this CNAME is reserved.</p>

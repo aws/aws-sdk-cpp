@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>One or more prefix list IDs.</p>
      */
-    inline void SetPrefixListIds(Aws::Vector<Aws::String>&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = value; }
+    inline void SetPrefixListIds(Aws::Vector<Aws::String>&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = std::move(value); }
 
     /**
      * <p>One or more prefix list IDs.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>One or more prefix list IDs.</p>
      */
-    inline DescribePrefixListsRequest& WithPrefixListIds(Aws::Vector<Aws::String>&& value) { SetPrefixListIds(value); return *this;}
+    inline DescribePrefixListsRequest& WithPrefixListIds(Aws::Vector<Aws::String>&& value) { SetPrefixListIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more prefix list IDs.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>One or more prefix list IDs.</p>
      */
-    inline DescribePrefixListsRequest& AddPrefixListIds(Aws::String&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(value); return *this; }
+    inline DescribePrefixListsRequest& AddPrefixListIds(Aws::String&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more prefix list IDs.</p>
@@ -126,7 +127,7 @@ namespace Model
      * a prefix list.</p> </li> <li> <p> <code>prefix-list-name</code>: The name of a
      * prefix list.</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>prefix-list-id</code>: The ID of
@@ -140,7 +141,7 @@ namespace Model
      * a prefix list.</p> </li> <li> <p> <code>prefix-list-name</code>: The name of a
      * prefix list.</p> </li> </ul>
      */
-    inline DescribePrefixListsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribePrefixListsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>prefix-list-id</code>: The ID of
@@ -154,7 +155,7 @@ namespace Model
      * a prefix list.</p> </li> <li> <p> <code>prefix-list-name</code>: The name of a
      * prefix list.</p> </li> </ul>
      */
-    inline DescribePrefixListsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribePrefixListsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The maximum number of items to return for this request. The request returns a
@@ -196,7 +197,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a prior call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -214,7 +215,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a prior call.)</p>
      */
-    inline DescribePrefixListsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribePrefixListsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
      * resource.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
@@ -78,7 +79,7 @@ namespace Model
      * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
      * resource.</p>
      */
-    inline StageKey& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline StageKey& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The stage name in the <a>RestApi</a> that the stage key references.</p>
      */
-    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
+    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
      * <p>The stage name in the <a>RestApi</a> that the stage key references.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The stage name in the <a>RestApi</a> that the stage key references.</p>
      */
-    inline StageKey& WithStageName(Aws::String&& value) { SetStageName(value); return *this;}
+    inline StageKey& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
      * <p>The stage name in the <a>RestApi</a> that the stage key references.</p>

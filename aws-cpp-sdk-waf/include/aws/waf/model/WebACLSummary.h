@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
      * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
      */
-    inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
+    inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
 
     /**
      * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
@@ -96,7 +97,7 @@ namespace Model
      * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
      * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
      */
-    inline WebACLSummary& WithWebACLId(Aws::String&& value) { SetWebACLId(value); return *this;}
+    inline WebACLSummary& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
@@ -123,7 +124,7 @@ namespace Model
      * <p>A friendly name or description of the <a>WebACL</a>. You can't change the
      * name of a <code>WebACL</code> after you create it.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>A friendly name or description of the <a>WebACL</a>. You can't change the
@@ -141,7 +142,7 @@ namespace Model
      * <p>A friendly name or description of the <a>WebACL</a>. You can't change the
      * name of a <code>WebACL</code> after you create it.</p>
      */
-    inline WebACLSummary& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline WebACLSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A friendly name or description of the <a>WebACL</a>. You can't change the

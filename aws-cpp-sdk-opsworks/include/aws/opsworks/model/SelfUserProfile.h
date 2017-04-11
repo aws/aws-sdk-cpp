@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The user's IAM ARN.</p>
      */
-    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
+    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::move(value); }
 
     /**
      * <p>The user's IAM ARN.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The user's IAM ARN.</p>
      */
-    inline SelfUserProfile& WithIamUserArn(Aws::String&& value) { SetIamUserArn(value); return *this;}
+    inline SelfUserProfile& WithIamUserArn(Aws::String&& value) { SetIamUserArn(std::move(value)); return *this;}
 
     /**
      * <p>The user's IAM ARN.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The user's name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The user's name.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The user's name.</p>
      */
-    inline SelfUserProfile& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline SelfUserProfile& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The user's name.</p>
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>The user's SSH user name.</p>
      */
-    inline void SetSshUsername(Aws::String&& value) { m_sshUsernameHasBeenSet = true; m_sshUsername = value; }
+    inline void SetSshUsername(Aws::String&& value) { m_sshUsernameHasBeenSet = true; m_sshUsername = std::move(value); }
 
     /**
      * <p>The user's SSH user name.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The user's SSH user name.</p>
      */
-    inline SelfUserProfile& WithSshUsername(Aws::String&& value) { SetSshUsername(value); return *this;}
+    inline SelfUserProfile& WithSshUsername(Aws::String&& value) { SetSshUsername(std::move(value)); return *this;}
 
     /**
      * <p>The user's SSH user name.</p>
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>The user's SSH public key.</p>
      */
-    inline void SetSshPublicKey(Aws::String&& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = value; }
+    inline void SetSshPublicKey(Aws::String&& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = std::move(value); }
 
     /**
      * <p>The user's SSH public key.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>The user's SSH public key.</p>
      */
-    inline SelfUserProfile& WithSshPublicKey(Aws::String&& value) { SetSshPublicKey(value); return *this;}
+    inline SelfUserProfile& WithSshPublicKey(Aws::String&& value) { SetSshPublicKey(std::move(value)); return *this;}
 
     /**
      * <p>The user's SSH public key.</p>

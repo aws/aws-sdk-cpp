@@ -16,6 +16,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/dms/DatabaseMigrationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
      */
-    inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
+    inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
      */
-    inline DescribeTableStatisticsRequest& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(value); return *this;}
+    inline DescribeTableStatisticsRequest& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
@@ -116,7 +117,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -137,7 +138,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline DescribeTableStatisticsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeTableStatisticsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous request. If this

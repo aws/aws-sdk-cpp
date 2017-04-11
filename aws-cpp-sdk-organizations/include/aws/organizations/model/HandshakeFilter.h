@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/model/ActionType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <code>ActionType</code>, you cannot also specify
      * <code>ParentHandshakeId</code>.</p>
      */
-    inline void SetActionType(ActionType&& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
+    inline void SetActionType(ActionType&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
 
     /**
      * <p>Specifies the type of handshake action.</p> <p>If you specify
@@ -78,7 +79,7 @@ namespace Model
      * <code>ActionType</code>, you cannot also specify
      * <code>ParentHandshakeId</code>.</p>
      */
-    inline HandshakeFilter& WithActionType(ActionType&& value) { SetActionType(value); return *this;}
+    inline HandshakeFilter& WithActionType(ActionType&& value) { SetActionType(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the parent handshake. Only used for handshake types that are a
@@ -105,7 +106,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
      * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
      */
-    inline void SetParentHandshakeId(Aws::String&& value) { m_parentHandshakeIdHasBeenSet = true; m_parentHandshakeId = value; }
+    inline void SetParentHandshakeId(Aws::String&& value) { m_parentHandshakeIdHasBeenSet = true; m_parentHandshakeId = std::move(value); }
 
     /**
      * <p>Specifies the parent handshake. Only used for handshake types that are a
@@ -132,7 +133,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
      * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
      */
-    inline HandshakeFilter& WithParentHandshakeId(Aws::String&& value) { SetParentHandshakeId(value); return *this;}
+    inline HandshakeFilter& WithParentHandshakeId(Aws::String&& value) { SetParentHandshakeId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the parent handshake. Only used for handshake types that are a

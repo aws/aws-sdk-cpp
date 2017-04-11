@@ -16,6 +16,7 @@
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/machinelearning/model/TaggableResourceType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ID of the ML object from which tags were deleted.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceId = std::move(value); }
 
     /**
      * <p>The ID of the ML object from which tags were deleted.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ID of the ML object from which tags were deleted.</p>
      */
-    inline DeleteTagsResult& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline DeleteTagsResult& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the ML object from which tags were deleted.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The type of the ML object from which tags were deleted.</p>
      */
-    inline void SetResourceType(TaggableResourceType&& value) { m_resourceType = value; }
+    inline void SetResourceType(TaggableResourceType&& value) { m_resourceType = std::move(value); }
 
     /**
      * <p>The type of the ML object from which tags were deleted.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The type of the ML object from which tags were deleted.</p>
      */
-    inline DeleteTagsResult& WithResourceType(TaggableResourceType&& value) { SetResourceType(value); return *this;}
+    inline DeleteTagsResult& WithResourceType(TaggableResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
   private:
     Aws::String m_resourceId;

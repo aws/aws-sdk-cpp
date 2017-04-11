@@ -17,6 +17,7 @@
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -73,7 +74,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
+    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource from which you want the tags
@@ -106,7 +107,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
-    inline RemoveTagsFromResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(value); return *this;}
+    inline RemoveTagsFromResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource from which you want the tags
@@ -135,7 +136,7 @@ namespace Model
      * <p>A list of <code>TagKeys</code> identifying the tags you want removed from the
      * named resource.</p>
      */
-    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
+    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
      * <p>A list of <code>TagKeys</code> identifying the tags you want removed from the
@@ -147,7 +148,7 @@ namespace Model
      * <p>A list of <code>TagKeys</code> identifying the tags you want removed from the
      * named resource.</p>
      */
-    inline RemoveTagsFromResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
+    inline RemoveTagsFromResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>TagKeys</code> identifying the tags you want removed from the
@@ -159,7 +160,7 @@ namespace Model
      * <p>A list of <code>TagKeys</code> identifying the tags you want removed from the
      * named resource.</p>
      */
-    inline RemoveTagsFromResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+    inline RemoveTagsFromResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of <code>TagKeys</code> identifying the tags you want removed from the

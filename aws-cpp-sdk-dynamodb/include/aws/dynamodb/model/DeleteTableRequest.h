@@ -16,6 +16,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/DynamoDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of the table to delete.</p>
      */
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
+    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
      * <p>The name of the table to delete.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the table to delete.</p>
      */
-    inline DeleteTableRequest& WithTableName(Aws::String&& value) { SetTableName(value); return *this;}
+    inline DeleteTableRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the table to delete.</p>

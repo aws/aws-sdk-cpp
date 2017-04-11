@@ -16,6 +16,7 @@
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -92,7 +93,7 @@ namespace Model
      * the timeout period is considered unhealthy.</p> <p>The total length of the HTTP
      * ping target must be 1024 16-bit Unicode characters or less.</p>
      */
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = value; }
+    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
      * <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL.
@@ -140,7 +141,7 @@ namespace Model
      * the timeout period is considered unhealthy.</p> <p>The total length of the HTTP
      * ping target must be 1024 16-bit Unicode characters or less.</p>
      */
-    inline HealthCheck& WithTarget(Aws::String&& value) { SetTarget(value); return *this;}
+    inline HealthCheck& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
 
     /**
      * <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL.

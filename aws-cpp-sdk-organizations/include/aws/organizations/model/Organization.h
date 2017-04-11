@@ -18,6 +18,7 @@
 #include <aws/organizations/model/OrganizationFeatureSet.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/organizations/model/PolicyTypeSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID
      * string requires "o-" followed by from 10 to 32 lower-case letters or digits.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of an organization.</p> <p>The <a
@@ -89,7 +90,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID
      * string requires "o-" followed by from 10 to 32 lower-case letters or digits.</p>
      */
-    inline Organization& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline Organization& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of an organization.</p> <p>The <a
@@ -123,7 +124,7 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
@@ -150,7 +151,7 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
-    inline Organization& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Organization& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
@@ -192,7 +193,7 @@ namespace Model
      * All Features in Your Organization</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
-    inline void SetFeatureSet(OrganizationFeatureSet&& value) { m_featureSetHasBeenSet = true; m_featureSet = value; }
+    inline void SetFeatureSet(OrganizationFeatureSet&& value) { m_featureSetHasBeenSet = true; m_featureSet = std::move(value); }
 
     /**
      * <p>Specifies the functionality that currently is available to the organization.
@@ -214,7 +215,7 @@ namespace Model
      * All Features in Your Organization</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
-    inline Organization& WithFeatureSet(OrganizationFeatureSet&& value) { SetFeatureSet(value); return *this;}
+    inline Organization& WithFeatureSet(OrganizationFeatureSet&& value) { SetFeatureSet(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
@@ -244,7 +245,7 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
-    inline void SetMasterAccountArn(Aws::String&& value) { m_masterAccountArnHasBeenSet = true; m_masterAccountArn = value; }
+    inline void SetMasterAccountArn(Aws::String&& value) { m_masterAccountArnHasBeenSet = true; m_masterAccountArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
@@ -274,7 +275,7 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
-    inline Organization& WithMasterAccountArn(Aws::String&& value) { SetMasterAccountArn(value); return *this;}
+    inline Organization& WithMasterAccountArn(Aws::String&& value) { SetMasterAccountArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
@@ -305,7 +306,7 @@ namespace Model
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an
      * account ID string requires exactly 12 digits.</p>
      */
-    inline void SetMasterAccountId(Aws::String&& value) { m_masterAccountIdHasBeenSet = true; m_masterAccountId = value; }
+    inline void SetMasterAccountId(Aws::String&& value) { m_masterAccountIdHasBeenSet = true; m_masterAccountId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the master account of an organization.</p>
@@ -326,7 +327,7 @@ namespace Model
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an
      * account ID string requires exactly 12 digits.</p>
      */
-    inline Organization& WithMasterAccountId(Aws::String&& value) { SetMasterAccountId(value); return *this;}
+    inline Organization& WithMasterAccountId(Aws::String&& value) { SetMasterAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the master account of an organization.</p>
@@ -351,7 +352,7 @@ namespace Model
      * <p>The email address that is associated with the AWS account that is designated
      * as the master account for the organization.</p>
      */
-    inline void SetMasterAccountEmail(Aws::String&& value) { m_masterAccountEmailHasBeenSet = true; m_masterAccountEmail = value; }
+    inline void SetMasterAccountEmail(Aws::String&& value) { m_masterAccountEmailHasBeenSet = true; m_masterAccountEmail = std::move(value); }
 
     /**
      * <p>The email address that is associated with the AWS account that is designated
@@ -369,7 +370,7 @@ namespace Model
      * <p>The email address that is associated with the AWS account that is designated
      * as the master account for the organization.</p>
      */
-    inline Organization& WithMasterAccountEmail(Aws::String&& value) { SetMasterAccountEmail(value); return *this;}
+    inline Organization& WithMasterAccountEmail(Aws::String&& value) { SetMasterAccountEmail(std::move(value)); return *this;}
 
     /**
      * <p>The email address that is associated with the AWS account that is designated
@@ -396,7 +397,7 @@ namespace Model
      * if your organization has all features enabled, then service control policies
      * (SCPs) are included in the list.</p>
      */
-    inline void SetAvailablePolicyTypes(Aws::Vector<PolicyTypeSummary>&& value) { m_availablePolicyTypesHasBeenSet = true; m_availablePolicyTypes = value; }
+    inline void SetAvailablePolicyTypes(Aws::Vector<PolicyTypeSummary>&& value) { m_availablePolicyTypesHasBeenSet = true; m_availablePolicyTypes = std::move(value); }
 
     /**
      * <p>A list of policy types that are enabled for this organization. For example,
@@ -410,7 +411,7 @@ namespace Model
      * if your organization has all features enabled, then service control policies
      * (SCPs) are included in the list.</p>
      */
-    inline Organization& WithAvailablePolicyTypes(Aws::Vector<PolicyTypeSummary>&& value) { SetAvailablePolicyTypes(value); return *this;}
+    inline Organization& WithAvailablePolicyTypes(Aws::Vector<PolicyTypeSummary>&& value) { SetAvailablePolicyTypes(std::move(value)); return *this;}
 
     /**
      * <p>A list of policy types that are enabled for this organization. For example,
@@ -424,7 +425,7 @@ namespace Model
      * if your organization has all features enabled, then service control policies
      * (SCPs) are included in the list.</p>
      */
-    inline Organization& AddAvailablePolicyTypes(PolicyTypeSummary&& value) { m_availablePolicyTypesHasBeenSet = true; m_availablePolicyTypes.push_back(value); return *this; }
+    inline Organization& AddAvailablePolicyTypes(PolicyTypeSummary&& value) { m_availablePolicyTypesHasBeenSet = true; m_availablePolicyTypes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_id;

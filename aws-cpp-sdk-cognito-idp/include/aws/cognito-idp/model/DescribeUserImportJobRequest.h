@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The user pool ID for the user pool that the users are being imported
      * into.</p>
      */
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
+    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
      * <p>The user pool ID for the user pool that the users are being imported
@@ -73,7 +74,7 @@ namespace Model
      * <p>The user pool ID for the user pool that the users are being imported
      * into.</p>
      */
-    inline DescribeUserImportJobRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(value); return *this;}
+    inline DescribeUserImportJobRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
      * <p>The user pool ID for the user pool that the users are being imported
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The job ID for the user import job.</p>
      */
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
      * <p>The job ID for the user import job.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The job ID for the user import job.</p>
      */
-    inline DescribeUserImportJobRequest& WithJobId(Aws::String&& value) { SetJobId(value); return *this;}
+    inline DescribeUserImportJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
      * <p>The job ID for the user import job.</p>

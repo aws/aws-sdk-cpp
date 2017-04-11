@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/ResponseMetadata.h>
 #include <aws/rds/model/Certificate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The list of <a>Certificate</a> objects for the AWS account.</p>
      */
-    inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificates = value; }
+    inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificates = std::move(value); }
 
     /**
      * <p>The list of <a>Certificate</a> objects for the AWS account.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The list of <a>Certificate</a> objects for the AWS account.</p>
      */
-    inline DescribeCertificatesResult& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(value); return *this;}
+    inline DescribeCertificatesResult& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(std::move(value)); return *this;}
 
     /**
      * <p>The list of <a>Certificate</a> objects for the AWS account.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>The list of <a>Certificate</a> objects for the AWS account.</p>
      */
-    inline DescribeCertificatesResult& AddCertificates(Certificate&& value) { m_certificates.push_back(value); return *this; }
+    inline DescribeCertificatesResult& AddCertificates(Certificate&& value) { m_certificates.push_back(std::move(value)); return *this; }
 
     /**
      * <p> An optional pagination token provided by a previous
@@ -105,7 +106,7 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code> . </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p> An optional pagination token provided by a previous
@@ -129,7 +130,7 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code> . </p>
      */
-    inline DescribeCertificatesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeCertificatesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous
@@ -146,13 +147,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeCertificatesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeCertificatesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeCertificatesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Certificate> m_certificates;

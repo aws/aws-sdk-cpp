@@ -17,6 +17,7 @@
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opsworks/model/InstanceIdentity.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The ID of the stack that the instance is to be registered with.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
      * <p>The ID of the stack that the instance is to be registered with.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The ID of the stack that the instance is to be registered with.</p>
      */
-    inline RegisterInstanceRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline RegisterInstanceRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the stack that the instance is to be registered with.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The instance's hostname.</p>
      */
-    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
+    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
 
     /**
      * <p>The instance's hostname.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The instance's hostname.</p>
      */
-    inline RegisterInstanceRequest& WithHostname(Aws::String&& value) { SetHostname(value); return *this;}
+    inline RegisterInstanceRequest& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
 
     /**
      * <p>The instance's hostname.</p>
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>The instance's public IP address.</p>
      */
-    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
+    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
 
     /**
      * <p>The instance's public IP address.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>The instance's public IP address.</p>
      */
-    inline RegisterInstanceRequest& WithPublicIp(Aws::String&& value) { SetPublicIp(value); return *this;}
+    inline RegisterInstanceRequest& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
 
     /**
      * <p>The instance's public IP address.</p>
@@ -154,7 +155,7 @@ namespace Model
     /**
      * <p>The instance's private IP address.</p>
      */
-    inline void SetPrivateIp(Aws::String&& value) { m_privateIpHasBeenSet = true; m_privateIp = value; }
+    inline void SetPrivateIp(Aws::String&& value) { m_privateIpHasBeenSet = true; m_privateIp = std::move(value); }
 
     /**
      * <p>The instance's private IP address.</p>
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p>The instance's private IP address.</p>
      */
-    inline RegisterInstanceRequest& WithPrivateIp(Aws::String&& value) { SetPrivateIp(value); return *this;}
+    inline RegisterInstanceRequest& WithPrivateIp(Aws::String&& value) { SetPrivateIp(std::move(value)); return *this;}
 
     /**
      * <p>The instance's private IP address.</p>
@@ -192,7 +193,7 @@ namespace Model
      * <p>The instances public RSA key. This key is used to encrypt communication
      * between the instance and the service.</p>
      */
-    inline void SetRsaPublicKey(Aws::String&& value) { m_rsaPublicKeyHasBeenSet = true; m_rsaPublicKey = value; }
+    inline void SetRsaPublicKey(Aws::String&& value) { m_rsaPublicKeyHasBeenSet = true; m_rsaPublicKey = std::move(value); }
 
     /**
      * <p>The instances public RSA key. This key is used to encrypt communication
@@ -210,7 +211,7 @@ namespace Model
      * <p>The instances public RSA key. This key is used to encrypt communication
      * between the instance and the service.</p>
      */
-    inline RegisterInstanceRequest& WithRsaPublicKey(Aws::String&& value) { SetRsaPublicKey(value); return *this;}
+    inline RegisterInstanceRequest& WithRsaPublicKey(Aws::String&& value) { SetRsaPublicKey(std::move(value)); return *this;}
 
     /**
      * <p>The instances public RSA key. This key is used to encrypt communication
@@ -231,7 +232,7 @@ namespace Model
     /**
      * <p>The instances public RSA key fingerprint.</p>
      */
-    inline void SetRsaPublicKeyFingerprint(Aws::String&& value) { m_rsaPublicKeyFingerprintHasBeenSet = true; m_rsaPublicKeyFingerprint = value; }
+    inline void SetRsaPublicKeyFingerprint(Aws::String&& value) { m_rsaPublicKeyFingerprintHasBeenSet = true; m_rsaPublicKeyFingerprint = std::move(value); }
 
     /**
      * <p>The instances public RSA key fingerprint.</p>
@@ -246,7 +247,7 @@ namespace Model
     /**
      * <p>The instances public RSA key fingerprint.</p>
      */
-    inline RegisterInstanceRequest& WithRsaPublicKeyFingerprint(Aws::String&& value) { SetRsaPublicKeyFingerprint(value); return *this;}
+    inline RegisterInstanceRequest& WithRsaPublicKeyFingerprint(Aws::String&& value) { SetRsaPublicKeyFingerprint(std::move(value)); return *this;}
 
     /**
      * <p>The instances public RSA key fingerprint.</p>
@@ -266,7 +267,7 @@ namespace Model
     /**
      * <p>An InstanceIdentity object that contains the instance's identity.</p>
      */
-    inline void SetInstanceIdentity(InstanceIdentity&& value) { m_instanceIdentityHasBeenSet = true; m_instanceIdentity = value; }
+    inline void SetInstanceIdentity(InstanceIdentity&& value) { m_instanceIdentityHasBeenSet = true; m_instanceIdentity = std::move(value); }
 
     /**
      * <p>An InstanceIdentity object that contains the instance's identity.</p>
@@ -276,7 +277,7 @@ namespace Model
     /**
      * <p>An InstanceIdentity object that contains the instance's identity.</p>
      */
-    inline RegisterInstanceRequest& WithInstanceIdentity(InstanceIdentity&& value) { SetInstanceIdentity(value); return *this;}
+    inline RegisterInstanceRequest& WithInstanceIdentity(InstanceIdentity&& value) { SetInstanceIdentity(std::move(value)); return *this;}
 
   private:
     Aws::String m_stackId;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/InventoryResultEntity.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>Collection of inventory entities such as a collection of instance inventory.
      * </p>
      */
-    inline void SetEntities(Aws::Vector<InventoryResultEntity>&& value) { m_entities = value; }
+    inline void SetEntities(Aws::Vector<InventoryResultEntity>&& value) { m_entities = std::move(value); }
 
     /**
      * <p>Collection of inventory entities such as a collection of instance inventory.
@@ -69,7 +70,7 @@ namespace Model
      * <p>Collection of inventory entities such as a collection of instance inventory.
      * </p>
      */
-    inline GetInventoryResult& WithEntities(Aws::Vector<InventoryResultEntity>&& value) { SetEntities(value); return *this;}
+    inline GetInventoryResult& WithEntities(Aws::Vector<InventoryResultEntity>&& value) { SetEntities(std::move(value)); return *this;}
 
     /**
      * <p>Collection of inventory entities such as a collection of instance inventory.
@@ -81,7 +82,7 @@ namespace Model
      * <p>Collection of inventory entities such as a collection of instance inventory.
      * </p>
      */
-    inline GetInventoryResult& AddEntities(InventoryResultEntity&& value) { m_entities.push_back(value); return *this; }
+    inline GetInventoryResult& AddEntities(InventoryResultEntity&& value) { m_entities.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -99,7 +100,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -117,7 +118,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline GetInventoryResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline GetInventoryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no

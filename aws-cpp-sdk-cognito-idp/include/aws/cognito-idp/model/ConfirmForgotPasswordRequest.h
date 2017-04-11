@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the client associated with the user pool.</p>
      */
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
+    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
 
     /**
      * <p>The ID of the client associated with the user pool.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the client associated with the user pool.</p>
      */
-    inline ConfirmForgotPasswordRequest& WithClientId(Aws::String&& value) { SetClientId(value); return *this;}
+    inline ConfirmForgotPasswordRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the client associated with the user pool.</p>
@@ -90,7 +91,7 @@ namespace Model
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
      * key of a user pool client and username plus the client ID in the message.</p>
      */
-    inline void SetSecretHash(Aws::String&& value) { m_secretHashHasBeenSet = true; m_secretHash = value; }
+    inline void SetSecretHash(Aws::String&& value) { m_secretHashHasBeenSet = true; m_secretHash = std::move(value); }
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
@@ -108,7 +109,7 @@ namespace Model
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
      * key of a user pool client and username plus the client ID in the message.</p>
      */
-    inline ConfirmForgotPasswordRequest& WithSecretHash(Aws::String&& value) { SetSecretHash(value); return *this;}
+    inline ConfirmForgotPasswordRequest& WithSecretHash(Aws::String&& value) { SetSecretHash(std::move(value)); return *this;}
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
@@ -132,7 +133,7 @@ namespace Model
      * <p>The user name of the user for whom you want to enter a code to retrieve a
      * forgotten password.</p>
      */
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
+    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
      * <p>The user name of the user for whom you want to enter a code to retrieve a
@@ -150,7 +151,7 @@ namespace Model
      * <p>The user name of the user for whom you want to enter a code to retrieve a
      * forgotten password.</p>
      */
-    inline ConfirmForgotPasswordRequest& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
+    inline ConfirmForgotPasswordRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
      * <p>The user name of the user for whom you want to enter a code to retrieve a
@@ -174,7 +175,7 @@ namespace Model
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
      * password.</p>
      */
-    inline void SetConfirmationCode(Aws::String&& value) { m_confirmationCodeHasBeenSet = true; m_confirmationCode = value; }
+    inline void SetConfirmationCode(Aws::String&& value) { m_confirmationCodeHasBeenSet = true; m_confirmationCode = std::move(value); }
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
@@ -192,7 +193,7 @@ namespace Model
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
      * password.</p>
      */
-    inline ConfirmForgotPasswordRequest& WithConfirmationCode(Aws::String&& value) { SetConfirmationCode(value); return *this;}
+    inline ConfirmForgotPasswordRequest& WithConfirmationCode(Aws::String&& value) { SetConfirmationCode(std::move(value)); return *this;}
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
@@ -216,7 +217,7 @@ namespace Model
      * <p>The password sent by sent by a user's request to retrieve a forgotten
      * password.</p>
      */
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = value; }
+    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
     /**
      * <p>The password sent by sent by a user's request to retrieve a forgotten
@@ -234,7 +235,7 @@ namespace Model
      * <p>The password sent by sent by a user's request to retrieve a forgotten
      * password.</p>
      */
-    inline ConfirmForgotPasswordRequest& WithPassword(Aws::String&& value) { SetPassword(value); return *this;}
+    inline ConfirmForgotPasswordRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     /**
      * <p>The password sent by sent by a user's request to retrieve a forgotten

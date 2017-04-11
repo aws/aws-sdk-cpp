@@ -16,6 +16,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/ServiceCatalogRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
+    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -75,7 +76,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline AcceptPortfolioShareRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(value); return *this;}
+    inline AcceptPortfolioShareRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The portfolio identifier.</p>
      */
-    inline void SetPortfolioId(Aws::String&& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = value; }
+    inline void SetPortfolioId(Aws::String&& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = std::move(value); }
 
     /**
      * <p>The portfolio identifier.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The portfolio identifier.</p>
      */
-    inline AcceptPortfolioShareRequest& WithPortfolioId(Aws::String&& value) { SetPortfolioId(value); return *this;}
+    inline AcceptPortfolioShareRequest& WithPortfolioId(Aws::String&& value) { SetPortfolioId(std::move(value)); return *this;}
 
     /**
      * <p>The portfolio identifier.</p>

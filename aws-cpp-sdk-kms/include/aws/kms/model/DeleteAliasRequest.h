@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/kms/KMSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * by a forward slash (alias/). Aliases that begin with "alias/AWS" are
      * reserved.</p>
      */
-    inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
+    inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
 
     /**
      * <p>The alias to be deleted. The name must start with the word "alias" followed
@@ -75,7 +76,7 @@ namespace Model
      * by a forward slash (alias/). Aliases that begin with "alias/AWS" are
      * reserved.</p>
      */
-    inline DeleteAliasRequest& WithAliasName(Aws::String&& value) { SetAliasName(value); return *this;}
+    inline DeleteAliasRequest& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
 
     /**
      * <p>The alias to be deleted. The name must start with the word "alias" followed

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>String that contains the ACM Certificate represented by the ARN specified at
      * input.</p>
      */
-    inline void SetCertificate(Aws::String&& value) { m_certificate = value; }
+    inline void SetCertificate(Aws::String&& value) { m_certificate = std::move(value); }
 
     /**
      * <p>String that contains the ACM Certificate represented by the ARN specified at
@@ -73,7 +74,7 @@ namespace Model
      * <p>String that contains the ACM Certificate represented by the ARN specified at
      * input.</p>
      */
-    inline GetCertificateResult& WithCertificate(Aws::String&& value) { SetCertificate(value); return *this;}
+    inline GetCertificateResult& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
 
     /**
      * <p>String that contains the ACM Certificate represented by the ARN specified at
@@ -97,7 +98,7 @@ namespace Model
      * <p>The certificate chain that contains the root certificate issued by the
      * certificate authority (CA).</p>
      */
-    inline void SetCertificateChain(Aws::String&& value) { m_certificateChain = value; }
+    inline void SetCertificateChain(Aws::String&& value) { m_certificateChain = std::move(value); }
 
     /**
      * <p>The certificate chain that contains the root certificate issued by the
@@ -115,7 +116,7 @@ namespace Model
      * <p>The certificate chain that contains the root certificate issued by the
      * certificate authority (CA).</p>
      */
-    inline GetCertificateResult& WithCertificateChain(Aws::String&& value) { SetCertificateChain(value); return *this;}
+    inline GetCertificateResult& WithCertificateChain(Aws::String&& value) { SetCertificateChain(std::move(value)); return *this;}
 
     /**
      * <p>The certificate chain that contains the root certificate issued by the

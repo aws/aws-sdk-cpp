@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elastictranscoder/model/Notifications.h>
 #include <aws/elastictranscoder/model/PipelineOutputConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * in which you want to perform a variety of operations, such as creating a job or
      * a preset.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The identifier for the pipeline. You use this value to identify the pipeline
@@ -86,7 +87,7 @@ namespace Model
      * in which you want to perform a variety of operations, such as creating a job or
      * a preset.</p>
      */
-    inline Pipeline& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline Pipeline& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the pipeline. You use this value to identify the pipeline
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the pipeline.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the pipeline.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the pipeline.</p>
      */
-    inline Pipeline& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Pipeline& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the pipeline.</p>
@@ -149,7 +150,7 @@ namespace Model
      * account, but uniqueness is not enforced.</p> <p>Constraints: Maximum 40
      * characters</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the pipeline. We recommend that the name be unique within the AWS
@@ -170,7 +171,7 @@ namespace Model
      * account, but uniqueness is not enforced.</p> <p>Constraints: Maximum 40
      * characters</p>
      */
-    inline Pipeline& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Pipeline& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the pipeline. We recommend that the name be unique within the AWS
@@ -198,7 +199,7 @@ namespace Model
      * The pipeline is processing jobs.</p> </li> <li> <p> <code>Paused</code>: The
      * pipeline is not currently processing jobs.</p> </li> </ul>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The current status of the pipeline:</p> <ul> <li> <p> <code>Active</code>:
@@ -219,7 +220,7 @@ namespace Model
      * The pipeline is processing jobs.</p> </li> <li> <p> <code>Paused</code>: The
      * pipeline is not currently processing jobs.</p> </li> </ul>
      */
-    inline Pipeline& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline Pipeline& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The current status of the pipeline:</p> <ul> <li> <p> <code>Active</code>:
@@ -247,7 +248,7 @@ namespace Model
      * transcoding and the graphics files, if any, that you want to use for
      * watermarks.</p>
      */
-    inline void SetInputBucket(Aws::String&& value) { m_inputBucketHasBeenSet = true; m_inputBucket = value; }
+    inline void SetInputBucket(Aws::String&& value) { m_inputBucketHasBeenSet = true; m_inputBucket = std::move(value); }
 
     /**
      * <p>The Amazon S3 bucket from which Elastic Transcoder gets media files for
@@ -268,7 +269,7 @@ namespace Model
      * transcoding and the graphics files, if any, that you want to use for
      * watermarks.</p>
      */
-    inline Pipeline& WithInputBucket(Aws::String&& value) { SetInputBucket(value); return *this;}
+    inline Pipeline& WithInputBucket(Aws::String&& value) { SetInputBucket(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 bucket from which Elastic Transcoder gets media files for
@@ -296,7 +297,7 @@ namespace Model
      * files, thumbnails, and playlists. Either you specify this value, or you specify
      * both <code>ContentConfig</code> and <code>ThumbnailConfig</code>.</p>
      */
-    inline void SetOutputBucket(Aws::String&& value) { m_outputBucketHasBeenSet = true; m_outputBucket = value; }
+    inline void SetOutputBucket(Aws::String&& value) { m_outputBucketHasBeenSet = true; m_outputBucket = std::move(value); }
 
     /**
      * <p>The Amazon S3 bucket in which you want Elastic Transcoder to save transcoded
@@ -317,7 +318,7 @@ namespace Model
      * files, thumbnails, and playlists. Either you specify this value, or you specify
      * both <code>ContentConfig</code> and <code>ThumbnailConfig</code>.</p>
      */
-    inline Pipeline& WithOutputBucket(Aws::String&& value) { SetOutputBucket(value); return *this;}
+    inline Pipeline& WithOutputBucket(Aws::String&& value) { SetOutputBucket(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 bucket in which you want Elastic Transcoder to save transcoded
@@ -342,7 +343,7 @@ namespace Model
      * <p>The IAM Amazon Resource Name (ARN) for the role that Elastic Transcoder uses
      * to transcode jobs for this pipeline.</p>
      */
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = value; }
+    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
      * <p>The IAM Amazon Resource Name (ARN) for the role that Elastic Transcoder uses
@@ -360,7 +361,7 @@ namespace Model
      * <p>The IAM Amazon Resource Name (ARN) for the role that Elastic Transcoder uses
      * to transcode jobs for this pipeline.</p>
      */
-    inline Pipeline& WithRole(Aws::String&& value) { SetRole(value); return *this;}
+    inline Pipeline& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
      * <p>The IAM Amazon Resource Name (ARN) for the role that Elastic Transcoder uses
@@ -399,7 +400,7 @@ namespace Model
      * non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of
      * <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.</p>
      */
-    inline void SetAwsKmsKeyArn(Aws::String&& value) { m_awsKmsKeyArnHasBeenSet = true; m_awsKmsKeyArn = value; }
+    inline void SetAwsKmsKeyArn(Aws::String&& value) { m_awsKmsKeyArnHasBeenSet = true; m_awsKmsKeyArn = std::move(value); }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that you want to use with this
@@ -432,7 +433,7 @@ namespace Model
      * non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of
      * <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.</p>
      */
-    inline Pipeline& WithAwsKmsKeyArn(Aws::String&& value) { SetAwsKmsKeyArn(value); return *this;}
+    inline Pipeline& WithAwsKmsKeyArn(Aws::String&& value) { SetAwsKmsKeyArn(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that you want to use with this
@@ -491,7 +492,7 @@ namespace Model
      * you want to notify when Elastic Transcoder encounters an error condition.</p>
      * </li> </ul>
      */
-    inline void SetNotifications(Notifications&& value) { m_notificationsHasBeenSet = true; m_notifications = value; }
+    inline void SetNotifications(Notifications&& value) { m_notificationsHasBeenSet = true; m_notifications = std::move(value); }
 
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
@@ -523,7 +524,7 @@ namespace Model
      * you want to notify when Elastic Transcoder encounters an error condition.</p>
      * </li> </ul>
      */
-    inline Pipeline& WithNotifications(Notifications&& value) { SetNotifications(value); return *this;}
+    inline Pipeline& WithNotifications(Notifications&& value) { SetNotifications(std::move(value)); return *this;}
 
     /**
      * <p>Information about the Amazon S3 bucket in which you want Elastic Transcoder
@@ -625,7 +626,7 @@ namespace Model
      * or ReducedRedundancy, that you want Elastic Transcoder to assign to the video
      * files and playlists that it stores in your Amazon S3 bucket. </p> </li> </ul>
      */
-    inline void SetContentConfig(PipelineOutputConfig&& value) { m_contentConfigHasBeenSet = true; m_contentConfig = value; }
+    inline void SetContentConfig(PipelineOutputConfig&& value) { m_contentConfigHasBeenSet = true; m_contentConfig = std::move(value); }
 
     /**
      * <p>Information about the Amazon S3 bucket in which you want Elastic Transcoder
@@ -693,7 +694,7 @@ namespace Model
      * or ReducedRedundancy, that you want Elastic Transcoder to assign to the video
      * files and playlists that it stores in your Amazon S3 bucket. </p> </li> </ul>
      */
-    inline Pipeline& WithContentConfig(PipelineOutputConfig&& value) { SetContentConfig(value); return *this;}
+    inline Pipeline& WithContentConfig(PipelineOutputConfig&& value) { SetContentConfig(std::move(value)); return *this;}
 
     /**
      * <p>Information about the Amazon S3 bucket in which you want Elastic Transcoder
@@ -798,7 +799,7 @@ namespace Model
      * <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
      * the thumbnails that it stores in your Amazon S3 bucket.</p> </li> </ul>
      */
-    inline void SetThumbnailConfig(PipelineOutputConfig&& value) { m_thumbnailConfigHasBeenSet = true; m_thumbnailConfig = value; }
+    inline void SetThumbnailConfig(PipelineOutputConfig&& value) { m_thumbnailConfigHasBeenSet = true; m_thumbnailConfig = std::move(value); }
 
     /**
      * <p>Information about the Amazon S3 bucket in which you want Elastic Transcoder
@@ -868,7 +869,7 @@ namespace Model
      * <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
      * the thumbnails that it stores in your Amazon S3 bucket.</p> </li> </ul>
      */
-    inline Pipeline& WithThumbnailConfig(PipelineOutputConfig&& value) { SetThumbnailConfig(value); return *this;}
+    inline Pipeline& WithThumbnailConfig(PipelineOutputConfig&& value) { SetThumbnailConfig(std::move(value)); return *this;}
 
   private:
     Aws::String m_id;

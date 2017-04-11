@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/storagegateway/model/StorediSCSIVolume.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,19 +48,19 @@ namespace Model
     inline void SetStorediSCSIVolumes(const Aws::Vector<StorediSCSIVolume>& value) { m_storediSCSIVolumes = value; }
 
     
-    inline void SetStorediSCSIVolumes(Aws::Vector<StorediSCSIVolume>&& value) { m_storediSCSIVolumes = value; }
+    inline void SetStorediSCSIVolumes(Aws::Vector<StorediSCSIVolume>&& value) { m_storediSCSIVolumes = std::move(value); }
 
     
     inline DescribeStorediSCSIVolumesResult& WithStorediSCSIVolumes(const Aws::Vector<StorediSCSIVolume>& value) { SetStorediSCSIVolumes(value); return *this;}
 
     
-    inline DescribeStorediSCSIVolumesResult& WithStorediSCSIVolumes(Aws::Vector<StorediSCSIVolume>&& value) { SetStorediSCSIVolumes(value); return *this;}
+    inline DescribeStorediSCSIVolumesResult& WithStorediSCSIVolumes(Aws::Vector<StorediSCSIVolume>&& value) { SetStorediSCSIVolumes(std::move(value)); return *this;}
 
     
     inline DescribeStorediSCSIVolumesResult& AddStorediSCSIVolumes(const StorediSCSIVolume& value) { m_storediSCSIVolumes.push_back(value); return *this; }
 
     
-    inline DescribeStorediSCSIVolumesResult& AddStorediSCSIVolumes(StorediSCSIVolume&& value) { m_storediSCSIVolumes.push_back(value); return *this; }
+    inline DescribeStorediSCSIVolumesResult& AddStorediSCSIVolumes(StorediSCSIVolume&& value) { m_storediSCSIVolumes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<StorediSCSIVolume> m_storediSCSIVolumes;

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -83,7 +84,7 @@ namespace Model
      * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
      * VPC peering connections.</p>
      */
-    inline void SetVpcPeeringConnectionIds(Aws::Vector<Aws::String>&& value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds = value; }
+    inline void SetVpcPeeringConnectionIds(Aws::Vector<Aws::String>&& value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds = std::move(value); }
 
     /**
      * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
@@ -95,7 +96,7 @@ namespace Model
      * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
      * VPC peering connections.</p>
      */
-    inline DescribeVpcPeeringConnectionsRequest& WithVpcPeeringConnectionIds(Aws::Vector<Aws::String>&& value) { SetVpcPeeringConnectionIds(value); return *this;}
+    inline DescribeVpcPeeringConnectionsRequest& WithVpcPeeringConnectionIds(Aws::Vector<Aws::String>&& value) { SetVpcPeeringConnectionIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
@@ -107,7 +108,7 @@ namespace Model
      * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
      * VPC peering connections.</p>
      */
-    inline DescribeVpcPeeringConnectionsRequest& AddVpcPeeringConnectionIds(Aws::String&& value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds.push_back(value); return *this; }
+    inline DescribeVpcPeeringConnectionsRequest& AddVpcPeeringConnectionIds(Aws::String&& value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
@@ -221,7 +222,7 @@ namespace Model
      * filter.</p> </li> <li> <p> <code>vpc-peering-connection-id</code> - The ID of
      * the VPC peering connection.</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
@@ -293,7 +294,7 @@ namespace Model
      * filter.</p> </li> <li> <p> <code>vpc-peering-connection-id</code> - The ID of
      * the VPC peering connection.</p> </li> </ul>
      */
-    inline DescribeVpcPeeringConnectionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeVpcPeeringConnectionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
@@ -365,7 +366,7 @@ namespace Model
      * filter.</p> </li> <li> <p> <code>vpc-peering-connection-id</code> - The ID of
      * the VPC peering connection.</p> </li> </ul>
      */
-    inline DescribeVpcPeeringConnectionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeVpcPeeringConnectionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

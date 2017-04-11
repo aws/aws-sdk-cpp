@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codedeploy/model/TagFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * list.</p> </li> <li> <p>Registered: Include registered on-premises instances in
      * the resulting list.</p> </li> </ul>
      */
-    inline void SetRegistrationStatus(RegistrationStatus&& value) { m_registrationStatusHasBeenSet = true; m_registrationStatus = value; }
+    inline void SetRegistrationStatus(RegistrationStatus&& value) { m_registrationStatusHasBeenSet = true; m_registrationStatus = std::move(value); }
 
     /**
      * <p>The registration status of the on-premises instances:</p> <ul> <li>
@@ -80,7 +81,7 @@ namespace Model
      * list.</p> </li> <li> <p>Registered: Include registered on-premises instances in
      * the resulting list.</p> </li> </ul>
      */
-    inline ListOnPremisesInstancesRequest& WithRegistrationStatus(RegistrationStatus&& value) { SetRegistrationStatus(value); return *this;}
+    inline ListOnPremisesInstancesRequest& WithRegistrationStatus(RegistrationStatus&& value) { SetRegistrationStatus(std::move(value)); return *this;}
 
     /**
      * <p>The on-premises instance tags that will be used to restrict the corresponding
@@ -98,7 +99,7 @@ namespace Model
      * <p>The on-premises instance tags that will be used to restrict the corresponding
      * on-premises instance names returned.</p>
      */
-    inline void SetTagFilters(Aws::Vector<TagFilter>&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = value; }
+    inline void SetTagFilters(Aws::Vector<TagFilter>&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = std::move(value); }
 
     /**
      * <p>The on-premises instance tags that will be used to restrict the corresponding
@@ -110,7 +111,7 @@ namespace Model
      * <p>The on-premises instance tags that will be used to restrict the corresponding
      * on-premises instance names returned.</p>
      */
-    inline ListOnPremisesInstancesRequest& WithTagFilters(Aws::Vector<TagFilter>&& value) { SetTagFilters(value); return *this;}
+    inline ListOnPremisesInstancesRequest& WithTagFilters(Aws::Vector<TagFilter>&& value) { SetTagFilters(std::move(value)); return *this;}
 
     /**
      * <p>The on-premises instance tags that will be used to restrict the corresponding
@@ -122,7 +123,7 @@ namespace Model
      * <p>The on-premises instance tags that will be used to restrict the corresponding
      * on-premises instance names returned.</p>
      */
-    inline ListOnPremisesInstancesRequest& AddTagFilters(TagFilter&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(value); return *this; }
+    inline ListOnPremisesInstancesRequest& AddTagFilters(TagFilter&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An identifier returned from the previous list on-premises instances call. It
@@ -140,7 +141,7 @@ namespace Model
      * <p>An identifier returned from the previous list on-premises instances call. It
      * can be used to return the next set of on-premises instances in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>An identifier returned from the previous list on-premises instances call. It
@@ -158,7 +159,7 @@ namespace Model
      * <p>An identifier returned from the previous list on-premises instances call. It
      * can be used to return the next set of on-premises instances in the list.</p>
      */
-    inline ListOnPremisesInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListOnPremisesInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An identifier returned from the previous list on-premises instances call. It

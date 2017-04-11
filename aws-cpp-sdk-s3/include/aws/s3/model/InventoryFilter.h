@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * The prefix that an object must have to be included in the inventory results.
      */
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * The prefix that an object must have to be included in the inventory results.
@@ -67,7 +68,7 @@ namespace Model
     /**
      * The prefix that an object must have to be included in the inventory results.
      */
-    inline InventoryFilter& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
+    inline InventoryFilter& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * The prefix that an object must have to be included in the inventory results.

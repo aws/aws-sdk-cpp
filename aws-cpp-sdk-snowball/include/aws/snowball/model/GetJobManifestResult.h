@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The Amazon S3 presigned URL for the manifest file associated with the
      * specified <code>JobId</code> value.</p>
      */
-    inline void SetManifestURI(Aws::String&& value) { m_manifestURI = value; }
+    inline void SetManifestURI(Aws::String&& value) { m_manifestURI = std::move(value); }
 
     /**
      * <p>The Amazon S3 presigned URL for the manifest file associated with the
@@ -73,7 +74,7 @@ namespace Model
      * <p>The Amazon S3 presigned URL for the manifest file associated with the
      * specified <code>JobId</code> value.</p>
      */
-    inline GetJobManifestResult& WithManifestURI(Aws::String&& value) { SetManifestURI(value); return *this;}
+    inline GetJobManifestResult& WithManifestURI(Aws::String&& value) { SetManifestURI(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 presigned URL for the manifest file associated with the

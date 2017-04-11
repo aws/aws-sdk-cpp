@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>The token for the next set of results, or <b>null</b> if there are no
      * additional results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of results, or <b>null</b> if there are no
@@ -76,7 +77,7 @@ namespace Model
      * <p>The token for the next set of results, or <b>null</b> if there are no
      * additional results.</p>
      */
-    inline ListThingTypesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListThingTypesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of results, or <b>null</b> if there are no
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The name of the thing type.</p>
      */
-    inline void SetThingTypeName(Aws::String&& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = value; }
+    inline void SetThingTypeName(Aws::String&& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = std::move(value); }
 
     /**
      * <p>The name of the thing type.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The name of the thing type.</p>
      */
-    inline ListThingTypesRequest& WithThingTypeName(Aws::String&& value) { SetThingTypeName(value); return *this;}
+    inline ListThingTypesRequest& WithThingTypeName(Aws::String&& value) { SetThingTypeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the thing type.</p>

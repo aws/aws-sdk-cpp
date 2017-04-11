@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of the log stream.</p>
      */
-    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
+    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::move(value); }
 
     /**
      * <p>The name of the log stream.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The name of the log stream.</p>
      */
-    inline LogStream& WithLogStreamName(Aws::String&& value) { SetLogStreamName(value); return *this;}
+    inline LogStream& WithLogStreamName(Aws::String&& value) { SetLogStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the log stream.</p>
@@ -158,7 +159,7 @@ namespace Model
     /**
      * <p>The sequence token.</p>
      */
-    inline void SetUploadSequenceToken(Aws::String&& value) { m_uploadSequenceTokenHasBeenSet = true; m_uploadSequenceToken = value; }
+    inline void SetUploadSequenceToken(Aws::String&& value) { m_uploadSequenceTokenHasBeenSet = true; m_uploadSequenceToken = std::move(value); }
 
     /**
      * <p>The sequence token.</p>
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>The sequence token.</p>
      */
-    inline LogStream& WithUploadSequenceToken(Aws::String&& value) { SetUploadSequenceToken(value); return *this;}
+    inline LogStream& WithUploadSequenceToken(Aws::String&& value) { SetUploadSequenceToken(std::move(value)); return *this;}
 
     /**
      * <p>The sequence token.</p>
@@ -193,7 +194,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the log stream.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the log stream.</p>
@@ -208,7 +209,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the log stream.</p>
      */
-    inline LogStream& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline LogStream& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the log stream.</p>

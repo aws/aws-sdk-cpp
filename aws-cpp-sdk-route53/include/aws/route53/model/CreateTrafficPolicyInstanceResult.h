@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/TrafficPolicyInstance.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>A complex type that contains settings for the new traffic policy
      * instance.</p>
      */
-    inline void SetTrafficPolicyInstance(TrafficPolicyInstance&& value) { m_trafficPolicyInstance = value; }
+    inline void SetTrafficPolicyInstance(TrafficPolicyInstance&& value) { m_trafficPolicyInstance = std::move(value); }
 
     /**
      * <p>A complex type that contains settings for the new traffic policy
@@ -74,7 +75,7 @@ namespace Model
      * <p>A complex type that contains settings for the new traffic policy
      * instance.</p>
      */
-    inline CreateTrafficPolicyInstanceResult& WithTrafficPolicyInstance(TrafficPolicyInstance&& value) { SetTrafficPolicyInstance(value); return *this;}
+    inline CreateTrafficPolicyInstanceResult& WithTrafficPolicyInstance(TrafficPolicyInstance&& value) { SetTrafficPolicyInstance(std::move(value)); return *this;}
 
     /**
      * <p>A unique URL that represents a new traffic policy instance.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>A unique URL that represents a new traffic policy instance.</p>
      */
-    inline void SetLocation(Aws::String&& value) { m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
 
     /**
      * <p>A unique URL that represents a new traffic policy instance.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>A unique URL that represents a new traffic policy instance.</p>
      */
-    inline CreateTrafficPolicyInstanceResult& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline CreateTrafficPolicyInstanceResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * <p>A unique URL that represents a new traffic policy instance.</p>

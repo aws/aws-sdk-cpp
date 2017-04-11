@@ -17,6 +17,7 @@
 #include <aws/support/SupportRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
-    inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
+    inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = std::move(value); }
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
@@ -79,7 +80,7 @@ namespace Model
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
-    inline AddCommunicationToCaseRequest& WithCaseId(Aws::String&& value) { SetCaseId(value); return *this;}
+    inline AddCommunicationToCaseRequest& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The body of an email communication to add to the support case.</p>
      */
-    inline void SetCommunicationBody(Aws::String&& value) { m_communicationBodyHasBeenSet = true; m_communicationBody = value; }
+    inline void SetCommunicationBody(Aws::String&& value) { m_communicationBodyHasBeenSet = true; m_communicationBody = std::move(value); }
 
     /**
      * <p>The body of an email communication to add to the support case.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The body of an email communication to add to the support case.</p>
      */
-    inline AddCommunicationToCaseRequest& WithCommunicationBody(Aws::String&& value) { SetCommunicationBody(value); return *this;}
+    inline AddCommunicationToCaseRequest& WithCommunicationBody(Aws::String&& value) { SetCommunicationBody(std::move(value)); return *this;}
 
     /**
      * <p>The body of an email communication to add to the support case.</p>
@@ -139,7 +140,7 @@ namespace Model
      * <p>The email addresses in the CC line of an email to be added to the support
      * case.</p>
      */
-    inline void SetCcEmailAddresses(Aws::Vector<Aws::String>&& value) { m_ccEmailAddressesHasBeenSet = true; m_ccEmailAddresses = value; }
+    inline void SetCcEmailAddresses(Aws::Vector<Aws::String>&& value) { m_ccEmailAddressesHasBeenSet = true; m_ccEmailAddresses = std::move(value); }
 
     /**
      * <p>The email addresses in the CC line of an email to be added to the support
@@ -151,7 +152,7 @@ namespace Model
      * <p>The email addresses in the CC line of an email to be added to the support
      * case.</p>
      */
-    inline AddCommunicationToCaseRequest& WithCcEmailAddresses(Aws::Vector<Aws::String>&& value) { SetCcEmailAddresses(value); return *this;}
+    inline AddCommunicationToCaseRequest& WithCcEmailAddresses(Aws::Vector<Aws::String>&& value) { SetCcEmailAddresses(std::move(value)); return *this;}
 
     /**
      * <p>The email addresses in the CC line of an email to be added to the support
@@ -163,7 +164,7 @@ namespace Model
      * <p>The email addresses in the CC line of an email to be added to the support
      * case.</p>
      */
-    inline AddCommunicationToCaseRequest& AddCcEmailAddresses(Aws::String&& value) { m_ccEmailAddressesHasBeenSet = true; m_ccEmailAddresses.push_back(value); return *this; }
+    inline AddCommunicationToCaseRequest& AddCcEmailAddresses(Aws::String&& value) { m_ccEmailAddressesHasBeenSet = true; m_ccEmailAddresses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The email addresses in the CC line of an email to be added to the support
@@ -187,7 +188,7 @@ namespace Model
      * <p>The ID of a set of one or more attachments for the communication to add to
      * the case. Create the set by calling <a>AddAttachmentsToSet</a> </p>
      */
-    inline void SetAttachmentSetId(Aws::String&& value) { m_attachmentSetIdHasBeenSet = true; m_attachmentSetId = value; }
+    inline void SetAttachmentSetId(Aws::String&& value) { m_attachmentSetIdHasBeenSet = true; m_attachmentSetId = std::move(value); }
 
     /**
      * <p>The ID of a set of one or more attachments for the communication to add to
@@ -205,7 +206,7 @@ namespace Model
      * <p>The ID of a set of one or more attachments for the communication to add to
      * the case. Create the set by calling <a>AddAttachmentsToSet</a> </p>
      */
-    inline AddCommunicationToCaseRequest& WithAttachmentSetId(Aws::String&& value) { SetAttachmentSetId(value); return *this;}
+    inline AddCommunicationToCaseRequest& WithAttachmentSetId(Aws::String&& value) { SetAttachmentSetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of a set of one or more attachments for the communication to add to

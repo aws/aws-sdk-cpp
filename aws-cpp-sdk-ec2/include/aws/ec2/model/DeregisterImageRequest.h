@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the AMI.</p>
      */
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
      * <p>The ID of the AMI.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The ID of the AMI.</p>
      */
-    inline DeregisterImageRequest& WithImageId(Aws::String&& value) { SetImageId(value); return *this;}
+    inline DeregisterImageRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the AMI.</p>

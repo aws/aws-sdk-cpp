@@ -16,6 +16,7 @@
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>Represents a message whose visibility timeout has been changed
      * successfully.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>Represents a message whose visibility timeout has been changed
@@ -81,7 +82,7 @@ namespace Model
      * <p>Represents a message whose visibility timeout has been changed
      * successfully.</p>
      */
-    inline ChangeMessageVisibilityBatchResultEntry& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline ChangeMessageVisibilityBatchResultEntry& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>Represents a message whose visibility timeout has been changed

@@ -17,6 +17,7 @@
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The list of names of Config rules that you want to run evaluations for.</p>
      */
-    inline void SetConfigRuleNames(Aws::Vector<Aws::String>&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = value; }
+    inline void SetConfigRuleNames(Aws::Vector<Aws::String>&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = std::move(value); }
 
     /**
      * <p>The list of names of Config rules that you want to run evaluations for.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The list of names of Config rules that you want to run evaluations for.</p>
      */
-    inline StartConfigRulesEvaluationRequest& WithConfigRuleNames(Aws::Vector<Aws::String>&& value) { SetConfigRuleNames(value); return *this;}
+    inline StartConfigRulesEvaluationRequest& WithConfigRuleNames(Aws::Vector<Aws::String>&& value) { SetConfigRuleNames(std::move(value)); return *this;}
 
     /**
      * <p>The list of names of Config rules that you want to run evaluations for.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The list of names of Config rules that you want to run evaluations for.</p>
      */
-    inline StartConfigRulesEvaluationRequest& AddConfigRuleNames(Aws::String&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
+    inline StartConfigRulesEvaluationRequest& AddConfigRuleNames(Aws::String&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of names of Config rules that you want to run evaluations for.</p>

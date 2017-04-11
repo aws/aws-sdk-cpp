@@ -16,6 +16,7 @@
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/swf/model/ActivityTaskTimeoutType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The type of the timeout that caused this event.</p>
      */
-    inline void SetTimeoutType(ActivityTaskTimeoutType&& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = value; }
+    inline void SetTimeoutType(ActivityTaskTimeoutType&& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = std::move(value); }
 
     /**
      * <p>The type of the timeout that caused this event.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The type of the timeout that caused this event.</p>
      */
-    inline ActivityTaskTimedOutEventAttributes& WithTimeoutType(ActivityTaskTimeoutType&& value) { SetTimeoutType(value); return *this;}
+    inline ActivityTaskTimedOutEventAttributes& WithTimeoutType(ActivityTaskTimeoutType&& value) { SetTimeoutType(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when
@@ -128,7 +129,7 @@ namespace Model
      * <p>Contains the content of the <code>details</code> parameter for the last call
      * made by the activity to <code>RecordActivityTaskHeartbeat</code>.</p>
      */
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = value; }
+    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
      * <p>Contains the content of the <code>details</code> parameter for the last call
@@ -146,7 +147,7 @@ namespace Model
      * <p>Contains the content of the <code>details</code> parameter for the last call
      * made by the activity to <code>RecordActivityTaskHeartbeat</code>.</p>
      */
-    inline ActivityTaskTimedOutEventAttributes& WithDetails(Aws::String&& value) { SetDetails(value); return *this;}
+    inline ActivityTaskTimedOutEventAttributes& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
      * <p>Contains the content of the <code>details</code> parameter for the last call

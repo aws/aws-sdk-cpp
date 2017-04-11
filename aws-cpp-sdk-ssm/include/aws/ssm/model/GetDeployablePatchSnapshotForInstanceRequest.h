@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The ID of the instance for which the appropriate patch snapshot should be
      * retrieved.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance for which the appropriate patch snapshot should be
@@ -69,7 +70,7 @@ namespace Model
      * <p>The ID of the instance for which the appropriate patch snapshot should be
      * retrieved.</p>
      */
-    inline GetDeployablePatchSnapshotForInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline GetDeployablePatchSnapshotForInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance for which the appropriate patch snapshot should be
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The user-defined snapshot ID.</p>
      */
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
+    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     /**
      * <p>The user-defined snapshot ID.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The user-defined snapshot ID.</p>
      */
-    inline GetDeployablePatchSnapshotForInstanceRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(value); return *this;}
+    inline GetDeployablePatchSnapshotForInstanceRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
      * <p>The user-defined snapshot ID.</p>

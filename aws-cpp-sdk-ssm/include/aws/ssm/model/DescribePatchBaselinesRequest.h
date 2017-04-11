@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/PatchOrchestratorFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * “NAME_PREFIX” or “OWNER”)</p> <p>Value: (array of strings, exactly 1 entry, 1 ≤
      * length ≤ 255)</p>
      */
-    inline void SetFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Each element in the array is a structure containing: </p> <p>Key: (string,
@@ -70,7 +71,7 @@ namespace Model
      * “NAME_PREFIX” or “OWNER”)</p> <p>Value: (array of strings, exactly 1 entry, 1 ≤
      * length ≤ 255)</p>
      */
-    inline DescribePatchBaselinesRequest& WithFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { SetFilters(value); return *this;}
+    inline DescribePatchBaselinesRequest& WithFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Each element in the array is a structure containing: </p> <p>Key: (string,
@@ -84,7 +85,7 @@ namespace Model
      * “NAME_PREFIX” or “OWNER”)</p> <p>Value: (array of strings, exactly 1 entry, 1 ≤
      * length ≤ 255)</p>
      */
-    inline DescribePatchBaselinesRequest& AddFilters(PatchOrchestratorFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribePatchBaselinesRequest& AddFilters(PatchOrchestratorFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The maximum number of patch baselines to return (per page).</p>
@@ -117,7 +118,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -135,7 +136,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline DescribePatchBaselinesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribePatchBaselinesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

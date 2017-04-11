@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VpcAttributeName.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline DescribeVpcAttributeRequest& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline DescribeVpcAttributeRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The VPC attribute.</p>
      */
-    inline void SetAttribute(VpcAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline void SetAttribute(VpcAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
      * <p>The VPC attribute.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The VPC attribute.</p>
      */
-    inline DescribeVpcAttributeRequest& WithAttribute(VpcAttributeName&& value) { SetAttribute(value); return *this;}
+    inline DescribeVpcAttributeRequest& WithAttribute(VpcAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

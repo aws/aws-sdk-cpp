@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
      * <code>snapshot</code> | <code>volume</code> </p>
      */
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = value; }
+    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
      * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
@@ -75,7 +76,7 @@ namespace Model
      * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
      * <code>snapshot</code> | <code>volume</code> </p>
      */
-    inline DescribeIdentityIdFormatRequest& WithResource(Aws::String&& value) { SetResource(value); return *this;}
+    inline DescribeIdentityIdFormatRequest& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
 
     /**
      * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
@@ -99,7 +100,7 @@ namespace Model
      * <p>The ARN of the principal, which can be an IAM role, IAM user, or the root
      * user.</p>
      */
-    inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
+    inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
 
     /**
      * <p>The ARN of the principal, which can be an IAM role, IAM user, or the root
@@ -117,7 +118,7 @@ namespace Model
      * <p>The ARN of the principal, which can be an IAM role, IAM user, or the root
      * user.</p>
      */
-    inline DescribeIdentityIdFormatRequest& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(value); return *this;}
+    inline DescribeIdentityIdFormatRequest& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the principal, which can be an IAM role, IAM user, or the root

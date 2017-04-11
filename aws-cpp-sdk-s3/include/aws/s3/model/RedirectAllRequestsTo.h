@@ -16,6 +16,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/Protocol.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * Name of the host where requests will be redirected.
      */
-    inline void SetHostName(Aws::String&& value) { m_hostNameHasBeenSet = true; m_hostName = value; }
+    inline void SetHostName(Aws::String&& value) { m_hostNameHasBeenSet = true; m_hostName = std::move(value); }
 
     /**
      * Name of the host where requests will be redirected.
@@ -68,7 +69,7 @@ namespace Model
     /**
      * Name of the host where requests will be redirected.
      */
-    inline RedirectAllRequestsTo& WithHostName(Aws::String&& value) { SetHostName(value); return *this;}
+    inline RedirectAllRequestsTo& WithHostName(Aws::String&& value) { SetHostName(std::move(value)); return *this;}
 
     /**
      * Name of the host where requests will be redirected.
@@ -91,7 +92,7 @@ namespace Model
      * Protocol to use (http, https) when redirecting requests. The default is the
      * protocol that is used in the original request.
      */
-    inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * Protocol to use (http, https) when redirecting requests. The default is the
@@ -103,7 +104,7 @@ namespace Model
      * Protocol to use (http, https) when redirecting requests. The default is the
      * protocol that is used in the original request.
      */
-    inline RedirectAllRequestsTo& WithProtocol(Protocol&& value) { SetProtocol(value); return *this;}
+    inline RedirectAllRequestsTo& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
 
   private:
     Aws::String m_hostName;

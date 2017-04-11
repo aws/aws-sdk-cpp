@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/Association.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The associations.</p>
      */
-    inline void SetAssociations(Aws::Vector<Association>&& value) { m_associations = value; }
+    inline void SetAssociations(Aws::Vector<Association>&& value) { m_associations = std::move(value); }
 
     /**
      * <p>The associations.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The associations.</p>
      */
-    inline ListAssociationsResult& WithAssociations(Aws::Vector<Association>&& value) { SetAssociations(value); return *this;}
+    inline ListAssociationsResult& WithAssociations(Aws::Vector<Association>&& value) { SetAssociations(std::move(value)); return *this;}
 
     /**
      * <p>The associations.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The associations.</p>
      */
-    inline ListAssociationsResult& AddAssociations(Association&& value) { m_associations.push_back(value); return *this; }
+    inline ListAssociationsResult& AddAssociations(Association&& value) { m_associations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -92,7 +93,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -110,7 +111,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline ListAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no

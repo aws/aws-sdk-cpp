@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/model/EventSourcePosition.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * AWS Lambda POSTs the Amazon Kinesis event, containing records, to your Lambda
      * function as JSON.</p>
      */
-    inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = value; }
+    inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB
@@ -90,7 +91,7 @@ namespace Model
      * AWS Lambda POSTs the Amazon Kinesis event, containing records, to your Lambda
      * function as JSON.</p>
      */
-    inline CreateEventSourceMappingRequest& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(value); return *this;}
+    inline CreateEventSourceMappingRequest& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB
@@ -153,7 +154,7 @@ namespace Model
      * applies only to the ARN. If you specify only the function name, it is limited to
      * 64 character in length.</p>
      */
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
      * <p>The Lambda function to invoke when AWS Lambda detects an event on the
@@ -207,7 +208,7 @@ namespace Model
      * applies only to the ARN. If you specify only the function name, it is limited to
      * 64 character in length.</p>
      */
-    inline CreateEventSourceMappingRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
+    inline CreateEventSourceMappingRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>The Lambda function to invoke when AWS Lambda detects an event on the
@@ -288,7 +289,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
      * in the <i>Amazon Kinesis API Reference</i>. </p>
      */
-    inline void SetStartingPosition(EventSourcePosition&& value) { m_startingPositionHasBeenSet = true; m_startingPosition = value; }
+    inline void SetStartingPosition(EventSourcePosition&& value) { m_startingPositionHasBeenSet = true; m_startingPosition = std::move(value); }
 
     /**
      * <p>The position in the stream where AWS Lambda should start reading. Valid only
@@ -304,7 +305,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
      * in the <i>Amazon Kinesis API Reference</i>. </p>
      */
-    inline CreateEventSourceMappingRequest& WithStartingPosition(EventSourcePosition&& value) { SetStartingPosition(value); return *this;}
+    inline CreateEventSourceMappingRequest& WithStartingPosition(EventSourcePosition&& value) { SetStartingPosition(std::move(value)); return *this;}
 
     /**
      * <p>The timestamp of the data record from which to start reading. Used with <a
@@ -334,7 +335,7 @@ namespace Model
      * older than the current trim horizon, the iterator returned is for the oldest
      * untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>
      */
-    inline void SetStartingPositionTimestamp(Aws::Utils::DateTime&& value) { m_startingPositionTimestampHasBeenSet = true; m_startingPositionTimestamp = value; }
+    inline void SetStartingPositionTimestamp(Aws::Utils::DateTime&& value) { m_startingPositionTimestampHasBeenSet = true; m_startingPositionTimestamp = std::move(value); }
 
     /**
      * <p>The timestamp of the data record from which to start reading. Used with <a
@@ -354,7 +355,7 @@ namespace Model
      * older than the current trim horizon, the iterator returned is for the oldest
      * untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>
      */
-    inline CreateEventSourceMappingRequest& WithStartingPositionTimestamp(Aws::Utils::DateTime&& value) { SetStartingPositionTimestamp(value); return *this;}
+    inline CreateEventSourceMappingRequest& WithStartingPositionTimestamp(Aws::Utils::DateTime&& value) { SetStartingPositionTimestamp(std::move(value)); return *this;}
 
   private:
     Aws::String m_eventSourceArn;

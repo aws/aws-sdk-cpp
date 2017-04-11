@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/model/ResponseMetadata.h>
 #include <aws/iam/model/PolicyVersion.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
      * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline void SetVersions(Aws::Vector<PolicyVersion>&& value) { m_versions = value; }
+    inline void SetVersions(Aws::Vector<PolicyVersion>&& value) { m_versions = std::move(value); }
 
     /**
      * <p>A list of policy versions.</p> <p>For more information about managed policy
@@ -86,7 +87,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
      * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline ListPolicyVersionsResult& WithVersions(Aws::Vector<PolicyVersion>&& value) { SetVersions(value); return *this;}
+    inline ListPolicyVersionsResult& WithVersions(Aws::Vector<PolicyVersion>&& value) { SetVersions(std::move(value)); return *this;}
 
     /**
      * <p>A list of policy versions.</p> <p>For more information about managed policy
@@ -102,7 +103,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
      * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline ListPolicyVersionsResult& AddVersions(PolicyVersion&& value) { m_versions.push_back(value); return *this; }
+    inline ListPolicyVersionsResult& AddVersions(PolicyVersion&& value) { m_versions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
@@ -156,7 +157,7 @@ namespace Model
      * and contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -177,7 +178,7 @@ namespace Model
      * and contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.</p>
      */
-    inline ListPolicyVersionsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListPolicyVersionsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -193,13 +194,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListPolicyVersionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListPolicyVersionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListPolicyVersionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<PolicyVersion> m_versions;

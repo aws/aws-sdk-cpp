@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
      * <p>A string (provided by the <a>ListExports</a> response output) that identifies
      * the next page of exported output values that you asked to retrieve.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>A string (provided by the <a>ListExports</a> response output) that identifies
@@ -71,7 +72,7 @@ namespace Model
      * <p>A string (provided by the <a>ListExports</a> response output) that identifies
      * the next page of exported output values that you asked to retrieve.</p>
      */
-    inline ListExportsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListExportsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A string (provided by the <a>ListExports</a> response output) that identifies

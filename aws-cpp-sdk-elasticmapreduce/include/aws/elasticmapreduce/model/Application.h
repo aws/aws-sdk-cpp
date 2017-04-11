@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of the application.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the application.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The name of the application.</p>
      */
-    inline Application& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Application& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the application.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The version of the application.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The version of the application.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The version of the application.</p>
      */
-    inline Application& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline Application& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the application.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>Arguments for Amazon EMR to pass to the application.</p>
      */
-    inline void SetArgs(Aws::Vector<Aws::String>&& value) { m_argsHasBeenSet = true; m_args = value; }
+    inline void SetArgs(Aws::Vector<Aws::String>&& value) { m_argsHasBeenSet = true; m_args = std::move(value); }
 
     /**
      * <p>Arguments for Amazon EMR to pass to the application.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>Arguments for Amazon EMR to pass to the application.</p>
      */
-    inline Application& WithArgs(Aws::Vector<Aws::String>&& value) { SetArgs(value); return *this;}
+    inline Application& WithArgs(Aws::Vector<Aws::String>&& value) { SetArgs(std::move(value)); return *this;}
 
     /**
      * <p>Arguments for Amazon EMR to pass to the application.</p>
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>Arguments for Amazon EMR to pass to the application.</p>
      */
-    inline Application& AddArgs(Aws::String&& value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
+    inline Application& AddArgs(Aws::String&& value) { m_argsHasBeenSet = true; m_args.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Arguments for Amazon EMR to pass to the application.</p>
@@ -184,7 +185,7 @@ namespace Model
      * <p>This option is for advanced users only. This is meta information about
      * third-party applications that third-party vendors use for testing purposes.</p>
      */
-    inline void SetAdditionalInfo(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
+    inline void SetAdditionalInfo(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
 
     /**
      * <p>This option is for advanced users only. This is meta information about
@@ -196,49 +197,49 @@ namespace Model
      * <p>This option is for advanced users only. This is meta information about
      * third-party applications that third-party vendors use for testing purposes.</p>
      */
-    inline Application& WithAdditionalInfo(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalInfo(value); return *this;}
+    inline Application& WithAdditionalInfo(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalInfo(std::move(value)); return *this;}
 
     /**
      * <p>This option is for advanced users only. This is meta information about
      * third-party applications that third-party vendors use for testing purposes.</p>
      */
-    inline Application& AddAdditionalInfo(const Aws::String& key, const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo[key] = value; return *this; }
+    inline Application& AddAdditionalInfo(const Aws::String& key, const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, value); return *this; }
 
     /**
      * <p>This option is for advanced users only. This is meta information about
      * third-party applications that third-party vendors use for testing purposes.</p>
      */
-    inline Application& AddAdditionalInfo(Aws::String&& key, const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo[key] = value; return *this; }
+    inline Application& AddAdditionalInfo(Aws::String&& key, const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>This option is for advanced users only. This is meta information about
      * third-party applications that third-party vendors use for testing purposes.</p>
      */
-    inline Application& AddAdditionalInfo(const Aws::String& key, Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo[key] = value; return *this; }
+    inline Application& AddAdditionalInfo(const Aws::String& key, Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>This option is for advanced users only. This is meta information about
      * third-party applications that third-party vendors use for testing purposes.</p>
      */
-    inline Application& AddAdditionalInfo(Aws::String&& key, Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo[key] = value; return *this; }
+    inline Application& AddAdditionalInfo(Aws::String&& key, Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>This option is for advanced users only. This is meta information about
      * third-party applications that third-party vendors use for testing purposes.</p>
      */
-    inline Application& AddAdditionalInfo(const char* key, Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo[key] = value; return *this; }
+    inline Application& AddAdditionalInfo(const char* key, Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>This option is for advanced users only. This is meta information about
      * third-party applications that third-party vendors use for testing purposes.</p>
      */
-    inline Application& AddAdditionalInfo(Aws::String&& key, const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo[key] = value; return *this; }
+    inline Application& AddAdditionalInfo(Aws::String&& key, const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>This option is for advanced users only. This is meta information about
      * third-party applications that third-party vendors use for testing purposes.</p>
      */
-    inline Application& AddAdditionalInfo(const char* key, const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo[key] = value; return *this; }
+    inline Application& AddAdditionalInfo(const char* key, const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, value); return *this; }
 
   private:
     Aws::String m_name;

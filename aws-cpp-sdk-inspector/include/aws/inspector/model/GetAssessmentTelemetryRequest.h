@@ -16,6 +16,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/InspectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The ARN specifying the assessment the telemetry of which you want to
      * obtain.</p>
      */
-    inline void SetAssessmentArn(Aws::String&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = value; }
+    inline void SetAssessmentArn(Aws::String&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = std::move(value); }
 
     /**
      * <p>The ARN specifying the assessment the telemetry of which you want to
@@ -69,7 +70,7 @@ namespace Model
      * <p>The ARN specifying the assessment the telemetry of which you want to
      * obtain.</p>
      */
-    inline GetAssessmentTelemetryRequest& WithAssessmentArn(Aws::String&& value) { SetAssessmentArn(value); return *this;}
+    inline GetAssessmentTelemetryRequest& WithAssessmentArn(Aws::String&& value) { SetAssessmentArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN specifying the assessment the telemetry of which you want to

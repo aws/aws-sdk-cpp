@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>A unique deployment configuration ID.</p>
      */
-    inline void SetDeploymentConfigId(Aws::String&& value) { m_deploymentConfigId = value; }
+    inline void SetDeploymentConfigId(Aws::String&& value) { m_deploymentConfigId = std::move(value); }
 
     /**
      * <p>A unique deployment configuration ID.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>A unique deployment configuration ID.</p>
      */
-    inline CreateDeploymentConfigResult& WithDeploymentConfigId(Aws::String&& value) { SetDeploymentConfigId(value); return *this;}
+    inline CreateDeploymentConfigResult& WithDeploymentConfigId(Aws::String&& value) { SetDeploymentConfigId(std::move(value)); return *this;}
 
     /**
      * <p>A unique deployment configuration ID.</p>

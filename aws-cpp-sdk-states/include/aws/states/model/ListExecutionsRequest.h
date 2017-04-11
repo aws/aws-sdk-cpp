@@ -17,6 +17,7 @@
 #include <aws/states/SFNRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/states/model/ExecutionStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions will be
      * listed.</p>
      */
-    inline void SetStateMachineArn(Aws::String&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = value; }
+    inline void SetStateMachineArn(Aws::String&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions will be
@@ -70,7 +71,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions will be
      * listed.</p>
      */
-    inline ListExecutionsRequest& WithStateMachineArn(Aws::String&& value) { SetStateMachineArn(value); return *this;}
+    inline ListExecutionsRequest& WithStateMachineArn(Aws::String&& value) { SetStateMachineArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions will be
@@ -94,7 +95,7 @@ namespace Model
      * <p>If specified, only list the executions whose current execution status matches
      * the given filter.</p>
      */
-    inline void SetStatusFilter(ExecutionStatus&& value) { m_statusFilterHasBeenSet = true; m_statusFilter = value; }
+    inline void SetStatusFilter(ExecutionStatus&& value) { m_statusFilterHasBeenSet = true; m_statusFilter = std::move(value); }
 
     /**
      * <p>If specified, only list the executions whose current execution status matches
@@ -106,7 +107,7 @@ namespace Model
      * <p>If specified, only list the executions whose current execution status matches
      * the given filter.</p>
      */
-    inline ListExecutionsRequest& WithStatusFilter(ExecutionStatus&& value) { SetStatusFilter(value); return *this;}
+    inline ListExecutionsRequest& WithStatusFilter(ExecutionStatus&& value) { SetStatusFilter(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of results that will be returned per call.
@@ -160,7 +161,7 @@ namespace Model
      * unchanged.</p> <p>The configured <code>maxResults</code> determines how many
      * results can be returned in a single call.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>If a <code>nextToken</code> was returned by a previous call, there are more
@@ -187,7 +188,7 @@ namespace Model
      * unchanged.</p> <p>The configured <code>maxResults</code> determines how many
      * results can be returned in a single call.</p>
      */
-    inline ListExecutionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListExecutionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If a <code>nextToken</code> was returned by a previous call, there are more

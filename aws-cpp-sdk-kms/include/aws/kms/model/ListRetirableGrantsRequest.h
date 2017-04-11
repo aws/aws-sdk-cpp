@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/kms/KMSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -81,7 +82,7 @@ namespace Model
      * truncated results. Set it to the value of <code>NextMarker</code> from the
      * truncated response you just received.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>Use this parameter in a subsequent request after you receive a response with
@@ -102,7 +103,7 @@ namespace Model
      * truncated results. Set it to the value of <code>NextMarker</code> from the
      * truncated response you just received.</p>
      */
-    inline ListRetirableGrantsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListRetirableGrantsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter in a subsequent request after you receive a response with
@@ -148,7 +149,7 @@ namespace Model
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>Amazon Web Services General Reference</i>.</p>
      */
-    inline void SetRetiringPrincipal(Aws::String&& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = value; }
+    inline void SetRetiringPrincipal(Aws::String&& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = std::move(value); }
 
     /**
      * <p>The retiring principal for which to list grants.</p> <p>To specify the
@@ -187,7 +188,7 @@ namespace Model
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>Amazon Web Services General Reference</i>.</p>
      */
-    inline ListRetirableGrantsRequest& WithRetiringPrincipal(Aws::String&& value) { SetRetiringPrincipal(value); return *this;}
+    inline ListRetirableGrantsRequest& WithRetiringPrincipal(Aws::String&& value) { SetRetiringPrincipal(std::move(value)); return *this;}
 
     /**
      * <p>The retiring principal for which to list grants.</p> <p>To specify the

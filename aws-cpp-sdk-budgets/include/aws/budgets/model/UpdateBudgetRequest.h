@@ -17,6 +17,7 @@
 #include <aws/budgets/BudgetsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/budgets/model/Budget.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
@@ -55,7 +56,7 @@ namespace Model
     inline UpdateBudgetRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     
-    inline UpdateBudgetRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline UpdateBudgetRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     
     inline UpdateBudgetRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
@@ -67,13 +68,13 @@ namespace Model
     inline void SetNewBudget(const Budget& value) { m_newBudgetHasBeenSet = true; m_newBudget = value; }
 
     
-    inline void SetNewBudget(Budget&& value) { m_newBudgetHasBeenSet = true; m_newBudget = value; }
+    inline void SetNewBudget(Budget&& value) { m_newBudgetHasBeenSet = true; m_newBudget = std::move(value); }
 
     
     inline UpdateBudgetRequest& WithNewBudget(const Budget& value) { SetNewBudget(value); return *this;}
 
     
-    inline UpdateBudgetRequest& WithNewBudget(Budget&& value) { SetNewBudget(value); return *this;}
+    inline UpdateBudgetRequest& WithNewBudget(Budget&& value) { SetNewBudget(std::move(value)); return *this;}
 
   private:
     Aws::String m_accountId;

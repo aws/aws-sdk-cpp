@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code>
      * status may be accessible for a short time before they are deleted.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet that contains the instance you want access to.
@@ -81,7 +82,7 @@ namespace Model
      * <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code>
      * status may be accessible for a short time before they are deleted.</p>
      */
-    inline GetInstanceAccessRequest& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline GetInstanceAccessRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet that contains the instance you want access to.
@@ -107,7 +108,7 @@ namespace Model
      * <p>Unique identifier for an instance you want to get access to. You can access
      * an instance in any status.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>Unique identifier for an instance you want to get access to. You can access
@@ -125,7 +126,7 @@ namespace Model
      * <p>Unique identifier for an instance you want to get access to. You can access
      * an instance in any status.</p>
      */
-    inline GetInstanceAccessRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline GetInstanceAccessRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for an instance you want to get access to. You can access

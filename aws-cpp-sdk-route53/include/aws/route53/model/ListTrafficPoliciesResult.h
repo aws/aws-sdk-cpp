@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/TrafficPolicySummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>A list that contains one <code>TrafficPolicySummary</code> element for each
      * traffic policy that was created by the current AWS account.</p>
      */
-    inline void SetTrafficPolicySummaries(Aws::Vector<TrafficPolicySummary>&& value) { m_trafficPolicySummaries = value; }
+    inline void SetTrafficPolicySummaries(Aws::Vector<TrafficPolicySummary>&& value) { m_trafficPolicySummaries = std::move(value); }
 
     /**
      * <p>A list that contains one <code>TrafficPolicySummary</code> element for each
@@ -75,7 +76,7 @@ namespace Model
      * <p>A list that contains one <code>TrafficPolicySummary</code> element for each
      * traffic policy that was created by the current AWS account.</p>
      */
-    inline ListTrafficPoliciesResult& WithTrafficPolicySummaries(Aws::Vector<TrafficPolicySummary>&& value) { SetTrafficPolicySummaries(value); return *this;}
+    inline ListTrafficPoliciesResult& WithTrafficPolicySummaries(Aws::Vector<TrafficPolicySummary>&& value) { SetTrafficPolicySummaries(std::move(value)); return *this;}
 
     /**
      * <p>A list that contains one <code>TrafficPolicySummary</code> element for each
@@ -87,7 +88,7 @@ namespace Model
      * <p>A list that contains one <code>TrafficPolicySummary</code> element for each
      * traffic policy that was created by the current AWS account.</p>
      */
-    inline ListTrafficPoliciesResult& AddTrafficPolicySummaries(TrafficPolicySummary&& value) { m_trafficPolicySummaries.push_back(value); return *this; }
+    inline ListTrafficPoliciesResult& AddTrafficPolicySummaries(TrafficPolicySummary&& value) { m_trafficPolicySummaries.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A flag that indicates whether there are more traffic policies to be listed.
@@ -141,7 +142,7 @@ namespace Model
      * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy in the
      * next group of <code>MaxItems</code> traffic policies.</p>
      */
-    inline void SetTrafficPolicyIdMarker(Aws::String&& value) { m_trafficPolicyIdMarker = value; }
+    inline void SetTrafficPolicyIdMarker(Aws::String&& value) { m_trafficPolicyIdMarker = std::move(value); }
 
     /**
      * <p>If the value of <code>IsTruncated</code> is <code>true</code>,
@@ -162,7 +163,7 @@ namespace Model
      * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy in the
      * next group of <code>MaxItems</code> traffic policies.</p>
      */
-    inline ListTrafficPoliciesResult& WithTrafficPolicyIdMarker(Aws::String&& value) { SetTrafficPolicyIdMarker(value); return *this;}
+    inline ListTrafficPoliciesResult& WithTrafficPolicyIdMarker(Aws::String&& value) { SetTrafficPolicyIdMarker(std::move(value)); return *this;}
 
     /**
      * <p>If the value of <code>IsTruncated</code> is <code>true</code>,
@@ -187,7 +188,7 @@ namespace Model
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
      * call to <code>ListTrafficPolicies</code> that produced the current response.</p>
      */
-    inline void SetMaxItems(Aws::String&& value) { m_maxItems = value; }
+    inline void SetMaxItems(Aws::String&& value) { m_maxItems = std::move(value); }
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
@@ -205,7 +206,7 @@ namespace Model
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
      * call to <code>ListTrafficPolicies</code> that produced the current response.</p>
      */
-    inline ListTrafficPoliciesResult& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
+    inline ListTrafficPoliciesResult& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the

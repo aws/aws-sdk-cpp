@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/kinesisanalytics/model/ApplicationDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * Resource Name (ARN), status, latest version, and input and output configuration
      * details.</p>
      */
-    inline void SetApplicationDetail(ApplicationDetail&& value) { m_applicationDetail = value; }
+    inline void SetApplicationDetail(ApplicationDetail&& value) { m_applicationDetail = std::move(value); }
 
     /**
      * <p>Provides a description of the application, such as the application Amazon
@@ -77,7 +78,7 @@ namespace Model
      * Resource Name (ARN), status, latest version, and input and output configuration
      * details.</p>
      */
-    inline DescribeApplicationResult& WithApplicationDetail(ApplicationDetail&& value) { SetApplicationDetail(value); return *this;}
+    inline DescribeApplicationResult& WithApplicationDetail(ApplicationDetail&& value) { SetApplicationDetail(std::move(value)); return *this;}
 
   private:
     ApplicationDetail m_applicationDetail;

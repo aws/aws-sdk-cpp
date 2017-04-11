@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The name of an existing snapshot from which to make a copy.</p>
      */
-    inline void SetSourceSnapshotName(Aws::String&& value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName = value; }
+    inline void SetSourceSnapshotName(Aws::String&& value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName = std::move(value); }
 
     /**
      * <p>The name of an existing snapshot from which to make a copy.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The name of an existing snapshot from which to make a copy.</p>
      */
-    inline CopySnapshotRequest& WithSourceSnapshotName(Aws::String&& value) { SetSourceSnapshotName(value); return *this;}
+    inline CopySnapshotRequest& WithSourceSnapshotName(Aws::String&& value) { SetSourceSnapshotName(std::move(value)); return *this;}
 
     /**
      * <p>The name of an existing snapshot from which to make a copy.</p>
@@ -95,7 +96,7 @@ namespace Model
      * snapshot, therefore this name must be unique within its context - ElastiCache or
      * an Amazon S3 bucket if exporting.</p>
      */
-    inline void SetTargetSnapshotName(Aws::String&& value) { m_targetSnapshotNameHasBeenSet = true; m_targetSnapshotName = value; }
+    inline void SetTargetSnapshotName(Aws::String&& value) { m_targetSnapshotNameHasBeenSet = true; m_targetSnapshotName = std::move(value); }
 
     /**
      * <p>A name for the snapshot copy. ElastiCache does not permit overwriting a
@@ -116,7 +117,7 @@ namespace Model
      * snapshot, therefore this name must be unique within its context - ElastiCache or
      * an Amazon S3 bucket if exporting.</p>
      */
-    inline CopySnapshotRequest& WithTargetSnapshotName(Aws::String&& value) { SetTargetSnapshotName(value); return *this;}
+    inline CopySnapshotRequest& WithTargetSnapshotName(Aws::String&& value) { SetTargetSnapshotName(std::move(value)); return *this;}
 
     /**
      * <p>A name for the snapshot copy. ElastiCache does not permit overwriting a
@@ -162,7 +163,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting
      * a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
      */
-    inline void SetTargetBucket(Aws::String&& value) { m_targetBucketHasBeenSet = true; m_targetBucket = value; }
+    inline void SetTargetBucket(Aws::String&& value) { m_targetBucketHasBeenSet = true; m_targetBucket = std::move(value); }
 
     /**
      * <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is
@@ -201,7 +202,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting
      * a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
      */
-    inline CopySnapshotRequest& WithTargetBucket(Aws::String&& value) { SetTargetBucket(value); return *this;}
+    inline CopySnapshotRequest& WithTargetBucket(Aws::String&& value) { SetTargetBucket(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is

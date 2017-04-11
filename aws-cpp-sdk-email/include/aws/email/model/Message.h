@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/email/model/Content.h>
 #include <aws/email/model/Body.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>The subject of the message: A short summary of the content, which will appear
      * in the recipient's inbox.</p>
      */
-    inline void SetSubject(Content&& value) { m_subjectHasBeenSet = true; m_subject = value; }
+    inline void SetSubject(Content&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
 
     /**
      * <p>The subject of the message: A short summary of the content, which will appear
@@ -76,7 +77,7 @@ namespace Model
      * <p>The subject of the message: A short summary of the content, which will appear
      * in the recipient's inbox.</p>
      */
-    inline Message& WithSubject(Content&& value) { SetSubject(value); return *this;}
+    inline Message& WithSubject(Content&& value) { SetSubject(std::move(value)); return *this;}
 
     /**
      * <p>The message body.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The message body.</p>
      */
-    inline void SetBody(Body&& value) { m_bodyHasBeenSet = true; m_body = value; }
+    inline void SetBody(Body&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
 
     /**
      * <p>The message body.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The message body.</p>
      */
-    inline Message& WithBody(Body&& value) { SetBody(value); return *this;}
+    inline Message& WithBody(Body&& value) { SetBody(std::move(value)); return *this;}
 
   private:
     Content m_subject;

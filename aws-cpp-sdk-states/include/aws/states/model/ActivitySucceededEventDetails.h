@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The JSON data output by the activity task.</p>
      */
-    inline void SetOutput(Aws::String&& value) { m_outputHasBeenSet = true; m_output = value; }
+    inline void SetOutput(Aws::String&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
 
     /**
      * <p>The JSON data output by the activity task.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The JSON data output by the activity task.</p>
      */
-    inline ActivitySucceededEventDetails& WithOutput(Aws::String&& value) { SetOutput(value); return *this;}
+    inline ActivitySucceededEventDetails& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
 
     /**
      * <p>The JSON data output by the activity task.</p>

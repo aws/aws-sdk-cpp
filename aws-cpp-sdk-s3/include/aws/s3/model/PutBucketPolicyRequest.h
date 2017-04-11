@@ -16,6 +16,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -42,7 +43,7 @@ namespace Model
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
@@ -51,7 +52,7 @@ namespace Model
     inline PutBucketPolicyRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     
-    inline PutBucketPolicyRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline PutBucketPolicyRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     
     inline PutBucketPolicyRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
@@ -63,7 +64,7 @@ namespace Model
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     
-    inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
+    inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
     
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
@@ -72,7 +73,7 @@ namespace Model
     inline PutBucketPolicyRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
     
-    inline PutBucketPolicyRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(value); return *this;}
+    inline PutBucketPolicyRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
     
     inline PutBucketPolicyRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}

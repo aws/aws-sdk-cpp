@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/ResponseMetadata.h>
 #include <aws/elasticache/model/CacheSecurityGroup.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
-    inline DescribeCacheSecurityGroupsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeCacheSecurityGroupsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -99,7 +100,7 @@ namespace Model
      * <p>A list of cache security groups. Each element in the list contains detailed
      * information about one group.</p>
      */
-    inline void SetCacheSecurityGroups(Aws::Vector<CacheSecurityGroup>&& value) { m_cacheSecurityGroups = value; }
+    inline void SetCacheSecurityGroups(Aws::Vector<CacheSecurityGroup>&& value) { m_cacheSecurityGroups = std::move(value); }
 
     /**
      * <p>A list of cache security groups. Each element in the list contains detailed
@@ -111,7 +112,7 @@ namespace Model
      * <p>A list of cache security groups. Each element in the list contains detailed
      * information about one group.</p>
      */
-    inline DescribeCacheSecurityGroupsResult& WithCacheSecurityGroups(Aws::Vector<CacheSecurityGroup>&& value) { SetCacheSecurityGroups(value); return *this;}
+    inline DescribeCacheSecurityGroupsResult& WithCacheSecurityGroups(Aws::Vector<CacheSecurityGroup>&& value) { SetCacheSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of cache security groups. Each element in the list contains detailed
@@ -123,7 +124,7 @@ namespace Model
      * <p>A list of cache security groups. Each element in the list contains detailed
      * information about one group.</p>
      */
-    inline DescribeCacheSecurityGroupsResult& AddCacheSecurityGroups(CacheSecurityGroup&& value) { m_cacheSecurityGroups.push_back(value); return *this; }
+    inline DescribeCacheSecurityGroupsResult& AddCacheSecurityGroups(CacheSecurityGroup&& value) { m_cacheSecurityGroups.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -132,13 +133,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeCacheSecurityGroupsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeCacheSecurityGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeCacheSecurityGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_marker;

@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
      * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
      * characters, digits, and upper and lowercased letters.</p>
      */
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p> The path for the user name. For more information about paths, see <a
@@ -113,7 +114,7 @@ namespace Model
      * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
      * characters, digits, and upper and lowercased letters.</p>
      */
-    inline CreateUserRequest& WithPath(Aws::String&& value) { SetPath(value); return *this;}
+    inline CreateUserRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p> The path for the user name. For more information about paths, see <a
@@ -156,7 +157,7 @@ namespace Model
      * distinguished by case. For example, you cannot create users named both
      * "TESTUSER" and "testuser".</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the user to create.</p> <p>This parameter allows (per its <a
@@ -186,7 +187,7 @@ namespace Model
      * distinguished by case. For example, you cannot create users named both
      * "TESTUSER" and "testuser".</p>
      */
-    inline CreateUserRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline CreateUserRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the user to create.</p> <p>This parameter allows (per its <a

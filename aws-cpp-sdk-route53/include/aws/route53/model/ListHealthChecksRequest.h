@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * marker is the health check ID for the first health check on the next page of
      * results. For more information, see <a>ListHealthChecksResponse$MaxItems</a>.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>If the response to a <code>ListHealthChecks</code> is more than one page,
@@ -91,7 +92,7 @@ namespace Model
      * marker is the health check ID for the first health check on the next page of
      * results. For more information, see <a>ListHealthChecksResponse$MaxItems</a>.</p>
      */
-    inline ListHealthChecksRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListHealthChecksRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>If the response to a <code>ListHealthChecks</code> is more than one page,
@@ -161,7 +162,7 @@ namespace Model
      * <a>ListHealthChecksResponse$IsTruncated</a> is <code>false</code>.</p> </li>
      * <li> <p> <a>ListHealthChecksResponse$NextMarker</a> is omitted.</p> </li> </ul>
      */
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
     /**
      * <p>The maximum number of <code>HealthCheck</code> elements you want
@@ -224,7 +225,7 @@ namespace Model
      * <a>ListHealthChecksResponse$IsTruncated</a> is <code>false</code>.</p> </li>
      * <li> <p> <a>ListHealthChecksResponse$NextMarker</a> is omitted.</p> </li> </ul>
      */
-    inline ListHealthChecksRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
+    inline ListHealthChecksRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of <code>HealthCheck</code> elements you want

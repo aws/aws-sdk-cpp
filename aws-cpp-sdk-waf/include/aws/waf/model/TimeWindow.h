@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
      * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
      * three hours.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The beginning of the time range from which you want
@@ -95,7 +96,7 @@ namespace Model
      * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
      * three hours.</p>
      */
-    inline TimeWindow& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline TimeWindow& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The end of the time range from which you want <code>GetSampledRequests</code>
@@ -119,7 +120,7 @@ namespace Model
      * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
      * specify any time range in the previous three hours.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The end of the time range from which you want <code>GetSampledRequests</code>
@@ -135,7 +136,7 @@ namespace Model
      * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
      * specify any time range in the previous three hours.</p>
      */
-    inline TimeWindow& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline TimeWindow& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
   private:
     Aws::Utils::DateTime m_startTime;

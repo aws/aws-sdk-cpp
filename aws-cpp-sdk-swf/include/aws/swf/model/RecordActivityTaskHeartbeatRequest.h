@@ -16,6 +16,7 @@
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/swf/SWFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <code>taskToken</code> must also be passed. This enables it to provide its
      * progress and respond with results. </important>
      */
-    inline void SetTaskToken(Aws::String&& value) { m_taskTokenHasBeenSet = true; m_taskToken = value; }
+    inline void SetTaskToken(Aws::String&& value) { m_taskTokenHasBeenSet = true; m_taskToken = std::move(value); }
 
     /**
      * <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p> <important>
@@ -87,7 +88,7 @@ namespace Model
      * <code>taskToken</code> must also be passed. This enables it to provide its
      * progress and respond with results. </important>
      */
-    inline RecordActivityTaskHeartbeatRequest& WithTaskToken(Aws::String&& value) { SetTaskToken(value); return *this;}
+    inline RecordActivityTaskHeartbeatRequest& WithTaskToken(Aws::String&& value) { SetTaskToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p> <important>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>If specified, contains details about the progress of the task.</p>
      */
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = value; }
+    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
      * <p>If specified, contains details about the progress of the task.</p>
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>If specified, contains details about the progress of the task.</p>
      */
-    inline RecordActivityTaskHeartbeatRequest& WithDetails(Aws::String&& value) { SetDetails(value); return *this;}
+    inline RecordActivityTaskHeartbeatRequest& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
      * <p>If specified, contains details about the progress of the task.</p>

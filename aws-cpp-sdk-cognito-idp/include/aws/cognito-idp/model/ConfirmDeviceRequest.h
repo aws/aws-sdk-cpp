@@ -17,6 +17,7 @@
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cognito-idp/model/DeviceSecretVerifierConfigType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The access token.</p>
      */
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
+    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
      * <p>The access token.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The access token.</p>
      */
-    inline ConfirmDeviceRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(value); return *this;}
+    inline ConfirmDeviceRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
      * <p>The access token.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The device key.</p>
      */
-    inline void SetDeviceKey(Aws::String&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = value; }
+    inline void SetDeviceKey(Aws::String&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = std::move(value); }
 
     /**
      * <p>The device key.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The device key.</p>
      */
-    inline ConfirmDeviceRequest& WithDeviceKey(Aws::String&& value) { SetDeviceKey(value); return *this;}
+    inline ConfirmDeviceRequest& WithDeviceKey(Aws::String&& value) { SetDeviceKey(std::move(value)); return *this;}
 
     /**
      * <p>The device key.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The configuration of the device secret verifier.</p>
      */
-    inline void SetDeviceSecretVerifierConfig(DeviceSecretVerifierConfigType&& value) { m_deviceSecretVerifierConfigHasBeenSet = true; m_deviceSecretVerifierConfig = value; }
+    inline void SetDeviceSecretVerifierConfig(DeviceSecretVerifierConfigType&& value) { m_deviceSecretVerifierConfigHasBeenSet = true; m_deviceSecretVerifierConfig = std::move(value); }
 
     /**
      * <p>The configuration of the device secret verifier.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The configuration of the device secret verifier.</p>
      */
-    inline ConfirmDeviceRequest& WithDeviceSecretVerifierConfig(DeviceSecretVerifierConfigType&& value) { SetDeviceSecretVerifierConfig(value); return *this;}
+    inline ConfirmDeviceRequest& WithDeviceSecretVerifierConfig(DeviceSecretVerifierConfigType&& value) { SetDeviceSecretVerifierConfig(std::move(value)); return *this;}
 
     /**
      * <p>The device name.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The device name.</p>
      */
-    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
+    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
 
     /**
      * <p>The device name.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>The device name.</p>
      */
-    inline ConfirmDeviceRequest& WithDeviceName(Aws::String&& value) { SetDeviceName(value); return *this;}
+    inline ConfirmDeviceRequest& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
 
     /**
      * <p>The device name.</p>

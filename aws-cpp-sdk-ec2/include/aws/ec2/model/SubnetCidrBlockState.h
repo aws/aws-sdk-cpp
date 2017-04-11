@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/SubnetCidrBlockStateCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The state of a CIDR block.</p>
      */
-    inline void SetState(SubnetCidrBlockStateCode&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(SubnetCidrBlockStateCode&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of a CIDR block.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The state of a CIDR block.</p>
      */
-    inline SubnetCidrBlockState& WithState(SubnetCidrBlockStateCode&& value) { SetState(value); return *this;}
+    inline SubnetCidrBlockState& WithState(SubnetCidrBlockStateCode&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>A message about the status of the CIDR block, if applicable.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>A message about the status of the CIDR block, if applicable.</p>
      */
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
 
     /**
      * <p>A message about the status of the CIDR block, if applicable.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>A message about the status of the CIDR block, if applicable.</p>
      */
-    inline SubnetCidrBlockState& WithStatusMessage(Aws::String&& value) { SetStatusMessage(value); return *this;}
+    inline SubnetCidrBlockState& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
      * <p>A message about the status of the CIDR block, if applicable.</p>

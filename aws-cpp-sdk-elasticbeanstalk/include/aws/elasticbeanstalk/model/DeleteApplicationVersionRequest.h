@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of the application to which the version belongs.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of the application to which the version belongs.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the application to which the version belongs.</p>
      */
-    inline DeleteApplicationVersionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline DeleteApplicationVersionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the application to which the version belongs.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The label of the version to delete.</p>
      */
-    inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
+    inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::move(value); }
 
     /**
      * <p>The label of the version to delete.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The label of the version to delete.</p>
      */
-    inline DeleteApplicationVersionRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(value); return *this;}
+    inline DeleteApplicationVersionRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
 
     /**
      * <p>The label of the version to delete.</p>

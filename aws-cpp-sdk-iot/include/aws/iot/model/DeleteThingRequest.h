@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The name of the thing to delete.</p>
      */
-    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
+    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
 
     /**
      * <p>The name of the thing to delete.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The name of the thing to delete.</p>
      */
-    inline DeleteThingRequest& WithThingName(Aws::String&& value) { SetThingName(value); return *this;}
+    inline DeleteThingRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the thing to delete.</p>

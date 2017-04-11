@@ -17,6 +17,7 @@
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>Unique identifier for a fleet(s) to retrieve attributes for. To request
      * attributes for all fleets, leave this parameter empty.</p>
      */
-    inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = value; }
+    inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet(s) to retrieve attributes for. To request
@@ -67,7 +68,7 @@ namespace Model
      * <p>Unique identifier for a fleet(s) to retrieve attributes for. To request
      * attributes for all fleets, leave this parameter empty.</p>
      */
-    inline DescribeFleetAttributesRequest& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(value); return *this;}
+    inline DescribeFleetAttributesRequest& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet(s) to retrieve attributes for. To request
@@ -79,7 +80,7 @@ namespace Model
      * <p>Unique identifier for a fleet(s) to retrieve attributes for. To request
      * attributes for all fleets, leave this parameter empty.</p>
      */
-    inline DescribeFleetAttributesRequest& AddFleetIds(Aws::String&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
+    inline DescribeFleetAttributesRequest& AddFleetIds(Aws::String&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Unique identifier for a fleet(s) to retrieve attributes for. To request
@@ -130,7 +131,7 @@ namespace Model
      * start of the result set, do not specify a value. This parameter is ignored when
      * the request specifies one or a list of fleet IDs.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
@@ -154,7 +155,7 @@ namespace Model
      * start of the result set, do not specify a value. This parameter is ignored when
      * the request specifies one or a list of fleet IDs.</p>
      */
-    inline DescribeFleetAttributesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeFleetAttributesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use

@@ -16,6 +16,7 @@
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/EBSOptions.h>
 #include <aws/es/model/OptionStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p> Specifies the EBS options for the specified Elasticsearch domain.</p>
      */
-    inline void SetOptions(EBSOptions&& value) { m_optionsHasBeenSet = true; m_options = value; }
+    inline void SetOptions(EBSOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     /**
      * <p> Specifies the EBS options for the specified Elasticsearch domain.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p> Specifies the EBS options for the specified Elasticsearch domain.</p>
      */
-    inline EBSOptionsStatus& WithOptions(EBSOptions&& value) { SetOptions(value); return *this;}
+    inline EBSOptionsStatus& WithOptions(EBSOptions&& value) { SetOptions(std::move(value)); return *this;}
 
     /**
      * <p> Specifies the status of the EBS options for the specified Elasticsearch
@@ -86,7 +87,7 @@ namespace Model
      * <p> Specifies the status of the EBS options for the specified Elasticsearch
      * domain.</p>
      */
-    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p> Specifies the status of the EBS options for the specified Elasticsearch
@@ -98,7 +99,7 @@ namespace Model
      * <p> Specifies the status of the EBS options for the specified Elasticsearch
      * domain.</p>
      */
-    inline EBSOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(value); return *this;}
+    inline EBSOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     EBSOptions m_options;

@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,13 +49,13 @@ namespace Model
     inline void SetValue(const Aws::Utils::ByteBuffer& value) { m_valueHasBeenSet = true; m_value = value; }
 
     
-    inline void SetValue(Aws::Utils::ByteBuffer&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::Utils::ByteBuffer&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     
     inline BlobAttributeValue& WithValue(const Aws::Utils::ByteBuffer& value) { SetValue(value); return *this;}
 
     
-    inline BlobAttributeValue& WithValue(Aws::Utils::ByteBuffer&& value) { SetValue(value); return *this;}
+    inline BlobAttributeValue& WithValue(Aws::Utils::ByteBuffer&& value) { SetValue(std::move(value)); return *this;}
 
   private:
     Aws::Utils::ByteBuffer m_value;

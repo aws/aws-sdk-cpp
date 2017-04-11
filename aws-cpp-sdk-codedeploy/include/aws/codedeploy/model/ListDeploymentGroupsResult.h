@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The application name.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationName = std::move(value); }
 
     /**
      * <p>The application name.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The application name.</p>
      */
-    inline ListDeploymentGroupsResult& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline ListDeploymentGroupsResult& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The application name.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>A list of corresponding deployment group names.</p>
      */
-    inline void SetDeploymentGroups(Aws::Vector<Aws::String>&& value) { m_deploymentGroups = value; }
+    inline void SetDeploymentGroups(Aws::Vector<Aws::String>&& value) { m_deploymentGroups = std::move(value); }
 
     /**
      * <p>A list of corresponding deployment group names.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>A list of corresponding deployment group names.</p>
      */
-    inline ListDeploymentGroupsResult& WithDeploymentGroups(Aws::Vector<Aws::String>&& value) { SetDeploymentGroups(value); return *this;}
+    inline ListDeploymentGroupsResult& WithDeploymentGroups(Aws::Vector<Aws::String>&& value) { SetDeploymentGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of corresponding deployment group names.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>A list of corresponding deployment group names.</p>
      */
-    inline ListDeploymentGroupsResult& AddDeploymentGroups(Aws::String&& value) { m_deploymentGroups.push_back(value); return *this; }
+    inline ListDeploymentGroupsResult& AddDeploymentGroups(Aws::String&& value) { m_deploymentGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of corresponding deployment group names.</p>
@@ -140,7 +141,7 @@ namespace Model
      * It can be used in a subsequent list deployment groups call to return the next
      * set of deployment groups in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
@@ -161,7 +162,7 @@ namespace Model
      * It can be used in a subsequent list deployment groups call to return the next
      * set of deployment groups in the list.</p>
      */
-    inline ListDeploymentGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListDeploymentGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.

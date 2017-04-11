@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>Reference that identifies the object.</p>
      */
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
+    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
 
     /**
      * <p>Reference that identifies the object.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Reference that identifies the object.</p>
      */
-    inline BatchDeleteObject& WithObjectReference(ObjectReference&& value) { SetObjectReference(value); return *this;}
+    inline BatchDeleteObject& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
   private:
     ObjectReference m_objectReference;

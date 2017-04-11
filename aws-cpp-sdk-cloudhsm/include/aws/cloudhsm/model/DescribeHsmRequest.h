@@ -16,6 +16,7 @@
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/cloudhsm/CloudHSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i>
      * parameter must be specified.</p>
      */
-    inline void SetHsmArn(Aws::String&& value) { m_hsmArnHasBeenSet = true; m_hsmArn = value; }
+    inline void SetHsmArn(Aws::String&& value) { m_hsmArnHasBeenSet = true; m_hsmArn = std::move(value); }
 
     /**
      * <p>The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i>
@@ -73,7 +74,7 @@ namespace Model
      * <p>The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i>
      * parameter must be specified.</p>
      */
-    inline DescribeHsmRequest& WithHsmArn(Aws::String&& value) { SetHsmArn(value); return *this;}
+    inline DescribeHsmRequest& WithHsmArn(Aws::String&& value) { SetHsmArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i>
@@ -97,7 +98,7 @@ namespace Model
      * <p>The serial number of the HSM. Either the <i>HsmArn</i> or the
      * <i>HsmSerialNumber</i> parameter must be specified.</p>
      */
-    inline void SetHsmSerialNumber(Aws::String&& value) { m_hsmSerialNumberHasBeenSet = true; m_hsmSerialNumber = value; }
+    inline void SetHsmSerialNumber(Aws::String&& value) { m_hsmSerialNumberHasBeenSet = true; m_hsmSerialNumber = std::move(value); }
 
     /**
      * <p>The serial number of the HSM. Either the <i>HsmArn</i> or the
@@ -115,7 +116,7 @@ namespace Model
      * <p>The serial number of the HSM. Either the <i>HsmArn</i> or the
      * <i>HsmSerialNumber</i> parameter must be specified.</p>
      */
-    inline DescribeHsmRequest& WithHsmSerialNumber(Aws::String&& value) { SetHsmSerialNumber(value); return *this;}
+    inline DescribeHsmRequest& WithHsmSerialNumber(Aws::String&& value) { SetHsmSerialNumber(std::move(value)); return *this;}
 
     /**
      * <p>The serial number of the HSM. Either the <i>HsmArn</i> or the

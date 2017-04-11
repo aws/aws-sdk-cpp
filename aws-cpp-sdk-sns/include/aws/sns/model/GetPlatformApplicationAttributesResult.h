@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sns/model/ResponseMetadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -87,7 +88,7 @@ namespace Model
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributes = value; }
+    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributes = std::move(value); }
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
@@ -115,7 +116,7 @@ namespace Model
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
-    inline GetPlatformApplicationAttributesResult& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(value); return *this;}
+    inline GetPlatformApplicationAttributesResult& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
@@ -129,7 +130,7 @@ namespace Model
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
-    inline GetPlatformApplicationAttributesResult& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributes[key] = value; return *this; }
+    inline GetPlatformApplicationAttributesResult& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
@@ -143,7 +144,7 @@ namespace Model
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
-    inline GetPlatformApplicationAttributesResult& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributes[key] = value; return *this; }
+    inline GetPlatformApplicationAttributesResult& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
@@ -157,7 +158,7 @@ namespace Model
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
-    inline GetPlatformApplicationAttributesResult& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributes[key] = value; return *this; }
+    inline GetPlatformApplicationAttributesResult& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
@@ -171,7 +172,7 @@ namespace Model
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
-    inline GetPlatformApplicationAttributesResult& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributes[key] = value; return *this; }
+    inline GetPlatformApplicationAttributesResult& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
@@ -185,7 +186,7 @@ namespace Model
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
-    inline GetPlatformApplicationAttributesResult& AddAttributes(const char* key, Aws::String&& value) { m_attributes[key] = value; return *this; }
+    inline GetPlatformApplicationAttributesResult& AddAttributes(const char* key, Aws::String&& value) { m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
@@ -199,7 +200,7 @@ namespace Model
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
-    inline GetPlatformApplicationAttributesResult& AddAttributes(Aws::String&& key, const char* value) { m_attributes[key] = value; return *this; }
+    inline GetPlatformApplicationAttributesResult& AddAttributes(Aws::String&& key, const char* value) { m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
@@ -213,7 +214,7 @@ namespace Model
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
-    inline GetPlatformApplicationAttributesResult& AddAttributes(const char* key, const char* value) { m_attributes[key] = value; return *this; }
+    inline GetPlatformApplicationAttributesResult& AddAttributes(const char* key, const char* value) { m_attributes.emplace(key, value); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -222,13 +223,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline GetPlatformApplicationAttributesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline GetPlatformApplicationAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline GetPlatformApplicationAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Map<Aws::String, Aws::String> m_attributes;

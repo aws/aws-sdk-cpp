@@ -17,6 +17,7 @@
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * tags. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
      * </p>
      */
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
+    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for which you want to describe the tag or
@@ -81,7 +82,7 @@ namespace Model
      * tags. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
      * </p>
      */
-    inline DescribeTagsRequest& WithResourceName(Aws::String&& value) { SetResourceName(value); return *this;}
+    inline DescribeTagsRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for which you want to describe the tag or
@@ -130,7 +131,7 @@ namespace Model
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
      */
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of resource with which you want to view tags. Valid resource types
@@ -172,7 +173,7 @@ namespace Model
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
      */
-    inline DescribeTagsRequest& WithResourceType(Aws::String&& value) { SetResourceType(value); return *this;}
+    inline DescribeTagsRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The type of resource with which you want to view tags. Valid resource types
@@ -243,7 +244,7 @@ namespace Model
      * <code>marker</code> field is empty, all response records have been retrieved for
      * the request. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -273,7 +274,7 @@ namespace Model
      * <code>marker</code> field is empty, all response records have been retrieved for
      * the request. </p>
      */
-    inline DescribeTagsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeTagsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -313,7 +314,7 @@ namespace Model
      * Amazon Redshift returns a response with all resources that have either or both
      * of these tag keys associated with them.</p>
      */
-    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
+    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
      * <p>A tag key or keys for which you want to return all matching resources that
@@ -333,7 +334,7 @@ namespace Model
      * Amazon Redshift returns a response with all resources that have either or both
      * of these tag keys associated with them.</p>
      */
-    inline DescribeTagsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
+    inline DescribeTagsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
      * <p>A tag key or keys for which you want to return all matching resources that
@@ -353,7 +354,7 @@ namespace Model
      * Amazon Redshift returns a response with all resources that have either or both
      * of these tag keys associated with them.</p>
      */
-    inline DescribeTagsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+    inline DescribeTagsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A tag key or keys for which you want to return all matching resources that
@@ -393,7 +394,7 @@ namespace Model
      * Amazon Redshift returns a response with all resources that have either or both
      * of these tag values associated with them.</p>
      */
-    inline void SetTagValues(Aws::Vector<Aws::String>&& value) { m_tagValuesHasBeenSet = true; m_tagValues = value; }
+    inline void SetTagValues(Aws::Vector<Aws::String>&& value) { m_tagValuesHasBeenSet = true; m_tagValues = std::move(value); }
 
     /**
      * <p>A tag value or values for which you want to return all matching resources
@@ -413,7 +414,7 @@ namespace Model
      * Amazon Redshift returns a response with all resources that have either or both
      * of these tag values associated with them.</p>
      */
-    inline DescribeTagsRequest& WithTagValues(Aws::Vector<Aws::String>&& value) { SetTagValues(value); return *this;}
+    inline DescribeTagsRequest& WithTagValues(Aws::Vector<Aws::String>&& value) { SetTagValues(std::move(value)); return *this;}
 
     /**
      * <p>A tag value or values for which you want to return all matching resources
@@ -433,7 +434,7 @@ namespace Model
      * Amazon Redshift returns a response with all resources that have either or both
      * of these tag values associated with them.</p>
      */
-    inline DescribeTagsRequest& AddTagValues(Aws::String&& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
+    inline DescribeTagsRequest& AddTagValues(Aws::String&& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A tag value or values for which you want to return all matching resources

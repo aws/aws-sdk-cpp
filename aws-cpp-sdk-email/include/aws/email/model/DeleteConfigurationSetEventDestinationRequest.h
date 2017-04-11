@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>The name of the configuration set from which to delete the event
      * destination.</p>
      */
-    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
+    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
 
     /**
      * <p>The name of the configuration set from which to delete the event
@@ -79,7 +80,7 @@ namespace Model
      * <p>The name of the configuration set from which to delete the event
      * destination.</p>
      */
-    inline DeleteConfigurationSetEventDestinationRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(value); return *this;}
+    inline DeleteConfigurationSetEventDestinationRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the configuration set from which to delete the event
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The name of the event destination to delete.</p>
      */
-    inline void SetEventDestinationName(Aws::String&& value) { m_eventDestinationNameHasBeenSet = true; m_eventDestinationName = value; }
+    inline void SetEventDestinationName(Aws::String&& value) { m_eventDestinationNameHasBeenSet = true; m_eventDestinationName = std::move(value); }
 
     /**
      * <p>The name of the event destination to delete.</p>
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>The name of the event destination to delete.</p>
      */
-    inline DeleteConfigurationSetEventDestinationRequest& WithEventDestinationName(Aws::String&& value) { SetEventDestinationName(value); return *this;}
+    inline DeleteConfigurationSetEventDestinationRequest& WithEventDestinationName(Aws::String&& value) { SetEventDestinationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the event destination to delete.</p>

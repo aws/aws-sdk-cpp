@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the patch baseline the patch group was deregistered from.</p>
      */
-    inline void SetBaselineId(Aws::String&& value) { m_baselineId = value; }
+    inline void SetBaselineId(Aws::String&& value) { m_baselineId = std::move(value); }
 
     /**
      * <p>The ID of the patch baseline the patch group was deregistered from.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the patch baseline the patch group was deregistered from.</p>
      */
-    inline DeregisterPatchBaselineForPatchGroupResult& WithBaselineId(Aws::String&& value) { SetBaselineId(value); return *this;}
+    inline DeregisterPatchBaselineForPatchGroupResult& WithBaselineId(Aws::String&& value) { SetBaselineId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the patch baseline the patch group was deregistered from.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The name of the patch group deregistered from the patch baseline.</p>
      */
-    inline void SetPatchGroup(Aws::String&& value) { m_patchGroup = value; }
+    inline void SetPatchGroup(Aws::String&& value) { m_patchGroup = std::move(value); }
 
     /**
      * <p>The name of the patch group deregistered from the patch baseline.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The name of the patch group deregistered from the patch baseline.</p>
      */
-    inline DeregisterPatchBaselineForPatchGroupResult& WithPatchGroup(Aws::String&& value) { SetPatchGroup(value); return *this;}
+    inline DeregisterPatchBaselineForPatchGroupResult& WithPatchGroup(Aws::String&& value) { SetPatchGroup(std::move(value)); return *this;}
 
     /**
      * <p>The name of the patch group deregistered from the patch baseline.</p>

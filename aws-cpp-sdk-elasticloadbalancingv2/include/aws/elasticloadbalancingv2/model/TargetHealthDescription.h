@@ -18,6 +18,7 @@
 #include <aws/elasticloadbalancingv2/model/TargetDescription.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticloadbalancingv2/model/TargetHealth.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The description of the target.</p>
      */
-    inline void SetTarget(TargetDescription&& value) { m_targetHasBeenSet = true; m_target = value; }
+    inline void SetTarget(TargetDescription&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
      * <p>The description of the target.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The description of the target.</p>
      */
-    inline TargetHealthDescription& WithTarget(TargetDescription&& value) { SetTarget(value); return *this;}
+    inline TargetHealthDescription& WithTarget(TargetDescription&& value) { SetTarget(std::move(value)); return *this;}
 
     /**
      * <p>The port to use to connect with the target.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The port to use to connect with the target.</p>
      */
-    inline void SetHealthCheckPort(Aws::String&& value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort = value; }
+    inline void SetHealthCheckPort(Aws::String&& value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort = std::move(value); }
 
     /**
      * <p>The port to use to connect with the target.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The port to use to connect with the target.</p>
      */
-    inline TargetHealthDescription& WithHealthCheckPort(Aws::String&& value) { SetHealthCheckPort(value); return *this;}
+    inline TargetHealthDescription& WithHealthCheckPort(Aws::String&& value) { SetHealthCheckPort(std::move(value)); return *this;}
 
     /**
      * <p>The port to use to connect with the target.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The health information for the target.</p>
      */
-    inline void SetTargetHealth(TargetHealth&& value) { m_targetHealthHasBeenSet = true; m_targetHealth = value; }
+    inline void SetTargetHealth(TargetHealth&& value) { m_targetHealthHasBeenSet = true; m_targetHealth = std::move(value); }
 
     /**
      * <p>The health information for the target.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The health information for the target.</p>
      */
-    inline TargetHealthDescription& WithTargetHealth(TargetHealth&& value) { SetTargetHealth(value); return *this;}
+    inline TargetHealthDescription& WithTargetHealth(TargetHealth&& value) { SetTargetHealth(std::move(value)); return *this;}
 
   private:
     TargetDescription m_target;

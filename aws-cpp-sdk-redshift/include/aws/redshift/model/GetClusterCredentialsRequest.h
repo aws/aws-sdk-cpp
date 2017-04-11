@@ -17,6 +17,7 @@
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -106,7 +107,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
      */
-    inline void SetDbUser(Aws::String&& value) { m_dbUserHasBeenSet = true; m_dbUser = value; }
+    inline void SetDbUser(Aws::String&& value) { m_dbUserHasBeenSet = true; m_dbUser = std::move(value); }
 
     /**
      * <p>The name of a database user. If a user name matching <code>DbUser</code>
@@ -172,7 +173,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
      */
-    inline GetClusterCredentialsRequest& WithDbUser(Aws::String&& value) { SetDbUser(value); return *this;}
+    inline GetClusterCredentialsRequest& WithDbUser(Aws::String&& value) { SetDbUser(std::move(value)); return *this;}
 
     /**
      * <p>The name of a database user. If a user name matching <code>DbUser</code>
@@ -230,7 +231,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
      */
-    inline void SetDbName(Aws::String&& value) { m_dbNameHasBeenSet = true; m_dbName = value; }
+    inline void SetDbName(Aws::String&& value) { m_dbNameHasBeenSet = true; m_dbName = std::move(value); }
 
     /**
      * <p>The name of a database that <code>DbUser</code> is authorized to log on to.
@@ -266,7 +267,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
      */
-    inline GetClusterCredentialsRequest& WithDbName(Aws::String&& value) { SetDbName(value); return *this;}
+    inline GetClusterCredentialsRequest& WithDbName(Aws::String&& value) { SetDbName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a database that <code>DbUser</code> is authorized to log on to.
@@ -296,7 +297,7 @@ namespace Model
      * <p>The unique identifier of the cluster that contains the database for which
      * your are requesting credentials. This parameter is case sensitive.</p>
      */
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     /**
      * <p>The unique identifier of the cluster that contains the database for which
@@ -314,7 +315,7 @@ namespace Model
      * <p>The unique identifier of the cluster that contains the database for which
      * your are requesting credentials. This parameter is case sensitive.</p>
      */
-    inline GetClusterCredentialsRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
+    inline GetClusterCredentialsRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the cluster that contains the database for which
@@ -377,7 +378,7 @@ namespace Model
      * join for the current session. If not specified, the new user is added only to
      * PUBLIC.</p>
      */
-    inline void SetDbGroups(Aws::Vector<Aws::String>&& value) { m_dbGroupsHasBeenSet = true; m_dbGroups = value; }
+    inline void SetDbGroups(Aws::Vector<Aws::String>&& value) { m_dbGroupsHasBeenSet = true; m_dbGroups = std::move(value); }
 
     /**
      * <p>A list of the names of existing database groups that <code>DbUser</code> will
@@ -391,7 +392,7 @@ namespace Model
      * join for the current session. If not specified, the new user is added only to
      * PUBLIC.</p>
      */
-    inline GetClusterCredentialsRequest& WithDbGroups(Aws::Vector<Aws::String>&& value) { SetDbGroups(value); return *this;}
+    inline GetClusterCredentialsRequest& WithDbGroups(Aws::Vector<Aws::String>&& value) { SetDbGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of the names of existing database groups that <code>DbUser</code> will
@@ -405,7 +406,7 @@ namespace Model
      * join for the current session. If not specified, the new user is added only to
      * PUBLIC.</p>
      */
-    inline GetClusterCredentialsRequest& AddDbGroups(Aws::String&& value) { m_dbGroupsHasBeenSet = true; m_dbGroups.push_back(value); return *this; }
+    inline GetClusterCredentialsRequest& AddDbGroups(Aws::String&& value) { m_dbGroupsHasBeenSet = true; m_dbGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of the names of existing database groups that <code>DbUser</code> will

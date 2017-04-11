@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/machinelearning/model/DataSource.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>A list of <code>DataSource</code> that meet the search criteria. </p>
      */
-    inline void SetResults(Aws::Vector<DataSource>&& value) { m_results = value; }
+    inline void SetResults(Aws::Vector<DataSource>&& value) { m_results = std::move(value); }
 
     /**
      * <p>A list of <code>DataSource</code> that meet the search criteria. </p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>A list of <code>DataSource</code> that meet the search criteria. </p>
      */
-    inline DescribeDataSourcesResult& WithResults(Aws::Vector<DataSource>&& value) { SetResults(value); return *this;}
+    inline DescribeDataSourcesResult& WithResults(Aws::Vector<DataSource>&& value) { SetResults(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>DataSource</code> that meet the search criteria. </p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>A list of <code>DataSource</code> that meet the search criteria. </p>
      */
-    inline DescribeDataSourcesResult& AddResults(DataSource&& value) { m_results.push_back(value); return *this; }
+    inline DescribeDataSourcesResult& AddResults(DataSource&& value) { m_results.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An ID of the next page in the paginated results that indicates at least one
@@ -99,7 +100,7 @@ namespace Model
      * <p>An ID of the next page in the paginated results that indicates at least one
      * more page follows.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>An ID of the next page in the paginated results that indicates at least one
@@ -117,7 +118,7 @@ namespace Model
      * <p>An ID of the next page in the paginated results that indicates at least one
      * more page follows.</p>
      */
-    inline DescribeDataSourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeDataSourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An ID of the next page in the paginated results that indicates at least one

@@ -17,6 +17,7 @@
 #include <aws/cognito-identity/model/RoleMappingType.h>
 #include <aws/cognito-identity/model/AmbiguousRoleResolutionType.h>
 #include <aws/cognito-identity/model/RulesConfigurationType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * token to map groups to roles. Rules will attempt to match claims from the token
      * to map to a role.</p>
      */
-    inline void SetType(RoleMappingType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(RoleMappingType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The role mapping type. Token will use <code>cognito:roles</code> and
@@ -83,7 +84,7 @@ namespace Model
      * token to map groups to roles. Rules will attempt to match claims from the token
      * to map to a role.</p>
      */
-    inline RoleMapping& WithType(RoleMappingType&& value) { SetType(value); return *this;}
+    inline RoleMapping& WithType(RoleMappingType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>If you specify Token or Rules as the <code>Type</code>,
@@ -110,7 +111,7 @@ namespace Model
      * type, or there is no <code>cognito:preferred_role</code> claim and there are
      * multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
      */
-    inline void SetAmbiguousRoleResolution(AmbiguousRoleResolutionType&& value) { m_ambiguousRoleResolutionHasBeenSet = true; m_ambiguousRoleResolution = value; }
+    inline void SetAmbiguousRoleResolution(AmbiguousRoleResolutionType&& value) { m_ambiguousRoleResolutionHasBeenSet = true; m_ambiguousRoleResolution = std::move(value); }
 
     /**
      * <p>If you specify Token or Rules as the <code>Type</code>,
@@ -128,7 +129,7 @@ namespace Model
      * type, or there is no <code>cognito:preferred_role</code> claim and there are
      * multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
      */
-    inline RoleMapping& WithAmbiguousRoleResolution(AmbiguousRoleResolutionType&& value) { SetAmbiguousRoleResolution(value); return *this;}
+    inline RoleMapping& WithAmbiguousRoleResolution(AmbiguousRoleResolutionType&& value) { SetAmbiguousRoleResolution(std::move(value)); return *this;}
 
     /**
      * <p>The rules to be used for mapping users to roles.</p> <p>If you specify Rules
@@ -146,7 +147,7 @@ namespace Model
      * <p>The rules to be used for mapping users to roles.</p> <p>If you specify Rules
      * as the role mapping type, <code>RulesConfiguration</code> is required.</p>
      */
-    inline void SetRulesConfiguration(RulesConfigurationType&& value) { m_rulesConfigurationHasBeenSet = true; m_rulesConfiguration = value; }
+    inline void SetRulesConfiguration(RulesConfigurationType&& value) { m_rulesConfigurationHasBeenSet = true; m_rulesConfiguration = std::move(value); }
 
     /**
      * <p>The rules to be used for mapping users to roles.</p> <p>If you specify Rules
@@ -158,7 +159,7 @@ namespace Model
      * <p>The rules to be used for mapping users to roles.</p> <p>If you specify Rules
      * as the role mapping type, <code>RulesConfiguration</code> is required.</p>
      */
-    inline RoleMapping& WithRulesConfiguration(RulesConfigurationType&& value) { SetRulesConfiguration(value); return *this;}
+    inline RoleMapping& WithRulesConfiguration(RulesConfigurationType&& value) { SetRulesConfiguration(std::move(value)); return *this;}
 
   private:
     RoleMappingType m_type;

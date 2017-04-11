@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/IpPermission.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group.</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group.</p>
      */
-    inline RevokeSecurityGroupIngressRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
+    inline RevokeSecurityGroupIngressRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group.</p>
@@ -118,7 +119,7 @@ namespace Model
      * <p>The ID of the security group. Required for a security group in a nondefault
      * VPC.</p>
      */
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
+    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
      * <p>The ID of the security group. Required for a security group in a nondefault
@@ -136,7 +137,7 @@ namespace Model
      * <p>The ID of the security group. Required for a security group in a nondefault
      * VPC.</p>
      */
-    inline RevokeSecurityGroupIngressRequest& WithGroupId(Aws::String&& value) { SetGroupId(value); return *this;}
+    inline RevokeSecurityGroupIngressRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the security group. Required for a security group in a nondefault
@@ -172,7 +173,7 @@ namespace Model
      * revoke a specific rule for an IP protocol and port range, use a set of IP
      * permissions instead.</p>
      */
-    inline void SetSourceSecurityGroupName(Aws::String&& value) { m_sourceSecurityGroupNameHasBeenSet = true; m_sourceSecurityGroupName = value; }
+    inline void SetSourceSecurityGroupName(Aws::String&& value) { m_sourceSecurityGroupNameHasBeenSet = true; m_sourceSecurityGroupName = std::move(value); }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the source security group. You can't
@@ -202,7 +203,7 @@ namespace Model
      * revoke a specific rule for an IP protocol and port range, use a set of IP
      * permissions instead.</p>
      */
-    inline RevokeSecurityGroupIngressRequest& WithSourceSecurityGroupName(Aws::String&& value) { SetSourceSecurityGroupName(value); return *this;}
+    inline RevokeSecurityGroupIngressRequest& WithSourceSecurityGroupName(Aws::String&& value) { SetSourceSecurityGroupName(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the source security group. You can't
@@ -242,7 +243,7 @@ namespace Model
      * a specific rule for an IP protocol and port range, use a set of IP permissions
      * instead.</p>
      */
-    inline void SetSourceSecurityGroupOwnerId(Aws::String&& value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId = value; }
+    inline void SetSourceSecurityGroupOwnerId(Aws::String&& value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId = std::move(value); }
 
     /**
      * <p>[EC2-Classic] The AWS account ID of the source security group, if the source
@@ -272,7 +273,7 @@ namespace Model
      * a specific rule for an IP protocol and port range, use a set of IP permissions
      * instead.</p>
      */
-    inline RevokeSecurityGroupIngressRequest& WithSourceSecurityGroupOwnerId(Aws::String&& value) { SetSourceSecurityGroupOwnerId(value); return *this;}
+    inline RevokeSecurityGroupIngressRequest& WithSourceSecurityGroupOwnerId(Aws::String&& value) { SetSourceSecurityGroupOwnerId(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-Classic] The AWS account ID of the source security group, if the source
@@ -306,7 +307,7 @@ namespace Model
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers</a>). Use <code>-1</code> to specify all.</p>
      */
-    inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
+    inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = std::move(value); }
 
     /**
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
@@ -330,7 +331,7 @@ namespace Model
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers</a>). Use <code>-1</code> to specify all.</p>
      */
-    inline RevokeSecurityGroupIngressRequest& WithIpProtocol(Aws::String&& value) { SetIpProtocol(value); return *this;}
+    inline RevokeSecurityGroupIngressRequest& WithIpProtocol(Aws::String&& value) { SetIpProtocol(std::move(value)); return *this;}
 
     /**
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
@@ -398,7 +399,7 @@ namespace Model
      * <p>The CIDR IP address range. You can't specify this parameter when specifying a
      * source security group.</p>
      */
-    inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
+    inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = std::move(value); }
 
     /**
      * <p>The CIDR IP address range. You can't specify this parameter when specifying a
@@ -416,7 +417,7 @@ namespace Model
      * <p>The CIDR IP address range. You can't specify this parameter when specifying a
      * source security group.</p>
      */
-    inline RevokeSecurityGroupIngressRequest& WithCidrIp(Aws::String&& value) { SetCidrIp(value); return *this;}
+    inline RevokeSecurityGroupIngressRequest& WithCidrIp(Aws::String&& value) { SetCidrIp(std::move(value)); return *this;}
 
     /**
      * <p>The CIDR IP address range. You can't specify this parameter when specifying a
@@ -440,7 +441,7 @@ namespace Model
      * <p>A set of IP permissions. You can't specify a source security group and a CIDR
      * IP address range.</p>
      */
-    inline void SetIpPermissions(Aws::Vector<IpPermission>&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
+    inline void SetIpPermissions(Aws::Vector<IpPermission>&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = std::move(value); }
 
     /**
      * <p>A set of IP permissions. You can't specify a source security group and a CIDR
@@ -452,7 +453,7 @@ namespace Model
      * <p>A set of IP permissions. You can't specify a source security group and a CIDR
      * IP address range.</p>
      */
-    inline RevokeSecurityGroupIngressRequest& WithIpPermissions(Aws::Vector<IpPermission>&& value) { SetIpPermissions(value); return *this;}
+    inline RevokeSecurityGroupIngressRequest& WithIpPermissions(Aws::Vector<IpPermission>&& value) { SetIpPermissions(std::move(value)); return *this;}
 
     /**
      * <p>A set of IP permissions. You can't specify a source security group and a CIDR
@@ -464,7 +465,7 @@ namespace Model
      * <p>A set of IP permissions. You can't specify a source security group and a CIDR
      * IP address range.</p>
      */
-    inline RevokeSecurityGroupIngressRequest& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(value); return *this; }
+    inline RevokeSecurityGroupIngressRequest& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

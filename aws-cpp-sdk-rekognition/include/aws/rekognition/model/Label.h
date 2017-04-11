@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name (label) of the object.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name (label) of the object.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The name (label) of the object.</p>
      */
-    inline Label& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Label& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name (label) of the object.</p>

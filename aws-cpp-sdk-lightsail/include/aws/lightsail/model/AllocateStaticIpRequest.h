@@ -16,6 +16,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the static IP address.</p>
      */
-    inline void SetStaticIpName(Aws::String&& value) { m_staticIpNameHasBeenSet = true; m_staticIpName = value; }
+    inline void SetStaticIpName(Aws::String&& value) { m_staticIpNameHasBeenSet = true; m_staticIpName = std::move(value); }
 
     /**
      * <p>The name of the static IP address.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the static IP address.</p>
      */
-    inline AllocateStaticIpRequest& WithStaticIpName(Aws::String&& value) { SetStaticIpName(value); return *this;}
+    inline AllocateStaticIpRequest& WithStaticIpName(Aws::String&& value) { SetStaticIpName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the static IP address.</p>

@@ -17,6 +17,7 @@
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
-    inline void SetListenerArn(Aws::String&& value) { m_listenerArnHasBeenSet = true; m_listenerArn = value; }
+    inline void SetListenerArn(Aws::String&& value) { m_listenerArnHasBeenSet = true; m_listenerArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
-    inline DescribeRulesRequest& WithListenerArn(Aws::String&& value) { SetListenerArn(value); return *this;}
+    inline DescribeRulesRequest& WithListenerArn(Aws::String&& value) { SetListenerArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Names (ARN) of the rules.</p>
      */
-    inline void SetRuleArns(Aws::Vector<Aws::String>&& value) { m_ruleArnsHasBeenSet = true; m_ruleArns = value; }
+    inline void SetRuleArns(Aws::Vector<Aws::String>&& value) { m_ruleArnsHasBeenSet = true; m_ruleArns = std::move(value); }
 
     /**
      * <p>The Amazon Resource Names (ARN) of the rules.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Names (ARN) of the rules.</p>
      */
-    inline DescribeRulesRequest& WithRuleArns(Aws::Vector<Aws::String>&& value) { SetRuleArns(value); return *this;}
+    inline DescribeRulesRequest& WithRuleArns(Aws::Vector<Aws::String>&& value) { SetRuleArns(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Names (ARN) of the rules.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Names (ARN) of the rules.</p>
      */
-    inline DescribeRulesRequest& AddRuleArns(Aws::String&& value) { m_ruleArnsHasBeenSet = true; m_ruleArns.push_back(value); return *this; }
+    inline DescribeRulesRequest& AddRuleArns(Aws::String&& value) { m_ruleArnsHasBeenSet = true; m_ruleArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The Amazon Resource Names (ARN) of the rules.</p>

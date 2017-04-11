@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/model/Qualification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p> The Qualification data structure of the Qualification assigned to a user,
      * including the Qualification type and the value (score). </p>
      */
-    inline void SetQualification(Qualification&& value) { m_qualification = value; }
+    inline void SetQualification(Qualification&& value) { m_qualification = std::move(value); }
 
     /**
      * <p> The Qualification data structure of the Qualification assigned to a user,
@@ -67,7 +68,7 @@ namespace Model
      * <p> The Qualification data structure of the Qualification assigned to a user,
      * including the Qualification type and the value (score). </p>
      */
-    inline GetQualificationScoreResult& WithQualification(Qualification&& value) { SetQualification(value); return *this;}
+    inline GetQualificationScoreResult& WithQualification(Qualification&& value) { SetQualification(std::move(value)); return *this;}
 
   private:
     Qualification m_qualification;

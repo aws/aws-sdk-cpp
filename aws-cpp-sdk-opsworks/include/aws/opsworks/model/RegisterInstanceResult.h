@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The registered instance's AWS OpsWorks ID.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
 
     /**
      * <p>The registered instance's AWS OpsWorks ID.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The registered instance's AWS OpsWorks ID.</p>
      */
-    inline RegisterInstanceResult& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline RegisterInstanceResult& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The registered instance's AWS OpsWorks ID.</p>

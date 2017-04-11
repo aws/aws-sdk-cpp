@@ -22,6 +22,7 @@
 #include <aws/ec2/model/AttributeValue.h>
 #include <aws/ec2/model/BlobAttributeValue.h>
 #include <aws/ec2/model/InstanceBlockDeviceMappingSpecification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline ModifyInstanceAttributeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>The name of the attribute.</p>
      */
-    inline void SetAttribute(InstanceAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline void SetAttribute(InstanceAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
      * <p>The name of the attribute.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The name of the attribute.</p>
      */
-    inline ModifyInstanceAttributeRequest& WithAttribute(InstanceAttributeName&& value) { SetAttribute(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithAttribute(InstanceAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 
     /**
      * <p>A new value for the attribute. Use only with the <code>kernel</code>,
@@ -150,7 +151,7 @@ namespace Model
      * <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>,
      * or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>A new value for the attribute. Use only with the <code>kernel</code>,
@@ -171,7 +172,7 @@ namespace Model
      * <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>,
      * or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
      */
-    inline ModifyInstanceAttributeRequest& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>A new value for the attribute. Use only with the <code>kernel</code>,
@@ -217,7 +218,7 @@ namespace Model
      * the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.</p>
      */
-    inline void SetBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMappingSpecification>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
+    inline void SetBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMappingSpecification>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
      * <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are
@@ -243,7 +244,7 @@ namespace Model
      * the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.</p>
      */
-    inline ModifyInstanceAttributeRequest& WithBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMappingSpecification>&& value) { SetBlockDeviceMappings(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMappingSpecification>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
      * <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are
@@ -269,7 +270,7 @@ namespace Model
      * the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.</p>
      */
-    inline ModifyInstanceAttributeRequest& AddBlockDeviceMappings(InstanceBlockDeviceMappingSpecification&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
+    inline ModifyInstanceAttributeRequest& AddBlockDeviceMappings(InstanceBlockDeviceMappingSpecification&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specifies whether source/destination checking is enabled. A value of
@@ -293,7 +294,7 @@ namespace Model
      * checking is disabled. This value must be <code>false</code> for a NAT instance
      * to perform NAT.</p>
      */
-    inline void SetSourceDestCheck(AttributeBooleanValue&& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
+    inline void SetSourceDestCheck(AttributeBooleanValue&& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = std::move(value); }
 
     /**
      * <p>Specifies whether source/destination checking is enabled. A value of
@@ -309,7 +310,7 @@ namespace Model
      * checking is disabled. This value must be <code>false</code> for a NAT instance
      * to perform NAT.</p>
      */
-    inline ModifyInstanceAttributeRequest& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
 
     /**
      * <p>If the value is <code>true</code>, you can't terminate the instance using the
@@ -330,7 +331,7 @@ namespace Model
      * Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this
      * paramater for Spot Instances.</p>
      */
-    inline void SetDisableApiTermination(AttributeBooleanValue&& value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = value; }
+    inline void SetDisableApiTermination(AttributeBooleanValue&& value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = std::move(value); }
 
     /**
      * <p>If the value is <code>true</code>, you can't terminate the instance using the
@@ -344,7 +345,7 @@ namespace Model
      * Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this
      * paramater for Spot Instances.</p>
      */
-    inline ModifyInstanceAttributeRequest& WithDisableApiTermination(AttributeBooleanValue&& value) { SetDisableApiTermination(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithDisableApiTermination(AttributeBooleanValue&& value) { SetDisableApiTermination(std::move(value)); return *this;}
 
     /**
      * <p>Changes the instance type to the specified value. For more information, see
@@ -371,7 +372,7 @@ namespace Model
      * Types</a>. If the instance type is not valid, the error returned is
      * <code>InvalidInstanceAttributeValue</code>.</p>
      */
-    inline void SetInstanceType(AttributeValue&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(AttributeValue&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>Changes the instance type to the specified value. For more information, see
@@ -389,7 +390,7 @@ namespace Model
      * Types</a>. If the instance type is not valid, the error returned is
      * <code>InvalidInstanceAttributeValue</code>.</p>
      */
-    inline ModifyInstanceAttributeRequest& WithInstanceType(AttributeValue&& value) { SetInstanceType(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithInstanceType(AttributeValue&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>Changes the instance's kernel to the specified value. We recommend that you
@@ -410,7 +411,7 @@ namespace Model
      * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
      */
-    inline void SetKernel(AttributeValue&& value) { m_kernelHasBeenSet = true; m_kernel = value; }
+    inline void SetKernel(AttributeValue&& value) { m_kernelHasBeenSet = true; m_kernel = std::move(value); }
 
     /**
      * <p>Changes the instance's kernel to the specified value. We recommend that you
@@ -424,7 +425,7 @@ namespace Model
      * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
      */
-    inline ModifyInstanceAttributeRequest& WithKernel(AttributeValue&& value) { SetKernel(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithKernel(AttributeValue&& value) { SetKernel(std::move(value)); return *this;}
 
     /**
      * <p>Changes the instance's RAM disk to the specified value. We recommend that you
@@ -445,7 +446,7 @@ namespace Model
      * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
      */
-    inline void SetRamdisk(AttributeValue&& value) { m_ramdiskHasBeenSet = true; m_ramdisk = value; }
+    inline void SetRamdisk(AttributeValue&& value) { m_ramdiskHasBeenSet = true; m_ramdisk = std::move(value); }
 
     /**
      * <p>Changes the instance's RAM disk to the specified value. We recommend that you
@@ -459,7 +460,7 @@ namespace Model
      * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
      */
-    inline ModifyInstanceAttributeRequest& WithRamdisk(AttributeValue&& value) { SetRamdisk(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithRamdisk(AttributeValue&& value) { SetRamdisk(std::move(value)); return *this;}
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
@@ -480,7 +481,7 @@ namespace Model
      * AWS SDK or command line tool, Base64-encoding is performed for you, and you can
      * load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
-    inline void SetUserData(BlobAttributeValue&& value) { m_userDataHasBeenSet = true; m_userData = value; }
+    inline void SetUserData(BlobAttributeValue&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
@@ -494,7 +495,7 @@ namespace Model
      * AWS SDK or command line tool, Base64-encoding is performed for you, and you can
      * load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
-    inline ModifyInstanceAttributeRequest& WithUserData(BlobAttributeValue&& value) { SetUserData(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithUserData(BlobAttributeValue&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
      * <p>Specifies whether an instance stops or terminates when you initiate shutdown
@@ -512,7 +513,7 @@ namespace Model
      * <p>Specifies whether an instance stops or terminates when you initiate shutdown
      * from the instance (using the operating system command for system shutdown).</p>
      */
-    inline void SetInstanceInitiatedShutdownBehavior(AttributeValue&& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
+    inline void SetInstanceInitiatedShutdownBehavior(AttributeValue&& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = std::move(value); }
 
     /**
      * <p>Specifies whether an instance stops or terminates when you initiate shutdown
@@ -524,7 +525,7 @@ namespace Model
      * <p>Specifies whether an instance stops or terminates when you initiate shutdown
      * from the instance (using the operating system command for system shutdown).</p>
      */
-    inline ModifyInstanceAttributeRequest& WithInstanceInitiatedShutdownBehavior(AttributeValue&& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithInstanceInitiatedShutdownBehavior(AttributeValue&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] Changes the security groups of the instance. You must specify at
@@ -545,7 +546,7 @@ namespace Model
      * least one security group, even if it's just the default security group for the
      * VPC. You must specify the security group ID, not the security group name.</p>
      */
-    inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = value; }
+    inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
      * <p>[EC2-VPC] Changes the security groups of the instance. You must specify at
@@ -559,7 +560,7 @@ namespace Model
      * least one security group, even if it's just the default security group for the
      * VPC. You must specify the security group ID, not the security group name.</p>
      */
-    inline ModifyInstanceAttributeRequest& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] Changes the security groups of the instance. You must specify at
@@ -573,7 +574,7 @@ namespace Model
      * least one security group, even if it's just the default security group for the
      * VPC. You must specify the security group ID, not the security group name.</p>
      */
-    inline ModifyInstanceAttributeRequest& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
+    inline ModifyInstanceAttributeRequest& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>[EC2-VPC] Changes the security groups of the instance. You must specify at
@@ -607,7 +608,7 @@ namespace Model
      * all instance types. Additional usage charges apply when using an EBS Optimized
      * instance.</p>
      */
-    inline void SetEbsOptimized(AttributeBooleanValue&& value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
+    inline void SetEbsOptimized(AttributeBooleanValue&& value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = std::move(value); }
 
     /**
      * <p>Specifies whether the instance is optimized for EBS I/O. This optimization
@@ -625,7 +626,7 @@ namespace Model
      * all instance types. Additional usage charges apply when using an EBS Optimized
      * instance.</p>
      */
-    inline ModifyInstanceAttributeRequest& WithEbsOptimized(AttributeBooleanValue&& value) { SetEbsOptimized(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithEbsOptimized(AttributeBooleanValue&& value) { SetEbsOptimized(std::move(value)); return *this;}
 
     /**
      * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
@@ -652,7 +653,7 @@ namespace Model
      * time.</p> <p>This option is supported only for HVM instances. Specifying this
      * option with a PV instance can make it unreachable.</p>
      */
-    inline void SetSriovNetSupport(AttributeValue&& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = value; }
+    inline void SetSriovNetSupport(AttributeValue&& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = std::move(value); }
 
     /**
      * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
@@ -670,7 +671,7 @@ namespace Model
      * time.</p> <p>This option is supported only for HVM instances. Specifying this
      * option with a PV instance can make it unreachable.</p>
      */
-    inline ModifyInstanceAttributeRequest& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(std::move(value)); return *this;}
 
     /**
      * <p>Set to <code>true</code> to enable enhanced networking with ENA for the
@@ -691,7 +692,7 @@ namespace Model
      * instance.</p> <p>This option is supported only for HVM instances. Specifying
      * this option with a PV instance can make it unreachable.</p>
      */
-    inline void SetEnaSupport(AttributeBooleanValue&& value) { m_enaSupportHasBeenSet = true; m_enaSupport = value; }
+    inline void SetEnaSupport(AttributeBooleanValue&& value) { m_enaSupportHasBeenSet = true; m_enaSupport = std::move(value); }
 
     /**
      * <p>Set to <code>true</code> to enable enhanced networking with ENA for the
@@ -705,7 +706,7 @@ namespace Model
      * instance.</p> <p>This option is supported only for HVM instances. Specifying
      * this option with a PV instance can make it unreachable.</p>
      */
-    inline ModifyInstanceAttributeRequest& WithEnaSupport(AttributeBooleanValue&& value) { SetEnaSupport(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithEnaSupport(AttributeBooleanValue&& value) { SetEnaSupport(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

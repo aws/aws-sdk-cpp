@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/Device.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>An object containing information about the requested device.</p>
      */
-    inline void SetDevice(Device&& value) { m_device = value; }
+    inline void SetDevice(Device&& value) { m_device = std::move(value); }
 
     /**
      * <p>An object containing information about the requested device.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>An object containing information about the requested device.</p>
      */
-    inline GetDeviceResult& WithDevice(Device&& value) { SetDevice(value); return *this;}
+    inline GetDeviceResult& WithDevice(Device&& value) { SetDevice(std::move(value)); return *this;}
 
   private:
     Device m_device;

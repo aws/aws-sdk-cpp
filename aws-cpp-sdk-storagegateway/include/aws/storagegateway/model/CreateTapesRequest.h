@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
      * return a list of gateways for your account and region.</p>
      */
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
@@ -78,7 +79,7 @@ namespace Model
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
      * return a list of gateways for your account and region.</p>
      */
-    inline CreateTapesRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline CreateTapesRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
@@ -127,7 +128,7 @@ namespace Model
      * <note> <p>Using the same <code>ClientToken</code> prevents creating the tape
      * multiple times.</p> </note>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>A unique identifier that you use to retry a request. If you retry a request,
@@ -151,7 +152,7 @@ namespace Model
      * <note> <p>Using the same <code>ClientToken</code> prevents creating the tape
      * multiple times.</p> </note>
      */
-    inline CreateTapesRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline CreateTapesRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier that you use to retry a request. If you retry a request,
@@ -198,7 +199,7 @@ namespace Model
      * characters in length and must be one of the uppercase letters from A to Z.</p>
      * </note>
      */
-    inline void SetTapeBarcodePrefix(Aws::String&& value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix = value; }
+    inline void SetTapeBarcodePrefix(Aws::String&& value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix = std::move(value); }
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
@@ -222,7 +223,7 @@ namespace Model
      * characters in length and must be one of the uppercase letters from A to Z.</p>
      * </note>
      */
-    inline CreateTapesRequest& WithTapeBarcodePrefix(Aws::String&& value) { SetTapeBarcodePrefix(value); return *this;}
+    inline CreateTapesRequest& WithTapeBarcodePrefix(Aws::String&& value) { SetTapeBarcodePrefix(std::move(value)); return *this;}
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.

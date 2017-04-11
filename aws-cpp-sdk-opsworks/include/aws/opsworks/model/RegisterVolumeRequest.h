@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The Amazon EBS volume ID.</p>
      */
-    inline void SetEc2VolumeId(Aws::String&& value) { m_ec2VolumeIdHasBeenSet = true; m_ec2VolumeId = value; }
+    inline void SetEc2VolumeId(Aws::String&& value) { m_ec2VolumeIdHasBeenSet = true; m_ec2VolumeId = std::move(value); }
 
     /**
      * <p>The Amazon EBS volume ID.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The Amazon EBS volume ID.</p>
      */
-    inline RegisterVolumeRequest& WithEc2VolumeId(Aws::String&& value) { SetEc2VolumeId(value); return *this;}
+    inline RegisterVolumeRequest& WithEc2VolumeId(Aws::String&& value) { SetEc2VolumeId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon EBS volume ID.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
      * <p>The stack ID.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
-    inline RegisterVolumeRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline RegisterVolumeRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>The stack ID.</p>

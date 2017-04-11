@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/model/Root.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>A structure that shows the root with the updated list of enabled policy
      * types.</p>
      */
-    inline void SetRoot(Root&& value) { m_root = value; }
+    inline void SetRoot(Root&& value) { m_root = std::move(value); }
 
     /**
      * <p>A structure that shows the root with the updated list of enabled policy
@@ -67,7 +68,7 @@ namespace Model
      * <p>A structure that shows the root with the updated list of enabled policy
      * types.</p>
      */
-    inline DisablePolicyTypeResult& WithRoot(Root&& value) { SetRoot(value); return *this;}
+    inline DisablePolicyTypeResult& WithRoot(Root&& value) { SetRoot(std::move(value)); return *this;}
 
   private:
     Root m_root;

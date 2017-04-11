@@ -17,6 +17,7 @@
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codedeploy/model/RevisionLocation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of the application that corresponds to the revision.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of the application that corresponds to the revision.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the application that corresponds to the revision.</p>
      */
-    inline GetApplicationRevisionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline GetApplicationRevisionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the application that corresponds to the revision.</p>
@@ -91,7 +92,7 @@ namespace Model
      * <p>Information about the application revision to get, including type and
      * location.</p>
      */
-    inline void SetRevision(RevisionLocation&& value) { m_revisionHasBeenSet = true; m_revision = value; }
+    inline void SetRevision(RevisionLocation&& value) { m_revisionHasBeenSet = true; m_revision = std::move(value); }
 
     /**
      * <p>Information about the application revision to get, including type and
@@ -103,7 +104,7 @@ namespace Model
      * <p>Information about the application revision to get, including type and
      * location.</p>
      */
-    inline GetApplicationRevisionRequest& WithRevision(RevisionLocation&& value) { SetRevision(value); return *this;}
+    inline GetApplicationRevisionRequest& WithRevision(RevisionLocation&& value) { SetRevision(std::move(value)); return *this;}
 
   private:
     Aws::String m_applicationName;

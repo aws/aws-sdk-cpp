@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The name of the log stream this event belongs to.</p>
      */
-    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
+    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::move(value); }
 
     /**
      * <p>The name of the log stream this event belongs to.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of the log stream this event belongs to.</p>
      */
-    inline FilteredLogEvent& WithLogStreamName(Aws::String&& value) { SetLogStreamName(value); return *this;}
+    inline FilteredLogEvent& WithLogStreamName(Aws::String&& value) { SetLogStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the log stream this event belongs to.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The data contained in the log event.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The data contained in the log event.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The data contained in the log event.</p>
      */
-    inline FilteredLogEvent& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline FilteredLogEvent& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The data contained in the log event.</p>
@@ -159,7 +160,7 @@ namespace Model
     /**
      * <p>The ID of the event.</p>
      */
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
+    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
 
     /**
      * <p>The ID of the event.</p>
@@ -174,7 +175,7 @@ namespace Model
     /**
      * <p>The ID of the event.</p>
      */
-    inline FilteredLogEvent& WithEventId(Aws::String&& value) { SetEventId(value); return *this;}
+    inline FilteredLogEvent& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the event.</p>

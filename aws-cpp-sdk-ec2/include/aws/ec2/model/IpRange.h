@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The IPv4 CIDR range. You can either specify a CIDR range or a source security
      * group, not both. To specify a single IPv4 address, use the /32 prefix.</p>
      */
-    inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
+    inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = std::move(value); }
 
     /**
      * <p>The IPv4 CIDR range. You can either specify a CIDR range or a source security
@@ -80,7 +81,7 @@ namespace Model
      * <p>The IPv4 CIDR range. You can either specify a CIDR range or a source security
      * group, not both. To specify a single IPv4 address, use the /32 prefix.</p>
      */
-    inline IpRange& WithCidrIp(Aws::String&& value) { SetCidrIp(value); return *this;}
+    inline IpRange& WithCidrIp(Aws::String&& value) { SetCidrIp(std::move(value)); return *this;}
 
     /**
      * <p>The IPv4 CIDR range. You can either specify a CIDR range or a source security

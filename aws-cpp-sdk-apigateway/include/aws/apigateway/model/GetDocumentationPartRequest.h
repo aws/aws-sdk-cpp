@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
      * <p>[Required] The identifier of an API of the to-be-retrieved documentation
      * part.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>[Required] The identifier of an API of the to-be-retrieved documentation
@@ -71,7 +72,7 @@ namespace Model
      * <p>[Required] The identifier of an API of the to-be-retrieved documentation
      * part.</p>
      */
-    inline GetDocumentationPartRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline GetDocumentationPartRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>[Required] The identifier of an API of the to-be-retrieved documentation
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>[Required] The identifier of the to-be-retrieved documentation part.</p>
      */
-    inline void SetDocumentationPartId(Aws::String&& value) { m_documentationPartIdHasBeenSet = true; m_documentationPartId = value; }
+    inline void SetDocumentationPartId(Aws::String&& value) { m_documentationPartIdHasBeenSet = true; m_documentationPartId = std::move(value); }
 
     /**
      * <p>[Required] The identifier of the to-be-retrieved documentation part.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>[Required] The identifier of the to-be-retrieved documentation part.</p>
      */
-    inline GetDocumentationPartRequest& WithDocumentationPartId(Aws::String&& value) { SetDocumentationPartId(value); return *this;}
+    inline GetDocumentationPartRequest& WithDocumentationPartId(Aws::String&& value) { SetDocumentationPartId(std::move(value)); return *this;}
 
     /**
      * <p>[Required] The identifier of the to-be-retrieved documentation part.</p>

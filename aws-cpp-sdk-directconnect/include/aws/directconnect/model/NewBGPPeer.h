@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/model/AddressFamily.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     inline void SetAuthKey(const Aws::String& value) { m_authKeyHasBeenSet = true; m_authKey = value; }
 
     
-    inline void SetAuthKey(Aws::String&& value) { m_authKeyHasBeenSet = true; m_authKey = value; }
+    inline void SetAuthKey(Aws::String&& value) { m_authKeyHasBeenSet = true; m_authKey = std::move(value); }
 
     
     inline void SetAuthKey(const char* value) { m_authKeyHasBeenSet = true; m_authKey.assign(value); }
@@ -70,7 +71,7 @@ namespace Model
     inline NewBGPPeer& WithAuthKey(const Aws::String& value) { SetAuthKey(value); return *this;}
 
     
-    inline NewBGPPeer& WithAuthKey(Aws::String&& value) { SetAuthKey(value); return *this;}
+    inline NewBGPPeer& WithAuthKey(Aws::String&& value) { SetAuthKey(std::move(value)); return *this;}
 
     
     inline NewBGPPeer& WithAuthKey(const char* value) { SetAuthKey(value); return *this;}
@@ -82,13 +83,13 @@ namespace Model
     inline void SetAddressFamily(const AddressFamily& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = value; }
 
     
-    inline void SetAddressFamily(AddressFamily&& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = value; }
+    inline void SetAddressFamily(AddressFamily&& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = std::move(value); }
 
     
     inline NewBGPPeer& WithAddressFamily(const AddressFamily& value) { SetAddressFamily(value); return *this;}
 
     
-    inline NewBGPPeer& WithAddressFamily(AddressFamily&& value) { SetAddressFamily(value); return *this;}
+    inline NewBGPPeer& WithAddressFamily(AddressFamily&& value) { SetAddressFamily(std::move(value)); return *this;}
 
     
     inline const Aws::String& GetAmazonAddress() const{ return m_amazonAddress; }
@@ -97,7 +98,7 @@ namespace Model
     inline void SetAmazonAddress(const Aws::String& value) { m_amazonAddressHasBeenSet = true; m_amazonAddress = value; }
 
     
-    inline void SetAmazonAddress(Aws::String&& value) { m_amazonAddressHasBeenSet = true; m_amazonAddress = value; }
+    inline void SetAmazonAddress(Aws::String&& value) { m_amazonAddressHasBeenSet = true; m_amazonAddress = std::move(value); }
 
     
     inline void SetAmazonAddress(const char* value) { m_amazonAddressHasBeenSet = true; m_amazonAddress.assign(value); }
@@ -106,7 +107,7 @@ namespace Model
     inline NewBGPPeer& WithAmazonAddress(const Aws::String& value) { SetAmazonAddress(value); return *this;}
 
     
-    inline NewBGPPeer& WithAmazonAddress(Aws::String&& value) { SetAmazonAddress(value); return *this;}
+    inline NewBGPPeer& WithAmazonAddress(Aws::String&& value) { SetAmazonAddress(std::move(value)); return *this;}
 
     
     inline NewBGPPeer& WithAmazonAddress(const char* value) { SetAmazonAddress(value); return *this;}
@@ -118,7 +119,7 @@ namespace Model
     inline void SetCustomerAddress(const Aws::String& value) { m_customerAddressHasBeenSet = true; m_customerAddress = value; }
 
     
-    inline void SetCustomerAddress(Aws::String&& value) { m_customerAddressHasBeenSet = true; m_customerAddress = value; }
+    inline void SetCustomerAddress(Aws::String&& value) { m_customerAddressHasBeenSet = true; m_customerAddress = std::move(value); }
 
     
     inline void SetCustomerAddress(const char* value) { m_customerAddressHasBeenSet = true; m_customerAddress.assign(value); }
@@ -127,7 +128,7 @@ namespace Model
     inline NewBGPPeer& WithCustomerAddress(const Aws::String& value) { SetCustomerAddress(value); return *this;}
 
     
-    inline NewBGPPeer& WithCustomerAddress(Aws::String&& value) { SetCustomerAddress(value); return *this;}
+    inline NewBGPPeer& WithCustomerAddress(Aws::String&& value) { SetCustomerAddress(std::move(value)); return *this;}
 
     
     inline NewBGPPeer& WithCustomerAddress(const char* value) { SetCustomerAddress(value); return *this;}

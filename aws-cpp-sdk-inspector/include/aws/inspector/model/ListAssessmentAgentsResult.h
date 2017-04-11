@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector/model/Agent.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of ARNs specifying the agents returned by the action.</p>
      */
-    inline void SetAgentList(Aws::Vector<Agent>&& value) { m_agentList = value; }
+    inline void SetAgentList(Aws::Vector<Agent>&& value) { m_agentList = std::move(value); }
 
     /**
      * <p>A list of ARNs specifying the agents returned by the action.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of ARNs specifying the agents returned by the action.</p>
      */
-    inline ListAssessmentAgentsResult& WithAgentList(Aws::Vector<Agent>&& value) { SetAgentList(value); return *this;}
+    inline ListAssessmentAgentsResult& WithAgentList(Aws::Vector<Agent>&& value) { SetAgentList(std::move(value)); return *this;}
 
     /**
      * <p>A list of ARNs specifying the agents returned by the action.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of ARNs specifying the agents returned by the action.</p>
      */
-    inline ListAssessmentAgentsResult& AddAgentList(Agent&& value) { m_agentList.push_back(value); return *this; }
+    inline ListAssessmentAgentsResult& AddAgentList(Agent&& value) { m_agentList.push_back(std::move(value)); return *this; }
 
     /**
      * <p> When a response is generated, if there is more data to be listed, this
@@ -98,7 +99,7 @@ namespace Model
      * <b>nextToken</b> parameter in a subsequent pagination request. If there is no
      * more data to be listed, this parameter is set to 'null'.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p> When a response is generated, if there is more data to be listed, this
@@ -122,7 +123,7 @@ namespace Model
      * <b>nextToken</b> parameter in a subsequent pagination request. If there is no
      * more data to be listed, this parameter is set to 'null'.</p>
      */
-    inline ListAssessmentAgentsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListAssessmentAgentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p> When a response is generated, if there is more data to be listed, this

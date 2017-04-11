@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudfront/model/OriginCustomHeader.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
     /**
      * A complex type that contains the custom headers for this Origin.
      */
-    inline void SetItems(Aws::Vector<OriginCustomHeader>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+    inline void SetItems(Aws::Vector<OriginCustomHeader>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * A complex type that contains the custom headers for this Origin.
@@ -84,7 +85,7 @@ namespace Model
     /**
      * A complex type that contains the custom headers for this Origin.
      */
-    inline CustomHeaders& WithItems(Aws::Vector<OriginCustomHeader>&& value) { SetItems(value); return *this;}
+    inline CustomHeaders& WithItems(Aws::Vector<OriginCustomHeader>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * A complex type that contains the custom headers for this Origin.
@@ -94,7 +95,7 @@ namespace Model
     /**
      * A complex type that contains the custom headers for this Origin.
      */
-    inline CustomHeaders& AddItems(OriginCustomHeader&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+    inline CustomHeaders& AddItems(OriginCustomHeader&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
     int m_quantity;

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -83,7 +84,7 @@ namespace Model
      * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
      * ACLs.</p>
      */
-    inline void SetNetworkAclIds(Aws::Vector<Aws::String>&& value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds = value; }
+    inline void SetNetworkAclIds(Aws::Vector<Aws::String>&& value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds = std::move(value); }
 
     /**
      * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
@@ -95,7 +96,7 @@ namespace Model
      * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
      * ACLs.</p>
      */
-    inline DescribeNetworkAclsRequest& WithNetworkAclIds(Aws::Vector<Aws::String>&& value) { SetNetworkAclIds(value); return *this;}
+    inline DescribeNetworkAclsRequest& WithNetworkAclIds(Aws::Vector<Aws::String>&& value) { SetNetworkAclIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
@@ -107,7 +108,7 @@ namespace Model
      * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
      * ACLs.</p>
      */
-    inline DescribeNetworkAclsRequest& AddNetworkAclIds(Aws::String&& value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds.push_back(value); return *this; }
+    inline DescribeNetworkAclsRequest& AddNetworkAclIds(Aws::String&& value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
@@ -239,7 +240,7 @@ namespace Model
      * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the
      * network ACL.</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
@@ -323,7 +324,7 @@ namespace Model
      * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the
      * network ACL.</p> </li> </ul>
      */
-    inline DescribeNetworkAclsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeNetworkAclsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
@@ -407,7 +408,7 @@ namespace Model
      * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the
      * network ACL.</p> </li> </ul>
      */
-    inline DescribeNetworkAclsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeNetworkAclsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/InstanceAssociationOutputLocation.h>
 #include <aws/ssm/model/Target.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of the Systems Manager document.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the Systems Manager document.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the Systems Manager document.</p>
      */
-    inline CreateAssociationRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateAssociationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Systems Manager document.</p>
@@ -90,7 +91,7 @@ namespace Model
      * <p>The document version you want to associate with the target(s). Can be a
      * specific version or the default version.</p>
      */
-    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
      * <p>The document version you want to associate with the target(s). Can be a
@@ -108,7 +109,7 @@ namespace Model
      * <p>The document version you want to associate with the target(s). Can be a
      * specific version or the default version.</p>
      */
-    inline CreateAssociationRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(value); return *this;}
+    inline CreateAssociationRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
      * <p>The document version you want to associate with the target(s). Can be a
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The instance ID.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
-    inline CreateAssociationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline CreateAssociationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The instance ID.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>The parameters for the documents runtime configuration. </p>
      */
-    inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>The parameters for the documents runtime configuration. </p>
@@ -174,37 +175,37 @@ namespace Model
     /**
      * <p>The parameters for the documents runtime configuration. </p>
      */
-    inline CreateAssociationRequest& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(value); return *this;}
+    inline CreateAssociationRequest& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>The parameters for the documents runtime configuration. </p>
      */
-    inline CreateAssociationRequest& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline CreateAssociationRequest& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>The parameters for the documents runtime configuration. </p>
      */
-    inline CreateAssociationRequest& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline CreateAssociationRequest& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The parameters for the documents runtime configuration. </p>
      */
-    inline CreateAssociationRequest& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline CreateAssociationRequest& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The parameters for the documents runtime configuration. </p>
      */
-    inline CreateAssociationRequest& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline CreateAssociationRequest& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The parameters for the documents runtime configuration. </p>
      */
-    inline CreateAssociationRequest& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline CreateAssociationRequest& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The parameters for the documents runtime configuration. </p>
      */
-    inline CreateAssociationRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline CreateAssociationRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>The targets (either instances or tags) for the association. Instances are
@@ -225,7 +226,7 @@ namespace Model
      * specified using Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;.
      * Tags are specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
      */
-    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = value; }
+    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
      * <p>The targets (either instances or tags) for the association. Instances are
@@ -239,7 +240,7 @@ namespace Model
      * specified using Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;.
      * Tags are specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
      */
-    inline CreateAssociationRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(value); return *this;}
+    inline CreateAssociationRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
      * <p>The targets (either instances or tags) for the association. Instances are
@@ -253,7 +254,7 @@ namespace Model
      * specified using Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;.
      * Tags are specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
      */
-    inline CreateAssociationRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+    inline CreateAssociationRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A cron expression when the association will be applied to the target(s).
@@ -280,7 +281,7 @@ namespace Model
      * thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10
      * ? * SUN *) to run every Sunday at 10 a.m.</p>
      */
-    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
+    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
 
     /**
      * <p>A cron expression when the association will be applied to the target(s).
@@ -307,7 +308,7 @@ namespace Model
      * thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10
      * ? * SUN *) to run every Sunday at 10 a.m.</p>
      */
-    inline CreateAssociationRequest& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(value); return *this;}
+    inline CreateAssociationRequest& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
      * <p>A cron expression when the association will be applied to the target(s).
@@ -340,7 +341,7 @@ namespace Model
      * \"&lt;region&gt;\", \"OutputS3BucketName\": \"bucket name\",
      * \"OutputS3KeyPrefix\": \"folder name\" } }"</code> </p>
      */
-    inline void SetOutputLocation(InstanceAssociationOutputLocation&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
+    inline void SetOutputLocation(InstanceAssociationOutputLocation&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
 
     /**
      * <p>An Amazon S3 bucket where you want to store the output details of the
@@ -356,7 +357,7 @@ namespace Model
      * \"&lt;region&gt;\", \"OutputS3BucketName\": \"bucket name\",
      * \"OutputS3KeyPrefix\": \"folder name\" } }"</code> </p>
      */
-    inline CreateAssociationRequest& WithOutputLocation(InstanceAssociationOutputLocation&& value) { SetOutputLocation(value); return *this;}
+    inline CreateAssociationRequest& WithOutputLocation(InstanceAssociationOutputLocation&& value) { SetOutputLocation(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

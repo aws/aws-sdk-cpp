@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/elasticbeanstalk/model/LoadBalancerDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Describes the LoadBalancer.</p>
      */
-    inline void SetLoadBalancer(LoadBalancerDescription&& value) { m_loadBalancerHasBeenSet = true; m_loadBalancer = value; }
+    inline void SetLoadBalancer(LoadBalancerDescription&& value) { m_loadBalancerHasBeenSet = true; m_loadBalancer = std::move(value); }
 
     /**
      * <p>Describes the LoadBalancer.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Describes the LoadBalancer.</p>
      */
-    inline EnvironmentResourcesDescription& WithLoadBalancer(LoadBalancerDescription&& value) { SetLoadBalancer(value); return *this;}
+    inline EnvironmentResourcesDescription& WithLoadBalancer(LoadBalancerDescription&& value) { SetLoadBalancer(std::move(value)); return *this;}
 
   private:
     LoadBalancerDescription m_loadBalancer;

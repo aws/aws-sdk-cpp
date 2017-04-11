@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ID of the attachment.</p>
      */
-    inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
+    inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::move(value); }
 
     /**
      * <p>The ID of the attachment.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ID of the attachment.</p>
      */
-    inline AttachmentDetails& WithAttachmentId(Aws::String&& value) { SetAttachmentId(value); return *this;}
+    inline AttachmentDetails& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the attachment.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The file name of the attachment.</p>
      */
-    inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
+    inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = std::move(value); }
 
     /**
      * <p>The file name of the attachment.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The file name of the attachment.</p>
      */
-    inline AttachmentDetails& WithFileName(Aws::String&& value) { SetFileName(value); return *this;}
+    inline AttachmentDetails& WithFileName(Aws::String&& value) { SetFileName(std::move(value)); return *this;}
 
     /**
      * <p>The file name of the attachment.</p>

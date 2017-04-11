@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
      * <a>DescribeProvisioningParameters</a>.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
@@ -78,7 +79,7 @@ namespace Model
      * <p>The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
      * <a>DescribeProvisioningParameters</a>.</p>
      */
-    inline ProvisioningParameter& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline ProvisioningParameter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
@@ -102,7 +103,7 @@ namespace Model
      * <p>The value to use for provisioning. Any constraints on this value can be found
      * in <code>ProvisioningArtifactParameter</code> for <code>Key</code>.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value to use for provisioning. Any constraints on this value can be found
@@ -120,7 +121,7 @@ namespace Model
      * <p>The value to use for provisioning. Any constraints on this value can be found
      * in <code>ProvisioningArtifactParameter</code> for <code>Key</code>.</p>
      */
-    inline ProvisioningParameter& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline ProvisioningParameter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value to use for provisioning. Any constraints on this value can be found

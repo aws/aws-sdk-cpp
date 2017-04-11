@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/PipelineSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The list of pipelines.</p>
      */
-    inline void SetPipelines(Aws::Vector<PipelineSummary>&& value) { m_pipelines = value; }
+    inline void SetPipelines(Aws::Vector<PipelineSummary>&& value) { m_pipelines = std::move(value); }
 
     /**
      * <p>The list of pipelines.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The list of pipelines.</p>
      */
-    inline ListPipelinesResult& WithPipelines(Aws::Vector<PipelineSummary>&& value) { SetPipelines(value); return *this;}
+    inline ListPipelinesResult& WithPipelines(Aws::Vector<PipelineSummary>&& value) { SetPipelines(std::move(value)); return *this;}
 
     /**
      * <p>The list of pipelines.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The list of pipelines.</p>
      */
-    inline ListPipelinesResult& AddPipelines(PipelineSummary&& value) { m_pipelines.push_back(value); return *this; }
+    inline ListPipelinesResult& AddPipelines(PipelineSummary&& value) { m_pipelines.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If the amount of returned information is significantly large, an identifier
@@ -101,7 +102,7 @@ namespace Model
      * is also returned which can be used in a subsequent list pipelines call to return
      * the next set of pipelines in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the amount of returned information is significantly large, an identifier
@@ -122,7 +123,7 @@ namespace Model
      * is also returned which can be used in a subsequent list pipelines call to return
      * the next set of pipelines in the list.</p>
      */
-    inline ListPipelinesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListPipelinesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the amount of returned information is significantly large, an identifier

@@ -16,6 +16,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The project's ARN.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The project's ARN.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The project's ARN.</p>
      */
-    inline Project& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Project& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The project's ARN.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The project's name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The project's name.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The project's name.</p>
      */
-    inline Project& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Project& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The project's name.</p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>When the project was created.</p>
      */
-    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = value; }
+    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
 
     /**
      * <p>When the project was created.</p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>When the project was created.</p>
      */
-    inline Project& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(value); return *this;}
+    inline Project& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
 
   private:
     Aws::String m_arn;

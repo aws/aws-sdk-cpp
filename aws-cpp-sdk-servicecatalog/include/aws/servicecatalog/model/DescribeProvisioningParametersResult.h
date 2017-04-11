@@ -18,6 +18,7 @@
 #include <aws/servicecatalog/model/ProvisioningArtifactParameter.h>
 #include <aws/servicecatalog/model/ConstraintSummary.h>
 #include <aws/servicecatalog/model/UsageInstruction.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * parameter includes a list of allowable values and additional metadata about each
      * parameter.</p>
      */
-    inline void SetProvisioningArtifactParameters(Aws::Vector<ProvisioningArtifactParameter>&& value) { m_provisioningArtifactParameters = value; }
+    inline void SetProvisioningArtifactParameters(Aws::Vector<ProvisioningArtifactParameter>&& value) { m_provisioningArtifactParameters = std::move(value); }
 
     /**
      * <p>The list of parameters used to successfully provision the product. Each
@@ -75,7 +76,7 @@ namespace Model
      * parameter includes a list of allowable values and additional metadata about each
      * parameter.</p>
      */
-    inline DescribeProvisioningParametersResult& WithProvisioningArtifactParameters(Aws::Vector<ProvisioningArtifactParameter>&& value) { SetProvisioningArtifactParameters(value); return *this;}
+    inline DescribeProvisioningParametersResult& WithProvisioningArtifactParameters(Aws::Vector<ProvisioningArtifactParameter>&& value) { SetProvisioningArtifactParameters(std::move(value)); return *this;}
 
     /**
      * <p>The list of parameters used to successfully provision the product. Each
@@ -89,7 +90,7 @@ namespace Model
      * parameter includes a list of allowable values and additional metadata about each
      * parameter.</p>
      */
-    inline DescribeProvisioningParametersResult& AddProvisioningArtifactParameters(ProvisioningArtifactParameter&& value) { m_provisioningArtifactParameters.push_back(value); return *this; }
+    inline DescribeProvisioningParametersResult& AddProvisioningArtifactParameters(ProvisioningArtifactParameter&& value) { m_provisioningArtifactParameters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of constraint summaries that apply to provisioning this product.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The list of constraint summaries that apply to provisioning this product.</p>
      */
-    inline void SetConstraintSummaries(Aws::Vector<ConstraintSummary>&& value) { m_constraintSummaries = value; }
+    inline void SetConstraintSummaries(Aws::Vector<ConstraintSummary>&& value) { m_constraintSummaries = std::move(value); }
 
     /**
      * <p>The list of constraint summaries that apply to provisioning this product.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The list of constraint summaries that apply to provisioning this product.</p>
      */
-    inline DescribeProvisioningParametersResult& WithConstraintSummaries(Aws::Vector<ConstraintSummary>&& value) { SetConstraintSummaries(value); return *this;}
+    inline DescribeProvisioningParametersResult& WithConstraintSummaries(Aws::Vector<ConstraintSummary>&& value) { SetConstraintSummaries(std::move(value)); return *this;}
 
     /**
      * <p>The list of constraint summaries that apply to provisioning this product.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The list of constraint summaries that apply to provisioning this product.</p>
      */
-    inline DescribeProvisioningParametersResult& AddConstraintSummaries(ConstraintSummary&& value) { m_constraintSummaries.push_back(value); return *this; }
+    inline DescribeProvisioningParametersResult& AddConstraintSummaries(ConstraintSummary&& value) { m_constraintSummaries.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Any additional metadata specifically related to the provisioning of the
@@ -145,7 +146,7 @@ namespace Model
      * product. For example, see the <code>Version</code> field of the CloudFormation
      * template.</p>
      */
-    inline void SetUsageInstructions(Aws::Vector<UsageInstruction>&& value) { m_usageInstructions = value; }
+    inline void SetUsageInstructions(Aws::Vector<UsageInstruction>&& value) { m_usageInstructions = std::move(value); }
 
     /**
      * <p>Any additional metadata specifically related to the provisioning of the
@@ -159,7 +160,7 @@ namespace Model
      * product. For example, see the <code>Version</code> field of the CloudFormation
      * template.</p>
      */
-    inline DescribeProvisioningParametersResult& WithUsageInstructions(Aws::Vector<UsageInstruction>&& value) { SetUsageInstructions(value); return *this;}
+    inline DescribeProvisioningParametersResult& WithUsageInstructions(Aws::Vector<UsageInstruction>&& value) { SetUsageInstructions(std::move(value)); return *this;}
 
     /**
      * <p>Any additional metadata specifically related to the provisioning of the
@@ -173,7 +174,7 @@ namespace Model
      * product. For example, see the <code>Version</code> field of the CloudFormation
      * template.</p>
      */
-    inline DescribeProvisioningParametersResult& AddUsageInstructions(UsageInstruction&& value) { m_usageInstructions.push_back(value); return *this; }
+    inline DescribeProvisioningParametersResult& AddUsageInstructions(UsageInstruction&& value) { m_usageInstructions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ProvisioningArtifactParameter> m_provisioningArtifactParameters;

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/PortAccessType.h>
 #include <aws/lightsail/model/AccessDirection.h>
+#include <utility>
 
 namespace Aws
 {
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The protocol. </p>
      */
-    inline void SetProtocol(NetworkProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline void SetProtocol(NetworkProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol. </p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The protocol. </p>
      */
-    inline InstancePortInfo& WithProtocol(NetworkProtocol&& value) { SetProtocol(value); return *this;}
+    inline InstancePortInfo& WithProtocol(NetworkProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
      * <p>The location from which access is allowed (e.g., <code>Anywhere
@@ -117,7 +118,7 @@ namespace Model
      * <p>The location from which access is allowed (e.g., <code>Anywhere
      * (0.0.0.0/0)</code>).</p>
      */
-    inline void SetAccessFrom(Aws::String&& value) { m_accessFromHasBeenSet = true; m_accessFrom = value; }
+    inline void SetAccessFrom(Aws::String&& value) { m_accessFromHasBeenSet = true; m_accessFrom = std::move(value); }
 
     /**
      * <p>The location from which access is allowed (e.g., <code>Anywhere
@@ -135,7 +136,7 @@ namespace Model
      * <p>The location from which access is allowed (e.g., <code>Anywhere
      * (0.0.0.0/0)</code>).</p>
      */
-    inline InstancePortInfo& WithAccessFrom(Aws::String&& value) { SetAccessFrom(value); return *this;}
+    inline InstancePortInfo& WithAccessFrom(Aws::String&& value) { SetAccessFrom(std::move(value)); return *this;}
 
     /**
      * <p>The location from which access is allowed (e.g., <code>Anywhere
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>The type of access (<code>Public</code> or <code>Private</code>).</p>
      */
-    inline void SetAccessType(PortAccessType&& value) { m_accessTypeHasBeenSet = true; m_accessType = value; }
+    inline void SetAccessType(PortAccessType&& value) { m_accessTypeHasBeenSet = true; m_accessType = std::move(value); }
 
     /**
      * <p>The type of access (<code>Public</code> or <code>Private</code>).</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>The type of access (<code>Public</code> or <code>Private</code>).</p>
      */
-    inline InstancePortInfo& WithAccessType(PortAccessType&& value) { SetAccessType(value); return *this;}
+    inline InstancePortInfo& WithAccessType(PortAccessType&& value) { SetAccessType(std::move(value)); return *this;}
 
     /**
      * <p>The common name.</p>
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>The common name.</p>
      */
-    inline void SetCommonName(Aws::String&& value) { m_commonNameHasBeenSet = true; m_commonName = value; }
+    inline void SetCommonName(Aws::String&& value) { m_commonNameHasBeenSet = true; m_commonName = std::move(value); }
 
     /**
      * <p>The common name.</p>
@@ -196,7 +197,7 @@ namespace Model
     /**
      * <p>The common name.</p>
      */
-    inline InstancePortInfo& WithCommonName(Aws::String&& value) { SetCommonName(value); return *this;}
+    inline InstancePortInfo& WithCommonName(Aws::String&& value) { SetCommonName(std::move(value)); return *this;}
 
     /**
      * <p>The common name.</p>
@@ -216,7 +217,7 @@ namespace Model
     /**
      * <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>
      */
-    inline void SetAccessDirection(AccessDirection&& value) { m_accessDirectionHasBeenSet = true; m_accessDirection = value; }
+    inline void SetAccessDirection(AccessDirection&& value) { m_accessDirectionHasBeenSet = true; m_accessDirection = std::move(value); }
 
     /**
      * <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>
@@ -226,7 +227,7 @@ namespace Model
     /**
      * <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>
      */
-    inline InstancePortInfo& WithAccessDirection(AccessDirection&& value) { SetAccessDirection(value); return *this;}
+    inline InstancePortInfo& WithAccessDirection(AccessDirection&& value) { SetAccessDirection(std::move(value)); return *this;}
 
   private:
     int m_fromPort;

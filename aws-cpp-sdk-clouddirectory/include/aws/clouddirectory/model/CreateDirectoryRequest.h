@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>Name of the <a>Directory</a>. Should be unique per account, per region.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Name of the <a>Directory</a>. Should be unique per account, per region.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Name of the <a>Directory</a>. Should be unique per account, per region.</p>
      */
-    inline CreateDirectoryRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateDirectoryRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the <a>Directory</a>. Should be unique per account, per region.</p>
@@ -86,7 +87,7 @@ namespace Model
      * <p>ARN of the published schema that will be copied into the data
      * <a>Directory</a>. For more information, see <a>arns</a>.</p>
      */
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
+    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
 
     /**
      * <p>ARN of the published schema that will be copied into the data
@@ -104,7 +105,7 @@ namespace Model
      * <p>ARN of the published schema that will be copied into the data
      * <a>Directory</a>. For more information, see <a>arns</a>.</p>
      */
-    inline CreateDirectoryRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(value); return *this;}
+    inline CreateDirectoryRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN of the published schema that will be copied into the data

@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The layer ID.</p>
      */
-    inline void SetLayerId(Aws::String&& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
+    inline void SetLayerId(Aws::String&& value) { m_layerIdHasBeenSet = true; m_layerId = std::move(value); }
 
     /**
      * <p>The layer ID.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The layer ID.</p>
      */
-    inline GetHostnameSuggestionRequest& WithLayerId(Aws::String&& value) { SetLayerId(value); return *this;}
+    inline GetHostnameSuggestionRequest& WithLayerId(Aws::String&& value) { SetLayerId(std::move(value)); return *this;}
 
     /**
      * <p>The layer ID.</p>

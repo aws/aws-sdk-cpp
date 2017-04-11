@@ -16,6 +16,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the static IP.</p>
      */
-    inline void SetStaticIpName(Aws::String&& value) { m_staticIpNameHasBeenSet = true; m_staticIpName = value; }
+    inline void SetStaticIpName(Aws::String&& value) { m_staticIpNameHasBeenSet = true; m_staticIpName = std::move(value); }
 
     /**
      * <p>The name of the static IP.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the static IP.</p>
      */
-    inline AttachStaticIpRequest& WithStaticIpName(Aws::String&& value) { SetStaticIpName(value); return *this;}
+    inline AttachStaticIpRequest& WithStaticIpName(Aws::String&& value) { SetStaticIpName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the static IP.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The instance name to which you want to attach the static IP address.</p>
      */
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
+    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
 
     /**
      * <p>The instance name to which you want to attach the static IP address.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The instance name to which you want to attach the static IP address.</p>
      */
-    inline AttachStaticIpRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(value); return *this;}
+    inline AttachStaticIpRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
 
     /**
      * <p>The instance name to which you want to attach the static IP address.</p>

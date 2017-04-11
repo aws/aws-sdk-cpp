@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The schedule recurrence.</p>
      */
-    inline void SetRecurrence(ScheduledInstanceRecurrenceRequest&& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
+    inline void SetRecurrence(ScheduledInstanceRecurrenceRequest&& value) { m_recurrenceHasBeenSet = true; m_recurrence = std::move(value); }
 
     /**
      * <p>The schedule recurrence.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The schedule recurrence.</p>
      */
-    inline DescribeScheduledInstanceAvailabilityRequest& WithRecurrence(ScheduledInstanceRecurrenceRequest&& value) { SetRecurrence(value); return *this;}
+    inline DescribeScheduledInstanceAvailabilityRequest& WithRecurrence(ScheduledInstanceRecurrenceRequest&& value) { SetRecurrence(std::move(value)); return *this;}
 
     /**
      * <p>The time period for the first schedule to start.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The time period for the first schedule to start.</p>
      */
-    inline void SetFirstSlotStartTimeRange(SlotDateTimeRangeRequest&& value) { m_firstSlotStartTimeRangeHasBeenSet = true; m_firstSlotStartTimeRange = value; }
+    inline void SetFirstSlotStartTimeRange(SlotDateTimeRangeRequest&& value) { m_firstSlotStartTimeRangeHasBeenSet = true; m_firstSlotStartTimeRange = std::move(value); }
 
     /**
      * <p>The time period for the first schedule to start.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>The time period for the first schedule to start.</p>
      */
-    inline DescribeScheduledInstanceAvailabilityRequest& WithFirstSlotStartTimeRange(SlotDateTimeRangeRequest&& value) { SetFirstSlotStartTimeRange(value); return *this;}
+    inline DescribeScheduledInstanceAvailabilityRequest& WithFirstSlotStartTimeRange(SlotDateTimeRangeRequest&& value) { SetFirstSlotStartTimeRange(std::move(value)); return *this;}
 
     /**
      * <p>The minimum available duration, in hours. The minimum required duration is
@@ -174,7 +175,7 @@ namespace Model
     /**
      * <p>The token for the next set of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of results.</p>
@@ -189,7 +190,7 @@ namespace Model
     /**
      * <p>The token for the next set of results.</p>
      */
-    inline DescribeScheduledInstanceAvailabilityRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeScheduledInstanceAvailabilityRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of results.</p>
@@ -248,7 +249,7 @@ namespace Model
      * <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or
      * <code>Windows</code>).</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
@@ -270,7 +271,7 @@ namespace Model
      * <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or
      * <code>Windows</code>).</p> </li> </ul>
      */
-    inline DescribeScheduledInstanceAvailabilityRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeScheduledInstanceAvailabilityRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
@@ -292,7 +293,7 @@ namespace Model
      * <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or
      * <code>Windows</code>).</p> </li> </ul>
      */
-    inline DescribeScheduledInstanceAvailabilityRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeScheduledInstanceAvailabilityRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

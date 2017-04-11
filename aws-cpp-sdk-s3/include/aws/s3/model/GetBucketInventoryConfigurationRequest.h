@@ -16,6 +16,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * The name of the bucket containing the inventory configuration to retrieve.
      */
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * The name of the bucket containing the inventory configuration to retrieve.
@@ -67,7 +68,7 @@ namespace Model
     /**
      * The name of the bucket containing the inventory configuration to retrieve.
      */
-    inline GetBucketInventoryConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline GetBucketInventoryConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * The name of the bucket containing the inventory configuration to retrieve.
@@ -87,7 +88,7 @@ namespace Model
     /**
      * The ID used to identify the inventory configuration.
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * The ID used to identify the inventory configuration.
@@ -102,7 +103,7 @@ namespace Model
     /**
      * The ID used to identify the inventory configuration.
      */
-    inline GetBucketInventoryConfigurationRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline GetBucketInventoryConfigurationRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * The ID used to identify the inventory configuration.

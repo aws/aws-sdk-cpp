@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The list of full Amazon Resource Name (ARN) entries for each cluster
      * associated with your account.</p>
      */
-    inline void SetClusterArns(Aws::Vector<Aws::String>&& value) { m_clusterArns = value; }
+    inline void SetClusterArns(Aws::Vector<Aws::String>&& value) { m_clusterArns = std::move(value); }
 
     /**
      * <p>The list of full Amazon Resource Name (ARN) entries for each cluster
@@ -68,7 +69,7 @@ namespace Model
      * <p>The list of full Amazon Resource Name (ARN) entries for each cluster
      * associated with your account.</p>
      */
-    inline ListClustersResult& WithClusterArns(Aws::Vector<Aws::String>&& value) { SetClusterArns(value); return *this;}
+    inline ListClustersResult& WithClusterArns(Aws::Vector<Aws::String>&& value) { SetClusterArns(std::move(value)); return *this;}
 
     /**
      * <p>The list of full Amazon Resource Name (ARN) entries for each cluster
@@ -80,7 +81,7 @@ namespace Model
      * <p>The list of full Amazon Resource Name (ARN) entries for each cluster
      * associated with your account.</p>
      */
-    inline ListClustersResult& AddClusterArns(Aws::String&& value) { m_clusterArns.push_back(value); return *this; }
+    inline ListClustersResult& AddClusterArns(Aws::String&& value) { m_clusterArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of full Amazon Resource Name (ARN) entries for each cluster
@@ -113,7 +114,7 @@ namespace Model
      * be used to retrieve the next page of results. This value is <code>null</code>
      * when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -140,7 +141,7 @@ namespace Model
      * be used to retrieve the next page of results. This value is <code>null</code>
      * when there are no more results to return.</p>
      */
-    inline ListClustersResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListClustersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value to include in a future

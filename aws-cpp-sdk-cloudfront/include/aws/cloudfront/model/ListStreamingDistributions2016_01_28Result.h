@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/StreamingDistributionList.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * The StreamingDistributionList type.
      */
-    inline void SetStreamingDistributionList(StreamingDistributionList&& value) { m_streamingDistributionList = value; }
+    inline void SetStreamingDistributionList(StreamingDistributionList&& value) { m_streamingDistributionList = std::move(value); }
 
     /**
      * The StreamingDistributionList type.
@@ -67,7 +68,7 @@ namespace Model
     /**
      * The StreamingDistributionList type.
      */
-    inline ListStreamingDistributions2016_01_28Result& WithStreamingDistributionList(StreamingDistributionList&& value) { SetStreamingDistributionList(value); return *this;}
+    inline ListStreamingDistributions2016_01_28Result& WithStreamingDistributionList(StreamingDistributionList&& value) { SetStreamingDistributionList(std::move(value)); return *this;}
 
   private:
     StreamingDistributionList m_streamingDistributionList;

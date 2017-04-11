@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * the same as a string using a backslash ("\") as an escape character in the
      * JSON.</p>
      */
-    inline void SetStatement(Aws::String&& value) { m_statement = value; }
+    inline void SetStatement(Aws::String&& value) { m_statement = std::move(value); }
 
     /**
      * <p>The permission statement you specified in the request. The response returns
@@ -84,7 +85,7 @@ namespace Model
      * the same as a string using a backslash ("\") as an escape character in the
      * JSON.</p>
      */
-    inline AddPermissionResult& WithStatement(Aws::String&& value) { SetStatement(value); return *this;}
+    inline AddPermissionResult& WithStatement(Aws::String&& value) { SetStatement(std::move(value)); return *this;}
 
     /**
      * <p>The permission statement you specified in the request. The response returns

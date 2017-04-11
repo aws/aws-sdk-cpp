@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/model/FailedCreateWorkspaceRequest.h>
 #include <aws/workspaces/model/Workspace.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>An array of structures that represent the WorkSpaces that could not be
      * created.</p>
      */
-    inline void SetFailedRequests(Aws::Vector<FailedCreateWorkspaceRequest>&& value) { m_failedRequests = value; }
+    inline void SetFailedRequests(Aws::Vector<FailedCreateWorkspaceRequest>&& value) { m_failedRequests = std::move(value); }
 
     /**
      * <p>An array of structures that represent the WorkSpaces that could not be
@@ -75,7 +76,7 @@ namespace Model
      * <p>An array of structures that represent the WorkSpaces that could not be
      * created.</p>
      */
-    inline CreateWorkspacesResult& WithFailedRequests(Aws::Vector<FailedCreateWorkspaceRequest>&& value) { SetFailedRequests(value); return *this;}
+    inline CreateWorkspacesResult& WithFailedRequests(Aws::Vector<FailedCreateWorkspaceRequest>&& value) { SetFailedRequests(std::move(value)); return *this;}
 
     /**
      * <p>An array of structures that represent the WorkSpaces that could not be
@@ -87,7 +88,7 @@ namespace Model
      * <p>An array of structures that represent the WorkSpaces that could not be
      * created.</p>
      */
-    inline CreateWorkspacesResult& AddFailedRequests(FailedCreateWorkspaceRequest&& value) { m_failedRequests.push_back(value); return *this; }
+    inline CreateWorkspacesResult& AddFailedRequests(FailedCreateWorkspaceRequest&& value) { m_failedRequests.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of structures that represent the WorkSpaces that were created.</p>
@@ -114,7 +115,7 @@ namespace Model
      * <a>DescribeWorkspaces</a> with this identifier, no information will be
      * returned.</p>
      */
-    inline void SetPendingRequests(Aws::Vector<Workspace>&& value) { m_pendingRequests = value; }
+    inline void SetPendingRequests(Aws::Vector<Workspace>&& value) { m_pendingRequests = std::move(value); }
 
     /**
      * <p>An array of structures that represent the WorkSpaces that were created.</p>
@@ -132,7 +133,7 @@ namespace Model
      * <a>DescribeWorkspaces</a> with this identifier, no information will be
      * returned.</p>
      */
-    inline CreateWorkspacesResult& WithPendingRequests(Aws::Vector<Workspace>&& value) { SetPendingRequests(value); return *this;}
+    inline CreateWorkspacesResult& WithPendingRequests(Aws::Vector<Workspace>&& value) { SetPendingRequests(std::move(value)); return *this;}
 
     /**
      * <p>An array of structures that represent the WorkSpaces that were created.</p>
@@ -150,7 +151,7 @@ namespace Model
      * <a>DescribeWorkspaces</a> with this identifier, no information will be
      * returned.</p>
      */
-    inline CreateWorkspacesResult& AddPendingRequests(Workspace&& value) { m_pendingRequests.push_back(value); return *this; }
+    inline CreateWorkspacesResult& AddPendingRequests(Workspace&& value) { m_pendingRequests.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<FailedCreateWorkspaceRequest> m_failedRequests;

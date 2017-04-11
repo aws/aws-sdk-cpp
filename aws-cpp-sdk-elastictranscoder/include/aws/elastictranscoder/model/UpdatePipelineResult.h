@@ -17,6 +17,7 @@
 #include <aws/elastictranscoder/model/Pipeline.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elastictranscoder/model/Warning.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
      */
-    inline void SetPipeline(Pipeline&& value) { m_pipeline = value; }
+    inline void SetPipeline(Pipeline&& value) { m_pipeline = std::move(value); }
 
     /**
      * <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
      */
-    inline UpdatePipelineResult& WithPipeline(Pipeline&& value) { SetPipeline(value); return *this;}
+    inline UpdatePipelineResult& WithPipeline(Pipeline&& value) { SetPipeline(std::move(value)); return *this;}
 
     /**
      * <p>Elastic Transcoder returns a warning if the resources used by your pipeline
@@ -94,7 +95,7 @@ namespace Model
      * region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS
      * KMS key, reduces processing time and prevents cross-regional charges.</p>
      */
-    inline void SetWarnings(Aws::Vector<Warning>&& value) { m_warnings = value; }
+    inline void SetWarnings(Aws::Vector<Warning>&& value) { m_warnings = std::move(value); }
 
     /**
      * <p>Elastic Transcoder returns a warning if the resources used by your pipeline
@@ -110,7 +111,7 @@ namespace Model
      * region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS
      * KMS key, reduces processing time and prevents cross-regional charges.</p>
      */
-    inline UpdatePipelineResult& WithWarnings(Aws::Vector<Warning>&& value) { SetWarnings(value); return *this;}
+    inline UpdatePipelineResult& WithWarnings(Aws::Vector<Warning>&& value) { SetWarnings(std::move(value)); return *this;}
 
     /**
      * <p>Elastic Transcoder returns a warning if the resources used by your pipeline
@@ -126,7 +127,7 @@ namespace Model
      * region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS
      * KMS key, reduces processing time and prevents cross-regional charges.</p>
      */
-    inline UpdatePipelineResult& AddWarnings(Warning&& value) { m_warnings.push_back(value); return *this; }
+    inline UpdatePipelineResult& AddWarnings(Warning&& value) { m_warnings.push_back(std::move(value)); return *this; }
 
   private:
     Pipeline m_pipeline;

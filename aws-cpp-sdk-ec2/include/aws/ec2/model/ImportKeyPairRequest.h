@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>A unique name for the key pair.</p>
      */
-    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
+    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
 
     /**
      * <p>A unique name for the key pair.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>A unique name for the key pair.</p>
      */
-    inline ImportKeyPairRequest& WithKeyName(Aws::String&& value) { SetKeyName(value); return *this;}
+    inline ImportKeyPairRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
 
     /**
      * <p>A unique name for the key pair.</p>
@@ -116,7 +117,7 @@ namespace Model
      * <p>The public key. For API calls, the text must be base64-encoded. For command
      * line tools, base64 encoding is performed for you.</p>
      */
-    inline void SetPublicKeyMaterial(Aws::Utils::ByteBuffer&& value) { m_publicKeyMaterialHasBeenSet = true; m_publicKeyMaterial = value; }
+    inline void SetPublicKeyMaterial(Aws::Utils::ByteBuffer&& value) { m_publicKeyMaterialHasBeenSet = true; m_publicKeyMaterial = std::move(value); }
 
     /**
      * <p>The public key. For API calls, the text must be base64-encoded. For command
@@ -128,7 +129,7 @@ namespace Model
      * <p>The public key. For API calls, the text must be base64-encoded. For command
      * line tools, base64 encoding is performed for you.</p>
      */
-    inline ImportKeyPairRequest& WithPublicKeyMaterial(Aws::Utils::ByteBuffer&& value) { SetPublicKeyMaterial(value); return *this;}
+    inline ImportKeyPairRequest& WithPublicKeyMaterial(Aws::Utils::ByteBuffer&& value) { SetPublicKeyMaterial(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

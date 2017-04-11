@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/InventoryS3BucketDestination.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * Contains the bucket name, file format, bucket owner (optional), and prefix
      * (optional) where inventory results are published.
      */
-    inline void SetS3BucketDestination(InventoryS3BucketDestination&& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = value; }
+    inline void SetS3BucketDestination(InventoryS3BucketDestination&& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = std::move(value); }
 
     /**
      * Contains the bucket name, file format, bucket owner (optional), and prefix
@@ -67,7 +68,7 @@ namespace Model
      * Contains the bucket name, file format, bucket owner (optional), and prefix
      * (optional) where inventory results are published.
      */
-    inline InventoryDestination& WithS3BucketDestination(InventoryS3BucketDestination&& value) { SetS3BucketDestination(value); return *this;}
+    inline InventoryDestination& WithS3BucketDestination(InventoryS3BucketDestination&& value) { SetS3BucketDestination(std::move(value)); return *this;}
 
   private:
     InventoryS3BucketDestination m_s3BucketDestination;

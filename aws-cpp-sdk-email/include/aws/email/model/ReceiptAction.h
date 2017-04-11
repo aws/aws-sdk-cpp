@@ -22,6 +22,7 @@
 #include <aws/email/model/StopAction.h>
 #include <aws/email/model/AddHeaderAction.h>
 #include <aws/email/model/SNSAction.h>
+#include <utility>
 
 namespace Aws
 {
@@ -73,7 +74,7 @@ namespace Model
      * <p>Saves the received message to an Amazon Simple Storage Service (Amazon S3)
      * bucket and, optionally, publishes a notification to Amazon SNS.</p>
      */
-    inline void SetS3Action(S3Action&& value) { m_s3ActionHasBeenSet = true; m_s3Action = value; }
+    inline void SetS3Action(S3Action&& value) { m_s3ActionHasBeenSet = true; m_s3Action = std::move(value); }
 
     /**
      * <p>Saves the received message to an Amazon Simple Storage Service (Amazon S3)
@@ -85,7 +86,7 @@ namespace Model
      * <p>Saves the received message to an Amazon Simple Storage Service (Amazon S3)
      * bucket and, optionally, publishes a notification to Amazon SNS.</p>
      */
-    inline ReceiptAction& WithS3Action(S3Action&& value) { SetS3Action(value); return *this;}
+    inline ReceiptAction& WithS3Action(S3Action&& value) { SetS3Action(std::move(value)); return *this;}
 
     /**
      * <p>Rejects the received email by returning a bounce response to the sender and,
@@ -106,7 +107,7 @@ namespace Model
      * optionally, publishes a notification to Amazon Simple Notification Service
      * (Amazon SNS).</p>
      */
-    inline void SetBounceAction(BounceAction&& value) { m_bounceActionHasBeenSet = true; m_bounceAction = value; }
+    inline void SetBounceAction(BounceAction&& value) { m_bounceActionHasBeenSet = true; m_bounceAction = std::move(value); }
 
     /**
      * <p>Rejects the received email by returning a bounce response to the sender and,
@@ -120,7 +121,7 @@ namespace Model
      * optionally, publishes a notification to Amazon Simple Notification Service
      * (Amazon SNS).</p>
      */
-    inline ReceiptAction& WithBounceAction(BounceAction&& value) { SetBounceAction(value); return *this;}
+    inline ReceiptAction& WithBounceAction(BounceAction&& value) { SetBounceAction(std::move(value)); return *this;}
 
     /**
      * <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon
@@ -138,7 +139,7 @@ namespace Model
      * <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon
      * SNS.</p>
      */
-    inline void SetWorkmailAction(WorkmailAction&& value) { m_workmailActionHasBeenSet = true; m_workmailAction = value; }
+    inline void SetWorkmailAction(WorkmailAction&& value) { m_workmailActionHasBeenSet = true; m_workmailAction = std::move(value); }
 
     /**
      * <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon
@@ -150,7 +151,7 @@ namespace Model
      * <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon
      * SNS.</p>
      */
-    inline ReceiptAction& WithWorkmailAction(WorkmailAction&& value) { SetWorkmailAction(value); return *this;}
+    inline ReceiptAction& WithWorkmailAction(WorkmailAction&& value) { SetWorkmailAction(std::move(value)); return *this;}
 
     /**
      * <p>Calls an AWS Lambda function, and optionally, publishes a notification to
@@ -168,7 +169,7 @@ namespace Model
      * <p>Calls an AWS Lambda function, and optionally, publishes a notification to
      * Amazon SNS.</p>
      */
-    inline void SetLambdaAction(LambdaAction&& value) { m_lambdaActionHasBeenSet = true; m_lambdaAction = value; }
+    inline void SetLambdaAction(LambdaAction&& value) { m_lambdaActionHasBeenSet = true; m_lambdaAction = std::move(value); }
 
     /**
      * <p>Calls an AWS Lambda function, and optionally, publishes a notification to
@@ -180,7 +181,7 @@ namespace Model
      * <p>Calls an AWS Lambda function, and optionally, publishes a notification to
      * Amazon SNS.</p>
      */
-    inline ReceiptAction& WithLambdaAction(LambdaAction&& value) { SetLambdaAction(value); return *this;}
+    inline ReceiptAction& WithLambdaAction(LambdaAction&& value) { SetLambdaAction(std::move(value)); return *this;}
 
     /**
      * <p>Terminates the evaluation of the receipt rule set and optionally publishes a
@@ -198,7 +199,7 @@ namespace Model
      * <p>Terminates the evaluation of the receipt rule set and optionally publishes a
      * notification to Amazon SNS.</p>
      */
-    inline void SetStopAction(StopAction&& value) { m_stopActionHasBeenSet = true; m_stopAction = value; }
+    inline void SetStopAction(StopAction&& value) { m_stopActionHasBeenSet = true; m_stopAction = std::move(value); }
 
     /**
      * <p>Terminates the evaluation of the receipt rule set and optionally publishes a
@@ -210,7 +211,7 @@ namespace Model
      * <p>Terminates the evaluation of the receipt rule set and optionally publishes a
      * notification to Amazon SNS.</p>
      */
-    inline ReceiptAction& WithStopAction(StopAction&& value) { SetStopAction(value); return *this;}
+    inline ReceiptAction& WithStopAction(StopAction&& value) { SetStopAction(std::move(value)); return *this;}
 
     /**
      * <p>Adds a header to the received email.</p>
@@ -225,7 +226,7 @@ namespace Model
     /**
      * <p>Adds a header to the received email.</p>
      */
-    inline void SetAddHeaderAction(AddHeaderAction&& value) { m_addHeaderActionHasBeenSet = true; m_addHeaderAction = value; }
+    inline void SetAddHeaderAction(AddHeaderAction&& value) { m_addHeaderActionHasBeenSet = true; m_addHeaderAction = std::move(value); }
 
     /**
      * <p>Adds a header to the received email.</p>
@@ -235,7 +236,7 @@ namespace Model
     /**
      * <p>Adds a header to the received email.</p>
      */
-    inline ReceiptAction& WithAddHeaderAction(AddHeaderAction&& value) { SetAddHeaderAction(value); return *this;}
+    inline ReceiptAction& WithAddHeaderAction(AddHeaderAction&& value) { SetAddHeaderAction(std::move(value)); return *this;}
 
     /**
      * <p>Publishes the email content within a notification to Amazon SNS.</p>
@@ -250,7 +251,7 @@ namespace Model
     /**
      * <p>Publishes the email content within a notification to Amazon SNS.</p>
      */
-    inline void SetSNSAction(SNSAction&& value) { m_sNSActionHasBeenSet = true; m_sNSAction = value; }
+    inline void SetSNSAction(SNSAction&& value) { m_sNSActionHasBeenSet = true; m_sNSAction = std::move(value); }
 
     /**
      * <p>Publishes the email content within a notification to Amazon SNS.</p>
@@ -260,7 +261,7 @@ namespace Model
     /**
      * <p>Publishes the email content within a notification to Amazon SNS.</p>
      */
-    inline ReceiptAction& WithSNSAction(SNSAction&& value) { SetSNSAction(value); return *this;}
+    inline ReceiptAction& WithSNSAction(SNSAction&& value) { SetSNSAction(std::move(value)); return *this;}
 
   private:
     S3Action m_s3Action;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The unique identifier of the record in the stream.</p>
      */
-    inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = value; }
+    inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = std::move(value); }
 
     /**
      * <p>The unique identifier of the record in the stream.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The unique identifier of the record in the stream.</p>
      */
-    inline Record& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(value); return *this;}
+    inline Record& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the record in the stream.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The approximate time that the record was inserted into the stream.</p>
      */
-    inline void SetApproximateArrivalTimestamp(Aws::Utils::DateTime&& value) { m_approximateArrivalTimestampHasBeenSet = true; m_approximateArrivalTimestamp = value; }
+    inline void SetApproximateArrivalTimestamp(Aws::Utils::DateTime&& value) { m_approximateArrivalTimestampHasBeenSet = true; m_approximateArrivalTimestamp = std::move(value); }
 
     /**
      * <p>The approximate time that the record was inserted into the stream.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The approximate time that the record was inserted into the stream.</p>
      */
-    inline Record& WithApproximateArrivalTimestamp(Aws::Utils::DateTime&& value) { SetApproximateArrivalTimestamp(value); return *this;}
+    inline Record& WithApproximateArrivalTimestamp(Aws::Utils::DateTime&& value) { SetApproximateArrivalTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The data blob. The data in the blob is both opaque and immutable to the
@@ -131,7 +132,7 @@ namespace Model
      * added to the partition key size, the total size must not exceed the maximum
      * record size (1 MB).</p>
      */
-    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = value; }
+    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
      * <p>The data blob. The data in the blob is both opaque and immutable to the
@@ -149,7 +150,7 @@ namespace Model
      * added to the partition key size, the total size must not exceed the maximum
      * record size (1 MB).</p>
      */
-    inline Record& WithData(Aws::Utils::ByteBuffer&& value) { SetData(value); return *this;}
+    inline Record& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
 
     /**
      * <p>Identifies which shard in the stream the data record is assigned to.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>Identifies which shard in the stream the data record is assigned to.</p>
      */
-    inline void SetPartitionKey(Aws::String&& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = value; }
+    inline void SetPartitionKey(Aws::String&& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = std::move(value); }
 
     /**
      * <p>Identifies which shard in the stream the data record is assigned to.</p>
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p>Identifies which shard in the stream the data record is assigned to.</p>
      */
-    inline Record& WithPartitionKey(Aws::String&& value) { SetPartitionKey(value); return *this;}
+    inline Record& WithPartitionKey(Aws::String&& value) { SetPartitionKey(std::move(value)); return *this;}
 
     /**
      * <p>Identifies which shard in the stream the data record is assigned to.</p>

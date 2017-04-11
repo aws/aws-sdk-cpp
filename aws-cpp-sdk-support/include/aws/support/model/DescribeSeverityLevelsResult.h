@@ -16,6 +16,7 @@
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/support/model/SeverityLevel.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The available severity levels for the support case. Available severity levels
      * are defined by your service level agreement with AWS.</p>
      */
-    inline void SetSeverityLevels(Aws::Vector<SeverityLevel>&& value) { m_severityLevels = value; }
+    inline void SetSeverityLevels(Aws::Vector<SeverityLevel>&& value) { m_severityLevels = std::move(value); }
 
     /**
      * <p>The available severity levels for the support case. Available severity levels
@@ -74,7 +75,7 @@ namespace Model
      * <p>The available severity levels for the support case. Available severity levels
      * are defined by your service level agreement with AWS.</p>
      */
-    inline DescribeSeverityLevelsResult& WithSeverityLevels(Aws::Vector<SeverityLevel>&& value) { SetSeverityLevels(value); return *this;}
+    inline DescribeSeverityLevelsResult& WithSeverityLevels(Aws::Vector<SeverityLevel>&& value) { SetSeverityLevels(std::move(value)); return *this;}
 
     /**
      * <p>The available severity levels for the support case. Available severity levels
@@ -86,7 +87,7 @@ namespace Model
      * <p>The available severity levels for the support case. Available severity levels
      * are defined by your service level agreement with AWS.</p>
      */
-    inline DescribeSeverityLevelsResult& AddSeverityLevels(SeverityLevel&& value) { m_severityLevels.push_back(value); return *this; }
+    inline DescribeSeverityLevelsResult& AddSeverityLevels(SeverityLevel&& value) { m_severityLevels.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<SeverityLevel> m_severityLevels;

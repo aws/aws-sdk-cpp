@@ -17,6 +17,7 @@
 #include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
      * successfully call this API, you must own the identity.</p>
      */
-    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = value; }
+    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
 
     /**
      * <p>The identity for which the policies will be retrieved. You can specify an
@@ -97,7 +98,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
      * successfully call this API, you must own the identity.</p>
      */
-    inline GetIdentityPoliciesRequest& WithIdentity(Aws::String&& value) { SetIdentity(value); return *this;}
+    inline GetIdentityPoliciesRequest& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
 
     /**
      * <p>The identity for which the policies will be retrieved. You can specify an
@@ -127,7 +128,7 @@ namespace Model
      * of 20 policies at a time. If you do not know the names of the policies that are
      * attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
      */
-    inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
+    inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = std::move(value); }
 
     /**
      * <p>A list of the names of policies to be retrieved. You can retrieve a maximum
@@ -141,7 +142,7 @@ namespace Model
      * of 20 policies at a time. If you do not know the names of the policies that are
      * attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
      */
-    inline GetIdentityPoliciesRequest& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(value); return *this;}
+    inline GetIdentityPoliciesRequest& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of the names of policies to be retrieved. You can retrieve a maximum
@@ -155,7 +156,7 @@ namespace Model
      * of 20 policies at a time. If you do not know the names of the policies that are
      * attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
      */
-    inline GetIdentityPoliciesRequest& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
+    inline GetIdentityPoliciesRequest& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of the names of policies to be retrieved. You can retrieve a maximum

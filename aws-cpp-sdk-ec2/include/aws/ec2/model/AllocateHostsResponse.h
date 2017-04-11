@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The ID of the allocated Dedicated Host. This is used when you want to launch
      * an instance onto a specific host.</p>
      */
-    inline void SetHostIds(Aws::Vector<Aws::String>&& value) { m_hostIds = value; }
+    inline void SetHostIds(Aws::Vector<Aws::String>&& value) { m_hostIds = std::move(value); }
 
     /**
      * <p>The ID of the allocated Dedicated Host. This is used when you want to launch
@@ -74,7 +75,7 @@ namespace Model
      * <p>The ID of the allocated Dedicated Host. This is used when you want to launch
      * an instance onto a specific host.</p>
      */
-    inline AllocateHostsResponse& WithHostIds(Aws::Vector<Aws::String>&& value) { SetHostIds(value); return *this;}
+    inline AllocateHostsResponse& WithHostIds(Aws::Vector<Aws::String>&& value) { SetHostIds(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the allocated Dedicated Host. This is used when you want to launch
@@ -86,7 +87,7 @@ namespace Model
      * <p>The ID of the allocated Dedicated Host. This is used when you want to launch
      * an instance onto a specific host.</p>
      */
-    inline AllocateHostsResponse& AddHostIds(Aws::String&& value) { m_hostIds.push_back(value); return *this; }
+    inline AllocateHostsResponse& AddHostIds(Aws::String&& value) { m_hostIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ID of the allocated Dedicated Host. This is used when you want to launch
@@ -101,13 +102,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline AllocateHostsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline AllocateHostsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline AllocateHostsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_hostIds;

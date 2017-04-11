@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/waf/model/IPSetDescriptor.h>
+#include <utility>
 
 namespace Aws
 {
@@ -86,7 +87,7 @@ namespace Model
      * AWS WAF (see <a>DeleteIPSet</a>).</p> <p> <code>IPSetId</code> is returned by
      * <a>CreateIPSet</a> and by <a>ListIPSets</a>.</p>
      */
-    inline void SetIPSetId(Aws::String&& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = value; }
+    inline void SetIPSetId(Aws::String&& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = std::move(value); }
 
     /**
      * <p>The <code>IPSetId</code> for an <code>IPSet</code>. You use
@@ -119,7 +120,7 @@ namespace Model
      * AWS WAF (see <a>DeleteIPSet</a>).</p> <p> <code>IPSetId</code> is returned by
      * <a>CreateIPSet</a> and by <a>ListIPSets</a>.</p>
      */
-    inline IPSet& WithIPSetId(Aws::String&& value) { SetIPSetId(value); return *this;}
+    inline IPSet& WithIPSetId(Aws::String&& value) { SetIPSetId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>IPSetId</code> for an <code>IPSet</code>. You use
@@ -148,7 +149,7 @@ namespace Model
      * <p>A friendly name or description of the <a>IPSet</a>. You can't change the name
      * of an <code>IPSet</code> after you create it.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>A friendly name or description of the <a>IPSet</a>. You can't change the name
@@ -166,7 +167,7 @@ namespace Model
      * <p>A friendly name or description of the <a>IPSet</a>. You can't change the name
      * of an <code>IPSet</code> after you create it.</p>
      */
-    inline IPSet& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline IPSet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A friendly name or description of the <a>IPSet</a>. You can't change the name
@@ -208,7 +209,7 @@ namespace Model
      * the viewer did use an HTTP proxy or a load balancer to send the request</p>
      * </li> </ul>
      */
-    inline void SetIPSetDescriptors(Aws::Vector<IPSetDescriptor>&& value) { m_iPSetDescriptorsHasBeenSet = true; m_iPSetDescriptors = value; }
+    inline void SetIPSetDescriptors(Aws::Vector<IPSetDescriptor>&& value) { m_iPSetDescriptorsHasBeenSet = true; m_iPSetDescriptors = std::move(value); }
 
     /**
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
@@ -232,7 +233,7 @@ namespace Model
      * the viewer did use an HTTP proxy or a load balancer to send the request</p>
      * </li> </ul>
      */
-    inline IPSet& WithIPSetDescriptors(Aws::Vector<IPSetDescriptor>&& value) { SetIPSetDescriptors(value); return *this;}
+    inline IPSet& WithIPSetDescriptors(Aws::Vector<IPSetDescriptor>&& value) { SetIPSetDescriptors(std::move(value)); return *this;}
 
     /**
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
@@ -256,7 +257,7 @@ namespace Model
      * the viewer did use an HTTP proxy or a load balancer to send the request</p>
      * </li> </ul>
      */
-    inline IPSet& AddIPSetDescriptors(IPSetDescriptor&& value) { m_iPSetDescriptorsHasBeenSet = true; m_iPSetDescriptors.push_back(value); return *this; }
+    inline IPSet& AddIPSetDescriptors(IPSetDescriptor&& value) { m_iPSetDescriptorsHasBeenSet = true; m_iPSetDescriptors.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_iPSetId;

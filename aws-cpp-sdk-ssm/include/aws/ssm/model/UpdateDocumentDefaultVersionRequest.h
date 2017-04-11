@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The name of a custom document that you want to set as the default
      * version.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of a custom document that you want to set as the default
@@ -69,7 +70,7 @@ namespace Model
      * <p>The name of a custom document that you want to set as the default
      * version.</p>
      */
-    inline UpdateDocumentDefaultVersionRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateDocumentDefaultVersionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a custom document that you want to set as the default
@@ -93,7 +94,7 @@ namespace Model
      * <p>The version of a custom document that you want to set as the default
      * version.</p>
      */
-    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
      * <p>The version of a custom document that you want to set as the default
@@ -111,7 +112,7 @@ namespace Model
      * <p>The version of a custom document that you want to set as the default
      * version.</p>
      */
-    inline UpdateDocumentDefaultVersionRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(value); return *this;}
+    inline UpdateDocumentDefaultVersionRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of a custom document that you want to set as the default

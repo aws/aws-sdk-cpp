@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elastictranscoder/model/Artwork.h>
+#include <utility>
 
 namespace Aws
 {
@@ -83,7 +84,7 @@ namespace Model
      * artwork for the output. If the original input does not contain artwork, Elastic
      * Transcoder uses the specified album art file.</p> </li> </ul>
      */
-    inline void SetMergePolicy(Aws::String&& value) { m_mergePolicyHasBeenSet = true; m_mergePolicy = value; }
+    inline void SetMergePolicy(Aws::String&& value) { m_mergePolicyHasBeenSet = true; m_mergePolicy = std::move(value); }
 
     /**
      * <p>A policy that determines how Elastic Transcoder handles the existence of
@@ -122,7 +123,7 @@ namespace Model
      * artwork for the output. If the original input does not contain artwork, Elastic
      * Transcoder uses the specified album art file.</p> </li> </ul>
      */
-    inline JobAlbumArt& WithMergePolicy(Aws::String&& value) { SetMergePolicy(value); return *this;}
+    inline JobAlbumArt& WithMergePolicy(Aws::String&& value) { SetMergePolicy(std::move(value)); return *this;}
 
     /**
      * <p>A policy that determines how Elastic Transcoder handles the existence of
@@ -156,7 +157,7 @@ namespace Model
      * with an audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and
      * <code>.png</code> </p>
      */
-    inline void SetArtwork(Aws::Vector<Artwork>&& value) { m_artworkHasBeenSet = true; m_artwork = value; }
+    inline void SetArtwork(Aws::Vector<Artwork>&& value) { m_artworkHasBeenSet = true; m_artwork = std::move(value); }
 
     /**
      * <p>The file to be used as album art. There can be multiple artworks associated
@@ -170,7 +171,7 @@ namespace Model
      * with an audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and
      * <code>.png</code> </p>
      */
-    inline JobAlbumArt& WithArtwork(Aws::Vector<Artwork>&& value) { SetArtwork(value); return *this;}
+    inline JobAlbumArt& WithArtwork(Aws::Vector<Artwork>&& value) { SetArtwork(std::move(value)); return *this;}
 
     /**
      * <p>The file to be used as album art. There can be multiple artworks associated
@@ -184,7 +185,7 @@ namespace Model
      * with an audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and
      * <code>.png</code> </p>
      */
-    inline JobAlbumArt& AddArtwork(Artwork&& value) { m_artworkHasBeenSet = true; m_artwork.push_back(value); return *this; }
+    inline JobAlbumArt& AddArtwork(Artwork&& value) { m_artworkHasBeenSet = true; m_artwork.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_mergePolicy;

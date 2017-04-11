@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the TargetARN
      * for specified VolumeARN.</p>
      */
-    inline void SetTargetARN(Aws::String&& value) { m_targetARNHasBeenSet = true; m_targetARN = value; }
+    inline void SetTargetARN(Aws::String&& value) { m_targetARNHasBeenSet = true; m_targetARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
@@ -79,7 +80,7 @@ namespace Model
      * <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the TargetARN
      * for specified VolumeARN.</p>
      */
-    inline DescribeChapCredentialsRequest& WithTargetARN(Aws::String&& value) { SetTargetARN(value); return *this;}
+    inline DescribeChapCredentialsRequest& WithTargetARN(Aws::String&& value) { SetTargetARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the

@@ -16,6 +16,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/cloudsearch/CloudSearchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The name of the domain you want to permanently delete.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The name of the domain you want to permanently delete.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The name of the domain you want to permanently delete.</p>
      */
-    inline DeleteDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DeleteDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain you want to permanently delete.</p>

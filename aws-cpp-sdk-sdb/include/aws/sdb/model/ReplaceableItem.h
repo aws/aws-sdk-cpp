@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sdb/model/ReplaceableAttribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * The name of the replaceable item.
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * The name of the replaceable item.
@@ -76,7 +77,7 @@ namespace Model
     /**
      * The name of the replaceable item.
      */
-    inline ReplaceableItem& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ReplaceableItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * The name of the replaceable item.
@@ -96,7 +97,7 @@ namespace Model
     /**
      * The list of attributes for a replaceable item.
      */
-    inline void SetAttributes(Aws::Vector<ReplaceableAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Vector<ReplaceableAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * The list of attributes for a replaceable item.
@@ -106,7 +107,7 @@ namespace Model
     /**
      * The list of attributes for a replaceable item.
      */
-    inline ReplaceableItem& WithAttributes(Aws::Vector<ReplaceableAttribute>&& value) { SetAttributes(value); return *this;}
+    inline ReplaceableItem& WithAttributes(Aws::Vector<ReplaceableAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * The list of attributes for a replaceable item.
@@ -116,7 +117,7 @@ namespace Model
     /**
      * The list of attributes for a replaceable item.
      */
-    inline ReplaceableItem& AddAttributes(ReplaceableAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+    inline ReplaceableItem& AddAttributes(ReplaceableAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_name;

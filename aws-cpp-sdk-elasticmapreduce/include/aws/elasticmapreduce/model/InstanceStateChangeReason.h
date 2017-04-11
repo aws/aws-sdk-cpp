@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/InstanceStateChangeReasonCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The programmable code for the state change reason.</p>
      */
-    inline void SetCode(InstanceStateChangeReasonCode&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(InstanceStateChangeReasonCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>The programmable code for the state change reason.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The programmable code for the state change reason.</p>
      */
-    inline InstanceStateChangeReason& WithCode(InstanceStateChangeReasonCode&& value) { SetCode(value); return *this;}
+    inline InstanceStateChangeReason& WithCode(InstanceStateChangeReasonCode&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>The status change reason description.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The status change reason description.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The status change reason description.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The status change reason description.</p>
      */
-    inline InstanceStateChangeReason& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline InstanceStateChangeReason& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The status change reason description.</p>

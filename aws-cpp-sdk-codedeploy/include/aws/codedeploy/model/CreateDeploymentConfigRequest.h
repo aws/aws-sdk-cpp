@@ -17,6 +17,7 @@
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codedeploy/model/MinimumHealthyHosts.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of the deployment configuration to create.</p>
      */
-    inline void SetDeploymentConfigName(Aws::String&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
+    inline void SetDeploymentConfigName(Aws::String&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = std::move(value); }
 
     /**
      * <p>The name of the deployment configuration to create.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the deployment configuration to create.</p>
      */
-    inline CreateDeploymentConfigRequest& WithDeploymentConfigName(Aws::String&& value) { SetDeploymentConfigName(value); return *this;}
+    inline CreateDeploymentConfigRequest& WithDeploymentConfigName(Aws::String&& value) { SetDeploymentConfigName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the deployment configuration to create.</p>
@@ -121,7 +122,7 @@ namespace Model
      * minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of
      * 95.</p>
      */
-    inline void SetMinimumHealthyHosts(MinimumHealthyHosts&& value) { m_minimumHealthyHostsHasBeenSet = true; m_minimumHealthyHosts = value; }
+    inline void SetMinimumHealthyHosts(MinimumHealthyHosts&& value) { m_minimumHealthyHostsHasBeenSet = true; m_minimumHealthyHosts = std::move(value); }
 
     /**
      * <p>The minimum number of healthy instances that should be available at any time
@@ -153,7 +154,7 @@ namespace Model
      * minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of
      * 95.</p>
      */
-    inline CreateDeploymentConfigRequest& WithMinimumHealthyHosts(MinimumHealthyHosts&& value) { SetMinimumHealthyHosts(value); return *this;}
+    inline CreateDeploymentConfigRequest& WithMinimumHealthyHosts(MinimumHealthyHosts&& value) { SetMinimumHealthyHosts(std::move(value)); return *this;}
 
   private:
     Aws::String m_deploymentConfigName;

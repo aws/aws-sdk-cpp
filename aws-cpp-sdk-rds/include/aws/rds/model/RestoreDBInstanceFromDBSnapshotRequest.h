@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
      */
-    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
+    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
@@ -100,7 +101,7 @@ namespace Model
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
      */
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(value); return *this;}
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
@@ -140,7 +141,7 @@ namespace Model
      * restoring from a shared manual DB snapshot, the
      * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
      */
-    inline void SetDBSnapshotIdentifier(Aws::String&& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
+    inline void SetDBSnapshotIdentifier(Aws::String&& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = std::move(value); }
 
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
@@ -170,7 +171,7 @@ namespace Model
      * restoring from a shared manual DB snapshot, the
      * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
      */
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithDBSnapshotIdentifier(Aws::String&& value) { SetDBSnapshotIdentifier(value); return *this;}
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDBSnapshotIdentifier(Aws::String&& value) { SetDBSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
@@ -213,7 +214,7 @@ namespace Model
      * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
      * db.t2.large</code> </p>
      */
-    inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
+    inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
@@ -246,7 +247,7 @@ namespace Model
      * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
      * db.t2.large</code> </p>
      */
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(value); return *this;}
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
@@ -302,7 +303,7 @@ namespace Model
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * <code>true</code>.</p> <p>Example: <code>us-east-1a</code> </p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The EC2 Availability Zone that the database instance will be created in.</p>
@@ -326,7 +327,7 @@ namespace Model
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * <code>true</code>.</p> <p>Example: <code>us-east-1a</code> </p>
      */
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The EC2 Availability Zone that the database instance will be created in.</p>
@@ -358,7 +359,7 @@ namespace Model
      * spaces, or hyphens. Must not be default.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
-    inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
+    inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
@@ -382,7 +383,7 @@ namespace Model
      * spaces, or hyphens. Must not be default.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(value); return *this;}
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
@@ -498,7 +499,7 @@ namespace Model
      * as source.</p> <p> Valid values: <code>license-included</code> |
      * <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
      */
-    inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
+    inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>Default: Same
@@ -519,7 +520,7 @@ namespace Model
      * as source.</p> <p> Valid values: <code>license-included</code> |
      * <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
      */
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(value); return *this;}
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>Default: Same
@@ -544,7 +545,7 @@ namespace Model
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
      * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
      */
-    inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
+    inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
@@ -562,7 +563,7 @@ namespace Model
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
      * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
      */
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithDBName(Aws::String&& value) { SetDBName(value); return *this;}
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
@@ -601,7 +602,7 @@ namespace Model
      * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
      * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code> </p>
      */
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
@@ -634,7 +635,7 @@ namespace Model
      * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
      * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code> </p>
      */
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
@@ -705,7 +706,7 @@ namespace Model
      * cannot be removed from an option group, and that option group cannot be removed
      * from a DB instance once it is associated with a DB instance</p>
      */
-    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
+    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
      * <p>The name of the option group to be used for the restored DB instance.</p>
@@ -729,7 +730,7 @@ namespace Model
      * cannot be removed from an option group, and that option group cannot be removed
      * from a DB instance once it is associated with a DB instance</p>
      */
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the option group to be used for the restored DB instance.</p>
@@ -746,19 +747,19 @@ namespace Model
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     
     inline RestoreDBInstanceFromDBSnapshotRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     
     inline RestoreDBInstanceFromDBSnapshotRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     
-    inline RestoreDBInstanceFromDBSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline RestoreDBInstanceFromDBSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
@@ -785,7 +786,7 @@ namespace Model
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified; otherwise <code>standard</code> </p>
      */
-    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
@@ -812,7 +813,7 @@ namespace Model
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified; otherwise <code>standard</code> </p>
      */
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithStorageType(Aws::String&& value) { SetStorageType(value); return *this;}
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
@@ -839,7 +840,7 @@ namespace Model
      * <p>The ARN from the Key Store with which to associate the instance for TDE
      * encryption.</p>
      */
-    inline void SetTdeCredentialArn(Aws::String&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
+    inline void SetTdeCredentialArn(Aws::String&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = std::move(value); }
 
     /**
      * <p>The ARN from the Key Store with which to associate the instance for TDE
@@ -857,7 +858,7 @@ namespace Model
      * <p>The ARN from the Key Store with which to associate the instance for TDE
      * encryption.</p>
      */
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithTdeCredentialArn(Aws::String&& value) { SetTdeCredentialArn(value); return *this;}
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithTdeCredentialArn(Aws::String&& value) { SetTdeCredentialArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN from the Key Store with which to associate the instance for TDE
@@ -881,7 +882,7 @@ namespace Model
      * <p>The password for the given ARN from the Key Store in order to access the
      * device.</p>
      */
-    inline void SetTdeCredentialPassword(Aws::String&& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = value; }
+    inline void SetTdeCredentialPassword(Aws::String&& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = std::move(value); }
 
     /**
      * <p>The password for the given ARN from the Key Store in order to access the
@@ -899,7 +900,7 @@ namespace Model
      * <p>The password for the given ARN from the Key Store in order to access the
      * device.</p>
      */
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithTdeCredentialPassword(Aws::String&& value) { SetTdeCredentialPassword(value); return *this;}
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithTdeCredentialPassword(Aws::String&& value) { SetTdeCredentialPassword(std::move(value)); return *this;}
 
     /**
      * <p>The password for the given ARN from the Key Store in order to access the
@@ -920,7 +921,7 @@ namespace Model
     /**
      * <p>Specify the Active Directory Domain to restore the instance in.</p>
      */
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>Specify the Active Directory Domain to restore the instance in.</p>
@@ -935,7 +936,7 @@ namespace Model
     /**
      * <p>Specify the Active Directory Domain to restore the instance in.</p>
      */
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>Specify the Active Directory Domain to restore the instance in.</p>
@@ -976,7 +977,7 @@ namespace Model
      * <p>Specify the name of the IAM role to be used when making API calls to the
      * Directory Service.</p>
      */
-    inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
+    inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::move(value); }
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
@@ -994,7 +995,7 @@ namespace Model
      * <p>Specify the name of the IAM role to be used when making API calls to the
      * Directory Service.</p>
      */
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(value); return *this;}
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(std::move(value)); return *this;}
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the

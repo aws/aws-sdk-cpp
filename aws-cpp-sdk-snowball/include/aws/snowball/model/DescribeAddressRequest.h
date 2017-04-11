@@ -16,6 +16,7 @@
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/SnowballRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The automatically generated ID for a specific address.</p>
      */
-    inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = value; }
+    inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = std::move(value); }
 
     /**
      * <p>The automatically generated ID for a specific address.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The automatically generated ID for a specific address.</p>
      */
-    inline DescribeAddressRequest& WithAddressId(Aws::String&& value) { SetAddressId(value); return *this;}
+    inline DescribeAddressRequest& WithAddressId(Aws::String&& value) { SetAddressId(std::move(value)); return *this;}
 
     /**
      * <p>The automatically generated ID for a specific address.</p>

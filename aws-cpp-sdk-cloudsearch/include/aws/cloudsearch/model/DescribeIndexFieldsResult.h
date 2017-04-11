@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudsearch/model/ResponseMetadata.h>
 #include <aws/cloudsearch/model/IndexFieldStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The index fields configured for the domain.</p>
      */
-    inline void SetIndexFields(Aws::Vector<IndexFieldStatus>&& value) { m_indexFields = value; }
+    inline void SetIndexFields(Aws::Vector<IndexFieldStatus>&& value) { m_indexFields = std::move(value); }
 
     /**
      * <p>The index fields configured for the domain.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The index fields configured for the domain.</p>
      */
-    inline DescribeIndexFieldsResult& WithIndexFields(Aws::Vector<IndexFieldStatus>&& value) { SetIndexFields(value); return *this;}
+    inline DescribeIndexFieldsResult& WithIndexFields(Aws::Vector<IndexFieldStatus>&& value) { SetIndexFields(std::move(value)); return *this;}
 
     /**
      * <p>The index fields configured for the domain.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>The index fields configured for the domain.</p>
      */
-    inline DescribeIndexFieldsResult& AddIndexFields(IndexFieldStatus&& value) { m_indexFields.push_back(value); return *this; }
+    inline DescribeIndexFieldsResult& AddIndexFields(IndexFieldStatus&& value) { m_indexFields.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -90,13 +91,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeIndexFieldsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeIndexFieldsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeIndexFieldsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<IndexFieldStatus> m_indexFields;

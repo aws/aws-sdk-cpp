@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/waf/model/WafAction.h>
+#include <utility>
 
 namespace Aws
 {
@@ -109,7 +110,7 @@ namespace Model
      * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
+    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
 
     /**
      * <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code>
@@ -142,7 +143,7 @@ namespace Model
      * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
-    inline ActivatedRule& WithRuleId(Aws::String&& value) { SetRuleId(value); return *this;}
+    inline ActivatedRule& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code>
@@ -189,7 +190,7 @@ namespace Model
      * requests that match the conditions in the rule and then continues to inspect the
      * web request based on the remaining rules in the web ACL. </p> </li> </ul>
      */
-    inline void SetAction(WafAction&& value) { m_actionHasBeenSet = true; m_action = value; }
+    inline void SetAction(WafAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
@@ -213,7 +214,7 @@ namespace Model
      * requests that match the conditions in the rule and then continues to inspect the
      * web request based on the remaining rules in the web ACL. </p> </li> </ul>
      */
-    inline ActivatedRule& WithAction(WafAction&& value) { SetAction(value); return *this;}
+    inline ActivatedRule& WithAction(WafAction&& value) { SetAction(std::move(value)); return *this;}
 
   private:
     int m_priority;

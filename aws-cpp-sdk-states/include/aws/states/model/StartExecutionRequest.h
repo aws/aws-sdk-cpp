@@ -16,6 +16,7 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/states/SFNRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
      */
-    inline void SetStateMachineArn(Aws::String&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = value; }
+    inline void SetStateMachineArn(Aws::String&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
      */
-    inline StartExecutionRequest& WithStateMachineArn(Aws::String&& value) { SetStateMachineArn(value); return *this;}
+    inline StartExecutionRequest& WithStateMachineArn(Aws::String&& value) { SetStateMachineArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
@@ -86,7 +87,7 @@ namespace Model
      * <p>The name of the execution. This name must be unique for your AWS account and
      * region.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the execution. This name must be unique for your AWS account and
@@ -104,7 +105,7 @@ namespace Model
      * <p>The name of the execution. This name must be unique for your AWS account and
      * region.</p>
      */
-    inline StartExecutionRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline StartExecutionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the execution. This name must be unique for your AWS account and
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>The JSON input data for the execution.</p>
      */
-    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = value; }
+    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
      * <p>The JSON input data for the execution.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The JSON input data for the execution.</p>
      */
-    inline StartExecutionRequest& WithInput(Aws::String&& value) { SetInput(value); return *this;}
+    inline StartExecutionRequest& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
      * <p>The JSON input data for the execution.</p>

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cognito-idp/model/AttributeType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>The user pool ID for the user pool where you want to update user
      * attributes.</p>
      */
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
+    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
      * <p>The user pool ID for the user pool where you want to update user
@@ -75,7 +76,7 @@ namespace Model
      * <p>The user pool ID for the user pool where you want to update user
      * attributes.</p>
      */
-    inline AdminUpdateUserAttributesRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(value); return *this;}
+    inline AdminUpdateUserAttributesRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
      * <p>The user pool ID for the user pool where you want to update user
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The user name of the user for whom you want to update user attributes.</p>
      */
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
+    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
      * <p>The user name of the user for whom you want to update user attributes.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The user name of the user for whom you want to update user attributes.</p>
      */
-    inline AdminUpdateUserAttributesRequest& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
+    inline AdminUpdateUserAttributesRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
      * <p>The user name of the user for whom you want to update user attributes.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>An array of name-value pairs representing user attributes.</p>
      */
-    inline void SetUserAttributes(Aws::Vector<AttributeType>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = value; }
+    inline void SetUserAttributes(Aws::Vector<AttributeType>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = std::move(value); }
 
     /**
      * <p>An array of name-value pairs representing user attributes.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>An array of name-value pairs representing user attributes.</p>
      */
-    inline AdminUpdateUserAttributesRequest& WithUserAttributes(Aws::Vector<AttributeType>&& value) { SetUserAttributes(value); return *this;}
+    inline AdminUpdateUserAttributesRequest& WithUserAttributes(Aws::Vector<AttributeType>&& value) { SetUserAttributes(std::move(value)); return *this;}
 
     /**
      * <p>An array of name-value pairs representing user attributes.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>An array of name-value pairs representing user attributes.</p>
      */
-    inline AdminUpdateUserAttributesRequest& AddUserAttributes(AttributeType&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(value); return *this; }
+    inline AdminUpdateUserAttributesRequest& AddUserAttributes(AttributeType&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_userPoolId;

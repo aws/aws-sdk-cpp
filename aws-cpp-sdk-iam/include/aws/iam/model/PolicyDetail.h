@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The name of the policy.</p>
      */
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
      * <p>The name of the policy.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The name of the policy.</p>
      */
-    inline PolicyDetail& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
+    inline PolicyDetail& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the policy.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The policy document.</p>
      */
-    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
+    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
 
     /**
      * <p>The policy document.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The policy document.</p>
      */
-    inline PolicyDetail& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
+    inline PolicyDetail& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
 
     /**
      * <p>The policy document.</p>

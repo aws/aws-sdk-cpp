@@ -17,6 +17,7 @@
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier for the new <a>Method</a> resource.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The <a>RestApi</a> identifier for the new <a>Method</a> resource.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier for the new <a>Method</a> resource.</p>
      */
-    inline PutMethodRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline PutMethodRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The <a>RestApi</a> identifier for the new <a>Method</a> resource.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The <a>Resource</a> identifier for the new <a>Method</a> resource.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The <a>Resource</a> identifier for the new <a>Method</a> resource.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The <a>Resource</a> identifier for the new <a>Method</a> resource.</p>
      */
-    inline PutMethodRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline PutMethodRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The <a>Resource</a> identifier for the new <a>Method</a> resource.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>Specifies the method request's HTTP method type.</p>
      */
-    inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
+    inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::move(value); }
 
     /**
      * <p>Specifies the method request's HTTP method type.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>Specifies the method request's HTTP method type.</p>
      */
-    inline PutMethodRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(value); return *this;}
+    inline PutMethodRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the method request's HTTP method type.</p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>Specifies the type of authorization used for the method.</p>
      */
-    inline void SetAuthorizationType(Aws::String&& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = value; }
+    inline void SetAuthorizationType(Aws::String&& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = std::move(value); }
 
     /**
      * <p>Specifies the type of authorization used for the method.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>Specifies the type of authorization used for the method.</p>
      */
-    inline PutMethodRequest& WithAuthorizationType(Aws::String&& value) { SetAuthorizationType(value); return *this;}
+    inline PutMethodRequest& WithAuthorizationType(Aws::String&& value) { SetAuthorizationType(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the type of authorization used for the method.</p>
@@ -194,7 +195,7 @@ namespace Model
      * <p>Specifies the identifier of an <a>Authorizer</a> to use on this Method, if
      * the type is CUSTOM.</p>
      */
-    inline void SetAuthorizerId(Aws::String&& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = value; }
+    inline void SetAuthorizerId(Aws::String&& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = std::move(value); }
 
     /**
      * <p>Specifies the identifier of an <a>Authorizer</a> to use on this Method, if
@@ -212,7 +213,7 @@ namespace Model
      * <p>Specifies the identifier of an <a>Authorizer</a> to use on this Method, if
      * the type is CUSTOM.</p>
      */
-    inline PutMethodRequest& WithAuthorizerId(Aws::String&& value) { SetAuthorizerId(value); return *this;}
+    inline PutMethodRequest& WithAuthorizerId(Aws::String&& value) { SetAuthorizerId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the identifier of an <a>Authorizer</a> to use on this Method, if
@@ -260,7 +261,7 @@ namespace Model
      * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
      * example.</p>
      */
-    inline void SetOperationName(Aws::String&& value) { m_operationNameHasBeenSet = true; m_operationName = value; }
+    inline void SetOperationName(Aws::String&& value) { m_operationNameHasBeenSet = true; m_operationName = std::move(value); }
 
     /**
      * <p>A human-friendly operation identifier for the method. For example, you can
@@ -287,7 +288,7 @@ namespace Model
      * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
      * example.</p>
      */
-    inline PutMethodRequest& WithOperationName(Aws::String&& value) { SetOperationName(value); return *this;}
+    inline PutMethodRequest& WithOperationName(Aws::String&& value) { SetOperationName(std::move(value)); return *this;}
 
     /**
      * <p>A human-friendly operation identifier for the method. For example, you can
@@ -335,7 +336,7 @@ namespace Model
      * method request parameter names defined here are available in <a>Integration</a>
      * to be mapped to integration request parameters or body-mapping templates.</p>
      */
-    inline void SetRequestParameters(Aws::Map<Aws::String, bool>&& value) { m_requestParametersHasBeenSet = true; m_requestParameters = value; }
+    inline void SetRequestParameters(Aws::Map<Aws::String, bool>&& value) { m_requestParametersHasBeenSet = true; m_requestParameters = std::move(value); }
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
@@ -361,7 +362,7 @@ namespace Model
      * method request parameter names defined here are available in <a>Integration</a>
      * to be mapped to integration request parameters or body-mapping templates.</p>
      */
-    inline PutMethodRequest& WithRequestParameters(Aws::Map<Aws::String, bool>&& value) { SetRequestParameters(value); return *this;}
+    inline PutMethodRequest& WithRequestParameters(Aws::Map<Aws::String, bool>&& value) { SetRequestParameters(std::move(value)); return *this;}
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
@@ -374,7 +375,7 @@ namespace Model
      * method request parameter names defined here are available in <a>Integration</a>
      * to be mapped to integration request parameters or body-mapping templates.</p>
      */
-    inline PutMethodRequest& AddRequestParameters(const Aws::String& key, bool value) { m_requestParametersHasBeenSet = true; m_requestParameters[key] = value; return *this; }
+    inline PutMethodRequest& AddRequestParameters(const Aws::String& key, bool value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, value); return *this; }
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
@@ -387,7 +388,7 @@ namespace Model
      * method request parameter names defined here are available in <a>Integration</a>
      * to be mapped to integration request parameters or body-mapping templates.</p>
      */
-    inline PutMethodRequest& AddRequestParameters(Aws::String&& key, bool value) { m_requestParametersHasBeenSet = true; m_requestParameters[key] = value; return *this; }
+    inline PutMethodRequest& AddRequestParameters(Aws::String&& key, bool value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
@@ -400,7 +401,7 @@ namespace Model
      * method request parameter names defined here are available in <a>Integration</a>
      * to be mapped to integration request parameters or body-mapping templates.</p>
      */
-    inline PutMethodRequest& AddRequestParameters(const char* key, bool value) { m_requestParametersHasBeenSet = true; m_requestParameters[key] = value; return *this; }
+    inline PutMethodRequest& AddRequestParameters(const char* key, bool value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, value); return *this; }
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the request's content type.
@@ -421,7 +422,7 @@ namespace Model
      * Request models are represented as a key/value map, with a content type as the
      * key and a <a>Model</a> name as the value.</p>
      */
-    inline void SetRequestModels(Aws::Map<Aws::String, Aws::String>&& value) { m_requestModelsHasBeenSet = true; m_requestModels = value; }
+    inline void SetRequestModels(Aws::Map<Aws::String, Aws::String>&& value) { m_requestModelsHasBeenSet = true; m_requestModels = std::move(value); }
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the request's content type.
@@ -435,56 +436,56 @@ namespace Model
      * Request models are represented as a key/value map, with a content type as the
      * key and a <a>Model</a> name as the value.</p>
      */
-    inline PutMethodRequest& WithRequestModels(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestModels(value); return *this;}
+    inline PutMethodRequest& WithRequestModels(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestModels(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the request's content type.
      * Request models are represented as a key/value map, with a content type as the
      * key and a <a>Model</a> name as the value.</p>
      */
-    inline PutMethodRequest& AddRequestModels(const Aws::String& key, const Aws::String& value) { m_requestModelsHasBeenSet = true; m_requestModels[key] = value; return *this; }
+    inline PutMethodRequest& AddRequestModels(const Aws::String& key, const Aws::String& value) { m_requestModelsHasBeenSet = true; m_requestModels.emplace(key, value); return *this; }
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the request's content type.
      * Request models are represented as a key/value map, with a content type as the
      * key and a <a>Model</a> name as the value.</p>
      */
-    inline PutMethodRequest& AddRequestModels(Aws::String&& key, const Aws::String& value) { m_requestModelsHasBeenSet = true; m_requestModels[key] = value; return *this; }
+    inline PutMethodRequest& AddRequestModels(Aws::String&& key, const Aws::String& value) { m_requestModelsHasBeenSet = true; m_requestModels.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the request's content type.
      * Request models are represented as a key/value map, with a content type as the
      * key and a <a>Model</a> name as the value.</p>
      */
-    inline PutMethodRequest& AddRequestModels(const Aws::String& key, Aws::String&& value) { m_requestModelsHasBeenSet = true; m_requestModels[key] = value; return *this; }
+    inline PutMethodRequest& AddRequestModels(const Aws::String& key, Aws::String&& value) { m_requestModelsHasBeenSet = true; m_requestModels.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the request's content type.
      * Request models are represented as a key/value map, with a content type as the
      * key and a <a>Model</a> name as the value.</p>
      */
-    inline PutMethodRequest& AddRequestModels(Aws::String&& key, Aws::String&& value) { m_requestModelsHasBeenSet = true; m_requestModels[key] = value; return *this; }
+    inline PutMethodRequest& AddRequestModels(Aws::String&& key, Aws::String&& value) { m_requestModelsHasBeenSet = true; m_requestModels.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the request's content type.
      * Request models are represented as a key/value map, with a content type as the
      * key and a <a>Model</a> name as the value.</p>
      */
-    inline PutMethodRequest& AddRequestModels(const char* key, Aws::String&& value) { m_requestModelsHasBeenSet = true; m_requestModels[key] = value; return *this; }
+    inline PutMethodRequest& AddRequestModels(const char* key, Aws::String&& value) { m_requestModelsHasBeenSet = true; m_requestModels.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the request's content type.
      * Request models are represented as a key/value map, with a content type as the
      * key and a <a>Model</a> name as the value.</p>
      */
-    inline PutMethodRequest& AddRequestModels(Aws::String&& key, const char* value) { m_requestModelsHasBeenSet = true; m_requestModels[key] = value; return *this; }
+    inline PutMethodRequest& AddRequestModels(Aws::String&& key, const char* value) { m_requestModelsHasBeenSet = true; m_requestModels.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the request's content type.
      * Request models are represented as a key/value map, with a content type as the
      * key and a <a>Model</a> name as the value.</p>
      */
-    inline PutMethodRequest& AddRequestModels(const char* key, const char* value) { m_requestModelsHasBeenSet = true; m_requestModels[key] = value; return *this; }
+    inline PutMethodRequest& AddRequestModels(const char* key, const char* value) { m_requestModelsHasBeenSet = true; m_requestModels.emplace(key, value); return *this; }
 
   private:
     Aws::String m_restApiId;

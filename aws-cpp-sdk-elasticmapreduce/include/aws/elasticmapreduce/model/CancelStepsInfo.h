@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/model/CancelStepsRequestStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The encrypted StepId of a step.</p>
      */
-    inline void SetStepId(Aws::String&& value) { m_stepIdHasBeenSet = true; m_stepId = value; }
+    inline void SetStepId(Aws::String&& value) { m_stepIdHasBeenSet = true; m_stepId = std::move(value); }
 
     /**
      * <p>The encrypted StepId of a step.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The encrypted StepId of a step.</p>
      */
-    inline CancelStepsInfo& WithStepId(Aws::String&& value) { SetStepId(value); return *this;}
+    inline CancelStepsInfo& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
 
     /**
      * <p>The encrypted StepId of a step.</p>
@@ -97,7 +98,7 @@ namespace Model
      * <p>The status of a CancelSteps Request. The value may be SUBMITTED or
      * FAILED.</p>
      */
-    inline void SetStatus(CancelStepsRequestStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(CancelStepsRequestStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of a CancelSteps Request. The value may be SUBMITTED or
@@ -109,7 +110,7 @@ namespace Model
      * <p>The status of a CancelSteps Request. The value may be SUBMITTED or
      * FAILED.</p>
      */
-    inline CancelStepsInfo& WithStatus(CancelStepsRequestStatus&& value) { SetStatus(value); return *this;}
+    inline CancelStepsInfo& WithStatus(CancelStepsRequestStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The reason for the failure if the CancelSteps request fails.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The reason for the failure if the CancelSteps request fails.</p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p>The reason for the failure if the CancelSteps request fails.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>The reason for the failure if the CancelSteps request fails.</p>
      */
-    inline CancelStepsInfo& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline CancelStepsInfo& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p>The reason for the failure if the CancelSteps request fails.</p>

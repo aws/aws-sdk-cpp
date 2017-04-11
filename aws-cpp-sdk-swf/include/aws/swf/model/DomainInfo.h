@@ -16,6 +16,7 @@
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/swf/model/RegistrationStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of the domain. This name is unique within the account.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the domain. This name is unique within the account.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The name of the domain. This name is unique within the account.</p>
      */
-    inline DomainInfo& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline DomainInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain. This name is unique within the account.</p>
@@ -104,7 +105,7 @@ namespace Model
      * was deprecated using <a>DeprecateDomain</a>, but is still in use. You should not
      * create new workflow executions in this domain. </li> </ul>
      */
-    inline void SetStatus(RegistrationStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(RegistrationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the domain:</p> <ul> <li> <b>REGISTERED</b>: The domain is
@@ -122,7 +123,7 @@ namespace Model
      * was deprecated using <a>DeprecateDomain</a>, but is still in use. You should not
      * create new workflow executions in this domain. </li> </ul>
      */
-    inline DomainInfo& WithStatus(RegistrationStatus&& value) { SetStatus(value); return *this;}
+    inline DomainInfo& WithStatus(RegistrationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The description of the domain provided through <a>RegisterDomain</a>.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The description of the domain provided through <a>RegisterDomain</a>.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the domain provided through <a>RegisterDomain</a>.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>The description of the domain provided through <a>RegisterDomain</a>.</p>
      */
-    inline DomainInfo& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline DomainInfo& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the domain provided through <a>RegisterDomain</a>.</p>

@@ -16,6 +16,7 @@
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -73,7 +74,7 @@ namespace Model
      * <p>The resource type in which you want to log data events. You can specify only
      * the following value: <code>AWS::S3::Object</code>.</p>
      */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The resource type in which you want to log data events. You can specify only
@@ -91,7 +92,7 @@ namespace Model
      * <p>The resource type in which you want to log data events. You can specify only
      * the following value: <code>AWS::S3::Object</code>.</p>
      */
-    inline DataResource& WithType(Aws::String&& value) { SetType(value); return *this;}
+    inline DataResource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The resource type in which you want to log data events. You can specify only
@@ -130,7 +131,7 @@ namespace Model
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p>
      */
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
+    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <p>A list of ARN-like strings for the specified S3 objects.</p> <p>To log data
@@ -152,7 +153,7 @@ namespace Model
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p>
      */
-    inline DataResource& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
+    inline DataResource& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <p>A list of ARN-like strings for the specified S3 objects.</p> <p>To log data
@@ -174,7 +175,7 @@ namespace Model
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p>
      */
-    inline DataResource& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    inline DataResource& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of ARN-like strings for the specified S3 objects.</p> <p>To log data

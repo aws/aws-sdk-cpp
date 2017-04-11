@@ -25,6 +25,7 @@
 #include <aws/snowball/model/Notification.h>
 #include <aws/snowball/model/DataTransfer.h>
 #include <aws/snowball/model/JobLogs.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,7 +73,7 @@ namespace Model
      * <p>The automatically generated ID for a job, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
      * <p>The automatically generated ID for a job, for example
@@ -90,7 +91,7 @@ namespace Model
      * <p>The automatically generated ID for a job, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
-    inline JobMetadata& WithJobId(Aws::String&& value) { SetJobId(value); return *this;}
+    inline JobMetadata& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
      * <p>The automatically generated ID for a job, for example
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The current status of the jobs.</p>
      */
-    inline void SetJobState(JobState&& value) { m_jobStateHasBeenSet = true; m_jobState = value; }
+    inline void SetJobState(JobState&& value) { m_jobStateHasBeenSet = true; m_jobState = std::move(value); }
 
     /**
      * <p>The current status of the jobs.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The current status of the jobs.</p>
      */
-    inline JobMetadata& WithJobState(JobState&& value) { SetJobState(value); return *this;}
+    inline JobMetadata& WithJobState(JobState&& value) { SetJobState(std::move(value)); return *this;}
 
     /**
      * <p>The type of job.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The type of job.</p>
      */
-    inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+    inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
 
     /**
      * <p>The type of job.</p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>The type of job.</p>
      */
-    inline JobMetadata& WithJobType(JobType&& value) { SetJobType(value); return *this;}
+    inline JobMetadata& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
 
     /**
      * <p>The type of appliance used with this job.</p>
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>The type of appliance used with this job.</p>
      */
-    inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
+    inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
      * <p>The type of appliance used with this job.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>The type of appliance used with this job.</p>
      */
-    inline JobMetadata& WithSnowballType(SnowballType&& value) { SetSnowballType(value); return *this;}
+    inline JobMetadata& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 
     /**
      * <p>The creation date for this job.</p>
@@ -186,7 +187,7 @@ namespace Model
     /**
      * <p>The creation date for this job.</p>
      */
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
      * <p>The creation date for this job.</p>
@@ -196,7 +197,7 @@ namespace Model
     /**
      * <p>The creation date for this job.</p>
      */
-    inline JobMetadata& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
+    inline JobMetadata& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>S3Resource</code> objects. Each <code>S3Resource</code>
@@ -217,7 +218,7 @@ namespace Model
      * object represents an Amazon S3 bucket that your transferred data will be
      * exported from or imported into.</p>
      */
-    inline void SetResources(JobResource&& value) { m_resourcesHasBeenSet = true; m_resources = value; }
+    inline void SetResources(JobResource&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
      * <p>An array of <code>S3Resource</code> objects. Each <code>S3Resource</code>
@@ -231,7 +232,7 @@ namespace Model
      * object represents an Amazon S3 bucket that your transferred data will be
      * exported from or imported into.</p>
      */
-    inline JobMetadata& WithResources(JobResource&& value) { SetResources(value); return *this;}
+    inline JobMetadata& WithResources(JobResource&& value) { SetResources(std::move(value)); return *this;}
 
     /**
      * <p>The description of the job, provided at job creation.</p>
@@ -246,7 +247,7 @@ namespace Model
     /**
      * <p>The description of the job, provided at job creation.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the job, provided at job creation.</p>
@@ -261,7 +262,7 @@ namespace Model
     /**
      * <p>The description of the job, provided at job creation.</p>
      */
-    inline JobMetadata& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline JobMetadata& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the job, provided at job creation.</p>
@@ -287,7 +288,7 @@ namespace Model
      * key associated with this job. This ARN was created using the
      * <code>CreateKey</code> API action in AWS KMS.</p>
      */
-    inline void SetKmsKeyARN(Aws::String&& value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN = value; }
+    inline void SetKmsKeyARN(Aws::String&& value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS)
@@ -308,7 +309,7 @@ namespace Model
      * key associated with this job. This ARN was created using the
      * <code>CreateKey</code> API action in AWS KMS.</p>
      */
-    inline JobMetadata& WithKmsKeyARN(Aws::String&& value) { SetKmsKeyARN(value); return *this;}
+    inline JobMetadata& WithKmsKeyARN(Aws::String&& value) { SetKmsKeyARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS)
@@ -336,7 +337,7 @@ namespace Model
      * <code>CreateRole</code> API action in AWS Identity and Access Management
      * (IAM).</p>
      */
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The role ARN associated with this job. This ARN was created using the
@@ -357,7 +358,7 @@ namespace Model
      * <code>CreateRole</code> API action in AWS Identity and Access Management
      * (IAM).</p>
      */
-    inline JobMetadata& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+    inline JobMetadata& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The role ARN associated with this job. This ARN was created using the
@@ -379,7 +380,7 @@ namespace Model
     /**
      * <p>The ID for the address that you want the Snowball shipped to.</p>
      */
-    inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = value; }
+    inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = std::move(value); }
 
     /**
      * <p>The ID for the address that you want the Snowball shipped to.</p>
@@ -394,7 +395,7 @@ namespace Model
     /**
      * <p>The ID for the address that you want the Snowball shipped to.</p>
      */
-    inline JobMetadata& WithAddressId(Aws::String&& value) { SetAddressId(value); return *this;}
+    inline JobMetadata& WithAddressId(Aws::String&& value) { SetAddressId(std::move(value)); return *this;}
 
     /**
      * <p>The ID for the address that you want the Snowball shipped to.</p>
@@ -417,7 +418,7 @@ namespace Model
      * <p>A job's shipping information, including inbound and outbound tracking numbers
      * and shipping speed options.</p>
      */
-    inline void SetShippingDetails(ShippingDetails&& value) { m_shippingDetailsHasBeenSet = true; m_shippingDetails = value; }
+    inline void SetShippingDetails(ShippingDetails&& value) { m_shippingDetailsHasBeenSet = true; m_shippingDetails = std::move(value); }
 
     /**
      * <p>A job's shipping information, including inbound and outbound tracking numbers
@@ -429,7 +430,7 @@ namespace Model
      * <p>A job's shipping information, including inbound and outbound tracking numbers
      * and shipping speed options.</p>
      */
-    inline JobMetadata& WithShippingDetails(ShippingDetails&& value) { SetShippingDetails(value); return *this;}
+    inline JobMetadata& WithShippingDetails(ShippingDetails&& value) { SetShippingDetails(std::move(value)); return *this;}
 
     /**
      * <p>The Snowball capacity preference for this job, specified at job creation. In
@@ -450,7 +451,7 @@ namespace Model
      * US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions
      * use 80 TB capacity Snowballs.</p>
      */
-    inline void SetSnowballCapacityPreference(SnowballCapacity&& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = value; }
+    inline void SetSnowballCapacityPreference(SnowballCapacity&& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = std::move(value); }
 
     /**
      * <p>The Snowball capacity preference for this job, specified at job creation. In
@@ -464,7 +465,7 @@ namespace Model
      * US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions
      * use 80 TB capacity Snowballs.</p>
      */
-    inline JobMetadata& WithSnowballCapacityPreference(SnowballCapacity&& value) { SetSnowballCapacityPreference(value); return *this;}
+    inline JobMetadata& WithSnowballCapacityPreference(SnowballCapacity&& value) { SetSnowballCapacityPreference(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) notification settings
@@ -488,7 +489,7 @@ namespace Model
      * as a part of the response syntax of the <code>DescribeJob</code> action in the
      * <code>JobMetadata</code> data type.</p>
      */
-    inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = value; }
+    inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
 
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) notification settings
@@ -504,7 +505,7 @@ namespace Model
      * as a part of the response syntax of the <code>DescribeJob</code> action in the
      * <code>JobMetadata</code> data type.</p>
      */
-    inline JobMetadata& WithNotification(Notification&& value) { SetNotification(value); return *this;}
+    inline JobMetadata& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
 
     /**
      * <p>A value that defines the real-time status of a Snowball's data transfer while
@@ -528,7 +529,7 @@ namespace Model
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */
-    inline void SetDataTransferProgress(DataTransfer&& value) { m_dataTransferProgressHasBeenSet = true; m_dataTransferProgress = value; }
+    inline void SetDataTransferProgress(DataTransfer&& value) { m_dataTransferProgressHasBeenSet = true; m_dataTransferProgress = std::move(value); }
 
     /**
      * <p>A value that defines the real-time status of a Snowball's data transfer while
@@ -544,7 +545,7 @@ namespace Model
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */
-    inline JobMetadata& WithDataTransferProgress(DataTransfer&& value) { SetDataTransferProgress(value); return *this;}
+    inline JobMetadata& WithDataTransferProgress(DataTransfer&& value) { SetDataTransferProgress(std::move(value)); return *this;}
 
     /**
      * <p>Links to Amazon S3 presigned URLs for the job report and logs. For import
@@ -568,7 +569,7 @@ namespace Model
      * export jobs, your job report typically becomes available while the Snowball for
      * your job part is being delivered to you.</p>
      */
-    inline void SetJobLogInfo(JobLogs&& value) { m_jobLogInfoHasBeenSet = true; m_jobLogInfo = value; }
+    inline void SetJobLogInfo(JobLogs&& value) { m_jobLogInfoHasBeenSet = true; m_jobLogInfo = std::move(value); }
 
     /**
      * <p>Links to Amazon S3 presigned URLs for the job report and logs. For import
@@ -584,7 +585,7 @@ namespace Model
      * export jobs, your job report typically becomes available while the Snowball for
      * your job part is being delivered to you.</p>
      */
-    inline JobMetadata& WithJobLogInfo(JobLogs&& value) { SetJobLogInfo(value); return *this;}
+    inline JobMetadata& WithJobLogInfo(JobLogs&& value) { SetJobLogInfo(std::move(value)); return *this;}
 
     /**
      * <p>The 39-character ID for the cluster, for example
@@ -602,7 +603,7 @@ namespace Model
      * <p>The 39-character ID for the cluster, for example
      * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
 
     /**
      * <p>The 39-character ID for the cluster, for example
@@ -620,7 +621,7 @@ namespace Model
      * <p>The 39-character ID for the cluster, for example
      * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
-    inline JobMetadata& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+    inline JobMetadata& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The 39-character ID for the cluster, for example

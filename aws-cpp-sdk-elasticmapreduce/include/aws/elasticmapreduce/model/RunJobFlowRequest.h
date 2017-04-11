@@ -25,6 +25,7 @@
 #include <aws/elasticmapreduce/model/Application.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
 #include <aws/elasticmapreduce/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name of the job flow.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the job flow.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name of the job flow.</p>
      */
-    inline RunJobFlowRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline RunJobFlowRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the job flow.</p>
@@ -98,7 +99,7 @@ namespace Model
      * <p>The location in Amazon S3 to write the log files of the job flow. If a value
      * is not provided, logs are not created.</p>
      */
-    inline void SetLogUri(Aws::String&& value) { m_logUriHasBeenSet = true; m_logUri = value; }
+    inline void SetLogUri(Aws::String&& value) { m_logUriHasBeenSet = true; m_logUri = std::move(value); }
 
     /**
      * <p>The location in Amazon S3 to write the log files of the job flow. If a value
@@ -116,7 +117,7 @@ namespace Model
      * <p>The location in Amazon S3 to write the log files of the job flow. If a value
      * is not provided, logs are not created.</p>
      */
-    inline RunJobFlowRequest& WithLogUri(Aws::String&& value) { SetLogUri(value); return *this;}
+    inline RunJobFlowRequest& WithLogUri(Aws::String&& value) { SetLogUri(std::move(value)); return *this;}
 
     /**
      * <p>The location in Amazon S3 to write the log files of the job flow. If a value
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>A JSON string for selecting additional features.</p>
      */
-    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
+    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
 
     /**
      * <p>A JSON string for selecting additional features.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>A JSON string for selecting additional features.</p>
      */
-    inline RunJobFlowRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(value); return *this;}
+    inline RunJobFlowRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(std::move(value)); return *this;}
 
     /**
      * <p>A JSON string for selecting additional features.</p>
@@ -220,7 +221,7 @@ namespace Model
      * option as they only have a newer release label version of EMR, which requires
      * you to specify an EMR release label release (EMR 4.x or later).</p> </note>
      */
-    inline void SetAmiVersion(Aws::String&& value) { m_amiVersionHasBeenSet = true; m_amiVersion = value; }
+    inline void SetAmiVersion(Aws::String&& value) { m_amiVersionHasBeenSet = true; m_amiVersion = std::move(value); }
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
@@ -283,7 +284,7 @@ namespace Model
      * option as they only have a newer release label version of EMR, which requires
      * you to specify an EMR release label release (EMR 4.x or later).</p> </note>
      */
-    inline RunJobFlowRequest& WithAmiVersion(Aws::String&& value) { SetAmiVersion(value); return *this;}
+    inline RunJobFlowRequest& WithAmiVersion(Aws::String&& value) { SetAmiVersion(std::move(value)); return *this;}
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
@@ -325,7 +326,7 @@ namespace Model
      * the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
      * instead of ReleaseLabel.</p>
      */
-    inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
+    inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::move(value); }
 
     /**
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The release label for
@@ -346,7 +347,7 @@ namespace Model
      * the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
      * instead of ReleaseLabel.</p>
      */
-    inline RunJobFlowRequest& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(value); return *this;}
+    inline RunJobFlowRequest& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
 
     /**
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The release label for
@@ -368,7 +369,7 @@ namespace Model
     /**
      * <p>A specification of the number and type of Amazon EC2 instances.</p>
      */
-    inline void SetInstances(JobFlowInstancesConfig&& value) { m_instancesHasBeenSet = true; m_instances = value; }
+    inline void SetInstances(JobFlowInstancesConfig&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
 
     /**
      * <p>A specification of the number and type of Amazon EC2 instances.</p>
@@ -378,7 +379,7 @@ namespace Model
     /**
      * <p>A specification of the number and type of Amazon EC2 instances.</p>
      */
-    inline RunJobFlowRequest& WithInstances(JobFlowInstancesConfig&& value) { SetInstances(value); return *this;}
+    inline RunJobFlowRequest& WithInstances(JobFlowInstancesConfig&& value) { SetInstances(std::move(value)); return *this;}
 
     /**
      * <p>A list of steps to run.</p>
@@ -393,7 +394,7 @@ namespace Model
     /**
      * <p>A list of steps to run.</p>
      */
-    inline void SetSteps(Aws::Vector<StepConfig>&& value) { m_stepsHasBeenSet = true; m_steps = value; }
+    inline void SetSteps(Aws::Vector<StepConfig>&& value) { m_stepsHasBeenSet = true; m_steps = std::move(value); }
 
     /**
      * <p>A list of steps to run.</p>
@@ -403,7 +404,7 @@ namespace Model
     /**
      * <p>A list of steps to run.</p>
      */
-    inline RunJobFlowRequest& WithSteps(Aws::Vector<StepConfig>&& value) { SetSteps(value); return *this;}
+    inline RunJobFlowRequest& WithSteps(Aws::Vector<StepConfig>&& value) { SetSteps(std::move(value)); return *this;}
 
     /**
      * <p>A list of steps to run.</p>
@@ -413,7 +414,7 @@ namespace Model
     /**
      * <p>A list of steps to run.</p>
      */
-    inline RunJobFlowRequest& AddSteps(StepConfig&& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
+    inline RunJobFlowRequest& AddSteps(StepConfig&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of bootstrap actions to run before Hadoop starts on the cluster
@@ -431,7 +432,7 @@ namespace Model
      * <p>A list of bootstrap actions to run before Hadoop starts on the cluster
      * nodes.</p>
      */
-    inline void SetBootstrapActions(Aws::Vector<BootstrapActionConfig>&& value) { m_bootstrapActionsHasBeenSet = true; m_bootstrapActions = value; }
+    inline void SetBootstrapActions(Aws::Vector<BootstrapActionConfig>&& value) { m_bootstrapActionsHasBeenSet = true; m_bootstrapActions = std::move(value); }
 
     /**
      * <p>A list of bootstrap actions to run before Hadoop starts on the cluster
@@ -443,7 +444,7 @@ namespace Model
      * <p>A list of bootstrap actions to run before Hadoop starts on the cluster
      * nodes.</p>
      */
-    inline RunJobFlowRequest& WithBootstrapActions(Aws::Vector<BootstrapActionConfig>&& value) { SetBootstrapActions(value); return *this;}
+    inline RunJobFlowRequest& WithBootstrapActions(Aws::Vector<BootstrapActionConfig>&& value) { SetBootstrapActions(std::move(value)); return *this;}
 
     /**
      * <p>A list of bootstrap actions to run before Hadoop starts on the cluster
@@ -455,7 +456,7 @@ namespace Model
      * <p>A list of bootstrap actions to run before Hadoop starts on the cluster
      * nodes.</p>
      */
-    inline RunJobFlowRequest& AddBootstrapActions(BootstrapActionConfig&& value) { m_bootstrapActionsHasBeenSet = true; m_bootstrapActions.push_back(value); return *this; }
+    inline RunJobFlowRequest& AddBootstrapActions(BootstrapActionConfig&& value) { m_bootstrapActionsHasBeenSet = true; m_bootstrapActions.push_back(std::move(value)); return *this; }
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
@@ -491,7 +492,7 @@ namespace Model
      * </li> <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
      * </ul>
      */
-    inline void SetSupportedProducts(Aws::Vector<Aws::String>&& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts = value; }
+    inline void SetSupportedProducts(Aws::Vector<Aws::String>&& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts = std::move(value); }
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
@@ -515,7 +516,7 @@ namespace Model
      * </li> <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
      * </ul>
      */
-    inline RunJobFlowRequest& WithSupportedProducts(Aws::Vector<Aws::String>&& value) { SetSupportedProducts(value); return *this;}
+    inline RunJobFlowRequest& WithSupportedProducts(Aws::Vector<Aws::String>&& value) { SetSupportedProducts(std::move(value)); return *this;}
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
@@ -539,7 +540,7 @@ namespace Model
      * </li> <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
      * </ul>
      */
-    inline RunJobFlowRequest& AddSupportedProducts(Aws::String&& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts.push_back(value); return *this; }
+    inline RunJobFlowRequest& AddSupportedProducts(Aws::String&& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts.push_back(std::move(value)); return *this; }
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
@@ -614,7 +615,7 @@ namespace Model
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>
      */
-    inline void SetNewSupportedProducts(Aws::Vector<SupportedProductConfig>&& value) { m_newSupportedProductsHasBeenSet = true; m_newSupportedProducts = value; }
+    inline void SetNewSupportedProducts(Aws::Vector<SupportedProductConfig>&& value) { m_newSupportedProductsHasBeenSet = true; m_newSupportedProducts = std::move(value); }
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
@@ -656,7 +657,7 @@ namespace Model
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>
      */
-    inline RunJobFlowRequest& WithNewSupportedProducts(Aws::Vector<SupportedProductConfig>&& value) { SetNewSupportedProducts(value); return *this;}
+    inline RunJobFlowRequest& WithNewSupportedProducts(Aws::Vector<SupportedProductConfig>&& value) { SetNewSupportedProducts(std::move(value)); return *this;}
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
@@ -698,7 +699,7 @@ namespace Model
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>
      */
-    inline RunJobFlowRequest& AddNewSupportedProducts(SupportedProductConfig&& value) { m_newSupportedProductsHasBeenSet = true; m_newSupportedProducts.push_back(value); return *this; }
+    inline RunJobFlowRequest& AddNewSupportedProducts(SupportedProductConfig&& value) { m_newSupportedProductsHasBeenSet = true; m_newSupportedProducts.push_back(std::move(value)); return *this; }
 
     /**
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>A list of
@@ -719,7 +720,7 @@ namespace Model
      * applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout",
      * "Pig", and "Spark." They are case insensitive.</p>
      */
-    inline void SetApplications(Aws::Vector<Application>&& value) { m_applicationsHasBeenSet = true; m_applications = value; }
+    inline void SetApplications(Aws::Vector<Application>&& value) { m_applicationsHasBeenSet = true; m_applications = std::move(value); }
 
     /**
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>A list of
@@ -733,7 +734,7 @@ namespace Model
      * applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout",
      * "Pig", and "Spark." They are case insensitive.</p>
      */
-    inline RunJobFlowRequest& WithApplications(Aws::Vector<Application>&& value) { SetApplications(value); return *this;}
+    inline RunJobFlowRequest& WithApplications(Aws::Vector<Application>&& value) { SetApplications(std::move(value)); return *this;}
 
     /**
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>A list of
@@ -747,7 +748,7 @@ namespace Model
      * applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout",
      * "Pig", and "Spark." They are case insensitive.</p>
      */
-    inline RunJobFlowRequest& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
+    inline RunJobFlowRequest& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
 
     /**
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
@@ -765,7 +766,7 @@ namespace Model
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
      * configurations supplied for the EMR cluster you are creating.</p>
      */
-    inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
+    inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
 
     /**
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
@@ -777,7 +778,7 @@ namespace Model
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
      * configurations supplied for the EMR cluster you are creating.</p>
      */
-    inline RunJobFlowRequest& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(value); return *this;}
+    inline RunJobFlowRequest& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(std::move(value)); return *this;}
 
     /**
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
@@ -789,7 +790,7 @@ namespace Model
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
      * configurations supplied for the EMR cluster you are creating.</p>
      */
-    inline RunJobFlowRequest& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
+    inline RunJobFlowRequest& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Whether the cluster is visible to all IAM users of the AWS account associated
@@ -840,7 +841,7 @@ namespace Model
      * <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must
      * have already created it using the CLI or console.</p>
      */
-    inline void SetJobFlowRole(Aws::String&& value) { m_jobFlowRoleHasBeenSet = true; m_jobFlowRole = value; }
+    inline void SetJobFlowRole(Aws::String&& value) { m_jobFlowRoleHasBeenSet = true; m_jobFlowRole = std::move(value); }
 
     /**
      * <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster.
@@ -864,7 +865,7 @@ namespace Model
      * <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must
      * have already created it using the CLI or console.</p>
      */
-    inline RunJobFlowRequest& WithJobFlowRole(Aws::String&& value) { SetJobFlowRole(value); return *this;}
+    inline RunJobFlowRequest& WithJobFlowRole(Aws::String&& value) { SetJobFlowRole(std::move(value)); return *this;}
 
     /**
      * <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster.
@@ -890,7 +891,7 @@ namespace Model
      * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
      * resources on your behalf.</p>
      */
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
@@ -908,7 +909,7 @@ namespace Model
      * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
      * resources on your behalf.</p>
      */
-    inline RunJobFlowRequest& WithServiceRole(Aws::String&& value) { SetServiceRole(value); return *this;}
+    inline RunJobFlowRequest& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
@@ -932,7 +933,7 @@ namespace Model
      * <p>A list of tags to associate with a cluster and propagate to Amazon EC2
      * instances.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of tags to associate with a cluster and propagate to Amazon EC2
@@ -944,7 +945,7 @@ namespace Model
      * <p>A list of tags to associate with a cluster and propagate to Amazon EC2
      * instances.</p>
      */
-    inline RunJobFlowRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline RunJobFlowRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of tags to associate with a cluster and propagate to Amazon EC2
@@ -956,7 +957,7 @@ namespace Model
      * <p>A list of tags to associate with a cluster and propagate to Amazon EC2
      * instances.</p>
      */
-    inline RunJobFlowRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline RunJobFlowRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The name of a security configuration to apply to the cluster.</p>
@@ -971,7 +972,7 @@ namespace Model
     /**
      * <p>The name of a security configuration to apply to the cluster.</p>
      */
-    inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
+    inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::move(value); }
 
     /**
      * <p>The name of a security configuration to apply to the cluster.</p>
@@ -986,7 +987,7 @@ namespace Model
     /**
      * <p>The name of a security configuration to apply to the cluster.</p>
      */
-    inline RunJobFlowRequest& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(value); return *this;}
+    inline RunJobFlowRequest& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The name of a security configuration to apply to the cluster.</p>
@@ -1015,7 +1016,7 @@ namespace Model
      * the automatic scaling feature requires to launch and terminate EC2 instances in
      * an instance group.</p>
      */
-    inline void SetAutoScalingRole(Aws::String&& value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole = value; }
+    inline void SetAutoScalingRole(Aws::String&& value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole = std::move(value); }
 
     /**
      * <p>An IAM role for automatic scaling policies. The default role is
@@ -1039,7 +1040,7 @@ namespace Model
      * the automatic scaling feature requires to launch and terminate EC2 instances in
      * an instance group.</p>
      */
-    inline RunJobFlowRequest& WithAutoScalingRole(Aws::String&& value) { SetAutoScalingRole(value); return *this;}
+    inline RunJobFlowRequest& WithAutoScalingRole(Aws::String&& value) { SetAutoScalingRole(std::move(value)); return *this;}
 
     /**
      * <p>An IAM role for automatic scaling policies. The default role is
@@ -1098,7 +1099,7 @@ namespace Model
      * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
      * Amazon EMR earlier than 5.1.0.</p>
      */
-    inline void SetScaleDownBehavior(ScaleDownBehavior&& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = value; }
+    inline void SetScaleDownBehavior(ScaleDownBehavior&& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = std::move(value); }
 
     /**
      * <p>Specifies the way that individual Amazon EC2 instances terminate when an
@@ -1132,7 +1133,7 @@ namespace Model
      * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
      * Amazon EMR earlier than 5.1.0.</p>
      */
-    inline RunJobFlowRequest& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(value); return *this;}
+    inline RunJobFlowRequest& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

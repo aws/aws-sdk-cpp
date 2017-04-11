@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/FieldToMatch.h>
 #include <aws/waf/model/TextTransformation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>Specifies where in a web request to look for cross-site scripting
      * attacks.</p>
      */
-    inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
+    inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
 
     /**
      * <p>Specifies where in a web request to look for cross-site scripting
@@ -74,7 +75,7 @@ namespace Model
      * <p>Specifies where in a web request to look for cross-site scripting
      * attacks.</p>
      */
-    inline XssMatchTuple& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(value); return *this;}
+    inline XssMatchTuple& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
@@ -182,7 +183,7 @@ namespace Model
      * option to decode a URL-encoded value.</p> <p> <b>NONE</b> </p> <p>Specify
      * <code>NONE</code> if you don't want to perform any text transformations.</p>
      */
-    inline void SetTextTransformation(TextTransformation&& value) { m_textTransformationHasBeenSet = true; m_textTransformation = value; }
+    inline void SetTextTransformation(TextTransformation&& value) { m_textTransformationHasBeenSet = true; m_textTransformation = std::move(value); }
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
@@ -254,7 +255,7 @@ namespace Model
      * option to decode a URL-encoded value.</p> <p> <b>NONE</b> </p> <p>Specify
      * <code>NONE</code> if you don't want to perform any text transformations.</p>
      */
-    inline XssMatchTuple& WithTextTransformation(TextTransformation&& value) { SetTextTransformation(value); return *this;}
+    inline XssMatchTuple& WithTextTransformation(TextTransformation&& value) { SetTextTransformation(std::move(value)); return *this;}
 
   private:
     FieldToMatch m_fieldToMatch;

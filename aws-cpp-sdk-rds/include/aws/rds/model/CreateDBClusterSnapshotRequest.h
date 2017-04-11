@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1-snapshot1</code> </p>
      */
-    inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
+    inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the DB cluster snapshot. This parameter is stored as a
@@ -94,7 +95,7 @@ namespace Model
      * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1-snapshot1</code> </p>
      */
-    inline CreateDBClusterSnapshotRequest& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(value); return *this;}
+    inline CreateDBClusterSnapshotRequest& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the DB cluster snapshot. This parameter is stored as a
@@ -130,7 +131,7 @@ namespace Model
      * a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1</code> </p>
      */
-    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
+    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the DB cluster to create a snapshot for. This parameter is
@@ -157,7 +158,7 @@ namespace Model
      * a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1</code> </p>
      */
-    inline CreateDBClusterSnapshotRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(value); return *this;}
+    inline CreateDBClusterSnapshotRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the DB cluster to create a snapshot for. This parameter is
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>The tags to be assigned to the DB cluster snapshot.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags to be assigned to the DB cluster snapshot.</p>
@@ -191,7 +192,7 @@ namespace Model
     /**
      * <p>The tags to be assigned to the DB cluster snapshot.</p>
      */
-    inline CreateDBClusterSnapshotRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline CreateDBClusterSnapshotRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags to be assigned to the DB cluster snapshot.</p>
@@ -201,7 +202,7 @@ namespace Model
     /**
      * <p>The tags to be assigned to the DB cluster snapshot.</p>
      */
-    inline CreateDBClusterSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateDBClusterSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_dBClusterSnapshotIdentifier;

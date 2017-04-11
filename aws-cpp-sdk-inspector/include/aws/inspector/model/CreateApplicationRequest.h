@@ -16,6 +16,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/InspectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The user-defined name identifying the application that you want to create.
      * The name must be unique within the AWS account.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The user-defined name identifying the application that you want to create.
@@ -69,7 +70,7 @@ namespace Model
      * <p>The user-defined name identifying the application that you want to create.
      * The name must be unique within the AWS account.</p>
      */
-    inline CreateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline CreateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The user-defined name identifying the application that you want to create.
@@ -93,7 +94,7 @@ namespace Model
      * <p>The ARN specifying the resource group that is used to create the
      * application.</p>
      */
-    inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = value; }
+    inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = std::move(value); }
 
     /**
      * <p>The ARN specifying the resource group that is used to create the
@@ -111,7 +112,7 @@ namespace Model
      * <p>The ARN specifying the resource group that is used to create the
      * application.</p>
      */
-    inline CreateApplicationRequest& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(value); return *this;}
+    inline CreateApplicationRequest& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN specifying the resource group that is used to create the

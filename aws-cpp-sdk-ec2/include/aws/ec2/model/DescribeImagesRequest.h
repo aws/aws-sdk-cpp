@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -82,7 +83,7 @@ namespace Model
      * <p>One or more image IDs.</p> <p>Default: Describes all images available to
      * you.</p>
      */
-    inline void SetImageIds(Aws::Vector<Aws::String>&& value) { m_imageIdsHasBeenSet = true; m_imageIds = value; }
+    inline void SetImageIds(Aws::Vector<Aws::String>&& value) { m_imageIdsHasBeenSet = true; m_imageIds = std::move(value); }
 
     /**
      * <p>One or more image IDs.</p> <p>Default: Describes all images available to
@@ -94,7 +95,7 @@ namespace Model
      * <p>One or more image IDs.</p> <p>Default: Describes all images available to
      * you.</p>
      */
-    inline DescribeImagesRequest& WithImageIds(Aws::Vector<Aws::String>&& value) { SetImageIds(value); return *this;}
+    inline DescribeImagesRequest& WithImageIds(Aws::Vector<Aws::String>&& value) { SetImageIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more image IDs.</p> <p>Default: Describes all images available to
@@ -106,7 +107,7 @@ namespace Model
      * <p>One or more image IDs.</p> <p>Default: Describes all images available to
      * you.</p>
      */
-    inline DescribeImagesRequest& AddImageIds(Aws::String&& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
+    inline DescribeImagesRequest& AddImageIds(Aws::String&& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more image IDs.</p> <p>Default: Describes all images available to
@@ -139,7 +140,7 @@ namespace Model
      * Omitting this option returns all images for which you have launch permissions,
      * regardless of ownership.</p>
      */
-    inline void SetOwners(Aws::Vector<Aws::String>&& value) { m_ownersHasBeenSet = true; m_owners = value; }
+    inline void SetOwners(Aws::Vector<Aws::String>&& value) { m_ownersHasBeenSet = true; m_owners = std::move(value); }
 
     /**
      * <p>Filters the images by the owner. Specify an AWS account ID, <code>self</code>
@@ -157,7 +158,7 @@ namespace Model
      * Omitting this option returns all images for which you have launch permissions,
      * regardless of ownership.</p>
      */
-    inline DescribeImagesRequest& WithOwners(Aws::Vector<Aws::String>&& value) { SetOwners(value); return *this;}
+    inline DescribeImagesRequest& WithOwners(Aws::Vector<Aws::String>&& value) { SetOwners(std::move(value)); return *this;}
 
     /**
      * <p>Filters the images by the owner. Specify an AWS account ID, <code>self</code>
@@ -175,7 +176,7 @@ namespace Model
      * Omitting this option returns all images for which you have launch permissions,
      * regardless of ownership.</p>
      */
-    inline DescribeImagesRequest& AddOwners(Aws::String&& value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
+    inline DescribeImagesRequest& AddOwners(Aws::String&& value) { m_ownersHasBeenSet = true; m_owners.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Filters the images by the owner. Specify an AWS account ID, <code>self</code>
@@ -205,7 +206,7 @@ namespace Model
      * account ID, <code>self</code> (the sender of the request), or <code>all</code>
      * (public AMIs).</p>
      */
-    inline void SetExecutableUsers(Aws::Vector<Aws::String>&& value) { m_executableUsersHasBeenSet = true; m_executableUsers = value; }
+    inline void SetExecutableUsers(Aws::Vector<Aws::String>&& value) { m_executableUsersHasBeenSet = true; m_executableUsers = std::move(value); }
 
     /**
      * <p>Scopes the images by users with explicit launch permissions. Specify an AWS
@@ -219,7 +220,7 @@ namespace Model
      * account ID, <code>self</code> (the sender of the request), or <code>all</code>
      * (public AMIs).</p>
      */
-    inline DescribeImagesRequest& WithExecutableUsers(Aws::Vector<Aws::String>&& value) { SetExecutableUsers(value); return *this;}
+    inline DescribeImagesRequest& WithExecutableUsers(Aws::Vector<Aws::String>&& value) { SetExecutableUsers(std::move(value)); return *this;}
 
     /**
      * <p>Scopes the images by users with explicit launch permissions. Specify an AWS
@@ -233,7 +234,7 @@ namespace Model
      * account ID, <code>self</code> (the sender of the request), or <code>all</code>
      * (public AMIs).</p>
      */
-    inline DescribeImagesRequest& AddExecutableUsers(Aws::String&& value) { m_executableUsersHasBeenSet = true; m_executableUsers.push_back(value); return *this; }
+    inline DescribeImagesRequest& AddExecutableUsers(Aws::String&& value) { m_executableUsersHasBeenSet = true; m_executableUsers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Scopes the images by users with explicit launch permissions. Specify an AWS
@@ -423,7 +424,7 @@ namespace Model
      * <code>virtualization-type</code> - The virtualization type
      * (<code>paravirtual</code> | <code>hvm</code>).</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>architecture</code> - The image
@@ -545,7 +546,7 @@ namespace Model
      * <code>virtualization-type</code> - The virtualization type
      * (<code>paravirtual</code> | <code>hvm</code>).</p> </li> </ul>
      */
-    inline DescribeImagesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeImagesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>architecture</code> - The image
@@ -667,7 +668,7 @@ namespace Model
      * <code>virtualization-type</code> - The virtualization type
      * (<code>paravirtual</code> | <code>hvm</code>).</p> </li> </ul>
      */
-    inline DescribeImagesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeImagesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

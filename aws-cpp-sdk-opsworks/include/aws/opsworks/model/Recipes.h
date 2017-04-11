@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>setup</code>
      * event.</p>
      */
-    inline void SetSetup(Aws::Vector<Aws::String>&& value) { m_setupHasBeenSet = true; m_setup = value; }
+    inline void SetSetup(Aws::Vector<Aws::String>&& value) { m_setupHasBeenSet = true; m_setup = std::move(value); }
 
     /**
      * <p>An array of custom recipe names to be run following a <code>setup</code>
@@ -82,7 +83,7 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>setup</code>
      * event.</p>
      */
-    inline Recipes& WithSetup(Aws::Vector<Aws::String>&& value) { SetSetup(value); return *this;}
+    inline Recipes& WithSetup(Aws::Vector<Aws::String>&& value) { SetSetup(std::move(value)); return *this;}
 
     /**
      * <p>An array of custom recipe names to be run following a <code>setup</code>
@@ -94,7 +95,7 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>setup</code>
      * event.</p>
      */
-    inline Recipes& AddSetup(Aws::String&& value) { m_setupHasBeenSet = true; m_setup.push_back(value); return *this; }
+    inline Recipes& AddSetup(Aws::String&& value) { m_setupHasBeenSet = true; m_setup.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of custom recipe names to be run following a <code>setup</code>
@@ -118,7 +119,7 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>configure</code>
      * event.</p>
      */
-    inline void SetConfigure(Aws::Vector<Aws::String>&& value) { m_configureHasBeenSet = true; m_configure = value; }
+    inline void SetConfigure(Aws::Vector<Aws::String>&& value) { m_configureHasBeenSet = true; m_configure = std::move(value); }
 
     /**
      * <p>An array of custom recipe names to be run following a <code>configure</code>
@@ -130,7 +131,7 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>configure</code>
      * event.</p>
      */
-    inline Recipes& WithConfigure(Aws::Vector<Aws::String>&& value) { SetConfigure(value); return *this;}
+    inline Recipes& WithConfigure(Aws::Vector<Aws::String>&& value) { SetConfigure(std::move(value)); return *this;}
 
     /**
      * <p>An array of custom recipe names to be run following a <code>configure</code>
@@ -142,7 +143,7 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>configure</code>
      * event.</p>
      */
-    inline Recipes& AddConfigure(Aws::String&& value) { m_configureHasBeenSet = true; m_configure.push_back(value); return *this; }
+    inline Recipes& AddConfigure(Aws::String&& value) { m_configureHasBeenSet = true; m_configure.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of custom recipe names to be run following a <code>configure</code>
@@ -166,7 +167,7 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>deploy</code>
      * event.</p>
      */
-    inline void SetDeploy(Aws::Vector<Aws::String>&& value) { m_deployHasBeenSet = true; m_deploy = value; }
+    inline void SetDeploy(Aws::Vector<Aws::String>&& value) { m_deployHasBeenSet = true; m_deploy = std::move(value); }
 
     /**
      * <p>An array of custom recipe names to be run following a <code>deploy</code>
@@ -178,7 +179,7 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>deploy</code>
      * event.</p>
      */
-    inline Recipes& WithDeploy(Aws::Vector<Aws::String>&& value) { SetDeploy(value); return *this;}
+    inline Recipes& WithDeploy(Aws::Vector<Aws::String>&& value) { SetDeploy(std::move(value)); return *this;}
 
     /**
      * <p>An array of custom recipe names to be run following a <code>deploy</code>
@@ -190,7 +191,7 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>deploy</code>
      * event.</p>
      */
-    inline Recipes& AddDeploy(Aws::String&& value) { m_deployHasBeenSet = true; m_deploy.push_back(value); return *this; }
+    inline Recipes& AddDeploy(Aws::String&& value) { m_deployHasBeenSet = true; m_deploy.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of custom recipe names to be run following a <code>deploy</code>
@@ -214,7 +215,7 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>undeploy</code>
      * event.</p>
      */
-    inline void SetUndeploy(Aws::Vector<Aws::String>&& value) { m_undeployHasBeenSet = true; m_undeploy = value; }
+    inline void SetUndeploy(Aws::Vector<Aws::String>&& value) { m_undeployHasBeenSet = true; m_undeploy = std::move(value); }
 
     /**
      * <p>An array of custom recipe names to be run following a <code>undeploy</code>
@@ -226,7 +227,7 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>undeploy</code>
      * event.</p>
      */
-    inline Recipes& WithUndeploy(Aws::Vector<Aws::String>&& value) { SetUndeploy(value); return *this;}
+    inline Recipes& WithUndeploy(Aws::Vector<Aws::String>&& value) { SetUndeploy(std::move(value)); return *this;}
 
     /**
      * <p>An array of custom recipe names to be run following a <code>undeploy</code>
@@ -238,7 +239,7 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>undeploy</code>
      * event.</p>
      */
-    inline Recipes& AddUndeploy(Aws::String&& value) { m_undeployHasBeenSet = true; m_undeploy.push_back(value); return *this; }
+    inline Recipes& AddUndeploy(Aws::String&& value) { m_undeployHasBeenSet = true; m_undeploy.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of custom recipe names to be run following a <code>undeploy</code>
@@ -262,7 +263,7 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>shutdown</code>
      * event.</p>
      */
-    inline void SetShutdown(Aws::Vector<Aws::String>&& value) { m_shutdownHasBeenSet = true; m_shutdown = value; }
+    inline void SetShutdown(Aws::Vector<Aws::String>&& value) { m_shutdownHasBeenSet = true; m_shutdown = std::move(value); }
 
     /**
      * <p>An array of custom recipe names to be run following a <code>shutdown</code>
@@ -274,7 +275,7 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>shutdown</code>
      * event.</p>
      */
-    inline Recipes& WithShutdown(Aws::Vector<Aws::String>&& value) { SetShutdown(value); return *this;}
+    inline Recipes& WithShutdown(Aws::Vector<Aws::String>&& value) { SetShutdown(std::move(value)); return *this;}
 
     /**
      * <p>An array of custom recipe names to be run following a <code>shutdown</code>
@@ -286,7 +287,7 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>shutdown</code>
      * event.</p>
      */
-    inline Recipes& AddShutdown(Aws::String&& value) { m_shutdownHasBeenSet = true; m_shutdown.push_back(value); return *this; }
+    inline Recipes& AddShutdown(Aws::String&& value) { m_shutdownHasBeenSet = true; m_shutdown.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of custom recipe names to be run following a <code>shutdown</code>

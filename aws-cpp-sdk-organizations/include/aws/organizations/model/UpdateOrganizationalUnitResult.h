@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/model/OrganizationalUnit.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>A structure that contains the details about the specified OU, including its
      * new name.</p>
      */
-    inline void SetOrganizationalUnit(OrganizationalUnit&& value) { m_organizationalUnit = value; }
+    inline void SetOrganizationalUnit(OrganizationalUnit&& value) { m_organizationalUnit = std::move(value); }
 
     /**
      * <p>A structure that contains the details about the specified OU, including its
@@ -67,7 +68,7 @@ namespace Model
      * <p>A structure that contains the details about the specified OU, including its
      * new name.</p>
      */
-    inline UpdateOrganizationalUnitResult& WithOrganizationalUnit(OrganizationalUnit&& value) { SetOrganizationalUnit(value); return *this;}
+    inline UpdateOrganizationalUnitResult& WithOrganizationalUnit(OrganizationalUnit&& value) { SetOrganizationalUnit(std::move(value)); return *this;}
 
   private:
     OrganizationalUnit m_organizationalUnit;

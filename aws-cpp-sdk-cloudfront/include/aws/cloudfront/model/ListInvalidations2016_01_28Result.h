@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/InvalidationList.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * Information about invalidation batches.
      */
-    inline void SetInvalidationList(InvalidationList&& value) { m_invalidationList = value; }
+    inline void SetInvalidationList(InvalidationList&& value) { m_invalidationList = std::move(value); }
 
     /**
      * Information about invalidation batches.
@@ -67,7 +68,7 @@ namespace Model
     /**
      * Information about invalidation batches.
      */
-    inline ListInvalidations2016_01_28Result& WithInvalidationList(InvalidationList&& value) { SetInvalidationList(value); return *this;}
+    inline ListInvalidations2016_01_28Result& WithInvalidationList(InvalidationList&& value) { SetInvalidationList(std::move(value)); return *this;}
 
   private:
     InvalidationList m_invalidationList;

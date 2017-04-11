@@ -20,6 +20,7 @@
 #include <aws/elastictranscoder/model/JobAlbumArt.h>
 #include <aws/elastictranscoder/model/Captions.h>
 #include <aws/elastictranscoder/model/JobWatermark.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * pipeline that is specified by the pipeline ID. If a file with the specified name
      * already exists in the output bucket, the job fails. </p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p> The name to assign to the transcoded file. Elastic Transcoder saves the file
@@ -94,7 +95,7 @@ namespace Model
      * pipeline that is specified by the pipeline ID. If a file with the specified name
      * already exists in the output bucket, the job fails. </p>
      */
-    inline CreateJobOutput& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline CreateJobOutput& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p> The name to assign to the transcoded file. Elastic Transcoder saves the file
@@ -189,7 +190,7 @@ namespace Model
      * <code>PresetID</code> value of <code>CreateJobOutput</code>. Elastic Transcoder
      * also appends the applicable file name extension.</p>
      */
-    inline void SetThumbnailPattern(Aws::String&& value) { m_thumbnailPatternHasBeenSet = true; m_thumbnailPattern = value; }
+    inline void SetThumbnailPattern(Aws::String&& value) { m_thumbnailPatternHasBeenSet = true; m_thumbnailPattern = std::move(value); }
 
     /**
      * <p>Whether you want Elastic Transcoder to create thumbnails for your videos and,
@@ -276,7 +277,7 @@ namespace Model
      * <code>PresetID</code> value of <code>CreateJobOutput</code>. Elastic Transcoder
      * also appends the applicable file name extension.</p>
      */
-    inline CreateJobOutput& WithThumbnailPattern(Aws::String&& value) { SetThumbnailPattern(value); return *this;}
+    inline CreateJobOutput& WithThumbnailPattern(Aws::String&& value) { SetThumbnailPattern(std::move(value)); return *this;}
 
     /**
      * <p>Whether you want Elastic Transcoder to create thumbnails for your videos and,
@@ -323,7 +324,7 @@ namespace Model
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
      * your thumbnail.</p>
      */
-    inline void SetThumbnailEncryption(Encryption&& value) { m_thumbnailEncryptionHasBeenSet = true; m_thumbnailEncryption = value; }
+    inline void SetThumbnailEncryption(Encryption&& value) { m_thumbnailEncryptionHasBeenSet = true; m_thumbnailEncryption = std::move(value); }
 
     /**
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
@@ -335,7 +336,7 @@ namespace Model
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
      * your thumbnail.</p>
      */
-    inline CreateJobOutput& WithThumbnailEncryption(Encryption&& value) { SetThumbnailEncryption(value); return *this;}
+    inline CreateJobOutput& WithThumbnailEncryption(Encryption&& value) { SetThumbnailEncryption(std::move(value)); return *this;}
 
     /**
      * <p> The number of degrees clockwise by which you want Elastic Transcoder to
@@ -362,7 +363,7 @@ namespace Model
      * <code>270</code>. The value <code>auto</code> generally works only if the file
      * that you're transcoding contains rotation metadata. </p>
      */
-    inline void SetRotate(Aws::String&& value) { m_rotateHasBeenSet = true; m_rotate = value; }
+    inline void SetRotate(Aws::String&& value) { m_rotateHasBeenSet = true; m_rotate = std::move(value); }
 
     /**
      * <p> The number of degrees clockwise by which you want Elastic Transcoder to
@@ -389,7 +390,7 @@ namespace Model
      * <code>270</code>. The value <code>auto</code> generally works only if the file
      * that you're transcoding contains rotation metadata. </p>
      */
-    inline CreateJobOutput& WithRotate(Aws::String&& value) { SetRotate(value); return *this;}
+    inline CreateJobOutput& WithRotate(Aws::String&& value) { SetRotate(std::move(value)); return *this;}
 
     /**
      * <p> The number of degrees clockwise by which you want Elastic Transcoder to
@@ -419,7 +420,7 @@ namespace Model
      * the audio, video, and thumbnail settings that Elastic Transcoder uses for
      * transcoding. </p>
      */
-    inline void SetPresetId(Aws::String&& value) { m_presetIdHasBeenSet = true; m_presetId = value; }
+    inline void SetPresetId(Aws::String&& value) { m_presetIdHasBeenSet = true; m_presetId = std::move(value); }
 
     /**
      * <p> The <code>Id</code> of the preset to use for this job. The preset determines
@@ -440,7 +441,7 @@ namespace Model
      * the audio, video, and thumbnail settings that Elastic Transcoder uses for
      * transcoding. </p>
      */
-    inline CreateJobOutput& WithPresetId(Aws::String&& value) { SetPresetId(value); return *this;}
+    inline CreateJobOutput& WithPresetId(Aws::String&& value) { SetPresetId(std::move(value)); return *this;}
 
     /**
      * <p> The <code>Id</code> of the preset to use for this job. The preset determines
@@ -507,7 +508,7 @@ namespace Model
      * master playlist for this job, include it in the <code>OutputKeys</code> of the
      * associated playlist.</p>
      */
-    inline void SetSegmentDuration(Aws::String&& value) { m_segmentDurationHasBeenSet = true; m_segmentDuration = value; }
+    inline void SetSegmentDuration(Aws::String&& value) { m_segmentDurationHasBeenSet = true; m_segmentDuration = std::move(value); }
 
     /**
      * <important> <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
@@ -567,7 +568,7 @@ namespace Model
      * master playlist for this job, include it in the <code>OutputKeys</code> of the
      * associated playlist.</p>
      */
-    inline CreateJobOutput& WithSegmentDuration(Aws::String&& value) { SetSegmentDuration(value); return *this;}
+    inline CreateJobOutput& WithSegmentDuration(Aws::String&& value) { SetSegmentDuration(std::move(value)); return *this;}
 
     /**
      * <important> <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
@@ -611,7 +612,7 @@ namespace Model
      * output. Settings for each watermark must be defined in the preset for the
      * current output.</p>
      */
-    inline void SetWatermarks(Aws::Vector<JobWatermark>&& value) { m_watermarksHasBeenSet = true; m_watermarks = value; }
+    inline void SetWatermarks(Aws::Vector<JobWatermark>&& value) { m_watermarksHasBeenSet = true; m_watermarks = std::move(value); }
 
     /**
      * <p>Information about the watermarks that you want Elastic Transcoder to add to
@@ -627,7 +628,7 @@ namespace Model
      * output. Settings for each watermark must be defined in the preset for the
      * current output.</p>
      */
-    inline CreateJobOutput& WithWatermarks(Aws::Vector<JobWatermark>&& value) { SetWatermarks(value); return *this;}
+    inline CreateJobOutput& WithWatermarks(Aws::Vector<JobWatermark>&& value) { SetWatermarks(std::move(value)); return *this;}
 
     /**
      * <p>Information about the watermarks that you want Elastic Transcoder to add to
@@ -643,7 +644,7 @@ namespace Model
      * output. Settings for each watermark must be defined in the preset for the
      * current output.</p>
      */
-    inline CreateJobOutput& AddWatermarks(JobWatermark&& value) { m_watermarksHasBeenSet = true; m_watermarks.push_back(value); return *this; }
+    inline CreateJobOutput& AddWatermarks(JobWatermark&& value) { m_watermarksHasBeenSet = true; m_watermarks.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Information about the album art that you want Elastic Transcoder to add to
@@ -667,7 +668,7 @@ namespace Model
      * each output. Settings for each artwork must be defined in the job for the
      * current output.</p>
      */
-    inline void SetAlbumArt(JobAlbumArt&& value) { m_albumArtHasBeenSet = true; m_albumArt = value; }
+    inline void SetAlbumArt(JobAlbumArt&& value) { m_albumArtHasBeenSet = true; m_albumArt = std::move(value); }
 
     /**
      * <p>Information about the album art that you want Elastic Transcoder to add to
@@ -683,7 +684,7 @@ namespace Model
      * each output. Settings for each artwork must be defined in the job for the
      * current output.</p>
      */
-    inline CreateJobOutput& WithAlbumArt(JobAlbumArt&& value) { SetAlbumArt(value); return *this;}
+    inline CreateJobOutput& WithAlbumArt(JobAlbumArt&& value) { SetAlbumArt(std::move(value)); return *this;}
 
     /**
      * <p>You can configure Elastic Transcoder to transcode captions, or subtitles,
@@ -788,7 +789,7 @@ namespace Model
      * files, see the Extensible Metadata Platform and Sidecar file Wikipedia
      * pages.</p>
      */
-    inline void SetCaptions(Captions&& value) { m_captionsHasBeenSet = true; m_captions = value; }
+    inline void SetCaptions(Captions&& value) { m_captionsHasBeenSet = true; m_captions = std::move(value); }
 
     /**
      * <p>You can configure Elastic Transcoder to transcode captions, or subtitles,
@@ -858,7 +859,7 @@ namespace Model
      * files, see the Extensible Metadata Platform and Sidecar file Wikipedia
      * pages.</p>
      */
-    inline CreateJobOutput& WithCaptions(Captions&& value) { SetCaptions(value); return *this;}
+    inline CreateJobOutput& WithCaptions(Captions&& value) { SetCaptions(std::move(value)); return *this;}
 
     /**
      * <p>You can specify encryption settings for any output files that you want to use
@@ -882,7 +883,7 @@ namespace Model
      * thumbnails, album art, or captions that you want to use. You must specify
      * encryption settings for each file individually.</p>
      */
-    inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
+    inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
 
     /**
      * <p>You can specify encryption settings for any output files that you want to use
@@ -898,7 +899,7 @@ namespace Model
      * thumbnails, album art, or captions that you want to use. You must specify
      * encryption settings for each file individually.</p>
      */
-    inline CreateJobOutput& WithEncryption(Encryption&& value) { SetEncryption(value); return *this;}
+    inline CreateJobOutput& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
 
   private:
     Aws::String m_key;

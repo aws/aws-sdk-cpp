@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The unique identifier (ID) of the protection.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the protection.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The unique identifier (ID) of the protection.</p>
      */
-    inline Protection& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline Protection& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the protection.</p>
@@ -95,7 +96,7 @@ namespace Model
      * <p>The friendly name of the protection. For example, <code>My CloudFront
      * distributions</code>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The friendly name of the protection. For example, <code>My CloudFront
@@ -113,7 +114,7 @@ namespace Model
      * <p>The friendly name of the protection. For example, <code>My CloudFront
      * distributions</code>.</p>
      */
-    inline Protection& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Protection& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The friendly name of the protection. For example, <code>My CloudFront
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>The ARN (Amazon Resource Name) of the AWS resource that is protected.</p>
      */
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
      * <p>The ARN (Amazon Resource Name) of the AWS resource that is protected.</p>
@@ -149,7 +150,7 @@ namespace Model
     /**
      * <p>The ARN (Amazon Resource Name) of the AWS resource that is protected.</p>
      */
-    inline Protection& WithResourceArn(Aws::String&& value) { SetResourceArn(value); return *this;}
+    inline Protection& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN (Amazon Resource Name) of the AWS resource that is protected.</p>

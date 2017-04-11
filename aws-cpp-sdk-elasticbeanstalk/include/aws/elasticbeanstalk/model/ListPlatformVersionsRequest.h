@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/PlatformFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>List only the platforms where the platform member value relates to one of the
      * supplied values.</p>
      */
-    inline void SetFilters(Aws::Vector<PlatformFilter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<PlatformFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>List only the platforms where the platform member value relates to one of the
@@ -67,7 +68,7 @@ namespace Model
      * <p>List only the platforms where the platform member value relates to one of the
      * supplied values.</p>
      */
-    inline ListPlatformVersionsRequest& WithFilters(Aws::Vector<PlatformFilter>&& value) { SetFilters(value); return *this;}
+    inline ListPlatformVersionsRequest& WithFilters(Aws::Vector<PlatformFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>List only the platforms where the platform member value relates to one of the
@@ -79,7 +80,7 @@ namespace Model
      * <p>List only the platforms where the platform member value relates to one of the
      * supplied values.</p>
      */
-    inline ListPlatformVersionsRequest& AddFilters(PlatformFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline ListPlatformVersionsRequest& AddFilters(PlatformFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The maximum number of platform values returned in one call.</p>
@@ -115,7 +116,7 @@ namespace Model
      * <code>NextToken</code> value from a previous <code>ListPlatformVersion</code>
      * call.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The starting index into the remaining list of platforms. Use the
@@ -136,7 +137,7 @@ namespace Model
      * <code>NextToken</code> value from a previous <code>ListPlatformVersion</code>
      * call.</p>
      */
-    inline ListPlatformVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListPlatformVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The starting index into the remaining list of platforms. Use the

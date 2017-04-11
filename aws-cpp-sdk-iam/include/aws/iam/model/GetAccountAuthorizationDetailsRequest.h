@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/model/EntityType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * strings. Each string value in the list must be one of the valid values listed
      * below.</p>
      */
-    inline void SetFilter(Aws::Vector<EntityType>&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(Aws::Vector<EntityType>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>A list of entity types used to filter the results. Only the entities that
@@ -87,7 +88,7 @@ namespace Model
      * strings. Each string value in the list must be one of the valid values listed
      * below.</p>
      */
-    inline GetAccountAuthorizationDetailsRequest& WithFilter(Aws::Vector<EntityType>&& value) { SetFilter(value); return *this;}
+    inline GetAccountAuthorizationDetailsRequest& WithFilter(Aws::Vector<EntityType>&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>A list of entity types used to filter the results. Only the entities that
@@ -107,7 +108,7 @@ namespace Model
      * strings. Each string value in the list must be one of the valid values listed
      * below.</p>
      */
-    inline GetAccountAuthorizationDetailsRequest& AddFilter(EntityType&& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
+    inline GetAccountAuthorizationDetailsRequest& AddFilter(EntityType&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
 
     /**
      * <p>(Optional) Use this only when paginating results to indicate the maximum
@@ -167,7 +168,7 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
@@ -191,7 +192,7 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline GetAccountAuthorizationDetailsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline GetAccountAuthorizationDetailsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
-    inline void SetReplicationInstanceArn(Aws::String&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
+    inline void SetReplicationInstanceArn(Aws::String&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
-    inline Connection& WithReplicationInstanceArn(Aws::String&& value) { SetReplicationInstanceArn(value); return *this;}
+    inline Connection& WithReplicationInstanceArn(Aws::String&& value) { SetReplicationInstanceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
@@ -94,7 +95,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
      * endpoint.</p>
      */
-    inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
+    inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
@@ -112,7 +113,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
      * endpoint.</p>
      */
-    inline Connection& WithEndpointArn(Aws::String&& value) { SetEndpointArn(value); return *this;}
+    inline Connection& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The connection status.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The connection status.</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>The connection status.</p>
      */
-    inline Connection& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline Connection& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The connection status.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>The error message when the connection last failed.</p>
      */
-    inline void SetLastFailureMessage(Aws::String&& value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage = value; }
+    inline void SetLastFailureMessage(Aws::String&& value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage = std::move(value); }
 
     /**
      * <p>The error message when the connection last failed.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>The error message when the connection last failed.</p>
      */
-    inline Connection& WithLastFailureMessage(Aws::String&& value) { SetLastFailureMessage(value); return *this;}
+    inline Connection& WithLastFailureMessage(Aws::String&& value) { SetLastFailureMessage(std::move(value)); return *this;}
 
     /**
      * <p>The error message when the connection last failed.</p>
@@ -209,7 +210,7 @@ namespace Model
      * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
      * or contain two consecutive hyphens.</p>
      */
-    inline void SetEndpointIdentifier(Aws::String&& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = value; }
+    inline void SetEndpointIdentifier(Aws::String&& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the endpoint. Identifiers must begin with a letter; must
@@ -230,7 +231,7 @@ namespace Model
      * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
      * or contain two consecutive hyphens.</p>
      */
-    inline Connection& WithEndpointIdentifier(Aws::String&& value) { SetEndpointIdentifier(value); return *this;}
+    inline Connection& WithEndpointIdentifier(Aws::String&& value) { SetEndpointIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the endpoint. Identifiers must begin with a letter; must
@@ -255,7 +256,7 @@ namespace Model
      * <p>The replication instance identifier. This parameter is stored as a lowercase
      * string.</p>
      */
-    inline void SetReplicationInstanceIdentifier(Aws::String&& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = value; }
+    inline void SetReplicationInstanceIdentifier(Aws::String&& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
@@ -273,7 +274,7 @@ namespace Model
      * <p>The replication instance identifier. This parameter is stored as a lowercase
      * string.</p>
      */
-    inline Connection& WithReplicationInstanceIdentifier(Aws::String&& value) { SetReplicationInstanceIdentifier(value); return *this;}
+    inline Connection& WithReplicationInstanceIdentifier(Aws::String&& value) { SetReplicationInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase

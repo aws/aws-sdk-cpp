@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The balance of the total value (the sum of remainingUpfrontValue +
      * hourlyPrice * number of hours remaining).</p>
      */
-    inline void SetRemainingTotalValue(Aws::String&& value) { m_remainingTotalValueHasBeenSet = true; m_remainingTotalValue = value; }
+    inline void SetRemainingTotalValue(Aws::String&& value) { m_remainingTotalValueHasBeenSet = true; m_remainingTotalValue = std::move(value); }
 
     /**
      * <p>The balance of the total value (the sum of remainingUpfrontValue +
@@ -80,7 +81,7 @@ namespace Model
      * <p>The balance of the total value (the sum of remainingUpfrontValue +
      * hourlyPrice * number of hours remaining).</p>
      */
-    inline ReservationValue& WithRemainingTotalValue(Aws::String&& value) { SetRemainingTotalValue(value); return *this;}
+    inline ReservationValue& WithRemainingTotalValue(Aws::String&& value) { SetRemainingTotalValue(std::move(value)); return *this;}
 
     /**
      * <p>The balance of the total value (the sum of remainingUpfrontValue +
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The remaining upfront cost of the reservation.</p>
      */
-    inline void SetRemainingUpfrontValue(Aws::String&& value) { m_remainingUpfrontValueHasBeenSet = true; m_remainingUpfrontValue = value; }
+    inline void SetRemainingUpfrontValue(Aws::String&& value) { m_remainingUpfrontValueHasBeenSet = true; m_remainingUpfrontValue = std::move(value); }
 
     /**
      * <p>The remaining upfront cost of the reservation.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The remaining upfront cost of the reservation.</p>
      */
-    inline ReservationValue& WithRemainingUpfrontValue(Aws::String&& value) { SetRemainingUpfrontValue(value); return *this;}
+    inline ReservationValue& WithRemainingUpfrontValue(Aws::String&& value) { SetRemainingUpfrontValue(std::move(value)); return *this;}
 
     /**
      * <p>The remaining upfront cost of the reservation.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The hourly rate of the reservation.</p>
      */
-    inline void SetHourlyPrice(Aws::String&& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = value; }
+    inline void SetHourlyPrice(Aws::String&& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = std::move(value); }
 
     /**
      * <p>The hourly rate of the reservation.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>The hourly rate of the reservation.</p>
      */
-    inline ReservationValue& WithHourlyPrice(Aws::String&& value) { SetHourlyPrice(value); return *this;}
+    inline ReservationValue& WithHourlyPrice(Aws::String&& value) { SetHourlyPrice(std::move(value)); return *this;}
 
     /**
      * <p>The hourly rate of the reservation.</p>

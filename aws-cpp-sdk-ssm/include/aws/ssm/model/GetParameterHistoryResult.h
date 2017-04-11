@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/ParameterHistory.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of parameters returned by the request.</p>
      */
-    inline void SetParameters(Aws::Vector<ParameterHistory>&& value) { m_parameters = value; }
+    inline void SetParameters(Aws::Vector<ParameterHistory>&& value) { m_parameters = std::move(value); }
 
     /**
      * <p>A list of parameters returned by the request.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of parameters returned by the request.</p>
      */
-    inline GetParameterHistoryResult& WithParameters(Aws::Vector<ParameterHistory>&& value) { SetParameters(value); return *this;}
+    inline GetParameterHistoryResult& WithParameters(Aws::Vector<ParameterHistory>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>A list of parameters returned by the request.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of parameters returned by the request.</p>
      */
-    inline GetParameterHistoryResult& AddParameters(ParameterHistory&& value) { m_parameters.push_back(value); return *this; }
+    inline GetParameterHistoryResult& AddParameters(ParameterHistory&& value) { m_parameters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -92,7 +93,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -110,7 +111,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline GetParameterHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline GetParameterHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no

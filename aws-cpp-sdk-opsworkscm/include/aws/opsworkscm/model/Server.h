@@ -20,6 +20,7 @@
 #include <aws/opsworkscm/model/MaintenanceStatus.h>
 #include <aws/opsworkscm/model/ServerStatus.h>
 #include <aws/opsworkscm/model/EngineAttribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The name of the server. </p>
      */
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
+    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
 
     /**
      * <p>The name of the server. </p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The name of the server. </p>
      */
-    inline Server& WithServerName(Aws::String&& value) { SetServerName(value); return *this;}
+    inline Server& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the server. </p>
@@ -129,7 +130,7 @@ namespace Model
      * <p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code>
      * </p>
      */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
      * <p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code>
@@ -141,7 +142,7 @@ namespace Model
      * <p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code>
      * </p>
      */
-    inline Server& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
+    inline Server& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the CloudFormation stack that was used to create the server. </p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>The ARN of the CloudFormation stack that was used to create the server. </p>
      */
-    inline void SetCloudFormationStackArn(Aws::String&& value) { m_cloudFormationStackArnHasBeenSet = true; m_cloudFormationStackArn = value; }
+    inline void SetCloudFormationStackArn(Aws::String&& value) { m_cloudFormationStackArnHasBeenSet = true; m_cloudFormationStackArn = std::move(value); }
 
     /**
      * <p>The ARN of the CloudFormation stack that was used to create the server. </p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>The ARN of the CloudFormation stack that was used to create the server. </p>
      */
-    inline Server& WithCloudFormationStackArn(Aws::String&& value) { SetCloudFormationStackArn(value); return *this;}
+    inline Server& WithCloudFormationStackArn(Aws::String&& value) { SetCloudFormationStackArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the CloudFormation stack that was used to create the server. </p>
@@ -212,7 +213,7 @@ namespace Model
      * <p> A DNS name that can be used to access the engine. Example:
      * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code> </p>
      */
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
+    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
      * <p> A DNS name that can be used to access the engine. Example:
@@ -230,7 +231,7 @@ namespace Model
      * <p> A DNS name that can be used to access the engine. Example:
      * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code> </p>
      */
-    inline Server& WithEndpoint(Aws::String&& value) { SetEndpoint(value); return *this;}
+    inline Server& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
 
     /**
      * <p> A DNS name that can be used to access the engine. Example:
@@ -254,7 +255,7 @@ namespace Model
      * <p>The engine type of the server. The valid value in this release is
      * <code>Chef</code>. </p>
      */
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The engine type of the server. The valid value in this release is
@@ -272,7 +273,7 @@ namespace Model
      * <p>The engine type of the server. The valid value in this release is
      * <code>Chef</code>. </p>
      */
-    inline Server& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
+    inline Server& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The engine type of the server. The valid value in this release is
@@ -296,7 +297,7 @@ namespace Model
      * <p>The engine model of the server. The valid value in this release is
      * <code>Single</code>. </p>
      */
-    inline void SetEngineModel(Aws::String&& value) { m_engineModelHasBeenSet = true; m_engineModel = value; }
+    inline void SetEngineModel(Aws::String&& value) { m_engineModelHasBeenSet = true; m_engineModel = std::move(value); }
 
     /**
      * <p>The engine model of the server. The valid value in this release is
@@ -314,7 +315,7 @@ namespace Model
      * <p>The engine model of the server. The valid value in this release is
      * <code>Single</code>. </p>
      */
-    inline Server& WithEngineModel(Aws::String&& value) { SetEngineModel(value); return *this;}
+    inline Server& WithEngineModel(Aws::String&& value) { SetEngineModel(std::move(value)); return *this;}
 
     /**
      * <p>The engine model of the server. The valid value in this release is
@@ -368,7 +369,7 @@ namespace Model
      * directory where you've unzipped the file contents. From this directory, you can
      * run Knife commands.</p> </li> </ul>
      */
-    inline void SetEngineAttributes(Aws::Vector<EngineAttribute>&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = value; }
+    inline void SetEngineAttributes(Aws::Vector<EngineAttribute>&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = std::move(value); }
 
     /**
      * <p>The response of a createServer() request returns the master credential to
@@ -400,7 +401,7 @@ namespace Model
      * directory where you've unzipped the file contents. From this directory, you can
      * run Knife commands.</p> </li> </ul>
      */
-    inline Server& WithEngineAttributes(Aws::Vector<EngineAttribute>&& value) { SetEngineAttributes(value); return *this;}
+    inline Server& WithEngineAttributes(Aws::Vector<EngineAttribute>&& value) { SetEngineAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The response of a createServer() request returns the master credential to
@@ -432,7 +433,7 @@ namespace Model
      * directory where you've unzipped the file contents. From this directory, you can
      * run Knife commands.</p> </li> </ul>
      */
-    inline Server& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(value); return *this; }
+    inline Server& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The engine version of the server. Because Chef is the engine available in
@@ -450,7 +451,7 @@ namespace Model
      * <p>The engine version of the server. Because Chef is the engine available in
      * this release, the valid value for EngineVersion is <code>12</code>. </p>
      */
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>The engine version of the server. Because Chef is the engine available in
@@ -468,7 +469,7 @@ namespace Model
      * <p>The engine version of the server. Because Chef is the engine available in
      * this release, the valid value for EngineVersion is <code>12</code>. </p>
      */
-    inline Server& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
+    inline Server& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The engine version of the server. Because Chef is the engine available in
@@ -489,7 +490,7 @@ namespace Model
     /**
      * <p>The instance profile ARN of the server. </p>
      */
-    inline void SetInstanceProfileArn(Aws::String&& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = value; }
+    inline void SetInstanceProfileArn(Aws::String&& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = std::move(value); }
 
     /**
      * <p>The instance profile ARN of the server. </p>
@@ -504,7 +505,7 @@ namespace Model
     /**
      * <p>The instance profile ARN of the server. </p>
      */
-    inline Server& WithInstanceProfileArn(Aws::String&& value) { SetInstanceProfileArn(value); return *this;}
+    inline Server& WithInstanceProfileArn(Aws::String&& value) { SetInstanceProfileArn(std::move(value)); return *this;}
 
     /**
      * <p>The instance profile ARN of the server. </p>
@@ -527,7 +528,7 @@ namespace Model
      * <p> The instance type for the server, as specified in the CloudFormation stack.
      * This might not be the same instance type that is shown in the EC2 console. </p>
      */
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p> The instance type for the server, as specified in the CloudFormation stack.
@@ -545,7 +546,7 @@ namespace Model
      * <p> The instance type for the server, as specified in the CloudFormation stack.
      * This might not be the same instance type that is shown in the EC2 console. </p>
      */
-    inline Server& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
+    inline Server& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p> The instance type for the server, as specified in the CloudFormation stack.
@@ -566,7 +567,7 @@ namespace Model
     /**
      * <p>The key pair associated with the server. </p>
      */
-    inline void SetKeyPair(Aws::String&& value) { m_keyPairHasBeenSet = true; m_keyPair = value; }
+    inline void SetKeyPair(Aws::String&& value) { m_keyPairHasBeenSet = true; m_keyPair = std::move(value); }
 
     /**
      * <p>The key pair associated with the server. </p>
@@ -581,7 +582,7 @@ namespace Model
     /**
      * <p>The key pair associated with the server. </p>
      */
-    inline Server& WithKeyPair(Aws::String&& value) { SetKeyPair(value); return *this;}
+    inline Server& WithKeyPair(Aws::String&& value) { SetKeyPair(std::move(value)); return *this;}
 
     /**
      * <p>The key pair associated with the server. </p>
@@ -604,7 +605,7 @@ namespace Model
      * <p>The status of the most recent server maintenance run. Shows
      * <code>SUCCESS</code> or <code>FAILED</code>. </p>
      */
-    inline void SetMaintenanceStatus(MaintenanceStatus&& value) { m_maintenanceStatusHasBeenSet = true; m_maintenanceStatus = value; }
+    inline void SetMaintenanceStatus(MaintenanceStatus&& value) { m_maintenanceStatusHasBeenSet = true; m_maintenanceStatus = std::move(value); }
 
     /**
      * <p>The status of the most recent server maintenance run. Shows
@@ -616,7 +617,7 @@ namespace Model
      * <p>The status of the most recent server maintenance run. Shows
      * <code>SUCCESS</code> or <code>FAILED</code>. </p>
      */
-    inline Server& WithMaintenanceStatus(MaintenanceStatus&& value) { SetMaintenanceStatus(value); return *this;}
+    inline Server& WithMaintenanceStatus(MaintenanceStatus&& value) { SetMaintenanceStatus(std::move(value)); return *this;}
 
     /**
      * <p>The preferred maintenance period specified for the server. </p>
@@ -631,7 +632,7 @@ namespace Model
     /**
      * <p>The preferred maintenance period specified for the server. </p>
      */
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
+    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p>The preferred maintenance period specified for the server. </p>
@@ -646,7 +647,7 @@ namespace Model
     /**
      * <p>The preferred maintenance period specified for the server. </p>
      */
-    inline Server& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(value); return *this;}
+    inline Server& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p>The preferred maintenance period specified for the server. </p>
@@ -666,7 +667,7 @@ namespace Model
     /**
      * <p>The preferred backup period specified for the server. </p>
      */
-    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
+    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
      * <p>The preferred backup period specified for the server. </p>
@@ -681,7 +682,7 @@ namespace Model
     /**
      * <p>The preferred backup period specified for the server. </p>
      */
-    inline Server& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(value); return *this;}
+    inline Server& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
      * <p>The preferred backup period specified for the server. </p>
@@ -707,7 +708,7 @@ namespace Model
      * stack. These might not be the same security groups that are shown in the EC2
      * console. </p>
      */
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
+    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p> The security group IDs for the server, as specified in the CloudFormation
@@ -721,7 +722,7 @@ namespace Model
      * stack. These might not be the same security groups that are shown in the EC2
      * console. </p>
      */
-    inline Server& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(value); return *this;}
+    inline Server& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p> The security group IDs for the server, as specified in the CloudFormation
@@ -735,7 +736,7 @@ namespace Model
      * stack. These might not be the same security groups that are shown in the EC2
      * console. </p>
      */
-    inline Server& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    inline Server& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p> The security group IDs for the server, as specified in the CloudFormation
@@ -757,7 +758,7 @@ namespace Model
     /**
      * <p>The service role ARN used to create the server. </p>
      */
-    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
+    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
      * <p>The service role ARN used to create the server. </p>
@@ -772,7 +773,7 @@ namespace Model
     /**
      * <p>The service role ARN used to create the server. </p>
      */
-    inline Server& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(value); return *this;}
+    inline Server& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The service role ARN used to create the server. </p>
@@ -798,7 +799,7 @@ namespace Model
      * such as creating, running, or backing up the server, as well as the server's
      * health state. </p>
      */
-    inline void SetStatus(ServerStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ServerStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p> The server's status. This field displays the states of actions in progress,
@@ -812,7 +813,7 @@ namespace Model
      * such as creating, running, or backing up the server, as well as the server's
      * health state. </p>
      */
-    inline Server& WithStatus(ServerStatus&& value) { SetStatus(value); return *this;}
+    inline Server& WithStatus(ServerStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p> Depending on the server status, this field has either a human-readable
@@ -833,7 +834,7 @@ namespace Model
      * message (such as a create or backup error), or an escaped block of JSON (used
      * for health check results). </p>
      */
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
 
     /**
      * <p> Depending on the server status, this field has either a human-readable
@@ -854,7 +855,7 @@ namespace Model
      * message (such as a create or backup error), or an escaped block of JSON (used
      * for health check results). </p>
      */
-    inline Server& WithStatusReason(Aws::String&& value) { SetStatusReason(value); return *this;}
+    inline Server& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
      * <p> Depending on the server status, this field has either a human-readable
@@ -876,7 +877,7 @@ namespace Model
     /**
      * <p> The subnet IDs specified in a CreateServer request. </p>
      */
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
+    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
      * <p> The subnet IDs specified in a CreateServer request. </p>
@@ -886,7 +887,7 @@ namespace Model
     /**
      * <p> The subnet IDs specified in a CreateServer request. </p>
      */
-    inline Server& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(value); return *this;}
+    inline Server& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
      * <p> The subnet IDs specified in a CreateServer request. </p>
@@ -896,7 +897,7 @@ namespace Model
     /**
      * <p> The subnet IDs specified in a CreateServer request. </p>
      */
-    inline Server& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    inline Server& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p> The subnet IDs specified in a CreateServer request. </p>
@@ -916,7 +917,7 @@ namespace Model
     /**
      * <p>The ARN of the server. </p>
      */
-    inline void SetServerArn(Aws::String&& value) { m_serverArnHasBeenSet = true; m_serverArn = value; }
+    inline void SetServerArn(Aws::String&& value) { m_serverArnHasBeenSet = true; m_serverArn = std::move(value); }
 
     /**
      * <p>The ARN of the server. </p>
@@ -931,7 +932,7 @@ namespace Model
     /**
      * <p>The ARN of the server. </p>
      */
-    inline Server& WithServerArn(Aws::String&& value) { SetServerArn(value); return *this;}
+    inline Server& WithServerArn(Aws::String&& value) { SetServerArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the server. </p>

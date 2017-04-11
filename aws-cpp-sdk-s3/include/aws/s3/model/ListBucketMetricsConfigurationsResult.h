@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/model/MetricsConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
      * The marker that is used as a starting point for this metrics configuration list
      * response. This value is present if it was sent in the request.
      */
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = value; }
+    inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = std::move(value); }
 
     /**
      * The marker that is used as a starting point for this metrics configuration list
@@ -96,7 +97,7 @@ namespace Model
      * The marker that is used as a starting point for this metrics configuration list
      * response. This value is present if it was sent in the request.
      */
-    inline ListBucketMetricsConfigurationsResult& WithContinuationToken(Aws::String&& value) { SetContinuationToken(value); return *this;}
+    inline ListBucketMetricsConfigurationsResult& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
      * The marker that is used as a starting point for this metrics configuration list
@@ -126,7 +127,7 @@ namespace Model
      * response to continue the listing. The continuation token is an opaque value that
      * Amazon S3 understands.
      */
-    inline void SetNextContinuationToken(Aws::String&& value) { m_nextContinuationToken = value; }
+    inline void SetNextContinuationToken(Aws::String&& value) { m_nextContinuationToken = std::move(value); }
 
     /**
      * The marker used to continue a metrics configuration listing that has been
@@ -150,7 +151,7 @@ namespace Model
      * response to continue the listing. The continuation token is an opaque value that
      * Amazon S3 understands.
      */
-    inline ListBucketMetricsConfigurationsResult& WithNextContinuationToken(Aws::String&& value) { SetNextContinuationToken(value); return *this;}
+    inline ListBucketMetricsConfigurationsResult& WithNextContinuationToken(Aws::String&& value) { SetNextContinuationToken(std::move(value)); return *this;}
 
     /**
      * The marker used to continue a metrics configuration listing that has been
@@ -173,7 +174,7 @@ namespace Model
     /**
      * The list of metrics configurations for a bucket.
      */
-    inline void SetMetricsConfigurationList(Aws::Vector<MetricsConfiguration>&& value) { m_metricsConfigurationList = value; }
+    inline void SetMetricsConfigurationList(Aws::Vector<MetricsConfiguration>&& value) { m_metricsConfigurationList = std::move(value); }
 
     /**
      * The list of metrics configurations for a bucket.
@@ -183,7 +184,7 @@ namespace Model
     /**
      * The list of metrics configurations for a bucket.
      */
-    inline ListBucketMetricsConfigurationsResult& WithMetricsConfigurationList(Aws::Vector<MetricsConfiguration>&& value) { SetMetricsConfigurationList(value); return *this;}
+    inline ListBucketMetricsConfigurationsResult& WithMetricsConfigurationList(Aws::Vector<MetricsConfiguration>&& value) { SetMetricsConfigurationList(std::move(value)); return *this;}
 
     /**
      * The list of metrics configurations for a bucket.
@@ -193,7 +194,7 @@ namespace Model
     /**
      * The list of metrics configurations for a bucket.
      */
-    inline ListBucketMetricsConfigurationsResult& AddMetricsConfigurationList(MetricsConfiguration&& value) { m_metricsConfigurationList.push_back(value); return *this; }
+    inline ListBucketMetricsConfigurationsResult& AddMetricsConfigurationList(MetricsConfiguration&& value) { m_metricsConfigurationList.push_back(std::move(value)); return *this; }
 
   private:
     bool m_isTruncated;

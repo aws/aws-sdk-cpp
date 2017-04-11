@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/Handshake.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>A list of <a>Handshake</a> objects with details about each of the handshakes
      * that are associated with an organization.</p>
      */
-    inline void SetHandshakes(Aws::Vector<Handshake>&& value) { m_handshakes = value; }
+    inline void SetHandshakes(Aws::Vector<Handshake>&& value) { m_handshakes = std::move(value); }
 
     /**
      * <p>A list of <a>Handshake</a> objects with details about each of the handshakes
@@ -69,7 +70,7 @@ namespace Model
      * <p>A list of <a>Handshake</a> objects with details about each of the handshakes
      * that are associated with an organization.</p>
      */
-    inline ListHandshakesForOrganizationResult& WithHandshakes(Aws::Vector<Handshake>&& value) { SetHandshakes(value); return *this;}
+    inline ListHandshakesForOrganizationResult& WithHandshakes(Aws::Vector<Handshake>&& value) { SetHandshakes(std::move(value)); return *this;}
 
     /**
      * <p>A list of <a>Handshake</a> objects with details about each of the handshakes
@@ -81,7 +82,7 @@ namespace Model
      * <p>A list of <a>Handshake</a> objects with details about each of the handshakes
      * that are associated with an organization.</p>
      */
-    inline ListHandshakesForOrganizationResult& AddHandshakes(Handshake&& value) { m_handshakes.push_back(value); return *this; }
+    inline ListHandshakesForOrganizationResult& AddHandshakes(Handshake&& value) { m_handshakes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -108,7 +109,7 @@ namespace Model
      * the output. You should repeat this until the <code>NextToken</code> response
      * element comes back as <code>null</code>.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -135,7 +136,7 @@ namespace Model
      * the output. You should repeat this until the <code>NextToken</code> response
      * element comes back as <code>null</code>.</p>
      */
-    inline ListHandshakesForOrganizationResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListHandshakesForOrganizationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If present, this value indicates that there is more output available than is

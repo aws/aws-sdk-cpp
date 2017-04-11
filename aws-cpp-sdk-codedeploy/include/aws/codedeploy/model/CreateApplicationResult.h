@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>A unique application ID.</p>
      */
-    inline void SetApplicationId(Aws::String&& value) { m_applicationId = value; }
+    inline void SetApplicationId(Aws::String&& value) { m_applicationId = std::move(value); }
 
     /**
      * <p>A unique application ID.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>A unique application ID.</p>
      */
-    inline CreateApplicationResult& WithApplicationId(Aws::String&& value) { SetApplicationId(value); return *this;}
+    inline CreateApplicationResult& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
      * <p>A unique application ID.</p>

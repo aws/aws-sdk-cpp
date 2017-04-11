@@ -16,6 +16,7 @@
 #include <aws/sns/SNS_EXPORTS.h>
 #include <aws/sns/SNSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput
      * action.</p>
      */
-    inline void SetPlatformApplicationArn(Aws::String&& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
+    inline void SetPlatformApplicationArn(Aws::String&& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = std::move(value); }
 
     /**
      * <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput
@@ -75,7 +76,7 @@ namespace Model
      * <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput
      * action.</p>
      */
-    inline ListEndpointsByPlatformApplicationRequest& WithPlatformApplicationArn(Aws::String&& value) { SetPlatformApplicationArn(value); return *this;}
+    inline ListEndpointsByPlatformApplicationRequest& WithPlatformApplicationArn(Aws::String&& value) { SetPlatformApplicationArn(std::move(value)); return *this;}
 
     /**
      * <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput
@@ -102,7 +103,7 @@ namespace Model
      * action to retrieve additional records that are available after the first page
      * results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>NextToken string is used when calling ListEndpointsByPlatformApplication
@@ -123,7 +124,7 @@ namespace Model
      * action to retrieve additional records that are available after the first page
      * results.</p>
      */
-    inline ListEndpointsByPlatformApplicationRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListEndpointsByPlatformApplicationRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>NextToken string is used when calling ListEndpointsByPlatformApplication

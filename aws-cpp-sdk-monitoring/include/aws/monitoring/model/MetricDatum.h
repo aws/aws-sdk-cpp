@@ -21,6 +21,7 @@
 #include <aws/monitoring/model/StatisticSet.h>
 #include <aws/monitoring/model/StandardUnit.h>
 #include <aws/monitoring/model/Dimension.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The name of the metric.</p>
      */
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
      * <p>The name of the metric.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The name of the metric.</p>
      */
-    inline MetricDatum& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
+    inline MetricDatum& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the metric.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The dimensions associated with the metric.</p>
      */
-    inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
+    inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
 
     /**
      * <p>The dimensions associated with the metric.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The dimensions associated with the metric.</p>
      */
-    inline MetricDatum& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(value); return *this;}
+    inline MetricDatum& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(std::move(value)); return *this;}
 
     /**
      * <p>The dimensions associated with the metric.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>The dimensions associated with the metric.</p>
      */
-    inline MetricDatum& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
+    inline MetricDatum& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The time the metric data was received, expressed as the number of
@@ -138,7 +139,7 @@ namespace Model
      * <p>The time the metric data was received, expressed as the number of
      * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
      */
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
      * <p>The time the metric data was received, expressed as the number of
@@ -150,7 +151,7 @@ namespace Model
      * <p>The time the metric data was received, expressed as the number of
      * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
      */
-    inline MetricDatum& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
+    inline MetricDatum& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The value for the metric.</p> <p>Although the parameter accepts numbers of
@@ -192,7 +193,7 @@ namespace Model
     /**
      * <p>The statistical values for the metric.</p>
      */
-    inline void SetStatisticValues(StatisticSet&& value) { m_statisticValuesHasBeenSet = true; m_statisticValues = value; }
+    inline void SetStatisticValues(StatisticSet&& value) { m_statisticValuesHasBeenSet = true; m_statisticValues = std::move(value); }
 
     /**
      * <p>The statistical values for the metric.</p>
@@ -202,7 +203,7 @@ namespace Model
     /**
      * <p>The statistical values for the metric.</p>
      */
-    inline MetricDatum& WithStatisticValues(StatisticSet&& value) { SetStatisticValues(value); return *this;}
+    inline MetricDatum& WithStatisticValues(StatisticSet&& value) { SetStatisticValues(std::move(value)); return *this;}
 
     /**
      * <p>The unit of the metric.</p>
@@ -217,7 +218,7 @@ namespace Model
     /**
      * <p>The unit of the metric.</p>
      */
-    inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
     /**
      * <p>The unit of the metric.</p>
@@ -227,7 +228,7 @@ namespace Model
     /**
      * <p>The unit of the metric.</p>
      */
-    inline MetricDatum& WithUnit(StandardUnit&& value) { SetUnit(value); return *this;}
+    inline MetricDatum& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
 
   private:
     Aws::String m_metricName;

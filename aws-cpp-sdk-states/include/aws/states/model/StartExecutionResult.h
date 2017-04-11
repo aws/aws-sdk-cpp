@@ -16,6 +16,7 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
-    inline void SetExecutionArn(Aws::String&& value) { m_executionArn = value; }
+    inline void SetExecutionArn(Aws::String&& value) { m_executionArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
-    inline StartExecutionResult& WithExecutionArn(Aws::String&& value) { SetExecutionArn(value); return *this;}
+    inline StartExecutionResult& WithExecutionArn(Aws::String&& value) { SetExecutionArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The date the execution was started.</p>
      */
-    inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDate = value; }
+    inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDate = std::move(value); }
 
     /**
      * <p>The date the execution was started.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The date the execution was started.</p>
      */
-    inline StartExecutionResult& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(value); return *this;}
+    inline StartExecutionResult& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_executionArn;

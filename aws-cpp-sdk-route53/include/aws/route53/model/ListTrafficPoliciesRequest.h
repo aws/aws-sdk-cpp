@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -84,7 +85,7 @@ namespace Model
      * response.</p> <p>Policies are listed in the order in which they were
      * created.</p>
      */
-    inline void SetTrafficPolicyIdMarker(Aws::String&& value) { m_trafficPolicyIdMarkerHasBeenSet = true; m_trafficPolicyIdMarker = value; }
+    inline void SetTrafficPolicyIdMarker(Aws::String&& value) { m_trafficPolicyIdMarkerHasBeenSet = true; m_trafficPolicyIdMarker = std::move(value); }
 
     /**
      * <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>, do
@@ -126,7 +127,7 @@ namespace Model
      * response.</p> <p>Policies are listed in the order in which they were
      * created.</p>
      */
-    inline ListTrafficPoliciesRequest& WithTrafficPolicyIdMarker(Aws::String&& value) { SetTrafficPolicyIdMarker(value); return *this;}
+    inline ListTrafficPoliciesRequest& WithTrafficPolicyIdMarker(Aws::String&& value) { SetTrafficPolicyIdMarker(std::move(value)); return *this;}
 
     /**
      * <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>, do
@@ -170,7 +171,7 @@ namespace Model
      * <code>TrafficPolicyIdMarker</code> element is the ID of the first traffic policy
      * in the next group of <code>MaxItems</code> traffic policies.</p>
      */
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
     /**
      * <p>(Optional) The maximum number of traffic policies to be included in the
@@ -200,7 +201,7 @@ namespace Model
      * <code>TrafficPolicyIdMarker</code> element is the ID of the first traffic policy
      * in the next group of <code>MaxItems</code> traffic policies.</p>
      */
-    inline ListTrafficPoliciesRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
+    inline ListTrafficPoliciesRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) The maximum number of traffic policies to be included in the

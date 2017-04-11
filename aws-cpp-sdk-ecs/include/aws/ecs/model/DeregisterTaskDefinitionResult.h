@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/TaskDefinition.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The full description of the deregistered task.</p>
      */
-    inline void SetTaskDefinition(TaskDefinition&& value) { m_taskDefinition = value; }
+    inline void SetTaskDefinition(TaskDefinition&& value) { m_taskDefinition = std::move(value); }
 
     /**
      * <p>The full description of the deregistered task.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The full description of the deregistered task.</p>
      */
-    inline DeregisterTaskDefinitionResult& WithTaskDefinition(TaskDefinition&& value) { SetTaskDefinition(value); return *this;}
+    inline DeregisterTaskDefinitionResult& WithTaskDefinition(TaskDefinition&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
   private:
     TaskDefinition m_taskDefinition;

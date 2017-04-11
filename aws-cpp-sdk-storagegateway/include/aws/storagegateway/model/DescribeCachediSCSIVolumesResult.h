@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/storagegateway/model/CachediSCSIVolume.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>An array of objects where each object contains metadata about one cached
      * volume.</p>
      */
-    inline void SetCachediSCSIVolumes(Aws::Vector<CachediSCSIVolume>&& value) { m_cachediSCSIVolumes = value; }
+    inline void SetCachediSCSIVolumes(Aws::Vector<CachediSCSIVolume>&& value) { m_cachediSCSIVolumes = std::move(value); }
 
     /**
      * <p>An array of objects where each object contains metadata about one cached
@@ -73,7 +74,7 @@ namespace Model
      * <p>An array of objects where each object contains metadata about one cached
      * volume.</p>
      */
-    inline DescribeCachediSCSIVolumesResult& WithCachediSCSIVolumes(Aws::Vector<CachediSCSIVolume>&& value) { SetCachediSCSIVolumes(value); return *this;}
+    inline DescribeCachediSCSIVolumesResult& WithCachediSCSIVolumes(Aws::Vector<CachediSCSIVolume>&& value) { SetCachediSCSIVolumes(std::move(value)); return *this;}
 
     /**
      * <p>An array of objects where each object contains metadata about one cached
@@ -85,7 +86,7 @@ namespace Model
      * <p>An array of objects where each object contains metadata about one cached
      * volume.</p>
      */
-    inline DescribeCachediSCSIVolumesResult& AddCachediSCSIVolumes(CachediSCSIVolume&& value) { m_cachediSCSIVolumes.push_back(value); return *this; }
+    inline DescribeCachediSCSIVolumesResult& AddCachediSCSIVolumes(CachediSCSIVolume&& value) { m_cachediSCSIVolumes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<CachediSCSIVolume> m_cachediSCSIVolumes;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ProductCodeValues.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The product code.</p>
      */
-    inline void SetProductCodeId(Aws::String&& value) { m_productCodeIdHasBeenSet = true; m_productCodeId = value; }
+    inline void SetProductCodeId(Aws::String&& value) { m_productCodeIdHasBeenSet = true; m_productCodeId = std::move(value); }
 
     /**
      * <p>The product code.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The product code.</p>
      */
-    inline ProductCode& WithProductCodeId(Aws::String&& value) { SetProductCodeId(value); return *this;}
+    inline ProductCode& WithProductCodeId(Aws::String&& value) { SetProductCodeId(std::move(value)); return *this;}
 
     /**
      * <p>The product code.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The type of product code.</p>
      */
-    inline void SetProductCodeType(ProductCodeValues&& value) { m_productCodeTypeHasBeenSet = true; m_productCodeType = value; }
+    inline void SetProductCodeType(ProductCodeValues&& value) { m_productCodeTypeHasBeenSet = true; m_productCodeType = std::move(value); }
 
     /**
      * <p>The type of product code.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The type of product code.</p>
      */
-    inline ProductCode& WithProductCodeType(ProductCodeValues&& value) { SetProductCodeType(value); return *this;}
+    inline ProductCode& WithProductCodeType(ProductCodeValues&& value) { SetProductCodeType(std::move(value)); return *this;}
 
   private:
     Aws::String m_productCodeId;

@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/ServerCertificate.h>
 #include <aws/iam/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A structure containing details about the server certificate.</p>
      */
-    inline void SetServerCertificate(ServerCertificate&& value) { m_serverCertificate = value; }
+    inline void SetServerCertificate(ServerCertificate&& value) { m_serverCertificate = std::move(value); }
 
     /**
      * <p>A structure containing details about the server certificate.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A structure containing details about the server certificate.</p>
      */
-    inline GetServerCertificateResult& WithServerCertificate(ServerCertificate&& value) { SetServerCertificate(value); return *this;}
+    inline GetServerCertificateResult& WithServerCertificate(ServerCertificate&& value) { SetServerCertificate(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -78,13 +79,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline GetServerCertificateResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline GetServerCertificateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline GetServerCertificateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     ServerCertificate m_serverCertificate;

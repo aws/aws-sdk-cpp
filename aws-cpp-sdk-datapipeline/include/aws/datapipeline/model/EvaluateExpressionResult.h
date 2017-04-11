@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The evaluated expression.</p>
      */
-    inline void SetEvaluatedExpression(Aws::String&& value) { m_evaluatedExpression = value; }
+    inline void SetEvaluatedExpression(Aws::String&& value) { m_evaluatedExpression = std::move(value); }
 
     /**
      * <p>The evaluated expression.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The evaluated expression.</p>
      */
-    inline EvaluateExpressionResult& WithEvaluatedExpression(Aws::String&& value) { SetEvaluatedExpression(value); return *this;}
+    inline EvaluateExpressionResult& WithEvaluatedExpression(Aws::String&& value) { SetEvaluatedExpression(std::move(value)); return *this;}
 
     /**
      * <p>The evaluated expression.</p>

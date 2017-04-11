@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <b>InitiateJob</b> request when initiating a job to retrieve a vault inventory.
      * Valid values are <code>CSV</code> and <code>JSON</code>.</p>
      */
-    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = value; }
+    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
      * <p>The output format for the vault inventory list, which is set by the
@@ -84,7 +85,7 @@ namespace Model
      * <b>InitiateJob</b> request when initiating a job to retrieve a vault inventory.
      * Valid values are <code>CSV</code> and <code>JSON</code>.</p>
      */
-    inline InventoryRetrievalJobDescription& WithFormat(Aws::String&& value) { SetFormat(value); return *this;}
+    inline InventoryRetrievalJobDescription& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
 
     /**
      * <p>The output format for the vault inventory list, which is set by the
@@ -115,7 +116,7 @@ namespace Model
      * value should be a string in the ISO 8601 date format, for example
      * <code>2013-03-20T17:03:43Z</code>.</p>
      */
-    inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = value; }
+    inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
 
     /**
      * <p>The start of the date range in Universal Coordinated Time (UTC) for vault
@@ -139,7 +140,7 @@ namespace Model
      * value should be a string in the ISO 8601 date format, for example
      * <code>2013-03-20T17:03:43Z</code>.</p>
      */
-    inline InventoryRetrievalJobDescription& WithStartDate(Aws::String&& value) { SetStartDate(value); return *this;}
+    inline InventoryRetrievalJobDescription& WithStartDate(Aws::String&& value) { SetStartDate(std::move(value)); return *this;}
 
     /**
      * <p>The start of the date range in Universal Coordinated Time (UTC) for vault
@@ -168,7 +169,7 @@ namespace Model
      * archives created before this date. This value should be a string in the ISO 8601
      * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
-    inline void SetEndDate(Aws::String&& value) { m_endDateHasBeenSet = true; m_endDate = value; }
+    inline void SetEndDate(Aws::String&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
 
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
@@ -189,7 +190,7 @@ namespace Model
      * archives created before this date. This value should be a string in the ISO 8601
      * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
-    inline InventoryRetrievalJobDescription& WithEndDate(Aws::String&& value) { SetEndDate(value); return *this;}
+    inline InventoryRetrievalJobDescription& WithEndDate(Aws::String&& value) { SetEndDate(std::move(value)); return *this;}
 
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
@@ -217,7 +218,7 @@ namespace Model
      * request. This limit is set when initiating the job with the a <b>InitiateJob</b>
      * request. </p>
      */
-    inline void SetLimit(Aws::String&& value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(Aws::String&& value) { m_limitHasBeenSet = true; m_limit = std::move(value); }
 
     /**
      * <p>The maximum number of inventory items returned per vault inventory retrieval
@@ -238,7 +239,7 @@ namespace Model
      * request. This limit is set when initiating the job with the a <b>InitiateJob</b>
      * request. </p>
      */
-    inline InventoryRetrievalJobDescription& WithLimit(Aws::String&& value) { SetLimit(value); return *this;}
+    inline InventoryRetrievalJobDescription& WithLimit(Aws::String&& value) { SetLimit(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of inventory items returned per vault inventory retrieval
@@ -275,7 +276,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
      * Range Inventory Retrieval</a>.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An opaque string that represents where to continue pagination of the vault
@@ -305,7 +306,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
      * Range Inventory Retrieval</a>.</p>
      */
-    inline InventoryRetrievalJobDescription& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline InventoryRetrievalJobDescription& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An opaque string that represents where to continue pagination of the vault

@@ -17,6 +17,7 @@
 #include <aws/workspaces/WorkSpacesRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/model/StartRequest.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The requests.</p>
      */
-    inline void SetStartWorkspaceRequests(Aws::Vector<StartRequest>&& value) { m_startWorkspaceRequestsHasBeenSet = true; m_startWorkspaceRequests = value; }
+    inline void SetStartWorkspaceRequests(Aws::Vector<StartRequest>&& value) { m_startWorkspaceRequestsHasBeenSet = true; m_startWorkspaceRequests = std::move(value); }
 
     /**
      * <p>The requests.</p>
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The requests.</p>
      */
-    inline StartWorkspacesRequest& WithStartWorkspaceRequests(Aws::Vector<StartRequest>&& value) { SetStartWorkspaceRequests(value); return *this;}
+    inline StartWorkspacesRequest& WithStartWorkspaceRequests(Aws::Vector<StartRequest>&& value) { SetStartWorkspaceRequests(std::move(value)); return *this;}
 
     /**
      * <p>The requests.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The requests.</p>
      */
-    inline StartWorkspacesRequest& AddStartWorkspaceRequests(StartRequest&& value) { m_startWorkspaceRequestsHasBeenSet = true; m_startWorkspaceRequests.push_back(value); return *this; }
+    inline StartWorkspacesRequest& AddStartWorkspaceRequests(StartRequest&& value) { m_startWorkspaceRequestsHasBeenSet = true; m_startWorkspaceRequests.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<StartRequest> m_startWorkspaceRequests;

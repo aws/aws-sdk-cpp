@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * Base64-encoding is performed for you, and you can load the text from a file.
      * Otherwise, you must provide Base64-encoded text.</p>
      */
-    inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = value; }
+    inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
      * <p>The user data. If you are using an AWS SDK or command line tool,
@@ -86,7 +87,7 @@ namespace Model
      * Base64-encoding is performed for you, and you can load the text from a file.
      * Otherwise, you must provide Base64-encoded text.</p>
      */
-    inline UserData& WithData(Aws::String&& value) { SetData(value); return *this;}
+    inline UserData& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
 
     /**
      * <p>The user data. If you are using an AWS SDK or command line tool,

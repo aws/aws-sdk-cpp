@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/MigrationTypeValue.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
      */
-    inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
+    inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
      */
-    inline ModifyReplicationTaskRequest& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(value); return *this;}
+    inline ModifyReplicationTaskRequest& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
@@ -97,7 +98,7 @@ namespace Model
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul>
      */
-    inline void SetReplicationTaskIdentifier(Aws::String&& value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier = value; }
+    inline void SetReplicationTaskIdentifier(Aws::String&& value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier = std::move(value); }
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
@@ -121,7 +122,7 @@ namespace Model
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul>
      */
-    inline ModifyReplicationTaskRequest& WithReplicationTaskIdentifier(Aws::String&& value) { SetReplicationTaskIdentifier(value); return *this;}
+    inline ModifyReplicationTaskRequest& WithReplicationTaskIdentifier(Aws::String&& value) { SetReplicationTaskIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
@@ -147,7 +148,7 @@ namespace Model
      * <p>The migration type.</p> <p>Valid values: full-load | cdc |
      * full-load-and-cdc</p>
      */
-    inline void SetMigrationType(MigrationTypeValue&& value) { m_migrationTypeHasBeenSet = true; m_migrationType = value; }
+    inline void SetMigrationType(MigrationTypeValue&& value) { m_migrationTypeHasBeenSet = true; m_migrationType = std::move(value); }
 
     /**
      * <p>The migration type.</p> <p>Valid values: full-load | cdc |
@@ -159,7 +160,7 @@ namespace Model
      * <p>The migration type.</p> <p>Valid values: full-load | cdc |
      * full-load-and-cdc</p>
      */
-    inline ModifyReplicationTaskRequest& WithMigrationType(MigrationTypeValue&& value) { SetMigrationType(value); return *this;}
+    inline ModifyReplicationTaskRequest& WithMigrationType(MigrationTypeValue&& value) { SetMigrationType(std::move(value)); return *this;}
 
     /**
      * <p>The path of the JSON file that contains the table mappings. Preceed the path
@@ -177,7 +178,7 @@ namespace Model
      * <p>The path of the JSON file that contains the table mappings. Preceed the path
      * with "file://".</p> <p>For example, --table-mappings file://mappingfile.json</p>
      */
-    inline void SetTableMappings(Aws::String&& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = value; }
+    inline void SetTableMappings(Aws::String&& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = std::move(value); }
 
     /**
      * <p>The path of the JSON file that contains the table mappings. Preceed the path
@@ -195,7 +196,7 @@ namespace Model
      * <p>The path of the JSON file that contains the table mappings. Preceed the path
      * with "file://".</p> <p>For example, --table-mappings file://mappingfile.json</p>
      */
-    inline ModifyReplicationTaskRequest& WithTableMappings(Aws::String&& value) { SetTableMappings(value); return *this;}
+    inline ModifyReplicationTaskRequest& WithTableMappings(Aws::String&& value) { SetTableMappings(std::move(value)); return *this;}
 
     /**
      * <p>The path of the JSON file that contains the table mappings. Preceed the path
@@ -219,7 +220,7 @@ namespace Model
      * <p>JSON file that contains settings for the task, such as target metadata
      * settings.</p>
      */
-    inline void SetReplicationTaskSettings(Aws::String&& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = value; }
+    inline void SetReplicationTaskSettings(Aws::String&& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = std::move(value); }
 
     /**
      * <p>JSON file that contains settings for the task, such as target metadata
@@ -237,7 +238,7 @@ namespace Model
      * <p>JSON file that contains settings for the task, such as target metadata
      * settings.</p>
      */
-    inline ModifyReplicationTaskRequest& WithReplicationTaskSettings(Aws::String&& value) { SetReplicationTaskSettings(value); return *this;}
+    inline ModifyReplicationTaskRequest& WithReplicationTaskSettings(Aws::String&& value) { SetReplicationTaskSettings(std::move(value)); return *this;}
 
     /**
      * <p>JSON file that contains settings for the task, such as target metadata
@@ -258,7 +259,7 @@ namespace Model
     /**
      * <p>The start time for the Change Data Capture (CDC) operation.</p>
      */
-    inline void SetCdcStartTime(Aws::Utils::DateTime&& value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = value; }
+    inline void SetCdcStartTime(Aws::Utils::DateTime&& value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = std::move(value); }
 
     /**
      * <p>The start time for the Change Data Capture (CDC) operation.</p>
@@ -268,7 +269,7 @@ namespace Model
     /**
      * <p>The start time for the Change Data Capture (CDC) operation.</p>
      */
-    inline ModifyReplicationTaskRequest& WithCdcStartTime(Aws::Utils::DateTime&& value) { SetCdcStartTime(value); return *this;}
+    inline ModifyReplicationTaskRequest& WithCdcStartTime(Aws::Utils::DateTime&& value) { SetCdcStartTime(std::move(value)); return *this;}
 
   private:
     Aws::String m_replicationTaskArn;

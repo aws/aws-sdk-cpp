@@ -17,6 +17,7 @@
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a> where both objects reside. For more
      * information, see <a>arns</a>.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>ARN associated with the <a>Directory</a> where both objects reside. For more
@@ -70,7 +71,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a> where both objects reside. For more
      * information, see <a>arns</a>.</p>
      */
-    inline AttachPolicyRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline AttachPolicyRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN associated with the <a>Directory</a> where both objects reside. For more
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>Reference associated with the policy object.</p>
      */
-    inline void SetPolicyReference(ObjectReference&& value) { m_policyReferenceHasBeenSet = true; m_policyReference = value; }
+    inline void SetPolicyReference(ObjectReference&& value) { m_policyReferenceHasBeenSet = true; m_policyReference = std::move(value); }
 
     /**
      * <p>Reference associated with the policy object.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>Reference associated with the policy object.</p>
      */
-    inline AttachPolicyRequest& WithPolicyReference(ObjectReference&& value) { SetPolicyReference(value); return *this;}
+    inline AttachPolicyRequest& WithPolicyReference(ObjectReference&& value) { SetPolicyReference(std::move(value)); return *this;}
 
     /**
      * <p>Reference that identifies the object to which the policy will be
@@ -119,7 +120,7 @@ namespace Model
      * <p>Reference that identifies the object to which the policy will be
      * attached.</p>
      */
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
+    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
 
     /**
      * <p>Reference that identifies the object to which the policy will be
@@ -131,7 +132,7 @@ namespace Model
      * <p>Reference that identifies the object to which the policy will be
      * attached.</p>
      */
-    inline AttachPolicyRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(value); return *this;}
+    inline AttachPolicyRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
   private:
     Aws::String m_directoryArn;

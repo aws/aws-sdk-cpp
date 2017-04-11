@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/ErrorCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -132,7 +133,7 @@ namespace Model
      * will most likely be raised if the revision is deleted after the deployment is
      * created but before it is started.</p> </li> </ul>
      */
-    inline void SetCode(ErrorCode&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(ErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>For information about additional error codes, see <a
@@ -192,7 +193,7 @@ namespace Model
      * will most likely be raised if the revision is deleted after the deployment is
      * created but before it is started.</p> </li> </ul>
      */
-    inline ErrorInformation& WithCode(ErrorCode&& value) { SetCode(value); return *this;}
+    inline ErrorInformation& WithCode(ErrorCode&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>An accompanying error message.</p>
@@ -207,7 +208,7 @@ namespace Model
     /**
      * <p>An accompanying error message.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>An accompanying error message.</p>
@@ -222,7 +223,7 @@ namespace Model
     /**
      * <p>An accompanying error message.</p>
      */
-    inline ErrorInformation& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline ErrorInformation& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>An accompanying error message.</p>

@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of the cluster parameter group family.</p>
      */
-    inline void SetParameterGroupFamily(Aws::String&& value) { m_parameterGroupFamilyHasBeenSet = true; m_parameterGroupFamily = value; }
+    inline void SetParameterGroupFamily(Aws::String&& value) { m_parameterGroupFamilyHasBeenSet = true; m_parameterGroupFamily = std::move(value); }
 
     /**
      * <p>The name of the cluster parameter group family.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the cluster parameter group family.</p>
      */
-    inline DescribeDefaultClusterParametersRequest& WithParameterGroupFamily(Aws::String&& value) { SetParameterGroupFamily(value); return *this;}
+    inline DescribeDefaultClusterParametersRequest& WithParameterGroupFamily(Aws::String&& value) { SetParameterGroupFamily(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cluster parameter group family.</p>
@@ -133,7 +134,7 @@ namespace Model
      * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -163,7 +164,7 @@ namespace Model
      * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline DescribeDefaultClusterParametersRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeDefaultClusterParametersRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of

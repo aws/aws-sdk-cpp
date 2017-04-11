@@ -16,6 +16,7 @@
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
 
     /**
      * <p>The name of the load balancer.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline DescribeLoadBalancerAttributesRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
+    inline DescribeLoadBalancerAttributesRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the load balancer.</p>

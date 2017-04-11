@@ -16,6 +16,7 @@
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/support/SupportRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * Support currently supports English ("en") and Japanese ("ja"). Language
      * parameters must be passed explicitly for operations that take them.</p>
      */
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = value; }
+    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
 
     /**
      * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
@@ -78,7 +79,7 @@ namespace Model
      * Support currently supports English ("en") and Japanese ("ja"). Language
      * parameters must be passed explicitly for operations that take them.</p>
      */
-    inline DescribeSeverityLevelsRequest& WithLanguage(Aws::String&& value) { SetLanguage(value); return *this;}
+    inline DescribeSeverityLevelsRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
 
     /**
      * <p>The ISO 639-1 code for the language in which AWS provides support. AWS

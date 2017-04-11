@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The ARN of the Lambda function.</p>
      */
-    inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
+    inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::move(value); }
 
     /**
      * <p>The ARN of the Lambda function.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The ARN of the Lambda function.</p>
      */
-    inline LambdaAction& WithFunctionArn(Aws::String&& value) { SetFunctionArn(value); return *this;}
+    inline LambdaAction& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the Lambda function.</p>

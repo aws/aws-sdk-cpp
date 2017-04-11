@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/iot/model/LoggingOptionsPayload.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The logging options payload.</p>
      */
-    inline void SetLoggingOptionsPayload(LoggingOptionsPayload&& value) { m_loggingOptionsPayloadHasBeenSet = true; m_loggingOptionsPayload = value; }
+    inline void SetLoggingOptionsPayload(LoggingOptionsPayload&& value) { m_loggingOptionsPayloadHasBeenSet = true; m_loggingOptionsPayload = std::move(value); }
 
     /**
      * <p>The logging options payload.</p>
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The logging options payload.</p>
      */
-    inline SetLoggingOptionsRequest& WithLoggingOptionsPayload(LoggingOptionsPayload&& value) { SetLoggingOptionsPayload(value); return *this;}
+    inline SetLoggingOptionsRequest& WithLoggingOptionsPayload(LoggingOptionsPayload&& value) { SetLoggingOptionsPayload(std::move(value)); return *this;}
 
   private:
     LoggingOptionsPayload m_loggingOptionsPayload;

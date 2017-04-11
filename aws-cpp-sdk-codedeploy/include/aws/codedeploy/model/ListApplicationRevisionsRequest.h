@@ -19,6 +19,7 @@
 #include <aws/codedeploy/model/ApplicationRevisionSortBy.h>
 #include <aws/codedeploy/model/SortOrder.h>
 #include <aws/codedeploy/model/ListStateFilterAction.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
      * user or AWS account.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
@@ -76,7 +77,7 @@ namespace Model
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
      * user or AWS account.</p>
      */
-    inline ListApplicationRevisionsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline ListApplicationRevisionsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
@@ -112,7 +113,7 @@ namespace Model
      * revisions were last used in a deployment.</p> </li> </ul> <p>If not specified or
      * set to null, the results will be returned in an arbitrary order.</p>
      */
-    inline void SetSortBy(ApplicationRevisionSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline void SetSortBy(ApplicationRevisionSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
      * <p>The column name to use to sort the list results:</p> <ul> <li>
@@ -132,7 +133,7 @@ namespace Model
      * revisions were last used in a deployment.</p> </li> </ul> <p>If not specified or
      * set to null, the results will be returned in an arbitrary order.</p>
      */
-    inline ListApplicationRevisionsRequest& WithSortBy(ApplicationRevisionSortBy&& value) { SetSortBy(value); return *this;}
+    inline ListApplicationRevisionsRequest& WithSortBy(ApplicationRevisionSortBy&& value) { SetSortBy(std::move(value)); return *this;}
 
     /**
      * <p>The order in which to sort the list results:</p> <ul> <li> <p>ascending:
@@ -156,7 +157,7 @@ namespace Model
      * <p>If not specified, the results will be sorted in ascending order.</p> <p>If
      * set to null, the results will be sorted in an arbitrary order.</p>
      */
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
      * <p>The order in which to sort the list results:</p> <ul> <li> <p>ascending:
@@ -172,7 +173,7 @@ namespace Model
      * <p>If not specified, the results will be sorted in ascending order.</p> <p>If
      * set to null, the results will be sorted in an arbitrary order.</p>
      */
-    inline ListApplicationRevisionsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(value); return *this;}
+    inline ListApplicationRevisionsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 
     /**
      * <p>An Amazon S3 bucket name to limit the search for revisions.</p> <p>If set to
@@ -190,7 +191,7 @@ namespace Model
      * <p>An Amazon S3 bucket name to limit the search for revisions.</p> <p>If set to
      * null, all of the user's buckets will be searched.</p>
      */
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
+    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
      * <p>An Amazon S3 bucket name to limit the search for revisions.</p> <p>If set to
@@ -208,7 +209,7 @@ namespace Model
      * <p>An Amazon S3 bucket name to limit the search for revisions.</p> <p>If set to
      * null, all of the user's buckets will be searched.</p>
      */
-    inline ListApplicationRevisionsRequest& WithS3Bucket(Aws::String&& value) { SetS3Bucket(value); return *this;}
+    inline ListApplicationRevisionsRequest& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
      * <p>An Amazon S3 bucket name to limit the search for revisions.</p> <p>If set to
@@ -232,7 +233,7 @@ namespace Model
      * <p>A key prefix for the set of Amazon S3 objects to limit the search for
      * revisions.</p>
      */
-    inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = value; }
+    inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = std::move(value); }
 
     /**
      * <p>A key prefix for the set of Amazon S3 objects to limit the search for
@@ -250,7 +251,7 @@ namespace Model
      * <p>A key prefix for the set of Amazon S3 objects to limit the search for
      * revisions.</p>
      */
-    inline ListApplicationRevisionsRequest& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(value); return *this;}
+    inline ListApplicationRevisionsRequest& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(std::move(value)); return *this;}
 
     /**
      * <p>A key prefix for the set of Amazon S3 objects to limit the search for
@@ -283,7 +284,7 @@ namespace Model
      * list revisions that are target revisions of a deployment group.</p> </li> <li>
      * <p>ignore: List all revisions.</p> </li> </ul>
      */
-    inline void SetDeployed(ListStateFilterAction&& value) { m_deployedHasBeenSet = true; m_deployed = value; }
+    inline void SetDeployed(ListStateFilterAction&& value) { m_deployedHasBeenSet = true; m_deployed = std::move(value); }
 
     /**
      * <p>Whether to list revisions based on whether the revision is the target
@@ -301,7 +302,7 @@ namespace Model
      * list revisions that are target revisions of a deployment group.</p> </li> <li>
      * <p>ignore: List all revisions.</p> </li> </ul>
      */
-    inline ListApplicationRevisionsRequest& WithDeployed(ListStateFilterAction&& value) { SetDeployed(value); return *this;}
+    inline ListApplicationRevisionsRequest& WithDeployed(ListStateFilterAction&& value) { SetDeployed(std::move(value)); return *this;}
 
     /**
      * <p>An identifier returned from the previous list application revisions call. It
@@ -319,7 +320,7 @@ namespace Model
      * <p>An identifier returned from the previous list application revisions call. It
      * can be used to return the next set of applications in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>An identifier returned from the previous list application revisions call. It
@@ -337,7 +338,7 @@ namespace Model
      * <p>An identifier returned from the previous list application revisions call. It
      * can be used to return the next set of applications in the list.</p>
      */
-    inline ListApplicationRevisionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListApplicationRevisionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An identifier returned from the previous list application revisions call. It

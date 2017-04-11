@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/model/NotifyWorkersFailureStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p> When MTurk sends notifications to the list of Workers, it returns back any
      * failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
      */
-    inline void SetNotifyWorkersFailureStatuses(Aws::Vector<NotifyWorkersFailureStatus>&& value) { m_notifyWorkersFailureStatuses = value; }
+    inline void SetNotifyWorkersFailureStatuses(Aws::Vector<NotifyWorkersFailureStatus>&& value) { m_notifyWorkersFailureStatuses = std::move(value); }
 
     /**
      * <p> When MTurk sends notifications to the list of Workers, it returns back any
@@ -68,7 +69,7 @@ namespace Model
      * <p> When MTurk sends notifications to the list of Workers, it returns back any
      * failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
      */
-    inline NotifyWorkersResult& WithNotifyWorkersFailureStatuses(Aws::Vector<NotifyWorkersFailureStatus>&& value) { SetNotifyWorkersFailureStatuses(value); return *this;}
+    inline NotifyWorkersResult& WithNotifyWorkersFailureStatuses(Aws::Vector<NotifyWorkersFailureStatus>&& value) { SetNotifyWorkersFailureStatuses(std::move(value)); return *this;}
 
     /**
      * <p> When MTurk sends notifications to the list of Workers, it returns back any
@@ -80,7 +81,7 @@ namespace Model
      * <p> When MTurk sends notifications to the list of Workers, it returns back any
      * failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
      */
-    inline NotifyWorkersResult& AddNotifyWorkersFailureStatuses(NotifyWorkersFailureStatus&& value) { m_notifyWorkersFailureStatuses.push_back(value); return *this; }
+    inline NotifyWorkersResult& AddNotifyWorkersFailureStatuses(NotifyWorkersFailureStatus&& value) { m_notifyWorkersFailureStatuses.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<NotifyWorkersFailureStatus> m_notifyWorkersFailureStatuses;

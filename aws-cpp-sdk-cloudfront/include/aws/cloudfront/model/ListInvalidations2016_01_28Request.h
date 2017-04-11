@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/CloudFrontRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * The distribution's id.
      */
-    inline void SetDistributionId(Aws::String&& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
+    inline void SetDistributionId(Aws::String&& value) { m_distributionIdHasBeenSet = true; m_distributionId = std::move(value); }
 
     /**
      * The distribution's id.
@@ -70,7 +71,7 @@ namespace Model
     /**
      * The distribution's id.
      */
-    inline ListInvalidations2016_01_28Request& WithDistributionId(Aws::String&& value) { SetDistributionId(value); return *this;}
+    inline ListInvalidations2016_01_28Request& WithDistributionId(Aws::String&& value) { SetDistributionId(std::move(value)); return *this;}
 
     /**
      * The distribution's id.
@@ -108,7 +109,7 @@ namespace Model
      * response. This value is the same as the ID of the last invalidation batch on
      * that page.
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * Use this parameter when paginating results to indicate where to begin in your
@@ -141,7 +142,7 @@ namespace Model
      * response. This value is the same as the ID of the last invalidation batch on
      * that page.
      */
-    inline ListInvalidations2016_01_28Request& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListInvalidations2016_01_28Request& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * Use this parameter when paginating results to indicate where to begin in your
@@ -167,7 +168,7 @@ namespace Model
     /**
      * The maximum number of invalidation batches you want in the response body.
      */
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
     /**
      * The maximum number of invalidation batches you want in the response body.
@@ -182,7 +183,7 @@ namespace Model
     /**
      * The maximum number of invalidation batches you want in the response body.
      */
-    inline ListInvalidations2016_01_28Request& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
+    inline ListInvalidations2016_01_28Request& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * The maximum number of invalidation batches you want in the response body.

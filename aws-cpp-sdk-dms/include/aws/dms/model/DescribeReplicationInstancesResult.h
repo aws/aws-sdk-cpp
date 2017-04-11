@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/model/ReplicationInstance.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -86,7 +87,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline DescribeReplicationInstancesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeReplicationInstancesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The replication instances described.</p>
      */
-    inline void SetReplicationInstances(Aws::Vector<ReplicationInstance>&& value) { m_replicationInstances = value; }
+    inline void SetReplicationInstances(Aws::Vector<ReplicationInstance>&& value) { m_replicationInstances = std::move(value); }
 
     /**
      * <p>The replication instances described.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The replication instances described.</p>
      */
-    inline DescribeReplicationInstancesResult& WithReplicationInstances(Aws::Vector<ReplicationInstance>&& value) { SetReplicationInstances(value); return *this;}
+    inline DescribeReplicationInstancesResult& WithReplicationInstances(Aws::Vector<ReplicationInstance>&& value) { SetReplicationInstances(std::move(value)); return *this;}
 
     /**
      * <p>The replication instances described.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The replication instances described.</p>
      */
-    inline DescribeReplicationInstancesResult& AddReplicationInstances(ReplicationInstance&& value) { m_replicationInstances.push_back(value); return *this; }
+    inline DescribeReplicationInstancesResult& AddReplicationInstances(ReplicationInstance&& value) { m_replicationInstances.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_marker;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/model/Operation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>An array of key-value pairs containing information about the operation.</p>
      */
-    inline void SetOperation(Operation&& value) { m_operation = value; }
+    inline void SetOperation(Operation&& value) { m_operation = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about the operation.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>An array of key-value pairs containing information about the operation.</p>
      */
-    inline CreateDomainEntryResult& WithOperation(Operation&& value) { SetOperation(value); return *this;}
+    inline CreateDomainEntryResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
 
   private:
     Operation m_operation;

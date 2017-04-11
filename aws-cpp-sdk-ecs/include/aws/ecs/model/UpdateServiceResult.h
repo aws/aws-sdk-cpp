@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/Service.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The full description of your service following the update call.</p>
      */
-    inline void SetService(Service&& value) { m_service = value; }
+    inline void SetService(Service&& value) { m_service = std::move(value); }
 
     /**
      * <p>The full description of your service following the update call.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The full description of your service following the update call.</p>
      */
-    inline UpdateServiceResult& WithService(Service&& value) { SetService(value); return *this;}
+    inline UpdateServiceResult& WithService(Service&& value) { SetService(std::move(value)); return *this;}
 
   private:
     Service m_service;

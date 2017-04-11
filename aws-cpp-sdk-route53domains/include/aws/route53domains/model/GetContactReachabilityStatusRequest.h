@@ -16,6 +16,7 @@
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/route53domains/Route53DomainsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * contact has confirmed that the email address is valid.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Required: Yes</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The name of the domain for which you want to know whether the registrant
@@ -75,7 +76,7 @@ namespace Model
      * contact has confirmed that the email address is valid.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Required: Yes</p>
      */
-    inline GetContactReachabilityStatusRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline GetContactReachabilityStatusRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain for which you want to know whether the registrant

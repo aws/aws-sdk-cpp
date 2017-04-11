@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/Upload.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>An app to upload or that has been uploaded.</p>
      */
-    inline void SetAppUpload(Upload&& value) { m_appUpload = value; }
+    inline void SetAppUpload(Upload&& value) { m_appUpload = std::move(value); }
 
     /**
      * <p>An app to upload or that has been uploaded.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>An app to upload or that has been uploaded.</p>
      */
-    inline InstallToRemoteAccessSessionResult& WithAppUpload(Upload&& value) { SetAppUpload(value); return *this;}
+    inline InstallToRemoteAccessSessionResult& WithAppUpload(Upload&& value) { SetAppUpload(std::move(value)); return *this;}
 
   private:
     Upload m_appUpload;

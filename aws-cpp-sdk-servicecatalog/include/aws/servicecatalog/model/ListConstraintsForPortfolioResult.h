@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/model/ConstraintDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>List of detailed constraint information objects.</p>
      */
-    inline void SetConstraintDetails(Aws::Vector<ConstraintDetail>&& value) { m_constraintDetails = value; }
+    inline void SetConstraintDetails(Aws::Vector<ConstraintDetail>&& value) { m_constraintDetails = std::move(value); }
 
     /**
      * <p>List of detailed constraint information objects.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>List of detailed constraint information objects.</p>
      */
-    inline ListConstraintsForPortfolioResult& WithConstraintDetails(Aws::Vector<ConstraintDetail>&& value) { SetConstraintDetails(value); return *this;}
+    inline ListConstraintsForPortfolioResult& WithConstraintDetails(Aws::Vector<ConstraintDetail>&& value) { SetConstraintDetails(std::move(value)); return *this;}
 
     /**
      * <p>List of detailed constraint information objects.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>List of detailed constraint information objects.</p>
      */
-    inline ListConstraintsForPortfolioResult& AddConstraintDetails(ConstraintDetail&& value) { m_constraintDetails.push_back(value); return *this; }
+    inline ListConstraintsForPortfolioResult& AddConstraintDetails(ConstraintDetail&& value) { m_constraintDetails.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -92,7 +93,7 @@ namespace Model
      * <p>The page token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -110,7 +111,7 @@ namespace Model
      * <p>The page token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline ListConstraintsForPortfolioResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline ListConstraintsForPortfolioResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>The page token to use to retrieve the next page of results for this

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ds/model/DirectoryDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,7 +73,7 @@ namespace Model
      * less than the requested number of items left to retrieve, or if the limitations
      * of the operation have been exceeded.</p>
      */
-    inline void SetDirectoryDescriptions(Aws::Vector<DirectoryDescription>&& value) { m_directoryDescriptions = value; }
+    inline void SetDirectoryDescriptions(Aws::Vector<DirectoryDescription>&& value) { m_directoryDescriptions = std::move(value); }
 
     /**
      * <p>The list of <a>DirectoryDescription</a> objects that were retrieved.</p>
@@ -90,7 +91,7 @@ namespace Model
      * less than the requested number of items left to retrieve, or if the limitations
      * of the operation have been exceeded.</p>
      */
-    inline DescribeDirectoriesResult& WithDirectoryDescriptions(Aws::Vector<DirectoryDescription>&& value) { SetDirectoryDescriptions(value); return *this;}
+    inline DescribeDirectoriesResult& WithDirectoryDescriptions(Aws::Vector<DirectoryDescription>&& value) { SetDirectoryDescriptions(std::move(value)); return *this;}
 
     /**
      * <p>The list of <a>DirectoryDescription</a> objects that were retrieved.</p>
@@ -108,7 +109,7 @@ namespace Model
      * less than the requested number of items left to retrieve, or if the limitations
      * of the operation have been exceeded.</p>
      */
-    inline DescribeDirectoriesResult& AddDirectoryDescriptions(DirectoryDescription&& value) { m_directoryDescriptions.push_back(value); return *this; }
+    inline DescribeDirectoriesResult& AddDirectoryDescriptions(DirectoryDescription&& value) { m_directoryDescriptions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If not null, more results are available. Pass this value for the
@@ -129,7 +130,7 @@ namespace Model
      * <i>NextToken</i> parameter in a subsequent call to <a>DescribeDirectories</a> to
      * retrieve the next set of items.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If not null, more results are available. Pass this value for the
@@ -150,7 +151,7 @@ namespace Model
      * <i>NextToken</i> parameter in a subsequent call to <a>DescribeDirectories</a> to
      * retrieve the next set of items.</p>
      */
-    inline DescribeDirectoriesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeDirectoriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If not null, more results are available. Pass this value for the

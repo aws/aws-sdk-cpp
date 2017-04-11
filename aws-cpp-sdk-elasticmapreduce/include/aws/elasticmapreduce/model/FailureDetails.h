@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * successfully determine the root cause of the failure, it returns "Unknown Error"
      * as a reason.</p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p>The reason for the step failure. In the case where the service cannot
@@ -84,7 +85,7 @@ namespace Model
      * successfully determine the root cause of the failure, it returns "Unknown Error"
      * as a reason.</p>
      */
-    inline FailureDetails& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline FailureDetails& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p>The reason for the step failure. In the case where the service cannot
@@ -112,7 +113,7 @@ namespace Model
      * the cause of step failure. This is text from an error log that describes the
      * root cause of the failure.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The descriptive message including the error the EMR service has identified as
@@ -133,7 +134,7 @@ namespace Model
      * the cause of step failure. This is text from an error log that describes the
      * root cause of the failure.</p>
      */
-    inline FailureDetails& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline FailureDetails& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The descriptive message including the error the EMR service has identified as
@@ -158,7 +159,7 @@ namespace Model
      * <p>The path to the log file where the step failure root cause was originally
      * recorded.</p>
      */
-    inline void SetLogFile(Aws::String&& value) { m_logFileHasBeenSet = true; m_logFile = value; }
+    inline void SetLogFile(Aws::String&& value) { m_logFileHasBeenSet = true; m_logFile = std::move(value); }
 
     /**
      * <p>The path to the log file where the step failure root cause was originally
@@ -176,7 +177,7 @@ namespace Model
      * <p>The path to the log file where the step failure root cause was originally
      * recorded.</p>
      */
-    inline FailureDetails& WithLogFile(Aws::String&& value) { SetLogFile(value); return *this;}
+    inline FailureDetails& WithLogFile(Aws::String&& value) { SetLogFile(std::move(value)); return *this;}
 
     /**
      * <p>The path to the log file where the step failure root cause was originally

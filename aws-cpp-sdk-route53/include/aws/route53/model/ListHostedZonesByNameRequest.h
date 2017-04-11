@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -116,7 +117,7 @@ namespace Model
      * parameters. For <code>dnsname</code>, specify the value of
      * <code>NextDNSName</code> from the previous response.</p>
      */
-    inline void SetDNSName(Aws::String&& value) { m_dNSNameHasBeenSet = true; m_dNSName = value; }
+    inline void SetDNSName(Aws::String&& value) { m_dNSNameHasBeenSet = true; m_dNSName = std::move(value); }
 
     /**
      * <p>(Optional) For your first request to <code>ListHostedZonesByName</code>,
@@ -152,7 +153,7 @@ namespace Model
      * parameters. For <code>dnsname</code>, specify the value of
      * <code>NextDNSName</code> from the previous response.</p>
      */
-    inline ListHostedZonesByNameRequest& WithDNSName(Aws::String&& value) { SetDNSName(value); return *this;}
+    inline ListHostedZonesByNameRequest& WithDNSName(Aws::String&& value) { SetDNSName(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) For your first request to <code>ListHostedZonesByName</code>,
@@ -203,7 +204,7 @@ namespace Model
      * <code>hostedzoneid</code>, specify the value of the
      * <code>NextHostedZoneId</code> element from the previous response.</p>
      */
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
+    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
 
     /**
      * <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, do
@@ -242,7 +243,7 @@ namespace Model
      * <code>hostedzoneid</code>, specify the value of the
      * <code>NextHostedZoneId</code> element from the previous response.</p>
      */
-    inline ListHostedZonesByNameRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
+    inline ListHostedZonesByNameRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, do
@@ -282,7 +283,7 @@ namespace Model
      * values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> specify the
      * first hosted zone in the next group of <code>maxitems</code> hosted zones. </p>
      */
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
     /**
      * <p>The maximum number of hosted zones to be included in the response body for
@@ -309,7 +310,7 @@ namespace Model
      * values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> specify the
      * first hosted zone in the next group of <code>maxitems</code> hosted zones. </p>
      */
-    inline ListHostedZonesByNameRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
+    inline ListHostedZonesByNameRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of hosted zones to be included in the response body for

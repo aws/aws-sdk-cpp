@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The Trust ID of the trust relationship that was deleted.</p>
      */
-    inline void SetTrustId(Aws::String&& value) { m_trustId = value; }
+    inline void SetTrustId(Aws::String&& value) { m_trustId = std::move(value); }
 
     /**
      * <p>The Trust ID of the trust relationship that was deleted.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The Trust ID of the trust relationship that was deleted.</p>
      */
-    inline DeleteTrustResult& WithTrustId(Aws::String&& value) { SetTrustId(value); return *this;}
+    inline DeleteTrustResult& WithTrustId(Aws::String&& value) { SetTrustId(std::move(value)); return *this;}
 
     /**
      * <p>The Trust ID of the trust relationship that was deleted.</p>

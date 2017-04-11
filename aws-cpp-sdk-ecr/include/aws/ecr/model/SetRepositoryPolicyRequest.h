@@ -16,6 +16,7 @@
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/ecr/ECRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The AWS account ID associated with the registry that contains the repository.
      * If you do not specify a registry, the default registry is assumed.</p>
      */
-    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
+    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository.
@@ -69,7 +70,7 @@ namespace Model
      * <p>The AWS account ID associated with the registry that contains the repository.
      * If you do not specify a registry, the default registry is assumed.</p>
      */
-    inline SetRepositoryPolicyRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(value); return *this;}
+    inline SetRepositoryPolicyRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository.
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The name of the repository to receive the policy.</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The name of the repository to receive the policy.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The name of the repository to receive the policy.</p>
      */
-    inline SetRepositoryPolicyRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline SetRepositoryPolicyRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the repository to receive the policy.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>The JSON repository policy text to apply to the repository.</p>
      */
-    inline void SetPolicyText(Aws::String&& value) { m_policyTextHasBeenSet = true; m_policyText = value; }
+    inline void SetPolicyText(Aws::String&& value) { m_policyTextHasBeenSet = true; m_policyText = std::move(value); }
 
     /**
      * <p>The JSON repository policy text to apply to the repository.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The JSON repository policy text to apply to the repository.</p>
      */
-    inline SetRepositoryPolicyRequest& WithPolicyText(Aws::String&& value) { SetPolicyText(value); return *this;}
+    inline SetRepositoryPolicyRequest& WithPolicyText(Aws::String&& value) { SetPolicyText(std::move(value)); return *this;}
 
     /**
      * <p>The JSON repository policy text to apply to the repository.</p>

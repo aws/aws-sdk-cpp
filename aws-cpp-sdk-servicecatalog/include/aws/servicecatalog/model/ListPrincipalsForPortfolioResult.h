@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/model/Principal.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The IAM principals (users or roles) associated with the portfolio.</p>
      */
-    inline void SetPrincipals(Aws::Vector<Principal>&& value) { m_principals = value; }
+    inline void SetPrincipals(Aws::Vector<Principal>&& value) { m_principals = std::move(value); }
 
     /**
      * <p>The IAM principals (users or roles) associated with the portfolio.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The IAM principals (users or roles) associated with the portfolio.</p>
      */
-    inline ListPrincipalsForPortfolioResult& WithPrincipals(Aws::Vector<Principal>&& value) { SetPrincipals(value); return *this;}
+    inline ListPrincipalsForPortfolioResult& WithPrincipals(Aws::Vector<Principal>&& value) { SetPrincipals(std::move(value)); return *this;}
 
     /**
      * <p>The IAM principals (users or roles) associated with the portfolio.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The IAM principals (users or roles) associated with the portfolio.</p>
      */
-    inline ListPrincipalsForPortfolioResult& AddPrincipals(Principal&& value) { m_principals.push_back(value); return *this; }
+    inline ListPrincipalsForPortfolioResult& AddPrincipals(Principal&& value) { m_principals.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -92,7 +93,7 @@ namespace Model
      * <p>The page token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -110,7 +111,7 @@ namespace Model
      * <p>The page token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline ListPrincipalsForPortfolioResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline ListPrincipalsForPortfolioResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>The page token to use to retrieve the next page of results for this

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kinesisanalytics/model/RecordColumn.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Specifies the format of the records on the streaming source.</p>
      */
-    inline void SetRecordFormatUpdate(RecordFormat&& value) { m_recordFormatUpdateHasBeenSet = true; m_recordFormatUpdate = value; }
+    inline void SetRecordFormatUpdate(RecordFormat&& value) { m_recordFormatUpdateHasBeenSet = true; m_recordFormatUpdate = std::move(value); }
 
     /**
      * <p>Specifies the format of the records on the streaming source.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Specifies the format of the records on the streaming source.</p>
      */
-    inline InputSchemaUpdate& WithRecordFormatUpdate(RecordFormat&& value) { SetRecordFormatUpdate(value); return *this;}
+    inline InputSchemaUpdate& WithRecordFormatUpdate(RecordFormat&& value) { SetRecordFormatUpdate(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the encoding of the records in the streaming source. For example,
@@ -88,7 +89,7 @@ namespace Model
      * <p>Specifies the encoding of the records in the streaming source. For example,
      * UTF-8.</p>
      */
-    inline void SetRecordEncodingUpdate(Aws::String&& value) { m_recordEncodingUpdateHasBeenSet = true; m_recordEncodingUpdate = value; }
+    inline void SetRecordEncodingUpdate(Aws::String&& value) { m_recordEncodingUpdateHasBeenSet = true; m_recordEncodingUpdate = std::move(value); }
 
     /**
      * <p>Specifies the encoding of the records in the streaming source. For example,
@@ -106,7 +107,7 @@ namespace Model
      * <p>Specifies the encoding of the records in the streaming source. For example,
      * UTF-8.</p>
      */
-    inline InputSchemaUpdate& WithRecordEncodingUpdate(Aws::String&& value) { SetRecordEncodingUpdate(value); return *this;}
+    inline InputSchemaUpdate& WithRecordEncodingUpdate(Aws::String&& value) { SetRecordEncodingUpdate(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the encoding of the records in the streaming source. For example,
@@ -133,7 +134,7 @@ namespace Model
      * mapping of the streaming source element to the corresponding column in the
      * in-application stream. </p>
      */
-    inline void SetRecordColumnUpdates(Aws::Vector<RecordColumn>&& value) { m_recordColumnUpdatesHasBeenSet = true; m_recordColumnUpdates = value; }
+    inline void SetRecordColumnUpdates(Aws::Vector<RecordColumn>&& value) { m_recordColumnUpdatesHasBeenSet = true; m_recordColumnUpdates = std::move(value); }
 
     /**
      * <p>A list of <code>RecordColumn</code> objects. Each object describes the
@@ -147,7 +148,7 @@ namespace Model
      * mapping of the streaming source element to the corresponding column in the
      * in-application stream. </p>
      */
-    inline InputSchemaUpdate& WithRecordColumnUpdates(Aws::Vector<RecordColumn>&& value) { SetRecordColumnUpdates(value); return *this;}
+    inline InputSchemaUpdate& WithRecordColumnUpdates(Aws::Vector<RecordColumn>&& value) { SetRecordColumnUpdates(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>RecordColumn</code> objects. Each object describes the
@@ -161,7 +162,7 @@ namespace Model
      * mapping of the streaming source element to the corresponding column in the
      * in-application stream. </p>
      */
-    inline InputSchemaUpdate& AddRecordColumnUpdates(RecordColumn&& value) { m_recordColumnUpdatesHasBeenSet = true; m_recordColumnUpdates.push_back(value); return *this; }
+    inline InputSchemaUpdate& AddRecordColumnUpdates(RecordColumn&& value) { m_recordColumnUpdatesHasBeenSet = true; m_recordColumnUpdates.push_back(std::move(value)); return *this; }
 
   private:
     RecordFormat m_recordFormatUpdate;

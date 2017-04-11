@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/ResponseMetadata.h>
 #include <aws/redshift/model/ClusterSubnetGroup.h>
+#include <utility>
 
 namespace Aws
 {
@@ -76,7 +77,7 @@ namespace Model
      * <code>Marker</code> field is empty, all response records have been retrieved for
      * the request. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -106,7 +107,7 @@ namespace Model
      * <code>Marker</code> field is empty, all response records have been retrieved for
      * the request. </p>
      */
-    inline DescribeClusterSubnetGroupsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeClusterSubnetGroupsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>A list of <a>ClusterSubnetGroup</a> instances. </p>
      */
-    inline void SetClusterSubnetGroups(Aws::Vector<ClusterSubnetGroup>&& value) { m_clusterSubnetGroups = value; }
+    inline void SetClusterSubnetGroups(Aws::Vector<ClusterSubnetGroup>&& value) { m_clusterSubnetGroups = std::move(value); }
 
     /**
      * <p>A list of <a>ClusterSubnetGroup</a> instances. </p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>A list of <a>ClusterSubnetGroup</a> instances. </p>
      */
-    inline DescribeClusterSubnetGroupsResult& WithClusterSubnetGroups(Aws::Vector<ClusterSubnetGroup>&& value) { SetClusterSubnetGroups(value); return *this;}
+    inline DescribeClusterSubnetGroupsResult& WithClusterSubnetGroups(Aws::Vector<ClusterSubnetGroup>&& value) { SetClusterSubnetGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of <a>ClusterSubnetGroup</a> instances. </p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>A list of <a>ClusterSubnetGroup</a> instances. </p>
      */
-    inline DescribeClusterSubnetGroupsResult& AddClusterSubnetGroups(ClusterSubnetGroup&& value) { m_clusterSubnetGroups.push_back(value); return *this; }
+    inline DescribeClusterSubnetGroupsResult& AddClusterSubnetGroups(ClusterSubnetGroup&& value) { m_clusterSubnetGroups.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -160,13 +161,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeClusterSubnetGroupsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeClusterSubnetGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeClusterSubnetGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_marker;

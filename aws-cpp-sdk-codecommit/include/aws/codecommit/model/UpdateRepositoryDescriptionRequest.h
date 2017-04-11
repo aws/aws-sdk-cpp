@@ -16,6 +16,7 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/CodeCommitRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The name of the repository to set or change the comment or description
      * for.</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The name of the repository to set or change the comment or description
@@ -73,7 +74,7 @@ namespace Model
      * <p>The name of the repository to set or change the comment or description
      * for.</p>
      */
-    inline UpdateRepositoryDescriptionRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline UpdateRepositoryDescriptionRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the repository to set or change the comment or description
@@ -97,7 +98,7 @@ namespace Model
      * <p>The new comment or description for the specified repository. Repository
      * descriptions are limited to 1,000 characters.</p>
      */
-    inline void SetRepositoryDescription(Aws::String&& value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription = value; }
+    inline void SetRepositoryDescription(Aws::String&& value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription = std::move(value); }
 
     /**
      * <p>The new comment or description for the specified repository. Repository
@@ -115,7 +116,7 @@ namespace Model
      * <p>The new comment or description for the specified repository. Repository
      * descriptions are limited to 1,000 characters.</p>
      */
-    inline UpdateRepositoryDescriptionRequest& WithRepositoryDescription(Aws::String&& value) { SetRepositoryDescription(value); return *this;}
+    inline UpdateRepositoryDescriptionRequest& WithRepositoryDescription(Aws::String&& value) { SetRepositoryDescription(std::move(value)); return *this;}
 
     /**
      * <p>The new comment or description for the specified repository. Repository

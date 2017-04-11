@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/CACertificateStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ARN of the CA certificate.</p>
      */
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
 
     /**
      * <p>The ARN of the CA certificate.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ARN of the CA certificate.</p>
      */
-    inline CACertificate& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
+    inline CACertificate& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the CA certificate.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The ID of the CA certificate.</p>
      */
-    inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
+    inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::move(value); }
 
     /**
      * <p>The ID of the CA certificate.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The ID of the CA certificate.</p>
      */
-    inline CACertificate& WithCertificateId(Aws::String&& value) { SetCertificateId(value); return *this;}
+    inline CACertificate& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the CA certificate.</p>
@@ -131,7 +132,7 @@ namespace Model
      * <p>The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE
      * is deprecated and should not be used.</p>
      */
-    inline void SetStatus(CACertificateStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(CACertificateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE
@@ -143,7 +144,7 @@ namespace Model
      * <p>The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE
      * is deprecated and should not be used.</p>
      */
-    inline CACertificate& WithStatus(CACertificateStatus&& value) { SetStatus(value); return *this;}
+    inline CACertificate& WithStatus(CACertificateStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The date the CA certificate was created.</p>
@@ -158,7 +159,7 @@ namespace Model
     /**
      * <p>The date the CA certificate was created.</p>
      */
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
      * <p>The date the CA certificate was created.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>The date the CA certificate was created.</p>
      */
-    inline CACertificate& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
+    inline CACertificate& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_certificateArn;

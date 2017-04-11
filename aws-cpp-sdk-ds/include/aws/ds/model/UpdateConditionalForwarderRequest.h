@@ -17,6 +17,7 @@
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The directory ID of the AWS directory for which to update the conditional
      * forwarder.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>The directory ID of the AWS directory for which to update the conditional
@@ -73,7 +74,7 @@ namespace Model
      * <p>The directory ID of the AWS directory for which to update the conditional
      * forwarder.</p>
      */
-    inline UpdateConditionalForwarderRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline UpdateConditionalForwarderRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>The directory ID of the AWS directory for which to update the conditional
@@ -97,7 +98,7 @@ namespace Model
      * <p>The fully qualified domain name (FQDN) of the remote domain with which you
      * will set up a trust relationship.</p>
      */
-    inline void SetRemoteDomainName(Aws::String&& value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName = value; }
+    inline void SetRemoteDomainName(Aws::String&& value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName = std::move(value); }
 
     /**
      * <p>The fully qualified domain name (FQDN) of the remote domain with which you
@@ -115,7 +116,7 @@ namespace Model
      * <p>The fully qualified domain name (FQDN) of the remote domain with which you
      * will set up a trust relationship.</p>
      */
-    inline UpdateConditionalForwarderRequest& WithRemoteDomainName(Aws::String&& value) { SetRemoteDomainName(value); return *this;}
+    inline UpdateConditionalForwarderRequest& WithRemoteDomainName(Aws::String&& value) { SetRemoteDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The fully qualified domain name (FQDN) of the remote domain with which you
@@ -139,7 +140,7 @@ namespace Model
      * <p>The updated IP addresses of the remote DNS server associated with the
      * conditional forwarder.</p>
      */
-    inline void SetDnsIpAddrs(Aws::Vector<Aws::String>&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs = value; }
+    inline void SetDnsIpAddrs(Aws::Vector<Aws::String>&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs = std::move(value); }
 
     /**
      * <p>The updated IP addresses of the remote DNS server associated with the
@@ -151,7 +152,7 @@ namespace Model
      * <p>The updated IP addresses of the remote DNS server associated with the
      * conditional forwarder.</p>
      */
-    inline UpdateConditionalForwarderRequest& WithDnsIpAddrs(Aws::Vector<Aws::String>&& value) { SetDnsIpAddrs(value); return *this;}
+    inline UpdateConditionalForwarderRequest& WithDnsIpAddrs(Aws::Vector<Aws::String>&& value) { SetDnsIpAddrs(std::move(value)); return *this;}
 
     /**
      * <p>The updated IP addresses of the remote DNS server associated with the
@@ -163,7 +164,7 @@ namespace Model
      * <p>The updated IP addresses of the remote DNS server associated with the
      * conditional forwarder.</p>
      */
-    inline UpdateConditionalForwarderRequest& AddDnsIpAddrs(Aws::String&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs.push_back(value); return *this; }
+    inline UpdateConditionalForwarderRequest& AddDnsIpAddrs(Aws::String&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The updated IP addresses of the remote DNS server associated with the

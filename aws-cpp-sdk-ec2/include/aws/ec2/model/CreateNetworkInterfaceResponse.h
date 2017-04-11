@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/NetworkInterface.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Information about the network interface.</p>
      */
-    inline void SetNetworkInterface(NetworkInterface&& value) { m_networkInterface = value; }
+    inline void SetNetworkInterface(NetworkInterface&& value) { m_networkInterface = std::move(value); }
 
     /**
      * <p>Information about the network interface.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Information about the network interface.</p>
      */
-    inline CreateNetworkInterfaceResponse& WithNetworkInterface(NetworkInterface&& value) { SetNetworkInterface(value); return *this;}
+    inline CreateNetworkInterfaceResponse& WithNetworkInterface(NetworkInterface&& value) { SetNetworkInterface(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -77,13 +78,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CreateNetworkInterfaceResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CreateNetworkInterfaceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CreateNetworkInterfaceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     NetworkInterface m_networkInterface;

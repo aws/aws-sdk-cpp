@@ -16,6 +16,7 @@
 #include <aws/polly/Polly_EXPORTS.h>
 #include <aws/polly/PollyRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>An opaque pagination token returned from previous <code>ListLexicons</code>
      * operation. If present, indicates where to continue the list of lexicons.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>An opaque pagination token returned from previous <code>ListLexicons</code>
@@ -73,7 +74,7 @@ namespace Model
      * <p>An opaque pagination token returned from previous <code>ListLexicons</code>
      * operation. If present, indicates where to continue the list of lexicons.</p>
      */
-    inline ListLexiconsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListLexiconsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An opaque pagination token returned from previous <code>ListLexicons</code>

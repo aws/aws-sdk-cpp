@@ -17,6 +17,7 @@
 #include <aws/firehose/model/ProcessorType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/firehose/model/ProcessorParameter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The type of processor.</p>
      */
-    inline void SetType(ProcessorType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(ProcessorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of processor.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The type of processor.</p>
      */
-    inline Processor& WithType(ProcessorType&& value) { SetType(value); return *this;}
+    inline Processor& WithType(ProcessorType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The processor parameters.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The processor parameters.</p>
      */
-    inline void SetParameters(Aws::Vector<ProcessorParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetParameters(Aws::Vector<ProcessorParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>The processor parameters.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The processor parameters.</p>
      */
-    inline Processor& WithParameters(Aws::Vector<ProcessorParameter>&& value) { SetParameters(value); return *this;}
+    inline Processor& WithParameters(Aws::Vector<ProcessorParameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>The processor parameters.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The processor parameters.</p>
      */
-    inline Processor& AddParameters(ProcessorParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
+    inline Processor& AddParameters(ProcessorParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
   private:
     ProcessorType m_type;

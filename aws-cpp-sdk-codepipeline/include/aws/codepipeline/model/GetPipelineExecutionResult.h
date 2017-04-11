@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/model/PipelineExecution.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Represents information about the execution of a pipeline.</p>
      */
-    inline void SetPipelineExecution(PipelineExecution&& value) { m_pipelineExecution = value; }
+    inline void SetPipelineExecution(PipelineExecution&& value) { m_pipelineExecution = std::move(value); }
 
     /**
      * <p>Represents information about the execution of a pipeline.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Represents information about the execution of a pipeline.</p>
      */
-    inline GetPipelineExecutionResult& WithPipelineExecution(PipelineExecution&& value) { SetPipelineExecution(value); return *this;}
+    inline GetPipelineExecutionResult& WithPipelineExecution(PipelineExecution&& value) { SetPipelineExecution(std::move(value)); return *this;}
 
   private:
     PipelineExecution m_pipelineExecution;

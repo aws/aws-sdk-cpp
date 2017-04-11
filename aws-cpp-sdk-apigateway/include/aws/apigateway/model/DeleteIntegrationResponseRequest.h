@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>Specifies a delete integration response request's API identifier.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>Specifies a delete integration response request's API identifier.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>Specifies a delete integration response request's API identifier.</p>
      */
-    inline DeleteIntegrationResponseRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline DeleteIntegrationResponseRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies a delete integration response request's API identifier.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>Specifies a delete integration response request's resource identifier.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>Specifies a delete integration response request's resource identifier.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>Specifies a delete integration response request's resource identifier.</p>
      */
-    inline DeleteIntegrationResponseRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline DeleteIntegrationResponseRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies a delete integration response request's resource identifier.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>Specifies a delete integration response request's HTTP method.</p>
      */
-    inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
+    inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::move(value); }
 
     /**
      * <p>Specifies a delete integration response request's HTTP method.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>Specifies a delete integration response request's HTTP method.</p>
      */
-    inline DeleteIntegrationResponseRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(value); return *this;}
+    inline DeleteIntegrationResponseRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(std::move(value)); return *this;}
 
     /**
      * <p>Specifies a delete integration response request's HTTP method.</p>
@@ -155,7 +156,7 @@ namespace Model
     /**
      * <p>Specifies a delete integration response request's status code.</p>
      */
-    inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
 
     /**
      * <p>Specifies a delete integration response request's status code.</p>
@@ -170,7 +171,7 @@ namespace Model
     /**
      * <p>Specifies a delete integration response request's status code.</p>
      */
-    inline DeleteIntegrationResponseRequest& WithStatusCode(Aws::String&& value) { SetStatusCode(value); return *this;}
+    inline DeleteIntegrationResponseRequest& WithStatusCode(Aws::String&& value) { SetStatusCode(std::move(value)); return *this;}
 
     /**
      * <p>Specifies a delete integration response request's status code.</p>

@@ -16,6 +16,7 @@
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/es/model/OptionStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p> Specifies the Elasticsearch version for the specified Elasticsearch
      * domain.</p>
      */
-    inline void SetOptions(Aws::String&& value) { m_optionsHasBeenSet = true; m_options = value; }
+    inline void SetOptions(Aws::String&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     /**
      * <p> Specifies the Elasticsearch version for the specified Elasticsearch
@@ -79,7 +80,7 @@ namespace Model
      * <p> Specifies the Elasticsearch version for the specified Elasticsearch
      * domain.</p>
      */
-    inline ElasticsearchVersionStatus& WithOptions(Aws::String&& value) { SetOptions(value); return *this;}
+    inline ElasticsearchVersionStatus& WithOptions(Aws::String&& value) { SetOptions(std::move(value)); return *this;}
 
     /**
      * <p> Specifies the Elasticsearch version for the specified Elasticsearch
@@ -103,7 +104,7 @@ namespace Model
      * <p> Specifies the status of the Elasticsearch version options for the specified
      * Elasticsearch domain.</p>
      */
-    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p> Specifies the status of the Elasticsearch version options for the specified
@@ -115,7 +116,7 @@ namespace Model
      * <p> Specifies the status of the Elasticsearch version options for the specified
      * Elasticsearch domain.</p>
      */
-    inline ElasticsearchVersionStatus& WithStatus(OptionStatus&& value) { SetStatus(value); return *this;}
+    inline ElasticsearchVersionStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_options;

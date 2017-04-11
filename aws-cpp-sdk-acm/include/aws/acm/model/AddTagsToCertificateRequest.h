@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/acm/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
 
     /**
      * <p>String that contains the ARN of the ACM Certificate to which the tag is to be
@@ -95,7 +96,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
-    inline AddTagsToCertificateRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
+    inline AddTagsToCertificateRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>String that contains the ARN of the ACM Certificate to which the tag is to be
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>The key-value pair that defines the tag. The tag value is optional.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The key-value pair that defines the tag. The tag value is optional.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The key-value pair that defines the tag. The tag value is optional.</p>
      */
-    inline AddTagsToCertificateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline AddTagsToCertificateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The key-value pair that defines the tag. The tag value is optional.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The key-value pair that defines the tag. The tag value is optional.</p>
      */
-    inline AddTagsToCertificateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline AddTagsToCertificateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_certificateArn;

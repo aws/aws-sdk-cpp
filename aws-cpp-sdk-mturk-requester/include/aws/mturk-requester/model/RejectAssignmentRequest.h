@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p> The ID of the assignment. The assignment must correspond to a HIT created by
      * the Requester. </p>
      */
-    inline void SetAssignmentId(Aws::String&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = value; }
+    inline void SetAssignmentId(Aws::String&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = std::move(value); }
 
     /**
      * <p> The ID of the assignment. The assignment must correspond to a HIT created by
@@ -69,7 +70,7 @@ namespace Model
      * <p> The ID of the assignment. The assignment must correspond to a HIT created by
      * the Requester. </p>
      */
-    inline RejectAssignmentRequest& WithAssignmentId(Aws::String&& value) { SetAssignmentId(value); return *this;}
+    inline RejectAssignmentRequest& WithAssignmentId(Aws::String&& value) { SetAssignmentId(std::move(value)); return *this;}
 
     /**
      * <p> The ID of the assignment. The assignment must correspond to a HIT created by
@@ -93,7 +94,7 @@ namespace Model
      * <p> A message for the Worker, which the Worker can see in the Status section of
      * the web site. </p>
      */
-    inline void SetRequesterFeedback(Aws::String&& value) { m_requesterFeedbackHasBeenSet = true; m_requesterFeedback = value; }
+    inline void SetRequesterFeedback(Aws::String&& value) { m_requesterFeedbackHasBeenSet = true; m_requesterFeedback = std::move(value); }
 
     /**
      * <p> A message for the Worker, which the Worker can see in the Status section of
@@ -111,7 +112,7 @@ namespace Model
      * <p> A message for the Worker, which the Worker can see in the Status section of
      * the web site. </p>
      */
-    inline RejectAssignmentRequest& WithRequesterFeedback(Aws::String&& value) { SetRequesterFeedback(value); return *this;}
+    inline RejectAssignmentRequest& WithRequesterFeedback(Aws::String&& value) { SetRequesterFeedback(std::move(value)); return *this;}
 
     /**
      * <p> A message for the Worker, which the Worker can see in the Status section of

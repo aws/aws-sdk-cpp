@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>The date and time of the last provisioned throughput increase for this
      * table.</p>
      */
-    inline void SetLastIncreaseDateTime(Aws::Utils::DateTime&& value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime = value; }
+    inline void SetLastIncreaseDateTime(Aws::Utils::DateTime&& value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime = std::move(value); }
 
     /**
      * <p>The date and time of the last provisioned throughput increase for this
@@ -73,7 +74,7 @@ namespace Model
      * <p>The date and time of the last provisioned throughput increase for this
      * table.</p>
      */
-    inline ProvisionedThroughputDescription& WithLastIncreaseDateTime(Aws::Utils::DateTime&& value) { SetLastIncreaseDateTime(value); return *this;}
+    inline ProvisionedThroughputDescription& WithLastIncreaseDateTime(Aws::Utils::DateTime&& value) { SetLastIncreaseDateTime(std::move(value)); return *this;}
 
     /**
      * <p>The date and time of the last provisioned throughput decrease for this
@@ -91,7 +92,7 @@ namespace Model
      * <p>The date and time of the last provisioned throughput decrease for this
      * table.</p>
      */
-    inline void SetLastDecreaseDateTime(Aws::Utils::DateTime&& value) { m_lastDecreaseDateTimeHasBeenSet = true; m_lastDecreaseDateTime = value; }
+    inline void SetLastDecreaseDateTime(Aws::Utils::DateTime&& value) { m_lastDecreaseDateTimeHasBeenSet = true; m_lastDecreaseDateTime = std::move(value); }
 
     /**
      * <p>The date and time of the last provisioned throughput decrease for this
@@ -103,7 +104,7 @@ namespace Model
      * <p>The date and time of the last provisioned throughput decrease for this
      * table.</p>
      */
-    inline ProvisionedThroughputDescription& WithLastDecreaseDateTime(Aws::Utils::DateTime&& value) { SetLastDecreaseDateTime(value); return *this;}
+    inline ProvisionedThroughputDescription& WithLastDecreaseDateTime(Aws::Utils::DateTime&& value) { SetLastDecreaseDateTime(std::move(value)); return *this;}
 
     /**
      * <p>The number of provisioned throughput decreases for this table during this UTC

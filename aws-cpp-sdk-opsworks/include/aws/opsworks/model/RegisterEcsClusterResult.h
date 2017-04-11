@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The cluster's ARN.</p>
      */
-    inline void SetEcsClusterArn(Aws::String&& value) { m_ecsClusterArn = value; }
+    inline void SetEcsClusterArn(Aws::String&& value) { m_ecsClusterArn = std::move(value); }
 
     /**
      * <p>The cluster's ARN.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The cluster's ARN.</p>
      */
-    inline RegisterEcsClusterResult& WithEcsClusterArn(Aws::String&& value) { SetEcsClusterArn(value); return *this;}
+    inline RegisterEcsClusterResult& WithEcsClusterArn(Aws::String&& value) { SetEcsClusterArn(std::move(value)); return *this;}
 
     /**
      * <p>The cluster's ARN.</p>

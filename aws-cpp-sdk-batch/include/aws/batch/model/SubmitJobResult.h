@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of the job. </p>
      */
-    inline void SetJobName(Aws::String&& value) { m_jobName = value; }
+    inline void SetJobName(Aws::String&& value) { m_jobName = std::move(value); }
 
     /**
      * <p>The name of the job. </p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the job. </p>
      */
-    inline SubmitJobResult& WithJobName(Aws::String&& value) { SetJobName(value); return *this;}
+    inline SubmitJobResult& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the job. </p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The unique identifier for the job.</p>
      */
-    inline void SetJobId(Aws::String&& value) { m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
 
     /**
      * <p>The unique identifier for the job.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The unique identifier for the job.</p>
      */
-    inline SubmitJobResult& WithJobId(Aws::String&& value) { SetJobId(value); return *this;}
+    inline SubmitJobResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the job.</p>

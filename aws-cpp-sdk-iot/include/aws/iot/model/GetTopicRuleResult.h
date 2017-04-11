@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/TopicRule.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The rule ARN.</p>
      */
-    inline void SetRuleArn(Aws::String&& value) { m_ruleArn = value; }
+    inline void SetRuleArn(Aws::String&& value) { m_ruleArn = std::move(value); }
 
     /**
      * <p>The rule ARN.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The rule ARN.</p>
      */
-    inline GetTopicRuleResult& WithRuleArn(Aws::String&& value) { SetRuleArn(value); return *this;}
+    inline GetTopicRuleResult& WithRuleArn(Aws::String&& value) { SetRuleArn(std::move(value)); return *this;}
 
     /**
      * <p>The rule ARN.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The rule.</p>
      */
-    inline void SetRule(TopicRule&& value) { m_rule = value; }
+    inline void SetRule(TopicRule&& value) { m_rule = std::move(value); }
 
     /**
      * <p>The rule.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The rule.</p>
      */
-    inline GetTopicRuleResult& WithRule(TopicRule&& value) { SetRule(value); return *this;}
+    inline GetTopicRuleResult& WithRule(TopicRule&& value) { SetRule(std::move(value)); return *this;}
 
   private:
     Aws::String m_ruleArn;

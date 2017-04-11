@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/apigateway/model/PatchOperation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The identifier of the <a>ApiKey</a> resource to be updated.</p>
      */
-    inline void SetApiKey(Aws::String&& value) { m_apiKeyHasBeenSet = true; m_apiKey = value; }
+    inline void SetApiKey(Aws::String&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::move(value); }
 
     /**
      * <p>The identifier of the <a>ApiKey</a> resource to be updated.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The identifier of the <a>ApiKey</a> resource to be updated.</p>
      */
-    inline UpdateApiKeyRequest& WithApiKey(Aws::String&& value) { SetApiKey(value); return *this;}
+    inline UpdateApiKeyRequest& WithApiKey(Aws::String&& value) { SetApiKey(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the <a>ApiKey</a> resource to be updated.</p>
@@ -90,7 +91,7 @@ namespace Model
      * <p>A list of update operations to be applied to the specified resource and in
      * the order specified in this list.</p>
      */
-    inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
+    inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = std::move(value); }
 
     /**
      * <p>A list of update operations to be applied to the specified resource and in
@@ -102,7 +103,7 @@ namespace Model
      * <p>A list of update operations to be applied to the specified resource and in
      * the order specified in this list.</p>
      */
-    inline UpdateApiKeyRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(value); return *this;}
+    inline UpdateApiKeyRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(std::move(value)); return *this;}
 
     /**
      * <p>A list of update operations to be applied to the specified resource and in
@@ -114,7 +115,7 @@ namespace Model
      * <p>A list of update operations to be applied to the specified resource and in
      * the order specified in this list.</p>
      */
-    inline UpdateApiKeyRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
+    inline UpdateApiKeyRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_apiKey;

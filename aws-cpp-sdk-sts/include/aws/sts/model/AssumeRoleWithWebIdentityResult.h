@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sts/model/AssumedRoleUser.h>
 #include <aws/sts/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
      * than 4096 bytes, but that can vary. Also, future updates to AWS might require
      * larger sizes.</p>
      */
-    inline void SetCredentials(Credentials&& value) { m_credentials = value; }
+    inline void SetCredentials(Credentials&& value) { m_credentials = std::move(value); }
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
@@ -97,7 +98,7 @@ namespace Model
      * than 4096 bytes, but that can vary. Also, future updates to AWS might require
      * larger sizes.</p>
      */
-    inline AssumeRoleWithWebIdentityResult& WithCredentials(Credentials&& value) { SetCredentials(value); return *this;}
+    inline AssumeRoleWithWebIdentityResult& WithCredentials(Credentials&& value) { SetCredentials(std::move(value)); return *this;}
 
     /**
      * <p>The unique user identifier that is returned by the identity provider. This
@@ -130,7 +131,7 @@ namespace Model
      * tokens, this field contains the value returned by the identity provider as the
      * token's <code>sub</code> (Subject) claim. </p>
      */
-    inline void SetSubjectFromWebIdentityToken(Aws::String&& value) { m_subjectFromWebIdentityToken = value; }
+    inline void SetSubjectFromWebIdentityToken(Aws::String&& value) { m_subjectFromWebIdentityToken = std::move(value); }
 
     /**
      * <p>The unique user identifier that is returned by the identity provider. This
@@ -163,7 +164,7 @@ namespace Model
      * tokens, this field contains the value returned by the identity provider as the
      * token's <code>sub</code> (Subject) claim. </p>
      */
-    inline AssumeRoleWithWebIdentityResult& WithSubjectFromWebIdentityToken(Aws::String&& value) { SetSubjectFromWebIdentityToken(value); return *this;}
+    inline AssumeRoleWithWebIdentityResult& WithSubjectFromWebIdentityToken(Aws::String&& value) { SetSubjectFromWebIdentityToken(std::move(value)); return *this;}
 
     /**
      * <p>The unique user identifier that is returned by the identity provider. This
@@ -204,7 +205,7 @@ namespace Model
      * <code>RoleSessionName</code> that you specified when you called
      * <code>AssumeRole</code>. </p>
      */
-    inline void SetAssumedRoleUser(AssumedRoleUser&& value) { m_assumedRoleUser = value; }
+    inline void SetAssumedRoleUser(AssumedRoleUser&& value) { m_assumedRoleUser = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers
@@ -224,7 +225,7 @@ namespace Model
      * <code>RoleSessionName</code> that you specified when you called
      * <code>AssumeRole</code>. </p>
      */
-    inline AssumeRoleWithWebIdentityResult& WithAssumedRoleUser(AssumedRoleUser&& value) { SetAssumedRoleUser(value); return *this;}
+    inline AssumeRoleWithWebIdentityResult& WithAssumedRoleUser(AssumedRoleUser&& value) { SetAssumedRoleUser(std::move(value)); return *this;}
 
     /**
      * <p>A percentage value that indicates the size of the policy in packed form. The
@@ -272,7 +273,7 @@ namespace Model
      * parameter that was passed in the <code>AssumeRoleWithWebIdentity</code>
      * request.</p>
      */
-    inline void SetProvider(Aws::String&& value) { m_provider = value; }
+    inline void SetProvider(Aws::String&& value) { m_provider = std::move(value); }
 
     /**
      * <p> The issuing authority of the web identity token presented. For OpenID
@@ -299,7 +300,7 @@ namespace Model
      * parameter that was passed in the <code>AssumeRoleWithWebIdentity</code>
      * request.</p>
      */
-    inline AssumeRoleWithWebIdentityResult& WithProvider(Aws::String&& value) { SetProvider(value); return *this;}
+    inline AssumeRoleWithWebIdentityResult& WithProvider(Aws::String&& value) { SetProvider(std::move(value)); return *this;}
 
     /**
      * <p> The issuing authority of the web identity token presented. For OpenID
@@ -329,7 +330,7 @@ namespace Model
      * This is traditionally the client identifier issued to the application that
      * requested the web identity token.</p>
      */
-    inline void SetAudience(Aws::String&& value) { m_audience = value; }
+    inline void SetAudience(Aws::String&& value) { m_audience = std::move(value); }
 
     /**
      * <p>The intended audience (also known as client ID) of the web identity token.
@@ -350,7 +351,7 @@ namespace Model
      * This is traditionally the client identifier issued to the application that
      * requested the web identity token.</p>
      */
-    inline AssumeRoleWithWebIdentityResult& WithAudience(Aws::String&& value) { SetAudience(value); return *this;}
+    inline AssumeRoleWithWebIdentityResult& WithAudience(Aws::String&& value) { SetAudience(std::move(value)); return *this;}
 
     /**
      * <p>The intended audience (also known as client ID) of the web identity token.
@@ -366,13 +367,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline AssumeRoleWithWebIdentityResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline AssumeRoleWithWebIdentityResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline AssumeRoleWithWebIdentityResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Credentials m_credentials;

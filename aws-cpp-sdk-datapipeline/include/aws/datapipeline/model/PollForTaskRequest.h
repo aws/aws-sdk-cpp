@@ -17,6 +17,7 @@
 #include <aws/datapipeline/DataPipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datapipeline/model/InstanceIdentity.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * <code>workerGroup</code>; the string must be an exact, case-sensitive,
      * match.</p>
      */
-    inline void SetWorkerGroup(Aws::String&& value) { m_workerGroupHasBeenSet = true; m_workerGroup = value; }
+    inline void SetWorkerGroup(Aws::String&& value) { m_workerGroupHasBeenSet = true; m_workerGroup = std::move(value); }
 
     /**
      * <p>The type of task the task runner is configured to accept and process. The
@@ -97,7 +98,7 @@ namespace Model
      * <code>workerGroup</code>; the string must be an exact, case-sensitive,
      * match.</p>
      */
-    inline PollForTaskRequest& WithWorkerGroup(Aws::String&& value) { SetWorkerGroup(value); return *this;}
+    inline PollForTaskRequest& WithWorkerGroup(Aws::String&& value) { SetWorkerGroup(std::move(value)); return *this;}
 
     /**
      * <p>The type of task the task runner is configured to accept and process. The
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The public DNS name of the calling task runner.</p>
      */
-    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
+    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
 
     /**
      * <p>The public DNS name of the calling task runner.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The public DNS name of the calling task runner.</p>
      */
-    inline PollForTaskRequest& WithHostname(Aws::String&& value) { SetHostname(value); return *this;}
+    inline PollForTaskRequest& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
 
     /**
      * <p>The public DNS name of the calling task runner.</p>
@@ -181,7 +182,7 @@ namespace Model
      * ensures the proper AWS Data Pipeline service charges are applied to your
      * pipeline.</p>
      */
-    inline void SetInstanceIdentity(InstanceIdentity&& value) { m_instanceIdentityHasBeenSet = true; m_instanceIdentity = value; }
+    inline void SetInstanceIdentity(InstanceIdentity&& value) { m_instanceIdentityHasBeenSet = true; m_instanceIdentity = std::move(value); }
 
     /**
      * <p>Identity information for the EC2 instance that is hosting the task runner.
@@ -207,7 +208,7 @@ namespace Model
      * ensures the proper AWS Data Pipeline service charges are applied to your
      * pipeline.</p>
      */
-    inline PollForTaskRequest& WithInstanceIdentity(InstanceIdentity&& value) { SetInstanceIdentity(value); return *this;}
+    inline PollForTaskRequest& WithInstanceIdentity(InstanceIdentity&& value) { SetInstanceIdentity(std::move(value)); return *this;}
 
   private:
     Aws::String m_workerGroup;

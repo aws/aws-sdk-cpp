@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/EncryptionKeyType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The ID used to identify the key. For an AWS KMS key, this is the key ID or
      * key ARN.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The ID used to identify the key. For an AWS KMS key, this is the key ID or
@@ -80,7 +81,7 @@ namespace Model
      * <p>The ID used to identify the key. For an AWS KMS key, this is the key ID or
      * key ARN.</p>
      */
-    inline EncryptionKey& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline EncryptionKey& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID used to identify the key. For an AWS KMS key, this is the key ID or
@@ -104,7 +105,7 @@ namespace Model
      * <p>The type of encryption key, such as an AWS Key Management Service (AWS KMS)
      * key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
      */
-    inline void SetType(EncryptionKeyType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(EncryptionKeyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of encryption key, such as an AWS Key Management Service (AWS KMS)
@@ -116,7 +117,7 @@ namespace Model
      * <p>The type of encryption key, such as an AWS Key Management Service (AWS KMS)
      * key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
      */
-    inline EncryptionKey& WithType(EncryptionKeyType&& value) { SetType(value); return *this;}
+    inline EncryptionKey& WithType(EncryptionKeyType&& value) { SetType(std::move(value)); return *this;}
 
   private:
     Aws::String m_id;

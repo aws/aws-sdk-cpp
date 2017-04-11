@@ -17,6 +17,7 @@
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/HealthCheckConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * executing the operation twice. You must use a unique
      * <code>CallerReference</code> string every time you create a health check.</p>
      */
-    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
+    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
@@ -84,7 +85,7 @@ namespace Model
      * executing the operation twice. You must use a unique
      * <code>CallerReference</code> string every time you create a health check.</p>
      */
-    inline CreateHealthCheckRequest& WithCallerReference(Aws::String&& value) { SetCallerReference(value); return *this;}
+    inline CreateHealthCheckRequest& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that identifies the request and that allows failed
@@ -110,7 +111,7 @@ namespace Model
      * <p>A complex type that contains the response to a <code>CreateHealthCheck</code>
      * request. </p>
      */
-    inline void SetHealthCheckConfig(HealthCheckConfig&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
+    inline void SetHealthCheckConfig(HealthCheckConfig&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = std::move(value); }
 
     /**
      * <p>A complex type that contains the response to a <code>CreateHealthCheck</code>
@@ -122,7 +123,7 @@ namespace Model
      * <p>A complex type that contains the response to a <code>CreateHealthCheck</code>
      * request. </p>
      */
-    inline CreateHealthCheckRequest& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(value); return *this;}
+    inline CreateHealthCheckRequest& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(std::move(value)); return *this;}
 
   private:
     Aws::String m_callerReference;

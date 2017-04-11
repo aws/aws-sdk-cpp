@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/apigateway/model/BasePathMapping.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     inline void SetPosition(const Aws::String& value) { m_position = value; }
 
     
-    inline void SetPosition(Aws::String&& value) { m_position = value; }
+    inline void SetPosition(Aws::String&& value) { m_position = std::move(value); }
 
     
     inline void SetPosition(const char* value) { m_position.assign(value); }
@@ -65,7 +66,7 @@ namespace Model
     inline GetBasePathMappingsResult& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
 
     
-    inline GetBasePathMappingsResult& WithPosition(Aws::String&& value) { SetPosition(value); return *this;}
+    inline GetBasePathMappingsResult& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     
     inline GetBasePathMappingsResult& WithPosition(const char* value) { SetPosition(value); return *this;}
@@ -86,7 +87,7 @@ namespace Model
      * <p>The current page of any <a>BasePathMapping</a> resources in the collection of
      * base path mapping resources.</p>
      */
-    inline void SetItems(Aws::Vector<BasePathMapping>&& value) { m_items = value; }
+    inline void SetItems(Aws::Vector<BasePathMapping>&& value) { m_items = std::move(value); }
 
     /**
      * <p>The current page of any <a>BasePathMapping</a> resources in the collection of
@@ -98,7 +99,7 @@ namespace Model
      * <p>The current page of any <a>BasePathMapping</a> resources in the collection of
      * base path mapping resources.</p>
      */
-    inline GetBasePathMappingsResult& WithItems(Aws::Vector<BasePathMapping>&& value) { SetItems(value); return *this;}
+    inline GetBasePathMappingsResult& WithItems(Aws::Vector<BasePathMapping>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * <p>The current page of any <a>BasePathMapping</a> resources in the collection of
@@ -110,7 +111,7 @@ namespace Model
      * <p>The current page of any <a>BasePathMapping</a> resources in the collection of
      * base path mapping resources.</p>
      */
-    inline GetBasePathMappingsResult& AddItems(BasePathMapping&& value) { m_items.push_back(value); return *this; }
+    inline GetBasePathMappingsResult& AddItems(BasePathMapping&& value) { m_items.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_position;

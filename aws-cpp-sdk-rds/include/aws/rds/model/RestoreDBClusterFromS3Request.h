@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
      * can be created in.</p>
      */
-    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
+    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
      * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
@@ -67,7 +68,7 @@ namespace Model
      * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
      * can be created in.</p>
      */
-    inline RestoreDBClusterFromS3Request& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
      * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
@@ -79,7 +80,7 @@ namespace Model
      * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
      * can be created in.</p>
      */
-    inline RestoreDBClusterFromS3Request& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+    inline RestoreDBClusterFromS3Request& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
@@ -124,7 +125,7 @@ namespace Model
      * <p>A value that indicates that the restored DB cluster should be associated with
      * the specified CharacterSet.</p>
      */
-    inline void SetCharacterSetName(Aws::String&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = value; }
+    inline void SetCharacterSetName(Aws::String&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = std::move(value); }
 
     /**
      * <p>A value that indicates that the restored DB cluster should be associated with
@@ -142,7 +143,7 @@ namespace Model
      * <p>A value that indicates that the restored DB cluster should be associated with
      * the specified CharacterSet.</p>
      */
-    inline RestoreDBClusterFromS3Request& WithCharacterSetName(Aws::String&& value) { SetCharacterSetName(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithCharacterSetName(Aws::String&& value) { SetCharacterSetName(std::move(value)); return *this;}
 
     /**
      * <p>A value that indicates that the restored DB cluster should be associated with
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>The database name for the restored DB cluster.</p>
      */
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
+    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
      * <p>The database name for the restored DB cluster.</p>
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>The database name for the restored DB cluster.</p>
      */
-    inline RestoreDBClusterFromS3Request& WithDatabaseName(Aws::String&& value) { SetDatabaseName(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
      * <p>The database name for the restored DB cluster.</p>
@@ -213,7 +214,7 @@ namespace Model
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
      */
-    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
+    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
      * <p>The name of the DB cluster to create from the source data in the S3 bucket.
@@ -243,7 +244,7 @@ namespace Model
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
      */
-    inline RestoreDBClusterFromS3Request& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB cluster to create from the source data in the S3 bucket.
@@ -280,7 +281,7 @@ namespace Model
      * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
-    inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
+    inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
@@ -307,7 +308,7 @@ namespace Model
      * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
-    inline RestoreDBClusterFromS3Request& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
@@ -334,7 +335,7 @@ namespace Model
      * <p>A list of EC2 VPC security groups to associate with the restored DB
      * cluster.</p>
      */
-    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
+    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
     /**
      * <p>A list of EC2 VPC security groups to associate with the restored DB
@@ -346,7 +347,7 @@ namespace Model
      * <p>A list of EC2 VPC security groups to associate with the restored DB
      * cluster.</p>
      */
-    inline RestoreDBClusterFromS3Request& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of EC2 VPC security groups to associate with the restored DB
@@ -358,7 +359,7 @@ namespace Model
      * <p>A list of EC2 VPC security groups to associate with the restored DB
      * cluster.</p>
      */
-    inline RestoreDBClusterFromS3Request& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+    inline RestoreDBClusterFromS3Request& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of EC2 VPC security groups to associate with the restored DB
@@ -388,7 +389,7 @@ namespace Model
      * underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
-    inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
+    inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
      * <p>A DB subnet group to associate with the restored DB cluster.</p>
@@ -412,7 +413,7 @@ namespace Model
      * underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
-    inline RestoreDBClusterFromS3Request& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>A DB subnet group to associate with the restored DB cluster.</p>
@@ -438,7 +439,7 @@ namespace Model
      * <p>The name of the database engine to be used for the restored DB cluster.</p>
      * <p>Valid Values: <code>aurora</code> </p>
      */
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The name of the database engine to be used for the restored DB cluster.</p>
@@ -456,7 +457,7 @@ namespace Model
      * <p>The name of the database engine to be used for the restored DB cluster.</p>
      * <p>Valid Values: <code>aurora</code> </p>
      */
-    inline RestoreDBClusterFromS3Request& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The name of the database engine to be used for the restored DB cluster.</p>
@@ -480,7 +481,7 @@ namespace Model
      * <p>The version number of the database engine to use.</p> <p> <b>Aurora</b> </p>
      * <p>Example: <code>5.6.10a</code> </p>
      */
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>The version number of the database engine to use.</p> <p> <b>Aurora</b> </p>
@@ -498,7 +499,7 @@ namespace Model
      * <p>The version number of the database engine to use.</p> <p> <b>Aurora</b> </p>
      * <p>Example: <code>5.6.10a</code> </p>
      */
-    inline RestoreDBClusterFromS3Request& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version number of the database engine to use.</p> <p> <b>Aurora</b> </p>
@@ -546,7 +547,7 @@ namespace Model
      * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
      * reserved word for the chosen database engine.</p> </li> </ul>
      */
-    inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
+    inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
      * <p>The name of the master user for the restored DB cluster.</p>
@@ -570,7 +571,7 @@ namespace Model
      * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
      * reserved word for the chosen database engine.</p> </li> </ul>
      */
-    inline RestoreDBClusterFromS3Request& WithMasterUsername(Aws::String&& value) { SetMasterUsername(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
      * <p>The name of the master user for the restored DB cluster.</p>
@@ -599,7 +600,7 @@ namespace Model
      * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
      * contain from 8 to 41 characters.</p>
      */
-    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
+    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
      * <p>The password for the master database user. This password can contain any
@@ -620,7 +621,7 @@ namespace Model
      * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
      * contain from 8 to 41 characters.</p>
      */
-    inline RestoreDBClusterFromS3Request& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
      * <p>The password for the master database user. This password can contain any
@@ -651,7 +652,7 @@ namespace Model
      * option group. An option group cannot be removed from a DB cluster once it is
      * associated with a DB cluster.</p>
      */
-    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
+    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
      * <p>A value that indicates that the restored DB cluster should be associated with
@@ -675,7 +676,7 @@ namespace Model
      * option group. An option group cannot be removed from a DB cluster once it is
      * associated with a DB cluster.</p>
      */
-    inline RestoreDBClusterFromS3Request& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
      * <p>A value that indicates that the restored DB cluster should be associated with
@@ -728,7 +729,7 @@ namespace Model
      * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
      * </ul>
      */
-    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
+    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
      * <p>The daily time range during which automated backups are created if automated
@@ -773,7 +774,7 @@ namespace Model
      * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
      * </ul>
      */
-    inline RestoreDBClusterFromS3Request& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
      * <p>The daily time range during which automated backups are created if automated
@@ -827,7 +828,7 @@ namespace Model
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
+    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p>The weekly time range during which system maintenance can occur, in Universal
@@ -866,7 +867,7 @@ namespace Model
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
-    inline RestoreDBClusterFromS3Request& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p>The weekly time range during which system maintenance can occur, in Universal
@@ -888,19 +889,19 @@ namespace Model
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     
     inline RestoreDBClusterFromS3Request& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     
-    inline RestoreDBClusterFromS3Request& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     
     inline RestoreDBClusterFromS3Request& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     
-    inline RestoreDBClusterFromS3Request& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline RestoreDBClusterFromS3Request& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specifies whether the restored DB cluster is encrypted.</p>
@@ -954,7 +955,7 @@ namespace Model
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS region.</p>
      */
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
@@ -993,7 +994,7 @@ namespace Model
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS region.</p>
      */
-    inline RestoreDBClusterFromS3Request& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
@@ -1024,7 +1025,7 @@ namespace Model
      * <p>The identifier for the database engine that was backed up to create the files
      * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
      */
-    inline void SetSourceEngine(Aws::String&& value) { m_sourceEngineHasBeenSet = true; m_sourceEngine = value; }
+    inline void SetSourceEngine(Aws::String&& value) { m_sourceEngineHasBeenSet = true; m_sourceEngine = std::move(value); }
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
@@ -1042,7 +1043,7 @@ namespace Model
      * <p>The identifier for the database engine that was backed up to create the files
      * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
      */
-    inline RestoreDBClusterFromS3Request& WithSourceEngine(Aws::String&& value) { SetSourceEngine(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithSourceEngine(Aws::String&& value) { SetSourceEngine(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
@@ -1069,7 +1070,7 @@ namespace Model
      * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
      * </p>
      */
-    inline void SetSourceEngineVersion(Aws::String&& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = value; }
+    inline void SetSourceEngineVersion(Aws::String&& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = std::move(value); }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
@@ -1090,7 +1091,7 @@ namespace Model
      * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
      * </p>
      */
-    inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(Aws::String&& value) { SetSourceEngineVersion(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(Aws::String&& value) { SetSourceEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
@@ -1115,7 +1116,7 @@ namespace Model
      * <p>The name of the Amazon S3 bucket that contains the data used to create the
      * Amazon Aurora DB cluster.</p>
      */
-    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
+    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
 
     /**
      * <p>The name of the Amazon S3 bucket that contains the data used to create the
@@ -1133,7 +1134,7 @@ namespace Model
      * <p>The name of the Amazon S3 bucket that contains the data used to create the
      * Amazon Aurora DB cluster.</p>
      */
-    inline RestoreDBClusterFromS3Request& WithS3BucketName(Aws::String&& value) { SetS3BucketName(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon S3 bucket that contains the data used to create the
@@ -1163,7 +1164,7 @@ namespace Model
      * then the Amazon Aurora DB cluster is created by using all of the files in the
      * Amazon S3 bucket.</p>
      */
-    inline void SetS3Prefix(Aws::String&& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = value; }
+    inline void SetS3Prefix(Aws::String&& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = std::move(value); }
 
     /**
      * <p>The prefix for all of the file names that contain the data used to create the
@@ -1187,7 +1188,7 @@ namespace Model
      * then the Amazon Aurora DB cluster is created by using all of the files in the
      * Amazon S3 bucket.</p>
      */
-    inline RestoreDBClusterFromS3Request& WithS3Prefix(Aws::String&& value) { SetS3Prefix(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithS3Prefix(Aws::String&& value) { SetS3Prefix(std::move(value)); return *this;}
 
     /**
      * <p>The prefix for all of the file names that contain the data used to create the
@@ -1216,7 +1217,7 @@ namespace Model
      * (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket on your
      * behalf.</p>
      */
-    inline void SetS3IngestionRoleArn(Aws::String&& value) { m_s3IngestionRoleArnHasBeenSet = true; m_s3IngestionRoleArn = value; }
+    inline void SetS3IngestionRoleArn(Aws::String&& value) { m_s3IngestionRoleArnHasBeenSet = true; m_s3IngestionRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
@@ -1237,7 +1238,7 @@ namespace Model
      * (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket on your
      * behalf.</p>
      */
-    inline RestoreDBClusterFromS3Request& WithS3IngestionRoleArn(Aws::String&& value) { SetS3IngestionRoleArn(value); return *this;}
+    inline RestoreDBClusterFromS3Request& WithS3IngestionRoleArn(Aws::String&& value) { SetS3IngestionRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management

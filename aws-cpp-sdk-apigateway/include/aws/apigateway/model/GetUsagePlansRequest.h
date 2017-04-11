@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>The zero-based array index specifying the position of the to-be-retrieved
      * <a>UsagePlan</a> resource.</p>
      */
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = value; }
+    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
      * <p>The zero-based array index specifying the position of the to-be-retrieved
@@ -77,7 +78,7 @@ namespace Model
      * <p>The zero-based array index specifying the position of the to-be-retrieved
      * <a>UsagePlan</a> resource.</p>
      */
-    inline GetUsagePlansRequest& WithPosition(Aws::String&& value) { SetPosition(value); return *this;}
+    inline GetUsagePlansRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
      * <p>The zero-based array index specifying the position of the to-be-retrieved
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The identifier of the API key associated with the usage plans.</p>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>The identifier of the API key associated with the usage plans.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The identifier of the API key associated with the usage plans.</p>
      */
-    inline GetUsagePlansRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline GetUsagePlansRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the API key associated with the usage plans.</p>

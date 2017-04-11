@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/config/model/Compliance.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the AWS Config rule.</p>
      */
-    inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
+    inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
 
     /**
      * <p>The name of the AWS Config rule.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the AWS Config rule.</p>
      */
-    inline ComplianceByConfigRule& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(value); return *this;}
+    inline ComplianceByConfigRule& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the AWS Config rule.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>Indicates whether the AWS Config rule is compliant.</p>
      */
-    inline void SetCompliance(Compliance&& value) { m_complianceHasBeenSet = true; m_compliance = value; }
+    inline void SetCompliance(Compliance&& value) { m_complianceHasBeenSet = true; m_compliance = std::move(value); }
 
     /**
      * <p>Indicates whether the AWS Config rule is compliant.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>Indicates whether the AWS Config rule is compliant.</p>
      */
-    inline ComplianceByConfigRule& WithCompliance(Compliance&& value) { SetCompliance(value); return *this;}
+    inline ComplianceByConfigRule& WithCompliance(Compliance&& value) { SetCompliance(std::move(value)); return *this;}
 
   private:
     Aws::String m_configRuleName;

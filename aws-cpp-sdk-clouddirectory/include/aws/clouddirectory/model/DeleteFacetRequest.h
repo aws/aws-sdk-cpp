@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>ARN associated with the <a>Facet</a>. For more information, see
      * <a>arns</a>.</p>
      */
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
+    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
 
     /**
      * <p>ARN associated with the <a>Facet</a>. For more information, see
@@ -69,7 +70,7 @@ namespace Model
      * <p>ARN associated with the <a>Facet</a>. For more information, see
      * <a>arns</a>.</p>
      */
-    inline DeleteFacetRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(value); return *this;}
+    inline DeleteFacetRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN associated with the <a>Facet</a>. For more information, see
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The name of the facet to delete.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the facet to delete.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The name of the facet to delete.</p>
      */
-    inline DeleteFacetRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline DeleteFacetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the facet to delete.</p>

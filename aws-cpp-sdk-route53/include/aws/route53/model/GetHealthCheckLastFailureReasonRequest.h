@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * you created the health check, <code>CreateHealthCheck</code> returned the ID in
      * the response, in the <code>HealthCheckId</code> element.</p>
      */
-    inline void SetHealthCheckId(Aws::String&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = value; }
+    inline void SetHealthCheckId(Aws::String&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = std::move(value); }
 
     /**
      * <p>The ID for the health check for which you want the last failure reason. When
@@ -83,7 +84,7 @@ namespace Model
      * you created the health check, <code>CreateHealthCheck</code> returned the ID in
      * the response, in the <code>HealthCheckId</code> element.</p>
      */
-    inline GetHealthCheckLastFailureReasonRequest& WithHealthCheckId(Aws::String&& value) { SetHealthCheckId(value); return *this;}
+    inline GetHealthCheckLastFailureReasonRequest& WithHealthCheckId(Aws::String&& value) { SetHealthCheckId(std::move(value)); return *this;}
 
     /**
      * <p>The ID for the health check for which you want the last failure reason. When

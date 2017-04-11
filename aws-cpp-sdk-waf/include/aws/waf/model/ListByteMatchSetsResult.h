@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/waf/model/ByteMatchSetSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * <code>NextMarker</code> value from the response in the <code>NextMarker</code>
      * value in the next request.</p>
      */
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
      * <p>If you have more <code>ByteMatchSet</code> objects than the number that you
@@ -99,7 +100,7 @@ namespace Model
      * <code>NextMarker</code> value from the response in the <code>NextMarker</code>
      * value in the next request.</p>
      */
-    inline ListByteMatchSetsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
+    inline ListByteMatchSetsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>If you have more <code>ByteMatchSet</code> objects than the number that you
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>An array of <a>ByteMatchSetSummary</a> objects.</p>
      */
-    inline void SetByteMatchSets(Aws::Vector<ByteMatchSetSummary>&& value) { m_byteMatchSets = value; }
+    inline void SetByteMatchSets(Aws::Vector<ByteMatchSetSummary>&& value) { m_byteMatchSets = std::move(value); }
 
     /**
      * <p>An array of <a>ByteMatchSetSummary</a> objects.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>An array of <a>ByteMatchSetSummary</a> objects.</p>
      */
-    inline ListByteMatchSetsResult& WithByteMatchSets(Aws::Vector<ByteMatchSetSummary>&& value) { SetByteMatchSets(value); return *this;}
+    inline ListByteMatchSetsResult& WithByteMatchSets(Aws::Vector<ByteMatchSetSummary>&& value) { SetByteMatchSets(std::move(value)); return *this;}
 
     /**
      * <p>An array of <a>ByteMatchSetSummary</a> objects.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>An array of <a>ByteMatchSetSummary</a> objects.</p>
      */
-    inline ListByteMatchSetsResult& AddByteMatchSets(ByteMatchSetSummary&& value) { m_byteMatchSets.push_back(value); return *this; }
+    inline ListByteMatchSetsResult& AddByteMatchSets(ByteMatchSetSummary&& value) { m_byteMatchSets.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_nextMarker;

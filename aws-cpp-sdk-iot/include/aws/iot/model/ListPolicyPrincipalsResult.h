@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The descriptions of the principals.</p>
      */
-    inline void SetPrincipals(Aws::Vector<Aws::String>&& value) { m_principals = value; }
+    inline void SetPrincipals(Aws::Vector<Aws::String>&& value) { m_principals = std::move(value); }
 
     /**
      * <p>The descriptions of the principals.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The descriptions of the principals.</p>
      */
-    inline ListPolicyPrincipalsResult& WithPrincipals(Aws::Vector<Aws::String>&& value) { SetPrincipals(value); return *this;}
+    inline ListPolicyPrincipalsResult& WithPrincipals(Aws::Vector<Aws::String>&& value) { SetPrincipals(std::move(value)); return *this;}
 
     /**
      * <p>The descriptions of the principals.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The descriptions of the principals.</p>
      */
-    inline ListPolicyPrincipalsResult& AddPrincipals(Aws::String&& value) { m_principals.push_back(value); return *this; }
+    inline ListPolicyPrincipalsResult& AddPrincipals(Aws::String&& value) { m_principals.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The descriptions of the principals.</p>
@@ -102,7 +103,7 @@ namespace Model
      * <p>The marker for the next set of results, or null if there are no additional
      * results.</p>
      */
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
      * <p>The marker for the next set of results, or null if there are no additional
@@ -120,7 +121,7 @@ namespace Model
      * <p>The marker for the next set of results, or null if there are no additional
      * results.</p>
      */
-    inline ListPolicyPrincipalsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
+    inline ListPolicyPrincipalsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>The marker for the next set of results, or null if there are no additional

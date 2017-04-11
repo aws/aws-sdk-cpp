@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -71,7 +72,7 @@ namespace Model
      * <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
      * <li> <p>Must be unique for all clusters within an AWS account.</p> </li> </ul>
      */
-    inline void SetSnapshotCopyGrantName(Aws::String&& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = value; }
+    inline void SetSnapshotCopyGrantName(Aws::String&& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = std::move(value); }
 
     /**
      * <p>The name of the snapshot copy grant. This name must be unique in the region
@@ -101,7 +102,7 @@ namespace Model
      * <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
      * <li> <p>Must be unique for all clusters within an AWS account.</p> </li> </ul>
      */
-    inline CreateSnapshotCopyGrantRequest& WithSnapshotCopyGrantName(Aws::String&& value) { SetSnapshotCopyGrantName(value); return *this;}
+    inline CreateSnapshotCopyGrantRequest& WithSnapshotCopyGrantName(Aws::String&& value) { SetSnapshotCopyGrantName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the snapshot copy grant. This name must be unique in the region
@@ -129,7 +130,7 @@ namespace Model
      * <p>The unique identifier of the customer master key (CMK) to which to grant
      * Amazon Redshift permission. If no key is specified, the default key is used.</p>
      */
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The unique identifier of the customer master key (CMK) to which to grant
@@ -147,7 +148,7 @@ namespace Model
      * <p>The unique identifier of the customer master key (CMK) to which to grant
      * Amazon Redshift permission. If no key is specified, the default key is used.</p>
      */
-    inline CreateSnapshotCopyGrantRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
+    inline CreateSnapshotCopyGrantRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the customer master key (CMK) to which to grant
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>A list of tag instances.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of tag instances.</p>
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>A list of tag instances.</p>
      */
-    inline CreateSnapshotCopyGrantRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline CreateSnapshotCopyGrantRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of tag instances.</p>
@@ -188,7 +189,7 @@ namespace Model
     /**
      * <p>A list of tag instances.</p>
      */
-    inline CreateSnapshotCopyGrantRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateSnapshotCopyGrantRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_snapshotCopyGrantName;

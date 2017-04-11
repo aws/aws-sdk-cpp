@@ -16,6 +16,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/cloudsearch/model/ExpressionStatus.h>
 #include <aws/cloudsearch/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The status of the expression being deleted.</p>
      */
-    inline void SetExpression(ExpressionStatus&& value) { m_expression = value; }
+    inline void SetExpression(ExpressionStatus&& value) { m_expression = std::move(value); }
 
     /**
      * <p>The status of the expression being deleted.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The status of the expression being deleted.</p>
      */
-    inline DeleteExpressionResult& WithExpression(ExpressionStatus&& value) { SetExpression(value); return *this;}
+    inline DeleteExpressionResult& WithExpression(ExpressionStatus&& value) { SetExpression(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -78,13 +79,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DeleteExpressionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DeleteExpressionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DeleteExpressionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     ExpressionStatus m_expression;

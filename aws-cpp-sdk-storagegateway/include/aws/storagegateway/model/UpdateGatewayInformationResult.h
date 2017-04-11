@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
 
     
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = value; }
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
 
     
     inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
@@ -61,7 +62,7 @@ namespace Model
     inline UpdateGatewayInformationResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     
-    inline UpdateGatewayInformationResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline UpdateGatewayInformationResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     
     inline UpdateGatewayInformationResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
@@ -73,7 +74,7 @@ namespace Model
     inline void SetGatewayName(const Aws::String& value) { m_gatewayName = value; }
 
     
-    inline void SetGatewayName(Aws::String&& value) { m_gatewayName = value; }
+    inline void SetGatewayName(Aws::String&& value) { m_gatewayName = std::move(value); }
 
     
     inline void SetGatewayName(const char* value) { m_gatewayName.assign(value); }
@@ -82,7 +83,7 @@ namespace Model
     inline UpdateGatewayInformationResult& WithGatewayName(const Aws::String& value) { SetGatewayName(value); return *this;}
 
     
-    inline UpdateGatewayInformationResult& WithGatewayName(Aws::String&& value) { SetGatewayName(value); return *this;}
+    inline UpdateGatewayInformationResult& WithGatewayName(Aws::String&& value) { SetGatewayName(std::move(value)); return *this;}
 
     
     inline UpdateGatewayInformationResult& WithGatewayName(const char* value) { SetGatewayName(value); return *this;}

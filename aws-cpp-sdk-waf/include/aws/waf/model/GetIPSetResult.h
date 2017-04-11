@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/IPSet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and
      * <code>Value</code> </p> </li> </ul>
      */
-    inline void SetIPSet(IPSet&& value) { m_iPSet = value; }
+    inline void SetIPSet(IPSet&& value) { m_iPSet = std::move(value); }
 
     /**
      * <p>Information about the <a>IPSet</a> that you specified in the
@@ -92,7 +93,7 @@ namespace Model
      * objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and
      * <code>Value</code> </p> </li> </ul>
      */
-    inline GetIPSetResult& WithIPSet(IPSet&& value) { SetIPSet(value); return *this;}
+    inline GetIPSetResult& WithIPSet(IPSet&& value) { SetIPSet(std::move(value)); return *this;}
 
   private:
     IPSet m_iPSet;

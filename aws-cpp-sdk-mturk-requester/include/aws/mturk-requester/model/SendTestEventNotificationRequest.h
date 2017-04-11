@@ -17,6 +17,7 @@
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/mturk-requester/model/NotificationSpecification.h>
 #include <aws/mturk-requester/model/EventType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * you would provide to the UpdateNotificationSettings operation when you establish
      * the notification specification for a HIT type. </p>
      */
-    inline void SetNotification(NotificationSpecification&& value) { m_notificationHasBeenSet = true; m_notification = value; }
+    inline void SetNotification(NotificationSpecification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
 
     /**
      * <p> The notification specification to test. This value is identical to the value
@@ -69,7 +70,7 @@ namespace Model
      * you would provide to the UpdateNotificationSettings operation when you establish
      * the notification specification for a HIT type. </p>
      */
-    inline SendTestEventNotificationRequest& WithNotification(NotificationSpecification&& value) { SetNotification(value); return *this;}
+    inline SendTestEventNotificationRequest& WithNotification(NotificationSpecification&& value) { SetNotification(std::move(value)); return *this;}
 
     /**
      * <p> The event to simulate to test the notification specification. This event is
@@ -93,7 +94,7 @@ namespace Model
      * include the event type. The notification specification does not filter out the
      * test event. </p>
      */
-    inline void SetTestEventType(EventType&& value) { m_testEventTypeHasBeenSet = true; m_testEventType = value; }
+    inline void SetTestEventType(EventType&& value) { m_testEventTypeHasBeenSet = true; m_testEventType = std::move(value); }
 
     /**
      * <p> The event to simulate to test the notification specification. This event is
@@ -109,7 +110,7 @@ namespace Model
      * include the event type. The notification specification does not filter out the
      * test event. </p>
      */
-    inline SendTestEventNotificationRequest& WithTestEventType(EventType&& value) { SetTestEventType(value); return *this;}
+    inline SendTestEventNotificationRequest& WithTestEventType(EventType&& value) { SetTestEventType(std::move(value)); return *this;}
 
   private:
     NotificationSpecification m_notification;

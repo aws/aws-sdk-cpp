@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -84,7 +85,7 @@ namespace Model
      * returned by <a>CreateSizeConstraintSet</a> and by
      * <a>ListSizeConstraintSets</a>.</p>
      */
-    inline void SetSizeConstraintSetId(Aws::String&& value) { m_sizeConstraintSetIdHasBeenSet = true; m_sizeConstraintSetId = value; }
+    inline void SetSizeConstraintSetId(Aws::String&& value) { m_sizeConstraintSetIdHasBeenSet = true; m_sizeConstraintSetId = std::move(value); }
 
     /**
      * <p>A unique identifier for a <code>SizeConstraintSet</code>. You use
@@ -126,7 +127,7 @@ namespace Model
      * returned by <a>CreateSizeConstraintSet</a> and by
      * <a>ListSizeConstraintSets</a>.</p>
      */
-    inline SizeConstraintSetSummary& WithSizeConstraintSetId(Aws::String&& value) { SetSizeConstraintSetId(value); return *this;}
+    inline SizeConstraintSetSummary& WithSizeConstraintSetId(Aws::String&& value) { SetSizeConstraintSetId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for a <code>SizeConstraintSet</code>. You use
@@ -155,7 +156,7 @@ namespace Model
     /**
      * <p>The name of the <code>SizeConstraintSet</code>, if any.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the <code>SizeConstraintSet</code>, if any.</p>
@@ -170,7 +171,7 @@ namespace Model
     /**
      * <p>The name of the <code>SizeConstraintSet</code>, if any.</p>
      */
-    inline SizeConstraintSetSummary& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline SizeConstraintSetSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the <code>SizeConstraintSet</code>, if any.</p>

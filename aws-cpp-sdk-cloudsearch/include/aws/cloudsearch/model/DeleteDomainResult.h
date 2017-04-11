@@ -16,6 +16,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/cloudsearch/model/DomainStatus.h>
 #include <aws/cloudsearch/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,13 +55,13 @@ namespace Model
     inline void SetDomainStatus(const DomainStatus& value) { m_domainStatus = value; }
 
     
-    inline void SetDomainStatus(DomainStatus&& value) { m_domainStatus = value; }
+    inline void SetDomainStatus(DomainStatus&& value) { m_domainStatus = std::move(value); }
 
     
     inline DeleteDomainResult& WithDomainStatus(const DomainStatus& value) { SetDomainStatus(value); return *this;}
 
     
-    inline DeleteDomainResult& WithDomainStatus(DomainStatus&& value) { SetDomainStatus(value); return *this;}
+    inline DeleteDomainResult& WithDomainStatus(DomainStatus&& value) { SetDomainStatus(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -69,13 +70,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DeleteDomainResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DeleteDomainResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DeleteDomainResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     DomainStatus m_domainStatus;

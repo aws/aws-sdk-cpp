@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/S3OutputLocation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
      */
-    inline void SetS3Location(S3OutputLocation&& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
+    inline void SetS3Location(S3OutputLocation&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
 
     /**
      * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
      */
-    inline InstanceAssociationOutputLocation& WithS3Location(S3OutputLocation&& value) { SetS3Location(value); return *this;}
+    inline InstanceAssociationOutputLocation& WithS3Location(S3OutputLocation&& value) { SetS3Location(std::move(value)); return *this;}
 
   private:
     S3OutputLocation m_s3Location;

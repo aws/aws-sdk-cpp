@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The ARN of the builder.</p>
      */
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
 
     /**
      * <p>The ARN of the builder.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The ARN of the builder.</p>
      */
-    inline Builder& WithARN(Aws::String&& value) { SetARN(value); return *this;}
+    inline Builder& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the builder.</p>

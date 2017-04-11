@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/CACertificateStatus.h>
 #include <aws/iot/model/AutoRegistrationStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The CA certificate identifier.</p>
      */
-    inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
+    inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::move(value); }
 
     /**
      * <p>The CA certificate identifier.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The CA certificate identifier.</p>
      */
-    inline UpdateCACertificateRequest& WithCertificateId(Aws::String&& value) { SetCertificateId(value); return *this;}
+    inline UpdateCACertificateRequest& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
 
     /**
      * <p>The CA certificate identifier.</p>
@@ -95,7 +96,7 @@ namespace Model
      * <p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status
      * value REGISTER_INACTIVE is deprecated and should not be used.</p>
      */
-    inline void SetNewStatus(CACertificateStatus&& value) { m_newStatusHasBeenSet = true; m_newStatus = value; }
+    inline void SetNewStatus(CACertificateStatus&& value) { m_newStatusHasBeenSet = true; m_newStatus = std::move(value); }
 
     /**
      * <p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status
@@ -107,7 +108,7 @@ namespace Model
      * <p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status
      * value REGISTER_INACTIVE is deprecated and should not be used.</p>
      */
-    inline UpdateCACertificateRequest& WithNewStatus(CACertificateStatus&& value) { SetNewStatus(value); return *this;}
+    inline UpdateCACertificateRequest& WithNewStatus(CACertificateStatus&& value) { SetNewStatus(std::move(value)); return *this;}
 
     /**
      * <p>The new value for the auto registration status. Valid values are: "ENABLE" or
@@ -125,7 +126,7 @@ namespace Model
      * <p>The new value for the auto registration status. Valid values are: "ENABLE" or
      * "DISABLE".</p>
      */
-    inline void SetNewAutoRegistrationStatus(AutoRegistrationStatus&& value) { m_newAutoRegistrationStatusHasBeenSet = true; m_newAutoRegistrationStatus = value; }
+    inline void SetNewAutoRegistrationStatus(AutoRegistrationStatus&& value) { m_newAutoRegistrationStatusHasBeenSet = true; m_newAutoRegistrationStatus = std::move(value); }
 
     /**
      * <p>The new value for the auto registration status. Valid values are: "ENABLE" or
@@ -137,7 +138,7 @@ namespace Model
      * <p>The new value for the auto registration status. Valid values are: "ENABLE" or
      * "DISABLE".</p>
      */
-    inline UpdateCACertificateRequest& WithNewAutoRegistrationStatus(AutoRegistrationStatus&& value) { SetNewAutoRegistrationStatus(value); return *this;}
+    inline UpdateCACertificateRequest& WithNewAutoRegistrationStatus(AutoRegistrationStatus&& value) { SetNewAutoRegistrationStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_certificateId;

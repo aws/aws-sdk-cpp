@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/config/model/ConfigRule.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The rule that you want to add to your account.</p>
      */
-    inline void SetConfigRule(ConfigRule&& value) { m_configRuleHasBeenSet = true; m_configRule = value; }
+    inline void SetConfigRule(ConfigRule&& value) { m_configRuleHasBeenSet = true; m_configRule = std::move(value); }
 
     /**
      * <p>The rule that you want to add to your account.</p>
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The rule that you want to add to your account.</p>
      */
-    inline PutConfigRuleRequest& WithConfigRule(ConfigRule&& value) { SetConfigRule(value); return *this;}
+    inline PutConfigRuleRequest& WithConfigRule(ConfigRule&& value) { SetConfigRule(std::move(value)); return *this;}
 
   private:
     ConfigRule m_configRule;

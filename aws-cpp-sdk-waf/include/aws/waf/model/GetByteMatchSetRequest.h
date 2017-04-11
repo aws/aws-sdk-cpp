@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/WAFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * get. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
      * <a>ListByteMatchSets</a>.</p>
      */
-    inline void SetByteMatchSetId(Aws::String&& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = value; }
+    inline void SetByteMatchSetId(Aws::String&& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = std::move(value); }
 
     /**
      * <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to
@@ -75,7 +76,7 @@ namespace Model
      * get. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
      * <a>ListByteMatchSets</a>.</p>
      */
-    inline GetByteMatchSetRequest& WithByteMatchSetId(Aws::String&& value) { SetByteMatchSetId(value); return *this;}
+    inline GetByteMatchSetRequest& WithByteMatchSetId(Aws::String&& value) { SetByteMatchSetId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to

@@ -17,6 +17,7 @@
 #include <aws/elasticmapreduce/model/StepExecutionState.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The state of the step.</p>
      */
-    inline void SetState(StepExecutionState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(StepExecutionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the step.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The state of the step.</p>
      */
-    inline StepExecutionStatusDetail& WithState(StepExecutionState&& value) { SetState(value); return *this;}
+    inline StepExecutionStatusDetail& WithState(StepExecutionState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The creation date and time of the step.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The creation date and time of the step.</p>
      */
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
+    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
 
     /**
      * <p>The creation date and time of the step.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The creation date and time of the step.</p>
      */
-    inline StepExecutionStatusDetail& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(value); return *this;}
+    inline StepExecutionStatusDetail& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
 
     /**
      * <p>The start date and time of the step.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The start date and time of the step.</p>
      */
-    inline void SetStartDateTime(Aws::Utils::DateTime&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
+    inline void SetStartDateTime(Aws::Utils::DateTime&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = std::move(value); }
 
     /**
      * <p>The start date and time of the step.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The start date and time of the step.</p>
      */
-    inline StepExecutionStatusDetail& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(value); return *this;}
+    inline StepExecutionStatusDetail& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(std::move(value)); return *this;}
 
     /**
      * <p>The completion date and time of the step.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The completion date and time of the step.</p>
      */
-    inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
+    inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::move(value); }
 
     /**
      * <p>The completion date and time of the step.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The completion date and time of the step.</p>
      */
-    inline StepExecutionStatusDetail& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(value); return *this;}
+    inline StepExecutionStatusDetail& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(std::move(value)); return *this;}
 
     /**
      * <p>A description of the step's current state.</p>
@@ -158,7 +159,7 @@ namespace Model
     /**
      * <p>A description of the step's current state.</p>
      */
-    inline void SetLastStateChangeReason(Aws::String&& value) { m_lastStateChangeReasonHasBeenSet = true; m_lastStateChangeReason = value; }
+    inline void SetLastStateChangeReason(Aws::String&& value) { m_lastStateChangeReasonHasBeenSet = true; m_lastStateChangeReason = std::move(value); }
 
     /**
      * <p>A description of the step's current state.</p>
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>A description of the step's current state.</p>
      */
-    inline StepExecutionStatusDetail& WithLastStateChangeReason(Aws::String&& value) { SetLastStateChangeReason(value); return *this;}
+    inline StepExecutionStatusDetail& WithLastStateChangeReason(Aws::String&& value) { SetLastStateChangeReason(std::move(value)); return *this;}
 
     /**
      * <p>A description of the step's current state.</p>

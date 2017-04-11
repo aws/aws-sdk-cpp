@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The time that the disk upload starts.</p>
      */
-    inline void SetUploadStart(Aws::Utils::DateTime&& value) { m_uploadStartHasBeenSet = true; m_uploadStart = value; }
+    inline void SetUploadStart(Aws::Utils::DateTime&& value) { m_uploadStartHasBeenSet = true; m_uploadStart = std::move(value); }
 
     /**
      * <p>The time that the disk upload starts.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The time that the disk upload starts.</p>
      */
-    inline ClientData& WithUploadStart(Aws::Utils::DateTime&& value) { SetUploadStart(value); return *this;}
+    inline ClientData& WithUploadStart(Aws::Utils::DateTime&& value) { SetUploadStart(std::move(value)); return *this;}
 
     /**
      * <p>The time that the disk upload ends.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The time that the disk upload ends.</p>
      */
-    inline void SetUploadEnd(Aws::Utils::DateTime&& value) { m_uploadEndHasBeenSet = true; m_uploadEnd = value; }
+    inline void SetUploadEnd(Aws::Utils::DateTime&& value) { m_uploadEndHasBeenSet = true; m_uploadEnd = std::move(value); }
 
     /**
      * <p>The time that the disk upload ends.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The time that the disk upload ends.</p>
      */
-    inline ClientData& WithUploadEnd(Aws::Utils::DateTime&& value) { SetUploadEnd(value); return *this;}
+    inline ClientData& WithUploadEnd(Aws::Utils::DateTime&& value) { SetUploadEnd(std::move(value)); return *this;}
 
     /**
      * <p>The size of the uploaded disk image, in GiB.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>A user-defined comment about the disk upload.</p>
      */
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
+    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
      * <p>A user-defined comment about the disk upload.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>A user-defined comment about the disk upload.</p>
      */
-    inline ClientData& WithComment(Aws::String&& value) { SetComment(value); return *this;}
+    inline ClientData& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
      * <p>A user-defined comment about the disk upload.</p>

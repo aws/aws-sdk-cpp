@@ -17,6 +17,7 @@
 #include <aws/codedeploy/model/RevisionLocationType.h>
 #include <aws/codedeploy/model/S3Location.h>
 #include <aws/codedeploy/model/GitHubLocation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
      * stored in GitHub.</p> </li> </ul>
      */
-    inline void SetRevisionType(RevisionLocationType&& value) { m_revisionTypeHasBeenSet = true; m_revisionType = value; }
+    inline void SetRevisionType(RevisionLocationType&& value) { m_revisionTypeHasBeenSet = true; m_revisionType = std::move(value); }
 
     /**
      * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
@@ -79,7 +80,7 @@ namespace Model
      * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
      * stored in GitHub.</p> </li> </ul>
      */
-    inline RevisionLocation& WithRevisionType(RevisionLocationType&& value) { SetRevisionType(value); return *this;}
+    inline RevisionLocation& WithRevisionType(RevisionLocationType&& value) { SetRevisionType(std::move(value)); return *this;}
 
     /**
      * <p>Information about the location of application artifacts stored in Amazon S3.
@@ -97,7 +98,7 @@ namespace Model
      * <p>Information about the location of application artifacts stored in Amazon S3.
      * </p>
      */
-    inline void SetS3Location(S3Location&& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
+    inline void SetS3Location(S3Location&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
 
     /**
      * <p>Information about the location of application artifacts stored in Amazon S3.
@@ -109,7 +110,7 @@ namespace Model
      * <p>Information about the location of application artifacts stored in Amazon S3.
      * </p>
      */
-    inline RevisionLocation& WithS3Location(S3Location&& value) { SetS3Location(value); return *this;}
+    inline RevisionLocation& WithS3Location(S3Location&& value) { SetS3Location(std::move(value)); return *this;}
 
     /**
      * <p>Information about the location of application artifacts stored in GitHub.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>Information about the location of application artifacts stored in GitHub.</p>
      */
-    inline void SetGitHubLocation(GitHubLocation&& value) { m_gitHubLocationHasBeenSet = true; m_gitHubLocation = value; }
+    inline void SetGitHubLocation(GitHubLocation&& value) { m_gitHubLocationHasBeenSet = true; m_gitHubLocation = std::move(value); }
 
     /**
      * <p>Information about the location of application artifacts stored in GitHub.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>Information about the location of application artifacts stored in GitHub.</p>
      */
-    inline RevisionLocation& WithGitHubLocation(GitHubLocation&& value) { SetGitHubLocation(value); return *this;}
+    inline RevisionLocation& WithGitHubLocation(GitHubLocation&& value) { SetGitHubLocation(std::move(value)); return *this;}
 
   private:
     RevisionLocationType m_revisionType;

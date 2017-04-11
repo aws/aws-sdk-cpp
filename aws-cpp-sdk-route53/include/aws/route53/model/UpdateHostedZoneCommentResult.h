@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/HostedZone.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,13 +53,13 @@ namespace Model
     inline void SetHostedZone(const HostedZone& value) { m_hostedZone = value; }
 
     
-    inline void SetHostedZone(HostedZone&& value) { m_hostedZone = value; }
+    inline void SetHostedZone(HostedZone&& value) { m_hostedZone = std::move(value); }
 
     
     inline UpdateHostedZoneCommentResult& WithHostedZone(const HostedZone& value) { SetHostedZone(value); return *this;}
 
     
-    inline UpdateHostedZoneCommentResult& WithHostedZone(HostedZone&& value) { SetHostedZone(value); return *this;}
+    inline UpdateHostedZoneCommentResult& WithHostedZone(HostedZone&& value) { SetHostedZone(std::move(value)); return *this;}
 
   private:
     HostedZone m_hostedZone;

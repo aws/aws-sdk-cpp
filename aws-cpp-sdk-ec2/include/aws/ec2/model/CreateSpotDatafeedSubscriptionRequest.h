@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket in which to store the Spot instance data feed.</p>
      */
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * <p>The Amazon S3 bucket in which to store the Spot instance data feed.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket in which to store the Spot instance data feed.</p>
      */
-    inline CreateSpotDatafeedSubscriptionRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline CreateSpotDatafeedSubscriptionRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 bucket in which to store the Spot instance data feed.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>A prefix for the data feed file names.</p>
      */
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * <p>A prefix for the data feed file names.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>A prefix for the data feed file names.</p>
      */
-    inline CreateSpotDatafeedSubscriptionRequest& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
+    inline CreateSpotDatafeedSubscriptionRequest& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * <p>A prefix for the data feed file names.</p>

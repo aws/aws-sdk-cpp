@@ -16,6 +16,7 @@
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53domains/model/ReachabilityStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The domain name for which you requested the reachability status.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainName = std::move(value); }
 
     /**
      * <p>The domain name for which you requested the reachability status.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The domain name for which you requested the reachability status.</p>
      */
-    inline GetContactReachabilityStatusResult& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline GetContactReachabilityStatusResult& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The domain name for which you requested the reachability status.</p>
@@ -106,7 +107,7 @@ namespace Model
      * <p>Valid values: <code>PENDING</code>, <code>DONE</code>,
      * <code>EXPIRED</code></p>
      */
-    inline void SetStatus(ReachabilityStatus&& value) { m_status = value; }
+    inline void SetStatus(ReachabilityStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>Whether the registrant contact has responded. <code>PENDING</code> indicates
@@ -128,7 +129,7 @@ namespace Model
      * <p>Valid values: <code>PENDING</code>, <code>DONE</code>,
      * <code>EXPIRED</code></p>
      */
-    inline GetContactReachabilityStatusResult& WithStatus(ReachabilityStatus&& value) { SetStatus(value); return *this;}
+    inline GetContactReachabilityStatusResult& WithStatus(ReachabilityStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_domainName;

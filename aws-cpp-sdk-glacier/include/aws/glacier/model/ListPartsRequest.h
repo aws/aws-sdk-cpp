@@ -16,6 +16,7 @@
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/glacier/GlacierRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * associated with the credentials used to sign the request. If you use an account
      * ID, do not include any hyphens ('-') in the ID. </p>
      */
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
@@ -95,7 +96,7 @@ namespace Model
      * associated with the credentials used to sign the request. If you use an account
      * ID, do not include any hyphens ('-') in the ID. </p>
      */
-    inline ListPartsRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline ListPartsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>The name of the vault.</p>
      */
-    inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
+    inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = std::move(value); }
 
     /**
      * <p>The name of the vault.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>The name of the vault.</p>
      */
-    inline ListPartsRequest& WithVaultName(Aws::String&& value) { SetVaultName(value); return *this;}
+    inline ListPartsRequest& WithVaultName(Aws::String&& value) { SetVaultName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the vault.</p>
@@ -154,7 +155,7 @@ namespace Model
     /**
      * <p>The upload ID of the multipart upload.</p>
      */
-    inline void SetUploadId(Aws::String&& value) { m_uploadIdHasBeenSet = true; m_uploadId = value; }
+    inline void SetUploadId(Aws::String&& value) { m_uploadIdHasBeenSet = true; m_uploadId = std::move(value); }
 
     /**
      * <p>The upload ID of the multipart upload.</p>
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p>The upload ID of the multipart upload.</p>
      */
-    inline ListPartsRequest& WithUploadId(Aws::String&& value) { SetUploadId(value); return *this;}
+    inline ListPartsRequest& WithUploadId(Aws::String&& value) { SetUploadId(std::move(value)); return *this;}
 
     /**
      * <p>The upload ID of the multipart upload.</p>
@@ -201,7 +202,7 @@ namespace Model
      * continuing the pagination of results started in a previous List Parts
      * request.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An opaque string used for pagination. This value specifies the part at which
@@ -228,7 +229,7 @@ namespace Model
      * continuing the pagination of results started in a previous List Parts
      * request.</p>
      */
-    inline ListPartsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListPartsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An opaque string used for pagination. This value specifies the part at which
@@ -258,7 +259,7 @@ namespace Model
      * number of parts returned might be fewer than the specified limit, but the number
      * of returned parts never exceeds the limit.</p>
      */
-    inline void SetLimit(Aws::String&& value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(Aws::String&& value) { m_limitHasBeenSet = true; m_limit = std::move(value); }
 
     /**
      * <p>The maximum number of parts to be returned. The default limit is 1000. The
@@ -279,7 +280,7 @@ namespace Model
      * number of parts returned might be fewer than the specified limit, but the number
      * of returned parts never exceeds the limit.</p>
      */
-    inline ListPartsRequest& WithLimit(Aws::String&& value) { SetLimit(value); return *this;}
+    inline ListPartsRequest& WithLimit(Aws::String&& value) { SetLimit(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of parts to be returned. The default limit is 1000. The

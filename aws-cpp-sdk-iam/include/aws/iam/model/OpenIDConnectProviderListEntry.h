@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
@@ -63,7 +64,7 @@ namespace Model
     inline OpenIDConnectProviderListEntry& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     
-    inline OpenIDConnectProviderListEntry& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline OpenIDConnectProviderListEntry& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     
     inline OpenIDConnectProviderListEntry& WithArn(const char* value) { SetArn(value); return *this;}

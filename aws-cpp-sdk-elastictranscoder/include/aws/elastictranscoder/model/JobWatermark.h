@@ -16,6 +16,7 @@
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elastictranscoder/model/Encryption.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * specified by Preset for the current output. In that preset, the value of
      * Watermarks Id tells Elastic Transcoder which settings to use.</p>
      */
-    inline void SetPresetWatermarkId(Aws::String&& value) { m_presetWatermarkIdHasBeenSet = true; m_presetWatermarkId = value; }
+    inline void SetPresetWatermarkId(Aws::String&& value) { m_presetWatermarkIdHasBeenSet = true; m_presetWatermarkId = std::move(value); }
 
     /**
      * <p>The ID of the watermark settings that Elastic Transcoder uses to add
@@ -92,7 +93,7 @@ namespace Model
      * specified by Preset for the current output. In that preset, the value of
      * Watermarks Id tells Elastic Transcoder which settings to use.</p>
      */
-    inline JobWatermark& WithPresetWatermarkId(Aws::String&& value) { SetPresetWatermarkId(value); return *this;}
+    inline JobWatermark& WithPresetWatermarkId(Aws::String&& value) { SetPresetWatermarkId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the watermark settings that Elastic Transcoder uses to add
@@ -133,7 +134,7 @@ namespace Model
      * in the key. If the file isn't in the specified bucket, Elastic Transcoder
      * returns an error. </p>
      */
-    inline void SetInputKey(Aws::String&& value) { m_inputKeyHasBeenSet = true; m_inputKey = value; }
+    inline void SetInputKey(Aws::String&& value) { m_inputKeyHasBeenSet = true; m_inputKey = std::move(value); }
 
     /**
      * <p> The name of the .png or .jpg file that you want to use for the watermark. To
@@ -166,7 +167,7 @@ namespace Model
      * in the key. If the file isn't in the specified bucket, Elastic Transcoder
      * returns an error. </p>
      */
-    inline JobWatermark& WithInputKey(Aws::String&& value) { SetInputKey(value); return *this;}
+    inline JobWatermark& WithInputKey(Aws::String&& value) { SetInputKey(std::move(value)); return *this;}
 
     /**
      * <p> The name of the .png or .jpg file that you want to use for the watermark. To
@@ -195,7 +196,7 @@ namespace Model
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
      * your watermarks.</p>
      */
-    inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
+    inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
 
     /**
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
@@ -207,7 +208,7 @@ namespace Model
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
      * your watermarks.</p>
      */
-    inline JobWatermark& WithEncryption(Encryption&& value) { SetEncryption(value); return *this;}
+    inline JobWatermark& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
 
   private:
     Aws::String m_presetWatermarkId;

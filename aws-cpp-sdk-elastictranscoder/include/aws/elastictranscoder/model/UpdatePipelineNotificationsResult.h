@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/elastictranscoder/model/Pipeline.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>A section of the response body that provides information about the pipeline
      * associated with this notification.</p>
      */
-    inline void SetPipeline(Pipeline&& value) { m_pipeline = value; }
+    inline void SetPipeline(Pipeline&& value) { m_pipeline = std::move(value); }
 
     /**
      * <p>A section of the response body that provides information about the pipeline
@@ -73,7 +74,7 @@ namespace Model
      * <p>A section of the response body that provides information about the pipeline
      * associated with this notification.</p>
      */
-    inline UpdatePipelineNotificationsResult& WithPipeline(Pipeline&& value) { SetPipeline(value); return *this;}
+    inline UpdatePipelineNotificationsResult& WithPipeline(Pipeline&& value) { SetPipeline(std::move(value)); return *this;}
 
   private:
     Pipeline m_pipeline;

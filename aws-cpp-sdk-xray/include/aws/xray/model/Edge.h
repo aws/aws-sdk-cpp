@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/xray/model/HistogramEntry.h>
 #include <aws/xray/model/Alias.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The start time of the first segment on the edge.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The start time of the first segment on the edge.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The start time of the first segment on the edge.</p>
      */
-    inline Edge& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline Edge& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The end time of the last segment on the edge.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The end time of the last segment on the edge.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The end time of the last segment on the edge.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The end time of the last segment on the edge.</p>
      */
-    inline Edge& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline Edge& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>Response statistics for segments on the edge.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>Response statistics for segments on the edge.</p>
      */
-    inline void SetSummaryStatistics(EdgeStatistics&& value) { m_summaryStatisticsHasBeenSet = true; m_summaryStatistics = value; }
+    inline void SetSummaryStatistics(EdgeStatistics&& value) { m_summaryStatisticsHasBeenSet = true; m_summaryStatistics = std::move(value); }
 
     /**
      * <p>Response statistics for segments on the edge.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>Response statistics for segments on the edge.</p>
      */
-    inline Edge& WithSummaryStatistics(EdgeStatistics&& value) { SetSummaryStatistics(value); return *this;}
+    inline Edge& WithSummaryStatistics(EdgeStatistics&& value) { SetSummaryStatistics(std::move(value)); return *this;}
 
     /**
      * <p>Histogram describing the prominence of response times on the edge.</p>
@@ -150,7 +151,7 @@ namespace Model
     /**
      * <p>Histogram describing the prominence of response times on the edge.</p>
      */
-    inline void SetResponseTimeHistogram(Aws::Vector<HistogramEntry>&& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram = value; }
+    inline void SetResponseTimeHistogram(Aws::Vector<HistogramEntry>&& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram = std::move(value); }
 
     /**
      * <p>Histogram describing the prominence of response times on the edge.</p>
@@ -160,7 +161,7 @@ namespace Model
     /**
      * <p>Histogram describing the prominence of response times on the edge.</p>
      */
-    inline Edge& WithResponseTimeHistogram(Aws::Vector<HistogramEntry>&& value) { SetResponseTimeHistogram(value); return *this;}
+    inline Edge& WithResponseTimeHistogram(Aws::Vector<HistogramEntry>&& value) { SetResponseTimeHistogram(std::move(value)); return *this;}
 
     /**
      * <p>Histogram describing the prominence of response times on the edge.</p>
@@ -170,7 +171,7 @@ namespace Model
     /**
      * <p>Histogram describing the prominence of response times on the edge.</p>
      */
-    inline Edge& AddResponseTimeHistogram(HistogramEntry&& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram.push_back(value); return *this; }
+    inline Edge& AddResponseTimeHistogram(HistogramEntry&& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Aliases for the edge.</p>
@@ -185,7 +186,7 @@ namespace Model
     /**
      * <p>Aliases for the edge.</p>
      */
-    inline void SetAliases(Aws::Vector<Alias>&& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
+    inline void SetAliases(Aws::Vector<Alias>&& value) { m_aliasesHasBeenSet = true; m_aliases = std::move(value); }
 
     /**
      * <p>Aliases for the edge.</p>
@@ -195,7 +196,7 @@ namespace Model
     /**
      * <p>Aliases for the edge.</p>
      */
-    inline Edge& WithAliases(Aws::Vector<Alias>&& value) { SetAliases(value); return *this;}
+    inline Edge& WithAliases(Aws::Vector<Alias>&& value) { SetAliases(std::move(value)); return *this;}
 
     /**
      * <p>Aliases for the edge.</p>
@@ -205,7 +206,7 @@ namespace Model
     /**
      * <p>Aliases for the edge.</p>
      */
-    inline Edge& AddAliases(Alias&& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(value); return *this; }
+    inline Edge& AddAliases(Alias&& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(std::move(value)); return *this; }
 
   private:
     int m_referenceId;

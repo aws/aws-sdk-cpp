@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudfront/model/SslProtocol.h>
+#include <utility>
 
 namespace Aws
 {
@@ -84,7 +85,7 @@ namespace Model
      * that you want to allow CloudFront to use when establishing an HTTPS connection
      * with this origin.
      */
-    inline void SetItems(Aws::Vector<SslProtocol>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+    inline void SetItems(Aws::Vector<SslProtocol>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * A complex type that contains one SslProtocol element for each SSL/TLS protocol
@@ -98,7 +99,7 @@ namespace Model
      * that you want to allow CloudFront to use when establishing an HTTPS connection
      * with this origin.
      */
-    inline OriginSslProtocols& WithItems(Aws::Vector<SslProtocol>&& value) { SetItems(value); return *this;}
+    inline OriginSslProtocols& WithItems(Aws::Vector<SslProtocol>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * A complex type that contains one SslProtocol element for each SSL/TLS protocol
@@ -112,7 +113,7 @@ namespace Model
      * that you want to allow CloudFront to use when establishing an HTTPS connection
      * with this origin.
      */
-    inline OriginSslProtocols& AddItems(SslProtocol&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+    inline OriginSslProtocols& AddItems(SslProtocol&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
     int m_quantity;

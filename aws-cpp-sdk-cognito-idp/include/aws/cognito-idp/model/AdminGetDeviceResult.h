@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/DeviceType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The device.</p>
      */
-    inline void SetDevice(DeviceType&& value) { m_device = value; }
+    inline void SetDevice(DeviceType&& value) { m_device = std::move(value); }
 
     /**
      * <p>The device.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The device.</p>
      */
-    inline AdminGetDeviceResult& WithDevice(DeviceType&& value) { SetDevice(value); return *this;}
+    inline AdminGetDeviceResult& WithDevice(DeviceType&& value) { SetDevice(std::move(value)); return *this;}
 
   private:
     DeviceType m_device;

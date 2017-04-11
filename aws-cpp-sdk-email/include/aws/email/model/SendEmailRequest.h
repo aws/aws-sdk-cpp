@@ -20,6 +20,7 @@
 #include <aws/email/model/Message.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/email/model/MessageTag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -102,7 +103,7 @@ namespace Model
      * For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC
      * 2047</a>. </p>
      */
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
      * <p>The email address that is sending the email. This email address must be
@@ -159,7 +160,7 @@ namespace Model
      * For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC
      * 2047</a>. </p>
      */
-    inline SendEmailRequest& WithSource(Aws::String&& value) { SetSource(value); return *this;}
+    inline SendEmailRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
      * <p>The email address that is sending the email. This email address must be
@@ -193,7 +194,7 @@ namespace Model
     /**
      * <p>The destination for this email, composed of To:, CC:, and BCC: fields.</p>
      */
-    inline void SetDestination(Destination&& value) { m_destinationHasBeenSet = true; m_destination = value; }
+    inline void SetDestination(Destination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
      * <p>The destination for this email, composed of To:, CC:, and BCC: fields.</p>
@@ -203,7 +204,7 @@ namespace Model
     /**
      * <p>The destination for this email, composed of To:, CC:, and BCC: fields.</p>
      */
-    inline SendEmailRequest& WithDestination(Destination&& value) { SetDestination(value); return *this;}
+    inline SendEmailRequest& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
      * <p>The message to be sent.</p>
@@ -218,7 +219,7 @@ namespace Model
     /**
      * <p>The message to be sent.</p>
      */
-    inline void SetMessage(Message&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Message&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The message to be sent.</p>
@@ -228,7 +229,7 @@ namespace Model
     /**
      * <p>The message to be sent.</p>
      */
-    inline SendEmailRequest& WithMessage(Message&& value) { SetMessage(value); return *this;}
+    inline SendEmailRequest& WithMessage(Message&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
@@ -246,7 +247,7 @@ namespace Model
      * <p>The reply-to email address(es) for the message. If the recipient replies to
      * the message, each reply-to address will receive the reply.</p>
      */
-    inline void SetReplyToAddresses(Aws::Vector<Aws::String>&& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses = value; }
+    inline void SetReplyToAddresses(Aws::Vector<Aws::String>&& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses = std::move(value); }
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
@@ -258,7 +259,7 @@ namespace Model
      * <p>The reply-to email address(es) for the message. If the recipient replies to
      * the message, each reply-to address will receive the reply.</p>
      */
-    inline SendEmailRequest& WithReplyToAddresses(Aws::Vector<Aws::String>&& value) { SetReplyToAddresses(value); return *this;}
+    inline SendEmailRequest& WithReplyToAddresses(Aws::Vector<Aws::String>&& value) { SetReplyToAddresses(std::move(value)); return *this;}
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
@@ -270,7 +271,7 @@ namespace Model
      * <p>The reply-to email address(es) for the message. If the recipient replies to
      * the message, each reply-to address will receive the reply.</p>
      */
-    inline SendEmailRequest& AddReplyToAddresses(Aws::String&& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses.push_back(value); return *this; }
+    inline SendEmailRequest& AddReplyToAddresses(Aws::String&& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
@@ -309,7 +310,7 @@ namespace Model
      * never overwritten. This email address must be either individually verified with
      * Amazon SES, or from a domain that has been verified with Amazon SES. </p>
      */
-    inline void SetReturnPath(Aws::String&& value) { m_returnPathHasBeenSet = true; m_returnPath = value; }
+    inline void SetReturnPath(Aws::String&& value) { m_returnPathHasBeenSet = true; m_returnPath = std::move(value); }
 
     /**
      * <p>The email address to which bounces and complaints are to be forwarded when
@@ -342,7 +343,7 @@ namespace Model
      * never overwritten. This email address must be either individually verified with
      * Amazon SES, or from a domain that has been verified with Amazon SES. </p>
      */
-    inline SendEmailRequest& WithReturnPath(Aws::String&& value) { SetReturnPath(value); return *this;}
+    inline SendEmailRequest& WithReturnPath(Aws::String&& value) { SetReturnPath(std::move(value)); return *this;}
 
     /**
      * <p>The email address to which bounces and complaints are to be forwarded when
@@ -401,7 +402,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>. </p>
      */
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
+    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -449,7 +450,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>. </p>
      */
-    inline SendEmailRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(value); return *this;}
+    inline SendEmailRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -516,7 +517,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>. </p>
      */
-    inline void SetReturnPathArn(Aws::String&& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = value; }
+    inline void SetReturnPathArn(Aws::String&& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = std::move(value); }
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -567,7 +568,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>. </p>
      */
-    inline SendEmailRequest& WithReturnPathArn(Aws::String&& value) { SetReturnPathArn(value); return *this;}
+    inline SendEmailRequest& WithReturnPathArn(Aws::String&& value) { SetReturnPathArn(std::move(value)); return *this;}
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -605,7 +606,7 @@ namespace Model
      * you send using <code>SendEmail</code>. Tags correspond to characteristics of the
      * email that you define, so that you can publish email sending events.</p>
      */
-    inline void SetTags(Aws::Vector<MessageTag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<MessageTag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of tags, in the form of name/value pairs, to apply to an email that
@@ -619,7 +620,7 @@ namespace Model
      * you send using <code>SendEmail</code>. Tags correspond to characteristics of the
      * email that you define, so that you can publish email sending events.</p>
      */
-    inline SendEmailRequest& WithTags(Aws::Vector<MessageTag>&& value) { SetTags(value); return *this;}
+    inline SendEmailRequest& WithTags(Aws::Vector<MessageTag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of tags, in the form of name/value pairs, to apply to an email that
@@ -633,7 +634,7 @@ namespace Model
      * you send using <code>SendEmail</code>. Tags correspond to characteristics of the
      * email that you define, so that you can publish email sending events.</p>
      */
-    inline SendEmailRequest& AddTags(MessageTag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline SendEmailRequest& AddTags(MessageTag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The name of the configuration set to use when you send an email using
@@ -651,7 +652,7 @@ namespace Model
      * <p>The name of the configuration set to use when you send an email using
      * <code>SendEmail</code>.</p>
      */
-    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
+    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
 
     /**
      * <p>The name of the configuration set to use when you send an email using
@@ -669,7 +670,7 @@ namespace Model
      * <p>The name of the configuration set to use when you send an email using
      * <code>SendEmail</code>.</p>
      */
-    inline SendEmailRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(value); return *this;}
+    inline SendEmailRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the configuration set to use when you send an email using

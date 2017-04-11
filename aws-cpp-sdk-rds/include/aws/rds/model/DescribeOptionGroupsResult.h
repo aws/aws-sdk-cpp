@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/ResponseMetadata.h>
 #include <aws/rds/model/OptionGroup.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>List of option groups.</p>
      */
-    inline void SetOptionGroupsList(Aws::Vector<OptionGroup>&& value) { m_optionGroupsList = value; }
+    inline void SetOptionGroupsList(Aws::Vector<OptionGroup>&& value) { m_optionGroupsList = std::move(value); }
 
     /**
      * <p>List of option groups.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>List of option groups.</p>
      */
-    inline DescribeOptionGroupsResult& WithOptionGroupsList(Aws::Vector<OptionGroup>&& value) { SetOptionGroupsList(value); return *this;}
+    inline DescribeOptionGroupsResult& WithOptionGroupsList(Aws::Vector<OptionGroup>&& value) { SetOptionGroupsList(std::move(value)); return *this;}
 
     /**
      * <p>List of option groups.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>List of option groups.</p>
      */
-    inline DescribeOptionGroupsResult& AddOptionGroupsList(OptionGroup&& value) { m_optionGroupsList.push_back(value); return *this; }
+    inline DescribeOptionGroupsResult& AddOptionGroupsList(OptionGroup&& value) { m_optionGroupsList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
@@ -101,7 +102,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
@@ -122,7 +123,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline DescribeOptionGroupsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeOptionGroupsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
@@ -138,13 +139,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeOptionGroupsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeOptionGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeOptionGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<OptionGroup> m_optionGroupsList;

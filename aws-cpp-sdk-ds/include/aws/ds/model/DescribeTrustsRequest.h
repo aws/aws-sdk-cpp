@@ -17,6 +17,7 @@
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>The Directory ID of the AWS directory that is a part of the requested trust
      * relationship.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>The Directory ID of the AWS directory that is a part of the requested trust
@@ -76,7 +77,7 @@ namespace Model
      * <p>The Directory ID of the AWS directory that is a part of the requested trust
      * relationship.</p>
      */
-    inline DescribeTrustsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline DescribeTrustsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>The Directory ID of the AWS directory that is a part of the requested trust
@@ -106,7 +107,7 @@ namespace Model
      * current account are returned.</p> <p>An empty list results in an
      * <code>InvalidParameterException</code> being thrown.</p>
      */
-    inline void SetTrustIds(Aws::Vector<Aws::String>&& value) { m_trustIdsHasBeenSet = true; m_trustIds = value; }
+    inline void SetTrustIds(Aws::Vector<Aws::String>&& value) { m_trustIdsHasBeenSet = true; m_trustIds = std::move(value); }
 
     /**
      * <p>A list of identifiers of the trust relationships for which to obtain the
@@ -122,7 +123,7 @@ namespace Model
      * current account are returned.</p> <p>An empty list results in an
      * <code>InvalidParameterException</code> being thrown.</p>
      */
-    inline DescribeTrustsRequest& WithTrustIds(Aws::Vector<Aws::String>&& value) { SetTrustIds(value); return *this;}
+    inline DescribeTrustsRequest& WithTrustIds(Aws::Vector<Aws::String>&& value) { SetTrustIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of identifiers of the trust relationships for which to obtain the
@@ -138,7 +139,7 @@ namespace Model
      * current account are returned.</p> <p>An empty list results in an
      * <code>InvalidParameterException</code> being thrown.</p>
      */
-    inline DescribeTrustsRequest& AddTrustIds(Aws::String&& value) { m_trustIdsHasBeenSet = true; m_trustIds.push_back(value); return *this; }
+    inline DescribeTrustsRequest& AddTrustIds(Aws::String&& value) { m_trustIdsHasBeenSet = true; m_trustIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of identifiers of the trust relationships for which to obtain the
@@ -164,7 +165,7 @@ namespace Model
      * <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to
      * <a>DescribeTrusts</a>. Pass null if this is the first call.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to
@@ -182,7 +183,7 @@ namespace Model
      * <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to
      * <a>DescribeTrusts</a>. Pass null if this is the first call.</p>
      */
-    inline DescribeTrustsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeTrustsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to

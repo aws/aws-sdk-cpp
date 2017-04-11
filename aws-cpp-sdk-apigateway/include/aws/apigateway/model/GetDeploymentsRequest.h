@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>The identifier of the <a>RestApi</a> resource for the collection of
      * <a>Deployment</a> resources to get information about.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The identifier of the <a>RestApi</a> resource for the collection of
@@ -77,7 +78,7 @@ namespace Model
      * <p>The identifier of the <a>RestApi</a> resource for the collection of
      * <a>Deployment</a> resources to get information about.</p>
      */
-    inline GetDeploymentsRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline GetDeploymentsRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the <a>RestApi</a> resource for the collection of
@@ -101,7 +102,7 @@ namespace Model
      * <p>The position of the current <a>Deployment</a> resource in the collection to
      * get information about.</p>
      */
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = value; }
+    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
      * <p>The position of the current <a>Deployment</a> resource in the collection to
@@ -119,7 +120,7 @@ namespace Model
      * <p>The position of the current <a>Deployment</a> resource in the collection to
      * get information about.</p>
      */
-    inline GetDeploymentsRequest& WithPosition(Aws::String&& value) { SetPosition(value); return *this;}
+    inline GetDeploymentsRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
      * <p>The position of the current <a>Deployment</a> resource in the collection to

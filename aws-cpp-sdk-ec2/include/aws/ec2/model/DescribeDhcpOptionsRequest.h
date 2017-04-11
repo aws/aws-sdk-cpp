@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -83,7 +84,7 @@ namespace Model
      * <p>The IDs of one or more DHCP options sets.</p> <p>Default: Describes all your
      * DHCP options sets.</p>
      */
-    inline void SetDhcpOptionsIds(Aws::Vector<Aws::String>&& value) { m_dhcpOptionsIdsHasBeenSet = true; m_dhcpOptionsIds = value; }
+    inline void SetDhcpOptionsIds(Aws::Vector<Aws::String>&& value) { m_dhcpOptionsIdsHasBeenSet = true; m_dhcpOptionsIds = std::move(value); }
 
     /**
      * <p>The IDs of one or more DHCP options sets.</p> <p>Default: Describes all your
@@ -95,7 +96,7 @@ namespace Model
      * <p>The IDs of one or more DHCP options sets.</p> <p>Default: Describes all your
      * DHCP options sets.</p>
      */
-    inline DescribeDhcpOptionsRequest& WithDhcpOptionsIds(Aws::Vector<Aws::String>&& value) { SetDhcpOptionsIds(value); return *this;}
+    inline DescribeDhcpOptionsRequest& WithDhcpOptionsIds(Aws::Vector<Aws::String>&& value) { SetDhcpOptionsIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of one or more DHCP options sets.</p> <p>Default: Describes all your
@@ -107,7 +108,7 @@ namespace Model
      * <p>The IDs of one or more DHCP options sets.</p> <p>Default: Describes all your
      * DHCP options sets.</p>
      */
-    inline DescribeDhcpOptionsRequest& AddDhcpOptionsIds(Aws::String&& value) { m_dhcpOptionsIdsHasBeenSet = true; m_dhcpOptionsIds.push_back(value); return *this; }
+    inline DescribeDhcpOptionsRequest& AddDhcpOptionsIds(Aws::String&& value) { m_dhcpOptionsIdsHasBeenSet = true; m_dhcpOptionsIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of one or more DHCP options sets.</p> <p>Default: Describes all your
@@ -179,7 +180,7 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID
@@ -223,7 +224,7 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> </ul>
      */
-    inline DescribeDhcpOptionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeDhcpOptionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID
@@ -267,7 +268,7 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> </ul>
      */
-    inline DescribeDhcpOptionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeDhcpOptionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

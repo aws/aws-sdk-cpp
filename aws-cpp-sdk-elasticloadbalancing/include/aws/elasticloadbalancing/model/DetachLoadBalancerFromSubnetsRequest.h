@@ -17,6 +17,7 @@
 #include <aws/elasticloadbalancing/ElasticLoadBalancingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
 
     /**
      * <p>The name of the load balancer.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline DetachLoadBalancerFromSubnetsRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
+    inline DetachLoadBalancerFromSubnetsRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the load balancer.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The IDs of the subnets.</p>
      */
-    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
+    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
     /**
      * <p>The IDs of the subnets.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The IDs of the subnets.</p>
      */
-    inline DetachLoadBalancerFromSubnetsRequest& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(value); return *this;}
+    inline DetachLoadBalancerFromSubnetsRequest& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the subnets.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The IDs of the subnets.</p>
      */
-    inline DetachLoadBalancerFromSubnetsRequest& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+    inline DetachLoadBalancerFromSubnetsRequest& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the subnets.</p>

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/model/ReplicationRule.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * Amazon Resource Name (ARN) of an IAM role for Amazon S3 to assume when
      * replicating the objects.
      */
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = value; }
+    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
      * Amazon Resource Name (ARN) of an IAM role for Amazon S3 to assume when
@@ -81,7 +82,7 @@ namespace Model
      * Amazon Resource Name (ARN) of an IAM role for Amazon S3 to assume when
      * replicating the objects.
      */
-    inline ReplicationConfiguration& WithRole(Aws::String&& value) { SetRole(value); return *this;}
+    inline ReplicationConfiguration& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
      * Amazon Resource Name (ARN) of an IAM role for Amazon S3 to assume when
@@ -105,7 +106,7 @@ namespace Model
      * Container for information about a particular replication rule. Replication
      * configuration must have at least one rule and can contain up to 1,000 rules.
      */
-    inline void SetRules(Aws::Vector<ReplicationRule>&& value) { m_rulesHasBeenSet = true; m_rules = value; }
+    inline void SetRules(Aws::Vector<ReplicationRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
      * Container for information about a particular replication rule. Replication
@@ -117,7 +118,7 @@ namespace Model
      * Container for information about a particular replication rule. Replication
      * configuration must have at least one rule and can contain up to 1,000 rules.
      */
-    inline ReplicationConfiguration& WithRules(Aws::Vector<ReplicationRule>&& value) { SetRules(value); return *this;}
+    inline ReplicationConfiguration& WithRules(Aws::Vector<ReplicationRule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
      * Container for information about a particular replication rule. Replication
@@ -129,7 +130,7 @@ namespace Model
      * Container for information about a particular replication rule. Replication
      * configuration must have at least one rule and can contain up to 1,000 rules.
      */
-    inline ReplicationConfiguration& AddRules(ReplicationRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
+    inline ReplicationConfiguration& AddRules(ReplicationRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_role;

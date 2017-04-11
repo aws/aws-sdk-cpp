@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The cache node type for which this value applies.</p>
      */
-    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
+    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::move(value); }
 
     /**
      * <p>The cache node type for which this value applies.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The cache node type for which this value applies.</p>
      */
-    inline CacheNodeTypeSpecificValue& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(value); return *this;}
+    inline CacheNodeTypeSpecificValue& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(std::move(value)); return *this;}
 
     /**
      * <p>The cache node type for which this value applies.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The value for the cache node type.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value for the cache node type.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The value for the cache node type.</p>
      */
-    inline CacheNodeTypeSpecificValue& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline CacheNodeTypeSpecificValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value for the cache node type.</p>

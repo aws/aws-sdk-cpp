@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>The name of the key value pair. For environment variables, this is the name
      * of the environment variable.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the key value pair. For environment variables, this is the name
@@ -77,7 +78,7 @@ namespace Model
      * <p>The name of the key value pair. For environment variables, this is the name
      * of the environment variable.</p>
      */
-    inline KeyValuePair& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline KeyValuePair& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the key value pair. For environment variables, this is the name
@@ -101,7 +102,7 @@ namespace Model
      * <p>The value of the key value pair. For environment variables, this is the value
      * of the environment variable.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of the key value pair. For environment variables, this is the value
@@ -119,7 +120,7 @@ namespace Model
      * <p>The value of the key value pair. For environment variables, this is the value
      * of the environment variable.</p>
      */
-    inline KeyValuePair& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline KeyValuePair& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the key value pair. For environment variables, this is the value

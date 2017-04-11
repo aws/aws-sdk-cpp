@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/model/Operation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * delete key pair request.</p>
      */
-    inline void SetOperation(Operation&& value) { m_operation = value; }
+    inline void SetOperation(Operation&& value) { m_operation = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -67,7 +68,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * delete key pair request.</p>
      */
-    inline DeleteKeyPairResult& WithOperation(Operation&& value) { SetOperation(value); return *this;}
+    inline DeleteKeyPairResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
 
   private:
     Operation m_operation;

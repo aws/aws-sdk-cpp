@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/apigateway/model/SdkConfigurationProperty.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The identifier of an <a>SdkType</a> instance.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The identifier of an <a>SdkType</a> instance.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The identifier of an <a>SdkType</a> instance.</p>
      */
-    inline SdkType& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline SdkType& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of an <a>SdkType</a> instance.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The user-friendly name of an <a>SdkType</a> instance.</p>
      */
-    inline void SetFriendlyName(Aws::String&& value) { m_friendlyNameHasBeenSet = true; m_friendlyName = value; }
+    inline void SetFriendlyName(Aws::String&& value) { m_friendlyNameHasBeenSet = true; m_friendlyName = std::move(value); }
 
     /**
      * <p>The user-friendly name of an <a>SdkType</a> instance.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The user-friendly name of an <a>SdkType</a> instance.</p>
      */
-    inline SdkType& WithFriendlyName(Aws::String&& value) { SetFriendlyName(value); return *this;}
+    inline SdkType& WithFriendlyName(Aws::String&& value) { SetFriendlyName(std::move(value)); return *this;}
 
     /**
      * <p>The user-friendly name of an <a>SdkType</a> instance.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The description of an <a>SdkType</a>.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of an <a>SdkType</a>.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The description of an <a>SdkType</a>.</p>
      */
-    inline SdkType& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline SdkType& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of an <a>SdkType</a>.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>A list of configuration properties of an <a>SdkType</a>.</p>
      */
-    inline void SetConfigurationProperties(Aws::Vector<SdkConfigurationProperty>&& value) { m_configurationPropertiesHasBeenSet = true; m_configurationProperties = value; }
+    inline void SetConfigurationProperties(Aws::Vector<SdkConfigurationProperty>&& value) { m_configurationPropertiesHasBeenSet = true; m_configurationProperties = std::move(value); }
 
     /**
      * <p>A list of configuration properties of an <a>SdkType</a>.</p>
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>A list of configuration properties of an <a>SdkType</a>.</p>
      */
-    inline SdkType& WithConfigurationProperties(Aws::Vector<SdkConfigurationProperty>&& value) { SetConfigurationProperties(value); return *this;}
+    inline SdkType& WithConfigurationProperties(Aws::Vector<SdkConfigurationProperty>&& value) { SetConfigurationProperties(std::move(value)); return *this;}
 
     /**
      * <p>A list of configuration properties of an <a>SdkType</a>.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>A list of configuration properties of an <a>SdkType</a>.</p>
      */
-    inline SdkType& AddConfigurationProperties(SdkConfigurationProperty&& value) { m_configurationPropertiesHasBeenSet = true; m_configurationProperties.push_back(value); return *this; }
+    inline SdkType& AddConfigurationProperties(SdkConfigurationProperty&& value) { m_configurationPropertiesHasBeenSet = true; m_configurationProperties.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_id;

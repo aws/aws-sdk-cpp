@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>The pending or in-progress change of the master user password for the
      * cluster.</p>
      */
-    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
+    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
      * <p>The pending or in-progress change of the master user password for the
@@ -82,7 +83,7 @@ namespace Model
      * <p>The pending or in-progress change of the master user password for the
      * cluster.</p>
      */
-    inline PendingModifiedValues& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(value); return *this;}
+    inline PendingModifiedValues& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
      * <p>The pending or in-progress change of the master user password for the
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The pending or in-progress change of the cluster's node type.</p>
      */
-    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
+    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
     /**
      * <p>The pending or in-progress change of the cluster's node type.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The pending or in-progress change of the cluster's node type.</p>
      */
-    inline PendingModifiedValues& WithNodeType(Aws::String&& value) { SetNodeType(value); return *this;}
+    inline PendingModifiedValues& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
 
     /**
      * <p>The pending or in-progress change of the cluster's node type.</p>
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p>The pending or in-progress change of the cluster type.</p>
      */
-    inline void SetClusterType(Aws::String&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
+    inline void SetClusterType(Aws::String&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = std::move(value); }
 
     /**
      * <p>The pending or in-progress change of the cluster type.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>The pending or in-progress change of the cluster type.</p>
      */
-    inline PendingModifiedValues& WithClusterType(Aws::String&& value) { SetClusterType(value); return *this;}
+    inline PendingModifiedValues& WithClusterType(Aws::String&& value) { SetClusterType(std::move(value)); return *this;}
 
     /**
      * <p>The pending or in-progress change of the cluster type.</p>
@@ -188,7 +189,7 @@ namespace Model
     /**
      * <p>The pending or in-progress change of the service version.</p>
      */
-    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = value; }
+    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = std::move(value); }
 
     /**
      * <p>The pending or in-progress change of the service version.</p>
@@ -203,7 +204,7 @@ namespace Model
     /**
      * <p>The pending or in-progress change of the service version.</p>
      */
-    inline PendingModifiedValues& WithClusterVersion(Aws::String&& value) { SetClusterVersion(value); return *this;}
+    inline PendingModifiedValues& WithClusterVersion(Aws::String&& value) { SetClusterVersion(std::move(value)); return *this;}
 
     /**
      * <p>The pending or in-progress change of the service version.</p>
@@ -241,7 +242,7 @@ namespace Model
     /**
      * <p>The pending or in-progress change of the new identifier for the cluster.</p>
      */
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     /**
      * <p>The pending or in-progress change of the new identifier for the cluster.</p>
@@ -256,7 +257,7 @@ namespace Model
     /**
      * <p>The pending or in-progress change of the new identifier for the cluster.</p>
      */
-    inline PendingModifiedValues& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
+    inline PendingModifiedValues& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The pending or in-progress change of the new identifier for the cluster.</p>

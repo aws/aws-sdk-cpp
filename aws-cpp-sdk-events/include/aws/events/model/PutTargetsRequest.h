@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/events/model/Target.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
      * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
      * name of the rule.</p> </xhtml>
      */
-    inline void SetRule(Aws::String&& value) { m_ruleHasBeenSet = true; m_rule = value; }
+    inline void SetRule(Aws::String&& value) { m_ruleHasBeenSet = true; m_rule = std::move(value); }
 
     /**
      * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
@@ -71,7 +72,7 @@ namespace Model
      * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
      * name of the rule.</p> </xhtml>
      */
-    inline PutTargetsRequest& WithRule(Aws::String&& value) { SetRule(value); return *this;}
+    inline PutTargetsRequest& WithRule(Aws::String&& value) { SetRule(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
@@ -95,7 +96,7 @@ namespace Model
      * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
      * </zonbook> <xhtml> <p>The targets to update or add to the rule.</p> </xhtml>
      */
-    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = value; }
+    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
      * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
@@ -107,7 +108,7 @@ namespace Model
      * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
      * </zonbook> <xhtml> <p>The targets to update or add to the rule.</p> </xhtml>
      */
-    inline PutTargetsRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(value); return *this;}
+    inline PutTargetsRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
@@ -119,7 +120,7 @@ namespace Model
      * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
      * </zonbook> <xhtml> <p>The targets to update or add to the rule.</p> </xhtml>
      */
-    inline PutTargetsRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+    inline PutTargetsRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_rule;

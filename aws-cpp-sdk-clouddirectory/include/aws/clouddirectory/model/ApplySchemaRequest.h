@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>Published schema ARN that needs to be copied. For more information, see
      * <a>arns</a>.</p>
      */
-    inline void SetPublishedSchemaArn(Aws::String&& value) { m_publishedSchemaArnHasBeenSet = true; m_publishedSchemaArn = value; }
+    inline void SetPublishedSchemaArn(Aws::String&& value) { m_publishedSchemaArnHasBeenSet = true; m_publishedSchemaArn = std::move(value); }
 
     /**
      * <p>Published schema ARN that needs to be copied. For more information, see
@@ -69,7 +70,7 @@ namespace Model
      * <p>Published schema ARN that needs to be copied. For more information, see
      * <a>arns</a>.</p>
      */
-    inline ApplySchemaRequest& WithPublishedSchemaArn(Aws::String&& value) { SetPublishedSchemaArn(value); return *this;}
+    inline ApplySchemaRequest& WithPublishedSchemaArn(Aws::String&& value) { SetPublishedSchemaArn(std::move(value)); return *this;}
 
     /**
      * <p>Published schema ARN that needs to be copied. For more information, see
@@ -93,7 +94,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a> into which the schema is copied. For
      * more information, see <a>arns</a>.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>ARN associated with the <a>Directory</a> into which the schema is copied. For
@@ -111,7 +112,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a> into which the schema is copied. For
      * more information, see <a>arns</a>.</p>
      */
-    inline ApplySchemaRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline ApplySchemaRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN associated with the <a>Directory</a> into which the schema is copied. For

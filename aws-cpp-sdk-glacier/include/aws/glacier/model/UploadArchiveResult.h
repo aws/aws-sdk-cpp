@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The relative URI path of the newly added archive resource.</p>
      */
-    inline void SetLocation(Aws::String&& value) { m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
 
     /**
      * <p>The relative URI path of the newly added archive resource.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The relative URI path of the newly added archive resource.</p>
      */
-    inline UploadArchiveResult& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline UploadArchiveResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * <p>The relative URI path of the newly added archive resource.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The checksum of the archive computed by Amazon Glacier.</p>
      */
-    inline void SetChecksum(Aws::String&& value) { m_checksum = value; }
+    inline void SetChecksum(Aws::String&& value) { m_checksum = std::move(value); }
 
     /**
      * <p>The checksum of the archive computed by Amazon Glacier.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The checksum of the archive computed by Amazon Glacier.</p>
      */
-    inline UploadArchiveResult& WithChecksum(Aws::String&& value) { SetChecksum(value); return *this;}
+    inline UploadArchiveResult& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
 
     /**
      * <p>The checksum of the archive computed by Amazon Glacier.</p>
@@ -135,7 +136,7 @@ namespace Model
      * <p>The ID of the archive. This value is also included as part of the
      * location.</p>
      */
-    inline void SetArchiveId(Aws::String&& value) { m_archiveId = value; }
+    inline void SetArchiveId(Aws::String&& value) { m_archiveId = std::move(value); }
 
     /**
      * <p>The ID of the archive. This value is also included as part of the
@@ -153,7 +154,7 @@ namespace Model
      * <p>The ID of the archive. This value is also included as part of the
      * location.</p>
      */
-    inline UploadArchiveResult& WithArchiveId(Aws::String&& value) { SetArchiveId(value); return *this;}
+    inline UploadArchiveResult& WithArchiveId(Aws::String&& value) { SetArchiveId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the archive. This value is also included as part of the

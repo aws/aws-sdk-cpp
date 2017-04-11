@@ -17,6 +17,7 @@
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/model/ExportTaskStatusCode.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The ID of the export task. Specifying a task ID filters the results to zero
      * or one export tasks.</p>
      */
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
+    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
 
     /**
      * <p>The ID of the export task. Specifying a task ID filters the results to zero
@@ -70,7 +71,7 @@ namespace Model
      * <p>The ID of the export task. Specifying a task ID filters the results to zero
      * or one export tasks.</p>
      */
-    inline DescribeExportTasksRequest& WithTaskId(Aws::String&& value) { SetTaskId(value); return *this;}
+    inline DescribeExportTasksRequest& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the export task. Specifying a task ID filters the results to zero
@@ -94,7 +95,7 @@ namespace Model
      * <p>The status code of the export task. Specifying a status code filters the
      * results to zero or more export tasks.</p>
      */
-    inline void SetStatusCode(ExportTaskStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline void SetStatusCode(ExportTaskStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
 
     /**
      * <p>The status code of the export task. Specifying a status code filters the
@@ -106,7 +107,7 @@ namespace Model
      * <p>The status code of the export task. Specifying a status code filters the
      * results to zero or more export tasks.</p>
      */
-    inline DescribeExportTasksRequest& WithStatusCode(ExportTaskStatusCode&& value) { SetStatusCode(value); return *this;}
+    inline DescribeExportTasksRequest& WithStatusCode(ExportTaskStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -124,7 +125,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -142,7 +143,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline DescribeExportTasksRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeExportTasksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

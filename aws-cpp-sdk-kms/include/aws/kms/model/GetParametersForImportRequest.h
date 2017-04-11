@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kms/model/AlgorithmSpec.h>
 #include <aws/kms/model/WrappingKeySpec.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>The identifier of the CMK into which you will import key material. The CMK's
@@ -101,7 +102,7 @@ namespace Model
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul>
      */
-    inline GetParametersForImportRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline GetParametersForImportRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the CMK into which you will import key material. The CMK's
@@ -139,7 +140,7 @@ namespace Model
      * the Key Material</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */
-    inline void SetWrappingAlgorithm(AlgorithmSpec&& value) { m_wrappingAlgorithmHasBeenSet = true; m_wrappingAlgorithm = value; }
+    inline void SetWrappingAlgorithm(AlgorithmSpec&& value) { m_wrappingAlgorithmHasBeenSet = true; m_wrappingAlgorithm = std::move(value); }
 
     /**
      * <p>The algorithm you will use to encrypt the key material before importing it
@@ -157,7 +158,7 @@ namespace Model
      * the Key Material</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */
-    inline GetParametersForImportRequest& WithWrappingAlgorithm(AlgorithmSpec&& value) { SetWrappingAlgorithm(value); return *this;}
+    inline GetParametersForImportRequest& WithWrappingAlgorithm(AlgorithmSpec&& value) { SetWrappingAlgorithm(std::move(value)); return *this;}
 
     /**
      * <p>The type of wrapping key (public key) to return in the response. Only
@@ -175,7 +176,7 @@ namespace Model
      * <p>The type of wrapping key (public key) to return in the response. Only
      * 2048-bit RSA public keys are supported.</p>
      */
-    inline void SetWrappingKeySpec(WrappingKeySpec&& value) { m_wrappingKeySpecHasBeenSet = true; m_wrappingKeySpec = value; }
+    inline void SetWrappingKeySpec(WrappingKeySpec&& value) { m_wrappingKeySpecHasBeenSet = true; m_wrappingKeySpec = std::move(value); }
 
     /**
      * <p>The type of wrapping key (public key) to return in the response. Only
@@ -187,7 +188,7 @@ namespace Model
      * <p>The type of wrapping key (public key) to return in the response. Only
      * 2048-bit RSA public keys are supported.</p>
      */
-    inline GetParametersForImportRequest& WithWrappingKeySpec(WrappingKeySpec&& value) { SetWrappingKeySpec(value); return *this;}
+    inline GetParametersForImportRequest& WithWrappingKeySpec(WrappingKeySpec&& value) { SetWrappingKeySpec(std::move(value)); return *this;}
 
   private:
     Aws::String m_keyId;

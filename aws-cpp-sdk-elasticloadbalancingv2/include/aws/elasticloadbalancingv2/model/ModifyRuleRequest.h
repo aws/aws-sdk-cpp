@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/RuleCondition.h>
 #include <aws/elasticloadbalancingv2/model/Action.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
-    inline void SetRuleArn(Aws::String&& value) { m_ruleArnHasBeenSet = true; m_ruleArn = value; }
+    inline void SetRuleArn(Aws::String&& value) { m_ruleArnHasBeenSet = true; m_ruleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
-    inline ModifyRuleRequest& WithRuleArn(Aws::String&& value) { SetRuleArn(value); return *this;}
+    inline ModifyRuleRequest& WithRuleArn(Aws::String&& value) { SetRuleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The conditions.</p>
      */
-    inline void SetConditions(Aws::Vector<RuleCondition>&& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
+    inline void SetConditions(Aws::Vector<RuleCondition>&& value) { m_conditionsHasBeenSet = true; m_conditions = std::move(value); }
 
     /**
      * <p>The conditions.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The conditions.</p>
      */
-    inline ModifyRuleRequest& WithConditions(Aws::Vector<RuleCondition>&& value) { SetConditions(value); return *this;}
+    inline ModifyRuleRequest& WithConditions(Aws::Vector<RuleCondition>&& value) { SetConditions(std::move(value)); return *this;}
 
     /**
      * <p>The conditions.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The conditions.</p>
      */
-    inline ModifyRuleRequest& AddConditions(RuleCondition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(value); return *this; }
+    inline ModifyRuleRequest& AddConditions(RuleCondition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The actions.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The actions.</p>
      */
-    inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = value; }
+    inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
      * <p>The actions.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The actions.</p>
      */
-    inline ModifyRuleRequest& WithActions(Aws::Vector<Action>&& value) { SetActions(value); return *this;}
+    inline ModifyRuleRequest& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
      * <p>The actions.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The actions.</p>
      */
-    inline ModifyRuleRequest& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
+    inline ModifyRuleRequest& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_ruleArn;

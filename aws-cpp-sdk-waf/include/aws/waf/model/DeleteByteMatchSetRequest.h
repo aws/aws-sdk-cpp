@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/WAFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * delete. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and
      * by <a>ListByteMatchSets</a>.</p>
      */
-    inline void SetByteMatchSetId(Aws::String&& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = value; }
+    inline void SetByteMatchSetId(Aws::String&& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = std::move(value); }
 
     /**
      * <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to
@@ -75,7 +76,7 @@ namespace Model
      * delete. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and
      * by <a>ListByteMatchSets</a>.</p>
      */
-    inline DeleteByteMatchSetRequest& WithByteMatchSetId(Aws::String&& value) { SetByteMatchSetId(value); return *this;}
+    inline DeleteByteMatchSetRequest& WithByteMatchSetId(Aws::String&& value) { SetByteMatchSetId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
+    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline DeleteByteMatchSetRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(value); return *this;}
+    inline DeleteByteMatchSetRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>

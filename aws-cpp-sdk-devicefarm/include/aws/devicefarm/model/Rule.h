@@ -17,6 +17,7 @@
 #include <aws/devicefarm/model/DeviceAttribute.h>
 #include <aws/devicefarm/model/RuleOperator.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li> <li>
      * <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
      */
-    inline void SetAttribute(DeviceAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline void SetAttribute(DeviceAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
      * <p>The rule's stringified attribute. For example, specify the value as
@@ -88,7 +89,7 @@ namespace Model
      * tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li> <li>
      * <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
      */
-    inline Rule& WithAttribute(DeviceAttribute&& value) { SetAttribute(value); return *this;}
+    inline Rule& WithAttribute(DeviceAttribute&& value) { SetAttribute(std::move(value)); return *this;}
 
     /**
      * <p>The rule's operator.</p> <ul> <li> <p>EQUALS: The equals operator.</p> </li>
@@ -112,7 +113,7 @@ namespace Model
      * operator.</p> </li> <li> <p>LESS_THAN: The less-than operator.</p> </li> <li>
      * <p>NOT_IN: The not-in operator.</p> </li> </ul>
      */
-    inline void SetOperator(RuleOperator&& value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline void SetOperator(RuleOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
 
     /**
      * <p>The rule's operator.</p> <ul> <li> <p>EQUALS: The equals operator.</p> </li>
@@ -128,7 +129,7 @@ namespace Model
      * operator.</p> </li> <li> <p>LESS_THAN: The less-than operator.</p> </li> <li>
      * <p>NOT_IN: The not-in operator.</p> </li> </ul>
      */
-    inline Rule& WithOperator(RuleOperator&& value) { SetOperator(value); return *this;}
+    inline Rule& WithOperator(RuleOperator&& value) { SetOperator(std::move(value)); return *this;}
 
     /**
      * <p>The rule's value.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The rule's value.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The rule's value.</p>
@@ -158,7 +159,7 @@ namespace Model
     /**
      * <p>The rule's value.</p>
      */
-    inline Rule& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Rule& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The rule's value.</p>

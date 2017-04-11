@@ -20,6 +20,7 @@
 #include <aws/cognito-idp/model/MessageActionType.h>
 #include <aws/cognito-idp/model/AttributeType.h>
 #include <aws/cognito-idp/model/DeliveryMediumType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The user pool ID for the user pool where the user will be created.</p>
      */
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
+    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
      * <p>The user pool ID for the user pool where the user will be created.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The user pool ID for the user pool where the user will be created.</p>
      */
-    inline AdminCreateUserRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(value); return *this;}
+    inline AdminCreateUserRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
      * <p>The user pool ID for the user pool where the user will be created.</p>
@@ -97,7 +98,7 @@ namespace Model
      * UTF-8 string between 1 and 128 characters. After the user is created, the
      * username cannot be changed.</p>
      */
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
+    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
      * <p>The username for the user. Must be unique within the user pool. Must be a
@@ -118,7 +119,7 @@ namespace Model
      * UTF-8 string between 1 and 128 characters. After the user is created, the
      * username cannot be changed.</p>
      */
-    inline AdminCreateUserRequest& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
+    inline AdminCreateUserRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
      * <p>The username for the user. Must be unique within the user pool. Must be a
@@ -197,7 +198,7 @@ namespace Model
      * phone_number_verified attribute is set to True, or if "SMS" is specified in the
      * DesiredDeliveryMediums parameter.</p> </li> </ul>
      */
-    inline void SetUserAttributes(Aws::Vector<AttributeType>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = value; }
+    inline void SetUserAttributes(Aws::Vector<AttributeType>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = std::move(value); }
 
     /**
      * <p>An array of name-value pairs that contain user attributes and attribute
@@ -245,7 +246,7 @@ namespace Model
      * phone_number_verified attribute is set to True, or if "SMS" is specified in the
      * DesiredDeliveryMediums parameter.</p> </li> </ul>
      */
-    inline AdminCreateUserRequest& WithUserAttributes(Aws::Vector<AttributeType>&& value) { SetUserAttributes(value); return *this;}
+    inline AdminCreateUserRequest& WithUserAttributes(Aws::Vector<AttributeType>&& value) { SetUserAttributes(std::move(value)); return *this;}
 
     /**
      * <p>An array of name-value pairs that contain user attributes and attribute
@@ -293,7 +294,7 @@ namespace Model
      * phone_number_verified attribute is set to True, or if "SMS" is specified in the
      * DesiredDeliveryMediums parameter.</p> </li> </ul>
      */
-    inline AdminCreateUserRequest& AddUserAttributes(AttributeType&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(value); return *this; }
+    inline AdminCreateUserRequest& AddUserAttributes(AttributeType&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The user's validation data. This is an array of name-value pairs that contain
@@ -329,7 +330,7 @@ namespace Model
      * Guide. The Lambda trigger receives the validation data and uses it in the
      * validation process.</p> <p>The user's validation data is not persisted.</p>
      */
-    inline void SetValidationData(Aws::Vector<AttributeType>&& value) { m_validationDataHasBeenSet = true; m_validationData = value; }
+    inline void SetValidationData(Aws::Vector<AttributeType>&& value) { m_validationDataHasBeenSet = true; m_validationData = std::move(value); }
 
     /**
      * <p>The user's validation data. This is an array of name-value pairs that contain
@@ -353,7 +354,7 @@ namespace Model
      * Guide. The Lambda trigger receives the validation data and uses it in the
      * validation process.</p> <p>The user's validation data is not persisted.</p>
      */
-    inline AdminCreateUserRequest& WithValidationData(Aws::Vector<AttributeType>&& value) { SetValidationData(value); return *this;}
+    inline AdminCreateUserRequest& WithValidationData(Aws::Vector<AttributeType>&& value) { SetValidationData(std::move(value)); return *this;}
 
     /**
      * <p>The user's validation data. This is an array of name-value pairs that contain
@@ -377,7 +378,7 @@ namespace Model
      * Guide. The Lambda trigger receives the validation data and uses it in the
      * validation process.</p> <p>The user's validation data is not persisted.</p>
      */
-    inline AdminCreateUserRequest& AddValidationData(AttributeType&& value) { m_validationDataHasBeenSet = true; m_validationData.push_back(value); return *this; }
+    inline AdminCreateUserRequest& AddValidationData(AttributeType&& value) { m_validationDataHasBeenSet = true; m_validationData.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The user's temporary password. This password must conform to the password
@@ -419,7 +420,7 @@ namespace Model
      * time limit, you must call AdminCreateUser again, specifying "RESEND" for the
      * MessageAction parameter.</p>
      */
-    inline void SetTemporaryPassword(Aws::String&& value) { m_temporaryPasswordHasBeenSet = true; m_temporaryPassword = value; }
+    inline void SetTemporaryPassword(Aws::String&& value) { m_temporaryPasswordHasBeenSet = true; m_temporaryPassword = std::move(value); }
 
     /**
      * <p>The user's temporary password. This password must conform to the password
@@ -461,7 +462,7 @@ namespace Model
      * time limit, you must call AdminCreateUser again, specifying "RESEND" for the
      * MessageAction parameter.</p>
      */
-    inline AdminCreateUserRequest& WithTemporaryPassword(Aws::String&& value) { SetTemporaryPassword(value); return *this;}
+    inline AdminCreateUserRequest& WithTemporaryPassword(Aws::String&& value) { SetTemporaryPassword(std::move(value)); return *this;}
 
     /**
      * <p>The user's temporary password. This password must conform to the password
@@ -532,7 +533,7 @@ namespace Model
      * exists and reset the expiration limit on the user's account. Set to "SUPPRESS"
      * to suppress sending the message. Only one value can be specified.</p>
      */
-    inline void SetMessageAction(MessageActionType&& value) { m_messageActionHasBeenSet = true; m_messageAction = value; }
+    inline void SetMessageAction(MessageActionType&& value) { m_messageActionHasBeenSet = true; m_messageAction = std::move(value); }
 
     /**
      * <p>Set to "RESEND" to resend the invitation message to a user that already
@@ -546,7 +547,7 @@ namespace Model
      * exists and reset the expiration limit on the user's account. Set to "SUPPRESS"
      * to suppress sending the message. Only one value can be specified.</p>
      */
-    inline AdminCreateUserRequest& WithMessageAction(MessageActionType&& value) { SetMessageAction(value); return *this;}
+    inline AdminCreateUserRequest& WithMessageAction(MessageActionType&& value) { SetMessageAction(std::move(value)); return *this;}
 
     /**
      * <p>Specify "EMAIL" if email will be used to send the welcome message. Specify
@@ -567,7 +568,7 @@ namespace Model
      * "SMS" if the phone number will be used. The default value is "SMS". More than
      * one value can be specified.</p>
      */
-    inline void SetDesiredDeliveryMediums(Aws::Vector<DeliveryMediumType>&& value) { m_desiredDeliveryMediumsHasBeenSet = true; m_desiredDeliveryMediums = value; }
+    inline void SetDesiredDeliveryMediums(Aws::Vector<DeliveryMediumType>&& value) { m_desiredDeliveryMediumsHasBeenSet = true; m_desiredDeliveryMediums = std::move(value); }
 
     /**
      * <p>Specify "EMAIL" if email will be used to send the welcome message. Specify
@@ -581,7 +582,7 @@ namespace Model
      * "SMS" if the phone number will be used. The default value is "SMS". More than
      * one value can be specified.</p>
      */
-    inline AdminCreateUserRequest& WithDesiredDeliveryMediums(Aws::Vector<DeliveryMediumType>&& value) { SetDesiredDeliveryMediums(value); return *this;}
+    inline AdminCreateUserRequest& WithDesiredDeliveryMediums(Aws::Vector<DeliveryMediumType>&& value) { SetDesiredDeliveryMediums(std::move(value)); return *this;}
 
     /**
      * <p>Specify "EMAIL" if email will be used to send the welcome message. Specify
@@ -595,7 +596,7 @@ namespace Model
      * "SMS" if the phone number will be used. The default value is "SMS". More than
      * one value can be specified.</p>
      */
-    inline AdminCreateUserRequest& AddDesiredDeliveryMediums(DeliveryMediumType&& value) { m_desiredDeliveryMediumsHasBeenSet = true; m_desiredDeliveryMediums.push_back(value); return *this; }
+    inline AdminCreateUserRequest& AddDesiredDeliveryMediums(DeliveryMediumType&& value) { m_desiredDeliveryMediumsHasBeenSet = true; m_desiredDeliveryMediums.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_userPoolId;

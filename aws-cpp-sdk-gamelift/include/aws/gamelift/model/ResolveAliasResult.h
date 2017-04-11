@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Fleet identifier that is associated with the requested alias.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetId = std::move(value); }
 
     /**
      * <p>Fleet identifier that is associated with the requested alias.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>Fleet identifier that is associated with the requested alias.</p>
      */
-    inline ResolveAliasResult& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline ResolveAliasResult& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Fleet identifier that is associated with the requested alias.</p>

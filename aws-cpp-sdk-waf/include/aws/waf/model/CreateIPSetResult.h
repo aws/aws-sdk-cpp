@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/IPSet.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The <a>IPSet</a> returned in the <code>CreateIPSet</code> response.</p>
      */
-    inline void SetIPSet(IPSet&& value) { m_iPSet = value; }
+    inline void SetIPSet(IPSet&& value) { m_iPSet = std::move(value); }
 
     /**
      * <p>The <a>IPSet</a> returned in the <code>CreateIPSet</code> response.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The <a>IPSet</a> returned in the <code>CreateIPSet</code> response.</p>
      */
-    inline CreateIPSetResult& WithIPSet(IPSet&& value) { SetIPSet(value); return *this;}
+    inline CreateIPSetResult& WithIPSet(IPSet&& value) { SetIPSet(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -87,7 +88,7 @@ namespace Model
      * status of the request. For more information, see
      * <a>GetChangeTokenStatus</a>.</p>
      */
-    inline void SetChangeToken(Aws::String&& value) { m_changeToken = value; }
+    inline void SetChangeToken(Aws::String&& value) { m_changeToken = std::move(value); }
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -111,7 +112,7 @@ namespace Model
      * status of the request. For more information, see
      * <a>GetChangeTokenStatus</a>.</p>
      */
-    inline CreateIPSetResult& WithChangeToken(Aws::String&& value) { SetChangeToken(value); return *this;}
+    inline CreateIPSetResult& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the

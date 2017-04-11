@@ -17,6 +17,7 @@
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The names of the on-premises instances about which to get information.</p>
      */
-    inline void SetInstanceNames(Aws::Vector<Aws::String>&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = value; }
+    inline void SetInstanceNames(Aws::Vector<Aws::String>&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = std::move(value); }
 
     /**
      * <p>The names of the on-premises instances about which to get information.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The names of the on-premises instances about which to get information.</p>
      */
-    inline BatchGetOnPremisesInstancesRequest& WithInstanceNames(Aws::Vector<Aws::String>&& value) { SetInstanceNames(value); return *this;}
+    inline BatchGetOnPremisesInstancesRequest& WithInstanceNames(Aws::Vector<Aws::String>&& value) { SetInstanceNames(std::move(value)); return *this;}
 
     /**
      * <p>The names of the on-premises instances about which to get information.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The names of the on-premises instances about which to get information.</p>
      */
-    inline BatchGetOnPremisesInstancesRequest& AddInstanceNames(Aws::String&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
+    inline BatchGetOnPremisesInstancesRequest& AddInstanceNames(Aws::String&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of the on-premises instances about which to get information.</p>

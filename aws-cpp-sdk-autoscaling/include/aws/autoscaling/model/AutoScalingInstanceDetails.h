@@ -16,6 +16,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline AutoScalingInstanceDetails& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline AutoScalingInstanceDetails& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group associated with the instance.</p>
      */
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
 
     /**
      * <p>The name of the Auto Scaling group associated with the instance.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group associated with the instance.</p>
      */
-    inline AutoScalingInstanceDetails& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
+    inline AutoScalingInstanceDetails& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Auto Scaling group associated with the instance.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The Availability Zone for the instance.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone for the instance.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>The Availability Zone for the instance.</p>
      */
-    inline AutoScalingInstanceDetails& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline AutoScalingInstanceDetails& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone for the instance.</p>
@@ -171,7 +172,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
      * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
-    inline void SetLifecycleState(Aws::String&& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
+    inline void SetLifecycleState(Aws::String&& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = std::move(value); }
 
     /**
      * <p>The lifecycle state for the instance. For more information, see <a
@@ -192,7 +193,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
      * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
-    inline AutoScalingInstanceDetails& WithLifecycleState(Aws::String&& value) { SetLifecycleState(value); return *this;}
+    inline AutoScalingInstanceDetails& WithLifecycleState(Aws::String&& value) { SetLifecycleState(std::move(value)); return *this;}
 
     /**
      * <p>The lifecycle state for the instance. For more information, see <a
@@ -220,7 +221,7 @@ namespace Model
      * instance is healthy and should remain in service. "Unhealthy" means that the
      * instance is unhealthy and Auto Scaling should terminate and replace it.</p>
      */
-    inline void SetHealthStatus(Aws::String&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
+    inline void SetHealthStatus(Aws::String&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::move(value); }
 
     /**
      * <p>The last reported health status of this instance. "Healthy" means that the
@@ -241,7 +242,7 @@ namespace Model
      * instance is healthy and should remain in service. "Unhealthy" means that the
      * instance is unhealthy and Auto Scaling should terminate and replace it.</p>
      */
-    inline AutoScalingInstanceDetails& WithHealthStatus(Aws::String&& value) { SetHealthStatus(value); return *this;}
+    inline AutoScalingInstanceDetails& WithHealthStatus(Aws::String&& value) { SetHealthStatus(std::move(value)); return *this;}
 
     /**
      * <p>The last reported health status of this instance. "Healthy" means that the
@@ -263,7 +264,7 @@ namespace Model
     /**
      * <p>The launch configuration associated with the instance.</p>
      */
-    inline void SetLaunchConfigurationName(Aws::String&& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
+    inline void SetLaunchConfigurationName(Aws::String&& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = std::move(value); }
 
     /**
      * <p>The launch configuration associated with the instance.</p>
@@ -278,7 +279,7 @@ namespace Model
     /**
      * <p>The launch configuration associated with the instance.</p>
      */
-    inline AutoScalingInstanceDetails& WithLaunchConfigurationName(Aws::String&& value) { SetLaunchConfigurationName(value); return *this;}
+    inline AutoScalingInstanceDetails& WithLaunchConfigurationName(Aws::String&& value) { SetLaunchConfigurationName(std::move(value)); return *this;}
 
     /**
      * <p>The launch configuration associated with the instance.</p>

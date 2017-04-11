@@ -17,6 +17,7 @@
 #include <aws/elasticmapreduce/EMRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The <code>ClusterID</code> for which specified steps will be canceled. Use
      * <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
      */
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
 
     /**
      * <p>The <code>ClusterID</code> for which specified steps will be canceled. Use
@@ -74,7 +75,7 @@ namespace Model
      * <p>The <code>ClusterID</code> for which specified steps will be canceled. Use
      * <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
      */
-    inline CancelStepsRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+    inline CancelStepsRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ClusterID</code> for which specified steps will be canceled. Use
@@ -98,7 +99,7 @@ namespace Model
      * <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
      * and their states for the specified cluster.</p>
      */
-    inline void SetStepIds(Aws::Vector<Aws::String>&& value) { m_stepIdsHasBeenSet = true; m_stepIds = value; }
+    inline void SetStepIds(Aws::Vector<Aws::String>&& value) { m_stepIdsHasBeenSet = true; m_stepIds = std::move(value); }
 
     /**
      * <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
@@ -110,7 +111,7 @@ namespace Model
      * <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
      * and their states for the specified cluster.</p>
      */
-    inline CancelStepsRequest& WithStepIds(Aws::Vector<Aws::String>&& value) { SetStepIds(value); return *this;}
+    inline CancelStepsRequest& WithStepIds(Aws::Vector<Aws::String>&& value) { SetStepIds(std::move(value)); return *this;}
 
     /**
      * <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
@@ -122,7 +123,7 @@ namespace Model
      * <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
      * and their states for the specified cluster.</p>
      */
-    inline CancelStepsRequest& AddStepIds(Aws::String&& value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(value); return *this; }
+    inline CancelStepsRequest& AddStepIds(Aws::String&& value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps

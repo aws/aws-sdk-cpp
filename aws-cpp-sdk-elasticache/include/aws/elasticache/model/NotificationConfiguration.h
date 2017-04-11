@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
      */
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
      */
-    inline NotificationConfiguration& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
+    inline NotificationConfiguration& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The current state of the topic.</p>
      */
-    inline void SetTopicStatus(Aws::String&& value) { m_topicStatusHasBeenSet = true; m_topicStatus = value; }
+    inline void SetTopicStatus(Aws::String&& value) { m_topicStatusHasBeenSet = true; m_topicStatus = std::move(value); }
 
     /**
      * <p>The current state of the topic.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The current state of the topic.</p>
      */
-    inline NotificationConfiguration& WithTopicStatus(Aws::String&& value) { SetTopicStatus(value); return *this;}
+    inline NotificationConfiguration& WithTopicStatus(Aws::String&& value) { SetTopicStatus(std::move(value)); return *this;}
 
     /**
      * <p>The current state of the topic.</p>

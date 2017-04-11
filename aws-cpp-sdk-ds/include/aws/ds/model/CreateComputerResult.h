@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/model/Computer.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>A <a>Computer</a> object that represents the computer account.</p>
      */
-    inline void SetComputer(Computer&& value) { m_computer = value; }
+    inline void SetComputer(Computer&& value) { m_computer = std::move(value); }
 
     /**
      * <p>A <a>Computer</a> object that represents the computer account.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>A <a>Computer</a> object that represents the computer account.</p>
      */
-    inline CreateComputerResult& WithComputer(Computer&& value) { SetComputer(value); return *this;}
+    inline CreateComputerResult& WithComputer(Computer&& value) { SetComputer(std::move(value)); return *this;}
 
   private:
     Computer m_computer;

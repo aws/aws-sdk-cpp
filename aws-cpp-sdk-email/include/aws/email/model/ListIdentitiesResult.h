@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/email/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>A list of identities.</p>
      */
-    inline void SetIdentities(Aws::Vector<Aws::String>&& value) { m_identities = value; }
+    inline void SetIdentities(Aws::Vector<Aws::String>&& value) { m_identities = std::move(value); }
 
     /**
      * <p>A list of identities.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>A list of identities.</p>
      */
-    inline ListIdentitiesResult& WithIdentities(Aws::Vector<Aws::String>&& value) { SetIdentities(value); return *this;}
+    inline ListIdentitiesResult& WithIdentities(Aws::Vector<Aws::String>&& value) { SetIdentities(std::move(value)); return *this;}
 
     /**
      * <p>A list of identities.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>A list of identities.</p>
      */
-    inline ListIdentitiesResult& AddIdentities(Aws::String&& value) { m_identities.push_back(value); return *this; }
+    inline ListIdentitiesResult& AddIdentities(Aws::String&& value) { m_identities.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of identities.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The token used for pagination.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token used for pagination.</p>
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>The token used for pagination.</p>
      */
-    inline ListIdentitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListIdentitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token used for pagination.</p>
@@ -129,13 +130,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListIdentitiesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListIdentitiesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListIdentitiesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_identities;

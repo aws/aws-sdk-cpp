@@ -17,6 +17,7 @@
 #include <aws/codecommit/CodeCommitRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The names of the repositories to get information about.</p>
      */
-    inline void SetRepositoryNames(Aws::Vector<Aws::String>&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames = value; }
+    inline void SetRepositoryNames(Aws::Vector<Aws::String>&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames = std::move(value); }
 
     /**
      * <p>The names of the repositories to get information about.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The names of the repositories to get information about.</p>
      */
-    inline BatchGetRepositoriesRequest& WithRepositoryNames(Aws::Vector<Aws::String>&& value) { SetRepositoryNames(value); return *this;}
+    inline BatchGetRepositoriesRequest& WithRepositoryNames(Aws::Vector<Aws::String>&& value) { SetRepositoryNames(std::move(value)); return *this;}
 
     /**
      * <p>The names of the repositories to get information about.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The names of the repositories to get information about.</p>
      */
-    inline BatchGetRepositoriesRequest& AddRepositoryNames(Aws::String&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(value); return *this; }
+    inline BatchGetRepositoriesRequest& AddRepositoryNames(Aws::String&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of the repositories to get information about.</p>

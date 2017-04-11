@@ -16,6 +16,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/RekognitionRequest.h>
 #include <aws/rekognition/model/Image.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>Source image either as bytes or an S3 object</p>
      */
-    inline void SetSourceImage(Image&& value) { m_sourceImageHasBeenSet = true; m_sourceImage = value; }
+    inline void SetSourceImage(Image&& value) { m_sourceImageHasBeenSet = true; m_sourceImage = std::move(value); }
 
     /**
      * <p>Source image either as bytes or an S3 object</p>
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Source image either as bytes or an S3 object</p>
      */
-    inline CompareFacesRequest& WithSourceImage(Image&& value) { SetSourceImage(value); return *this;}
+    inline CompareFacesRequest& WithSourceImage(Image&& value) { SetSourceImage(std::move(value)); return *this;}
 
     /**
      * <p>Target image either as bytes or an S3 object</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>Target image either as bytes or an S3 object</p>
      */
-    inline void SetTargetImage(Image&& value) { m_targetImageHasBeenSet = true; m_targetImage = value; }
+    inline void SetTargetImage(Image&& value) { m_targetImageHasBeenSet = true; m_targetImage = std::move(value); }
 
     /**
      * <p>Target image either as bytes or an S3 object</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>Target image either as bytes or an S3 object</p>
      */
-    inline CompareFacesRequest& WithTargetImage(Image&& value) { SetTargetImage(value); return *this;}
+    inline CompareFacesRequest& WithTargetImage(Image&& value) { SetTargetImage(std::move(value)); return *this;}
 
     /**
      * <p>The minimum level of confidence in the match you want included in the

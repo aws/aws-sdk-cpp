@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/NetworkInterfaceAttribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
 
     /**
      * <p>The ID of the network interface.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
-    inline DescribeNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(value); return *this;}
+    inline DescribeNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the network interface.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The attribute of the network interface.</p>
      */
-    inline void SetAttribute(NetworkInterfaceAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline void SetAttribute(NetworkInterfaceAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
      * <p>The attribute of the network interface.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The attribute of the network interface.</p>
      */
-    inline DescribeNetworkInterfaceAttributeRequest& WithAttribute(NetworkInterfaceAttribute&& value) { SetAttribute(value); return *this;}
+    inline DescribeNetworkInterfaceAttributeRequest& WithAttribute(NetworkInterfaceAttribute&& value) { SetAttribute(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

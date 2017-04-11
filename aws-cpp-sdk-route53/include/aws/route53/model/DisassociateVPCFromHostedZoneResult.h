@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/ChangeInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>A complex type that describes the changes made to the specified private
      * hosted zone.</p>
      */
-    inline void SetChangeInfo(ChangeInfo&& value) { m_changeInfo = value; }
+    inline void SetChangeInfo(ChangeInfo&& value) { m_changeInfo = std::move(value); }
 
     /**
      * <p>A complex type that describes the changes made to the specified private
@@ -73,7 +74,7 @@ namespace Model
      * <p>A complex type that describes the changes made to the specified private
      * hosted zone.</p>
      */
-    inline DisassociateVPCFromHostedZoneResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(value); return *this;}
+    inline DisassociateVPCFromHostedZoneResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(std::move(value)); return *this;}
 
   private:
     ChangeInfo m_changeInfo;

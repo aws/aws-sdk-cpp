@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: =,.@-</p>
      */
-    inline void SetInstanceProfileName(Aws::String&& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
+    inline void SetInstanceProfileName(Aws::String&& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = std::move(value); }
 
     /**
      * <p>The name of the instance profile to create.</p> <p>This parameter allows (per
@@ -83,7 +84,7 @@ namespace Model
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: =,.@-</p>
      */
-    inline CreateInstanceProfileRequest& WithInstanceProfileName(Aws::String&& value) { SetInstanceProfileName(value); return *this;}
+    inline CreateInstanceProfileRequest& WithInstanceProfileName(Aws::String&& value) { SetInstanceProfileName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the instance profile to create.</p> <p>This parameter allows (per
@@ -130,7 +131,7 @@ namespace Model
      * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
      * characters, digits, and upper and lowercased letters.</p>
      */
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p> The path to the instance profile. For more information about paths, see <a
@@ -169,7 +170,7 @@ namespace Model
      * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
      * characters, digits, and upper and lowercased letters.</p>
      */
-    inline CreateInstanceProfileRequest& WithPath(Aws::String&& value) { SetPath(value); return *this;}
+    inline CreateInstanceProfileRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p> The path to the instance profile. For more information about paths, see <a

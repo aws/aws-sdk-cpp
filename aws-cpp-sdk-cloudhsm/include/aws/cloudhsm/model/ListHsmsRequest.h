@@ -16,6 +16,7 @@
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/cloudhsm/CloudHSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The <i>NextToken</i> value from a previous call to <a>ListHsms</a>. Pass null
      * if this is the first call.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <i>NextToken</i> value from a previous call to <a>ListHsms</a>. Pass null
@@ -69,7 +70,7 @@ namespace Model
      * <p>The <i>NextToken</i> value from a previous call to <a>ListHsms</a>. Pass null
      * if this is the first call.</p>
      */
-    inline ListHsmsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListHsmsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <i>NextToken</i> value from a previous call to <a>ListHsms</a>. Pass null

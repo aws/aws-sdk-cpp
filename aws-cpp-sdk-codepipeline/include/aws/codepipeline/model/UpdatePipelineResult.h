@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/model/PipelineDeclaration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The structure of the updated pipeline.</p>
      */
-    inline void SetPipeline(PipelineDeclaration&& value) { m_pipeline = value; }
+    inline void SetPipeline(PipelineDeclaration&& value) { m_pipeline = std::move(value); }
 
     /**
      * <p>The structure of the updated pipeline.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The structure of the updated pipeline.</p>
      */
-    inline UpdatePipelineResult& WithPipeline(PipelineDeclaration&& value) { SetPipeline(value); return *this;}
+    inline UpdatePipelineResult& WithPipeline(PipelineDeclaration&& value) { SetPipeline(std::move(value)); return *this;}
 
   private:
     PipelineDeclaration m_pipeline;

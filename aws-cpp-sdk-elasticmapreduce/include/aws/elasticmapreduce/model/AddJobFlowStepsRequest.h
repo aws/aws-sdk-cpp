@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/StepConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>A string that uniquely identifies the job flow. This identifier is returned
      * by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>. </p>
      */
-    inline void SetJobFlowId(Aws::String&& value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId = value; }
+    inline void SetJobFlowId(Aws::String&& value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId = std::move(value); }
 
     /**
      * <p>A string that uniquely identifies the job flow. This identifier is returned
@@ -75,7 +76,7 @@ namespace Model
      * <p>A string that uniquely identifies the job flow. This identifier is returned
      * by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>. </p>
      */
-    inline AddJobFlowStepsRequest& WithJobFlowId(Aws::String&& value) { SetJobFlowId(value); return *this;}
+    inline AddJobFlowStepsRequest& WithJobFlowId(Aws::String&& value) { SetJobFlowId(std::move(value)); return *this;}
 
     /**
      * <p>A string that uniquely identifies the job flow. This identifier is returned
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
      */
-    inline void SetSteps(Aws::Vector<StepConfig>&& value) { m_stepsHasBeenSet = true; m_steps = value; }
+    inline void SetSteps(Aws::Vector<StepConfig>&& value) { m_stepsHasBeenSet = true; m_steps = std::move(value); }
 
     /**
      * <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
      */
-    inline AddJobFlowStepsRequest& WithSteps(Aws::Vector<StepConfig>&& value) { SetSteps(value); return *this;}
+    inline AddJobFlowStepsRequest& WithSteps(Aws::Vector<StepConfig>&& value) { SetSteps(std::move(value)); return *this;}
 
     /**
      * <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
      */
-    inline AddJobFlowStepsRequest& AddSteps(StepConfig&& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
+    inline AddJobFlowStepsRequest& AddSteps(StepConfig&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_jobFlowId;

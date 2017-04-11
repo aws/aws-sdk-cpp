@@ -17,6 +17,7 @@
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -91,7 +92,7 @@ namespace Model
      * <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel
      * (mono), little-endian format. </p> </li> </ul> <p> </p>
      */
-    inline void SetContentType(Aws::String&& value) { m_contentType = value; }
+    inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
 
     /**
      * <p> Specifies the type audio stream. This should reflect the
@@ -130,7 +131,7 @@ namespace Model
      * <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel
      * (mono), little-endian format. </p> </li> </ul> <p> </p>
      */
-    inline SynthesizeSpeechResult& WithContentType(Aws::String&& value) { SetContentType(value); return *this;}
+    inline SynthesizeSpeechResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
     /**
      * <p> Specifies the type audio stream. This should reflect the

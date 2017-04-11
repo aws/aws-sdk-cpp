@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/TopicRuleListItem.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The rules.</p>
      */
-    inline void SetRules(Aws::Vector<TopicRuleListItem>&& value) { m_rules = value; }
+    inline void SetRules(Aws::Vector<TopicRuleListItem>&& value) { m_rules = std::move(value); }
 
     /**
      * <p>The rules.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The rules.</p>
      */
-    inline ListTopicRulesResult& WithRules(Aws::Vector<TopicRuleListItem>&& value) { SetRules(value); return *this;}
+    inline ListTopicRulesResult& WithRules(Aws::Vector<TopicRuleListItem>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
      * <p>The rules.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The rules.</p>
      */
-    inline ListTopicRulesResult& AddRules(TopicRuleListItem&& value) { m_rules.push_back(value); return *this; }
+    inline ListTopicRulesResult& AddRules(TopicRuleListItem&& value) { m_rules.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A token used to retrieve the next value.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>A token used to retrieve the next value.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>A token used to retrieve the next value.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>A token used to retrieve the next value.</p>
      */
-    inline ListTopicRulesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListTopicRulesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A token used to retrieve the next value.</p>

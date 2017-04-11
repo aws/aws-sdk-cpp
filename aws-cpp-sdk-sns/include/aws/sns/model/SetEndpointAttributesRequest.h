@@ -17,6 +17,7 @@
 #include <aws/sns/SNSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>EndpointArn used for SetEndpointAttributes action.</p>
      */
-    inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
+    inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
 
     /**
      * <p>EndpointArn used for SetEndpointAttributes action.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>EndpointArn used for SetEndpointAttributes action.</p>
      */
-    inline SetEndpointAttributesRequest& WithEndpointArn(Aws::String&& value) { SetEndpointArn(value); return *this;}
+    inline SetEndpointAttributesRequest& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
 
     /**
      * <p>EndpointArn used for SetEndpointAttributes action.</p>
@@ -119,7 +120,7 @@ namespace Model
      * notification service when an app and mobile device are registered with the
      * notification service.</p> </li> </ul>
      */
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>A map of the endpoint attributes. Attributes in this map include the
@@ -149,7 +150,7 @@ namespace Model
      * notification service when an app and mobile device are registered with the
      * notification service.</p> </li> </ul>
      */
-    inline SetEndpointAttributesRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(value); return *this;}
+    inline SetEndpointAttributesRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>A map of the endpoint attributes. Attributes in this map include the
@@ -164,7 +165,7 @@ namespace Model
      * notification service when an app and mobile device are registered with the
      * notification service.</p> </li> </ul>
      */
-    inline SetEndpointAttributesRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline SetEndpointAttributesRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>A map of the endpoint attributes. Attributes in this map include the
@@ -179,7 +180,7 @@ namespace Model
      * notification service when an app and mobile device are registered with the
      * notification service.</p> </li> </ul>
      */
-    inline SetEndpointAttributesRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline SetEndpointAttributesRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of the endpoint attributes. Attributes in this map include the
@@ -194,7 +195,7 @@ namespace Model
      * notification service when an app and mobile device are registered with the
      * notification service.</p> </li> </ul>
      */
-    inline SetEndpointAttributesRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline SetEndpointAttributesRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of the endpoint attributes. Attributes in this map include the
@@ -209,7 +210,7 @@ namespace Model
      * notification service when an app and mobile device are registered with the
      * notification service.</p> </li> </ul>
      */
-    inline SetEndpointAttributesRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline SetEndpointAttributesRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A map of the endpoint attributes. Attributes in this map include the
@@ -224,7 +225,7 @@ namespace Model
      * notification service when an app and mobile device are registered with the
      * notification service.</p> </li> </ul>
      */
-    inline SetEndpointAttributesRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline SetEndpointAttributesRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of the endpoint attributes. Attributes in this map include the
@@ -239,7 +240,7 @@ namespace Model
      * notification service when an app and mobile device are registered with the
      * notification service.</p> </li> </ul>
      */
-    inline SetEndpointAttributesRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline SetEndpointAttributesRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of the endpoint attributes. Attributes in this map include the
@@ -254,7 +255,7 @@ namespace Model
      * notification service when an app and mobile device are registered with the
      * notification service.</p> </li> </ul>
      */
-    inline SetEndpointAttributesRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline SetEndpointAttributesRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
   private:
     Aws::String m_endpointArn;

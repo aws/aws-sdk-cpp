@@ -16,6 +16,7 @@
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/es/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
      */
-    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagList = value; }
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagList = std::move(value); }
 
     /**
      * <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
      */
-    inline ListTagsResult& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(value); return *this;}
+    inline ListTagsResult& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
 
     /**
      * <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
      */
-    inline ListTagsResult& AddTagList(Tag&& value) { m_tagList.push_back(value); return *this; }
+    inline ListTagsResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Tag> m_tagList;

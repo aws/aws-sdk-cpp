@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/Face.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,13 +67,13 @@ namespace Model
     inline void SetFace(const Face& value) { m_faceHasBeenSet = true; m_face = value; }
 
     
-    inline void SetFace(Face&& value) { m_faceHasBeenSet = true; m_face = value; }
+    inline void SetFace(Face&& value) { m_faceHasBeenSet = true; m_face = std::move(value); }
 
     
     inline FaceMatch& WithFace(const Face& value) { SetFace(value); return *this;}
 
     
-    inline FaceMatch& WithFace(Face&& value) { SetFace(value); return *this;}
+    inline FaceMatch& WithFace(Face&& value) { SetFace(std::move(value)); return *this;}
 
   private:
     double m_similarity;

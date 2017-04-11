@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of a cluster parameter group for which to return details.</p>
      */
-    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
+    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::move(value); }
 
     /**
      * <p>The name of a cluster parameter group for which to return details.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of a cluster parameter group for which to return details.</p>
      */
-    inline DescribeClusterParametersRequest& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(value); return *this;}
+    inline DescribeClusterParametersRequest& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a cluster parameter group for which to return details.</p>
@@ -100,7 +101,7 @@ namespace Model
      * parameter group. </p> <p>Default: All parameter types returned.</p> <p>Valid
      * Values: <code>user</code> | <code>engine-default</code> </p>
      */
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
      * <p>The parameter types to return. Specify <code>user</code> to show parameters
@@ -127,7 +128,7 @@ namespace Model
      * parameter group. </p> <p>Default: All parameter types returned.</p> <p>Valid
      * Values: <code>user</code> | <code>engine-default</code> </p>
      */
-    inline DescribeClusterParametersRequest& WithSource(Aws::String&& value) { SetSource(value); return *this;}
+    inline DescribeClusterParametersRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
      * <p>The parameter types to return. Specify <code>user</code> to show parameters
@@ -196,7 +197,7 @@ namespace Model
      * response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -226,7 +227,7 @@ namespace Model
      * response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline DescribeClusterParametersRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeClusterParametersRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of

@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The attribute value. Note that the value is case-sensitive.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The attribute value. Note that the value is case-sensitive.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The attribute value. Note that the value is case-sensitive.</p>
      */
-    inline AttributeValue& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline AttributeValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The attribute value. Note that the value is case-sensitive.</p>

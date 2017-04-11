@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/clouddirectory/model/ObjectType.h>
 #include <aws/clouddirectory/model/FacetAttribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>Schema ARN in which the new <a>Facet</a> will be created. For more
      * information, see <a>arns</a>.</p>
      */
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
+    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
 
     /**
      * <p>Schema ARN in which the new <a>Facet</a> will be created. For more
@@ -72,7 +73,7 @@ namespace Model
      * <p>Schema ARN in which the new <a>Facet</a> will be created. For more
      * information, see <a>arns</a>.</p>
      */
-    inline CreateFacetRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(value); return *this;}
+    inline CreateFacetRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
 
     /**
      * <p>Schema ARN in which the new <a>Facet</a> will be created. For more
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>Name of the <a>Facet</a>, which is unique for a given schema.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Name of the <a>Facet</a>, which is unique for a given schema.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>Name of the <a>Facet</a>, which is unique for a given schema.</p>
      */
-    inline CreateFacetRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateFacetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the <a>Facet</a>, which is unique for a given schema.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>Attributes associated with the <a>Facet</a>.e</p>
      */
-    inline void SetAttributes(Aws::Vector<FacetAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Vector<FacetAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>Attributes associated with the <a>Facet</a>.e</p>
@@ -138,7 +139,7 @@ namespace Model
     /**
      * <p>Attributes associated with the <a>Facet</a>.e</p>
      */
-    inline CreateFacetRequest& WithAttributes(Aws::Vector<FacetAttribute>&& value) { SetAttributes(value); return *this;}
+    inline CreateFacetRequest& WithAttributes(Aws::Vector<FacetAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Attributes associated with the <a>Facet</a>.e</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>Attributes associated with the <a>Facet</a>.e</p>
      */
-    inline CreateFacetRequest& AddAttributes(FacetAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+    inline CreateFacetRequest& AddAttributes(FacetAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specifies whether a given object created from this facet is of type Node,
@@ -184,7 +185,7 @@ namespace Model
      * </li> </ul> <ul> <li> <p>Index: Can be created with the Index API.</p> </li>
      * </ul>
      */
-    inline void SetObjectType(ObjectType&& value) { m_objectTypeHasBeenSet = true; m_objectType = value; }
+    inline void SetObjectType(ObjectType&& value) { m_objectTypeHasBeenSet = true; m_objectType = std::move(value); }
 
     /**
      * <p>Specifies whether a given object created from this facet is of type Node,
@@ -208,7 +209,7 @@ namespace Model
      * </li> </ul> <ul> <li> <p>Index: Can be created with the Index API.</p> </li>
      * </ul>
      */
-    inline CreateFacetRequest& WithObjectType(ObjectType&& value) { SetObjectType(value); return *this;}
+    inline CreateFacetRequest& WithObjectType(ObjectType&& value) { SetObjectType(std::move(value)); return *this;}
 
   private:
     Aws::String m_schemaArn;

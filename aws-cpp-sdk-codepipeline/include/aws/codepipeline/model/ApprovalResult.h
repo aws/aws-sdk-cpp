@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/ApprovalStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The summary of the current status of the approval request.</p>
      */
-    inline void SetSummary(Aws::String&& value) { m_summaryHasBeenSet = true; m_summary = value; }
+    inline void SetSummary(Aws::String&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
 
     /**
      * <p>The summary of the current status of the approval request.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The summary of the current status of the approval request.</p>
      */
-    inline ApprovalResult& WithSummary(Aws::String&& value) { SetSummary(value); return *this;}
+    inline ApprovalResult& WithSummary(Aws::String&& value) { SetSummary(std::move(value)); return *this;}
 
     /**
      * <p>The summary of the current status of the approval request.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>The response submitted by a reviewer assigned to an approval action
      * request.</p>
      */
-    inline void SetStatus(ApprovalStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ApprovalStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The response submitted by a reviewer assigned to an approval action
@@ -108,7 +109,7 @@ namespace Model
      * <p>The response submitted by a reviewer assigned to an approval action
      * request.</p>
      */
-    inline ApprovalResult& WithStatus(ApprovalStatus&& value) { SetStatus(value); return *this;}
+    inline ApprovalResult& WithStatus(ApprovalStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_summary;

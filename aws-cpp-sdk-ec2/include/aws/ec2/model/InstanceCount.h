@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/ListingState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The states of the listed Reserved Instances.</p>
      */
-    inline void SetState(ListingState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(ListingState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The states of the listed Reserved Instances.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The states of the listed Reserved Instances.</p>
      */
-    inline InstanceCount& WithState(ListingState&& value) { SetState(value); return *this;}
+    inline InstanceCount& WithState(ListingState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The number of listed Reserved Instances in the state specified by the

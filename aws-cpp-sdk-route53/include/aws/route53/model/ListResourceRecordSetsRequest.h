@@ -17,6 +17,7 @@
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/RRType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>The ID of the hosted zone that contains the resource record sets that you
      * want to get.</p>
      */
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
+    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
 
     /**
      * <p>The ID of the hosted zone that contains the resource record sets that you
@@ -77,7 +78,7 @@ namespace Model
      * <p>The ID of the hosted zone that contains the resource record sets that you
      * want to get.</p>
      */
-    inline ListResourceRecordSetsRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
+    inline ListResourceRecordSetsRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the hosted zone that contains the resource record sets that you
@@ -101,7 +102,7 @@ namespace Model
      * <p>The first name in the lexicographic ordering of domain names that you want
      * the <code>ListResourceRecordSets</code> request to list.</p>
      */
-    inline void SetStartRecordName(Aws::String&& value) { m_startRecordNameHasBeenSet = true; m_startRecordName = value; }
+    inline void SetStartRecordName(Aws::String&& value) { m_startRecordNameHasBeenSet = true; m_startRecordName = std::move(value); }
 
     /**
      * <p>The first name in the lexicographic ordering of domain names that you want
@@ -119,7 +120,7 @@ namespace Model
      * <p>The first name in the lexicographic ordering of domain names that you want
      * the <code>ListResourceRecordSets</code> request to list.</p>
      */
-    inline ListResourceRecordSetsRequest& WithStartRecordName(Aws::String&& value) { SetStartRecordName(value); return *this;}
+    inline ListResourceRecordSetsRequest& WithStartRecordName(Aws::String&& value) { SetStartRecordName(std::move(value)); return *this;}
 
     /**
      * <p>The first name in the lexicographic ordering of domain names that you want
@@ -179,7 +180,7 @@ namespace Model
      * <code>type</code> without specifying <code>name</code> returns an
      * <code>InvalidInput</code> error.</p>
      */
-    inline void SetStartRecordType(RRType&& value) { m_startRecordTypeHasBeenSet = true; m_startRecordType = value; }
+    inline void SetStartRecordType(RRType&& value) { m_startRecordTypeHasBeenSet = true; m_startRecordType = std::move(value); }
 
     /**
      * <p>The type of resource record set to begin the record listing from.</p>
@@ -215,7 +216,7 @@ namespace Model
      * <code>type</code> without specifying <code>name</code> returns an
      * <code>InvalidInput</code> error.</p>
      */
-    inline ListResourceRecordSetsRequest& WithStartRecordType(RRType&& value) { SetStartRecordType(value); return *this;}
+    inline ListResourceRecordSetsRequest& WithStartRecordType(RRType&& value) { SetStartRecordType(std::move(value)); return *this;}
 
     /**
      * <p> <i>Weighted resource record sets only:</i> If results were truncated for a
@@ -239,7 +240,7 @@ namespace Model
      * from the previous response to get the next resource record set that has the
      * current DNS name and type.</p>
      */
-    inline void SetStartRecordIdentifier(Aws::String&& value) { m_startRecordIdentifierHasBeenSet = true; m_startRecordIdentifier = value; }
+    inline void SetStartRecordIdentifier(Aws::String&& value) { m_startRecordIdentifierHasBeenSet = true; m_startRecordIdentifier = std::move(value); }
 
     /**
      * <p> <i>Weighted resource record sets only:</i> If results were truncated for a
@@ -263,7 +264,7 @@ namespace Model
      * from the previous response to get the next resource record set that has the
      * current DNS name and type.</p>
      */
-    inline ListResourceRecordSetsRequest& WithStartRecordIdentifier(Aws::String&& value) { SetStartRecordIdentifier(value); return *this;}
+    inline ListResourceRecordSetsRequest& WithStartRecordIdentifier(Aws::String&& value) { SetStartRecordIdentifier(std::move(value)); return *this;}
 
     /**
      * <p> <i>Weighted resource record sets only:</i> If results were truncated for a
@@ -304,7 +305,7 @@ namespace Model
      * elements in the response identify the first resource record set in the next
      * group of <code>maxitems</code> resource record sets.</p>
      */
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
     /**
      * <p>(Optional) The maximum number of resource records sets to include in the
@@ -337,7 +338,7 @@ namespace Model
      * elements in the response identify the first resource record set in the next
      * group of <code>maxitems</code> resource record sets.</p>
      */
-    inline ListResourceRecordSetsRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
+    inline ListResourceRecordSetsRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) The maximum number of resource records sets to include in the

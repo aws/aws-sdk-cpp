@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudsearch/model/SuggesterFuzzyMatching.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name of the index field you want to use for suggestions. </p>
      */
-    inline void SetSourceField(Aws::String&& value) { m_sourceFieldHasBeenSet = true; m_sourceField = value; }
+    inline void SetSourceField(Aws::String&& value) { m_sourceFieldHasBeenSet = true; m_sourceField = std::move(value); }
 
     /**
      * <p>The name of the index field you want to use for suggestions. </p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name of the index field you want to use for suggestions. </p>
      */
-    inline DocumentSuggesterOptions& WithSourceField(Aws::String&& value) { SetSourceField(value); return *this;}
+    inline DocumentSuggesterOptions& WithSourceField(Aws::String&& value) { SetSourceField(std::move(value)); return *this;}
 
     /**
      * <p>The name of the index field you want to use for suggestions. </p>
@@ -107,7 +108,7 @@ namespace Model
      * differ from the specified string by no more than one character. With high,
      * suggestions can differ by up to two characters. The default is none. </p>
      */
-    inline void SetFuzzyMatching(SuggesterFuzzyMatching&& value) { m_fuzzyMatchingHasBeenSet = true; m_fuzzyMatching = value; }
+    inline void SetFuzzyMatching(SuggesterFuzzyMatching&& value) { m_fuzzyMatchingHasBeenSet = true; m_fuzzyMatching = std::move(value); }
 
     /**
      * <p>The level of fuzziness allowed when suggesting matches for a string:
@@ -125,7 +126,7 @@ namespace Model
      * differ from the specified string by no more than one character. With high,
      * suggestions can differ by up to two characters. The default is none. </p>
      */
-    inline DocumentSuggesterOptions& WithFuzzyMatching(SuggesterFuzzyMatching&& value) { SetFuzzyMatching(value); return *this;}
+    inline DocumentSuggesterOptions& WithFuzzyMatching(SuggesterFuzzyMatching&& value) { SetFuzzyMatching(std::move(value)); return *this;}
 
     /**
      * <p>An expression that computes a score for each suggestion to control how they
@@ -158,7 +159,7 @@ namespace Model
      * the name of the field or expression. If no expression is configured for the
      * suggester, the suggestions are sorted with the closest matches listed first.</p>
      */
-    inline void SetSortExpression(Aws::String&& value) { m_sortExpressionHasBeenSet = true; m_sortExpression = value; }
+    inline void SetSortExpression(Aws::String&& value) { m_sortExpressionHasBeenSet = true; m_sortExpression = std::move(value); }
 
     /**
      * <p>An expression that computes a score for each suggestion to control how they
@@ -191,7 +192,7 @@ namespace Model
      * the name of the field or expression. If no expression is configured for the
      * suggester, the suggestions are sorted with the closest matches listed first.</p>
      */
-    inline DocumentSuggesterOptions& WithSortExpression(Aws::String&& value) { SetSortExpression(value); return *this;}
+    inline DocumentSuggesterOptions& WithSortExpression(Aws::String&& value) { SetSortExpression(std::move(value)); return *this;}
 
     /**
      * <p>An expression that computes a score for each suggestion to control how they

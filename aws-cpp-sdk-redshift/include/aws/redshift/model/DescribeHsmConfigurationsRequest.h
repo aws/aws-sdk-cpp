@@ -17,6 +17,7 @@
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * described. If no identifier is specified, information is returned for all HSM
      * configurations owned by your AWS customer account.</p>
      */
-    inline void SetHsmConfigurationIdentifier(Aws::String&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
+    inline void SetHsmConfigurationIdentifier(Aws::String&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
@@ -81,7 +82,7 @@ namespace Model
      * described. If no identifier is specified, information is returned for all HSM
      * configurations owned by your AWS customer account.</p>
      */
-    inline DescribeHsmConfigurationsRequest& WithHsmConfigurationIdentifier(Aws::String&& value) { SetHsmConfigurationIdentifier(value); return *this;}
+    inline DescribeHsmConfigurationsRequest& WithHsmConfigurationIdentifier(Aws::String&& value) { SetHsmConfigurationIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
@@ -148,7 +149,7 @@ namespace Model
      * response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -178,7 +179,7 @@ namespace Model
      * response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline DescribeHsmConfigurationsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeHsmConfigurationsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -221,7 +222,7 @@ namespace Model
      * configurations that have either or both of these tag keys associated with
      * them.</p>
      */
-    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
+    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
      * <p>A tag key or keys for which you want to return all matching HSM
@@ -243,7 +244,7 @@ namespace Model
      * configurations that have either or both of these tag keys associated with
      * them.</p>
      */
-    inline DescribeHsmConfigurationsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
+    inline DescribeHsmConfigurationsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
      * <p>A tag key or keys for which you want to return all matching HSM
@@ -265,7 +266,7 @@ namespace Model
      * configurations that have either or both of these tag keys associated with
      * them.</p>
      */
-    inline DescribeHsmConfigurationsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+    inline DescribeHsmConfigurationsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A tag key or keys for which you want to return all matching HSM
@@ -309,7 +310,7 @@ namespace Model
      * configurations that have either or both of these tag values associated with
      * them.</p>
      */
-    inline void SetTagValues(Aws::Vector<Aws::String>&& value) { m_tagValuesHasBeenSet = true; m_tagValues = value; }
+    inline void SetTagValues(Aws::Vector<Aws::String>&& value) { m_tagValuesHasBeenSet = true; m_tagValues = std::move(value); }
 
     /**
      * <p>A tag value or values for which you want to return all matching HSM
@@ -331,7 +332,7 @@ namespace Model
      * configurations that have either or both of these tag values associated with
      * them.</p>
      */
-    inline DescribeHsmConfigurationsRequest& WithTagValues(Aws::Vector<Aws::String>&& value) { SetTagValues(value); return *this;}
+    inline DescribeHsmConfigurationsRequest& WithTagValues(Aws::Vector<Aws::String>&& value) { SetTagValues(std::move(value)); return *this;}
 
     /**
      * <p>A tag value or values for which you want to return all matching HSM
@@ -353,7 +354,7 @@ namespace Model
      * configurations that have either or both of these tag values associated with
      * them.</p>
      */
-    inline DescribeHsmConfigurationsRequest& AddTagValues(Aws::String&& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
+    inline DescribeHsmConfigurationsRequest& AddTagValues(Aws::String&& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A tag value or values for which you want to return all matching HSM

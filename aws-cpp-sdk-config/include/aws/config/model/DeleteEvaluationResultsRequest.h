@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>The name of the Config rule for which you want to delete the evaluation
      * results.</p>
      */
-    inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
+    inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
 
     /**
      * <p>The name of the Config rule for which you want to delete the evaluation
@@ -72,7 +73,7 @@ namespace Model
      * <p>The name of the Config rule for which you want to delete the evaluation
      * results.</p>
      */
-    inline DeleteEvaluationResultsRequest& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(value); return *this;}
+    inline DeleteEvaluationResultsRequest& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Config rule for which you want to delete the evaluation

@@ -21,6 +21,7 @@
 #include <aws/clouddirectory/model/BatchDeleteObjectResponse.h>
 #include <aws/clouddirectory/model/BatchAddFacetToObjectResponse.h>
 #include <aws/clouddirectory/model/BatchRemoveFacetFromObjectResponse.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Creates an object in a <a>Directory</a>.</p>
      */
-    inline void SetCreateObject(BatchCreateObjectResponse&& value) { m_createObjectHasBeenSet = true; m_createObject = value; }
+    inline void SetCreateObject(BatchCreateObjectResponse&& value) { m_createObjectHasBeenSet = true; m_createObject = std::move(value); }
 
     /**
      * <p>Creates an object in a <a>Directory</a>.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>Creates an object in a <a>Directory</a>.</p>
      */
-    inline BatchWriteOperationResponse& WithCreateObject(BatchCreateObjectResponse&& value) { SetCreateObject(value); return *this;}
+    inline BatchWriteOperationResponse& WithCreateObject(BatchCreateObjectResponse&& value) { SetCreateObject(std::move(value)); return *this;}
 
     /**
      * <p>Attaches an object to a <a>Directory</a>.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>Attaches an object to a <a>Directory</a>.</p>
      */
-    inline void SetAttachObject(BatchAttachObjectResponse&& value) { m_attachObjectHasBeenSet = true; m_attachObject = value; }
+    inline void SetAttachObject(BatchAttachObjectResponse&& value) { m_attachObjectHasBeenSet = true; m_attachObject = std::move(value); }
 
     /**
      * <p>Attaches an object to a <a>Directory</a>.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>Attaches an object to a <a>Directory</a>.</p>
      */
-    inline BatchWriteOperationResponse& WithAttachObject(BatchAttachObjectResponse&& value) { SetAttachObject(value); return *this;}
+    inline BatchWriteOperationResponse& WithAttachObject(BatchAttachObjectResponse&& value) { SetAttachObject(std::move(value)); return *this;}
 
     /**
      * <p>Detaches an object from a <a>Directory</a>.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>Detaches an object from a <a>Directory</a>.</p>
      */
-    inline void SetDetachObject(BatchDetachObjectResponse&& value) { m_detachObjectHasBeenSet = true; m_detachObject = value; }
+    inline void SetDetachObject(BatchDetachObjectResponse&& value) { m_detachObjectHasBeenSet = true; m_detachObject = std::move(value); }
 
     /**
      * <p>Detaches an object from a <a>Directory</a>.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>Detaches an object from a <a>Directory</a>.</p>
      */
-    inline BatchWriteOperationResponse& WithDetachObject(BatchDetachObjectResponse&& value) { SetDetachObject(value); return *this;}
+    inline BatchWriteOperationResponse& WithDetachObject(BatchDetachObjectResponse&& value) { SetDetachObject(std::move(value)); return *this;}
 
     /**
      * <p>Updates a given object’s attributes.</p>
@@ -138,7 +139,7 @@ namespace Model
     /**
      * <p>Updates a given object’s attributes.</p>
      */
-    inline void SetUpdateObjectAttributes(BatchUpdateObjectAttributesResponse&& value) { m_updateObjectAttributesHasBeenSet = true; m_updateObjectAttributes = value; }
+    inline void SetUpdateObjectAttributes(BatchUpdateObjectAttributesResponse&& value) { m_updateObjectAttributesHasBeenSet = true; m_updateObjectAttributes = std::move(value); }
 
     /**
      * <p>Updates a given object’s attributes.</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>Updates a given object’s attributes.</p>
      */
-    inline BatchWriteOperationResponse& WithUpdateObjectAttributes(BatchUpdateObjectAttributesResponse&& value) { SetUpdateObjectAttributes(value); return *this;}
+    inline BatchWriteOperationResponse& WithUpdateObjectAttributes(BatchUpdateObjectAttributesResponse&& value) { SetUpdateObjectAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Deletes an object in a <a>Directory</a>.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>Deletes an object in a <a>Directory</a>.</p>
      */
-    inline void SetDeleteObject(BatchDeleteObjectResponse&& value) { m_deleteObjectHasBeenSet = true; m_deleteObject = value; }
+    inline void SetDeleteObject(BatchDeleteObjectResponse&& value) { m_deleteObjectHasBeenSet = true; m_deleteObject = std::move(value); }
 
     /**
      * <p>Deletes an object in a <a>Directory</a>.</p>
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>Deletes an object in a <a>Directory</a>.</p>
      */
-    inline BatchWriteOperationResponse& WithDeleteObject(BatchDeleteObjectResponse&& value) { SetDeleteObject(value); return *this;}
+    inline BatchWriteOperationResponse& WithDeleteObject(BatchDeleteObjectResponse&& value) { SetDeleteObject(std::move(value)); return *this;}
 
     /**
      * <p>Result of an add facet to object batch operation.</p>
@@ -188,7 +189,7 @@ namespace Model
     /**
      * <p>Result of an add facet to object batch operation.</p>
      */
-    inline void SetAddFacetToObject(BatchAddFacetToObjectResponse&& value) { m_addFacetToObjectHasBeenSet = true; m_addFacetToObject = value; }
+    inline void SetAddFacetToObject(BatchAddFacetToObjectResponse&& value) { m_addFacetToObjectHasBeenSet = true; m_addFacetToObject = std::move(value); }
 
     /**
      * <p>Result of an add facet to object batch operation.</p>
@@ -198,7 +199,7 @@ namespace Model
     /**
      * <p>Result of an add facet to object batch operation.</p>
      */
-    inline BatchWriteOperationResponse& WithAddFacetToObject(BatchAddFacetToObjectResponse&& value) { SetAddFacetToObject(value); return *this;}
+    inline BatchWriteOperationResponse& WithAddFacetToObject(BatchAddFacetToObjectResponse&& value) { SetAddFacetToObject(std::move(value)); return *this;}
 
     /**
      * <p>Result of a batch remove facet from object operation.</p>
@@ -213,7 +214,7 @@ namespace Model
     /**
      * <p>Result of a batch remove facet from object operation.</p>
      */
-    inline void SetRemoveFacetFromObject(BatchRemoveFacetFromObjectResponse&& value) { m_removeFacetFromObjectHasBeenSet = true; m_removeFacetFromObject = value; }
+    inline void SetRemoveFacetFromObject(BatchRemoveFacetFromObjectResponse&& value) { m_removeFacetFromObjectHasBeenSet = true; m_removeFacetFromObject = std::move(value); }
 
     /**
      * <p>Result of a batch remove facet from object operation.</p>
@@ -223,7 +224,7 @@ namespace Model
     /**
      * <p>Result of a batch remove facet from object operation.</p>
      */
-    inline BatchWriteOperationResponse& WithRemoveFacetFromObject(BatchRemoveFacetFromObjectResponse&& value) { SetRemoveFacetFromObject(value); return *this;}
+    inline BatchWriteOperationResponse& WithRemoveFacetFromObject(BatchRemoveFacetFromObjectResponse&& value) { SetRemoveFacetFromObject(std::move(value)); return *this;}
 
   private:
     BatchCreateObjectResponse m_createObject;

@@ -16,6 +16,7 @@
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/cloudhsm/CloudHSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ARN of the client.</p>
      */
-    inline void SetClientArn(Aws::String&& value) { m_clientArnHasBeenSet = true; m_clientArn = value; }
+    inline void SetClientArn(Aws::String&& value) { m_clientArnHasBeenSet = true; m_clientArn = std::move(value); }
 
     /**
      * <p>The ARN of the client.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ARN of the client.</p>
      */
-    inline DescribeLunaClientRequest& WithClientArn(Aws::String&& value) { SetClientArn(value); return *this;}
+    inline DescribeLunaClientRequest& WithClientArn(Aws::String&& value) { SetClientArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the client.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The certificate fingerprint.</p>
      */
-    inline void SetCertificateFingerprint(Aws::String&& value) { m_certificateFingerprintHasBeenSet = true; m_certificateFingerprint = value; }
+    inline void SetCertificateFingerprint(Aws::String&& value) { m_certificateFingerprintHasBeenSet = true; m_certificateFingerprint = std::move(value); }
 
     /**
      * <p>The certificate fingerprint.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The certificate fingerprint.</p>
      */
-    inline DescribeLunaClientRequest& WithCertificateFingerprint(Aws::String&& value) { SetCertificateFingerprint(value); return *this;}
+    inline DescribeLunaClientRequest& WithCertificateFingerprint(Aws::String&& value) { SetCertificateFingerprint(std::move(value)); return *this;}
 
     /**
      * <p>The certificate fingerprint.</p>

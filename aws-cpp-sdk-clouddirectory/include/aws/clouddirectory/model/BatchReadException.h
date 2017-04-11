@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/BatchReadExceptionType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Type of exception, such as <code>InvalidArnException</code>.</p>
      */
-    inline void SetType(BatchReadExceptionType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(BatchReadExceptionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>Type of exception, such as <code>InvalidArnException</code>.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Type of exception, such as <code>InvalidArnException</code>.</p>
      */
-    inline BatchReadException& WithType(BatchReadExceptionType&& value) { SetType(value); return *this;}
+    inline BatchReadException& WithType(BatchReadExceptionType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>Exception message associated with the failure.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>Exception message associated with the failure.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>Exception message associated with the failure.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>Exception message associated with the failure.</p>
      */
-    inline BatchReadException& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline BatchReadException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>Exception message associated with the failure.</p>

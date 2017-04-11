@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/BatchState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The ID of the Spot fleet request.</p>
      */
-    inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = value; }
+    inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = std::move(value); }
 
     /**
      * <p>The ID of the Spot fleet request.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The ID of the Spot fleet request.</p>
      */
-    inline CancelSpotFleetRequestsSuccessItem& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(value); return *this;}
+    inline CancelSpotFleetRequestsSuccessItem& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Spot fleet request.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The current state of the Spot fleet request.</p>
      */
-    inline void SetCurrentSpotFleetRequestState(BatchState&& value) { m_currentSpotFleetRequestStateHasBeenSet = true; m_currentSpotFleetRequestState = value; }
+    inline void SetCurrentSpotFleetRequestState(BatchState&& value) { m_currentSpotFleetRequestStateHasBeenSet = true; m_currentSpotFleetRequestState = std::move(value); }
 
     /**
      * <p>The current state of the Spot fleet request.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The current state of the Spot fleet request.</p>
      */
-    inline CancelSpotFleetRequestsSuccessItem& WithCurrentSpotFleetRequestState(BatchState&& value) { SetCurrentSpotFleetRequestState(value); return *this;}
+    inline CancelSpotFleetRequestsSuccessItem& WithCurrentSpotFleetRequestState(BatchState&& value) { SetCurrentSpotFleetRequestState(std::move(value)); return *this;}
 
     /**
      * <p>The previous state of the Spot fleet request.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The previous state of the Spot fleet request.</p>
      */
-    inline void SetPreviousSpotFleetRequestState(BatchState&& value) { m_previousSpotFleetRequestStateHasBeenSet = true; m_previousSpotFleetRequestState = value; }
+    inline void SetPreviousSpotFleetRequestState(BatchState&& value) { m_previousSpotFleetRequestStateHasBeenSet = true; m_previousSpotFleetRequestState = std::move(value); }
 
     /**
      * <p>The previous state of the Spot fleet request.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The previous state of the Spot fleet request.</p>
      */
-    inline CancelSpotFleetRequestsSuccessItem& WithPreviousSpotFleetRequestState(BatchState&& value) { SetPreviousSpotFleetRequestState(value); return *this;}
+    inline CancelSpotFleetRequestsSuccessItem& WithPreviousSpotFleetRequestState(BatchState&& value) { SetPreviousSpotFleetRequestState(std::move(value)); return *this;}
 
   private:
     Aws::String m_spotFleetRequestId;

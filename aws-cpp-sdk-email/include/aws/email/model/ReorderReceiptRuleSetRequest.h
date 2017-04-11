@@ -17,6 +17,7 @@
 #include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The name of the receipt rule set to reorder.</p>
      */
-    inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
+    inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::move(value); }
 
     /**
      * <p>The name of the receipt rule set to reorder.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The name of the receipt rule set to reorder.</p>
      */
-    inline ReorderReceiptRuleSetRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(value); return *this;}
+    inline ReorderReceiptRuleSetRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the receipt rule set to reorder.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>A list of the specified receipt rule set's receipt rules in the order that
      * you want to put them.</p>
      */
-    inline void SetRuleNames(Aws::Vector<Aws::String>&& value) { m_ruleNamesHasBeenSet = true; m_ruleNames = value; }
+    inline void SetRuleNames(Aws::Vector<Aws::String>&& value) { m_ruleNamesHasBeenSet = true; m_ruleNames = std::move(value); }
 
     /**
      * <p>A list of the specified receipt rule set's receipt rules in the order that
@@ -108,7 +109,7 @@ namespace Model
      * <p>A list of the specified receipt rule set's receipt rules in the order that
      * you want to put them.</p>
      */
-    inline ReorderReceiptRuleSetRequest& WithRuleNames(Aws::Vector<Aws::String>&& value) { SetRuleNames(value); return *this;}
+    inline ReorderReceiptRuleSetRequest& WithRuleNames(Aws::Vector<Aws::String>&& value) { SetRuleNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of the specified receipt rule set's receipt rules in the order that
@@ -120,7 +121,7 @@ namespace Model
      * <p>A list of the specified receipt rule set's receipt rules in the order that
      * you want to put them.</p>
      */
-    inline ReorderReceiptRuleSetRequest& AddRuleNames(Aws::String&& value) { m_ruleNamesHasBeenSet = true; m_ruleNames.push_back(value); return *this; }
+    inline ReorderReceiptRuleSetRequest& AddRuleNames(Aws::String&& value) { m_ruleNamesHasBeenSet = true; m_ruleNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of the specified receipt rule set's receipt rules in the order that

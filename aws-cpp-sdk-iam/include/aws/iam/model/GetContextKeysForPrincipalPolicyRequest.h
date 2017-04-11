@@ -17,6 +17,7 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -81,7 +82,7 @@ namespace Model
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
-    inline void SetPolicySourceArn(Aws::String&& value) { m_policySourceArnHasBeenSet = true; m_policySourceArn = value; }
+    inline void SetPolicySourceArn(Aws::String&& value) { m_policySourceArnHasBeenSet = true; m_policySourceArn = std::move(value); }
 
     /**
      * <p>The ARN of a user, group, or role whose policies contain the context keys
@@ -126,7 +127,7 @@ namespace Model
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
-    inline GetContextKeysForPrincipalPolicyRequest& WithPolicySourceArn(Aws::String&& value) { SetPolicySourceArn(value); return *this;}
+    inline GetContextKeysForPrincipalPolicyRequest& WithPolicySourceArn(Aws::String&& value) { SetPolicySourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of a user, group, or role whose policies contain the context keys
@@ -177,7 +178,7 @@ namespace Model
      * Supplement character set (through \u00FF). It also includes the special
      * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
-    inline void SetPolicyInputList(Aws::Vector<Aws::String>&& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
+    inline void SetPolicyInputList(Aws::Vector<Aws::String>&& value) { m_policyInputListHasBeenSet = true; m_policyInputList = std::move(value); }
 
     /**
      * <p>An optional list of additional policies for which you want the list of
@@ -201,7 +202,7 @@ namespace Model
      * Supplement character set (through \u00FF). It also includes the special
      * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
-    inline GetContextKeysForPrincipalPolicyRequest& WithPolicyInputList(Aws::Vector<Aws::String>&& value) { SetPolicyInputList(value); return *this;}
+    inline GetContextKeysForPrincipalPolicyRequest& WithPolicyInputList(Aws::Vector<Aws::String>&& value) { SetPolicyInputList(std::move(value)); return *this;}
 
     /**
      * <p>An optional list of additional policies for which you want the list of
@@ -225,7 +226,7 @@ namespace Model
      * Supplement character set (through \u00FF). It also includes the special
      * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
-    inline GetContextKeysForPrincipalPolicyRequest& AddPolicyInputList(Aws::String&& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
+    inline GetContextKeysForPrincipalPolicyRequest& AddPolicyInputList(Aws::String&& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An optional list of additional policies for which you want the list of

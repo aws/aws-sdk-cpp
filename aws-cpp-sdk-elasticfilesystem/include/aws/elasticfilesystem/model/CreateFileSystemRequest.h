@@ -17,6 +17,7 @@
 #include <aws/elasticfilesystem/EFSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticfilesystem/model/PerformanceMode.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
      * <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure
      * idempotent creation.</p>
      */
-    inline void SetCreationToken(Aws::String&& value) { m_creationTokenHasBeenSet = true; m_creationToken = value; }
+    inline void SetCreationToken(Aws::String&& value) { m_creationTokenHasBeenSet = true; m_creationToken = std::move(value); }
 
     /**
      * <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure
@@ -68,7 +69,7 @@ namespace Model
      * <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure
      * idempotent creation.</p>
      */
-    inline CreateFileSystemRequest& WithCreationToken(Aws::String&& value) { SetCreationToken(value); return *this;}
+    inline CreateFileSystemRequest& WithCreationToken(Aws::String&& value) { SetCreationToken(std::move(value)); return *this;}
 
     /**
      * <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure
@@ -104,7 +105,7 @@ namespace Model
      * higher latencies for most file operations. This can't be changed after the file
      * system has been created.</p>
      */
-    inline void SetPerformanceMode(PerformanceMode&& value) { m_performanceModeHasBeenSet = true; m_performanceMode = value; }
+    inline void SetPerformanceMode(PerformanceMode&& value) { m_performanceModeHasBeenSet = true; m_performanceMode = std::move(value); }
 
     /**
      * <p>The <code>PerformanceMode</code> of the file system. We recommend
@@ -124,7 +125,7 @@ namespace Model
      * higher latencies for most file operations. This can't be changed after the file
      * system has been created.</p>
      */
-    inline CreateFileSystemRequest& WithPerformanceMode(PerformanceMode&& value) { SetPerformanceMode(value); return *this;}
+    inline CreateFileSystemRequest& WithPerformanceMode(PerformanceMode&& value) { SetPerformanceMode(std::move(value)); return *this;}
 
   private:
     Aws::String m_creationToken;

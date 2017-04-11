@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
-    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
+    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
 
     /**
      * <p>The name of the role to list instance profiles for.</p> <p>This parameter
@@ -83,7 +84,7 @@ namespace Model
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
-    inline ListInstanceProfilesForRoleRequest& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
+    inline ListInstanceProfilesForRoleRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the role to list instance profiles for.</p> <p>This parameter
@@ -115,7 +116,7 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
@@ -139,7 +140,7 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline ListInstanceProfilesForRoleRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListInstanceProfilesForRoleRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a

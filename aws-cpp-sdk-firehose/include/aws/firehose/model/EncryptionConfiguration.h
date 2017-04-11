@@ -16,6 +16,7 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/firehose/model/NoEncryptionConfig.h>
 #include <aws/firehose/model/KMSEncryptionConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>Specifically override existing encryption information to ensure no encryption
      * is used.</p>
      */
-    inline void SetNoEncryptionConfig(NoEncryptionConfig&& value) { m_noEncryptionConfigHasBeenSet = true; m_noEncryptionConfig = value; }
+    inline void SetNoEncryptionConfig(NoEncryptionConfig&& value) { m_noEncryptionConfigHasBeenSet = true; m_noEncryptionConfig = std::move(value); }
 
     /**
      * <p>Specifically override existing encryption information to ensure no encryption
@@ -73,7 +74,7 @@ namespace Model
      * <p>Specifically override existing encryption information to ensure no encryption
      * is used.</p>
      */
-    inline EncryptionConfiguration& WithNoEncryptionConfig(NoEncryptionConfig&& value) { SetNoEncryptionConfig(value); return *this;}
+    inline EncryptionConfiguration& WithNoEncryptionConfig(NoEncryptionConfig&& value) { SetNoEncryptionConfig(std::move(value)); return *this;}
 
     /**
      * <p>The encryption key.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The encryption key.</p>
      */
-    inline void SetKMSEncryptionConfig(KMSEncryptionConfig&& value) { m_kMSEncryptionConfigHasBeenSet = true; m_kMSEncryptionConfig = value; }
+    inline void SetKMSEncryptionConfig(KMSEncryptionConfig&& value) { m_kMSEncryptionConfigHasBeenSet = true; m_kMSEncryptionConfig = std::move(value); }
 
     /**
      * <p>The encryption key.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The encryption key.</p>
      */
-    inline EncryptionConfiguration& WithKMSEncryptionConfig(KMSEncryptionConfig&& value) { SetKMSEncryptionConfig(value); return *this;}
+    inline EncryptionConfiguration& WithKMSEncryptionConfig(KMSEncryptionConfig&& value) { SetKMSEncryptionConfig(std::move(value)); return *this;}
 
   private:
     NoEncryptionConfig m_noEncryptionConfig;

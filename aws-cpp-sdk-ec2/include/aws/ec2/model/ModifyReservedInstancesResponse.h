@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ID for the modification.</p>
      */
-    inline void SetReservedInstancesModificationId(Aws::String&& value) { m_reservedInstancesModificationId = value; }
+    inline void SetReservedInstancesModificationId(Aws::String&& value) { m_reservedInstancesModificationId = std::move(value); }
 
     /**
      * <p>The ID for the modification.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ID for the modification.</p>
      */
-    inline ModifyReservedInstancesResponse& WithReservedInstancesModificationId(Aws::String&& value) { SetReservedInstancesModificationId(value); return *this;}
+    inline ModifyReservedInstancesResponse& WithReservedInstancesModificationId(Aws::String&& value) { SetReservedInstancesModificationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID for the modification.</p>
@@ -87,13 +88,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ModifyReservedInstancesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ModifyReservedInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ModifyReservedInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_reservedInstancesModificationId;

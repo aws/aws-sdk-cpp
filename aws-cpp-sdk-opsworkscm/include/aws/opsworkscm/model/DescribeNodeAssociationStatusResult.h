@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
 #include <aws/opsworkscm/model/NodeAssociationStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * <p> <code>IN_PROGRESS</code>: The association or disassociation is still in
      * progress. </p> </li> </ul>
      */
-    inline void SetNodeAssociationStatus(NodeAssociationStatus&& value) { m_nodeAssociationStatus = value; }
+    inline void SetNodeAssociationStatus(NodeAssociationStatus&& value) { m_nodeAssociationStatus = std::move(value); }
 
     /**
      * <p>The status of the association or disassociation request. </p> <p
@@ -87,7 +88,7 @@ namespace Model
      * <p> <code>IN_PROGRESS</code>: The association or disassociation is still in
      * progress. </p> </li> </ul>
      */
-    inline DescribeNodeAssociationStatusResult& WithNodeAssociationStatus(NodeAssociationStatus&& value) { SetNodeAssociationStatus(value); return *this;}
+    inline DescribeNodeAssociationStatusResult& WithNodeAssociationStatus(NodeAssociationStatus&& value) { SetNodeAssociationStatus(std::move(value)); return *this;}
 
   private:
     NodeAssociationStatus m_nodeAssociationStatus;

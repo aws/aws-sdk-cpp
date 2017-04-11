@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/RevisionLocation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>The name of an AWS CodeDeploy application about which to get revision
      * information.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of an AWS CodeDeploy application about which to get revision
@@ -75,7 +76,7 @@ namespace Model
      * <p>The name of an AWS CodeDeploy application about which to get revision
      * information.</p>
      */
-    inline BatchGetApplicationRevisionsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline BatchGetApplicationRevisionsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of an AWS CodeDeploy application about which to get revision
@@ -99,7 +100,7 @@ namespace Model
      * <p>Information to get about the application revisions, including type and
      * location.</p>
      */
-    inline void SetRevisions(Aws::Vector<RevisionLocation>&& value) { m_revisionsHasBeenSet = true; m_revisions = value; }
+    inline void SetRevisions(Aws::Vector<RevisionLocation>&& value) { m_revisionsHasBeenSet = true; m_revisions = std::move(value); }
 
     /**
      * <p>Information to get about the application revisions, including type and
@@ -111,7 +112,7 @@ namespace Model
      * <p>Information to get about the application revisions, including type and
      * location.</p>
      */
-    inline BatchGetApplicationRevisionsRequest& WithRevisions(Aws::Vector<RevisionLocation>&& value) { SetRevisions(value); return *this;}
+    inline BatchGetApplicationRevisionsRequest& WithRevisions(Aws::Vector<RevisionLocation>&& value) { SetRevisions(std::move(value)); return *this;}
 
     /**
      * <p>Information to get about the application revisions, including type and
@@ -123,7 +124,7 @@ namespace Model
      * <p>Information to get about the application revisions, including type and
      * location.</p>
      */
-    inline BatchGetApplicationRevisionsRequest& AddRevisions(RevisionLocation&& value) { m_revisionsHasBeenSet = true; m_revisions.push_back(value); return *this; }
+    inline BatchGetApplicationRevisionsRequest& AddRevisions(RevisionLocation&& value) { m_revisionsHasBeenSet = true; m_revisions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_applicationName;

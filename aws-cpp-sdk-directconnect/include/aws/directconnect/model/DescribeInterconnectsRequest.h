@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     inline void SetInterconnectId(const Aws::String& value) { m_interconnectIdHasBeenSet = true; m_interconnectId = value; }
 
     
-    inline void SetInterconnectId(Aws::String&& value) { m_interconnectIdHasBeenSet = true; m_interconnectId = value; }
+    inline void SetInterconnectId(Aws::String&& value) { m_interconnectIdHasBeenSet = true; m_interconnectId = std::move(value); }
 
     
     inline void SetInterconnectId(const char* value) { m_interconnectIdHasBeenSet = true; m_interconnectId.assign(value); }
@@ -55,7 +56,7 @@ namespace Model
     inline DescribeInterconnectsRequest& WithInterconnectId(const Aws::String& value) { SetInterconnectId(value); return *this;}
 
     
-    inline DescribeInterconnectsRequest& WithInterconnectId(Aws::String&& value) { SetInterconnectId(value); return *this;}
+    inline DescribeInterconnectsRequest& WithInterconnectId(Aws::String&& value) { SetInterconnectId(std::move(value)); return *this;}
 
     
     inline DescribeInterconnectsRequest& WithInterconnectId(const char* value) { SetInterconnectId(value); return *this;}

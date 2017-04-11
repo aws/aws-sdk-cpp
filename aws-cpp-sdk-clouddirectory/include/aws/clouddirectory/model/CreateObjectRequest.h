@@ -20,6 +20,7 @@
 #include <aws/clouddirectory/model/ObjectReference.h>
 #include <aws/clouddirectory/model/SchemaFacet.h>
 #include <aws/clouddirectory/model/AttributeKeyAndValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a> in which the object will be created.
      * For more information, see <a>arns</a>.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>ARN associated with the <a>Directory</a> in which the object will be created.
@@ -73,7 +74,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a> in which the object will be created.
      * For more information, see <a>arns</a>.</p>
      */
-    inline CreateObjectRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline CreateObjectRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN associated with the <a>Directory</a> in which the object will be created.
@@ -97,7 +98,7 @@ namespace Model
      * <p>List of facet ARNs to be associated with the object. For more information,
      * see <a>arns</a>.</p>
      */
-    inline void SetSchemaFacets(Aws::Vector<SchemaFacet>&& value) { m_schemaFacetsHasBeenSet = true; m_schemaFacets = value; }
+    inline void SetSchemaFacets(Aws::Vector<SchemaFacet>&& value) { m_schemaFacetsHasBeenSet = true; m_schemaFacets = std::move(value); }
 
     /**
      * <p>List of facet ARNs to be associated with the object. For more information,
@@ -109,7 +110,7 @@ namespace Model
      * <p>List of facet ARNs to be associated with the object. For more information,
      * see <a>arns</a>.</p>
      */
-    inline CreateObjectRequest& WithSchemaFacets(Aws::Vector<SchemaFacet>&& value) { SetSchemaFacets(value); return *this;}
+    inline CreateObjectRequest& WithSchemaFacets(Aws::Vector<SchemaFacet>&& value) { SetSchemaFacets(std::move(value)); return *this;}
 
     /**
      * <p>List of facet ARNs to be associated with the object. For more information,
@@ -121,7 +122,7 @@ namespace Model
      * <p>List of facet ARNs to be associated with the object. For more information,
      * see <a>arns</a>.</p>
      */
-    inline CreateObjectRequest& AddSchemaFacets(SchemaFacet&& value) { m_schemaFacetsHasBeenSet = true; m_schemaFacets.push_back(value); return *this; }
+    inline CreateObjectRequest& AddSchemaFacets(SchemaFacet&& value) { m_schemaFacetsHasBeenSet = true; m_schemaFacets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Attribute map whose attribute ARN contains the key and attribute value as the
@@ -139,7 +140,7 @@ namespace Model
      * <p>Attribute map whose attribute ARN contains the key and attribute value as the
      * map value.</p>
      */
-    inline void SetObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList = value; }
+    inline void SetObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList = std::move(value); }
 
     /**
      * <p>Attribute map whose attribute ARN contains the key and attribute value as the
@@ -151,7 +152,7 @@ namespace Model
      * <p>Attribute map whose attribute ARN contains the key and attribute value as the
      * map value.</p>
      */
-    inline CreateObjectRequest& WithObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { SetObjectAttributeList(value); return *this;}
+    inline CreateObjectRequest& WithObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { SetObjectAttributeList(std::move(value)); return *this;}
 
     /**
      * <p>Attribute map whose attribute ARN contains the key and attribute value as the
@@ -163,7 +164,7 @@ namespace Model
      * <p>Attribute map whose attribute ARN contains the key and attribute value as the
      * map value.</p>
      */
-    inline CreateObjectRequest& AddObjectAttributeList(AttributeKeyAndValue&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(value); return *this; }
+    inline CreateObjectRequest& AddObjectAttributeList(AttributeKeyAndValue&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If specified, the parent reference to which this object will be attached.</p>
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>If specified, the parent reference to which this object will be attached.</p>
      */
-    inline void SetParentReference(ObjectReference&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = value; }
+    inline void SetParentReference(ObjectReference&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = std::move(value); }
 
     /**
      * <p>If specified, the parent reference to which this object will be attached.</p>
@@ -188,7 +189,7 @@ namespace Model
     /**
      * <p>If specified, the parent reference to which this object will be attached.</p>
      */
-    inline CreateObjectRequest& WithParentReference(ObjectReference&& value) { SetParentReference(value); return *this;}
+    inline CreateObjectRequest& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
 
     /**
      * <p>The name of link that is used to attach this object to a parent.</p>
@@ -203,7 +204,7 @@ namespace Model
     /**
      * <p>The name of link that is used to attach this object to a parent.</p>
      */
-    inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = value; }
+    inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = std::move(value); }
 
     /**
      * <p>The name of link that is used to attach this object to a parent.</p>
@@ -218,7 +219,7 @@ namespace Model
     /**
      * <p>The name of link that is used to attach this object to a parent.</p>
      */
-    inline CreateObjectRequest& WithLinkName(Aws::String&& value) { SetLinkName(value); return *this;}
+    inline CreateObjectRequest& WithLinkName(Aws::String&& value) { SetLinkName(std::move(value)); return *this;}
 
     /**
      * <p>The name of link that is used to attach this object to a parent.</p>

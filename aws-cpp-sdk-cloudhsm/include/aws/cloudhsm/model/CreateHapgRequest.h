@@ -16,6 +16,7 @@
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/cloudhsm/CloudHSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The label of the new high-availability partition group.</p>
      */
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = value; }
+    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
 
     /**
      * <p>The label of the new high-availability partition group.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The label of the new high-availability partition group.</p>
      */
-    inline CreateHapgRequest& WithLabel(Aws::String&& value) { SetLabel(value); return *this;}
+    inline CreateHapgRequest& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
 
     /**
      * <p>The label of the new high-availability partition group.</p>

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/Parameter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster parameter group to reset.</p>
      */
-    inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
+    inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the DB cluster parameter group to reset.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster parameter group to reset.</p>
      */
-    inline ResetDBClusterParameterGroupRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(value); return *this;}
+    inline ResetDBClusterParameterGroupRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB cluster parameter group to reset.</p>
@@ -120,7 +121,7 @@ namespace Model
      * default values. You cannot use this parameter if the
      * <code>ResetAllParameters</code> parameter is set to <code>true</code>.</p>
      */
-    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>A list of parameter names in the DB cluster parameter group to reset to the
@@ -134,7 +135,7 @@ namespace Model
      * default values. You cannot use this parameter if the
      * <code>ResetAllParameters</code> parameter is set to <code>true</code>.</p>
      */
-    inline ResetDBClusterParameterGroupRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
+    inline ResetDBClusterParameterGroupRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>A list of parameter names in the DB cluster parameter group to reset to the
@@ -148,7 +149,7 @@ namespace Model
      * default values. You cannot use this parameter if the
      * <code>ResetAllParameters</code> parameter is set to <code>true</code>.</p>
      */
-    inline ResetDBClusterParameterGroupRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
+    inline ResetDBClusterParameterGroupRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_dBClusterParameterGroupName;

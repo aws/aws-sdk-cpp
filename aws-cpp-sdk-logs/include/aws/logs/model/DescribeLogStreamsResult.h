@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/model/LogStream.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The log streams.</p>
      */
-    inline void SetLogStreams(Aws::Vector<LogStream>&& value) { m_logStreams = value; }
+    inline void SetLogStreams(Aws::Vector<LogStream>&& value) { m_logStreams = std::move(value); }
 
     /**
      * <p>The log streams.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The log streams.</p>
      */
-    inline DescribeLogStreamsResult& WithLogStreams(Aws::Vector<LogStream>&& value) { SetLogStreams(value); return *this;}
+    inline DescribeLogStreamsResult& WithLogStreams(Aws::Vector<LogStream>&& value) { SetLogStreams(std::move(value)); return *this;}
 
     /**
      * <p>The log streams.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The log streams.</p>
      */
-    inline DescribeLogStreamsResult& AddLogStreams(LogStream&& value) { m_logStreams.push_back(value); return *this; }
+    inline DescribeLogStreamsResult& AddLogStreams(LogStream&& value) { m_logStreams.push_back(std::move(value)); return *this; }
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -83,7 +84,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
@@ -92,7 +93,7 @@ namespace Model
     inline DescribeLogStreamsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     
-    inline DescribeLogStreamsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeLogStreamsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     
     inline DescribeLogStreamsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

@@ -18,6 +18,7 @@
 #include <aws/organizations/model/AccountStatus.h>
 #include <aws/organizations/model/AccountJoinedMethod.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
      * string requires exactly 12 digits.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the account.</p> <p>The <a
@@ -87,7 +88,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
      * string requires exactly 12 digits.</p>
      */
-    inline Account& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline Account& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the account.</p> <p>The <a
@@ -121,7 +122,7 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account.</p> <p>For more information
@@ -148,7 +149,7 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
-    inline Account& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Account& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account.</p> <p>For more information
@@ -181,7 +182,7 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The friendly name of the account.</p> <p>The <a
@@ -205,7 +206,7 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline Account& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Account& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The friendly name of the account.</p> <p>The <a
@@ -228,7 +229,7 @@ namespace Model
     /**
      * <p>The status of the account in the organization.</p>
      */
-    inline void SetStatus(AccountStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(AccountStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the account in the organization.</p>
@@ -238,7 +239,7 @@ namespace Model
     /**
      * <p>The status of the account in the organization.</p>
      */
-    inline Account& WithStatus(AccountStatus&& value) { SetStatus(value); return *this;}
+    inline Account& WithStatus(AccountStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The method by which the account joined the organization.</p>
@@ -253,7 +254,7 @@ namespace Model
     /**
      * <p>The method by which the account joined the organization.</p>
      */
-    inline void SetJoinedMethod(AccountJoinedMethod&& value) { m_joinedMethodHasBeenSet = true; m_joinedMethod = value; }
+    inline void SetJoinedMethod(AccountJoinedMethod&& value) { m_joinedMethodHasBeenSet = true; m_joinedMethod = std::move(value); }
 
     /**
      * <p>The method by which the account joined the organization.</p>
@@ -263,7 +264,7 @@ namespace Model
     /**
      * <p>The method by which the account joined the organization.</p>
      */
-    inline Account& WithJoinedMethod(AccountJoinedMethod&& value) { SetJoinedMethod(value); return *this;}
+    inline Account& WithJoinedMethod(AccountJoinedMethod&& value) { SetJoinedMethod(std::move(value)); return *this;}
 
     /**
      * <p>The date the account became a part of the organization.</p>
@@ -278,7 +279,7 @@ namespace Model
     /**
      * <p>The date the account became a part of the organization.</p>
      */
-    inline void SetJoinedTimestamp(Aws::Utils::DateTime&& value) { m_joinedTimestampHasBeenSet = true; m_joinedTimestamp = value; }
+    inline void SetJoinedTimestamp(Aws::Utils::DateTime&& value) { m_joinedTimestampHasBeenSet = true; m_joinedTimestamp = std::move(value); }
 
     /**
      * <p>The date the account became a part of the organization.</p>
@@ -288,7 +289,7 @@ namespace Model
     /**
      * <p>The date the account became a part of the organization.</p>
      */
-    inline Account& WithJoinedTimestamp(Aws::Utils::DateTime&& value) { SetJoinedTimestamp(value); return *this;}
+    inline Account& WithJoinedTimestamp(Aws::Utils::DateTime&& value) { SetJoinedTimestamp(std::move(value)); return *this;}
 
   private:
     Aws::String m_id;

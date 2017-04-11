@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/model/WorkerBlock.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
@@ -57,7 +58,7 @@ namespace Model
     inline ListWorkerBlocksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     
-    inline ListWorkerBlocksResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListWorkerBlocksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     
     inline ListWorkerBlocksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
@@ -96,7 +97,7 @@ namespace Model
      * <p> The list of WorkerBlocks, containing the collection of Worker IDs and
      * reasons for blocking.</p>
      */
-    inline void SetWorkerBlocks(Aws::Vector<WorkerBlock>&& value) { m_workerBlocks = value; }
+    inline void SetWorkerBlocks(Aws::Vector<WorkerBlock>&& value) { m_workerBlocks = std::move(value); }
 
     /**
      * <p> The list of WorkerBlocks, containing the collection of Worker IDs and
@@ -108,7 +109,7 @@ namespace Model
      * <p> The list of WorkerBlocks, containing the collection of Worker IDs and
      * reasons for blocking.</p>
      */
-    inline ListWorkerBlocksResult& WithWorkerBlocks(Aws::Vector<WorkerBlock>&& value) { SetWorkerBlocks(value); return *this;}
+    inline ListWorkerBlocksResult& WithWorkerBlocks(Aws::Vector<WorkerBlock>&& value) { SetWorkerBlocks(std::move(value)); return *this;}
 
     /**
      * <p> The list of WorkerBlocks, containing the collection of Worker IDs and
@@ -120,7 +121,7 @@ namespace Model
      * <p> The list of WorkerBlocks, containing the collection of Worker IDs and
      * reasons for blocking.</p>
      */
-    inline ListWorkerBlocksResult& AddWorkerBlocks(WorkerBlock&& value) { m_workerBlocks.push_back(value); return *this; }
+    inline ListWorkerBlocksResult& AddWorkerBlocks(WorkerBlock&& value) { m_workerBlocks.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_nextToken;

@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
      * Optional: A complex type that contains whitelisted cookies for this cache
      * behavior. If Quantity is 0, you can omit Items.
      */
-    inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+    inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * Optional: A complex type that contains whitelisted cookies for this cache
@@ -90,7 +91,7 @@ namespace Model
      * Optional: A complex type that contains whitelisted cookies for this cache
      * behavior. If Quantity is 0, you can omit Items.
      */
-    inline CookieNames& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(value); return *this;}
+    inline CookieNames& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * Optional: A complex type that contains whitelisted cookies for this cache
@@ -102,7 +103,7 @@ namespace Model
      * Optional: A complex type that contains whitelisted cookies for this cache
      * behavior. If Quantity is 0, you can omit Items.
      */
-    inline CookieNames& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+    inline CookieNames& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
     /**
      * Optional: A complex type that contains whitelisted cookies for this cache

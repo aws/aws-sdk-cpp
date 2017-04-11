@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The Unix file mode in the form "nnnn". For example, "0666" represents the
      * default file mode inside the file share. The default value is 0666. </p>
      */
-    inline void SetFileMode(Aws::String&& value) { m_fileModeHasBeenSet = true; m_fileMode = value; }
+    inline void SetFileMode(Aws::String&& value) { m_fileModeHasBeenSet = true; m_fileMode = std::move(value); }
 
     /**
      * <p>The Unix file mode in the form "nnnn". For example, "0666" represents the
@@ -81,7 +82,7 @@ namespace Model
      * <p>The Unix file mode in the form "nnnn". For example, "0666" represents the
      * default file mode inside the file share. The default value is 0666. </p>
      */
-    inline NFSFileShareDefaults& WithFileMode(Aws::String&& value) { SetFileMode(value); return *this;}
+    inline NFSFileShareDefaults& WithFileMode(Aws::String&& value) { SetFileMode(std::move(value)); return *this;}
 
     /**
      * <p>The Unix file mode in the form "nnnn". For example, "0666" represents the
@@ -108,7 +109,7 @@ namespace Model
      * the default access mode for all directories inside the file share. The default
      * value is 0777.</p>
      */
-    inline void SetDirectoryMode(Aws::String&& value) { m_directoryModeHasBeenSet = true; m_directoryMode = value; }
+    inline void SetDirectoryMode(Aws::String&& value) { m_directoryModeHasBeenSet = true; m_directoryMode = std::move(value); }
 
     /**
      * <p>The Unix directory mode in the form "nnnn". For example, "0666" represents
@@ -129,7 +130,7 @@ namespace Model
      * the default access mode for all directories inside the file share. The default
      * value is 0777.</p>
      */
-    inline NFSFileShareDefaults& WithDirectoryMode(Aws::String&& value) { SetDirectoryMode(value); return *this;}
+    inline NFSFileShareDefaults& WithDirectoryMode(Aws::String&& value) { SetDirectoryMode(std::move(value)); return *this;}
 
     /**
      * <p>The Unix directory mode in the form "nnnn". For example, "0666" represents

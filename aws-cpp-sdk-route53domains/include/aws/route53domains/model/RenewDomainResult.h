@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
 
     
-    inline void SetOperationId(Aws::String&& value) { m_operationId = value; }
+    inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
 
     
     inline void SetOperationId(const char* value) { m_operationId.assign(value); }
@@ -55,7 +56,7 @@ namespace Model
     inline RenewDomainResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
 
     
-    inline RenewDomainResult& WithOperationId(Aws::String&& value) { SetOperationId(value); return *this;}
+    inline RenewDomainResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
 
     
     inline RenewDomainResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}

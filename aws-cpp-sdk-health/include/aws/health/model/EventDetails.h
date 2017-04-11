@@ -17,6 +17,7 @@
 #include <aws/health/model/Event.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>Summary information about the event.</p>
      */
-    inline void SetEvent(Event&& value) { m_eventHasBeenSet = true; m_event = value; }
+    inline void SetEvent(Event&& value) { m_eventHasBeenSet = true; m_event = std::move(value); }
 
     /**
      * <p>Summary information about the event.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>Summary information about the event.</p>
      */
-    inline EventDetails& WithEvent(Event&& value) { SetEvent(value); return *this;}
+    inline EventDetails& WithEvent(Event&& value) { SetEvent(std::move(value)); return *this;}
 
     /**
      * <p>The most recent description of the event.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The most recent description of the event.</p>
      */
-    inline void SetEventDescription(Aws::String&& value) { m_eventDescriptionHasBeenSet = true; m_eventDescription = value; }
+    inline void SetEventDescription(Aws::String&& value) { m_eventDescriptionHasBeenSet = true; m_eventDescription = std::move(value); }
 
     /**
      * <p>The most recent description of the event.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The most recent description of the event.</p>
      */
-    inline EventDetails& WithEventDescription(Aws::String&& value) { SetEventDescription(value); return *this;}
+    inline EventDetails& WithEventDescription(Aws::String&& value) { SetEventDescription(std::move(value)); return *this;}
 
     /**
      * <p>The most recent description of the event.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>Additional metadata about the event.</p>
      */
-    inline void SetEventMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_eventMetadataHasBeenSet = true; m_eventMetadata = value; }
+    inline void SetEventMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_eventMetadataHasBeenSet = true; m_eventMetadata = std::move(value); }
 
     /**
      * <p>Additional metadata about the event.</p>
@@ -131,42 +132,42 @@ namespace Model
     /**
      * <p>Additional metadata about the event.</p>
      */
-    inline EventDetails& WithEventMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetEventMetadata(value); return *this;}
+    inline EventDetails& WithEventMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetEventMetadata(std::move(value)); return *this;}
 
     /**
      * <p>Additional metadata about the event.</p>
      */
-    inline EventDetails& AddEventMetadata(const Aws::String& key, const Aws::String& value) { m_eventMetadataHasBeenSet = true; m_eventMetadata[key] = value; return *this; }
+    inline EventDetails& AddEventMetadata(const Aws::String& key, const Aws::String& value) { m_eventMetadataHasBeenSet = true; m_eventMetadata.emplace(key, value); return *this; }
 
     /**
      * <p>Additional metadata about the event.</p>
      */
-    inline EventDetails& AddEventMetadata(Aws::String&& key, const Aws::String& value) { m_eventMetadataHasBeenSet = true; m_eventMetadata[key] = value; return *this; }
+    inline EventDetails& AddEventMetadata(Aws::String&& key, const Aws::String& value) { m_eventMetadataHasBeenSet = true; m_eventMetadata.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Additional metadata about the event.</p>
      */
-    inline EventDetails& AddEventMetadata(const Aws::String& key, Aws::String&& value) { m_eventMetadataHasBeenSet = true; m_eventMetadata[key] = value; return *this; }
+    inline EventDetails& AddEventMetadata(const Aws::String& key, Aws::String&& value) { m_eventMetadataHasBeenSet = true; m_eventMetadata.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Additional metadata about the event.</p>
      */
-    inline EventDetails& AddEventMetadata(Aws::String&& key, Aws::String&& value) { m_eventMetadataHasBeenSet = true; m_eventMetadata[key] = value; return *this; }
+    inline EventDetails& AddEventMetadata(Aws::String&& key, Aws::String&& value) { m_eventMetadataHasBeenSet = true; m_eventMetadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Additional metadata about the event.</p>
      */
-    inline EventDetails& AddEventMetadata(const char* key, Aws::String&& value) { m_eventMetadataHasBeenSet = true; m_eventMetadata[key] = value; return *this; }
+    inline EventDetails& AddEventMetadata(const char* key, Aws::String&& value) { m_eventMetadataHasBeenSet = true; m_eventMetadata.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Additional metadata about the event.</p>
      */
-    inline EventDetails& AddEventMetadata(Aws::String&& key, const char* value) { m_eventMetadataHasBeenSet = true; m_eventMetadata[key] = value; return *this; }
+    inline EventDetails& AddEventMetadata(Aws::String&& key, const char* value) { m_eventMetadataHasBeenSet = true; m_eventMetadata.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Additional metadata about the event.</p>
      */
-    inline EventDetails& AddEventMetadata(const char* key, const char* value) { m_eventMetadataHasBeenSet = true; m_eventMetadata[key] = value; return *this; }
+    inline EventDetails& AddEventMetadata(const char* key, const char* value) { m_eventMetadataHasBeenSet = true; m_eventMetadata.emplace(key, value); return *this; }
 
   private:
     Event m_event;

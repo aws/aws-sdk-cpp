@@ -16,6 +16,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The identifier of the directory to delete.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>The identifier of the directory to delete.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The identifier of the directory to delete.</p>
      */
-    inline DeleteDirectoryRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline DeleteDirectoryRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the directory to delete.</p>

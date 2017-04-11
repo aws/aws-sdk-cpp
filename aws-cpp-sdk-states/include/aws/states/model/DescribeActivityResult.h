@@ -16,6 +16,7 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
      */
-    inline void SetActivityArn(Aws::String&& value) { m_activityArn = value; }
+    inline void SetActivityArn(Aws::String&& value) { m_activityArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
      */
-    inline DescribeActivityResult& WithActivityArn(Aws::String&& value) { SetActivityArn(value); return *this;}
+    inline DescribeActivityResult& WithActivityArn(Aws::String&& value) { SetActivityArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The name of the activity.</p>
      */
-    inline void SetName(Aws::String&& value) { m_name = value; }
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
      * <p>The name of the activity.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The name of the activity.</p>
      */
-    inline DescribeActivityResult& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline DescribeActivityResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the activity.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The date the activity was created.</p>
      */
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = value; }
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
 
     /**
      * <p>The date the activity was created.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The date the activity was created.</p>
      */
-    inline DescribeActivityResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
+    inline DescribeActivityResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_activityArn;

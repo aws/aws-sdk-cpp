@@ -24,6 +24,7 @@
 #include <aws/devicefarm/model/BillingMethod.h>
 #include <aws/devicefarm/model/DeviceMinutes.h>
 #include <aws/devicefarm/model/NetworkProfile.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The run's ARN.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The run's ARN.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>The run's ARN.</p>
      */
-    inline Run& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Run& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The run's ARN.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The run's name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The run's name.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The run's name.</p>
      */
-    inline Run& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Run& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The run's name.</p>
@@ -175,7 +176,7 @@ namespace Model
      * </li> <li> <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The
      * XCode UI test type.</p> </li> </ul>
      */
-    inline void SetType(TestType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(TestType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The run's type.</p> <p>Must be one of the following values:</p> <ul> <li>
@@ -211,7 +212,7 @@ namespace Model
      * </li> <li> <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The
      * XCode UI test type.</p> </li> </ul>
      */
-    inline Run& WithType(TestType&& value) { SetType(value); return *this;}
+    inline Run& WithType(TestType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The run's platform.</p> <p>Allowed values include:</p> <ul> <li> <p>ANDROID:
@@ -229,7 +230,7 @@ namespace Model
      * <p>The run's platform.</p> <p>Allowed values include:</p> <ul> <li> <p>ANDROID:
      * The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p> </li> </ul>
      */
-    inline void SetPlatform(DevicePlatform&& value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline void SetPlatform(DevicePlatform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
      * <p>The run's platform.</p> <p>Allowed values include:</p> <ul> <li> <p>ANDROID:
@@ -241,7 +242,7 @@ namespace Model
      * <p>The run's platform.</p> <p>Allowed values include:</p> <ul> <li> <p>ANDROID:
      * The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p> </li> </ul>
      */
-    inline Run& WithPlatform(DevicePlatform&& value) { SetPlatform(value); return *this;}
+    inline Run& WithPlatform(DevicePlatform&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
      * <p>When the run was created.</p>
@@ -256,7 +257,7 @@ namespace Model
     /**
      * <p>When the run was created.</p>
      */
-    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = value; }
+    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
 
     /**
      * <p>When the run was created.</p>
@@ -266,7 +267,7 @@ namespace Model
     /**
      * <p>When the run was created.</p>
      */
-    inline Run& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(value); return *this;}
+    inline Run& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
 
     /**
      * <p>The run's status.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
@@ -299,7 +300,7 @@ namespace Model
      * <li> <p>RUNNING: A running status.</p> </li> <li> <p>COMPLETED: A completed
      * status.</p> </li> <li> <p>STOPPING: A stopping status.</p> </li> </ul>
      */
-    inline void SetStatus(ExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The run's status.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
@@ -321,7 +322,7 @@ namespace Model
      * <li> <p>RUNNING: A running status.</p> </li> <li> <p>COMPLETED: A completed
      * status.</p> </li> <li> <p>STOPPING: A stopping status.</p> </li> </ul>
      */
-    inline Run& WithStatus(ExecutionStatus&& value) { SetStatus(value); return *this;}
+    inline Run& WithStatus(ExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The run's result.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
@@ -351,7 +352,7 @@ namespace Model
      * <p>ERRORED: An error condition.</p> </li> <li> <p>STOPPED: A stopped
      * condition.</p> </li> </ul>
      */
-    inline void SetResult(ExecutionResult&& value) { m_resultHasBeenSet = true; m_result = value; }
+    inline void SetResult(ExecutionResult&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
 
     /**
      * <p>The run's result.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
@@ -371,7 +372,7 @@ namespace Model
      * <p>ERRORED: An error condition.</p> </li> <li> <p>STOPPED: A stopped
      * condition.</p> </li> </ul>
      */
-    inline Run& WithResult(ExecutionResult&& value) { SetResult(value); return *this;}
+    inline Run& WithResult(ExecutionResult&& value) { SetResult(std::move(value)); return *this;}
 
     /**
      * <p>The run's start time.</p>
@@ -386,7 +387,7 @@ namespace Model
     /**
      * <p>The run's start time.</p>
      */
-    inline void SetStarted(Aws::Utils::DateTime&& value) { m_startedHasBeenSet = true; m_started = value; }
+    inline void SetStarted(Aws::Utils::DateTime&& value) { m_startedHasBeenSet = true; m_started = std::move(value); }
 
     /**
      * <p>The run's start time.</p>
@@ -396,7 +397,7 @@ namespace Model
     /**
      * <p>The run's start time.</p>
      */
-    inline Run& WithStarted(Aws::Utils::DateTime&& value) { SetStarted(value); return *this;}
+    inline Run& WithStarted(Aws::Utils::DateTime&& value) { SetStarted(std::move(value)); return *this;}
 
     /**
      * <p>The run's stop time.</p>
@@ -411,7 +412,7 @@ namespace Model
     /**
      * <p>The run's stop time.</p>
      */
-    inline void SetStopped(Aws::Utils::DateTime&& value) { m_stoppedHasBeenSet = true; m_stopped = value; }
+    inline void SetStopped(Aws::Utils::DateTime&& value) { m_stoppedHasBeenSet = true; m_stopped = std::move(value); }
 
     /**
      * <p>The run's stop time.</p>
@@ -421,7 +422,7 @@ namespace Model
     /**
      * <p>The run's stop time.</p>
      */
-    inline Run& WithStopped(Aws::Utils::DateTime&& value) { SetStopped(value); return *this;}
+    inline Run& WithStopped(Aws::Utils::DateTime&& value) { SetStopped(std::move(value)); return *this;}
 
     /**
      * <p>The run's result counters.</p>
@@ -436,7 +437,7 @@ namespace Model
     /**
      * <p>The run's result counters.</p>
      */
-    inline void SetCounters(Counters&& value) { m_countersHasBeenSet = true; m_counters = value; }
+    inline void SetCounters(Counters&& value) { m_countersHasBeenSet = true; m_counters = std::move(value); }
 
     /**
      * <p>The run's result counters.</p>
@@ -446,7 +447,7 @@ namespace Model
     /**
      * <p>The run's result counters.</p>
      */
-    inline Run& WithCounters(Counters&& value) { SetCounters(value); return *this;}
+    inline Run& WithCounters(Counters&& value) { SetCounters(std::move(value)); return *this;}
 
     /**
      * <p>A message about the run's result.</p>
@@ -461,7 +462,7 @@ namespace Model
     /**
      * <p>A message about the run's result.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>A message about the run's result.</p>
@@ -476,7 +477,7 @@ namespace Model
     /**
      * <p>A message about the run's result.</p>
      */
-    inline Run& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline Run& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>A message about the run's result.</p>
@@ -532,7 +533,7 @@ namespace Model
      * <code>unmetered</code>. If the parameter is not specified, the default value is
      * <code>metered</code>.</p>
      */
-    inline void SetBillingMethod(BillingMethod&& value) { m_billingMethodHasBeenSet = true; m_billingMethod = value; }
+    inline void SetBillingMethod(BillingMethod&& value) { m_billingMethodHasBeenSet = true; m_billingMethod = std::move(value); }
 
     /**
      * <p>Specifies the billing method for a test run: <code>metered</code> or
@@ -546,7 +547,7 @@ namespace Model
      * <code>unmetered</code>. If the parameter is not specified, the default value is
      * <code>metered</code>.</p>
      */
-    inline Run& WithBillingMethod(BillingMethod&& value) { SetBillingMethod(value); return *this;}
+    inline Run& WithBillingMethod(BillingMethod&& value) { SetBillingMethod(std::move(value)); return *this;}
 
     /**
      * <p>Represents the total (metered or unmetered) minutes used by the test run.</p>
@@ -561,7 +562,7 @@ namespace Model
     /**
      * <p>Represents the total (metered or unmetered) minutes used by the test run.</p>
      */
-    inline void SetDeviceMinutes(DeviceMinutes&& value) { m_deviceMinutesHasBeenSet = true; m_deviceMinutes = value; }
+    inline void SetDeviceMinutes(DeviceMinutes&& value) { m_deviceMinutesHasBeenSet = true; m_deviceMinutes = std::move(value); }
 
     /**
      * <p>Represents the total (metered or unmetered) minutes used by the test run.</p>
@@ -571,7 +572,7 @@ namespace Model
     /**
      * <p>Represents the total (metered or unmetered) minutes used by the test run.</p>
      */
-    inline Run& WithDeviceMinutes(DeviceMinutes&& value) { SetDeviceMinutes(value); return *this;}
+    inline Run& WithDeviceMinutes(DeviceMinutes&& value) { SetDeviceMinutes(std::move(value)); return *this;}
 
     /**
      * <p>The network profile being used for a test run.</p>
@@ -586,7 +587,7 @@ namespace Model
     /**
      * <p>The network profile being used for a test run.</p>
      */
-    inline void SetNetworkProfile(NetworkProfile&& value) { m_networkProfileHasBeenSet = true; m_networkProfile = value; }
+    inline void SetNetworkProfile(NetworkProfile&& value) { m_networkProfileHasBeenSet = true; m_networkProfile = std::move(value); }
 
     /**
      * <p>The network profile being used for a test run.</p>
@@ -596,7 +597,7 @@ namespace Model
     /**
      * <p>The network profile being used for a test run.</p>
      */
-    inline Run& WithNetworkProfile(NetworkProfile&& value) { SetNetworkProfile(value); return *this;}
+    inline Run& WithNetworkProfile(NetworkProfile&& value) { SetNetworkProfile(std::move(value)); return *this;}
 
   private:
     Aws::String m_arn;

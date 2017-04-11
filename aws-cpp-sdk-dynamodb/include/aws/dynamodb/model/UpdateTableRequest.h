@@ -21,6 +21,7 @@
 #include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndexUpdate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * <code>AttributeDefinitions</code> must include the key element(s) of the new
      * index.</p>
      */
-    inline void SetAttributeDefinitions(Aws::Vector<AttributeDefinition>&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions = value; }
+    inline void SetAttributeDefinitions(Aws::Vector<AttributeDefinition>&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions = std::move(value); }
 
     /**
      * <p>An array of attributes that describe the key schema for the table and
@@ -82,7 +83,7 @@ namespace Model
      * <code>AttributeDefinitions</code> must include the key element(s) of the new
      * index.</p>
      */
-    inline UpdateTableRequest& WithAttributeDefinitions(Aws::Vector<AttributeDefinition>&& value) { SetAttributeDefinitions(value); return *this;}
+    inline UpdateTableRequest& WithAttributeDefinitions(Aws::Vector<AttributeDefinition>&& value) { SetAttributeDefinitions(std::move(value)); return *this;}
 
     /**
      * <p>An array of attributes that describe the key schema for the table and
@@ -98,7 +99,7 @@ namespace Model
      * <code>AttributeDefinitions</code> must include the key element(s) of the new
      * index.</p>
      */
-    inline UpdateTableRequest& AddAttributeDefinitions(AttributeDefinition&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions.push_back(value); return *this; }
+    inline UpdateTableRequest& AddAttributeDefinitions(AttributeDefinition&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The name of the table to be updated.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The name of the table to be updated.</p>
      */
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
+    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
      * <p>The name of the table to be updated.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The name of the table to be updated.</p>
      */
-    inline UpdateTableRequest& WithTableName(Aws::String&& value) { SetTableName(value); return *this;}
+    inline UpdateTableRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the table to be updated.</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>The new provisioned throughput settings for the specified table or index.</p>
      */
-    inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
+    inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
 
     /**
      * <p>The new provisioned throughput settings for the specified table or index.</p>
@@ -158,7 +159,7 @@ namespace Model
     /**
      * <p>The new provisioned throughput settings for the specified table or index.</p>
      */
-    inline UpdateTableRequest& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(value); return *this;}
+    inline UpdateTableRequest& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
 
     /**
      * <p>An array of one or more global secondary indexes for the table. For each
@@ -197,7 +198,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
      * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
-    inline void SetGlobalSecondaryIndexUpdates(Aws::Vector<GlobalSecondaryIndexUpdate>&& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates = value; }
+    inline void SetGlobalSecondaryIndexUpdates(Aws::Vector<GlobalSecondaryIndexUpdate>&& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates = std::move(value); }
 
     /**
      * <p>An array of one or more global secondary indexes for the table. For each
@@ -223,7 +224,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
      * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
-    inline UpdateTableRequest& WithGlobalSecondaryIndexUpdates(Aws::Vector<GlobalSecondaryIndexUpdate>&& value) { SetGlobalSecondaryIndexUpdates(value); return *this;}
+    inline UpdateTableRequest& WithGlobalSecondaryIndexUpdates(Aws::Vector<GlobalSecondaryIndexUpdate>&& value) { SetGlobalSecondaryIndexUpdates(std::move(value)); return *this;}
 
     /**
      * <p>An array of one or more global secondary indexes for the table. For each
@@ -249,7 +250,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
      * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
-    inline UpdateTableRequest& AddGlobalSecondaryIndexUpdates(GlobalSecondaryIndexUpdate&& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates.push_back(value); return *this; }
+    inline UpdateTableRequest& AddGlobalSecondaryIndexUpdates(GlobalSecondaryIndexUpdate&& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
@@ -273,7 +274,7 @@ namespace Model
      * enable a stream on a table that already has a stream, or if you attempt to
      * disable a stream on a table which does not have a stream.</p> </note>
      */
-    inline void SetStreamSpecification(StreamSpecification&& value) { m_streamSpecificationHasBeenSet = true; m_streamSpecification = value; }
+    inline void SetStreamSpecification(StreamSpecification&& value) { m_streamSpecificationHasBeenSet = true; m_streamSpecification = std::move(value); }
 
     /**
      * <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
@@ -289,7 +290,7 @@ namespace Model
      * enable a stream on a table that already has a stream, or if you attempt to
      * disable a stream on a table which does not have a stream.</p> </note>
      */
-    inline UpdateTableRequest& WithStreamSpecification(StreamSpecification&& value) { SetStreamSpecification(value); return *this;}
+    inline UpdateTableRequest& WithStreamSpecification(StreamSpecification&& value) { SetStreamSpecification(std::move(value)); return *this;}
 
   private:
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;

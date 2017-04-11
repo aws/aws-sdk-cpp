@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The vault access policy.</p>
      */
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
+    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
      * <p>The vault access policy.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The vault access policy.</p>
      */
-    inline VaultAccessPolicy& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
+    inline VaultAccessPolicy& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
      * <p>The vault access policy.</p>

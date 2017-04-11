@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/model/ContextEntry.h>
+#include <utility>
 
 namespace Aws
 {
@@ -97,7 +98,7 @@ namespace Model
      * Latin-1 Supplement character set (through \u00FF). It also includes the special
      * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
-    inline void SetPolicyInputList(Aws::Vector<Aws::String>&& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
+    inline void SetPolicyInputList(Aws::Vector<Aws::String>&& value) { m_policyInputListHasBeenSet = true; m_policyInputList = std::move(value); }
 
     /**
      * <p>A list of policy documents to include in the simulation. Each document is
@@ -137,7 +138,7 @@ namespace Model
      * Latin-1 Supplement character set (through \u00FF). It also includes the special
      * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
-    inline SimulateCustomPolicyRequest& WithPolicyInputList(Aws::Vector<Aws::String>&& value) { SetPolicyInputList(value); return *this;}
+    inline SimulateCustomPolicyRequest& WithPolicyInputList(Aws::Vector<Aws::String>&& value) { SetPolicyInputList(std::move(value)); return *this;}
 
     /**
      * <p>A list of policy documents to include in the simulation. Each document is
@@ -177,7 +178,7 @@ namespace Model
      * Latin-1 Supplement character set (through \u00FF). It also includes the special
      * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
-    inline SimulateCustomPolicyRequest& AddPolicyInputList(Aws::String&& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
+    inline SimulateCustomPolicyRequest& AddPolicyInputList(Aws::String&& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of policy documents to include in the simulation. Each document is
@@ -218,7 +219,7 @@ namespace Model
      * evaluated against each resource. Each action must include the service
      * identifier, such as <code>iam:CreateUser</code>.</p>
      */
-    inline void SetActionNames(Aws::Vector<Aws::String>&& value) { m_actionNamesHasBeenSet = true; m_actionNames = value; }
+    inline void SetActionNames(Aws::Vector<Aws::String>&& value) { m_actionNamesHasBeenSet = true; m_actionNames = std::move(value); }
 
     /**
      * <p>A list of names of API actions to evaluate in the simulation. Each action is
@@ -232,7 +233,7 @@ namespace Model
      * evaluated against each resource. Each action must include the service
      * identifier, such as <code>iam:CreateUser</code>.</p>
      */
-    inline SimulateCustomPolicyRequest& WithActionNames(Aws::Vector<Aws::String>&& value) { SetActionNames(value); return *this;}
+    inline SimulateCustomPolicyRequest& WithActionNames(Aws::Vector<Aws::String>&& value) { SetActionNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of names of API actions to evaluate in the simulation. Each action is
@@ -246,7 +247,7 @@ namespace Model
      * evaluated against each resource. Each action must include the service
      * identifier, such as <code>iam:CreateUser</code>.</p>
      */
-    inline SimulateCustomPolicyRequest& AddActionNames(Aws::String&& value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(value); return *this; }
+    inline SimulateCustomPolicyRequest& AddActionNames(Aws::String&& value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of names of API actions to evaluate in the simulation. Each action is
@@ -307,7 +308,7 @@ namespace Model
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
-    inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
+    inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::move(value); }
 
     /**
      * <p>A list of ARNs of AWS resources to include in the simulation. If this
@@ -343,7 +344,7 @@ namespace Model
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
-    inline SimulateCustomPolicyRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(value); return *this;}
+    inline SimulateCustomPolicyRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
 
     /**
      * <p>A list of ARNs of AWS resources to include in the simulation. If this
@@ -379,7 +380,7 @@ namespace Model
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
-    inline SimulateCustomPolicyRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
+    inline SimulateCustomPolicyRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of ARNs of AWS resources to include in the simulation. If this
@@ -436,7 +437,7 @@ namespace Model
      * Supplement character set (through \u00FF). It also includes the special
      * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
-    inline void SetResourcePolicy(Aws::String&& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = value; }
+    inline void SetResourcePolicy(Aws::String&& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = std::move(value); }
 
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
@@ -475,7 +476,7 @@ namespace Model
      * Supplement character set (through \u00FF). It also includes the special
      * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
-    inline SimulateCustomPolicyRequest& WithResourcePolicy(Aws::String&& value) { SetResourcePolicy(value); return *this;}
+    inline SimulateCustomPolicyRequest& WithResourcePolicy(Aws::String&& value) { SetResourcePolicy(std::move(value)); return *this;}
 
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
@@ -530,7 +531,7 @@ namespace Model
      * from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p>
      */
-    inline void SetResourceOwner(Aws::String&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = value; }
+    inline void SetResourceOwner(Aws::String&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::move(value); }
 
     /**
      * <p>An AWS account ID that specifies the owner of any simulated resource that
@@ -572,7 +573,7 @@ namespace Model
      * from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p>
      */
-    inline SimulateCustomPolicyRequest& WithResourceOwner(Aws::String&& value) { SetResourceOwner(value); return *this;}
+    inline SimulateCustomPolicyRequest& WithResourceOwner(Aws::String&& value) { SetResourceOwner(std::move(value)); return *this;}
 
     /**
      * <p>An AWS account ID that specifies the owner of any simulated resource that
@@ -616,7 +617,7 @@ namespace Model
      * of an IAM user. You cannot specify the ARN of an assumed role, federated user,
      * or a service principal.</p>
      */
-    inline void SetCallerArn(Aws::String&& value) { m_callerArnHasBeenSet = true; m_callerArn = value; }
+    inline void SetCallerArn(Aws::String&& value) { m_callerArnHasBeenSet = true; m_callerArn = std::move(value); }
 
     /**
      * <p>The ARN of the IAM user that you want to use as the simulated caller of the
@@ -646,7 +647,7 @@ namespace Model
      * of an IAM user. You cannot specify the ARN of an assumed role, federated user,
      * or a service principal.</p>
      */
-    inline SimulateCustomPolicyRequest& WithCallerArn(Aws::String&& value) { SetCallerArn(value); return *this;}
+    inline SimulateCustomPolicyRequest& WithCallerArn(Aws::String&& value) { SetCallerArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM user that you want to use as the simulated caller of the
@@ -677,7 +678,7 @@ namespace Model
      * Whenever a context key is evaluated in one of the simulated IAM permission
      * policies, the corresponding value is supplied.</p>
      */
-    inline void SetContextEntries(Aws::Vector<ContextEntry>&& value) { m_contextEntriesHasBeenSet = true; m_contextEntries = value; }
+    inline void SetContextEntries(Aws::Vector<ContextEntry>&& value) { m_contextEntriesHasBeenSet = true; m_contextEntries = std::move(value); }
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
@@ -691,7 +692,7 @@ namespace Model
      * Whenever a context key is evaluated in one of the simulated IAM permission
      * policies, the corresponding value is supplied.</p>
      */
-    inline SimulateCustomPolicyRequest& WithContextEntries(Aws::Vector<ContextEntry>&& value) { SetContextEntries(value); return *this;}
+    inline SimulateCustomPolicyRequest& WithContextEntries(Aws::Vector<ContextEntry>&& value) { SetContextEntries(std::move(value)); return *this;}
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
@@ -705,7 +706,7 @@ namespace Model
      * Whenever a context key is evaluated in one of the simulated IAM permission
      * policies, the corresponding value is supplied.</p>
      */
-    inline SimulateCustomPolicyRequest& AddContextEntries(ContextEntry&& value) { m_contextEntriesHasBeenSet = true; m_contextEntries.push_back(value); return *this; }
+    inline SimulateCustomPolicyRequest& AddContextEntries(ContextEntry&& value) { m_contextEntriesHasBeenSet = true; m_contextEntries.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specifies the type of simulation to run. Different APIs that support
@@ -789,7 +790,7 @@ namespace Model
      * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security-group,
      * network-interface, subnet, volume</p> </li> </ul>
      */
-    inline void SetResourceHandlingOption(Aws::String&& value) { m_resourceHandlingOptionHasBeenSet = true; m_resourceHandlingOption = value; }
+    inline void SetResourceHandlingOption(Aws::String&& value) { m_resourceHandlingOptionHasBeenSet = true; m_resourceHandlingOption = std::move(value); }
 
     /**
      * <p>Specifies the type of simulation to run. Different APIs that support
@@ -873,7 +874,7 @@ namespace Model
      * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security-group,
      * network-interface, subnet, volume</p> </li> </ul>
      */
-    inline SimulateCustomPolicyRequest& WithResourceHandlingOption(Aws::String&& value) { SetResourceHandlingOption(value); return *this;}
+    inline SimulateCustomPolicyRequest& WithResourceHandlingOption(Aws::String&& value) { SetResourceHandlingOption(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the type of simulation to run. Different APIs that support
@@ -961,7 +962,7 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
@@ -985,7 +986,7 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline SimulateCustomPolicyRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline SimulateCustomPolicyRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a

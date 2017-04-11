@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/budgets/model/Subscriber.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,19 +54,19 @@ namespace Model
     inline void SetSubscribers(const Aws::Vector<Subscriber>& value) { m_subscribers = value; }
 
     
-    inline void SetSubscribers(Aws::Vector<Subscriber>&& value) { m_subscribers = value; }
+    inline void SetSubscribers(Aws::Vector<Subscriber>&& value) { m_subscribers = std::move(value); }
 
     
     inline DescribeSubscribersForNotificationResult& WithSubscribers(const Aws::Vector<Subscriber>& value) { SetSubscribers(value); return *this;}
 
     
-    inline DescribeSubscribersForNotificationResult& WithSubscribers(Aws::Vector<Subscriber>&& value) { SetSubscribers(value); return *this;}
+    inline DescribeSubscribersForNotificationResult& WithSubscribers(Aws::Vector<Subscriber>&& value) { SetSubscribers(std::move(value)); return *this;}
 
     
     inline DescribeSubscribersForNotificationResult& AddSubscribers(const Subscriber& value) { m_subscribers.push_back(value); return *this; }
 
     
-    inline DescribeSubscribersForNotificationResult& AddSubscribers(Subscriber&& value) { m_subscribers.push_back(value); return *this; }
+    inline DescribeSubscribersForNotificationResult& AddSubscribers(Subscriber&& value) { m_subscribers.push_back(std::move(value)); return *this; }
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -74,7 +75,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
@@ -83,7 +84,7 @@ namespace Model
     inline DescribeSubscribersForNotificationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     
-    inline DescribeSubscribersForNotificationResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeSubscribersForNotificationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     
     inline DescribeSubscribersForNotificationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

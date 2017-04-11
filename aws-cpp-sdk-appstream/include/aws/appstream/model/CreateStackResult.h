@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/model/Stack.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The details for the created stack.</p>
      */
-    inline void SetStack(Stack&& value) { m_stack = value; }
+    inline void SetStack(Stack&& value) { m_stack = std::move(value); }
 
     /**
      * <p>The details for the created stack.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The details for the created stack.</p>
      */
-    inline CreateStackResult& WithStack(Stack&& value) { SetStack(value); return *this;}
+    inline CreateStackResult& WithStack(Stack&& value) { SetStack(std::move(value)); return *this;}
 
   private:
     Stack m_stack;

@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The status of the association. Status can be: <code>Pending</code>,
      * <code>Success</code>, or <code>Failed</code>.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the association. Status can be: <code>Pending</code>,
@@ -78,7 +79,7 @@ namespace Model
      * <p>The status of the association. Status can be: <code>Pending</code>,
      * <code>Success</code>, or <code>Failed</code>.</p>
      */
-    inline AssociationOverview& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline AssociationOverview& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the association. Status can be: <code>Pending</code>,
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>A detailed status of the association.</p>
      */
-    inline void SetDetailedStatus(Aws::String&& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = value; }
+    inline void SetDetailedStatus(Aws::String&& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = std::move(value); }
 
     /**
      * <p>A detailed status of the association.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>A detailed status of the association.</p>
      */
-    inline AssociationOverview& WithDetailedStatus(Aws::String&& value) { SetDetailedStatus(value); return *this;}
+    inline AssociationOverview& WithDetailedStatus(Aws::String&& value) { SetDetailedStatus(std::move(value)); return *this;}
 
     /**
      * <p>A detailed status of the association.</p>
@@ -140,7 +141,7 @@ namespace Model
      * created an association with two instances, and one of them was successful, this
      * would return the count of instances by status.</p>
      */
-    inline void SetAssociationStatusAggregatedCount(Aws::Map<Aws::String, int>&& value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount = value; }
+    inline void SetAssociationStatusAggregatedCount(Aws::Map<Aws::String, int>&& value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount = std::move(value); }
 
     /**
      * <p>Returns the number of targets for the association status. For example, if you
@@ -154,28 +155,28 @@ namespace Model
      * created an association with two instances, and one of them was successful, this
      * would return the count of instances by status.</p>
      */
-    inline AssociationOverview& WithAssociationStatusAggregatedCount(Aws::Map<Aws::String, int>&& value) { SetAssociationStatusAggregatedCount(value); return *this;}
+    inline AssociationOverview& WithAssociationStatusAggregatedCount(Aws::Map<Aws::String, int>&& value) { SetAssociationStatusAggregatedCount(std::move(value)); return *this;}
 
     /**
      * <p>Returns the number of targets for the association status. For example, if you
      * created an association with two instances, and one of them was successful, this
      * would return the count of instances by status.</p>
      */
-    inline AssociationOverview& AddAssociationStatusAggregatedCount(const Aws::String& key, int value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount[key] = value; return *this; }
+    inline AssociationOverview& AddAssociationStatusAggregatedCount(const Aws::String& key, int value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount.emplace(key, value); return *this; }
 
     /**
      * <p>Returns the number of targets for the association status. For example, if you
      * created an association with two instances, and one of them was successful, this
      * would return the count of instances by status.</p>
      */
-    inline AssociationOverview& AddAssociationStatusAggregatedCount(Aws::String&& key, int value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount[key] = value; return *this; }
+    inline AssociationOverview& AddAssociationStatusAggregatedCount(Aws::String&& key, int value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Returns the number of targets for the association status. For example, if you
      * created an association with two instances, and one of them was successful, this
      * would return the count of instances by status.</p>
      */
-    inline AssociationOverview& AddAssociationStatusAggregatedCount(const char* key, int value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount[key] = value; return *this; }
+    inline AssociationOverview& AddAssociationStatusAggregatedCount(const char* key, int value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount.emplace(key, value); return *this; }
 
   private:
     Aws::String m_status;

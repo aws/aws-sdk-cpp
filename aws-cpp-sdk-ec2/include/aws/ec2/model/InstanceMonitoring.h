@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Monitoring.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline InstanceMonitoring& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline InstanceMonitoring& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The monitoring for the instance.</p>
      */
-    inline void SetMonitoring(Monitoring&& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
+    inline void SetMonitoring(Monitoring&& value) { m_monitoringHasBeenSet = true; m_monitoring = std::move(value); }
 
     /**
      * <p>The monitoring for the instance.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The monitoring for the instance.</p>
      */
-    inline InstanceMonitoring& WithMonitoring(Monitoring&& value) { SetMonitoring(value); return *this;}
+    inline InstanceMonitoring& WithMonitoring(Monitoring&& value) { SetMonitoring(std::move(value)); return *this;}
 
   private:
     Aws::String m_instanceId;

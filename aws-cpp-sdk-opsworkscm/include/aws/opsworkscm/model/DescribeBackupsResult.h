@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opsworkscm/model/Backup.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>Contains the response to a <code>DescribeBackups</code> request. </p>
      */
-    inline void SetBackups(Aws::Vector<Backup>&& value) { m_backups = value; }
+    inline void SetBackups(Aws::Vector<Backup>&& value) { m_backups = std::move(value); }
 
     /**
      * <p>Contains the response to a <code>DescribeBackups</code> request. </p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Contains the response to a <code>DescribeBackups</code> request. </p>
      */
-    inline DescribeBackupsResult& WithBackups(Aws::Vector<Backup>&& value) { SetBackups(value); return *this;}
+    inline DescribeBackupsResult& WithBackups(Aws::Vector<Backup>&& value) { SetBackups(std::move(value)); return *this;}
 
     /**
      * <p>Contains the response to a <code>DescribeBackups</code> request. </p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Contains the response to a <code>DescribeBackups</code> request. </p>
      */
-    inline DescribeBackupsResult& AddBackups(Backup&& value) { m_backups.push_back(value); return *this; }
+    inline DescribeBackupsResult& AddBackups(Backup&& value) { m_backups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>NextToken is a string that is returned in some command responses. It
@@ -113,7 +114,7 @@ namespace Model
      * in your previous results causes an <code>InvalidNextTokenException</code> to
      * occur. </p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>NextToken is a string that is returned in some command responses. It
@@ -152,7 +153,7 @@ namespace Model
      * in your previous results causes an <code>InvalidNextTokenException</code> to
      * occur. </p>
      */
-    inline DescribeBackupsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeBackupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>NextToken is a string that is returned in some command responses. It

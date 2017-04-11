@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/mturk-requester/model/QualificationTypeStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * given a Qualification type ID when you call the CreateQualificationType
      * operation. </p>
      */
-    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
+    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = std::move(value); }
 
     /**
      * <p> A unique identifier for the Qualification type. A Qualification type is
@@ -89,7 +90,7 @@ namespace Model
      * given a Qualification type ID when you call the CreateQualificationType
      * operation. </p>
      */
-    inline QualificationType& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(value); return *this;}
+    inline QualificationType& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(std::move(value)); return *this;}
 
     /**
      * <p> A unique identifier for the Qualification type. A Qualification type is
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p> The date and time the Qualification type was created. </p>
      */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
      * <p> The date and time the Qualification type was created. </p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p> The date and time the Qualification type was created. </p>
      */
-    inline QualificationType& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
+    inline QualificationType& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
     /**
      * <p> The name of the Qualification type. The type name is used to identify the
@@ -139,7 +140,7 @@ namespace Model
      * <p> The name of the Qualification type. The type name is used to identify the
      * type, and to find the type using a Qualification type search. </p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p> The name of the Qualification type. The type name is used to identify the
@@ -157,7 +158,7 @@ namespace Model
      * <p> The name of the Qualification type. The type name is used to identify the
      * type, and to find the type using a Qualification type search. </p>
      */
-    inline QualificationType& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline QualificationType& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p> The name of the Qualification type. The type name is used to identify the
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p> A long description for the Qualification type. </p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p> A long description for the Qualification type. </p>
@@ -193,7 +194,7 @@ namespace Model
     /**
      * <p> A long description for the Qualification type. </p>
      */
-    inline QualificationType& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline QualificationType& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p> A long description for the Qualification type. </p>
@@ -216,7 +217,7 @@ namespace Model
      * <p> One or more words or phrases that describe theQualification type, separated
      * by commas. The Keywords make the type easier to find using a search. </p>
      */
-    inline void SetKeywords(Aws::String&& value) { m_keywordsHasBeenSet = true; m_keywords = value; }
+    inline void SetKeywords(Aws::String&& value) { m_keywordsHasBeenSet = true; m_keywords = std::move(value); }
 
     /**
      * <p> One or more words or phrases that describe theQualification type, separated
@@ -234,7 +235,7 @@ namespace Model
      * <p> One or more words or phrases that describe theQualification type, separated
      * by commas. The Keywords make the type easier to find using a search. </p>
      */
-    inline QualificationType& WithKeywords(Aws::String&& value) { SetKeywords(value); return *this;}
+    inline QualificationType& WithKeywords(Aws::String&& value) { SetKeywords(std::move(value)); return *this;}
 
     /**
      * <p> One or more words or phrases that describe theQualification type, separated
@@ -264,7 +265,7 @@ namespace Model
      * HITs can be created with requirements based on this type. Valid values are
      * Active | Inactive. </p>
      */
-    inline void SetQualificationTypeStatus(QualificationTypeStatus&& value) { m_qualificationTypeStatusHasBeenSet = true; m_qualificationTypeStatus = value; }
+    inline void SetQualificationTypeStatus(QualificationTypeStatus&& value) { m_qualificationTypeStatusHasBeenSet = true; m_qualificationTypeStatus = std::move(value); }
 
     /**
      * <p> The status of the Qualification type. A Qualification type's status
@@ -280,7 +281,7 @@ namespace Model
      * HITs can be created with requirements based on this type. Valid values are
      * Active | Inactive. </p>
      */
-    inline QualificationType& WithQualificationTypeStatus(QualificationTypeStatus&& value) { SetQualificationTypeStatus(value); return *this;}
+    inline QualificationType& WithQualificationTypeStatus(QualificationTypeStatus&& value) { SetQualificationTypeStatus(std::move(value)); return *this;}
 
     /**
      * <p> The questions for a Qualification test associated with this Qualification
@@ -304,7 +305,7 @@ namespace Model
      * must be specified if AnswerKey is present. A Qualification type cannot have both
      * a specified Test parameter and an AutoGranted value of true. </p>
      */
-    inline void SetTest(Aws::String&& value) { m_testHasBeenSet = true; m_test = value; }
+    inline void SetTest(Aws::String&& value) { m_testHasBeenSet = true; m_test = std::move(value); }
 
     /**
      * <p> The questions for a Qualification test associated with this Qualification
@@ -328,7 +329,7 @@ namespace Model
      * must be specified if AnswerKey is present. A Qualification type cannot have both
      * a specified Test parameter and an AutoGranted value of true. </p>
      */
-    inline QualificationType& WithTest(Aws::String&& value) { SetTest(value); return *this;}
+    inline QualificationType& WithTest(Aws::String&& value) { SetTest(std::move(value)); return *this;}
 
     /**
      * <p> The questions for a Qualification test associated with this Qualification
@@ -372,7 +373,7 @@ namespace Model
     /**
      * <p>The answers to the Qualification test specified in the Test parameter.</p>
      */
-    inline void SetAnswerKey(Aws::String&& value) { m_answerKeyHasBeenSet = true; m_answerKey = value; }
+    inline void SetAnswerKey(Aws::String&& value) { m_answerKeyHasBeenSet = true; m_answerKey = std::move(value); }
 
     /**
      * <p>The answers to the Qualification test specified in the Test parameter.</p>
@@ -387,7 +388,7 @@ namespace Model
     /**
      * <p>The answers to the Qualification test specified in the Test parameter.</p>
      */
-    inline QualificationType& WithAnswerKey(Aws::String&& value) { SetAnswerKey(value); return *this;}
+    inline QualificationType& WithAnswerKey(Aws::String&& value) { SetAnswerKey(std::move(value)); return *this;}
 
     /**
      * <p>The answers to the Qualification test specified in the Test parameter.</p>

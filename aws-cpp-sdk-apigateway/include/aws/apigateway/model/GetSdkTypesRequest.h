@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>The position of the last fetched element in the <a>SdkTypes</a>
      * collection.</p>
      */
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = value; }
+    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
      * <p>The position of the last fetched element in the <a>SdkTypes</a>
@@ -76,7 +77,7 @@ namespace Model
      * <p>The position of the last fetched element in the <a>SdkTypes</a>
      * collection.</p>
      */
-    inline GetSdkTypesRequest& WithPosition(Aws::String&& value) { SetPosition(value); return *this;}
+    inline GetSdkTypesRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
      * <p>The position of the last fetched element in the <a>SdkTypes</a>

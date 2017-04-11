@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The name of the group.</p>
      */
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
 
     /**
      * <p>The name of the group.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of the group.</p>
      */
-    inline DescribeScheduledActionsRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
+    inline DescribeScheduledActionsRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the group.</p>
@@ -106,7 +107,7 @@ namespace Model
      * returns a token. To get the next set of items, repeat the call with the returned
      * token.</p>
      */
-    inline void SetScheduledActionNames(Aws::Vector<Aws::String>&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = value; }
+    inline void SetScheduledActionNames(Aws::Vector<Aws::String>&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = std::move(value); }
 
     /**
      * <p>Describes one or more scheduled actions. If you omit this parameter, all
@@ -126,7 +127,7 @@ namespace Model
      * returns a token. To get the next set of items, repeat the call with the returned
      * token.</p>
      */
-    inline DescribeScheduledActionsRequest& WithScheduledActionNames(Aws::Vector<Aws::String>&& value) { SetScheduledActionNames(value); return *this;}
+    inline DescribeScheduledActionsRequest& WithScheduledActionNames(Aws::Vector<Aws::String>&& value) { SetScheduledActionNames(std::move(value)); return *this;}
 
     /**
      * <p>Describes one or more scheduled actions. If you omit this parameter, all
@@ -146,7 +147,7 @@ namespace Model
      * returns a token. To get the next set of items, repeat the call with the returned
      * token.</p>
      */
-    inline DescribeScheduledActionsRequest& AddScheduledActionNames(Aws::String&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(value); return *this; }
+    inline DescribeScheduledActionsRequest& AddScheduledActionNames(Aws::String&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Describes one or more scheduled actions. If you omit this parameter, all
@@ -174,7 +175,7 @@ namespace Model
      * <p>The earliest scheduled start time to return. If scheduled action names are
      * provided, this parameter is ignored.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The earliest scheduled start time to return. If scheduled action names are
@@ -186,7 +187,7 @@ namespace Model
      * <p>The earliest scheduled start time to return. If scheduled action names are
      * provided, this parameter is ignored.</p>
      */
-    inline DescribeScheduledActionsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline DescribeScheduledActionsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The latest scheduled start time to return. If scheduled action names are
@@ -204,7 +205,7 @@ namespace Model
      * <p>The latest scheduled start time to return. If scheduled action names are
      * provided, this parameter is ignored.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The latest scheduled start time to return. If scheduled action names are
@@ -216,7 +217,7 @@ namespace Model
      * <p>The latest scheduled start time to return. If scheduled action names are
      * provided, this parameter is ignored.</p>
      */
-    inline DescribeScheduledActionsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline DescribeScheduledActionsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -234,7 +235,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -252,7 +253,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline DescribeScheduledActionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeScheduledActionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

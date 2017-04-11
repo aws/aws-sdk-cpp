@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>The position of the current <a>RestApis</a> resource in the collection to get
      * information about.</p>
      */
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = value; }
+    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
      * <p>The position of the current <a>RestApis</a> resource in the collection to get
@@ -77,7 +78,7 @@ namespace Model
      * <p>The position of the current <a>RestApis</a> resource in the collection to get
      * information about.</p>
      */
-    inline GetRestApisRequest& WithPosition(Aws::String&& value) { SetPosition(value); return *this;}
+    inline GetRestApisRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
      * <p>The position of the current <a>RestApis</a> resource in the collection to get

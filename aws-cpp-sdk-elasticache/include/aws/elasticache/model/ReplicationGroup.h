@@ -21,6 +21,7 @@
 #include <aws/elasticache/model/AutomaticFailoverStatus.h>
 #include <aws/elasticache/model/Endpoint.h>
 #include <aws/elasticache/model/NodeGroup.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The identifier for the replication group.</p>
      */
-    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
+    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::move(value); }
 
     /**
      * <p>The identifier for the replication group.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The identifier for the replication group.</p>
      */
-    inline ReplicationGroup& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(value); return *this;}
+    inline ReplicationGroup& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the replication group.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The description of the replication group.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the replication group.</p>
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>The description of the replication group.</p>
      */
-    inline ReplicationGroup& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline ReplicationGroup& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the replication group.</p>
@@ -141,7 +142,7 @@ namespace Model
      * <code>available</code>, <code>modifying</code>, <code>deleting</code>,
      * <code>create-failed</code>, <code>snapshotting</code>.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
@@ -162,7 +163,7 @@ namespace Model
      * <code>available</code>, <code>modifying</code>, <code>deleting</code>,
      * <code>create-failed</code>, <code>snapshotting</code>.</p>
      */
-    inline ReplicationGroup& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline ReplicationGroup& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
@@ -187,7 +188,7 @@ namespace Model
      * <p>A group of settings to be applied to the replication group, either
      * immediately or during the next maintenance window.</p>
      */
-    inline void SetPendingModifiedValues(ReplicationGroupPendingModifiedValues&& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = value; }
+    inline void SetPendingModifiedValues(ReplicationGroupPendingModifiedValues&& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = std::move(value); }
 
     /**
      * <p>A group of settings to be applied to the replication group, either
@@ -199,7 +200,7 @@ namespace Model
      * <p>A group of settings to be applied to the replication group, either
      * immediately or during the next maintenance window.</p>
      */
-    inline ReplicationGroup& WithPendingModifiedValues(ReplicationGroupPendingModifiedValues&& value) { SetPendingModifiedValues(value); return *this;}
+    inline ReplicationGroup& WithPendingModifiedValues(ReplicationGroupPendingModifiedValues&& value) { SetPendingModifiedValues(std::move(value)); return *this;}
 
     /**
      * <p>The names of all the cache clusters that are part of this replication
@@ -217,7 +218,7 @@ namespace Model
      * <p>The names of all the cache clusters that are part of this replication
      * group.</p>
      */
-    inline void SetMemberClusters(Aws::Vector<Aws::String>&& value) { m_memberClustersHasBeenSet = true; m_memberClusters = value; }
+    inline void SetMemberClusters(Aws::Vector<Aws::String>&& value) { m_memberClustersHasBeenSet = true; m_memberClusters = std::move(value); }
 
     /**
      * <p>The names of all the cache clusters that are part of this replication
@@ -229,7 +230,7 @@ namespace Model
      * <p>The names of all the cache clusters that are part of this replication
      * group.</p>
      */
-    inline ReplicationGroup& WithMemberClusters(Aws::Vector<Aws::String>&& value) { SetMemberClusters(value); return *this;}
+    inline ReplicationGroup& WithMemberClusters(Aws::Vector<Aws::String>&& value) { SetMemberClusters(std::move(value)); return *this;}
 
     /**
      * <p>The names of all the cache clusters that are part of this replication
@@ -241,7 +242,7 @@ namespace Model
      * <p>The names of all the cache clusters that are part of this replication
      * group.</p>
      */
-    inline ReplicationGroup& AddMemberClusters(Aws::String&& value) { m_memberClustersHasBeenSet = true; m_memberClusters.push_back(value); return *this; }
+    inline ReplicationGroup& AddMemberClusters(Aws::String&& value) { m_memberClustersHasBeenSet = true; m_memberClusters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of all the cache clusters that are part of this replication
@@ -265,7 +266,7 @@ namespace Model
      * <p>A single element list with information about the nodes in the replication
      * group.</p>
      */
-    inline void SetNodeGroups(Aws::Vector<NodeGroup>&& value) { m_nodeGroupsHasBeenSet = true; m_nodeGroups = value; }
+    inline void SetNodeGroups(Aws::Vector<NodeGroup>&& value) { m_nodeGroupsHasBeenSet = true; m_nodeGroups = std::move(value); }
 
     /**
      * <p>A single element list with information about the nodes in the replication
@@ -277,7 +278,7 @@ namespace Model
      * <p>A single element list with information about the nodes in the replication
      * group.</p>
      */
-    inline ReplicationGroup& WithNodeGroups(Aws::Vector<NodeGroup>&& value) { SetNodeGroups(value); return *this;}
+    inline ReplicationGroup& WithNodeGroups(Aws::Vector<NodeGroup>&& value) { SetNodeGroups(std::move(value)); return *this;}
 
     /**
      * <p>A single element list with information about the nodes in the replication
@@ -289,7 +290,7 @@ namespace Model
      * <p>A single element list with information about the nodes in the replication
      * group.</p>
      */
-    inline ReplicationGroup& AddNodeGroups(NodeGroup&& value) { m_nodeGroupsHasBeenSet = true; m_nodeGroups.push_back(value); return *this; }
+    inline ReplicationGroup& AddNodeGroups(NodeGroup&& value) { m_nodeGroupsHasBeenSet = true; m_nodeGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The cache cluster ID that is used as the daily snapshot source for the
@@ -307,7 +308,7 @@ namespace Model
      * <p>The cache cluster ID that is used as the daily snapshot source for the
      * replication group.</p>
      */
-    inline void SetSnapshottingClusterId(Aws::String&& value) { m_snapshottingClusterIdHasBeenSet = true; m_snapshottingClusterId = value; }
+    inline void SetSnapshottingClusterId(Aws::String&& value) { m_snapshottingClusterIdHasBeenSet = true; m_snapshottingClusterId = std::move(value); }
 
     /**
      * <p>The cache cluster ID that is used as the daily snapshot source for the
@@ -325,7 +326,7 @@ namespace Model
      * <p>The cache cluster ID that is used as the daily snapshot source for the
      * replication group.</p>
      */
-    inline ReplicationGroup& WithSnapshottingClusterId(Aws::String&& value) { SetSnapshottingClusterId(value); return *this;}
+    inline ReplicationGroup& WithSnapshottingClusterId(Aws::String&& value) { SetSnapshottingClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The cache cluster ID that is used as the daily snapshot source for the
@@ -358,7 +359,7 @@ namespace Model
      * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
      * node types.</p> </li> </ul> </note>
      */
-    inline void SetAutomaticFailover(AutomaticFailoverStatus&& value) { m_automaticFailoverHasBeenSet = true; m_automaticFailover = value; }
+    inline void SetAutomaticFailover(AutomaticFailoverStatus&& value) { m_automaticFailoverHasBeenSet = true; m_automaticFailover = std::move(value); }
 
     /**
      * <p>Indicates the status of Multi-AZ for this replication group.</p> <note>
@@ -376,7 +377,7 @@ namespace Model
      * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
      * node types.</p> </li> </ul> </note>
      */
-    inline ReplicationGroup& WithAutomaticFailover(AutomaticFailoverStatus&& value) { SetAutomaticFailover(value); return *this;}
+    inline ReplicationGroup& WithAutomaticFailover(AutomaticFailoverStatus&& value) { SetAutomaticFailover(std::move(value)); return *this;}
 
     /**
      * <p>The configuration endpoint for this replicaiton group. Use the configuration
@@ -394,7 +395,7 @@ namespace Model
      * <p>The configuration endpoint for this replicaiton group. Use the configuration
      * endpoint to connect to this replication group.</p>
      */
-    inline void SetConfigurationEndpoint(Endpoint&& value) { m_configurationEndpointHasBeenSet = true; m_configurationEndpoint = value; }
+    inline void SetConfigurationEndpoint(Endpoint&& value) { m_configurationEndpointHasBeenSet = true; m_configurationEndpoint = std::move(value); }
 
     /**
      * <p>The configuration endpoint for this replicaiton group. Use the configuration
@@ -406,7 +407,7 @@ namespace Model
      * <p>The configuration endpoint for this replicaiton group. Use the configuration
      * endpoint to connect to this replication group.</p>
      */
-    inline ReplicationGroup& WithConfigurationEndpoint(Endpoint&& value) { SetConfigurationEndpoint(value); return *this;}
+    inline ReplicationGroup& WithConfigurationEndpoint(Endpoint&& value) { SetConfigurationEndpoint(std::move(value)); return *this;}
 
     /**
      * <p>The number of days for which ElastiCache retains automatic cache cluster
@@ -463,7 +464,7 @@ namespace Model
      * an appropriate time range.</p> <p> <b>Note:</b> This parameter is only valid if
      * the <code>Engine</code> parameter is <code>redis</code>.</p>
      */
-    inline void SetSnapshotWindow(Aws::String&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = value; }
+    inline void SetSnapshotWindow(Aws::String&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = std::move(value); }
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
@@ -490,7 +491,7 @@ namespace Model
      * an appropriate time range.</p> <p> <b>Note:</b> This parameter is only valid if
      * the <code>Engine</code> parameter is <code>redis</code>.</p>
      */
-    inline ReplicationGroup& WithSnapshotWindow(Aws::String&& value) { SetSnapshotWindow(value); return *this;}
+    inline ReplicationGroup& WithSnapshotWindow(Aws::String&& value) { SetSnapshotWindow(std::move(value)); return *this;}
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
@@ -538,7 +539,7 @@ namespace Model
      * <p>The name of the compute and memory capacity node type for each node in the
      * replication group.</p>
      */
-    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
+    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::move(value); }
 
     /**
      * <p>The name of the compute and memory capacity node type for each node in the
@@ -556,7 +557,7 @@ namespace Model
      * <p>The name of the compute and memory capacity node type for each node in the
      * replication group.</p>
      */
-    inline ReplicationGroup& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(value); return *this;}
+    inline ReplicationGroup& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(std::move(value)); return *this;}
 
     /**
      * <p>The name of the compute and memory capacity node type for each node in the

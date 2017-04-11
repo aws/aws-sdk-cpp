@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <code>UnlockCode</code> value can be accessed for up to 90 days after the job
      * has been created.</p>
      */
-    inline void SetUnlockCode(Aws::String&& value) { m_unlockCode = value; }
+    inline void SetUnlockCode(Aws::String&& value) { m_unlockCode = std::move(value); }
 
     /**
      * <p>The <code>UnlockCode</code> value for the specified job. The
@@ -79,7 +80,7 @@ namespace Model
      * <code>UnlockCode</code> value can be accessed for up to 90 days after the job
      * has been created.</p>
      */
-    inline GetJobUnlockCodeResult& WithUnlockCode(Aws::String&& value) { SetUnlockCode(value); return *this;}
+    inline GetJobUnlockCodeResult& WithUnlockCode(Aws::String&& value) { SetUnlockCode(std::move(value)); return *this;}
 
     /**
      * <p>The <code>UnlockCode</code> value for the specified job. The

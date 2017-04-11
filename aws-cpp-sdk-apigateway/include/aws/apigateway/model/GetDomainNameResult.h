@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The name of the <a>DomainName</a> resource.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainName = std::move(value); }
 
     /**
      * <p>The name of the <a>DomainName</a> resource.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The name of the <a>DomainName</a> resource.</p>
      */
-    inline GetDomainNameResult& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline GetDomainNameResult& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the <a>DomainName</a> resource.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The name of the certificate.</p>
      */
-    inline void SetCertificateName(Aws::String&& value) { m_certificateName = value; }
+    inline void SetCertificateName(Aws::String&& value) { m_certificateName = std::move(value); }
 
     /**
      * <p>The name of the certificate.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The name of the certificate.</p>
      */
-    inline GetDomainNameResult& WithCertificateName(Aws::String&& value) { SetCertificateName(value); return *this;}
+    inline GetDomainNameResult& WithCertificateName(Aws::String&& value) { SetCertificateName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the certificate.</p>
@@ -134,7 +135,7 @@ namespace Model
      * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
      * only supported source.</p>
      */
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArn = value; }
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArn = std::move(value); }
 
     /**
      * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
@@ -152,7 +153,7 @@ namespace Model
      * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
      * only supported source.</p>
      */
-    inline GetDomainNameResult& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
+    inline GetDomainNameResult& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>The timestamp when the certificate was uploaded.</p>
      */
-    inline void SetCertificateUploadDate(Aws::Utils::DateTime&& value) { m_certificateUploadDate = value; }
+    inline void SetCertificateUploadDate(Aws::Utils::DateTime&& value) { m_certificateUploadDate = std::move(value); }
 
     /**
      * <p>The timestamp when the certificate was uploaded.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>The timestamp when the certificate was uploaded.</p>
      */
-    inline GetDomainNameResult& WithCertificateUploadDate(Aws::Utils::DateTime&& value) { SetCertificateUploadDate(value); return *this;}
+    inline GetDomainNameResult& WithCertificateUploadDate(Aws::Utils::DateTime&& value) { SetCertificateUploadDate(std::move(value)); return *this;}
 
     /**
      * <p>The domain name of the Amazon CloudFront distribution. For more information,
@@ -204,7 +205,7 @@ namespace Model
      * see the <a href="http://aws.amazon.com/documentation/cloudfront/"
      * target="_blank">Amazon CloudFront documentation</a>.</p>
      */
-    inline void SetDistributionDomainName(Aws::String&& value) { m_distributionDomainName = value; }
+    inline void SetDistributionDomainName(Aws::String&& value) { m_distributionDomainName = std::move(value); }
 
     /**
      * <p>The domain name of the Amazon CloudFront distribution. For more information,
@@ -225,7 +226,7 @@ namespace Model
      * see the <a href="http://aws.amazon.com/documentation/cloudfront/"
      * target="_blank">Amazon CloudFront documentation</a>.</p>
      */
-    inline GetDomainNameResult& WithDistributionDomainName(Aws::String&& value) { SetDistributionDomainName(value); return *this;}
+    inline GetDomainNameResult& WithDistributionDomainName(Aws::String&& value) { SetDistributionDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The domain name of the Amazon CloudFront distribution. For more information,

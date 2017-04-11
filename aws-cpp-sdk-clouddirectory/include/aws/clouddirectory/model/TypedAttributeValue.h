@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>A string data value.</p>
      */
-    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
+    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
 
     /**
      * <p>A string data value.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>A string data value.</p>
      */
-    inline TypedAttributeValue& WithStringValue(Aws::String&& value) { SetStringValue(value); return *this;}
+    inline TypedAttributeValue& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
 
     /**
      * <p>A string data value.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>A binary data value.</p>
      */
-    inline void SetBinaryValue(Aws::Utils::ByteBuffer&& value) { m_binaryValueHasBeenSet = true; m_binaryValue = value; }
+    inline void SetBinaryValue(Aws::Utils::ByteBuffer&& value) { m_binaryValueHasBeenSet = true; m_binaryValue = std::move(value); }
 
     /**
      * <p>A binary data value.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>A binary data value.</p>
      */
-    inline TypedAttributeValue& WithBinaryValue(Aws::Utils::ByteBuffer&& value) { SetBinaryValue(value); return *this;}
+    inline TypedAttributeValue& WithBinaryValue(Aws::Utils::ByteBuffer&& value) { SetBinaryValue(std::move(value)); return *this;}
 
     /**
      * <p>A Boolean data value.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>A number data value.</p>
      */
-    inline void SetNumberValue(Aws::String&& value) { m_numberValueHasBeenSet = true; m_numberValue = value; }
+    inline void SetNumberValue(Aws::String&& value) { m_numberValueHasBeenSet = true; m_numberValue = std::move(value); }
 
     /**
      * <p>A number data value.</p>
@@ -150,7 +151,7 @@ namespace Model
     /**
      * <p>A number data value.</p>
      */
-    inline TypedAttributeValue& WithNumberValue(Aws::String&& value) { SetNumberValue(value); return *this;}
+    inline TypedAttributeValue& WithNumberValue(Aws::String&& value) { SetNumberValue(std::move(value)); return *this;}
 
     /**
      * <p>A number data value.</p>
@@ -170,7 +171,7 @@ namespace Model
     /**
      * <p>A date and time value.</p>
      */
-    inline void SetDatetimeValue(Aws::Utils::DateTime&& value) { m_datetimeValueHasBeenSet = true; m_datetimeValue = value; }
+    inline void SetDatetimeValue(Aws::Utils::DateTime&& value) { m_datetimeValueHasBeenSet = true; m_datetimeValue = std::move(value); }
 
     /**
      * <p>A date and time value.</p>
@@ -180,7 +181,7 @@ namespace Model
     /**
      * <p>A date and time value.</p>
      */
-    inline TypedAttributeValue& WithDatetimeValue(Aws::Utils::DateTime&& value) { SetDatetimeValue(value); return *this;}
+    inline TypedAttributeValue& WithDatetimeValue(Aws::Utils::DateTime&& value) { SetDatetimeValue(std::move(value)); return *this;}
 
   private:
     Aws::String m_stringValue;

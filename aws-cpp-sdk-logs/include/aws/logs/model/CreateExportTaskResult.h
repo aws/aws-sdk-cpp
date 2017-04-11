@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the export task.</p>
      */
-    inline void SetTaskId(Aws::String&& value) { m_taskId = value; }
+    inline void SetTaskId(Aws::String&& value) { m_taskId = std::move(value); }
 
     /**
      * <p>The ID of the export task.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the export task.</p>
      */
-    inline CreateExportTaskResult& WithTaskId(Aws::String&& value) { SetTaskId(value); return *this;}
+    inline CreateExportTaskResult& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the export task.</p>

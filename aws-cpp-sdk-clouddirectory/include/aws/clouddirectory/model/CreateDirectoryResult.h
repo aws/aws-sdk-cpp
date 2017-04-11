@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a>. For more information, see
      * <a>arns</a>.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArn = std::move(value); }
 
     /**
      * <p>ARN associated with the <a>Directory</a>. For more information, see
@@ -73,7 +74,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a>. For more information, see
      * <a>arns</a>.</p>
      */
-    inline CreateDirectoryResult& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline CreateDirectoryResult& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN associated with the <a>Directory</a>. For more information, see
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>Name of the <a>Directory</a>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_name = value; }
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
      * <p>Name of the <a>Directory</a>.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>Name of the <a>Directory</a>.</p>
      */
-    inline CreateDirectoryResult& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateDirectoryResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the <a>Directory</a>.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The root object node of the created directory.</p>
      */
-    inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifier = value; }
+    inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifier = std::move(value); }
 
     /**
      * <p>The root object node of the created directory.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>The root object node of the created directory.</p>
      */
-    inline CreateDirectoryResult& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(value); return *this;}
+    inline CreateDirectoryResult& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The root object node of the created directory.</p>
@@ -170,7 +171,7 @@ namespace Model
      * is copied into the directory, it has its own ARN which is referred to applied
      * schema ARN. For more information, see <a>arns</a>.</p>
      */
-    inline void SetAppliedSchemaArn(Aws::String&& value) { m_appliedSchemaArn = value; }
+    inline void SetAppliedSchemaArn(Aws::String&& value) { m_appliedSchemaArn = std::move(value); }
 
     /**
      * <p>ARN of the published schema in the <a>Directory</a>. Once a published schema
@@ -191,7 +192,7 @@ namespace Model
      * is copied into the directory, it has its own ARN which is referred to applied
      * schema ARN. For more information, see <a>arns</a>.</p>
      */
-    inline CreateDirectoryResult& WithAppliedSchemaArn(Aws::String&& value) { SetAppliedSchemaArn(value); return *this;}
+    inline CreateDirectoryResult& WithAppliedSchemaArn(Aws::String&& value) { SetAppliedSchemaArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN of the published schema in the <a>Directory</a>. Once a published schema

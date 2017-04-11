@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the virtual tape you want to retrieve from
      * the virtual tape shelf (VTS).</p>
      */
-    inline void SetTapeARN(Aws::String&& value) { m_tapeARNHasBeenSet = true; m_tapeARN = value; }
+    inline void SetTapeARN(Aws::String&& value) { m_tapeARNHasBeenSet = true; m_tapeARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape you want to retrieve from
@@ -72,7 +73,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the virtual tape you want to retrieve from
      * the virtual tape shelf (VTS).</p>
      */
-    inline RetrieveTapeArchiveRequest& WithTapeARN(Aws::String&& value) { SetTapeARN(value); return *this;}
+    inline RetrieveTapeArchiveRequest& WithTapeARN(Aws::String&& value) { SetTapeARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape you want to retrieve from
@@ -102,7 +103,7 @@ namespace Model
      * gateways for your account and region.</p> <p>You retrieve archived virtual tapes
      * to only one gateway and the gateway must be a tape gateway.</p>
      */
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the
@@ -126,7 +127,7 @@ namespace Model
      * gateways for your account and region.</p> <p>You retrieve archived virtual tapes
      * to only one gateway and the gateway must be a tape gateway.</p>
      */
-    inline RetrieveTapeArchiveRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline RetrieveTapeArchiveRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the

@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The IAM user's current password.</p>
      */
-    inline void SetOldPassword(Aws::String&& value) { m_oldPasswordHasBeenSet = true; m_oldPassword = value; }
+    inline void SetOldPassword(Aws::String&& value) { m_oldPasswordHasBeenSet = true; m_oldPassword = std::move(value); }
 
     /**
      * <p>The IAM user's current password.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The IAM user's current password.</p>
      */
-    inline ChangePasswordRequest& WithOldPassword(Aws::String&& value) { SetOldPassword(value); return *this;}
+    inline ChangePasswordRequest& WithOldPassword(Aws::String&& value) { SetOldPassword(std::move(value)); return *this;}
 
     /**
      * <p>The IAM user's current password.</p>
@@ -112,7 +113,7 @@ namespace Model
      * restrict the ability to enter certain characters because they have special
      * meaning within that tool.</p>
      */
-    inline void SetNewPassword(Aws::String&& value) { m_newPasswordHasBeenSet = true; m_newPassword = value; }
+    inline void SetNewPassword(Aws::String&& value) { m_newPasswordHasBeenSet = true; m_newPassword = std::move(value); }
 
     /**
      * <p>The new password. The new password must conform to the AWS account's password
@@ -154,7 +155,7 @@ namespace Model
      * restrict the ability to enter certain characters because they have special
      * meaning within that tool.</p>
      */
-    inline ChangePasswordRequest& WithNewPassword(Aws::String&& value) { SetNewPassword(value); return *this;}
+    inline ChangePasswordRequest& WithNewPassword(Aws::String&& value) { SetNewPassword(std::move(value)); return *this;}
 
     /**
      * <p>The new password. The new password must conform to the AWS account's password

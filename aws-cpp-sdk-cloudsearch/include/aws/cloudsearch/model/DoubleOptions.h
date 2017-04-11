@@ -16,6 +16,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The name of the source field to map to the field. </p>
      */
-    inline void SetSourceField(Aws::String&& value) { m_sourceFieldHasBeenSet = true; m_sourceField = value; }
+    inline void SetSourceField(Aws::String&& value) { m_sourceFieldHasBeenSet = true; m_sourceField = std::move(value); }
 
     /**
      * <p>The name of the source field to map to the field. </p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The name of the source field to map to the field. </p>
      */
-    inline DoubleOptions& WithSourceField(Aws::String&& value) { SetSourceField(value); return *this;}
+    inline DoubleOptions& WithSourceField(Aws::String&& value) { SetSourceField(std::move(value)); return *this;}
 
     /**
      * <p>The name of the source field to map to the field. </p>

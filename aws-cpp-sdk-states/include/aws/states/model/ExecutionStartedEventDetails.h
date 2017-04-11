@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The JSON data input to the execution.</p>
      */
-    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = value; }
+    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
      * <p>The JSON data input to the execution.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The JSON data input to the execution.</p>
      */
-    inline ExecutionStartedEventDetails& WithInput(Aws::String&& value) { SetInput(value); return *this;}
+    inline ExecutionStartedEventDetails& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
      * <p>The JSON data input to the execution.</p>
@@ -89,7 +90,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda
      * tasks.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda
@@ -107,7 +108,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda
      * tasks.</p>
      */
-    inline ExecutionStartedEventDetails& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline ExecutionStartedEventDetails& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda

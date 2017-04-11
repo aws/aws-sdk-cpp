@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The environment ID of the target environment.</p>
      */
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
+    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
 
     /**
      * <p>The environment ID of the target environment.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The environment ID of the target environment.</p>
      */
-    inline DescribeEnvironmentManagedActionHistoryRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(value); return *this;}
+    inline DescribeEnvironmentManagedActionHistoryRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
 
     /**
      * <p>The environment ID of the target environment.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The name of the target environment.</p>
      */
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
+    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
 
     /**
      * <p>The name of the target environment.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The name of the target environment.</p>
      */
-    inline DescribeEnvironmentManagedActionHistoryRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
+    inline DescribeEnvironmentManagedActionHistoryRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the target environment.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The pagination token returned by a previous request.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token returned by a previous request.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>The pagination token returned by a previous request.</p>
      */
-    inline DescribeEnvironmentManagedActionHistoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeEnvironmentManagedActionHistoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token returned by a previous request.</p>

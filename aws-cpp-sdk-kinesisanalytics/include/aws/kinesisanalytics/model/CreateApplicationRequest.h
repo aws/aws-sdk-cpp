@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kinesisanalytics/model/Input.h>
 #include <aws/kinesisanalytics/model/Output.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>Name of your Amazon Kinesis Analytics application (for example,
      * <code>sample-app</code>).</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>Name of your Amazon Kinesis Analytics application (for example,
@@ -75,7 +76,7 @@ namespace Model
      * <p>Name of your Amazon Kinesis Analytics application (for example,
      * <code>sample-app</code>).</p>
      */
-    inline CreateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline CreateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>Name of your Amazon Kinesis Analytics application (for example,
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>Summary description of the application.</p>
      */
-    inline void SetApplicationDescription(Aws::String&& value) { m_applicationDescriptionHasBeenSet = true; m_applicationDescription = value; }
+    inline void SetApplicationDescription(Aws::String&& value) { m_applicationDescriptionHasBeenSet = true; m_applicationDescription = std::move(value); }
 
     /**
      * <p>Summary description of the application.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>Summary description of the application.</p>
      */
-    inline CreateApplicationRequest& WithApplicationDescription(Aws::String&& value) { SetApplicationDescription(value); return *this;}
+    inline CreateApplicationRequest& WithApplicationDescription(Aws::String&& value) { SetApplicationDescription(std::move(value)); return *this;}
 
     /**
      * <p>Summary description of the application.</p>
@@ -164,7 +165,7 @@ namespace Model
      * you provide the necessary mapping of the data elements in the streaming source
      * to record columns in the in-app stream.</p>
      */
-    inline void SetInputs(Aws::Vector<Input>&& value) { m_inputsHasBeenSet = true; m_inputs = value; }
+    inline void SetInputs(Aws::Vector<Input>&& value) { m_inputsHasBeenSet = true; m_inputs = std::move(value); }
 
     /**
      * <p>Use this parameter to configure the application input.</p> <p>You can
@@ -196,7 +197,7 @@ namespace Model
      * you provide the necessary mapping of the data elements in the streaming source
      * to record columns in the in-app stream.</p>
      */
-    inline CreateApplicationRequest& WithInputs(Aws::Vector<Input>&& value) { SetInputs(value); return *this;}
+    inline CreateApplicationRequest& WithInputs(Aws::Vector<Input>&& value) { SetInputs(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter to configure the application input.</p> <p>You can
@@ -228,7 +229,7 @@ namespace Model
      * you provide the necessary mapping of the data elements in the streaming source
      * to record columns in the in-app stream.</p>
      */
-    inline CreateApplicationRequest& AddInputs(Input&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
+    inline CreateApplicationRequest& AddInputs(Input&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>You can configure application output to write data from any of the
@@ -273,7 +274,7 @@ namespace Model
      * must provide an IAM role that Amazon Kinesis Analytics can assume to write to
      * this stream on your behalf.</p>
      */
-    inline void SetOutputs(Aws::Vector<Output>&& value) { m_outputsHasBeenSet = true; m_outputs = value; }
+    inline void SetOutputs(Aws::Vector<Output>&& value) { m_outputsHasBeenSet = true; m_outputs = std::move(value); }
 
     /**
      * <p>You can configure application output to write data from any of the
@@ -303,7 +304,7 @@ namespace Model
      * must provide an IAM role that Amazon Kinesis Analytics can assume to write to
      * this stream on your behalf.</p>
      */
-    inline CreateApplicationRequest& WithOutputs(Aws::Vector<Output>&& value) { SetOutputs(value); return *this;}
+    inline CreateApplicationRequest& WithOutputs(Aws::Vector<Output>&& value) { SetOutputs(std::move(value)); return *this;}
 
     /**
      * <p>You can configure application output to write data from any of the
@@ -333,7 +334,7 @@ namespace Model
      * must provide an IAM role that Amazon Kinesis Analytics can assume to write to
      * this stream on your behalf.</p>
      */
-    inline CreateApplicationRequest& AddOutputs(Output&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(value); return *this; }
+    inline CreateApplicationRequest& AddOutputs(Output&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more SQL statements that read input data, transform it, and generate
@@ -375,7 +376,7 @@ namespace Model
      * <code>ExampleOutputStream2</code>, then your application code must create these
      * streams. </p>
      */
-    inline void SetApplicationCode(Aws::String&& value) { m_applicationCodeHasBeenSet = true; m_applicationCode = value; }
+    inline void SetApplicationCode(Aws::String&& value) { m_applicationCodeHasBeenSet = true; m_applicationCode = std::move(value); }
 
     /**
      * <p>One or more SQL statements that read input data, transform it, and generate
@@ -417,7 +418,7 @@ namespace Model
      * <code>ExampleOutputStream2</code>, then your application code must create these
      * streams. </p>
      */
-    inline CreateApplicationRequest& WithApplicationCode(Aws::String&& value) { SetApplicationCode(value); return *this;}
+    inline CreateApplicationRequest& WithApplicationCode(Aws::String&& value) { SetApplicationCode(std::move(value)); return *this;}
 
     /**
      * <p>One or more SQL statements that read input data, transform it, and generate

@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/CommandInvocationStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The parent command ID of the invocation plugin.</p>
      */
-    inline void SetCommandId(Aws::String&& value) { m_commandId = value; }
+    inline void SetCommandId(Aws::String&& value) { m_commandId = std::move(value); }
 
     /**
      * <p>The parent command ID of the invocation plugin.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The parent command ID of the invocation plugin.</p>
      */
-    inline GetCommandInvocationResult& WithCommandId(Aws::String&& value) { SetCommandId(value); return *this;}
+    inline GetCommandInvocationResult& WithCommandId(Aws::String&& value) { SetCommandId(std::move(value)); return *this;}
 
     /**
      * <p>The parent command ID of the invocation plugin.</p>
@@ -94,7 +95,7 @@ namespace Model
      * can be an Amazon EC2 instance or an instance in your hybrid environment that is
      * configured for Systems Manager.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the managed instance targeted by the command. A managed instance
@@ -115,7 +116,7 @@ namespace Model
      * can be an Amazon EC2 instance or an instance in your hybrid environment that is
      * configured for Systems Manager.</p>
      */
-    inline GetCommandInvocationResult& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline GetCommandInvocationResult& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the managed instance targeted by the command. A managed instance
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The comment text for the command.</p>
      */
-    inline void SetComment(Aws::String&& value) { m_comment = value; }
+    inline void SetComment(Aws::String&& value) { m_comment = std::move(value); }
 
     /**
      * <p>The comment text for the command.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>The comment text for the command.</p>
      */
-    inline GetCommandInvocationResult& WithComment(Aws::String&& value) { SetComment(value); return *this;}
+    inline GetCommandInvocationResult& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
      * <p>The comment text for the command.</p>
@@ -175,7 +176,7 @@ namespace Model
      * <p>The name of the document that was executed. For example,
      * AWS-RunShellScript.</p>
      */
-    inline void SetDocumentName(Aws::String&& value) { m_documentName = value; }
+    inline void SetDocumentName(Aws::String&& value) { m_documentName = std::move(value); }
 
     /**
      * <p>The name of the document that was executed. For example,
@@ -193,7 +194,7 @@ namespace Model
      * <p>The name of the document that was executed. For example,
      * AWS-RunShellScript.</p>
      */
-    inline GetCommandInvocationResult& WithDocumentName(Aws::String&& value) { SetDocumentName(value); return *this;}
+    inline GetCommandInvocationResult& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the document that was executed. For example,
@@ -217,7 +218,7 @@ namespace Model
      * <p>The name of the plugin for which you want detailed results. For example,
      * aws:RunShellScript is a plugin.</p>
      */
-    inline void SetPluginName(Aws::String&& value) { m_pluginName = value; }
+    inline void SetPluginName(Aws::String&& value) { m_pluginName = std::move(value); }
 
     /**
      * <p>The name of the plugin for which you want detailed results. For example,
@@ -235,7 +236,7 @@ namespace Model
      * <p>The name of the plugin for which you want detailed results. For example,
      * aws:RunShellScript is a plugin.</p>
      */
-    inline GetCommandInvocationResult& WithPluginName(Aws::String&& value) { SetPluginName(value); return *this;}
+    inline GetCommandInvocationResult& WithPluginName(Aws::String&& value) { SetPluginName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the plugin for which you want detailed results. For example,
@@ -283,7 +284,7 @@ namespace Model
      * ISO 8601 format. For example, August 28, 2016 is represented as 2016-08-28. If
      * the plugin has not started to execute, the string is empty.</p>
      */
-    inline void SetExecutionStartDateTime(Aws::String&& value) { m_executionStartDateTime = value; }
+    inline void SetExecutionStartDateTime(Aws::String&& value) { m_executionStartDateTime = std::move(value); }
 
     /**
      * <p>The date and time the plugin started executing. Date and time are written in
@@ -304,7 +305,7 @@ namespace Model
      * ISO 8601 format. For example, August 28, 2016 is represented as 2016-08-28. If
      * the plugin has not started to execute, the string is empty.</p>
      */
-    inline GetCommandInvocationResult& WithExecutionStartDateTime(Aws::String&& value) { SetExecutionStartDateTime(value); return *this;}
+    inline GetCommandInvocationResult& WithExecutionStartDateTime(Aws::String&& value) { SetExecutionStartDateTime(std::move(value)); return *this;}
 
     /**
      * <p>The date and time the plugin started executing. Date and time are written in
@@ -326,7 +327,7 @@ namespace Model
     /**
      * <p>Duration since <code>ExecutionStartDateTime</code>.</p>
      */
-    inline void SetExecutionElapsedTime(Aws::String&& value) { m_executionElapsedTime = value; }
+    inline void SetExecutionElapsedTime(Aws::String&& value) { m_executionElapsedTime = std::move(value); }
 
     /**
      * <p>Duration since <code>ExecutionStartDateTime</code>.</p>
@@ -341,7 +342,7 @@ namespace Model
     /**
      * <p>Duration since <code>ExecutionStartDateTime</code>.</p>
      */
-    inline GetCommandInvocationResult& WithExecutionElapsedTime(Aws::String&& value) { SetExecutionElapsedTime(value); return *this;}
+    inline GetCommandInvocationResult& WithExecutionElapsedTime(Aws::String&& value) { SetExecutionElapsedTime(std::move(value)); return *this;}
 
     /**
      * <p>Duration since <code>ExecutionStartDateTime</code>.</p>
@@ -367,7 +368,7 @@ namespace Model
      * written in ISO 8601 format. For example, August 28, 2016 is represented as
      * 2016-08-28. If the plugin has not started to execute, the string is empty.</p>
      */
-    inline void SetExecutionEndDateTime(Aws::String&& value) { m_executionEndDateTime = value; }
+    inline void SetExecutionEndDateTime(Aws::String&& value) { m_executionEndDateTime = std::move(value); }
 
     /**
      * <p>The date and time the plugin was finished executing. Date and time are
@@ -388,7 +389,7 @@ namespace Model
      * written in ISO 8601 format. For example, August 28, 2016 is represented as
      * 2016-08-28. If the plugin has not started to execute, the string is empty.</p>
      */
-    inline GetCommandInvocationResult& WithExecutionEndDateTime(Aws::String&& value) { SetExecutionEndDateTime(value); return *this;}
+    inline GetCommandInvocationResult& WithExecutionEndDateTime(Aws::String&& value) { SetExecutionEndDateTime(std::move(value)); return *this;}
 
     /**
      * <p>The date and time the plugin was finished executing. Date and time are
@@ -413,7 +414,7 @@ namespace Model
      * <p>The status of the parent command for this invocation. This status can be
      * different than <code>StatusDetails</code>.</p>
      */
-    inline void SetStatus(CommandInvocationStatus&& value) { m_status = value; }
+    inline void SetStatus(CommandInvocationStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The status of the parent command for this invocation. This status can be
@@ -425,7 +426,7 @@ namespace Model
      * <p>The status of the parent command for this invocation. This status can be
      * different than <code>StatusDetails</code>.</p>
      */
-    inline GetCommandInvocationResult& WithStatus(CommandInvocationStatus&& value) { SetStatus(value); return *this;}
+    inline GetCommandInvocationResult& WithStatus(CommandInvocationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>A detailed status of the command execution for an invocation.
@@ -545,7 +546,7 @@ namespace Model
      * exceeded its <code>MaxErrors</code> limit and subsequent command invocations
      * were canceled by the system. This is a terminal state.</p> </li> </ul>
      */
-    inline void SetStatusDetails(Aws::String&& value) { m_statusDetails = value; }
+    inline void SetStatusDetails(Aws::String&& value) { m_statusDetails = std::move(value); }
 
     /**
      * <p>A detailed status of the command execution for an invocation.
@@ -665,7 +666,7 @@ namespace Model
      * exceeded its <code>MaxErrors</code> limit and subsequent command invocations
      * were canceled by the system. This is a terminal state.</p> </li> </ul>
      */
-    inline GetCommandInvocationResult& WithStatusDetails(Aws::String&& value) { SetStatusDetails(value); return *this;}
+    inline GetCommandInvocationResult& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
 
     /**
      * <p>A detailed status of the command execution for an invocation.
@@ -726,7 +727,7 @@ namespace Model
      * has not finished executing, if <code>ExecutionStatus</code> is neither
      * <code>Succeeded</code> nor <code>Failed</code>, then this string is empty.</p>
      */
-    inline void SetStandardOutputContent(Aws::String&& value) { m_standardOutputContent = value; }
+    inline void SetStandardOutputContent(Aws::String&& value) { m_standardOutputContent = std::move(value); }
 
     /**
      * <p>The first 24,000 characters written by the plugin to stdout. If the command
@@ -747,7 +748,7 @@ namespace Model
      * has not finished executing, if <code>ExecutionStatus</code> is neither
      * <code>Succeeded</code> nor <code>Failed</code>, then this string is empty.</p>
      */
-    inline GetCommandInvocationResult& WithStandardOutputContent(Aws::String&& value) { SetStandardOutputContent(value); return *this;}
+    inline GetCommandInvocationResult& WithStandardOutputContent(Aws::String&& value) { SetStandardOutputContent(std::move(value)); return *this;}
 
     /**
      * <p>The first 24,000 characters written by the plugin to stdout. If the command
@@ -772,7 +773,7 @@ namespace Model
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
      * If an Amazon S3 bucket was not specified, then this string is empty.</p>
      */
-    inline void SetStandardOutputUrl(Aws::String&& value) { m_standardOutputUrl = value; }
+    inline void SetStandardOutputUrl(Aws::String&& value) { m_standardOutputUrl = std::move(value); }
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
@@ -790,7 +791,7 @@ namespace Model
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
      * If an Amazon S3 bucket was not specified, then this string is empty.</p>
      */
-    inline GetCommandInvocationResult& WithStandardOutputUrl(Aws::String&& value) { SetStandardOutputUrl(value); return *this;}
+    inline GetCommandInvocationResult& WithStandardOutputUrl(Aws::String&& value) { SetStandardOutputUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
@@ -814,7 +815,7 @@ namespace Model
      * <p>The first 8,000 characters written by the plugin to stderr. If the command
      * has not finished executing, then this string is empty.</p>
      */
-    inline void SetStandardErrorContent(Aws::String&& value) { m_standardErrorContent = value; }
+    inline void SetStandardErrorContent(Aws::String&& value) { m_standardErrorContent = std::move(value); }
 
     /**
      * <p>The first 8,000 characters written by the plugin to stderr. If the command
@@ -832,7 +833,7 @@ namespace Model
      * <p>The first 8,000 characters written by the plugin to stderr. If the command
      * has not finished executing, then this string is empty.</p>
      */
-    inline GetCommandInvocationResult& WithStandardErrorContent(Aws::String&& value) { SetStandardErrorContent(value); return *this;}
+    inline GetCommandInvocationResult& WithStandardErrorContent(Aws::String&& value) { SetStandardErrorContent(std::move(value)); return *this;}
 
     /**
      * <p>The first 8,000 characters written by the plugin to stderr. If the command
@@ -856,7 +857,7 @@ namespace Model
      * <p>The URL for the complete text written by the plugin to stderr. If the command
      * has not finished executing, then this string is empty.</p>
      */
-    inline void SetStandardErrorUrl(Aws::String&& value) { m_standardErrorUrl = value; }
+    inline void SetStandardErrorUrl(Aws::String&& value) { m_standardErrorUrl = std::move(value); }
 
     /**
      * <p>The URL for the complete text written by the plugin to stderr. If the command
@@ -874,7 +875,7 @@ namespace Model
      * <p>The URL for the complete text written by the plugin to stderr. If the command
      * has not finished executing, then this string is empty.</p>
      */
-    inline GetCommandInvocationResult& WithStandardErrorUrl(Aws::String&& value) { SetStandardErrorUrl(value); return *this;}
+    inline GetCommandInvocationResult& WithStandardErrorUrl(Aws::String&& value) { SetStandardErrorUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL for the complete text written by the plugin to stderr. If the command

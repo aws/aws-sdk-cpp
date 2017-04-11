@@ -17,6 +17,7 @@
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a>. For more information, see
      * <a>arns</a>.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>ARN associated with the <a>Directory</a>. For more information, see
@@ -70,7 +71,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a>. For more information, see
      * <a>arns</a>.</p>
      */
-    inline LookupPolicyRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline LookupPolicyRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN associated with the <a>Directory</a>. For more information, see
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>Reference that identifies the object whose policies will be looked up.</p>
      */
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
+    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
 
     /**
      * <p>Reference that identifies the object whose policies will be looked up.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>Reference that identifies the object whose policies will be looked up.</p>
      */
-    inline LookupPolicyRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(value); return *this;}
+    inline LookupPolicyRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
     /**
      * <p>The token to request the next page of results.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The token to request the next page of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token to request the next page of results.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The token to request the next page of results.</p>
      */
-    inline LookupPolicyRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline LookupPolicyRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to request the next page of results.</p>

@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The name of the region that contains the AMI to copy.</p>
      */
-    inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
+    inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
 
     /**
      * <p>The name of the region that contains the AMI to copy.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The name of the region that contains the AMI to copy.</p>
      */
-    inline CopyImageRequest& WithSourceRegion(Aws::String&& value) { SetSourceRegion(value); return *this;}
+    inline CopyImageRequest& WithSourceRegion(Aws::String&& value) { SetSourceRegion(std::move(value)); return *this;}
 
     /**
      * <p>The name of the region that contains the AMI to copy.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The ID of the AMI to copy.</p>
      */
-    inline void SetSourceImageId(Aws::String&& value) { m_sourceImageIdHasBeenSet = true; m_sourceImageId = value; }
+    inline void SetSourceImageId(Aws::String&& value) { m_sourceImageIdHasBeenSet = true; m_sourceImageId = std::move(value); }
 
     /**
      * <p>The ID of the AMI to copy.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The ID of the AMI to copy.</p>
      */
-    inline CopyImageRequest& WithSourceImageId(Aws::String&& value) { SetSourceImageId(value); return *this;}
+    inline CopyImageRequest& WithSourceImageId(Aws::String&& value) { SetSourceImageId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the AMI to copy.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The name of the new AMI in the destination region.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the new AMI in the destination region.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>The name of the new AMI in the destination region.</p>
      */
-    inline CopyImageRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CopyImageRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the new AMI in the destination region.</p>
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p>A description for the new AMI in the destination region.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description for the new AMI in the destination region.</p>
@@ -197,7 +198,7 @@ namespace Model
     /**
      * <p>A description for the new AMI in the destination region.</p>
      */
-    inline CopyImageRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CopyImageRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description for the new AMI in the destination region.</p>
@@ -229,7 +230,7 @@ namespace Model
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
@@ -256,7 +257,7 @@ namespace Model
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
-    inline CopyImageRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline CopyImageRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
@@ -340,7 +341,7 @@ namespace Model
      * If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must
      * also be set.</p>
      */
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when
@@ -385,7 +386,7 @@ namespace Model
      * If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must
      * also be set.</p>
      */
-    inline CopyImageRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
+    inline CopyImageRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when

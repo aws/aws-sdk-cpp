@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -84,7 +85,7 @@ namespace Model
      * length</p> <p>Constraints for EC2-Classic: ASCII characters</p> <p>Constraints
      * for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>The name of the security group.</p> <p>Constraints: Up to 255 characters in
@@ -105,7 +106,7 @@ namespace Model
      * length</p> <p>Constraints for EC2-Classic: ASCII characters</p> <p>Constraints
      * for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
      */
-    inline CreateSecurityGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
+    inline CreateSecurityGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the security group.</p> <p>Constraints: Up to 255 characters in
@@ -136,7 +137,7 @@ namespace Model
      * EC2-Classic: ASCII characters</p> <p>Constraints for EC2-VPC: a-z, A-Z, 0-9,
      * spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description for the security group. This is informational only.</p>
@@ -160,7 +161,7 @@ namespace Model
      * EC2-Classic: ASCII characters</p> <p>Constraints for EC2-VPC: a-z, A-Z, 0-9,
      * spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
      */
-    inline CreateSecurityGroupRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateSecurityGroupRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description for the security group. This is informational only.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>[EC2-VPC] The ID of the VPC. Required for EC2-VPC.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>[EC2-VPC] The ID of the VPC. Required for EC2-VPC.</p>
@@ -198,7 +199,7 @@ namespace Model
     /**
      * <p>[EC2-VPC] The ID of the VPC. Required for EC2-VPC.</p>
      */
-    inline CreateSecurityGroupRequest& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline CreateSecurityGroupRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] The ID of the VPC. Required for EC2-VPC.</p>

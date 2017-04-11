@@ -17,6 +17,7 @@
 #include <aws/datapipeline/DataPipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers
      * in a single call. To obtain pipeline IDs, call <a>ListPipelines</a>.</p>
      */
-    inline void SetPipelineIds(Aws::Vector<Aws::String>&& value) { m_pipelineIdsHasBeenSet = true; m_pipelineIds = value; }
+    inline void SetPipelineIds(Aws::Vector<Aws::String>&& value) { m_pipelineIdsHasBeenSet = true; m_pipelineIds = std::move(value); }
 
     /**
      * <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers
@@ -67,7 +68,7 @@ namespace Model
      * <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers
      * in a single call. To obtain pipeline IDs, call <a>ListPipelines</a>.</p>
      */
-    inline DescribePipelinesRequest& WithPipelineIds(Aws::Vector<Aws::String>&& value) { SetPipelineIds(value); return *this;}
+    inline DescribePipelinesRequest& WithPipelineIds(Aws::Vector<Aws::String>&& value) { SetPipelineIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers
@@ -79,7 +80,7 @@ namespace Model
      * <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers
      * in a single call. To obtain pipeline IDs, call <a>ListPipelines</a>.</p>
      */
-    inline DescribePipelinesRequest& AddPipelineIds(Aws::String&& value) { m_pipelineIdsHasBeenSet = true; m_pipelineIds.push_back(value); return *this; }
+    inline DescribePipelinesRequest& AddPipelineIds(Aws::String&& value) { m_pipelineIdsHasBeenSet = true; m_pipelineIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers

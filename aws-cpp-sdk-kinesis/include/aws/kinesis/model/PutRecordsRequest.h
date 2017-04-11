@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesis/model/PutRecordsRequestEntry.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The records associated with the request.</p>
      */
-    inline void SetRecords(Aws::Vector<PutRecordsRequestEntry>&& value) { m_recordsHasBeenSet = true; m_records = value; }
+    inline void SetRecords(Aws::Vector<PutRecordsRequestEntry>&& value) { m_recordsHasBeenSet = true; m_records = std::move(value); }
 
     /**
      * <p>The records associated with the request.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The records associated with the request.</p>
      */
-    inline PutRecordsRequest& WithRecords(Aws::Vector<PutRecordsRequestEntry>&& value) { SetRecords(value); return *this;}
+    inline PutRecordsRequest& WithRecords(Aws::Vector<PutRecordsRequestEntry>&& value) { SetRecords(std::move(value)); return *this;}
 
     /**
      * <p>The records associated with the request.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The records associated with the request.</p>
      */
-    inline PutRecordsRequest& AddRecords(PutRecordsRequestEntry&& value) { m_recordsHasBeenSet = true; m_records.push_back(value); return *this; }
+    inline PutRecordsRequest& AddRecords(PutRecordsRequestEntry&& value) { m_recordsHasBeenSet = true; m_records.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The stream name associated with the request.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The stream name associated with the request.</p>
      */
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
 
     /**
      * <p>The stream name associated with the request.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The stream name associated with the request.</p>
      */
-    inline PutRecordsRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
+    inline PutRecordsRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The stream name associated with the request.</p>

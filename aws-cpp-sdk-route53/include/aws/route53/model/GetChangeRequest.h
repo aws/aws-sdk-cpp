@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * value that <code>ChangeResourceRecordSets</code> returned in the Id element when
      * you submitted the request.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The ID of the change batch request. The value that you specify here is the
@@ -76,7 +77,7 @@ namespace Model
      * value that <code>ChangeResourceRecordSets</code> returned in the Id element when
      * you submitted the request.</p>
      */
-    inline GetChangeRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline GetChangeRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the change batch request. The value that you specify here is the

@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of the on-premises instance to register.</p>
      */
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
+    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
 
     /**
      * <p>The name of the on-premises instance to register.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the on-premises instance to register.</p>
      */
-    inline RegisterOnPremisesInstanceRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(value); return *this;}
+    inline RegisterOnPremisesInstanceRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the on-premises instance to register.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The ARN of the IAM session to associate with the on-premises instance.</p>
      */
-    inline void SetIamSessionArn(Aws::String&& value) { m_iamSessionArnHasBeenSet = true; m_iamSessionArn = value; }
+    inline void SetIamSessionArn(Aws::String&& value) { m_iamSessionArnHasBeenSet = true; m_iamSessionArn = std::move(value); }
 
     /**
      * <p>The ARN of the IAM session to associate with the on-premises instance.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The ARN of the IAM session to associate with the on-premises instance.</p>
      */
-    inline RegisterOnPremisesInstanceRequest& WithIamSessionArn(Aws::String&& value) { SetIamSessionArn(value); return *this;}
+    inline RegisterOnPremisesInstanceRequest& WithIamSessionArn(Aws::String&& value) { SetIamSessionArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM session to associate with the on-premises instance.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The ARN of the IAM user to associate with the on-premises instance.</p>
      */
-    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
+    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::move(value); }
 
     /**
      * <p>The ARN of the IAM user to associate with the on-premises instance.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The ARN of the IAM user to associate with the on-premises instance.</p>
      */
-    inline RegisterOnPremisesInstanceRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(value); return *this;}
+    inline RegisterOnPremisesInstanceRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM user to associate with the on-premises instance.</p>

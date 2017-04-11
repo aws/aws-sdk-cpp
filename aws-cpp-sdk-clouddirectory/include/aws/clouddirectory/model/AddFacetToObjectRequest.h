@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
 #include <aws/clouddirectory/model/AttributeKeyAndValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a> where the object resides. For more
      * information, see <a>arns</a>.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>ARN associated with the <a>Directory</a> where the object resides. For more
@@ -73,7 +74,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a> where the object resides. For more
      * information, see <a>arns</a>.</p>
      */
-    inline AddFacetToObjectRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline AddFacetToObjectRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN associated with the <a>Directory</a> where the object resides. For more
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>Identifiers for the facet that you are adding to the object.</p>
      */
-    inline void SetSchemaFacet(SchemaFacet&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = value; }
+    inline void SetSchemaFacet(SchemaFacet&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = std::move(value); }
 
     /**
      * <p>Identifiers for the facet that you are adding to the object.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>Identifiers for the facet that you are adding to the object.</p>
      */
-    inline AddFacetToObjectRequest& WithSchemaFacet(SchemaFacet&& value) { SetSchemaFacet(value); return *this;}
+    inline AddFacetToObjectRequest& WithSchemaFacet(SchemaFacet&& value) { SetSchemaFacet(std::move(value)); return *this;}
 
     /**
      * <p>Attributes on the facet you are adding to the object.</p>
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>Attributes on the facet you are adding to the object.</p>
      */
-    inline void SetObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList = value; }
+    inline void SetObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList = std::move(value); }
 
     /**
      * <p>Attributes on the facet you are adding to the object.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>Attributes on the facet you are adding to the object.</p>
      */
-    inline AddFacetToObjectRequest& WithObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { SetObjectAttributeList(value); return *this;}
+    inline AddFacetToObjectRequest& WithObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { SetObjectAttributeList(std::move(value)); return *this;}
 
     /**
      * <p>Attributes on the facet you are adding to the object.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>Attributes on the facet you are adding to the object.</p>
      */
-    inline AddFacetToObjectRequest& AddObjectAttributeList(AttributeKeyAndValue&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(value); return *this; }
+    inline AddFacetToObjectRequest& AddObjectAttributeList(AttributeKeyAndValue&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A reference to the object you are adding the specified facet to.</p>
@@ -154,7 +155,7 @@ namespace Model
     /**
      * <p>A reference to the object you are adding the specified facet to.</p>
      */
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
+    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
 
     /**
      * <p>A reference to the object you are adding the specified facet to.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>A reference to the object you are adding the specified facet to.</p>
      */
-    inline AddFacetToObjectRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(value); return *this;}
+    inline AddFacetToObjectRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
   private:
     Aws::String m_directoryArn;

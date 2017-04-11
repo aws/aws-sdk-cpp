@@ -16,6 +16,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
      * <p>The name of the log group.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline DescribeSubscriptionFiltersRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
+    inline DescribeSubscriptionFiltersRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the log group.</p>
@@ -86,7 +87,7 @@ namespace Model
      * <p>The prefix to match. If you don't specify a value, no prefix filter is
      * applied.</p>
      */
-    inline void SetFilterNamePrefix(Aws::String&& value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix = value; }
+    inline void SetFilterNamePrefix(Aws::String&& value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix = std::move(value); }
 
     /**
      * <p>The prefix to match. If you don't specify a value, no prefix filter is
@@ -104,7 +105,7 @@ namespace Model
      * <p>The prefix to match. If you don't specify a value, no prefix filter is
      * applied.</p>
      */
-    inline DescribeSubscriptionFiltersRequest& WithFilterNamePrefix(Aws::String&& value) { SetFilterNamePrefix(value); return *this;}
+    inline DescribeSubscriptionFiltersRequest& WithFilterNamePrefix(Aws::String&& value) { SetFilterNamePrefix(std::move(value)); return *this;}
 
     /**
      * <p>The prefix to match. If you don't specify a value, no prefix filter is
@@ -128,7 +129,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -146,7 +147,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline DescribeSubscriptionFiltersRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeSubscriptionFiltersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

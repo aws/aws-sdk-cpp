@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/email/model/ResponseMetadata.h>
 #include <aws/email/model/ConfigurationSet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of configuration sets.</p>
      */
-    inline void SetConfigurationSets(Aws::Vector<ConfigurationSet>&& value) { m_configurationSets = value; }
+    inline void SetConfigurationSets(Aws::Vector<ConfigurationSet>&& value) { m_configurationSets = std::move(value); }
 
     /**
      * <p>A list of configuration sets.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of configuration sets.</p>
      */
-    inline ListConfigurationSetsResult& WithConfigurationSets(Aws::Vector<ConfigurationSet>&& value) { SetConfigurationSets(value); return *this;}
+    inline ListConfigurationSetsResult& WithConfigurationSets(Aws::Vector<ConfigurationSet>&& value) { SetConfigurationSets(std::move(value)); return *this;}
 
     /**
      * <p>A list of configuration sets.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>A list of configuration sets.</p>
      */
-    inline ListConfigurationSetsResult& AddConfigurationSets(ConfigurationSet&& value) { m_configurationSets.push_back(value); return *this; }
+    inline ListConfigurationSetsResult& AddConfigurationSets(ConfigurationSet&& value) { m_configurationSets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A token indicating that there are additional configuration sets available to
@@ -105,7 +106,7 @@ namespace Model
      * be listed. Pass this token to successive calls of
      * <code>ListConfigurationSets</code>. </p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>A token indicating that there are additional configuration sets available to
@@ -126,7 +127,7 @@ namespace Model
      * be listed. Pass this token to successive calls of
      * <code>ListConfigurationSets</code>. </p>
      */
-    inline ListConfigurationSetsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListConfigurationSetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A token indicating that there are additional configuration sets available to
@@ -142,13 +143,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListConfigurationSetsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListConfigurationSetsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListConfigurationSetsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<ConfigurationSet> m_configurationSets;

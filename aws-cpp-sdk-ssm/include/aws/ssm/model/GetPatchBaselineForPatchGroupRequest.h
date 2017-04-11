@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the patch group whose patch baseline should be retrieved.</p>
      */
-    inline void SetPatchGroup(Aws::String&& value) { m_patchGroupHasBeenSet = true; m_patchGroup = value; }
+    inline void SetPatchGroup(Aws::String&& value) { m_patchGroupHasBeenSet = true; m_patchGroup = std::move(value); }
 
     /**
      * <p>The name of the patch group whose patch baseline should be retrieved.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the patch group whose patch baseline should be retrieved.</p>
      */
-    inline GetPatchBaselineForPatchGroupRequest& WithPatchGroup(Aws::String&& value) { SetPatchGroup(value); return *this;}
+    inline GetPatchBaselineForPatchGroupRequest& WithPatchGroup(Aws::String&& value) { SetPatchGroup(std::move(value)); return *this;}
 
     /**
      * <p>The name of the patch group whose patch baseline should be retrieved.</p>

@@ -16,6 +16,7 @@
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
 #include <aws/opsworkscm/OpsWorksCMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * of backup IDs. Backup IDs are in the format
      * <code>ServerName-yyyyMMddHHmmssSSS</code>. </p>
      */
-    inline void SetBackupId(Aws::String&& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
+    inline void SetBackupId(Aws::String&& value) { m_backupIdHasBeenSet = true; m_backupId = std::move(value); }
 
     /**
      * <p>The ID of the backup to delete. Run the DescribeBackups command to get a list
@@ -75,7 +76,7 @@ namespace Model
      * of backup IDs. Backup IDs are in the format
      * <code>ServerName-yyyyMMddHHmmssSSS</code>. </p>
      */
-    inline DeleteBackupRequest& WithBackupId(Aws::String&& value) { SetBackupId(value); return *this;}
+    inline DeleteBackupRequest& WithBackupId(Aws::String&& value) { SetBackupId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the backup to delete. Run the DescribeBackups command to get a list

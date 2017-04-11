@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The IDs of the Dedicated Hosts you want to release.</p>
      */
-    inline void SetHostIds(Aws::Vector<Aws::String>&& value) { m_hostIdsHasBeenSet = true; m_hostIds = value; }
+    inline void SetHostIds(Aws::Vector<Aws::String>&& value) { m_hostIdsHasBeenSet = true; m_hostIds = std::move(value); }
 
     /**
      * <p>The IDs of the Dedicated Hosts you want to release.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The IDs of the Dedicated Hosts you want to release.</p>
      */
-    inline ReleaseHostsRequest& WithHostIds(Aws::Vector<Aws::String>&& value) { SetHostIds(value); return *this;}
+    inline ReleaseHostsRequest& WithHostIds(Aws::Vector<Aws::String>&& value) { SetHostIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the Dedicated Hosts you want to release.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The IDs of the Dedicated Hosts you want to release.</p>
      */
-    inline ReleaseHostsRequest& AddHostIds(Aws::String&& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
+    inline ReleaseHostsRequest& AddHostIds(Aws::String&& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the Dedicated Hosts you want to release.</p>

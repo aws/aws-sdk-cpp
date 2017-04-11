@@ -17,6 +17,7 @@
 #include <aws/xray/XRayRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,7 +48,7 @@ namespace Model
     /**
      * <p>Trace IDs of requests for which to generate a service graph.</p>
      */
-    inline void SetTraceIds(Aws::Vector<Aws::String>&& value) { m_traceIdsHasBeenSet = true; m_traceIds = value; }
+    inline void SetTraceIds(Aws::Vector<Aws::String>&& value) { m_traceIdsHasBeenSet = true; m_traceIds = std::move(value); }
 
     /**
      * <p>Trace IDs of requests for which to generate a service graph.</p>
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>Trace IDs of requests for which to generate a service graph.</p>
      */
-    inline GetTraceGraphRequest& WithTraceIds(Aws::Vector<Aws::String>&& value) { SetTraceIds(value); return *this;}
+    inline GetTraceGraphRequest& WithTraceIds(Aws::Vector<Aws::String>&& value) { SetTraceIds(std::move(value)); return *this;}
 
     /**
      * <p>Trace IDs of requests for which to generate a service graph.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Trace IDs of requests for which to generate a service graph.</p>
      */
-    inline GetTraceGraphRequest& AddTraceIds(Aws::String&& value) { m_traceIdsHasBeenSet = true; m_traceIds.push_back(value); return *this; }
+    inline GetTraceGraphRequest& AddTraceIds(Aws::String&& value) { m_traceIdsHasBeenSet = true; m_traceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Trace IDs of requests for which to generate a service graph.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>Pagination token. Not used.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Pagination token. Not used.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>Pagination token. Not used.</p>
      */
-    inline GetTraceGraphRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline GetTraceGraphRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Pagination token. Not used.</p>

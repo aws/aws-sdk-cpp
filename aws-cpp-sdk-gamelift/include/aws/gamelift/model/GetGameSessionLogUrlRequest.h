@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>Unique identifier for the game session to get logs for.</p>
      */
-    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
+    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
      * <p>Unique identifier for the game session to get logs for.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>Unique identifier for the game session to get logs for.</p>
      */
-    inline GetGameSessionLogUrlRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(value); return *this;}
+    inline GetGameSessionLogUrlRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for the game session to get logs for.</p>

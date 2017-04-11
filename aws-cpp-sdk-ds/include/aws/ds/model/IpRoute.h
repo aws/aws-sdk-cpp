@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * single IP address use a CIDR address block with /32. For example
      * 10.0.0.0/32.</p>
      */
-    inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
+    inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = std::move(value); }
 
     /**
      * <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often
@@ -90,7 +91,7 @@ namespace Model
      * single IP address use a CIDR address block with /32. For example
      * 10.0.0.0/32.</p>
      */
-    inline IpRoute& WithCidrIp(Aws::String&& value) { SetCidrIp(value); return *this;}
+    inline IpRoute& WithCidrIp(Aws::String&& value) { SetCidrIp(std::move(value)); return *this;}
 
     /**
      * <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>Description of the address block.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Description of the address block.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>Description of the address block.</p>
      */
-    inline IpRoute& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline IpRoute& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Description of the address block.</p>

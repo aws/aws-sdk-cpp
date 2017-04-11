@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the volume.</p>
      */
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     /**
      * <p>The ID of the volume.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The ID of the volume.</p>
      */
-    inline DetachVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
+    inline DetachVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the volume.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline DetachVolumeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline DetachVolumeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The device name.</p>
      */
-    inline void SetDevice(Aws::String&& value) { m_deviceHasBeenSet = true; m_device = value; }
+    inline void SetDevice(Aws::String&& value) { m_deviceHasBeenSet = true; m_device = std::move(value); }
 
     /**
      * <p>The device name.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>The device name.</p>
      */
-    inline DetachVolumeRequest& WithDevice(Aws::String&& value) { SetDevice(value); return *this;}
+    inline DetachVolumeRequest& WithDevice(Aws::String&& value) { SetDevice(std::move(value)); return *this;}
 
     /**
      * <p>The device name.</p>

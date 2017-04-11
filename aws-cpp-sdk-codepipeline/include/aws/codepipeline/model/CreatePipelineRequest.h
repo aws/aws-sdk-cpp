@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/CodePipelineRequest.h>
 #include <aws/codepipeline/model/PipelineDeclaration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,13 +47,13 @@ namespace Model
     inline void SetPipeline(const PipelineDeclaration& value) { m_pipelineHasBeenSet = true; m_pipeline = value; }
 
     
-    inline void SetPipeline(PipelineDeclaration&& value) { m_pipelineHasBeenSet = true; m_pipeline = value; }
+    inline void SetPipeline(PipelineDeclaration&& value) { m_pipelineHasBeenSet = true; m_pipeline = std::move(value); }
 
     
     inline CreatePipelineRequest& WithPipeline(const PipelineDeclaration& value) { SetPipeline(value); return *this;}
 
     
-    inline CreatePipelineRequest& WithPipeline(PipelineDeclaration&& value) { SetPipeline(value); return *this;}
+    inline CreatePipelineRequest& WithPipeline(PipelineDeclaration&& value) { SetPipeline(std::move(value)); return *this;}
 
   private:
     PipelineDeclaration m_pipeline;

@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/model/ArtifactLocationType.h>
 #include <aws/codepipeline/model/S3ArtifactLocation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The type of artifact in the location.</p>
      */
-    inline void SetType(ArtifactLocationType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(ArtifactLocationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of artifact in the location.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The type of artifact in the location.</p>
      */
-    inline ArtifactLocation& WithType(ArtifactLocationType&& value) { SetType(value); return *this;}
+    inline ArtifactLocation& WithType(ArtifactLocationType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 bucket that contains the artifact.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket that contains the artifact.</p>
      */
-    inline void SetS3Location(S3ArtifactLocation&& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
+    inline void SetS3Location(S3ArtifactLocation&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
 
     /**
      * <p>The Amazon S3 bucket that contains the artifact.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket that contains the artifact.</p>
      */
-    inline ArtifactLocation& WithS3Location(S3ArtifactLocation&& value) { SetS3Location(value); return *this;}
+    inline ArtifactLocation& WithS3Location(S3ArtifactLocation&& value) { SetS3Location(std::move(value)); return *this;}
 
   private:
     ArtifactLocationType m_type;

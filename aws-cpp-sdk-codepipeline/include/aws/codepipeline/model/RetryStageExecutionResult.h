@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ID of the current workflow execution in the failed stage.</p>
      */
-    inline void SetPipelineExecutionId(Aws::String&& value) { m_pipelineExecutionId = value; }
+    inline void SetPipelineExecutionId(Aws::String&& value) { m_pipelineExecutionId = std::move(value); }
 
     /**
      * <p>The ID of the current workflow execution in the failed stage.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ID of the current workflow execution in the failed stage.</p>
      */
-    inline RetryStageExecutionResult& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(value); return *this;}
+    inline RetryStageExecutionResult& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the current workflow execution in the failed stage.</p>

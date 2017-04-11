@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/model/ApplicationVersionDescription.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
      */
-    inline void SetApplicationVersion(ApplicationVersionDescription&& value) { m_applicationVersion = value; }
+    inline void SetApplicationVersion(ApplicationVersionDescription&& value) { m_applicationVersion = std::move(value); }
 
     /**
      * <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
      */
-    inline CreateApplicationVersionResult& WithApplicationVersion(ApplicationVersionDescription&& value) { SetApplicationVersion(value); return *this;}
+    inline CreateApplicationVersionResult& WithApplicationVersion(ApplicationVersionDescription&& value) { SetApplicationVersion(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -78,13 +79,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CreateApplicationVersionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CreateApplicationVersionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CreateApplicationVersionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     ApplicationVersionDescription m_applicationVersion;

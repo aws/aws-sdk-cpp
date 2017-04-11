@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mturk-requester/model/ReviewActionStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The unique identifier for the action.</p>
      */
-    inline void SetActionId(Aws::String&& value) { m_actionIdHasBeenSet = true; m_actionId = value; }
+    inline void SetActionId(Aws::String&& value) { m_actionIdHasBeenSet = true; m_actionId = std::move(value); }
 
     /**
      * <p>The unique identifier for the action.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The unique identifier for the action.</p>
      */
-    inline ReviewActionDetail& WithActionId(Aws::String&& value) { SetActionId(value); return *this;}
+    inline ReviewActionDetail& WithActionId(Aws::String&& value) { SetActionId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the action.</p>
@@ -101,7 +102,7 @@ namespace Model
      * examining the HIT and Assignments, emitting results, and deciding which other
      * actions will be necessary. </p>
      */
-    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
+    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
 
     /**
      * <p> The nature of the action itself. The Review Policy is responsible for
@@ -122,7 +123,7 @@ namespace Model
      * examining the HIT and Assignments, emitting results, and deciding which other
      * actions will be necessary. </p>
      */
-    inline ReviewActionDetail& WithActionName(Aws::String&& value) { SetActionName(value); return *this;}
+    inline ReviewActionDetail& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
 
     /**
      * <p> The nature of the action itself. The Review Policy is responsible for
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p> The specific HITId or AssignmentID targeted by the action.</p>
      */
-    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
+    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
 
     /**
      * <p> The specific HITId or AssignmentID targeted by the action.</p>
@@ -159,7 +160,7 @@ namespace Model
     /**
      * <p> The specific HITId or AssignmentID targeted by the action.</p>
      */
-    inline ReviewActionDetail& WithTargetId(Aws::String&& value) { SetTargetId(value); return *this;}
+    inline ReviewActionDetail& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
 
     /**
      * <p> The specific HITId or AssignmentID targeted by the action.</p>
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p> The type of object in TargetId.</p>
      */
-    inline void SetTargetType(Aws::String&& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+    inline void SetTargetType(Aws::String&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
     /**
      * <p> The type of object in TargetId.</p>
@@ -194,7 +195,7 @@ namespace Model
     /**
      * <p> The type of object in TargetId.</p>
      */
-    inline ReviewActionDetail& WithTargetType(Aws::String&& value) { SetTargetType(value); return *this;}
+    inline ReviewActionDetail& WithTargetType(Aws::String&& value) { SetTargetType(std::move(value)); return *this;}
 
     /**
      * <p> The type of object in TargetId.</p>
@@ -217,7 +218,7 @@ namespace Model
      * <p> The current disposition of the action: INTENDED, SUCCEEDED, FAILED, or
      * CANCELLED. </p>
      */
-    inline void SetStatus(ReviewActionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ReviewActionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p> The current disposition of the action: INTENDED, SUCCEEDED, FAILED, or
@@ -229,7 +230,7 @@ namespace Model
      * <p> The current disposition of the action: INTENDED, SUCCEEDED, FAILED, or
      * CANCELLED. </p>
      */
-    inline ReviewActionDetail& WithStatus(ReviewActionStatus&& value) { SetStatus(value); return *this;}
+    inline ReviewActionDetail& WithStatus(ReviewActionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p> The date when the action was completed.</p>
@@ -244,7 +245,7 @@ namespace Model
     /**
      * <p> The date when the action was completed.</p>
      */
-    inline void SetCompleteTime(Aws::Utils::DateTime&& value) { m_completeTimeHasBeenSet = true; m_completeTime = value; }
+    inline void SetCompleteTime(Aws::Utils::DateTime&& value) { m_completeTimeHasBeenSet = true; m_completeTime = std::move(value); }
 
     /**
      * <p> The date when the action was completed.</p>
@@ -254,7 +255,7 @@ namespace Model
     /**
      * <p> The date when the action was completed.</p>
      */
-    inline ReviewActionDetail& WithCompleteTime(Aws::Utils::DateTime&& value) { SetCompleteTime(value); return *this;}
+    inline ReviewActionDetail& WithCompleteTime(Aws::Utils::DateTime&& value) { SetCompleteTime(std::move(value)); return *this;}
 
     /**
      * <p> A description of the outcome of the review.</p>
@@ -269,7 +270,7 @@ namespace Model
     /**
      * <p> A description of the outcome of the review.</p>
      */
-    inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = value; }
+    inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
 
     /**
      * <p> A description of the outcome of the review.</p>
@@ -284,7 +285,7 @@ namespace Model
     /**
      * <p> A description of the outcome of the review.</p>
      */
-    inline ReviewActionDetail& WithResult(Aws::String&& value) { SetResult(value); return *this;}
+    inline ReviewActionDetail& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
 
     /**
      * <p> A description of the outcome of the review.</p>
@@ -304,7 +305,7 @@ namespace Model
     /**
      * <p> Present only when the Results have a FAILED Status.</p>
      */
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
      * <p> Present only when the Results have a FAILED Status.</p>
@@ -319,7 +320,7 @@ namespace Model
     /**
      * <p> Present only when the Results have a FAILED Status.</p>
      */
-    inline ReviewActionDetail& WithErrorCode(Aws::String&& value) { SetErrorCode(value); return *this;}
+    inline ReviewActionDetail& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
      * <p> Present only when the Results have a FAILED Status.</p>

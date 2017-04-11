@@ -23,6 +23,7 @@
 #include <aws/ecs/model/ServiceEvent.h>
 #include <aws/ecs/model/PlacementConstraint.h>
 #include <aws/ecs/model/PlacementStrategy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
      * </code>.</p>
      */
-    inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
+    inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the service. The ARN contains
@@ -109,7 +110,7 @@ namespace Model
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
      * </code>.</p>
      */
-    inline Service& WithServiceArn(Aws::String&& value) { SetServiceArn(value); return *this;}
+    inline Service& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the service. The ARN contains
@@ -143,7 +144,7 @@ namespace Model
      * within a cluster, but you can have similarly named services in multiple clusters
      * within a region or across multiple regions.</p>
      */
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
+    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
@@ -167,7 +168,7 @@ namespace Model
      * within a cluster, but you can have similarly named services in multiple clusters
      * within a region or across multiple regions.</p>
      */
-    inline Service& WithServiceName(Aws::String&& value) { SetServiceName(value); return *this;}
+    inline Service& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
@@ -190,7 +191,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the cluster that hosts the service.</p>
      */
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
+    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the cluster that hosts the service.</p>
@@ -205,7 +206,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the cluster that hosts the service.</p>
      */
-    inline Service& WithClusterArn(Aws::String&& value) { SetClusterArn(value); return *this;}
+    inline Service& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the cluster that hosts the service.</p>
@@ -231,7 +232,7 @@ namespace Model
      * balancer name, the container name (as it appears in a container definition), and
      * the container port to access from the load balancer.</p>
      */
-    inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
+    inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = std::move(value); }
 
     /**
      * <p>A list of Elastic Load Balancing load balancer objects, containing the load
@@ -245,7 +246,7 @@ namespace Model
      * balancer name, the container name (as it appears in a container definition), and
      * the container port to access from the load balancer.</p>
      */
-    inline Service& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(value); return *this;}
+    inline Service& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(std::move(value)); return *this;}
 
     /**
      * <p>A list of Elastic Load Balancing load balancer objects, containing the load
@@ -259,7 +260,7 @@ namespace Model
      * balancer name, the container name (as it appears in a container definition), and
      * the container port to access from the load balancer.</p>
      */
-    inline Service& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
+    inline Service& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The status of the service. The valid values are <code>ACTIVE</code>,
@@ -277,7 +278,7 @@ namespace Model
      * <p>The status of the service. The valid values are <code>ACTIVE</code>,
      * <code>DRAINING</code>, or <code>INACTIVE</code>.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the service. The valid values are <code>ACTIVE</code>,
@@ -295,7 +296,7 @@ namespace Model
      * <p>The status of the service. The valid values are <code>ACTIVE</code>,
      * <code>DRAINING</code>, or <code>INACTIVE</code>.</p>
      */
-    inline Service& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline Service& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the service. The valid values are <code>ACTIVE</code>,
@@ -379,7 +380,7 @@ namespace Model
      * when the service is created with <a>CreateService</a>, and it can be modified
      * with <a>UpdateService</a>.</p>
      */
-    inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
+    inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
 
     /**
      * <p>The task definition to use for tasks in the service. This value is specified
@@ -400,7 +401,7 @@ namespace Model
      * when the service is created with <a>CreateService</a>, and it can be modified
      * with <a>UpdateService</a>.</p>
      */
-    inline Service& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(value); return *this;}
+    inline Service& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
     /**
      * <p>The task definition to use for tasks in the service. This value is specified
@@ -425,7 +426,7 @@ namespace Model
      * <p>Optional deployment parameters that control how many tasks run during the
      * deployment and the ordering of stopping and starting tasks.</p>
      */
-    inline void SetDeploymentConfiguration(DeploymentConfiguration&& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = value; }
+    inline void SetDeploymentConfiguration(DeploymentConfiguration&& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = std::move(value); }
 
     /**
      * <p>Optional deployment parameters that control how many tasks run during the
@@ -437,7 +438,7 @@ namespace Model
      * <p>Optional deployment parameters that control how many tasks run during the
      * deployment and the ordering of stopping and starting tasks.</p>
      */
-    inline Service& WithDeploymentConfiguration(DeploymentConfiguration&& value) { SetDeploymentConfiguration(value); return *this;}
+    inline Service& WithDeploymentConfiguration(DeploymentConfiguration&& value) { SetDeploymentConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The current state of deployments for the service.</p>
@@ -452,7 +453,7 @@ namespace Model
     /**
      * <p>The current state of deployments for the service.</p>
      */
-    inline void SetDeployments(Aws::Vector<Deployment>&& value) { m_deploymentsHasBeenSet = true; m_deployments = value; }
+    inline void SetDeployments(Aws::Vector<Deployment>&& value) { m_deploymentsHasBeenSet = true; m_deployments = std::move(value); }
 
     /**
      * <p>The current state of deployments for the service.</p>
@@ -462,7 +463,7 @@ namespace Model
     /**
      * <p>The current state of deployments for the service.</p>
      */
-    inline Service& WithDeployments(Aws::Vector<Deployment>&& value) { SetDeployments(value); return *this;}
+    inline Service& WithDeployments(Aws::Vector<Deployment>&& value) { SetDeployments(std::move(value)); return *this;}
 
     /**
      * <p>The current state of deployments for the service.</p>
@@ -472,7 +473,7 @@ namespace Model
     /**
      * <p>The current state of deployments for the service.</p>
      */
-    inline Service& AddDeployments(Deployment&& value) { m_deploymentsHasBeenSet = true; m_deployments.push_back(value); return *this; }
+    inline Service& AddDeployments(Deployment&& value) { m_deploymentsHasBeenSet = true; m_deployments.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the service
@@ -493,7 +494,7 @@ namespace Model
      * that allows the Amazon ECS container agent to register container instances with
      * an Elastic Load Balancing load balancer.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the service
@@ -514,7 +515,7 @@ namespace Model
      * that allows the Amazon ECS container agent to register container instances with
      * an Elastic Load Balancing load balancer.</p>
      */
-    inline Service& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline Service& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the service
@@ -539,7 +540,7 @@ namespace Model
      * <p>The event stream for your service. A maximum of 100 of the latest events are
      * displayed.</p>
      */
-    inline void SetEvents(Aws::Vector<ServiceEvent>&& value) { m_eventsHasBeenSet = true; m_events = value; }
+    inline void SetEvents(Aws::Vector<ServiceEvent>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     /**
      * <p>The event stream for your service. A maximum of 100 of the latest events are
@@ -551,7 +552,7 @@ namespace Model
      * <p>The event stream for your service. A maximum of 100 of the latest events are
      * displayed.</p>
      */
-    inline Service& WithEvents(Aws::Vector<ServiceEvent>&& value) { SetEvents(value); return *this;}
+    inline Service& WithEvents(Aws::Vector<ServiceEvent>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
      * <p>The event stream for your service. A maximum of 100 of the latest events are
@@ -563,7 +564,7 @@ namespace Model
      * <p>The event stream for your service. A maximum of 100 of the latest events are
      * displayed.</p>
      */
-    inline Service& AddEvents(ServiceEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
+    inline Service& AddEvents(ServiceEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The Unix timestamp for when the service was created.</p>
@@ -578,7 +579,7 @@ namespace Model
     /**
      * <p>The Unix timestamp for when the service was created.</p>
      */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
      * <p>The Unix timestamp for when the service was created.</p>
@@ -588,7 +589,7 @@ namespace Model
     /**
      * <p>The Unix timestamp for when the service was created.</p>
      */
-    inline Service& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
+    inline Service& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
      * <p>The placement constraints for the tasks in the service.</p>
@@ -603,7 +604,7 @@ namespace Model
     /**
      * <p>The placement constraints for the tasks in the service.</p>
      */
-    inline void SetPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
+    inline void SetPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = std::move(value); }
 
     /**
      * <p>The placement constraints for the tasks in the service.</p>
@@ -613,7 +614,7 @@ namespace Model
     /**
      * <p>The placement constraints for the tasks in the service.</p>
      */
-    inline Service& WithPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { SetPlacementConstraints(value); return *this;}
+    inline Service& WithPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { SetPlacementConstraints(std::move(value)); return *this;}
 
     /**
      * <p>The placement constraints for the tasks in the service.</p>
@@ -623,7 +624,7 @@ namespace Model
     /**
      * <p>The placement constraints for the tasks in the service.</p>
      */
-    inline Service& AddPlacementConstraints(PlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
+    inline Service& AddPlacementConstraints(PlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The placement strategy that determines how tasks for the service are
@@ -641,7 +642,7 @@ namespace Model
      * <p>The placement strategy that determines how tasks for the service are
      * placed.</p>
      */
-    inline void SetPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = value; }
+    inline void SetPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = std::move(value); }
 
     /**
      * <p>The placement strategy that determines how tasks for the service are
@@ -653,7 +654,7 @@ namespace Model
      * <p>The placement strategy that determines how tasks for the service are
      * placed.</p>
      */
-    inline Service& WithPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { SetPlacementStrategy(value); return *this;}
+    inline Service& WithPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { SetPlacementStrategy(std::move(value)); return *this;}
 
     /**
      * <p>The placement strategy that determines how tasks for the service are
@@ -665,7 +666,7 @@ namespace Model
      * <p>The placement strategy that determines how tasks for the service are
      * placed.</p>
      */
-    inline Service& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(value); return *this; }
+    inline Service& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_serviceArn;

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codecommit/model/RepositoryTrigger.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The name of the repository in which to test the triggers.</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The name of the repository in which to test the triggers.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The name of the repository in which to test the triggers.</p>
      */
-    inline TestRepositoryTriggersRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline TestRepositoryTriggersRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the repository in which to test the triggers.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The list of triggers to test.</p>
      */
-    inline void SetTriggers(Aws::Vector<RepositoryTrigger>&& value) { m_triggersHasBeenSet = true; m_triggers = value; }
+    inline void SetTriggers(Aws::Vector<RepositoryTrigger>&& value) { m_triggersHasBeenSet = true; m_triggers = std::move(value); }
 
     /**
      * <p>The list of triggers to test.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The list of triggers to test.</p>
      */
-    inline TestRepositoryTriggersRequest& WithTriggers(Aws::Vector<RepositoryTrigger>&& value) { SetTriggers(value); return *this;}
+    inline TestRepositoryTriggersRequest& WithTriggers(Aws::Vector<RepositoryTrigger>&& value) { SetTriggers(std::move(value)); return *this;}
 
     /**
      * <p>The list of triggers to test.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The list of triggers to test.</p>
      */
-    inline TestRepositoryTriggersRequest& AddTriggers(RepositoryTrigger&& value) { m_triggersHasBeenSet = true; m_triggers.push_back(value); return *this; }
+    inline TestRepositoryTriggersRequest& AddTriggers(RepositoryTrigger&& value) { m_triggersHasBeenSet = true; m_triggers.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_repositoryName;

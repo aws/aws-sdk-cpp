@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The ID assigned to the managed instance when you registered it using the
      * activation process. </p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID assigned to the managed instance when you registered it using the
@@ -69,7 +70,7 @@ namespace Model
      * <p>The ID assigned to the managed instance when you registered it using the
      * activation process. </p>
      */
-    inline DeregisterManagedInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline DeregisterManagedInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID assigned to the managed instance when you registered it using the

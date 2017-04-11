@@ -18,6 +18,7 @@
 #include <aws/dynamodb/model/ConsumedCapacity.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/AttributeValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>A map of attribute names to <code>AttributeValue</code> objects, as specified
      * by <code>ProjectionExpression</code>.</p>
      */
-    inline void SetItem(Aws::Map<Aws::String, AttributeValue>&& value) { m_item = value; }
+    inline void SetItem(Aws::Map<Aws::String, AttributeValue>&& value) { m_item = std::move(value); }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, as specified
@@ -76,43 +77,43 @@ namespace Model
      * <p>A map of attribute names to <code>AttributeValue</code> objects, as specified
      * by <code>ProjectionExpression</code>.</p>
      */
-    inline GetItemResult& WithItem(Aws::Map<Aws::String, AttributeValue>&& value) { SetItem(value); return *this;}
+    inline GetItemResult& WithItem(Aws::Map<Aws::String, AttributeValue>&& value) { SetItem(std::move(value)); return *this;}
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, as specified
      * by <code>ProjectionExpression</code>.</p>
      */
-    inline GetItemResult& AddItem(const Aws::String& key, const AttributeValue& value) { m_item[key] = value; return *this; }
+    inline GetItemResult& AddItem(const Aws::String& key, const AttributeValue& value) { m_item.emplace(key, value); return *this; }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, as specified
      * by <code>ProjectionExpression</code>.</p>
      */
-    inline GetItemResult& AddItem(Aws::String&& key, const AttributeValue& value) { m_item[key] = value; return *this; }
+    inline GetItemResult& AddItem(Aws::String&& key, const AttributeValue& value) { m_item.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, as specified
      * by <code>ProjectionExpression</code>.</p>
      */
-    inline GetItemResult& AddItem(const Aws::String& key, AttributeValue&& value) { m_item[key] = value; return *this; }
+    inline GetItemResult& AddItem(const Aws::String& key, AttributeValue&& value) { m_item.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, as specified
      * by <code>ProjectionExpression</code>.</p>
      */
-    inline GetItemResult& AddItem(Aws::String&& key, AttributeValue&& value) { m_item[key] = value; return *this; }
+    inline GetItemResult& AddItem(Aws::String&& key, AttributeValue&& value) { m_item.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, as specified
      * by <code>ProjectionExpression</code>.</p>
      */
-    inline GetItemResult& AddItem(const char* key, AttributeValue&& value) { m_item[key] = value; return *this; }
+    inline GetItemResult& AddItem(const char* key, AttributeValue&& value) { m_item.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, as specified
      * by <code>ProjectionExpression</code>.</p>
      */
-    inline GetItemResult& AddItem(const char* key, const AttributeValue& value) { m_item[key] = value; return *this; }
+    inline GetItemResult& AddItem(const char* key, const AttributeValue& value) { m_item.emplace(key, value); return *this; }
 
     /**
      * <p>The capacity units consumed by the <code>GetItem</code> operation. The data
@@ -148,7 +149,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline void SetConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity = value; }
+    inline void SetConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity = std::move(value); }
 
     /**
      * <p>The capacity units consumed by the <code>GetItem</code> operation. The data
@@ -172,7 +173,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline GetItemResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(value); return *this;}
+    inline GetItemResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(std::move(value)); return *this;}
 
   private:
     Aws::Map<Aws::String, AttributeValue> m_item;

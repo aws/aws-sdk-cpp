@@ -19,6 +19,7 @@
 #include <aws/ec2/model/SpotInstanceType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/RequestSpotLaunchSpecification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -84,7 +85,7 @@ namespace Model
      * <p>The maximum hourly price (bid) for any Spot instance launched to fulfill the
      * request.</p>
      */
-    inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
+    inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::move(value); }
 
     /**
      * <p>The maximum hourly price (bid) for any Spot instance launched to fulfill the
@@ -102,7 +103,7 @@ namespace Model
      * <p>The maximum hourly price (bid) for any Spot instance launched to fulfill the
      * request.</p>
      */
-    inline RequestSpotInstancesRequest& WithSpotPrice(Aws::String&& value) { SetSpotPrice(value); return *this;}
+    inline RequestSpotInstancesRequest& WithSpotPrice(Aws::String&& value) { SetSpotPrice(std::move(value)); return *this;}
 
     /**
      * <p>The maximum hourly price (bid) for any Spot instance launched to fulfill the
@@ -135,7 +136,7 @@ namespace Model
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
@@ -162,7 +163,7 @@ namespace Model
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
-    inline RequestSpotInstancesRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline RequestSpotInstancesRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
@@ -201,7 +202,7 @@ namespace Model
     /**
      * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code> </p>
      */
-    inline void SetType(SpotInstanceType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(SpotInstanceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code> </p>
@@ -211,7 +212,7 @@ namespace Model
     /**
      * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code> </p>
      */
-    inline RequestSpotInstancesRequest& WithType(SpotInstanceType&& value) { SetType(value); return *this;}
+    inline RequestSpotInstancesRequest& WithType(SpotInstanceType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The start date of the request. If this is a one-time request, the request
@@ -241,7 +242,7 @@ namespace Model
      * until it expires or is canceled.</p> <p>Default: The request is effective
      * indefinitely.</p>
      */
-    inline void SetValidFrom(Aws::Utils::DateTime&& value) { m_validFromHasBeenSet = true; m_validFrom = value; }
+    inline void SetValidFrom(Aws::Utils::DateTime&& value) { m_validFromHasBeenSet = true; m_validFrom = std::move(value); }
 
     /**
      * <p>The start date of the request. If this is a one-time request, the request
@@ -261,7 +262,7 @@ namespace Model
      * until it expires or is canceled.</p> <p>Default: The request is effective
      * indefinitely.</p>
      */
-    inline RequestSpotInstancesRequest& WithValidFrom(Aws::Utils::DateTime&& value) { SetValidFrom(value); return *this;}
+    inline RequestSpotInstancesRequest& WithValidFrom(Aws::Utils::DateTime&& value) { SetValidFrom(std::move(value)); return *this;}
 
     /**
      * <p>The end date of the request. If this is a one-time request, the request
@@ -288,7 +289,7 @@ namespace Model
      * or this date and time is reached.</p> <p>Default: The request is effective
      * indefinitely.</p>
      */
-    inline void SetValidUntil(Aws::Utils::DateTime&& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
+    inline void SetValidUntil(Aws::Utils::DateTime&& value) { m_validUntilHasBeenSet = true; m_validUntil = std::move(value); }
 
     /**
      * <p>The end date of the request. If this is a one-time request, the request
@@ -306,7 +307,7 @@ namespace Model
      * or this date and time is reached.</p> <p>Default: The request is effective
      * indefinitely.</p>
      */
-    inline RequestSpotInstancesRequest& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(value); return *this;}
+    inline RequestSpotInstancesRequest& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(std::move(value)); return *this;}
 
     /**
      * <p>The instance launch group. Launch groups are Spot instances that launch
@@ -327,7 +328,7 @@ namespace Model
      * together and terminate together.</p> <p>Default: Instances are launched and
      * terminated individually</p>
      */
-    inline void SetLaunchGroup(Aws::String&& value) { m_launchGroupHasBeenSet = true; m_launchGroup = value; }
+    inline void SetLaunchGroup(Aws::String&& value) { m_launchGroupHasBeenSet = true; m_launchGroup = std::move(value); }
 
     /**
      * <p>The instance launch group. Launch groups are Spot instances that launch
@@ -348,7 +349,7 @@ namespace Model
      * together and terminate together.</p> <p>Default: Instances are launched and
      * terminated individually</p>
      */
-    inline RequestSpotInstancesRequest& WithLaunchGroup(Aws::String&& value) { SetLaunchGroup(value); return *this;}
+    inline RequestSpotInstancesRequest& WithLaunchGroup(Aws::String&& value) { SetLaunchGroup(std::move(value)); return *this;}
 
     /**
      * <p>The instance launch group. Launch groups are Spot instances that launch
@@ -412,7 +413,7 @@ namespace Model
      * original request, even if you specified the same Availability Zone group.</p>
      * <p>Default: Instances are launched in any available Availability Zone.</p>
      */
-    inline void SetAvailabilityZoneGroup(Aws::String&& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = value; }
+    inline void SetAvailabilityZoneGroup(Aws::String&& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = std::move(value); }
 
     /**
      * <p>The user-specified name for a logical grouping of bids.</p> <p>When you
@@ -469,7 +470,7 @@ namespace Model
      * original request, even if you specified the same Availability Zone group.</p>
      * <p>Default: Instances are launched in any available Availability Zone.</p>
      */
-    inline RequestSpotInstancesRequest& WithAvailabilityZoneGroup(Aws::String&& value) { SetAvailabilityZoneGroup(value); return *this;}
+    inline RequestSpotInstancesRequest& WithAvailabilityZoneGroup(Aws::String&& value) { SetAvailabilityZoneGroup(std::move(value)); return *this;}
 
     /**
      * <p>The user-specified name for a logical grouping of bids.</p> <p>When you
@@ -533,13 +534,13 @@ namespace Model
     inline void SetLaunchSpecification(const RequestSpotLaunchSpecification& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = value; }
 
     
-    inline void SetLaunchSpecification(RequestSpotLaunchSpecification&& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = value; }
+    inline void SetLaunchSpecification(RequestSpotLaunchSpecification&& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = std::move(value); }
 
     
     inline RequestSpotInstancesRequest& WithLaunchSpecification(const RequestSpotLaunchSpecification& value) { SetLaunchSpecification(value); return *this;}
 
     
-    inline RequestSpotInstancesRequest& WithLaunchSpecification(RequestSpotLaunchSpecification&& value) { SetLaunchSpecification(value); return *this;}
+    inline RequestSpotInstancesRequest& WithLaunchSpecification(RequestSpotLaunchSpecification&& value) { SetLaunchSpecification(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

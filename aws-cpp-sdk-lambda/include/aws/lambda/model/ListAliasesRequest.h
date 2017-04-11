@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Lambda function name for which the alias is created.</p>
      */
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
      * <p>Lambda function name for which the alias is created.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Lambda function name for which the alias is created.</p>
      */
-    inline ListAliasesRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
+    inline ListAliasesRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>Lambda function name for which the alias is created.</p>
@@ -93,7 +94,7 @@ namespace Model
      * are pointing to the specific Lambda function version, otherwise the API returns
      * all of the aliases created for the Lambda function.</p>
      */
-    inline void SetFunctionVersion(Aws::String&& value) { m_functionVersionHasBeenSet = true; m_functionVersion = value; }
+    inline void SetFunctionVersion(Aws::String&& value) { m_functionVersionHasBeenSet = true; m_functionVersion = std::move(value); }
 
     /**
      * <p>If you specify this optional parameter, the API returns only the aliases that
@@ -114,7 +115,7 @@ namespace Model
      * are pointing to the specific Lambda function version, otherwise the API returns
      * all of the aliases created for the Lambda function.</p>
      */
-    inline ListAliasesRequest& WithFunctionVersion(Aws::String&& value) { SetFunctionVersion(value); return *this;}
+    inline ListAliasesRequest& WithFunctionVersion(Aws::String&& value) { SetFunctionVersion(std::move(value)); return *this;}
 
     /**
      * <p>If you specify this optional parameter, the API returns only the aliases that
@@ -142,7 +143,7 @@ namespace Model
      * <code>ListAliases</code> operation. If present, indicates where to continue the
      * listing.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>Optional string. An opaque pagination token returned from a previous
@@ -163,7 +164,7 @@ namespace Model
      * <code>ListAliases</code> operation. If present, indicates where to continue the
      * listing.</p>
      */
-    inline ListAliasesRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListAliasesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Optional string. An opaque pagination token returned from a previous

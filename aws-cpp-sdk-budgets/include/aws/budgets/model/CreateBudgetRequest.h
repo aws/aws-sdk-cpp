@@ -19,6 +19,7 @@
 #include <aws/budgets/model/Budget.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/budgets/model/NotificationWithSubscribers.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
@@ -57,7 +58,7 @@ namespace Model
     inline CreateBudgetRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     
-    inline CreateBudgetRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline CreateBudgetRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     
     inline CreateBudgetRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
@@ -69,13 +70,13 @@ namespace Model
     inline void SetBudget(const Budget& value) { m_budgetHasBeenSet = true; m_budget = value; }
 
     
-    inline void SetBudget(Budget&& value) { m_budgetHasBeenSet = true; m_budget = value; }
+    inline void SetBudget(Budget&& value) { m_budgetHasBeenSet = true; m_budget = std::move(value); }
 
     
     inline CreateBudgetRequest& WithBudget(const Budget& value) { SetBudget(value); return *this;}
 
     
-    inline CreateBudgetRequest& WithBudget(Budget&& value) { SetBudget(value); return *this;}
+    inline CreateBudgetRequest& WithBudget(Budget&& value) { SetBudget(std::move(value)); return *this;}
 
     
     inline const Aws::Vector<NotificationWithSubscribers>& GetNotificationsWithSubscribers() const{ return m_notificationsWithSubscribers; }
@@ -84,19 +85,19 @@ namespace Model
     inline void SetNotificationsWithSubscribers(const Aws::Vector<NotificationWithSubscribers>& value) { m_notificationsWithSubscribersHasBeenSet = true; m_notificationsWithSubscribers = value; }
 
     
-    inline void SetNotificationsWithSubscribers(Aws::Vector<NotificationWithSubscribers>&& value) { m_notificationsWithSubscribersHasBeenSet = true; m_notificationsWithSubscribers = value; }
+    inline void SetNotificationsWithSubscribers(Aws::Vector<NotificationWithSubscribers>&& value) { m_notificationsWithSubscribersHasBeenSet = true; m_notificationsWithSubscribers = std::move(value); }
 
     
     inline CreateBudgetRequest& WithNotificationsWithSubscribers(const Aws::Vector<NotificationWithSubscribers>& value) { SetNotificationsWithSubscribers(value); return *this;}
 
     
-    inline CreateBudgetRequest& WithNotificationsWithSubscribers(Aws::Vector<NotificationWithSubscribers>&& value) { SetNotificationsWithSubscribers(value); return *this;}
+    inline CreateBudgetRequest& WithNotificationsWithSubscribers(Aws::Vector<NotificationWithSubscribers>&& value) { SetNotificationsWithSubscribers(std::move(value)); return *this;}
 
     
     inline CreateBudgetRequest& AddNotificationsWithSubscribers(const NotificationWithSubscribers& value) { m_notificationsWithSubscribersHasBeenSet = true; m_notificationsWithSubscribers.push_back(value); return *this; }
 
     
-    inline CreateBudgetRequest& AddNotificationsWithSubscribers(NotificationWithSubscribers&& value) { m_notificationsWithSubscribersHasBeenSet = true; m_notificationsWithSubscribers.push_back(value); return *this; }
+    inline CreateBudgetRequest& AddNotificationsWithSubscribers(NotificationWithSubscribers&& value) { m_notificationsWithSubscribersHasBeenSet = true; m_notificationsWithSubscribers.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_accountId;

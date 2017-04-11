@@ -16,6 +16,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/ServiceCatalogRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
+    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -75,7 +76,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline UpdateProvisioningArtifactRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(value); return *this;}
+    inline UpdateProvisioningArtifactRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The product identifier.</p>
      */
-    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = value; }
+    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
 
     /**
      * <p>The product identifier.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The product identifier.</p>
      */
-    inline UpdateProvisioningArtifactRequest& WithProductId(Aws::String&& value) { SetProductId(value); return *this;}
+    inline UpdateProvisioningArtifactRequest& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
 
     /**
      * <p>The product identifier.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The identifier of the provisioning artifact for the update request.</p>
      */
-    inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
+    inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
 
     /**
      * <p>The identifier of the provisioning artifact for the update request.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The identifier of the provisioning artifact for the update request.</p>
      */
-    inline UpdateProvisioningArtifactRequest& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(value); return *this;}
+    inline UpdateProvisioningArtifactRequest& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the provisioning artifact for the update request.</p>
@@ -167,7 +168,7 @@ namespace Model
     /**
      * <p>The updated name of the provisioning artifact.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The updated name of the provisioning artifact.</p>
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p>The updated name of the provisioning artifact.</p>
      */
-    inline UpdateProvisioningArtifactRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateProvisioningArtifactRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The updated name of the provisioning artifact.</p>
@@ -202,7 +203,7 @@ namespace Model
     /**
      * <p>The updated text description of the provisioning artifact.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The updated text description of the provisioning artifact.</p>
@@ -217,7 +218,7 @@ namespace Model
     /**
      * <p>The updated text description of the provisioning artifact.</p>
      */
-    inline UpdateProvisioningArtifactRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline UpdateProvisioningArtifactRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The updated text description of the provisioning artifact.</p>

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/StackResourceSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>A list of <code>StackResourceSummary</code> structures.</p>
      */
-    inline void SetStackResourceSummaries(Aws::Vector<StackResourceSummary>&& value) { m_stackResourceSummaries = value; }
+    inline void SetStackResourceSummaries(Aws::Vector<StackResourceSummary>&& value) { m_stackResourceSummaries = std::move(value); }
 
     /**
      * <p>A list of <code>StackResourceSummary</code> structures.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>A list of <code>StackResourceSummary</code> structures.</p>
      */
-    inline ListStackResourcesResult& WithStackResourceSummaries(Aws::Vector<StackResourceSummary>&& value) { SetStackResourceSummaries(value); return *this;}
+    inline ListStackResourcesResult& WithStackResourceSummaries(Aws::Vector<StackResourceSummary>&& value) { SetStackResourceSummaries(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>StackResourceSummary</code> structures.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>A list of <code>StackResourceSummary</code> structures.</p>
      */
-    inline ListStackResourcesResult& AddStackResourceSummaries(StackResourceSummary&& value) { m_stackResourceSummaries.push_back(value); return *this; }
+    inline ListStackResourcesResult& AddStackResourceSummaries(StackResourceSummary&& value) { m_stackResourceSummaries.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of stack
@@ -99,7 +100,7 @@ namespace Model
      * <p>If the output exceeds 1 MB, a string that identifies the next page of stack
      * resources. If no additional page exists, this value is null.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of stack
@@ -117,7 +118,7 @@ namespace Model
      * <p>If the output exceeds 1 MB, a string that identifies the next page of stack
      * resources. If no additional page exists, this value is null.</p>
      */
-    inline ListStackResourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListStackResourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of stack
@@ -132,13 +133,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListStackResourcesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListStackResourcesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListStackResourcesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<StackResourceSummary> m_stackResourceSummaries;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the volume target.</p>
      */
-    inline void SetTargetARN(Aws::String&& value) { m_targetARNHasBeenSet = true; m_targetARN = value; }
+    inline void SetTargetARN(Aws::String&& value) { m_targetARNHasBeenSet = true; m_targetARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the volume target.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the volume target.</p>
      */
-    inline VolumeiSCSIAttributes& WithTargetARN(Aws::String&& value) { SetTargetARN(value); return *this;}
+    inline VolumeiSCSIAttributes& WithTargetARN(Aws::String&& value) { SetTargetARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the volume target.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The network interface identifier.</p>
      */
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
 
     /**
      * <p>The network interface identifier.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The network interface identifier.</p>
      */
-    inline VolumeiSCSIAttributes& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(value); return *this;}
+    inline VolumeiSCSIAttributes& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
 
     /**
      * <p>The network interface identifier.</p>

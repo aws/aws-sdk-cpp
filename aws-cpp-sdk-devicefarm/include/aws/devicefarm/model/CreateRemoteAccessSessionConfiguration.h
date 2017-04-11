@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/BillingMethod.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>Returns the billing method for purposes of configuring a remote access
      * session.</p>
      */
-    inline void SetBillingMethod(BillingMethod&& value) { m_billingMethodHasBeenSet = true; m_billingMethod = value; }
+    inline void SetBillingMethod(BillingMethod&& value) { m_billingMethodHasBeenSet = true; m_billingMethod = std::move(value); }
 
     /**
      * <p>Returns the billing method for purposes of configuring a remote access
@@ -72,7 +73,7 @@ namespace Model
      * <p>Returns the billing method for purposes of configuring a remote access
      * session.</p>
      */
-    inline CreateRemoteAccessSessionConfiguration& WithBillingMethod(BillingMethod&& value) { SetBillingMethod(value); return *this;}
+    inline CreateRemoteAccessSessionConfiguration& WithBillingMethod(BillingMethod&& value) { SetBillingMethod(std::move(value)); return *this;}
 
   private:
     BillingMethod m_billingMethod;

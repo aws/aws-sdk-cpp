@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The name of the IP address filter to delete.</p>
      */
-    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
+    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = std::move(value); }
 
     /**
      * <p>The name of the IP address filter to delete.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of the IP address filter to delete.</p>
      */
-    inline DeleteReceiptFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(value); return *this;}
+    inline DeleteReceiptFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IP address filter to delete.</p>

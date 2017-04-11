@@ -17,6 +17,7 @@
 #include <aws/swf/SWFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/swf/model/ChildPolicy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The domain of the workflow execution to terminate.</p>
      */
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The domain of the workflow execution to terminate.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The domain of the workflow execution to terminate.</p>
      */
-    inline TerminateWorkflowExecutionRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+    inline TerminateWorkflowExecutionRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The domain of the workflow execution to terminate.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The workflowId of the workflow execution to terminate.</p>
      */
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
+    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
 
     /**
      * <p>The workflowId of the workflow execution to terminate.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The workflowId of the workflow execution to terminate.</p>
      */
-    inline TerminateWorkflowExecutionRequest& WithWorkflowId(Aws::String&& value) { SetWorkflowId(value); return *this;}
+    inline TerminateWorkflowExecutionRequest& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
 
     /**
      * <p>The workflowId of the workflow execution to terminate.</p>
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>The runId of the workflow execution to terminate.</p>
      */
-    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = value; }
+    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
 
     /**
      * <p>The runId of the workflow execution to terminate.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>The runId of the workflow execution to terminate.</p>
      */
-    inline TerminateWorkflowExecutionRequest& WithRunId(Aws::String&& value) { SetRunId(value); return *this;}
+    inline TerminateWorkflowExecutionRequest& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
 
     /**
      * <p>The runId of the workflow execution to terminate.</p>
@@ -157,7 +158,7 @@ namespace Model
      * <p><i>Optional.</i> A descriptive reason for terminating the workflow
      * execution.</p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p><i>Optional.</i> A descriptive reason for terminating the workflow
@@ -175,7 +176,7 @@ namespace Model
      * <p><i>Optional.</i> A descriptive reason for terminating the workflow
      * execution.</p>
      */
-    inline TerminateWorkflowExecutionRequest& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline TerminateWorkflowExecutionRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p><i>Optional.</i> A descriptive reason for terminating the workflow
@@ -196,7 +197,7 @@ namespace Model
     /**
      * <p><i>Optional.</i> Details for terminating the workflow execution.</p>
      */
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = value; }
+    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
      * <p><i>Optional.</i> Details for terminating the workflow execution.</p>
@@ -211,7 +212,7 @@ namespace Model
     /**
      * <p><i>Optional.</i> Details for terminating the workflow execution.</p>
      */
-    inline TerminateWorkflowExecutionRequest& WithDetails(Aws::String&& value) { SetDetails(value); return *this;}
+    inline TerminateWorkflowExecutionRequest& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
      * <p><i>Optional.</i> Details for terminating the workflow execution.</p>
@@ -270,7 +271,7 @@ namespace Model
      * parameter is set nor a default child policy was specified at registration time
      * then a fault will be returned.</note>
      */
-    inline void SetChildPolicy(ChildPolicy&& value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
+    inline void SetChildPolicy(ChildPolicy&& value) { m_childPolicyHasBeenSet = true; m_childPolicy = std::move(value); }
 
     /**
      * <p>If set, specifies the policy to use for the child workflow executions of the
@@ -306,7 +307,7 @@ namespace Model
      * parameter is set nor a default child policy was specified at registration time
      * then a fault will be returned.</note>
      */
-    inline TerminateWorkflowExecutionRequest& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(value); return *this;}
+    inline TerminateWorkflowExecutionRequest& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
 
   private:
     Aws::String m_domain;

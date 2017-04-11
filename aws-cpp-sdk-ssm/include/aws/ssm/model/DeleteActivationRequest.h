@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ID of the activation that you want to delete.</p>
      */
-    inline void SetActivationId(Aws::String&& value) { m_activationIdHasBeenSet = true; m_activationId = value; }
+    inline void SetActivationId(Aws::String&& value) { m_activationIdHasBeenSet = true; m_activationId = std::move(value); }
 
     /**
      * <p>The ID of the activation that you want to delete.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID of the activation that you want to delete.</p>
      */
-    inline DeleteActivationRequest& WithActivationId(Aws::String&& value) { SetActivationId(value); return *this;}
+    inline DeleteActivationRequest& WithActivationId(Aws::String&& value) { SetActivationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the activation that you want to delete.</p>

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
      * Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>The status code. For a list of status codes, see <a
@@ -88,7 +89,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
      * Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
-    inline SpotInstanceStatus& WithCode(Aws::String&& value) { SetCode(value); return *this;}
+    inline SpotInstanceStatus& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>The status code. For a list of status codes, see <a
@@ -113,7 +114,7 @@ namespace Model
      * <p>The date and time of the most recent status update, in UTC format (for
      * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
+    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
 
     /**
      * <p>The date and time of the most recent status update, in UTC format (for
@@ -125,7 +126,7 @@ namespace Model
      * <p>The date and time of the most recent status update, in UTC format (for
      * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline SpotInstanceStatus& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(value); return *this;}
+    inline SpotInstanceStatus& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
 
     /**
      * <p>The description for the status code.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The description for the status code.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The description for the status code.</p>
@@ -155,7 +156,7 @@ namespace Model
     /**
      * <p>The description for the status code.</p>
      */
-    inline SpotInstanceStatus& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline SpotInstanceStatus& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The description for the status code.</p>

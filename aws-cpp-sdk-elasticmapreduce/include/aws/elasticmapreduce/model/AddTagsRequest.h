@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>The Amazon EMR resource identifier to which tags will be added. This value
      * must be a cluster identifier.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The Amazon EMR resource identifier to which tags will be added. This value
@@ -75,7 +76,7 @@ namespace Model
      * <p>The Amazon EMR resource identifier to which tags will be added. This value
      * must be a cluster identifier.</p>
      */
-    inline AddTagsRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline AddTagsRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon EMR resource identifier to which tags will be added. This value
@@ -105,7 +106,7 @@ namespace Model
      * a maximum of 128 characters, and an optional value string with a maximum of 256
      * characters.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of tags to associate with a cluster and propagate to EC2 instances.
@@ -121,7 +122,7 @@ namespace Model
      * a maximum of 128 characters, and an optional value string with a maximum of 256
      * characters.</p>
      */
-    inline AddTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline AddTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of tags to associate with a cluster and propagate to EC2 instances.
@@ -137,7 +138,7 @@ namespace Model
      * a maximum of 128 characters, and an optional value string with a maximum of 256
      * characters.</p>
      */
-    inline AddTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline AddTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_resourceId;

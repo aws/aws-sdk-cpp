@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/Rule.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * <code>Predicate</code> object contains <code>DataId</code>,
      * <code>Negated</code>, and <code>Type</code> </p> </li> </ul>
      */
-    inline void SetRule(Rule&& value) { m_rule = value; }
+    inline void SetRule(Rule&& value) { m_rule = std::move(value); }
 
     /**
      * <p>Information about the <a>Rule</a> that you specified in the
@@ -92,7 +93,7 @@ namespace Model
      * <code>Predicate</code> object contains <code>DataId</code>,
      * <code>Negated</code>, and <code>Type</code> </p> </li> </ul>
      */
-    inline GetRuleResult& WithRule(Rule&& value) { SetRule(value); return *this;}
+    inline GetRuleResult& WithRule(Rule&& value) { SetRule(std::move(value)); return *this;}
 
   private:
     Rule m_rule;

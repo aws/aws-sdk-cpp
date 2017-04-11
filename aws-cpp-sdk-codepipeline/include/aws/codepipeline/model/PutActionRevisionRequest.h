@@ -17,6 +17,7 @@
 #include <aws/codepipeline/CodePipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/ActionRevision.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The name of the pipeline that will start processing the revision to the
      * source.</p>
      */
-    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
+    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
 
     /**
      * <p>The name of the pipeline that will start processing the revision to the
@@ -74,7 +75,7 @@ namespace Model
      * <p>The name of the pipeline that will start processing the revision to the
      * source.</p>
      */
-    inline PutActionRevisionRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(value); return *this;}
+    inline PutActionRevisionRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the pipeline that will start processing the revision to the
@@ -98,7 +99,7 @@ namespace Model
      * <p>The name of the stage that contains the action that will act upon the
      * revision.</p>
      */
-    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
+    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
      * <p>The name of the stage that contains the action that will act upon the
@@ -116,7 +117,7 @@ namespace Model
      * <p>The name of the stage that contains the action that will act upon the
      * revision.</p>
      */
-    inline PutActionRevisionRequest& WithStageName(Aws::String&& value) { SetStageName(value); return *this;}
+    inline PutActionRevisionRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the stage that contains the action that will act upon the
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The name of the action that will process the revision.</p>
      */
-    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
+    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
 
     /**
      * <p>The name of the action that will process the revision.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>The name of the action that will process the revision.</p>
      */
-    inline PutActionRevisionRequest& WithActionName(Aws::String&& value) { SetActionName(value); return *this;}
+    inline PutActionRevisionRequest& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the action that will process the revision.</p>
@@ -166,13 +167,13 @@ namespace Model
     inline void SetActionRevision(const ActionRevision& value) { m_actionRevisionHasBeenSet = true; m_actionRevision = value; }
 
     
-    inline void SetActionRevision(ActionRevision&& value) { m_actionRevisionHasBeenSet = true; m_actionRevision = value; }
+    inline void SetActionRevision(ActionRevision&& value) { m_actionRevisionHasBeenSet = true; m_actionRevision = std::move(value); }
 
     
     inline PutActionRevisionRequest& WithActionRevision(const ActionRevision& value) { SetActionRevision(value); return *this;}
 
     
-    inline PutActionRevisionRequest& WithActionRevision(ActionRevision&& value) { SetActionRevision(value); return *this;}
+    inline PutActionRevisionRequest& WithActionRevision(ActionRevision&& value) { SetActionRevision(std::move(value)); return *this;}
 
   private:
     Aws::String m_pipelineName;

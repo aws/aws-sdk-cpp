@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ID of the patch baseline to retrieve the effective patches for.</p>
      */
-    inline void SetBaselineId(Aws::String&& value) { m_baselineIdHasBeenSet = true; m_baselineId = value; }
+    inline void SetBaselineId(Aws::String&& value) { m_baselineIdHasBeenSet = true; m_baselineId = std::move(value); }
 
     /**
      * <p>The ID of the patch baseline to retrieve the effective patches for.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID of the patch baseline to retrieve the effective patches for.</p>
      */
-    inline DescribeEffectivePatchesForPatchBaselineRequest& WithBaselineId(Aws::String&& value) { SetBaselineId(value); return *this;}
+    inline DescribeEffectivePatchesForPatchBaselineRequest& WithBaselineId(Aws::String&& value) { SetBaselineId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the patch baseline to retrieve the effective patches for.</p>
@@ -101,7 +102,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -119,7 +120,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline DescribeEffectivePatchesForPatchBaselineRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeEffectivePatchesForPatchBaselineRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

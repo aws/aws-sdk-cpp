@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/Upload.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>An app or a set of one or more tests to upload or that have been
      * uploaded.</p>
      */
-    inline void SetUpload(Upload&& value) { m_upload = value; }
+    inline void SetUpload(Upload&& value) { m_upload = std::move(value); }
 
     /**
      * <p>An app or a set of one or more tests to upload or that have been
@@ -72,7 +73,7 @@ namespace Model
      * <p>An app or a set of one or more tests to upload or that have been
      * uploaded.</p>
      */
-    inline GetUploadResult& WithUpload(Upload&& value) { SetUpload(value); return *this;}
+    inline GetUploadResult& WithUpload(Upload&& value) { SetUpload(std::move(value)); return *this;}
 
   private:
     Upload m_upload;

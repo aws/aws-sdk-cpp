@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/model/DirectoryLimits.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
      * current region.</p>
      */
-    inline void SetDirectoryLimits(DirectoryLimits&& value) { m_directoryLimits = value; }
+    inline void SetDirectoryLimits(DirectoryLimits&& value) { m_directoryLimits = std::move(value); }
 
     /**
      * <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
@@ -73,7 +74,7 @@ namespace Model
      * <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
      * current region.</p>
      */
-    inline GetDirectoryLimitsResult& WithDirectoryLimits(DirectoryLimits&& value) { SetDirectoryLimits(value); return *this;}
+    inline GetDirectoryLimitsResult& WithDirectoryLimits(DirectoryLimits&& value) { SetDirectoryLimits(std::move(value)); return *this;}
 
   private:
     DirectoryLimits m_directoryLimits;

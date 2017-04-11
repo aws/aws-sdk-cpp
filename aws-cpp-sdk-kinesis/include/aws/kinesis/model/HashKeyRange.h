@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The starting hash key of the hash key range.</p>
      */
-    inline void SetStartingHashKey(Aws::String&& value) { m_startingHashKeyHasBeenSet = true; m_startingHashKey = value; }
+    inline void SetStartingHashKey(Aws::String&& value) { m_startingHashKeyHasBeenSet = true; m_startingHashKey = std::move(value); }
 
     /**
      * <p>The starting hash key of the hash key range.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The starting hash key of the hash key range.</p>
      */
-    inline HashKeyRange& WithStartingHashKey(Aws::String&& value) { SetStartingHashKey(value); return *this;}
+    inline HashKeyRange& WithStartingHashKey(Aws::String&& value) { SetStartingHashKey(std::move(value)); return *this;}
 
     /**
      * <p>The starting hash key of the hash key range.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The ending hash key of the hash key range.</p>
      */
-    inline void SetEndingHashKey(Aws::String&& value) { m_endingHashKeyHasBeenSet = true; m_endingHashKey = value; }
+    inline void SetEndingHashKey(Aws::String&& value) { m_endingHashKeyHasBeenSet = true; m_endingHashKey = std::move(value); }
 
     /**
      * <p>The ending hash key of the hash key range.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The ending hash key of the hash key range.</p>
      */
-    inline HashKeyRange& WithEndingHashKey(Aws::String&& value) { SetEndingHashKey(value); return *this;}
+    inline HashKeyRange& WithEndingHashKey(Aws::String&& value) { SetEndingHashKey(std::move(value)); return *this;}
 
     /**
      * <p>The ending hash key of the hash key range.</p>

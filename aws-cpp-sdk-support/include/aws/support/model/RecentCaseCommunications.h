@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/support/model/Communication.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The five most recent communications associated with the case.</p>
      */
-    inline void SetCommunications(Aws::Vector<Communication>&& value) { m_communicationsHasBeenSet = true; m_communications = value; }
+    inline void SetCommunications(Aws::Vector<Communication>&& value) { m_communicationsHasBeenSet = true; m_communications = std::move(value); }
 
     /**
      * <p>The five most recent communications associated with the case.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The five most recent communications associated with the case.</p>
      */
-    inline RecentCaseCommunications& WithCommunications(Aws::Vector<Communication>&& value) { SetCommunications(value); return *this;}
+    inline RecentCaseCommunications& WithCommunications(Aws::Vector<Communication>&& value) { SetCommunications(std::move(value)); return *this;}
 
     /**
      * <p>The five most recent communications associated with the case.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The five most recent communications associated with the case.</p>
      */
-    inline RecentCaseCommunications& AddCommunications(Communication&& value) { m_communicationsHasBeenSet = true; m_communications.push_back(value); return *this; }
+    inline RecentCaseCommunications& AddCommunications(Communication&& value) { m_communicationsHasBeenSet = true; m_communications.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A resumption point for pagination.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>A resumption point for pagination.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>A resumption point for pagination.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>A resumption point for pagination.</p>
      */
-    inline RecentCaseCommunications& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline RecentCaseCommunications& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A resumption point for pagination.</p>

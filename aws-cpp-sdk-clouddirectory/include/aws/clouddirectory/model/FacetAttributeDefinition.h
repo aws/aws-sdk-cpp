@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/Rule.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The type of the attribute.</p>
      */
-    inline void SetType(FacetAttributeType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(FacetAttributeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of the attribute.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The type of the attribute.</p>
      */
-    inline FacetAttributeDefinition& WithType(FacetAttributeType&& value) { SetType(value); return *this;}
+    inline FacetAttributeDefinition& WithType(FacetAttributeType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The default value of the attribute (if configured).</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The default value of the attribute (if configured).</p>
      */
-    inline void SetDefaultValue(TypedAttributeValue&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+    inline void SetDefaultValue(TypedAttributeValue&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
 
     /**
      * <p>The default value of the attribute (if configured).</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The default value of the attribute (if configured).</p>
      */
-    inline FacetAttributeDefinition& WithDefaultValue(TypedAttributeValue&& value) { SetDefaultValue(value); return *this;}
+    inline FacetAttributeDefinition& WithDefaultValue(TypedAttributeValue&& value) { SetDefaultValue(std::move(value)); return *this;}
 
     /**
      * <p>Whether the attribute is mutable or not.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>Validation rules attached to the attribute definition.</p>
      */
-    inline void SetRules(Aws::Map<Aws::String, Rule>&& value) { m_rulesHasBeenSet = true; m_rules = value; }
+    inline void SetRules(Aws::Map<Aws::String, Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
      * <p>Validation rules attached to the attribute definition.</p>
@@ -137,37 +138,37 @@ namespace Model
     /**
      * <p>Validation rules attached to the attribute definition.</p>
      */
-    inline FacetAttributeDefinition& WithRules(Aws::Map<Aws::String, Rule>&& value) { SetRules(value); return *this;}
+    inline FacetAttributeDefinition& WithRules(Aws::Map<Aws::String, Rule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
      * <p>Validation rules attached to the attribute definition.</p>
      */
-    inline FacetAttributeDefinition& AddRules(const Aws::String& key, const Rule& value) { m_rulesHasBeenSet = true; m_rules[key] = value; return *this; }
+    inline FacetAttributeDefinition& AddRules(const Aws::String& key, const Rule& value) { m_rulesHasBeenSet = true; m_rules.emplace(key, value); return *this; }
 
     /**
      * <p>Validation rules attached to the attribute definition.</p>
      */
-    inline FacetAttributeDefinition& AddRules(Aws::String&& key, const Rule& value) { m_rulesHasBeenSet = true; m_rules[key] = value; return *this; }
+    inline FacetAttributeDefinition& AddRules(Aws::String&& key, const Rule& value) { m_rulesHasBeenSet = true; m_rules.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Validation rules attached to the attribute definition.</p>
      */
-    inline FacetAttributeDefinition& AddRules(const Aws::String& key, Rule&& value) { m_rulesHasBeenSet = true; m_rules[key] = value; return *this; }
+    inline FacetAttributeDefinition& AddRules(const Aws::String& key, Rule&& value) { m_rulesHasBeenSet = true; m_rules.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Validation rules attached to the attribute definition.</p>
      */
-    inline FacetAttributeDefinition& AddRules(Aws::String&& key, Rule&& value) { m_rulesHasBeenSet = true; m_rules[key] = value; return *this; }
+    inline FacetAttributeDefinition& AddRules(Aws::String&& key, Rule&& value) { m_rulesHasBeenSet = true; m_rules.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Validation rules attached to the attribute definition.</p>
      */
-    inline FacetAttributeDefinition& AddRules(const char* key, Rule&& value) { m_rulesHasBeenSet = true; m_rules[key] = value; return *this; }
+    inline FacetAttributeDefinition& AddRules(const char* key, Rule&& value) { m_rulesHasBeenSet = true; m_rules.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Validation rules attached to the attribute definition.</p>
      */
-    inline FacetAttributeDefinition& AddRules(const char* key, const Rule& value) { m_rulesHasBeenSet = true; m_rules[key] = value; return *this; }
+    inline FacetAttributeDefinition& AddRules(const char* key, const Rule& value) { m_rulesHasBeenSet = true; m_rules.emplace(key, value); return *this; }
 
   private:
     FacetAttributeType m_type;

@@ -19,6 +19,7 @@
 #include <aws/elasticbeanstalk/model/SourceConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticbeanstalk/model/ConfigurationOptionSetting.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * no application is found with this name, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of the application to associate with this configuration template. If
@@ -83,7 +84,7 @@ namespace Model
      * no application is found with this name, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
-    inline CreateConfigurationTemplateRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline CreateConfigurationTemplateRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the application to associate with this configuration template. If
@@ -114,7 +115,7 @@ namespace Model
      * exists with this name, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
+    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
      * <p>The name of the configuration template.</p> <p>Constraint: This name must be
@@ -138,7 +139,7 @@ namespace Model
      * exists with this name, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
-    inline CreateConfigurationTemplateRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(value); return *this;}
+    inline CreateConfigurationTemplateRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the configuration template.</p> <p>Constraint: This name must be
@@ -188,7 +189,7 @@ namespace Model
      * not specified and the source configuration parameter is specified, AWS Elastic
      * Beanstalk uses the same solution stack as the source configuration template.</p>
      */
-    inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
+    inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = std::move(value); }
 
     /**
      * <p>The name of the solution stack used by this configuration. The solution stack
@@ -230,7 +231,7 @@ namespace Model
      * not specified and the source configuration parameter is specified, AWS Elastic
      * Beanstalk uses the same solution stack as the source configuration template.</p>
      */
-    inline CreateConfigurationTemplateRequest& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(value); return *this;}
+    inline CreateConfigurationTemplateRequest& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the solution stack used by this configuration. The solution stack
@@ -259,7 +260,7 @@ namespace Model
     /**
      * <p>The ARN of the custome platform.</p>
      */
-    inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
+    inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = std::move(value); }
 
     /**
      * <p>The ARN of the custome platform.</p>
@@ -274,7 +275,7 @@ namespace Model
     /**
      * <p>The ARN of the custome platform.</p>
      */
-    inline CreateConfigurationTemplateRequest& WithPlatformArn(Aws::String&& value) { SetPlatformArn(value); return *this;}
+    inline CreateConfigurationTemplateRequest& WithPlatformArn(Aws::String&& value) { SetPlatformArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the custome platform.</p>
@@ -321,7 +322,7 @@ namespace Model
      * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
      * </p>
      */
-    inline void SetSourceConfiguration(SourceConfiguration&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = value; }
+    inline void SetSourceConfiguration(SourceConfiguration&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::move(value); }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk uses the configuration values from the
@@ -349,7 +350,7 @@ namespace Model
      * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
      * </p>
      */
-    inline CreateConfigurationTemplateRequest& WithSourceConfiguration(SourceConfiguration&& value) { SetSourceConfiguration(value); return *this;}
+    inline CreateConfigurationTemplateRequest& WithSourceConfiguration(SourceConfiguration&& value) { SetSourceConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the environment used with this configuration template.</p>
@@ -364,7 +365,7 @@ namespace Model
     /**
      * <p>The ID of the environment used with this configuration template.</p>
      */
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
+    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
 
     /**
      * <p>The ID of the environment used with this configuration template.</p>
@@ -379,7 +380,7 @@ namespace Model
     /**
      * <p>The ID of the environment used with this configuration template.</p>
      */
-    inline CreateConfigurationTemplateRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(value); return *this;}
+    inline CreateConfigurationTemplateRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the environment used with this configuration template.</p>
@@ -399,7 +400,7 @@ namespace Model
     /**
      * <p>Describes this configuration.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Describes this configuration.</p>
@@ -414,7 +415,7 @@ namespace Model
     /**
      * <p>Describes this configuration.</p>
      */
-    inline CreateConfigurationTemplateRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateConfigurationTemplateRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Describes this configuration.</p>
@@ -440,7 +441,7 @@ namespace Model
      * to the requested value. The new value overrides the value obtained from the
      * solution stack or the source configuration template.</p>
      */
-    inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
+    inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = std::move(value); }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk sets the specified configuration option
@@ -454,7 +455,7 @@ namespace Model
      * to the requested value. The new value overrides the value obtained from the
      * solution stack or the source configuration template.</p>
      */
-    inline CreateConfigurationTemplateRequest& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(value); return *this;}
+    inline CreateConfigurationTemplateRequest& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(std::move(value)); return *this;}
 
     /**
      * <p>If specified, AWS Elastic Beanstalk sets the specified configuration option
@@ -468,7 +469,7 @@ namespace Model
      * to the requested value. The new value overrides the value obtained from the
      * solution stack or the source configuration template.</p>
      */
-    inline CreateConfigurationTemplateRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
+    inline CreateConfigurationTemplateRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_applicationName;

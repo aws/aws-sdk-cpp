@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ARN specifying the application that is created.</p>
      */
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArn = value; }
+    inline void SetApplicationArn(Aws::String&& value) { m_applicationArn = std::move(value); }
 
     /**
      * <p>The ARN specifying the application that is created.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ARN specifying the application that is created.</p>
      */
-    inline CreateApplicationResult& WithApplicationArn(Aws::String&& value) { SetApplicationArn(value); return *this;}
+    inline CreateApplicationResult& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN specifying the application that is created.</p>

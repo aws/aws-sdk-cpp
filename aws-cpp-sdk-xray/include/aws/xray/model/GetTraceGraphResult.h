@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/xray/model/Service.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The services that have processed one of the specified requests.</p>
      */
-    inline void SetServices(Aws::Vector<Service>&& value) { m_services = value; }
+    inline void SetServices(Aws::Vector<Service>&& value) { m_services = std::move(value); }
 
     /**
      * <p>The services that have processed one of the specified requests.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The services that have processed one of the specified requests.</p>
      */
-    inline GetTraceGraphResult& WithServices(Aws::Vector<Service>&& value) { SetServices(value); return *this;}
+    inline GetTraceGraphResult& WithServices(Aws::Vector<Service>&& value) { SetServices(std::move(value)); return *this;}
 
     /**
      * <p>The services that have processed one of the specified requests.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The services that have processed one of the specified requests.</p>
      */
-    inline GetTraceGraphResult& AddServices(Service&& value) { m_services.push_back(value); return *this; }
+    inline GetTraceGraphResult& AddServices(Service&& value) { m_services.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Pagination token. Not used.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>Pagination token. Not used.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>Pagination token. Not used.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>Pagination token. Not used.</p>
      */
-    inline GetTraceGraphResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline GetTraceGraphResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Pagination token. Not used.</p>

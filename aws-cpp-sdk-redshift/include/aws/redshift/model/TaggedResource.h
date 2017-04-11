@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/redshift/model/Tag.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The tag for the resource.</p>
      */
-    inline void SetTag(Tag&& value) { m_tagHasBeenSet = true; m_tag = value; }
+    inline void SetTag(Tag&& value) { m_tagHasBeenSet = true; m_tag = std::move(value); }
 
     /**
      * <p>The tag for the resource.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The tag for the resource.</p>
      */
-    inline TaggedResource& WithTag(Tag&& value) { SetTag(value); return *this;}
+    inline TaggedResource& WithTag(Tag&& value) { SetTag(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) with which the tag is associated. For example,
@@ -88,7 +89,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) with which the tag is associated. For example,
      * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
      */
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
+    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) with which the tag is associated. For example,
@@ -106,7 +107,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) with which the tag is associated. For example,
      * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
      */
-    inline TaggedResource& WithResourceName(Aws::String&& value) { SetResourceName(value); return *this;}
+    inline TaggedResource& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) with which the tag is associated. For example,
@@ -154,7 +155,7 @@ namespace Model
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
      */
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of resource with which the tag is associated. Valid resource types
@@ -196,7 +197,7 @@ namespace Model
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
      */
-    inline TaggedResource& WithResourceType(Aws::String&& value) { SetResourceType(value); return *this;}
+    inline TaggedResource& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The type of resource with which the tag is associated. Valid resource types

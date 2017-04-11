@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The ARN of the version of the custom platform.</p>
      */
-    inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
+    inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = std::move(value); }
 
     /**
      * <p>The ARN of the version of the custom platform.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ARN of the version of the custom platform.</p>
      */
-    inline DeletePlatformVersionRequest& WithPlatformArn(Aws::String&& value) { SetPlatformArn(value); return *this;}
+    inline DeletePlatformVersionRequest& WithPlatformArn(Aws::String&& value) { SetPlatformArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the version of the custom platform.</p>

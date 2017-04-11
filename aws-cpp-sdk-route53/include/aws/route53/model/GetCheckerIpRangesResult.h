@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,19 +48,19 @@ namespace Model
     inline void SetCheckerIpRanges(const Aws::Vector<Aws::String>& value) { m_checkerIpRanges = value; }
 
     
-    inline void SetCheckerIpRanges(Aws::Vector<Aws::String>&& value) { m_checkerIpRanges = value; }
+    inline void SetCheckerIpRanges(Aws::Vector<Aws::String>&& value) { m_checkerIpRanges = std::move(value); }
 
     
     inline GetCheckerIpRangesResult& WithCheckerIpRanges(const Aws::Vector<Aws::String>& value) { SetCheckerIpRanges(value); return *this;}
 
     
-    inline GetCheckerIpRangesResult& WithCheckerIpRanges(Aws::Vector<Aws::String>&& value) { SetCheckerIpRanges(value); return *this;}
+    inline GetCheckerIpRangesResult& WithCheckerIpRanges(Aws::Vector<Aws::String>&& value) { SetCheckerIpRanges(std::move(value)); return *this;}
 
     
     inline GetCheckerIpRangesResult& AddCheckerIpRanges(const Aws::String& value) { m_checkerIpRanges.push_back(value); return *this; }
 
     
-    inline GetCheckerIpRangesResult& AddCheckerIpRanges(Aws::String&& value) { m_checkerIpRanges.push_back(value); return *this; }
+    inline GetCheckerIpRangesResult& AddCheckerIpRanges(Aws::String&& value) { m_checkerIpRanges.push_back(std::move(value)); return *this; }
 
     
     inline GetCheckerIpRangesResult& AddCheckerIpRanges(const char* value) { m_checkerIpRanges.push_back(value); return *this; }

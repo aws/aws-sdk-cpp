@@ -17,6 +17,7 @@
 #include <aws/kinesisanalytics/KinesisAnalyticsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Name of the Amazon Kinesis Analytics application to delete.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>Name of the Amazon Kinesis Analytics application to delete.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Name of the Amazon Kinesis Analytics application to delete.</p>
      */
-    inline DeleteApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline DeleteApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the Amazon Kinesis Analytics application to delete.</p>
@@ -90,7 +91,7 @@ namespace Model
      * <p> You can use the <code>DescribeApplication</code> operation to get this
      * value. </p>
      */
-    inline void SetCreateTimestamp(Aws::Utils::DateTime&& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = value; }
+    inline void SetCreateTimestamp(Aws::Utils::DateTime&& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = std::move(value); }
 
     /**
      * <p> You can use the <code>DescribeApplication</code> operation to get this
@@ -102,7 +103,7 @@ namespace Model
      * <p> You can use the <code>DescribeApplication</code> operation to get this
      * value. </p>
      */
-    inline DeleteApplicationRequest& WithCreateTimestamp(Aws::Utils::DateTime&& value) { SetCreateTimestamp(value); return *this;}
+    inline DeleteApplicationRequest& WithCreateTimestamp(Aws::Utils::DateTime&& value) { SetCreateTimestamp(std::move(value)); return *this;}
 
   private:
     Aws::String m_applicationName;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/model/ProvisioningArtifactDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>List of detailed provisioning artifact information objects.</p>
      */
-    inline void SetProvisioningArtifactDetails(Aws::Vector<ProvisioningArtifactDetail>&& value) { m_provisioningArtifactDetails = value; }
+    inline void SetProvisioningArtifactDetails(Aws::Vector<ProvisioningArtifactDetail>&& value) { m_provisioningArtifactDetails = std::move(value); }
 
     /**
      * <p>List of detailed provisioning artifact information objects.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>List of detailed provisioning artifact information objects.</p>
      */
-    inline ListProvisioningArtifactsResult& WithProvisioningArtifactDetails(Aws::Vector<ProvisioningArtifactDetail>&& value) { SetProvisioningArtifactDetails(value); return *this;}
+    inline ListProvisioningArtifactsResult& WithProvisioningArtifactDetails(Aws::Vector<ProvisioningArtifactDetail>&& value) { SetProvisioningArtifactDetails(std::move(value)); return *this;}
 
     /**
      * <p>List of detailed provisioning artifact information objects.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>List of detailed provisioning artifact information objects.</p>
      */
-    inline ListProvisioningArtifactsResult& AddProvisioningArtifactDetails(ProvisioningArtifactDetail&& value) { m_provisioningArtifactDetails.push_back(value); return *this; }
+    inline ListProvisioningArtifactsResult& AddProvisioningArtifactDetails(ProvisioningArtifactDetail&& value) { m_provisioningArtifactDetails.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -92,7 +93,7 @@ namespace Model
      * <p>The page token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -110,7 +111,7 @@ namespace Model
      * <p>The page token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline ListProvisioningArtifactsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline ListProvisioningArtifactsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>The page token to use to retrieve the next page of results for this

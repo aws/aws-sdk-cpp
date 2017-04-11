@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cognito-identity/model/CognitoIdentityProvider.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
-    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolId = value; }
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolId = std::move(value); }
 
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
-    inline DescribeIdentityPoolResult& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
+    inline DescribeIdentityPoolResult& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(std::move(value)); return *this;}
 
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>A string that you provide.</p>
      */
-    inline void SetIdentityPoolName(Aws::String&& value) { m_identityPoolName = value; }
+    inline void SetIdentityPoolName(Aws::String&& value) { m_identityPoolName = std::move(value); }
 
     /**
      * <p>A string that you provide.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>A string that you provide.</p>
      */
-    inline DescribeIdentityPoolResult& WithIdentityPoolName(Aws::String&& value) { SetIdentityPoolName(value); return *this;}
+    inline DescribeIdentityPoolResult& WithIdentityPoolName(Aws::String&& value) { SetIdentityPoolName(std::move(value)); return *this;}
 
     /**
      * <p>A string that you provide.</p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
      */
-    inline void SetSupportedLoginProviders(Aws::Map<Aws::String, Aws::String>&& value) { m_supportedLoginProviders = value; }
+    inline void SetSupportedLoginProviders(Aws::Map<Aws::String, Aws::String>&& value) { m_supportedLoginProviders = std::move(value); }
 
     /**
      * <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
@@ -156,42 +157,42 @@ namespace Model
     /**
      * <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
      */
-    inline DescribeIdentityPoolResult& WithSupportedLoginProviders(Aws::Map<Aws::String, Aws::String>&& value) { SetSupportedLoginProviders(value); return *this;}
+    inline DescribeIdentityPoolResult& WithSupportedLoginProviders(Aws::Map<Aws::String, Aws::String>&& value) { SetSupportedLoginProviders(std::move(value)); return *this;}
 
     /**
      * <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
      */
-    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(const Aws::String& key, const Aws::String& value) { m_supportedLoginProviders[key] = value; return *this; }
+    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(const Aws::String& key, const Aws::String& value) { m_supportedLoginProviders.emplace(key, value); return *this; }
 
     /**
      * <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
      */
-    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(Aws::String&& key, const Aws::String& value) { m_supportedLoginProviders[key] = value; return *this; }
+    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(Aws::String&& key, const Aws::String& value) { m_supportedLoginProviders.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
      */
-    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(const Aws::String& key, Aws::String&& value) { m_supportedLoginProviders[key] = value; return *this; }
+    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(const Aws::String& key, Aws::String&& value) { m_supportedLoginProviders.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
      */
-    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(Aws::String&& key, Aws::String&& value) { m_supportedLoginProviders[key] = value; return *this; }
+    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(Aws::String&& key, Aws::String&& value) { m_supportedLoginProviders.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
      */
-    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(const char* key, Aws::String&& value) { m_supportedLoginProviders[key] = value; return *this; }
+    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(const char* key, Aws::String&& value) { m_supportedLoginProviders.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
      */
-    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(Aws::String&& key, const char* value) { m_supportedLoginProviders[key] = value; return *this; }
+    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(Aws::String&& key, const char* value) { m_supportedLoginProviders.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
      */
-    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(const char* key, const char* value) { m_supportedLoginProviders[key] = value; return *this; }
+    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(const char* key, const char* value) { m_supportedLoginProviders.emplace(key, value); return *this; }
 
     /**
      * <p>The "domain" by which Cognito will refer to your users.</p>
@@ -206,7 +207,7 @@ namespace Model
     /**
      * <p>The "domain" by which Cognito will refer to your users.</p>
      */
-    inline void SetDeveloperProviderName(Aws::String&& value) { m_developerProviderName = value; }
+    inline void SetDeveloperProviderName(Aws::String&& value) { m_developerProviderName = std::move(value); }
 
     /**
      * <p>The "domain" by which Cognito will refer to your users.</p>
@@ -221,7 +222,7 @@ namespace Model
     /**
      * <p>The "domain" by which Cognito will refer to your users.</p>
      */
-    inline DescribeIdentityPoolResult& WithDeveloperProviderName(Aws::String&& value) { SetDeveloperProviderName(value); return *this;}
+    inline DescribeIdentityPoolResult& WithDeveloperProviderName(Aws::String&& value) { SetDeveloperProviderName(std::move(value)); return *this;}
 
     /**
      * <p>The "domain" by which Cognito will refer to your users.</p>
@@ -241,7 +242,7 @@ namespace Model
     /**
      * <p>A list of OpendID Connect provider ARNs.</p>
      */
-    inline void SetOpenIdConnectProviderARNs(Aws::Vector<Aws::String>&& value) { m_openIdConnectProviderARNs = value; }
+    inline void SetOpenIdConnectProviderARNs(Aws::Vector<Aws::String>&& value) { m_openIdConnectProviderARNs = std::move(value); }
 
     /**
      * <p>A list of OpendID Connect provider ARNs.</p>
@@ -251,7 +252,7 @@ namespace Model
     /**
      * <p>A list of OpendID Connect provider ARNs.</p>
      */
-    inline DescribeIdentityPoolResult& WithOpenIdConnectProviderARNs(Aws::Vector<Aws::String>&& value) { SetOpenIdConnectProviderARNs(value); return *this;}
+    inline DescribeIdentityPoolResult& WithOpenIdConnectProviderARNs(Aws::Vector<Aws::String>&& value) { SetOpenIdConnectProviderARNs(std::move(value)); return *this;}
 
     /**
      * <p>A list of OpendID Connect provider ARNs.</p>
@@ -261,7 +262,7 @@ namespace Model
     /**
      * <p>A list of OpendID Connect provider ARNs.</p>
      */
-    inline DescribeIdentityPoolResult& AddOpenIdConnectProviderARNs(Aws::String&& value) { m_openIdConnectProviderARNs.push_back(value); return *this; }
+    inline DescribeIdentityPoolResult& AddOpenIdConnectProviderARNs(Aws::String&& value) { m_openIdConnectProviderARNs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of OpendID Connect provider ARNs.</p>
@@ -284,7 +285,7 @@ namespace Model
      * <p>A list representing an Amazon Cognito Identity User Pool and its client
      * ID.</p>
      */
-    inline void SetCognitoIdentityProviders(Aws::Vector<CognitoIdentityProvider>&& value) { m_cognitoIdentityProviders = value; }
+    inline void SetCognitoIdentityProviders(Aws::Vector<CognitoIdentityProvider>&& value) { m_cognitoIdentityProviders = std::move(value); }
 
     /**
      * <p>A list representing an Amazon Cognito Identity User Pool and its client
@@ -296,7 +297,7 @@ namespace Model
      * <p>A list representing an Amazon Cognito Identity User Pool and its client
      * ID.</p>
      */
-    inline DescribeIdentityPoolResult& WithCognitoIdentityProviders(Aws::Vector<CognitoIdentityProvider>&& value) { SetCognitoIdentityProviders(value); return *this;}
+    inline DescribeIdentityPoolResult& WithCognitoIdentityProviders(Aws::Vector<CognitoIdentityProvider>&& value) { SetCognitoIdentityProviders(std::move(value)); return *this;}
 
     /**
      * <p>A list representing an Amazon Cognito Identity User Pool and its client
@@ -308,7 +309,7 @@ namespace Model
      * <p>A list representing an Amazon Cognito Identity User Pool and its client
      * ID.</p>
      */
-    inline DescribeIdentityPoolResult& AddCognitoIdentityProviders(CognitoIdentityProvider&& value) { m_cognitoIdentityProviders.push_back(value); return *this; }
+    inline DescribeIdentityPoolResult& AddCognitoIdentityProviders(CognitoIdentityProvider&& value) { m_cognitoIdentityProviders.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
@@ -326,7 +327,7 @@ namespace Model
      * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
      * identity pool.</p>
      */
-    inline void SetSamlProviderARNs(Aws::Vector<Aws::String>&& value) { m_samlProviderARNs = value; }
+    inline void SetSamlProviderARNs(Aws::Vector<Aws::String>&& value) { m_samlProviderARNs = std::move(value); }
 
     /**
      * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
@@ -338,7 +339,7 @@ namespace Model
      * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
      * identity pool.</p>
      */
-    inline DescribeIdentityPoolResult& WithSamlProviderARNs(Aws::Vector<Aws::String>&& value) { SetSamlProviderARNs(value); return *this;}
+    inline DescribeIdentityPoolResult& WithSamlProviderARNs(Aws::Vector<Aws::String>&& value) { SetSamlProviderARNs(std::move(value)); return *this;}
 
     /**
      * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
@@ -350,7 +351,7 @@ namespace Model
      * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
      * identity pool.</p>
      */
-    inline DescribeIdentityPoolResult& AddSamlProviderARNs(Aws::String&& value) { m_samlProviderARNs.push_back(value); return *this; }
+    inline DescribeIdentityPoolResult& AddSamlProviderARNs(Aws::String&& value) { m_samlProviderARNs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your

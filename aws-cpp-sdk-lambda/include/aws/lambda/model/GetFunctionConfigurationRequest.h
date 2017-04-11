@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
      * to the ARN. If you specify only the function name, it is limited to 64 character
      * in length. </p>
      */
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
      * <p>The name of the Lambda function for which you want to retrieve the
@@ -118,7 +119,7 @@ namespace Model
      * to the ARN. If you specify only the function name, it is limited to 64 character
      * in length. </p>
      */
-    inline GetFunctionConfigurationRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
+    inline GetFunctionConfigurationRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Lambda function for which you want to retrieve the
@@ -164,7 +165,7 @@ namespace Model
      * the API uses unqualified function ARN, and returns information about the
      * <code>$LATEST</code> function version.</p>
      */
-    inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
+    inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
 
     /**
      * <p>Using this optional parameter you can specify a function version or an alias
@@ -197,7 +198,7 @@ namespace Model
      * the API uses unqualified function ARN, and returns information about the
      * <code>$LATEST</code> function version.</p>
      */
-    inline GetFunctionConfigurationRequest& WithQualifier(Aws::String&& value) { SetQualifier(value); return *this;}
+    inline GetFunctionConfigurationRequest& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
 
     /**
      * <p>Using this optional parameter you can specify a function version or an alias

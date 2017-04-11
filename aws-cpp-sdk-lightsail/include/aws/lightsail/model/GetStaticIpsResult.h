@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/StaticIp.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about your get static IPs
      * request.</p>
      */
-    inline void SetStaticIps(Aws::Vector<StaticIp>&& value) { m_staticIps = value; }
+    inline void SetStaticIps(Aws::Vector<StaticIp>&& value) { m_staticIps = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about your get static IPs
@@ -69,7 +70,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about your get static IPs
      * request.</p>
      */
-    inline GetStaticIpsResult& WithStaticIps(Aws::Vector<StaticIp>&& value) { SetStaticIps(value); return *this;}
+    inline GetStaticIpsResult& WithStaticIps(Aws::Vector<StaticIp>&& value) { SetStaticIps(std::move(value)); return *this;}
 
     /**
      * <p>An array of key-value pairs containing information about your get static IPs
@@ -81,7 +82,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about your get static IPs
      * request.</p>
      */
-    inline GetStaticIpsResult& AddStaticIps(StaticIp&& value) { m_staticIps.push_back(value); return *this; }
+    inline GetStaticIpsResult& AddStaticIps(StaticIp&& value) { m_staticIps.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A token used for advancing to the next page of results from your get static
@@ -99,7 +100,7 @@ namespace Model
      * <p>A token used for advancing to the next page of results from your get static
      * IPs request.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>A token used for advancing to the next page of results from your get static
@@ -117,7 +118,7 @@ namespace Model
      * <p>A token used for advancing to the next page of results from your get static
      * IPs request.</p>
      */
-    inline GetStaticIpsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline GetStaticIpsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>A token used for advancing to the next page of results from your get static

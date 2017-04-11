@@ -17,6 +17,7 @@
 #include <aws/workspaces/WorkSpacesRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>An array of strings that contains the identifiers of the bundles to retrieve.
      * This parameter cannot be combined with any other filter parameter.</p>
      */
-    inline void SetBundleIds(Aws::Vector<Aws::String>&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds = value; }
+    inline void SetBundleIds(Aws::Vector<Aws::String>&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds = std::move(value); }
 
     /**
      * <p>An array of strings that contains the identifiers of the bundles to retrieve.
@@ -68,7 +69,7 @@ namespace Model
      * <p>An array of strings that contains the identifiers of the bundles to retrieve.
      * This parameter cannot be combined with any other filter parameter.</p>
      */
-    inline DescribeWorkspaceBundlesRequest& WithBundleIds(Aws::Vector<Aws::String>&& value) { SetBundleIds(value); return *this;}
+    inline DescribeWorkspaceBundlesRequest& WithBundleIds(Aws::Vector<Aws::String>&& value) { SetBundleIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of strings that contains the identifiers of the bundles to retrieve.
@@ -80,7 +81,7 @@ namespace Model
      * <p>An array of strings that contains the identifiers of the bundles to retrieve.
      * This parameter cannot be combined with any other filter parameter.</p>
      */
-    inline DescribeWorkspaceBundlesRequest& AddBundleIds(Aws::String&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds.push_back(value); return *this; }
+    inline DescribeWorkspaceBundlesRequest& AddBundleIds(Aws::String&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of strings that contains the identifiers of the bundles to retrieve.
@@ -113,7 +114,7 @@ namespace Model
      * making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles
      * that are provided by AWS.</p> </li> </ul>
      */
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = value; }
+    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
      * <p>The owner of the bundles to retrieve. This parameter cannot be combined with
@@ -140,7 +141,7 @@ namespace Model
      * making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles
      * that are provided by AWS.</p> </li> </ul>
      */
-    inline DescribeWorkspaceBundlesRequest& WithOwner(Aws::String&& value) { SetOwner(value); return *this;}
+    inline DescribeWorkspaceBundlesRequest& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
      * <p>The owner of the bundles to retrieve. This parameter cannot be combined with
@@ -167,7 +168,7 @@ namespace Model
      * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
      * null if this is the first call.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
@@ -185,7 +186,7 @@ namespace Model
      * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
      * null if this is the first call.</p>
      */
-    inline DescribeWorkspaceBundlesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeWorkspaceBundlesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>NextToken</code> value from a previous call to this operation. Pass

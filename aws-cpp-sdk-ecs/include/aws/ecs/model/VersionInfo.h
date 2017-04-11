@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The version number of the Amazon ECS container agent.</p>
      */
-    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
+    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
 
     /**
      * <p>The version number of the Amazon ECS container agent.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The version number of the Amazon ECS container agent.</p>
      */
-    inline VersionInfo& WithAgentVersion(Aws::String&& value) { SetAgentVersion(value); return *this;}
+    inline VersionInfo& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version number of the Amazon ECS container agent.</p>
@@ -98,7 +99,7 @@ namespace Model
      * href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent
      * </a> GitHub repository.</p>
      */
-    inline void SetAgentHash(Aws::String&& value) { m_agentHashHasBeenSet = true; m_agentHash = value; }
+    inline void SetAgentHash(Aws::String&& value) { m_agentHashHasBeenSet = true; m_agentHash = std::move(value); }
 
     /**
      * <p>The Git commit hash for the Amazon ECS container agent build on the <a
@@ -119,7 +120,7 @@ namespace Model
      * href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent
      * </a> GitHub repository.</p>
      */
-    inline VersionInfo& WithAgentHash(Aws::String&& value) { SetAgentHash(value); return *this;}
+    inline VersionInfo& WithAgentHash(Aws::String&& value) { SetAgentHash(std::move(value)); return *this;}
 
     /**
      * <p>The Git commit hash for the Amazon ECS container agent build on the <a
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The Docker version running on the container instance.</p>
      */
-    inline void SetDockerVersion(Aws::String&& value) { m_dockerVersionHasBeenSet = true; m_dockerVersion = value; }
+    inline void SetDockerVersion(Aws::String&& value) { m_dockerVersionHasBeenSet = true; m_dockerVersion = std::move(value); }
 
     /**
      * <p>The Docker version running on the container instance.</p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>The Docker version running on the container instance.</p>
      */
-    inline VersionInfo& WithDockerVersion(Aws::String&& value) { SetDockerVersion(value); return *this;}
+    inline VersionInfo& WithDockerVersion(Aws::String&& value) { SetDockerVersion(std::move(value)); return *this;}
 
     /**
      * <p>The Docker version running on the container instance.</p>

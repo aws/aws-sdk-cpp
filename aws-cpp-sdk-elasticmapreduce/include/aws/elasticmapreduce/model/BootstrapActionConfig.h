@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/model/ScriptBootstrapActionConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of the bootstrap action.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the bootstrap action.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The name of the bootstrap action.</p>
      */
-    inline BootstrapActionConfig& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline BootstrapActionConfig& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the bootstrap action.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The script run by the bootstrap action.</p>
      */
-    inline void SetScriptBootstrapAction(ScriptBootstrapActionConfig&& value) { m_scriptBootstrapActionHasBeenSet = true; m_scriptBootstrapAction = value; }
+    inline void SetScriptBootstrapAction(ScriptBootstrapActionConfig&& value) { m_scriptBootstrapActionHasBeenSet = true; m_scriptBootstrapAction = std::move(value); }
 
     /**
      * <p>The script run by the bootstrap action.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The script run by the bootstrap action.</p>
      */
-    inline BootstrapActionConfig& WithScriptBootstrapAction(ScriptBootstrapActionConfig&& value) { SetScriptBootstrapAction(value); return *this;}
+    inline BootstrapActionConfig& WithScriptBootstrapAction(ScriptBootstrapActionConfig&& value) { SetScriptBootstrapAction(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

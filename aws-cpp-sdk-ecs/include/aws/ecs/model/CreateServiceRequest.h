@@ -21,6 +21,7 @@
 #include <aws/ecs/model/LoadBalancer.h>
 #include <aws/ecs/model/PlacementConstraint.h>
 #include <aws/ecs/model/PlacementStrategy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * run your service. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
@@ -80,7 +81,7 @@ namespace Model
      * run your service. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
-    inline CreateServiceRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
+    inline CreateServiceRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
@@ -111,7 +112,7 @@ namespace Model
      * within a cluster, but you can have similarly named services in multiple clusters
      * within a region or across multiple regions.</p>
      */
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
+    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
@@ -135,7 +136,7 @@ namespace Model
      * within a cluster, but you can have similarly named services in multiple clusters
      * within a region or across multiple regions.</p>
      */
-    inline CreateServiceRequest& WithServiceName(Aws::String&& value) { SetServiceName(value); return *this;}
+    inline CreateServiceRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
@@ -167,7 +168,7 @@ namespace Model
      * definition to run in your service. If a <code>revision</code> is not specified,
      * the latest <code>ACTIVE</code> revision is used.</p>
      */
-    inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
+    inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
@@ -191,7 +192,7 @@ namespace Model
      * definition to run in your service. If a <code>revision</code> is not specified,
      * the latest <code>ACTIVE</code> revision is used.</p>
      */
-    inline CreateServiceRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(value); return *this;}
+    inline CreateServiceRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
@@ -256,7 +257,7 @@ namespace Model
      * and port combination is registered as a target in the target group specified
      * here.</p>
      */
-    inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
+    inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = std::move(value); }
 
     /**
      * <p>A load balancer object representing the load balancer to use with your
@@ -294,7 +295,7 @@ namespace Model
      * and port combination is registered as a target in the target group specified
      * here.</p>
      */
-    inline CreateServiceRequest& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(value); return *this;}
+    inline CreateServiceRequest& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(std::move(value)); return *this;}
 
     /**
      * <p>A load balancer object representing the load balancer to use with your
@@ -332,7 +333,7 @@ namespace Model
      * and port combination is registered as a target in the target group specified
      * here.</p>
      */
-    inline CreateServiceRequest& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
+    inline CreateServiceRequest& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The number of instantiations of the specified task definition to place and
@@ -368,7 +369,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. Up to 32 ASCII characters are allowed.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -386,7 +387,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. Up to 32 ASCII characters are allowed.</p>
      */
-    inline CreateServiceRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline CreateServiceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -440,7 +441,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = value; }
+    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows
@@ -488,7 +489,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline CreateServiceRequest& WithRole(Aws::String&& value) { SetRole(value); return *this;}
+    inline CreateServiceRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows
@@ -522,7 +523,7 @@ namespace Model
      * <p>Optional deployment parameters that control how many tasks run during the
      * deployment and the ordering of stopping and starting tasks.</p>
      */
-    inline void SetDeploymentConfiguration(DeploymentConfiguration&& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = value; }
+    inline void SetDeploymentConfiguration(DeploymentConfiguration&& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = std::move(value); }
 
     /**
      * <p>Optional deployment parameters that control how many tasks run during the
@@ -534,7 +535,7 @@ namespace Model
      * <p>Optional deployment parameters that control how many tasks run during the
      * deployment and the ordering of stopping and starting tasks.</p>
      */
-    inline CreateServiceRequest& WithDeploymentConfiguration(DeploymentConfiguration&& value) { SetDeploymentConfiguration(value); return *this;}
+    inline CreateServiceRequest& WithDeploymentConfiguration(DeploymentConfiguration&& value) { SetDeploymentConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>An array of placement constraint objects to use for tasks in your service.
@@ -555,7 +556,7 @@ namespace Model
      * You can specify a maximum of 10 constraints per task (this limit includes
      * constraints in the task definition and those specified at run time). </p>
      */
-    inline void SetPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
+    inline void SetPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = std::move(value); }
 
     /**
      * <p>An array of placement constraint objects to use for tasks in your service.
@@ -569,7 +570,7 @@ namespace Model
      * You can specify a maximum of 10 constraints per task (this limit includes
      * constraints in the task definition and those specified at run time). </p>
      */
-    inline CreateServiceRequest& WithPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { SetPlacementConstraints(value); return *this;}
+    inline CreateServiceRequest& WithPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { SetPlacementConstraints(std::move(value)); return *this;}
 
     /**
      * <p>An array of placement constraint objects to use for tasks in your service.
@@ -583,7 +584,7 @@ namespace Model
      * You can specify a maximum of 10 constraints per task (this limit includes
      * constraints in the task definition and those specified at run time). </p>
      */
-    inline CreateServiceRequest& AddPlacementConstraints(PlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
+    inline CreateServiceRequest& AddPlacementConstraints(PlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
@@ -601,7 +602,7 @@ namespace Model
      * <p>The placement strategy objects to use for tasks in your service. You can
      * specify a maximum of 5 strategy rules per service.</p>
      */
-    inline void SetPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = value; }
+    inline void SetPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = std::move(value); }
 
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
@@ -613,7 +614,7 @@ namespace Model
      * <p>The placement strategy objects to use for tasks in your service. You can
      * specify a maximum of 5 strategy rules per service.</p>
      */
-    inline CreateServiceRequest& WithPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { SetPlacementStrategy(value); return *this;}
+    inline CreateServiceRequest& WithPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { SetPlacementStrategy(std::move(value)); return *this;}
 
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
@@ -625,7 +626,7 @@ namespace Model
      * <p>The placement strategy objects to use for tasks in your service. You can
      * specify a maximum of 5 strategy rules per service.</p>
      */
-    inline CreateServiceRequest& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(value); return *this; }
+    inline CreateServiceRequest& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_cluster;

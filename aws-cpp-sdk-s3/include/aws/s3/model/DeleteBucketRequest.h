@@ -16,6 +16,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -40,7 +41,7 @@ namespace Model
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
@@ -49,7 +50,7 @@ namespace Model
     inline DeleteBucketRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     
-    inline DeleteBucketRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline DeleteBucketRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     
     inline DeleteBucketRequest& WithBucket(const char* value) { SetBucket(value); return *this;}

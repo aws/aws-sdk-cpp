@@ -17,6 +17,7 @@
 #include <aws/dynamodb/DynamoDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/TimeToLiveSpecification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of the table to be configured.</p>
      */
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
+    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
      * <p>The name of the table to be configured.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the table to be configured.</p>
      */
-    inline UpdateTimeToLiveRequest& WithTableName(Aws::String&& value) { SetTableName(value); return *this;}
+    inline UpdateTimeToLiveRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the table to be configured.</p>
@@ -91,7 +92,7 @@ namespace Model
      * <p>Represents the settings used to enable or disable Time to Live for the
      * specified table.</p>
      */
-    inline void SetTimeToLiveSpecification(TimeToLiveSpecification&& value) { m_timeToLiveSpecificationHasBeenSet = true; m_timeToLiveSpecification = value; }
+    inline void SetTimeToLiveSpecification(TimeToLiveSpecification&& value) { m_timeToLiveSpecificationHasBeenSet = true; m_timeToLiveSpecification = std::move(value); }
 
     /**
      * <p>Represents the settings used to enable or disable Time to Live for the
@@ -103,7 +104,7 @@ namespace Model
      * <p>Represents the settings used to enable or disable Time to Live for the
      * specified table.</p>
      */
-    inline UpdateTimeToLiveRequest& WithTimeToLiveSpecification(TimeToLiveSpecification&& value) { SetTimeToLiveSpecification(value); return *this;}
+    inline UpdateTimeToLiveRequest& WithTimeToLiveSpecification(TimeToLiveSpecification&& value) { SetTimeToLiveSpecification(std::move(value)); return *this;}
 
   private:
     Aws::String m_tableName;

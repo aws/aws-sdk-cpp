@@ -16,6 +16,7 @@
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/ElasticsearchServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>Version of Elasticsearch for which list of supported elasticsearch instance
      * types are needed. </p>
      */
-    inline void SetElasticsearchVersion(Aws::String&& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = value; }
+    inline void SetElasticsearchVersion(Aws::String&& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = std::move(value); }
 
     /**
      * <p>Version of Elasticsearch for which list of supported elasticsearch instance
@@ -78,7 +79,7 @@ namespace Model
      * <p>Version of Elasticsearch for which list of supported elasticsearch instance
      * types are needed. </p>
      */
-    inline ListElasticsearchInstanceTypesRequest& WithElasticsearchVersion(Aws::String&& value) { SetElasticsearchVersion(value); return *this;}
+    inline ListElasticsearchInstanceTypesRequest& WithElasticsearchVersion(Aws::String&& value) { SetElasticsearchVersion(std::move(value)); return *this;}
 
     /**
      * <p>Version of Elasticsearch for which list of supported elasticsearch instance
@@ -105,7 +106,7 @@ namespace Model
      * This should be present only if we are querying for list of available
      * Elasticsearch instance types when modifying existing domain. </p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>DomainName represents the name of the Domain that we are trying to modify.
@@ -126,7 +127,7 @@ namespace Model
      * This should be present only if we are querying for list of available
      * Elasticsearch instance types when modifying existing domain. </p>
      */
-    inline ListElasticsearchInstanceTypesRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline ListElasticsearchInstanceTypesRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>DomainName represents the name of the Domain that we are trying to modify.
@@ -169,7 +170,7 @@ namespace Model
      * <p>NextToken should be sent in case if earlier API call produced result
      * containing NextToken. It is used for pagination. </p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>NextToken should be sent in case if earlier API call produced result
@@ -187,7 +188,7 @@ namespace Model
      * <p>NextToken should be sent in case if earlier API call produced result
      * containing NextToken. It is used for pagination. </p>
      */
-    inline ListElasticsearchInstanceTypesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListElasticsearchInstanceTypesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>NextToken should be sent in case if earlier API call produced result

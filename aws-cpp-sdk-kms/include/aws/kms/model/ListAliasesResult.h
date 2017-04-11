@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kms/model/AliasListEntry.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of key aliases in the user's account.</p>
      */
-    inline void SetAliases(Aws::Vector<AliasListEntry>&& value) { m_aliases = value; }
+    inline void SetAliases(Aws::Vector<AliasListEntry>&& value) { m_aliases = std::move(value); }
 
     /**
      * <p>A list of key aliases in the user's account.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of key aliases in the user's account.</p>
      */
-    inline ListAliasesResult& WithAliases(Aws::Vector<AliasListEntry>&& value) { SetAliases(value); return *this;}
+    inline ListAliasesResult& WithAliases(Aws::Vector<AliasListEntry>&& value) { SetAliases(std::move(value)); return *this;}
 
     /**
      * <p>A list of key aliases in the user's account.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of key aliases in the user's account.</p>
      */
-    inline ListAliasesResult& AddAliases(AliasListEntry&& value) { m_aliases.push_back(value); return *this; }
+    inline ListAliasesResult& AddAliases(AliasListEntry&& value) { m_aliases.push_back(std::move(value)); return *this; }
 
     /**
      * <p>When <code>Truncated</code> is true, this element is present and contains the
@@ -92,7 +93,7 @@ namespace Model
      * <p>When <code>Truncated</code> is true, this element is present and contains the
      * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
      */
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
      * <p>When <code>Truncated</code> is true, this element is present and contains the
@@ -110,7 +111,7 @@ namespace Model
      * <p>When <code>Truncated</code> is true, this element is present and contains the
      * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
      */
-    inline ListAliasesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
+    inline ListAliasesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>When <code>Truncated</code> is true, this element is present and contains the

@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/Command.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>An array of <code>Command</code> objects that describe each of the specified
      * commands.</p>
      */
-    inline void SetCommands(Aws::Vector<Command>&& value) { m_commands = value; }
+    inline void SetCommands(Aws::Vector<Command>&& value) { m_commands = std::move(value); }
 
     /**
      * <p>An array of <code>Command</code> objects that describe each of the specified
@@ -74,7 +75,7 @@ namespace Model
      * <p>An array of <code>Command</code> objects that describe each of the specified
      * commands.</p>
      */
-    inline DescribeCommandsResult& WithCommands(Aws::Vector<Command>&& value) { SetCommands(value); return *this;}
+    inline DescribeCommandsResult& WithCommands(Aws::Vector<Command>&& value) { SetCommands(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>Command</code> objects that describe each of the specified
@@ -86,7 +87,7 @@ namespace Model
      * <p>An array of <code>Command</code> objects that describe each of the specified
      * commands.</p>
      */
-    inline DescribeCommandsResult& AddCommands(Command&& value) { m_commands.push_back(value); return *this; }
+    inline DescribeCommandsResult& AddCommands(Command&& value) { m_commands.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Command> m_commands;

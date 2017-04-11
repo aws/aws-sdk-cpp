@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Confirmation details of the action performed.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
 
     /**
      * <p>Confirmation details of the action performed.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Confirmation details of the action performed.</p>
      */
-    inline DetachAssessmentAndRulesPackageResult& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline DetachAssessmentAndRulesPackageResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>Confirmation details of the action performed.</p>

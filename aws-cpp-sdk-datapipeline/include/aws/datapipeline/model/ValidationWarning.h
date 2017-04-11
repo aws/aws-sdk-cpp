@@ -16,6 +16,7 @@
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The identifier of the object that contains the validation warning.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The identifier of the object that contains the validation warning.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The identifier of the object that contains the validation warning.</p>
      */
-    inline ValidationWarning& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline ValidationWarning& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the object that contains the validation warning.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>A description of the validation warning.</p>
      */
-    inline void SetWarnings(Aws::Vector<Aws::String>&& value) { m_warningsHasBeenSet = true; m_warnings = value; }
+    inline void SetWarnings(Aws::Vector<Aws::String>&& value) { m_warningsHasBeenSet = true; m_warnings = std::move(value); }
 
     /**
      * <p>A description of the validation warning.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>A description of the validation warning.</p>
      */
-    inline ValidationWarning& WithWarnings(Aws::Vector<Aws::String>&& value) { SetWarnings(value); return *this;}
+    inline ValidationWarning& WithWarnings(Aws::Vector<Aws::String>&& value) { SetWarnings(std::move(value)); return *this;}
 
     /**
      * <p>A description of the validation warning.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>A description of the validation warning.</p>
      */
-    inline ValidationWarning& AddWarnings(Aws::String&& value) { m_warningsHasBeenSet = true; m_warnings.push_back(value); return *this; }
+    inline ValidationWarning& AddWarnings(Aws::String&& value) { m_warningsHasBeenSet = true; m_warnings.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A description of the validation warning.</p>

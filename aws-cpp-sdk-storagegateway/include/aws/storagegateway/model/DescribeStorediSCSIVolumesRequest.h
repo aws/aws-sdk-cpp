@@ -17,6 +17,7 @@
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * (ARN) of a stored volume. All of the specified stored volumes must from the same
      * gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
      */
-    inline void SetVolumeARNs(Aws::Vector<Aws::String>&& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs = value; }
+    inline void SetVolumeARNs(Aws::Vector<Aws::String>&& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs = std::move(value); }
 
     /**
      * <p>An array of strings where each string represents the Amazon Resource Name
@@ -73,7 +74,7 @@ namespace Model
      * (ARN) of a stored volume. All of the specified stored volumes must from the same
      * gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
      */
-    inline DescribeStorediSCSIVolumesRequest& WithVolumeARNs(Aws::Vector<Aws::String>&& value) { SetVolumeARNs(value); return *this;}
+    inline DescribeStorediSCSIVolumesRequest& WithVolumeARNs(Aws::Vector<Aws::String>&& value) { SetVolumeARNs(std::move(value)); return *this;}
 
     /**
      * <p>An array of strings where each string represents the Amazon Resource Name
@@ -87,7 +88,7 @@ namespace Model
      * (ARN) of a stored volume. All of the specified stored volumes must from the same
      * gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
      */
-    inline DescribeStorediSCSIVolumesRequest& AddVolumeARNs(Aws::String&& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs.push_back(value); return *this; }
+    inline DescribeStorediSCSIVolumesRequest& AddVolumeARNs(Aws::String&& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of strings where each string represents the Amazon Resource Name

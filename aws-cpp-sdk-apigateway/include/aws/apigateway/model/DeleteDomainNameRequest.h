@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The name of the <a>DomainName</a> resource to be deleted.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The name of the <a>DomainName</a> resource to be deleted.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The name of the <a>DomainName</a> resource to be deleted.</p>
      */
-    inline DeleteDomainNameRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DeleteDomainNameRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the <a>DomainName</a> resource to be deleted.</p>

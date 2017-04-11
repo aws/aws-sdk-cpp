@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/OptionGroupOptionSetting.h>
 #include <aws/rds/model/OptionVersion.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The name of the option.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the option.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The name of the option.</p>
      */
-    inline OptionGroupOption& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline OptionGroupOption& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the option.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The description of the option.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the option.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The description of the option.</p>
      */
-    inline OptionGroupOption& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline OptionGroupOption& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the option.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The name of the engine that this option can be applied to.</p>
      */
-    inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
+    inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
      * <p>The name of the engine that this option can be applied to.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The name of the engine that this option can be applied to.</p>
      */
-    inline OptionGroupOption& WithEngineName(Aws::String&& value) { SetEngineName(value); return *this;}
+    inline OptionGroupOption& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the engine that this option can be applied to.</p>
@@ -167,7 +168,7 @@ namespace Model
     /**
      * <p>Indicates the major engine version that the option is available for.</p>
      */
-    inline void SetMajorEngineVersion(Aws::String&& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = value; }
+    inline void SetMajorEngineVersion(Aws::String&& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = std::move(value); }
 
     /**
      * <p>Indicates the major engine version that the option is available for.</p>
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p>Indicates the major engine version that the option is available for.</p>
      */
-    inline OptionGroupOption& WithMajorEngineVersion(Aws::String&& value) { SetMajorEngineVersion(value); return *this;}
+    inline OptionGroupOption& WithMajorEngineVersion(Aws::String&& value) { SetMajorEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>Indicates the major engine version that the option is available for.</p>
@@ -202,7 +203,7 @@ namespace Model
     /**
      * <p>The minimum required engine version for the option to be applied.</p>
      */
-    inline void SetMinimumRequiredMinorEngineVersion(Aws::String&& value) { m_minimumRequiredMinorEngineVersionHasBeenSet = true; m_minimumRequiredMinorEngineVersion = value; }
+    inline void SetMinimumRequiredMinorEngineVersion(Aws::String&& value) { m_minimumRequiredMinorEngineVersionHasBeenSet = true; m_minimumRequiredMinorEngineVersion = std::move(value); }
 
     /**
      * <p>The minimum required engine version for the option to be applied.</p>
@@ -217,7 +218,7 @@ namespace Model
     /**
      * <p>The minimum required engine version for the option to be applied.</p>
      */
-    inline OptionGroupOption& WithMinimumRequiredMinorEngineVersion(Aws::String&& value) { SetMinimumRequiredMinorEngineVersion(value); return *this;}
+    inline OptionGroupOption& WithMinimumRequiredMinorEngineVersion(Aws::String&& value) { SetMinimumRequiredMinorEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The minimum required engine version for the option to be applied.</p>
@@ -267,7 +268,7 @@ namespace Model
     /**
      * <p>The options that are prerequisites for this option.</p>
      */
-    inline void SetOptionsDependedOn(Aws::Vector<Aws::String>&& value) { m_optionsDependedOnHasBeenSet = true; m_optionsDependedOn = value; }
+    inline void SetOptionsDependedOn(Aws::Vector<Aws::String>&& value) { m_optionsDependedOnHasBeenSet = true; m_optionsDependedOn = std::move(value); }
 
     /**
      * <p>The options that are prerequisites for this option.</p>
@@ -277,7 +278,7 @@ namespace Model
     /**
      * <p>The options that are prerequisites for this option.</p>
      */
-    inline OptionGroupOption& WithOptionsDependedOn(Aws::Vector<Aws::String>&& value) { SetOptionsDependedOn(value); return *this;}
+    inline OptionGroupOption& WithOptionsDependedOn(Aws::Vector<Aws::String>&& value) { SetOptionsDependedOn(std::move(value)); return *this;}
 
     /**
      * <p>The options that are prerequisites for this option.</p>
@@ -287,7 +288,7 @@ namespace Model
     /**
      * <p>The options that are prerequisites for this option.</p>
      */
-    inline OptionGroupOption& AddOptionsDependedOn(Aws::String&& value) { m_optionsDependedOnHasBeenSet = true; m_optionsDependedOn.push_back(value); return *this; }
+    inline OptionGroupOption& AddOptionsDependedOn(Aws::String&& value) { m_optionsDependedOnHasBeenSet = true; m_optionsDependedOn.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The options that are prerequisites for this option.</p>
@@ -307,7 +308,7 @@ namespace Model
     /**
      * <p>The options that conflict with this option.</p>
      */
-    inline void SetOptionsConflictsWith(Aws::Vector<Aws::String>&& value) { m_optionsConflictsWithHasBeenSet = true; m_optionsConflictsWith = value; }
+    inline void SetOptionsConflictsWith(Aws::Vector<Aws::String>&& value) { m_optionsConflictsWithHasBeenSet = true; m_optionsConflictsWith = std::move(value); }
 
     /**
      * <p>The options that conflict with this option.</p>
@@ -317,7 +318,7 @@ namespace Model
     /**
      * <p>The options that conflict with this option.</p>
      */
-    inline OptionGroupOption& WithOptionsConflictsWith(Aws::Vector<Aws::String>&& value) { SetOptionsConflictsWith(value); return *this;}
+    inline OptionGroupOption& WithOptionsConflictsWith(Aws::Vector<Aws::String>&& value) { SetOptionsConflictsWith(std::move(value)); return *this;}
 
     /**
      * <p>The options that conflict with this option.</p>
@@ -327,7 +328,7 @@ namespace Model
     /**
      * <p>The options that conflict with this option.</p>
      */
-    inline OptionGroupOption& AddOptionsConflictsWith(Aws::String&& value) { m_optionsConflictsWithHasBeenSet = true; m_optionsConflictsWith.push_back(value); return *this; }
+    inline OptionGroupOption& AddOptionsConflictsWith(Aws::String&& value) { m_optionsConflictsWithHasBeenSet = true; m_optionsConflictsWith.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The options that conflict with this option.</p>
@@ -392,7 +393,7 @@ namespace Model
      * <p>The option settings that are available (and the default value) for each
      * option in an option group.</p>
      */
-    inline void SetOptionGroupOptionSettings(Aws::Vector<OptionGroupOptionSetting>&& value) { m_optionGroupOptionSettingsHasBeenSet = true; m_optionGroupOptionSettings = value; }
+    inline void SetOptionGroupOptionSettings(Aws::Vector<OptionGroupOptionSetting>&& value) { m_optionGroupOptionSettingsHasBeenSet = true; m_optionGroupOptionSettings = std::move(value); }
 
     /**
      * <p>The option settings that are available (and the default value) for each
@@ -404,7 +405,7 @@ namespace Model
      * <p>The option settings that are available (and the default value) for each
      * option in an option group.</p>
      */
-    inline OptionGroupOption& WithOptionGroupOptionSettings(Aws::Vector<OptionGroupOptionSetting>&& value) { SetOptionGroupOptionSettings(value); return *this;}
+    inline OptionGroupOption& WithOptionGroupOptionSettings(Aws::Vector<OptionGroupOptionSetting>&& value) { SetOptionGroupOptionSettings(std::move(value)); return *this;}
 
     /**
      * <p>The option settings that are available (and the default value) for each
@@ -416,7 +417,7 @@ namespace Model
      * <p>The option settings that are available (and the default value) for each
      * option in an option group.</p>
      */
-    inline OptionGroupOption& AddOptionGroupOptionSettings(OptionGroupOptionSetting&& value) { m_optionGroupOptionSettingsHasBeenSet = true; m_optionGroupOptionSettings.push_back(value); return *this; }
+    inline OptionGroupOption& AddOptionGroupOptionSettings(OptionGroupOptionSetting&& value) { m_optionGroupOptionSettingsHasBeenSet = true; m_optionGroupOptionSettings.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The versions that are available for the option.</p>
@@ -431,7 +432,7 @@ namespace Model
     /**
      * <p>The versions that are available for the option.</p>
      */
-    inline void SetOptionGroupOptionVersions(Aws::Vector<OptionVersion>&& value) { m_optionGroupOptionVersionsHasBeenSet = true; m_optionGroupOptionVersions = value; }
+    inline void SetOptionGroupOptionVersions(Aws::Vector<OptionVersion>&& value) { m_optionGroupOptionVersionsHasBeenSet = true; m_optionGroupOptionVersions = std::move(value); }
 
     /**
      * <p>The versions that are available for the option.</p>
@@ -441,7 +442,7 @@ namespace Model
     /**
      * <p>The versions that are available for the option.</p>
      */
-    inline OptionGroupOption& WithOptionGroupOptionVersions(Aws::Vector<OptionVersion>&& value) { SetOptionGroupOptionVersions(value); return *this;}
+    inline OptionGroupOption& WithOptionGroupOptionVersions(Aws::Vector<OptionVersion>&& value) { SetOptionGroupOptionVersions(std::move(value)); return *this;}
 
     /**
      * <p>The versions that are available for the option.</p>
@@ -451,7 +452,7 @@ namespace Model
     /**
      * <p>The versions that are available for the option.</p>
      */
-    inline OptionGroupOption& AddOptionGroupOptionVersions(OptionVersion&& value) { m_optionGroupOptionVersionsHasBeenSet = true; m_optionGroupOptionVersions.push_back(value); return *this; }
+    inline OptionGroupOption& AddOptionGroupOptionVersions(OptionVersion&& value) { m_optionGroupOptionVersionsHasBeenSet = true; m_optionGroupOptionVersions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_name;

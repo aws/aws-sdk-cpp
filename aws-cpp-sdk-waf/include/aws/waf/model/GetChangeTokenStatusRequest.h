@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/WAFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The change token for which you want to get the status. This change token was
      * previously returned in the <code>GetChangeToken</code> response.</p>
      */
-    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
+    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
 
     /**
      * <p>The change token for which you want to get the status. This change token was
@@ -69,7 +70,7 @@ namespace Model
      * <p>The change token for which you want to get the status. This change token was
      * previously returned in the <code>GetChangeToken</code> response.</p>
      */
-    inline GetChangeTokenStatusRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(value); return *this;}
+    inline GetChangeTokenStatusRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
 
     /**
      * <p>The change token for which you want to get the status. This change token was

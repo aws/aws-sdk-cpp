@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
      */
-    inline KinesisAction& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline KinesisAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The name of the Amazon Kinesis stream.</p>
      */
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
 
     /**
      * <p>The name of the Amazon Kinesis stream.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The name of the Amazon Kinesis stream.</p>
      */
-    inline KinesisAction& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
+    inline KinesisAction& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon Kinesis stream.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The partition key.</p>
      */
-    inline void SetPartitionKey(Aws::String&& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = value; }
+    inline void SetPartitionKey(Aws::String&& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = std::move(value); }
 
     /**
      * <p>The partition key.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The partition key.</p>
      */
-    inline KinesisAction& WithPartitionKey(Aws::String&& value) { SetPartitionKey(value); return *this;}
+    inline KinesisAction& WithPartitionKey(Aws::String&& value) { SetPartitionKey(std::move(value)); return *this;}
 
     /**
      * <p>The partition key.</p>

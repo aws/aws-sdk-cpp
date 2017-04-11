@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArn = value; }
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArn = std::move(value); }
 
     /**
      * <p>String that contains the ARN of the issued certificate. This must be of the
@@ -85,7 +86,7 @@ namespace Model
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
-    inline RequestCertificateResult& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
+    inline RequestCertificateResult& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>String that contains the ARN of the issued certificate. This must be of the

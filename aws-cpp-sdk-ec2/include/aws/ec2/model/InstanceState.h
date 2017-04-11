@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/InstanceStateName.h>
+#include <utility>
 
 namespace Aws
 {
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The current state of the instance.</p>
      */
-    inline void SetName(InstanceStateName&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(InstanceStateName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The current state of the instance.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The current state of the instance.</p>
      */
-    inline InstanceState& WithName(InstanceStateName&& value) { SetName(value); return *this;}
+    inline InstanceState& WithName(InstanceStateName&& value) { SetName(std::move(value)); return *this;}
 
   private:
     int m_code;

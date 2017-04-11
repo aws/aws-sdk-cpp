@@ -16,6 +16,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the snapshot to delete.</p>
      */
-    inline void SetInstanceSnapshotName(Aws::String&& value) { m_instanceSnapshotNameHasBeenSet = true; m_instanceSnapshotName = value; }
+    inline void SetInstanceSnapshotName(Aws::String&& value) { m_instanceSnapshotNameHasBeenSet = true; m_instanceSnapshotName = std::move(value); }
 
     /**
      * <p>The name of the snapshot to delete.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the snapshot to delete.</p>
      */
-    inline DeleteInstanceSnapshotRequest& WithInstanceSnapshotName(Aws::String&& value) { SetInstanceSnapshotName(value); return *this;}
+    inline DeleteInstanceSnapshotRequest& WithInstanceSnapshotName(Aws::String&& value) { SetInstanceSnapshotName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the snapshot to delete.</p>

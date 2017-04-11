@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of the policy to detach.</p>
      */
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
      * <p>The name of the policy to detach.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the policy to detach.</p>
      */
-    inline DetachPrincipalPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
+    inline DetachPrincipalPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the policy to detach.</p>
@@ -93,7 +94,7 @@ namespace Model
      * certificate ARN. If the principal is an Amazon Cognito identity, specify the
      * identity ID.</p>
      */
-    inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = value; }
+    inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
     /**
      * <p>The principal.</p> <p>If the principal is a certificate, specify the
@@ -114,7 +115,7 @@ namespace Model
      * certificate ARN. If the principal is an Amazon Cognito identity, specify the
      * identity ID.</p>
      */
-    inline DetachPrincipalPolicyRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(value); return *this;}
+    inline DetachPrincipalPolicyRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
 
     /**
      * <p>The principal.</p> <p>If the principal is a certificate, specify the

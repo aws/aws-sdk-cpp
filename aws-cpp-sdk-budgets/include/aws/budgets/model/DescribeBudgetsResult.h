@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/budgets/model/Budget.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,19 +54,19 @@ namespace Model
     inline void SetBudgets(const Aws::Vector<Budget>& value) { m_budgets = value; }
 
     
-    inline void SetBudgets(Aws::Vector<Budget>&& value) { m_budgets = value; }
+    inline void SetBudgets(Aws::Vector<Budget>&& value) { m_budgets = std::move(value); }
 
     
     inline DescribeBudgetsResult& WithBudgets(const Aws::Vector<Budget>& value) { SetBudgets(value); return *this;}
 
     
-    inline DescribeBudgetsResult& WithBudgets(Aws::Vector<Budget>&& value) { SetBudgets(value); return *this;}
+    inline DescribeBudgetsResult& WithBudgets(Aws::Vector<Budget>&& value) { SetBudgets(std::move(value)); return *this;}
 
     
     inline DescribeBudgetsResult& AddBudgets(const Budget& value) { m_budgets.push_back(value); return *this; }
 
     
-    inline DescribeBudgetsResult& AddBudgets(Budget&& value) { m_budgets.push_back(value); return *this; }
+    inline DescribeBudgetsResult& AddBudgets(Budget&& value) { m_budgets.push_back(std::move(value)); return *this; }
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -74,7 +75,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
@@ -83,7 +84,7 @@ namespace Model
     inline DescribeBudgetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     
-    inline DescribeBudgetsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeBudgetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     
     inline DescribeBudgetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

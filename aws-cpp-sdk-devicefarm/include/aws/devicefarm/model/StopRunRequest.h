@@ -16,6 +16,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/DeviceFarmRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>Represents the Amazon Resource Name (ARN) of the Device Farm run you wish to
      * stop.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>Represents the Amazon Resource Name (ARN) of the Device Farm run you wish to
@@ -72,7 +73,7 @@ namespace Model
      * <p>Represents the Amazon Resource Name (ARN) of the Device Farm run you wish to
      * stop.</p>
      */
-    inline StopRunRequest& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline StopRunRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>Represents the Amazon Resource Name (ARN) of the Device Farm run you wish to

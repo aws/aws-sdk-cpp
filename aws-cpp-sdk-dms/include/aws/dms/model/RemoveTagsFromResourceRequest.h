@@ -17,6 +17,7 @@
 #include <aws/dms/DatabaseMigrationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
      * removed from.</p>
      */
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
      * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
@@ -73,7 +74,7 @@ namespace Model
      * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
      * removed from.</p>
      */
-    inline RemoveTagsFromResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(value); return *this;}
+    inline RemoveTagsFromResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The tag key (name) of the tag to be removed.</p>
      */
-    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
+    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
      * <p>The tag key (name) of the tag to be removed.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The tag key (name) of the tag to be removed.</p>
      */
-    inline RemoveTagsFromResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
+    inline RemoveTagsFromResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
      * <p>The tag key (name) of the tag to be removed.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The tag key (name) of the tag to be removed.</p>
      */
-    inline RemoveTagsFromResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+    inline RemoveTagsFromResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The tag key (name) of the tag to be removed.</p>

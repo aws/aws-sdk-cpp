@@ -16,6 +16,7 @@
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticloadbalancing/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The DNS name of the load balancer.</p>
      */
-    inline void SetDNSName(Aws::String&& value) { m_dNSName = value; }
+    inline void SetDNSName(Aws::String&& value) { m_dNSName = std::move(value); }
 
     /**
      * <p>The DNS name of the load balancer.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The DNS name of the load balancer.</p>
      */
-    inline CreateLoadBalancerResult& WithDNSName(Aws::String&& value) { SetDNSName(value); return *this;}
+    inline CreateLoadBalancerResult& WithDNSName(Aws::String&& value) { SetDNSName(std::move(value)); return *this;}
 
     /**
      * <p>The DNS name of the load balancer.</p>
@@ -87,13 +88,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CreateLoadBalancerResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CreateLoadBalancerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CreateLoadBalancerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_dNSName;

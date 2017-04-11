@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/PeeringConnectionOptions.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>Information about the VPC peering connection options for the requester
      * VPC.</p>
      */
-    inline void SetRequesterPeeringConnectionOptions(PeeringConnectionOptions&& value) { m_requesterPeeringConnectionOptions = value; }
+    inline void SetRequesterPeeringConnectionOptions(PeeringConnectionOptions&& value) { m_requesterPeeringConnectionOptions = std::move(value); }
 
     /**
      * <p>Information about the VPC peering connection options for the requester
@@ -68,7 +69,7 @@ namespace Model
      * <p>Information about the VPC peering connection options for the requester
      * VPC.</p>
      */
-    inline ModifyVpcPeeringConnectionOptionsResponse& WithRequesterPeeringConnectionOptions(PeeringConnectionOptions&& value) { SetRequesterPeeringConnectionOptions(value); return *this;}
+    inline ModifyVpcPeeringConnectionOptionsResponse& WithRequesterPeeringConnectionOptions(PeeringConnectionOptions&& value) { SetRequesterPeeringConnectionOptions(std::move(value)); return *this;}
 
     /**
      * <p>Information about the VPC peering connection options for the accepter
@@ -86,7 +87,7 @@ namespace Model
      * <p>Information about the VPC peering connection options for the accepter
      * VPC.</p>
      */
-    inline void SetAccepterPeeringConnectionOptions(PeeringConnectionOptions&& value) { m_accepterPeeringConnectionOptions = value; }
+    inline void SetAccepterPeeringConnectionOptions(PeeringConnectionOptions&& value) { m_accepterPeeringConnectionOptions = std::move(value); }
 
     /**
      * <p>Information about the VPC peering connection options for the accepter
@@ -98,7 +99,7 @@ namespace Model
      * <p>Information about the VPC peering connection options for the accepter
      * VPC.</p>
      */
-    inline ModifyVpcPeeringConnectionOptionsResponse& WithAccepterPeeringConnectionOptions(PeeringConnectionOptions&& value) { SetAccepterPeeringConnectionOptions(value); return *this;}
+    inline ModifyVpcPeeringConnectionOptionsResponse& WithAccepterPeeringConnectionOptions(PeeringConnectionOptions&& value) { SetAccepterPeeringConnectionOptions(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -107,13 +108,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ModifyVpcPeeringConnectionOptionsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ModifyVpcPeeringConnectionOptionsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ModifyVpcPeeringConnectionOptionsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     PeeringConnectionOptions m_requesterPeeringConnectionOptions;

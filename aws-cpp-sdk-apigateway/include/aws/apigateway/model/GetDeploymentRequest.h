@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
      * <p>The identifier of the <a>RestApi</a> resource for the <a>Deployment</a>
      * resource to get information about.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The identifier of the <a>RestApi</a> resource for the <a>Deployment</a>
@@ -71,7 +72,7 @@ namespace Model
      * <p>The identifier of the <a>RestApi</a> resource for the <a>Deployment</a>
      * resource to get information about.</p>
      */
-    inline GetDeploymentRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline GetDeploymentRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the <a>RestApi</a> resource for the <a>Deployment</a>
@@ -95,7 +96,7 @@ namespace Model
      * <p>The identifier of the <a>Deployment</a> resource to get information
      * about.</p>
      */
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
+    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
      * <p>The identifier of the <a>Deployment</a> resource to get information
@@ -113,7 +114,7 @@ namespace Model
      * <p>The identifier of the <a>Deployment</a> resource to get information
      * about.</p>
      */
-    inline GetDeploymentRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
+    inline GetDeploymentRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the <a>Deployment</a> resource to get information

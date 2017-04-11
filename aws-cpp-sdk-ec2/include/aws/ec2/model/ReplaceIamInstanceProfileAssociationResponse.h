@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/IamInstanceProfileAssociation.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>Information about the IAM instance profile association.</p>
      */
-    inline void SetIamInstanceProfileAssociation(IamInstanceProfileAssociation&& value) { m_iamInstanceProfileAssociation = value; }
+    inline void SetIamInstanceProfileAssociation(IamInstanceProfileAssociation&& value) { m_iamInstanceProfileAssociation = std::move(value); }
 
     /**
      * <p>Information about the IAM instance profile association.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Information about the IAM instance profile association.</p>
      */
-    inline ReplaceIamInstanceProfileAssociationResponse& WithIamInstanceProfileAssociation(IamInstanceProfileAssociation&& value) { SetIamInstanceProfileAssociation(value); return *this;}
+    inline ReplaceIamInstanceProfileAssociationResponse& WithIamInstanceProfileAssociation(IamInstanceProfileAssociation&& value) { SetIamInstanceProfileAssociation(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -72,13 +73,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ReplaceIamInstanceProfileAssociationResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ReplaceIamInstanceProfileAssociationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ReplaceIamInstanceProfileAssociationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     IamInstanceProfileAssociation m_iamInstanceProfileAssociation;

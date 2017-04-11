@@ -17,6 +17,7 @@
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/VPC.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>The ID of the private hosted zone that you want to disassociate a VPC
      * from.</p>
      */
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
+    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
 
     /**
      * <p>The ID of the private hosted zone that you want to disassociate a VPC
@@ -72,7 +73,7 @@ namespace Model
      * <p>The ID of the private hosted zone that you want to disassociate a VPC
      * from.</p>
      */
-    inline DisassociateVPCFromHostedZoneRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
+    inline DisassociateVPCFromHostedZoneRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the private hosted zone that you want to disassociate a VPC
@@ -96,7 +97,7 @@ namespace Model
      * <p>A complex type that contains information about the VPC that you're
      * disassociating from the specified hosted zone.</p>
      */
-    inline void SetVPC(VPC&& value) { m_vPCHasBeenSet = true; m_vPC = value; }
+    inline void SetVPC(VPC&& value) { m_vPCHasBeenSet = true; m_vPC = std::move(value); }
 
     /**
      * <p>A complex type that contains information about the VPC that you're
@@ -108,7 +109,7 @@ namespace Model
      * <p>A complex type that contains information about the VPC that you're
      * disassociating from the specified hosted zone.</p>
      */
-    inline DisassociateVPCFromHostedZoneRequest& WithVPC(VPC&& value) { SetVPC(value); return *this;}
+    inline DisassociateVPCFromHostedZoneRequest& WithVPC(VPC&& value) { SetVPC(std::move(value)); return *this;}
 
     /**
      * <p> <i>Optional:</i> A comment about the disassociation request.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p> <i>Optional:</i> A comment about the disassociation request.</p>
      */
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
+    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
      * <p> <i>Optional:</i> A comment about the disassociation request.</p>
@@ -138,7 +139,7 @@ namespace Model
     /**
      * <p> <i>Optional:</i> A comment about the disassociation request.</p>
      */
-    inline DisassociateVPCFromHostedZoneRequest& WithComment(Aws::String&& value) { SetComment(value); return *this;}
+    inline DisassociateVPCFromHostedZoneRequest& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
      * <p> <i>Optional:</i> A comment about the disassociation request.</p>

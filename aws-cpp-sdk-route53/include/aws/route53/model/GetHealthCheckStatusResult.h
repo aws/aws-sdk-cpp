@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/model/HealthCheckObservation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * Amazon Route 53 health checker that is reporting a status about the health check
      * endpoint.</p>
      */
-    inline void SetHealthCheckObservations(Aws::Vector<HealthCheckObservation>&& value) { m_healthCheckObservations = value; }
+    inline void SetHealthCheckObservations(Aws::Vector<HealthCheckObservation>&& value) { m_healthCheckObservations = std::move(value); }
 
     /**
      * <p>A list that contains one <code>HealthCheckObservation</code> element for each
@@ -79,7 +80,7 @@ namespace Model
      * Amazon Route 53 health checker that is reporting a status about the health check
      * endpoint.</p>
      */
-    inline GetHealthCheckStatusResult& WithHealthCheckObservations(Aws::Vector<HealthCheckObservation>&& value) { SetHealthCheckObservations(value); return *this;}
+    inline GetHealthCheckStatusResult& WithHealthCheckObservations(Aws::Vector<HealthCheckObservation>&& value) { SetHealthCheckObservations(std::move(value)); return *this;}
 
     /**
      * <p>A list that contains one <code>HealthCheckObservation</code> element for each
@@ -93,7 +94,7 @@ namespace Model
      * Amazon Route 53 health checker that is reporting a status about the health check
      * endpoint.</p>
      */
-    inline GetHealthCheckStatusResult& AddHealthCheckObservations(HealthCheckObservation&& value) { m_healthCheckObservations.push_back(value); return *this; }
+    inline GetHealthCheckStatusResult& AddHealthCheckObservations(HealthCheckObservation&& value) { m_healthCheckObservations.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<HealthCheckObservation> m_healthCheckObservations;

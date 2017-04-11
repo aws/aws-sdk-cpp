@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Amazon S3 bucket identifier. This is the name of your S3 bucket.</p>
      */
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * <p>Amazon S3 bucket identifier. This is the name of your S3 bucket.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>Amazon S3 bucket identifier. This is the name of your S3 bucket.</p>
      */
-    inline S3Location& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline S3Location& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * <p>Amazon S3 bucket identifier. This is the name of your S3 bucket.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>Name of the zip file containing your build files. </p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>Name of the zip file containing your build files. </p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>Name of the zip file containing your build files. </p>
      */
-    inline S3Location& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline S3Location& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>Name of the zip file containing your build files. </p>
@@ -136,7 +137,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * for the access role that allows Amazon GameLift to access your S3 bucket.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>Amazon Resource Name (<a
@@ -157,7 +158,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * for the access role that allows Amazon GameLift to access your S3 bucket.</p>
      */
-    inline S3Location& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline S3Location& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Resource Name (<a

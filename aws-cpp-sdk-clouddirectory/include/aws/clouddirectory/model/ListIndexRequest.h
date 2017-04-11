@@ -20,6 +20,7 @@
 #include <aws/clouddirectory/model/ObjectReference.h>
 #include <aws/clouddirectory/model/ConsistencyLevel.h>
 #include <aws/clouddirectory/model/ObjectAttributeRange.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ARN of the directory that the index exists in.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>The ARN of the directory that the index exists in.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ARN of the directory that the index exists in.</p>
      */
-    inline ListIndexRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline ListIndexRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the directory that the index exists in.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>Specifies the ranges of indexed values that you want to query.</p>
      */
-    inline void SetRangesOnIndexedValues(Aws::Vector<ObjectAttributeRange>&& value) { m_rangesOnIndexedValuesHasBeenSet = true; m_rangesOnIndexedValues = value; }
+    inline void SetRangesOnIndexedValues(Aws::Vector<ObjectAttributeRange>&& value) { m_rangesOnIndexedValuesHasBeenSet = true; m_rangesOnIndexedValues = std::move(value); }
 
     /**
      * <p>Specifies the ranges of indexed values that you want to query.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>Specifies the ranges of indexed values that you want to query.</p>
      */
-    inline ListIndexRequest& WithRangesOnIndexedValues(Aws::Vector<ObjectAttributeRange>&& value) { SetRangesOnIndexedValues(value); return *this;}
+    inline ListIndexRequest& WithRangesOnIndexedValues(Aws::Vector<ObjectAttributeRange>&& value) { SetRangesOnIndexedValues(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the ranges of indexed values that you want to query.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>Specifies the ranges of indexed values that you want to query.</p>
      */
-    inline ListIndexRequest& AddRangesOnIndexedValues(ObjectAttributeRange&& value) { m_rangesOnIndexedValuesHasBeenSet = true; m_rangesOnIndexedValues.push_back(value); return *this; }
+    inline ListIndexRequest& AddRangesOnIndexedValues(ObjectAttributeRange&& value) { m_rangesOnIndexedValuesHasBeenSet = true; m_rangesOnIndexedValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The reference to the index to list.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The reference to the index to list.</p>
      */
-    inline void SetIndexReference(ObjectReference&& value) { m_indexReferenceHasBeenSet = true; m_indexReference = value; }
+    inline void SetIndexReference(ObjectReference&& value) { m_indexReferenceHasBeenSet = true; m_indexReference = std::move(value); }
 
     /**
      * <p>The reference to the index to list.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The reference to the index to list.</p>
      */
-    inline ListIndexRequest& WithIndexReference(ObjectReference&& value) { SetIndexReference(value); return *this;}
+    inline ListIndexRequest& WithIndexReference(ObjectReference&& value) { SetIndexReference(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of results to retrieve from the index.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline ListIndexRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListIndexRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>
@@ -197,7 +198,7 @@ namespace Model
     /**
      * <p>The consistency level to execute the request at.</p>
      */
-    inline void SetConsistencyLevel(ConsistencyLevel&& value) { m_consistencyLevelHasBeenSet = true; m_consistencyLevel = value; }
+    inline void SetConsistencyLevel(ConsistencyLevel&& value) { m_consistencyLevelHasBeenSet = true; m_consistencyLevel = std::move(value); }
 
     /**
      * <p>The consistency level to execute the request at.</p>
@@ -207,7 +208,7 @@ namespace Model
     /**
      * <p>The consistency level to execute the request at.</p>
      */
-    inline ListIndexRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(value); return *this;}
+    inline ListIndexRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(std::move(value)); return *this;}
 
   private:
     Aws::String m_directoryArn;

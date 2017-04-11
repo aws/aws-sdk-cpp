@@ -18,6 +18,7 @@
 #include <aws/ssm/model/ResourceTypeForTagging.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The type of resource of which you want to remove a tag.</p>
      */
-    inline void SetResourceType(ResourceTypeForTagging&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(ResourceTypeForTagging&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of resource of which you want to remove a tag.</p>
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The type of resource of which you want to remove a tag.</p>
      */
-    inline RemoveTagsFromResourceRequest& WithResourceType(ResourceTypeForTagging&& value) { SetResourceType(value); return *this;}
+    inline RemoveTagsFromResourceRequest& WithResourceType(ResourceTypeForTagging&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The resource ID for which you want to remove tags.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The resource ID for which you want to remove tags.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The resource ID for which you want to remove tags.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The resource ID for which you want to remove tags.</p>
      */
-    inline RemoveTagsFromResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline RemoveTagsFromResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The resource ID for which you want to remove tags.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>Tag keys that you want to remove from the specified resource.</p>
      */
-    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
+    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
      * <p>Tag keys that you want to remove from the specified resource.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>Tag keys that you want to remove from the specified resource.</p>
      */
-    inline RemoveTagsFromResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
+    inline RemoveTagsFromResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
      * <p>Tag keys that you want to remove from the specified resource.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>Tag keys that you want to remove from the specified resource.</p>
      */
-    inline RemoveTagsFromResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+    inline RemoveTagsFromResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Tag keys that you want to remove from the specified resource.</p>

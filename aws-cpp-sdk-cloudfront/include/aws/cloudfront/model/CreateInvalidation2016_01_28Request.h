@@ -17,6 +17,7 @@
 #include <aws/cloudfront/CloudFrontRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudfront/model/InvalidationBatch.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * The distribution's id.
      */
-    inline void SetDistributionId(Aws::String&& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
+    inline void SetDistributionId(Aws::String&& value) { m_distributionIdHasBeenSet = true; m_distributionId = std::move(value); }
 
     /**
      * The distribution's id.
@@ -65,7 +66,7 @@ namespace Model
     /**
      * The distribution's id.
      */
-    inline CreateInvalidation2016_01_28Request& WithDistributionId(Aws::String&& value) { SetDistributionId(value); return *this;}
+    inline CreateInvalidation2016_01_28Request& WithDistributionId(Aws::String&& value) { SetDistributionId(std::move(value)); return *this;}
 
     /**
      * The distribution's id.
@@ -85,7 +86,7 @@ namespace Model
     /**
      * The batch information for the invalidation.
      */
-    inline void SetInvalidationBatch(InvalidationBatch&& value) { m_invalidationBatchHasBeenSet = true; m_invalidationBatch = value; }
+    inline void SetInvalidationBatch(InvalidationBatch&& value) { m_invalidationBatchHasBeenSet = true; m_invalidationBatch = std::move(value); }
 
     /**
      * The batch information for the invalidation.
@@ -95,7 +96,7 @@ namespace Model
     /**
      * The batch information for the invalidation.
      */
-    inline CreateInvalidation2016_01_28Request& WithInvalidationBatch(InvalidationBatch&& value) { SetInvalidationBatch(value); return *this;}
+    inline CreateInvalidation2016_01_28Request& WithInvalidationBatch(InvalidationBatch&& value) { SetInvalidationBatch(std::move(value)); return *this;}
 
   private:
     Aws::String m_distributionId;

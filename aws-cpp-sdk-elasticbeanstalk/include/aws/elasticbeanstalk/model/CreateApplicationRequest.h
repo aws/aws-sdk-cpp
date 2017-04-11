@@ -17,6 +17,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/ApplicationResourceLifecycleConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * within your account. If the specified name already exists, the action returns an
      * <code>InvalidParameterValue</code> error.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of the application.</p> <p>Constraint: This name must be unique
@@ -81,7 +82,7 @@ namespace Model
      * within your account. If the specified name already exists, the action returns an
      * <code>InvalidParameterValue</code> error.</p>
      */
-    inline CreateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline CreateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the application.</p> <p>Constraint: This name must be unique
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>Describes the application.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Describes the application.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>Describes the application.</p>
      */
-    inline CreateApplicationRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateApplicationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Describes the application.</p>
@@ -141,7 +142,7 @@ namespace Model
      * <p>Specify an application resource lifecycle configuration to prevent your
      * application from accumulating too many versions.</p>
      */
-    inline void SetResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { m_resourceLifecycleConfigHasBeenSet = true; m_resourceLifecycleConfig = value; }
+    inline void SetResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { m_resourceLifecycleConfigHasBeenSet = true; m_resourceLifecycleConfig = std::move(value); }
 
     /**
      * <p>Specify an application resource lifecycle configuration to prevent your
@@ -153,7 +154,7 @@ namespace Model
      * <p>Specify an application resource lifecycle configuration to prevent your
      * application from accumulating too many versions.</p>
      */
-    inline CreateApplicationRequest& WithResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { SetResourceLifecycleConfig(value); return *this;}
+    inline CreateApplicationRequest& WithResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { SetResourceLifecycleConfig(std::move(value)); return *this;}
 
   private:
     Aws::String m_applicationName;

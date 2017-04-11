@@ -16,6 +16,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      * <code>PercentChangeInCapacity</code>.</p>
      */
-    inline void SetAdjustmentType(Aws::String&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
+    inline void SetAdjustmentType(Aws::String&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = std::move(value); }
 
     /**
      * <p>The policy adjustment type. The valid values are
@@ -88,7 +89,7 @@ namespace Model
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      * <code>PercentChangeInCapacity</code>.</p>
      */
-    inline AdjustmentType& WithAdjustmentType(Aws::String&& value) { SetAdjustmentType(value); return *this;}
+    inline AdjustmentType& WithAdjustmentType(Aws::String&& value) { SetAdjustmentType(std::move(value)); return *this;}
 
     /**
      * <p>The policy adjustment type. The valid values are

@@ -16,6 +16,7 @@
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/route53domains/Route53DomainsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The domain for which you want to get a list of tags.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The domain for which you want to get a list of tags.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The domain for which you want to get a list of tags.</p>
      */
-    inline ListTagsForDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline ListTagsForDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The domain for which you want to get a list of tags.</p>

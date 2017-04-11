@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) to which you want to add the tag or tags. For
      * example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
      */
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
+    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) to which you want to add the tag or tags. For
@@ -77,7 +78,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) to which you want to add the tag or tags. For
      * example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
      */
-    inline CreateTagsRequest& WithResourceName(Aws::String&& value) { SetResourceName(value); return *this;}
+    inline CreateTagsRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) to which you want to add the tag or tags. For
@@ -116,7 +117,7 @@ namespace Model
      * "Key"="owner","Value"="admin" "Key"="environment","Value"="test"
      * "Key"="version","Value"="1.0"</code>. </p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>One or more name/value pairs to add as tags to the specified resource. Each
@@ -138,7 +139,7 @@ namespace Model
      * "Key"="owner","Value"="admin" "Key"="environment","Value"="test"
      * "Key"="version","Value"="1.0"</code>. </p>
      */
-    inline CreateTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline CreateTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>One or more name/value pairs to add as tags to the specified resource. Each
@@ -160,7 +161,7 @@ namespace Model
      * "Key"="owner","Value"="admin" "Key"="environment","Value"="test"
      * "Key"="version","Value"="1.0"</code>. </p>
      */
-    inline CreateTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_resourceName;

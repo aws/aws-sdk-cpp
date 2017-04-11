@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Specifies the oldest start or close date and time to return.</p>
      */
-    inline void SetOldestDate(Aws::Utils::DateTime&& value) { m_oldestDateHasBeenSet = true; m_oldestDate = value; }
+    inline void SetOldestDate(Aws::Utils::DateTime&& value) { m_oldestDateHasBeenSet = true; m_oldestDate = std::move(value); }
 
     /**
      * <p>Specifies the oldest start or close date and time to return.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Specifies the oldest start or close date and time to return.</p>
      */
-    inline ExecutionTimeFilter& WithOldestDate(Aws::Utils::DateTime&& value) { SetOldestDate(value); return *this;}
+    inline ExecutionTimeFilter& WithOldestDate(Aws::Utils::DateTime&& value) { SetOldestDate(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the latest start or close date and time to return.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>Specifies the latest start or close date and time to return.</p>
      */
-    inline void SetLatestDate(Aws::Utils::DateTime&& value) { m_latestDateHasBeenSet = true; m_latestDate = value; }
+    inline void SetLatestDate(Aws::Utils::DateTime&& value) { m_latestDateHasBeenSet = true; m_latestDate = std::move(value); }
 
     /**
      * <p>Specifies the latest start or close date and time to return.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>Specifies the latest start or close date and time to return.</p>
      */
-    inline ExecutionTimeFilter& WithLatestDate(Aws::Utils::DateTime&& value) { SetLatestDate(value); return *this;}
+    inline ExecutionTimeFilter& WithLatestDate(Aws::Utils::DateTime&& value) { SetLatestDate(std::move(value)); return *this;}
 
   private:
     Aws::Utils::DateTime m_oldestDate;

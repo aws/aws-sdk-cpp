@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The CA certificate registration code.</p>
      */
-    inline void SetRegistrationCode(Aws::String&& value) { m_registrationCode = value; }
+    inline void SetRegistrationCode(Aws::String&& value) { m_registrationCode = std::move(value); }
 
     /**
      * <p>The CA certificate registration code.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The CA certificate registration code.</p>
      */
-    inline GetRegistrationCodeResult& WithRegistrationCode(Aws::String&& value) { SetRegistrationCode(value); return *this;}
+    inline GetRegistrationCodeResult& WithRegistrationCode(Aws::String&& value) { SetRegistrationCode(std::move(value)); return *this;}
 
     /**
      * <p>The CA certificate registration code.</p>

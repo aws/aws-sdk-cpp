@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ScheduledInstanceRecurrence.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The Scheduled Instance ID.</p>
      */
-    inline void SetScheduledInstanceId(Aws::String&& value) { m_scheduledInstanceIdHasBeenSet = true; m_scheduledInstanceId = value; }
+    inline void SetScheduledInstanceId(Aws::String&& value) { m_scheduledInstanceIdHasBeenSet = true; m_scheduledInstanceId = std::move(value); }
 
     /**
      * <p>The Scheduled Instance ID.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The Scheduled Instance ID.</p>
      */
-    inline ScheduledInstance& WithScheduledInstanceId(Aws::String&& value) { SetScheduledInstanceId(value); return *this;}
+    inline ScheduledInstance& WithScheduledInstanceId(Aws::String&& value) { SetScheduledInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The Scheduled Instance ID.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The instance type.</p>
      */
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The instance type.</p>
      */
-    inline ScheduledInstance& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
+    inline ScheduledInstance& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The instance type.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
      */
-    inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
      * <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
      */
-    inline ScheduledInstance& WithPlatform(Aws::String&& value) { SetPlatform(value); return *this;}
+    inline ScheduledInstance& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
      * <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
      */
-    inline void SetNetworkPlatform(Aws::String&& value) { m_networkPlatformHasBeenSet = true; m_networkPlatform = value; }
+    inline void SetNetworkPlatform(Aws::String&& value) { m_networkPlatformHasBeenSet = true; m_networkPlatform = std::move(value); }
 
     /**
      * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
      */
-    inline ScheduledInstance& WithNetworkPlatform(Aws::String&& value) { SetNetworkPlatform(value); return *this;}
+    inline ScheduledInstance& WithNetworkPlatform(Aws::String&& value) { SetNetworkPlatform(std::move(value)); return *this;}
 
     /**
      * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
@@ -201,7 +202,7 @@ namespace Model
     /**
      * <p>The Availability Zone.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone.</p>
@@ -216,7 +217,7 @@ namespace Model
     /**
      * <p>The Availability Zone.</p>
      */
-    inline ScheduledInstance& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline ScheduledInstance& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone.</p>
@@ -251,7 +252,7 @@ namespace Model
     /**
      * <p>The schedule recurrence.</p>
      */
-    inline void SetRecurrence(ScheduledInstanceRecurrence&& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
+    inline void SetRecurrence(ScheduledInstanceRecurrence&& value) { m_recurrenceHasBeenSet = true; m_recurrence = std::move(value); }
 
     /**
      * <p>The schedule recurrence.</p>
@@ -261,7 +262,7 @@ namespace Model
     /**
      * <p>The schedule recurrence.</p>
      */
-    inline ScheduledInstance& WithRecurrence(ScheduledInstanceRecurrence&& value) { SetRecurrence(value); return *this;}
+    inline ScheduledInstance& WithRecurrence(ScheduledInstanceRecurrence&& value) { SetRecurrence(std::move(value)); return *this;}
 
     /**
      * <p>The time that the previous schedule ended or will end.</p>
@@ -276,7 +277,7 @@ namespace Model
     /**
      * <p>The time that the previous schedule ended or will end.</p>
      */
-    inline void SetPreviousSlotEndTime(Aws::Utils::DateTime&& value) { m_previousSlotEndTimeHasBeenSet = true; m_previousSlotEndTime = value; }
+    inline void SetPreviousSlotEndTime(Aws::Utils::DateTime&& value) { m_previousSlotEndTimeHasBeenSet = true; m_previousSlotEndTime = std::move(value); }
 
     /**
      * <p>The time that the previous schedule ended or will end.</p>
@@ -286,7 +287,7 @@ namespace Model
     /**
      * <p>The time that the previous schedule ended or will end.</p>
      */
-    inline ScheduledInstance& WithPreviousSlotEndTime(Aws::Utils::DateTime&& value) { SetPreviousSlotEndTime(value); return *this;}
+    inline ScheduledInstance& WithPreviousSlotEndTime(Aws::Utils::DateTime&& value) { SetPreviousSlotEndTime(std::move(value)); return *this;}
 
     /**
      * <p>The time for the next schedule to start.</p>
@@ -301,7 +302,7 @@ namespace Model
     /**
      * <p>The time for the next schedule to start.</p>
      */
-    inline void SetNextSlotStartTime(Aws::Utils::DateTime&& value) { m_nextSlotStartTimeHasBeenSet = true; m_nextSlotStartTime = value; }
+    inline void SetNextSlotStartTime(Aws::Utils::DateTime&& value) { m_nextSlotStartTimeHasBeenSet = true; m_nextSlotStartTime = std::move(value); }
 
     /**
      * <p>The time for the next schedule to start.</p>
@@ -311,7 +312,7 @@ namespace Model
     /**
      * <p>The time for the next schedule to start.</p>
      */
-    inline ScheduledInstance& WithNextSlotStartTime(Aws::Utils::DateTime&& value) { SetNextSlotStartTime(value); return *this;}
+    inline ScheduledInstance& WithNextSlotStartTime(Aws::Utils::DateTime&& value) { SetNextSlotStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The hourly price for a single instance.</p>
@@ -326,7 +327,7 @@ namespace Model
     /**
      * <p>The hourly price for a single instance.</p>
      */
-    inline void SetHourlyPrice(Aws::String&& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = value; }
+    inline void SetHourlyPrice(Aws::String&& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = std::move(value); }
 
     /**
      * <p>The hourly price for a single instance.</p>
@@ -341,7 +342,7 @@ namespace Model
     /**
      * <p>The hourly price for a single instance.</p>
      */
-    inline ScheduledInstance& WithHourlyPrice(Aws::String&& value) { SetHourlyPrice(value); return *this;}
+    inline ScheduledInstance& WithHourlyPrice(Aws::String&& value) { SetHourlyPrice(std::move(value)); return *this;}
 
     /**
      * <p>The hourly price for a single instance.</p>
@@ -391,7 +392,7 @@ namespace Model
     /**
      * <p>The start date for the Scheduled Instance.</p>
      */
-    inline void SetTermStartDate(Aws::Utils::DateTime&& value) { m_termStartDateHasBeenSet = true; m_termStartDate = value; }
+    inline void SetTermStartDate(Aws::Utils::DateTime&& value) { m_termStartDateHasBeenSet = true; m_termStartDate = std::move(value); }
 
     /**
      * <p>The start date for the Scheduled Instance.</p>
@@ -401,7 +402,7 @@ namespace Model
     /**
      * <p>The start date for the Scheduled Instance.</p>
      */
-    inline ScheduledInstance& WithTermStartDate(Aws::Utils::DateTime&& value) { SetTermStartDate(value); return *this;}
+    inline ScheduledInstance& WithTermStartDate(Aws::Utils::DateTime&& value) { SetTermStartDate(std::move(value)); return *this;}
 
     /**
      * <p>The end date for the Scheduled Instance.</p>
@@ -416,7 +417,7 @@ namespace Model
     /**
      * <p>The end date for the Scheduled Instance.</p>
      */
-    inline void SetTermEndDate(Aws::Utils::DateTime&& value) { m_termEndDateHasBeenSet = true; m_termEndDate = value; }
+    inline void SetTermEndDate(Aws::Utils::DateTime&& value) { m_termEndDateHasBeenSet = true; m_termEndDate = std::move(value); }
 
     /**
      * <p>The end date for the Scheduled Instance.</p>
@@ -426,7 +427,7 @@ namespace Model
     /**
      * <p>The end date for the Scheduled Instance.</p>
      */
-    inline ScheduledInstance& WithTermEndDate(Aws::Utils::DateTime&& value) { SetTermEndDate(value); return *this;}
+    inline ScheduledInstance& WithTermEndDate(Aws::Utils::DateTime&& value) { SetTermEndDate(std::move(value)); return *this;}
 
     /**
      * <p>The date when the Scheduled Instance was purchased.</p>
@@ -441,7 +442,7 @@ namespace Model
     /**
      * <p>The date when the Scheduled Instance was purchased.</p>
      */
-    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = value; }
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
 
     /**
      * <p>The date when the Scheduled Instance was purchased.</p>
@@ -451,7 +452,7 @@ namespace Model
     /**
      * <p>The date when the Scheduled Instance was purchased.</p>
      */
-    inline ScheduledInstance& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(value); return *this;}
+    inline ScheduledInstance& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_scheduledInstanceId;

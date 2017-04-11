@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/model/ResponseMetadata.h>
 #include <aws/iam/model/User.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>A list of users.</p>
      */
-    inline void SetUsers(Aws::Vector<User>&& value) { m_users = value; }
+    inline void SetUsers(Aws::Vector<User>&& value) { m_users = std::move(value); }
 
     /**
      * <p>A list of users.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>A list of users.</p>
      */
-    inline ListUsersResult& WithUsers(Aws::Vector<User>&& value) { SetUsers(value); return *this;}
+    inline ListUsersResult& WithUsers(Aws::Vector<User>&& value) { SetUsers(std::move(value)); return *this;}
 
     /**
      * <p>A list of users.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>A list of users.</p>
      */
-    inline ListUsersResult& AddUsers(User&& value) { m_users.push_back(value); return *this; }
+    inline ListUsersResult& AddUsers(User&& value) { m_users.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
@@ -135,7 +136,7 @@ namespace Model
      * and contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -156,7 +157,7 @@ namespace Model
      * and contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.</p>
      */
-    inline ListUsersResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListUsersResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -172,13 +173,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListUsersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListUsersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListUsersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<User> m_users;

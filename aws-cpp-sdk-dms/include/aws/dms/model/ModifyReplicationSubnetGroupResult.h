@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/dms/model/ReplicationSubnetGroup.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The modified replication subnet group.</p>
      */
-    inline void SetReplicationSubnetGroup(ReplicationSubnetGroup&& value) { m_replicationSubnetGroup = value; }
+    inline void SetReplicationSubnetGroup(ReplicationSubnetGroup&& value) { m_replicationSubnetGroup = std::move(value); }
 
     /**
      * <p>The modified replication subnet group.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The modified replication subnet group.</p>
      */
-    inline ModifyReplicationSubnetGroupResult& WithReplicationSubnetGroup(ReplicationSubnetGroup&& value) { SetReplicationSubnetGroup(value); return *this;}
+    inline ModifyReplicationSubnetGroupResult& WithReplicationSubnetGroup(ReplicationSubnetGroup&& value) { SetReplicationSubnetGroup(std::move(value)); return *this;}
 
   private:
     ReplicationSubnetGroup m_replicationSubnetGroup;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/support/model/Attachment.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The attachment content and file name.</p>
      */
-    inline void SetAttachment(Attachment&& value) { m_attachment = value; }
+    inline void SetAttachment(Attachment&& value) { m_attachment = std::move(value); }
 
     /**
      * <p>The attachment content and file name.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The attachment content and file name.</p>
      */
-    inline DescribeAttachmentResult& WithAttachment(Attachment&& value) { SetAttachment(value); return *this;}
+    inline DescribeAttachmentResult& WithAttachment(Attachment&& value) { SetAttachment(std::move(value)); return *this;}
 
   private:
     Attachment m_attachment;

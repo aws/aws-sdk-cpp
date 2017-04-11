@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sqs/model/SendMessageBatchRequestEntry.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
      * <p>Queue URLs are case-sensitive.</p>
      */
-    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
+    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::move(value); }
 
     /**
      * <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
@@ -76,7 +77,7 @@ namespace Model
      * <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
      * <p>Queue URLs are case-sensitive.</p>
      */
-    inline SendMessageBatchRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
+    inline SendMessageBatchRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.</p>
      */
-    inline void SetEntries(Aws::Vector<SendMessageBatchRequestEntry>&& value) { m_entriesHasBeenSet = true; m_entries = value; }
+    inline void SetEntries(Aws::Vector<SendMessageBatchRequestEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
 
     /**
      * <p>A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.</p>
      */
-    inline SendMessageBatchRequest& WithEntries(Aws::Vector<SendMessageBatchRequestEntry>&& value) { SetEntries(value); return *this;}
+    inline SendMessageBatchRequest& WithEntries(Aws::Vector<SendMessageBatchRequestEntry>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.</p>
      */
-    inline SendMessageBatchRequest& AddEntries(SendMessageBatchRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
+    inline SendMessageBatchRequest& AddEntries(SendMessageBatchRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_queueUrl;

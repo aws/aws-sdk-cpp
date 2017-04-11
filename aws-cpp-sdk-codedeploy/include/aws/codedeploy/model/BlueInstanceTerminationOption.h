@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/InstanceAction.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * are left running after they are deregistered from the load balancer and removed
      * from the deployment group.</p> </li> </ul>
      */
-    inline void SetAction(InstanceAction&& value) { m_actionHasBeenSet = true; m_action = value; }
+    inline void SetAction(InstanceAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>The action to take on instances in the original environment after a
@@ -88,7 +89,7 @@ namespace Model
      * are left running after they are deregistered from the load balancer and removed
      * from the deployment group.</p> </li> </ul>
      */
-    inline BlueInstanceTerminationOption& WithAction(InstanceAction&& value) { SetAction(value); return *this;}
+    inline BlueInstanceTerminationOption& WithAction(InstanceAction&& value) { SetAction(std::move(value)); return *this;}
 
     /**
      * <p>The number of minutes to wait after a successful blue/green deployment before

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/model/InterconnectState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,13 +53,13 @@ namespace Model
     inline void SetInterconnectState(const InterconnectState& value) { m_interconnectState = value; }
 
     
-    inline void SetInterconnectState(InterconnectState&& value) { m_interconnectState = value; }
+    inline void SetInterconnectState(InterconnectState&& value) { m_interconnectState = std::move(value); }
 
     
     inline DeleteInterconnectResult& WithInterconnectState(const InterconnectState& value) { SetInterconnectState(value); return *this;}
 
     
-    inline DeleteInterconnectResult& WithInterconnectState(InterconnectState&& value) { SetInterconnectState(value); return *this;}
+    inline DeleteInterconnectResult& WithInterconnectState(InterconnectState&& value) { SetInterconnectState(std::move(value)); return *this;}
 
   private:
     InterconnectState m_interconnectState;

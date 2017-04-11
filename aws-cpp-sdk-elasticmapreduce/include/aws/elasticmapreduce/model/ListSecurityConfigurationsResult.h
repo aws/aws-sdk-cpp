@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/model/SecurityConfigurationSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The creation date and time, and name, of each security configuration.</p>
      */
-    inline void SetSecurityConfigurations(Aws::Vector<SecurityConfigurationSummary>&& value) { m_securityConfigurations = value; }
+    inline void SetSecurityConfigurations(Aws::Vector<SecurityConfigurationSummary>&& value) { m_securityConfigurations = std::move(value); }
 
     /**
      * <p>The creation date and time, and name, of each security configuration.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The creation date and time, and name, of each security configuration.</p>
      */
-    inline ListSecurityConfigurationsResult& WithSecurityConfigurations(Aws::Vector<SecurityConfigurationSummary>&& value) { SetSecurityConfigurations(value); return *this;}
+    inline ListSecurityConfigurationsResult& WithSecurityConfigurations(Aws::Vector<SecurityConfigurationSummary>&& value) { SetSecurityConfigurations(std::move(value)); return *this;}
 
     /**
      * <p>The creation date and time, and name, of each security configuration.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The creation date and time, and name, of each security configuration.</p>
      */
-    inline ListSecurityConfigurationsResult& AddSecurityConfigurations(SecurityConfigurationSummary&& value) { m_securityConfigurations.push_back(value); return *this; }
+    inline ListSecurityConfigurationsResult& AddSecurityConfigurations(SecurityConfigurationSummary&& value) { m_securityConfigurations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A pagination token that indicates the next set of results to retrieve.
@@ -95,7 +96,7 @@ namespace Model
      * Include the marker in the next ListSecurityConfiguration call to retrieve the
      * next page of results, if required.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>A pagination token that indicates the next set of results to retrieve.
@@ -116,7 +117,7 @@ namespace Model
      * Include the marker in the next ListSecurityConfiguration call to retrieve the
      * next page of results, if required.</p>
      */
-    inline ListSecurityConfigurationsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListSecurityConfigurationsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>A pagination token that indicates the next set of results to retrieve.

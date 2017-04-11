@@ -18,6 +18,7 @@
 #include <aws/codepipeline/model/ActionTypeId.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,13 +48,13 @@ namespace Model
     inline void SetActionTypeId(const ActionTypeId& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = value; }
 
     
-    inline void SetActionTypeId(ActionTypeId&& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = value; }
+    inline void SetActionTypeId(ActionTypeId&& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = std::move(value); }
 
     
     inline PollForJobsRequest& WithActionTypeId(const ActionTypeId& value) { SetActionTypeId(value); return *this;}
 
     
-    inline PollForJobsRequest& WithActionTypeId(ActionTypeId&& value) { SetActionTypeId(value); return *this;}
+    inline PollForJobsRequest& WithActionTypeId(ActionTypeId&& value) { SetActionTypeId(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of jobs to return in a poll for jobs call.</p>
@@ -92,7 +93,7 @@ namespace Model
      * queryable property, you must supply that property as a key in the map. Only jobs
      * whose action configuration matches the mapped value will be returned.</p>
      */
-    inline void SetQueryParam(Aws::Map<Aws::String, Aws::String>&& value) { m_queryParamHasBeenSet = true; m_queryParam = value; }
+    inline void SetQueryParam(Aws::Map<Aws::String, Aws::String>&& value) { m_queryParamHasBeenSet = true; m_queryParam = std::move(value); }
 
     /**
      * <p>A map of property names and values. For an action type with no queryable
@@ -108,7 +109,7 @@ namespace Model
      * queryable property, you must supply that property as a key in the map. Only jobs
      * whose action configuration matches the mapped value will be returned.</p>
      */
-    inline PollForJobsRequest& WithQueryParam(Aws::Map<Aws::String, Aws::String>&& value) { SetQueryParam(value); return *this;}
+    inline PollForJobsRequest& WithQueryParam(Aws::Map<Aws::String, Aws::String>&& value) { SetQueryParam(std::move(value)); return *this;}
 
     /**
      * <p>A map of property names and values. For an action type with no queryable
@@ -116,7 +117,7 @@ namespace Model
      * queryable property, you must supply that property as a key in the map. Only jobs
      * whose action configuration matches the mapped value will be returned.</p>
      */
-    inline PollForJobsRequest& AddQueryParam(const Aws::String& key, const Aws::String& value) { m_queryParamHasBeenSet = true; m_queryParam[key] = value; return *this; }
+    inline PollForJobsRequest& AddQueryParam(const Aws::String& key, const Aws::String& value) { m_queryParamHasBeenSet = true; m_queryParam.emplace(key, value); return *this; }
 
     /**
      * <p>A map of property names and values. For an action type with no queryable
@@ -124,7 +125,7 @@ namespace Model
      * queryable property, you must supply that property as a key in the map. Only jobs
      * whose action configuration matches the mapped value will be returned.</p>
      */
-    inline PollForJobsRequest& AddQueryParam(Aws::String&& key, const Aws::String& value) { m_queryParamHasBeenSet = true; m_queryParam[key] = value; return *this; }
+    inline PollForJobsRequest& AddQueryParam(Aws::String&& key, const Aws::String& value) { m_queryParamHasBeenSet = true; m_queryParam.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of property names and values. For an action type with no queryable
@@ -132,7 +133,7 @@ namespace Model
      * queryable property, you must supply that property as a key in the map. Only jobs
      * whose action configuration matches the mapped value will be returned.</p>
      */
-    inline PollForJobsRequest& AddQueryParam(const Aws::String& key, Aws::String&& value) { m_queryParamHasBeenSet = true; m_queryParam[key] = value; return *this; }
+    inline PollForJobsRequest& AddQueryParam(const Aws::String& key, Aws::String&& value) { m_queryParamHasBeenSet = true; m_queryParam.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of property names and values. For an action type with no queryable
@@ -140,7 +141,7 @@ namespace Model
      * queryable property, you must supply that property as a key in the map. Only jobs
      * whose action configuration matches the mapped value will be returned.</p>
      */
-    inline PollForJobsRequest& AddQueryParam(Aws::String&& key, Aws::String&& value) { m_queryParamHasBeenSet = true; m_queryParam[key] = value; return *this; }
+    inline PollForJobsRequest& AddQueryParam(Aws::String&& key, Aws::String&& value) { m_queryParamHasBeenSet = true; m_queryParam.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A map of property names and values. For an action type with no queryable
@@ -148,7 +149,7 @@ namespace Model
      * queryable property, you must supply that property as a key in the map. Only jobs
      * whose action configuration matches the mapped value will be returned.</p>
      */
-    inline PollForJobsRequest& AddQueryParam(const char* key, Aws::String&& value) { m_queryParamHasBeenSet = true; m_queryParam[key] = value; return *this; }
+    inline PollForJobsRequest& AddQueryParam(const char* key, Aws::String&& value) { m_queryParamHasBeenSet = true; m_queryParam.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of property names and values. For an action type with no queryable
@@ -156,7 +157,7 @@ namespace Model
      * queryable property, you must supply that property as a key in the map. Only jobs
      * whose action configuration matches the mapped value will be returned.</p>
      */
-    inline PollForJobsRequest& AddQueryParam(Aws::String&& key, const char* value) { m_queryParamHasBeenSet = true; m_queryParam[key] = value; return *this; }
+    inline PollForJobsRequest& AddQueryParam(Aws::String&& key, const char* value) { m_queryParamHasBeenSet = true; m_queryParam.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of property names and values. For an action type with no queryable
@@ -164,7 +165,7 @@ namespace Model
      * queryable property, you must supply that property as a key in the map. Only jobs
      * whose action configuration matches the mapped value will be returned.</p>
      */
-    inline PollForJobsRequest& AddQueryParam(const char* key, const char* value) { m_queryParamHasBeenSet = true; m_queryParam[key] = value; return *this; }
+    inline PollForJobsRequest& AddQueryParam(const char* key, const char* value) { m_queryParamHasBeenSet = true; m_queryParam.emplace(key, value); return *this; }
 
   private:
     ActionTypeId m_actionTypeId;

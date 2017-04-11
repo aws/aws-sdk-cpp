@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of the group.</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>The name of the group.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The name of the group.</p>
      */
-    inline GroupType& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
+    inline GroupType& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the group.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The user pool ID for the user pool.</p>
      */
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
+    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
      * <p>The user pool ID for the user pool.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The user pool ID for the user pool.</p>
      */
-    inline GroupType& WithUserPoolId(Aws::String&& value) { SetUserPoolId(value); return *this;}
+    inline GroupType& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
      * <p>The user pool ID for the user pool.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>A string containing the description of the group.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A string containing the description of the group.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>A string containing the description of the group.</p>
      */
-    inline GroupType& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline GroupType& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A string containing the description of the group.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>The role ARN for the group.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The role ARN for the group.</p>
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>The role ARN for the group.</p>
      */
-    inline GroupType& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline GroupType& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The role ARN for the group.</p>
@@ -251,7 +252,7 @@ namespace Model
     /**
      * <p>The date the group was last modified.</p>
      */
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
 
     /**
      * <p>The date the group was last modified.</p>
@@ -261,7 +262,7 @@ namespace Model
     /**
      * <p>The date the group was last modified.</p>
      */
-    inline GroupType& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(value); return *this;}
+    inline GroupType& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
     /**
      * <p>The date the group was created.</p>
@@ -276,7 +277,7 @@ namespace Model
     /**
      * <p>The date the group was created.</p>
      */
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
      * <p>The date the group was created.</p>
@@ -286,7 +287,7 @@ namespace Model
     /**
      * <p>The date the group was created.</p>
      */
-    inline GroupType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
+    inline GroupType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_groupName;

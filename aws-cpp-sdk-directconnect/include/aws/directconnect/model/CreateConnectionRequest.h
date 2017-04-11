@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
@@ -55,7 +56,7 @@ namespace Model
     inline CreateConnectionRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     
-    inline CreateConnectionRequest& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline CreateConnectionRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     
     inline CreateConnectionRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
@@ -67,7 +68,7 @@ namespace Model
     inline void SetBandwidth(const Aws::String& value) { m_bandwidthHasBeenSet = true; m_bandwidth = value; }
 
     
-    inline void SetBandwidth(Aws::String&& value) { m_bandwidthHasBeenSet = true; m_bandwidth = value; }
+    inline void SetBandwidth(Aws::String&& value) { m_bandwidthHasBeenSet = true; m_bandwidth = std::move(value); }
 
     
     inline void SetBandwidth(const char* value) { m_bandwidthHasBeenSet = true; m_bandwidth.assign(value); }
@@ -76,7 +77,7 @@ namespace Model
     inline CreateConnectionRequest& WithBandwidth(const Aws::String& value) { SetBandwidth(value); return *this;}
 
     
-    inline CreateConnectionRequest& WithBandwidth(Aws::String&& value) { SetBandwidth(value); return *this;}
+    inline CreateConnectionRequest& WithBandwidth(Aws::String&& value) { SetBandwidth(std::move(value)); return *this;}
 
     
     inline CreateConnectionRequest& WithBandwidth(const char* value) { SetBandwidth(value); return *this;}
@@ -88,7 +89,7 @@ namespace Model
     inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
 
     
-    inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
+    inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::move(value); }
 
     
     inline void SetConnectionName(const char* value) { m_connectionNameHasBeenSet = true; m_connectionName.assign(value); }
@@ -97,7 +98,7 @@ namespace Model
     inline CreateConnectionRequest& WithConnectionName(const Aws::String& value) { SetConnectionName(value); return *this;}
 
     
-    inline CreateConnectionRequest& WithConnectionName(Aws::String&& value) { SetConnectionName(value); return *this;}
+    inline CreateConnectionRequest& WithConnectionName(Aws::String&& value) { SetConnectionName(std::move(value)); return *this;}
 
     
     inline CreateConnectionRequest& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
@@ -109,7 +110,7 @@ namespace Model
     inline void SetLagId(const Aws::String& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
 
     
-    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
+    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = std::move(value); }
 
     
     inline void SetLagId(const char* value) { m_lagIdHasBeenSet = true; m_lagId.assign(value); }
@@ -118,7 +119,7 @@ namespace Model
     inline CreateConnectionRequest& WithLagId(const Aws::String& value) { SetLagId(value); return *this;}
 
     
-    inline CreateConnectionRequest& WithLagId(Aws::String&& value) { SetLagId(value); return *this;}
+    inline CreateConnectionRequest& WithLagId(Aws::String&& value) { SetLagId(std::move(value)); return *this;}
 
     
     inline CreateConnectionRequest& WithLagId(const char* value) { SetLagId(value); return *this;}

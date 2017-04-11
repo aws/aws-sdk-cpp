@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The stages' API identifiers.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The stages' API identifiers.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The stages' API identifiers.</p>
      */
-    inline GetStagesRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline GetStagesRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The stages' API identifiers.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The stages' deployment identifiers.</p>
      */
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
+    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
      * <p>The stages' deployment identifiers.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The stages' deployment identifiers.</p>
      */
-    inline GetStagesRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
+    inline GetStagesRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
      * <p>The stages' deployment identifiers.</p>

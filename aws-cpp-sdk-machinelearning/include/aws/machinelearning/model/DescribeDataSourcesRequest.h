@@ -18,6 +18,7 @@
 #include <aws/machinelearning/model/DataSourceFilterVariable.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/machinelearning/model/SortOrder.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
      * <code>IAMUser</code> - Sets the search criteria to the user account that invoked
      * the <code>DataSource</code> creation.</li> </ul>
      */
-    inline void SetFilterVariable(DataSourceFilterVariable&& value) { m_filterVariableHasBeenSet = true; m_filterVariable = value; }
+    inline void SetFilterVariable(DataSourceFilterVariable&& value) { m_filterVariableHasBeenSet = true; m_filterVariable = std::move(value); }
 
     /**
      * <p>Use one of the following variables to filter a list of
@@ -110,7 +111,7 @@ namespace Model
      * <code>IAMUser</code> - Sets the search criteria to the user account that invoked
      * the <code>DataSource</code> creation.</li> </ul>
      */
-    inline DescribeDataSourcesRequest& WithFilterVariable(DataSourceFilterVariable&& value) { SetFilterVariable(value); return *this;}
+    inline DescribeDataSourcesRequest& WithFilterVariable(DataSourceFilterVariable&& value) { SetFilterVariable(std::move(value)); return *this;}
 
     /**
      * <p>The equal to operator. The <code>DataSource</code> results will have
@@ -131,7 +132,7 @@ namespace Model
      * <code>FilterVariable</code> values that exactly match the value specified with
      * <code>EQ</code>.</p>
      */
-    inline void SetEQ(Aws::String&& value) { m_eQHasBeenSet = true; m_eQ = value; }
+    inline void SetEQ(Aws::String&& value) { m_eQHasBeenSet = true; m_eQ = std::move(value); }
 
     /**
      * <p>The equal to operator. The <code>DataSource</code> results will have
@@ -152,7 +153,7 @@ namespace Model
      * <code>FilterVariable</code> values that exactly match the value specified with
      * <code>EQ</code>.</p>
      */
-    inline DescribeDataSourcesRequest& WithEQ(Aws::String&& value) { SetEQ(value); return *this;}
+    inline DescribeDataSourcesRequest& WithEQ(Aws::String&& value) { SetEQ(std::move(value)); return *this;}
 
     /**
      * <p>The equal to operator. The <code>DataSource</code> results will have
@@ -180,7 +181,7 @@ namespace Model
      * <code>FilterVariable</code> values that are greater than the value specified
      * with <code>GT</code>.</p>
      */
-    inline void SetGT(Aws::String&& value) { m_gTHasBeenSet = true; m_gT = value; }
+    inline void SetGT(Aws::String&& value) { m_gTHasBeenSet = true; m_gT = std::move(value); }
 
     /**
      * <p>The greater than operator. The <code>DataSource</code> results will have
@@ -201,7 +202,7 @@ namespace Model
      * <code>FilterVariable</code> values that are greater than the value specified
      * with <code>GT</code>.</p>
      */
-    inline DescribeDataSourcesRequest& WithGT(Aws::String&& value) { SetGT(value); return *this;}
+    inline DescribeDataSourcesRequest& WithGT(Aws::String&& value) { SetGT(std::move(value)); return *this;}
 
     /**
      * <p>The greater than operator. The <code>DataSource</code> results will have
@@ -229,7 +230,7 @@ namespace Model
      * <code>FilterVariable</code> values that are less than the value specified with
      * <code>LT</code>.</p>
      */
-    inline void SetLT(Aws::String&& value) { m_lTHasBeenSet = true; m_lT = value; }
+    inline void SetLT(Aws::String&& value) { m_lTHasBeenSet = true; m_lT = std::move(value); }
 
     /**
      * <p>The less than operator. The <code>DataSource</code> results will have
@@ -250,7 +251,7 @@ namespace Model
      * <code>FilterVariable</code> values that are less than the value specified with
      * <code>LT</code>.</p>
      */
-    inline DescribeDataSourcesRequest& WithLT(Aws::String&& value) { SetLT(value); return *this;}
+    inline DescribeDataSourcesRequest& WithLT(Aws::String&& value) { SetLT(std::move(value)); return *this;}
 
     /**
      * <p>The less than operator. The <code>DataSource</code> results will have
@@ -278,7 +279,7 @@ namespace Model
      * will have <code>FilterVariable</code> values that are greater than or equal to
      * the value specified with <code>GE</code>. </p>
      */
-    inline void SetGE(Aws::String&& value) { m_gEHasBeenSet = true; m_gE = value; }
+    inline void SetGE(Aws::String&& value) { m_gEHasBeenSet = true; m_gE = std::move(value); }
 
     /**
      * <p>The greater than or equal to operator. The <code>DataSource</code> results
@@ -299,7 +300,7 @@ namespace Model
      * will have <code>FilterVariable</code> values that are greater than or equal to
      * the value specified with <code>GE</code>. </p>
      */
-    inline DescribeDataSourcesRequest& WithGE(Aws::String&& value) { SetGE(value); return *this;}
+    inline DescribeDataSourcesRequest& WithGE(Aws::String&& value) { SetGE(std::move(value)); return *this;}
 
     /**
      * <p>The greater than or equal to operator. The <code>DataSource</code> results
@@ -327,7 +328,7 @@ namespace Model
      * have <code>FilterVariable</code> values that are less than or equal to the value
      * specified with <code>LE</code>.</p>
      */
-    inline void SetLE(Aws::String&& value) { m_lEHasBeenSet = true; m_lE = value; }
+    inline void SetLE(Aws::String&& value) { m_lEHasBeenSet = true; m_lE = std::move(value); }
 
     /**
      * <p>The less than or equal to operator. The <code>DataSource</code> results will
@@ -348,7 +349,7 @@ namespace Model
      * have <code>FilterVariable</code> values that are less than or equal to the value
      * specified with <code>LE</code>.</p>
      */
-    inline DescribeDataSourcesRequest& WithLE(Aws::String&& value) { SetLE(value); return *this;}
+    inline DescribeDataSourcesRequest& WithLE(Aws::String&& value) { SetLE(std::move(value)); return *this;}
 
     /**
      * <p>The less than or equal to operator. The <code>DataSource</code> results will
@@ -376,7 +377,7 @@ namespace Model
      * <code>FilterVariable</code> values not equal to the value specified with
      * <code>NE</code>.</p>
      */
-    inline void SetNE(Aws::String&& value) { m_nEHasBeenSet = true; m_nE = value; }
+    inline void SetNE(Aws::String&& value) { m_nEHasBeenSet = true; m_nE = std::move(value); }
 
     /**
      * <p>The not equal to operator. The <code>DataSource</code> results will have
@@ -397,7 +398,7 @@ namespace Model
      * <code>FilterVariable</code> values not equal to the value specified with
      * <code>NE</code>.</p>
      */
-    inline DescribeDataSourcesRequest& WithNE(Aws::String&& value) { SetNE(value); return *this;}
+    inline DescribeDataSourcesRequest& WithNE(Aws::String&& value) { SetNE(std::move(value)); return *this;}
 
     /**
      * <p>The not equal to operator. The <code>DataSource</code> results will have
@@ -440,7 +441,7 @@ namespace Model
      * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
      * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
      */
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * <p>A string that is found at the beginning of a variable, such as
@@ -476,7 +477,7 @@ namespace Model
      * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
      * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
      */
-    inline DescribeDataSourcesRequest& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
+    inline DescribeDataSourcesRequest& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * <p>A string that is found at the beginning of a variable, such as
@@ -515,7 +516,7 @@ namespace Model
      * descending order (Z-A, 9-0).</li> </ul> <p>Results are sorted by
      * <code>FilterVariable</code>.</p>
      */
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
      * <p>A two-value parameter that determines the sequence of the resulting list of
@@ -533,7 +534,7 @@ namespace Model
      * descending order (Z-A, 9-0).</li> </ul> <p>Results are sorted by
      * <code>FilterVariable</code>.</p>
      */
-    inline DescribeDataSourcesRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(value); return *this;}
+    inline DescribeDataSourcesRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the page in the paginated results.</p>
@@ -548,7 +549,7 @@ namespace Model
     /**
      * <p>The ID of the page in the paginated results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The ID of the page in the paginated results.</p>
@@ -563,7 +564,7 @@ namespace Model
     /**
      * <p>The ID of the page in the paginated results.</p>
      */
-    inline DescribeDataSourcesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeDataSourcesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the page in the paginated results.</p>

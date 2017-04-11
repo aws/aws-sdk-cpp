@@ -17,6 +17,7 @@
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>An array of instance IDs.</p>
      */
-    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
+    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
      * <p>An array of instance IDs.</p>
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>An array of instance IDs.</p>
      */
-    inline DescribeTimeBasedAutoScalingRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
+    inline DescribeTimeBasedAutoScalingRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of instance IDs.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>An array of instance IDs.</p>
      */
-    inline DescribeTimeBasedAutoScalingRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+    inline DescribeTimeBasedAutoScalingRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of instance IDs.</p>

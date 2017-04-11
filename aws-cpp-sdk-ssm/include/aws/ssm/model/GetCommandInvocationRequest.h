@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>(Required) The parent command ID of the invocation plugin.</p>
      */
-    inline void SetCommandId(Aws::String&& value) { m_commandIdHasBeenSet = true; m_commandId = value; }
+    inline void SetCommandId(Aws::String&& value) { m_commandIdHasBeenSet = true; m_commandId = std::move(value); }
 
     /**
      * <p>(Required) The parent command ID of the invocation plugin.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>(Required) The parent command ID of the invocation plugin.</p>
      */
-    inline GetCommandInvocationRequest& WithCommandId(Aws::String&& value) { SetCommandId(value); return *this;}
+    inline GetCommandInvocationRequest& WithCommandId(Aws::String&& value) { SetCommandId(std::move(value)); return *this;}
 
     /**
      * <p>(Required) The parent command ID of the invocation plugin.</p>
@@ -89,7 +90,7 @@ namespace Model
      * instance can be an Amazon EC2 instance or an instance in your hybrid environment
      * that is configured for Systems Manager.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>(Required) The ID of the managed instance targeted by the command. A managed
@@ -110,7 +111,7 @@ namespace Model
      * instance can be an Amazon EC2 instance or an instance in your hybrid environment
      * that is configured for Systems Manager.</p>
      */
-    inline GetCommandInvocationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline GetCommandInvocationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>(Required) The ID of the managed instance targeted by the command. A managed
@@ -138,7 +139,7 @@ namespace Model
      * document contains only one plugin, the name can be omitted and the details will
      * be returned.</p>
      */
-    inline void SetPluginName(Aws::String&& value) { m_pluginNameHasBeenSet = true; m_pluginName = value; }
+    inline void SetPluginName(Aws::String&& value) { m_pluginNameHasBeenSet = true; m_pluginName = std::move(value); }
 
     /**
      * <p>(Optional) The name of the plugin for which you want detailed results. If the
@@ -159,7 +160,7 @@ namespace Model
      * document contains only one plugin, the name can be omitted and the details will
      * be returned.</p>
      */
-    inline GetCommandInvocationRequest& WithPluginName(Aws::String&& value) { SetPluginName(value); return *this;}
+    inline GetCommandInvocationRequest& WithPluginName(Aws::String&& value) { SetPluginName(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) The name of the plugin for which you want detailed results. If the

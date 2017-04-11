@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/ResponseMetadata.h>
 #include <aws/rds/model/ReservedDBInstancesOffering.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -89,7 +90,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline DescribeReservedDBInstancesOfferingsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeReservedDBInstancesOfferingsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>A list of reserved DB instance offerings.</p>
      */
-    inline void SetReservedDBInstancesOfferings(Aws::Vector<ReservedDBInstancesOffering>&& value) { m_reservedDBInstancesOfferings = value; }
+    inline void SetReservedDBInstancesOfferings(Aws::Vector<ReservedDBInstancesOffering>&& value) { m_reservedDBInstancesOfferings = std::move(value); }
 
     /**
      * <p>A list of reserved DB instance offerings.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>A list of reserved DB instance offerings.</p>
      */
-    inline DescribeReservedDBInstancesOfferingsResult& WithReservedDBInstancesOfferings(Aws::Vector<ReservedDBInstancesOffering>&& value) { SetReservedDBInstancesOfferings(value); return *this;}
+    inline DescribeReservedDBInstancesOfferingsResult& WithReservedDBInstancesOfferings(Aws::Vector<ReservedDBInstancesOffering>&& value) { SetReservedDBInstancesOfferings(std::move(value)); return *this;}
 
     /**
      * <p>A list of reserved DB instance offerings.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>A list of reserved DB instance offerings.</p>
      */
-    inline DescribeReservedDBInstancesOfferingsResult& AddReservedDBInstancesOfferings(ReservedDBInstancesOffering&& value) { m_reservedDBInstancesOfferings.push_back(value); return *this; }
+    inline DescribeReservedDBInstancesOfferingsResult& AddReservedDBInstancesOfferings(ReservedDBInstancesOffering&& value) { m_reservedDBInstancesOfferings.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -140,13 +141,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeReservedDBInstancesOfferingsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeReservedDBInstancesOfferingsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeReservedDBInstancesOfferingsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_marker;

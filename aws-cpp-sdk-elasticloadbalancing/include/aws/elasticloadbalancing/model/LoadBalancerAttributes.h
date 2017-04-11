@@ -21,6 +21,7 @@
 #include <aws/elasticloadbalancing/model/ConnectionSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancing/model/AdditionalAttribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -76,7 +77,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure
      * Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
-    inline void SetCrossZoneLoadBalancing(CrossZoneLoadBalancing&& value) { m_crossZoneLoadBalancingHasBeenSet = true; m_crossZoneLoadBalancing = value; }
+    inline void SetCrossZoneLoadBalancing(CrossZoneLoadBalancing&& value) { m_crossZoneLoadBalancingHasBeenSet = true; m_crossZoneLoadBalancing = std::move(value); }
 
     /**
      * <p>If enabled, the load balancer routes the request traffic evenly across all
@@ -94,7 +95,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure
      * Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
-    inline LoadBalancerAttributes& WithCrossZoneLoadBalancing(CrossZoneLoadBalancing&& value) { SetCrossZoneLoadBalancing(value); return *this;}
+    inline LoadBalancerAttributes& WithCrossZoneLoadBalancing(CrossZoneLoadBalancing&& value) { SetCrossZoneLoadBalancing(std::move(value)); return *this;}
 
     /**
      * <p>If enabled, the load balancer captures detailed information of all requests
@@ -121,7 +122,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable
      * Access Logs</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
-    inline void SetAccessLog(AccessLog&& value) { m_accessLogHasBeenSet = true; m_accessLog = value; }
+    inline void SetAccessLog(AccessLog&& value) { m_accessLogHasBeenSet = true; m_accessLog = std::move(value); }
 
     /**
      * <p>If enabled, the load balancer captures detailed information of all requests
@@ -139,7 +140,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable
      * Access Logs</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
-    inline LoadBalancerAttributes& WithAccessLog(AccessLog&& value) { SetAccessLog(value); return *this;}
+    inline LoadBalancerAttributes& WithAccessLog(AccessLog&& value) { SetAccessLog(std::move(value)); return *this;}
 
     /**
      * <p>If enabled, the load balancer allows existing requests to complete before the
@@ -166,7 +167,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
      * Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
-    inline void SetConnectionDraining(ConnectionDraining&& value) { m_connectionDrainingHasBeenSet = true; m_connectionDraining = value; }
+    inline void SetConnectionDraining(ConnectionDraining&& value) { m_connectionDrainingHasBeenSet = true; m_connectionDraining = std::move(value); }
 
     /**
      * <p>If enabled, the load balancer allows existing requests to complete before the
@@ -184,7 +185,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
      * Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
-    inline LoadBalancerAttributes& WithConnectionDraining(ConnectionDraining&& value) { SetConnectionDraining(value); return *this;}
+    inline LoadBalancerAttributes& WithConnectionDraining(ConnectionDraining&& value) { SetConnectionDraining(std::move(value)); return *this;}
 
     /**
      * <p>If enabled, the load balancer allows the connections to remain idle (no data
@@ -217,7 +218,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure
      * Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
-    inline void SetConnectionSettings(ConnectionSettings&& value) { m_connectionSettingsHasBeenSet = true; m_connectionSettings = value; }
+    inline void SetConnectionSettings(ConnectionSettings&& value) { m_connectionSettingsHasBeenSet = true; m_connectionSettings = std::move(value); }
 
     /**
      * <p>If enabled, the load balancer allows the connections to remain idle (no data
@@ -239,7 +240,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure
      * Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
-    inline LoadBalancerAttributes& WithConnectionSettings(ConnectionSettings&& value) { SetConnectionSettings(value); return *this;}
+    inline LoadBalancerAttributes& WithConnectionSettings(ConnectionSettings&& value) { SetConnectionSettings(std::move(value)); return *this;}
 
     /**
      * <p>This parameter is reserved.</p>
@@ -254,7 +255,7 @@ namespace Model
     /**
      * <p>This parameter is reserved.</p>
      */
-    inline void SetAdditionalAttributes(Aws::Vector<AdditionalAttribute>&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = value; }
+    inline void SetAdditionalAttributes(Aws::Vector<AdditionalAttribute>&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = std::move(value); }
 
     /**
      * <p>This parameter is reserved.</p>
@@ -264,7 +265,7 @@ namespace Model
     /**
      * <p>This parameter is reserved.</p>
      */
-    inline LoadBalancerAttributes& WithAdditionalAttributes(Aws::Vector<AdditionalAttribute>&& value) { SetAdditionalAttributes(value); return *this;}
+    inline LoadBalancerAttributes& WithAdditionalAttributes(Aws::Vector<AdditionalAttribute>&& value) { SetAdditionalAttributes(std::move(value)); return *this;}
 
     /**
      * <p>This parameter is reserved.</p>
@@ -274,7 +275,7 @@ namespace Model
     /**
      * <p>This parameter is reserved.</p>
      */
-    inline LoadBalancerAttributes& AddAdditionalAttributes(AdditionalAttribute&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(value); return *this; }
+    inline LoadBalancerAttributes& AddAdditionalAttributes(AdditionalAttribute&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(std::move(value)); return *this; }
 
   private:
     CrossZoneLoadBalancing m_crossZoneLoadBalancing;

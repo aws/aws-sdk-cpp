@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * <p>The name of the user, which can be used for signing in to the AWS Management
      * Console.</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the user, which can be used for signing in to the AWS Management
@@ -83,7 +84,7 @@ namespace Model
      * <p>The name of the user, which can be used for signing in to the AWS Management
      * Console.</p>
      */
-    inline LoginProfile& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline LoginProfile& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the user, which can be used for signing in to the AWS Management
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The date when the password for the user was created.</p>
      */
-    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = value; }
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
 
     /**
      * <p>The date when the password for the user was created.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The date when the password for the user was created.</p>
      */
-    inline LoginProfile& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(value); return *this;}
+    inline LoginProfile& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
     /**
      * <p>Specifies whether the user is required to set a new password on next

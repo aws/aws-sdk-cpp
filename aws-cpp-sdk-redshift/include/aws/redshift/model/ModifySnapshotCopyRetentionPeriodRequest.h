@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * region.</p> <p>Constraints: Must be the valid name of an existing cluster that
      * has cross-region snapshot copy enabled.</p>
      */
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     /**
      * <p>The unique identifier of the cluster for which you want to change the
@@ -86,7 +87,7 @@ namespace Model
      * region.</p> <p>Constraints: Must be the valid name of an existing cluster that
      * has cross-region snapshot copy enabled.</p>
      */
-    inline ModifySnapshotCopyRetentionPeriodRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
+    inline ModifySnapshotCopyRetentionPeriodRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the cluster for which you want to change the

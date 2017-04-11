@@ -18,6 +18,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/shield/model/AttackVectorDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The unique identifier (ID) of the attack.</p>
      */
-    inline void SetAttackId(Aws::String&& value) { m_attackIdHasBeenSet = true; m_attackId = value; }
+    inline void SetAttackId(Aws::String&& value) { m_attackIdHasBeenSet = true; m_attackId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the attack.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The unique identifier (ID) of the attack.</p>
      */
-    inline AttackSummary& WithAttackId(Aws::String&& value) { SetAttackId(value); return *this;}
+    inline AttackSummary& WithAttackId(Aws::String&& value) { SetAttackId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the attack.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
      */
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
      */
-    inline AttackSummary& WithResourceArn(Aws::String&& value) { SetResourceArn(value); return *this;}
+    inline AttackSummary& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The start time of the attack, in the format 2016-12-16T13:50Z.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The start time of the attack, in the format 2016-12-16T13:50Z.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The start time of the attack, in the format 2016-12-16T13:50Z.</p>
      */
-    inline AttackSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline AttackSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The end time of the attack, in the format 2016-12-16T13:50Z.</p>
@@ -155,7 +156,7 @@ namespace Model
     /**
      * <p>The end time of the attack, in the format 2016-12-16T13:50Z.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The end time of the attack, in the format 2016-12-16T13:50Z.</p>
@@ -165,7 +166,7 @@ namespace Model
     /**
      * <p>The end time of the attack, in the format 2016-12-16T13:50Z.</p>
      */
-    inline AttackSummary& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline AttackSummary& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>The list of attacks for a specified time period.</p>
@@ -180,7 +181,7 @@ namespace Model
     /**
      * <p>The list of attacks for a specified time period.</p>
      */
-    inline void SetAttackVectors(Aws::Vector<AttackVectorDescription>&& value) { m_attackVectorsHasBeenSet = true; m_attackVectors = value; }
+    inline void SetAttackVectors(Aws::Vector<AttackVectorDescription>&& value) { m_attackVectorsHasBeenSet = true; m_attackVectors = std::move(value); }
 
     /**
      * <p>The list of attacks for a specified time period.</p>
@@ -190,7 +191,7 @@ namespace Model
     /**
      * <p>The list of attacks for a specified time period.</p>
      */
-    inline AttackSummary& WithAttackVectors(Aws::Vector<AttackVectorDescription>&& value) { SetAttackVectors(value); return *this;}
+    inline AttackSummary& WithAttackVectors(Aws::Vector<AttackVectorDescription>&& value) { SetAttackVectors(std::move(value)); return *this;}
 
     /**
      * <p>The list of attacks for a specified time period.</p>
@@ -200,7 +201,7 @@ namespace Model
     /**
      * <p>The list of attacks for a specified time period.</p>
      */
-    inline AttackSummary& AddAttackVectors(AttackVectorDescription&& value) { m_attackVectorsHasBeenSet = true; m_attackVectors.push_back(value); return *this; }
+    inline AttackSummary& AddAttackVectors(AttackVectorDescription&& value) { m_attackVectorsHasBeenSet = true; m_attackVectors.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_attackId;

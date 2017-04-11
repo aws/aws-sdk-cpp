@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/CustomerGateway.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Information about one or more customer gateways.</p>
      */
-    inline void SetCustomerGateways(Aws::Vector<CustomerGateway>&& value) { m_customerGateways = value; }
+    inline void SetCustomerGateways(Aws::Vector<CustomerGateway>&& value) { m_customerGateways = std::move(value); }
 
     /**
      * <p>Information about one or more customer gateways.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Information about one or more customer gateways.</p>
      */
-    inline DescribeCustomerGatewaysResponse& WithCustomerGateways(Aws::Vector<CustomerGateway>&& value) { SetCustomerGateways(value); return *this;}
+    inline DescribeCustomerGatewaysResponse& WithCustomerGateways(Aws::Vector<CustomerGateway>&& value) { SetCustomerGateways(std::move(value)); return *this;}
 
     /**
      * <p>Information about one or more customer gateways.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>Information about one or more customer gateways.</p>
      */
-    inline DescribeCustomerGatewaysResponse& AddCustomerGateways(CustomerGateway&& value) { m_customerGateways.push_back(value); return *this; }
+    inline DescribeCustomerGatewaysResponse& AddCustomerGateways(CustomerGateway&& value) { m_customerGateways.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -89,13 +90,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeCustomerGatewaysResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeCustomerGatewaysResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeCustomerGatewaysResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<CustomerGateway> m_customerGateways;

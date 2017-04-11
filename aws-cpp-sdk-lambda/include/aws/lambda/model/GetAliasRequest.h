@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * exists only in the context of an existing Lambda function so you must specify
      * the function name.</p>
      */
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
      * <p>Function name for which the alias is created. An alias is a subresource that
@@ -73,7 +74,7 @@ namespace Model
      * exists only in the context of an existing Lambda function so you must specify
      * the function name.</p>
      */
-    inline GetAliasRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
+    inline GetAliasRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>Function name for which the alias is created. An alias is a subresource that
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>Name of the alias for which you want to retrieve information.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Name of the alias for which you want to retrieve information.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>Name of the alias for which you want to retrieve information.</p>
      */
-    inline GetAliasRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline GetAliasRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the alias for which you want to retrieve information.</p>

@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The ID of your security group.</p>
      */
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
+    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
      * <p>The ID of your security group.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The ID of your security group.</p>
      */
-    inline SecurityGroupReference& WithGroupId(Aws::String&& value) { SetGroupId(value); return *this;}
+    inline SecurityGroupReference& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of your security group.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The ID of the VPC with the referencing security group.</p>
      */
-    inline void SetReferencingVpcId(Aws::String&& value) { m_referencingVpcIdHasBeenSet = true; m_referencingVpcId = value; }
+    inline void SetReferencingVpcId(Aws::String&& value) { m_referencingVpcIdHasBeenSet = true; m_referencingVpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC with the referencing security group.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The ID of the VPC with the referencing security group.</p>
      */
-    inline SecurityGroupReference& WithReferencingVpcId(Aws::String&& value) { SetReferencingVpcId(value); return *this;}
+    inline SecurityGroupReference& WithReferencingVpcId(Aws::String&& value) { SetReferencingVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC with the referencing security group.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The ID of the VPC peering connection.</p>
      */
-    inline void SetVpcPeeringConnectionId(Aws::String&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = value; }
+    inline void SetVpcPeeringConnectionId(Aws::String&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = std::move(value); }
 
     /**
      * <p>The ID of the VPC peering connection.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>The ID of the VPC peering connection.</p>
      */
-    inline SecurityGroupReference& WithVpcPeeringConnectionId(Aws::String&& value) { SetVpcPeeringConnectionId(value); return *this;}
+    inline SecurityGroupReference& WithVpcPeeringConnectionId(Aws::String&& value) { SetVpcPeeringConnectionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC peering connection.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> <p>Constraints: Each key
      * can be 1-128 characters long.</p> <p>Required: Yes</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The key (name) of a tag.</p> <p>Type: String</p> <p>Default: None</p>
@@ -83,7 +84,7 @@ namespace Model
      * <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> <p>Constraints: Each key
      * can be 1-128 characters long.</p> <p>Required: Yes</p>
      */
-    inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The key (name) of a tag.</p> <p>Type: String</p> <p>Default: None</p>
@@ -111,7 +112,7 @@ namespace Model
      * values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> <p>Constraints: Each value can be
      * 0-256 characters long.</p> <p>Required: Yes</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of a tag.</p> <p>Type: String</p> <p>Default: None</p> <p>Valid
@@ -132,7 +133,7 @@ namespace Model
      * values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> <p>Constraints: Each value can be
      * 0-256 characters long.</p> <p>Required: Yes</p>
      */
-    inline Tag& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of a tag.</p> <p>Type: String</p> <p>Default: None</p> <p>Valid

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/RuntimeConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>The runtime configuration currently in force. If the update was successful,
      * this object matches the one in the request.</p>
      */
-    inline void SetRuntimeConfiguration(RuntimeConfiguration&& value) { m_runtimeConfiguration = value; }
+    inline void SetRuntimeConfiguration(RuntimeConfiguration&& value) { m_runtimeConfiguration = std::move(value); }
 
     /**
      * <p>The runtime configuration currently in force. If the update was successful,
@@ -73,7 +74,7 @@ namespace Model
      * <p>The runtime configuration currently in force. If the update was successful,
      * this object matches the one in the request.</p>
      */
-    inline UpdateRuntimeConfigurationResult& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(value); return *this;}
+    inline UpdateRuntimeConfigurationResult& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(std::move(value)); return *this;}
 
   private:
     RuntimeConfiguration m_runtimeConfiguration;

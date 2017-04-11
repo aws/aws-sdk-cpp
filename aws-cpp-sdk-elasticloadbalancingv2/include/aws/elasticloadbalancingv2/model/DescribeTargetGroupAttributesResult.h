@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/ResponseMetadata.h>
 #include <aws/elasticloadbalancingv2/model/TargetGroupAttribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>Information about the target group attributes</p>
      */
-    inline void SetAttributes(Aws::Vector<TargetGroupAttribute>&& value) { m_attributes = value; }
+    inline void SetAttributes(Aws::Vector<TargetGroupAttribute>&& value) { m_attributes = std::move(value); }
 
     /**
      * <p>Information about the target group attributes</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Information about the target group attributes</p>
      */
-    inline DescribeTargetGroupAttributesResult& WithAttributes(Aws::Vector<TargetGroupAttribute>&& value) { SetAttributes(value); return *this;}
+    inline DescribeTargetGroupAttributesResult& WithAttributes(Aws::Vector<TargetGroupAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Information about the target group attributes</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Information about the target group attributes</p>
      */
-    inline DescribeTargetGroupAttributesResult& AddAttributes(TargetGroupAttribute&& value) { m_attributes.push_back(value); return *this; }
+    inline DescribeTargetGroupAttributesResult& AddAttributes(TargetGroupAttribute&& value) { m_attributes.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -83,13 +84,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeTargetGroupAttributesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeTargetGroupAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeTargetGroupAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<TargetGroupAttribute> m_attributes;

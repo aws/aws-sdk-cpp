@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/AnalyticsS3BucketDestination.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * A destination signifying output to an S3 bucket.
      */
-    inline void SetS3BucketDestination(AnalyticsS3BucketDestination&& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = value; }
+    inline void SetS3BucketDestination(AnalyticsS3BucketDestination&& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = std::move(value); }
 
     /**
      * A destination signifying output to an S3 bucket.
@@ -62,7 +63,7 @@ namespace Model
     /**
      * A destination signifying output to an S3 bucket.
      */
-    inline AnalyticsExportDestination& WithS3BucketDestination(AnalyticsS3BucketDestination&& value) { SetS3BucketDestination(value); return *this;}
+    inline AnalyticsExportDestination& WithS3BucketDestination(AnalyticsS3BucketDestination&& value) { SetS3BucketDestination(std::move(value)); return *this;}
 
   private:
     AnalyticsS3BucketDestination m_s3BucketDestination;

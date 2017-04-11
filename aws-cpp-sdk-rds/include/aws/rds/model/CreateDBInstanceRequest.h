@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -130,7 +131,7 @@ namespace Model
      * characters</p> </li> <li> <p>Cannot be a word reserved by the specified database
      * engine</p> </li> </ul>
      */
-    inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
+    inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
     /**
      * <p>The meaning of this parameter differs according to the database engine you
@@ -220,7 +221,7 @@ namespace Model
      * characters</p> </li> <li> <p>Cannot be a word reserved by the specified database
      * engine</p> </li> </ul>
      */
-    inline CreateDBInstanceRequest& WithDBName(Aws::String&& value) { SetDBName(value); return *this;}
+    inline CreateDBInstanceRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
     /**
      * <p>The meaning of this parameter differs according to the database engine you
@@ -280,7 +281,7 @@ namespace Model
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>mydbinstance</code> </p>
      */
-    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
+    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The DB instance identifier. This parameter is stored as a lowercase
@@ -310,7 +311,7 @@ namespace Model
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>mydbinstance</code> </p>
      */
-    inline CreateDBInstanceRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(value); return *this;}
+    inline CreateDBInstanceRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The DB instance identifier. This parameter is stored as a lowercase
@@ -395,7 +396,7 @@ namespace Model
      * db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
      * db.t2.medium | db.t2.large</code> </p>
      */
-    inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
+    inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
      * <p>The compute and memory capacity of the DB instance. Note that not all
@@ -431,7 +432,7 @@ namespace Model
      * db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
      * db.t2.medium | db.t2.large</code> </p>
      */
-    inline CreateDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(value); return *this;}
+    inline CreateDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
      * <p>The compute and memory capacity of the DB instance. Note that not all
@@ -476,7 +477,7 @@ namespace Model
      * <code>aurora</code> </p> <p>Not every database engine is available for every AWS
      * region.</p>
      */
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The name of the database engine to be used for this instance.</p> <p> Valid
@@ -509,7 +510,7 @@ namespace Model
      * <code>aurora</code> </p> <p>Not every database engine is available for every AWS
      * region.</p>
      */
-    inline CreateDBInstanceRequest& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
+    inline CreateDBInstanceRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The name of the database engine to be used for this instance.</p> <p> Valid
@@ -583,7 +584,7 @@ namespace Model
      * </li> <li> <p>Cannot be a reserved word for the chosen database engine.</p>
      * </li> </ul>
      */
-    inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
+    inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
      * <p>The name of master user for the client DB instance.</p> <p> <b>MySQL</b> </p>
@@ -646,7 +647,7 @@ namespace Model
      * </li> <li> <p>Cannot be a reserved word for the chosen database engine.</p>
      * </li> </ul>
      */
-    inline CreateDBInstanceRequest& WithMasterUsername(Aws::String&& value) { SetMasterUsername(value); return *this;}
+    inline CreateDBInstanceRequest& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
      * <p>The name of master user for the client DB instance.</p> <p> <b>MySQL</b> </p>
@@ -706,7 +707,7 @@ namespace Model
      * characters.</p> <p> <b>Amazon Aurora</b> </p> <p>Constraints: Must contain from
      * 8 to 41 characters.</p>
      */
-    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
+    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
      * <p>The password for the master database user. Can be any printable ASCII
@@ -745,7 +746,7 @@ namespace Model
      * characters.</p> <p> <b>Amazon Aurora</b> </p> <p>Constraints: Must contain from
      * 8 to 41 characters.</p>
      */
-    inline CreateDBInstanceRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(value); return *this;}
+    inline CreateDBInstanceRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
      * <p>The password for the master database user. Can be any printable ASCII
@@ -776,7 +777,7 @@ namespace Model
      * <p>A list of DB security groups to associate with this DB instance.</p>
      * <p>Default: The default DB security group for the database engine.</p>
      */
-    inline void SetDBSecurityGroups(Aws::Vector<Aws::String>&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = value; }
+    inline void SetDBSecurityGroups(Aws::Vector<Aws::String>&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = std::move(value); }
 
     /**
      * <p>A list of DB security groups to associate with this DB instance.</p>
@@ -788,7 +789,7 @@ namespace Model
      * <p>A list of DB security groups to associate with this DB instance.</p>
      * <p>Default: The default DB security group for the database engine.</p>
      */
-    inline CreateDBInstanceRequest& WithDBSecurityGroups(Aws::Vector<Aws::String>&& value) { SetDBSecurityGroups(value); return *this;}
+    inline CreateDBInstanceRequest& WithDBSecurityGroups(Aws::Vector<Aws::String>&& value) { SetDBSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of DB security groups to associate with this DB instance.</p>
@@ -800,7 +801,7 @@ namespace Model
      * <p>A list of DB security groups to associate with this DB instance.</p>
      * <p>Default: The default DB security group for the database engine.</p>
      */
-    inline CreateDBInstanceRequest& AddDBSecurityGroups(Aws::String&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
+    inline CreateDBInstanceRequest& AddDBSecurityGroups(Aws::String&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of DB security groups to associate with this DB instance.</p>
@@ -827,7 +828,7 @@ namespace Model
      * <p>Default: The default EC2 VPC security group for the DB subnet group's
      * VPC.</p>
      */
-    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
+    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
     /**
      * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
@@ -841,7 +842,7 @@ namespace Model
      * <p>Default: The default EC2 VPC security group for the DB subnet group's
      * VPC.</p>
      */
-    inline CreateDBInstanceRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(value); return *this;}
+    inline CreateDBInstanceRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
@@ -855,7 +856,7 @@ namespace Model
      * <p>Default: The default EC2 VPC security group for the DB subnet group's
      * VPC.</p>
      */
-    inline CreateDBInstanceRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+    inline CreateDBInstanceRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
@@ -901,7 +902,7 @@ namespace Model
      * specified Availability Zone must be in the same region as the current endpoint.
      * </p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p> The EC2 Availability Zone that the database instance will be created in. For
@@ -940,7 +941,7 @@ namespace Model
      * specified Availability Zone must be in the same region as the current endpoint.
      * </p>
      */
-    inline CreateDBInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline CreateDBInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p> The EC2 Availability Zone that the database instance will be created in. For
@@ -971,7 +972,7 @@ namespace Model
      * <p>A DB subnet group to associate with this DB instance.</p> <p>If there is no
      * DB subnet group, then it is a non-VPC DB instance.</p>
      */
-    inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
+    inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
      * <p>A DB subnet group to associate with this DB instance.</p> <p>If there is no
@@ -989,7 +990,7 @@ namespace Model
      * <p>A DB subnet group to associate with this DB instance.</p> <p>If there is no
      * DB subnet group, then it is a non-VPC DB instance.</p>
      */
-    inline CreateDBInstanceRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(value); return *this;}
+    inline CreateDBInstanceRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>A DB subnet group to associate with this DB instance.</p> <p>If there is no
@@ -1040,7 +1041,7 @@ namespace Model
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
+    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p> The weekly time range during which system maintenance can occur, in
@@ -1085,7 +1086,7 @@ namespace Model
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
-    inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(value); return *this;}
+    inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p> The weekly time range during which system maintenance can occur, in
@@ -1127,7 +1128,7 @@ namespace Model
      * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
-    inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
+    inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If
@@ -1154,7 +1155,7 @@ namespace Model
      * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
-    inline CreateDBInstanceRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(value); return *this;}
+    inline CreateDBInstanceRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If
@@ -1244,7 +1245,7 @@ namespace Model
      * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
      * </ul>
      */
-    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
+    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
      * <p> The daily time range during which automated backups are created if automated
@@ -1298,7 +1299,7 @@ namespace Model
      * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
      * </ul>
      */
-    inline CreateDBInstanceRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(value); return *this;}
+    inline CreateDBInstanceRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
      * <p> The daily time range during which automated backups are created if automated
@@ -1940,7 +1941,7 @@ namespace Model
      * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1,
      * us-west-1, us-west-2):</b> <code> 9.3.12 | 9.3.14</code> </p> </li> </ul>
      */
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>The version number of the database engine to use.</p> <p>The following are
@@ -2495,7 +2496,7 @@ namespace Model
      * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1,
      * us-west-1, us-west-2):</b> <code> 9.3.12 | 9.3.14</code> </p> </li> </ul>
      */
-    inline CreateDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
+    inline CreateDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version number of the database engine to use.</p> <p>The following are
@@ -2719,7 +2720,7 @@ namespace Model
      * <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
-    inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
+    inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
     /**
      * <p>License model information for this DB instance.</p> <p> Valid values:
@@ -2740,7 +2741,7 @@ namespace Model
      * <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
-    inline CreateDBInstanceRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(value); return *this;}
+    inline CreateDBInstanceRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
     /**
      * <p>License model information for this DB instance.</p> <p> Valid values:
@@ -2801,7 +2802,7 @@ namespace Model
      * cannot be removed from a DB instance once it is associated with a DB
      * instance</p>
      */
-    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
+    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
@@ -2828,7 +2829,7 @@ namespace Model
      * cannot be removed from a DB instance once it is associated with a DB
      * instance</p>
      */
-    inline CreateDBInstanceRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
+    inline CreateDBInstanceRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
@@ -2855,7 +2856,7 @@ namespace Model
      * <p>For supported engines, indicates that the DB instance should be associated
      * with the specified CharacterSet.</p>
      */
-    inline void SetCharacterSetName(Aws::String&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = value; }
+    inline void SetCharacterSetName(Aws::String&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = std::move(value); }
 
     /**
      * <p>For supported engines, indicates that the DB instance should be associated
@@ -2873,7 +2874,7 @@ namespace Model
      * <p>For supported engines, indicates that the DB instance should be associated
      * with the specified CharacterSet.</p>
      */
-    inline CreateDBInstanceRequest& WithCharacterSetName(Aws::String&& value) { SetCharacterSetName(value); return *this;}
+    inline CreateDBInstanceRequest& WithCharacterSetName(Aws::String&& value) { SetCharacterSetName(std::move(value)); return *this;}
 
     /**
      * <p>For supported engines, indicates that the DB instance should be associated
@@ -2936,19 +2937,19 @@ namespace Model
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     
     inline CreateDBInstanceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     
-    inline CreateDBInstanceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline CreateDBInstanceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     
     inline CreateDBInstanceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     
-    inline CreateDBInstanceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateDBInstanceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The identifier of the DB cluster that the instance will belong to.</p> <p>For
@@ -2969,7 +2970,7 @@ namespace Model
      * information on creating a DB cluster, see <a>CreateDBCluster</a>.</p> <p>Type:
      * String</p>
      */
-    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
+    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the DB cluster that the instance will belong to.</p> <p>For
@@ -2990,7 +2991,7 @@ namespace Model
      * information on creating a DB cluster, see <a>CreateDBCluster</a>.</p> <p>Type:
      * String</p>
      */
-    inline CreateDBInstanceRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(value); return *this;}
+    inline CreateDBInstanceRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the DB cluster that the instance will belong to.</p> <p>For
@@ -3024,7 +3025,7 @@ namespace Model
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified; otherwise <code>standard</code> </p>
      */
-    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
@@ -3051,7 +3052,7 @@ namespace Model
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified; otherwise <code>standard</code> </p>
      */
-    inline CreateDBInstanceRequest& WithStorageType(Aws::String&& value) { SetStorageType(value); return *this;}
+    inline CreateDBInstanceRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
@@ -3078,7 +3079,7 @@ namespace Model
      * <p>The ARN from the Key Store with which to associate the instance for TDE
      * encryption.</p>
      */
-    inline void SetTdeCredentialArn(Aws::String&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
+    inline void SetTdeCredentialArn(Aws::String&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = std::move(value); }
 
     /**
      * <p>The ARN from the Key Store with which to associate the instance for TDE
@@ -3096,7 +3097,7 @@ namespace Model
      * <p>The ARN from the Key Store with which to associate the instance for TDE
      * encryption.</p>
      */
-    inline CreateDBInstanceRequest& WithTdeCredentialArn(Aws::String&& value) { SetTdeCredentialArn(value); return *this;}
+    inline CreateDBInstanceRequest& WithTdeCredentialArn(Aws::String&& value) { SetTdeCredentialArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN from the Key Store with which to associate the instance for TDE
@@ -3120,7 +3121,7 @@ namespace Model
      * <p>The password for the given ARN from the Key Store in order to access the
      * device.</p>
      */
-    inline void SetTdeCredentialPassword(Aws::String&& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = value; }
+    inline void SetTdeCredentialPassword(Aws::String&& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = std::move(value); }
 
     /**
      * <p>The password for the given ARN from the Key Store in order to access the
@@ -3138,7 +3139,7 @@ namespace Model
      * <p>The password for the given ARN from the Key Store in order to access the
      * device.</p>
      */
-    inline CreateDBInstanceRequest& WithTdeCredentialPassword(Aws::String&& value) { SetTdeCredentialPassword(value); return *this;}
+    inline CreateDBInstanceRequest& WithTdeCredentialPassword(Aws::String&& value) { SetTdeCredentialPassword(std::move(value)); return *this;}
 
     /**
      * <p>The password for the given ARN from the Key Store in order to access the
@@ -3198,7 +3199,7 @@ namespace Model
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS region.</p>
      */
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
@@ -3237,7 +3238,7 @@ namespace Model
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS region.</p>
      */
-    inline CreateDBInstanceRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
+    inline CreateDBInstanceRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
@@ -3265,7 +3266,7 @@ namespace Model
     /**
      * <p>Specify the Active Directory Domain to create the instance in.</p>
      */
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>Specify the Active Directory Domain to create the instance in.</p>
@@ -3280,7 +3281,7 @@ namespace Model
     /**
      * <p>Specify the Active Directory Domain to create the instance in.</p>
      */
-    inline CreateDBInstanceRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+    inline CreateDBInstanceRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>Specify the Active Directory Domain to create the instance in.</p>
@@ -3366,7 +3367,7 @@ namespace Model
      * <code>MonitoringInterval</code> is set to a value other than 0, then you must
      * supply a <code>MonitoringRoleArn</code> value.</p>
      */
-    inline void SetMonitoringRoleArn(Aws::String&& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = value; }
+    inline void SetMonitoringRoleArn(Aws::String&& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = std::move(value); }
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
@@ -3402,7 +3403,7 @@ namespace Model
      * <code>MonitoringInterval</code> is set to a value other than 0, then you must
      * supply a <code>MonitoringRoleArn</code> value.</p>
      */
-    inline CreateDBInstanceRequest& WithMonitoringRoleArn(Aws::String&& value) { SetMonitoringRoleArn(value); return *this;}
+    inline CreateDBInstanceRequest& WithMonitoringRoleArn(Aws::String&& value) { SetMonitoringRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
@@ -3432,7 +3433,7 @@ namespace Model
      * <p>Specify the name of the IAM role to be used when making API calls to the
      * Directory Service.</p>
      */
-    inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
+    inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::move(value); }
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
@@ -3450,7 +3451,7 @@ namespace Model
      * <p>Specify the name of the IAM role to be used when making API calls to the
      * Directory Service.</p>
      */
-    inline CreateDBInstanceRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(value); return *this;}
+    inline CreateDBInstanceRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(std::move(value)); return *this;}
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
@@ -3510,7 +3511,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
      * SQL Server</a>. </p>
      */
-    inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
+    inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
 
     /**
      * <p>The time zone of the DB instance. The time zone parameter is currently
@@ -3534,7 +3535,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
      * SQL Server</a>. </p>
      */
-    inline CreateDBInstanceRequest& WithTimezone(Aws::String&& value) { SetTimezone(value); return *this;}
+    inline CreateDBInstanceRequest& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
 
     /**
      * <p>The time zone of the DB instance. The time zone parameter is currently

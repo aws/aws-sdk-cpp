@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/kms/KMSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * "alias" followed by a forward slash (alias/). Aliases that begin with
      * "alias/AWS" are reserved.</p>
      */
-    inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
+    inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
 
     /**
      * <p>String that contains the display name. The name must start with the word
@@ -75,7 +76,7 @@ namespace Model
      * "alias" followed by a forward slash (alias/). Aliases that begin with
      * "alias/AWS" are reserved.</p>
      */
-    inline CreateAliasRequest& WithAliasName(Aws::String&& value) { SetAliasName(value); return *this;}
+    inline CreateAliasRequest& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
 
     /**
      * <p>String that contains the display name. The name must start with the word
@@ -112,7 +113,7 @@ namespace Model
      * </li> <li> <p>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
-    inline void SetTargetKeyId(Aws::String&& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = value; }
+    inline void SetTargetKeyId(Aws::String&& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = std::move(value); }
 
     /**
      * <p>An identifier of the key for which you are creating the alias. This value
@@ -142,7 +143,7 @@ namespace Model
      * </li> <li> <p>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
-    inline CreateAliasRequest& WithTargetKeyId(Aws::String&& value) { SetTargetKeyId(value); return *this;}
+    inline CreateAliasRequest& WithTargetKeyId(Aws::String&& value) { SetTargetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>An identifier of the key for which you are creating the alias. This value

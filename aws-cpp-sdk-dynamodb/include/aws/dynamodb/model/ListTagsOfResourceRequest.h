@@ -16,6 +16,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/DynamoDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon
      * Resource Name (ARN).</p>
      */
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
      * <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon
@@ -69,7 +70,7 @@ namespace Model
      * <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon
      * Resource Name (ARN).</p>
      */
-    inline ListTagsOfResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(value); return *this;}
+    inline ListTagsOfResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon
@@ -96,7 +97,7 @@ namespace Model
      * previous call to ListTagOfResource. When provided in this manner, this API
      * fetches the next page of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>An optional string that, if supplied, must be copied from the output of a
@@ -117,7 +118,7 @@ namespace Model
      * previous call to ListTagOfResource. When provided in this manner, this API
      * fetches the next page of results.</p>
      */
-    inline ListTagsOfResourceRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListTagsOfResourceRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An optional string that, if supplied, must be copied from the output of a

@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The textual data of the content.</p>
      */
-    inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = value; }
+    inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
      * <p>The textual data of the content.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The textual data of the content.</p>
      */
-    inline Content& WithData(Aws::String&& value) { SetData(value); return *this;}
+    inline Content& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
 
     /**
      * <p>The textual data of the content.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The character set of the content.</p>
      */
-    inline void SetCharset(Aws::String&& value) { m_charsetHasBeenSet = true; m_charset = value; }
+    inline void SetCharset(Aws::String&& value) { m_charsetHasBeenSet = true; m_charset = std::move(value); }
 
     /**
      * <p>The character set of the content.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The character set of the content.</p>
      */
-    inline Content& WithCharset(Aws::String&& value) { SetCharset(value); return *this;}
+    inline Content& WithCharset(Aws::String&& value) { SetCharset(std::move(value)); return *this;}
 
     /**
      * <p>The character set of the content.</p>

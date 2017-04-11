@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The unique identifier of the reserved node offering you want to purchase.</p>
      */
-    inline void SetReservedNodeOfferingId(Aws::String&& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = value; }
+    inline void SetReservedNodeOfferingId(Aws::String&& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = std::move(value); }
 
     /**
      * <p>The unique identifier of the reserved node offering you want to purchase.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The unique identifier of the reserved node offering you want to purchase.</p>
      */
-    inline PurchaseReservedNodeOfferingRequest& WithReservedNodeOfferingId(Aws::String&& value) { SetReservedNodeOfferingId(value); return *this;}
+    inline PurchaseReservedNodeOfferingRequest& WithReservedNodeOfferingId(Aws::String&& value) { SetReservedNodeOfferingId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the reserved node offering you want to purchase.</p>

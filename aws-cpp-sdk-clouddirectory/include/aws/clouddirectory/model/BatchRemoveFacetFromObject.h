@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/SchemaFacet.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The facet to remove from the object.</p>
      */
-    inline void SetSchemaFacet(SchemaFacet&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = value; }
+    inline void SetSchemaFacet(SchemaFacet&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = std::move(value); }
 
     /**
      * <p>The facet to remove from the object.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The facet to remove from the object.</p>
      */
-    inline BatchRemoveFacetFromObject& WithSchemaFacet(SchemaFacet&& value) { SetSchemaFacet(value); return *this;}
+    inline BatchRemoveFacetFromObject& WithSchemaFacet(SchemaFacet&& value) { SetSchemaFacet(std::move(value)); return *this;}
 
     /**
      * <p>A reference to the object whose facet will be removed.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>A reference to the object whose facet will be removed.</p>
      */
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
+    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
 
     /**
      * <p>A reference to the object whose facet will be removed.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>A reference to the object whose facet will be removed.</p>
      */
-    inline BatchRemoveFacetFromObject& WithObjectReference(ObjectReference&& value) { SetObjectReference(value); return *this;}
+    inline BatchRemoveFacetFromObject& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
   private:
     SchemaFacet m_schemaFacet;

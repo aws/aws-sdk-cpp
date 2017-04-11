@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/GameSessionQueue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Object that describes the newly created game session queue.</p>
      */
-    inline void SetGameSessionQueue(GameSessionQueue&& value) { m_gameSessionQueue = value; }
+    inline void SetGameSessionQueue(GameSessionQueue&& value) { m_gameSessionQueue = std::move(value); }
 
     /**
      * <p>Object that describes the newly created game session queue.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Object that describes the newly created game session queue.</p>
      */
-    inline CreateGameSessionQueueResult& WithGameSessionQueue(GameSessionQueue&& value) { SetGameSessionQueue(value); return *this;}
+    inline CreateGameSessionQueueResult& WithGameSessionQueue(GameSessionQueue&& value) { SetGameSessionQueue(std::move(value)); return *this;}
 
   private:
     GameSessionQueue m_gameSessionQueue;

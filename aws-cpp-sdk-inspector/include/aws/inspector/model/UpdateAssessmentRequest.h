@@ -16,6 +16,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/InspectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>Asessment ARN that you want to update.</p>
      */
-    inline void SetAssessmentArn(Aws::String&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = value; }
+    inline void SetAssessmentArn(Aws::String&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = std::move(value); }
 
     /**
      * <p>Asessment ARN that you want to update.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Asessment ARN that you want to update.</p>
      */
-    inline UpdateAssessmentRequest& WithAssessmentArn(Aws::String&& value) { SetAssessmentArn(value); return *this;}
+    inline UpdateAssessmentRequest& WithAssessmentArn(Aws::String&& value) { SetAssessmentArn(std::move(value)); return *this;}
 
     /**
      * <p>Asessment ARN that you want to update.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>Assessment name that you want to update.</p>
      */
-    inline void SetAssessmentName(Aws::String&& value) { m_assessmentNameHasBeenSet = true; m_assessmentName = value; }
+    inline void SetAssessmentName(Aws::String&& value) { m_assessmentNameHasBeenSet = true; m_assessmentName = std::move(value); }
 
     /**
      * <p>Assessment name that you want to update.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>Assessment name that you want to update.</p>
      */
-    inline UpdateAssessmentRequest& WithAssessmentName(Aws::String&& value) { SetAssessmentName(value); return *this;}
+    inline UpdateAssessmentRequest& WithAssessmentName(Aws::String&& value) { SetAssessmentName(std::move(value)); return *this;}
 
     /**
      * <p>Assessment name that you want to update.</p>

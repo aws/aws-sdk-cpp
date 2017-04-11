@@ -17,6 +17,7 @@
 #include <aws/waf/WAFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/waf/model/TimeWindow.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want
      * <code>GetSampledRequests</code> to return a sample of requests.</p>
      */
-    inline void SetWebAclId(Aws::String&& value) { m_webAclIdHasBeenSet = true; m_webAclId = value; }
+    inline void SetWebAclId(Aws::String&& value) { m_webAclIdHasBeenSet = true; m_webAclId = std::move(value); }
 
     /**
      * <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want
@@ -70,7 +71,7 @@ namespace Model
      * <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want
      * <code>GetSampledRequests</code> to return a sample of requests.</p>
      */
-    inline GetSampledRequestsRequest& WithWebAclId(Aws::String&& value) { SetWebAclId(value); return *this;}
+    inline GetSampledRequestsRequest& WithWebAclId(Aws::String&& value) { SetWebAclId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want
@@ -106,7 +107,7 @@ namespace Model
      * return a sample of the requests that didn't match any of the rules in the
      * specified <code>WebACL</code>.</p> </li> </ul>
      */
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
+    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
 
     /**
      * <p> <code>RuleId</code> is one of two values:</p> <ul> <li> <p>The
@@ -136,7 +137,7 @@ namespace Model
      * return a sample of the requests that didn't match any of the rules in the
      * specified <code>WebACL</code>.</p> </li> </ul>
      */
-    inline GetSampledRequestsRequest& WithRuleId(Aws::String&& value) { SetRuleId(value); return *this;}
+    inline GetSampledRequestsRequest& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
 
     /**
      * <p> <code>RuleId</code> is one of two values:</p> <ul> <li> <p>The
@@ -170,7 +171,7 @@ namespace Model
      * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
      * specify any time range in the previous three hours.</p>
      */
-    inline void SetTimeWindow(TimeWindow&& value) { m_timeWindowHasBeenSet = true; m_timeWindow = value; }
+    inline void SetTimeWindow(TimeWindow&& value) { m_timeWindowHasBeenSet = true; m_timeWindow = std::move(value); }
 
     /**
      * <p>The start date and time and the end date and time of the range for which you
@@ -186,7 +187,7 @@ namespace Model
      * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
      * specify any time range in the previous three hours.</p>
      */
-    inline GetSampledRequestsRequest& WithTimeWindow(TimeWindow&& value) { SetTimeWindow(value); return *this;}
+    inline GetSampledRequestsRequest& WithTimeWindow(TimeWindow&& value) { SetTimeWindow(std::move(value)); return *this;}
 
     /**
      * <p>The number of requests that you want AWS WAF to return from among the first

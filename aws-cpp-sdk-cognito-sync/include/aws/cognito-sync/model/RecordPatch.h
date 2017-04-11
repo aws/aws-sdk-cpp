@@ -17,6 +17,7 @@
 #include <aws/cognito-sync/model/Operation.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * An operation, either replace or remove.
      */
-    inline void SetOp(Operation&& value) { m_opHasBeenSet = true; m_op = value; }
+    inline void SetOp(Operation&& value) { m_opHasBeenSet = true; m_op = std::move(value); }
 
     /**
      * An operation, either replace or remove.
@@ -68,7 +69,7 @@ namespace Model
     /**
      * An operation, either replace or remove.
      */
-    inline RecordPatch& WithOp(Operation&& value) { SetOp(value); return *this;}
+    inline RecordPatch& WithOp(Operation&& value) { SetOp(std::move(value)); return *this;}
 
     /**
      * The key associated with the record patch.
@@ -83,7 +84,7 @@ namespace Model
     /**
      * The key associated with the record patch.
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * The key associated with the record patch.
@@ -98,7 +99,7 @@ namespace Model
     /**
      * The key associated with the record patch.
      */
-    inline RecordPatch& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline RecordPatch& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * The key associated with the record patch.
@@ -118,7 +119,7 @@ namespace Model
     /**
      * The value associated with the record patch.
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * The value associated with the record patch.
@@ -133,7 +134,7 @@ namespace Model
     /**
      * The value associated with the record patch.
      */
-    inline RecordPatch& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline RecordPatch& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * The value associated with the record patch.
@@ -168,7 +169,7 @@ namespace Model
     /**
      * The last modified date of the client device.
      */
-    inline void SetDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { m_deviceLastModifiedDateHasBeenSet = true; m_deviceLastModifiedDate = value; }
+    inline void SetDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { m_deviceLastModifiedDateHasBeenSet = true; m_deviceLastModifiedDate = std::move(value); }
 
     /**
      * The last modified date of the client device.
@@ -178,7 +179,7 @@ namespace Model
     /**
      * The last modified date of the client device.
      */
-    inline RecordPatch& WithDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { SetDeviceLastModifiedDate(value); return *this;}
+    inline RecordPatch& WithDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { SetDeviceLastModifiedDate(std::move(value)); return *this;}
 
   private:
     Operation m_op;

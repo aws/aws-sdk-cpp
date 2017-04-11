@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p> The ID of the newly registered HIT type.</p>
      */
-    inline void SetHITTypeId(Aws::String&& value) { m_hITTypeId = value; }
+    inline void SetHITTypeId(Aws::String&& value) { m_hITTypeId = std::move(value); }
 
     /**
      * <p> The ID of the newly registered HIT type.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p> The ID of the newly registered HIT type.</p>
      */
-    inline CreateHITTypeResult& WithHITTypeId(Aws::String&& value) { SetHITTypeId(value); return *this;}
+    inline CreateHITTypeResult& WithHITTypeId(Aws::String&& value) { SetHITTypeId(std::move(value)); return *this;}
 
     /**
      * <p> The ID of the newly registered HIT type.</p>

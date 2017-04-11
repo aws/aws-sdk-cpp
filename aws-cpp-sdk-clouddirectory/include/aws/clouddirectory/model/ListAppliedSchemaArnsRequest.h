@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     /**
      * <p>The ARN of the directory you are listing.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>The ARN of the directory you are listing.</p>
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The ARN of the directory you are listing.</p>
      */
-    inline ListAppliedSchemaArnsRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline ListAppliedSchemaArnsRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the directory you are listing.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline ListAppliedSchemaArnsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListAppliedSchemaArnsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>

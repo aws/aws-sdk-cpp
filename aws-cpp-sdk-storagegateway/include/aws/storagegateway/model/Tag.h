@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -45,7 +46,7 @@ namespace Model
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
@@ -54,7 +55,7 @@ namespace Model
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     
-    inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
@@ -66,7 +67,7 @@ namespace Model
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
@@ -75,7 +76,7 @@ namespace Model
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     
-    inline Tag& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}

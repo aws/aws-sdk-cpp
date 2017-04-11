@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/OutgoingCertificate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The certificates that are being transfered but not yet accepted.</p>
      */
-    inline void SetOutgoingCertificates(Aws::Vector<OutgoingCertificate>&& value) { m_outgoingCertificates = value; }
+    inline void SetOutgoingCertificates(Aws::Vector<OutgoingCertificate>&& value) { m_outgoingCertificates = std::move(value); }
 
     /**
      * <p>The certificates that are being transfered but not yet accepted.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The certificates that are being transfered but not yet accepted.</p>
      */
-    inline ListOutgoingCertificatesResult& WithOutgoingCertificates(Aws::Vector<OutgoingCertificate>&& value) { SetOutgoingCertificates(value); return *this;}
+    inline ListOutgoingCertificatesResult& WithOutgoingCertificates(Aws::Vector<OutgoingCertificate>&& value) { SetOutgoingCertificates(std::move(value)); return *this;}
 
     /**
      * <p>The certificates that are being transfered but not yet accepted.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The certificates that are being transfered but not yet accepted.</p>
      */
-    inline ListOutgoingCertificatesResult& AddOutgoingCertificates(OutgoingCertificate&& value) { m_outgoingCertificates.push_back(value); return *this; }
+    inline ListOutgoingCertificatesResult& AddOutgoingCertificates(OutgoingCertificate&& value) { m_outgoingCertificates.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The marker for the next set of results.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The marker for the next set of results.</p>
      */
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
      * <p>The marker for the next set of results.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The marker for the next set of results.</p>
      */
-    inline ListOutgoingCertificatesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
+    inline ListOutgoingCertificatesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>The marker for the next set of results.</p>

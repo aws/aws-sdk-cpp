@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>The type of pending maintenance action that is available for the
      * resource.</p>
      */
-    inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = value; }
+    inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>The type of pending maintenance action that is available for the
@@ -82,7 +83,7 @@ namespace Model
      * <p>The type of pending maintenance action that is available for the
      * resource.</p>
      */
-    inline PendingMaintenanceAction& WithAction(Aws::String&& value) { SetAction(value); return *this;}
+    inline PendingMaintenanceAction& WithAction(Aws::String&& value) { SetAction(std::move(value)); return *this;}
 
     /**
      * <p>The type of pending maintenance action that is available for the
@@ -112,7 +113,7 @@ namespace Model
      * window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.</p>
      */
-    inline void SetAutoAppliedAfterDate(Aws::Utils::DateTime&& value) { m_autoAppliedAfterDateHasBeenSet = true; m_autoAppliedAfterDate = value; }
+    inline void SetAutoAppliedAfterDate(Aws::Utils::DateTime&& value) { m_autoAppliedAfterDateHasBeenSet = true; m_autoAppliedAfterDate = std::move(value); }
 
     /**
      * <p>The date of the maintenance window when the action will be applied. The
@@ -128,7 +129,7 @@ namespace Model
      * window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.</p>
      */
-    inline PendingMaintenanceAction& WithAutoAppliedAfterDate(Aws::Utils::DateTime&& value) { SetAutoAppliedAfterDate(value); return *this;}
+    inline PendingMaintenanceAction& WithAutoAppliedAfterDate(Aws::Utils::DateTime&& value) { SetAutoAppliedAfterDate(std::move(value)); return *this;}
 
     /**
      * <p>The date when the maintenance action will be automatically applied. The
@@ -152,7 +153,7 @@ namespace Model
      * the maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.</p>
      */
-    inline void SetForcedApplyDate(Aws::Utils::DateTime&& value) { m_forcedApplyDateHasBeenSet = true; m_forcedApplyDate = value; }
+    inline void SetForcedApplyDate(Aws::Utils::DateTime&& value) { m_forcedApplyDateHasBeenSet = true; m_forcedApplyDate = std::move(value); }
 
     /**
      * <p>The date when the maintenance action will be automatically applied. The
@@ -168,7 +169,7 @@ namespace Model
      * the maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.</p>
      */
-    inline PendingMaintenanceAction& WithForcedApplyDate(Aws::Utils::DateTime&& value) { SetForcedApplyDate(value); return *this;}
+    inline PendingMaintenanceAction& WithForcedApplyDate(Aws::Utils::DateTime&& value) { SetForcedApplyDate(std::move(value)); return *this;}
 
     /**
      * <p>Indicates the type of opt-in request that has been received for the
@@ -186,7 +187,7 @@ namespace Model
      * <p>Indicates the type of opt-in request that has been received for the
      * resource.</p>
      */
-    inline void SetOptInStatus(Aws::String&& value) { m_optInStatusHasBeenSet = true; m_optInStatus = value; }
+    inline void SetOptInStatus(Aws::String&& value) { m_optInStatusHasBeenSet = true; m_optInStatus = std::move(value); }
 
     /**
      * <p>Indicates the type of opt-in request that has been received for the
@@ -204,7 +205,7 @@ namespace Model
      * <p>Indicates the type of opt-in request that has been received for the
      * resource.</p>
      */
-    inline PendingMaintenanceAction& WithOptInStatus(Aws::String&& value) { SetOptInStatus(value); return *this;}
+    inline PendingMaintenanceAction& WithOptInStatus(Aws::String&& value) { SetOptInStatus(std::move(value)); return *this;}
 
     /**
      * <p>Indicates the type of opt-in request that has been received for the
@@ -240,7 +241,7 @@ namespace Model
      * has not been received and nothing has been specified as
      * <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
      */
-    inline void SetCurrentApplyDate(Aws::Utils::DateTime&& value) { m_currentApplyDateHasBeenSet = true; m_currentApplyDate = value; }
+    inline void SetCurrentApplyDate(Aws::Utils::DateTime&& value) { m_currentApplyDateHasBeenSet = true; m_currentApplyDate = std::move(value); }
 
     /**
      * <p>The effective date when the pending maintenance action will be applied to the
@@ -260,7 +261,7 @@ namespace Model
      * has not been received and nothing has been specified as
      * <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
      */
-    inline PendingMaintenanceAction& WithCurrentApplyDate(Aws::Utils::DateTime&& value) { SetCurrentApplyDate(value); return *this;}
+    inline PendingMaintenanceAction& WithCurrentApplyDate(Aws::Utils::DateTime&& value) { SetCurrentApplyDate(std::move(value)); return *this;}
 
     /**
      * <p>A description providing more detail about the maintenance action.</p>
@@ -275,7 +276,7 @@ namespace Model
     /**
      * <p>A description providing more detail about the maintenance action.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description providing more detail about the maintenance action.</p>
@@ -290,7 +291,7 @@ namespace Model
     /**
      * <p>A description providing more detail about the maintenance action.</p>
      */
-    inline PendingMaintenanceAction& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline PendingMaintenanceAction& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description providing more detail about the maintenance action.</p>

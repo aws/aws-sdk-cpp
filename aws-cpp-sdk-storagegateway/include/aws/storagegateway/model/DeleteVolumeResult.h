@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is
      * the same ARN you provided in the request.</p>
      */
-    inline void SetVolumeARN(Aws::String&& value) { m_volumeARN = value; }
+    inline void SetVolumeARN(Aws::String&& value) { m_volumeARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is
@@ -79,7 +80,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is
      * the same ARN you provided in the request.</p>
      */
-    inline DeleteVolumeResult& WithVolumeARN(Aws::String&& value) { SetVolumeARN(value); return *this;}
+    inline DeleteVolumeResult& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     inline void SetAvailableBalance(const Aws::String& value) { m_availableBalance = value; }
 
     
-    inline void SetAvailableBalance(Aws::String&& value) { m_availableBalance = value; }
+    inline void SetAvailableBalance(Aws::String&& value) { m_availableBalance = std::move(value); }
 
     
     inline void SetAvailableBalance(const char* value) { m_availableBalance.assign(value); }
@@ -55,7 +56,7 @@ namespace Model
     inline GetAccountBalanceResult& WithAvailableBalance(const Aws::String& value) { SetAvailableBalance(value); return *this;}
 
     
-    inline GetAccountBalanceResult& WithAvailableBalance(Aws::String&& value) { SetAvailableBalance(value); return *this;}
+    inline GetAccountBalanceResult& WithAvailableBalance(Aws::String&& value) { SetAvailableBalance(std::move(value)); return *this;}
 
     
     inline GetAccountBalanceResult& WithAvailableBalance(const char* value) { SetAvailableBalance(value); return *this;}
@@ -67,7 +68,7 @@ namespace Model
     inline void SetOnHoldBalance(const Aws::String& value) { m_onHoldBalance = value; }
 
     
-    inline void SetOnHoldBalance(Aws::String&& value) { m_onHoldBalance = value; }
+    inline void SetOnHoldBalance(Aws::String&& value) { m_onHoldBalance = std::move(value); }
 
     
     inline void SetOnHoldBalance(const char* value) { m_onHoldBalance.assign(value); }
@@ -76,7 +77,7 @@ namespace Model
     inline GetAccountBalanceResult& WithOnHoldBalance(const Aws::String& value) { SetOnHoldBalance(value); return *this;}
 
     
-    inline GetAccountBalanceResult& WithOnHoldBalance(Aws::String&& value) { SetOnHoldBalance(value); return *this;}
+    inline GetAccountBalanceResult& WithOnHoldBalance(Aws::String&& value) { SetOnHoldBalance(std::move(value)); return *this;}
 
     
     inline GetAccountBalanceResult& WithOnHoldBalance(const char* value) { SetOnHoldBalance(value); return *this;}

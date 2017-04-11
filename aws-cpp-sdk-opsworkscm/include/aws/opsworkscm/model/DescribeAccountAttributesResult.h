@@ -16,6 +16,7 @@
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworkscm/model/AccountAttribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p> The attributes that are currently set for the account. </p>
      */
-    inline void SetAttributes(Aws::Vector<AccountAttribute>&& value) { m_attributes = value; }
+    inline void SetAttributes(Aws::Vector<AccountAttribute>&& value) { m_attributes = std::move(value); }
 
     /**
      * <p> The attributes that are currently set for the account. </p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p> The attributes that are currently set for the account. </p>
      */
-    inline DescribeAccountAttributesResult& WithAttributes(Aws::Vector<AccountAttribute>&& value) { SetAttributes(value); return *this;}
+    inline DescribeAccountAttributesResult& WithAttributes(Aws::Vector<AccountAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p> The attributes that are currently set for the account. </p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p> The attributes that are currently set for the account. </p>
      */
-    inline DescribeAccountAttributesResult& AddAttributes(AccountAttribute&& value) { m_attributes.push_back(value); return *this; }
+    inline DescribeAccountAttributesResult& AddAttributes(AccountAttribute&& value) { m_attributes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<AccountAttribute> m_attributes;

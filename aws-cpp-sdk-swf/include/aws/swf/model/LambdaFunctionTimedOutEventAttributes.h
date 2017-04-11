@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/swf/model/LambdaFunctionTimeoutType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The type of the timeout that caused this event.</p>
      */
-    inline void SetTimeoutType(LambdaFunctionTimeoutType&& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = value; }
+    inline void SetTimeoutType(LambdaFunctionTimeoutType&& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = std::move(value); }
 
     /**
      * <p>The type of the timeout that caused this event.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The type of the timeout that caused this event.</p>
      */
-    inline LambdaFunctionTimedOutEventAttributes& WithTimeoutType(LambdaFunctionTimeoutType&& value) { SetTimeoutType(value); return *this;}
+    inline LambdaFunctionTimedOutEventAttributes& WithTimeoutType(LambdaFunctionTimeoutType&& value) { SetTimeoutType(std::move(value)); return *this;}
 
   private:
     long long m_scheduledEventId;

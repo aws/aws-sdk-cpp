@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/DBClusterSnapshotAttribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * <p>The identifier of the manual DB cluster snapshot that the attributes apply
      * to.</p>
      */
-    inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
+    inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the manual DB cluster snapshot that the attributes apply
@@ -87,7 +88,7 @@ namespace Model
      * <p>The identifier of the manual DB cluster snapshot that the attributes apply
      * to.</p>
      */
-    inline DBClusterSnapshotAttributesResult& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(value); return *this;}
+    inline DBClusterSnapshotAttributesResult& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the manual DB cluster snapshot that the attributes apply
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The list of attributes and values for the manual DB cluster snapshot.</p>
      */
-    inline void SetDBClusterSnapshotAttributes(Aws::Vector<DBClusterSnapshotAttribute>&& value) { m_dBClusterSnapshotAttributesHasBeenSet = true; m_dBClusterSnapshotAttributes = value; }
+    inline void SetDBClusterSnapshotAttributes(Aws::Vector<DBClusterSnapshotAttribute>&& value) { m_dBClusterSnapshotAttributesHasBeenSet = true; m_dBClusterSnapshotAttributes = std::move(value); }
 
     /**
      * <p>The list of attributes and values for the manual DB cluster snapshot.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The list of attributes and values for the manual DB cluster snapshot.</p>
      */
-    inline DBClusterSnapshotAttributesResult& WithDBClusterSnapshotAttributes(Aws::Vector<DBClusterSnapshotAttribute>&& value) { SetDBClusterSnapshotAttributes(value); return *this;}
+    inline DBClusterSnapshotAttributesResult& WithDBClusterSnapshotAttributes(Aws::Vector<DBClusterSnapshotAttribute>&& value) { SetDBClusterSnapshotAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The list of attributes and values for the manual DB cluster snapshot.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The list of attributes and values for the manual DB cluster snapshot.</p>
      */
-    inline DBClusterSnapshotAttributesResult& AddDBClusterSnapshotAttributes(DBClusterSnapshotAttribute&& value) { m_dBClusterSnapshotAttributesHasBeenSet = true; m_dBClusterSnapshotAttributes.push_back(value); return *this; }
+    inline DBClusterSnapshotAttributesResult& AddDBClusterSnapshotAttributes(DBClusterSnapshotAttribute&& value) { m_dBClusterSnapshotAttributesHasBeenSet = true; m_dBClusterSnapshotAttributes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_dBClusterSnapshotIdentifier;

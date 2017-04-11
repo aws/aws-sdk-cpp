@@ -17,6 +17,7 @@
 #include <aws/ecr/ECRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * layers to check. If you do not specify a registry, the default registry is
      * assumed.</p>
      */
-    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
+    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
      * <p>The AWS account ID associated with the registry that contains the image
@@ -76,7 +77,7 @@ namespace Model
      * layers to check. If you do not specify a registry, the default registry is
      * assumed.</p>
      */
-    inline BatchCheckLayerAvailabilityRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(value); return *this;}
+    inline BatchCheckLayerAvailabilityRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID associated with the registry that contains the image
@@ -101,7 +102,7 @@ namespace Model
      * <p>The name of the repository that is associated with the image layers to
      * check.</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The name of the repository that is associated with the image layers to
@@ -119,7 +120,7 @@ namespace Model
      * <p>The name of the repository that is associated with the image layers to
      * check.</p>
      */
-    inline BatchCheckLayerAvailabilityRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline BatchCheckLayerAvailabilityRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the repository that is associated with the image layers to
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The digests of the image layers to check.</p>
      */
-    inline void SetLayerDigests(Aws::Vector<Aws::String>&& value) { m_layerDigestsHasBeenSet = true; m_layerDigests = value; }
+    inline void SetLayerDigests(Aws::Vector<Aws::String>&& value) { m_layerDigestsHasBeenSet = true; m_layerDigests = std::move(value); }
 
     /**
      * <p>The digests of the image layers to check.</p>
@@ -150,7 +151,7 @@ namespace Model
     /**
      * <p>The digests of the image layers to check.</p>
      */
-    inline BatchCheckLayerAvailabilityRequest& WithLayerDigests(Aws::Vector<Aws::String>&& value) { SetLayerDigests(value); return *this;}
+    inline BatchCheckLayerAvailabilityRequest& WithLayerDigests(Aws::Vector<Aws::String>&& value) { SetLayerDigests(std::move(value)); return *this;}
 
     /**
      * <p>The digests of the image layers to check.</p>
@@ -160,7 +161,7 @@ namespace Model
     /**
      * <p>The digests of the image layers to check.</p>
      */
-    inline BatchCheckLayerAvailabilityRequest& AddLayerDigests(Aws::String&& value) { m_layerDigestsHasBeenSet = true; m_layerDigests.push_back(value); return *this; }
+    inline BatchCheckLayerAvailabilityRequest& AddLayerDigests(Aws::String&& value) { m_layerDigestsHasBeenSet = true; m_layerDigests.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The digests of the image layers to check.</p>

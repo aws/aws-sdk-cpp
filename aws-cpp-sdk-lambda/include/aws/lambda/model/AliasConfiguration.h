@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * helloworld function version, the ARN is
      * <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.</p>
      */
-    inline void SetAliasArn(Aws::String&& value) { m_aliasArnHasBeenSet = true; m_aliasArn = value; }
+    inline void SetAliasArn(Aws::String&& value) { m_aliasArnHasBeenSet = true; m_aliasArn = std::move(value); }
 
     /**
      * <p>Lambda function ARN that is qualified using the alias name as the suffix. For
@@ -90,7 +91,7 @@ namespace Model
      * helloworld function version, the ARN is
      * <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.</p>
      */
-    inline AliasConfiguration& WithAliasArn(Aws::String&& value) { SetAliasArn(value); return *this;}
+    inline AliasConfiguration& WithAliasArn(Aws::String&& value) { SetAliasArn(std::move(value)); return *this;}
 
     /**
      * <p>Lambda function ARN that is qualified using the alias name as the suffix. For
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>Alias name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Alias name.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>Alias name.</p>
      */
-    inline AliasConfiguration& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline AliasConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Alias name.</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>Function version to which the alias points.</p>
      */
-    inline void SetFunctionVersion(Aws::String&& value) { m_functionVersionHasBeenSet = true; m_functionVersion = value; }
+    inline void SetFunctionVersion(Aws::String&& value) { m_functionVersionHasBeenSet = true; m_functionVersion = std::move(value); }
 
     /**
      * <p>Function version to which the alias points.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>Function version to which the alias points.</p>
      */
-    inline AliasConfiguration& WithFunctionVersion(Aws::String&& value) { SetFunctionVersion(value); return *this;}
+    inline AliasConfiguration& WithFunctionVersion(Aws::String&& value) { SetFunctionVersion(std::move(value)); return *this;}
 
     /**
      * <p>Function version to which the alias points.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>Alias description.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Alias description.</p>
@@ -198,7 +199,7 @@ namespace Model
     /**
      * <p>Alias description.</p>
      */
-    inline AliasConfiguration& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline AliasConfiguration& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Alias description.</p>

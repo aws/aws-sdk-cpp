@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/ReplicationEndpointTypeValue.h>
 #include <aws/dms/model/DmsSslModeValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
      * or contain two consecutive hyphens.</p>
      */
-    inline void SetEndpointIdentifier(Aws::String&& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = value; }
+    inline void SetEndpointIdentifier(Aws::String&& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = std::move(value); }
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter; must
@@ -85,7 +86,7 @@ namespace Model
      * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
      * or contain two consecutive hyphens.</p>
      */
-    inline Endpoint& WithEndpointIdentifier(Aws::String&& value) { SetEndpointIdentifier(value); return *this;}
+    inline Endpoint& WithEndpointIdentifier(Aws::String&& value) { SetEndpointIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter; must
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The type of endpoint.</p>
      */
-    inline void SetEndpointType(ReplicationEndpointTypeValue&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
+    inline void SetEndpointType(ReplicationEndpointTypeValue&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
     /**
      * <p>The type of endpoint.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>The type of endpoint.</p>
      */
-    inline Endpoint& WithEndpointType(ReplicationEndpointTypeValue&& value) { SetEndpointType(value); return *this;}
+    inline Endpoint& WithEndpointType(ReplicationEndpointTypeValue&& value) { SetEndpointType(std::move(value)); return *this;}
 
     /**
      * <p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES,
@@ -135,7 +136,7 @@ namespace Model
      * <p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES,
      * MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
      */
-    inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
+    inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
      * <p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES,
@@ -153,7 +154,7 @@ namespace Model
      * <p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES,
      * MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
      */
-    inline Endpoint& WithEngineName(Aws::String&& value) { SetEngineName(value); return *this;}
+    inline Endpoint& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
      * <p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES,
@@ -174,7 +175,7 @@ namespace Model
     /**
      * <p>The user name used to connect to the endpoint.</p>
      */
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
+    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
      * <p>The user name used to connect to the endpoint.</p>
@@ -189,7 +190,7 @@ namespace Model
     /**
      * <p>The user name used to connect to the endpoint.</p>
      */
-    inline Endpoint& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
+    inline Endpoint& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
      * <p>The user name used to connect to the endpoint.</p>
@@ -209,7 +210,7 @@ namespace Model
     /**
      * <p>The name of the server at the endpoint.</p>
      */
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
+    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
 
     /**
      * <p>The name of the server at the endpoint.</p>
@@ -224,7 +225,7 @@ namespace Model
     /**
      * <p>The name of the server at the endpoint.</p>
      */
-    inline Endpoint& WithServerName(Aws::String&& value) { SetServerName(value); return *this;}
+    inline Endpoint& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the server at the endpoint.</p>
@@ -259,7 +260,7 @@ namespace Model
     /**
      * <p>The name of the database at the endpoint.</p>
      */
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
+    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
      * <p>The name of the database at the endpoint.</p>
@@ -274,7 +275,7 @@ namespace Model
     /**
      * <p>The name of the database at the endpoint.</p>
      */
-    inline Endpoint& WithDatabaseName(Aws::String&& value) { SetDatabaseName(value); return *this;}
+    inline Endpoint& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the database at the endpoint.</p>
@@ -294,7 +295,7 @@ namespace Model
     /**
      * <p>Additional connection attributes used to connect to the endpoint.</p>
      */
-    inline void SetExtraConnectionAttributes(Aws::String&& value) { m_extraConnectionAttributesHasBeenSet = true; m_extraConnectionAttributes = value; }
+    inline void SetExtraConnectionAttributes(Aws::String&& value) { m_extraConnectionAttributesHasBeenSet = true; m_extraConnectionAttributes = std::move(value); }
 
     /**
      * <p>Additional connection attributes used to connect to the endpoint.</p>
@@ -309,7 +310,7 @@ namespace Model
     /**
      * <p>Additional connection attributes used to connect to the endpoint.</p>
      */
-    inline Endpoint& WithExtraConnectionAttributes(Aws::String&& value) { SetExtraConnectionAttributes(value); return *this;}
+    inline Endpoint& WithExtraConnectionAttributes(Aws::String&& value) { SetExtraConnectionAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Additional connection attributes used to connect to the endpoint.</p>
@@ -329,7 +330,7 @@ namespace Model
     /**
      * <p>The status of the endpoint.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the endpoint.</p>
@@ -344,7 +345,7 @@ namespace Model
     /**
      * <p>The status of the endpoint.</p>
      */
-    inline Endpoint& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline Endpoint& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the endpoint.</p>
@@ -376,7 +377,7 @@ namespace Model
      * key for your AWS account. Your AWS account has a different default encryption
      * key for each AWS region.</p>
      */
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The KMS key identifier that will be used to encrypt the connection
@@ -403,7 +404,7 @@ namespace Model
      * key for your AWS account. Your AWS account has a different default encryption
      * key for each AWS region.</p>
      */
-    inline Endpoint& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
+    inline Endpoint& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The KMS key identifier that will be used to encrypt the connection
@@ -430,7 +431,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
      * endpoint.</p>
      */
-    inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
+    inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
@@ -448,7 +449,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
      * endpoint.</p>
      */
-    inline Endpoint& WithEndpointArn(Aws::String&& value) { SetEndpointArn(value); return *this;}
+    inline Endpoint& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
@@ -469,7 +470,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
      */
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
@@ -484,7 +485,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
      */
-    inline Endpoint& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
+    inline Endpoint& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
@@ -510,7 +511,7 @@ namespace Model
      * four values: none, require, verify-ca, verify-full. </p> <p>The default value is
      * none.</p>
      */
-    inline void SetSslMode(DmsSslModeValue&& value) { m_sslModeHasBeenSet = true; m_sslMode = value; }
+    inline void SetSslMode(DmsSslModeValue&& value) { m_sslModeHasBeenSet = true; m_sslMode = std::move(value); }
 
     /**
      * <p>The SSL mode used to connect to the endpoint.</p> <p>SSL mode can be one of
@@ -524,7 +525,7 @@ namespace Model
      * four values: none, require, verify-ca, verify-full. </p> <p>The default value is
      * none.</p>
      */
-    inline Endpoint& WithSslMode(DmsSslModeValue&& value) { SetSslMode(value); return *this;}
+    inline Endpoint& WithSslMode(DmsSslModeValue&& value) { SetSslMode(std::move(value)); return *this;}
 
   private:
     Aws::String m_endpointIdentifier;

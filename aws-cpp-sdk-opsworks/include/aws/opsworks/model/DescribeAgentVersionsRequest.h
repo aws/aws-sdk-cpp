@@ -17,6 +17,7 @@
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opsworks/model/StackConfigurationManager.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
      * <p>The stack ID.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
-    inline DescribeAgentVersionsRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline DescribeAgentVersionsRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>The stack ID.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The configuration manager.</p>
      */
-    inline void SetConfigurationManager(StackConfigurationManager&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = value; }
+    inline void SetConfigurationManager(StackConfigurationManager&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = std::move(value); }
 
     /**
      * <p>The configuration manager.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The configuration manager.</p>
      */
-    inline DescribeAgentVersionsRequest& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(value); return *this;}
+    inline DescribeAgentVersionsRequest& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(std::move(value)); return *this;}
 
   private:
     Aws::String m_stackId;

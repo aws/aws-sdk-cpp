@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/Snapshot.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Information about the snapshots.</p>
      */
-    inline void SetSnapshots(Aws::Vector<Snapshot>&& value) { m_snapshots = value; }
+    inline void SetSnapshots(Aws::Vector<Snapshot>&& value) { m_snapshots = std::move(value); }
 
     /**
      * <p>Information about the snapshots.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Information about the snapshots.</p>
      */
-    inline DescribeSnapshotsResponse& WithSnapshots(Aws::Vector<Snapshot>&& value) { SetSnapshots(value); return *this;}
+    inline DescribeSnapshotsResponse& WithSnapshots(Aws::Vector<Snapshot>&& value) { SetSnapshots(std::move(value)); return *this;}
 
     /**
      * <p>Information about the snapshots.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>Information about the snapshots.</p>
      */
-    inline DescribeSnapshotsResponse& AddSnapshots(Snapshot&& value) { m_snapshots.push_back(value); return *this; }
+    inline DescribeSnapshotsResponse& AddSnapshots(Snapshot&& value) { m_snapshots.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The <code>NextToken</code> value to include in a future
@@ -107,7 +108,7 @@ namespace Model
      * value can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>NextToken</code> value to include in a future
@@ -134,7 +135,7 @@ namespace Model
      * value can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline DescribeSnapshotsResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeSnapshotsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>NextToken</code> value to include in a future
@@ -152,13 +153,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeSnapshotsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeSnapshotsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeSnapshotsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Snapshot> m_snapshots;

@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/SigningCertificate.h>
 #include <aws/iam/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Information about the certificate.</p>
      */
-    inline void SetCertificate(SigningCertificate&& value) { m_certificate = value; }
+    inline void SetCertificate(SigningCertificate&& value) { m_certificate = std::move(value); }
 
     /**
      * <p>Information about the certificate.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Information about the certificate.</p>
      */
-    inline UploadSigningCertificateResult& WithCertificate(SigningCertificate&& value) { SetCertificate(value); return *this;}
+    inline UploadSigningCertificateResult& WithCertificate(SigningCertificate&& value) { SetCertificate(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -78,13 +79,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline UploadSigningCertificateResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline UploadSigningCertificateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline UploadSigningCertificateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     SigningCertificate m_certificate;

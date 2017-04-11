@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The identifier of the schema extension that will be applied.</p>
      */
-    inline void SetSchemaExtensionId(Aws::String&& value) { m_schemaExtensionId = value; }
+    inline void SetSchemaExtensionId(Aws::String&& value) { m_schemaExtensionId = std::move(value); }
 
     /**
      * <p>The identifier of the schema extension that will be applied.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The identifier of the schema extension that will be applied.</p>
      */
-    inline StartSchemaExtensionResult& WithSchemaExtensionId(Aws::String&& value) { SetSchemaExtensionId(value); return *this;}
+    inline StartSchemaExtensionResult& WithSchemaExtensionId(Aws::String&& value) { SetSchemaExtensionId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the schema extension that will be applied.</p>

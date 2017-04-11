@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/FacetAttribute.h>
 #include <aws/clouddirectory/model/UpdateActionType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The attribute to update.</p>
      */
-    inline void SetAttribute(FacetAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline void SetAttribute(FacetAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
      * <p>The attribute to update.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The attribute to update.</p>
      */
-    inline FacetAttributeUpdate& WithAttribute(FacetAttribute&& value) { SetAttribute(value); return *this;}
+    inline FacetAttributeUpdate& WithAttribute(FacetAttribute&& value) { SetAttribute(std::move(value)); return *this;}
 
     /**
      * <p>The action to perform when updating the attribute.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The action to perform when updating the attribute.</p>
      */
-    inline void SetAction(UpdateActionType&& value) { m_actionHasBeenSet = true; m_action = value; }
+    inline void SetAction(UpdateActionType&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>The action to perform when updating the attribute.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The action to perform when updating the attribute.</p>
      */
-    inline FacetAttributeUpdate& WithAction(UpdateActionType&& value) { SetAction(value); return *this;}
+    inline FacetAttributeUpdate& WithAction(UpdateActionType&& value) { SetAction(std::move(value)); return *this;}
 
   private:
     FacetAttribute m_attribute;

@@ -23,6 +23,7 @@
 #include <aws/opsworks/model/LifecycleEventConfiguration.h>
 #include <aws/opsworks/model/LayerAttributesKeys.h>
 #include <aws/opsworks/model/VolumeConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The layer stack ID.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
      * <p>The layer stack ID.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The layer stack ID.</p>
      */
-    inline CreateLayerRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline CreateLayerRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>The layer stack ID.</p>
@@ -96,7 +97,7 @@ namespace Model
      * type. It can have any number of custom layers. Built-in layers are not available
      * in Chef 12 stacks.</p>
      */
-    inline void SetType(LayerType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(LayerType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The layer type. A stack cannot have more than one built-in layer of the same
@@ -110,7 +111,7 @@ namespace Model
      * type. It can have any number of custom layers. Built-in layers are not available
      * in Chef 12 stacks.</p>
      */
-    inline CreateLayerRequest& WithType(LayerType&& value) { SetType(value); return *this;}
+    inline CreateLayerRequest& WithType(LayerType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The layer name, which is used by the console.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>The layer name, which is used by the console.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The layer name, which is used by the console.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The layer name, which is used by the console.</p>
      */
-    inline CreateLayerRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateLayerRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The layer name, which is used by the console.</p>
@@ -181,7 +182,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a>.</p>
      */
-    inline void SetShortname(Aws::String&& value) { m_shortnameHasBeenSet = true; m_shortname = value; }
+    inline void SetShortname(Aws::String&& value) { m_shortnameHasBeenSet = true; m_shortname = std::move(value); }
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
@@ -217,7 +218,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a>.</p>
      */
-    inline CreateLayerRequest& WithShortname(Aws::String&& value) { SetShortname(value); return *this;}
+    inline CreateLayerRequest& WithShortname(Aws::String&& value) { SetShortname(std::move(value)); return *this;}
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
@@ -250,7 +251,7 @@ namespace Model
      * attributes.</p> <p>To create a cluster layer, set the <code>EcsClusterArn</code>
      * attribute to the cluster's ARN.</p>
      */
-    inline void SetAttributes(Aws::Map<LayerAttributesKeys, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Map<LayerAttributesKeys, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>One or more user-defined key-value pairs to be added to the stack
@@ -264,49 +265,49 @@ namespace Model
      * attributes.</p> <p>To create a cluster layer, set the <code>EcsClusterArn</code>
      * attribute to the cluster's ARN.</p>
      */
-    inline CreateLayerRequest& WithAttributes(Aws::Map<LayerAttributesKeys, Aws::String>&& value) { SetAttributes(value); return *this;}
+    inline CreateLayerRequest& WithAttributes(Aws::Map<LayerAttributesKeys, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>One or more user-defined key-value pairs to be added to the stack
      * attributes.</p> <p>To create a cluster layer, set the <code>EcsClusterArn</code>
      * attribute to the cluster's ARN.</p>
      */
-    inline CreateLayerRequest& AddAttributes(const LayerAttributesKeys& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CreateLayerRequest& AddAttributes(const LayerAttributesKeys& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>One or more user-defined key-value pairs to be added to the stack
      * attributes.</p> <p>To create a cluster layer, set the <code>EcsClusterArn</code>
      * attribute to the cluster's ARN.</p>
      */
-    inline CreateLayerRequest& AddAttributes(LayerAttributesKeys&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CreateLayerRequest& AddAttributes(LayerAttributesKeys&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>One or more user-defined key-value pairs to be added to the stack
      * attributes.</p> <p>To create a cluster layer, set the <code>EcsClusterArn</code>
      * attribute to the cluster's ARN.</p>
      */
-    inline CreateLayerRequest& AddAttributes(const LayerAttributesKeys& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CreateLayerRequest& AddAttributes(const LayerAttributesKeys& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>One or more user-defined key-value pairs to be added to the stack
      * attributes.</p> <p>To create a cluster layer, set the <code>EcsClusterArn</code>
      * attribute to the cluster's ARN.</p>
      */
-    inline CreateLayerRequest& AddAttributes(LayerAttributesKeys&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CreateLayerRequest& AddAttributes(LayerAttributesKeys&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>One or more user-defined key-value pairs to be added to the stack
      * attributes.</p> <p>To create a cluster layer, set the <code>EcsClusterArn</code>
      * attribute to the cluster's ARN.</p>
      */
-    inline CreateLayerRequest& AddAttributes(LayerAttributesKeys&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CreateLayerRequest& AddAttributes(LayerAttributesKeys&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>One or more user-defined key-value pairs to be added to the stack
      * attributes.</p> <p>To create a cluster layer, set the <code>EcsClusterArn</code>
      * attribute to the cluster's ARN.</p>
      */
-    inline CreateLayerRequest& AddAttributes(const LayerAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CreateLayerRequest& AddAttributes(const LayerAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more
@@ -330,7 +331,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
-    inline void SetCustomInstanceProfileArn(Aws::String&& value) { m_customInstanceProfileArnHasBeenSet = true; m_customInstanceProfileArn = value; }
+    inline void SetCustomInstanceProfileArn(Aws::String&& value) { m_customInstanceProfileArnHasBeenSet = true; m_customInstanceProfileArn = std::move(value); }
 
     /**
      * <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more
@@ -354,7 +355,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
-    inline CreateLayerRequest& WithCustomInstanceProfileArn(Aws::String&& value) { SetCustomInstanceProfileArn(value); return *this;}
+    inline CreateLayerRequest& WithCustomInstanceProfileArn(Aws::String&& value) { SetCustomInstanceProfileArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more
@@ -392,7 +393,7 @@ namespace Model
      * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
      * CLI. </p>
      */
-    inline void SetCustomJson(Aws::String&& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
+    inline void SetCustomJson(Aws::String&& value) { m_customJsonHasBeenSet = true; m_customJson = std::move(value); }
 
     /**
      * <p>A JSON-formatted string containing custom stack configuration and deployment
@@ -422,7 +423,7 @@ namespace Model
      * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
      * CLI. </p>
      */
-    inline CreateLayerRequest& WithCustomJson(Aws::String&& value) { SetCustomJson(value); return *this;}
+    inline CreateLayerRequest& WithCustomJson(Aws::String&& value) { SetCustomJson(std::move(value)); return *this;}
 
     /**
      * <p>A JSON-formatted string containing custom stack configuration and deployment
@@ -447,7 +448,7 @@ namespace Model
     /**
      * <p>An array containing the layer custom security group IDs.</p>
      */
-    inline void SetCustomSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_customSecurityGroupIdsHasBeenSet = true; m_customSecurityGroupIds = value; }
+    inline void SetCustomSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_customSecurityGroupIdsHasBeenSet = true; m_customSecurityGroupIds = std::move(value); }
 
     /**
      * <p>An array containing the layer custom security group IDs.</p>
@@ -457,7 +458,7 @@ namespace Model
     /**
      * <p>An array containing the layer custom security group IDs.</p>
      */
-    inline CreateLayerRequest& WithCustomSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetCustomSecurityGroupIds(value); return *this;}
+    inline CreateLayerRequest& WithCustomSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetCustomSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>An array containing the layer custom security group IDs.</p>
@@ -467,7 +468,7 @@ namespace Model
     /**
      * <p>An array containing the layer custom security group IDs.</p>
      */
-    inline CreateLayerRequest& AddCustomSecurityGroupIds(Aws::String&& value) { m_customSecurityGroupIdsHasBeenSet = true; m_customSecurityGroupIds.push_back(value); return *this; }
+    inline CreateLayerRequest& AddCustomSecurityGroupIds(Aws::String&& value) { m_customSecurityGroupIdsHasBeenSet = true; m_customSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array containing the layer custom security group IDs.</p>
@@ -490,7 +491,7 @@ namespace Model
      * <p>An array of <code>Package</code> objects that describes the layer
      * packages.</p>
      */
-    inline void SetPackages(Aws::Vector<Aws::String>&& value) { m_packagesHasBeenSet = true; m_packages = value; }
+    inline void SetPackages(Aws::Vector<Aws::String>&& value) { m_packagesHasBeenSet = true; m_packages = std::move(value); }
 
     /**
      * <p>An array of <code>Package</code> objects that describes the layer
@@ -502,7 +503,7 @@ namespace Model
      * <p>An array of <code>Package</code> objects that describes the layer
      * packages.</p>
      */
-    inline CreateLayerRequest& WithPackages(Aws::Vector<Aws::String>&& value) { SetPackages(value); return *this;}
+    inline CreateLayerRequest& WithPackages(Aws::Vector<Aws::String>&& value) { SetPackages(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>Package</code> objects that describes the layer
@@ -514,7 +515,7 @@ namespace Model
      * <p>An array of <code>Package</code> objects that describes the layer
      * packages.</p>
      */
-    inline CreateLayerRequest& AddPackages(Aws::String&& value) { m_packagesHasBeenSet = true; m_packages.push_back(value); return *this; }
+    inline CreateLayerRequest& AddPackages(Aws::String&& value) { m_packagesHasBeenSet = true; m_packages.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of <code>Package</code> objects that describes the layer
@@ -538,7 +539,7 @@ namespace Model
      * <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon
      * EBS volumes.</p>
      */
-    inline void SetVolumeConfigurations(Aws::Vector<VolumeConfiguration>&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = value; }
+    inline void SetVolumeConfigurations(Aws::Vector<VolumeConfiguration>&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = std::move(value); }
 
     /**
      * <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon
@@ -550,7 +551,7 @@ namespace Model
      * <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon
      * EBS volumes.</p>
      */
-    inline CreateLayerRequest& WithVolumeConfigurations(Aws::Vector<VolumeConfiguration>&& value) { SetVolumeConfigurations(value); return *this;}
+    inline CreateLayerRequest& WithVolumeConfigurations(Aws::Vector<VolumeConfiguration>&& value) { SetVolumeConfigurations(std::move(value)); return *this;}
 
     /**
      * <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon
@@ -562,7 +563,7 @@ namespace Model
      * <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon
      * EBS volumes.</p>
      */
-    inline CreateLayerRequest& AddVolumeConfigurations(VolumeConfiguration&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(value); return *this; }
+    inline CreateLayerRequest& AddVolumeConfigurations(VolumeConfiguration&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Whether to disable auto healing for the layer.</p>
@@ -646,7 +647,7 @@ namespace Model
      * <p>A <code>LayerCustomRecipes</code> object that specifies the layer custom
      * recipes.</p>
      */
-    inline void SetCustomRecipes(Recipes&& value) { m_customRecipesHasBeenSet = true; m_customRecipes = value; }
+    inline void SetCustomRecipes(Recipes&& value) { m_customRecipesHasBeenSet = true; m_customRecipes = std::move(value); }
 
     /**
      * <p>A <code>LayerCustomRecipes</code> object that specifies the layer custom
@@ -658,7 +659,7 @@ namespace Model
      * <p>A <code>LayerCustomRecipes</code> object that specifies the layer custom
      * recipes.</p>
      */
-    inline CreateLayerRequest& WithCustomRecipes(Recipes&& value) { SetCustomRecipes(value); return *this;}
+    inline CreateLayerRequest& WithCustomRecipes(Recipes&& value) { SetCustomRecipes(std::move(value)); return *this;}
 
     /**
      * <p>Whether to install operating system and package updates when the instance
@@ -733,7 +734,7 @@ namespace Model
      * configure the Shutdown event to specify an execution timeout and enable or
      * disable Elastic Load Balancer connection draining.</p>
      */
-    inline void SetLifecycleEventConfiguration(LifecycleEventConfiguration&& value) { m_lifecycleEventConfigurationHasBeenSet = true; m_lifecycleEventConfiguration = value; }
+    inline void SetLifecycleEventConfiguration(LifecycleEventConfiguration&& value) { m_lifecycleEventConfigurationHasBeenSet = true; m_lifecycleEventConfiguration = std::move(value); }
 
     /**
      * <p>A <code>LifeCycleEventConfiguration</code> object that you can use to
@@ -747,7 +748,7 @@ namespace Model
      * configure the Shutdown event to specify an execution timeout and enable or
      * disable Elastic Load Balancer connection draining.</p>
      */
-    inline CreateLayerRequest& WithLifecycleEventConfiguration(LifecycleEventConfiguration&& value) { SetLifecycleEventConfiguration(value); return *this;}
+    inline CreateLayerRequest& WithLifecycleEventConfiguration(LifecycleEventConfiguration&& value) { SetLifecycleEventConfiguration(std::move(value)); return *this;}
 
   private:
     Aws::String m_stackId;

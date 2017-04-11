@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
+    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
@@ -60,7 +61,7 @@ namespace Model
     inline RedshiftDatabase& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     
-    inline RedshiftDatabase& WithDatabaseName(Aws::String&& value) { SetDatabaseName(value); return *this;}
+    inline RedshiftDatabase& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     
     inline RedshiftDatabase& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
@@ -72,7 +73,7 @@ namespace Model
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
@@ -81,7 +82,7 @@ namespace Model
     inline RedshiftDatabase& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
 
     
-    inline RedshiftDatabase& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
+    inline RedshiftDatabase& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     
     inline RedshiftDatabase& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}

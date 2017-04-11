@@ -19,6 +19,7 @@
 #include <aws/ec2/model/RuleAction.h>
 #include <aws/ec2/model/IcmpTypeCode.h>
 #include <aws/ec2/model/PortRange.h>
+#include <utility>
 
 namespace Aws
 {
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>The ID of the ACL.</p>
      */
-    inline void SetNetworkAclId(Aws::String&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = value; }
+    inline void SetNetworkAclId(Aws::String&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = std::move(value); }
 
     /**
      * <p>The ID of the ACL.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The ID of the ACL.</p>
      */
-    inline ReplaceNetworkAclEntryRequest& WithNetworkAclId(Aws::String&& value) { SetNetworkAclId(value); return *this;}
+    inline ReplaceNetworkAclEntryRequest& WithNetworkAclId(Aws::String&& value) { SetNetworkAclId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the ACL.</p>
@@ -152,7 +153,7 @@ namespace Model
      * that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify
      * an IPv6 CIDR block, you must specify an ICMP type and code.</p>
      */
-    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean
@@ -188,7 +189,7 @@ namespace Model
      * that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify
      * an IPv6 CIDR block, you must specify an ICMP type and code.</p>
      */
-    inline ReplaceNetworkAclEntryRequest& WithProtocol(Aws::String&& value) { SetProtocol(value); return *this;}
+    inline ReplaceNetworkAclEntryRequest& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
      * <p>The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean
@@ -215,7 +216,7 @@ namespace Model
     /**
      * <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
      */
-    inline void SetRuleAction(RuleAction&& value) { m_ruleActionHasBeenSet = true; m_ruleAction = value; }
+    inline void SetRuleAction(RuleAction&& value) { m_ruleActionHasBeenSet = true; m_ruleAction = std::move(value); }
 
     /**
      * <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
@@ -225,7 +226,7 @@ namespace Model
     /**
      * <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
      */
-    inline ReplaceNetworkAclEntryRequest& WithRuleAction(RuleAction&& value) { SetRuleAction(value); return *this;}
+    inline ReplaceNetworkAclEntryRequest& WithRuleAction(RuleAction&& value) { SetRuleAction(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether to replace the egress rule.</p> <p>Default: If no value is
@@ -261,7 +262,7 @@ namespace Model
      * <p>The IPv4 network range to allow or deny, in CIDR notation (for example
      * <code>172.16.0.0/24</code>).</p>
      */
-    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
+    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
 
     /**
      * <p>The IPv4 network range to allow or deny, in CIDR notation (for example
@@ -279,7 +280,7 @@ namespace Model
      * <p>The IPv4 network range to allow or deny, in CIDR notation (for example
      * <code>172.16.0.0/24</code>).</p>
      */
-    inline ReplaceNetworkAclEntryRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(value); return *this;}
+    inline ReplaceNetworkAclEntryRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The IPv4 network range to allow or deny, in CIDR notation (for example
@@ -303,7 +304,7 @@ namespace Model
      * <p>The IPv6 network range to allow or deny, in CIDR notation (for example
      * <code>2001:bd8:1234:1a00::/64</code>).</p>
      */
-    inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
+    inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = std::move(value); }
 
     /**
      * <p>The IPv6 network range to allow or deny, in CIDR notation (for example
@@ -321,7 +322,7 @@ namespace Model
      * <p>The IPv6 network range to allow or deny, in CIDR notation (for example
      * <code>2001:bd8:1234:1a00::/64</code>).</p>
      */
-    inline ReplaceNetworkAclEntryRequest& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(value); return *this;}
+    inline ReplaceNetworkAclEntryRequest& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The IPv6 network range to allow or deny, in CIDR notation (for example
@@ -345,7 +346,7 @@ namespace Model
      * <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying the
      * ICMP (1) protocol, or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
      */
-    inline void SetIcmpTypeCode(IcmpTypeCode&& value) { m_icmpTypeCodeHasBeenSet = true; m_icmpTypeCode = value; }
+    inline void SetIcmpTypeCode(IcmpTypeCode&& value) { m_icmpTypeCodeHasBeenSet = true; m_icmpTypeCode = std::move(value); }
 
     /**
      * <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying the
@@ -357,7 +358,7 @@ namespace Model
      * <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying the
      * ICMP (1) protocol, or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
      */
-    inline ReplaceNetworkAclEntryRequest& WithIcmpTypeCode(IcmpTypeCode&& value) { SetIcmpTypeCode(value); return *this;}
+    inline ReplaceNetworkAclEntryRequest& WithIcmpTypeCode(IcmpTypeCode&& value) { SetIcmpTypeCode(std::move(value)); return *this;}
 
     /**
      * <p>TCP or UDP protocols: The range of ports the rule applies to. Required if
@@ -375,7 +376,7 @@ namespace Model
      * <p>TCP or UDP protocols: The range of ports the rule applies to. Required if
      * specifying TCP (6) or UDP (17) for the protocol.</p>
      */
-    inline void SetPortRange(PortRange&& value) { m_portRangeHasBeenSet = true; m_portRange = value; }
+    inline void SetPortRange(PortRange&& value) { m_portRangeHasBeenSet = true; m_portRange = std::move(value); }
 
     /**
      * <p>TCP or UDP protocols: The range of ports the rule applies to. Required if
@@ -387,7 +388,7 @@ namespace Model
      * <p>TCP or UDP protocols: The range of ports the rule applies to. Required if
      * specifying TCP (6) or UDP (17) for the protocol.</p>
      */
-    inline ReplaceNetworkAclEntryRequest& WithPortRange(PortRange&& value) { SetPortRange(value); return *this;}
+    inline ReplaceNetworkAclEntryRequest& WithPortRange(PortRange&& value) { SetPortRange(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>Must be the identifier for a valid automated snapshot whose state is
      * <code>available</code>.</p> </li> </ul>
      */
-    inline void SetSourceSnapshotIdentifier(Aws::String&& value) { m_sourceSnapshotIdentifierHasBeenSet = true; m_sourceSnapshotIdentifier = value; }
+    inline void SetSourceSnapshotIdentifier(Aws::String&& value) { m_sourceSnapshotIdentifierHasBeenSet = true; m_sourceSnapshotIdentifier = std::move(value); }
 
     /**
      * <p>The identifier for the source snapshot.</p> <p>Constraints:</p> <ul> <li>
@@ -80,7 +81,7 @@ namespace Model
      * <p>Must be the identifier for a valid automated snapshot whose state is
      * <code>available</code>.</p> </li> </ul>
      */
-    inline CopyClusterSnapshotRequest& WithSourceSnapshotIdentifier(Aws::String&& value) { SetSourceSnapshotIdentifier(value); return *this;}
+    inline CopyClusterSnapshotRequest& WithSourceSnapshotIdentifier(Aws::String&& value) { SetSourceSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the source snapshot.</p> <p>Constraints:</p> <ul> <li>
@@ -114,7 +115,7 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p>
      * </li> </ul>
      */
-    inline void SetSourceSnapshotClusterIdentifier(Aws::String&& value) { m_sourceSnapshotClusterIdentifierHasBeenSet = true; m_sourceSnapshotClusterIdentifier = value; }
+    inline void SetSourceSnapshotClusterIdentifier(Aws::String&& value) { m_sourceSnapshotClusterIdentifierHasBeenSet = true; m_sourceSnapshotClusterIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the cluster the source snapshot was created from. This
@@ -141,7 +142,7 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p>
      * </li> </ul>
      */
-    inline CopyClusterSnapshotRequest& WithSourceSnapshotClusterIdentifier(Aws::String&& value) { SetSourceSnapshotClusterIdentifier(value); return *this;}
+    inline CopyClusterSnapshotRequest& WithSourceSnapshotClusterIdentifier(Aws::String&& value) { SetSourceSnapshotClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the cluster the source snapshot was created from. This
@@ -180,7 +181,7 @@ namespace Model
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for the AWS account that
      * is making the request.</p> </li> </ul>
      */
-    inline void SetTargetSnapshotIdentifier(Aws::String&& value) { m_targetSnapshotIdentifierHasBeenSet = true; m_targetSnapshotIdentifier = value; }
+    inline void SetTargetSnapshotIdentifier(Aws::String&& value) { m_targetSnapshotIdentifierHasBeenSet = true; m_targetSnapshotIdentifier = std::move(value); }
 
     /**
      * <p>The identifier given to the new manual snapshot.</p> <p>Constraints:</p> <ul>
@@ -210,7 +211,7 @@ namespace Model
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for the AWS account that
      * is making the request.</p> </li> </ul>
      */
-    inline CopyClusterSnapshotRequest& WithTargetSnapshotIdentifier(Aws::String&& value) { SetTargetSnapshotIdentifier(value); return *this;}
+    inline CopyClusterSnapshotRequest& WithTargetSnapshotIdentifier(Aws::String&& value) { SetTargetSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier given to the new manual snapshot.</p> <p>Constraints:</p> <ul>

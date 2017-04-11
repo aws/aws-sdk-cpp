@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/GeoRestriction.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,13 +53,13 @@ namespace Model
     inline void SetGeoRestriction(const GeoRestriction& value) { m_geoRestrictionHasBeenSet = true; m_geoRestriction = value; }
 
     
-    inline void SetGeoRestriction(GeoRestriction&& value) { m_geoRestrictionHasBeenSet = true; m_geoRestriction = value; }
+    inline void SetGeoRestriction(GeoRestriction&& value) { m_geoRestrictionHasBeenSet = true; m_geoRestriction = std::move(value); }
 
     
     inline Restrictions& WithGeoRestriction(const GeoRestriction& value) { SetGeoRestriction(value); return *this;}
 
     
-    inline Restrictions& WithGeoRestriction(GeoRestriction&& value) { SetGeoRestriction(value); return *this;}
+    inline Restrictions& WithGeoRestriction(GeoRestriction&& value) { SetGeoRestriction(std::move(value)); return *this;}
 
   private:
     GeoRestriction m_geoRestriction;

@@ -19,6 +19,7 @@
 #include <aws/ec2/model/VolumeType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/TagSpecification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The snapshot from which to create the volume.</p>
      */
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
+    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     /**
      * <p>The snapshot from which to create the volume.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>The snapshot from which to create the volume.</p>
      */
-    inline CreateVolumeRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(value); return *this;}
+    inline CreateVolumeRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
      * <p>The snapshot from which to create the volume.</p>
@@ -151,7 +152,7 @@ namespace Model
      * <a>DescribeAvailabilityZones</a> to list the Availability Zones that are
      * currently available to you.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone in which to create the volume. Use
@@ -172,7 +173,7 @@ namespace Model
      * <a>DescribeAvailabilityZones</a> to list the Availability Zones that are
      * currently available to you.</p>
      */
-    inline CreateVolumeRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline CreateVolumeRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone in which to create the volume. Use
@@ -203,7 +204,7 @@ namespace Model
      * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
      * Magnetic volumes.</p> <p>Default: <code>standard</code> </p>
      */
-    inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
+    inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
@@ -219,7 +220,7 @@ namespace Model
      * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
      * Magnetic volumes.</p> <p>Default: <code>standard</code> </p>
      */
-    inline CreateVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(value); return *this;}
+    inline CreateVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
     /**
      * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
@@ -318,7 +319,7 @@ namespace Model
      * If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must
      * also be set.</p>
      */
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key
@@ -357,7 +358,7 @@ namespace Model
      * If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must
      * also be set.</p>
      */
-    inline CreateVolumeRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
+    inline CreateVolumeRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key
@@ -385,7 +386,7 @@ namespace Model
     /**
      * <p>The tags to apply to the volume during creation.</p>
      */
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
      * <p>The tags to apply to the volume during creation.</p>
@@ -395,7 +396,7 @@ namespace Model
     /**
      * <p>The tags to apply to the volume during creation.</p>
      */
-    inline CreateVolumeRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(value); return *this;}
+    inline CreateVolumeRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
      * <p>The tags to apply to the volume during creation.</p>
@@ -405,7 +406,7 @@ namespace Model
     /**
      * <p>The tags to apply to the volume during creation.</p>
      */
-    inline CreateVolumeRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+    inline CreateVolumeRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

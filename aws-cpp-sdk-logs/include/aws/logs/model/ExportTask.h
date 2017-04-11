@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/model/ExportTaskStatus.h>
 #include <aws/logs/model/ExportTaskExecutionInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ID of the export task.</p>
      */
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
+    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
 
     /**
      * <p>The ID of the export task.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ID of the export task.</p>
      */
-    inline ExportTask& WithTaskId(Aws::String&& value) { SetTaskId(value); return *this;}
+    inline ExportTask& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the export task.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The name of the export task.</p>
      */
-    inline void SetTaskName(Aws::String&& value) { m_taskNameHasBeenSet = true; m_taskName = value; }
+    inline void SetTaskName(Aws::String&& value) { m_taskNameHasBeenSet = true; m_taskName = std::move(value); }
 
     /**
      * <p>The name of the export task.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The name of the export task.</p>
      */
-    inline ExportTask& WithTaskName(Aws::String&& value) { SetTaskName(value); return *this;}
+    inline ExportTask& WithTaskName(Aws::String&& value) { SetTaskName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the export task.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The name of the log group from which logs data was exported.</p>
      */
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
      * <p>The name of the log group from which logs data was exported.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The name of the log group from which logs data was exported.</p>
      */
-    inline ExportTask& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
+    inline ExportTask& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the log group from which logs data was exported.</p>
@@ -199,7 +200,7 @@ namespace Model
     /**
      * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
      */
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = value; }
+    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
      * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
@@ -214,7 +215,7 @@ namespace Model
     /**
      * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
      */
-    inline ExportTask& WithDestination(Aws::String&& value) { SetDestination(value); return *this;}
+    inline ExportTask& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
      * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
@@ -237,7 +238,7 @@ namespace Model
      * <p>The prefix that was used as the start of Amazon S3 key for every object
      * exported.</p>
      */
-    inline void SetDestinationPrefix(Aws::String&& value) { m_destinationPrefixHasBeenSet = true; m_destinationPrefix = value; }
+    inline void SetDestinationPrefix(Aws::String&& value) { m_destinationPrefixHasBeenSet = true; m_destinationPrefix = std::move(value); }
 
     /**
      * <p>The prefix that was used as the start of Amazon S3 key for every object
@@ -255,7 +256,7 @@ namespace Model
      * <p>The prefix that was used as the start of Amazon S3 key for every object
      * exported.</p>
      */
-    inline ExportTask& WithDestinationPrefix(Aws::String&& value) { SetDestinationPrefix(value); return *this;}
+    inline ExportTask& WithDestinationPrefix(Aws::String&& value) { SetDestinationPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The prefix that was used as the start of Amazon S3 key for every object
@@ -276,7 +277,7 @@ namespace Model
     /**
      * <p>The status of the export task.</p>
      */
-    inline void SetStatus(ExportTaskStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ExportTaskStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the export task.</p>
@@ -286,7 +287,7 @@ namespace Model
     /**
      * <p>The status of the export task.</p>
      */
-    inline ExportTask& WithStatus(ExportTaskStatus&& value) { SetStatus(value); return *this;}
+    inline ExportTask& WithStatus(ExportTaskStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Execution info about the export task.</p>
@@ -301,7 +302,7 @@ namespace Model
     /**
      * <p>Execution info about the export task.</p>
      */
-    inline void SetExecutionInfo(ExportTaskExecutionInfo&& value) { m_executionInfoHasBeenSet = true; m_executionInfo = value; }
+    inline void SetExecutionInfo(ExportTaskExecutionInfo&& value) { m_executionInfoHasBeenSet = true; m_executionInfo = std::move(value); }
 
     /**
      * <p>Execution info about the export task.</p>
@@ -311,7 +312,7 @@ namespace Model
     /**
      * <p>Execution info about the export task.</p>
      */
-    inline ExportTask& WithExecutionInfo(ExportTaskExecutionInfo&& value) { SetExecutionInfo(value); return *this;}
+    inline ExportTask& WithExecutionInfo(ExportTaskExecutionInfo&& value) { SetExecutionInfo(std::move(value)); return *this;}
 
   private:
     Aws::String m_taskId;

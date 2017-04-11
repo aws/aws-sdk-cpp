@@ -20,6 +20,7 @@
 #include <aws/batch/model/KeyValuePair.h>
 #include <aws/batch/model/MountPoint.h>
 #include <aws/batch/model/Ulimit.h>
+#include <utility>
 
 namespace Aws
 {
@@ -122,7 +123,7 @@ namespace Model
      * <p>Images in other online repositories are qualified further by a domain name
      * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
-    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = value; }
+    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
@@ -197,7 +198,7 @@ namespace Model
      * <p>Images in other online repositories are qualified further by a domain name
      * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
-    inline ContainerProperties& WithImage(Aws::String&& value) { SetImage(value); return *this;}
+    inline ContainerProperties& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
@@ -333,7 +334,7 @@ namespace Model
      * information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
      */
-    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = value; }
+    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
 
     /**
      * <p>The command that is passed to the container. This parameter maps to
@@ -359,7 +360,7 @@ namespace Model
      * information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
      */
-    inline ContainerProperties& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(value); return *this;}
+    inline ContainerProperties& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
 
     /**
      * <p>The command that is passed to the container. This parameter maps to
@@ -385,7 +386,7 @@ namespace Model
      * information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
      */
-    inline ContainerProperties& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
+    inline ContainerProperties& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The command that is passed to the container. This parameter maps to
@@ -416,7 +417,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
      * for AWS permissions.</p>
      */
-    inline void SetJobRoleArn(Aws::String&& value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn = value; }
+    inline void SetJobRoleArn(Aws::String&& value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
@@ -434,7 +435,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
      * for AWS permissions.</p>
      */
-    inline ContainerProperties& WithJobRoleArn(Aws::String&& value) { SetJobRoleArn(value); return *this;}
+    inline ContainerProperties& WithJobRoleArn(Aws::String&& value) { SetJobRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
@@ -455,7 +456,7 @@ namespace Model
     /**
      * <p>A list of data volumes used in a job.</p>
      */
-    inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumesHasBeenSet = true; m_volumes = value; }
+    inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumesHasBeenSet = true; m_volumes = std::move(value); }
 
     /**
      * <p>A list of data volumes used in a job.</p>
@@ -465,7 +466,7 @@ namespace Model
     /**
      * <p>A list of data volumes used in a job.</p>
      */
-    inline ContainerProperties& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(value); return *this;}
+    inline ContainerProperties& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(std::move(value)); return *this;}
 
     /**
      * <p>A list of data volumes used in a job.</p>
@@ -475,7 +476,7 @@ namespace Model
     /**
      * <p>A list of data volumes used in a job.</p>
      */
-    inline ContainerProperties& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
+    inline ContainerProperties& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The environment variables to pass to a container. This parameter maps to
@@ -514,7 +515,7 @@ namespace Model
      * <important> <p>We do not recommend using plain text environment variables for
      * sensitive information, such as credential data.</p> </important>
      */
-    inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = value; }
+    inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
     /**
      * <p>The environment variables to pass to a container. This parameter maps to
@@ -540,7 +541,7 @@ namespace Model
      * <important> <p>We do not recommend using plain text environment variables for
      * sensitive information, such as credential data.</p> </important>
      */
-    inline ContainerProperties& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(value); return *this;}
+    inline ContainerProperties& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
      * <p>The environment variables to pass to a container. This parameter maps to
@@ -566,7 +567,7 @@ namespace Model
      * <important> <p>We do not recommend using plain text environment variables for
      * sensitive information, such as credential data.</p> </important>
      */
-    inline ContainerProperties& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
+    inline ContainerProperties& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The mount points for data volumes in your container. This parameter maps to
@@ -599,7 +600,7 @@ namespace Model
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline void SetMountPoints(Aws::Vector<MountPoint>&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = value; }
+    inline void SetMountPoints(Aws::Vector<MountPoint>&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = std::move(value); }
 
     /**
      * <p>The mount points for data volumes in your container. This parameter maps to
@@ -621,7 +622,7 @@ namespace Model
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline ContainerProperties& WithMountPoints(Aws::Vector<MountPoint>&& value) { SetMountPoints(value); return *this;}
+    inline ContainerProperties& WithMountPoints(Aws::Vector<MountPoint>&& value) { SetMountPoints(std::move(value)); return *this;}
 
     /**
      * <p>The mount points for data volumes in your container. This parameter maps to
@@ -643,7 +644,7 @@ namespace Model
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline ContainerProperties& AddMountPoints(MountPoint&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(value); return *this; }
+    inline ContainerProperties& AddMountPoints(MountPoint&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(std::move(value)); return *this; }
 
     /**
      * <p>When this parameter is true, the container is given read-only access to its
@@ -745,7 +746,7 @@ namespace Model
      * Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline void SetUlimits(Aws::Vector<Ulimit>&& value) { m_ulimitsHasBeenSet = true; m_ulimits = value; }
+    inline void SetUlimits(Aws::Vector<Ulimit>&& value) { m_ulimitsHasBeenSet = true; m_ulimits = std::move(value); }
 
     /**
      * <p>A list of <code>ulimits</code> to set in the container. This parameter maps
@@ -767,7 +768,7 @@ namespace Model
      * Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline ContainerProperties& WithUlimits(Aws::Vector<Ulimit>&& value) { SetUlimits(value); return *this;}
+    inline ContainerProperties& WithUlimits(Aws::Vector<Ulimit>&& value) { SetUlimits(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>ulimits</code> to set in the container. This parameter maps
@@ -789,7 +790,7 @@ namespace Model
      * Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline ContainerProperties& AddUlimits(Ulimit&& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(value); return *this; }
+    inline ContainerProperties& AddUlimits(Ulimit&& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The user name to use inside the container. This parameter maps to
@@ -822,7 +823,7 @@ namespace Model
      * Remote API</a> and the <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = value; }
+    inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
 
     /**
      * <p>The user name to use inside the container. This parameter maps to
@@ -855,7 +856,7 @@ namespace Model
      * Remote API</a> and the <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline ContainerProperties& WithUser(Aws::String&& value) { SetUser(value); return *this;}
+    inline ContainerProperties& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
 
     /**
      * <p>The user name to use inside the container. This parameter maps to

@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/model/AutoScalingPolicyDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>Specifies the ID of a cluster. The instance group to which the automatic
      * scaling policy is applied is within this cluster.</p>
      */
-    inline void SetClusterId(Aws::String&& value) { m_clusterId = value; }
+    inline void SetClusterId(Aws::String&& value) { m_clusterId = std::move(value); }
 
     /**
      * <p>Specifies the ID of a cluster. The instance group to which the automatic
@@ -74,7 +75,7 @@ namespace Model
      * <p>Specifies the ID of a cluster. The instance group to which the automatic
      * scaling policy is applied is within this cluster.</p>
      */
-    inline PutAutoScalingPolicyResult& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+    inline PutAutoScalingPolicyResult& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the ID of a cluster. The instance group to which the automatic
@@ -98,7 +99,7 @@ namespace Model
      * <p>Specifies the ID of the instance group to which the scaling policy is
      * applied.</p>
      */
-    inline void SetInstanceGroupId(Aws::String&& value) { m_instanceGroupId = value; }
+    inline void SetInstanceGroupId(Aws::String&& value) { m_instanceGroupId = std::move(value); }
 
     /**
      * <p>Specifies the ID of the instance group to which the scaling policy is
@@ -116,7 +117,7 @@ namespace Model
      * <p>Specifies the ID of the instance group to which the scaling policy is
      * applied.</p>
      */
-    inline PutAutoScalingPolicyResult& WithInstanceGroupId(Aws::String&& value) { SetInstanceGroupId(value); return *this;}
+    inline PutAutoScalingPolicyResult& WithInstanceGroupId(Aws::String&& value) { SetInstanceGroupId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the ID of the instance group to which the scaling policy is
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The automatic scaling policy definition.</p>
      */
-    inline void SetAutoScalingPolicy(AutoScalingPolicyDescription&& value) { m_autoScalingPolicy = value; }
+    inline void SetAutoScalingPolicy(AutoScalingPolicyDescription&& value) { m_autoScalingPolicy = std::move(value); }
 
     /**
      * <p>The automatic scaling policy definition.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The automatic scaling policy definition.</p>
      */
-    inline PutAutoScalingPolicyResult& WithAutoScalingPolicy(AutoScalingPolicyDescription&& value) { SetAutoScalingPolicy(value); return *this;}
+    inline PutAutoScalingPolicyResult& WithAutoScalingPolicy(AutoScalingPolicyDescription&& value) { SetAutoScalingPolicy(std::move(value)); return *this;}
 
   private:
     Aws::String m_clusterId;

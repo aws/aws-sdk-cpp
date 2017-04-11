@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>ARN of the destination Amazon Kinesis Firehose delivery stream to write
      * to.</p>
      */
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
+    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
 
     /**
      * <p>ARN of the destination Amazon Kinesis Firehose delivery stream to write
@@ -80,7 +81,7 @@ namespace Model
      * <p>ARN of the destination Amazon Kinesis Firehose delivery stream to write
      * to.</p>
      */
-    inline KinesisFirehoseOutput& WithResourceARN(Aws::String&& value) { SetResourceARN(value); return *this;}
+    inline KinesisFirehoseOutput& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
      * <p>ARN of the destination Amazon Kinesis Firehose delivery stream to write
@@ -107,7 +108,7 @@ namespace Model
      * destination stream on your behalf. You need to grant the necessary permissions
      * to this role.</p>
      */
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the
@@ -128,7 +129,7 @@ namespace Model
      * destination stream on your behalf. You need to grant the necessary permissions
      * to this role.</p>
      */
-    inline KinesisFirehoseOutput& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+    inline KinesisFirehoseOutput& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the

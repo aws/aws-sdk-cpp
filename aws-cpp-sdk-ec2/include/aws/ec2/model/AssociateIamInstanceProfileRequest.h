@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/model/IamInstanceProfileSpecification.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The IAM instance profile.</p>
      */
-    inline void SetIamInstanceProfile(IamInstanceProfileSpecification&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
+    inline void SetIamInstanceProfile(IamInstanceProfileSpecification&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
 
     /**
      * <p>The IAM instance profile.</p>
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The IAM instance profile.</p>
      */
-    inline AssociateIamInstanceProfileRequest& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(value); return *this;}
+    inline AssociateIamInstanceProfileRequest& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline AssociateIamInstanceProfileRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline AssociateIamInstanceProfileRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>

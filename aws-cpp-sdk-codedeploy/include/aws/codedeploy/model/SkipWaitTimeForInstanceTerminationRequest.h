@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The ID of the blue/green deployment for which you want to skip the instance
      * termination wait time.</p>
      */
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
+    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
      * <p>The ID of the blue/green deployment for which you want to skip the instance
@@ -69,7 +70,7 @@ namespace Model
      * <p>The ID of the blue/green deployment for which you want to skip the instance
      * termination wait time.</p>
      */
-    inline SkipWaitTimeForInstanceTerminationRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
+    inline SkipWaitTimeForInstanceTerminationRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the blue/green deployment for which you want to skip the instance

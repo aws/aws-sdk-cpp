@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/MaintenanceWindowFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window execution the task is part of.</p>
      */
-    inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = value; }
+    inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = std::move(value); }
 
     /**
      * <p>The ID of the Maintenance Window execution the task is part of.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window execution the task is part of.</p>
      */
-    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(value); return *this;}
+    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Maintenance Window execution the task is part of.</p>
@@ -88,7 +89,7 @@ namespace Model
      * <p>The ID of the specific task in the Maintenance Window task that should be
      * retrieved.</p>
      */
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
+    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
 
     /**
      * <p>The ID of the specific task in the Maintenance Window task that should be
@@ -106,7 +107,7 @@ namespace Model
      * <p>The ID of the specific task in the Maintenance Window task that should be
      * retrieved.</p>
      */
-    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithTaskId(Aws::String&& value) { SetTaskId(value); return *this;}
+    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the specific task in the Maintenance Window task that should be
@@ -133,7 +134,7 @@ namespace Model
      * supported filter key is STATUS with the corresponding values PENDING,
      * IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, and CANCELLED.</p>
      */
-    inline void SetFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Optional filters used to scope down the returned task invocations. The
@@ -147,7 +148,7 @@ namespace Model
      * supported filter key is STATUS with the corresponding values PENDING,
      * IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, and CANCELLED.</p>
      */
-    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { SetFilters(value); return *this;}
+    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Optional filters used to scope down the returned task invocations. The
@@ -161,7 +162,7 @@ namespace Model
      * supported filter key is STATUS with the corresponding values PENDING,
      * IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, and CANCELLED.</p>
      */
-    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& AddFilters(MaintenanceWindowFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& AddFilters(MaintenanceWindowFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
@@ -200,7 +201,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -218,7 +219,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

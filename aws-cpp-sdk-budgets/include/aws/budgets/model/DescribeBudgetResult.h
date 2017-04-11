@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/budgets/model/Budget.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,13 +52,13 @@ namespace Model
     inline void SetBudget(const Budget& value) { m_budget = value; }
 
     
-    inline void SetBudget(Budget&& value) { m_budget = value; }
+    inline void SetBudget(Budget&& value) { m_budget = std::move(value); }
 
     
     inline DescribeBudgetResult& WithBudget(const Budget& value) { SetBudget(value); return *this;}
 
     
-    inline DescribeBudgetResult& WithBudget(Budget&& value) { SetBudget(value); return *this;}
+    inline DescribeBudgetResult& WithBudget(Budget&& value) { SetBudget(std::move(value)); return *this;}
 
   private:
     Budget m_budget;

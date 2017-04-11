@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/storagegateway/model/NetworkInterface.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
 
     
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = value; }
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
 
     
     inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
@@ -62,7 +63,7 @@ namespace Model
     inline DescribeGatewayInformationResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     
-    inline DescribeGatewayInformationResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline DescribeGatewayInformationResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     
     inline DescribeGatewayInformationResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
@@ -86,7 +87,7 @@ namespace Model
      * becomes part of the gateway Amazon Resource Name (ARN), which you use as input
      * for other operations.</p>
      */
-    inline void SetGatewayId(Aws::String&& value) { m_gatewayId = value; }
+    inline void SetGatewayId(Aws::String&& value) { m_gatewayId = std::move(value); }
 
     /**
      * <p>The unique identifier assigned to your gateway during activation. This ID
@@ -107,7 +108,7 @@ namespace Model
      * becomes part of the gateway Amazon Resource Name (ARN), which you use as input
      * for other operations.</p>
      */
-    inline DescribeGatewayInformationResult& WithGatewayId(Aws::String&& value) { SetGatewayId(value); return *this;}
+    inline DescribeGatewayInformationResult& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier assigned to your gateway during activation. This ID
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The name you configured for your gateway.</p>
      */
-    inline void SetGatewayName(Aws::String&& value) { m_gatewayName = value; }
+    inline void SetGatewayName(Aws::String&& value) { m_gatewayName = std::move(value); }
 
     /**
      * <p>The name you configured for your gateway.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>The name you configured for your gateway.</p>
      */
-    inline DescribeGatewayInformationResult& WithGatewayName(Aws::String&& value) { SetGatewayName(value); return *this;}
+    inline DescribeGatewayInformationResult& WithGatewayName(Aws::String&& value) { SetGatewayName(std::move(value)); return *this;}
 
     /**
      * <p>The name you configured for your gateway.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>A value that indicates the time zone configured for the gateway.</p>
      */
-    inline void SetGatewayTimezone(Aws::String&& value) { m_gatewayTimezone = value; }
+    inline void SetGatewayTimezone(Aws::String&& value) { m_gatewayTimezone = std::move(value); }
 
     /**
      * <p>A value that indicates the time zone configured for the gateway.</p>
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p>A value that indicates the time zone configured for the gateway.</p>
      */
-    inline DescribeGatewayInformationResult& WithGatewayTimezone(Aws::String&& value) { SetGatewayTimezone(value); return *this;}
+    inline DescribeGatewayInformationResult& WithGatewayTimezone(Aws::String&& value) { SetGatewayTimezone(std::move(value)); return *this;}
 
     /**
      * <p>A value that indicates the time zone configured for the gateway.</p>
@@ -199,7 +200,7 @@ namespace Model
     /**
      * <p>A value that indicates the operating state of the gateway.</p>
      */
-    inline void SetGatewayState(Aws::String&& value) { m_gatewayState = value; }
+    inline void SetGatewayState(Aws::String&& value) { m_gatewayState = std::move(value); }
 
     /**
      * <p>A value that indicates the operating state of the gateway.</p>
@@ -214,7 +215,7 @@ namespace Model
     /**
      * <p>A value that indicates the operating state of the gateway.</p>
      */
-    inline DescribeGatewayInformationResult& WithGatewayState(Aws::String&& value) { SetGatewayState(value); return *this;}
+    inline DescribeGatewayInformationResult& WithGatewayState(Aws::String&& value) { SetGatewayState(std::move(value)); return *this;}
 
     /**
      * <p>A value that indicates the operating state of the gateway.</p>
@@ -237,7 +238,7 @@ namespace Model
      * <p>A <a>NetworkInterface</a> array that contains descriptions of the gateway
      * network interfaces.</p>
      */
-    inline void SetGatewayNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_gatewayNetworkInterfaces = value; }
+    inline void SetGatewayNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_gatewayNetworkInterfaces = std::move(value); }
 
     /**
      * <p>A <a>NetworkInterface</a> array that contains descriptions of the gateway
@@ -249,7 +250,7 @@ namespace Model
      * <p>A <a>NetworkInterface</a> array that contains descriptions of the gateway
      * network interfaces.</p>
      */
-    inline DescribeGatewayInformationResult& WithGatewayNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetGatewayNetworkInterfaces(value); return *this;}
+    inline DescribeGatewayInformationResult& WithGatewayNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetGatewayNetworkInterfaces(std::move(value)); return *this;}
 
     /**
      * <p>A <a>NetworkInterface</a> array that contains descriptions of the gateway
@@ -261,7 +262,7 @@ namespace Model
      * <p>A <a>NetworkInterface</a> array that contains descriptions of the gateway
      * network interfaces.</p>
      */
-    inline DescribeGatewayInformationResult& AddGatewayNetworkInterfaces(NetworkInterface&& value) { m_gatewayNetworkInterfaces.push_back(value); return *this; }
+    inline DescribeGatewayInformationResult& AddGatewayNetworkInterfaces(NetworkInterface&& value) { m_gatewayNetworkInterfaces.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The type of the gateway.</p>
@@ -276,7 +277,7 @@ namespace Model
     /**
      * <p>The type of the gateway.</p>
      */
-    inline void SetGatewayType(Aws::String&& value) { m_gatewayType = value; }
+    inline void SetGatewayType(Aws::String&& value) { m_gatewayType = std::move(value); }
 
     /**
      * <p>The type of the gateway.</p>
@@ -291,7 +292,7 @@ namespace Model
     /**
      * <p>The type of the gateway.</p>
      */
-    inline DescribeGatewayInformationResult& WithGatewayType(Aws::String&& value) { SetGatewayType(value); return *this;}
+    inline DescribeGatewayInformationResult& WithGatewayType(Aws::String&& value) { SetGatewayType(std::move(value)); return *this;}
 
     /**
      * <p>The type of the gateway.</p>
@@ -317,7 +318,7 @@ namespace Model
      * time zone of the gateway. If the gateway is not available for an update this
      * field is not returned in the response.</p>
      */
-    inline void SetNextUpdateAvailabilityDate(Aws::String&& value) { m_nextUpdateAvailabilityDate = value; }
+    inline void SetNextUpdateAvailabilityDate(Aws::String&& value) { m_nextUpdateAvailabilityDate = std::move(value); }
 
     /**
      * <p>The date on which an update to the gateway is available. This date is in the
@@ -338,7 +339,7 @@ namespace Model
      * time zone of the gateway. If the gateway is not available for an update this
      * field is not returned in the response.</p>
      */
-    inline DescribeGatewayInformationResult& WithNextUpdateAvailabilityDate(Aws::String&& value) { SetNextUpdateAvailabilityDate(value); return *this;}
+    inline DescribeGatewayInformationResult& WithNextUpdateAvailabilityDate(Aws::String&& value) { SetNextUpdateAvailabilityDate(std::move(value)); return *this;}
 
     /**
      * <p>The date on which an update to the gateway is available. This date is in the
@@ -366,7 +367,7 @@ namespace Model
      * gateway has never been updated, this field does not return a value in the
      * response.</p>
      */
-    inline void SetLastSoftwareUpdate(Aws::String&& value) { m_lastSoftwareUpdate = value; }
+    inline void SetLastSoftwareUpdate(Aws::String&& value) { m_lastSoftwareUpdate = std::move(value); }
 
     /**
      * <p>The date on which the last software update was applied to the gateway. If the
@@ -387,7 +388,7 @@ namespace Model
      * gateway has never been updated, this field does not return a value in the
      * response.</p>
      */
-    inline DescribeGatewayInformationResult& WithLastSoftwareUpdate(Aws::String&& value) { SetLastSoftwareUpdate(value); return *this;}
+    inline DescribeGatewayInformationResult& WithLastSoftwareUpdate(Aws::String&& value) { SetLastSoftwareUpdate(std::move(value)); return *this;}
 
     /**
      * <p>The date on which the last software update was applied to the gateway. If the

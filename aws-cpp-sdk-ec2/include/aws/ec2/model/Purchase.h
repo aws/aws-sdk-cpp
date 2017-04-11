@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/PaymentOption.h>
 #include <aws/ec2/model/CurrencyCodeValues.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The ID of the reservation.</p>
      */
-    inline void SetHostReservationId(Aws::String&& value) { m_hostReservationIdHasBeenSet = true; m_hostReservationId = value; }
+    inline void SetHostReservationId(Aws::String&& value) { m_hostReservationIdHasBeenSet = true; m_hostReservationId = std::move(value); }
 
     /**
      * <p>The ID of the reservation.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the reservation.</p>
      */
-    inline Purchase& WithHostReservationId(Aws::String&& value) { SetHostReservationId(value); return *this;}
+    inline Purchase& WithHostReservationId(Aws::String&& value) { SetHostReservationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the reservation.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
      */
-    inline void SetHostIdSet(Aws::Vector<Aws::String>&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet = value; }
+    inline void SetHostIdSet(Aws::Vector<Aws::String>&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet = std::move(value); }
 
     /**
      * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
      */
-    inline Purchase& WithHostIdSet(Aws::Vector<Aws::String>&& value) { SetHostIdSet(value); return *this;}
+    inline Purchase& WithHostIdSet(Aws::Vector<Aws::String>&& value) { SetHostIdSet(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
      */
-    inline Purchase& AddHostIdSet(Aws::String&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(value); return *this; }
+    inline Purchase& AddHostIdSet(Aws::String&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
@@ -140,7 +141,7 @@ namespace Model
      * <p>The instance family on the Dedicated Host that the reservation can be
      * associated with.</p>
      */
-    inline void SetInstanceFamily(Aws::String&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = value; }
+    inline void SetInstanceFamily(Aws::String&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = std::move(value); }
 
     /**
      * <p>The instance family on the Dedicated Host that the reservation can be
@@ -158,7 +159,7 @@ namespace Model
      * <p>The instance family on the Dedicated Host that the reservation can be
      * associated with.</p>
      */
-    inline Purchase& WithInstanceFamily(Aws::String&& value) { SetInstanceFamily(value); return *this;}
+    inline Purchase& WithInstanceFamily(Aws::String&& value) { SetInstanceFamily(std::move(value)); return *this;}
 
     /**
      * <p>The instance family on the Dedicated Host that the reservation can be
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p>The payment option for the reservation.</p>
      */
-    inline void SetPaymentOption(PaymentOption&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
+    inline void SetPaymentOption(PaymentOption&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::move(value); }
 
     /**
      * <p>The payment option for the reservation.</p>
@@ -189,7 +190,7 @@ namespace Model
     /**
      * <p>The payment option for the reservation.</p>
      */
-    inline Purchase& WithPaymentOption(PaymentOption&& value) { SetPaymentOption(value); return *this;}
+    inline Purchase& WithPaymentOption(PaymentOption&& value) { SetPaymentOption(std::move(value)); return *this;}
 
     /**
      * <p>The upfront price of the reservation.</p>
@@ -204,7 +205,7 @@ namespace Model
     /**
      * <p>The upfront price of the reservation.</p>
      */
-    inline void SetUpfrontPrice(Aws::String&& value) { m_upfrontPriceHasBeenSet = true; m_upfrontPrice = value; }
+    inline void SetUpfrontPrice(Aws::String&& value) { m_upfrontPriceHasBeenSet = true; m_upfrontPrice = std::move(value); }
 
     /**
      * <p>The upfront price of the reservation.</p>
@@ -219,7 +220,7 @@ namespace Model
     /**
      * <p>The upfront price of the reservation.</p>
      */
-    inline Purchase& WithUpfrontPrice(Aws::String&& value) { SetUpfrontPrice(value); return *this;}
+    inline Purchase& WithUpfrontPrice(Aws::String&& value) { SetUpfrontPrice(std::move(value)); return *this;}
 
     /**
      * <p>The upfront price of the reservation.</p>
@@ -239,7 +240,7 @@ namespace Model
     /**
      * <p>The hourly price of the reservation per hour.</p>
      */
-    inline void SetHourlyPrice(Aws::String&& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = value; }
+    inline void SetHourlyPrice(Aws::String&& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = std::move(value); }
 
     /**
      * <p>The hourly price of the reservation per hour.</p>
@@ -254,7 +255,7 @@ namespace Model
     /**
      * <p>The hourly price of the reservation per hour.</p>
      */
-    inline Purchase& WithHourlyPrice(Aws::String&& value) { SetHourlyPrice(value); return *this;}
+    inline Purchase& WithHourlyPrice(Aws::String&& value) { SetHourlyPrice(std::move(value)); return *this;}
 
     /**
      * <p>The hourly price of the reservation per hour.</p>
@@ -280,7 +281,7 @@ namespace Model
      * <code>HourlyPrice</code> amounts are specified. At this time, the only supported
      * currency is <code>USD</code>.</p>
      */
-    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
+    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
      * <p>The currency in which the <code>UpfrontPrice</code> and
@@ -294,7 +295,7 @@ namespace Model
      * <code>HourlyPrice</code> amounts are specified. At this time, the only supported
      * currency is <code>USD</code>.</p>
      */
-    inline Purchase& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(value); return *this;}
+    inline Purchase& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
      * <p>The duration of the reservation's term in seconds.</p>

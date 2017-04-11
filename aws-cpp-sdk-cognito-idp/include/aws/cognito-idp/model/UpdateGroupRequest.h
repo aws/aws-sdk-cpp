@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the group.</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>The name of the group.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the group.</p>
      */
-    inline UpdateGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
+    inline UpdateGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the group.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The user pool ID for the user pool.</p>
      */
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
+    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
      * <p>The user pool ID for the user pool.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The user pool ID for the user pool.</p>
      */
-    inline UpdateGroupRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(value); return *this;}
+    inline UpdateGroupRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
      * <p>The user pool ID for the user pool.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>A string containing the new description of the group.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A string containing the new description of the group.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>A string containing the new description of the group.</p>
      */
-    inline UpdateGroupRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline UpdateGroupRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A string containing the new description of the group.</p>
@@ -159,7 +160,7 @@ namespace Model
      * <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the
      * token.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The new role ARN for the group. This is used for setting the
@@ -180,7 +181,7 @@ namespace Model
      * <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the
      * token.</p>
      */
-    inline UpdateGroupRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline UpdateGroupRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The new role ARN for the group. This is used for setting the

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The byte range of a part, inclusive of the upper value of the range.</p>
      */
-    inline void SetRangeInBytes(Aws::String&& value) { m_rangeInBytesHasBeenSet = true; m_rangeInBytes = value; }
+    inline void SetRangeInBytes(Aws::String&& value) { m_rangeInBytesHasBeenSet = true; m_rangeInBytes = std::move(value); }
 
     /**
      * <p>The byte range of a part, inclusive of the upper value of the range.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The byte range of a part, inclusive of the upper value of the range.</p>
      */
-    inline PartListElement& WithRangeInBytes(Aws::String&& value) { SetRangeInBytes(value); return *this;}
+    inline PartListElement& WithRangeInBytes(Aws::String&& value) { SetRangeInBytes(std::move(value)); return *this;}
 
     /**
      * <p>The byte range of a part, inclusive of the upper value of the range.</p>
@@ -95,7 +96,7 @@ namespace Model
      * <p>The SHA256 tree hash value that Amazon Glacier calculated for the part. This
      * field is never <code>null</code>.</p>
      */
-    inline void SetSHA256TreeHash(Aws::String&& value) { m_sHA256TreeHashHasBeenSet = true; m_sHA256TreeHash = value; }
+    inline void SetSHA256TreeHash(Aws::String&& value) { m_sHA256TreeHashHasBeenSet = true; m_sHA256TreeHash = std::move(value); }
 
     /**
      * <p>The SHA256 tree hash value that Amazon Glacier calculated for the part. This
@@ -113,7 +114,7 @@ namespace Model
      * <p>The SHA256 tree hash value that Amazon Glacier calculated for the part. This
      * field is never <code>null</code>.</p>
      */
-    inline PartListElement& WithSHA256TreeHash(Aws::String&& value) { SetSHA256TreeHash(value); return *this;}
+    inline PartListElement& WithSHA256TreeHash(Aws::String&& value) { SetSHA256TreeHash(std::move(value)); return *this;}
 
     /**
      * <p>The SHA256 tree hash value that Amazon Glacier calculated for the part. This

@@ -16,6 +16,7 @@
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
 #include <aws/elasticfilesystem/EFSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -88,7 +89,7 @@ namespace Model
      * <code>DescribeFileSystems</code> operation (String). If present, specifies to
      * continue the list from where the returning call had left off. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>(Optional) Opaque pagination token returned from a previous
@@ -109,7 +110,7 @@ namespace Model
      * <code>DescribeFileSystems</code> operation (String). If present, specifies to
      * continue the list from where the returning call had left off. </p>
      */
-    inline DescribeFileSystemsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeFileSystemsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) Opaque pagination token returned from a previous
@@ -137,7 +138,7 @@ namespace Model
      * (String). You specify a creation token when you create an Amazon EFS file
      * system.</p>
      */
-    inline void SetCreationToken(Aws::String&& value) { m_creationTokenHasBeenSet = true; m_creationToken = value; }
+    inline void SetCreationToken(Aws::String&& value) { m_creationTokenHasBeenSet = true; m_creationToken = std::move(value); }
 
     /**
      * <p>(Optional) Restricts the list to the file system with this creation token
@@ -158,7 +159,7 @@ namespace Model
      * (String). You specify a creation token when you create an Amazon EFS file
      * system.</p>
      */
-    inline DescribeFileSystemsRequest& WithCreationToken(Aws::String&& value) { SetCreationToken(value); return *this;}
+    inline DescribeFileSystemsRequest& WithCreationToken(Aws::String&& value) { SetCreationToken(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) Restricts the list to the file system with this creation token
@@ -183,7 +184,7 @@ namespace Model
      * <p>(Optional) ID of the file system whose description you want to retrieve
      * (String).</p>
      */
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
+    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
 
     /**
      * <p>(Optional) ID of the file system whose description you want to retrieve
@@ -201,7 +202,7 @@ namespace Model
      * <p>(Optional) ID of the file system whose description you want to retrieve
      * (String).</p>
      */
-    inline DescribeFileSystemsRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(value); return *this;}
+    inline DescribeFileSystemsRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) ID of the file system whose description you want to retrieve

@@ -19,6 +19,7 @@
 #include <aws/firehose/model/CompressionFormat.h>
 #include <aws/firehose/model/EncryptionConfiguration.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The ARN of the AWS credentials.</p>
      */
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The ARN of the AWS credentials.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The ARN of the AWS credentials.</p>
      */
-    inline S3DestinationDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+    inline S3DestinationDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the AWS credentials.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The ARN of the S3 bucket.</p>
      */
-    inline void SetBucketARN(Aws::String&& value) { m_bucketARNHasBeenSet = true; m_bucketARN = value; }
+    inline void SetBucketARN(Aws::String&& value) { m_bucketARNHasBeenSet = true; m_bucketARN = std::move(value); }
 
     /**
      * <p>The ARN of the S3 bucket.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The ARN of the S3 bucket.</p>
      */
-    inline S3DestinationDescription& WithBucketARN(Aws::String&& value) { SetBucketARN(value); return *this;}
+    inline S3DestinationDescription& WithBucketARN(Aws::String&& value) { SetBucketARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the S3 bucket.</p>
@@ -148,7 +149,7 @@ namespace Model
      * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
      * Guide</i>.</p>
      */
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
@@ -181,7 +182,7 @@ namespace Model
      * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
      * Guide</i>.</p>
      */
-    inline S3DestinationDescription& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
+    inline S3DestinationDescription& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
@@ -210,7 +211,7 @@ namespace Model
      * <p>The buffering option. If no value is specified, <b>BufferingHints</b> object
      * default values are used.</p>
      */
-    inline void SetBufferingHints(BufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
+    inline void SetBufferingHints(BufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::move(value); }
 
     /**
      * <p>The buffering option. If no value is specified, <b>BufferingHints</b> object
@@ -222,7 +223,7 @@ namespace Model
      * <p>The buffering option. If no value is specified, <b>BufferingHints</b> object
      * default values are used.</p>
      */
-    inline S3DestinationDescription& WithBufferingHints(BufferingHints&& value) { SetBufferingHints(value); return *this;}
+    inline S3DestinationDescription& WithBufferingHints(BufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
 
     /**
      * <p>The compression format. If no value is specified, the default is
@@ -240,7 +241,7 @@ namespace Model
      * <p>The compression format. If no value is specified, the default is
      * <code>UNCOMPRESSED</code>.</p>
      */
-    inline void SetCompressionFormat(CompressionFormat&& value) { m_compressionFormatHasBeenSet = true; m_compressionFormat = value; }
+    inline void SetCompressionFormat(CompressionFormat&& value) { m_compressionFormatHasBeenSet = true; m_compressionFormat = std::move(value); }
 
     /**
      * <p>The compression format. If no value is specified, the default is
@@ -252,7 +253,7 @@ namespace Model
      * <p>The compression format. If no value is specified, the default is
      * <code>UNCOMPRESSED</code>.</p>
      */
-    inline S3DestinationDescription& WithCompressionFormat(CompressionFormat&& value) { SetCompressionFormat(value); return *this;}
+    inline S3DestinationDescription& WithCompressionFormat(CompressionFormat&& value) { SetCompressionFormat(std::move(value)); return *this;}
 
     /**
      * <p>The encryption configuration. If no value is specified, the default is no
@@ -270,7 +271,7 @@ namespace Model
      * <p>The encryption configuration. If no value is specified, the default is no
      * encryption.</p>
      */
-    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
 
     /**
      * <p>The encryption configuration. If no value is specified, the default is no
@@ -282,7 +283,7 @@ namespace Model
      * <p>The encryption configuration. If no value is specified, the default is no
      * encryption.</p>
      */
-    inline S3DestinationDescription& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(value); return *this;}
+    inline S3DestinationDescription& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The CloudWatch logging options for your delivery stream.</p>
@@ -297,7 +298,7 @@ namespace Model
     /**
      * <p>The CloudWatch logging options for your delivery stream.</p>
      */
-    inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
+    inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::move(value); }
 
     /**
      * <p>The CloudWatch logging options for your delivery stream.</p>
@@ -307,7 +308,7 @@ namespace Model
     /**
      * <p>The CloudWatch logging options for your delivery stream.</p>
      */
-    inline S3DestinationDescription& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(value); return *this;}
+    inline S3DestinationDescription& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
 
   private:
     Aws::String m_roleARN;

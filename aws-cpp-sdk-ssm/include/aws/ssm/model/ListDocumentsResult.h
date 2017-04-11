@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/DocumentIdentifier.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The names of the SSM documents.</p>
      */
-    inline void SetDocumentIdentifiers(Aws::Vector<DocumentIdentifier>&& value) { m_documentIdentifiers = value; }
+    inline void SetDocumentIdentifiers(Aws::Vector<DocumentIdentifier>&& value) { m_documentIdentifiers = std::move(value); }
 
     /**
      * <p>The names of the SSM documents.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The names of the SSM documents.</p>
      */
-    inline ListDocumentsResult& WithDocumentIdentifiers(Aws::Vector<DocumentIdentifier>&& value) { SetDocumentIdentifiers(value); return *this;}
+    inline ListDocumentsResult& WithDocumentIdentifiers(Aws::Vector<DocumentIdentifier>&& value) { SetDocumentIdentifiers(std::move(value)); return *this;}
 
     /**
      * <p>The names of the SSM documents.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The names of the SSM documents.</p>
      */
-    inline ListDocumentsResult& AddDocumentIdentifiers(DocumentIdentifier&& value) { m_documentIdentifiers.push_back(value); return *this; }
+    inline ListDocumentsResult& AddDocumentIdentifiers(DocumentIdentifier&& value) { m_documentIdentifiers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -92,7 +93,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -110,7 +111,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline ListDocumentsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListDocumentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no

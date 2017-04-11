@@ -17,6 +17,7 @@
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>An array of layer IDs.</p>
      */
-    inline void SetLayerIds(Aws::Vector<Aws::String>&& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
+    inline void SetLayerIds(Aws::Vector<Aws::String>&& value) { m_layerIdsHasBeenSet = true; m_layerIds = std::move(value); }
 
     /**
      * <p>An array of layer IDs.</p>
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>An array of layer IDs.</p>
      */
-    inline DescribeLoadBasedAutoScalingRequest& WithLayerIds(Aws::Vector<Aws::String>&& value) { SetLayerIds(value); return *this;}
+    inline DescribeLoadBasedAutoScalingRequest& WithLayerIds(Aws::Vector<Aws::String>&& value) { SetLayerIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of layer IDs.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>An array of layer IDs.</p>
      */
-    inline DescribeLoadBasedAutoScalingRequest& AddLayerIds(Aws::String&& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
+    inline DescribeLoadBasedAutoScalingRequest& AddLayerIds(Aws::String&& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of layer IDs.</p>

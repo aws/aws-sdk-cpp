@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The names of facets that exist within the schema.</p>
      */
-    inline void SetFacetNames(Aws::Vector<Aws::String>&& value) { m_facetNames = value; }
+    inline void SetFacetNames(Aws::Vector<Aws::String>&& value) { m_facetNames = std::move(value); }
 
     /**
      * <p>The names of facets that exist within the schema.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The names of facets that exist within the schema.</p>
      */
-    inline ListFacetNamesResult& WithFacetNames(Aws::Vector<Aws::String>&& value) { SetFacetNames(value); return *this;}
+    inline ListFacetNamesResult& WithFacetNames(Aws::Vector<Aws::String>&& value) { SetFacetNames(std::move(value)); return *this;}
 
     /**
      * <p>The names of facets that exist within the schema.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The names of facets that exist within the schema.</p>
      */
-    inline ListFacetNamesResult& AddFacetNames(Aws::String&& value) { m_facetNames.push_back(value); return *this; }
+    inline ListFacetNamesResult& AddFacetNames(Aws::String&& value) { m_facetNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of facets that exist within the schema.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline ListFacetNamesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListFacetNamesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>

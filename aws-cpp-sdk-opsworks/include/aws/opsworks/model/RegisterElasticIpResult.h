@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The Elastic IP address.</p>
      */
-    inline void SetElasticIp(Aws::String&& value) { m_elasticIp = value; }
+    inline void SetElasticIp(Aws::String&& value) { m_elasticIp = std::move(value); }
 
     /**
      * <p>The Elastic IP address.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The Elastic IP address.</p>
      */
-    inline RegisterElasticIpResult& WithElasticIp(Aws::String&& value) { SetElasticIp(value); return *this;}
+    inline RegisterElasticIpResult& WithElasticIp(Aws::String&& value) { SetElasticIp(std::move(value)); return *this;}
 
     /**
      * <p>The Elastic IP address.</p>

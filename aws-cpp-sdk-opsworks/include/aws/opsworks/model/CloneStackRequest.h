@@ -23,6 +23,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/RootDeviceType.h>
 #include <aws/opsworks/model/StackAttributesKeys.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The source stack ID.</p>
      */
-    inline void SetSourceStackId(Aws::String&& value) { m_sourceStackIdHasBeenSet = true; m_sourceStackId = value; }
+    inline void SetSourceStackId(Aws::String&& value) { m_sourceStackIdHasBeenSet = true; m_sourceStackId = std::move(value); }
 
     /**
      * <p>The source stack ID.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The source stack ID.</p>
      */
-    inline CloneStackRequest& WithSourceStackId(Aws::String&& value) { SetSourceStackId(value); return *this;}
+    inline CloneStackRequest& WithSourceStackId(Aws::String&& value) { SetSourceStackId(std::move(value)); return *this;}
 
     /**
      * <p>The source stack ID.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The cloned stack name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The cloned stack name.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The cloned stack name.</p>
      */
-    inline CloneStackRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CloneStackRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The cloned stack name.</p>
@@ -134,7 +135,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = value; }
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
      * <p>The cloned stack AWS region, such as "ap-northeast-2". For more information
@@ -158,7 +159,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
-    inline CloneStackRequest& WithRegion(Aws::String&& value) { SetRegion(value); return *this;}
+    inline CloneStackRequest& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
      * <p>The cloned stack AWS region, such as "ap-northeast-2". For more information
@@ -238,7 +239,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>. </p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC that the cloned stack is to be launched into. It must be in
@@ -310,7 +311,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>. </p>
      */
-    inline CloneStackRequest& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline CloneStackRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC that the cloned stack is to be launched into. It must be in
@@ -352,7 +353,7 @@ namespace Model
      * <p>A list of stack attributes and values as key/value pairs to be added to the
      * cloned stack.</p>
      */
-    inline void SetAttributes(Aws::Map<StackAttributesKeys, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Map<StackAttributesKeys, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>A list of stack attributes and values as key/value pairs to be added to the
@@ -364,43 +365,43 @@ namespace Model
      * <p>A list of stack attributes and values as key/value pairs to be added to the
      * cloned stack.</p>
      */
-    inline CloneStackRequest& WithAttributes(Aws::Map<StackAttributesKeys, Aws::String>&& value) { SetAttributes(value); return *this;}
+    inline CloneStackRequest& WithAttributes(Aws::Map<StackAttributesKeys, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>A list of stack attributes and values as key/value pairs to be added to the
      * cloned stack.</p>
      */
-    inline CloneStackRequest& AddAttributes(const StackAttributesKeys& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CloneStackRequest& AddAttributes(const StackAttributesKeys& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>A list of stack attributes and values as key/value pairs to be added to the
      * cloned stack.</p>
      */
-    inline CloneStackRequest& AddAttributes(StackAttributesKeys&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CloneStackRequest& AddAttributes(StackAttributesKeys&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A list of stack attributes and values as key/value pairs to be added to the
      * cloned stack.</p>
      */
-    inline CloneStackRequest& AddAttributes(const StackAttributesKeys& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CloneStackRequest& AddAttributes(const StackAttributesKeys& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A list of stack attributes and values as key/value pairs to be added to the
      * cloned stack.</p>
      */
-    inline CloneStackRequest& AddAttributes(StackAttributesKeys&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CloneStackRequest& AddAttributes(StackAttributesKeys&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A list of stack attributes and values as key/value pairs to be added to the
      * cloned stack.</p>
      */
-    inline CloneStackRequest& AddAttributes(StackAttributesKeys&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CloneStackRequest& AddAttributes(StackAttributesKeys&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A list of stack attributes and values as key/value pairs to be added to the
      * cloned stack.</p>
      */
-    inline CloneStackRequest& AddAttributes(const StackAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CloneStackRequest& AddAttributes(const StackAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS
@@ -445,7 +446,7 @@ namespace Model
      * source stack's service role ARN, if you prefer, but you must do so
      * explicitly.</p> </note>
      */
-    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
+    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
      * <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS
@@ -490,7 +491,7 @@ namespace Model
      * source stack's service role ARN, if you prefer, but you must do so
      * explicitly.</p> </note>
      */
-    inline CloneStackRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(value); return *this;}
+    inline CloneStackRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS
@@ -532,7 +533,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
-    inline void SetDefaultInstanceProfileArn(Aws::String&& value) { m_defaultInstanceProfileArnHasBeenSet = true; m_defaultInstanceProfileArn = value; }
+    inline void SetDefaultInstanceProfileArn(Aws::String&& value) { m_defaultInstanceProfileArnHasBeenSet = true; m_defaultInstanceProfileArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile
@@ -559,7 +560,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
-    inline CloneStackRequest& WithDefaultInstanceProfileArn(Aws::String&& value) { SetDefaultInstanceProfileArn(value); return *this;}
+    inline CloneStackRequest& WithDefaultInstanceProfileArn(Aws::String&& value) { SetDefaultInstanceProfileArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile
@@ -643,7 +644,7 @@ namespace Model
      * operating system for the cloned stack, but you cannot change from Linux to
      * Windows or Windows to Linux.</p> </note>
      */
-    inline void SetDefaultOs(Aws::String&& value) { m_defaultOsHasBeenSet = true; m_defaultOs = value; }
+    inline void SetDefaultOs(Aws::String&& value) { m_defaultOsHasBeenSet = true; m_defaultOs = std::move(value); }
 
     /**
      * <p>The stack's operating system, which must be set to one of the following.</p>
@@ -718,7 +719,7 @@ namespace Model
      * operating system for the cloned stack, but you cannot change from Linux to
      * Windows or Windows to Linux.</p> </note>
      */
-    inline CloneStackRequest& WithDefaultOs(Aws::String&& value) { SetDefaultOs(value); return *this;}
+    inline CloneStackRequest& WithDefaultOs(Aws::String&& value) { SetDefaultOs(std::move(value)); return *this;}
 
     /**
      * <p>The stack's operating system, which must be set to one of the following.</p>
@@ -797,7 +798,7 @@ namespace Model
      * <code>GetHostNameSuggestion</code>, which returns a host name based on the
      * current theme.</p>
      */
-    inline void SetHostnameTheme(Aws::String&& value) { m_hostnameThemeHasBeenSet = true; m_hostnameTheme = value; }
+    inline void SetHostnameTheme(Aws::String&& value) { m_hostnameThemeHasBeenSet = true; m_hostnameTheme = std::move(value); }
 
     /**
      * <p>The stack's host name theme, with spaces are replaced by underscores. The
@@ -851,7 +852,7 @@ namespace Model
      * <code>GetHostNameSuggestion</code>, which returns a host name based on the
      * current theme.</p>
      */
-    inline CloneStackRequest& WithHostnameTheme(Aws::String&& value) { SetHostnameTheme(value); return *this;}
+    inline CloneStackRequest& WithHostnameTheme(Aws::String&& value) { SetHostnameTheme(std::move(value)); return *this;}
 
     /**
      * <p>The stack's host name theme, with spaces are replaced by underscores. The
@@ -899,7 +900,7 @@ namespace Model
      * subnet must be in the same zone. For more information, see the
      * <code>VpcId</code> parameter description. </p>
      */
-    inline void SetDefaultAvailabilityZone(Aws::String&& value) { m_defaultAvailabilityZoneHasBeenSet = true; m_defaultAvailabilityZone = value; }
+    inline void SetDefaultAvailabilityZone(Aws::String&& value) { m_defaultAvailabilityZoneHasBeenSet = true; m_defaultAvailabilityZone = std::move(value); }
 
     /**
      * <p>The cloned stack's default Availability Zone, which must be in the specified
@@ -929,7 +930,7 @@ namespace Model
      * subnet must be in the same zone. For more information, see the
      * <code>VpcId</code> parameter description. </p>
      */
-    inline CloneStackRequest& WithDefaultAvailabilityZone(Aws::String&& value) { SetDefaultAvailabilityZone(value); return *this;}
+    inline CloneStackRequest& WithDefaultAvailabilityZone(Aws::String&& value) { SetDefaultAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The cloned stack's default Availability Zone, which must be in the specified
@@ -969,7 +970,7 @@ namespace Model
      * be in that zone. For information on default values and when this parameter is
      * required, see the <code>VpcId</code> parameter description. </p>
      */
-    inline void SetDefaultSubnetId(Aws::String&& value) { m_defaultSubnetIdHasBeenSet = true; m_defaultSubnetId = value; }
+    inline void SetDefaultSubnetId(Aws::String&& value) { m_defaultSubnetIdHasBeenSet = true; m_defaultSubnetId = std::move(value); }
 
     /**
      * <p>The stack's default VPC subnet ID. This parameter is required if you specify
@@ -999,7 +1000,7 @@ namespace Model
      * be in that zone. For information on default values and when this parameter is
      * required, see the <code>VpcId</code> parameter description. </p>
      */
-    inline CloneStackRequest& WithDefaultSubnetId(Aws::String&& value) { SetDefaultSubnetId(value); return *this;}
+    inline CloneStackRequest& WithDefaultSubnetId(Aws::String&& value) { SetDefaultSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The stack's default VPC subnet ID. This parameter is required if you specify
@@ -1039,7 +1040,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a> </p>
      */
-    inline void SetCustomJson(Aws::String&& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
+    inline void SetCustomJson(Aws::String&& value) { m_customJsonHasBeenSet = true; m_customJson = std::move(value); }
 
     /**
      * <p>A string that contains user-defined, custom JSON. It is used to override the
@@ -1069,7 +1070,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a> </p>
      */
-    inline CloneStackRequest& WithCustomJson(Aws::String&& value) { SetCustomJson(value); return *this;}
+    inline CloneStackRequest& WithCustomJson(Aws::String&& value) { SetCustomJson(std::move(value)); return *this;}
 
     /**
      * <p>A string that contains user-defined, custom JSON. It is used to override the
@@ -1103,7 +1104,7 @@ namespace Model
      * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
      * currently 12.</p>
      */
-    inline void SetConfigurationManager(StackConfigurationManager&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = value; }
+    inline void SetConfigurationManager(StackConfigurationManager&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = std::move(value); }
 
     /**
      * <p>The configuration manager. When you clone a stack we recommend that you use
@@ -1119,7 +1120,7 @@ namespace Model
      * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
      * currently 12.</p>
      */
-    inline CloneStackRequest& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(value); return *this;}
+    inline CloneStackRequest& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(std::move(value)); return *this;}
 
     /**
      * <p>A <code>ChefConfiguration</code> object that specifies whether to enable
@@ -1146,7 +1147,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      * a New Stack</a>.</p>
      */
-    inline void SetChefConfiguration(ChefConfiguration&& value) { m_chefConfigurationHasBeenSet = true; m_chefConfiguration = value; }
+    inline void SetChefConfiguration(ChefConfiguration&& value) { m_chefConfigurationHasBeenSet = true; m_chefConfiguration = std::move(value); }
 
     /**
      * <p>A <code>ChefConfiguration</code> object that specifies whether to enable
@@ -1164,7 +1165,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      * a New Stack</a>.</p>
      */
-    inline CloneStackRequest& WithChefConfiguration(ChefConfiguration&& value) { SetChefConfiguration(value); return *this;}
+    inline CloneStackRequest& WithChefConfiguration(ChefConfiguration&& value) { SetChefConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>Whether to use custom cookbooks.</p>
@@ -1251,13 +1252,13 @@ namespace Model
     inline void SetCustomCookbooksSource(const Source& value) { m_customCookbooksSourceHasBeenSet = true; m_customCookbooksSource = value; }
 
     
-    inline void SetCustomCookbooksSource(Source&& value) { m_customCookbooksSourceHasBeenSet = true; m_customCookbooksSource = value; }
+    inline void SetCustomCookbooksSource(Source&& value) { m_customCookbooksSourceHasBeenSet = true; m_customCookbooksSource = std::move(value); }
 
     
     inline CloneStackRequest& WithCustomCookbooksSource(const Source& value) { SetCustomCookbooksSource(value); return *this;}
 
     
-    inline CloneStackRequest& WithCustomCookbooksSource(Source&& value) { SetCustomCookbooksSource(value); return *this;}
+    inline CloneStackRequest& WithCustomCookbooksSource(Source&& value) { SetCustomCookbooksSource(std::move(value)); return *this;}
 
     /**
      * <p>A default Amazon EC2 key pair name. The default value is none. If you specify
@@ -1302,7 +1303,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
      * create an instance</a>. </p>
      */
-    inline void SetDefaultSshKeyName(Aws::String&& value) { m_defaultSshKeyNameHasBeenSet = true; m_defaultSshKeyName = value; }
+    inline void SetDefaultSshKeyName(Aws::String&& value) { m_defaultSshKeyNameHasBeenSet = true; m_defaultSshKeyName = std::move(value); }
 
     /**
      * <p>A default Amazon EC2 key pair name. The default value is none. If you specify
@@ -1347,7 +1348,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
      * create an instance</a>. </p>
      */
-    inline CloneStackRequest& WithDefaultSshKeyName(Aws::String&& value) { SetDefaultSshKeyName(value); return *this;}
+    inline CloneStackRequest& WithDefaultSshKeyName(Aws::String&& value) { SetDefaultSshKeyName(std::move(value)); return *this;}
 
     /**
      * <p>A default Amazon EC2 key pair name. The default value is none. If you specify
@@ -1392,7 +1393,7 @@ namespace Model
     /**
      * <p>A list of source stack app IDs to be included in the cloned stack.</p>
      */
-    inline void SetCloneAppIds(Aws::Vector<Aws::String>&& value) { m_cloneAppIdsHasBeenSet = true; m_cloneAppIds = value; }
+    inline void SetCloneAppIds(Aws::Vector<Aws::String>&& value) { m_cloneAppIdsHasBeenSet = true; m_cloneAppIds = std::move(value); }
 
     /**
      * <p>A list of source stack app IDs to be included in the cloned stack.</p>
@@ -1402,7 +1403,7 @@ namespace Model
     /**
      * <p>A list of source stack app IDs to be included in the cloned stack.</p>
      */
-    inline CloneStackRequest& WithCloneAppIds(Aws::Vector<Aws::String>&& value) { SetCloneAppIds(value); return *this;}
+    inline CloneStackRequest& WithCloneAppIds(Aws::Vector<Aws::String>&& value) { SetCloneAppIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of source stack app IDs to be included in the cloned stack.</p>
@@ -1412,7 +1413,7 @@ namespace Model
     /**
      * <p>A list of source stack app IDs to be included in the cloned stack.</p>
      */
-    inline CloneStackRequest& AddCloneAppIds(Aws::String&& value) { m_cloneAppIdsHasBeenSet = true; m_cloneAppIds.push_back(value); return *this; }
+    inline CloneStackRequest& AddCloneAppIds(Aws::String&& value) { m_cloneAppIdsHasBeenSet = true; m_cloneAppIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of source stack app IDs to be included in the cloned stack.</p>
@@ -1444,7 +1445,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.</p>
      */
-    inline void SetDefaultRootDeviceType(RootDeviceType&& value) { m_defaultRootDeviceTypeHasBeenSet = true; m_defaultRootDeviceType = value; }
+    inline void SetDefaultRootDeviceType(RootDeviceType&& value) { m_defaultRootDeviceTypeHasBeenSet = true; m_defaultRootDeviceType = std::move(value); }
 
     /**
      * <p>The default root device type. This value is used by default for all instances
@@ -1462,7 +1463,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.</p>
      */
-    inline CloneStackRequest& WithDefaultRootDeviceType(RootDeviceType&& value) { SetDefaultRootDeviceType(value); return *this;}
+    inline CloneStackRequest& WithDefaultRootDeviceType(RootDeviceType&& value) { SetDefaultRootDeviceType(std::move(value)); return *this;}
 
     /**
      * <p>The default AWS OpsWorks agent version. You have the following options:</p>
@@ -1510,7 +1511,7 @@ namespace Model
      * <note> <p>You can also specify an agent version when you create or update an
      * instance, which overrides the stack's default setting.</p> </note>
      */
-    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
+    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
 
     /**
      * <p>The default AWS OpsWorks agent version. You have the following options:</p>
@@ -1558,7 +1559,7 @@ namespace Model
      * <note> <p>You can also specify an agent version when you create or update an
      * instance, which overrides the stack's default setting.</p> </note>
      */
-    inline CloneStackRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(value); return *this;}
+    inline CloneStackRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
 
     /**
      * <p>The default AWS OpsWorks agent version. You have the following options:</p>

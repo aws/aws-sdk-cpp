@@ -16,6 +16,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/AppStreamRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the fleet to associate.</p>
      */
-    inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = value; }
+    inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = std::move(value); }
 
     /**
      * <p>The name of the fleet to associate.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the fleet to associate.</p>
      */
-    inline AssociateFleetRequest& WithFleetName(Aws::String&& value) { SetFleetName(value); return *this;}
+    inline AssociateFleetRequest& WithFleetName(Aws::String&& value) { SetFleetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the fleet to associate.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The name of the stack to which the fleet is associated.</p>
      */
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
+    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
      * <p>The name of the stack to which the fleet is associated.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The name of the stack to which the fleet is associated.</p>
      */
-    inline AssociateFleetRequest& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
+    inline AssociateFleetRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the stack to which the fleet is associated.</p>

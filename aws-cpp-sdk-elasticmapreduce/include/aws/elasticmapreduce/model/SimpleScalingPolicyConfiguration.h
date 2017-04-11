@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/AdjustmentType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -95,7 +96,7 @@ namespace Model
      * specified by <code>ScalingAdjustment</code>, which should be expressed as a
      * positive integer.</p>
      */
-    inline void SetAdjustmentType(AdjustmentType&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
+    inline void SetAdjustmentType(AdjustmentType&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = std::move(value); }
 
     /**
      * <p>The way in which EC2 instances are added (if <code>ScalingAdjustment</code>
@@ -129,7 +130,7 @@ namespace Model
      * specified by <code>ScalingAdjustment</code>, which should be expressed as a
      * positive integer.</p>
      */
-    inline SimpleScalingPolicyConfiguration& WithAdjustmentType(AdjustmentType&& value) { SetAdjustmentType(value); return *this;}
+    inline SimpleScalingPolicyConfiguration& WithAdjustmentType(AdjustmentType&& value) { SetAdjustmentType(std::move(value)); return *this;}
 
     /**
      * <p>The amount by which to scale in or scale out, based on the specified

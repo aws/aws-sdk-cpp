@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/health/model/AffectedEntity.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The entities that match the filter criteria.</p>
      */
-    inline void SetEntities(Aws::Vector<AffectedEntity>&& value) { m_entities = value; }
+    inline void SetEntities(Aws::Vector<AffectedEntity>&& value) { m_entities = std::move(value); }
 
     /**
      * <p>The entities that match the filter criteria.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The entities that match the filter criteria.</p>
      */
-    inline DescribeAffectedEntitiesResult& WithEntities(Aws::Vector<AffectedEntity>&& value) { SetEntities(value); return *this;}
+    inline DescribeAffectedEntitiesResult& WithEntities(Aws::Vector<AffectedEntity>&& value) { SetEntities(std::move(value)); return *this;}
 
     /**
      * <p>The entities that match the filter criteria.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The entities that match the filter criteria.</p>
      */
-    inline DescribeAffectedEntitiesResult& AddEntities(AffectedEntity&& value) { m_entities.push_back(value); return *this; }
+    inline DescribeAffectedEntitiesResult& AddEntities(AffectedEntity&& value) { m_entities.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If the results of a search are large, only a portion of the results are
@@ -101,7 +102,7 @@ namespace Model
      * include the returned token. When all results have been returned, the response
      * does not contain a pagination token value.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the results of a search are large, only a portion of the results are
@@ -128,7 +129,7 @@ namespace Model
      * include the returned token. When all results have been returned, the response
      * does not contain a pagination token value.</p>
      */
-    inline DescribeAffectedEntitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeAffectedEntitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the results of a search are large, only a portion of the results are

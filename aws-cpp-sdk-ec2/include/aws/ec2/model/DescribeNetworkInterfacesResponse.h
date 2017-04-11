@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/NetworkInterface.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Information about one or more network interfaces.</p>
      */
-    inline void SetNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_networkInterfaces = value; }
+    inline void SetNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_networkInterfaces = std::move(value); }
 
     /**
      * <p>Information about one or more network interfaces.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Information about one or more network interfaces.</p>
      */
-    inline DescribeNetworkInterfacesResponse& WithNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetNetworkInterfaces(value); return *this;}
+    inline DescribeNetworkInterfacesResponse& WithNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
      * <p>Information about one or more network interfaces.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>Information about one or more network interfaces.</p>
      */
-    inline DescribeNetworkInterfacesResponse& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfaces.push_back(value); return *this; }
+    inline DescribeNetworkInterfacesResponse& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfaces.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -89,13 +90,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeNetworkInterfacesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeNetworkInterfacesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeNetworkInterfacesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<NetworkInterface> m_networkInterfaces;

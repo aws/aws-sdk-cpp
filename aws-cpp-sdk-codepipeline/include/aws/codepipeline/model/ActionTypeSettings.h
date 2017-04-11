@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The URL of a sign-up page where users can sign up for an external service and
      * perform initial configuration of the action provided by that service.</p>
      */
-    inline void SetThirdPartyConfigurationUrl(Aws::String&& value) { m_thirdPartyConfigurationUrlHasBeenSet = true; m_thirdPartyConfigurationUrl = value; }
+    inline void SetThirdPartyConfigurationUrl(Aws::String&& value) { m_thirdPartyConfigurationUrlHasBeenSet = true; m_thirdPartyConfigurationUrl = std::move(value); }
 
     /**
      * <p>The URL of a sign-up page where users can sign up for an external service and
@@ -78,7 +79,7 @@ namespace Model
      * <p>The URL of a sign-up page where users can sign up for an external service and
      * perform initial configuration of the action provided by that service.</p>
      */
-    inline ActionTypeSettings& WithThirdPartyConfigurationUrl(Aws::String&& value) { SetThirdPartyConfigurationUrl(value); return *this;}
+    inline ActionTypeSettings& WithThirdPartyConfigurationUrl(Aws::String&& value) { SetThirdPartyConfigurationUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL of a sign-up page where users can sign up for an external service and
@@ -108,7 +109,7 @@ namespace Model
      * CodeDeploy deployment group. This link is provided as part of the action display
      * within the pipeline.</p>
      */
-    inline void SetEntityUrlTemplate(Aws::String&& value) { m_entityUrlTemplateHasBeenSet = true; m_entityUrlTemplate = value; }
+    inline void SetEntityUrlTemplate(Aws::String&& value) { m_entityUrlTemplateHasBeenSet = true; m_entityUrlTemplate = std::move(value); }
 
     /**
      * <p>The URL returned to the AWS CodePipeline console that provides a deep link to
@@ -132,7 +133,7 @@ namespace Model
      * CodeDeploy deployment group. This link is provided as part of the action display
      * within the pipeline.</p>
      */
-    inline ActionTypeSettings& WithEntityUrlTemplate(Aws::String&& value) { SetEntityUrlTemplate(value); return *this;}
+    inline ActionTypeSettings& WithEntityUrlTemplate(Aws::String&& value) { SetEntityUrlTemplate(std::move(value)); return *this;}
 
     /**
      * <p>The URL returned to the AWS CodePipeline console that provides a deep link to
@@ -164,7 +165,7 @@ namespace Model
      * CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline
      * console and provides a link to the execution entity of the external action.</p>
      */
-    inline void SetExecutionUrlTemplate(Aws::String&& value) { m_executionUrlTemplateHasBeenSet = true; m_executionUrlTemplate = value; }
+    inline void SetExecutionUrlTemplate(Aws::String&& value) { m_executionUrlTemplateHasBeenSet = true; m_executionUrlTemplate = std::move(value); }
 
     /**
      * <p>The URL returned to the AWS CodePipeline console that contains a link to the
@@ -188,7 +189,7 @@ namespace Model
      * CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline
      * console and provides a link to the execution entity of the external action.</p>
      */
-    inline ActionTypeSettings& WithExecutionUrlTemplate(Aws::String&& value) { SetExecutionUrlTemplate(value); return *this;}
+    inline ActionTypeSettings& WithExecutionUrlTemplate(Aws::String&& value) { SetExecutionUrlTemplate(std::move(value)); return *this;}
 
     /**
      * <p>The URL returned to the AWS CodePipeline console that contains a link to the
@@ -217,7 +218,7 @@ namespace Model
      * page where customers can update or change the configuration of the external
      * action.</p>
      */
-    inline void SetRevisionUrlTemplate(Aws::String&& value) { m_revisionUrlTemplateHasBeenSet = true; m_revisionUrlTemplate = value; }
+    inline void SetRevisionUrlTemplate(Aws::String&& value) { m_revisionUrlTemplateHasBeenSet = true; m_revisionUrlTemplate = std::move(value); }
 
     /**
      * <p>The URL returned to the AWS CodePipeline console that contains a link to the
@@ -238,7 +239,7 @@ namespace Model
      * page where customers can update or change the configuration of the external
      * action.</p>
      */
-    inline ActionTypeSettings& WithRevisionUrlTemplate(Aws::String&& value) { SetRevisionUrlTemplate(value); return *this;}
+    inline ActionTypeSettings& WithRevisionUrlTemplate(Aws::String&& value) { SetRevisionUrlTemplate(std::move(value)); return *this;}
 
     /**
      * <p>The URL returned to the AWS CodePipeline console that contains a link to the

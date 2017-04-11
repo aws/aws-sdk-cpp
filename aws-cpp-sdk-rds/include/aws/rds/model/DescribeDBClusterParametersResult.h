@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/ResponseMetadata.h>
 #include <aws/rds/model/Parameter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>Provides a list of parameters for the DB cluster parameter group.</p>
      */
-    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = value; }
+    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = std::move(value); }
 
     /**
      * <p>Provides a list of parameters for the DB cluster parameter group.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>Provides a list of parameters for the DB cluster parameter group.</p>
      */
-    inline DescribeDBClusterParametersResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
+    inline DescribeDBClusterParametersResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>Provides a list of parameters for the DB cluster parameter group.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>Provides a list of parameters for the DB cluster parameter group.</p>
      */
-    inline DescribeDBClusterParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(value); return *this; }
+    inline DescribeDBClusterParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
 
     /**
      * <p> An optional pagination token provided by a previous
@@ -105,7 +106,7 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code> . </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p> An optional pagination token provided by a previous
@@ -129,7 +130,7 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code> . </p>
      */
-    inline DescribeDBClusterParametersResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeDBClusterParametersResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous
@@ -146,13 +147,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeDBClusterParametersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeDBClusterParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeDBClusterParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Parameter> m_parameters;

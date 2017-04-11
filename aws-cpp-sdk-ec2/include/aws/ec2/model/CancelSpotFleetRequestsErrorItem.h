@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/CancelSpotFleetRequestsError.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The ID of the Spot fleet request.</p>
      */
-    inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = value; }
+    inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = std::move(value); }
 
     /**
      * <p>The ID of the Spot fleet request.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The ID of the Spot fleet request.</p>
      */
-    inline CancelSpotFleetRequestsErrorItem& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(value); return *this;}
+    inline CancelSpotFleetRequestsErrorItem& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Spot fleet request.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The error.</p>
      */
-    inline void SetError(CancelSpotFleetRequestsError&& value) { m_errorHasBeenSet = true; m_error = value; }
+    inline void SetError(CancelSpotFleetRequestsError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
 
     /**
      * <p>The error.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The error.</p>
      */
-    inline CancelSpotFleetRequestsErrorItem& WithError(CancelSpotFleetRequestsError&& value) { SetError(value); return *this;}
+    inline CancelSpotFleetRequestsErrorItem& WithError(CancelSpotFleetRequestsError&& value) { SetError(std::move(value)); return *this;}
 
   private:
     Aws::String m_spotFleetRequestId;

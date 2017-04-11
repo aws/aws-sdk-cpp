@@ -16,6 +16,7 @@
 #include <aws/sns/SNS_EXPORTS.h>
 #include <aws/sns/SNSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The ARN of the topic whose access control policy you wish to modify.</p>
      */
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
 
     /**
      * <p>The ARN of the topic whose access control policy you wish to modify.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The ARN of the topic whose access control policy you wish to modify.</p>
      */
-    inline RemovePermissionRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
+    inline RemovePermissionRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the topic whose access control policy you wish to modify.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The unique label of the statement you want to remove.</p>
      */
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = value; }
+    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
 
     /**
      * <p>The unique label of the statement you want to remove.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The unique label of the statement you want to remove.</p>
      */
-    inline RemovePermissionRequest& WithLabel(Aws::String&& value) { SetLabel(value); return *this;}
+    inline RemovePermissionRequest& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
 
     /**
      * <p>The unique label of the statement you want to remove.</p>

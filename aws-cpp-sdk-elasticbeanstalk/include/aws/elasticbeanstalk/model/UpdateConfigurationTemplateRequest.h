@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticbeanstalk/model/ConfigurationOptionSetting.h>
 #include <aws/elasticbeanstalk/model/OptionSpecification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * <code>UpdateConfigurationTemplate</code> returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of the application associated with the configuration template to
@@ -90,7 +91,7 @@ namespace Model
      * <code>UpdateConfigurationTemplate</code> returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
-    inline UpdateConfigurationTemplateRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline UpdateConfigurationTemplateRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the application associated with the configuration template to
@@ -119,7 +120,7 @@ namespace Model
      * template is found with this name, <code>UpdateConfigurationTemplate</code>
      * returns an <code>InvalidParameterValue</code> error. </p>
      */
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
+    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
      * <p>The name of the configuration template to update.</p> <p> If no configuration
@@ -140,7 +141,7 @@ namespace Model
      * template is found with this name, <code>UpdateConfigurationTemplate</code>
      * returns an <code>InvalidParameterValue</code> error. </p>
      */
-    inline UpdateConfigurationTemplateRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(value); return *this;}
+    inline UpdateConfigurationTemplateRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the configuration template to update.</p> <p> If no configuration
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>A new description for the configuration.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A new description for the configuration.</p>
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>A new description for the configuration.</p>
      */
-    inline UpdateConfigurationTemplateRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline UpdateConfigurationTemplateRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A new description for the configuration.</p>
@@ -200,7 +201,7 @@ namespace Model
      * <p>A list of configuration option settings to update with the new specified
      * option value.</p>
      */
-    inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
+    inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = std::move(value); }
 
     /**
      * <p>A list of configuration option settings to update with the new specified
@@ -212,7 +213,7 @@ namespace Model
      * <p>A list of configuration option settings to update with the new specified
      * option value.</p>
      */
-    inline UpdateConfigurationTemplateRequest& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(value); return *this;}
+    inline UpdateConfigurationTemplateRequest& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(std::move(value)); return *this;}
 
     /**
      * <p>A list of configuration option settings to update with the new specified
@@ -224,7 +225,7 @@ namespace Model
      * <p>A list of configuration option settings to update with the new specified
      * option value.</p>
      */
-    inline UpdateConfigurationTemplateRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
+    inline UpdateConfigurationTemplateRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of configuration options to remove from the configuration set.</p> <p>
@@ -245,7 +246,7 @@ namespace Model
      * Constraint: You can remove only <code>UserDefined</code> configuration options.
      * </p>
      */
-    inline void SetOptionsToRemove(Aws::Vector<OptionSpecification>&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = value; }
+    inline void SetOptionsToRemove(Aws::Vector<OptionSpecification>&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = std::move(value); }
 
     /**
      * <p>A list of configuration options to remove from the configuration set.</p> <p>
@@ -259,7 +260,7 @@ namespace Model
      * Constraint: You can remove only <code>UserDefined</code> configuration options.
      * </p>
      */
-    inline UpdateConfigurationTemplateRequest& WithOptionsToRemove(Aws::Vector<OptionSpecification>&& value) { SetOptionsToRemove(value); return *this;}
+    inline UpdateConfigurationTemplateRequest& WithOptionsToRemove(Aws::Vector<OptionSpecification>&& value) { SetOptionsToRemove(std::move(value)); return *this;}
 
     /**
      * <p>A list of configuration options to remove from the configuration set.</p> <p>
@@ -273,7 +274,7 @@ namespace Model
      * Constraint: You can remove only <code>UserDefined</code> configuration options.
      * </p>
      */
-    inline UpdateConfigurationTemplateRequest& AddOptionsToRemove(OptionSpecification&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(value); return *this; }
+    inline UpdateConfigurationTemplateRequest& AddOptionsToRemove(OptionSpecification&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_applicationName;

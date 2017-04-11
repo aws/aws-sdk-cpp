@@ -20,6 +20,7 @@
 #include <aws/es/model/AccessPoliciesStatus.h>
 #include <aws/es/model/SnapshotOptionsStatus.h>
 #include <aws/es/model/AdvancedOptionsStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>String of format X.Y to specify version for the Elasticsearch domain.</p>
      */
-    inline void SetElasticsearchVersion(ElasticsearchVersionStatus&& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = value; }
+    inline void SetElasticsearchVersion(ElasticsearchVersionStatus&& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = std::move(value); }
 
     /**
      * <p>String of format X.Y to specify version for the Elasticsearch domain.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>String of format X.Y to specify version for the Elasticsearch domain.</p>
      */
-    inline ElasticsearchDomainConfig& WithElasticsearchVersion(ElasticsearchVersionStatus&& value) { SetElasticsearchVersion(value); return *this;}
+    inline ElasticsearchDomainConfig& WithElasticsearchVersion(ElasticsearchVersionStatus&& value) { SetElasticsearchVersion(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the <code>ElasticsearchClusterConfig</code> for the Elasticsearch
@@ -89,7 +90,7 @@ namespace Model
      * <p>Specifies the <code>ElasticsearchClusterConfig</code> for the Elasticsearch
      * domain.</p>
      */
-    inline void SetElasticsearchClusterConfig(ElasticsearchClusterConfigStatus&& value) { m_elasticsearchClusterConfigHasBeenSet = true; m_elasticsearchClusterConfig = value; }
+    inline void SetElasticsearchClusterConfig(ElasticsearchClusterConfigStatus&& value) { m_elasticsearchClusterConfigHasBeenSet = true; m_elasticsearchClusterConfig = std::move(value); }
 
     /**
      * <p>Specifies the <code>ElasticsearchClusterConfig</code> for the Elasticsearch
@@ -101,7 +102,7 @@ namespace Model
      * <p>Specifies the <code>ElasticsearchClusterConfig</code> for the Elasticsearch
      * domain.</p>
      */
-    inline ElasticsearchDomainConfig& WithElasticsearchClusterConfig(ElasticsearchClusterConfigStatus&& value) { SetElasticsearchClusterConfig(value); return *this;}
+    inline ElasticsearchDomainConfig& WithElasticsearchClusterConfig(ElasticsearchClusterConfigStatus&& value) { SetElasticsearchClusterConfig(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the <code>EBSOptions</code> for the Elasticsearch domain.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>Specifies the <code>EBSOptions</code> for the Elasticsearch domain.</p>
      */
-    inline void SetEBSOptions(EBSOptionsStatus&& value) { m_eBSOptionsHasBeenSet = true; m_eBSOptions = value; }
+    inline void SetEBSOptions(EBSOptionsStatus&& value) { m_eBSOptionsHasBeenSet = true; m_eBSOptions = std::move(value); }
 
     /**
      * <p>Specifies the <code>EBSOptions</code> for the Elasticsearch domain.</p>
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>Specifies the <code>EBSOptions</code> for the Elasticsearch domain.</p>
      */
-    inline ElasticsearchDomainConfig& WithEBSOptions(EBSOptionsStatus&& value) { SetEBSOptions(value); return *this;}
+    inline ElasticsearchDomainConfig& WithEBSOptions(EBSOptionsStatus&& value) { SetEBSOptions(std::move(value)); return *this;}
 
     /**
      * <p>IAM access policy as a JSON-formatted string.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>IAM access policy as a JSON-formatted string.</p>
      */
-    inline void SetAccessPolicies(AccessPoliciesStatus&& value) { m_accessPoliciesHasBeenSet = true; m_accessPolicies = value; }
+    inline void SetAccessPolicies(AccessPoliciesStatus&& value) { m_accessPoliciesHasBeenSet = true; m_accessPolicies = std::move(value); }
 
     /**
      * <p>IAM access policy as a JSON-formatted string.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>IAM access policy as a JSON-formatted string.</p>
      */
-    inline ElasticsearchDomainConfig& WithAccessPolicies(AccessPoliciesStatus&& value) { SetAccessPolicies(value); return *this;}
+    inline ElasticsearchDomainConfig& WithAccessPolicies(AccessPoliciesStatus&& value) { SetAccessPolicies(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the <code>SnapshotOptions</code> for the Elasticsearch domain.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>Specifies the <code>SnapshotOptions</code> for the Elasticsearch domain.</p>
      */
-    inline void SetSnapshotOptions(SnapshotOptionsStatus&& value) { m_snapshotOptionsHasBeenSet = true; m_snapshotOptions = value; }
+    inline void SetSnapshotOptions(SnapshotOptionsStatus&& value) { m_snapshotOptionsHasBeenSet = true; m_snapshotOptions = std::move(value); }
 
     /**
      * <p>Specifies the <code>SnapshotOptions</code> for the Elasticsearch domain.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>Specifies the <code>SnapshotOptions</code> for the Elasticsearch domain.</p>
      */
-    inline ElasticsearchDomainConfig& WithSnapshotOptions(SnapshotOptionsStatus&& value) { SetSnapshotOptions(value); return *this;}
+    inline ElasticsearchDomainConfig& WithSnapshotOptions(SnapshotOptionsStatus&& value) { SetSnapshotOptions(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the <code>AdvancedOptions</code> for the domain. See <a
@@ -197,7 +198,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuring Advanced Options</a> for more information.</p>
      */
-    inline void SetAdvancedOptions(AdvancedOptionsStatus&& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions = value; }
+    inline void SetAdvancedOptions(AdvancedOptionsStatus&& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions = std::move(value); }
 
     /**
      * <p>Specifies the <code>AdvancedOptions</code> for the domain. See <a
@@ -211,7 +212,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuring Advanced Options</a> for more information.</p>
      */
-    inline ElasticsearchDomainConfig& WithAdvancedOptions(AdvancedOptionsStatus&& value) { SetAdvancedOptions(value); return *this;}
+    inline ElasticsearchDomainConfig& WithAdvancedOptions(AdvancedOptionsStatus&& value) { SetAdvancedOptions(std::move(value)); return *this;}
 
   private:
     ElasticsearchVersionStatus m_elasticsearchVersion;

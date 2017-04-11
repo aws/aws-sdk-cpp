@@ -16,6 +16,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/DeviceFarmRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The ID of the offering.</p>
      */
-    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
+    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::move(value); }
 
     /**
      * <p>The ID of the offering.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The ID of the offering.</p>
      */
-    inline PurchaseOfferingRequest& WithOfferingId(Aws::String&& value) { SetOfferingId(value); return *this;}
+    inline PurchaseOfferingRequest& WithOfferingId(Aws::String&& value) { SetOfferingId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the offering.</p>

@@ -18,6 +18,7 @@
 #include <aws/mturk-requester/model/NotificationTransport.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/model/EventType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * (Amazon SQS) notifications (if Transport is SQS), this is the URL for your
      * Amazon SQS queue. </p>
      */
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = value; }
+    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
      * <p> The destination for notification messages. or email notifications (if
@@ -93,7 +94,7 @@ namespace Model
      * (Amazon SQS) notifications (if Transport is SQS), this is the URL for your
      * Amazon SQS queue. </p>
      */
-    inline NotificationSpecification& WithDestination(Aws::String&& value) { SetDestination(value); return *this;}
+    inline NotificationSpecification& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
      * <p> The destination for notification messages. or email notifications (if
@@ -119,7 +120,7 @@ namespace Model
      * <p> The method Amazon Mechanical Turk uses to send the notification. Valid
      * Values: Email | SQS. </p>
      */
-    inline void SetTransport(NotificationTransport&& value) { m_transportHasBeenSet = true; m_transport = value; }
+    inline void SetTransport(NotificationTransport&& value) { m_transportHasBeenSet = true; m_transport = std::move(value); }
 
     /**
      * <p> The method Amazon Mechanical Turk uses to send the notification. Valid
@@ -131,7 +132,7 @@ namespace Model
      * <p> The method Amazon Mechanical Turk uses to send the notification. Valid
      * Values: Email | SQS. </p>
      */
-    inline NotificationSpecification& WithTransport(NotificationTransport&& value) { SetTransport(value); return *this;}
+    inline NotificationSpecification& WithTransport(NotificationTransport&& value) { SetTransport(std::move(value)); return *this;}
 
     /**
      * <p>The version of the Notification API to use. Valid value is 2006-05-05.</p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>The version of the Notification API to use. Valid value is 2006-05-05.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The version of the Notification API to use. Valid value is 2006-05-05.</p>
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>The version of the Notification API to use. Valid value is 2006-05-05.</p>
      */
-    inline NotificationSpecification& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline NotificationSpecification& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the Notification API to use. Valid value is 2006-05-05.</p>
@@ -193,7 +194,7 @@ namespace Model
      * HITExtended | HITDisposed | HITReviewable | HITExpired | Ping. The Ping event is
      * only valid for the SendTestEventNotification operation. </p>
      */
-    inline void SetEventTypes(Aws::Vector<EventType>&& value) { m_eventTypesHasBeenSet = true; m_eventTypes = value; }
+    inline void SetEventTypes(Aws::Vector<EventType>&& value) { m_eventTypesHasBeenSet = true; m_eventTypes = std::move(value); }
 
     /**
      * <p> The list of events that should cause notifications to be sent. Valid Values:
@@ -211,7 +212,7 @@ namespace Model
      * HITExtended | HITDisposed | HITReviewable | HITExpired | Ping. The Ping event is
      * only valid for the SendTestEventNotification operation. </p>
      */
-    inline NotificationSpecification& WithEventTypes(Aws::Vector<EventType>&& value) { SetEventTypes(value); return *this;}
+    inline NotificationSpecification& WithEventTypes(Aws::Vector<EventType>&& value) { SetEventTypes(std::move(value)); return *this;}
 
     /**
      * <p> The list of events that should cause notifications to be sent. Valid Values:
@@ -229,7 +230,7 @@ namespace Model
      * HITExtended | HITDisposed | HITReviewable | HITExpired | Ping. The Ping event is
      * only valid for the SendTestEventNotification operation. </p>
      */
-    inline NotificationSpecification& AddEventTypes(EventType&& value) { m_eventTypesHasBeenSet = true; m_eventTypes.push_back(value); return *this; }
+    inline NotificationSpecification& AddEventTypes(EventType&& value) { m_eventTypesHasBeenSet = true; m_eventTypes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_destination;

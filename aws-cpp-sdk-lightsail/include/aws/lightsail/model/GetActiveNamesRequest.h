@@ -16,6 +16,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>A token used for paginating results from your get active names request.</p>
      */
-    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
+    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
 
     /**
      * <p>A token used for paginating results from your get active names request.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>A token used for paginating results from your get active names request.</p>
      */
-    inline GetActiveNamesRequest& WithPageToken(Aws::String&& value) { SetPageToken(value); return *this;}
+    inline GetActiveNamesRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
 
     /**
      * <p>A token used for paginating results from your get active names request.</p>

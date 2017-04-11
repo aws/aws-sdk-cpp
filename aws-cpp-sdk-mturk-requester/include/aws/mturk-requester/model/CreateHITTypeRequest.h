@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/model/QualificationRequirement.h>
+#include <utility>
 
 namespace Aws
 {
@@ -101,7 +102,7 @@ namespace Model
      * <p> The amount of money the Requester will pay a Worker for successfully
      * completing the HIT. </p>
      */
-    inline void SetReward(Aws::String&& value) { m_rewardHasBeenSet = true; m_reward = value; }
+    inline void SetReward(Aws::String&& value) { m_rewardHasBeenSet = true; m_reward = std::move(value); }
 
     /**
      * <p> The amount of money the Requester will pay a Worker for successfully
@@ -119,7 +120,7 @@ namespace Model
      * <p> The amount of money the Requester will pay a Worker for successfully
      * completing the HIT. </p>
      */
-    inline CreateHITTypeRequest& WithReward(Aws::String&& value) { SetReward(value); return *this;}
+    inline CreateHITTypeRequest& WithReward(Aws::String&& value) { SetReward(std::move(value)); return *this;}
 
     /**
      * <p> The amount of money the Requester will pay a Worker for successfully
@@ -146,7 +147,7 @@ namespace Model
      * of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title
      * appears in search results, and everywhere the HIT is mentioned. </p>
      */
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = value; }
+    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
      * <p> The title of the HIT. A title should be short and descriptive about the kind
@@ -167,7 +168,7 @@ namespace Model
      * of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title
      * appears in search results, and everywhere the HIT is mentioned. </p>
      */
-    inline CreateHITTypeRequest& WithTitle(Aws::String&& value) { SetTitle(value); return *this;}
+    inline CreateHITTypeRequest& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
      * <p> The title of the HIT. A title should be short and descriptive about the kind
@@ -192,7 +193,7 @@ namespace Model
      * <p> One or more words or phrases that describe the HIT, separated by commas.
      * These words are used in searches to find HITs. </p>
      */
-    inline void SetKeywords(Aws::String&& value) { m_keywordsHasBeenSet = true; m_keywords = value; }
+    inline void SetKeywords(Aws::String&& value) { m_keywordsHasBeenSet = true; m_keywords = std::move(value); }
 
     /**
      * <p> One or more words or phrases that describe the HIT, separated by commas.
@@ -210,7 +211,7 @@ namespace Model
      * <p> One or more words or phrases that describe the HIT, separated by commas.
      * These words are used in searches to find HITs. </p>
      */
-    inline CreateHITTypeRequest& WithKeywords(Aws::String&& value) { SetKeywords(value); return *this;}
+    inline CreateHITTypeRequest& WithKeywords(Aws::String&& value) { SetKeywords(std::move(value)); return *this;}
 
     /**
      * <p> One or more words or phrases that describe the HIT, separated by commas.
@@ -243,7 +244,7 @@ namespace Model
      * results, and in the HIT and assignment screens. A good description gives the
      * user enough information to evaluate the HIT before accepting it. </p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p> A general description of the HIT. A description includes detailed
@@ -270,7 +271,7 @@ namespace Model
      * results, and in the HIT and assignment screens. A good description gives the
      * user enough information to evaluate the HIT before accepting it. </p>
      */
-    inline CreateHITTypeRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateHITTypeRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p> A general description of the HIT. A description includes detailed
@@ -297,7 +298,7 @@ namespace Model
      * <p> A condition that a Worker's Qualifications must meet before the Worker is
      * allowed to accept and complete the HIT. </p>
      */
-    inline void SetQualificationRequirements(Aws::Vector<QualificationRequirement>&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements = value; }
+    inline void SetQualificationRequirements(Aws::Vector<QualificationRequirement>&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements = std::move(value); }
 
     /**
      * <p> A condition that a Worker's Qualifications must meet before the Worker is
@@ -309,7 +310,7 @@ namespace Model
      * <p> A condition that a Worker's Qualifications must meet before the Worker is
      * allowed to accept and complete the HIT. </p>
      */
-    inline CreateHITTypeRequest& WithQualificationRequirements(Aws::Vector<QualificationRequirement>&& value) { SetQualificationRequirements(value); return *this;}
+    inline CreateHITTypeRequest& WithQualificationRequirements(Aws::Vector<QualificationRequirement>&& value) { SetQualificationRequirements(std::move(value)); return *this;}
 
     /**
      * <p> A condition that a Worker's Qualifications must meet before the Worker is
@@ -321,7 +322,7 @@ namespace Model
      * <p> A condition that a Worker's Qualifications must meet before the Worker is
      * allowed to accept and complete the HIT. </p>
      */
-    inline CreateHITTypeRequest& AddQualificationRequirements(QualificationRequirement&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements.push_back(value); return *this; }
+    inline CreateHITTypeRequest& AddQualificationRequirements(QualificationRequirement&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements.push_back(std::move(value)); return *this; }
 
   private:
     long long m_autoApprovalDelayInSeconds;

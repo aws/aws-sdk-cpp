@@ -29,6 +29,7 @@
 #include <aws/rekognition/model/ImageQuality.h>
 #include <aws/rekognition/model/Emotion.h>
 #include <aws/rekognition/model/Landmark.h>
+#include <utility>
 
 namespace Aws
 {
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>Bounding box of the face.</p>
      */
-    inline void SetBoundingBox(BoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
+    inline void SetBoundingBox(BoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
 
     /**
      * <p>Bounding box of the face.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>Bounding box of the face.</p>
      */
-    inline FaceDetail& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(value); return *this;}
+    inline FaceDetail& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
 
     /**
      * <p>The estimated age range, in years, for the face. Low represents the lowest
@@ -99,7 +100,7 @@ namespace Model
      * <p>The estimated age range, in years, for the face. Low represents the lowest
      * estimated age and High represents the highest estimated age.</p>
      */
-    inline void SetAgeRange(AgeRange&& value) { m_ageRangeHasBeenSet = true; m_ageRange = value; }
+    inline void SetAgeRange(AgeRange&& value) { m_ageRangeHasBeenSet = true; m_ageRange = std::move(value); }
 
     /**
      * <p>The estimated age range, in years, for the face. Low represents the lowest
@@ -111,7 +112,7 @@ namespace Model
      * <p>The estimated age range, in years, for the face. Low represents the lowest
      * estimated age and High represents the highest estimated age.</p>
      */
-    inline FaceDetail& WithAgeRange(AgeRange&& value) { SetAgeRange(value); return *this;}
+    inline FaceDetail& WithAgeRange(AgeRange&& value) { SetAgeRange(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether or not the face is smiling, and the confidence level in the
@@ -129,7 +130,7 @@ namespace Model
      * <p>Indicates whether or not the face is smiling, and the confidence level in the
      * determination.</p>
      */
-    inline void SetSmile(Smile&& value) { m_smileHasBeenSet = true; m_smile = value; }
+    inline void SetSmile(Smile&& value) { m_smileHasBeenSet = true; m_smile = std::move(value); }
 
     /**
      * <p>Indicates whether or not the face is smiling, and the confidence level in the
@@ -141,7 +142,7 @@ namespace Model
      * <p>Indicates whether or not the face is smiling, and the confidence level in the
      * determination.</p>
      */
-    inline FaceDetail& WithSmile(Smile&& value) { SetSmile(value); return *this;}
+    inline FaceDetail& WithSmile(Smile&& value) { SetSmile(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether or not the face is wearing eye glasses, and the confidence
@@ -159,7 +160,7 @@ namespace Model
      * <p>Indicates whether or not the face is wearing eye glasses, and the confidence
      * level in the determination.</p>
      */
-    inline void SetEyeglasses(Eyeglasses&& value) { m_eyeglassesHasBeenSet = true; m_eyeglasses = value; }
+    inline void SetEyeglasses(Eyeglasses&& value) { m_eyeglassesHasBeenSet = true; m_eyeglasses = std::move(value); }
 
     /**
      * <p>Indicates whether or not the face is wearing eye glasses, and the confidence
@@ -171,7 +172,7 @@ namespace Model
      * <p>Indicates whether or not the face is wearing eye glasses, and the confidence
      * level in the determination.</p>
      */
-    inline FaceDetail& WithEyeglasses(Eyeglasses&& value) { SetEyeglasses(value); return *this;}
+    inline FaceDetail& WithEyeglasses(Eyeglasses&& value) { SetEyeglasses(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether or not the face is wearing sunglasses, and the confidence
@@ -189,7 +190,7 @@ namespace Model
      * <p>Indicates whether or not the face is wearing sunglasses, and the confidence
      * level in the determination.</p>
      */
-    inline void SetSunglasses(Sunglasses&& value) { m_sunglassesHasBeenSet = true; m_sunglasses = value; }
+    inline void SetSunglasses(Sunglasses&& value) { m_sunglassesHasBeenSet = true; m_sunglasses = std::move(value); }
 
     /**
      * <p>Indicates whether or not the face is wearing sunglasses, and the confidence
@@ -201,7 +202,7 @@ namespace Model
      * <p>Indicates whether or not the face is wearing sunglasses, and the confidence
      * level in the determination.</p>
      */
-    inline FaceDetail& WithSunglasses(Sunglasses&& value) { SetSunglasses(value); return *this;}
+    inline FaceDetail& WithSunglasses(Sunglasses&& value) { SetSunglasses(std::move(value)); return *this;}
 
     /**
      * <p>Gender of the face and the confidence level in the determination.</p>
@@ -216,7 +217,7 @@ namespace Model
     /**
      * <p>Gender of the face and the confidence level in the determination.</p>
      */
-    inline void SetGender(Gender&& value) { m_genderHasBeenSet = true; m_gender = value; }
+    inline void SetGender(Gender&& value) { m_genderHasBeenSet = true; m_gender = std::move(value); }
 
     /**
      * <p>Gender of the face and the confidence level in the determination.</p>
@@ -226,7 +227,7 @@ namespace Model
     /**
      * <p>Gender of the face and the confidence level in the determination.</p>
      */
-    inline FaceDetail& WithGender(Gender&& value) { SetGender(value); return *this;}
+    inline FaceDetail& WithGender(Gender&& value) { SetGender(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether or not the face has a beard, and the confidence level in
@@ -244,7 +245,7 @@ namespace Model
      * <p>Indicates whether or not the face has a beard, and the confidence level in
      * the determination.</p>
      */
-    inline void SetBeard(Beard&& value) { m_beardHasBeenSet = true; m_beard = value; }
+    inline void SetBeard(Beard&& value) { m_beardHasBeenSet = true; m_beard = std::move(value); }
 
     /**
      * <p>Indicates whether or not the face has a beard, and the confidence level in
@@ -256,7 +257,7 @@ namespace Model
      * <p>Indicates whether or not the face has a beard, and the confidence level in
      * the determination.</p>
      */
-    inline FaceDetail& WithBeard(Beard&& value) { SetBeard(value); return *this;}
+    inline FaceDetail& WithBeard(Beard&& value) { SetBeard(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether or not the face has a mustache, and the confidence level in
@@ -274,7 +275,7 @@ namespace Model
      * <p>Indicates whether or not the face has a mustache, and the confidence level in
      * the determination.</p>
      */
-    inline void SetMustache(Mustache&& value) { m_mustacheHasBeenSet = true; m_mustache = value; }
+    inline void SetMustache(Mustache&& value) { m_mustacheHasBeenSet = true; m_mustache = std::move(value); }
 
     /**
      * <p>Indicates whether or not the face has a mustache, and the confidence level in
@@ -286,7 +287,7 @@ namespace Model
      * <p>Indicates whether or not the face has a mustache, and the confidence level in
      * the determination.</p>
      */
-    inline FaceDetail& WithMustache(Mustache&& value) { SetMustache(value); return *this;}
+    inline FaceDetail& WithMustache(Mustache&& value) { SetMustache(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether or not the eyes on the face are open, and the confidence
@@ -304,7 +305,7 @@ namespace Model
      * <p>Indicates whether or not the eyes on the face are open, and the confidence
      * level in the determination.</p>
      */
-    inline void SetEyesOpen(EyeOpen&& value) { m_eyesOpenHasBeenSet = true; m_eyesOpen = value; }
+    inline void SetEyesOpen(EyeOpen&& value) { m_eyesOpenHasBeenSet = true; m_eyesOpen = std::move(value); }
 
     /**
      * <p>Indicates whether or not the eyes on the face are open, and the confidence
@@ -316,7 +317,7 @@ namespace Model
      * <p>Indicates whether or not the eyes on the face are open, and the confidence
      * level in the determination.</p>
      */
-    inline FaceDetail& WithEyesOpen(EyeOpen&& value) { SetEyesOpen(value); return *this;}
+    inline FaceDetail& WithEyesOpen(EyeOpen&& value) { SetEyesOpen(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether or not the mouth on the face is open, and the confidence
@@ -334,7 +335,7 @@ namespace Model
      * <p>Indicates whether or not the mouth on the face is open, and the confidence
      * level in the determination.</p>
      */
-    inline void SetMouthOpen(MouthOpen&& value) { m_mouthOpenHasBeenSet = true; m_mouthOpen = value; }
+    inline void SetMouthOpen(MouthOpen&& value) { m_mouthOpenHasBeenSet = true; m_mouthOpen = std::move(value); }
 
     /**
      * <p>Indicates whether or not the mouth on the face is open, and the confidence
@@ -346,7 +347,7 @@ namespace Model
      * <p>Indicates whether or not the mouth on the face is open, and the confidence
      * level in the determination.</p>
      */
-    inline FaceDetail& WithMouthOpen(MouthOpen&& value) { SetMouthOpen(value); return *this;}
+    inline FaceDetail& WithMouthOpen(MouthOpen&& value) { SetMouthOpen(std::move(value)); return *this;}
 
     /**
      * <p>The emotions detected on the face, and the confidence level in the
@@ -364,7 +365,7 @@ namespace Model
      * <p>The emotions detected on the face, and the confidence level in the
      * determination. For example, HAPPY, SAD, and ANGRY. </p>
      */
-    inline void SetEmotions(Aws::Vector<Emotion>&& value) { m_emotionsHasBeenSet = true; m_emotions = value; }
+    inline void SetEmotions(Aws::Vector<Emotion>&& value) { m_emotionsHasBeenSet = true; m_emotions = std::move(value); }
 
     /**
      * <p>The emotions detected on the face, and the confidence level in the
@@ -376,7 +377,7 @@ namespace Model
      * <p>The emotions detected on the face, and the confidence level in the
      * determination. For example, HAPPY, SAD, and ANGRY. </p>
      */
-    inline FaceDetail& WithEmotions(Aws::Vector<Emotion>&& value) { SetEmotions(value); return *this;}
+    inline FaceDetail& WithEmotions(Aws::Vector<Emotion>&& value) { SetEmotions(std::move(value)); return *this;}
 
     /**
      * <p>The emotions detected on the face, and the confidence level in the
@@ -388,7 +389,7 @@ namespace Model
      * <p>The emotions detected on the face, and the confidence level in the
      * determination. For example, HAPPY, SAD, and ANGRY. </p>
      */
-    inline FaceDetail& AddEmotions(Emotion&& value) { m_emotionsHasBeenSet = true; m_emotions.push_back(value); return *this; }
+    inline FaceDetail& AddEmotions(Emotion&& value) { m_emotionsHasBeenSet = true; m_emotions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Indicates the location of the landmark on the face.</p>
@@ -403,7 +404,7 @@ namespace Model
     /**
      * <p>Indicates the location of the landmark on the face.</p>
      */
-    inline void SetLandmarks(Aws::Vector<Landmark>&& value) { m_landmarksHasBeenSet = true; m_landmarks = value; }
+    inline void SetLandmarks(Aws::Vector<Landmark>&& value) { m_landmarksHasBeenSet = true; m_landmarks = std::move(value); }
 
     /**
      * <p>Indicates the location of the landmark on the face.</p>
@@ -413,7 +414,7 @@ namespace Model
     /**
      * <p>Indicates the location of the landmark on the face.</p>
      */
-    inline FaceDetail& WithLandmarks(Aws::Vector<Landmark>&& value) { SetLandmarks(value); return *this;}
+    inline FaceDetail& WithLandmarks(Aws::Vector<Landmark>&& value) { SetLandmarks(std::move(value)); return *this;}
 
     /**
      * <p>Indicates the location of the landmark on the face.</p>
@@ -423,7 +424,7 @@ namespace Model
     /**
      * <p>Indicates the location of the landmark on the face.</p>
      */
-    inline FaceDetail& AddLandmarks(Landmark&& value) { m_landmarksHasBeenSet = true; m_landmarks.push_back(value); return *this; }
+    inline FaceDetail& AddLandmarks(Landmark&& value) { m_landmarksHasBeenSet = true; m_landmarks.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Indicates the pose of the face as determined by pitch, roll, and the yaw.</p>
@@ -438,7 +439,7 @@ namespace Model
     /**
      * <p>Indicates the pose of the face as determined by pitch, roll, and the yaw.</p>
      */
-    inline void SetPose(Pose&& value) { m_poseHasBeenSet = true; m_pose = value; }
+    inline void SetPose(Pose&& value) { m_poseHasBeenSet = true; m_pose = std::move(value); }
 
     /**
      * <p>Indicates the pose of the face as determined by pitch, roll, and the yaw.</p>
@@ -448,7 +449,7 @@ namespace Model
     /**
      * <p>Indicates the pose of the face as determined by pitch, roll, and the yaw.</p>
      */
-    inline FaceDetail& WithPose(Pose&& value) { SetPose(value); return *this;}
+    inline FaceDetail& WithPose(Pose&& value) { SetPose(std::move(value)); return *this;}
 
     /**
      * <p>Identifies image brightness and sharpness.</p>
@@ -463,7 +464,7 @@ namespace Model
     /**
      * <p>Identifies image brightness and sharpness.</p>
      */
-    inline void SetQuality(ImageQuality&& value) { m_qualityHasBeenSet = true; m_quality = value; }
+    inline void SetQuality(ImageQuality&& value) { m_qualityHasBeenSet = true; m_quality = std::move(value); }
 
     /**
      * <p>Identifies image brightness and sharpness.</p>
@@ -473,7 +474,7 @@ namespace Model
     /**
      * <p>Identifies image brightness and sharpness.</p>
      */
-    inline FaceDetail& WithQuality(ImageQuality&& value) { SetQuality(value); return *this;}
+    inline FaceDetail& WithQuality(ImageQuality&& value) { SetQuality(std::move(value)); return *this;}
 
     /**
      * <p>Confidence level that the bounding box contains a face (and not a different

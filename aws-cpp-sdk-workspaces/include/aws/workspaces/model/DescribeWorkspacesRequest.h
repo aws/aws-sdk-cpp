@@ -17,6 +17,7 @@
 #include <aws/workspaces/WorkSpacesRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * the identifier it returns is not immediately available. If you immediately call
      * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
-    inline void SetWorkspaceIds(Aws::Vector<Aws::String>&& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds = value; }
+    inline void SetWorkspaceIds(Aws::Vector<Aws::String>&& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds = std::move(value); }
 
     /**
      * <p>An array of strings that contain the identifiers of the WorkSpaces for which
@@ -83,7 +84,7 @@ namespace Model
      * the identifier it returns is not immediately available. If you immediately call
      * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
-    inline DescribeWorkspacesRequest& WithWorkspaceIds(Aws::Vector<Aws::String>&& value) { SetWorkspaceIds(value); return *this;}
+    inline DescribeWorkspacesRequest& WithWorkspaceIds(Aws::Vector<Aws::String>&& value) { SetWorkspaceIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of strings that contain the identifiers of the WorkSpaces for which
@@ -101,7 +102,7 @@ namespace Model
      * the identifier it returns is not immediately available. If you immediately call
      * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
-    inline DescribeWorkspacesRequest& AddWorkspaceIds(Aws::String&& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(value); return *this; }
+    inline DescribeWorkspacesRequest& AddWorkspaceIds(Aws::String&& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of strings that contain the identifiers of the WorkSpaces for which
@@ -134,7 +135,7 @@ namespace Model
      * <code>UserName</code> parameter. This parameter cannot be combined with any
      * other filter parameter.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>Specifies the directory identifier to which to limit the WorkSpaces.
@@ -158,7 +159,7 @@ namespace Model
      * <code>UserName</code> parameter. This parameter cannot be combined with any
      * other filter parameter.</p>
      */
-    inline DescribeWorkspacesRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline DescribeWorkspacesRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the directory identifier to which to limit the WorkSpaces.
@@ -184,7 +185,7 @@ namespace Model
      * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
      * user for whom to obtain the WorkSpace.</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
@@ -202,7 +203,7 @@ namespace Model
      * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
      * user for whom to obtain the WorkSpace.</p>
      */
-    inline DescribeWorkspacesRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline DescribeWorkspacesRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
@@ -229,7 +230,7 @@ namespace Model
      * are created from this bundle will be retrieved. This parameter cannot be
      * combined with any other filter parameter.</p>
      */
-    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
+    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
 
     /**
      * <p>The identifier of a bundle to obtain the WorkSpaces for. All WorkSpaces that
@@ -250,7 +251,7 @@ namespace Model
      * are created from this bundle will be retrieved. This parameter cannot be
      * combined with any other filter parameter.</p>
      */
-    inline DescribeWorkspacesRequest& WithBundleId(Aws::String&& value) { SetBundleId(value); return *this;}
+    inline DescribeWorkspacesRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of a bundle to obtain the WorkSpaces for. All WorkSpaces that
@@ -290,7 +291,7 @@ namespace Model
      * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
      * null if this is the first call.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
@@ -308,7 +309,7 @@ namespace Model
      * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
      * null if this is the first call.</p>
      */
-    inline DescribeWorkspacesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeWorkspacesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>NextToken</code> value from a previous call to this operation. Pass

@@ -17,6 +17,7 @@
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/model/NewBGPPeer.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The ID of the virtual interface on which the BGP peer will be
      * provisioned.</p> <p>Example: dxvif-456abc78</p> <p>Default: None</p>
      */
-    inline void SetVirtualInterfaceId(Aws::String&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = value; }
+    inline void SetVirtualInterfaceId(Aws::String&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = std::move(value); }
 
     /**
      * <p>The ID of the virtual interface on which the BGP peer will be
@@ -74,7 +75,7 @@ namespace Model
      * <p>The ID of the virtual interface on which the BGP peer will be
      * provisioned.</p> <p>Example: dxvif-456abc78</p> <p>Default: None</p>
      */
-    inline CreateBGPPeerRequest& WithVirtualInterfaceId(Aws::String&& value) { SetVirtualInterfaceId(value); return *this;}
+    inline CreateBGPPeerRequest& WithVirtualInterfaceId(Aws::String&& value) { SetVirtualInterfaceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the virtual interface on which the BGP peer will be
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>Detailed information for the BGP peer to be created.</p> <p>Default: None</p>
      */
-    inline void SetNewBGPPeer(NewBGPPeer&& value) { m_newBGPPeerHasBeenSet = true; m_newBGPPeer = value; }
+    inline void SetNewBGPPeer(NewBGPPeer&& value) { m_newBGPPeerHasBeenSet = true; m_newBGPPeer = std::move(value); }
 
     /**
      * <p>Detailed information for the BGP peer to be created.</p> <p>Default: None</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>Detailed information for the BGP peer to be created.</p> <p>Default: None</p>
      */
-    inline CreateBGPPeerRequest& WithNewBGPPeer(NewBGPPeer&& value) { SetNewBGPPeer(value); return *this;}
+    inline CreateBGPPeerRequest& WithNewBGPPeer(NewBGPPeer&& value) { SetNewBGPPeer(std::move(value)); return *this;}
 
   private:
     Aws::String m_virtualInterfaceId;

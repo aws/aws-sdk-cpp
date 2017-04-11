@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codecommit/model/RepositoryTrigger.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>The name of the repository where you want to create or update the
      * trigger.</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The name of the repository where you want to create or update the
@@ -75,7 +76,7 @@ namespace Model
      * <p>The name of the repository where you want to create or update the
      * trigger.</p>
      */
-    inline PutRepositoryTriggersRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline PutRepositoryTriggersRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the repository where you want to create or update the
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The JSON block of configuration information for each trigger.</p>
      */
-    inline void SetTriggers(Aws::Vector<RepositoryTrigger>&& value) { m_triggersHasBeenSet = true; m_triggers = value; }
+    inline void SetTriggers(Aws::Vector<RepositoryTrigger>&& value) { m_triggersHasBeenSet = true; m_triggers = std::move(value); }
 
     /**
      * <p>The JSON block of configuration information for each trigger.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The JSON block of configuration information for each trigger.</p>
      */
-    inline PutRepositoryTriggersRequest& WithTriggers(Aws::Vector<RepositoryTrigger>&& value) { SetTriggers(value); return *this;}
+    inline PutRepositoryTriggersRequest& WithTriggers(Aws::Vector<RepositoryTrigger>&& value) { SetTriggers(std::move(value)); return *this;}
 
     /**
      * <p>The JSON block of configuration information for each trigger.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The JSON block of configuration information for each trigger.</p>
      */
-    inline PutRepositoryTriggersRequest& AddTriggers(RepositoryTrigger&& value) { m_triggersHasBeenSet = true; m_triggers.push_back(value); return *this; }
+    inline PutRepositoryTriggersRequest& AddTriggers(RepositoryTrigger&& value) { m_triggersHasBeenSet = true; m_triggers.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_repositoryName;

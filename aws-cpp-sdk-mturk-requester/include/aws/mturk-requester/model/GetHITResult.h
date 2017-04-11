@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/model/HIT.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p> Contains the requested HIT data.</p>
      */
-    inline void SetHIT(HIT&& value) { m_hIT = value; }
+    inline void SetHIT(HIT&& value) { m_hIT = std::move(value); }
 
     /**
      * <p> Contains the requested HIT data.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p> Contains the requested HIT data.</p>
      */
-    inline GetHITResult& WithHIT(HIT&& value) { SetHIT(value); return *this;}
+    inline GetHITResult& WithHIT(HIT&& value) { SetHIT(std::move(value)); return *this;}
 
   private:
     HIT m_hIT;

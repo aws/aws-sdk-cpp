@@ -21,6 +21,7 @@
 #include <aws/ec2/model/NatGatewayState.h>
 #include <aws/ec2/model/ProvisionedBandwidth.h>
 #include <aws/ec2/model/NatGatewayAddress.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The ID of the VPC in which the NAT gateway is located.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC in which the NAT gateway is located.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The ID of the VPC in which the NAT gateway is located.</p>
      */
-    inline NatGateway& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline NatGateway& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC in which the NAT gateway is located.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The ID of the subnet in which the NAT gateway is located.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>The ID of the subnet in which the NAT gateway is located.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The ID of the subnet in which the NAT gateway is located.</p>
      */
-    inline NatGateway& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+    inline NatGateway& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the subnet in which the NAT gateway is located.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>The ID of the NAT gateway.</p>
      */
-    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
+    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = std::move(value); }
 
     /**
      * <p>The ID of the NAT gateway.</p>
@@ -149,7 +150,7 @@ namespace Model
     /**
      * <p>The ID of the NAT gateway.</p>
      */
-    inline NatGateway& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(value); return *this;}
+    inline NatGateway& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the NAT gateway.</p>
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p>The date and time the NAT gateway was created.</p>
      */
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
 
     /**
      * <p>The date and time the NAT gateway was created.</p>
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p>The date and time the NAT gateway was created.</p>
      */
-    inline NatGateway& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(value); return *this;}
+    inline NatGateway& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
     /**
      * <p>The date and time the NAT gateway was deleted, if applicable.</p>
@@ -194,7 +195,7 @@ namespace Model
     /**
      * <p>The date and time the NAT gateway was deleted, if applicable.</p>
      */
-    inline void SetDeleteTime(Aws::Utils::DateTime&& value) { m_deleteTimeHasBeenSet = true; m_deleteTime = value; }
+    inline void SetDeleteTime(Aws::Utils::DateTime&& value) { m_deleteTimeHasBeenSet = true; m_deleteTime = std::move(value); }
 
     /**
      * <p>The date and time the NAT gateway was deleted, if applicable.</p>
@@ -204,7 +205,7 @@ namespace Model
     /**
      * <p>The date and time the NAT gateway was deleted, if applicable.</p>
      */
-    inline NatGateway& WithDeleteTime(Aws::Utils::DateTime&& value) { SetDeleteTime(value); return *this;}
+    inline NatGateway& WithDeleteTime(Aws::Utils::DateTime&& value) { SetDeleteTime(std::move(value)); return *this;}
 
     /**
      * <p>Information about the IP addresses and network interface associated with the
@@ -222,7 +223,7 @@ namespace Model
      * <p>Information about the IP addresses and network interface associated with the
      * NAT gateway.</p>
      */
-    inline void SetNatGatewayAddresses(Aws::Vector<NatGatewayAddress>&& value) { m_natGatewayAddressesHasBeenSet = true; m_natGatewayAddresses = value; }
+    inline void SetNatGatewayAddresses(Aws::Vector<NatGatewayAddress>&& value) { m_natGatewayAddressesHasBeenSet = true; m_natGatewayAddresses = std::move(value); }
 
     /**
      * <p>Information about the IP addresses and network interface associated with the
@@ -234,7 +235,7 @@ namespace Model
      * <p>Information about the IP addresses and network interface associated with the
      * NAT gateway.</p>
      */
-    inline NatGateway& WithNatGatewayAddresses(Aws::Vector<NatGatewayAddress>&& value) { SetNatGatewayAddresses(value); return *this;}
+    inline NatGateway& WithNatGatewayAddresses(Aws::Vector<NatGatewayAddress>&& value) { SetNatGatewayAddresses(std::move(value)); return *this;}
 
     /**
      * <p>Information about the IP addresses and network interface associated with the
@@ -246,7 +247,7 @@ namespace Model
      * <p>Information about the IP addresses and network interface associated with the
      * NAT gateway.</p>
      */
-    inline NatGateway& AddNatGatewayAddresses(NatGatewayAddress&& value) { m_natGatewayAddressesHasBeenSet = true; m_natGatewayAddresses.push_back(value); return *this; }
+    inline NatGateway& AddNatGatewayAddresses(NatGatewayAddress&& value) { m_natGatewayAddressesHasBeenSet = true; m_natGatewayAddresses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The state of the NAT gateway.</p> <ul> <li> <p> <code>pending</code>: The NAT
@@ -291,7 +292,7 @@ namespace Model
      * NAT gateway has been terminated and is no longer processing traffic.</p> </li>
      * </ul>
      */
-    inline void SetState(NatGatewayState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(NatGatewayState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the NAT gateway.</p> <ul> <li> <p> <code>pending</code>: The NAT
@@ -321,7 +322,7 @@ namespace Model
      * NAT gateway has been terminated and is no longer processing traffic.</p> </li>
      * </ul>
      */
-    inline NatGateway& WithState(NatGatewayState&& value) { SetState(value); return *this;}
+    inline NatGateway& WithState(NatGatewayState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error code for the
@@ -348,7 +349,7 @@ namespace Model
      * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> |
      * <code>InvalidSubnetID.NotFound</code>)</p>
      */
-    inline void SetFailureCode(Aws::String&& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
+    inline void SetFailureCode(Aws::String&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error code for the
@@ -375,7 +376,7 @@ namespace Model
      * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> |
      * <code>InvalidSubnetID.NotFound</code>)</p>
      */
-    inline NatGateway& WithFailureCode(Aws::String&& value) { SetFailureCode(value); return *this;}
+    inline NatGateway& WithFailureCode(Aws::String&& value) { SetFailureCode(std::move(value)); return *this;}
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error code for the
@@ -435,7 +436,7 @@ namespace Model
      * specified subnet subnet-xxxxxxxx does not exist or could not be found."</p>
      * </li> </ul>
      */
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
+    inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::move(value); }
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error message for the
@@ -486,7 +487,7 @@ namespace Model
      * specified subnet subnet-xxxxxxxx does not exist or could not be found."</p>
      * </li> </ul>
      */
-    inline NatGateway& WithFailureMessage(Aws::String&& value) { SetFailureMessage(value); return *this;}
+    inline NatGateway& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error message for the
@@ -527,7 +528,7 @@ namespace Model
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
-    inline void SetProvisionedBandwidth(ProvisionedBandwidth&& value) { m_provisionedBandwidthHasBeenSet = true; m_provisionedBandwidth = value; }
+    inline void SetProvisionedBandwidth(ProvisionedBandwidth&& value) { m_provisionedBandwidthHasBeenSet = true; m_provisionedBandwidth = std::move(value); }
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
@@ -543,7 +544,7 @@ namespace Model
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
-    inline NatGateway& WithProvisionedBandwidth(ProvisionedBandwidth&& value) { SetProvisionedBandwidth(value); return *this;}
+    inline NatGateway& WithProvisionedBandwidth(ProvisionedBandwidth&& value) { SetProvisionedBandwidth(std::move(value)); return *this;}
 
   private:
     Aws::String m_vpcId;

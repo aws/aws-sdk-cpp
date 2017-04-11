@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/AvailabilityZone.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>Specifies the identifier of the subnet.</p>
      */
-    inline void SetSubnetIdentifier(Aws::String&& value) { m_subnetIdentifierHasBeenSet = true; m_subnetIdentifier = value; }
+    inline void SetSubnetIdentifier(Aws::String&& value) { m_subnetIdentifierHasBeenSet = true; m_subnetIdentifier = std::move(value); }
 
     /**
      * <p>Specifies the identifier of the subnet.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>Specifies the identifier of the subnet.</p>
      */
-    inline Subnet& WithSubnetIdentifier(Aws::String&& value) { SetSubnetIdentifier(value); return *this;}
+    inline Subnet& WithSubnetIdentifier(Aws::String&& value) { SetSubnetIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the identifier of the subnet.</p>
@@ -90,13 +91,13 @@ namespace Model
     inline void SetSubnetAvailabilityZone(const AvailabilityZone& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = value; }
 
     
-    inline void SetSubnetAvailabilityZone(AvailabilityZone&& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = value; }
+    inline void SetSubnetAvailabilityZone(AvailabilityZone&& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = std::move(value); }
 
     
     inline Subnet& WithSubnetAvailabilityZone(const AvailabilityZone& value) { SetSubnetAvailabilityZone(value); return *this;}
 
     
-    inline Subnet& WithSubnetAvailabilityZone(AvailabilityZone&& value) { SetSubnetAvailabilityZone(value); return *this;}
+    inline Subnet& WithSubnetAvailabilityZone(AvailabilityZone&& value) { SetSubnetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the status of the subnet.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>Specifies the status of the subnet.</p>
      */
-    inline void SetSubnetStatus(Aws::String&& value) { m_subnetStatusHasBeenSet = true; m_subnetStatus = value; }
+    inline void SetSubnetStatus(Aws::String&& value) { m_subnetStatusHasBeenSet = true; m_subnetStatus = std::move(value); }
 
     /**
      * <p>Specifies the status of the subnet.</p>
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>Specifies the status of the subnet.</p>
      */
-    inline Subnet& WithSubnetStatus(Aws::String&& value) { SetSubnetStatus(value); return *this;}
+    inline Subnet& WithSubnetStatus(Aws::String&& value) { SetSubnetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the status of the subnet.</p>

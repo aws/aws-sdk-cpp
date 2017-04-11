@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/UnsuccessfulItemError.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The ID of the resource.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The ID of the resource.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The ID of the resource.</p>
      */
-    inline UnsuccessfulItem& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline UnsuccessfulItem& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the resource.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>Information about the error.</p>
      */
-    inline void SetError(UnsuccessfulItemError&& value) { m_errorHasBeenSet = true; m_error = value; }
+    inline void SetError(UnsuccessfulItemError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
 
     /**
      * <p>Information about the error.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>Information about the error.</p>
      */
-    inline UnsuccessfulItem& WithError(UnsuccessfulItemError&& value) { SetError(value); return *this;}
+    inline UnsuccessfulItem& WithError(UnsuccessfulItemError&& value) { SetError(std::move(value)); return *this;}
 
   private:
     Aws::String m_resourceId;

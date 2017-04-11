@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The ID of the VPC for which to create the egress-only Internet gateway.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC for which to create the egress-only Internet gateway.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The ID of the VPC for which to create the egress-only Internet gateway.</p>
      */
-    inline CreateEgressOnlyInternetGatewayRequest& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline CreateEgressOnlyInternetGatewayRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC for which to create the egress-only Internet gateway.</p>
@@ -118,7 +119,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -142,7 +143,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
-    inline CreateEgressOnlyInternetGatewayRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline CreateEgressOnlyInternetGatewayRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of

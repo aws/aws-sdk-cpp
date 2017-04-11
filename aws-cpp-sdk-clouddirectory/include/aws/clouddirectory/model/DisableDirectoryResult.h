@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ARN of the directory that has been disabled.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArn = std::move(value); }
 
     /**
      * <p>The ARN of the directory that has been disabled.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ARN of the directory that has been disabled.</p>
      */
-    inline DisableDirectoryResult& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline DisableDirectoryResult& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the directory that has been disabled.</p>

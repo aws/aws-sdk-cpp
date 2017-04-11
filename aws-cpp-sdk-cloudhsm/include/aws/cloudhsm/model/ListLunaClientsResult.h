@@ -16,6 +16,7 @@
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The list of clients.</p>
      */
-    inline void SetClientList(Aws::Vector<Aws::String>&& value) { m_clientList = value; }
+    inline void SetClientList(Aws::Vector<Aws::String>&& value) { m_clientList = std::move(value); }
 
     /**
      * <p>The list of clients.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The list of clients.</p>
      */
-    inline ListLunaClientsResult& WithClientList(Aws::Vector<Aws::String>&& value) { SetClientList(value); return *this;}
+    inline ListLunaClientsResult& WithClientList(Aws::Vector<Aws::String>&& value) { SetClientList(std::move(value)); return *this;}
 
     /**
      * <p>The list of clients.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The list of clients.</p>
      */
-    inline ListLunaClientsResult& AddClientList(Aws::String&& value) { m_clientList.push_back(value); return *this; }
+    inline ListLunaClientsResult& AddClientList(Aws::String&& value) { m_clientList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of clients.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>If not null, more results are available. Pass this to <a>ListLunaClients</a>
      * to retrieve the next set of items.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If not null, more results are available. Pass this to <a>ListLunaClients</a>
@@ -114,7 +115,7 @@ namespace Model
      * <p>If not null, more results are available. Pass this to <a>ListLunaClients</a>
      * to retrieve the next set of items.</p>
      */
-    inline ListLunaClientsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListLunaClientsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If not null, more results are available. Pass this to <a>ListLunaClients</a>

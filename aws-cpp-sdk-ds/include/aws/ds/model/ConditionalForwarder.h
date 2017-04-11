@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ds/model/ReplicationScope.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The fully qualified domain name (FQDN) of the remote domains pointed to by
      * the conditional forwarder.</p>
      */
-    inline void SetRemoteDomainName(Aws::String&& value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName = value; }
+    inline void SetRemoteDomainName(Aws::String&& value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName = std::move(value); }
 
     /**
      * <p>The fully qualified domain name (FQDN) of the remote domains pointed to by
@@ -81,7 +82,7 @@ namespace Model
      * <p>The fully qualified domain name (FQDN) of the remote domains pointed to by
      * the conditional forwarder.</p>
      */
-    inline ConditionalForwarder& WithRemoteDomainName(Aws::String&& value) { SetRemoteDomainName(value); return *this;}
+    inline ConditionalForwarder& WithRemoteDomainName(Aws::String&& value) { SetRemoteDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The fully qualified domain name (FQDN) of the remote domains pointed to by
@@ -108,7 +109,7 @@ namespace Model
      * This is the IP address of the DNS server that your conditional forwarder points
      * to.</p>
      */
-    inline void SetDnsIpAddrs(Aws::Vector<Aws::String>&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs = value; }
+    inline void SetDnsIpAddrs(Aws::Vector<Aws::String>&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs = std::move(value); }
 
     /**
      * <p>The IP addresses of the remote DNS server associated with RemoteDomainName.
@@ -122,7 +123,7 @@ namespace Model
      * This is the IP address of the DNS server that your conditional forwarder points
      * to.</p>
      */
-    inline ConditionalForwarder& WithDnsIpAddrs(Aws::Vector<Aws::String>&& value) { SetDnsIpAddrs(value); return *this;}
+    inline ConditionalForwarder& WithDnsIpAddrs(Aws::Vector<Aws::String>&& value) { SetDnsIpAddrs(std::move(value)); return *this;}
 
     /**
      * <p>The IP addresses of the remote DNS server associated with RemoteDomainName.
@@ -136,7 +137,7 @@ namespace Model
      * This is the IP address of the DNS server that your conditional forwarder points
      * to.</p>
      */
-    inline ConditionalForwarder& AddDnsIpAddrs(Aws::String&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs.push_back(value); return *this; }
+    inline ConditionalForwarder& AddDnsIpAddrs(Aws::String&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IP addresses of the remote DNS server associated with RemoteDomainName.
@@ -164,7 +165,7 @@ namespace Model
      * <code>Domain</code>, which will replicate the conditional forwarder to all of
      * the domain controllers for your AWS directory.</p>
      */
-    inline void SetReplicationScope(ReplicationScope&& value) { m_replicationScopeHasBeenSet = true; m_replicationScope = value; }
+    inline void SetReplicationScope(ReplicationScope&& value) { m_replicationScopeHasBeenSet = true; m_replicationScope = std::move(value); }
 
     /**
      * <p>The replication scope of the conditional forwarder. The only allowed value is
@@ -178,7 +179,7 @@ namespace Model
      * <code>Domain</code>, which will replicate the conditional forwarder to all of
      * the domain controllers for your AWS directory.</p>
      */
-    inline ConditionalForwarder& WithReplicationScope(ReplicationScope&& value) { SetReplicationScope(value); return *this;}
+    inline ConditionalForwarder& WithReplicationScope(ReplicationScope&& value) { SetReplicationScope(std::move(value)); return *this;}
 
   private:
     Aws::String m_remoteDomainName;

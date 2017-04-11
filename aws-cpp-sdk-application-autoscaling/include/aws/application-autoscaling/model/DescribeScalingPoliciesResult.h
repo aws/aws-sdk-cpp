@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/application-autoscaling/model/ScalingPolicy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of scaling policy objects.</p>
      */
-    inline void SetScalingPolicies(Aws::Vector<ScalingPolicy>&& value) { m_scalingPolicies = value; }
+    inline void SetScalingPolicies(Aws::Vector<ScalingPolicy>&& value) { m_scalingPolicies = std::move(value); }
 
     /**
      * <p>A list of scaling policy objects.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of scaling policy objects.</p>
      */
-    inline DescribeScalingPoliciesResult& WithScalingPolicies(Aws::Vector<ScalingPolicy>&& value) { SetScalingPolicies(value); return *this;}
+    inline DescribeScalingPoliciesResult& WithScalingPolicies(Aws::Vector<ScalingPolicy>&& value) { SetScalingPolicies(std::move(value)); return *this;}
 
     /**
      * <p>A list of scaling policy objects.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of scaling policy objects.</p>
      */
-    inline DescribeScalingPoliciesResult& AddScalingPolicies(ScalingPolicy&& value) { m_scalingPolicies.push_back(value); return *this; }
+    inline DescribeScalingPoliciesResult& AddScalingPolicies(ScalingPolicy&& value) { m_scalingPolicies.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token required to get the next set of results. This value is
@@ -92,7 +93,7 @@ namespace Model
      * <p>The token required to get the next set of results. This value is
      * <code>null</code> if there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token required to get the next set of results. This value is
@@ -110,7 +111,7 @@ namespace Model
      * <p>The token required to get the next set of results. This value is
      * <code>null</code> if there are no more results to return.</p>
      */
-    inline DescribeScalingPoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeScalingPoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token required to get the next set of results. This value is

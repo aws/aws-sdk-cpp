@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The old password in the change password request.</p>
      */
-    inline void SetPreviousPassword(Aws::String&& value) { m_previousPasswordHasBeenSet = true; m_previousPassword = value; }
+    inline void SetPreviousPassword(Aws::String&& value) { m_previousPasswordHasBeenSet = true; m_previousPassword = std::move(value); }
 
     /**
      * <p>The old password in the change password request.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The old password in the change password request.</p>
      */
-    inline ChangePasswordRequest& WithPreviousPassword(Aws::String&& value) { SetPreviousPassword(value); return *this;}
+    inline ChangePasswordRequest& WithPreviousPassword(Aws::String&& value) { SetPreviousPassword(std::move(value)); return *this;}
 
     /**
      * <p>The old password in the change password request.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The new password in the change password request.</p>
      */
-    inline void SetProposedPassword(Aws::String&& value) { m_proposedPasswordHasBeenSet = true; m_proposedPassword = value; }
+    inline void SetProposedPassword(Aws::String&& value) { m_proposedPasswordHasBeenSet = true; m_proposedPassword = std::move(value); }
 
     /**
      * <p>The new password in the change password request.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The new password in the change password request.</p>
      */
-    inline ChangePasswordRequest& WithProposedPassword(Aws::String&& value) { SetProposedPassword(value); return *this;}
+    inline ChangePasswordRequest& WithProposedPassword(Aws::String&& value) { SetProposedPassword(std::move(value)); return *this;}
 
     /**
      * <p>The new password in the change password request.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The access token in the change password request.</p>
      */
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
+    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
      * <p>The access token in the change password request.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The access token in the change password request.</p>
      */
-    inline ChangePasswordRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(value); return *this;}
+    inline ChangePasswordRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
      * <p>The access token in the change password request.</p>

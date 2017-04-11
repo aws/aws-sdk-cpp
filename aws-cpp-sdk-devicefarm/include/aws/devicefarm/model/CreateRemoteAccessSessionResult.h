@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/RemoteAccessSession.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>A container that describes the remote access session when the request to
      * create a remote access session is sent.</p>
      */
-    inline void SetRemoteAccessSession(RemoteAccessSession&& value) { m_remoteAccessSession = value; }
+    inline void SetRemoteAccessSession(RemoteAccessSession&& value) { m_remoteAccessSession = std::move(value); }
 
     /**
      * <p>A container that describes the remote access session when the request to
@@ -73,7 +74,7 @@ namespace Model
      * <p>A container that describes the remote access session when the request to
      * create a remote access session is sent.</p>
      */
-    inline CreateRemoteAccessSessionResult& WithRemoteAccessSession(RemoteAccessSession&& value) { SetRemoteAccessSession(value); return *this;}
+    inline CreateRemoteAccessSessionResult& WithRemoteAccessSession(RemoteAccessSession&& value) { SetRemoteAccessSession(std::move(value)); return *this;}
 
   private:
     RemoteAccessSession m_remoteAccessSession;

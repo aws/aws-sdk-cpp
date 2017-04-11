@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/MinimumHealthyHostsType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -125,7 +126,7 @@ namespace Model
      * also means that if the deployment to the last instance fails, the overall
      * deployment still succeeds.</p> </note>
      */
-    inline void SetType(MinimumHealthyHostsType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(MinimumHealthyHostsType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The minimum healthy instance type:</p> <ul> <li> <p>HOST_COUNT: The minimum
@@ -171,7 +172,7 @@ namespace Model
      * also means that if the deployment to the last instance fails, the overall
      * deployment still succeeds.</p> </note>
      */
-    inline MinimumHealthyHosts& WithType(MinimumHealthyHostsType&& value) { SetType(value); return *this;}
+    inline MinimumHealthyHosts& WithType(MinimumHealthyHostsType&& value) { SetType(std::move(value)); return *this;}
 
   private:
     int m_value;

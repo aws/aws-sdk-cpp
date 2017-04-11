@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
      * <p>[Required] Specifies the API identifier of the to-be-created documentation
      * version.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>[Required] Specifies the API identifier of the to-be-created documentation
@@ -71,7 +72,7 @@ namespace Model
      * <p>[Required] Specifies the API identifier of the to-be-created documentation
      * version.</p>
      */
-    inline CreateDocumentationVersionRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline CreateDocumentationVersionRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>[Required] Specifies the API identifier of the to-be-created documentation
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>[Required] The version identifier of the new snapshot.</p>
      */
-    inline void SetDocumentationVersion(Aws::String&& value) { m_documentationVersionHasBeenSet = true; m_documentationVersion = value; }
+    inline void SetDocumentationVersion(Aws::String&& value) { m_documentationVersionHasBeenSet = true; m_documentationVersion = std::move(value); }
 
     /**
      * <p>[Required] The version identifier of the new snapshot.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>[Required] The version identifier of the new snapshot.</p>
      */
-    inline CreateDocumentationVersionRequest& WithDocumentationVersion(Aws::String&& value) { SetDocumentationVersion(value); return *this;}
+    inline CreateDocumentationVersionRequest& WithDocumentationVersion(Aws::String&& value) { SetDocumentationVersion(std::move(value)); return *this;}
 
     /**
      * <p>[Required] The version identifier of the new snapshot.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The stage name to be associated with the new documentation snapshot.</p>
      */
-    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
+    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
      * <p>The stage name to be associated with the new documentation snapshot.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The stage name to be associated with the new documentation snapshot.</p>
      */
-    inline CreateDocumentationVersionRequest& WithStageName(Aws::String&& value) { SetStageName(value); return *this;}
+    inline CreateDocumentationVersionRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
      * <p>The stage name to be associated with the new documentation snapshot.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>A description about the new documentation snapshot.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description about the new documentation snapshot.</p>
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>A description about the new documentation snapshot.</p>
      */
-    inline CreateDocumentationVersionRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateDocumentationVersionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description about the new documentation snapshot.</p>

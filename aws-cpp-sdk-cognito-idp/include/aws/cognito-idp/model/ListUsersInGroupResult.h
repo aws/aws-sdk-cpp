@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cognito-idp/model/UserType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The users returned in the request to list users.</p>
      */
-    inline void SetUsers(Aws::Vector<UserType>&& value) { m_users = value; }
+    inline void SetUsers(Aws::Vector<UserType>&& value) { m_users = std::move(value); }
 
     /**
      * <p>The users returned in the request to list users.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The users returned in the request to list users.</p>
      */
-    inline ListUsersInGroupResult& WithUsers(Aws::Vector<UserType>&& value) { SetUsers(value); return *this;}
+    inline ListUsersInGroupResult& WithUsers(Aws::Vector<UserType>&& value) { SetUsers(std::move(value)); return *this;}
 
     /**
      * <p>The users returned in the request to list users.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The users returned in the request to list users.</p>
      */
-    inline ListUsersInGroupResult& AddUsers(UserType&& value) { m_users.push_back(value); return *this; }
+    inline ListUsersInGroupResult& AddUsers(UserType&& value) { m_users.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -92,7 +93,7 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -110,7 +111,7 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
      */
-    inline ListUsersInGroupResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListUsersInGroupResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,

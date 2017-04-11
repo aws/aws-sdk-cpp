@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
      * the task.</p>
      */
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
@@ -69,7 +70,7 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
      * the task.</p>
      */
-    inline SubmitTaskStateChangeRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
+    inline SubmitTaskStateChangeRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
@@ -93,7 +94,7 @@ namespace Model
      * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
      * change request.</p>
      */
-    inline void SetTask(Aws::String&& value) { m_taskHasBeenSet = true; m_task = value; }
+    inline void SetTask(Aws::String&& value) { m_taskHasBeenSet = true; m_task = std::move(value); }
 
     /**
      * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
@@ -111,7 +112,7 @@ namespace Model
      * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
      * change request.</p>
      */
-    inline SubmitTaskStateChangeRequest& WithTask(Aws::String&& value) { SetTask(value); return *this;}
+    inline SubmitTaskStateChangeRequest& WithTask(Aws::String&& value) { SetTask(std::move(value)); return *this;}
 
     /**
      * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The status of the state change request.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the state change request.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The status of the state change request.</p>
      */
-    inline SubmitTaskStateChangeRequest& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline SubmitTaskStateChangeRequest& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the state change request.</p>
@@ -167,7 +168,7 @@ namespace Model
     /**
      * <p>The reason for the state change request.</p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p>The reason for the state change request.</p>
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p>The reason for the state change request.</p>
      */
-    inline SubmitTaskStateChangeRequest& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline SubmitTaskStateChangeRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p>The reason for the state change request.</p>

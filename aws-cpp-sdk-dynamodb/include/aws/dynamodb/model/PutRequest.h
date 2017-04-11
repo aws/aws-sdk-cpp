@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/AttributeValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
      * an index key schema for the table, their types must match the index key
      * schema.</p>
      */
-    inline void SetItem(Aws::Map<Aws::String, AttributeValue>&& value) { m_itemHasBeenSet = true; m_item = value; }
+    inline void SetItem(Aws::Map<Aws::String, AttributeValue>&& value) { m_itemHasBeenSet = true; m_item = std::move(value); }
 
     /**
      * <p>A map of attribute name to attribute values, representing the primary key of
@@ -94,7 +95,7 @@ namespace Model
      * an index key schema for the table, their types must match the index key
      * schema.</p>
      */
-    inline PutRequest& WithItem(Aws::Map<Aws::String, AttributeValue>&& value) { SetItem(value); return *this;}
+    inline PutRequest& WithItem(Aws::Map<Aws::String, AttributeValue>&& value) { SetItem(std::move(value)); return *this;}
 
     /**
      * <p>A map of attribute name to attribute values, representing the primary key of
@@ -104,7 +105,7 @@ namespace Model
      * an index key schema for the table, their types must match the index key
      * schema.</p>
      */
-    inline PutRequest& AddItem(const Aws::String& key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item[key] = value; return *this; }
+    inline PutRequest& AddItem(const Aws::String& key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(key, value); return *this; }
 
     /**
      * <p>A map of attribute name to attribute values, representing the primary key of
@@ -114,7 +115,7 @@ namespace Model
      * an index key schema for the table, their types must match the index key
      * schema.</p>
      */
-    inline PutRequest& AddItem(Aws::String&& key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item[key] = value; return *this; }
+    inline PutRequest& AddItem(Aws::String&& key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of attribute name to attribute values, representing the primary key of
@@ -124,7 +125,7 @@ namespace Model
      * an index key schema for the table, their types must match the index key
      * schema.</p>
      */
-    inline PutRequest& AddItem(const Aws::String& key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item[key] = value; return *this; }
+    inline PutRequest& AddItem(const Aws::String& key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of attribute name to attribute values, representing the primary key of
@@ -134,7 +135,7 @@ namespace Model
      * an index key schema for the table, their types must match the index key
      * schema.</p>
      */
-    inline PutRequest& AddItem(Aws::String&& key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item[key] = value; return *this; }
+    inline PutRequest& AddItem(Aws::String&& key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A map of attribute name to attribute values, representing the primary key of
@@ -144,7 +145,7 @@ namespace Model
      * an index key schema for the table, their types must match the index key
      * schema.</p>
      */
-    inline PutRequest& AddItem(const char* key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item[key] = value; return *this; }
+    inline PutRequest& AddItem(const char* key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of attribute name to attribute values, representing the primary key of
@@ -154,7 +155,7 @@ namespace Model
      * an index key schema for the table, their types must match the index key
      * schema.</p>
      */
-    inline PutRequest& AddItem(const char* key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item[key] = value; return *this; }
+    inline PutRequest& AddItem(const char* key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(key, value); return *this; }
 
   private:
     Aws::Map<Aws::String, AttributeValue> m_item;

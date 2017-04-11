@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/model/OrientationCorrection.h>
 #include <aws/rekognition/model/FaceRecord.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>An array of faces detected and added to the collection. For more information,
      * see <a>howitworks-index-faces</a>. </p>
      */
-    inline void SetFaceRecords(Aws::Vector<FaceRecord>&& value) { m_faceRecords = value; }
+    inline void SetFaceRecords(Aws::Vector<FaceRecord>&& value) { m_faceRecords = std::move(value); }
 
     /**
      * <p>An array of faces detected and added to the collection. For more information,
@@ -69,7 +70,7 @@ namespace Model
      * <p>An array of faces detected and added to the collection. For more information,
      * see <a>howitworks-index-faces</a>. </p>
      */
-    inline IndexFacesResult& WithFaceRecords(Aws::Vector<FaceRecord>&& value) { SetFaceRecords(value); return *this;}
+    inline IndexFacesResult& WithFaceRecords(Aws::Vector<FaceRecord>&& value) { SetFaceRecords(std::move(value)); return *this;}
 
     /**
      * <p>An array of faces detected and added to the collection. For more information,
@@ -81,7 +82,7 @@ namespace Model
      * <p>An array of faces detected and added to the collection. For more information,
      * see <a>howitworks-index-faces</a>. </p>
      */
-    inline IndexFacesResult& AddFaceRecords(FaceRecord&& value) { m_faceRecords.push_back(value); return *this; }
+    inline IndexFacesResult& AddFaceRecords(FaceRecord&& value) { m_faceRecords.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The algorithm detects the image orientation. If it detects that the image was
@@ -111,7 +112,7 @@ namespace Model
      * orientation field, Amazon Rekognition does not perform orientation correction
      * and the value of OrientationCorrection will be nil.</p> </note>
      */
-    inline void SetOrientationCorrection(OrientationCorrection&& value) { m_orientationCorrection = value; }
+    inline void SetOrientationCorrection(OrientationCorrection&& value) { m_orientationCorrection = std::move(value); }
 
     /**
      * <p>The algorithm detects the image orientation. If it detects that the image was
@@ -131,7 +132,7 @@ namespace Model
      * orientation field, Amazon Rekognition does not perform orientation correction
      * and the value of OrientationCorrection will be nil.</p> </note>
      */
-    inline IndexFacesResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(value); return *this;}
+    inline IndexFacesResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(std::move(value)); return *this;}
 
   private:
     Aws::Vector<FaceRecord> m_faceRecords;

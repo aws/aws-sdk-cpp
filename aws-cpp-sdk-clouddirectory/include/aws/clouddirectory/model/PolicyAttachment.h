@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ID of <code>PolicyAttachment</code>.</p>
      */
-    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
+    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
 
     /**
      * <p>The ID of <code>PolicyAttachment</code>.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ID of <code>PolicyAttachment</code>.</p>
      */
-    inline PolicyAttachment& WithPolicyId(Aws::String&& value) { SetPolicyId(value); return *this;}
+    inline PolicyAttachment& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of <code>PolicyAttachment</code>.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>The <code>ObjectIdentifier</code> associated with
      * <code>PolicyAttachment</code>.</p>
      */
-    inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = value; }
+    inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = std::move(value); }
 
     /**
      * <p>The <code>ObjectIdentifier</code> associated with
@@ -114,7 +115,7 @@ namespace Model
      * <p>The <code>ObjectIdentifier</code> associated with
      * <code>PolicyAttachment</code>.</p>
      */
-    inline PolicyAttachment& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(value); return *this;}
+    inline PolicyAttachment& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ObjectIdentifier</code> associated with
@@ -138,7 +139,7 @@ namespace Model
      * <p>The type of policy that can be associated with
      * <code>PolicyAttachment</code>.</p>
      */
-    inline void SetPolicyType(Aws::String&& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
+    inline void SetPolicyType(Aws::String&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
      * <p>The type of policy that can be associated with
@@ -156,7 +157,7 @@ namespace Model
      * <p>The type of policy that can be associated with
      * <code>PolicyAttachment</code>.</p>
      */
-    inline PolicyAttachment& WithPolicyType(Aws::String&& value) { SetPolicyType(value); return *this;}
+    inline PolicyAttachment& WithPolicyType(Aws::String&& value) { SetPolicyType(std::move(value)); return *this;}
 
     /**
      * <p>The type of policy that can be associated with

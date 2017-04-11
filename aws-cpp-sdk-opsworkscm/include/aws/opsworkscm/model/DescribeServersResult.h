@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opsworkscm/model/Server.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>Contains the response to a <code>DescribeServers</code> request. </p>
      */
-    inline void SetServers(Aws::Vector<Server>&& value) { m_servers = value; }
+    inline void SetServers(Aws::Vector<Server>&& value) { m_servers = std::move(value); }
 
     /**
      * <p>Contains the response to a <code>DescribeServers</code> request. </p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Contains the response to a <code>DescribeServers</code> request. </p>
      */
-    inline DescribeServersResult& WithServers(Aws::Vector<Server>&& value) { SetServers(value); return *this;}
+    inline DescribeServersResult& WithServers(Aws::Vector<Server>&& value) { SetServers(std::move(value)); return *this;}
 
     /**
      * <p>Contains the response to a <code>DescribeServers</code> request. </p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Contains the response to a <code>DescribeServers</code> request. </p>
      */
-    inline DescribeServersResult& AddServers(Server&& value) { m_servers.push_back(value); return *this; }
+    inline DescribeServersResult& AddServers(Server&& value) { m_servers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>NextToken is a string that is returned in some command responses. It
@@ -113,7 +114,7 @@ namespace Model
      * in your previous results causes an <code>InvalidNextTokenException</code> to
      * occur. </p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>NextToken is a string that is returned in some command responses. It
@@ -152,7 +153,7 @@ namespace Model
      * in your previous results causes an <code>InvalidNextTokenException</code> to
      * occur. </p>
      */
-    inline DescribeServersResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeServersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>NextToken is a string that is returned in some command responses. It

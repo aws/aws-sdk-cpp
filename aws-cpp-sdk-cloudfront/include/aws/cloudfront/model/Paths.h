@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
     /**
      * A complex type that contains a list of the objects that you want to invalidate.
      */
-    inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+    inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * A complex type that contains a list of the objects that you want to invalidate.
@@ -84,7 +85,7 @@ namespace Model
     /**
      * A complex type that contains a list of the objects that you want to invalidate.
      */
-    inline Paths& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(value); return *this;}
+    inline Paths& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * A complex type that contains a list of the objects that you want to invalidate.
@@ -94,7 +95,7 @@ namespace Model
     /**
      * A complex type that contains a list of the objects that you want to invalidate.
      */
-    inline Paths& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+    inline Paths& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
     /**
      * A complex type that contains a list of the objects that you want to invalidate.

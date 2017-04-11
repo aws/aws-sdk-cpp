@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The access key for the session.</p>
      */
-    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
+    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
 
     /**
      * <p>The access key for the session.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The access key for the session.</p>
      */
-    inline AWSSessionCredentials& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(value); return *this;}
+    inline AWSSessionCredentials& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The access key for the session.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The secret access key for the session.</p>
      */
-    inline void SetSecretAccessKey(Aws::String&& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = value; }
+    inline void SetSecretAccessKey(Aws::String&& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = std::move(value); }
 
     /**
      * <p>The secret access key for the session.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The secret access key for the session.</p>
      */
-    inline AWSSessionCredentials& WithSecretAccessKey(Aws::String&& value) { SetSecretAccessKey(value); return *this;}
+    inline AWSSessionCredentials& WithSecretAccessKey(Aws::String&& value) { SetSecretAccessKey(std::move(value)); return *this;}
 
     /**
      * <p>The secret access key for the session.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The token for the session.</p>
      */
-    inline void SetSessionToken(Aws::String&& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = value; }
+    inline void SetSessionToken(Aws::String&& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = std::move(value); }
 
     /**
      * <p>The token for the session.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>The token for the session.</p>
      */
-    inline AWSSessionCredentials& WithSessionToken(Aws::String&& value) { SetSessionToken(value); return *this;}
+    inline AWSSessionCredentials& WithSessionToken(Aws::String&& value) { SetSessionToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the session.</p>

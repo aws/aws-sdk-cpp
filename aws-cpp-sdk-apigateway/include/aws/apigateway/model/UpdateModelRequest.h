@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/apigateway/model/PatchOperation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier under which the model exists.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The <a>RestApi</a> identifier under which the model exists.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier under which the model exists.</p>
      */
-    inline UpdateModelRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline UpdateModelRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The <a>RestApi</a> identifier under which the model exists.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The name of the model to update.</p>
      */
-    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
+    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
 
     /**
      * <p>The name of the model to update.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The name of the model to update.</p>
      */
-    inline UpdateModelRequest& WithModelName(Aws::String&& value) { SetModelName(value); return *this;}
+    inline UpdateModelRequest& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the model to update.</p>
@@ -125,7 +126,7 @@ namespace Model
      * <p>A list of update operations to be applied to the specified resource and in
      * the order specified in this list.</p>
      */
-    inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
+    inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = std::move(value); }
 
     /**
      * <p>A list of update operations to be applied to the specified resource and in
@@ -137,7 +138,7 @@ namespace Model
      * <p>A list of update operations to be applied to the specified resource and in
      * the order specified in this list.</p>
      */
-    inline UpdateModelRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(value); return *this;}
+    inline UpdateModelRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(std::move(value)); return *this;}
 
     /**
      * <p>A list of update operations to be applied to the specified resource and in
@@ -149,7 +150,7 @@ namespace Model
      * <p>A list of update operations to be applied to the specified resource and in
      * the order specified in this list.</p>
      */
-    inline UpdateModelRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
+    inline UpdateModelRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_restApiId;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/model/ProvisioningArtifactType.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The identifier of the provisioning artifact.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The identifier of the provisioning artifact.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The identifier of the provisioning artifact.</p>
      */
-    inline ProvisioningArtifactDetail& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline ProvisioningArtifactDetail& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the provisioning artifact.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The name assigned to the provisioning artifact.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name assigned to the provisioning artifact.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The name assigned to the provisioning artifact.</p>
      */
-    inline ProvisioningArtifactDetail& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ProvisioningArtifactDetail& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name assigned to the provisioning artifact.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The text description of the provisioning artifact.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The text description of the provisioning artifact.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The text description of the provisioning artifact.</p>
      */
-    inline ProvisioningArtifactDetail& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline ProvisioningArtifactDetail& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The text description of the provisioning artifact.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>The type of the provisioning artifact.</p>
      */
-    inline void SetType(ProvisioningArtifactType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(ProvisioningArtifactType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of the provisioning artifact.</p>
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>The type of the provisioning artifact.</p>
      */
-    inline ProvisioningArtifactDetail& WithType(ProvisioningArtifactType&& value) { SetType(value); return *this;}
+    inline ProvisioningArtifactDetail& WithType(ProvisioningArtifactType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The UTC timestamp of the creation time.</p>
@@ -188,7 +189,7 @@ namespace Model
     /**
      * <p>The UTC timestamp of the creation time.</p>
      */
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
      * <p>The UTC timestamp of the creation time.</p>
@@ -198,7 +199,7 @@ namespace Model
     /**
      * <p>The UTC timestamp of the creation time.</p>
      */
-    inline ProvisioningArtifactDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(value); return *this;}
+    inline ProvisioningArtifactDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
   private:
     Aws::String m_id;

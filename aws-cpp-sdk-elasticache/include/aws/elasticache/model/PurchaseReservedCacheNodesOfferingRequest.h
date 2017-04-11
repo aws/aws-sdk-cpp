@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>The ID of the reserved cache node offering to purchase.</p> <p>Example:
      * <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
      */
-    inline void SetReservedCacheNodesOfferingId(Aws::String&& value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId = value; }
+    inline void SetReservedCacheNodesOfferingId(Aws::String&& value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId = std::move(value); }
 
     /**
      * <p>The ID of the reserved cache node offering to purchase.</p> <p>Example:
@@ -75,7 +76,7 @@ namespace Model
      * <p>The ID of the reserved cache node offering to purchase.</p> <p>Example:
      * <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
      */
-    inline PurchaseReservedCacheNodesOfferingRequest& WithReservedCacheNodesOfferingId(Aws::String&& value) { SetReservedCacheNodesOfferingId(value); return *this;}
+    inline PurchaseReservedCacheNodesOfferingRequest& WithReservedCacheNodesOfferingId(Aws::String&& value) { SetReservedCacheNodesOfferingId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the reserved cache node offering to purchase.</p> <p>Example:
@@ -108,7 +109,7 @@ namespace Model
      * generates an identifier for the reservation.</p> </note> <p>Example:
      * myreservationID</p>
      */
-    inline void SetReservedCacheNodeId(Aws::String&& value) { m_reservedCacheNodeIdHasBeenSet = true; m_reservedCacheNodeId = value; }
+    inline void SetReservedCacheNodeId(Aws::String&& value) { m_reservedCacheNodeIdHasBeenSet = true; m_reservedCacheNodeId = std::move(value); }
 
     /**
      * <p>A customer-specified identifier to track this reservation.</p> <note> <p>The
@@ -135,7 +136,7 @@ namespace Model
      * generates an identifier for the reservation.</p> </note> <p>Example:
      * myreservationID</p>
      */
-    inline PurchaseReservedCacheNodesOfferingRequest& WithReservedCacheNodeId(Aws::String&& value) { SetReservedCacheNodeId(value); return *this;}
+    inline PurchaseReservedCacheNodesOfferingRequest& WithReservedCacheNodeId(Aws::String&& value) { SetReservedCacheNodeId(std::move(value)); return *this;}
 
     /**
      * <p>A customer-specified identifier to track this reservation.</p> <note> <p>The

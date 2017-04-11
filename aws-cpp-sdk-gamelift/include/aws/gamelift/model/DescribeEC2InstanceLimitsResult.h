@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gamelift/model/EC2InstanceLimit.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>Object that contains the maximum number of instances for the specified
      * instance type.</p>
      */
-    inline void SetEC2InstanceLimits(Aws::Vector<EC2InstanceLimit>&& value) { m_eC2InstanceLimits = value; }
+    inline void SetEC2InstanceLimits(Aws::Vector<EC2InstanceLimit>&& value) { m_eC2InstanceLimits = std::move(value); }
 
     /**
      * <p>Object that contains the maximum number of instances for the specified
@@ -74,7 +75,7 @@ namespace Model
      * <p>Object that contains the maximum number of instances for the specified
      * instance type.</p>
      */
-    inline DescribeEC2InstanceLimitsResult& WithEC2InstanceLimits(Aws::Vector<EC2InstanceLimit>&& value) { SetEC2InstanceLimits(value); return *this;}
+    inline DescribeEC2InstanceLimitsResult& WithEC2InstanceLimits(Aws::Vector<EC2InstanceLimit>&& value) { SetEC2InstanceLimits(std::move(value)); return *this;}
 
     /**
      * <p>Object that contains the maximum number of instances for the specified
@@ -86,7 +87,7 @@ namespace Model
      * <p>Object that contains the maximum number of instances for the specified
      * instance type.</p>
      */
-    inline DescribeEC2InstanceLimitsResult& AddEC2InstanceLimits(EC2InstanceLimit&& value) { m_eC2InstanceLimits.push_back(value); return *this; }
+    inline DescribeEC2InstanceLimitsResult& AddEC2InstanceLimits(EC2InstanceLimit&& value) { m_eC2InstanceLimits.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<EC2InstanceLimit> m_eC2InstanceLimits;

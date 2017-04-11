@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>The identifier for the cluster to be deleted. This parameter is not case
      * sensitive.</p>
      */
-    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
+    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::move(value); }
 
     /**
      * <p>The identifier for the cluster to be deleted. This parameter is not case
@@ -75,7 +76,7 @@ namespace Model
      * <p>The identifier for the cluster to be deleted. This parameter is not case
      * sensitive.</p>
      */
-    inline DeleteReplicationGroupRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(value); return *this;}
+    inline DeleteReplicationGroupRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the cluster to be deleted. This parameter is not case
@@ -123,7 +124,7 @@ namespace Model
      * this is to ensure that it captures the freshest data. After the final snapshot
      * is taken, the replication group is immediately deleted.</p>
      */
-    inline void SetFinalSnapshotIdentifier(Aws::String&& value) { m_finalSnapshotIdentifierHasBeenSet = true; m_finalSnapshotIdentifier = value; }
+    inline void SetFinalSnapshotIdentifier(Aws::String&& value) { m_finalSnapshotIdentifierHasBeenSet = true; m_finalSnapshotIdentifier = std::move(value); }
 
     /**
      * <p>The name of a final node group (shard) snapshot. ElastiCache creates the
@@ -147,7 +148,7 @@ namespace Model
      * this is to ensure that it captures the freshest data. After the final snapshot
      * is taken, the replication group is immediately deleted.</p>
      */
-    inline DeleteReplicationGroupRequest& WithFinalSnapshotIdentifier(Aws::String&& value) { SetFinalSnapshotIdentifier(value); return *this;}
+    inline DeleteReplicationGroupRequest& WithFinalSnapshotIdentifier(Aws::String&& value) { SetFinalSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The name of a final node group (shard) snapshot. ElastiCache creates the

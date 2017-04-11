@@ -16,6 +16,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/AppStreamRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The unique identifier of the streaming session to be stopped.</p>
      */
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
+    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
 
     /**
      * <p>The unique identifier of the streaming session to be stopped.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The unique identifier of the streaming session to be stopped.</p>
      */
-    inline ExpireSessionRequest& WithSessionId(Aws::String&& value) { SetSessionId(value); return *this;}
+    inline ExpireSessionRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the streaming session to be stopped.</p>

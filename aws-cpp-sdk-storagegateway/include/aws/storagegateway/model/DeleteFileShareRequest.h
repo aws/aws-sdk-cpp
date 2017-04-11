@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the file share to be deleted. </p>
      */
-    inline void SetFileShareARN(Aws::String&& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = value; }
+    inline void SetFileShareARN(Aws::String&& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the file share to be deleted. </p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the file share to be deleted. </p>
      */
-    inline DeleteFileShareRequest& WithFileShareARN(Aws::String&& value) { SetFileShareARN(value); return *this;}
+    inline DeleteFileShareRequest& WithFileShareARN(Aws::String&& value) { SetFileShareARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the file share to be deleted. </p>

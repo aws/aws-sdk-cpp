@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector/model/Telemetry.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The EC2 instance ID where the agent is installed.</p>
      */
-    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
+    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
 
     /**
      * <p>The EC2 instance ID where the agent is installed.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The EC2 instance ID where the agent is installed.</p>
      */
-    inline Agent& WithAgentId(Aws::String&& value) { SetAgentId(value); return *this;}
+    inline Agent& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
 
     /**
      * <p>The EC2 instance ID where the agent is installed.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The ARN of the assessment that is associated with the agent.</p>
      */
-    inline void SetAssessmentArn(Aws::String&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = value; }
+    inline void SetAssessmentArn(Aws::String&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = std::move(value); }
 
     /**
      * <p>The ARN of the assessment that is associated with the agent.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The ARN of the assessment that is associated with the agent.</p>
      */
-    inline Agent& WithAssessmentArn(Aws::String&& value) { SetAssessmentArn(value); return *this;}
+    inline Agent& WithAssessmentArn(Aws::String&& value) { SetAssessmentArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the assessment that is associated with the agent.</p>
@@ -130,7 +131,7 @@ namespace Model
      * <p>The current health state of the agent. Values can be set to <i>HEALTHY</i> or
      * <i>UNHEALTHY</i>.</p>
      */
-    inline void SetAgentHealth(Aws::String&& value) { m_agentHealthHasBeenSet = true; m_agentHealth = value; }
+    inline void SetAgentHealth(Aws::String&& value) { m_agentHealthHasBeenSet = true; m_agentHealth = std::move(value); }
 
     /**
      * <p>The current health state of the agent. Values can be set to <i>HEALTHY</i> or
@@ -148,7 +149,7 @@ namespace Model
      * <p>The current health state of the agent. Values can be set to <i>HEALTHY</i> or
      * <i>UNHEALTHY</i>.</p>
      */
-    inline Agent& WithAgentHealth(Aws::String&& value) { SetAgentHealth(value); return *this;}
+    inline Agent& WithAgentHealth(Aws::String&& value) { SetAgentHealth(std::move(value)); return *this;}
 
     /**
      * <p>The current health state of the agent. Values can be set to <i>HEALTHY</i> or
@@ -175,7 +176,7 @@ namespace Model
      * <i>HEALTHY</i>, <i>UNHEALTHY</i>, <i>UNKNOWN</i>, <i>BLACKLISTED</i>,
      * <i>SHUTDOWN</i>, <i>THROTTLED</i>. </p>
      */
-    inline void SetAgentHealthCode(Aws::String&& value) { m_agentHealthCodeHasBeenSet = true; m_agentHealthCode = value; }
+    inline void SetAgentHealthCode(Aws::String&& value) { m_agentHealthCodeHasBeenSet = true; m_agentHealthCode = std::move(value); }
 
     /**
      * <p>The detailed health state of the agent. Values can be set to <i>RUNNING</i>,
@@ -196,7 +197,7 @@ namespace Model
      * <i>HEALTHY</i>, <i>UNHEALTHY</i>, <i>UNKNOWN</i>, <i>BLACKLISTED</i>,
      * <i>SHUTDOWN</i>, <i>THROTTLED</i>. </p>
      */
-    inline Agent& WithAgentHealthCode(Aws::String&& value) { SetAgentHealthCode(value); return *this;}
+    inline Agent& WithAgentHealthCode(Aws::String&& value) { SetAgentHealthCode(std::move(value)); return *this;}
 
     /**
      * <p>The detailed health state of the agent. Values can be set to <i>RUNNING</i>,
@@ -218,7 +219,7 @@ namespace Model
     /**
      * <p>The description for the agent health code.</p>
      */
-    inline void SetAgentHealthDetails(Aws::String&& value) { m_agentHealthDetailsHasBeenSet = true; m_agentHealthDetails = value; }
+    inline void SetAgentHealthDetails(Aws::String&& value) { m_agentHealthDetailsHasBeenSet = true; m_agentHealthDetails = std::move(value); }
 
     /**
      * <p>The description for the agent health code.</p>
@@ -233,7 +234,7 @@ namespace Model
     /**
      * <p>The description for the agent health code.</p>
      */
-    inline Agent& WithAgentHealthDetails(Aws::String&& value) { SetAgentHealthDetails(value); return *this;}
+    inline Agent& WithAgentHealthDetails(Aws::String&& value) { SetAgentHealthDetails(std::move(value)); return *this;}
 
     /**
      * <p>The description for the agent health code.</p>
@@ -253,7 +254,7 @@ namespace Model
     /**
      * <p>This data type property is currently not used.</p>
      */
-    inline void SetAutoScalingGroup(Aws::String&& value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup = value; }
+    inline void SetAutoScalingGroup(Aws::String&& value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup = std::move(value); }
 
     /**
      * <p>This data type property is currently not used.</p>
@@ -268,7 +269,7 @@ namespace Model
     /**
      * <p>This data type property is currently not used.</p>
      */
-    inline Agent& WithAutoScalingGroup(Aws::String&& value) { SetAutoScalingGroup(value); return *this;}
+    inline Agent& WithAutoScalingGroup(Aws::String&& value) { SetAutoScalingGroup(std::move(value)); return *this;}
 
     /**
      * <p>This data type property is currently not used.</p>
@@ -288,7 +289,7 @@ namespace Model
     /**
      * <p>AWS account of the EC2 instance where the agent is installed.</p>
      */
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>AWS account of the EC2 instance where the agent is installed.</p>
@@ -303,7 +304,7 @@ namespace Model
     /**
      * <p>AWS account of the EC2 instance where the agent is installed.</p>
      */
-    inline Agent& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline Agent& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>AWS account of the EC2 instance where the agent is installed.</p>
@@ -323,7 +324,7 @@ namespace Model
     /**
      * <p>The Inspector application data metrics collected by the agent. </p>
      */
-    inline void SetTelemetry(Aws::Vector<Telemetry>&& value) { m_telemetryHasBeenSet = true; m_telemetry = value; }
+    inline void SetTelemetry(Aws::Vector<Telemetry>&& value) { m_telemetryHasBeenSet = true; m_telemetry = std::move(value); }
 
     /**
      * <p>The Inspector application data metrics collected by the agent. </p>
@@ -333,7 +334,7 @@ namespace Model
     /**
      * <p>The Inspector application data metrics collected by the agent. </p>
      */
-    inline Agent& WithTelemetry(Aws::Vector<Telemetry>&& value) { SetTelemetry(value); return *this;}
+    inline Agent& WithTelemetry(Aws::Vector<Telemetry>&& value) { SetTelemetry(std::move(value)); return *this;}
 
     /**
      * <p>The Inspector application data metrics collected by the agent. </p>
@@ -343,7 +344,7 @@ namespace Model
     /**
      * <p>The Inspector application data metrics collected by the agent. </p>
      */
-    inline Agent& AddTelemetry(Telemetry&& value) { m_telemetryHasBeenSet = true; m_telemetry.push_back(value); return *this; }
+    inline Agent& AddTelemetry(Telemetry&& value) { m_telemetryHasBeenSet = true; m_telemetry.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_agentId;

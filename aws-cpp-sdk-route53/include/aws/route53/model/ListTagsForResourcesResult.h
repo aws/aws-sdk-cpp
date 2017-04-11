@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/model/ResourceTagSet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>A list of <code>ResourceTagSet</code>s containing tags associated with the
      * specified resources.</p>
      */
-    inline void SetResourceTagSets(Aws::Vector<ResourceTagSet>&& value) { m_resourceTagSets = value; }
+    inline void SetResourceTagSets(Aws::Vector<ResourceTagSet>&& value) { m_resourceTagSets = std::move(value); }
 
     /**
      * <p>A list of <code>ResourceTagSet</code>s containing tags associated with the
@@ -74,7 +75,7 @@ namespace Model
      * <p>A list of <code>ResourceTagSet</code>s containing tags associated with the
      * specified resources.</p>
      */
-    inline ListTagsForResourcesResult& WithResourceTagSets(Aws::Vector<ResourceTagSet>&& value) { SetResourceTagSets(value); return *this;}
+    inline ListTagsForResourcesResult& WithResourceTagSets(Aws::Vector<ResourceTagSet>&& value) { SetResourceTagSets(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>ResourceTagSet</code>s containing tags associated with the
@@ -86,7 +87,7 @@ namespace Model
      * <p>A list of <code>ResourceTagSet</code>s containing tags associated with the
      * specified resources.</p>
      */
-    inline ListTagsForResourcesResult& AddResourceTagSets(ResourceTagSet&& value) { m_resourceTagSets.push_back(value); return *this; }
+    inline ListTagsForResourcesResult& AddResourceTagSets(ResourceTagSet&& value) { m_resourceTagSets.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ResourceTagSet> m_resourceTagSets;

@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The name of the receipt rule set that contains the receipt rule to
      * reposition.</p>
      */
-    inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
+    inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::move(value); }
 
     /**
      * <p>The name of the receipt rule set that contains the receipt rule to
@@ -78,7 +79,7 @@ namespace Model
      * <p>The name of the receipt rule set that contains the receipt rule to
      * reposition.</p>
      */
-    inline SetReceiptRulePositionRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(value); return *this;}
+    inline SetReceiptRulePositionRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the receipt rule set that contains the receipt rule to
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The name of the receipt rule to reposition.</p>
      */
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
+    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
 
     /**
      * <p>The name of the receipt rule to reposition.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The name of the receipt rule to reposition.</p>
      */
-    inline SetReceiptRulePositionRequest& WithRuleName(Aws::String&& value) { SetRuleName(value); return *this;}
+    inline SetReceiptRulePositionRequest& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the receipt rule to reposition.</p>
@@ -137,7 +138,7 @@ namespace Model
      * <p>The name of the receipt rule after which to place the specified receipt
      * rule.</p>
      */
-    inline void SetAfter(Aws::String&& value) { m_afterHasBeenSet = true; m_after = value; }
+    inline void SetAfter(Aws::String&& value) { m_afterHasBeenSet = true; m_after = std::move(value); }
 
     /**
      * <p>The name of the receipt rule after which to place the specified receipt
@@ -155,7 +156,7 @@ namespace Model
      * <p>The name of the receipt rule after which to place the specified receipt
      * rule.</p>
      */
-    inline SetReceiptRulePositionRequest& WithAfter(Aws::String&& value) { SetAfter(value); return *this;}
+    inline SetReceiptRulePositionRequest& WithAfter(Aws::String&& value) { SetAfter(std::move(value)); return *this;}
 
     /**
      * <p>The name of the receipt rule after which to place the specified receipt

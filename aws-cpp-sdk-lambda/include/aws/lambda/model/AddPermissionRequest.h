@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
      * to the ARN. If you specify only the function name, it is limited to 64 character
      * in length. </p>
      */
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
      * <p>Name of the Lambda function whose resource policy you are updating by adding
@@ -118,7 +119,7 @@ namespace Model
      * to the ARN. If you specify only the function name, it is limited to 64 character
      * in length. </p>
      */
-    inline AddPermissionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
+    inline AddPermissionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the Lambda function whose resource policy you are updating by adding
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>A unique statement identifier.</p>
      */
-    inline void SetStatementId(Aws::String&& value) { m_statementIdHasBeenSet = true; m_statementId = value; }
+    inline void SetStatementId(Aws::String&& value) { m_statementIdHasBeenSet = true; m_statementId = std::move(value); }
 
     /**
      * <p>A unique statement identifier.</p>
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>A unique statement identifier.</p>
      */
-    inline AddPermissionRequest& WithStatementId(Aws::String&& value) { SetStatementId(value); return *this;}
+    inline AddPermissionRequest& WithStatementId(Aws::String&& value) { SetStatementId(std::move(value)); return *this;}
 
     /**
      * <p>A unique statement identifier.</p>
@@ -190,7 +191,7 @@ namespace Model
      * example, <code>lambda:CreateFunction</code>. You can use wildcard
      * (<code>lambda:*</code>) to grant permission for all AWS Lambda actions. </p>
      */
-    inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = value; }
+    inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>The AWS Lambda action you want to allow in this statement. Each Lambda action
@@ -214,7 +215,7 @@ namespace Model
      * example, <code>lambda:CreateFunction</code>. You can use wildcard
      * (<code>lambda:*</code>) to grant permission for all AWS Lambda actions. </p>
      */
-    inline AddPermissionRequest& WithAction(Aws::String&& value) { SetAction(value); return *this;}
+    inline AddPermissionRequest& WithAction(Aws::String&& value) { SetAction(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Lambda action you want to allow in this statement. Each Lambda action
@@ -252,7 +253,7 @@ namespace Model
      * you might want to allow a custom application in another AWS account to push
      * events to AWS Lambda by invoking your function. </p>
      */
-    inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = value; }
+    inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
     /**
      * <p>The principal who is getting this permission. It can be Amazon S3 service
@@ -282,7 +283,7 @@ namespace Model
      * you might want to allow a custom application in another AWS account to push
      * events to AWS Lambda by invoking your function. </p>
      */
-    inline AddPermissionRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(value); return *this;}
+    inline AddPermissionRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
 
     /**
      * <p>The principal who is getting this permission. It can be Amazon S3 service
@@ -325,7 +326,7 @@ namespace Model
      * mapping to your function ARN can send events to invoke your Lambda function from
      * Amazon S3.</p> </important>
      */
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
+    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
     /**
      * <p>This is optional; however, when granting Amazon S3 permission to invoke your
@@ -358,7 +359,7 @@ namespace Model
      * mapping to your function ARN can send events to invoke your Lambda function from
      * Amazon S3.</p> </important>
      */
-    inline AddPermissionRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(value); return *this;}
+    inline AddPermissionRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
     /**
      * <p>This is optional; however, when granting Amazon S3 permission to invoke your
@@ -405,7 +406,7 @@ namespace Model
      * condition to specify all sources (that is, you don't specify the
      * <code>SourceArn</code>) owned by a specific account. </p>
      */
-    inline void SetSourceAccount(Aws::String&& value) { m_sourceAccountHasBeenSet = true; m_sourceAccount = value; }
+    inline void SetSourceAccount(Aws::String&& value) { m_sourceAccountHasBeenSet = true; m_sourceAccount = std::move(value); }
 
     /**
      * <p>This parameter is used for S3, SES, CloudWatch Logs and CloudWatch Rules
@@ -441,7 +442,7 @@ namespace Model
      * condition to specify all sources (that is, you don't specify the
      * <code>SourceArn</code>) owned by a specific account. </p>
      */
-    inline AddPermissionRequest& WithSourceAccount(Aws::String&& value) { SetSourceAccount(value); return *this;}
+    inline AddPermissionRequest& WithSourceAccount(Aws::String&& value) { SetSourceAccount(std::move(value)); return *this;}
 
     /**
      * <p>This parameter is used for S3, SES, CloudWatch Logs and CloudWatch Rules
@@ -471,7 +472,7 @@ namespace Model
      * <p>A unique token that must be supplied by the principal invoking the function.
      * This is currently only used for Alexa Smart Home functions.</p>
      */
-    inline void SetEventSourceToken(Aws::String&& value) { m_eventSourceTokenHasBeenSet = true; m_eventSourceToken = value; }
+    inline void SetEventSourceToken(Aws::String&& value) { m_eventSourceTokenHasBeenSet = true; m_eventSourceToken = std::move(value); }
 
     /**
      * <p>A unique token that must be supplied by the principal invoking the function.
@@ -489,7 +490,7 @@ namespace Model
      * <p>A unique token that must be supplied by the principal invoking the function.
      * This is currently only used for Alexa Smart Home functions.</p>
      */
-    inline AddPermissionRequest& WithEventSourceToken(Aws::String&& value) { SetEventSourceToken(value); return *this;}
+    inline AddPermissionRequest& WithEventSourceToken(Aws::String&& value) { SetEventSourceToken(std::move(value)); return *this;}
 
     /**
      * <p>A unique token that must be supplied by the principal invoking the function.
@@ -543,7 +544,7 @@ namespace Model
      * is made using unqualified function ARN.</p> <p>
      * <code>arn:aws:lambda:aws-region:acct-id:function:function-name</code> </p>
      */
-    inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
+    inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
 
     /**
      * <p>You can use this optional query parameter to describe a qualified ARN using a
@@ -591,7 +592,7 @@ namespace Model
      * is made using unqualified function ARN.</p> <p>
      * <code>arn:aws:lambda:aws-region:acct-id:function:function-name</code> </p>
      */
-    inline AddPermissionRequest& WithQualifier(Aws::String&& value) { SetQualifier(value); return *this;}
+    inline AddPermissionRequest& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
 
     /**
      * <p>You can use this optional query parameter to describe a qualified ARN using a

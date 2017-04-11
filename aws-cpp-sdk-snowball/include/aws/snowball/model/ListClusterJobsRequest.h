@@ -16,6 +16,7 @@
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/SnowballRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The 39-character ID for the cluster that you want to list, for example
      * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
 
     /**
      * <p>The 39-character ID for the cluster that you want to list, for example
@@ -69,7 +70,7 @@ namespace Model
      * <p>The 39-character ID for the cluster that you want to list, for example
      * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
-    inline ListClusterJobsRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+    inline ListClusterJobsRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The 39-character ID for the cluster that you want to list, for example
@@ -111,7 +112,7 @@ namespace Model
      * of <code>JobListEntry</code> objects, you have the option of specifying
      * <code>NextToken</code> as the starting point for your returned list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>HTTP requests are stateless. To identify what object comes "next" in the list
@@ -132,7 +133,7 @@ namespace Model
      * of <code>JobListEntry</code> objects, you have the option of specifying
      * <code>NextToken</code> as the starting point for your returned list.</p>
      */
-    inline ListClusterJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListClusterJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>HTTP requests are stateless. To identify what object comes "next" in the list

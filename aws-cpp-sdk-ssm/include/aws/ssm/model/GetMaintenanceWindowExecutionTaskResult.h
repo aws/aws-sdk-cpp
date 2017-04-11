@@ -21,6 +21,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm/model/MaintenanceWindowTaskParameterValueExpression.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window execution that includes the task.</p>
      */
-    inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionId = value; }
+    inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionId = std::move(value); }
 
     /**
      * <p>The ID of the Maintenance Window execution that includes the task.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window execution that includes the task.</p>
      */
-    inline GetMaintenanceWindowExecutionTaskResult& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(value); return *this;}
+    inline GetMaintenanceWindowExecutionTaskResult& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Maintenance Window execution that includes the task.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>The ID of the specific task execution in the Maintenance Window task that was
      * retrieved.</p>
      */
-    inline void SetTaskExecutionId(Aws::String&& value) { m_taskExecutionId = value; }
+    inline void SetTaskExecutionId(Aws::String&& value) { m_taskExecutionId = std::move(value); }
 
     /**
      * <p>The ID of the specific task execution in the Maintenance Window task that was
@@ -114,7 +115,7 @@ namespace Model
      * <p>The ID of the specific task execution in the Maintenance Window task that was
      * retrieved.</p>
      */
-    inline GetMaintenanceWindowExecutionTaskResult& WithTaskExecutionId(Aws::String&& value) { SetTaskExecutionId(value); return *this;}
+    inline GetMaintenanceWindowExecutionTaskResult& WithTaskExecutionId(Aws::String&& value) { SetTaskExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the specific task execution in the Maintenance Window task that was
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>The ARN of the executed task.</p>
      */
-    inline void SetTaskArn(Aws::String&& value) { m_taskArn = value; }
+    inline void SetTaskArn(Aws::String&& value) { m_taskArn = std::move(value); }
 
     /**
      * <p>The ARN of the executed task.</p>
@@ -150,7 +151,7 @@ namespace Model
     /**
      * <p>The ARN of the executed task.</p>
      */
-    inline GetMaintenanceWindowExecutionTaskResult& WithTaskArn(Aws::String&& value) { SetTaskArn(value); return *this;}
+    inline GetMaintenanceWindowExecutionTaskResult& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the executed task.</p>
@@ -170,7 +171,7 @@ namespace Model
     /**
      * <p>The role that was assumed when executing the task.</p>
      */
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRole = value; }
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRole = std::move(value); }
 
     /**
      * <p>The role that was assumed when executing the task.</p>
@@ -185,7 +186,7 @@ namespace Model
     /**
      * <p>The role that was assumed when executing the task.</p>
      */
-    inline GetMaintenanceWindowExecutionTaskResult& WithServiceRole(Aws::String&& value) { SetServiceRole(value); return *this;}
+    inline GetMaintenanceWindowExecutionTaskResult& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
      * <p>The role that was assumed when executing the task.</p>
@@ -205,7 +206,7 @@ namespace Model
     /**
      * <p>The type of task executed.</p>
      */
-    inline void SetType(MaintenanceWindowTaskType&& value) { m_type = value; }
+    inline void SetType(MaintenanceWindowTaskType&& value) { m_type = std::move(value); }
 
     /**
      * <p>The type of task executed.</p>
@@ -215,7 +216,7 @@ namespace Model
     /**
      * <p>The type of task executed.</p>
      */
-    inline GetMaintenanceWindowExecutionTaskResult& WithType(MaintenanceWindowTaskType&& value) { SetType(value); return *this;}
+    inline GetMaintenanceWindowExecutionTaskResult& WithType(MaintenanceWindowTaskType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The parameters passed to the task when it was executed. The map has the
@@ -236,7 +237,7 @@ namespace Model
      * following format:</p> <p>Key: string, 1 ≤ length ≤ 255</p> <p>Value: an array of
      * strings where each string 1 ≤ length ≤ 255</p>
      */
-    inline void SetTaskParameters(Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>&& value) { m_taskParameters = value; }
+    inline void SetTaskParameters(Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>&& value) { m_taskParameters = std::move(value); }
 
     /**
      * <p>The parameters passed to the task when it was executed. The map has the
@@ -250,7 +251,7 @@ namespace Model
      * following format:</p> <p>Key: string, 1 ≤ length ≤ 255</p> <p>Value: an array of
      * strings where each string 1 ≤ length ≤ 255</p>
      */
-    inline GetMaintenanceWindowExecutionTaskResult& WithTaskParameters(Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>&& value) { SetTaskParameters(value); return *this;}
+    inline GetMaintenanceWindowExecutionTaskResult& WithTaskParameters(Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>&& value) { SetTaskParameters(std::move(value)); return *this;}
 
     /**
      * <p>The parameters passed to the task when it was executed. The map has the
@@ -264,7 +265,7 @@ namespace Model
      * following format:</p> <p>Key: string, 1 ≤ length ≤ 255</p> <p>Value: an array of
      * strings where each string 1 ≤ length ≤ 255</p>
      */
-    inline GetMaintenanceWindowExecutionTaskResult& AddTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { m_taskParameters.push_back(value); return *this; }
+    inline GetMaintenanceWindowExecutionTaskResult& AddTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { m_taskParameters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The priority of the task.</p>
@@ -297,7 +298,7 @@ namespace Model
      * <p>The defined maximum number of task executions that could be run in
      * parallel.</p>
      */
-    inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrency = value; }
+    inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrency = std::move(value); }
 
     /**
      * <p>The defined maximum number of task executions that could be run in
@@ -315,7 +316,7 @@ namespace Model
      * <p>The defined maximum number of task executions that could be run in
      * parallel.</p>
      */
-    inline GetMaintenanceWindowExecutionTaskResult& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(value); return *this;}
+    inline GetMaintenanceWindowExecutionTaskResult& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
     /**
      * <p>The defined maximum number of task executions that could be run in
@@ -339,7 +340,7 @@ namespace Model
      * <p>The defined maximum number of task execution errors allowed before scheduling
      * of the task execution would have been stopped.</p>
      */
-    inline void SetMaxErrors(Aws::String&& value) { m_maxErrors = value; }
+    inline void SetMaxErrors(Aws::String&& value) { m_maxErrors = std::move(value); }
 
     /**
      * <p>The defined maximum number of task execution errors allowed before scheduling
@@ -357,7 +358,7 @@ namespace Model
      * <p>The defined maximum number of task execution errors allowed before scheduling
      * of the task execution would have been stopped.</p>
      */
-    inline GetMaintenanceWindowExecutionTaskResult& WithMaxErrors(Aws::String&& value) { SetMaxErrors(value); return *this;}
+    inline GetMaintenanceWindowExecutionTaskResult& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
 
     /**
      * <p>The defined maximum number of task execution errors allowed before scheduling
@@ -378,7 +379,7 @@ namespace Model
     /**
      * <p>The status of the task.</p>
      */
-    inline void SetStatus(MaintenanceWindowExecutionStatus&& value) { m_status = value; }
+    inline void SetStatus(MaintenanceWindowExecutionStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The status of the task.</p>
@@ -388,7 +389,7 @@ namespace Model
     /**
      * <p>The status of the task.</p>
      */
-    inline GetMaintenanceWindowExecutionTaskResult& WithStatus(MaintenanceWindowExecutionStatus&& value) { SetStatus(value); return *this;}
+    inline GetMaintenanceWindowExecutionTaskResult& WithStatus(MaintenanceWindowExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The details explaining the Status. Only available for certain status
@@ -406,7 +407,7 @@ namespace Model
      * <p>The details explaining the Status. Only available for certain status
      * values.</p>
      */
-    inline void SetStatusDetails(Aws::String&& value) { m_statusDetails = value; }
+    inline void SetStatusDetails(Aws::String&& value) { m_statusDetails = std::move(value); }
 
     /**
      * <p>The details explaining the Status. Only available for certain status
@@ -424,7 +425,7 @@ namespace Model
      * <p>The details explaining the Status. Only available for certain status
      * values.</p>
      */
-    inline GetMaintenanceWindowExecutionTaskResult& WithStatusDetails(Aws::String&& value) { SetStatusDetails(value); return *this;}
+    inline GetMaintenanceWindowExecutionTaskResult& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
 
     /**
      * <p>The details explaining the Status. Only available for certain status
@@ -445,7 +446,7 @@ namespace Model
     /**
      * <p>The time the task execution started.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
 
     /**
      * <p>The time the task execution started.</p>
@@ -455,7 +456,7 @@ namespace Model
     /**
      * <p>The time the task execution started.</p>
      */
-    inline GetMaintenanceWindowExecutionTaskResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline GetMaintenanceWindowExecutionTaskResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The time the task execution completed.</p>
@@ -470,7 +471,7 @@ namespace Model
     /**
      * <p>The time the task execution completed.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
 
     /**
      * <p>The time the task execution completed.</p>
@@ -480,7 +481,7 @@ namespace Model
     /**
      * <p>The time the task execution completed.</p>
      */
-    inline GetMaintenanceWindowExecutionTaskResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline GetMaintenanceWindowExecutionTaskResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
   private:
     Aws::String m_windowExecutionId;

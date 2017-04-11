@@ -17,6 +17,7 @@
 #include <aws/codebuild/model/SourceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codebuild/model/SourceAuth.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
      * GitHub repository.</p> </li> <li> <p> <code>S3</code>: The source code is in an
      * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
      */
-    inline void SetType(SourceType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(SourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of repository that contains the source code to be built. Valid
@@ -99,7 +100,7 @@ namespace Model
      * GitHub repository.</p> </li> <li> <p> <code>S3</code>: The source code is in an
      * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
      */
-    inline ProjectSource& WithType(SourceType&& value) { SetType(value); return *this;}
+    inline ProjectSource& WithType(SourceType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>Information about the location of the source code to be built. Valid values
@@ -177,7 +178,7 @@ namespace Model
      * in the <code>source</code> object, set the <code>auth</code> object's
      * <code>type</code> value to <code>OAUTH</code>.</p> </li> </ul>
      */
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
      * <p>Information about the location of the source code to be built. Valid values
@@ -255,7 +256,7 @@ namespace Model
      * in the <code>source</code> object, set the <code>auth</code> object's
      * <code>type</code> value to <code>OAUTH</code>.</p> </li> </ul>
      */
-    inline ProjectSource& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline ProjectSource& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * <p>Information about the location of the source code to be built. Valid values
@@ -302,7 +303,7 @@ namespace Model
      * <p>If this value is not specified, a build spec must be included along with the
      * source code to be built.</p>
      */
-    inline void SetBuildspec(Aws::String&& value) { m_buildspecHasBeenSet = true; m_buildspec = value; }
+    inline void SetBuildspec(Aws::String&& value) { m_buildspecHasBeenSet = true; m_buildspec = std::move(value); }
 
     /**
      * <p>The build spec declaration to use for the builds in this build project.</p>
@@ -323,7 +324,7 @@ namespace Model
      * <p>If this value is not specified, a build spec must be included along with the
      * source code to be built.</p>
      */
-    inline ProjectSource& WithBuildspec(Aws::String&& value) { SetBuildspec(value); return *this;}
+    inline ProjectSource& WithBuildspec(Aws::String&& value) { SetBuildspec(std::move(value)); return *this;}
 
     /**
      * <p>The build spec declaration to use for the builds in this build project.</p>
@@ -357,7 +358,7 @@ namespace Model
      * (unless the build project's source <code>type</code> value is
      * <code>GITHUB</code>).</p>
      */
-    inline void SetAuth(SourceAuth&& value) { m_authHasBeenSet = true; m_auth = value; }
+    inline void SetAuth(SourceAuth&& value) { m_authHasBeenSet = true; m_auth = std::move(value); }
 
     /**
      * <p>Information about the authorization settings for AWS CodeBuild to access the
@@ -375,7 +376,7 @@ namespace Model
      * (unless the build project's source <code>type</code> value is
      * <code>GITHUB</code>).</p>
      */
-    inline ProjectSource& WithAuth(SourceAuth&& value) { SetAuth(value); return *this;}
+    inline ProjectSource& WithAuth(SourceAuth&& value) { SetAuth(std::move(value)); return *this;}
 
   private:
     SourceType m_type;

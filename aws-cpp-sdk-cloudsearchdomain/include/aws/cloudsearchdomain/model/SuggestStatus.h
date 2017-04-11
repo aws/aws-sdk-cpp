@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudsearchdomain/CloudSearchDomain_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The encrypted resource ID for the request.</p>
      */
-    inline void SetRid(Aws::String&& value) { m_ridHasBeenSet = true; m_rid = value; }
+    inline void SetRid(Aws::String&& value) { m_ridHasBeenSet = true; m_rid = std::move(value); }
 
     /**
      * <p>The encrypted resource ID for the request.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The encrypted resource ID for the request.</p>
      */
-    inline SuggestStatus& WithRid(Aws::String&& value) { SetRid(value); return *this;}
+    inline SuggestStatus& WithRid(Aws::String&& value) { SetRid(std::move(value)); return *this;}
 
     /**
      * <p>The encrypted resource ID for the request.</p>

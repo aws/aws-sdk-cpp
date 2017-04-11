@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
-    inline void SetSourceDBInstanceIdentifier(Aws::String&& value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier = value; }
+    inline void SetSourceDBInstanceIdentifier(Aws::String&& value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
@@ -95,7 +96,7 @@ namespace Model
      * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
-    inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceIdentifier(Aws::String&& value) { SetSourceDBInstanceIdentifier(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceIdentifier(Aws::String&& value) { SetSourceDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
@@ -128,7 +129,7 @@ namespace Model
      * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
      * a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
-    inline void SetTargetDBInstanceIdentifier(Aws::String&& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = value; }
+    inline void SetTargetDBInstanceIdentifier(Aws::String&& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
@@ -152,7 +153,7 @@ namespace Model
      * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
      * a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
-    inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(Aws::String&& value) { SetTargetDBInstanceIdentifier(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(Aws::String&& value) { SetTargetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
@@ -187,7 +188,7 @@ namespace Model
      * <p>Cannot be specified if UseLatestRestorableTime parameter is true</p> </li>
      * </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
      */
-    inline void SetRestoreTime(Aws::Utils::DateTime&& value) { m_restoreTimeHasBeenSet = true; m_restoreTime = value; }
+    inline void SetRestoreTime(Aws::Utils::DateTime&& value) { m_restoreTimeHasBeenSet = true; m_restoreTime = std::move(value); }
 
     /**
      * <p>The date and time to restore from.</p> <p>Valid Values: Value must be a time
@@ -205,7 +206,7 @@ namespace Model
      * <p>Cannot be specified if UseLatestRestorableTime parameter is true</p> </li>
      * </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
      */
-    inline RestoreDBInstanceToPointInTimeRequest& WithRestoreTime(Aws::Utils::DateTime&& value) { SetRestoreTime(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithRestoreTime(Aws::Utils::DateTime&& value) { SetRestoreTime(std::move(value)); return *this;}
 
     /**
      * <p> Specifies whether (<code>true</code>) or not (<code>false</code>) the DB
@@ -265,7 +266,7 @@ namespace Model
      * db.t2.large</code> </p> <p>Default: The same DBInstanceClass as the original DB
      * instance.</p>
      */
-    inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
+    inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
@@ -301,7 +302,7 @@ namespace Model
      * db.t2.large</code> </p> <p>Default: The same DBInstanceClass as the original DB
      * instance.</p>
      */
-    inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
@@ -358,7 +359,7 @@ namespace Model
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * true.</p> <p>Example: <code>us-east-1a</code> </p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The EC2 Availability Zone that the database instance will be created in.</p>
@@ -382,7 +383,7 @@ namespace Model
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * true.</p> <p>Example: <code>us-east-1a</code> </p>
      */
-    inline RestoreDBInstanceToPointInTimeRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The EC2 Availability Zone that the database instance will be created in.</p>
@@ -414,7 +415,7 @@ namespace Model
      * spaces, or hyphens. Must not be default.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
-    inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
+    inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
@@ -438,7 +439,7 @@ namespace Model
      * spaces, or hyphens. Must not be default.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
-    inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
@@ -554,7 +555,7 @@ namespace Model
      * as source.</p> <p> Valid values: <code>license-included</code> |
      * <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
      */
-    inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
+    inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>Default: Same
@@ -575,7 +576,7 @@ namespace Model
      * as source.</p> <p> Valid values: <code>license-included</code> |
      * <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
      */
-    inline RestoreDBInstanceToPointInTimeRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>Default: Same
@@ -600,7 +601,7 @@ namespace Model
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
      * is not used for the MySQL or MariaDB engines.</p> </note>
      */
-    inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
+    inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
@@ -618,7 +619,7 @@ namespace Model
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
      * is not used for the MySQL or MariaDB engines.</p> </note>
      */
-    inline RestoreDBInstanceToPointInTimeRequest& WithDBName(Aws::String&& value) { SetDBName(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
@@ -657,7 +658,7 @@ namespace Model
      * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
      * <code>aurora</code> </p>
      */
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
@@ -690,7 +691,7 @@ namespace Model
      * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
      * <code>aurora</code> </p>
      */
-    inline RestoreDBInstanceToPointInTimeRequest& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
@@ -749,7 +750,7 @@ namespace Model
      * cannot be removed from an option group, and that option group cannot be removed
      * from a DB instance once it is associated with a DB instance</p>
      */
-    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
+    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
      * <p>The name of the option group to be used for the restored DB instance.</p>
@@ -773,7 +774,7 @@ namespace Model
      * cannot be removed from an option group, and that option group cannot be removed
      * from a DB instance once it is associated with a DB instance</p>
      */
-    inline RestoreDBInstanceToPointInTimeRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the option group to be used for the restored DB instance.</p>
@@ -808,19 +809,19 @@ namespace Model
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     
     inline RestoreDBInstanceToPointInTimeRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     
-    inline RestoreDBInstanceToPointInTimeRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     
     inline RestoreDBInstanceToPointInTimeRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     
-    inline RestoreDBInstanceToPointInTimeRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline RestoreDBInstanceToPointInTimeRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
@@ -847,7 +848,7 @@ namespace Model
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified; otherwise <code>standard</code> </p>
      */
-    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
@@ -874,7 +875,7 @@ namespace Model
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified; otherwise <code>standard</code> </p>
      */
-    inline RestoreDBInstanceToPointInTimeRequest& WithStorageType(Aws::String&& value) { SetStorageType(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
@@ -901,7 +902,7 @@ namespace Model
      * <p>The ARN from the Key Store with which to associate the instance for TDE
      * encryption.</p>
      */
-    inline void SetTdeCredentialArn(Aws::String&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
+    inline void SetTdeCredentialArn(Aws::String&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = std::move(value); }
 
     /**
      * <p>The ARN from the Key Store with which to associate the instance for TDE
@@ -919,7 +920,7 @@ namespace Model
      * <p>The ARN from the Key Store with which to associate the instance for TDE
      * encryption.</p>
      */
-    inline RestoreDBInstanceToPointInTimeRequest& WithTdeCredentialArn(Aws::String&& value) { SetTdeCredentialArn(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithTdeCredentialArn(Aws::String&& value) { SetTdeCredentialArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN from the Key Store with which to associate the instance for TDE
@@ -943,7 +944,7 @@ namespace Model
      * <p>The password for the given ARN from the Key Store in order to access the
      * device.</p>
      */
-    inline void SetTdeCredentialPassword(Aws::String&& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = value; }
+    inline void SetTdeCredentialPassword(Aws::String&& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = std::move(value); }
 
     /**
      * <p>The password for the given ARN from the Key Store in order to access the
@@ -961,7 +962,7 @@ namespace Model
      * <p>The password for the given ARN from the Key Store in order to access the
      * device.</p>
      */
-    inline RestoreDBInstanceToPointInTimeRequest& WithTdeCredentialPassword(Aws::String&& value) { SetTdeCredentialPassword(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithTdeCredentialPassword(Aws::String&& value) { SetTdeCredentialPassword(std::move(value)); return *this;}
 
     /**
      * <p>The password for the given ARN from the Key Store in order to access the
@@ -982,7 +983,7 @@ namespace Model
     /**
      * <p>Specify the Active Directory Domain to restore the instance in.</p>
      */
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>Specify the Active Directory Domain to restore the instance in.</p>
@@ -997,7 +998,7 @@ namespace Model
     /**
      * <p>Specify the Active Directory Domain to restore the instance in.</p>
      */
-    inline RestoreDBInstanceToPointInTimeRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>Specify the Active Directory Domain to restore the instance in.</p>
@@ -1020,7 +1021,7 @@ namespace Model
      * <p>Specify the name of the IAM role to be used when making API calls to the
      * Directory Service.</p>
      */
-    inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
+    inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::move(value); }
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
@@ -1038,7 +1039,7 @@ namespace Model
      * <p>Specify the name of the IAM role to be used when making API calls to the
      * Directory Service.</p>
      */
-    inline RestoreDBInstanceToPointInTimeRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(value); return *this;}
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(std::move(value)); return *this;}
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the

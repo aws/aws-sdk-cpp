@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The dimension name.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The dimension name.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The dimension name.</p>
      */
-    inline MetricDimension& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline MetricDimension& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The dimension name.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The dimension value.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The dimension value.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The dimension value.</p>
      */
-    inline MetricDimension& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline MetricDimension& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The dimension value.</p>

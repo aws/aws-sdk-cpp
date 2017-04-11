@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/model/Policy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>A structure that contains details about the specified policy.</p>
      */
-    inline void SetPolicy(Policy&& value) { m_policy = value; }
+    inline void SetPolicy(Policy&& value) { m_policy = std::move(value); }
 
     /**
      * <p>A structure that contains details about the specified policy.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>A structure that contains details about the specified policy.</p>
      */
-    inline DescribePolicyResult& WithPolicy(Policy&& value) { SetPolicy(value); return *this;}
+    inline DescribePolicyResult& WithPolicy(Policy&& value) { SetPolicy(std::move(value)); return *this;}
 
   private:
     Policy m_policy;

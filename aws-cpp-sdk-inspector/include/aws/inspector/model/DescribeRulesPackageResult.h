@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/model/RulesPackage.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Information about the rules package.</p>
      */
-    inline void SetRulesPackage(RulesPackage&& value) { m_rulesPackage = value; }
+    inline void SetRulesPackage(RulesPackage&& value) { m_rulesPackage = std::move(value); }
 
     /**
      * <p>Information about the rules package.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Information about the rules package.</p>
      */
-    inline DescribeRulesPackageResult& WithRulesPackage(RulesPackage&& value) { SetRulesPackage(value); return *this;}
+    inline DescribeRulesPackageResult& WithRulesPackage(RulesPackage&& value) { SetRulesPackage(std::move(value)); return *this;}
 
   private:
     RulesPackage m_rulesPackage;

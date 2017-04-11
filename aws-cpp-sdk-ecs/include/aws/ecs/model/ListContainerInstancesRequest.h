@@ -17,6 +17,7 @@
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/ContainerInstanceStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * the container instances to list. If you do not specify a cluster, the default
      * cluster is assumed.</p>
      */
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
@@ -76,7 +77,7 @@ namespace Model
      * the container instances to list. If you do not specify a cluster, the default
      * cluster is assumed.</p>
      */
-    inline ListContainerInstancesRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
+    inline ListContainerInstancesRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
@@ -110,7 +111,7 @@ namespace Model
      * Query Language</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.</p>
      */
-    inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>You can filter the results of a <code>ListContainerInstances</code> operation
@@ -137,7 +138,7 @@ namespace Model
      * Query Language</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.</p>
      */
-    inline ListContainerInstancesRequest& WithFilter(Aws::String&& value) { SetFilter(value); return *this;}
+    inline ListContainerInstancesRequest& WithFilter(Aws::String&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>You can filter the results of a <code>ListContainerInstances</code> operation
@@ -182,7 +183,7 @@ namespace Model
      * is only used to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -218,7 +219,7 @@ namespace Model
      * is only used to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
      */
-    inline ListContainerInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListContainerInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -296,7 +297,7 @@ namespace Model
      * have been set to drain with the <a>UpdateContainerInstancesState</a>
      * operation.</p>
      */
-    inline void SetStatus(ContainerInstanceStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ContainerInstanceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The container instance status with which to filter the
@@ -314,7 +315,7 @@ namespace Model
      * have been set to drain with the <a>UpdateContainerInstancesState</a>
      * operation.</p>
      */
-    inline ListContainerInstancesRequest& WithStatus(ContainerInstanceStatus&& value) { SetStatus(value); return *this;}
+    inline ListContainerInstancesRequest& WithStatus(ContainerInstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_cluster;

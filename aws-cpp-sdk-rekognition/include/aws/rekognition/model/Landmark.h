@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/LandmarkType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>Type of the landmark.</p>
      */
-    inline void SetType(LandmarkType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(LandmarkType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>Type of the landmark.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Type of the landmark.</p>
      */
-    inline Landmark& WithType(LandmarkType&& value) { SetType(value); return *this;}
+    inline Landmark& WithType(LandmarkType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>x-coordinate from the top left of the landmark expressed as the ration of the

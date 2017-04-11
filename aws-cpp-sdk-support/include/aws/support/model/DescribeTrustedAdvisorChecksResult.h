@@ -16,6 +16,7 @@
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/support/model/TrustedAdvisorCheckDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Information about all available Trusted Advisor checks.</p>
      */
-    inline void SetChecks(Aws::Vector<TrustedAdvisorCheckDescription>&& value) { m_checks = value; }
+    inline void SetChecks(Aws::Vector<TrustedAdvisorCheckDescription>&& value) { m_checks = std::move(value); }
 
     /**
      * <p>Information about all available Trusted Advisor checks.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Information about all available Trusted Advisor checks.</p>
      */
-    inline DescribeTrustedAdvisorChecksResult& WithChecks(Aws::Vector<TrustedAdvisorCheckDescription>&& value) { SetChecks(value); return *this;}
+    inline DescribeTrustedAdvisorChecksResult& WithChecks(Aws::Vector<TrustedAdvisorCheckDescription>&& value) { SetChecks(std::move(value)); return *this;}
 
     /**
      * <p>Information about all available Trusted Advisor checks.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>Information about all available Trusted Advisor checks.</p>
      */
-    inline DescribeTrustedAdvisorChecksResult& AddChecks(TrustedAdvisorCheckDescription&& value) { m_checks.push_back(value); return *this; }
+    inline DescribeTrustedAdvisorChecksResult& AddChecks(TrustedAdvisorCheckDescription&& value) { m_checks.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<TrustedAdvisorCheckDescription> m_checks;

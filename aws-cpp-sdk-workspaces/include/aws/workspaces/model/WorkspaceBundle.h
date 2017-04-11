@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces/model/UserStorage.h>
 #include <aws/workspaces/model/ComputeType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The bundle identifier.</p>
      */
-    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
+    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
 
     /**
      * <p>The bundle identifier.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The bundle identifier.</p>
      */
-    inline WorkspaceBundle& WithBundleId(Aws::String&& value) { SetBundleId(value); return *this;}
+    inline WorkspaceBundle& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
 
     /**
      * <p>The bundle identifier.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The name of the bundle.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the bundle.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The name of the bundle.</p>
      */
-    inline WorkspaceBundle& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline WorkspaceBundle& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the bundle.</p>
@@ -131,7 +132,7 @@ namespace Model
      * <p>The owner of the bundle. This contains the owner's account identifier, or
      * <code>AMAZON</code> if the bundle is provided by AWS.</p>
      */
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = value; }
+    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
      * <p>The owner of the bundle. This contains the owner's account identifier, or
@@ -149,7 +150,7 @@ namespace Model
      * <p>The owner of the bundle. This contains the owner's account identifier, or
      * <code>AMAZON</code> if the bundle is provided by AWS.</p>
      */
-    inline WorkspaceBundle& WithOwner(Aws::String&& value) { SetOwner(value); return *this;}
+    inline WorkspaceBundle& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
      * <p>The owner of the bundle. This contains the owner's account identifier, or
@@ -170,7 +171,7 @@ namespace Model
     /**
      * <p>The bundle description.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The bundle description.</p>
@@ -185,7 +186,7 @@ namespace Model
     /**
      * <p>The bundle description.</p>
      */
-    inline WorkspaceBundle& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline WorkspaceBundle& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The bundle description.</p>
@@ -208,7 +209,7 @@ namespace Model
      * <p>A <a>UserStorage</a> object that specifies the amount of user storage that
      * the bundle contains.</p>
      */
-    inline void SetUserStorage(UserStorage&& value) { m_userStorageHasBeenSet = true; m_userStorage = value; }
+    inline void SetUserStorage(UserStorage&& value) { m_userStorageHasBeenSet = true; m_userStorage = std::move(value); }
 
     /**
      * <p>A <a>UserStorage</a> object that specifies the amount of user storage that
@@ -220,7 +221,7 @@ namespace Model
      * <p>A <a>UserStorage</a> object that specifies the amount of user storage that
      * the bundle contains.</p>
      */
-    inline WorkspaceBundle& WithUserStorage(UserStorage&& value) { SetUserStorage(value); return *this;}
+    inline WorkspaceBundle& WithUserStorage(UserStorage&& value) { SetUserStorage(std::move(value)); return *this;}
 
     /**
      * <p>A <a>ComputeType</a> object that specifies the compute type for the
@@ -238,7 +239,7 @@ namespace Model
      * <p>A <a>ComputeType</a> object that specifies the compute type for the
      * bundle.</p>
      */
-    inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
+    inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
 
     /**
      * <p>A <a>ComputeType</a> object that specifies the compute type for the
@@ -250,7 +251,7 @@ namespace Model
      * <p>A <a>ComputeType</a> object that specifies the compute type for the
      * bundle.</p>
      */
-    inline WorkspaceBundle& WithComputeType(ComputeType&& value) { SetComputeType(value); return *this;}
+    inline WorkspaceBundle& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
 
   private:
     Aws::String m_bundleId;

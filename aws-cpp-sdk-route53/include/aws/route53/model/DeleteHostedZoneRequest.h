@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The ID of the hosted zone you want to delete.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The ID of the hosted zone you want to delete.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ID of the hosted zone you want to delete.</p>
      */
-    inline DeleteHostedZoneRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline DeleteHostedZoneRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the hosted zone you want to delete.</p>

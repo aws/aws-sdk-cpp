@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The key of the tag.</p>
      */
-    inline void SetTagKey(Aws::String&& value) { m_tagKeyHasBeenSet = true; m_tagKey = value; }
+    inline void SetTagKey(Aws::String&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::move(value); }
 
     /**
      * <p>The key of the tag.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The key of the tag.</p>
      */
-    inline Tag& WithTagKey(Aws::String&& value) { SetTagKey(value); return *this;}
+    inline Tag& WithTagKey(Aws::String&& value) { SetTagKey(std::move(value)); return *this;}
 
     /**
      * <p>The key of the tag.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The value of the tag.</p>
      */
-    inline void SetTagValue(Aws::String&& value) { m_tagValueHasBeenSet = true; m_tagValue = value; }
+    inline void SetTagValue(Aws::String&& value) { m_tagValueHasBeenSet = true; m_tagValue = std::move(value); }
 
     /**
      * <p>The value of the tag.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The value of the tag.</p>
      */
-    inline Tag& WithTagValue(Aws::String&& value) { SetTagValue(value); return *this;}
+    inline Tag& WithTagValue(Aws::String&& value) { SetTagValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the tag.</p>

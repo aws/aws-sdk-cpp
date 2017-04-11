@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Acknowledgement of the state change.</p>
      */
-    inline void SetAcknowledgment(Aws::String&& value) { m_acknowledgment = value; }
+    inline void SetAcknowledgment(Aws::String&& value) { m_acknowledgment = std::move(value); }
 
     /**
      * <p>Acknowledgement of the state change.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Acknowledgement of the state change.</p>
      */
-    inline SubmitContainerStateChangeResult& WithAcknowledgment(Aws::String&& value) { SetAcknowledgment(value); return *this;}
+    inline SubmitContainerStateChangeResult& WithAcknowledgment(Aws::String&& value) { SetAcknowledgment(std::move(value)); return *this;}
 
     /**
      * <p>Acknowledgement of the state change.</p>

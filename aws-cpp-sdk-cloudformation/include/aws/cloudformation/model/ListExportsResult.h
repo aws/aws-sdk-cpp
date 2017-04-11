@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/Export.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The output for the <a>ListExports</a> action.</p>
      */
-    inline void SetExports(Aws::Vector<Export>&& value) { m_exports = value; }
+    inline void SetExports(Aws::Vector<Export>&& value) { m_exports = std::move(value); }
 
     /**
      * <p>The output for the <a>ListExports</a> action.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The output for the <a>ListExports</a> action.</p>
      */
-    inline ListExportsResult& WithExports(Aws::Vector<Export>&& value) { SetExports(value); return *this;}
+    inline ListExportsResult& WithExports(Aws::Vector<Export>&& value) { SetExports(std::move(value)); return *this;}
 
     /**
      * <p>The output for the <a>ListExports</a> action.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The output for the <a>ListExports</a> action.</p>
      */
-    inline ListExportsResult& AddExports(Export&& value) { m_exports.push_back(value); return *this; }
+    inline ListExportsResult& AddExports(Export&& value) { m_exports.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If the output exceeds 100 exported output values, a string that identifies
@@ -96,7 +97,7 @@ namespace Model
      * the next page of exports. If there is no additional page, this value is
      * null.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the output exceeds 100 exported output values, a string that identifies
@@ -117,7 +118,7 @@ namespace Model
      * the next page of exports. If there is no additional page, this value is
      * null.</p>
      */
-    inline ListExportsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListExportsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the output exceeds 100 exported output values, a string that identifies
@@ -133,13 +134,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListExportsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListExportsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListExportsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Export> m_exports;

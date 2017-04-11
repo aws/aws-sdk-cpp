@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The regular expression pattern that a string configuration option value with
      * this restriction must match.</p>
      */
-    inline void SetPattern(Aws::String&& value) { m_patternHasBeenSet = true; m_pattern = value; }
+    inline void SetPattern(Aws::String&& value) { m_patternHasBeenSet = true; m_pattern = std::move(value); }
 
     /**
      * <p>The regular expression pattern that a string configuration option value with
@@ -81,7 +82,7 @@ namespace Model
      * <p>The regular expression pattern that a string configuration option value with
      * this restriction must match.</p>
      */
-    inline OptionRestrictionRegex& WithPattern(Aws::String&& value) { SetPattern(value); return *this;}
+    inline OptionRestrictionRegex& WithPattern(Aws::String&& value) { SetPattern(std::move(value)); return *this;}
 
     /**
      * <p>The regular expression pattern that a string configuration option value with
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>A unique name representing this regular expression.</p>
      */
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = value; }
+    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
 
     /**
      * <p>A unique name representing this regular expression.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>A unique name representing this regular expression.</p>
      */
-    inline OptionRestrictionRegex& WithLabel(Aws::String&& value) { SetLabel(value); return *this;}
+    inline OptionRestrictionRegex& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
 
     /**
      * <p>A unique name representing this regular expression.</p>

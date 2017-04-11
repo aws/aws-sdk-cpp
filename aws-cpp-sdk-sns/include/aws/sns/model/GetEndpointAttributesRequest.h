@@ -16,6 +16,7 @@
 #include <aws/sns/SNS_EXPORTS.h>
 #include <aws/sns/SNSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>EndpointArn for GetEndpointAttributes input.</p>
      */
-    inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
+    inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
 
     /**
      * <p>EndpointArn for GetEndpointAttributes input.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>EndpointArn for GetEndpointAttributes input.</p>
      */
-    inline GetEndpointAttributesRequest& WithEndpointArn(Aws::String&& value) { SetEndpointArn(value); return *this;}
+    inline GetEndpointAttributesRequest& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
 
     /**
      * <p>EndpointArn for GetEndpointAttributes input.</p>

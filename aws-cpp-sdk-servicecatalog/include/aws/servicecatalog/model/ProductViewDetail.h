@@ -18,6 +18,7 @@
 #include <aws/servicecatalog/model/Status.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The summary metadata about the specified product view.</p>
      */
-    inline void SetProductViewSummary(ProductViewSummary&& value) { m_productViewSummaryHasBeenSet = true; m_productViewSummary = value; }
+    inline void SetProductViewSummary(ProductViewSummary&& value) { m_productViewSummaryHasBeenSet = true; m_productViewSummary = std::move(value); }
 
     /**
      * <p>The summary metadata about the specified product view.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The summary metadata about the specified product view.</p>
      */
-    inline ProductViewDetail& WithProductViewSummary(ProductViewSummary&& value) { SetProductViewSummary(value); return *this;}
+    inline ProductViewDetail& WithProductViewSummary(ProductViewSummary&& value) { SetProductViewSummary(std::move(value)); return *this;}
 
     /**
      * <p>Current status of the product.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>Current status of the product.</p>
      */
-    inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Current status of the product.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>Current status of the product.</p>
      */
-    inline ProductViewDetail& WithStatus(Status&& value) { SetStatus(value); return *this;}
+    inline ProductViewDetail& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The ARN associated with the product.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The ARN associated with the product.</p>
      */
-    inline void SetProductARN(Aws::String&& value) { m_productARNHasBeenSet = true; m_productARN = value; }
+    inline void SetProductARN(Aws::String&& value) { m_productARNHasBeenSet = true; m_productARN = std::move(value); }
 
     /**
      * <p>The ARN associated with the product.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The ARN associated with the product.</p>
      */
-    inline ProductViewDetail& WithProductARN(Aws::String&& value) { SetProductARN(value); return *this;}
+    inline ProductViewDetail& WithProductARN(Aws::String&& value) { SetProductARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN associated with the product.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>The UTC timestamp of the creation time.</p>
      */
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
      * <p>The UTC timestamp of the creation time.</p>
@@ -154,7 +155,7 @@ namespace Model
     /**
      * <p>The UTC timestamp of the creation time.</p>
      */
-    inline ProductViewDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(value); return *this;}
+    inline ProductViewDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
   private:
     ProductViewSummary m_productViewSummary;

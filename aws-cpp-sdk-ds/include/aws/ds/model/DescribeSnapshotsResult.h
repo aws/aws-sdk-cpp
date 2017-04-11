@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ds/model/Snapshot.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,7 +73,7 @@ namespace Model
      * requested number of items left to retrieve, or if the limitations of the
      * operation have been exceeded.</p>
      */
-    inline void SetSnapshots(Aws::Vector<Snapshot>&& value) { m_snapshots = value; }
+    inline void SetSnapshots(Aws::Vector<Snapshot>&& value) { m_snapshots = std::move(value); }
 
     /**
      * <p>The list of <a>Snapshot</a> objects that were retrieved.</p> <p>It is
@@ -90,7 +91,7 @@ namespace Model
      * requested number of items left to retrieve, or if the limitations of the
      * operation have been exceeded.</p>
      */
-    inline DescribeSnapshotsResult& WithSnapshots(Aws::Vector<Snapshot>&& value) { SetSnapshots(value); return *this;}
+    inline DescribeSnapshotsResult& WithSnapshots(Aws::Vector<Snapshot>&& value) { SetSnapshots(std::move(value)); return *this;}
 
     /**
      * <p>The list of <a>Snapshot</a> objects that were retrieved.</p> <p>It is
@@ -108,7 +109,7 @@ namespace Model
      * requested number of items left to retrieve, or if the limitations of the
      * operation have been exceeded.</p>
      */
-    inline DescribeSnapshotsResult& AddSnapshots(Snapshot&& value) { m_snapshots.push_back(value); return *this; }
+    inline DescribeSnapshotsResult& AddSnapshots(Snapshot&& value) { m_snapshots.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If not null, more results are available. Pass this value in the
@@ -126,7 +127,7 @@ namespace Model
      * <p>If not null, more results are available. Pass this value in the
      * <i>NextToken</i> member of a subsequent call to <a>DescribeSnapshots</a>.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If not null, more results are available. Pass this value in the
@@ -144,7 +145,7 @@ namespace Model
      * <p>If not null, more results are available. Pass this value in the
      * <i>NextToken</i> member of a subsequent call to <a>DescribeSnapshots</a>.</p>
      */
-    inline DescribeSnapshotsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeSnapshotsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If not null, more results are available. Pass this value in the

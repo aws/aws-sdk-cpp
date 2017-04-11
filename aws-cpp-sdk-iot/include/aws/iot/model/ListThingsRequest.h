@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>The token for the next set of results, or <b>null</b> if there are no
      * additional results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of results, or <b>null</b> if there are no
@@ -76,7 +77,7 @@ namespace Model
      * <p>The token for the next set of results, or <b>null</b> if there are no
      * additional results.</p>
      */
-    inline ListThingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListThingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of results, or <b>null</b> if there are no
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The attribute name used to search for things.</p>
      */
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
      * <p>The attribute name used to search for things.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The attribute name used to search for things.</p>
      */
-    inline ListThingsRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
+    inline ListThingsRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
      * <p>The attribute name used to search for things.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The attribute value used to search for things.</p>
      */
-    inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
+    inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::move(value); }
 
     /**
      * <p>The attribute value used to search for things.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>The attribute value used to search for things.</p>
      */
-    inline ListThingsRequest& WithAttributeValue(Aws::String&& value) { SetAttributeValue(value); return *this;}
+    inline ListThingsRequest& WithAttributeValue(Aws::String&& value) { SetAttributeValue(std::move(value)); return *this;}
 
     /**
      * <p>The attribute value used to search for things.</p>
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p>The name of the thing type used to search for things.</p>
      */
-    inline void SetThingTypeName(Aws::String&& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = value; }
+    inline void SetThingTypeName(Aws::String&& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = std::move(value); }
 
     /**
      * <p>The name of the thing type used to search for things.</p>
@@ -197,7 +198,7 @@ namespace Model
     /**
      * <p>The name of the thing type used to search for things.</p>
      */
-    inline ListThingsRequest& WithThingTypeName(Aws::String&& value) { SetThingTypeName(value); return *this;}
+    inline ListThingsRequest& WithThingTypeName(Aws::String&& value) { SetThingTypeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the thing type used to search for things.</p>

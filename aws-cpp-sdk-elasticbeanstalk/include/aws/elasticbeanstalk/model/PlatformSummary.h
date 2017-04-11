@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/PlatformStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The ARN of the platform.</p>
      */
-    inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
+    inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = std::move(value); }
 
     /**
      * <p>The ARN of the platform.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The ARN of the platform.</p>
      */
-    inline PlatformSummary& WithPlatformArn(Aws::String&& value) { SetPlatformArn(value); return *this;}
+    inline PlatformSummary& WithPlatformArn(Aws::String&& value) { SetPlatformArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the platform.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The AWS account ID of the person who created the platform.</p>
      */
-    inline void SetPlatformOwner(Aws::String&& value) { m_platformOwnerHasBeenSet = true; m_platformOwner = value; }
+    inline void SetPlatformOwner(Aws::String&& value) { m_platformOwnerHasBeenSet = true; m_platformOwner = std::move(value); }
 
     /**
      * <p>The AWS account ID of the person who created the platform.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The AWS account ID of the person who created the platform.</p>
      */
-    inline PlatformSummary& WithPlatformOwner(Aws::String&& value) { SetPlatformOwner(value); return *this;}
+    inline PlatformSummary& WithPlatformOwner(Aws::String&& value) { SetPlatformOwner(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID of the person who created the platform.</p>
@@ -134,7 +135,7 @@ namespace Model
      * <p>The status of the platform. You can create an environment from the platform
      * once it is ready.</p>
      */
-    inline void SetPlatformStatus(PlatformStatus&& value) { m_platformStatusHasBeenSet = true; m_platformStatus = value; }
+    inline void SetPlatformStatus(PlatformStatus&& value) { m_platformStatusHasBeenSet = true; m_platformStatus = std::move(value); }
 
     /**
      * <p>The status of the platform. You can create an environment from the platform
@@ -146,7 +147,7 @@ namespace Model
      * <p>The status of the platform. You can create an environment from the platform
      * once it is ready.</p>
      */
-    inline PlatformSummary& WithPlatformStatus(PlatformStatus&& value) { SetPlatformStatus(value); return *this;}
+    inline PlatformSummary& WithPlatformStatus(PlatformStatus&& value) { SetPlatformStatus(std::move(value)); return *this;}
 
     /**
      * <p>The category of platform.</p>
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>The category of platform.</p>
      */
-    inline void SetPlatformCategory(Aws::String&& value) { m_platformCategoryHasBeenSet = true; m_platformCategory = value; }
+    inline void SetPlatformCategory(Aws::String&& value) { m_platformCategoryHasBeenSet = true; m_platformCategory = std::move(value); }
 
     /**
      * <p>The category of platform.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>The category of platform.</p>
      */
-    inline PlatformSummary& WithPlatformCategory(Aws::String&& value) { SetPlatformCategory(value); return *this;}
+    inline PlatformSummary& WithPlatformCategory(Aws::String&& value) { SetPlatformCategory(std::move(value)); return *this;}
 
     /**
      * <p>The category of platform.</p>
@@ -196,7 +197,7 @@ namespace Model
     /**
      * <p>The operating system used by the platform.</p>
      */
-    inline void SetOperatingSystemName(Aws::String&& value) { m_operatingSystemNameHasBeenSet = true; m_operatingSystemName = value; }
+    inline void SetOperatingSystemName(Aws::String&& value) { m_operatingSystemNameHasBeenSet = true; m_operatingSystemName = std::move(value); }
 
     /**
      * <p>The operating system used by the platform.</p>
@@ -211,7 +212,7 @@ namespace Model
     /**
      * <p>The operating system used by the platform.</p>
      */
-    inline PlatformSummary& WithOperatingSystemName(Aws::String&& value) { SetOperatingSystemName(value); return *this;}
+    inline PlatformSummary& WithOperatingSystemName(Aws::String&& value) { SetOperatingSystemName(std::move(value)); return *this;}
 
     /**
      * <p>The operating system used by the platform.</p>
@@ -231,7 +232,7 @@ namespace Model
     /**
      * <p>The version of the operating system used by the platform.</p>
      */
-    inline void SetOperatingSystemVersion(Aws::String&& value) { m_operatingSystemVersionHasBeenSet = true; m_operatingSystemVersion = value; }
+    inline void SetOperatingSystemVersion(Aws::String&& value) { m_operatingSystemVersionHasBeenSet = true; m_operatingSystemVersion = std::move(value); }
 
     /**
      * <p>The version of the operating system used by the platform.</p>
@@ -246,7 +247,7 @@ namespace Model
     /**
      * <p>The version of the operating system used by the platform.</p>
      */
-    inline PlatformSummary& WithOperatingSystemVersion(Aws::String&& value) { SetOperatingSystemVersion(value); return *this;}
+    inline PlatformSummary& WithOperatingSystemVersion(Aws::String&& value) { SetOperatingSystemVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the operating system used by the platform.</p>
@@ -266,7 +267,7 @@ namespace Model
     /**
      * <p>The tiers in which the platform runs.</p>
      */
-    inline void SetSupportedTierList(Aws::Vector<Aws::String>&& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList = value; }
+    inline void SetSupportedTierList(Aws::Vector<Aws::String>&& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList = std::move(value); }
 
     /**
      * <p>The tiers in which the platform runs.</p>
@@ -276,7 +277,7 @@ namespace Model
     /**
      * <p>The tiers in which the platform runs.</p>
      */
-    inline PlatformSummary& WithSupportedTierList(Aws::Vector<Aws::String>&& value) { SetSupportedTierList(value); return *this;}
+    inline PlatformSummary& WithSupportedTierList(Aws::Vector<Aws::String>&& value) { SetSupportedTierList(std::move(value)); return *this;}
 
     /**
      * <p>The tiers in which the platform runs.</p>
@@ -286,7 +287,7 @@ namespace Model
     /**
      * <p>The tiers in which the platform runs.</p>
      */
-    inline PlatformSummary& AddSupportedTierList(Aws::String&& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList.push_back(value); return *this; }
+    inline PlatformSummary& AddSupportedTierList(Aws::String&& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The tiers in which the platform runs.</p>
@@ -306,7 +307,7 @@ namespace Model
     /**
      * <p>The additions associated with the platform.</p>
      */
-    inline void SetSupportedAddonList(Aws::Vector<Aws::String>&& value) { m_supportedAddonListHasBeenSet = true; m_supportedAddonList = value; }
+    inline void SetSupportedAddonList(Aws::Vector<Aws::String>&& value) { m_supportedAddonListHasBeenSet = true; m_supportedAddonList = std::move(value); }
 
     /**
      * <p>The additions associated with the platform.</p>
@@ -316,7 +317,7 @@ namespace Model
     /**
      * <p>The additions associated with the platform.</p>
      */
-    inline PlatformSummary& WithSupportedAddonList(Aws::Vector<Aws::String>&& value) { SetSupportedAddonList(value); return *this;}
+    inline PlatformSummary& WithSupportedAddonList(Aws::Vector<Aws::String>&& value) { SetSupportedAddonList(std::move(value)); return *this;}
 
     /**
      * <p>The additions associated with the platform.</p>
@@ -326,7 +327,7 @@ namespace Model
     /**
      * <p>The additions associated with the platform.</p>
      */
-    inline PlatformSummary& AddSupportedAddonList(Aws::String&& value) { m_supportedAddonListHasBeenSet = true; m_supportedAddonList.push_back(value); return *this; }
+    inline PlatformSummary& AddSupportedAddonList(Aws::String&& value) { m_supportedAddonListHasBeenSet = true; m_supportedAddonList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The additions associated with the platform.</p>

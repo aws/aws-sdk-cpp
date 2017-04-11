@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the instance profile.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance profile.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the instance profile.</p>
      */
-    inline IamInstanceProfileSpecification& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline IamInstanceProfileSpecification& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance profile.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The name of the instance profile.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the instance profile.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The name of the instance profile.</p>
      */
-    inline IamInstanceProfileSpecification& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline IamInstanceProfileSpecification& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the instance profile.</p>

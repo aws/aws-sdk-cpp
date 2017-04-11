@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>One or more key pair names.</p> <p>Default: Describes all your key pairs.</p>
      */
-    inline void SetKeyNames(Aws::Vector<Aws::String>&& value) { m_keyNamesHasBeenSet = true; m_keyNames = value; }
+    inline void SetKeyNames(Aws::Vector<Aws::String>&& value) { m_keyNamesHasBeenSet = true; m_keyNames = std::move(value); }
 
     /**
      * <p>One or more key pair names.</p> <p>Default: Describes all your key pairs.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>One or more key pair names.</p> <p>Default: Describes all your key pairs.</p>
      */
-    inline DescribeKeyPairsRequest& WithKeyNames(Aws::Vector<Aws::String>&& value) { SetKeyNames(value); return *this;}
+    inline DescribeKeyPairsRequest& WithKeyNames(Aws::Vector<Aws::String>&& value) { SetKeyNames(std::move(value)); return *this;}
 
     /**
      * <p>One or more key pair names.</p> <p>Default: Describes all your key pairs.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>One or more key pair names.</p> <p>Default: Describes all your key pairs.</p>
      */
-    inline DescribeKeyPairsRequest& AddKeyNames(Aws::String&& value) { m_keyNamesHasBeenSet = true; m_keyNames.push_back(value); return *this; }
+    inline DescribeKeyPairsRequest& AddKeyNames(Aws::String&& value) { m_keyNamesHasBeenSet = true; m_keyNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more key pair names.</p> <p>Default: Describes all your key pairs.</p>
@@ -125,7 +126,7 @@ namespace Model
      * fingerprint of the key pair.</p> </li> <li> <p> <code>key-name</code> - The name
      * of the key pair.</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>fingerprint</code> - The
@@ -139,7 +140,7 @@ namespace Model
      * fingerprint of the key pair.</p> </li> <li> <p> <code>key-name</code> - The name
      * of the key pair.</p> </li> </ul>
      */
-    inline DescribeKeyPairsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeKeyPairsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>fingerprint</code> - The
@@ -153,7 +154,7 @@ namespace Model
      * fingerprint of the key pair.</p> </li> <li> <p> <code>key-name</code> - The name
      * of the key pair.</p> </li> </ul>
      */
-    inline DescribeKeyPairsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeKeyPairsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

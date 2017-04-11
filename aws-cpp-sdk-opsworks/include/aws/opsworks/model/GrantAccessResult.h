@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/opsworks/model/TemporaryCredential.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * log in to the instance by RDP clients, such as the Microsoft Remote Desktop
      * Connection.</p>
      */
-    inline void SetTemporaryCredential(TemporaryCredential&& value) { m_temporaryCredential = value; }
+    inline void SetTemporaryCredential(TemporaryCredential&& value) { m_temporaryCredential = std::move(value); }
 
     /**
      * <p>A <code>TemporaryCredential</code> object that contains the data needed to
@@ -78,7 +79,7 @@ namespace Model
      * log in to the instance by RDP clients, such as the Microsoft Remote Desktop
      * Connection.</p>
      */
-    inline GrantAccessResult& WithTemporaryCredential(TemporaryCredential&& value) { SetTemporaryCredential(value); return *this;}
+    inline GrantAccessResult& WithTemporaryCredential(TemporaryCredential&& value) { SetTemporaryCredential(std::move(value)); return *this;}
 
   private:
     TemporaryCredential m_temporaryCredential;

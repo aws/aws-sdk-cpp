@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name of the option group that the instance belongs to.</p>
      */
-    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
+    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
      * <p>The name of the option group that the instance belongs to.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name of the option group that the instance belongs to.</p>
      */
-    inline OptionGroupMembership& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
+    inline OptionGroupMembership& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the option group that the instance belongs to.</p>
@@ -107,7 +108,7 @@ namespace Model
      * <code>pending-maintenance-removal</code>, <code>applying</code>,
      * <code>removing</code>, and <code>failed</code>. </p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the DB instance's option group membership. Valid values are:
@@ -134,7 +135,7 @@ namespace Model
      * <code>pending-maintenance-removal</code>, <code>applying</code>,
      * <code>removing</code>, and <code>failed</code>. </p>
      */
-    inline OptionGroupMembership& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline OptionGroupMembership& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the DB instance's option group membership. Valid values are:

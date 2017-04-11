@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/MovingAddressStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The status for each Elastic IP address.</p>
      */
-    inline void SetMovingAddressStatuses(Aws::Vector<MovingAddressStatus>&& value) { m_movingAddressStatuses = value; }
+    inline void SetMovingAddressStatuses(Aws::Vector<MovingAddressStatus>&& value) { m_movingAddressStatuses = std::move(value); }
 
     /**
      * <p>The status for each Elastic IP address.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The status for each Elastic IP address.</p>
      */
-    inline DescribeMovingAddressesResponse& WithMovingAddressStatuses(Aws::Vector<MovingAddressStatus>&& value) { SetMovingAddressStatuses(value); return *this;}
+    inline DescribeMovingAddressesResponse& WithMovingAddressStatuses(Aws::Vector<MovingAddressStatus>&& value) { SetMovingAddressStatuses(std::move(value)); return *this;}
 
     /**
      * <p>The status for each Elastic IP address.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The status for each Elastic IP address.</p>
      */
-    inline DescribeMovingAddressesResponse& AddMovingAddressStatuses(MovingAddressStatus&& value) { m_movingAddressStatuses.push_back(value); return *this; }
+    inline DescribeMovingAddressesResponse& AddMovingAddressStatuses(MovingAddressStatus&& value) { m_movingAddressStatuses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -98,7 +99,7 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -116,7 +117,7 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline DescribeMovingAddressesResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeMovingAddressesResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -131,13 +132,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeMovingAddressesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeMovingAddressesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeMovingAddressesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<MovingAddressStatus> m_movingAddressStatuses;

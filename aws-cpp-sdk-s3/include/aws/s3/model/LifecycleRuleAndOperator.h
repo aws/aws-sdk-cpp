@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
@@ -64,7 +65,7 @@ namespace Model
     inline LifecycleRuleAndOperator& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     
-    inline LifecycleRuleAndOperator& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
+    inline LifecycleRuleAndOperator& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     
     inline LifecycleRuleAndOperator& WithPrefix(const char* value) { SetPrefix(value); return *this;}
@@ -85,7 +86,7 @@ namespace Model
      * All of these tags must exist in the object's tag set in order for the rule to
      * apply.
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * All of these tags must exist in the object's tag set in order for the rule to
@@ -97,7 +98,7 @@ namespace Model
      * All of these tags must exist in the object's tag set in order for the rule to
      * apply.
      */
-    inline LifecycleRuleAndOperator& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline LifecycleRuleAndOperator& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * All of these tags must exist in the object's tag set in order for the rule to
@@ -109,7 +110,7 @@ namespace Model
      * All of these tags must exist in the object's tag set in order for the rule to
      * apply.
      */
-    inline LifecycleRuleAndOperator& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline LifecycleRuleAndOperator& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_prefix;

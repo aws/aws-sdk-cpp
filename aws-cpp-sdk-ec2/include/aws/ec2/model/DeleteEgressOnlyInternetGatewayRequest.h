@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The ID of the egress-only Internet gateway.</p>
      */
-    inline void SetEgressOnlyInternetGatewayId(Aws::String&& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = value; }
+    inline void SetEgressOnlyInternetGatewayId(Aws::String&& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = std::move(value); }
 
     /**
      * <p>The ID of the egress-only Internet gateway.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The ID of the egress-only Internet gateway.</p>
      */
-    inline DeleteEgressOnlyInternetGatewayRequest& WithEgressOnlyInternetGatewayId(Aws::String&& value) { SetEgressOnlyInternetGatewayId(value); return *this;}
+    inline DeleteEgressOnlyInternetGatewayRequest& WithEgressOnlyInternetGatewayId(Aws::String&& value) { SetEgressOnlyInternetGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the egress-only Internet gateway.</p>

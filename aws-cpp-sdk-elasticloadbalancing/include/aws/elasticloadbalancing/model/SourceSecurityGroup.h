@@ -16,6 +16,7 @@
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The owner of the security group.</p>
      */
-    inline void SetOwnerAlias(Aws::String&& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = value; }
+    inline void SetOwnerAlias(Aws::String&& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = std::move(value); }
 
     /**
      * <p>The owner of the security group.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The owner of the security group.</p>
      */
-    inline SourceSecurityGroup& WithOwnerAlias(Aws::String&& value) { SetOwnerAlias(value); return *this;}
+    inline SourceSecurityGroup& WithOwnerAlias(Aws::String&& value) { SetOwnerAlias(std::move(value)); return *this;}
 
     /**
      * <p>The owner of the security group.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The name of the security group.</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>The name of the security group.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The name of the security group.</p>
      */
-    inline SourceSecurityGroup& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
+    inline SourceSecurityGroup& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the security group.</p>

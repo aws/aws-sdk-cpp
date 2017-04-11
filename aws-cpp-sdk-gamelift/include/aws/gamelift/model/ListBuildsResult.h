@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/Build.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Collection of build records that match the request.</p>
      */
-    inline void SetBuilds(Aws::Vector<Build>&& value) { m_builds = value; }
+    inline void SetBuilds(Aws::Vector<Build>&& value) { m_builds = std::move(value); }
 
     /**
      * <p>Collection of build records that match the request.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Collection of build records that match the request.</p>
      */
-    inline ListBuildsResult& WithBuilds(Aws::Vector<Build>&& value) { SetBuilds(value); return *this;}
+    inline ListBuildsResult& WithBuilds(Aws::Vector<Build>&& value) { SetBuilds(std::move(value)); return *this;}
 
     /**
      * <p>Collection of build records that match the request.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>Collection of build records that match the request.</p>
      */
-    inline ListBuildsResult& AddBuilds(Build&& value) { m_builds.push_back(value); return *this; }
+    inline ListBuildsResult& AddBuilds(Build&& value) { m_builds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -101,7 +102,7 @@ namespace Model
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -122,7 +123,7 @@ namespace Model
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
-    inline ListBuildsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListBuildsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to

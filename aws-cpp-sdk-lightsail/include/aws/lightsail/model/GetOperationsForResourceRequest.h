@@ -16,6 +16,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the resource for which you are requesting information.</p>
      */
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
+    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
     /**
      * <p>The name of the resource for which you are requesting information.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the resource for which you are requesting information.</p>
      */
-    inline GetOperationsForResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(value); return *this;}
+    inline GetOperationsForResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the resource for which you are requesting information.</p>
@@ -86,7 +87,7 @@ namespace Model
      * <p>A token used for advancing to the next page of results from your get
      * operations for resource request.</p>
      */
-    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
+    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
 
     /**
      * <p>A token used for advancing to the next page of results from your get
@@ -104,7 +105,7 @@ namespace Model
      * <p>A token used for advancing to the next page of results from your get
      * operations for resource request.</p>
      */
-    inline GetOperationsForResourceRequest& WithPageToken(Aws::String&& value) { SetPageToken(value); return *this;}
+    inline GetOperationsForResourceRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
 
     /**
      * <p>A token used for advancing to the next page of results from your get

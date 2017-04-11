@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Storage.h>
+#include <utility>
 
 namespace Aws
 {
@@ -81,7 +82,7 @@ namespace Model
      * <p>The ID of the instance to bundle.</p> <p>Type: String</p> <p>Default:
      * None</p> <p>Required: Yes</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance to bundle.</p> <p>Type: String</p> <p>Default:
@@ -99,7 +100,7 @@ namespace Model
      * <p>The ID of the instance to bundle.</p> <p>Type: String</p> <p>Default:
      * None</p> <p>Required: Yes</p>
      */
-    inline BundleInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline BundleInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance to bundle.</p> <p>Type: String</p> <p>Default:
@@ -126,7 +127,7 @@ namespace Model
      * already own or a new bucket that Amazon EC2 creates on your behalf. If you
      * specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
      */
-    inline void SetStorage(Storage&& value) { m_storageHasBeenSet = true; m_storage = value; }
+    inline void SetStorage(Storage&& value) { m_storageHasBeenSet = true; m_storage = std::move(value); }
 
     /**
      * <p>The bucket in which to store the AMI. You can specify a bucket that you
@@ -140,7 +141,7 @@ namespace Model
      * already own or a new bucket that Amazon EC2 creates on your behalf. If you
      * specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
      */
-    inline BundleInstanceRequest& WithStorage(Storage&& value) { SetStorage(value); return *this;}
+    inline BundleInstanceRequest& WithStorage(Storage&& value) { SetStorage(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

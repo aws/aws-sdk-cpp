@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/CancelSpotInstanceRequestState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The ID of the Spot instance request.</p>
      */
-    inline void SetSpotInstanceRequestId(Aws::String&& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = value; }
+    inline void SetSpotInstanceRequestId(Aws::String&& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = std::move(value); }
 
     /**
      * <p>The ID of the Spot instance request.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The ID of the Spot instance request.</p>
      */
-    inline CancelledSpotInstanceRequest& WithSpotInstanceRequestId(Aws::String&& value) { SetSpotInstanceRequestId(value); return *this;}
+    inline CancelledSpotInstanceRequest& WithSpotInstanceRequestId(Aws::String&& value) { SetSpotInstanceRequestId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Spot instance request.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The state of the Spot instance request.</p>
      */
-    inline void SetState(CancelSpotInstanceRequestState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(CancelSpotInstanceRequestState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the Spot instance request.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The state of the Spot instance request.</p>
      */
-    inline CancelledSpotInstanceRequest& WithState(CancelSpotInstanceRequestState&& value) { SetState(value); return *this;}
+    inline CancelledSpotInstanceRequest& WithState(CancelSpotInstanceRequestState&& value) { SetState(std::move(value)); return *this;}
 
   private:
     Aws::String m_spotInstanceRequestId;

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/SchemaFacet.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The ARN of the directory in which the object resides.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>The ARN of the directory in which the object resides.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ARN of the directory in which the object resides.</p>
      */
-    inline RemoveFacetFromObjectRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline RemoveFacetFromObjectRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the directory in which the object resides.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The facet to remove.</p>
      */
-    inline void SetSchemaFacet(SchemaFacet&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = value; }
+    inline void SetSchemaFacet(SchemaFacet&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = std::move(value); }
 
     /**
      * <p>The facet to remove.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The facet to remove.</p>
      */
-    inline RemoveFacetFromObjectRequest& WithSchemaFacet(SchemaFacet&& value) { SetSchemaFacet(value); return *this;}
+    inline RemoveFacetFromObjectRequest& WithSchemaFacet(SchemaFacet&& value) { SetSchemaFacet(std::move(value)); return *this;}
 
     /**
      * <p>A reference to the object to remove the facet from.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>A reference to the object to remove the facet from.</p>
      */
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
+    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
 
     /**
      * <p>A reference to the object to remove the facet from.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>A reference to the object to remove the facet from.</p>
      */
-    inline RemoveFacetFromObjectRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(value); return *this;}
+    inline RemoveFacetFromObjectRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
   private:
     Aws::String m_directoryArn;

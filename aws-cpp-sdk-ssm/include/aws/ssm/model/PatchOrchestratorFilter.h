@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The key for the filter.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The key for the filter.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The key for the filter.</p>
      */
-    inline PatchOrchestratorFilter& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline PatchOrchestratorFilter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The key for the filter.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The value for the filter.</p>
      */
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
+    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <p>The value for the filter.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The value for the filter.</p>
      */
-    inline PatchOrchestratorFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
+    inline PatchOrchestratorFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <p>The value for the filter.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The value for the filter.</p>
      */
-    inline PatchOrchestratorFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    inline PatchOrchestratorFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The value for the filter.</p>

@@ -16,6 +16,7 @@
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/xray/model/ErrorStatistics.h>
 #include <aws/xray/model/FaultStatistics.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * <p>Information about requests that failed with a 4xx Client Error status
      * code.</p>
      */
-    inline void SetErrorStatistics(ErrorStatistics&& value) { m_errorStatisticsHasBeenSet = true; m_errorStatistics = value; }
+    inline void SetErrorStatistics(ErrorStatistics&& value) { m_errorStatisticsHasBeenSet = true; m_errorStatistics = std::move(value); }
 
     /**
      * <p>Information about requests that failed with a 4xx Client Error status
@@ -87,7 +88,7 @@ namespace Model
      * <p>Information about requests that failed with a 4xx Client Error status
      * code.</p>
      */
-    inline EdgeStatistics& WithErrorStatistics(ErrorStatistics&& value) { SetErrorStatistics(value); return *this;}
+    inline EdgeStatistics& WithErrorStatistics(ErrorStatistics&& value) { SetErrorStatistics(std::move(value)); return *this;}
 
     /**
      * <p>Information about requests that failed with a 5xx Server Error status
@@ -105,7 +106,7 @@ namespace Model
      * <p>Information about requests that failed with a 5xx Server Error status
      * code.</p>
      */
-    inline void SetFaultStatistics(FaultStatistics&& value) { m_faultStatisticsHasBeenSet = true; m_faultStatistics = value; }
+    inline void SetFaultStatistics(FaultStatistics&& value) { m_faultStatisticsHasBeenSet = true; m_faultStatistics = std::move(value); }
 
     /**
      * <p>Information about requests that failed with a 5xx Server Error status
@@ -117,7 +118,7 @@ namespace Model
      * <p>Information about requests that failed with a 5xx Server Error status
      * code.</p>
      */
-    inline EdgeStatistics& WithFaultStatistics(FaultStatistics&& value) { SetFaultStatistics(value); return *this;}
+    inline EdgeStatistics& WithFaultStatistics(FaultStatistics&& value) { SetFaultStatistics(std::move(value)); return *this;}
 
     /**
      * <p>The total number of completed requests.</p>

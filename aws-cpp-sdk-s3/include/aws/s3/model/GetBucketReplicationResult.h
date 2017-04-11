@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/ReplicationConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,13 +47,13 @@ namespace Model
     inline void SetReplicationConfiguration(const ReplicationConfiguration& value) { m_replicationConfiguration = value; }
 
     
-    inline void SetReplicationConfiguration(ReplicationConfiguration&& value) { m_replicationConfiguration = value; }
+    inline void SetReplicationConfiguration(ReplicationConfiguration&& value) { m_replicationConfiguration = std::move(value); }
 
     
     inline GetBucketReplicationResult& WithReplicationConfiguration(const ReplicationConfiguration& value) { SetReplicationConfiguration(value); return *this;}
 
     
-    inline GetBucketReplicationResult& WithReplicationConfiguration(ReplicationConfiguration&& value) { SetReplicationConfiguration(value); return *this;}
+    inline GetBucketReplicationResult& WithReplicationConfiguration(ReplicationConfiguration&& value) { SetReplicationConfiguration(std::move(value)); return *this;}
 
   private:
     ReplicationConfiguration m_replicationConfiguration;

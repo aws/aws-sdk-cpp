@@ -16,6 +16,7 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/CodeCommitRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The existing name of the repository.</p>
      */
-    inline void SetOldName(Aws::String&& value) { m_oldNameHasBeenSet = true; m_oldName = value; }
+    inline void SetOldName(Aws::String&& value) { m_oldNameHasBeenSet = true; m_oldName = std::move(value); }
 
     /**
      * <p>The existing name of the repository.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The existing name of the repository.</p>
      */
-    inline UpdateRepositoryNameRequest& WithOldName(Aws::String&& value) { SetOldName(value); return *this;}
+    inline UpdateRepositoryNameRequest& WithOldName(Aws::String&& value) { SetOldName(std::move(value)); return *this;}
 
     /**
      * <p>The existing name of the repository.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The new name for the repository.</p>
      */
-    inline void SetNewName(Aws::String&& value) { m_newNameHasBeenSet = true; m_newName = value; }
+    inline void SetNewName(Aws::String&& value) { m_newNameHasBeenSet = true; m_newName = std::move(value); }
 
     /**
      * <p>The new name for the repository.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The new name for the repository.</p>
      */
-    inline UpdateRepositoryNameRequest& WithNewName(Aws::String&& value) { SetNewName(value); return *this;}
+    inline UpdateRepositoryNameRequest& WithNewName(Aws::String&& value) { SetNewName(std::move(value)); return *this;}
 
     /**
      * <p>The new name for the repository.</p>

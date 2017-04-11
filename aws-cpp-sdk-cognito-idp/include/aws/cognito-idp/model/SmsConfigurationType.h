@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) caller.</p>
      */
-    inline void SetSnsCallerArn(Aws::String&& value) { m_snsCallerArnHasBeenSet = true; m_snsCallerArn = value; }
+    inline void SetSnsCallerArn(Aws::String&& value) { m_snsCallerArnHasBeenSet = true; m_snsCallerArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
@@ -77,7 +78,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) caller.</p>
      */
-    inline SmsConfigurationType& WithSnsCallerArn(Aws::String&& value) { SetSnsCallerArn(value); return *this;}
+    inline SmsConfigurationType& WithSnsCallerArn(Aws::String&& value) { SetSnsCallerArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The external ID.</p>
      */
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
+    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
 
     /**
      * <p>The external ID.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The external ID.</p>
      */
-    inline SmsConfigurationType& WithExternalId(Aws::String&& value) { SetExternalId(value); return *this;}
+    inline SmsConfigurationType& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
     /**
      * <p>The external ID.</p>

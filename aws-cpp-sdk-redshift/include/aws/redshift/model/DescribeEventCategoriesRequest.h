@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
      * cluster-parameter-group, and cluster-security-group.</p>
      */
-    inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
      * <p>The source type, such as cluster or parameter group, to which the described
@@ -80,7 +81,7 @@ namespace Model
      * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
      * cluster-parameter-group, and cluster-security-group.</p>
      */
-    inline DescribeEventCategoriesRequest& WithSourceType(Aws::String&& value) { SetSourceType(value); return *this;}
+    inline DescribeEventCategoriesRequest& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
 
     /**
      * <p>The source type, such as cluster or parameter group, to which the described

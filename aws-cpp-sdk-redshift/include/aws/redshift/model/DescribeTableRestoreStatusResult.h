@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/redshift/model/ResponseMetadata.h>
 #include <aws/redshift/model/TableRestoreStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>A list of status details for one or more table restore requests.</p>
      */
-    inline void SetTableRestoreStatusDetails(Aws::Vector<TableRestoreStatus>&& value) { m_tableRestoreStatusDetails = value; }
+    inline void SetTableRestoreStatusDetails(Aws::Vector<TableRestoreStatus>&& value) { m_tableRestoreStatusDetails = std::move(value); }
 
     /**
      * <p>A list of status details for one or more table restore requests.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>A list of status details for one or more table restore requests.</p>
      */
-    inline DescribeTableRestoreStatusResult& WithTableRestoreStatusDetails(Aws::Vector<TableRestoreStatus>&& value) { SetTableRestoreStatusDetails(value); return *this;}
+    inline DescribeTableRestoreStatusResult& WithTableRestoreStatusDetails(Aws::Vector<TableRestoreStatus>&& value) { SetTableRestoreStatusDetails(std::move(value)); return *this;}
 
     /**
      * <p>A list of status details for one or more table restore requests.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>A list of status details for one or more table restore requests.</p>
      */
-    inline DescribeTableRestoreStatusResult& AddTableRestoreStatusDetails(TableRestoreStatus&& value) { m_tableRestoreStatusDetails.push_back(value); return *this; }
+    inline DescribeTableRestoreStatusResult& AddTableRestoreStatusDetails(TableRestoreStatus&& value) { m_tableRestoreStatusDetails.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A pagination token that can be used in a subsequent
@@ -98,7 +99,7 @@ namespace Model
      * <p>A pagination token that can be used in a subsequent
      * <a>DescribeTableRestoreStatus</a> request.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>A pagination token that can be used in a subsequent
@@ -116,7 +117,7 @@ namespace Model
      * <p>A pagination token that can be used in a subsequent
      * <a>DescribeTableRestoreStatus</a> request.</p>
      */
-    inline DescribeTableRestoreStatusResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeTableRestoreStatusResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>A pagination token that can be used in a subsequent
@@ -131,13 +132,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeTableRestoreStatusResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeTableRestoreStatusResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeTableRestoreStatusResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<TableRestoreStatus> m_tableRestoreStatusDetails;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesisanalytics/model/S3ReferenceDataSourceUpdate.h>
 #include <aws/kinesisanalytics/model/SourceSchema.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * <p>ID of the reference data source being updated. You can use the
      * <a>DescribeApplication</a> operation to get this value.</p>
      */
-    inline void SetReferenceId(Aws::String&& value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
+    inline void SetReferenceId(Aws::String&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::move(value); }
 
     /**
      * <p>ID of the reference data source being updated. You can use the
@@ -83,7 +84,7 @@ namespace Model
      * <p>ID of the reference data source being updated. You can use the
      * <a>DescribeApplication</a> operation to get this value.</p>
      */
-    inline ReferenceDataSourceUpdate& WithReferenceId(Aws::String&& value) { SetReferenceId(value); return *this;}
+    inline ReferenceDataSourceUpdate& WithReferenceId(Aws::String&& value) { SetReferenceId(std::move(value)); return *this;}
 
     /**
      * <p>ID of the reference data source being updated. You can use the
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>In-application table name that is created by this update.</p>
      */
-    inline void SetTableNameUpdate(Aws::String&& value) { m_tableNameUpdateHasBeenSet = true; m_tableNameUpdate = value; }
+    inline void SetTableNameUpdate(Aws::String&& value) { m_tableNameUpdateHasBeenSet = true; m_tableNameUpdate = std::move(value); }
 
     /**
      * <p>In-application table name that is created by this update.</p>
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>In-application table name that is created by this update.</p>
      */
-    inline ReferenceDataSourceUpdate& WithTableNameUpdate(Aws::String&& value) { SetTableNameUpdate(value); return *this;}
+    inline ReferenceDataSourceUpdate& WithTableNameUpdate(Aws::String&& value) { SetTableNameUpdate(std::move(value)); return *this;}
 
     /**
      * <p>In-application table name that is created by this update.</p>
@@ -145,7 +146,7 @@ namespace Model
      * Kinesis Analytics can assume to read the Amazon S3 object on your behalf and
      * populate the in-application reference table.</p>
      */
-    inline void SetS3ReferenceDataSourceUpdate(S3ReferenceDataSourceUpdate&& value) { m_s3ReferenceDataSourceUpdateHasBeenSet = true; m_s3ReferenceDataSourceUpdate = value; }
+    inline void SetS3ReferenceDataSourceUpdate(S3ReferenceDataSourceUpdate&& value) { m_s3ReferenceDataSourceUpdateHasBeenSet = true; m_s3ReferenceDataSourceUpdate = std::move(value); }
 
     /**
      * <p>Describes the S3 bucket name, object key name, and IAM role that Amazon
@@ -159,7 +160,7 @@ namespace Model
      * Kinesis Analytics can assume to read the Amazon S3 object on your behalf and
      * populate the in-application reference table.</p>
      */
-    inline ReferenceDataSourceUpdate& WithS3ReferenceDataSourceUpdate(S3ReferenceDataSourceUpdate&& value) { SetS3ReferenceDataSourceUpdate(value); return *this;}
+    inline ReferenceDataSourceUpdate& WithS3ReferenceDataSourceUpdate(S3ReferenceDataSourceUpdate&& value) { SetS3ReferenceDataSourceUpdate(std::move(value)); return *this;}
 
     
     inline const SourceSchema& GetReferenceSchemaUpdate() const{ return m_referenceSchemaUpdate; }
@@ -168,13 +169,13 @@ namespace Model
     inline void SetReferenceSchemaUpdate(const SourceSchema& value) { m_referenceSchemaUpdateHasBeenSet = true; m_referenceSchemaUpdate = value; }
 
     
-    inline void SetReferenceSchemaUpdate(SourceSchema&& value) { m_referenceSchemaUpdateHasBeenSet = true; m_referenceSchemaUpdate = value; }
+    inline void SetReferenceSchemaUpdate(SourceSchema&& value) { m_referenceSchemaUpdateHasBeenSet = true; m_referenceSchemaUpdate = std::move(value); }
 
     
     inline ReferenceDataSourceUpdate& WithReferenceSchemaUpdate(const SourceSchema& value) { SetReferenceSchemaUpdate(value); return *this;}
 
     
-    inline ReferenceDataSourceUpdate& WithReferenceSchemaUpdate(SourceSchema&& value) { SetReferenceSchemaUpdate(value); return *this;}
+    inline ReferenceDataSourceUpdate& WithReferenceSchemaUpdate(SourceSchema&& value) { SetReferenceSchemaUpdate(std::move(value)); return *this;}
 
   private:
     Aws::String m_referenceId;

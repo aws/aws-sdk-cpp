@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/glacier/model/DataRetrievalPolicy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Contains the returned data retrieval policy in JSON format.</p>
      */
-    inline void SetPolicy(DataRetrievalPolicy&& value) { m_policy = value; }
+    inline void SetPolicy(DataRetrievalPolicy&& value) { m_policy = std::move(value); }
 
     /**
      * <p>Contains the returned data retrieval policy in JSON format.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Contains the returned data retrieval policy in JSON format.</p>
      */
-    inline GetDataRetrievalPolicyResult& WithPolicy(DataRetrievalPolicy&& value) { SetPolicy(value); return *this;}
+    inline GetDataRetrievalPolicyResult& WithPolicy(DataRetrievalPolicy&& value) { SetPolicy(std::move(value)); return *this;}
 
   private:
     DataRetrievalPolicy m_policy;

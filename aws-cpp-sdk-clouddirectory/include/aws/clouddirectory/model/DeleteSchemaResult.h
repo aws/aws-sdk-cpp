@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>Input ARN that is returned as part of the response. For more information, see
      * <a>arns</a>.</p>
      */
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArn = value; }
+    inline void SetSchemaArn(Aws::String&& value) { m_schemaArn = std::move(value); }
 
     /**
      * <p>Input ARN that is returned as part of the response. For more information, see
@@ -73,7 +74,7 @@ namespace Model
      * <p>Input ARN that is returned as part of the response. For more information, see
      * <a>arns</a>.</p>
      */
-    inline DeleteSchemaResult& WithSchemaArn(Aws::String&& value) { SetSchemaArn(value); return *this;}
+    inline DeleteSchemaResult& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
 
     /**
      * <p>Input ARN that is returned as part of the response. For more information, see

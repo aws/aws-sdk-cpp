@@ -20,6 +20,7 @@
 #include <aws/ecs/model/AgentUpdateStatus.h>
 #include <aws/ecs/model/Resource.h>
 #include <aws/ecs/model/Attribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
      * </code>.</p>
      */
-    inline void SetContainerInstanceArn(Aws::String&& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
+    inline void SetContainerInstanceArn(Aws::String&& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
@@ -113,7 +114,7 @@ namespace Model
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
      * </code>.</p>
      */
-    inline ContainerInstance& WithContainerInstanceArn(Aws::String&& value) { SetContainerInstanceArn(value); return *this;}
+    inline ContainerInstance& WithContainerInstanceArn(Aws::String&& value) { SetContainerInstanceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>The EC2 instance ID of the container instance.</p>
      */
-    inline void SetEc2InstanceId(Aws::String&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = value; }
+    inline void SetEc2InstanceId(Aws::String&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = std::move(value); }
 
     /**
      * <p>The EC2 instance ID of the container instance.</p>
@@ -154,7 +155,7 @@ namespace Model
     /**
      * <p>The EC2 instance ID of the container instance.</p>
      */
-    inline ContainerInstance& WithEc2InstanceId(Aws::String&& value) { SetEc2InstanceId(value); return *this;}
+    inline ContainerInstance& WithEc2InstanceId(Aws::String&& value) { SetEc2InstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The EC2 instance ID of the container instance.</p>
@@ -210,7 +211,7 @@ namespace Model
      * <p>The version information for the Amazon ECS container agent and Docker daemon
      * running on the container instance.</p>
      */
-    inline void SetVersionInfo(VersionInfo&& value) { m_versionInfoHasBeenSet = true; m_versionInfo = value; }
+    inline void SetVersionInfo(VersionInfo&& value) { m_versionInfoHasBeenSet = true; m_versionInfo = std::move(value); }
 
     /**
      * <p>The version information for the Amazon ECS container agent and Docker daemon
@@ -222,7 +223,7 @@ namespace Model
      * <p>The version information for the Amazon ECS container agent and Docker daemon
      * running on the container instance.</p>
      */
-    inline ContainerInstance& WithVersionInfo(VersionInfo&& value) { SetVersionInfo(value); return *this;}
+    inline ContainerInstance& WithVersionInfo(VersionInfo&& value) { SetVersionInfo(std::move(value)); return *this;}
 
     /**
      * <p>For most resource types, this parameter describes the remaining resources of
@@ -249,7 +250,7 @@ namespace Model
      * container agent and any containers that have reserved port mappings; any port
      * that is not specified here is available for new tasks.</p>
      */
-    inline void SetRemainingResources(Aws::Vector<Resource>&& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources = value; }
+    inline void SetRemainingResources(Aws::Vector<Resource>&& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources = std::move(value); }
 
     /**
      * <p>For most resource types, this parameter describes the remaining resources of
@@ -267,7 +268,7 @@ namespace Model
      * container agent and any containers that have reserved port mappings; any port
      * that is not specified here is available for new tasks.</p>
      */
-    inline ContainerInstance& WithRemainingResources(Aws::Vector<Resource>&& value) { SetRemainingResources(value); return *this;}
+    inline ContainerInstance& WithRemainingResources(Aws::Vector<Resource>&& value) { SetRemainingResources(std::move(value)); return *this;}
 
     /**
      * <p>For most resource types, this parameter describes the remaining resources of
@@ -285,7 +286,7 @@ namespace Model
      * container agent and any containers that have reserved port mappings; any port
      * that is not specified here is available for new tasks.</p>
      */
-    inline ContainerInstance& AddRemainingResources(Resource&& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources.push_back(value); return *this; }
+    inline ContainerInstance& AddRemainingResources(Resource&& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources.push_back(std::move(value)); return *this; }
 
     /**
      * <p>For most resource types, this parameter describes the registered resources on
@@ -309,7 +310,7 @@ namespace Model
      * types, this parameter describes the ports that were reserved by the Amazon ECS
      * container agent when it registered the container instance with Amazon ECS.</p>
      */
-    inline void SetRegisteredResources(Aws::Vector<Resource>&& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources = value; }
+    inline void SetRegisteredResources(Aws::Vector<Resource>&& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources = std::move(value); }
 
     /**
      * <p>For most resource types, this parameter describes the registered resources on
@@ -325,7 +326,7 @@ namespace Model
      * types, this parameter describes the ports that were reserved by the Amazon ECS
      * container agent when it registered the container instance with Amazon ECS.</p>
      */
-    inline ContainerInstance& WithRegisteredResources(Aws::Vector<Resource>&& value) { SetRegisteredResources(value); return *this;}
+    inline ContainerInstance& WithRegisteredResources(Aws::Vector<Resource>&& value) { SetRegisteredResources(std::move(value)); return *this;}
 
     /**
      * <p>For most resource types, this parameter describes the registered resources on
@@ -341,7 +342,7 @@ namespace Model
      * types, this parameter describes the ports that were reserved by the Amazon ECS
      * container agent when it registered the container instance with Amazon ECS.</p>
      */
-    inline ContainerInstance& AddRegisteredResources(Resource&& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources.push_back(value); return *this; }
+    inline ContainerInstance& AddRegisteredResources(Resource&& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The status of the container instance. The valid values are
@@ -362,7 +363,7 @@ namespace Model
      * <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code> indicates that
      * the container instance can accept tasks.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the container instance. The valid values are
@@ -383,7 +384,7 @@ namespace Model
      * <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code> indicates that
      * the container instance can accept tasks.</p>
      */
-    inline ContainerInstance& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline ContainerInstance& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the container instance. The valid values are
@@ -468,7 +469,7 @@ namespace Model
      * <p>The status of the most recent agent update. If an update has never been
      * requested, this value is <code>NULL</code>.</p>
      */
-    inline void SetAgentUpdateStatus(AgentUpdateStatus&& value) { m_agentUpdateStatusHasBeenSet = true; m_agentUpdateStatus = value; }
+    inline void SetAgentUpdateStatus(AgentUpdateStatus&& value) { m_agentUpdateStatusHasBeenSet = true; m_agentUpdateStatus = std::move(value); }
 
     /**
      * <p>The status of the most recent agent update. If an update has never been
@@ -480,7 +481,7 @@ namespace Model
      * <p>The status of the most recent agent update. If an update has never been
      * requested, this value is <code>NULL</code>.</p>
      */
-    inline ContainerInstance& WithAgentUpdateStatus(AgentUpdateStatus&& value) { SetAgentUpdateStatus(value); return *this;}
+    inline ContainerInstance& WithAgentUpdateStatus(AgentUpdateStatus&& value) { SetAgentUpdateStatus(std::move(value)); return *this;}
 
     /**
      * <p>The attributes set for the container instance, either by the Amazon ECS
@@ -501,7 +502,7 @@ namespace Model
      * container agent at instance registration or manually with the
      * <a>PutAttributes</a> operation.</p>
      */
-    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>The attributes set for the container instance, either by the Amazon ECS
@@ -515,7 +516,7 @@ namespace Model
      * container agent at instance registration or manually with the
      * <a>PutAttributes</a> operation.</p>
      */
-    inline ContainerInstance& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(value); return *this;}
+    inline ContainerInstance& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The attributes set for the container instance, either by the Amazon ECS
@@ -529,7 +530,7 @@ namespace Model
      * container agent at instance registration or manually with the
      * <a>PutAttributes</a> operation.</p>
      */
-    inline ContainerInstance& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+    inline ContainerInstance& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_containerInstanceArn;

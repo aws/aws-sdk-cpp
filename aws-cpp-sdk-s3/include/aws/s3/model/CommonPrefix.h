@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
@@ -55,7 +56,7 @@ namespace Model
     inline CommonPrefix& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     
-    inline CommonPrefix& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
+    inline CommonPrefix& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     
     inline CommonPrefix& WithPrefix(const char* value) { SetPrefix(value); return *this;}

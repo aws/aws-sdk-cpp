@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
      * Guide</i>.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The key name of a tag defined by a user. For more information, see <a
@@ -94,7 +95,7 @@ namespace Model
      * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
      * Guide</i>.</p>
      */
-    inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The key name of a tag defined by a user. For more information, see <a
@@ -129,7 +130,7 @@ namespace Model
      * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
      * Guide</i>.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The optional value portion of a tag defined by a user. For more information,
@@ -156,7 +157,7 @@ namespace Model
      * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
      * Guide</i>.</p>
      */
-    inline Tag& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The optional value portion of a tag defined by a user. For more information,

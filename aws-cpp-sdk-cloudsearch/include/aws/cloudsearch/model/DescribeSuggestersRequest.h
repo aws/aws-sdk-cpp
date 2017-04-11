@@ -17,6 +17,7 @@
 #include <aws/cloudsearch/CloudSearchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the domain you want to describe.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The name of the domain you want to describe.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the domain you want to describe.</p>
      */
-    inline DescribeSuggestersRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DescribeSuggestersRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain you want to describe.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The suggesters you want to describe.</p>
      */
-    inline void SetSuggesterNames(Aws::Vector<Aws::String>&& value) { m_suggesterNamesHasBeenSet = true; m_suggesterNames = value; }
+    inline void SetSuggesterNames(Aws::Vector<Aws::String>&& value) { m_suggesterNamesHasBeenSet = true; m_suggesterNames = std::move(value); }
 
     /**
      * <p>The suggesters you want to describe.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The suggesters you want to describe.</p>
      */
-    inline DescribeSuggestersRequest& WithSuggesterNames(Aws::Vector<Aws::String>&& value) { SetSuggesterNames(value); return *this;}
+    inline DescribeSuggestersRequest& WithSuggesterNames(Aws::Vector<Aws::String>&& value) { SetSuggesterNames(std::move(value)); return *this;}
 
     /**
      * <p>The suggesters you want to describe.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The suggesters you want to describe.</p>
      */
-    inline DescribeSuggestersRequest& AddSuggesterNames(Aws::String&& value) { m_suggesterNamesHasBeenSet = true; m_suggesterNames.push_back(value); return *this; }
+    inline DescribeSuggestersRequest& AddSuggesterNames(Aws::String&& value) { m_suggesterNamesHasBeenSet = true; m_suggesterNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The suggesters you want to describe.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -89,7 +90,7 @@ namespace Model
      * the value that CloudFront returned in the Id element when you created the origin
      * access identity.
      */
-    inline void SetOriginAccessIdentity(Aws::String&& value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity = value; }
+    inline void SetOriginAccessIdentity(Aws::String&& value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity = std::move(value); }
 
     /**
      * The CloudFront origin access identity to associate with the origin. Use an
@@ -134,7 +135,7 @@ namespace Model
      * the value that CloudFront returned in the Id element when you created the origin
      * access identity.
      */
-    inline S3OriginConfig& WithOriginAccessIdentity(Aws::String&& value) { SetOriginAccessIdentity(value); return *this;}
+    inline S3OriginConfig& WithOriginAccessIdentity(Aws::String&& value) { SetOriginAccessIdentity(std::move(value)); return *this;}
 
     /**
      * The CloudFront origin access identity to associate with the origin. Use an

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/Instance.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Collection of objects containing properties for each instance returned.</p>
      */
-    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instances = value; }
+    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instances = std::move(value); }
 
     /**
      * <p>Collection of objects containing properties for each instance returned.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Collection of objects containing properties for each instance returned.</p>
      */
-    inline DescribeInstancesResult& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(value); return *this;}
+    inline DescribeInstancesResult& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(std::move(value)); return *this;}
 
     /**
      * <p>Collection of objects containing properties for each instance returned.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>Collection of objects containing properties for each instance returned.</p>
      */
-    inline DescribeInstancesResult& AddInstances(Instance&& value) { m_instances.push_back(value); return *this; }
+    inline DescribeInstancesResult& AddInstances(Instance&& value) { m_instances.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -101,7 +102,7 @@ namespace Model
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -122,7 +123,7 @@ namespace Model
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
-    inline DescribeInstancesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeInstancesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to

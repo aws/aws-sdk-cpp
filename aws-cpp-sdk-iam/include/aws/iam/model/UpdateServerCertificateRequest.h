@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-</p>
      */
-    inline void SetServerCertificateName(Aws::String&& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
+    inline void SetServerCertificateName(Aws::String&& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = std::move(value); }
 
     /**
      * <p>The name of the server certificate that you want to update.</p> <p>This
@@ -89,7 +90,7 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-</p>
      */
-    inline UpdateServerCertificateRequest& WithServerCertificateName(Aws::String&& value) { SetServerCertificateName(value); return *this;}
+    inline UpdateServerCertificateRequest& WithServerCertificateName(Aws::String&& value) { SetServerCertificateName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the server certificate that you want to update.</p> <p>This
@@ -131,7 +132,7 @@ namespace Model
      * thru the DEL character (\u007F), including most punctuation characters, digits,
      * and upper and lowercased letters.</p>
      */
-    inline void SetNewPath(Aws::String&& value) { m_newPathHasBeenSet = true; m_newPath = value; }
+    inline void SetNewPath(Aws::String&& value) { m_newPathHasBeenSet = true; m_newPath = std::move(value); }
 
     /**
      * <p>The new path for the server certificate. Include this only if you are
@@ -164,7 +165,7 @@ namespace Model
      * thru the DEL character (\u007F), including most punctuation characters, digits,
      * and upper and lowercased letters.</p>
      */
-    inline UpdateServerCertificateRequest& WithNewPath(Aws::String&& value) { SetNewPath(value); return *this;}
+    inline UpdateServerCertificateRequest& WithNewPath(Aws::String&& value) { SetNewPath(std::move(value)); return *this;}
 
     /**
      * <p>The new path for the server certificate. Include this only if you are
@@ -205,7 +206,7 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: =,.@-</p>
      */
-    inline void SetNewServerCertificateName(Aws::String&& value) { m_newServerCertificateNameHasBeenSet = true; m_newServerCertificateName = value; }
+    inline void SetNewServerCertificateName(Aws::String&& value) { m_newServerCertificateNameHasBeenSet = true; m_newServerCertificateName = std::move(value); }
 
     /**
      * <p>The new name for the server certificate. Include this only if you are
@@ -235,7 +236,7 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: =,.@-</p>
      */
-    inline UpdateServerCertificateRequest& WithNewServerCertificateName(Aws::String&& value) { SetNewServerCertificateName(value); return *this;}
+    inline UpdateServerCertificateRequest& WithNewServerCertificateName(Aws::String&& value) { SetNewServerCertificateName(std::move(value)); return *this;}
 
     /**
      * <p>The new name for the server certificate. Include this only if you are

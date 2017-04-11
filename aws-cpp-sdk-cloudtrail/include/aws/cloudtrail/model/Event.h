@@ -18,6 +18,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudtrail/model/Resource.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The CloudTrail ID of the event returned.</p>
      */
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
+    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
 
     /**
      * <p>The CloudTrail ID of the event returned.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The CloudTrail ID of the event returned.</p>
      */
-    inline Event& WithEventId(Aws::String&& value) { SetEventId(value); return *this;}
+    inline Event& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
 
     /**
      * <p>The CloudTrail ID of the event returned.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The name of the event returned.</p>
      */
-    inline void SetEventName(Aws::String&& value) { m_eventNameHasBeenSet = true; m_eventName = value; }
+    inline void SetEventName(Aws::String&& value) { m_eventNameHasBeenSet = true; m_eventName = std::move(value); }
 
     /**
      * <p>The name of the event returned.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The name of the event returned.</p>
      */
-    inline Event& WithEventName(Aws::String&& value) { SetEventName(value); return *this;}
+    inline Event& WithEventName(Aws::String&& value) { SetEventName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the event returned.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The date and time of the event returned.</p>
      */
-    inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
+    inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
 
     /**
      * <p>The date and time of the event returned.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The date and time of the event returned.</p>
      */
-    inline Event& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(value); return *this;}
+    inline Event& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
 
     /**
      * <p>The AWS service that the request was made to.</p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>The AWS service that the request was made to.</p>
      */
-    inline void SetEventSource(Aws::String&& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
+    inline void SetEventSource(Aws::String&& value) { m_eventSourceHasBeenSet = true; m_eventSource = std::move(value); }
 
     /**
      * <p>The AWS service that the request was made to.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>The AWS service that the request was made to.</p>
      */
-    inline Event& WithEventSource(Aws::String&& value) { SetEventSource(value); return *this;}
+    inline Event& WithEventSource(Aws::String&& value) { SetEventSource(std::move(value)); return *this;}
 
     /**
      * <p>The AWS service that the request was made to.</p>
@@ -194,7 +195,7 @@ namespace Model
      * <p>A user name or role name of the requester that called the API in the event
      * returned.</p>
      */
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
+    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
      * <p>A user name or role name of the requester that called the API in the event
@@ -212,7 +213,7 @@ namespace Model
      * <p>A user name or role name of the requester that called the API in the event
      * returned.</p>
      */
-    inline Event& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
+    inline Event& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
      * <p>A user name or role name of the requester that called the API in the event
@@ -233,7 +234,7 @@ namespace Model
     /**
      * <p>A list of resources referenced by the event returned.</p>
      */
-    inline void SetResources(Aws::Vector<Resource>&& value) { m_resourcesHasBeenSet = true; m_resources = value; }
+    inline void SetResources(Aws::Vector<Resource>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
      * <p>A list of resources referenced by the event returned.</p>
@@ -243,7 +244,7 @@ namespace Model
     /**
      * <p>A list of resources referenced by the event returned.</p>
      */
-    inline Event& WithResources(Aws::Vector<Resource>&& value) { SetResources(value); return *this;}
+    inline Event& WithResources(Aws::Vector<Resource>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
      * <p>A list of resources referenced by the event returned.</p>
@@ -253,7 +254,7 @@ namespace Model
     /**
      * <p>A list of resources referenced by the event returned.</p>
      */
-    inline Event& AddResources(Resource&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
+    inline Event& AddResources(Resource&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A JSON string that contains a representation of the event returned.</p>
@@ -268,7 +269,7 @@ namespace Model
     /**
      * <p>A JSON string that contains a representation of the event returned.</p>
      */
-    inline void SetCloudTrailEvent(Aws::String&& value) { m_cloudTrailEventHasBeenSet = true; m_cloudTrailEvent = value; }
+    inline void SetCloudTrailEvent(Aws::String&& value) { m_cloudTrailEventHasBeenSet = true; m_cloudTrailEvent = std::move(value); }
 
     /**
      * <p>A JSON string that contains a representation of the event returned.</p>
@@ -283,7 +284,7 @@ namespace Model
     /**
      * <p>A JSON string that contains a representation of the event returned.</p>
      */
-    inline Event& WithCloudTrailEvent(Aws::String&& value) { SetCloudTrailEvent(value); return *this;}
+    inline Event& WithCloudTrailEvent(Aws::String&& value) { SetCloudTrailEvent(std::move(value)); return *this;}
 
     /**
      * <p>A JSON string that contains a representation of the event returned.</p>

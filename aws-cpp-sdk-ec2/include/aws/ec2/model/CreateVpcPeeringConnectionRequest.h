@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The ID of the requester VPC.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of the requester VPC.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The ID of the requester VPC.</p>
      */
-    inline CreateVpcPeeringConnectionRequest& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline CreateVpcPeeringConnectionRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the requester VPC.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
      */
-    inline void SetPeerVpcId(Aws::String&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = value; }
+    inline void SetPeerVpcId(Aws::String&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
      */
-    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(Aws::String&& value) { SetPeerVpcId(value); return *this;}
+    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(Aws::String&& value) { SetPeerVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
@@ -151,7 +152,7 @@ namespace Model
      * <p>The AWS account ID of the owner of the peer VPC.</p> <p>Default: Your AWS
      * account ID</p>
      */
-    inline void SetPeerOwnerId(Aws::String&& value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId = value; }
+    inline void SetPeerOwnerId(Aws::String&& value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId = std::move(value); }
 
     /**
      * <p>The AWS account ID of the owner of the peer VPC.</p> <p>Default: Your AWS
@@ -169,7 +170,7 @@ namespace Model
      * <p>The AWS account ID of the owner of the peer VPC.</p> <p>Default: Your AWS
      * account ID</p>
      */
-    inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(Aws::String&& value) { SetPeerOwnerId(value); return *this;}
+    inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(Aws::String&& value) { SetPeerOwnerId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID of the owner of the peer VPC.</p> <p>Default: Your AWS

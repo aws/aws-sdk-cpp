@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -82,7 +83,7 @@ namespace Model
      * <p>[EC2-Classic] One or more Elastic IP addresses.</p> <p>Default: Describes all
      * your Elastic IP addresses.</p>
      */
-    inline void SetPublicIps(Aws::Vector<Aws::String>&& value) { m_publicIpsHasBeenSet = true; m_publicIps = value; }
+    inline void SetPublicIps(Aws::Vector<Aws::String>&& value) { m_publicIpsHasBeenSet = true; m_publicIps = std::move(value); }
 
     /**
      * <p>[EC2-Classic] One or more Elastic IP addresses.</p> <p>Default: Describes all
@@ -94,7 +95,7 @@ namespace Model
      * <p>[EC2-Classic] One or more Elastic IP addresses.</p> <p>Default: Describes all
      * your Elastic IP addresses.</p>
      */
-    inline DescribeAddressesRequest& WithPublicIps(Aws::Vector<Aws::String>&& value) { SetPublicIps(value); return *this;}
+    inline DescribeAddressesRequest& WithPublicIps(Aws::Vector<Aws::String>&& value) { SetPublicIps(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-Classic] One or more Elastic IP addresses.</p> <p>Default: Describes all
@@ -106,7 +107,7 @@ namespace Model
      * <p>[EC2-Classic] One or more Elastic IP addresses.</p> <p>Default: Describes all
      * your Elastic IP addresses.</p>
      */
-    inline DescribeAddressesRequest& AddPublicIps(Aws::String&& value) { m_publicIpsHasBeenSet = true; m_publicIps.push_back(value); return *this; }
+    inline DescribeAddressesRequest& AddPublicIps(Aws::String&& value) { m_publicIpsHasBeenSet = true; m_publicIps.push_back(std::move(value)); return *this; }
 
     /**
      * <p>[EC2-Classic] One or more Elastic IP addresses.</p> <p>Default: Describes all
@@ -163,7 +164,7 @@ namespace Model
      * address associated with the Elastic IP address.</p> </li> <li> <p>
      * <code>public-ip</code> - The Elastic IP address.</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
@@ -197,7 +198,7 @@ namespace Model
      * address associated with the Elastic IP address.</p> </li> <li> <p>
      * <code>public-ip</code> - The Elastic IP address.</p> </li> </ul>
      */
-    inline DescribeAddressesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeAddressesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
@@ -231,7 +232,7 @@ namespace Model
      * address associated with the Elastic IP address.</p> </li> <li> <p>
      * <code>public-ip</code> - The Elastic IP address.</p> </li> </ul>
      */
-    inline DescribeAddressesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeAddressesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your
@@ -249,7 +250,7 @@ namespace Model
      * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your
      * Elastic IP addresses.</p>
      */
-    inline void SetAllocationIds(Aws::Vector<Aws::String>&& value) { m_allocationIdsHasBeenSet = true; m_allocationIds = value; }
+    inline void SetAllocationIds(Aws::Vector<Aws::String>&& value) { m_allocationIdsHasBeenSet = true; m_allocationIds = std::move(value); }
 
     /**
      * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your
@@ -261,7 +262,7 @@ namespace Model
      * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your
      * Elastic IP addresses.</p>
      */
-    inline DescribeAddressesRequest& WithAllocationIds(Aws::Vector<Aws::String>&& value) { SetAllocationIds(value); return *this;}
+    inline DescribeAddressesRequest& WithAllocationIds(Aws::Vector<Aws::String>&& value) { SetAllocationIds(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your
@@ -273,7 +274,7 @@ namespace Model
      * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your
      * Elastic IP addresses.</p>
      */
-    inline DescribeAddressesRequest& AddAllocationIds(Aws::String&& value) { m_allocationIdsHasBeenSet = true; m_allocationIds.push_back(value); return *this; }
+    inline DescribeAddressesRequest& AddAllocationIds(Aws::String&& value) { m_allocationIdsHasBeenSet = true; m_allocationIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your

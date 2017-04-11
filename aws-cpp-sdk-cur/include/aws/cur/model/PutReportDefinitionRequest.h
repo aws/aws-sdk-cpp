@@ -16,6 +16,7 @@
 #include <aws/cur/CostandUsageReportService_EXPORTS.h>
 #include <aws/cur/CostandUsageReportServiceRequest.h>
 #include <aws/cur/model/ReportDefinition.h>
+#include <utility>
 
 namespace Aws
 {
@@ -45,13 +46,13 @@ namespace Model
     inline void SetReportDefinition(const ReportDefinition& value) { m_reportDefinitionHasBeenSet = true; m_reportDefinition = value; }
 
     
-    inline void SetReportDefinition(ReportDefinition&& value) { m_reportDefinitionHasBeenSet = true; m_reportDefinition = value; }
+    inline void SetReportDefinition(ReportDefinition&& value) { m_reportDefinitionHasBeenSet = true; m_reportDefinition = std::move(value); }
 
     
     inline PutReportDefinitionRequest& WithReportDefinition(const ReportDefinition& value) { SetReportDefinition(value); return *this;}
 
     
-    inline PutReportDefinitionRequest& WithReportDefinition(ReportDefinition&& value) { SetReportDefinition(value); return *this;}
+    inline PutReportDefinitionRequest& WithReportDefinition(ReportDefinition&& value) { SetReportDefinition(std::move(value)); return *this;}
 
   private:
     ReportDefinition m_reportDefinition;

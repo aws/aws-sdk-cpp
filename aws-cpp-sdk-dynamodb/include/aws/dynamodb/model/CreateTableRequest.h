@@ -23,6 +23,7 @@
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <aws/dynamodb/model/LocalSecondaryIndex.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndex.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>An array of attributes that describe the key schema for the table and
      * indexes.</p>
      */
-    inline void SetAttributeDefinitions(Aws::Vector<AttributeDefinition>&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions = value; }
+    inline void SetAttributeDefinitions(Aws::Vector<AttributeDefinition>&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions = std::move(value); }
 
     /**
      * <p>An array of attributes that describe the key schema for the table and
@@ -74,7 +75,7 @@ namespace Model
      * <p>An array of attributes that describe the key schema for the table and
      * indexes.</p>
      */
-    inline CreateTableRequest& WithAttributeDefinitions(Aws::Vector<AttributeDefinition>&& value) { SetAttributeDefinitions(value); return *this;}
+    inline CreateTableRequest& WithAttributeDefinitions(Aws::Vector<AttributeDefinition>&& value) { SetAttributeDefinitions(std::move(value)); return *this;}
 
     /**
      * <p>An array of attributes that describe the key schema for the table and
@@ -86,7 +87,7 @@ namespace Model
      * <p>An array of attributes that describe the key schema for the table and
      * indexes.</p>
      */
-    inline CreateTableRequest& AddAttributeDefinitions(AttributeDefinition&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions.push_back(value); return *this; }
+    inline CreateTableRequest& AddAttributeDefinitions(AttributeDefinition&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The name of the table to create.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The name of the table to create.</p>
      */
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
+    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
      * <p>The name of the table to create.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The name of the table to create.</p>
      */
-    inline CreateTableRequest& WithTableName(Aws::String&& value) { SetTableName(value); return *this;}
+    inline CreateTableRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the table to create.</p>
@@ -205,7 +206,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline void SetKeySchema(Aws::Vector<KeySchemaElement>&& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
+    inline void SetKeySchema(Aws::Vector<KeySchemaElement>&& value) { m_keySchemaHasBeenSet = true; m_keySchema = std::move(value); }
 
     /**
      * <p>Specifies the attributes that make up the primary key for a table or an
@@ -261,7 +262,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline CreateTableRequest& WithKeySchema(Aws::Vector<KeySchemaElement>&& value) { SetKeySchema(value); return *this;}
+    inline CreateTableRequest& WithKeySchema(Aws::Vector<KeySchemaElement>&& value) { SetKeySchema(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the attributes that make up the primary key for a table or an
@@ -317,7 +318,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline CreateTableRequest& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
+    inline CreateTableRequest& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more local secondary indexes (the maximum is five) to be created on
@@ -401,7 +402,7 @@ namespace Model
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> </ul>
      */
-    inline void SetLocalSecondaryIndexes(Aws::Vector<LocalSecondaryIndex>&& value) { m_localSecondaryIndexesHasBeenSet = true; m_localSecondaryIndexes = value; }
+    inline void SetLocalSecondaryIndexes(Aws::Vector<LocalSecondaryIndex>&& value) { m_localSecondaryIndexesHasBeenSet = true; m_localSecondaryIndexes = std::move(value); }
 
     /**
      * <p>One or more local secondary indexes (the maximum is five) to be created on
@@ -457,7 +458,7 @@ namespace Model
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> </ul>
      */
-    inline CreateTableRequest& WithLocalSecondaryIndexes(Aws::Vector<LocalSecondaryIndex>&& value) { SetLocalSecondaryIndexes(value); return *this;}
+    inline CreateTableRequest& WithLocalSecondaryIndexes(Aws::Vector<LocalSecondaryIndex>&& value) { SetLocalSecondaryIndexes(std::move(value)); return *this;}
 
     /**
      * <p>One or more local secondary indexes (the maximum is five) to be created on
@@ -513,7 +514,7 @@ namespace Model
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> </ul>
      */
-    inline CreateTableRequest& AddLocalSecondaryIndexes(LocalSecondaryIndex&& value) { m_localSecondaryIndexesHasBeenSet = true; m_localSecondaryIndexes.push_back(value); return *this; }
+    inline CreateTableRequest& AddLocalSecondaryIndexes(LocalSecondaryIndex&& value) { m_localSecondaryIndexesHasBeenSet = true; m_localSecondaryIndexes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more global secondary indexes (the maximum is five) to be created on
@@ -594,7 +595,7 @@ namespace Model
      * provisioned throughput settings for the global secondary index, consisting of
      * read and write capacity units.</p> </li> </ul>
      */
-    inline void SetGlobalSecondaryIndexes(Aws::Vector<GlobalSecondaryIndex>&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes = value; }
+    inline void SetGlobalSecondaryIndexes(Aws::Vector<GlobalSecondaryIndex>&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes = std::move(value); }
 
     /**
      * <p>One or more global secondary indexes (the maximum is five) to be created on
@@ -648,7 +649,7 @@ namespace Model
      * provisioned throughput settings for the global secondary index, consisting of
      * read and write capacity units.</p> </li> </ul>
      */
-    inline CreateTableRequest& WithGlobalSecondaryIndexes(Aws::Vector<GlobalSecondaryIndex>&& value) { SetGlobalSecondaryIndexes(value); return *this;}
+    inline CreateTableRequest& WithGlobalSecondaryIndexes(Aws::Vector<GlobalSecondaryIndex>&& value) { SetGlobalSecondaryIndexes(std::move(value)); return *this;}
 
     /**
      * <p>One or more global secondary indexes (the maximum is five) to be created on
@@ -702,7 +703,7 @@ namespace Model
      * provisioned throughput settings for the global secondary index, consisting of
      * read and write capacity units.</p> </li> </ul>
      */
-    inline CreateTableRequest& AddGlobalSecondaryIndexes(GlobalSecondaryIndex&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.push_back(value); return *this; }
+    inline CreateTableRequest& AddGlobalSecondaryIndexes(GlobalSecondaryIndex&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Represents the provisioned throughput settings for a specified table or
@@ -732,7 +733,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
+    inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
 
     /**
      * <p>Represents the provisioned throughput settings for a specified table or
@@ -752,7 +753,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline CreateTableRequest& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(value); return *this;}
+    inline CreateTableRequest& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
 
     /**
      * <p>The settings for DynamoDB Streams on the table. These settings consist
@@ -803,7 +804,7 @@ namespace Model
      * <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the
      * item are written to the stream.</p> </li> </ul> </li> </ul>
      */
-    inline void SetStreamSpecification(StreamSpecification&& value) { m_streamSpecificationHasBeenSet = true; m_streamSpecification = value; }
+    inline void SetStreamSpecification(StreamSpecification&& value) { m_streamSpecificationHasBeenSet = true; m_streamSpecification = std::move(value); }
 
     /**
      * <p>The settings for DynamoDB Streams on the table. These settings consist
@@ -837,7 +838,7 @@ namespace Model
      * <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the
      * item are written to the stream.</p> </li> </ul> </li> </ul>
      */
-    inline CreateTableRequest& WithStreamSpecification(StreamSpecification&& value) { SetStreamSpecification(value); return *this;}
+    inline CreateTableRequest& WithStreamSpecification(StreamSpecification&& value) { SetStreamSpecification(std::move(value)); return *this;}
 
   private:
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
