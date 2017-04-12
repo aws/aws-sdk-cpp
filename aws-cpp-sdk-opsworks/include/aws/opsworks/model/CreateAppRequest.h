@@ -221,46 +221,46 @@ namespace Model
 
     /**
      * <p>The app type. Each supported type is associated with a particular layer. For
-     * example, PHP applications are associated with a PHP layer. AWS OpsWorks deploys
-     * an application to those instances that are members of the corresponding layer.
-     * If your app isn't one of the standard types, or you prefer to implement your own
-     * Deploy recipes, specify <code>other</code>.</p>
+     * example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks
+     * deploys an application to those instances that are members of the corresponding
+     * layer. If your app isn't one of the standard types, or you prefer to implement
+     * your own Deploy recipes, specify <code>other</code>.</p>
      */
     inline const AppType& GetType() const{ return m_type; }
 
     /**
      * <p>The app type. Each supported type is associated with a particular layer. For
-     * example, PHP applications are associated with a PHP layer. AWS OpsWorks deploys
-     * an application to those instances that are members of the corresponding layer.
-     * If your app isn't one of the standard types, or you prefer to implement your own
-     * Deploy recipes, specify <code>other</code>.</p>
+     * example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks
+     * deploys an application to those instances that are members of the corresponding
+     * layer. If your app isn't one of the standard types, or you prefer to implement
+     * your own Deploy recipes, specify <code>other</code>.</p>
      */
     inline void SetType(const AppType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The app type. Each supported type is associated with a particular layer. For
-     * example, PHP applications are associated with a PHP layer. AWS OpsWorks deploys
-     * an application to those instances that are members of the corresponding layer.
-     * If your app isn't one of the standard types, or you prefer to implement your own
-     * Deploy recipes, specify <code>other</code>.</p>
+     * example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks
+     * deploys an application to those instances that are members of the corresponding
+     * layer. If your app isn't one of the standard types, or you prefer to implement
+     * your own Deploy recipes, specify <code>other</code>.</p>
      */
     inline void SetType(AppType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The app type. Each supported type is associated with a particular layer. For
-     * example, PHP applications are associated with a PHP layer. AWS OpsWorks deploys
-     * an application to those instances that are members of the corresponding layer.
-     * If your app isn't one of the standard types, or you prefer to implement your own
-     * Deploy recipes, specify <code>other</code>.</p>
+     * example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks
+     * deploys an application to those instances that are members of the corresponding
+     * layer. If your app isn't one of the standard types, or you prefer to implement
+     * your own Deploy recipes, specify <code>other</code>.</p>
      */
     inline CreateAppRequest& WithType(const AppType& value) { SetType(value); return *this;}
 
     /**
      * <p>The app type. Each supported type is associated with a particular layer. For
-     * example, PHP applications are associated with a PHP layer. AWS OpsWorks deploys
-     * an application to those instances that are members of the corresponding layer.
-     * If your app isn't one of the standard types, or you prefer to implement your own
-     * Deploy recipes, specify <code>other</code>.</p>
+     * example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks
+     * deploys an application to those instances that are members of the corresponding
+     * layer. If your app isn't one of the standard types, or you prefer to implement
+     * your own Deploy recipes, specify <code>other</code>.</p>
      */
     inline CreateAppRequest& WithType(AppType&& value) { SetType(std::move(value)); return *this;}
 

@@ -31,7 +31,8 @@ PutMethodRequest::PutMethodRequest() :
     m_apiKeyRequiredHasBeenSet(false),
     m_operationNameHasBeenSet(false),
     m_requestParametersHasBeenSet(false),
-    m_requestModelsHasBeenSet(false)
+    m_requestModelsHasBeenSet(false),
+    m_requestValidatorIdHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,12 @@ Aws::String PutMethodRequest::SerializePayload() const
      requestModelsJsonMap.WithString(requestModelsItem.first, requestModelsItem.second);
    }
    payload.WithObject("requestModels", std::move(requestModelsJsonMap));
+
+  }
+
+  if(m_requestValidatorIdHasBeenSet)
+  {
+   payload.WithString("requestValidatorId", m_requestValidatorId);
 
   }
 

@@ -29,16 +29,20 @@ namespace Model
 
 GameSessionQueue::GameSessionQueue() : 
     m_nameHasBeenSet(false),
+    m_gameSessionQueueArnHasBeenSet(false),
     m_timeoutInSeconds(0),
     m_timeoutInSecondsHasBeenSet(false),
+    m_playerLatencyPoliciesHasBeenSet(false),
     m_destinationsHasBeenSet(false)
 {
 }
 
 GameSessionQueue::GameSessionQueue(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
+    m_gameSessionQueueArnHasBeenSet(false),
     m_timeoutInSeconds(0),
     m_timeoutInSecondsHasBeenSet(false),
+    m_playerLatencyPoliciesHasBeenSet(false),
     m_destinationsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -53,11 +57,28 @@ GameSessionQueue& GameSessionQueue::operator =(const JsonValue& jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GameSessionQueueArn"))
+  {
+    m_gameSessionQueueArn = jsonValue.GetString("GameSessionQueueArn");
+
+    m_gameSessionQueueArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("TimeoutInSeconds"))
   {
     m_timeoutInSeconds = jsonValue.GetInteger("TimeoutInSeconds");
 
     m_timeoutInSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PlayerLatencyPolicies"))
+  {
+    Array<JsonValue> playerLatencyPoliciesJsonList = jsonValue.GetArray("PlayerLatencyPolicies");
+    for(unsigned playerLatencyPoliciesIndex = 0; playerLatencyPoliciesIndex < playerLatencyPoliciesJsonList.GetLength(); ++playerLatencyPoliciesIndex)
+    {
+      m_playerLatencyPolicies.push_back(playerLatencyPoliciesJsonList[playerLatencyPoliciesIndex].AsObject());
+    }
+    m_playerLatencyPoliciesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Destinations"))
@@ -83,9 +104,26 @@ JsonValue GameSessionQueue::Jsonize() const
 
   }
 
+  if(m_gameSessionQueueArnHasBeenSet)
+  {
+   payload.WithString("GameSessionQueueArn", m_gameSessionQueueArn);
+
+  }
+
   if(m_timeoutInSecondsHasBeenSet)
   {
    payload.WithInteger("TimeoutInSeconds", m_timeoutInSeconds);
+
+  }
+
+  if(m_playerLatencyPoliciesHasBeenSet)
+  {
+   Array<JsonValue> playerLatencyPoliciesJsonList(m_playerLatencyPolicies.size());
+   for(unsigned playerLatencyPoliciesIndex = 0; playerLatencyPoliciesIndex < playerLatencyPoliciesJsonList.GetLength(); ++playerLatencyPoliciesIndex)
+   {
+     playerLatencyPoliciesJsonList[playerLatencyPoliciesIndex].AsObject(m_playerLatencyPolicies[playerLatencyPoliciesIndex].Jsonize());
+   }
+   payload.WithArray("PlayerLatencyPolicies", std::move(playerLatencyPoliciesJsonList));
 
   }
 

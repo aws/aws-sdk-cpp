@@ -140,37 +140,37 @@ namespace Model
     inline TemporaryCredential& WithValidForInMinutes(int value) { SetValidForInMinutes(value); return *this;}
 
     /**
-     * <p>The instance's AWS OpsWorks ID.</p>
+     * <p>The instance's AWS OpsWorks Stacks ID.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The instance's AWS OpsWorks ID.</p>
+     * <p>The instance's AWS OpsWorks Stacks ID.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The instance's AWS OpsWorks ID.</p>
+     * <p>The instance's AWS OpsWorks Stacks ID.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The instance's AWS OpsWorks ID.</p>
+     * <p>The instance's AWS OpsWorks Stacks ID.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The instance's AWS OpsWorks ID.</p>
+     * <p>The instance's AWS OpsWorks Stacks ID.</p>
      */
     inline TemporaryCredential& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The instance's AWS OpsWorks ID.</p>
+     * <p>The instance's AWS OpsWorks Stacks ID.</p>
      */
     inline TemporaryCredential& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The instance's AWS OpsWorks ID.</p>
+     * <p>The instance's AWS OpsWorks Stacks ID.</p>
      */
     inline TemporaryCredential& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

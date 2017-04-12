@@ -75,37 +75,44 @@ namespace Model
     inline DescribeGameSessionsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>Unique identifier for the game session to retrieve. You can use either a
+     * <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p>
      */
     inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>Unique identifier for the game session to retrieve. You can use either a
+     * <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p>
      */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>Unique identifier for the game session to retrieve. You can use either a
+     * <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p>
      */
     inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>Unique identifier for the game session to retrieve. You can use either a
+     * <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p>
      */
     inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>Unique identifier for the game session to retrieve. You can use either a
+     * <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p>
      */
     inline DescribeGameSessionsRequest& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>Unique identifier for the game session to retrieve. You can use either a
+     * <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p>
      */
     inline DescribeGameSessionsRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>Unique identifier for the game session to retrieve. You can use either a
+     * <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p>
      */
     inline DescribeGameSessionsRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 

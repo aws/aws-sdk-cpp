@@ -45,44 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The zero-based array index specifying the position of the to-be-retrieved
-     * <a>UsagePlan</a> resource.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline const Aws::String& GetPosition() const{ return m_position; }
 
     /**
-     * <p>The zero-based array index specifying the position of the to-be-retrieved
-     * <a>UsagePlan</a> resource.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
-     * <p>The zero-based array index specifying the position of the to-be-retrieved
-     * <a>UsagePlan</a> resource.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
-     * <p>The zero-based array index specifying the position of the to-be-retrieved
-     * <a>UsagePlan</a> resource.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
 
     /**
-     * <p>The zero-based array index specifying the position of the to-be-retrieved
-     * <a>UsagePlan</a> resource.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetUsagePlansRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The zero-based array index specifying the position of the to-be-retrieved
-     * <a>UsagePlan</a> resource.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetUsagePlansRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
-     * <p>The zero-based array index specifying the position of the to-be-retrieved
-     * <a>UsagePlan</a> resource.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetUsagePlansRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
 
@@ -122,17 +115,17 @@ namespace Model
     inline GetUsagePlansRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The number of <a>UsagePlan</a> resources to be returned as the result.</p>
+     * <p>The maximum number of returned results per page.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The number of <a>UsagePlan</a> resources to be returned as the result.</p>
+     * <p>The maximum number of returned results per page.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The number of <a>UsagePlan</a> resources to be returned as the result.</p>
+     * <p>The maximum number of returned results per page.</p>
      */
     inline GetUsagePlansRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

@@ -159,6 +159,48 @@ namespace Model
     inline ComputeResource& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
     /**
+     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
+     * environment.</p>
+     */
+    inline const Aws::String& GetImageId() const{ return m_imageId; }
+
+    /**
+     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
+     * environment.</p>
+     */
+    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+
+    /**
+     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
+     * environment.</p>
+     */
+    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
+
+    /**
+     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
+     * environment.</p>
+     */
+    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
+
+    /**
+     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
+     * environment.</p>
+     */
+    inline ComputeResource& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
+
+    /**
+     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
+     * environment.</p>
+     */
+    inline ComputeResource& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
+     * environment.</p>
+     */
+    inline ComputeResource& WithImageId(const char* value) { SetImageId(value); return *this;}
+
+    /**
      * <p>The VPC subnets into which the compute resources are launched. </p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
@@ -479,6 +521,8 @@ namespace Model
     bool m_desiredvCpusHasBeenSet;
     Aws::Vector<Aws::String> m_instanceTypes;
     bool m_instanceTypesHasBeenSet;
+    Aws::String m_imageId;
+    bool m_imageIdHasBeenSet;
     Aws::Vector<Aws::String> m_subnets;
     bool m_subnetsHasBeenSet;
     Aws::Vector<Aws::String> m_securityGroupIds;

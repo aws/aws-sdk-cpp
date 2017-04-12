@@ -17,6 +17,7 @@
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/opsworks/model/CloudWatchLogsConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/Recipes.h>
 #include <aws/opsworks/model/LifecycleEventConfiguration.h>
@@ -114,11 +115,11 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorksand by Chef. The short name is also used
-     * as the name for the directory where your app files are installed. It can have a
-     * maximum of 200 characters and must be in the following format:
+     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
+     * also used as the name for the directory where your app files are installed. It
+     * can have a maximum of 200 characters and must be in the following format:
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks. For more information, see the <a
+     * AWS OpsWorks Stacks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a> </p>
      */
@@ -126,11 +127,11 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorksand by Chef. The short name is also used
-     * as the name for the directory where your app files are installed. It can have a
-     * maximum of 200 characters and must be in the following format:
+     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
+     * also used as the name for the directory where your app files are installed. It
+     * can have a maximum of 200 characters and must be in the following format:
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks. For more information, see the <a
+     * AWS OpsWorks Stacks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a> </p>
      */
@@ -138,11 +139,11 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorksand by Chef. The short name is also used
-     * as the name for the directory where your app files are installed. It can have a
-     * maximum of 200 characters and must be in the following format:
+     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
+     * also used as the name for the directory where your app files are installed. It
+     * can have a maximum of 200 characters and must be in the following format:
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks. For more information, see the <a
+     * AWS OpsWorks Stacks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a> </p>
      */
@@ -150,11 +151,11 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorksand by Chef. The short name is also used
-     * as the name for the directory where your app files are installed. It can have a
-     * maximum of 200 characters and must be in the following format:
+     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
+     * also used as the name for the directory where your app files are installed. It
+     * can have a maximum of 200 characters and must be in the following format:
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks. For more information, see the <a
+     * AWS OpsWorks Stacks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a> </p>
      */
@@ -162,11 +163,11 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorksand by Chef. The short name is also used
-     * as the name for the directory where your app files are installed. It can have a
-     * maximum of 200 characters and must be in the following format:
+     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
+     * also used as the name for the directory where your app files are installed. It
+     * can have a maximum of 200 characters and must be in the following format:
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks. For more information, see the <a
+     * AWS OpsWorks Stacks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a> </p>
      */
@@ -174,11 +175,11 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorksand by Chef. The short name is also used
-     * as the name for the directory where your app files are installed. It can have a
-     * maximum of 200 characters and must be in the following format:
+     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
+     * also used as the name for the directory where your app files are installed. It
+     * can have a maximum of 200 characters and must be in the following format:
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks. For more information, see the <a
+     * AWS OpsWorks Stacks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a> </p>
      */
@@ -186,11 +187,11 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorksand by Chef. The short name is also used
-     * as the name for the directory where your app files are installed. It can have a
-     * maximum of 200 characters and must be in the following format:
+     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
+     * also used as the name for the directory where your app files are installed. It
+     * can have a maximum of 200 characters and must be in the following format:
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks. For more information, see the <a
+     * AWS OpsWorks Stacks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a> </p>
      */
@@ -261,6 +262,36 @@ namespace Model
      * attributes.</p>
      */
     inline UpdateLayerRequest& AddAttributes(const LayerAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+
+    /**
+     * <p>Specifies CloudWatch Logs configuration options for the layer. For more
+     * information, see <a>CloudWatchLogsLogStream</a>.</p>
+     */
+    inline const CloudWatchLogsConfiguration& GetCloudWatchLogsConfiguration() const{ return m_cloudWatchLogsConfiguration; }
+
+    /**
+     * <p>Specifies CloudWatch Logs configuration options for the layer. For more
+     * information, see <a>CloudWatchLogsLogStream</a>.</p>
+     */
+    inline void SetCloudWatchLogsConfiguration(const CloudWatchLogsConfiguration& value) { m_cloudWatchLogsConfigurationHasBeenSet = true; m_cloudWatchLogsConfiguration = value; }
+
+    /**
+     * <p>Specifies CloudWatch Logs configuration options for the layer. For more
+     * information, see <a>CloudWatchLogsLogStream</a>.</p>
+     */
+    inline void SetCloudWatchLogsConfiguration(CloudWatchLogsConfiguration&& value) { m_cloudWatchLogsConfigurationHasBeenSet = true; m_cloudWatchLogsConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies CloudWatch Logs configuration options for the layer. For more
+     * information, see <a>CloudWatchLogsLogStream</a>.</p>
+     */
+    inline UpdateLayerRequest& WithCloudWatchLogsConfiguration(const CloudWatchLogsConfiguration& value) { SetCloudWatchLogsConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies CloudWatch Logs configuration options for the layer. For more
+     * information, see <a>CloudWatchLogsLogStream</a>.</p>
+     */
+    inline UpdateLayerRequest& WithCloudWatchLogsConfiguration(CloudWatchLogsConfiguration&& value) { SetCloudWatchLogsConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances.
@@ -695,6 +726,8 @@ namespace Model
     bool m_shortnameHasBeenSet;
     Aws::Map<LayerAttributesKeys, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
+    CloudWatchLogsConfiguration m_cloudWatchLogsConfiguration;
+    bool m_cloudWatchLogsConfigurationHasBeenSet;
     Aws::String m_customInstanceProfileArn;
     bool m_customInstanceProfileArnHasBeenSet;
     Aws::String m_customJson;

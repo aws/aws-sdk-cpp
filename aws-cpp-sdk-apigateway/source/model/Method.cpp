@@ -33,6 +33,7 @@ Method::Method() :
     m_authorizerIdHasBeenSet(false),
     m_apiKeyRequired(false),
     m_apiKeyRequiredHasBeenSet(false),
+    m_requestValidatorIdHasBeenSet(false),
     m_operationNameHasBeenSet(false),
     m_requestParametersHasBeenSet(false),
     m_requestModelsHasBeenSet(false),
@@ -47,6 +48,7 @@ Method::Method(const JsonValue& jsonValue) :
     m_authorizerIdHasBeenSet(false),
     m_apiKeyRequired(false),
     m_apiKeyRequiredHasBeenSet(false),
+    m_requestValidatorIdHasBeenSet(false),
     m_operationNameHasBeenSet(false),
     m_requestParametersHasBeenSet(false),
     m_requestModelsHasBeenSet(false),
@@ -84,6 +86,13 @@ Method& Method::operator =(const JsonValue& jsonValue)
     m_apiKeyRequired = jsonValue.GetBool("apiKeyRequired");
 
     m_apiKeyRequiredHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("requestValidatorId"))
+  {
+    m_requestValidatorId = jsonValue.GetString("requestValidatorId");
+
+    m_requestValidatorIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("operationName"))
@@ -158,6 +167,12 @@ JsonValue Method::Jsonize() const
   if(m_apiKeyRequiredHasBeenSet)
   {
    payload.WithBool("apiKeyRequired", m_apiKeyRequired);
+
+  }
+
+  if(m_requestValidatorIdHasBeenSet)
+  {
+   payload.WithString("requestValidatorId", m_requestValidatorId);
 
   }
 

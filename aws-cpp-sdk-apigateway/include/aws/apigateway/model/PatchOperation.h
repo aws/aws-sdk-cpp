@@ -198,37 +198,65 @@ namespace Model
     inline PatchOperation& WithPath(const char* value) { SetPath(value); return *this;}
 
     /**
-     * <p>The new target value of the update operation. </p>
+     * <p>The new target value of the update operation. When using AWS CLI to update a
+     * property of a JSON value, enclose the JSON object with a pair of single quotes
+     * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * JSON for Parameters</a>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The new target value of the update operation. </p>
+     * <p>The new target value of the update operation. When using AWS CLI to update a
+     * property of a JSON value, enclose the JSON object with a pair of single quotes
+     * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * JSON for Parameters</a>.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The new target value of the update operation. </p>
+     * <p>The new target value of the update operation. When using AWS CLI to update a
+     * property of a JSON value, enclose the JSON object with a pair of single quotes
+     * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * JSON for Parameters</a>.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The new target value of the update operation. </p>
+     * <p>The new target value of the update operation. When using AWS CLI to update a
+     * property of a JSON value, enclose the JSON object with a pair of single quotes
+     * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * JSON for Parameters</a>.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The new target value of the update operation. </p>
+     * <p>The new target value of the update operation. When using AWS CLI to update a
+     * property of a JSON value, enclose the JSON object with a pair of single quotes
+     * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * JSON for Parameters</a>.</p>
      */
     inline PatchOperation& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The new target value of the update operation. </p>
+     * <p>The new target value of the update operation. When using AWS CLI to update a
+     * property of a JSON value, enclose the JSON object with a pair of single quotes
+     * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * JSON for Parameters</a>.</p>
      */
     inline PatchOperation& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The new target value of the update operation. </p>
+     * <p>The new target value of the update operation. When using AWS CLI to update a
+     * property of a JSON value, enclose the JSON object with a pair of single quotes
+     * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * JSON for Parameters</a>.</p>
      */
     inline PatchOperation& WithValue(const char* value) { SetValue(value); return *this;}
 

@@ -29,7 +29,8 @@ CreateGameSessionRequest::CreateGameSessionRequest() :
     m_nameHasBeenSet(false),
     m_gamePropertiesHasBeenSet(false),
     m_creatorIdHasBeenSet(false),
-    m_gameSessionIdHasBeenSet(false)
+    m_gameSessionIdHasBeenSet(false),
+    m_idempotencyTokenHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,12 @@ Aws::String CreateGameSessionRequest::SerializePayload() const
   if(m_gameSessionIdHasBeenSet)
   {
    payload.WithString("GameSessionId", m_gameSessionId);
+
+  }
+
+  if(m_idempotencyTokenHasBeenSet)
+  {
+   payload.WithString("IdempotencyToken", m_idempotencyToken);
 
   }
 

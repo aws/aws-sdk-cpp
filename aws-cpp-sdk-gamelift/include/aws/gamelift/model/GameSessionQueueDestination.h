@@ -33,8 +33,8 @@ namespace Model
 
   /**
    * <p>Fleet designated in a game session queue. Requests for new game sessions in
-   * the queue are fulfilled by starting a new game session on any destination listed
-   * for a queue. </p><p><h3>See Also:</h3>   <a
+   * the queue are fulfilled by starting a new game session on any destination
+   * configured for a queue. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionQueueDestination">AWS
    * API Reference</a></p>
    */
