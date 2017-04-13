@@ -46,10 +46,12 @@ endif()
 
 string(TOLOWER ${TARGET_ARCH} __LOWER_ARCH)
 
+# default settings is unix platform
 if(PLATFORM_LINUX OR PLATFORM_APPLE OR PLATFORM_ANDROID)
     include(platform/unix)
 endif()
 
+# if not specified to custom platform, settings above will be reset by specific platform settings
 if(NOT PLATFORM_CUSTOM)
     include(platform/${__LOWER_ARCH})
 else()

@@ -13,7 +13,7 @@ function(compute_links lib)
     endif()
     # Immediately return if output property is already set.
     get_property(complete TARGET ${lib} PROPERTY LINK_LIBRARIES_ALL SET)
-    if(completed)
+    if(complete)
         return()
     endif()
     # Initialize output property.

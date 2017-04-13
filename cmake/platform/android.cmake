@@ -235,6 +235,7 @@ macro(apply_post_project_platform_settings)
     set(SDK_INSTALL_BINARY_PREFIX "${SDK_INSTALL_BINARY_PREFIX}/${ANDROID_ABI}")
 
     set(PLATFORM_DEP_LIBS log atomic)
+    set(PLATFORM_DEP_LIBS_ABSTRACT_NAME log atomic)
 
     # Workaround for problem when ndk 13, gcc, and libc++ are used together.
     # See https://www.bountysource.com/issues/38341727-stddef-h-no-such-file-or-directory
