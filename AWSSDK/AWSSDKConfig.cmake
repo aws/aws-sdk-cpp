@@ -13,7 +13,7 @@
 # If the compile time option SIMPLE_INSTALL is turned off
 # users also need to set variable as set(AWSSDK_PLATFORM_PREFIX, "<linux/intel64/config>")
 
-unset(AWSSDK_FOUND)
+unset(AWSSDK_FOUND CACHE)
 
 # Compute the default installation root relative to this file.
 # from xx/lib/cmake/AWSSDK/xx.cmake to xx/
@@ -85,24 +85,55 @@ include(${CMAKE_CURRENT_LIST_DIR}/sdksCommon.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/platformDeps.cmake)
 
 SET(AWSSDK_FOUND "1")
-Message(STATUS "Find AWSSDK, Version: ${PACKAGE_VERSION}, install Root: ${AWSSDK_ROOT_DIR}, Platform prefix: ${AWSSDK_PLATFORM_PREFIX}")
-
 set(AWSSDK_INCLUDE_DIR "${AWSSDK_DEFAULT_ROOT_DIR}/include")
 set(AWSSDK_CMAKE_DIR "${AWSSDK_DEFAULT_ROOT_DIR}/lib/cmake")
 set(AWSSDK_LIB_DIR "${AWSSDK_DEFAULT_ROOT_DIR}/lib/${AWSSDK_PLATFORM_PREFIX}")
 set(AWSSDK_BIN_DIR "${AWSSDK_DEFAULT_ROOT_DIR}/bin/${AWSSDK_PLATFORM_PREFIX}")
 
 
-set(AWSSDK_PLATFORM_DEPS "${PLATFORM_DEPS}" "${CLIENT_LIBS}" "${CRYPTO_LIBS}" "${ADDITIONAL_LIBS}")
-Message(STATUS "Platform Deps: ${AWSSDK_PLATFORM_DEPS}")
+if (PLATFORM_DEPS)
+	set(AWSSDK_PLATFORM_DEPS "${PLATFORM_DEPS}")
+endif()
+
+if (CRYPTO_LIBS)
+	set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${CRYPTO_LIBS}")
+endif()
+
+if (CLIENT_LIBS)
+	set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${CLIEND_LIBS}")
+endif()
+
+if (ADDITIONAL_LIBS)
+	set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${ADDITIONAL_LIBS}")
+endif()
+
+Message(STATUS "Find AWSSDK, Version: ${PACKAGE_VERSION}, install Root:${AWSSDK_ROOT_DIR}, Platform prefix:${AWSSDK_PLATFORM_PREFIX}, Platform Dependent Libraries: ${AWSSDK_PLATFORM_DEPS}")
 
 
 # copy libs of services in SERVICE_LIST and all there dependent libs to DEST_DIR
 # CONFIG denote copy release or debug version
 macro(AWSSDK_CPY_DYN_LIBS SERVICE_LIST CONFIG DEST_DIR)
-#
-#
-#
+    set(ALL_SERVICES "core")
+
+    foreach(SVC IN LISTS ${SERVICE_LIST})
+        list(APPEND ALL_SERVICES ${SVC})
+        get_dependencies_for_sdk(${SVC} DEPENDENCY_LIST)
+        if (DEPENDENCY_LIST)
+            STRING(REPLACE "," ";" LIST_RESULT ${DEPENDENCY_LIST})
+            list(APPEND ALL_SERVICES ${LIST_RESULT})
+        endif()
+        unset(DEPENDENCY_LIST CACHE)
+    endforeach()
+    list(REMOVE_DUPLICATES ALL_SERVICES)
+
+    foreach(SVC IN LISTS ALL_SERVICES)
+        find_library(LIB_PATH "aws-cpp-sdk-${SVC}" "${AWSSDK_LIB_DIR}/${CONFIG}")
+        if (NOT LIB_PATH)
+            Message(FATAL_ERROR "Couldn't find library aws-cpp-sdk-${SVC}")
+        endif()
+        execute_process(COMMAND cp ${LIB_PATH} ${DEST_DIR})
+        unset(LIB_PATH CACHE)
+    endforeach()
 endmacro(AWSSDK_CPY_DYN_LIBS)
 
 # output link libs command to OUTPUT_VAR which required by all services from SERVCE_LIST
@@ -114,7 +145,11 @@ endmacro(AWSSDK_DETERMINE_LIBS_TO_LINK)
 
 # output high level lib dependencies such as for transfter; sqs; dynamodb etc.
 macro(AWSSDK_LIB_DEPS HIGH_LEVEL_LIB_NAME OUTPUT_VAR)
-#
-#
-#
+    get_dependencies_for_sdk(${HIGH_LEVEL_LIB_NAME} DEPENDENCY_LIST)
+    if (DEPENDENCY_LIST)
+        STRING(REPLACE "," ";" ${OUTPUT_VAR} ${DEPENDENCY_LIST})
+        list(APPEND ALL_SERVICES ${LIST_RESULT})
+    endif()
+    list(APPEND ${OUTPUT_VAR} "core")
+    list(REMOVE_DUPLICATES ${OUTPUT_VAR})
 endmacro(AWSSDK_LIB_DEPS)
