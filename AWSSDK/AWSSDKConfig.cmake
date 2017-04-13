@@ -17,10 +17,10 @@ unset(AWSSDK_FOUND CACHE)
 
 # Compute the default installation root relative to this file.
 # from xx/lib/cmake/AWSSDK/xx.cmake to xx/
-get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
-get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
-get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
-get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
+get_filename_component(AWSSDK_ROOT_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
+get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
+get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
 if(AWSSDK_DEFAULT_ROOT_DIR STREQUAL "/")
   set(AWSSDK_DEFAULT_ROOT_DIR "")
 endif()
