@@ -185,52 +185,52 @@ namespace Model
     inline GetUsageRequest& WithEndDate(const char* value) { SetEndDate(value); return *this;}
 
     /**
-     * <p>Position</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline const Aws::String& GetPosition() const{ return m_position; }
 
     /**
-     * <p>Position</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
-     * <p>Position</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
-     * <p>Position</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
 
     /**
-     * <p>Position</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetUsageRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
 
     /**
-     * <p>Position</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetUsageRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
-     * <p>Position</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetUsageRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The maximum number of results to be returned.</p>
+     * <p>The maximum number of returned results per page.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of results to be returned.</p>
+     * <p>The maximum number of returned results per page.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of results to be returned.</p>
+     * <p>The maximum number of returned results per page.</p>
      */
     inline GetUsageRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

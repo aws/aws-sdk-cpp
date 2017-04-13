@@ -37,6 +37,7 @@ ComputeResource::ComputeResource() :
     m_desiredvCpus(0),
     m_desiredvCpusHasBeenSet(false),
     m_instanceTypesHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
     m_subnetsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_ec2KeyPairHasBeenSet(false),
@@ -58,6 +59,7 @@ ComputeResource::ComputeResource(const JsonValue& jsonValue) :
     m_desiredvCpus(0),
     m_desiredvCpusHasBeenSet(false),
     m_instanceTypesHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
     m_subnetsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_ec2KeyPairHasBeenSet(false),
@@ -108,6 +110,13 @@ ComputeResource& ComputeResource::operator =(const JsonValue& jsonValue)
       m_instanceTypes.push_back(instanceTypesJsonList[instanceTypesIndex].AsString());
     }
     m_instanceTypesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("imageId"))
+  {
+    m_imageId = jsonValue.GetString("imageId");
+
+    m_imageIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("subnets"))
@@ -206,6 +215,12 @@ JsonValue ComputeResource::Jsonize() const
      instanceTypesJsonList[instanceTypesIndex].AsString(m_instanceTypes[instanceTypesIndex]);
    }
    payload.WithArray("instanceTypes", std::move(instanceTypesJsonList));
+
+  }
+
+  if(m_imageIdHasBeenSet)
+  {
+   payload.WithString("imageId", m_imageId);
 
   }
 

@@ -34,6 +34,7 @@
 #include <aws/apigateway/model/CreateDocumentationVersionRequest.h>
 #include <aws/apigateway/model/CreateDomainNameRequest.h>
 #include <aws/apigateway/model/CreateModelRequest.h>
+#include <aws/apigateway/model/CreateRequestValidatorRequest.h>
 #include <aws/apigateway/model/CreateResourceRequest.h>
 #include <aws/apigateway/model/CreateRestApiRequest.h>
 #include <aws/apigateway/model/CreateStageRequest.h>
@@ -52,6 +53,7 @@
 #include <aws/apigateway/model/DeleteMethodRequest.h>
 #include <aws/apigateway/model/DeleteMethodResponseRequest.h>
 #include <aws/apigateway/model/DeleteModelRequest.h>
+#include <aws/apigateway/model/DeleteRequestValidatorRequest.h>
 #include <aws/apigateway/model/DeleteResourceRequest.h>
 #include <aws/apigateway/model/DeleteRestApiRequest.h>
 #include <aws/apigateway/model/DeleteStageRequest.h>
@@ -85,6 +87,8 @@
 #include <aws/apigateway/model/GetModelRequest.h>
 #include <aws/apigateway/model/GetModelTemplateRequest.h>
 #include <aws/apigateway/model/GetModelsRequest.h>
+#include <aws/apigateway/model/GetRequestValidatorRequest.h>
+#include <aws/apigateway/model/GetRequestValidatorsRequest.h>
 #include <aws/apigateway/model/GetResourceRequest.h>
 #include <aws/apigateway/model/GetResourcesRequest.h>
 #include <aws/apigateway/model/GetRestApiRequest.h>
@@ -123,6 +127,7 @@
 #include <aws/apigateway/model/UpdateMethodRequest.h>
 #include <aws/apigateway/model/UpdateMethodResponseRequest.h>
 #include <aws/apigateway/model/UpdateModelRequest.h>
+#include <aws/apigateway/model/UpdateRequestValidatorRequest.h>
 #include <aws/apigateway/model/UpdateResourceRequest.h>
 #include <aws/apigateway/model/UpdateRestApiRequest.h>
 #include <aws/apigateway/model/UpdateStageRequest.h>
@@ -475,6 +480,42 @@ void APIGatewayClient::CreateModelAsync(const CreateModelRequest& request, const
 void APIGatewayClient::CreateModelAsyncHelper(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateModel(request), context);
+}
+
+CreateRequestValidatorOutcome APIGatewayClient::CreateRequestValidator(const CreateRequestValidatorRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/requestvalidators";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateRequestValidatorOutcome(CreateRequestValidatorResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateRequestValidatorOutcome(outcome.GetError());
+  }
+}
+
+CreateRequestValidatorOutcomeCallable APIGatewayClient::CreateRequestValidatorCallable(const CreateRequestValidatorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateRequestValidatorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRequestValidator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::CreateRequestValidatorAsync(const CreateRequestValidatorRequest& request, const CreateRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateRequestValidatorAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::CreateRequestValidatorAsyncHelper(const CreateRequestValidatorRequest& request, const CreateRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateRequestValidator(request), context);
 }
 
 CreateResourceOutcome APIGatewayClient::CreateResource(const CreateResourceRequest& request) const
@@ -1140,6 +1181,43 @@ void APIGatewayClient::DeleteModelAsync(const DeleteModelRequest& request, const
 void APIGatewayClient::DeleteModelAsyncHelper(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteModel(request), context);
+}
+
+DeleteRequestValidatorOutcome APIGatewayClient::DeleteRequestValidator(const DeleteRequestValidatorRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/requestvalidators/";
+  ss << request.GetRequestValidatorId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteRequestValidatorOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteRequestValidatorOutcome(outcome.GetError());
+  }
+}
+
+DeleteRequestValidatorOutcomeCallable APIGatewayClient::DeleteRequestValidatorCallable(const DeleteRequestValidatorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRequestValidatorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRequestValidator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::DeleteRequestValidatorAsync(const DeleteRequestValidatorRequest& request, const DeleteRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRequestValidatorAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::DeleteRequestValidatorAsyncHelper(const DeleteRequestValidatorRequest& request, const DeleteRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRequestValidator(request), context);
 }
 
 DeleteResourceOutcome APIGatewayClient::DeleteResource(const DeleteResourceRequest& request) const
@@ -2348,6 +2426,79 @@ void APIGatewayClient::GetModelsAsync(const GetModelsRequest& request, const Get
 void APIGatewayClient::GetModelsAsyncHelper(const GetModelsRequest& request, const GetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetModels(request), context);
+}
+
+GetRequestValidatorOutcome APIGatewayClient::GetRequestValidator(const GetRequestValidatorRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/requestvalidators/";
+  ss << request.GetRequestValidatorId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetRequestValidatorOutcome(GetRequestValidatorResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRequestValidatorOutcome(outcome.GetError());
+  }
+}
+
+GetRequestValidatorOutcomeCallable APIGatewayClient::GetRequestValidatorCallable(const GetRequestValidatorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRequestValidatorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRequestValidator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::GetRequestValidatorAsync(const GetRequestValidatorRequest& request, const GetRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRequestValidatorAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::GetRequestValidatorAsyncHelper(const GetRequestValidatorRequest& request, const GetRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRequestValidator(request), context);
+}
+
+GetRequestValidatorsOutcome APIGatewayClient::GetRequestValidators(const GetRequestValidatorsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/requestvalidators";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetRequestValidatorsOutcome(GetRequestValidatorsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRequestValidatorsOutcome(outcome.GetError());
+  }
+}
+
+GetRequestValidatorsOutcomeCallable APIGatewayClient::GetRequestValidatorsCallable(const GetRequestValidatorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRequestValidatorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRequestValidators(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::GetRequestValidatorsAsync(const GetRequestValidatorsRequest& request, const GetRequestValidatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRequestValidatorsAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::GetRequestValidatorsAsyncHelper(const GetRequestValidatorsRequest& request, const GetRequestValidatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRequestValidators(request), context);
 }
 
 GetResourceOutcome APIGatewayClient::GetResource(const GetResourceRequest& request) const
@@ -3747,6 +3898,43 @@ void APIGatewayClient::UpdateModelAsync(const UpdateModelRequest& request, const
 void APIGatewayClient::UpdateModelAsyncHelper(const UpdateModelRequest& request, const UpdateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateModel(request), context);
+}
+
+UpdateRequestValidatorOutcome APIGatewayClient::UpdateRequestValidator(const UpdateRequestValidatorRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/requestvalidators/";
+  ss << request.GetRequestValidatorId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PATCH);
+  if(outcome.IsSuccess())
+  {
+    return UpdateRequestValidatorOutcome(UpdateRequestValidatorResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateRequestValidatorOutcome(outcome.GetError());
+  }
+}
+
+UpdateRequestValidatorOutcomeCallable APIGatewayClient::UpdateRequestValidatorCallable(const UpdateRequestValidatorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRequestValidatorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRequestValidator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::UpdateRequestValidatorAsync(const UpdateRequestValidatorRequest& request, const UpdateRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRequestValidatorAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::UpdateRequestValidatorAsyncHelper(const UpdateRequestValidatorRequest& request, const UpdateRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRequestValidator(request), context);
 }
 
 UpdateResourceOutcome APIGatewayClient::UpdateResource(const UpdateResourceRequest& request) const

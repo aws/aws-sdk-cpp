@@ -45,44 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The position of the current <a>ApiKeys</a> resource to get information
-     * about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline const Aws::String& GetPosition() const{ return m_position; }
 
     /**
-     * <p>The position of the current <a>ApiKeys</a> resource to get information
-     * about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
-     * <p>The position of the current <a>ApiKeys</a> resource to get information
-     * about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
-     * <p>The position of the current <a>ApiKeys</a> resource to get information
-     * about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
 
     /**
-     * <p>The position of the current <a>ApiKeys</a> resource to get information
-     * about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetApiKeysRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The position of the current <a>ApiKeys</a> resource to get information
-     * about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetApiKeysRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
-     * <p>The position of the current <a>ApiKeys</a> resource to get information
-     * about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetApiKeysRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
 

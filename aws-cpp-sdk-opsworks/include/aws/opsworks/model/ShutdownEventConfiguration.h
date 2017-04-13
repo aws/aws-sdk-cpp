@@ -43,20 +43,20 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The time, in seconds, that AWS OpsWorks will wait after triggering a Shutdown
-     * event before shutting down an instance.</p>
+     * <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a
+     * Shutdown event before shutting down an instance.</p>
      */
     inline int GetExecutionTimeout() const{ return m_executionTimeout; }
 
     /**
-     * <p>The time, in seconds, that AWS OpsWorks will wait after triggering a Shutdown
-     * event before shutting down an instance.</p>
+     * <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a
+     * Shutdown event before shutting down an instance.</p>
      */
     inline void SetExecutionTimeout(int value) { m_executionTimeoutHasBeenSet = true; m_executionTimeout = value; }
 
     /**
-     * <p>The time, in seconds, that AWS OpsWorks will wait after triggering a Shutdown
-     * event before shutting down an instance.</p>
+     * <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a
+     * Shutdown event before shutting down an instance.</p>
      */
     inline ShutdownEventConfiguration& WithExecutionTimeout(int value) { SetExecutionTimeout(value); return *this;}
 

@@ -87,65 +87,55 @@ namespace Model
     inline GetDeploymentsRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>The position of the current <a>Deployment</a> resource in the collection to
-     * get information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline const Aws::String& GetPosition() const{ return m_position; }
 
     /**
-     * <p>The position of the current <a>Deployment</a> resource in the collection to
-     * get information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
-     * <p>The position of the current <a>Deployment</a> resource in the collection to
-     * get information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
-     * <p>The position of the current <a>Deployment</a> resource in the collection to
-     * get information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
 
     /**
-     * <p>The position of the current <a>Deployment</a> resource in the collection to
-     * get information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetDeploymentsRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The position of the current <a>Deployment</a> resource in the collection to
-     * get information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetDeploymentsRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
-     * <p>The position of the current <a>Deployment</a> resource in the collection to
-     * get information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetDeploymentsRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The maximum number of <a>Deployment</a> resources in the collection to get
-     * information about. The default limit is 25. It should be an integer between 1 -
-     * 500.</p>
+     * <p>The maximum number of returned results per page. The value is 25 by default
+     * and could be between 1 - 500.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of <a>Deployment</a> resources in the collection to get
-     * information about. The default limit is 25. It should be an integer between 1 -
-     * 500.</p>
+     * <p>The maximum number of returned results per page. The value is 25 by default
+     * and could be between 1 - 500.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of <a>Deployment</a> resources in the collection to get
-     * information about. The default limit is 25. It should be an integer between 1 -
-     * 500.</p>
+     * <p>The maximum number of returned results per page. The value is 25 by default
+     * and could be between 1 - 500.</p>
      */
     inline GetDeploymentsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

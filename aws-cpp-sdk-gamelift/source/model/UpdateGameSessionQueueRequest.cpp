@@ -25,6 +25,7 @@ UpdateGameSessionQueueRequest::UpdateGameSessionQueueRequest() :
     m_nameHasBeenSet(false),
     m_timeoutInSeconds(0),
     m_timeoutInSecondsHasBeenSet(false),
+    m_playerLatencyPoliciesHasBeenSet(false),
     m_destinationsHasBeenSet(false)
 {
 }
@@ -42,6 +43,17 @@ Aws::String UpdateGameSessionQueueRequest::SerializePayload() const
   if(m_timeoutInSecondsHasBeenSet)
   {
    payload.WithInteger("TimeoutInSeconds", m_timeoutInSeconds);
+
+  }
+
+  if(m_playerLatencyPoliciesHasBeenSet)
+  {
+   Array<JsonValue> playerLatencyPoliciesJsonList(m_playerLatencyPolicies.size());
+   for(unsigned playerLatencyPoliciesIndex = 0; playerLatencyPoliciesIndex < playerLatencyPoliciesJsonList.GetLength(); ++playerLatencyPoliciesIndex)
+   {
+     playerLatencyPoliciesJsonList[playerLatencyPoliciesIndex].AsObject(m_playerLatencyPolicies[playerLatencyPoliciesIndex].Jsonize());
+   }
+   payload.WithArray("PlayerLatencyPolicies", std::move(playerLatencyPoliciesJsonList));
 
   }
 

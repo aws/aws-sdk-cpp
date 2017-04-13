@@ -345,44 +345,44 @@ namespace Model
     inline PlayerSession& WithStatus(PlayerSessionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>Game session IP address. All player sessions reference the game session
-     * location.</p>
+     * <p>IP address of the game session. To connect to a Amazon GameLift game server,
+     * an app needs both the IP address and port number.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>Game session IP address. All player sessions reference the game session
-     * location.</p>
+     * <p>IP address of the game session. To connect to a Amazon GameLift game server,
+     * an app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>Game session IP address. All player sessions reference the game session
-     * location.</p>
+     * <p>IP address of the game session. To connect to a Amazon GameLift game server,
+     * an app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
-     * <p>Game session IP address. All player sessions reference the game session
-     * location.</p>
+     * <p>IP address of the game session. To connect to a Amazon GameLift game server,
+     * an app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p>Game session IP address. All player sessions reference the game session
-     * location.</p>
+     * <p>IP address of the game session. To connect to a Amazon GameLift game server,
+     * an app needs both the IP address and port number.</p>
      */
     inline PlayerSession& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>Game session IP address. All player sessions reference the game session
-     * location.</p>
+     * <p>IP address of the game session. To connect to a Amazon GameLift game server,
+     * an app needs both the IP address and port number.</p>
      */
     inline PlayerSession& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>Game session IP address. All player sessions reference the game session
-     * location.</p>
+     * <p>IP address of the game session. To connect to a Amazon GameLift game server,
+     * an app needs both the IP address and port number.</p>
      */
     inline PlayerSession& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 

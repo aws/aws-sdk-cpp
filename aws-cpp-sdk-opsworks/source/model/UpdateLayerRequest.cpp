@@ -26,6 +26,7 @@ UpdateLayerRequest::UpdateLayerRequest() :
     m_nameHasBeenSet(false),
     m_shortnameHasBeenSet(false),
     m_attributesHasBeenSet(false),
+    m_cloudWatchLogsConfigurationHasBeenSet(false),
     m_customInstanceProfileArnHasBeenSet(false),
     m_customJsonHasBeenSet(false),
     m_customSecurityGroupIdsHasBeenSet(false),
@@ -76,6 +77,12 @@ Aws::String UpdateLayerRequest::SerializePayload() const
      attributesJsonMap.WithString(LayerAttributesKeysMapper::GetNameForLayerAttributesKeys(attributesItem.first), attributesItem.second);
    }
    payload.WithObject("Attributes", std::move(attributesJsonMap));
+
+  }
+
+  if(m_cloudWatchLogsConfigurationHasBeenSet)
+  {
+   payload.WithObject("CloudWatchLogsConfiguration", m_cloudWatchLogsConfiguration.Jsonize());
 
   }
 

@@ -35,6 +35,7 @@ Layer::Layer() :
     m_nameHasBeenSet(false),
     m_shortnameHasBeenSet(false),
     m_attributesHasBeenSet(false),
+    m_cloudWatchLogsConfigurationHasBeenSet(false),
     m_customInstanceProfileArnHasBeenSet(false),
     m_customJsonHasBeenSet(false),
     m_customSecurityGroupIdsHasBeenSet(false),
@@ -66,6 +67,7 @@ Layer::Layer(const JsonValue& jsonValue) :
     m_nameHasBeenSet(false),
     m_shortnameHasBeenSet(false),
     m_attributesHasBeenSet(false),
+    m_cloudWatchLogsConfigurationHasBeenSet(false),
     m_customInstanceProfileArnHasBeenSet(false),
     m_customJsonHasBeenSet(false),
     m_customSecurityGroupIdsHasBeenSet(false),
@@ -135,6 +137,13 @@ Layer& Layer::operator =(const JsonValue& jsonValue)
       m_attributes[LayerAttributesKeysMapper::GetLayerAttributesKeysForName(attributesItem.first)] = attributesItem.second.AsString();
     }
     m_attributesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CloudWatchLogsConfiguration"))
+  {
+    m_cloudWatchLogsConfiguration = jsonValue.GetObject("CloudWatchLogsConfiguration");
+
+    m_cloudWatchLogsConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CustomInstanceProfileArn"))
@@ -298,6 +307,12 @@ JsonValue Layer::Jsonize() const
      attributesJsonMap.WithString(LayerAttributesKeysMapper::GetNameForLayerAttributesKeys(attributesItem.first), attributesItem.second);
    }
    payload.WithObject("Attributes", std::move(attributesJsonMap));
+
+  }
+
+  if(m_cloudWatchLogsConfigurationHasBeenSet)
+  {
+   payload.WithObject("CloudWatchLogsConfiguration", m_cloudWatchLogsConfiguration.Jsonize());
 
   }
 

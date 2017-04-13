@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/gamelift/model/PlayerLatencyPolicy.h>
 #include <aws/gamelift/model/GameSessionQueueDestination.h>
 #include <utility>
 
@@ -34,10 +35,18 @@ namespace Model
 {
 
   /**
-   * <p>Configuration of a queue used to process game session placement requests. The
-   * queue configuration identifies the fleets that new game session can be placed
-   * on, given available resources, and the length of time a request can remain in
-   * the queue waiting for placement.</p> <p>Queue-related operations include:</p>
+   * <p>Configuration of a queue that is used to process game session placement
+   * requests. The queue configuration identifies several game features:</p> <ul>
+   * <li> <p>The destinations where a new game session can potentially be hosted.
+   * Amazon GameLift tries these destinations in an order based on either the queue's
+   * default order or player latency information, if provided in a placement request.
+   * With latency information, Amazon GameLift can place game sessions where the
+   * majority of players are reporting the lowest possible latency. </p> </li> <li>
+   * <p>The length of time that placement requests can wait in the queue before
+   * timing out. </p> </li> <li> <p>A set of optional latency policies that protect
+   * individual players from high latencies, preventing game sessions from being
+   * placed where any individual player is reporting latency higher than a policy's
+   * maximum.</p> </li> </ul> <p>Queue-related operations include the following:</p>
    * <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
    * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
    * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
@@ -96,6 +105,62 @@ namespace Model
     inline GameSessionQueue& WithName(const char* value) { SetName(value); return *this;}
 
     /**
+     * <p>Amazon Resource Name (<a
+     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a game session queue and uniquely identifies it. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     */
+    inline const Aws::String& GetGameSessionQueueArn() const{ return m_gameSessionQueueArn; }
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a game session queue and uniquely identifies it. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     */
+    inline void SetGameSessionQueueArn(const Aws::String& value) { m_gameSessionQueueArnHasBeenSet = true; m_gameSessionQueueArn = value; }
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a game session queue and uniquely identifies it. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     */
+    inline void SetGameSessionQueueArn(Aws::String&& value) { m_gameSessionQueueArnHasBeenSet = true; m_gameSessionQueueArn = std::move(value); }
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a game session queue and uniquely identifies it. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     */
+    inline void SetGameSessionQueueArn(const char* value) { m_gameSessionQueueArnHasBeenSet = true; m_gameSessionQueueArn.assign(value); }
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a game session queue and uniquely identifies it. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     */
+    inline GameSessionQueue& WithGameSessionQueueArn(const Aws::String& value) { SetGameSessionQueueArn(value); return *this;}
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a game session queue and uniquely identifies it. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     */
+    inline GameSessionQueue& WithGameSessionQueueArn(Aws::String&& value) { SetGameSessionQueueArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a game session queue and uniquely identifies it. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     */
+    inline GameSessionQueue& WithGameSessionQueueArn(const char* value) { SetGameSessionQueueArn(value); return *this;}
+
+    /**
      * <p>Maximum time, in seconds, that a new game session placement request remains
      * in the queue. When a request exceeds this time, the game session placement
      * changes to a TIMED_OUT status.</p>
@@ -115,6 +180,90 @@ namespace Model
      * changes to a TIMED_OUT status.</p>
      */
     inline GameSessionQueue& WithTimeoutInSeconds(int value) { SetTimeoutInSeconds(value); return *this;}
+
+    /**
+     * <p>Collection of latency policies to apply when processing game sessions
+     * placement requests with player latency information. Multiple policies are
+     * evaluated in order of the maximum latency value, starting with the lowest
+     * latency values. With just one policy, it is enforced at the start of the game
+     * session placement for the duration period. With multiple policies, each policy
+     * is enforced consecutively for its duration period. For example, a queue might
+     * enforce a 60-second policy followed by a 120-second policy, and then no policy
+     * for the remainder of the placement. </p>
+     */
+    inline const Aws::Vector<PlayerLatencyPolicy>& GetPlayerLatencyPolicies() const{ return m_playerLatencyPolicies; }
+
+    /**
+     * <p>Collection of latency policies to apply when processing game sessions
+     * placement requests with player latency information. Multiple policies are
+     * evaluated in order of the maximum latency value, starting with the lowest
+     * latency values. With just one policy, it is enforced at the start of the game
+     * session placement for the duration period. With multiple policies, each policy
+     * is enforced consecutively for its duration period. For example, a queue might
+     * enforce a 60-second policy followed by a 120-second policy, and then no policy
+     * for the remainder of the placement. </p>
+     */
+    inline void SetPlayerLatencyPolicies(const Aws::Vector<PlayerLatencyPolicy>& value) { m_playerLatencyPoliciesHasBeenSet = true; m_playerLatencyPolicies = value; }
+
+    /**
+     * <p>Collection of latency policies to apply when processing game sessions
+     * placement requests with player latency information. Multiple policies are
+     * evaluated in order of the maximum latency value, starting with the lowest
+     * latency values. With just one policy, it is enforced at the start of the game
+     * session placement for the duration period. With multiple policies, each policy
+     * is enforced consecutively for its duration period. For example, a queue might
+     * enforce a 60-second policy followed by a 120-second policy, and then no policy
+     * for the remainder of the placement. </p>
+     */
+    inline void SetPlayerLatencyPolicies(Aws::Vector<PlayerLatencyPolicy>&& value) { m_playerLatencyPoliciesHasBeenSet = true; m_playerLatencyPolicies = std::move(value); }
+
+    /**
+     * <p>Collection of latency policies to apply when processing game sessions
+     * placement requests with player latency information. Multiple policies are
+     * evaluated in order of the maximum latency value, starting with the lowest
+     * latency values. With just one policy, it is enforced at the start of the game
+     * session placement for the duration period. With multiple policies, each policy
+     * is enforced consecutively for its duration period. For example, a queue might
+     * enforce a 60-second policy followed by a 120-second policy, and then no policy
+     * for the remainder of the placement. </p>
+     */
+    inline GameSessionQueue& WithPlayerLatencyPolicies(const Aws::Vector<PlayerLatencyPolicy>& value) { SetPlayerLatencyPolicies(value); return *this;}
+
+    /**
+     * <p>Collection of latency policies to apply when processing game sessions
+     * placement requests with player latency information. Multiple policies are
+     * evaluated in order of the maximum latency value, starting with the lowest
+     * latency values. With just one policy, it is enforced at the start of the game
+     * session placement for the duration period. With multiple policies, each policy
+     * is enforced consecutively for its duration period. For example, a queue might
+     * enforce a 60-second policy followed by a 120-second policy, and then no policy
+     * for the remainder of the placement. </p>
+     */
+    inline GameSessionQueue& WithPlayerLatencyPolicies(Aws::Vector<PlayerLatencyPolicy>&& value) { SetPlayerLatencyPolicies(std::move(value)); return *this;}
+
+    /**
+     * <p>Collection of latency policies to apply when processing game sessions
+     * placement requests with player latency information. Multiple policies are
+     * evaluated in order of the maximum latency value, starting with the lowest
+     * latency values. With just one policy, it is enforced at the start of the game
+     * session placement for the duration period. With multiple policies, each policy
+     * is enforced consecutively for its duration period. For example, a queue might
+     * enforce a 60-second policy followed by a 120-second policy, and then no policy
+     * for the remainder of the placement. </p>
+     */
+    inline GameSessionQueue& AddPlayerLatencyPolicies(const PlayerLatencyPolicy& value) { m_playerLatencyPoliciesHasBeenSet = true; m_playerLatencyPolicies.push_back(value); return *this; }
+
+    /**
+     * <p>Collection of latency policies to apply when processing game sessions
+     * placement requests with player latency information. Multiple policies are
+     * evaluated in order of the maximum latency value, starting with the lowest
+     * latency values. With just one policy, it is enforced at the start of the game
+     * session placement for the duration period. With multiple policies, each policy
+     * is enforced consecutively for its duration period. For example, a queue might
+     * enforce a 60-second policy followed by a 120-second policy, and then no policy
+     * for the remainder of the placement. </p>
+     */
+    inline GameSessionQueue& AddPlayerLatencyPolicies(PlayerLatencyPolicy&& value) { m_playerLatencyPoliciesHasBeenSet = true; m_playerLatencyPolicies.push_back(std::move(value)); return *this; }
 
     /**
      * <p>List of fleets that can be used to fulfill game session placement requests in
@@ -168,8 +317,12 @@ namespace Model
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
+    Aws::String m_gameSessionQueueArn;
+    bool m_gameSessionQueueArnHasBeenSet;
     int m_timeoutInSeconds;
     bool m_timeoutInSecondsHasBeenSet;
+    Aws::Vector<PlayerLatencyPolicy> m_playerLatencyPolicies;
+    bool m_playerLatencyPoliciesHasBeenSet;
     Aws::Vector<GameSessionQueueDestination> m_destinations;
     bool m_destinationsHasBeenSet;
   };

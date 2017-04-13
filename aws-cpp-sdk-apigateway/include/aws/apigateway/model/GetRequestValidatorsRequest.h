@@ -1,0 +1,150 @@
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/apigateway/APIGateway_EXPORTS.h>
+#include <aws/apigateway/APIGatewayRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Http
+{
+    class URI;
+} //namespace Http
+namespace APIGateway
+{
+namespace Model
+{
+
+  /**
+   * <p>Gets the <a>RequestValidators</a> collection of a given
+   * <a>RestApi</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidatorsRequest">AWS
+   * API Reference</a></p>
+   */
+  class AWS_APIGATEWAY_API GetRequestValidatorsRequest : public APIGatewayRequest
+  {
+  public:
+    GetRequestValidatorsRequest();
+    Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+
+    /**
+     * <p>[Required] The identifier of a <a>RestApi</a> to which the
+     * <a>RequestValidators</a> collection belongs.</p>
+     */
+    inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
+
+    /**
+     * <p>[Required] The identifier of a <a>RestApi</a> to which the
+     * <a>RequestValidators</a> collection belongs.</p>
+     */
+    inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+
+    /**
+     * <p>[Required] The identifier of a <a>RestApi</a> to which the
+     * <a>RequestValidators</a> collection belongs.</p>
+     */
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
+
+    /**
+     * <p>[Required] The identifier of a <a>RestApi</a> to which the
+     * <a>RequestValidators</a> collection belongs.</p>
+     */
+    inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
+
+    /**
+     * <p>[Required] The identifier of a <a>RestApi</a> to which the
+     * <a>RequestValidators</a> collection belongs.</p>
+     */
+    inline GetRequestValidatorsRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
+
+    /**
+     * <p>[Required] The identifier of a <a>RestApi</a> to which the
+     * <a>RequestValidators</a> collection belongs.</p>
+     */
+    inline GetRequestValidatorsRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
+
+    /**
+     * <p>[Required] The identifier of a <a>RestApi</a> to which the
+     * <a>RequestValidators</a> collection belongs.</p>
+     */
+    inline GetRequestValidatorsRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
+    /**
+     * <p>The current pagination position in the paged result set.</p>
+     */
+    inline const Aws::String& GetPosition() const{ return m_position; }
+
+    /**
+     * <p>The current pagination position in the paged result set.</p>
+     */
+    inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
+
+    /**
+     * <p>The current pagination position in the paged result set.</p>
+     */
+    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
+
+    /**
+     * <p>The current pagination position in the paged result set.</p>
+     */
+    inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
+
+    /**
+     * <p>The current pagination position in the paged result set.</p>
+     */
+    inline GetRequestValidatorsRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
+
+    /**
+     * <p>The current pagination position in the paged result set.</p>
+     */
+    inline GetRequestValidatorsRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
+
+    /**
+     * <p>The current pagination position in the paged result set.</p>
+     */
+    inline GetRequestValidatorsRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
+
+    /**
+     * <p>The maximum number of returned results per page.</p>
+     */
+    inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of returned results per page.</p>
+     */
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
+
+    /**
+     * <p>The maximum number of returned results per page.</p>
+     */
+    inline GetRequestValidatorsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
+  private:
+    Aws::String m_restApiId;
+    bool m_restApiIdHasBeenSet;
+    Aws::String m_position;
+    bool m_positionHasBeenSet;
+    int m_limit;
+    bool m_limitHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace APIGateway
+} // namespace Aws
