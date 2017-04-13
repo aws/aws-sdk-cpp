@@ -1,26 +1,33 @@
-# When using AWSSDK package, users need to identify the installation root dir
+# When using AWSSDK package, users need to tell the installation root dir
 # by setting up variable as set(AWSSDK_ROOT_DIR, "<path/to/dir>")
-# In Windows this is like C:/Progra~1/AWSSDK/
-# In Unix like system this is like /usr/local/
+# In Windows the dir is like C:/Progra~1/AWSSDK/
+# In Unix like system the dir is like /usr/local/
+# if AWSSDK_ROOT_DIR doesn't appear, this module will identify it automatically
 
-# The cmake files will all be in <prefix>/lib/cmake dir
-# The hearders will all be in <prefix>/include dir
+# By default:
+#   The cmake files will all be in <prefix>/lib/cmake dir
+#   The hearders will all be in <prefix>/include dir
 
-# The libraries will all be in <prefix>/lib dir
-# The binaries will all be in <prefix>/bin dir
-# The archives will all be in <prefix>/lib dir if target is shared, otherwise will be in <prefix>/bin dir.
+#   The libraries will all be in <prefix>/lib/<platform_prefix> dir
+#   The binaries will all be in <prefix>/bin/<platform_prefix> dir
+#   The archives will all be in <prefix>/lib/<platform_prefix> dir if target is shared, 
+#   otherwise will be in <prefix>/bin/<platform_prefix> dir.
 
-# If the compile time option SIMPLE_INSTALL is turned off
-# users also need to set variable as set(AWSSDK_PLATFORM_PREFIX, "<linux/intel64/config>")
+# Platfrom_prefix is determined on compile time nbu option SIMPLE_INSTALL
+# such as "<linux/intel64>"
+
+include(${CMAKE_CURRENT_LIST_DIR}/AWSSDKConfigVersion.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/sdksCommon.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/platformDeps.cmake)
 
 unset(AWSSDK_FOUND CACHE)
 
 # Compute the default installation root relative to this file.
-# from xx/lib/cmake/AWSSDK/xx.cmake to xx/
-get_filename_component(AWSSDK_ROOT_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
-get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
-get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
-get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
+# from prefix/lib/cmake/AWSSDK/xx.cmake to prefix
+get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
+get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
+get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
 if(AWSSDK_DEFAULT_ROOT_DIR STREQUAL "/")
   set(AWSSDK_DEFAULT_ROOT_DIR "")
 endif()
@@ -34,6 +41,7 @@ else()
         "/usr/include/aws/core"
         "/usr/local/include/aws/core"
         "C:/Progra~1/AWSSDK/include/aws/core"
+        "C:/AWSSDK/include/aws/core"
         "${AWSSDK_DEFAULT_ROOT_DIR}/include/aws/core"
     )
 endif()
@@ -57,6 +65,11 @@ endif()
 if (AWSSDK_PLATFORM_PREFIX)
     find_library(AWSSDK_CORE_LIB_FILE aws-cpp-sdk-core
             "${AWSSDK_ROOT_DIR}/lib/${AWSSDK_PLATFORM_PREFIX}"
+            "${AWSSDK_ROOT_DIR}/lib/${AWSSDK_PLATFORM_PREFIX}/Debug"
+            "${AWSSDK_ROOT_DIR}/lib/${AWSSDK_PLATFORM_PREFIX}/DebugOpt"
+            "${AWSSDK_ROOT_DIR}/lib/${AWSSDK_PLATFORM_PREFIX}/Release"
+            "${AWSSDK_ROOT_DIR}/lib/${AWSSDK_PLATFORM_PREFIX}/RelWithDebInfo"
+            "${AWSSDK_ROOT_DIR}/lib/${AWSSDK_PLATFORM_PREFIX}/MinSizeRel"
             NO_DEFAULT_PATH
             )
 else()
@@ -79,10 +92,6 @@ while (NOT TEMP_NAME STREQUAL "lib")
 endwhile()
 
 set(AWSSDK_PLATFORM_PREFIX "${TEMP_PLATFORM_PREFIX}")
-
-include(${CMAKE_CURRENT_LIST_DIR}/AWSSDKConfigVersion.cmake)
-include(${CMAKE_CURRENT_LIST_DIR}/sdksCommon.cmake)
-include(${CMAKE_CURRENT_LIST_DIR}/platformDeps.cmake)
 
 SET(AWSSDK_FOUND "1")
 set(AWSSDK_INCLUDE_DIR "${AWSSDK_DEFAULT_ROOT_DIR}/include")
@@ -127,7 +136,7 @@ macro(AWSSDK_CPY_DYN_LIBS SERVICE_LIST CONFIG DEST_DIR)
     list(REMOVE_DUPLICATES ALL_SERVICES)
 
     foreach(SVC IN LISTS ALL_SERVICES)
-        find_library(LIB_PATH "aws-cpp-sdk-${SVC}" "${AWSSDK_LIB_DIR}/${CONFIG}")
+        find_library(LIB_PATH "aws-cpp-sdk-${SVC}" "${AWSSDK_LIB_DIR}/${CONFIG}" NO_DEFAULT_PATH)
         if (NOT LIB_PATH)
             Message(FATAL_ERROR "Couldn't find library aws-cpp-sdk-${SVC}")
         endif()
@@ -138,9 +147,22 @@ endmacro(AWSSDK_CPY_DYN_LIBS)
 
 # output link libs command to OUTPUT_VAR which required by all services from SERVCE_LIST
 macro(AWSSDK_DETERMINE_LIBS_TO_LINK SERVICE_LIST OUTPUT_VAR)
-#
-#
-#
+    set(ALL_SERVICES "core")
+
+    foreach(SVC IN LISTS ${SERVICE_LIST})
+        list(APPEND ALL_SERVICES ${SVC})
+        get_dependencies_for_sdk(${SVC} DEPENDENCY_LIST)
+        if (DEPENDENCY_LIST)
+            STRING(REPLACE "," ";" LIST_RESULT ${DEPENDENCY_LIST})
+            list(APPEND ALL_SERVICES ${LIST_RESULT})
+        endif()
+        unset(DEPENDENCY_LIST CACHE)
+    endforeach()
+    list(REMOVE_DUPLICATES ALL_SERVICES)
+    set(${OUTPUT_VAR} "")
+    foreach(DEP IN LISTS ALL_SERVICES)
+        list(APPEND ${OUTPUT_VAR} "aws-cpp-sdk-${DEP}")
+    endforeach()
 endmacro(AWSSDK_DETERMINE_LIBS_TO_LINK)
 
 # output high level lib dependencies such as for transfter; sqs; dynamodb etc.
