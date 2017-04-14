@@ -148,8 +148,26 @@ elseif(ENABLE_WINDOWS_CLIENT)
     endif()
 endif()
 
-add_sdks()
+# setup user specified installation directory if any, regardless previous platform default settings
+if (CMAKE_INSTALL_BINDIR)
+    SET(BINARY_DIRECTORY "${CMAKE_INSTALL_BINDIR}")
+endif()
 
+if (CMAKE_INSTALL_LIBDIR)
+    SET(LIBRARY_DIRECTORY "${CMAKE_INSTALL_LIBDIR}")
+endif()
+
+if (CMAKE_INSTALL_INCLUDEDIR)
+    SET(INCLUDE_DIRECTORY "${CMAKE_INSTALL_INCLUDEDIR}")
+endif()
+
+if(BUILD_SHARED_LIBS)
+    SET(ARCHIVE_DIRECTORY "${BINARY_DIRECTORY}")
+else()
+    SET(ARCHIVE_DIRECTORY "${LIBRARY_DIRECTORY}")
+endif()
+
+add_sdks()
 
 # for user friendly sdk manager
 add_subdirectory(AWSSDK)
