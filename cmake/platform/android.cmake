@@ -1,7 +1,7 @@
 
 macro(verify_tools)
     # TODO: don't do this if the user is supplying their own curl/openssl/zlib
-    # minimum version of cmake that 
+    # minimum version of cmake that
     #   (1) supports ExternalProject_Add URL_HASH
     #   (2) correctly extracts OPENSSL's version number from openssl/opensslv.h in version 1.0.2d
     cmake_minimum_required (VERSION 3.1.2)
@@ -41,7 +41,7 @@ macro(determine_stdlib_and_api)
 
         # With gnustl, API level can go as low as 3, but let's make a reasonably modern default
         if(NOT ANDROID_NATIVE_API_LEVEL)
-            set(ANDROID_NATIVE_API_LEVEL "android-19") 
+            set(ANDROID_NATIVE_API_LEVEL "android-19")
         endif()
 
         set(STANDALONE_TOOLCHAIN_STL "gnustl")
@@ -170,7 +170,7 @@ macro(initialize_toolchain)
                 set(__MAKE_TOOLCHAIN_OPTIONS "${__MAKE_TOOLCHAIN_OPTIONS} --ndk-dir=${NDK_DIR} --toolchain=${__TOOLCHAIN} ${LLVM_OPTIONS} --platform=${ANDROID_NATIVE_API_LEVEL}")
 
                 execute_process(
-                    COMMAND ${TOOLCHAIN_SCRIPT_HOST} ${NDK_DIR}/build/tools/make-standalone-toolchain.sh --ndk-dir=${NDK_DIR} --toolchain=${__TOOLCHAIN} ${LLVM_OPTIONS} 
+                    COMMAND ${TOOLCHAIN_SCRIPT_HOST} ${NDK_DIR}/build/tools/make-standalone-toolchain.sh --ndk-dir=${NDK_DIR} --toolchain=${__TOOLCHAIN} ${LLVM_OPTIONS}
                     --platform=${ANDROID_NATIVE_API_LEVEL} --stl=${STANDALONE_TOOLCHAIN_STL} --install-dir=${STANDALONE_TOOLCHAIN_DIR} WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
                 )
             else()
@@ -204,7 +204,10 @@ macro(apply_pre_project_platform_settings)
     set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/platform/android.toolchain.cmake)
 
     # android-specific required overrrides
-    set(CUSTOM_MEMORY_MANAGEMENT "1")
+    if (NOT DEFINED CUSTOM_MEMORY_MANAGEMENT)
+        set(CUSTOM_MEMORY_MANAGEMENT "1")
+    endif()
+
     set(ANDROID_STL_FORCE_FEATURES "OFF")
 
     # android-specific parameter defaults
