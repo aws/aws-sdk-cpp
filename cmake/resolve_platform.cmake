@@ -31,6 +31,7 @@ else()
 endif()
 
 # directory defaults; linux overrides these on SIMPLE_INSTALL builds
+# user sepficied cmake variables (cmake -DVAR=xx) will further overrides these
 SET(BINARY_DIRECTORY "bin")
 SET(LIBRARY_DIRECTORY "lib")
 SET(INCLUDE_DIRECTORY "include")

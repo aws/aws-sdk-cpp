@@ -31,11 +31,26 @@
 # Platfrom_prefix is determined on compile time nbu option SIMPLE_INSTALL
 # such as "<linux/intel64>"
 
+unset(AWSSDK_FOUND CACHE)
+
+# set default platform prefix to "", but it could be inherited from platfromDeps if any
+unset(AWSSDK_PLATFORM_PREFIX CACHE)
+
 include(${CMAKE_CURRENT_LIST_DIR}/AWSSDKConfigVersion.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/sdksCommon.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/platformDeps.cmake)
 
-unset(AWSSDK_FOUND CACHE)
+if (NOT AWSSDK_LIB_INSTALLDIR)
+    set(AWSSDK_LIB_INSTALLDIR "lib")
+endif()
+
+if (NOT AWSSDK_BIN_INSTALLDIR)
+    set(AWSSDK_BIN_INSTALLDIR "bin")
+endif()
+
+if (NOT AWSSDK_INCLUDE_INSTALLDIR)
+    set(AWSSDK_INCLUDE_INSTALLDIR "include")
+endif()
 
 # Compute the default installation root relative to this file.
 # from prefix/lib/cmake/AWSSDK/xx.cmake to prefix
@@ -50,16 +65,17 @@ endif()
 # currently AWSSDK_ROOT_DIR is either empty or user specified
 if (AWSSDK_ROOT_DIR)
     find_file(AWSSDK_CORE_HEADER_FILE Aws.h
-            "${AWSSDK_ROOT_DIR}/include/aws/core")
+            "${AWSSDK_ROOT_DIR}/${AWSSDK_INCLUDE_INSTALLDIR}/aws/core")
 else()
     find_file(AWSSDK_CORE_HEADER_FILE Aws.h
-        "/usr/include/aws/core"
-        "/usr/local/include/aws/core"
-        "C:/Progra~1/AWSSDK/include/aws/core"
-        "C:/Program Files/AWSSDK/include/aws/core"
-        "C:/Program Files/aws-cpp-sdk-all/include/aws/core"
-        "C:/AWSSDK/include/aws/core"
-        "${AWSSDK_DEFAULT_ROOT_DIR}/include/aws/core"
+        "/usr/${AWSSDK_INCLUDE_INSTALLDIR}/aws/core"
+        "/usr/local/${AWSSDK_INCLUDE_INSTALLDIR}/aws/core"
+        "C:/Progra~1/AWSSDK/${AWSSDK_INCLUDE_INSTALLDIR}/aws/core"
+        "C:/Program Files/AWSSDK/${AWSSDK_INCLUDE_INSTALLDIR}/aws/core"
+        "C:/Program Files/aws-cpp-sdk-all/${AWSSDK_INCLUDE_INSTALLDIR}/aws/core"
+        "C:/Program Files (x86)/aws-cpp-sdk-all/${AWSSDK_INCLUDE_INSTALLDIR}/aws/core"
+        "C:/AWSSDK/${AWSSDK_INCLUDE_INSTALLDIR}/aws/core"
+        "${AWSSDK_DEFAULT_ROOT_DIR}/${AWSSDK_INCLUDE_INSTALLDIR}/aws/core"
     )
 endif()
 
@@ -79,20 +95,16 @@ if (NOT AWSSDK_ROOT_DIR)
             becomes empty")
 endif()
 
-if (AWSSDK_PLATFORM_PREFIX)
-    find_library(AWSSDK_CORE_LIB_FILE aws-cpp-sdk-core
-            "${AWSSDK_ROOT_DIR}/lib/${AWSSDK_PLATFORM_PREFIX}"
-            "${AWSSDK_ROOT_DIR}/lib/${AWSSDK_PLATFORM_PREFIX}/Debug"
-            "${AWSSDK_ROOT_DIR}/lib/${AWSSDK_PLATFORM_PREFIX}/DebugOpt"
-            "${AWSSDK_ROOT_DIR}/lib/${AWSSDK_PLATFORM_PREFIX}/Release"
-            "${AWSSDK_ROOT_DIR}/lib/${AWSSDK_PLATFORM_PREFIX}/RelWithDebInfo"
-            "${AWSSDK_ROOT_DIR}/lib/${AWSSDK_PLATFORM_PREFIX}/MinSizeRel"
-            NO_DEFAULT_PATH
-            )
-else()
-    find_library(AWSSDK_CORE_LIB_FILE aws-cpp-sdk-core
-            "${AWSSDK_ROOT_DIR}/lib")
-endif()
+
+find_library(AWSSDK_CORE_LIB_FILE aws-cpp-sdk-core
+        "${AWSSDK_ROOT_DIR}/${AWSSDK_LIB_INSTALLDIR}/${AWSSDK_PLATFORM_PREFIX}"
+        "${AWSSDK_ROOT_DIR}/${AWSSDK_LIB_INSTALLDIR}/${AWSSDK_PLATFORM_PREFIX}/Debug"
+        "${AWSSDK_ROOT_DIR}/${AWSSDK_LIB_INSTALLDIR}/${AWSSDK_PLATFORM_PREFIX}/DebugOpt"
+        "${AWSSDK_ROOT_DIR}/${AWSSDK_LIB_INSTALLDIR}/${AWSSDK_PLATFORM_PREFIX}/Release"
+        "${AWSSDK_ROOT_DIR}/${AWSSDK_LIB_INSTALLDIR}/${AWSSDK_PLATFORM_PREFIX}/RelWithDebInfo"
+        "${AWSSDK_ROOT_DIR}/${AWSSDK_LIB_INSTALLDIR}/${AWSSDK_PLATFORM_PREFIX}/MinSizeRel"
+        NO_DEFAULT_PATH)
+
 
 if (NOT AWSSDK_CORE_LIB_FILE)
     Message(FATAL_ERROR "AWSSDK header of core exists, but libray is missing")
@@ -102,7 +114,7 @@ endif()
 get_filename_component(TEMP_PATH "${AWSSDK_CORE_LIB_FILE}" PATH)
 get_filename_component(TEMP_NAME "${TEMP_PATH}" NAME)
 
-while (NOT TEMP_NAME STREQUAL "lib")
+while (NOT TEMP_NAME STREQUAL ${AWSSDK_LIB_INSTALLDIR})
     set(TEMP_PLATFORM_PREFIX "${TEMP_NAME}/${TEMP_PLATFORM_PREFIX}")
     get_filename_component(TEMP_PATH "${TEMP_PATH}" PATH) 
     get_filename_component(TEMP_NAME "${TEMP_PATH}" NAME)
@@ -111,26 +123,26 @@ endwhile()
 set(AWSSDK_PLATFORM_PREFIX "${TEMP_PLATFORM_PREFIX}")
 
 SET(AWSSDK_FOUND "1")
-set(AWSSDK_INCLUDE_DIR "${AWSSDK_DEFAULT_ROOT_DIR}/include")
-set(AWSSDK_CMAKE_DIR "${AWSSDK_DEFAULT_ROOT_DIR}/lib/cmake")
-set(AWSSDK_LIB_DIR "${AWSSDK_DEFAULT_ROOT_DIR}/lib/${AWSSDK_PLATFORM_PREFIX}")
-set(AWSSDK_BIN_DIR "${AWSSDK_DEFAULT_ROOT_DIR}/bin/${AWSSDK_PLATFORM_PREFIX}")
+set(AWSSDK_INCLUDE_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_INCLUDE_INSTALLDIR}")
+set(AWSSDK_CMAKE_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_LIB_INSTALLDIR}/cmake")
+set(AWSSDK_LIB_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_LIB_INSTALLDIR}/${AWSSDK_PLATFORM_PREFIX}")
+set(AWSSDK_BIN_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_BIN_INSTALLDIR}/${AWSSDK_PLATFORM_PREFIX}")
 
 
-if (PLATFORM_DEPS)
-	set(AWSSDK_PLATFORM_DEPS "${PLATFORM_DEPS}")
+if (AWSSDK_PLATFORM_DEPS_LIBS)
+	set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS_LIBS}")
 endif()
 
-if (CRYPTO_LIBS)
-	set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${CRYPTO_LIBS}")
+if (AWSSDK_CRYPTO_LIBS)
+	set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${AWSSDK_CRYPTO_LIBS}")
 endif()
 
-if (CLIENT_LIBS)
-	set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${CLIEND_LIBS}")
+if (AWSSDK_CLIENT_LIBS)
+	set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${AWSSDK_CLIENT_LIBS}")
 endif()
 
-if (ADDITIONAL_LIBS)
-	set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${ADDITIONAL_LIBS}")
+if (AWSSDK_ADDITIONAL_LIBS)
+	set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${AWSSDK_ADDITIONAL_LIBS}")
 endif()
 
 Message(STATUS "Find AWSSDK, Version: ${PACKAGE_VERSION}, install Root:${AWSSDK_ROOT_DIR}, Platform prefix:${AWSSDK_PLATFORM_PREFIX}, Platform Dependent Libraries: ${AWSSDK_PLATFORM_DEPS}")
