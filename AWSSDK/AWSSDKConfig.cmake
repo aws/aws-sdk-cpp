@@ -56,6 +56,8 @@ else()
         "/usr/include/aws/core"
         "/usr/local/include/aws/core"
         "C:/Progra~1/AWSSDK/include/aws/core"
+        "C:/Program Files/AWSSDK/include/aws/core"
+        "C:/Program Files/aws-cpp-sdk-all/include/aws/core"
         "C:/AWSSDK/include/aws/core"
         "${AWSSDK_DEFAULT_ROOT_DIR}/include/aws/core"
     )
