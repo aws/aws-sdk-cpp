@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The domain name of the <a>BasePathMapping</a> resource to be described.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The domain name of the <a>BasePathMapping</a> resource to be described.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The domain name of the <a>BasePathMapping</a> resource to be described.</p>
      */
-    inline GetBasePathMappingRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline GetBasePathMappingRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The domain name of the <a>BasePathMapping</a> resource to be described.</p>
@@ -94,7 +95,7 @@ namespace Model
      * a single API. Leave this blank if you do not want callers to specify any base
      * path name after the domain name.</p>
      */
-    inline void SetBasePath(Aws::String&& value) { m_basePathHasBeenSet = true; m_basePath = value; }
+    inline void SetBasePath(Aws::String&& value) { m_basePathHasBeenSet = true; m_basePath = std::move(value); }
 
     /**
      * <p>The base path name that callers of the API must provide as part of the URL
@@ -118,7 +119,7 @@ namespace Model
      * a single API. Leave this blank if you do not want callers to specify any base
      * path name after the domain name.</p>
      */
-    inline GetBasePathMappingRequest& WithBasePath(Aws::String&& value) { SetBasePath(value); return *this;}
+    inline GetBasePathMappingRequest& WithBasePath(Aws::String&& value) { SetBasePath(std::move(value)); return *this;}
 
     /**
      * <p>The base path name that callers of the API must provide as part of the URL

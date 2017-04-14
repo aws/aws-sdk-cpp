@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
      * 255 characters.</p>
      */
-    inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
+    inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = std::move(value); }
 
     /**
      * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
@@ -76,7 +77,7 @@ namespace Model
      * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
      * 255 characters.</p>
      */
-    inline CreateEventSubscriptionRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(value); return *this;}
+    inline CreateEventSubscriptionRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
@@ -103,7 +104,7 @@ namespace Model
      * notification. The ARN is created by Amazon SNS when you create a topic and
      * subscribe to it.</p>
      */
-    inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
+    inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
@@ -124,7 +125,7 @@ namespace Model
      * notification. The ARN is created by Amazon SNS when you create a topic and
      * subscribe to it.</p>
      */
-    inline CreateEventSubscriptionRequest& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(value); return *this;}
+    inline CreateEventSubscriptionRequest& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
@@ -164,7 +165,7 @@ namespace Model
      * <code>db-security-group</code> | <code>db-snapshot</code> |
      * <code>db-cluster-snapshot</code> </p>
      */
-    inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
      * <p>The type of source that will be generating the events. For example, if you
@@ -197,7 +198,7 @@ namespace Model
      * <code>db-security-group</code> | <code>db-snapshot</code> |
      * <code>db-cluster-snapshot</code> </p>
      */
-    inline CreateEventSubscriptionRequest& WithSourceType(Aws::String&& value) { SetSourceType(value); return *this;}
+    inline CreateEventSubscriptionRequest& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
 
     /**
      * <p>The type of source that will be generating the events. For example, if you
@@ -235,7 +236,7 @@ namespace Model
      * topic in the Amazon RDS User Guide or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */
-    inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
+    inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::move(value); }
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
@@ -253,7 +254,7 @@ namespace Model
      * topic in the Amazon RDS User Guide or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */
-    inline CreateEventSubscriptionRequest& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(value); return *this;}
+    inline CreateEventSubscriptionRequest& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(std::move(value)); return *this;}
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
@@ -271,7 +272,7 @@ namespace Model
      * topic in the Amazon RDS User Guide or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */
-    inline CreateEventSubscriptionRequest& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
+    inline CreateEventSubscriptionRequest& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(std::move(value)); return *this; }
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
@@ -328,7 +329,7 @@ namespace Model
      * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
      * supplied.</p> </li> </ul>
      */
-    inline void SetSourceIds(Aws::Vector<Aws::String>&& value) { m_sourceIdsHasBeenSet = true; m_sourceIds = value; }
+    inline void SetSourceIds(Aws::Vector<Aws::String>&& value) { m_sourceIdsHasBeenSet = true; m_sourceIds = std::move(value); }
 
     /**
      * <p>The list of identifiers of the event sources for which events will be
@@ -360,7 +361,7 @@ namespace Model
      * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
      * supplied.</p> </li> </ul>
      */
-    inline CreateEventSubscriptionRequest& WithSourceIds(Aws::Vector<Aws::String>&& value) { SetSourceIds(value); return *this;}
+    inline CreateEventSubscriptionRequest& WithSourceIds(Aws::Vector<Aws::String>&& value) { SetSourceIds(std::move(value)); return *this;}
 
     /**
      * <p>The list of identifiers of the event sources for which events will be
@@ -392,7 +393,7 @@ namespace Model
      * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
      * supplied.</p> </li> </ul>
      */
-    inline CreateEventSubscriptionRequest& AddSourceIds(Aws::String&& value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(value); return *this; }
+    inline CreateEventSubscriptionRequest& AddSourceIds(Aws::String&& value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of identifiers of the event sources for which events will be
@@ -435,19 +436,19 @@ namespace Model
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     
     inline CreateEventSubscriptionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     
-    inline CreateEventSubscriptionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline CreateEventSubscriptionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     
     inline CreateEventSubscriptionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     
-    inline CreateEventSubscriptionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateEventSubscriptionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_subscriptionName;

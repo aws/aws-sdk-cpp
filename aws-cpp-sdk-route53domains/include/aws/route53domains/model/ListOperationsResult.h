@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53domains/model/OperationSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * list of operation summaries</p> <p>Children: <code>OperationId</code>,
      * <code>Status</code>, <code>SubmittedDate</code>, <code>Type</code></p>
      */
-    inline void SetOperations(Aws::Vector<OperationSummary>&& value) { m_operations = value; }
+    inline void SetOperations(Aws::Vector<OperationSummary>&& value) { m_operations = std::move(value); }
 
     /**
      * <p>Lists summaries of the operations.</p> <p>Type: Complex type containing a
@@ -80,7 +81,7 @@ namespace Model
      * list of operation summaries</p> <p>Children: <code>OperationId</code>,
      * <code>Status</code>, <code>SubmittedDate</code>, <code>Type</code></p>
      */
-    inline ListOperationsResult& WithOperations(Aws::Vector<OperationSummary>&& value) { SetOperations(value); return *this;}
+    inline ListOperationsResult& WithOperations(Aws::Vector<OperationSummary>&& value) { SetOperations(std::move(value)); return *this;}
 
     /**
      * <p>Lists summaries of the operations.</p> <p>Type: Complex type containing a
@@ -94,7 +95,7 @@ namespace Model
      * list of operation summaries</p> <p>Children: <code>OperationId</code>,
      * <code>Status</code>, <code>SubmittedDate</code>, <code>Type</code></p>
      */
-    inline ListOperationsResult& AddOperations(OperationSummary&& value) { m_operations.push_back(value); return *this; }
+    inline ListOperationsResult& AddOperations(OperationSummary&& value) { m_operations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If there are more operations than you specified for <code>MaxItems</code> in
@@ -118,7 +119,7 @@ namespace Model
      * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p> <p>Type:
      * String</p> <p>Parent: <code>Operations</code></p>
      */
-    inline void SetNextPageMarker(Aws::String&& value) { m_nextPageMarker = value; }
+    inline void SetNextPageMarker(Aws::String&& value) { m_nextPageMarker = std::move(value); }
 
     /**
      * <p>If there are more operations than you specified for <code>MaxItems</code> in
@@ -142,7 +143,7 @@ namespace Model
      * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p> <p>Type:
      * String</p> <p>Parent: <code>Operations</code></p>
      */
-    inline ListOperationsResult& WithNextPageMarker(Aws::String&& value) { SetNextPageMarker(value); return *this;}
+    inline ListOperationsResult& WithNextPageMarker(Aws::String&& value) { SetNextPageMarker(std::move(value)); return *this;}
 
     /**
      * <p>If there are more operations than you specified for <code>MaxItems</code> in

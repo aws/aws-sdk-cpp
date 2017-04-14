@@ -16,6 +16,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The identifier of the directory of which to take a snapshot.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>The identifier of the directory of which to take a snapshot.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The identifier of the directory of which to take a snapshot.</p>
      */
-    inline CreateSnapshotRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline CreateSnapshotRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the directory of which to take a snapshot.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The descriptive name to apply to the snapshot.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The descriptive name to apply to the snapshot.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The descriptive name to apply to the snapshot.</p>
      */
-    inline CreateSnapshotRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateSnapshotRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The descriptive name to apply to the snapshot.</p>

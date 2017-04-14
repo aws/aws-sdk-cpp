@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to
      * list change sets.</p>
      */
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
+    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to
@@ -74,7 +75,7 @@ namespace Model
      * <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to
      * list change sets.</p>
      */
-    inline ListChangeSetsRequest& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
+    inline ListChangeSetsRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to
@@ -98,7 +99,7 @@ namespace Model
      * <p>A string (provided by the <a>ListChangeSets</a> response output) that
      * identifies the next page of change sets that you want to retrieve.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>A string (provided by the <a>ListChangeSets</a> response output) that
@@ -116,7 +117,7 @@ namespace Model
      * <p>A string (provided by the <a>ListChangeSets</a> response output) that
      * identifies the next page of change sets that you want to retrieve.</p>
      */
-    inline ListChangeSetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListChangeSetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A string (provided by the <a>ListChangeSets</a> response output) that

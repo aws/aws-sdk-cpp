@@ -16,6 +16,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/ServiceCatalogRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 #include <aws/core/utils/UUID.h>
 
 namespace Aws
@@ -55,7 +56,7 @@ namespace Model
      * either <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>,
      * but not both.</p>
      */
-    inline void SetProvisionedProductName(Aws::String&& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = value; }
+    inline void SetProvisionedProductName(Aws::String&& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = std::move(value); }
 
     /**
      * <p>The name of the ProvisionedProduct object to terminate. You must specify
@@ -76,7 +77,7 @@ namespace Model
      * either <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>,
      * but not both.</p>
      */
-    inline TerminateProvisionedProductRequest& WithProvisionedProductName(Aws::String&& value) { SetProvisionedProductName(value); return *this;}
+    inline TerminateProvisionedProductRequest& WithProvisionedProductName(Aws::String&& value) { SetProvisionedProductName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the ProvisionedProduct object to terminate. You must specify
@@ -104,7 +105,7 @@ namespace Model
      * specify either <code>ProvisionedProductName</code> or
      * <code>ProvisionedProductId</code>, but not both.</p>
      */
-    inline void SetProvisionedProductId(Aws::String&& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = value; }
+    inline void SetProvisionedProductId(Aws::String&& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = std::move(value); }
 
     /**
      * <p>The identifier of the ProvisionedProduct object to terminate. You must
@@ -125,7 +126,7 @@ namespace Model
      * specify either <code>ProvisionedProductName</code> or
      * <code>ProvisionedProductId</code>, but not both.</p>
      */
-    inline TerminateProvisionedProductRequest& WithProvisionedProductId(Aws::String&& value) { SetProvisionedProductId(value); return *this;}
+    inline TerminateProvisionedProductRequest& WithProvisionedProductId(Aws::String&& value) { SetProvisionedProductId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the ProvisionedProduct object to terminate. You must
@@ -159,7 +160,7 @@ namespace Model
      * object always return <b>ResourceNotFound</b> regardless of the value of
      * <code>TerminateToken</code>.</p>
      */
-    inline void SetTerminateToken(Aws::String&& value) { m_terminateTokenHasBeenSet = true; m_terminateToken = value; }
+    inline void SetTerminateToken(Aws::String&& value) { m_terminateTokenHasBeenSet = true; m_terminateToken = std::move(value); }
 
     /**
      * <p>An idempotency token that uniquely identifies the termination request. This
@@ -186,7 +187,7 @@ namespace Model
      * object always return <b>ResourceNotFound</b> regardless of the value of
      * <code>TerminateToken</code>.</p>
      */
-    inline TerminateProvisionedProductRequest& WithTerminateToken(Aws::String&& value) { SetTerminateToken(value); return *this;}
+    inline TerminateProvisionedProductRequest& WithTerminateToken(Aws::String&& value) { SetTerminateToken(std::move(value)); return *this;}
 
     /**
      * <p>An idempotency token that uniquely identifies the termination request. This
@@ -234,7 +235,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
+    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -255,7 +256,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline TerminateProvisionedProductRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(value); return *this;}
+    inline TerminateProvisionedProductRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as

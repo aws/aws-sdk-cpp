@@ -17,6 +17,7 @@
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/InventoryConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * The name of the bucket where the inventory configuration will be stored.
      */
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * The name of the bucket where the inventory configuration will be stored.
@@ -68,7 +69,7 @@ namespace Model
     /**
      * The name of the bucket where the inventory configuration will be stored.
      */
-    inline PutBucketInventoryConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline PutBucketInventoryConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * The name of the bucket where the inventory configuration will be stored.
@@ -88,7 +89,7 @@ namespace Model
     /**
      * The ID used to identify the inventory configuration.
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * The ID used to identify the inventory configuration.
@@ -103,7 +104,7 @@ namespace Model
     /**
      * The ID used to identify the inventory configuration.
      */
-    inline PutBucketInventoryConfigurationRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline PutBucketInventoryConfigurationRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * The ID used to identify the inventory configuration.
@@ -123,7 +124,7 @@ namespace Model
     /**
      * Specifies the inventory configuration.
      */
-    inline void SetInventoryConfiguration(InventoryConfiguration&& value) { m_inventoryConfigurationHasBeenSet = true; m_inventoryConfiguration = value; }
+    inline void SetInventoryConfiguration(InventoryConfiguration&& value) { m_inventoryConfigurationHasBeenSet = true; m_inventoryConfiguration = std::move(value); }
 
     /**
      * Specifies the inventory configuration.
@@ -133,7 +134,7 @@ namespace Model
     /**
      * Specifies the inventory configuration.
      */
-    inline PutBucketInventoryConfigurationRequest& WithInventoryConfiguration(InventoryConfiguration&& value) { SetInventoryConfiguration(value); return *this;}
+    inline PutBucketInventoryConfigurationRequest& WithInventoryConfiguration(InventoryConfiguration&& value) { SetInventoryConfiguration(std::move(value)); return *this;}
 
   private:
     Aws::String m_bucket;

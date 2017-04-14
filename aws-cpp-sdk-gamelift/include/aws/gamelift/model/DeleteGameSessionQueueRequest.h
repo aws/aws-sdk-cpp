@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -25,6 +26,9 @@ namespace Model
 {
 
   /**
+   * <p>Represents the input for a request action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameSessionQueueInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API DeleteGameSessionQueueRequest : public GameLiftRequest
   {
@@ -51,7 +55,7 @@ namespace Model
      * <p>Descriptive label that is associated with queue. Queue names must be unique
      * within each region.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Descriptive label that is associated with queue. Queue names must be unique
@@ -69,7 +73,7 @@ namespace Model
      * <p>Descriptive label that is associated with queue. Queue names must be unique
      * within each region.</p>
      */
-    inline DeleteGameSessionQueueRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline DeleteGameSessionQueueRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with queue. Queue names must be unique

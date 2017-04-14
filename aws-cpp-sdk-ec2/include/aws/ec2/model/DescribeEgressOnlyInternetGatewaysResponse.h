@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/EgressOnlyInternetGateway.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>Information about the egress-only Internet gateways.</p>
      */
-    inline void SetEgressOnlyInternetGateways(Aws::Vector<EgressOnlyInternetGateway>&& value) { m_egressOnlyInternetGateways = value; }
+    inline void SetEgressOnlyInternetGateways(Aws::Vector<EgressOnlyInternetGateway>&& value) { m_egressOnlyInternetGateways = std::move(value); }
 
     /**
      * <p>Information about the egress-only Internet gateways.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>Information about the egress-only Internet gateways.</p>
      */
-    inline DescribeEgressOnlyInternetGatewaysResponse& WithEgressOnlyInternetGateways(Aws::Vector<EgressOnlyInternetGateway>&& value) { SetEgressOnlyInternetGateways(value); return *this;}
+    inline DescribeEgressOnlyInternetGatewaysResponse& WithEgressOnlyInternetGateways(Aws::Vector<EgressOnlyInternetGateway>&& value) { SetEgressOnlyInternetGateways(std::move(value)); return *this;}
 
     /**
      * <p>Information about the egress-only Internet gateways.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>Information about the egress-only Internet gateways.</p>
      */
-    inline DescribeEgressOnlyInternetGatewaysResponse& AddEgressOnlyInternetGateways(EgressOnlyInternetGateway&& value) { m_egressOnlyInternetGateways.push_back(value); return *this; }
+    inline DescribeEgressOnlyInternetGatewaysResponse& AddEgressOnlyInternetGateways(EgressOnlyInternetGateway&& value) { m_egressOnlyInternetGateways.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use to retrieve the next page of results.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The token to use to retrieve the next page of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use to retrieve the next page of results.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The token to use to retrieve the next page of results.</p>
      */
-    inline DescribeEgressOnlyInternetGatewaysResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeEgressOnlyInternetGatewaysResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use to retrieve the next page of results.</p>
@@ -119,13 +120,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeEgressOnlyInternetGatewaysResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeEgressOnlyInternetGatewaysResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeEgressOnlyInternetGatewaysResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<EgressOnlyInternetGateway> m_egressOnlyInternetGateways;

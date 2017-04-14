@@ -23,6 +23,7 @@
 #include <aws/ec2/model/OfferingTypeValues.h>
 #include <aws/ec2/model/OfferingClassType.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>One or more Reserved Instances offering IDs.</p>
      */
-    inline void SetReservedInstancesOfferingIds(Aws::Vector<Aws::String>&& value) { m_reservedInstancesOfferingIdsHasBeenSet = true; m_reservedInstancesOfferingIds = value; }
+    inline void SetReservedInstancesOfferingIds(Aws::Vector<Aws::String>&& value) { m_reservedInstancesOfferingIdsHasBeenSet = true; m_reservedInstancesOfferingIds = std::move(value); }
 
     /**
      * <p>One or more Reserved Instances offering IDs.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>One or more Reserved Instances offering IDs.</p>
      */
-    inline DescribeReservedInstancesOfferingsRequest& WithReservedInstancesOfferingIds(Aws::Vector<Aws::String>&& value) { SetReservedInstancesOfferingIds(value); return *this;}
+    inline DescribeReservedInstancesOfferingsRequest& WithReservedInstancesOfferingIds(Aws::Vector<Aws::String>&& value) { SetReservedInstancesOfferingIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more Reserved Instances offering IDs.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>One or more Reserved Instances offering IDs.</p>
      */
-    inline DescribeReservedInstancesOfferingsRequest& AddReservedInstancesOfferingIds(Aws::String&& value) { m_reservedInstancesOfferingIdsHasBeenSet = true; m_reservedInstancesOfferingIds.push_back(value); return *this; }
+    inline DescribeReservedInstancesOfferingsRequest& AddReservedInstancesOfferingIds(Aws::String&& value) { m_reservedInstancesOfferingIdsHasBeenSet = true; m_reservedInstancesOfferingIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more Reserved Instances offering IDs.</p>
@@ -134,7 +135,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type that the reservation will cover (for example,
@@ -150,7 +151,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
-    inline DescribeReservedInstancesOfferingsRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(value); return *this;}
+    inline DescribeReservedInstancesOfferingsRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
@@ -165,7 +166,7 @@ namespace Model
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
@@ -180,7 +181,7 @@ namespace Model
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
      */
-    inline DescribeReservedInstancesOfferingsRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline DescribeReservedInstancesOfferingsRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
@@ -203,7 +204,7 @@ namespace Model
      * <p>The Reserved Instance product platform description. Instances that include
      * <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
      */
-    inline void SetProductDescription(RIProductDescription&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
+    inline void SetProductDescription(RIProductDescription&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = std::move(value); }
 
     /**
      * <p>The Reserved Instance product platform description. Instances that include
@@ -215,7 +216,7 @@ namespace Model
      * <p>The Reserved Instance product platform description. Instances that include
      * <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
      */
-    inline DescribeReservedInstancesOfferingsRequest& WithProductDescription(RIProductDescription&& value) { SetProductDescription(value); return *this;}
+    inline DescribeReservedInstancesOfferingsRequest& WithProductDescription(RIProductDescription&& value) { SetProductDescription(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
@@ -308,7 +309,7 @@ namespace Model
      * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
      * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
@@ -370,7 +371,7 @@ namespace Model
      * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
      * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
      */
-    inline DescribeReservedInstancesOfferingsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeReservedInstancesOfferingsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
@@ -432,7 +433,7 @@ namespace Model
      * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
      * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
      */
-    inline DescribeReservedInstancesOfferingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeReservedInstancesOfferingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The tenancy of the instances covered by the reservation. A Reserved Instance
@@ -456,7 +457,7 @@ namespace Model
      * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>Default:
      * <code>default</code> </p>
      */
-    inline void SetInstanceTenancy(Tenancy&& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
+    inline void SetInstanceTenancy(Tenancy&& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = std::move(value); }
 
     /**
      * <p>The tenancy of the instances covered by the reservation. A Reserved Instance
@@ -472,7 +473,7 @@ namespace Model
      * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>Default:
      * <code>default</code> </p>
      */
-    inline DescribeReservedInstancesOfferingsRequest& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(value); return *this;}
+    inline DescribeReservedInstancesOfferingsRequest& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(std::move(value)); return *this;}
 
     /**
      * <p>The Reserved Instance offering type. If you are using tools that predate the
@@ -493,7 +494,7 @@ namespace Model
      * 2011-11-01 API version, you only have access to the <code>Medium
      * Utilization</code> Reserved Instance offering type. </p>
      */
-    inline void SetOfferingType(OfferingTypeValues&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
+    inline void SetOfferingType(OfferingTypeValues&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::move(value); }
 
     /**
      * <p>The Reserved Instance offering type. If you are using tools that predate the
@@ -507,7 +508,7 @@ namespace Model
      * 2011-11-01 API version, you only have access to the <code>Medium
      * Utilization</code> Reserved Instance offering type. </p>
      */
-    inline DescribeReservedInstancesOfferingsRequest& WithOfferingType(OfferingTypeValues&& value) { SetOfferingType(value); return *this;}
+    inline DescribeReservedInstancesOfferingsRequest& WithOfferingType(OfferingTypeValues&& value) { SetOfferingType(std::move(value)); return *this;}
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -522,7 +523,7 @@ namespace Model
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -537,7 +538,7 @@ namespace Model
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
-    inline DescribeReservedInstancesOfferingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeReservedInstancesOfferingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -653,7 +654,7 @@ namespace Model
      * <p>The offering class of the Reserved Instance. Can be <code>standard</code> or
      * <code>convertible</code>.</p>
      */
-    inline void SetOfferingClass(OfferingClassType&& value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
+    inline void SetOfferingClass(OfferingClassType&& value) { m_offeringClassHasBeenSet = true; m_offeringClass = std::move(value); }
 
     /**
      * <p>The offering class of the Reserved Instance. Can be <code>standard</code> or
@@ -665,7 +666,7 @@ namespace Model
      * <p>The offering class of the Reserved Instance. Can be <code>standard</code> or
      * <code>convertible</code>.</p>
      */
-    inline DescribeReservedInstancesOfferingsRequest& WithOfferingClass(OfferingClassType&& value) { SetOfferingClass(value); return *this;}
+    inline DescribeReservedInstancesOfferingsRequest& WithOfferingClass(OfferingClassType&& value) { SetOfferingClass(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

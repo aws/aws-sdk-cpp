@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The amount of user storage for the bundle.</p>
      */
-    inline void SetCapacity(Aws::String&& value) { m_capacityHasBeenSet = true; m_capacity = value; }
+    inline void SetCapacity(Aws::String&& value) { m_capacityHasBeenSet = true; m_capacity = std::move(value); }
 
     /**
      * <p>The amount of user storage for the bundle.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The amount of user storage for the bundle.</p>
      */
-    inline UserStorage& WithCapacity(Aws::String&& value) { SetCapacity(value); return *this;}
+    inline UserStorage& WithCapacity(Aws::String&& value) { SetCapacity(std::move(value)); return *this;}
 
     /**
      * <p>The amount of user storage for the bundle.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * <p>A user-supplied ID that uniquely identifies the datasource. This value should
      * be identical to the value of the <code>DataSourceID</code> in the request. </p>
      */
-    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceId = value; }
+    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceId = std::move(value); }
 
     /**
      * <p>A user-supplied ID that uniquely identifies the datasource. This value should
@@ -86,7 +87,7 @@ namespace Model
      * <p>A user-supplied ID that uniquely identifies the datasource. This value should
      * be identical to the value of the <code>DataSourceID</code> in the request. </p>
      */
-    inline CreateDataSourceFromRDSResult& WithDataSourceId(Aws::String&& value) { SetDataSourceId(value); return *this;}
+    inline CreateDataSourceFromRDSResult& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied ID that uniquely identifies the datasource. This value should

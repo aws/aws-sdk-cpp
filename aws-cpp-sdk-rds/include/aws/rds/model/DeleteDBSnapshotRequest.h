@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The DBSnapshot identifier.</p> <p>Constraints: Must be the name of an
      * existing DB snapshot in the <code>available</code> state.</p>
      */
-    inline void SetDBSnapshotIdentifier(Aws::String&& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
+    inline void SetDBSnapshotIdentifier(Aws::String&& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = std::move(value); }
 
     /**
      * <p>The DBSnapshot identifier.</p> <p>Constraints: Must be the name of an
@@ -74,7 +75,7 @@ namespace Model
      * <p>The DBSnapshot identifier.</p> <p>Constraints: Must be the name of an
      * existing DB snapshot in the <code>available</code> state.</p>
      */
-    inline DeleteDBSnapshotRequest& WithDBSnapshotIdentifier(Aws::String&& value) { SetDBSnapshotIdentifier(value); return *this;}
+    inline DeleteDBSnapshotRequest& WithDBSnapshotIdentifier(Aws::String&& value) { SetDBSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The DBSnapshot identifier.</p> <p>Constraints: Must be the name of an

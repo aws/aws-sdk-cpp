@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/InstanceType.h>
 #include <aws/codedeploy/model/LifecycleEvent.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The deployment ID.</p>
      */
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
+    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
      * <p>The deployment ID.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The deployment ID.</p>
      */
-    inline InstanceSummary& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
+    inline InstanceSummary& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
      * <p>The deployment ID.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The instance ID.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
-    inline InstanceSummary& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline InstanceSummary& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The instance ID.</p>
@@ -149,7 +150,7 @@ namespace Model
      * deployment has been skipped for this instance.</p> </li> <li> <p>Unknown: The
      * deployment status is unknown for this instance.</p> </li> </ul>
      */
-    inline void SetStatus(InstanceStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(InstanceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The deployment status for this instance:</p> <ul> <li> <p>Pending: The
@@ -171,7 +172,7 @@ namespace Model
      * deployment has been skipped for this instance.</p> </li> <li> <p>Unknown: The
      * deployment status is unknown for this instance.</p> </li> </ul>
      */
-    inline InstanceSummary& WithStatus(InstanceStatus&& value) { SetStatus(value); return *this;}
+    inline InstanceSummary& WithStatus(InstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>A timestamp indicating when the instance information was last updated.</p>
@@ -186,7 +187,7 @@ namespace Model
     /**
      * <p>A timestamp indicating when the instance information was last updated.</p>
      */
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
+    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
 
     /**
      * <p>A timestamp indicating when the instance information was last updated.</p>
@@ -196,7 +197,7 @@ namespace Model
     /**
      * <p>A timestamp indicating when the instance information was last updated.</p>
      */
-    inline InstanceSummary& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(value); return *this;}
+    inline InstanceSummary& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
 
     /**
      * <p>A list of lifecycle events for this instance.</p>
@@ -211,7 +212,7 @@ namespace Model
     /**
      * <p>A list of lifecycle events for this instance.</p>
      */
-    inline void SetLifecycleEvents(Aws::Vector<LifecycleEvent>&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents = value; }
+    inline void SetLifecycleEvents(Aws::Vector<LifecycleEvent>&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents = std::move(value); }
 
     /**
      * <p>A list of lifecycle events for this instance.</p>
@@ -221,7 +222,7 @@ namespace Model
     /**
      * <p>A list of lifecycle events for this instance.</p>
      */
-    inline InstanceSummary& WithLifecycleEvents(Aws::Vector<LifecycleEvent>&& value) { SetLifecycleEvents(value); return *this;}
+    inline InstanceSummary& WithLifecycleEvents(Aws::Vector<LifecycleEvent>&& value) { SetLifecycleEvents(std::move(value)); return *this;}
 
     /**
      * <p>A list of lifecycle events for this instance.</p>
@@ -231,7 +232,7 @@ namespace Model
     /**
      * <p>A list of lifecycle events for this instance.</p>
      */
-    inline InstanceSummary& AddLifecycleEvents(LifecycleEvent&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents.push_back(value); return *this; }
+    inline InstanceSummary& AddLifecycleEvents(LifecycleEvent&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Information about which environment an instance belongs to in a blue/green
@@ -255,7 +256,7 @@ namespace Model
      * environment.</p> </li> <li> <p>GREEN: The instance is part of the replacement
      * environment.</p> </li> </ul>
      */
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>Information about which environment an instance belongs to in a blue/green
@@ -271,7 +272,7 @@ namespace Model
      * environment.</p> </li> <li> <p>GREEN: The instance is part of the replacement
      * environment.</p> </li> </ul>
      */
-    inline InstanceSummary& WithInstanceType(InstanceType&& value) { SetInstanceType(value); return *this;}
+    inline InstanceSummary& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
   private:
     Aws::String m_deploymentId;

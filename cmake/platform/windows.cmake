@@ -17,5 +17,6 @@ macro(apply_post_project_platform_settings)
     endif()    
    
     set(PLATFORM_DEP_LIBS Userenv Rpcrt4 version)    
+    set(PLATFORM_DEP_LIBS_ABSTRACT_NAME Userenv Rpcrt4 version)
 
 endmacro()

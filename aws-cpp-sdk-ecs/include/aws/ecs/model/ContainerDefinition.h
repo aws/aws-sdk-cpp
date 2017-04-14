@@ -24,6 +24,7 @@
 #include <aws/ecs/model/VolumeFrom.h>
 #include <aws/ecs/model/HostEntry.h>
 #include <aws/ecs/model/Ulimit.h>
+#include <utility>
 
 namespace Aws
 {
@@ -93,7 +94,7 @@ namespace Model
      * Remote API</a> and the <code>--name</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. </p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of a container. If you are linking multiple containers together in a
@@ -135,7 +136,7 @@ namespace Model
      * Remote API</a> and the <code>--name</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. </p>
      */
-    inline ContainerDefinition& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ContainerDefinition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a container. If you are linking multiple containers together in a
@@ -230,7 +231,7 @@ namespace Model
      * <p>Images in other online repositories are qualified further by a domain name
      * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
-    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = value; }
+    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
@@ -311,7 +312,7 @@ namespace Model
      * <p>Images in other online repositories are qualified further by a domain name
      * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
-    inline ContainerDefinition& WithImage(Aws::String&& value) { SetImage(value); return *this;}
+    inline ContainerDefinition& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
@@ -668,7 +669,7 @@ namespace Model
      * mappings. Network isolation is achieved on the container instance using security
      * groups and VPC settings.</p> </important>
      */
-    inline void SetLinks(Aws::Vector<Aws::String>&& value) { m_linksHasBeenSet = true; m_links = value; }
+    inline void SetLinks(Aws::Vector<Aws::String>&& value) { m_linksHasBeenSet = true; m_links = std::move(value); }
 
     /**
      * <p>The <code>link</code> parameter allows containers to communicate with each
@@ -712,7 +713,7 @@ namespace Model
      * mappings. Network isolation is achieved on the container instance using security
      * groups and VPC settings.</p> </important>
      */
-    inline ContainerDefinition& WithLinks(Aws::Vector<Aws::String>&& value) { SetLinks(value); return *this;}
+    inline ContainerDefinition& WithLinks(Aws::Vector<Aws::String>&& value) { SetLinks(std::move(value)); return *this;}
 
     /**
      * <p>The <code>link</code> parameter allows containers to communicate with each
@@ -756,7 +757,7 @@ namespace Model
      * mappings. Network isolation is achieved on the container instance using security
      * groups and VPC settings.</p> </important>
      */
-    inline ContainerDefinition& AddLinks(Aws::String&& value) { m_linksHasBeenSet = true; m_links.push_back(value); return *this; }
+    inline ContainerDefinition& AddLinks(Aws::String&& value) { m_linksHasBeenSet = true; m_links.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The <code>link</code> parameter allows containers to communicate with each
@@ -838,7 +839,7 @@ namespace Model
      * description of a selected task in the Amazon ECS console, or the
      * <code>networkBindings</code> section <a>DescribeTasks</a> responses.</p> </note>
      */
-    inline void SetPortMappings(Aws::Vector<PortMapping>&& value) { m_portMappingsHasBeenSet = true; m_portMappings = value; }
+    inline void SetPortMappings(Aws::Vector<PortMapping>&& value) { m_portMappingsHasBeenSet = true; m_portMappings = std::move(value); }
 
     /**
      * <p>The list of port mappings for the container. Port mappings allow containers
@@ -878,7 +879,7 @@ namespace Model
      * description of a selected task in the Amazon ECS console, or the
      * <code>networkBindings</code> section <a>DescribeTasks</a> responses.</p> </note>
      */
-    inline ContainerDefinition& WithPortMappings(Aws::Vector<PortMapping>&& value) { SetPortMappings(value); return *this;}
+    inline ContainerDefinition& WithPortMappings(Aws::Vector<PortMapping>&& value) { SetPortMappings(std::move(value)); return *this;}
 
     /**
      * <p>The list of port mappings for the container. Port mappings allow containers
@@ -918,7 +919,7 @@ namespace Model
      * description of a selected task in the Amazon ECS console, or the
      * <code>networkBindings</code> section <a>DescribeTasks</a> responses.</p> </note>
      */
-    inline ContainerDefinition& AddPortMappings(PortMapping&& value) { m_portMappingsHasBeenSet = true; m_portMappings.push_back(value); return *this; }
+    inline ContainerDefinition& AddPortMappings(PortMapping&& value) { m_portMappingsHasBeenSet = true; m_portMappings.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If the <code>essential</code> parameter of a container is marked as
@@ -1017,7 +1018,7 @@ namespace Model
      * information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#entrypoint">https://docs.docker.com/engine/reference/builder/#entrypoint</a>.</p>
      */
-    inline void SetEntryPoint(Aws::Vector<Aws::String>&& value) { m_entryPointHasBeenSet = true; m_entryPoint = value; }
+    inline void SetEntryPoint(Aws::Vector<Aws::String>&& value) { m_entryPointHasBeenSet = true; m_entryPoint = std::move(value); }
 
     /**
      * <important> <p>Early versions of the Amazon ECS container agent do not properly
@@ -1051,7 +1052,7 @@ namespace Model
      * information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#entrypoint">https://docs.docker.com/engine/reference/builder/#entrypoint</a>.</p>
      */
-    inline ContainerDefinition& WithEntryPoint(Aws::Vector<Aws::String>&& value) { SetEntryPoint(value); return *this;}
+    inline ContainerDefinition& WithEntryPoint(Aws::Vector<Aws::String>&& value) { SetEntryPoint(std::move(value)); return *this;}
 
     /**
      * <important> <p>Early versions of the Amazon ECS container agent do not properly
@@ -1085,7 +1086,7 @@ namespace Model
      * information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#entrypoint">https://docs.docker.com/engine/reference/builder/#entrypoint</a>.</p>
      */
-    inline ContainerDefinition& AddEntryPoint(Aws::String&& value) { m_entryPointHasBeenSet = true; m_entryPoint.push_back(value); return *this; }
+    inline ContainerDefinition& AddEntryPoint(Aws::String&& value) { m_entryPointHasBeenSet = true; m_entryPoint.push_back(std::move(value)); return *this; }
 
     /**
      * <important> <p>Early versions of the Amazon ECS container agent do not properly
@@ -1141,7 +1142,7 @@ namespace Model
      * information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
      */
-    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = value; }
+    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
 
     /**
      * <p>The command that is passed to the container. This parameter maps to
@@ -1167,7 +1168,7 @@ namespace Model
      * information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
      */
-    inline ContainerDefinition& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(value); return *this;}
+    inline ContainerDefinition& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
 
     /**
      * <p>The command that is passed to the container. This parameter maps to
@@ -1193,7 +1194,7 @@ namespace Model
      * information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
      */
-    inline ContainerDefinition& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
+    inline ContainerDefinition& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The command that is passed to the container. This parameter maps to
@@ -1245,7 +1246,7 @@ namespace Model
      * <important> <p>We do not recommend using plain text environment variables for
      * sensitive information, such as credential data.</p> </important>
      */
-    inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = value; }
+    inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
     /**
      * <p>The environment variables to pass to a container. This parameter maps to
@@ -1271,7 +1272,7 @@ namespace Model
      * <important> <p>We do not recommend using plain text environment variables for
      * sensitive information, such as credential data.</p> </important>
      */
-    inline ContainerDefinition& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(value); return *this;}
+    inline ContainerDefinition& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
      * <p>The environment variables to pass to a container. This parameter maps to
@@ -1297,7 +1298,7 @@ namespace Model
      * <important> <p>We do not recommend using plain text environment variables for
      * sensitive information, such as credential data.</p> </important>
      */
-    inline ContainerDefinition& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
+    inline ContainerDefinition& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The mount points for data volumes in your container. This parameter maps to
@@ -1330,7 +1331,7 @@ namespace Model
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline void SetMountPoints(Aws::Vector<MountPoint>&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = value; }
+    inline void SetMountPoints(Aws::Vector<MountPoint>&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = std::move(value); }
 
     /**
      * <p>The mount points for data volumes in your container. This parameter maps to
@@ -1352,7 +1353,7 @@ namespace Model
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline ContainerDefinition& WithMountPoints(Aws::Vector<MountPoint>&& value) { SetMountPoints(value); return *this;}
+    inline ContainerDefinition& WithMountPoints(Aws::Vector<MountPoint>&& value) { SetMountPoints(std::move(value)); return *this;}
 
     /**
      * <p>The mount points for data volumes in your container. This parameter maps to
@@ -1374,7 +1375,7 @@ namespace Model
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline ContainerDefinition& AddMountPoints(MountPoint&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(value); return *this; }
+    inline ContainerDefinition& AddMountPoints(MountPoint&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Data volumes to mount from another container. This parameter maps to
@@ -1407,7 +1408,7 @@ namespace Model
      * Remote API</a> and the <code>--volumes-from</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline void SetVolumesFrom(Aws::Vector<VolumeFrom>&& value) { m_volumesFromHasBeenSet = true; m_volumesFrom = value; }
+    inline void SetVolumesFrom(Aws::Vector<VolumeFrom>&& value) { m_volumesFromHasBeenSet = true; m_volumesFrom = std::move(value); }
 
     /**
      * <p>Data volumes to mount from another container. This parameter maps to
@@ -1429,7 +1430,7 @@ namespace Model
      * Remote API</a> and the <code>--volumes-from</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline ContainerDefinition& WithVolumesFrom(Aws::Vector<VolumeFrom>&& value) { SetVolumesFrom(value); return *this;}
+    inline ContainerDefinition& WithVolumesFrom(Aws::Vector<VolumeFrom>&& value) { SetVolumesFrom(std::move(value)); return *this;}
 
     /**
      * <p>Data volumes to mount from another container. This parameter maps to
@@ -1451,7 +1452,7 @@ namespace Model
      * Remote API</a> and the <code>--volumes-from</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline ContainerDefinition& AddVolumesFrom(VolumeFrom&& value) { m_volumesFromHasBeenSet = true; m_volumesFrom.push_back(value); return *this; }
+    inline ContainerDefinition& AddVolumesFrom(VolumeFrom&& value) { m_volumesFromHasBeenSet = true; m_volumesFrom.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The hostname to use for your container. This parameter maps to
@@ -1484,7 +1485,7 @@ namespace Model
      * Remote API</a> and the <code>--hostname</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
+    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
 
     /**
      * <p>The hostname to use for your container. This parameter maps to
@@ -1517,7 +1518,7 @@ namespace Model
      * Remote API</a> and the <code>--hostname</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline ContainerDefinition& WithHostname(Aws::String&& value) { SetHostname(value); return *this;}
+    inline ContainerDefinition& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
 
     /**
      * <p>The hostname to use for your container. This parameter maps to
@@ -1561,7 +1562,7 @@ namespace Model
      * Remote API</a> and the <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = value; }
+    inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
 
     /**
      * <p>The user name to use inside the container. This parameter maps to
@@ -1594,7 +1595,7 @@ namespace Model
      * Remote API</a> and the <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline ContainerDefinition& WithUser(Aws::String&& value) { SetUser(value); return *this;}
+    inline ContainerDefinition& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
 
     /**
      * <p>The user name to use inside the container. This parameter maps to
@@ -1638,7 +1639,7 @@ namespace Model
      * Remote API</a> and the <code>--workdir</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline void SetWorkingDirectory(Aws::String&& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = value; }
+    inline void SetWorkingDirectory(Aws::String&& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = std::move(value); }
 
     /**
      * <p>The working directory in which to run commands inside the container. This
@@ -1671,7 +1672,7 @@ namespace Model
      * Remote API</a> and the <code>--workdir</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline ContainerDefinition& WithWorkingDirectory(Aws::String&& value) { SetWorkingDirectory(value); return *this;}
+    inline ContainerDefinition& WithWorkingDirectory(Aws::String&& value) { SetWorkingDirectory(std::move(value)); return *this;}
 
     /**
      * <p>The working directory in which to run commands inside the container. This
@@ -1814,7 +1815,7 @@ namespace Model
      * Remote API</a> and the <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline void SetDnsServers(Aws::Vector<Aws::String>&& value) { m_dnsServersHasBeenSet = true; m_dnsServers = value; }
+    inline void SetDnsServers(Aws::Vector<Aws::String>&& value) { m_dnsServersHasBeenSet = true; m_dnsServers = std::move(value); }
 
     /**
      * <p>A list of DNS servers that are presented to the container. This parameter
@@ -1836,7 +1837,7 @@ namespace Model
      * Remote API</a> and the <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline ContainerDefinition& WithDnsServers(Aws::Vector<Aws::String>&& value) { SetDnsServers(value); return *this;}
+    inline ContainerDefinition& WithDnsServers(Aws::Vector<Aws::String>&& value) { SetDnsServers(std::move(value)); return *this;}
 
     /**
      * <p>A list of DNS servers that are presented to the container. This parameter
@@ -1858,7 +1859,7 @@ namespace Model
      * Remote API</a> and the <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline ContainerDefinition& AddDnsServers(Aws::String&& value) { m_dnsServersHasBeenSet = true; m_dnsServers.push_back(value); return *this; }
+    inline ContainerDefinition& AddDnsServers(Aws::String&& value) { m_dnsServersHasBeenSet = true; m_dnsServers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of DNS servers that are presented to the container. This parameter
@@ -1902,7 +1903,7 @@ namespace Model
      * Remote API</a> and the <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline void SetDnsSearchDomains(Aws::Vector<Aws::String>&& value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains = value; }
+    inline void SetDnsSearchDomains(Aws::Vector<Aws::String>&& value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains = std::move(value); }
 
     /**
      * <p>A list of DNS search domains that are presented to the container. This
@@ -1924,7 +1925,7 @@ namespace Model
      * Remote API</a> and the <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline ContainerDefinition& WithDnsSearchDomains(Aws::Vector<Aws::String>&& value) { SetDnsSearchDomains(value); return *this;}
+    inline ContainerDefinition& WithDnsSearchDomains(Aws::Vector<Aws::String>&& value) { SetDnsSearchDomains(std::move(value)); return *this;}
 
     /**
      * <p>A list of DNS search domains that are presented to the container. This
@@ -1946,7 +1947,7 @@ namespace Model
      * Remote API</a> and the <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline ContainerDefinition& AddDnsSearchDomains(Aws::String&& value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains.push_back(value); return *this; }
+    inline ContainerDefinition& AddDnsSearchDomains(Aws::String&& value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of DNS search domains that are presented to the container. This
@@ -1993,7 +1994,7 @@ namespace Model
      * Remote API</a> and the <code>--add-host</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline void SetExtraHosts(Aws::Vector<HostEntry>&& value) { m_extraHostsHasBeenSet = true; m_extraHosts = value; }
+    inline void SetExtraHosts(Aws::Vector<HostEntry>&& value) { m_extraHostsHasBeenSet = true; m_extraHosts = std::move(value); }
 
     /**
      * <p>A list of hostnames and IP address mappings to append to the
@@ -2017,7 +2018,7 @@ namespace Model
      * Remote API</a> and the <code>--add-host</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline ContainerDefinition& WithExtraHosts(Aws::Vector<HostEntry>&& value) { SetExtraHosts(value); return *this;}
+    inline ContainerDefinition& WithExtraHosts(Aws::Vector<HostEntry>&& value) { SetExtraHosts(std::move(value)); return *this;}
 
     /**
      * <p>A list of hostnames and IP address mappings to append to the
@@ -2041,7 +2042,7 @@ namespace Model
      * Remote API</a> and the <code>--add-host</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline ContainerDefinition& AddExtraHosts(HostEntry&& value) { m_extraHostsHasBeenSet = true; m_extraHosts.push_back(value); return *this; }
+    inline ContainerDefinition& AddExtraHosts(HostEntry&& value) { m_extraHostsHasBeenSet = true; m_extraHosts.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
@@ -2101,7 +2102,7 @@ namespace Model
      * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.</p> </note>
      */
-    inline void SetDockerSecurityOptions(Aws::Vector<Aws::String>&& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions = value; }
+    inline void SetDockerSecurityOptions(Aws::Vector<Aws::String>&& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions = std::move(value); }
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
@@ -2141,7 +2142,7 @@ namespace Model
      * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.</p> </note>
      */
-    inline ContainerDefinition& WithDockerSecurityOptions(Aws::Vector<Aws::String>&& value) { SetDockerSecurityOptions(value); return *this;}
+    inline ContainerDefinition& WithDockerSecurityOptions(Aws::Vector<Aws::String>&& value) { SetDockerSecurityOptions(std::move(value)); return *this;}
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
@@ -2181,7 +2182,7 @@ namespace Model
      * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.</p> </note>
      */
-    inline ContainerDefinition& AddDockerSecurityOptions(Aws::String&& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions.push_back(value); return *this; }
+    inline ContainerDefinition& AddDockerSecurityOptions(Aws::String&& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
@@ -2246,7 +2247,7 @@ namespace Model
      * instance, log into your container instance and run the following command:
      * <code>sudo docker version | grep "Server API version"</code> </p>
      */
-    inline void SetDockerLabels(Aws::Map<Aws::String, Aws::String>&& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels = value; }
+    inline void SetDockerLabels(Aws::Map<Aws::String, Aws::String>&& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels = std::move(value); }
 
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
@@ -2276,7 +2277,7 @@ namespace Model
      * instance, log into your container instance and run the following command:
      * <code>sudo docker version | grep "Server API version"</code> </p>
      */
-    inline ContainerDefinition& WithDockerLabels(Aws::Map<Aws::String, Aws::String>&& value) { SetDockerLabels(value); return *this;}
+    inline ContainerDefinition& WithDockerLabels(Aws::Map<Aws::String, Aws::String>&& value) { SetDockerLabels(std::move(value)); return *this;}
 
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
@@ -2291,7 +2292,7 @@ namespace Model
      * instance, log into your container instance and run the following command:
      * <code>sudo docker version | grep "Server API version"</code> </p>
      */
-    inline ContainerDefinition& AddDockerLabels(const Aws::String& key, const Aws::String& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels[key] = value; return *this; }
+    inline ContainerDefinition& AddDockerLabels(const Aws::String& key, const Aws::String& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels.emplace(key, value); return *this; }
 
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
@@ -2306,7 +2307,7 @@ namespace Model
      * instance, log into your container instance and run the following command:
      * <code>sudo docker version | grep "Server API version"</code> </p>
      */
-    inline ContainerDefinition& AddDockerLabels(Aws::String&& key, const Aws::String& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels[key] = value; return *this; }
+    inline ContainerDefinition& AddDockerLabels(Aws::String&& key, const Aws::String& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
@@ -2321,7 +2322,7 @@ namespace Model
      * instance, log into your container instance and run the following command:
      * <code>sudo docker version | grep "Server API version"</code> </p>
      */
-    inline ContainerDefinition& AddDockerLabels(const Aws::String& key, Aws::String&& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels[key] = value; return *this; }
+    inline ContainerDefinition& AddDockerLabels(const Aws::String& key, Aws::String&& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
@@ -2336,7 +2337,7 @@ namespace Model
      * instance, log into your container instance and run the following command:
      * <code>sudo docker version | grep "Server API version"</code> </p>
      */
-    inline ContainerDefinition& AddDockerLabels(Aws::String&& key, Aws::String&& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels[key] = value; return *this; }
+    inline ContainerDefinition& AddDockerLabels(Aws::String&& key, Aws::String&& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
@@ -2351,7 +2352,7 @@ namespace Model
      * instance, log into your container instance and run the following command:
      * <code>sudo docker version | grep "Server API version"</code> </p>
      */
-    inline ContainerDefinition& AddDockerLabels(const char* key, Aws::String&& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels[key] = value; return *this; }
+    inline ContainerDefinition& AddDockerLabels(const char* key, Aws::String&& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
@@ -2366,7 +2367,7 @@ namespace Model
      * instance, log into your container instance and run the following command:
      * <code>sudo docker version | grep "Server API version"</code> </p>
      */
-    inline ContainerDefinition& AddDockerLabels(Aws::String&& key, const char* value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels[key] = value; return *this; }
+    inline ContainerDefinition& AddDockerLabels(Aws::String&& key, const char* value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
@@ -2381,7 +2382,7 @@ namespace Model
      * instance, log into your container instance and run the following command:
      * <code>sudo docker version | grep "Server API version"</code> </p>
      */
-    inline ContainerDefinition& AddDockerLabels(const char* key, const char* value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels[key] = value; return *this; }
+    inline ContainerDefinition& AddDockerLabels(const char* key, const char* value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels.emplace(key, value); return *this; }
 
     /**
      * <p>A list of <code>ulimits</code> to set in the container. This parameter maps
@@ -2429,7 +2430,7 @@ namespace Model
      * into your container instance and run the following command: <code>sudo docker
      * version | grep "Server API version"</code> </p>
      */
-    inline void SetUlimits(Aws::Vector<Ulimit>&& value) { m_ulimitsHasBeenSet = true; m_ulimits = value; }
+    inline void SetUlimits(Aws::Vector<Ulimit>&& value) { m_ulimitsHasBeenSet = true; m_ulimits = std::move(value); }
 
     /**
      * <p>A list of <code>ulimits</code> to set in the container. This parameter maps
@@ -2461,7 +2462,7 @@ namespace Model
      * into your container instance and run the following command: <code>sudo docker
      * version | grep "Server API version"</code> </p>
      */
-    inline ContainerDefinition& WithUlimits(Aws::Vector<Ulimit>&& value) { SetUlimits(value); return *this;}
+    inline ContainerDefinition& WithUlimits(Aws::Vector<Ulimit>&& value) { SetUlimits(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>ulimits</code> to set in the container. This parameter maps
@@ -2493,7 +2494,7 @@ namespace Model
      * into your container instance and run the following command: <code>sudo docker
      * version | grep "Server API version"</code> </p>
      */
-    inline ContainerDefinition& AddUlimits(Ulimit&& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(value); return *this; }
+    inline ContainerDefinition& AddUlimits(Ulimit&& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The log configuration specification for the container. This parameter maps to
@@ -2598,7 +2599,7 @@ namespace Model
      * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.</p> </note>
      */
-    inline void SetLogConfiguration(LogConfiguration&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
+    inline void SetLogConfiguration(LogConfiguration&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
 
     /**
      * <p>The log configuration specification for the container. This parameter maps to
@@ -2668,7 +2669,7 @@ namespace Model
      * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.</p> </note>
      */
-    inline ContainerDefinition& WithLogConfiguration(LogConfiguration&& value) { SetLogConfiguration(value); return *this;}
+    inline ContainerDefinition& WithLogConfiguration(LogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

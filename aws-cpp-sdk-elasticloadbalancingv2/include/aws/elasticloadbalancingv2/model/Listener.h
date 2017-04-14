@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/Certificate.h>
 #include <aws/elasticloadbalancingv2/model/Action.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
-    inline void SetListenerArn(Aws::String&& value) { m_listenerArnHasBeenSet = true; m_listenerArn = value; }
+    inline void SetListenerArn(Aws::String&& value) { m_listenerArnHasBeenSet = true; m_listenerArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
-    inline Listener& WithListenerArn(Aws::String&& value) { SetListenerArn(value); return *this;}
+    inline Listener& WithListenerArn(Aws::String&& value) { SetListenerArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
-    inline void SetLoadBalancerArn(Aws::String&& value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn = value; }
+    inline void SetLoadBalancerArn(Aws::String&& value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
-    inline Listener& WithLoadBalancerArn(Aws::String&& value) { SetLoadBalancerArn(value); return *this;}
+    inline Listener& WithLoadBalancerArn(Aws::String&& value) { SetLoadBalancerArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>The protocol for connections from clients to the load balancer.</p>
      */
-    inline void SetProtocol(ProtocolEnum&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline void SetProtocol(ProtocolEnum&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol for connections from clients to the load balancer.</p>
@@ -158,7 +159,7 @@ namespace Model
     /**
      * <p>The protocol for connections from clients to the load balancer.</p>
      */
-    inline Listener& WithProtocol(ProtocolEnum&& value) { SetProtocol(value); return *this;}
+    inline Listener& WithProtocol(ProtocolEnum&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
      * <p>The SSL server certificate. You must provide a certificate if the protocol is
@@ -176,7 +177,7 @@ namespace Model
      * <p>The SSL server certificate. You must provide a certificate if the protocol is
      * HTTPS.</p>
      */
-    inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificatesHasBeenSet = true; m_certificates = value; }
+    inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificatesHasBeenSet = true; m_certificates = std::move(value); }
 
     /**
      * <p>The SSL server certificate. You must provide a certificate if the protocol is
@@ -188,7 +189,7 @@ namespace Model
      * <p>The SSL server certificate. You must provide a certificate if the protocol is
      * HTTPS.</p>
      */
-    inline Listener& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(value); return *this;}
+    inline Listener& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(std::move(value)); return *this;}
 
     /**
      * <p>The SSL server certificate. You must provide a certificate if the protocol is
@@ -200,7 +201,7 @@ namespace Model
      * <p>The SSL server certificate. You must provide a certificate if the protocol is
      * HTTPS.</p>
      */
-    inline Listener& AddCertificates(Certificate&& value) { m_certificatesHasBeenSet = true; m_certificates.push_back(value); return *this; }
+    inline Listener& AddCertificates(Certificate&& value) { m_certificatesHasBeenSet = true; m_certificates.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The security policy that defines which ciphers and protocols are supported.
@@ -218,7 +219,7 @@ namespace Model
      * <p>The security policy that defines which ciphers and protocols are supported.
      * The default is the current predefined security policy.</p>
      */
-    inline void SetSslPolicy(Aws::String&& value) { m_sslPolicyHasBeenSet = true; m_sslPolicy = value; }
+    inline void SetSslPolicy(Aws::String&& value) { m_sslPolicyHasBeenSet = true; m_sslPolicy = std::move(value); }
 
     /**
      * <p>The security policy that defines which ciphers and protocols are supported.
@@ -236,7 +237,7 @@ namespace Model
      * <p>The security policy that defines which ciphers and protocols are supported.
      * The default is the current predefined security policy.</p>
      */
-    inline Listener& WithSslPolicy(Aws::String&& value) { SetSslPolicy(value); return *this;}
+    inline Listener& WithSslPolicy(Aws::String&& value) { SetSslPolicy(std::move(value)); return *this;}
 
     /**
      * <p>The security policy that defines which ciphers and protocols are supported.
@@ -257,7 +258,7 @@ namespace Model
     /**
      * <p>The default actions for the listener.</p>
      */
-    inline void SetDefaultActions(Aws::Vector<Action>&& value) { m_defaultActionsHasBeenSet = true; m_defaultActions = value; }
+    inline void SetDefaultActions(Aws::Vector<Action>&& value) { m_defaultActionsHasBeenSet = true; m_defaultActions = std::move(value); }
 
     /**
      * <p>The default actions for the listener.</p>
@@ -267,7 +268,7 @@ namespace Model
     /**
      * <p>The default actions for the listener.</p>
      */
-    inline Listener& WithDefaultActions(Aws::Vector<Action>&& value) { SetDefaultActions(value); return *this;}
+    inline Listener& WithDefaultActions(Aws::Vector<Action>&& value) { SetDefaultActions(std::move(value)); return *this;}
 
     /**
      * <p>The default actions for the listener.</p>
@@ -277,7 +278,7 @@ namespace Model
     /**
      * <p>The default actions for the listener.</p>
      */
-    inline Listener& AddDefaultActions(Action&& value) { m_defaultActionsHasBeenSet = true; m_defaultActions.push_back(value); return *this; }
+    inline Listener& AddDefaultActions(Action&& value) { m_defaultActionsHasBeenSet = true; m_defaultActions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_listenerArn;

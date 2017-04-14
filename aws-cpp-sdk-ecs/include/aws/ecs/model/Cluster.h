@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i>
      * </code>..</p>
      */
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
+    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
@@ -104,7 +105,7 @@ namespace Model
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i>
      * </code>..</p>
      */
-    inline Cluster& WithClusterArn(Aws::String&& value) { SetClusterArn(value); return *this;}
+    inline Cluster& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>A user-generated string that you use to identify your cluster.</p>
      */
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
+    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
 
     /**
      * <p>A user-generated string that you use to identify your cluster.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>A user-generated string that you use to identify your cluster.</p>
      */
-    inline Cluster& WithClusterName(Aws::String&& value) { SetClusterName(value); return *this;}
+    inline Cluster& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
 
     /**
      * <p>A user-generated string that you use to identify your cluster.</p>
@@ -173,7 +174,7 @@ namespace Model
      * container instances with the cluster and the associated instances can accept
      * tasks.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the cluster. The valid values are <code>ACTIVE</code> or
@@ -197,7 +198,7 @@ namespace Model
      * container instances with the cluster and the associated instances can accept
      * tasks.</p>
      */
-    inline Cluster& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline Cluster& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the cluster. The valid values are <code>ACTIVE</code> or

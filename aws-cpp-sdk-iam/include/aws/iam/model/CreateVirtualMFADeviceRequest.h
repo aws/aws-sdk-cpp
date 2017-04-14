@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
      * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
      * characters, digits, and upper and lowercased letters.</p>
      */
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p> The path for the virtual MFA device. For more information about paths, see
@@ -119,7 +120,7 @@ namespace Model
      * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
      * characters, digits, and upper and lowercased letters.</p>
      */
-    inline CreateVirtualMFADeviceRequest& WithPath(Aws::String&& value) { SetPath(value); return *this;}
+    inline CreateVirtualMFADeviceRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p> The path for the virtual MFA device. For more information about paths, see
@@ -160,7 +161,7 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: =,.@-</p>
      */
-    inline void SetVirtualMFADeviceName(Aws::String&& value) { m_virtualMFADeviceNameHasBeenSet = true; m_virtualMFADeviceName = value; }
+    inline void SetVirtualMFADeviceName(Aws::String&& value) { m_virtualMFADeviceNameHasBeenSet = true; m_virtualMFADeviceName = std::move(value); }
 
     /**
      * <p>The name of the virtual MFA device. Use with path to uniquely identify a
@@ -187,7 +188,7 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: =,.@-</p>
      */
-    inline CreateVirtualMFADeviceRequest& WithVirtualMFADeviceName(Aws::String&& value) { SetVirtualMFADeviceName(value); return *this;}
+    inline CreateVirtualMFADeviceRequest& WithVirtualMFADeviceName(Aws::String&& value) { SetVirtualMFADeviceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the virtual MFA device. Use with path to uniquely identify a

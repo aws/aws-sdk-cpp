@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/BatchReadSuccessfulResponse.h>
 #include <aws/clouddirectory/model/BatchReadException.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Identifies which operation in a batch has succeeded.</p>
      */
-    inline void SetSuccessfulResponse(BatchReadSuccessfulResponse&& value) { m_successfulResponseHasBeenSet = true; m_successfulResponse = value; }
+    inline void SetSuccessfulResponse(BatchReadSuccessfulResponse&& value) { m_successfulResponseHasBeenSet = true; m_successfulResponse = std::move(value); }
 
     /**
      * <p>Identifies which operation in a batch has succeeded.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Identifies which operation in a batch has succeeded.</p>
      */
-    inline BatchReadOperationResponse& WithSuccessfulResponse(BatchReadSuccessfulResponse&& value) { SetSuccessfulResponse(value); return *this;}
+    inline BatchReadOperationResponse& WithSuccessfulResponse(BatchReadSuccessfulResponse&& value) { SetSuccessfulResponse(std::move(value)); return *this;}
 
     /**
      * <p>Identifies which operation in a batch has failed.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>Identifies which operation in a batch has failed.</p>
      */
-    inline void SetExceptionResponse(BatchReadException&& value) { m_exceptionResponseHasBeenSet = true; m_exceptionResponse = value; }
+    inline void SetExceptionResponse(BatchReadException&& value) { m_exceptionResponseHasBeenSet = true; m_exceptionResponse = std::move(value); }
 
     /**
      * <p>Identifies which operation in a batch has failed.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>Identifies which operation in a batch has failed.</p>
      */
-    inline BatchReadOperationResponse& WithExceptionResponse(BatchReadException&& value) { SetExceptionResponse(value); return *this;}
+    inline BatchReadOperationResponse& WithExceptionResponse(BatchReadException&& value) { SetExceptionResponse(std::move(value)); return *this;}
 
   private:
     BatchReadSuccessfulResponse m_successfulResponse;

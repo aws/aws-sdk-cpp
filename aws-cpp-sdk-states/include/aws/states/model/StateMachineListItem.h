@@ -16,6 +16,7 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
      */
-    inline void SetStateMachineArn(Aws::String&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = value; }
+    inline void SetStateMachineArn(Aws::String&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
      */
-    inline StateMachineListItem& WithStateMachineArn(Aws::String&& value) { SetStateMachineArn(value); return *this;}
+    inline StateMachineListItem& WithStateMachineArn(Aws::String&& value) { SetStateMachineArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The name of the state machine.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the state machine.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The name of the state machine.</p>
      */
-    inline StateMachineListItem& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline StateMachineListItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the state machine.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The date the state machine was created.</p>
      */
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
      * <p>The date the state machine was created.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The date the state machine was created.</p>
      */
-    inline StateMachineListItem& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
+    inline StateMachineListItem& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_stateMachineArn;

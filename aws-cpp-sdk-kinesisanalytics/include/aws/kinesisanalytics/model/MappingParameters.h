@@ -16,6 +16,7 @@
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/kinesisanalytics/model/JSONMappingParameters.h>
 #include <aws/kinesisanalytics/model/CSVMappingParameters.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>Provides additional mapping information when JSON is the record format on the
      * streaming source.</p>
      */
-    inline void SetJSONMappingParameters(JSONMappingParameters&& value) { m_jSONMappingParametersHasBeenSet = true; m_jSONMappingParameters = value; }
+    inline void SetJSONMappingParameters(JSONMappingParameters&& value) { m_jSONMappingParametersHasBeenSet = true; m_jSONMappingParameters = std::move(value); }
 
     /**
      * <p>Provides additional mapping information when JSON is the record format on the
@@ -75,7 +76,7 @@ namespace Model
      * <p>Provides additional mapping information when JSON is the record format on the
      * streaming source.</p>
      */
-    inline MappingParameters& WithJSONMappingParameters(JSONMappingParameters&& value) { SetJSONMappingParameters(value); return *this;}
+    inline MappingParameters& WithJSONMappingParameters(JSONMappingParameters&& value) { SetJSONMappingParameters(std::move(value)); return *this;}
 
     /**
      * <p>Provides additional mapping information when the record format uses
@@ -93,7 +94,7 @@ namespace Model
      * <p>Provides additional mapping information when the record format uses
      * delimiters (for example, CSV).</p>
      */
-    inline void SetCSVMappingParameters(CSVMappingParameters&& value) { m_cSVMappingParametersHasBeenSet = true; m_cSVMappingParameters = value; }
+    inline void SetCSVMappingParameters(CSVMappingParameters&& value) { m_cSVMappingParametersHasBeenSet = true; m_cSVMappingParameters = std::move(value); }
 
     /**
      * <p>Provides additional mapping information when the record format uses
@@ -105,7 +106,7 @@ namespace Model
      * <p>Provides additional mapping information when the record format uses
      * delimiters (for example, CSV).</p>
      */
-    inline MappingParameters& WithCSVMappingParameters(CSVMappingParameters&& value) { SetCSVMappingParameters(value); return *this;}
+    inline MappingParameters& WithCSVMappingParameters(CSVMappingParameters&& value) { SetCSVMappingParameters(std::move(value)); return *this;}
 
   private:
     JSONMappingParameters m_jSONMappingParameters;

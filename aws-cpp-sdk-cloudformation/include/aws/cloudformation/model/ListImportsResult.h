@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>A list of stack names that are importing the specified exported output value.
      * </p>
      */
-    inline void SetImports(Aws::Vector<Aws::String>&& value) { m_imports = value; }
+    inline void SetImports(Aws::Vector<Aws::String>&& value) { m_imports = std::move(value); }
 
     /**
      * <p>A list of stack names that are importing the specified exported output value.
@@ -69,7 +70,7 @@ namespace Model
      * <p>A list of stack names that are importing the specified exported output value.
      * </p>
      */
-    inline ListImportsResult& WithImports(Aws::Vector<Aws::String>&& value) { SetImports(value); return *this;}
+    inline ListImportsResult& WithImports(Aws::Vector<Aws::String>&& value) { SetImports(std::move(value)); return *this;}
 
     /**
      * <p>A list of stack names that are importing the specified exported output value.
@@ -81,7 +82,7 @@ namespace Model
      * <p>A list of stack names that are importing the specified exported output value.
      * </p>
      */
-    inline ListImportsResult& AddImports(Aws::String&& value) { m_imports.push_back(value); return *this; }
+    inline ListImportsResult& AddImports(Aws::String&& value) { m_imports.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of stack names that are importing the specified exported output value.
@@ -105,7 +106,7 @@ namespace Model
      * <p>A string that identifies the next page of exports. If there is no additional
      * page, this value is null.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>A string that identifies the next page of exports. If there is no additional
@@ -123,7 +124,7 @@ namespace Model
      * <p>A string that identifies the next page of exports. If there is no additional
      * page, this value is null.</p>
      */
-    inline ListImportsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListImportsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A string that identifies the next page of exports. If there is no additional
@@ -138,13 +139,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListImportsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListImportsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListImportsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_imports;

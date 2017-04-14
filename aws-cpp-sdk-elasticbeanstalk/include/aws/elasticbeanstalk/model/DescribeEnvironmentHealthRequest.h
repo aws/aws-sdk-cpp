@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticbeanstalk/model/EnvironmentHealthAttribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>Specify the environment by name.</p> <p>You must specify either this or an
      * EnvironmentName, or both.</p>
      */
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
+    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
 
     /**
      * <p>Specify the environment by name.</p> <p>You must specify either this or an
@@ -77,7 +78,7 @@ namespace Model
      * <p>Specify the environment by name.</p> <p>You must specify either this or an
      * EnvironmentName, or both.</p>
      */
-    inline DescribeEnvironmentHealthRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
+    inline DescribeEnvironmentHealthRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
 
     /**
      * <p>Specify the environment by name.</p> <p>You must specify either this or an
@@ -101,7 +102,7 @@ namespace Model
      * <p>Specify the environment by ID.</p> <p>You must specify either this or an
      * EnvironmentName, or both.</p>
      */
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
+    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
 
     /**
      * <p>Specify the environment by ID.</p> <p>You must specify either this or an
@@ -119,7 +120,7 @@ namespace Model
      * <p>Specify the environment by ID.</p> <p>You must specify either this or an
      * EnvironmentName, or both.</p>
      */
-    inline DescribeEnvironmentHealthRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(value); return *this;}
+    inline DescribeEnvironmentHealthRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
 
     /**
      * <p>Specify the environment by ID.</p> <p>You must specify either this or an
@@ -146,7 +147,7 @@ namespace Model
      * <code>All</code>. If no attribute names are specified, returns the name of the
      * environment.</p>
      */
-    inline void SetAttributeNames(Aws::Vector<EnvironmentHealthAttribute>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
+    inline void SetAttributeNames(Aws::Vector<EnvironmentHealthAttribute>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::move(value); }
 
     /**
      * <p>Specify the response elements to return. To retrieve all attributes, set to
@@ -160,7 +161,7 @@ namespace Model
      * <code>All</code>. If no attribute names are specified, returns the name of the
      * environment.</p>
      */
-    inline DescribeEnvironmentHealthRequest& WithAttributeNames(Aws::Vector<EnvironmentHealthAttribute>&& value) { SetAttributeNames(value); return *this;}
+    inline DescribeEnvironmentHealthRequest& WithAttributeNames(Aws::Vector<EnvironmentHealthAttribute>&& value) { SetAttributeNames(std::move(value)); return *this;}
 
     /**
      * <p>Specify the response elements to return. To retrieve all attributes, set to
@@ -174,7 +175,7 @@ namespace Model
      * <code>All</code>. If no attribute names are specified, returns the name of the
      * environment.</p>
      */
-    inline DescribeEnvironmentHealthRequest& AddAttributeNames(EnvironmentHealthAttribute&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
+    inline DescribeEnvironmentHealthRequest& AddAttributeNames(EnvironmentHealthAttribute&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_environmentName;

@@ -17,6 +17,7 @@
 #include <aws/elasticmapreduce/EMRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/model/InstanceFleetModifyConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The unique identifier of the cluster.</p>
      */
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
 
     /**
      * <p>The unique identifier of the cluster.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The unique identifier of the cluster.</p>
      */
-    inline ModifyInstanceFleetRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+    inline ModifyInstanceFleetRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the cluster.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The unique identifier of the instance fleet.</p>
      */
-    inline void SetInstanceFleet(InstanceFleetModifyConfig&& value) { m_instanceFleetHasBeenSet = true; m_instanceFleet = value; }
+    inline void SetInstanceFleet(InstanceFleetModifyConfig&& value) { m_instanceFleetHasBeenSet = true; m_instanceFleet = std::move(value); }
 
     /**
      * <p>The unique identifier of the instance fleet.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The unique identifier of the instance fleet.</p>
      */
-    inline ModifyInstanceFleetRequest& WithInstanceFleet(InstanceFleetModifyConfig&& value) { SetInstanceFleet(value); return *this;}
+    inline ModifyInstanceFleetRequest& WithInstanceFleet(InstanceFleetModifyConfig&& value) { SetInstanceFleet(std::move(value)); return *this;}
 
   private:
     Aws::String m_clusterId;

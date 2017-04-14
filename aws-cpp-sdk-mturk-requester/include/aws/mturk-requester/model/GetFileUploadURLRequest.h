@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The ID of the assignment that contains the question with a
      * FileUploadAnswer.</p>
      */
-    inline void SetAssignmentId(Aws::String&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = value; }
+    inline void SetAssignmentId(Aws::String&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = std::move(value); }
 
     /**
      * <p>The ID of the assignment that contains the question with a
@@ -69,7 +70,7 @@ namespace Model
      * <p>The ID of the assignment that contains the question with a
      * FileUploadAnswer.</p>
      */
-    inline GetFileUploadURLRequest& WithAssignmentId(Aws::String&& value) { SetAssignmentId(value); return *this;}
+    inline GetFileUploadURLRequest& WithAssignmentId(Aws::String&& value) { SetAssignmentId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the assignment that contains the question with a
@@ -93,7 +94,7 @@ namespace Model
      * <p>The identifier of the question with a FileUploadAnswer, as specified in the
      * QuestionForm of the HIT.</p>
      */
-    inline void SetQuestionIdentifier(Aws::String&& value) { m_questionIdentifierHasBeenSet = true; m_questionIdentifier = value; }
+    inline void SetQuestionIdentifier(Aws::String&& value) { m_questionIdentifierHasBeenSet = true; m_questionIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the question with a FileUploadAnswer, as specified in the
@@ -111,7 +112,7 @@ namespace Model
      * <p>The identifier of the question with a FileUploadAnswer, as specified in the
      * QuestionForm of the HIT.</p>
      */
-    inline GetFileUploadURLRequest& WithQuestionIdentifier(Aws::String&& value) { SetQuestionIdentifier(value); return *this;}
+    inline GetFileUploadURLRequest& WithQuestionIdentifier(Aws::String&& value) { SetQuestionIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the question with a FileUploadAnswer, as specified in the

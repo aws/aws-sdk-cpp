@@ -16,6 +16,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/model/FleetErrorCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The error code for the fleet error.</p>
      */
-    inline void SetErrorCode(FleetErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline void SetErrorCode(FleetErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
      * <p>The error code for the fleet error.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The error code for the fleet error.</p>
      */
-    inline FleetError& WithErrorCode(FleetErrorCode&& value) { SetErrorCode(value); return *this;}
+    inline FleetError& WithErrorCode(FleetErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
      * <p>The error message generated when the fleet has errors.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The error message generated when the fleet has errors.</p>
      */
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
      * <p>The error message generated when the fleet has errors.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The error message generated when the fleet has errors.</p>
      */
-    inline FleetError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(value); return *this;}
+    inline FleetError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
      * <p>The error message generated when the fleet has errors.</p>

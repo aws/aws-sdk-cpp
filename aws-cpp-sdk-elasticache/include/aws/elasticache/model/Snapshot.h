@@ -20,6 +20,7 @@
 #include <aws/elasticache/model/AutomaticFailoverStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/NodeSnapshot.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * <p>The name of a snapshot. For an automatic snapshot, the name is
      * system-generated. For a manual snapshot, this is the user-provided name.</p>
      */
-    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
+    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::move(value); }
 
     /**
      * <p>The name of a snapshot. For an automatic snapshot, the name is
@@ -85,7 +86,7 @@ namespace Model
      * <p>The name of a snapshot. For an automatic snapshot, the name is
      * system-generated. For a manual snapshot, this is the user-provided name.</p>
      */
-    inline Snapshot& WithSnapshotName(Aws::String&& value) { SetSnapshotName(value); return *this;}
+    inline Snapshot& WithSnapshotName(Aws::String&& value) { SetSnapshotName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a snapshot. For an automatic snapshot, the name is
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The unique identifier of the source replication group.</p>
      */
-    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
+    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::move(value); }
 
     /**
      * <p>The unique identifier of the source replication group.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The unique identifier of the source replication group.</p>
      */
-    inline Snapshot& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(value); return *this;}
+    inline Snapshot& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the source replication group.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>A description of the source replication group.</p>
      */
-    inline void SetReplicationGroupDescription(Aws::String&& value) { m_replicationGroupDescriptionHasBeenSet = true; m_replicationGroupDescription = value; }
+    inline void SetReplicationGroupDescription(Aws::String&& value) { m_replicationGroupDescriptionHasBeenSet = true; m_replicationGroupDescription = std::move(value); }
 
     /**
      * <p>A description of the source replication group.</p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>A description of the source replication group.</p>
      */
-    inline Snapshot& WithReplicationGroupDescription(Aws::String&& value) { SetReplicationGroupDescription(value); return *this;}
+    inline Snapshot& WithReplicationGroupDescription(Aws::String&& value) { SetReplicationGroupDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description of the source replication group.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>The user-supplied identifier of the source cache cluster.</p>
      */
-    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
+    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
 
     /**
      * <p>The user-supplied identifier of the source cache cluster.</p>
@@ -191,7 +192,7 @@ namespace Model
     /**
      * <p>The user-supplied identifier of the source cache cluster.</p>
      */
-    inline Snapshot& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(value); return *this;}
+    inline Snapshot& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The user-supplied identifier of the source cache cluster.</p>
@@ -217,7 +218,7 @@ namespace Model
      * <code>available</code> | <code>restoring</code> | <code>copying</code> |
      * <code>deleting</code>.</p>
      */
-    inline void SetSnapshotStatus(Aws::String&& value) { m_snapshotStatusHasBeenSet = true; m_snapshotStatus = value; }
+    inline void SetSnapshotStatus(Aws::String&& value) { m_snapshotStatusHasBeenSet = true; m_snapshotStatus = std::move(value); }
 
     /**
      * <p>The status of the snapshot. Valid values: <code>creating</code> |
@@ -238,7 +239,7 @@ namespace Model
      * <code>available</code> | <code>restoring</code> | <code>copying</code> |
      * <code>deleting</code>.</p>
      */
-    inline Snapshot& WithSnapshotStatus(Aws::String&& value) { SetSnapshotStatus(value); return *this;}
+    inline Snapshot& WithSnapshotStatus(Aws::String&& value) { SetSnapshotStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the snapshot. Valid values: <code>creating</code> |
@@ -263,7 +264,7 @@ namespace Model
      * <p>Indicates whether the snapshot is from an automatic backup
      * (<code>automated</code>) or was created manually (<code>manual</code>).</p>
      */
-    inline void SetSnapshotSource(Aws::String&& value) { m_snapshotSourceHasBeenSet = true; m_snapshotSource = value; }
+    inline void SetSnapshotSource(Aws::String&& value) { m_snapshotSourceHasBeenSet = true; m_snapshotSource = std::move(value); }
 
     /**
      * <p>Indicates whether the snapshot is from an automatic backup
@@ -281,7 +282,7 @@ namespace Model
      * <p>Indicates whether the snapshot is from an automatic backup
      * (<code>automated</code>) or was created manually (<code>manual</code>).</p>
      */
-    inline Snapshot& WithSnapshotSource(Aws::String&& value) { SetSnapshotSource(value); return *this;}
+    inline Snapshot& WithSnapshotSource(Aws::String&& value) { SetSnapshotSource(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether the snapshot is from an automatic backup
@@ -392,7 +393,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
      * Node Type-Specific Parameters for Redis</a>.</p>
      */
-    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
+    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::move(value); }
 
     /**
      * <p>The name of the compute and memory capacity node type for the source cache
@@ -497,7 +498,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
      * Node Type-Specific Parameters for Redis</a>.</p>
      */
-    inline Snapshot& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(value); return *this;}
+    inline Snapshot& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(std::move(value)); return *this;}
 
     /**
      * <p>The name of the compute and memory capacity node type for the source cache
@@ -550,7 +551,7 @@ namespace Model
      * <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>)
      * used by the source cache cluster.</p>
      */
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>)
@@ -568,7 +569,7 @@ namespace Model
      * <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>)
      * used by the source cache cluster.</p>
      */
-    inline Snapshot& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
+    inline Snapshot& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>)
@@ -592,7 +593,7 @@ namespace Model
      * <p>The version of the cache engine version that is used by the source cache
      * cluster.</p>
      */
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>The version of the cache engine version that is used by the source cache
@@ -610,7 +611,7 @@ namespace Model
      * <p>The version of the cache engine version that is used by the source cache
      * cluster.</p>
      */
-    inline Snapshot& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
+    inline Snapshot& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the cache engine version that is used by the source cache
@@ -655,7 +656,7 @@ namespace Model
      * <p>The name of the Availability Zone in which the source cache cluster is
      * located.</p>
      */
-    inline void SetPreferredAvailabilityZone(Aws::String&& value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone = value; }
+    inline void SetPreferredAvailabilityZone(Aws::String&& value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone = std::move(value); }
 
     /**
      * <p>The name of the Availability Zone in which the source cache cluster is
@@ -673,7 +674,7 @@ namespace Model
      * <p>The name of the Availability Zone in which the source cache cluster is
      * located.</p>
      */
-    inline Snapshot& WithPreferredAvailabilityZone(Aws::String&& value) { SetPreferredAvailabilityZone(value); return *this;}
+    inline Snapshot& WithPreferredAvailabilityZone(Aws::String&& value) { SetPreferredAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Availability Zone in which the source cache cluster is
@@ -694,7 +695,7 @@ namespace Model
     /**
      * <p>The date and time when the source cache cluster was created.</p>
      */
-    inline void SetCacheClusterCreateTime(Aws::Utils::DateTime&& value) { m_cacheClusterCreateTimeHasBeenSet = true; m_cacheClusterCreateTime = value; }
+    inline void SetCacheClusterCreateTime(Aws::Utils::DateTime&& value) { m_cacheClusterCreateTimeHasBeenSet = true; m_cacheClusterCreateTime = std::move(value); }
 
     /**
      * <p>The date and time when the source cache cluster was created.</p>
@@ -704,7 +705,7 @@ namespace Model
     /**
      * <p>The date and time when the source cache cluster was created.</p>
      */
-    inline Snapshot& WithCacheClusterCreateTime(Aws::Utils::DateTime&& value) { SetCacheClusterCreateTime(value); return *this;}
+    inline Snapshot& WithCacheClusterCreateTime(Aws::Utils::DateTime&& value) { SetCacheClusterCreateTime(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
@@ -740,7 +741,7 @@ namespace Model
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
      * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
+    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
@@ -776,7 +777,7 @@ namespace Model
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
      * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
-    inline Snapshot& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(value); return *this;}
+    inline Snapshot& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
@@ -806,7 +807,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the topic used by the source cache cluster
      * for publishing notifications.</p>
      */
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the topic used by the source cache cluster
@@ -824,7 +825,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the topic used by the source cache cluster
      * for publishing notifications.</p>
      */
-    inline Snapshot& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
+    inline Snapshot& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the topic used by the source cache cluster
@@ -863,7 +864,7 @@ namespace Model
      * <p>The cache parameter group that is associated with the source cache
      * cluster.</p>
      */
-    inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
+    inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = std::move(value); }
 
     /**
      * <p>The cache parameter group that is associated with the source cache
@@ -881,7 +882,7 @@ namespace Model
      * <p>The cache parameter group that is associated with the source cache
      * cluster.</p>
      */
-    inline Snapshot& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(value); return *this;}
+    inline Snapshot& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The cache parameter group that is associated with the source cache
@@ -905,7 +906,7 @@ namespace Model
      * <p>The name of the cache subnet group associated with the source cache
      * cluster.</p>
      */
-    inline void SetCacheSubnetGroupName(Aws::String&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
+    inline void SetCacheSubnetGroupName(Aws::String&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = std::move(value); }
 
     /**
      * <p>The name of the cache subnet group associated with the source cache
@@ -923,7 +924,7 @@ namespace Model
      * <p>The name of the cache subnet group associated with the source cache
      * cluster.</p>
      */
-    inline Snapshot& WithCacheSubnetGroupName(Aws::String&& value) { SetCacheSubnetGroupName(value); return *this;}
+    inline Snapshot& WithCacheSubnetGroupName(Aws::String&& value) { SetCacheSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cache subnet group associated with the source cache
@@ -947,7 +948,7 @@ namespace Model
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet
      * group for the source cache cluster.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet
@@ -965,7 +966,7 @@ namespace Model
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet
      * group for the source cache cluster.</p>
      */
-    inline Snapshot& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline Snapshot& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet
@@ -1037,7 +1038,7 @@ namespace Model
      * <p>The daily time range during which ElastiCache takes daily snapshots of the
      * source cache cluster.</p>
      */
-    inline void SetSnapshotWindow(Aws::String&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = value; }
+    inline void SetSnapshotWindow(Aws::String&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = std::move(value); }
 
     /**
      * <p>The daily time range during which ElastiCache takes daily snapshots of the
@@ -1055,7 +1056,7 @@ namespace Model
      * <p>The daily time range during which ElastiCache takes daily snapshots of the
      * source cache cluster.</p>
      */
-    inline Snapshot& WithSnapshotWindow(Aws::String&& value) { SetSnapshotWindow(value); return *this;}
+    inline Snapshot& WithSnapshotWindow(Aws::String&& value) { SetSnapshotWindow(std::move(value)); return *this;}
 
     /**
      * <p>The daily time range during which ElastiCache takes daily snapshots of the
@@ -1109,7 +1110,7 @@ namespace Model
      * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
      * node types.</p> </li> </ul> </note>
      */
-    inline void SetAutomaticFailover(AutomaticFailoverStatus&& value) { m_automaticFailoverHasBeenSet = true; m_automaticFailover = value; }
+    inline void SetAutomaticFailover(AutomaticFailoverStatus&& value) { m_automaticFailoverHasBeenSet = true; m_automaticFailover = std::move(value); }
 
     /**
      * <p>Indicates the status of Multi-AZ for the source replication group.</p> <note>
@@ -1127,7 +1128,7 @@ namespace Model
      * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
      * node types.</p> </li> </ul> </note>
      */
-    inline Snapshot& WithAutomaticFailover(AutomaticFailoverStatus&& value) { SetAutomaticFailover(value); return *this;}
+    inline Snapshot& WithAutomaticFailover(AutomaticFailoverStatus&& value) { SetAutomaticFailover(std::move(value)); return *this;}
 
     /**
      * <p>A list of the cache nodes in the source cache cluster.</p>
@@ -1142,7 +1143,7 @@ namespace Model
     /**
      * <p>A list of the cache nodes in the source cache cluster.</p>
      */
-    inline void SetNodeSnapshots(Aws::Vector<NodeSnapshot>&& value) { m_nodeSnapshotsHasBeenSet = true; m_nodeSnapshots = value; }
+    inline void SetNodeSnapshots(Aws::Vector<NodeSnapshot>&& value) { m_nodeSnapshotsHasBeenSet = true; m_nodeSnapshots = std::move(value); }
 
     /**
      * <p>A list of the cache nodes in the source cache cluster.</p>
@@ -1152,7 +1153,7 @@ namespace Model
     /**
      * <p>A list of the cache nodes in the source cache cluster.</p>
      */
-    inline Snapshot& WithNodeSnapshots(Aws::Vector<NodeSnapshot>&& value) { SetNodeSnapshots(value); return *this;}
+    inline Snapshot& WithNodeSnapshots(Aws::Vector<NodeSnapshot>&& value) { SetNodeSnapshots(std::move(value)); return *this;}
 
     /**
      * <p>A list of the cache nodes in the source cache cluster.</p>
@@ -1162,7 +1163,7 @@ namespace Model
     /**
      * <p>A list of the cache nodes in the source cache cluster.</p>
      */
-    inline Snapshot& AddNodeSnapshots(NodeSnapshot&& value) { m_nodeSnapshotsHasBeenSet = true; m_nodeSnapshots.push_back(value); return *this; }
+    inline Snapshot& AddNodeSnapshots(NodeSnapshot&& value) { m_nodeSnapshotsHasBeenSet = true; m_nodeSnapshots.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_snapshotName;

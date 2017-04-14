@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/model/ConnectionState.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The AWS account that will own the new connection.</p>
      */
-    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
+    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
      * <p>The AWS account that will own the new connection.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The AWS account that will own the new connection.</p>
      */
-    inline Connection& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(value); return *this;}
+    inline Connection& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account that will own the new connection.</p>
@@ -88,7 +89,7 @@ namespace Model
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
     
-    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
+    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
     
     inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
@@ -97,7 +98,7 @@ namespace Model
     inline Connection& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
 
     
-    inline Connection& WithConnectionId(Aws::String&& value) { SetConnectionId(value); return *this;}
+    inline Connection& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     
     inline Connection& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
@@ -109,7 +110,7 @@ namespace Model
     inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
 
     
-    inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
+    inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::move(value); }
 
     
     inline void SetConnectionName(const char* value) { m_connectionNameHasBeenSet = true; m_connectionName.assign(value); }
@@ -118,7 +119,7 @@ namespace Model
     inline Connection& WithConnectionName(const Aws::String& value) { SetConnectionName(value); return *this;}
 
     
-    inline Connection& WithConnectionName(Aws::String&& value) { SetConnectionName(value); return *this;}
+    inline Connection& WithConnectionName(Aws::String&& value) { SetConnectionName(std::move(value)); return *this;}
 
     
     inline Connection& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
@@ -130,13 +131,13 @@ namespace Model
     inline void SetConnectionState(const ConnectionState& value) { m_connectionStateHasBeenSet = true; m_connectionState = value; }
 
     
-    inline void SetConnectionState(ConnectionState&& value) { m_connectionStateHasBeenSet = true; m_connectionState = value; }
+    inline void SetConnectionState(ConnectionState&& value) { m_connectionStateHasBeenSet = true; m_connectionState = std::move(value); }
 
     
     inline Connection& WithConnectionState(const ConnectionState& value) { SetConnectionState(value); return *this;}
 
     
-    inline Connection& WithConnectionState(ConnectionState&& value) { SetConnectionState(value); return *this;}
+    inline Connection& WithConnectionState(ConnectionState&& value) { SetConnectionState(std::move(value)); return *this;}
 
     
     inline const Aws::String& GetRegion() const{ return m_region; }
@@ -145,7 +146,7 @@ namespace Model
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = value; }
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
@@ -154,7 +155,7 @@ namespace Model
     inline Connection& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     
-    inline Connection& WithRegion(Aws::String&& value) { SetRegion(value); return *this;}
+    inline Connection& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     
     inline Connection& WithRegion(const char* value) { SetRegion(value); return *this;}
@@ -166,7 +167,7 @@ namespace Model
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
@@ -175,7 +176,7 @@ namespace Model
     inline Connection& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     
-    inline Connection& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline Connection& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     
     inline Connection& WithLocation(const char* value) { SetLocation(value); return *this;}
@@ -196,7 +197,7 @@ namespace Model
      * <p>Bandwidth of the connection.</p> <p>Example: 1Gbps (for regular connections),
      * or 500Mbps (for hosted connections)</p> <p>Default: None</p>
      */
-    inline void SetBandwidth(Aws::String&& value) { m_bandwidthHasBeenSet = true; m_bandwidth = value; }
+    inline void SetBandwidth(Aws::String&& value) { m_bandwidthHasBeenSet = true; m_bandwidth = std::move(value); }
 
     /**
      * <p>Bandwidth of the connection.</p> <p>Example: 1Gbps (for regular connections),
@@ -214,7 +215,7 @@ namespace Model
      * <p>Bandwidth of the connection.</p> <p>Example: 1Gbps (for regular connections),
      * or 500Mbps (for hosted connections)</p> <p>Default: None</p>
      */
-    inline Connection& WithBandwidth(Aws::String&& value) { SetBandwidth(value); return *this;}
+    inline Connection& WithBandwidth(Aws::String&& value) { SetBandwidth(std::move(value)); return *this;}
 
     /**
      * <p>Bandwidth of the connection.</p> <p>Example: 1Gbps (for regular connections),
@@ -247,7 +248,7 @@ namespace Model
      * <p>The name of the AWS Direct Connect service provider associated with the
      * connection.</p>
      */
-    inline void SetPartnerName(Aws::String&& value) { m_partnerNameHasBeenSet = true; m_partnerName = value; }
+    inline void SetPartnerName(Aws::String&& value) { m_partnerNameHasBeenSet = true; m_partnerName = std::move(value); }
 
     /**
      * <p>The name of the AWS Direct Connect service provider associated with the
@@ -265,7 +266,7 @@ namespace Model
      * <p>The name of the AWS Direct Connect service provider associated with the
      * connection.</p>
      */
-    inline Connection& WithPartnerName(Aws::String&& value) { SetPartnerName(value); return *this;}
+    inline Connection& WithPartnerName(Aws::String&& value) { SetPartnerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the AWS Direct Connect service provider associated with the
@@ -289,7 +290,7 @@ namespace Model
      * <p>The time of the most recent call to <a>DescribeLoa</a> for this
      * connection.</p>
      */
-    inline void SetLoaIssueTime(Aws::Utils::DateTime&& value) { m_loaIssueTimeHasBeenSet = true; m_loaIssueTime = value; }
+    inline void SetLoaIssueTime(Aws::Utils::DateTime&& value) { m_loaIssueTimeHasBeenSet = true; m_loaIssueTime = std::move(value); }
 
     /**
      * <p>The time of the most recent call to <a>DescribeLoa</a> for this
@@ -301,7 +302,7 @@ namespace Model
      * <p>The time of the most recent call to <a>DescribeLoa</a> for this
      * connection.</p>
      */
-    inline Connection& WithLoaIssueTime(Aws::Utils::DateTime&& value) { SetLoaIssueTime(value); return *this;}
+    inline Connection& WithLoaIssueTime(Aws::Utils::DateTime&& value) { SetLoaIssueTime(std::move(value)); return *this;}
 
     
     inline const Aws::String& GetLagId() const{ return m_lagId; }
@@ -310,7 +311,7 @@ namespace Model
     inline void SetLagId(const Aws::String& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
 
     
-    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
+    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = std::move(value); }
 
     
     inline void SetLagId(const char* value) { m_lagIdHasBeenSet = true; m_lagId.assign(value); }
@@ -319,7 +320,7 @@ namespace Model
     inline Connection& WithLagId(const Aws::String& value) { SetLagId(value); return *this;}
 
     
-    inline Connection& WithLagId(Aws::String&& value) { SetLagId(value); return *this;}
+    inline Connection& WithLagId(Aws::String&& value) { SetLagId(std::move(value)); return *this;}
 
     
     inline Connection& WithLagId(const char* value) { SetLagId(value); return *this;}
@@ -340,7 +341,7 @@ namespace Model
      * <p>The Direct Connection endpoint which the physical connection terminates
      * on.</p>
      */
-    inline void SetAwsDevice(Aws::String&& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = value; }
+    inline void SetAwsDevice(Aws::String&& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = std::move(value); }
 
     /**
      * <p>The Direct Connection endpoint which the physical connection terminates
@@ -358,7 +359,7 @@ namespace Model
      * <p>The Direct Connection endpoint which the physical connection terminates
      * on.</p>
      */
-    inline Connection& WithAwsDevice(Aws::String&& value) { SetAwsDevice(value); return *this;}
+    inline Connection& WithAwsDevice(Aws::String&& value) { SetAwsDevice(std::move(value)); return *this;}
 
     /**
      * <p>The Direct Connection endpoint which the physical connection terminates

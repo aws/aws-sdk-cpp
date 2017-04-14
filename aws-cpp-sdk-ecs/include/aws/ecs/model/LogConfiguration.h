@@ -17,6 +17,7 @@
 #include <aws/ecs/model/LogDriver.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -98,7 +99,7 @@ namespace Model
      * following command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      */
-    inline void SetLogDriver(LogDriver&& value) { m_logDriverHasBeenSet = true; m_logDriver = value; }
+    inline void SetLogDriver(LogDriver&& value) { m_logDriverHasBeenSet = true; m_logDriver = std::move(value); }
 
     /**
      * <p>The log driver to use for the container. The valid values listed for this
@@ -134,7 +135,7 @@ namespace Model
      * following command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      */
-    inline LogConfiguration& WithLogDriver(LogDriver&& value) { SetLogDriver(value); return *this;}
+    inline LogConfiguration& WithLogDriver(LogDriver&& value) { SetLogDriver(std::move(value)); return *this;}
 
     /**
      * <p>The configuration options to send to the log driver. This parameter requires
@@ -161,7 +162,7 @@ namespace Model
      * container instance and run the following command: <code>sudo docker version |
      * grep "Server API version"</code> </p>
      */
-    inline void SetOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_optionsHasBeenSet = true; m_options = value; }
+    inline void SetOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     /**
      * <p>The configuration options to send to the log driver. This parameter requires
@@ -179,7 +180,7 @@ namespace Model
      * container instance and run the following command: <code>sudo docker version |
      * grep "Server API version"</code> </p>
      */
-    inline LogConfiguration& WithOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetOptions(value); return *this;}
+    inline LogConfiguration& WithOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetOptions(std::move(value)); return *this;}
 
     /**
      * <p>The configuration options to send to the log driver. This parameter requires
@@ -188,7 +189,7 @@ namespace Model
      * container instance and run the following command: <code>sudo docker version |
      * grep "Server API version"</code> </p>
      */
-    inline LogConfiguration& AddOptions(const Aws::String& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options[key] = value; return *this; }
+    inline LogConfiguration& AddOptions(const Aws::String& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
 
     /**
      * <p>The configuration options to send to the log driver. This parameter requires
@@ -197,7 +198,7 @@ namespace Model
      * container instance and run the following command: <code>sudo docker version |
      * grep "Server API version"</code> </p>
      */
-    inline LogConfiguration& AddOptions(Aws::String&& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options[key] = value; return *this; }
+    inline LogConfiguration& AddOptions(Aws::String&& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The configuration options to send to the log driver. This parameter requires
@@ -206,7 +207,7 @@ namespace Model
      * container instance and run the following command: <code>sudo docker version |
      * grep "Server API version"</code> </p>
      */
-    inline LogConfiguration& AddOptions(const Aws::String& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options[key] = value; return *this; }
+    inline LogConfiguration& AddOptions(const Aws::String& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The configuration options to send to the log driver. This parameter requires
@@ -215,7 +216,7 @@ namespace Model
      * container instance and run the following command: <code>sudo docker version |
      * grep "Server API version"</code> </p>
      */
-    inline LogConfiguration& AddOptions(Aws::String&& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options[key] = value; return *this; }
+    inline LogConfiguration& AddOptions(Aws::String&& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The configuration options to send to the log driver. This parameter requires
@@ -224,7 +225,7 @@ namespace Model
      * container instance and run the following command: <code>sudo docker version |
      * grep "Server API version"</code> </p>
      */
-    inline LogConfiguration& AddOptions(const char* key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options[key] = value; return *this; }
+    inline LogConfiguration& AddOptions(const char* key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The configuration options to send to the log driver. This parameter requires
@@ -233,7 +234,7 @@ namespace Model
      * container instance and run the following command: <code>sudo docker version |
      * grep "Server API version"</code> </p>
      */
-    inline LogConfiguration& AddOptions(Aws::String&& key, const char* value) { m_optionsHasBeenSet = true; m_options[key] = value; return *this; }
+    inline LogConfiguration& AddOptions(Aws::String&& key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The configuration options to send to the log driver. This parameter requires
@@ -242,7 +243,7 @@ namespace Model
      * container instance and run the following command: <code>sudo docker version |
      * grep "Server API version"</code> </p>
      */
-    inline LogConfiguration& AddOptions(const char* key, const char* value) { m_optionsHasBeenSet = true; m_options[key] = value; return *this; }
+    inline LogConfiguration& AddOptions(const char* key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
 
   private:
     LogDriver m_logDriver;

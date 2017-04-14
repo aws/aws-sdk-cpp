@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * matches this list or is a subset of this list, the grant allows the operation.
      * Otherwise, the operation is not allowed.</p>
      */
-    inline void SetEncryptionContextSubset(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset = value; }
+    inline void SetEncryptionContextSubset(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset = std::move(value); }
 
     /**
      * <p>Contains a list of key-value pairs, a subset of which must be present in the
@@ -93,7 +94,7 @@ namespace Model
      * matches this list or is a subset of this list, the grant allows the operation.
      * Otherwise, the operation is not allowed.</p>
      */
-    inline GrantConstraints& WithEncryptionContextSubset(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContextSubset(value); return *this;}
+    inline GrantConstraints& WithEncryptionContextSubset(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContextSubset(std::move(value)); return *this;}
 
     /**
      * <p>Contains a list of key-value pairs, a subset of which must be present in the
@@ -102,7 +103,7 @@ namespace Model
      * matches this list or is a subset of this list, the grant allows the operation.
      * Otherwise, the operation is not allowed.</p>
      */
-    inline GrantConstraints& AddEncryptionContextSubset(const Aws::String& key, const Aws::String& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
+    inline GrantConstraints& AddEncryptionContextSubset(const Aws::String& key, const Aws::String& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(key, value); return *this; }
 
     /**
      * <p>Contains a list of key-value pairs, a subset of which must be present in the
@@ -111,7 +112,7 @@ namespace Model
      * matches this list or is a subset of this list, the grant allows the operation.
      * Otherwise, the operation is not allowed.</p>
      */
-    inline GrantConstraints& AddEncryptionContextSubset(Aws::String&& key, const Aws::String& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
+    inline GrantConstraints& AddEncryptionContextSubset(Aws::String&& key, const Aws::String& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Contains a list of key-value pairs, a subset of which must be present in the
@@ -120,7 +121,7 @@ namespace Model
      * matches this list or is a subset of this list, the grant allows the operation.
      * Otherwise, the operation is not allowed.</p>
      */
-    inline GrantConstraints& AddEncryptionContextSubset(const Aws::String& key, Aws::String&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
+    inline GrantConstraints& AddEncryptionContextSubset(const Aws::String& key, Aws::String&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Contains a list of key-value pairs, a subset of which must be present in the
@@ -129,7 +130,7 @@ namespace Model
      * matches this list or is a subset of this list, the grant allows the operation.
      * Otherwise, the operation is not allowed.</p>
      */
-    inline GrantConstraints& AddEncryptionContextSubset(Aws::String&& key, Aws::String&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
+    inline GrantConstraints& AddEncryptionContextSubset(Aws::String&& key, Aws::String&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Contains a list of key-value pairs, a subset of which must be present in the
@@ -138,7 +139,7 @@ namespace Model
      * matches this list or is a subset of this list, the grant allows the operation.
      * Otherwise, the operation is not allowed.</p>
      */
-    inline GrantConstraints& AddEncryptionContextSubset(const char* key, Aws::String&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
+    inline GrantConstraints& AddEncryptionContextSubset(const char* key, Aws::String&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Contains a list of key-value pairs, a subset of which must be present in the
@@ -147,7 +148,7 @@ namespace Model
      * matches this list or is a subset of this list, the grant allows the operation.
      * Otherwise, the operation is not allowed.</p>
      */
-    inline GrantConstraints& AddEncryptionContextSubset(Aws::String&& key, const char* value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
+    inline GrantConstraints& AddEncryptionContextSubset(Aws::String&& key, const char* value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Contains a list of key-value pairs, a subset of which must be present in the
@@ -156,7 +157,7 @@ namespace Model
      * matches this list or is a subset of this list, the grant allows the operation.
      * Otherwise, the operation is not allowed.</p>
      */
-    inline GrantConstraints& AddEncryptionContextSubset(const char* key, const char* value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
+    inline GrantConstraints& AddEncryptionContextSubset(const char* key, const char* value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(key, value); return *this; }
 
     /**
      * <p>Contains a list of key-value pairs that must be present in the encryption
@@ -183,7 +184,7 @@ namespace Model
      * this list, the grant allows the operation. Otherwise, the operation is not
      * allowed.</p>
      */
-    inline void SetEncryptionContextEquals(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals = value; }
+    inline void SetEncryptionContextEquals(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals = std::move(value); }
 
     /**
      * <p>Contains a list of key-value pairs that must be present in the encryption
@@ -201,7 +202,7 @@ namespace Model
      * this list, the grant allows the operation. Otherwise, the operation is not
      * allowed.</p>
      */
-    inline GrantConstraints& WithEncryptionContextEquals(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContextEquals(value); return *this;}
+    inline GrantConstraints& WithEncryptionContextEquals(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContextEquals(std::move(value)); return *this;}
 
     /**
      * <p>Contains a list of key-value pairs that must be present in the encryption
@@ -210,7 +211,7 @@ namespace Model
      * this list, the grant allows the operation. Otherwise, the operation is not
      * allowed.</p>
      */
-    inline GrantConstraints& AddEncryptionContextEquals(const Aws::String& key, const Aws::String& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
+    inline GrantConstraints& AddEncryptionContextEquals(const Aws::String& key, const Aws::String& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(key, value); return *this; }
 
     /**
      * <p>Contains a list of key-value pairs that must be present in the encryption
@@ -219,7 +220,7 @@ namespace Model
      * this list, the grant allows the operation. Otherwise, the operation is not
      * allowed.</p>
      */
-    inline GrantConstraints& AddEncryptionContextEquals(Aws::String&& key, const Aws::String& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
+    inline GrantConstraints& AddEncryptionContextEquals(Aws::String&& key, const Aws::String& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Contains a list of key-value pairs that must be present in the encryption
@@ -228,7 +229,7 @@ namespace Model
      * this list, the grant allows the operation. Otherwise, the operation is not
      * allowed.</p>
      */
-    inline GrantConstraints& AddEncryptionContextEquals(const Aws::String& key, Aws::String&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
+    inline GrantConstraints& AddEncryptionContextEquals(const Aws::String& key, Aws::String&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Contains a list of key-value pairs that must be present in the encryption
@@ -237,7 +238,7 @@ namespace Model
      * this list, the grant allows the operation. Otherwise, the operation is not
      * allowed.</p>
      */
-    inline GrantConstraints& AddEncryptionContextEquals(Aws::String&& key, Aws::String&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
+    inline GrantConstraints& AddEncryptionContextEquals(Aws::String&& key, Aws::String&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Contains a list of key-value pairs that must be present in the encryption
@@ -246,7 +247,7 @@ namespace Model
      * this list, the grant allows the operation. Otherwise, the operation is not
      * allowed.</p>
      */
-    inline GrantConstraints& AddEncryptionContextEquals(const char* key, Aws::String&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
+    inline GrantConstraints& AddEncryptionContextEquals(const char* key, Aws::String&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Contains a list of key-value pairs that must be present in the encryption
@@ -255,7 +256,7 @@ namespace Model
      * this list, the grant allows the operation. Otherwise, the operation is not
      * allowed.</p>
      */
-    inline GrantConstraints& AddEncryptionContextEquals(Aws::String&& key, const char* value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
+    inline GrantConstraints& AddEncryptionContextEquals(Aws::String&& key, const char* value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Contains a list of key-value pairs that must be present in the encryption
@@ -264,7 +265,7 @@ namespace Model
      * this list, the grant allows the operation. Otherwise, the operation is not
      * allowed.</p>
      */
-    inline GrantConstraints& AddEncryptionContextEquals(const char* key, const char* value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
+    inline GrantConstraints& AddEncryptionContextEquals(const char* key, const char* value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(key, value); return *this; }
 
   private:
     Aws::Map<Aws::String, Aws::String> m_encryptionContextSubset;

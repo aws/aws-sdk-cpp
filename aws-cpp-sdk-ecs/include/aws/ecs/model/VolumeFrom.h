@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The name of the container to mount volumes from.</p>
      */
-    inline void SetSourceContainer(Aws::String&& value) { m_sourceContainerHasBeenSet = true; m_sourceContainer = value; }
+    inline void SetSourceContainer(Aws::String&& value) { m_sourceContainerHasBeenSet = true; m_sourceContainer = std::move(value); }
 
     /**
      * <p>The name of the container to mount volumes from.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of the container to mount volumes from.</p>
      */
-    inline VolumeFrom& WithSourceContainer(Aws::String&& value) { SetSourceContainer(value); return *this;}
+    inline VolumeFrom& WithSourceContainer(Aws::String&& value) { SetSourceContainer(std::move(value)); return *this;}
 
     /**
      * <p>The name of the container to mount volumes from.</p>

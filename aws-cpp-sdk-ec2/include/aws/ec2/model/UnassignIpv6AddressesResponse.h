@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceId = value; }
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceId = std::move(value); }
 
     /**
      * <p>The ID of the network interface.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
-    inline UnassignIpv6AddressesResponse& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(value); return *this;}
+    inline UnassignIpv6AddressesResponse& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the network interface.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The IPv6 addresses that have been unassigned from the network interface.</p>
      */
-    inline void SetUnassignedIpv6Addresses(Aws::Vector<Aws::String>&& value) { m_unassignedIpv6Addresses = value; }
+    inline void SetUnassignedIpv6Addresses(Aws::Vector<Aws::String>&& value) { m_unassignedIpv6Addresses = std::move(value); }
 
     /**
      * <p>The IPv6 addresses that have been unassigned from the network interface.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The IPv6 addresses that have been unassigned from the network interface.</p>
      */
-    inline UnassignIpv6AddressesResponse& WithUnassignedIpv6Addresses(Aws::Vector<Aws::String>&& value) { SetUnassignedIpv6Addresses(value); return *this;}
+    inline UnassignIpv6AddressesResponse& WithUnassignedIpv6Addresses(Aws::Vector<Aws::String>&& value) { SetUnassignedIpv6Addresses(std::move(value)); return *this;}
 
     /**
      * <p>The IPv6 addresses that have been unassigned from the network interface.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The IPv6 addresses that have been unassigned from the network interface.</p>
      */
-    inline UnassignIpv6AddressesResponse& AddUnassignedIpv6Addresses(Aws::String&& value) { m_unassignedIpv6Addresses.push_back(value); return *this; }
+    inline UnassignIpv6AddressesResponse& AddUnassignedIpv6Addresses(Aws::String&& value) { m_unassignedIpv6Addresses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IPv6 addresses that have been unassigned from the network interface.</p>
@@ -123,13 +124,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline UnassignIpv6AddressesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline UnassignIpv6AddressesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline UnassignIpv6AddressesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_networkInterfaceId;

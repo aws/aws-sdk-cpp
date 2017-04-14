@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/monitoring/model/HistoryItemType.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of the alarm.</p>
      */
-    inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
+    inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::move(value); }
 
     /**
      * <p>The name of the alarm.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the alarm.</p>
      */
-    inline DescribeAlarmHistoryRequest& WithAlarmName(Aws::String&& value) { SetAlarmName(value); return *this;}
+    inline DescribeAlarmHistoryRequest& WithAlarmName(Aws::String&& value) { SetAlarmName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the alarm.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The type of alarm histories to retrieve.</p>
      */
-    inline void SetHistoryItemType(HistoryItemType&& value) { m_historyItemTypeHasBeenSet = true; m_historyItemType = value; }
+    inline void SetHistoryItemType(HistoryItemType&& value) { m_historyItemTypeHasBeenSet = true; m_historyItemType = std::move(value); }
 
     /**
      * <p>The type of alarm histories to retrieve.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The type of alarm histories to retrieve.</p>
      */
-    inline DescribeAlarmHistoryRequest& WithHistoryItemType(HistoryItemType&& value) { SetHistoryItemType(value); return *this;}
+    inline DescribeAlarmHistoryRequest& WithHistoryItemType(HistoryItemType&& value) { SetHistoryItemType(std::move(value)); return *this;}
 
     /**
      * <p>The starting date to retrieve alarm history.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The starting date to retrieve alarm history.</p>
      */
-    inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDateHasBeenSet = true; m_startDate = value; }
+    inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
 
     /**
      * <p>The starting date to retrieve alarm history.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The starting date to retrieve alarm history.</p>
      */
-    inline DescribeAlarmHistoryRequest& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(value); return *this;}
+    inline DescribeAlarmHistoryRequest& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
 
     /**
      * <p>The ending date to retrieve alarm history.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The ending date to retrieve alarm history.</p>
      */
-    inline void SetEndDate(Aws::Utils::DateTime&& value) { m_endDateHasBeenSet = true; m_endDate = value; }
+    inline void SetEndDate(Aws::Utils::DateTime&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
 
     /**
      * <p>The ending date to retrieve alarm history.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The ending date to retrieve alarm history.</p>
      */
-    inline DescribeAlarmHistoryRequest& WithEndDate(Aws::Utils::DateTime&& value) { SetEndDate(value); return *this;}
+    inline DescribeAlarmHistoryRequest& WithEndDate(Aws::Utils::DateTime&& value) { SetEndDate(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of alarm history records to retrieve.</p>
@@ -180,7 +181,7 @@ namespace Model
      * <p>The token returned by a previous call to indicate that there is more data
      * available.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token returned by a previous call to indicate that there is more data
@@ -198,7 +199,7 @@ namespace Model
      * <p>The token returned by a previous call to indicate that there is more data
      * available.</p>
      */
-    inline DescribeAlarmHistoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeAlarmHistoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token returned by a previous call to indicate that there is more data

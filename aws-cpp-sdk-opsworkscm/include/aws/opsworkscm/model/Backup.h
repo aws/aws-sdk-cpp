@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworkscm/model/BackupStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The ARN of the backup. </p>
      */
-    inline void SetBackupArn(Aws::String&& value) { m_backupArnHasBeenSet = true; m_backupArn = value; }
+    inline void SetBackupArn(Aws::String&& value) { m_backupArnHasBeenSet = true; m_backupArn = std::move(value); }
 
     /**
      * <p>The ARN of the backup. </p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The ARN of the backup. </p>
      */
-    inline Backup& WithBackupArn(Aws::String&& value) { SetBackupArn(value); return *this;}
+    inline Backup& WithBackupArn(Aws::String&& value) { SetBackupArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the backup. </p>
@@ -98,7 +99,7 @@ namespace Model
      * <p> The generated ID of the backup. Example:
      * <code>myServerName-yyyyMMddHHmmssSSS</code> </p>
      */
-    inline void SetBackupId(Aws::String&& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
+    inline void SetBackupId(Aws::String&& value) { m_backupIdHasBeenSet = true; m_backupId = std::move(value); }
 
     /**
      * <p> The generated ID of the backup. Example:
@@ -116,7 +117,7 @@ namespace Model
      * <p> The generated ID of the backup. Example:
      * <code>myServerName-yyyyMMddHHmmssSSS</code> </p>
      */
-    inline Backup& WithBackupId(Aws::String&& value) { SetBackupId(value); return *this;}
+    inline Backup& WithBackupId(Aws::String&& value) { SetBackupId(std::move(value)); return *this;}
 
     /**
      * <p> The generated ID of the backup. Example:
@@ -140,7 +141,7 @@ namespace Model
      * <p> The backup type. Valid values are <code>automated</code> or
      * <code>manual</code>. </p>
      */
-    inline void SetBackupType(BackupType&& value) { m_backupTypeHasBeenSet = true; m_backupType = value; }
+    inline void SetBackupType(BackupType&& value) { m_backupTypeHasBeenSet = true; m_backupType = std::move(value); }
 
     /**
      * <p> The backup type. Valid values are <code>automated</code> or
@@ -152,7 +153,7 @@ namespace Model
      * <p> The backup type. Valid values are <code>automated</code> or
      * <code>manual</code>. </p>
      */
-    inline Backup& WithBackupType(BackupType&& value) { SetBackupType(value); return *this;}
+    inline Backup& WithBackupType(BackupType&& value) { SetBackupType(std::move(value)); return *this;}
 
     /**
      * <p> The time stamp when the backup was created in the database. Example:
@@ -170,7 +171,7 @@ namespace Model
      * <p> The time stamp when the backup was created in the database. Example:
      * <code>2016-07-29T13:38:47.520Z</code> </p>
      */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
      * <p> The time stamp when the backup was created in the database. Example:
@@ -182,7 +183,7 @@ namespace Model
      * <p> The time stamp when the backup was created in the database. Example:
      * <code>2016-07-29T13:38:47.520Z</code> </p>
      */
-    inline Backup& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
+    inline Backup& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
      * <p> A user-provided description for a manual backup. This field is empty for
@@ -200,7 +201,7 @@ namespace Model
      * <p> A user-provided description for a manual backup. This field is empty for
      * automated backups. </p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p> A user-provided description for a manual backup. This field is empty for
@@ -218,7 +219,7 @@ namespace Model
      * <p> A user-provided description for a manual backup. This field is empty for
      * automated backups. </p>
      */
-    inline Backup& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline Backup& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p> A user-provided description for a manual backup. This field is empty for
@@ -242,7 +243,7 @@ namespace Model
      * <p> The engine type that is obtained from the server when the backup is created.
      * </p>
      */
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p> The engine type that is obtained from the server when the backup is created.
@@ -260,7 +261,7 @@ namespace Model
      * <p> The engine type that is obtained from the server when the backup is created.
      * </p>
      */
-    inline Backup& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
+    inline Backup& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p> The engine type that is obtained from the server when the backup is created.
@@ -284,7 +285,7 @@ namespace Model
      * <p> The engine model that is obtained from the server when the backup is
      * created. </p>
      */
-    inline void SetEngineModel(Aws::String&& value) { m_engineModelHasBeenSet = true; m_engineModel = value; }
+    inline void SetEngineModel(Aws::String&& value) { m_engineModelHasBeenSet = true; m_engineModel = std::move(value); }
 
     /**
      * <p> The engine model that is obtained from the server when the backup is
@@ -302,7 +303,7 @@ namespace Model
      * <p> The engine model that is obtained from the server when the backup is
      * created. </p>
      */
-    inline Backup& WithEngineModel(Aws::String&& value) { SetEngineModel(value); return *this;}
+    inline Backup& WithEngineModel(Aws::String&& value) { SetEngineModel(std::move(value)); return *this;}
 
     /**
      * <p> The engine model that is obtained from the server when the backup is
@@ -326,7 +327,7 @@ namespace Model
      * <p> The engine version that is obtained from the server when the backup is
      * created. </p>
      */
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p> The engine version that is obtained from the server when the backup is
@@ -344,7 +345,7 @@ namespace Model
      * <p> The engine version that is obtained from the server when the backup is
      * created. </p>
      */
-    inline Backup& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
+    inline Backup& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p> The engine version that is obtained from the server when the backup is
@@ -371,7 +372,7 @@ namespace Model
      * backup is created. Because this value is stored, you are not required to provide
      * the InstanceProfileArn again if you restore a backup. </p>
      */
-    inline void SetInstanceProfileArn(Aws::String&& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = value; }
+    inline void SetInstanceProfileArn(Aws::String&& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = std::move(value); }
 
     /**
      * <p> The EC2 instance profile ARN that is obtained from the server when the
@@ -392,7 +393,7 @@ namespace Model
      * backup is created. Because this value is stored, you are not required to provide
      * the InstanceProfileArn again if you restore a backup. </p>
      */
-    inline Backup& WithInstanceProfileArn(Aws::String&& value) { SetInstanceProfileArn(value); return *this;}
+    inline Backup& WithInstanceProfileArn(Aws::String&& value) { SetInstanceProfileArn(std::move(value)); return *this;}
 
     /**
      * <p> The EC2 instance profile ARN that is obtained from the server when the
@@ -417,7 +418,7 @@ namespace Model
      * <p> The instance type that is obtained from the server when the backup is
      * created. </p>
      */
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p> The instance type that is obtained from the server when the backup is
@@ -435,7 +436,7 @@ namespace Model
      * <p> The instance type that is obtained from the server when the backup is
      * created. </p>
      */
-    inline Backup& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
+    inline Backup& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p> The instance type that is obtained from the server when the backup is
@@ -459,7 +460,7 @@ namespace Model
      * <p> The key pair that is obtained from the server when the backup is created.
      * </p>
      */
-    inline void SetKeyPair(Aws::String&& value) { m_keyPairHasBeenSet = true; m_keyPair = value; }
+    inline void SetKeyPair(Aws::String&& value) { m_keyPairHasBeenSet = true; m_keyPair = std::move(value); }
 
     /**
      * <p> The key pair that is obtained from the server when the backup is created.
@@ -477,7 +478,7 @@ namespace Model
      * <p> The key pair that is obtained from the server when the backup is created.
      * </p>
      */
-    inline Backup& WithKeyPair(Aws::String&& value) { SetKeyPair(value); return *this;}
+    inline Backup& WithKeyPair(Aws::String&& value) { SetKeyPair(std::move(value)); return *this;}
 
     /**
      * <p> The key pair that is obtained from the server when the backup is created.
@@ -501,7 +502,7 @@ namespace Model
      * <p> The preferred backup period that is obtained from the server when the backup
      * is created. </p>
      */
-    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
+    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
      * <p> The preferred backup period that is obtained from the server when the backup
@@ -519,7 +520,7 @@ namespace Model
      * <p> The preferred backup period that is obtained from the server when the backup
      * is created. </p>
      */
-    inline Backup& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(value); return *this;}
+    inline Backup& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
      * <p> The preferred backup period that is obtained from the server when the backup
@@ -543,7 +544,7 @@ namespace Model
      * <p> The preferred maintenance period that is obtained from the server when the
      * backup is created. </p>
      */
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
+    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p> The preferred maintenance period that is obtained from the server when the
@@ -561,7 +562,7 @@ namespace Model
      * <p> The preferred maintenance period that is obtained from the server when the
      * backup is created. </p>
      */
-    inline Backup& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(value); return *this;}
+    inline Backup& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p> The preferred maintenance period that is obtained from the server when the
@@ -582,7 +583,7 @@ namespace Model
     /**
      * <p> The Amazon S3 URL of the backup's log file. </p>
      */
-    inline void SetS3LogUrl(Aws::String&& value) { m_s3LogUrlHasBeenSet = true; m_s3LogUrl = value; }
+    inline void SetS3LogUrl(Aws::String&& value) { m_s3LogUrlHasBeenSet = true; m_s3LogUrl = std::move(value); }
 
     /**
      * <p> The Amazon S3 URL of the backup's log file. </p>
@@ -597,7 +598,7 @@ namespace Model
     /**
      * <p> The Amazon S3 URL of the backup's log file. </p>
      */
-    inline Backup& WithS3LogUrl(Aws::String&& value) { SetS3LogUrl(value); return *this;}
+    inline Backup& WithS3LogUrl(Aws::String&& value) { SetS3LogUrl(std::move(value)); return *this;}
 
     /**
      * <p> The Amazon S3 URL of the backup's log file. </p>
@@ -620,7 +621,7 @@ namespace Model
      * <p> The security group IDs that are obtained from the server when the backup is
      * created. </p>
      */
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
+    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p> The security group IDs that are obtained from the server when the backup is
@@ -632,7 +633,7 @@ namespace Model
      * <p> The security group IDs that are obtained from the server when the backup is
      * created. </p>
      */
-    inline Backup& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(value); return *this;}
+    inline Backup& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p> The security group IDs that are obtained from the server when the backup is
@@ -644,7 +645,7 @@ namespace Model
      * <p> The security group IDs that are obtained from the server when the backup is
      * created. </p>
      */
-    inline Backup& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    inline Backup& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p> The security group IDs that are obtained from the server when the backup is
@@ -665,7 +666,7 @@ namespace Model
     /**
      * <p> The name of the server from which the backup was made. </p>
      */
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
+    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
 
     /**
      * <p> The name of the server from which the backup was made. </p>
@@ -680,7 +681,7 @@ namespace Model
     /**
      * <p> The name of the server from which the backup was made. </p>
      */
-    inline Backup& WithServerName(Aws::String&& value) { SetServerName(value); return *this;}
+    inline Backup& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
 
     /**
      * <p> The name of the server from which the backup was made. </p>
@@ -703,7 +704,7 @@ namespace Model
      * <p> The service role ARN that is obtained from the server when the backup is
      * created. </p>
      */
-    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
+    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
      * <p> The service role ARN that is obtained from the server when the backup is
@@ -721,7 +722,7 @@ namespace Model
      * <p> The service role ARN that is obtained from the server when the backup is
      * created. </p>
      */
-    inline Backup& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(value); return *this;}
+    inline Backup& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
      * <p> The service role ARN that is obtained from the server when the backup is
@@ -742,7 +743,7 @@ namespace Model
     /**
      * <p>The status of a backup while in progress. </p>
      */
-    inline void SetStatus(BackupStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(BackupStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of a backup while in progress. </p>
@@ -752,7 +753,7 @@ namespace Model
     /**
      * <p>The status of a backup while in progress. </p>
      */
-    inline Backup& WithStatus(BackupStatus&& value) { SetStatus(value); return *this;}
+    inline Backup& WithStatus(BackupStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p> An informational message about backup status. </p>
@@ -767,7 +768,7 @@ namespace Model
     /**
      * <p> An informational message about backup status. </p>
      */
-    inline void SetStatusDescription(Aws::String&& value) { m_statusDescriptionHasBeenSet = true; m_statusDescription = value; }
+    inline void SetStatusDescription(Aws::String&& value) { m_statusDescriptionHasBeenSet = true; m_statusDescription = std::move(value); }
 
     /**
      * <p> An informational message about backup status. </p>
@@ -782,7 +783,7 @@ namespace Model
     /**
      * <p> An informational message about backup status. </p>
      */
-    inline Backup& WithStatusDescription(Aws::String&& value) { SetStatusDescription(value); return *this;}
+    inline Backup& WithStatusDescription(Aws::String&& value) { SetStatusDescription(std::move(value)); return *this;}
 
     /**
      * <p> An informational message about backup status. </p>
@@ -805,7 +806,7 @@ namespace Model
      * <p> The subnet IDs that are obtained from the server when the backup is created.
      * </p>
      */
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
+    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
      * <p> The subnet IDs that are obtained from the server when the backup is created.
@@ -817,7 +818,7 @@ namespace Model
      * <p> The subnet IDs that are obtained from the server when the backup is created.
      * </p>
      */
-    inline Backup& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(value); return *this;}
+    inline Backup& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
      * <p> The subnet IDs that are obtained from the server when the backup is created.
@@ -829,7 +830,7 @@ namespace Model
      * <p> The subnet IDs that are obtained from the server when the backup is created.
      * </p>
      */
-    inline Backup& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    inline Backup& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p> The subnet IDs that are obtained from the server when the backup is created.
@@ -853,7 +854,7 @@ namespace Model
      * <p> The version of AWS OpsWorks for Chef Automate-specific tools that is
      * obtained from the server when the backup is created. </p>
      */
-    inline void SetToolsVersion(Aws::String&& value) { m_toolsVersionHasBeenSet = true; m_toolsVersion = value; }
+    inline void SetToolsVersion(Aws::String&& value) { m_toolsVersionHasBeenSet = true; m_toolsVersion = std::move(value); }
 
     /**
      * <p> The version of AWS OpsWorks for Chef Automate-specific tools that is
@@ -871,7 +872,7 @@ namespace Model
      * <p> The version of AWS OpsWorks for Chef Automate-specific tools that is
      * obtained from the server when the backup is created. </p>
      */
-    inline Backup& WithToolsVersion(Aws::String&& value) { SetToolsVersion(value); return *this;}
+    inline Backup& WithToolsVersion(Aws::String&& value) { SetToolsVersion(std::move(value)); return *this;}
 
     /**
      * <p> The version of AWS OpsWorks for Chef Automate-specific tools that is
@@ -895,7 +896,7 @@ namespace Model
      * <p> The IAM user ARN of the requester for manual backups. This field is empty
      * for automated backups. </p>
      */
-    inline void SetUserArn(Aws::String&& value) { m_userArnHasBeenSet = true; m_userArn = value; }
+    inline void SetUserArn(Aws::String&& value) { m_userArnHasBeenSet = true; m_userArn = std::move(value); }
 
     /**
      * <p> The IAM user ARN of the requester for manual backups. This field is empty
@@ -913,7 +914,7 @@ namespace Model
      * <p> The IAM user ARN of the requester for manual backups. This field is empty
      * for automated backups. </p>
      */
-    inline Backup& WithUserArn(Aws::String&& value) { SetUserArn(value); return *this;}
+    inline Backup& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
 
     /**
      * <p> The IAM user ARN of the requester for manual backups. This field is empty

@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/SESRequest.h>
 #include <aws/email/model/ReceiptFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * consists of a name, an IP address range, and whether to allow or block mail from
      * it.</p>
      */
-    inline void SetFilter(ReceiptFilter&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(ReceiptFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>A data structure that describes the IP address filter to create, which
@@ -76,7 +77,7 @@ namespace Model
      * consists of a name, an IP address range, and whether to allow or block mail from
      * it.</p>
      */
-    inline CreateReceiptFilterRequest& WithFilter(ReceiptFilter&& value) { SetFilter(value); return *this;}
+    inline CreateReceiptFilterRequest& WithFilter(ReceiptFilter&& value) { SetFilter(std::move(value)); return *this;}
 
   private:
     ReceiptFilter m_filter;

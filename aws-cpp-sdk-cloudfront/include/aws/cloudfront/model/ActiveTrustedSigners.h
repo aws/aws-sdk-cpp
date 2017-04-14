@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudfront/model/Signer.h>
+#include <utility>
 
 namespace Aws
 {
@@ -103,7 +104,7 @@ namespace Model
      * signer that is specified in the TrustedSigners complex type, including trusted
      * signers in the default cache behavior and in all of the other cache behaviors.
      */
-    inline void SetItems(Aws::Vector<Signer>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+    inline void SetItems(Aws::Vector<Signer>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * A complex type that contains one Signer complex type for each unique trusted
@@ -117,7 +118,7 @@ namespace Model
      * signer that is specified in the TrustedSigners complex type, including trusted
      * signers in the default cache behavior and in all of the other cache behaviors.
      */
-    inline ActiveTrustedSigners& WithItems(Aws::Vector<Signer>&& value) { SetItems(value); return *this;}
+    inline ActiveTrustedSigners& WithItems(Aws::Vector<Signer>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * A complex type that contains one Signer complex type for each unique trusted
@@ -131,7 +132,7 @@ namespace Model
      * signer that is specified in the TrustedSigners complex type, including trusted
      * signers in the default cache behavior and in all of the other cache behaviors.
      */
-    inline ActiveTrustedSigners& AddItems(Signer&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+    inline ActiveTrustedSigners& AddItems(Signer&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
     bool m_enabled;

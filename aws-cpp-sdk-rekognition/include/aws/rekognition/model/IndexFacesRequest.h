@@ -19,6 +19,7 @@
 #include <aws/rekognition/model/Image.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/model/Attribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>ID of an existing collection to which you want to add the faces that are
      * detected in the input images.</p>
      */
-    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
+    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::move(value); }
 
     /**
      * <p>ID of an existing collection to which you want to add the faces that are
@@ -72,7 +73,7 @@ namespace Model
      * <p>ID of an existing collection to which you want to add the faces that are
      * detected in the input images.</p>
      */
-    inline IndexFacesRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(value); return *this;}
+    inline IndexFacesRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(std::move(value)); return *this;}
 
     /**
      * <p>ID of an existing collection to which you want to add the faces that are
@@ -87,13 +88,13 @@ namespace Model
     inline void SetImage(const Image& value) { m_imageHasBeenSet = true; m_image = value; }
 
     
-    inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = value; }
+    inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     
     inline IndexFacesRequest& WithImage(const Image& value) { SetImage(value); return *this;}
 
     
-    inline IndexFacesRequest& WithImage(Image&& value) { SetImage(value); return *this;}
+    inline IndexFacesRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
 
     /**
      * <p>ID you want to assign to all the faces detected in the image.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>ID you want to assign to all the faces detected in the image.</p>
      */
-    inline void SetExternalImageId(Aws::String&& value) { m_externalImageIdHasBeenSet = true; m_externalImageId = value; }
+    inline void SetExternalImageId(Aws::String&& value) { m_externalImageIdHasBeenSet = true; m_externalImageId = std::move(value); }
 
     /**
      * <p>ID you want to assign to all the faces detected in the image.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>ID you want to assign to all the faces detected in the image.</p>
      */
-    inline IndexFacesRequest& WithExternalImageId(Aws::String&& value) { SetExternalImageId(value); return *this;}
+    inline IndexFacesRequest& WithExternalImageId(Aws::String&& value) { SetExternalImageId(std::move(value)); return *this;}
 
     /**
      * <p>ID you want to assign to all the faces detected in the image.</p>
@@ -170,7 +171,7 @@ namespace Model
      * logical AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
-    inline void SetDetectionAttributes(Aws::Vector<Attribute>&& value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes = value; }
+    inline void SetDetectionAttributes(Aws::Vector<Attribute>&& value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes = std::move(value); }
 
     /**
      * <p>A list of facial attributes you want to be returned. This can be the default
@@ -198,7 +199,7 @@ namespace Model
      * logical AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
-    inline IndexFacesRequest& WithDetectionAttributes(Aws::Vector<Attribute>&& value) { SetDetectionAttributes(value); return *this;}
+    inline IndexFacesRequest& WithDetectionAttributes(Aws::Vector<Attribute>&& value) { SetDetectionAttributes(std::move(value)); return *this;}
 
     /**
      * <p>A list of facial attributes you want to be returned. This can be the default
@@ -226,7 +227,7 @@ namespace Model
      * logical AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
-    inline IndexFacesRequest& AddDetectionAttributes(Attribute&& value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes.push_back(value); return *this; }
+    inline IndexFacesRequest& AddDetectionAttributes(Attribute&& value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_collectionId;

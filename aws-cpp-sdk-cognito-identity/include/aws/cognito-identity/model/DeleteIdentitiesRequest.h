@@ -17,6 +17,7 @@
 #include <aws/cognito-identity/CognitoIdentityRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>A list of 1-60 identities that you want to delete.</p>
      */
-    inline void SetIdentityIdsToDelete(Aws::Vector<Aws::String>&& value) { m_identityIdsToDeleteHasBeenSet = true; m_identityIdsToDelete = value; }
+    inline void SetIdentityIdsToDelete(Aws::Vector<Aws::String>&& value) { m_identityIdsToDeleteHasBeenSet = true; m_identityIdsToDelete = std::move(value); }
 
     /**
      * <p>A list of 1-60 identities that you want to delete.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>A list of 1-60 identities that you want to delete.</p>
      */
-    inline DeleteIdentitiesRequest& WithIdentityIdsToDelete(Aws::Vector<Aws::String>&& value) { SetIdentityIdsToDelete(value); return *this;}
+    inline DeleteIdentitiesRequest& WithIdentityIdsToDelete(Aws::Vector<Aws::String>&& value) { SetIdentityIdsToDelete(std::move(value)); return *this;}
 
     /**
      * <p>A list of 1-60 identities that you want to delete.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>A list of 1-60 identities that you want to delete.</p>
      */
-    inline DeleteIdentitiesRequest& AddIdentityIdsToDelete(Aws::String&& value) { m_identityIdsToDeleteHasBeenSet = true; m_identityIdsToDelete.push_back(value); return *this; }
+    inline DeleteIdentitiesRequest& AddIdentityIdsToDelete(Aws::String&& value) { m_identityIdsToDeleteHasBeenSet = true; m_identityIdsToDelete.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of 1-60 identities that you want to delete.</p>

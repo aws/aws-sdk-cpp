@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/GameSessionQueue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -32,6 +33,12 @@ namespace GameLift
 {
 namespace Model
 {
+  /**
+   * <p>Represents the returned data in response to a request action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSessionQueueOutput">AWS
+   * API Reference</a></p>
+   */
   class AWS_GAMELIFT_API CreateGameSessionQueueResult
   {
   public:
@@ -52,7 +59,7 @@ namespace Model
     /**
      * <p>Object that describes the newly created game session queue.</p>
      */
-    inline void SetGameSessionQueue(GameSessionQueue&& value) { m_gameSessionQueue = value; }
+    inline void SetGameSessionQueue(GameSessionQueue&& value) { m_gameSessionQueue = std::move(value); }
 
     /**
      * <p>Object that describes the newly created game session queue.</p>
@@ -62,7 +69,7 @@ namespace Model
     /**
      * <p>Object that describes the newly created game session queue.</p>
      */
-    inline CreateGameSessionQueueResult& WithGameSessionQueue(GameSessionQueue&& value) { SetGameSessionQueue(value); return *this;}
+    inline CreateGameSessionQueueResult& WithGameSessionQueue(GameSessionQueue&& value) { SetGameSessionQueue(std::move(value)); return *this;}
 
   private:
     GameSessionQueue m_gameSessionQueue;

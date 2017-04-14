@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The type of compute environment.</p>
      */
-    inline void SetType(CRType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(CRType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of compute environment.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The type of compute environment.</p>
      */
-    inline ComputeResource& WithType(CRType&& value) { SetType(value); return *this;}
+    inline ComputeResource& WithType(CRType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The minimum number of EC2 vCPUs that an environment should maintain. </p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The instances types that may launched.</p>
      */
-    inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
+    inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
 
     /**
      * <p>The instances types that may launched.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The instances types that may launched.</p>
      */
-    inline ComputeResource& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(value); return *this;}
+    inline ComputeResource& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
 
     /**
      * <p>The instances types that may launched.</p>
@@ -150,12 +151,54 @@ namespace Model
     /**
      * <p>The instances types that may launched.</p>
      */
-    inline ComputeResource& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+    inline ComputeResource& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The instances types that may launched.</p>
      */
     inline ComputeResource& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
+     * environment.</p>
+     */
+    inline const Aws::String& GetImageId() const{ return m_imageId; }
+
+    /**
+     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
+     * environment.</p>
+     */
+    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+
+    /**
+     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
+     * environment.</p>
+     */
+    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
+
+    /**
+     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
+     * environment.</p>
+     */
+    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
+
+    /**
+     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
+     * environment.</p>
+     */
+    inline ComputeResource& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
+
+    /**
+     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
+     * environment.</p>
+     */
+    inline ComputeResource& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
+     * environment.</p>
+     */
+    inline ComputeResource& WithImageId(const char* value) { SetImageId(value); return *this;}
 
     /**
      * <p>The VPC subnets into which the compute resources are launched. </p>
@@ -170,7 +213,7 @@ namespace Model
     /**
      * <p>The VPC subnets into which the compute resources are launched. </p>
      */
-    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
+    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
     /**
      * <p>The VPC subnets into which the compute resources are launched. </p>
@@ -180,7 +223,7 @@ namespace Model
     /**
      * <p>The VPC subnets into which the compute resources are launched. </p>
      */
-    inline ComputeResource& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(value); return *this;}
+    inline ComputeResource& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
     /**
      * <p>The VPC subnets into which the compute resources are launched. </p>
@@ -190,7 +233,7 @@ namespace Model
     /**
      * <p>The VPC subnets into which the compute resources are launched. </p>
      */
-    inline ComputeResource& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+    inline ComputeResource& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The VPC subnets into which the compute resources are launched. </p>
@@ -213,7 +256,7 @@ namespace Model
      * <p>The EC2 security group that is associated with instances launched in the
      * compute environment. </p>
      */
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
+    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p>The EC2 security group that is associated with instances launched in the
@@ -225,7 +268,7 @@ namespace Model
      * <p>The EC2 security group that is associated with instances launched in the
      * compute environment. </p>
      */
-    inline ComputeResource& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(value); return *this;}
+    inline ComputeResource& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>The EC2 security group that is associated with instances launched in the
@@ -237,7 +280,7 @@ namespace Model
      * <p>The EC2 security group that is associated with instances launched in the
      * compute environment. </p>
      */
-    inline ComputeResource& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    inline ComputeResource& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The EC2 security group that is associated with instances launched in the
@@ -261,7 +304,7 @@ namespace Model
      * <p>The EC2 key pair that is used for instances launched in the compute
      * environment.</p>
      */
-    inline void SetEc2KeyPair(Aws::String&& value) { m_ec2KeyPairHasBeenSet = true; m_ec2KeyPair = value; }
+    inline void SetEc2KeyPair(Aws::String&& value) { m_ec2KeyPairHasBeenSet = true; m_ec2KeyPair = std::move(value); }
 
     /**
      * <p>The EC2 key pair that is used for instances launched in the compute
@@ -279,7 +322,7 @@ namespace Model
      * <p>The EC2 key pair that is used for instances launched in the compute
      * environment.</p>
      */
-    inline ComputeResource& WithEc2KeyPair(Aws::String&& value) { SetEc2KeyPair(value); return *this;}
+    inline ComputeResource& WithEc2KeyPair(Aws::String&& value) { SetEc2KeyPair(std::move(value)); return *this;}
 
     /**
      * <p>The EC2 key pair that is used for instances launched in the compute
@@ -303,7 +346,7 @@ namespace Model
      * <p>The Amazon ECS instance role applied to Amazon EC2 instances in a compute
      * environment.</p>
      */
-    inline void SetInstanceRole(Aws::String&& value) { m_instanceRoleHasBeenSet = true; m_instanceRole = value; }
+    inline void SetInstanceRole(Aws::String&& value) { m_instanceRoleHasBeenSet = true; m_instanceRole = std::move(value); }
 
     /**
      * <p>The Amazon ECS instance role applied to Amazon EC2 instances in a compute
@@ -321,7 +364,7 @@ namespace Model
      * <p>The Amazon ECS instance role applied to Amazon EC2 instances in a compute
      * environment.</p>
      */
-    inline ComputeResource& WithInstanceRole(Aws::String&& value) { SetInstanceRole(value); return *this;}
+    inline ComputeResource& WithInstanceRole(Aws::String&& value) { SetInstanceRole(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon ECS instance role applied to Amazon EC2 instances in a compute
@@ -345,7 +388,7 @@ namespace Model
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. </p>
      */
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>Key-value pair tags to be applied to resources that are launched in the
@@ -357,49 +400,49 @@ namespace Model
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. </p>
      */
-    inline ComputeResource& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(value); return *this;}
+    inline ComputeResource& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. </p>
      */
-    inline ComputeResource& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline ComputeResource& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. </p>
      */
-    inline ComputeResource& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline ComputeResource& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. </p>
      */
-    inline ComputeResource& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline ComputeResource& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. </p>
      */
-    inline ComputeResource& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline ComputeResource& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. </p>
      */
-    inline ComputeResource& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline ComputeResource& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. </p>
      */
-    inline ComputeResource& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline ComputeResource& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Key-value pair tags to be applied to resources that are launched in the
      * compute environment. </p>
      */
-    inline ComputeResource& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline ComputeResource& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The minimum percentage that a Spot Instance price must be when compared with
@@ -441,7 +484,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied
      * to a <code>SPOT</code> compute environment.</p>
      */
-    inline void SetSpotIamFleetRole(Aws::String&& value) { m_spotIamFleetRoleHasBeenSet = true; m_spotIamFleetRole = value; }
+    inline void SetSpotIamFleetRole(Aws::String&& value) { m_spotIamFleetRoleHasBeenSet = true; m_spotIamFleetRole = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied
@@ -459,7 +502,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied
      * to a <code>SPOT</code> compute environment.</p>
      */
-    inline ComputeResource& WithSpotIamFleetRole(Aws::String&& value) { SetSpotIamFleetRole(value); return *this;}
+    inline ComputeResource& WithSpotIamFleetRole(Aws::String&& value) { SetSpotIamFleetRole(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied
@@ -478,6 +521,8 @@ namespace Model
     bool m_desiredvCpusHasBeenSet;
     Aws::Vector<Aws::String> m_instanceTypes;
     bool m_instanceTypesHasBeenSet;
+    Aws::String m_imageId;
+    bool m_imageIdHasBeenSet;
     Aws::Vector<Aws::String> m_subnets;
     bool m_subnetsHasBeenSet;
     Aws::Vector<Aws::String> m_securityGroupIds;

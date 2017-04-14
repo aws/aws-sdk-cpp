@@ -16,6 +16,7 @@
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/es/model/OptionState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>Timestamp which tells the creation date for the entity.</p>
      */
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
      * <p>Timestamp which tells the creation date for the entity.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Timestamp which tells the creation date for the entity.</p>
      */
-    inline OptionStatus& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
+    inline OptionStatus& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
     /**
      * <p>Timestamp which tells the last updated time for the entity.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>Timestamp which tells the last updated time for the entity.</p>
      */
-    inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
+    inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDateHasBeenSet = true; m_updateDate = std::move(value); }
 
     /**
      * <p>Timestamp which tells the last updated time for the entity.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>Timestamp which tells the last updated time for the entity.</p>
      */
-    inline OptionStatus& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(value); return *this;}
+    inline OptionStatus& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the latest version for the entity.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>Provides the <code>OptionState</code> for the Elasticsearch domain.</p>
      */
-    inline void SetState(OptionState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(OptionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>Provides the <code>OptionState</code> for the Elasticsearch domain.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>Provides the <code>OptionState</code> for the Elasticsearch domain.</p>
      */
-    inline OptionStatus& WithState(OptionState&& value) { SetState(value); return *this;}
+    inline OptionStatus& WithState(OptionState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether the Elasticsearch domain is being deleted.</p>

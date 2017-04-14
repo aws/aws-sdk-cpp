@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The ID of the customer gateway.</p>
      */
-    inline void SetCustomerGatewayId(Aws::String&& value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId = value; }
+    inline void SetCustomerGatewayId(Aws::String&& value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId = std::move(value); }
 
     /**
      * <p>The ID of the customer gateway.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The ID of the customer gateway.</p>
      */
-    inline DeleteCustomerGatewayRequest& WithCustomerGatewayId(Aws::String&& value) { SetCustomerGatewayId(value); return *this;}
+    inline DeleteCustomerGatewayRequest& WithCustomerGatewayId(Aws::String&& value) { SetCustomerGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the customer gateway.</p>

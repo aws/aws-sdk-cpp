@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudsearch/model/DocumentSuggesterOptions.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     inline void SetSuggesterName(const Aws::String& value) { m_suggesterNameHasBeenSet = true; m_suggesterName = value; }
 
     
-    inline void SetSuggesterName(Aws::String&& value) { m_suggesterNameHasBeenSet = true; m_suggesterName = value; }
+    inline void SetSuggesterName(Aws::String&& value) { m_suggesterNameHasBeenSet = true; m_suggesterName = std::move(value); }
 
     
     inline void SetSuggesterName(const char* value) { m_suggesterNameHasBeenSet = true; m_suggesterName.assign(value); }
@@ -66,7 +67,7 @@ namespace Model
     inline Suggester& WithSuggesterName(const Aws::String& value) { SetSuggesterName(value); return *this;}
 
     
-    inline Suggester& WithSuggesterName(Aws::String&& value) { SetSuggesterName(value); return *this;}
+    inline Suggester& WithSuggesterName(Aws::String&& value) { SetSuggesterName(std::move(value)); return *this;}
 
     
     inline Suggester& WithSuggesterName(const char* value) { SetSuggesterName(value); return *this;}
@@ -78,13 +79,13 @@ namespace Model
     inline void SetDocumentSuggesterOptions(const DocumentSuggesterOptions& value) { m_documentSuggesterOptionsHasBeenSet = true; m_documentSuggesterOptions = value; }
 
     
-    inline void SetDocumentSuggesterOptions(DocumentSuggesterOptions&& value) { m_documentSuggesterOptionsHasBeenSet = true; m_documentSuggesterOptions = value; }
+    inline void SetDocumentSuggesterOptions(DocumentSuggesterOptions&& value) { m_documentSuggesterOptionsHasBeenSet = true; m_documentSuggesterOptions = std::move(value); }
 
     
     inline Suggester& WithDocumentSuggesterOptions(const DocumentSuggesterOptions& value) { SetDocumentSuggesterOptions(value); return *this;}
 
     
-    inline Suggester& WithDocumentSuggesterOptions(DocumentSuggesterOptions&& value) { SetDocumentSuggesterOptions(value); return *this;}
+    inline Suggester& WithDocumentSuggesterOptions(DocumentSuggesterOptions&& value) { SetDocumentSuggesterOptions(std::move(value)); return *this;}
 
   private:
     Aws::String m_suggesterName;

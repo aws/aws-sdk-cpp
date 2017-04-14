@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The name. This parameter must be set to "Chef".</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name. This parameter must be set to "Chef".</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name. This parameter must be set to "Chef".</p>
      */
-    inline StackConfigurationManager& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline StackConfigurationManager& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name. This parameter must be set to "Chef".</p>
@@ -97,7 +98,7 @@ namespace Model
      * stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is
      * 11.4.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux
@@ -118,7 +119,7 @@ namespace Model
      * stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is
      * 11.4.</p>
      */
-    inline StackConfigurationManager& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline StackConfigurationManager& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux

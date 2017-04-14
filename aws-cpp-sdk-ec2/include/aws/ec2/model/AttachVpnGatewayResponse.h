@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/VpcAttachment.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Information about the attachment.</p>
      */
-    inline void SetVpcAttachment(VpcAttachment&& value) { m_vpcAttachment = value; }
+    inline void SetVpcAttachment(VpcAttachment&& value) { m_vpcAttachment = std::move(value); }
 
     /**
      * <p>Information about the attachment.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Information about the attachment.</p>
      */
-    inline AttachVpnGatewayResponse& WithVpcAttachment(VpcAttachment&& value) { SetVpcAttachment(value); return *this;}
+    inline AttachVpnGatewayResponse& WithVpcAttachment(VpcAttachment&& value) { SetVpcAttachment(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -77,13 +78,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline AttachVpnGatewayResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline AttachVpnGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline AttachVpnGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     VpcAttachment m_vpcAttachment;

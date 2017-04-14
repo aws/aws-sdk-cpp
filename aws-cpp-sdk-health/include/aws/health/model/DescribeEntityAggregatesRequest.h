@@ -17,6 +17,7 @@
 #include <aws/health/HealthRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <code>"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331",
      * "arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz"</code> </p>
      */
-    inline void SetEventArns(Aws::Vector<Aws::String>&& value) { m_eventArnsHasBeenSet = true; m_eventArns = value; }
+    inline void SetEventArns(Aws::Vector<Aws::String>&& value) { m_eventArnsHasBeenSet = true; m_eventArns = std::move(value); }
 
     /**
      * <p>A list of event ARNs (unique identifiers). For example:
@@ -69,7 +70,7 @@ namespace Model
      * <code>"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331",
      * "arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz"</code> </p>
      */
-    inline DescribeEntityAggregatesRequest& WithEventArns(Aws::Vector<Aws::String>&& value) { SetEventArns(value); return *this;}
+    inline DescribeEntityAggregatesRequest& WithEventArns(Aws::Vector<Aws::String>&& value) { SetEventArns(std::move(value)); return *this;}
 
     /**
      * <p>A list of event ARNs (unique identifiers). For example:
@@ -83,7 +84,7 @@ namespace Model
      * <code>"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331",
      * "arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz"</code> </p>
      */
-    inline DescribeEntityAggregatesRequest& AddEventArns(Aws::String&& value) { m_eventArnsHasBeenSet = true; m_eventArns.push_back(value); return *this; }
+    inline DescribeEntityAggregatesRequest& AddEventArns(Aws::String&& value) { m_eventArnsHasBeenSet = true; m_eventArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of event ARNs (unique identifiers). For example:

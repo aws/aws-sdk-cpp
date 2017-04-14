@@ -18,6 +18,7 @@
 #include <aws/glacier/model/ActionCode.h>
 #include <aws/glacier/model/StatusCode.h>
 #include <aws/glacier/model/InventoryRetrievalJobDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>An opaque string that identifies an Amazon Glacier job.</p>
      */
-    inline void SetJobId(Aws::String&& value) { m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
 
     /**
      * <p>An opaque string that identifies an Amazon Glacier job.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>An opaque string that identifies an Amazon Glacier job.</p>
      */
-    inline DescribeJobResult& WithJobId(Aws::String&& value) { SetJobId(value); return *this;}
+    inline DescribeJobResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
      * <p>An opaque string that identifies an Amazon Glacier job.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The job description you provided when you initiated the job.</p>
      */
-    inline void SetJobDescription(Aws::String&& value) { m_jobDescription = value; }
+    inline void SetJobDescription(Aws::String&& value) { m_jobDescription = std::move(value); }
 
     /**
      * <p>The job description you provided when you initiated the job.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The job description you provided when you initiated the job.</p>
      */
-    inline DescribeJobResult& WithJobDescription(Aws::String&& value) { SetJobDescription(value); return *this;}
+    inline DescribeJobResult& WithJobDescription(Aws::String&& value) { SetJobDescription(std::move(value)); return *this;}
 
     /**
      * <p>The job description you provided when you initiated the job.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The job type. It is either ArchiveRetrieval or InventoryRetrieval.</p>
      */
-    inline void SetAction(ActionCode&& value) { m_action = value; }
+    inline void SetAction(ActionCode&& value) { m_action = std::move(value); }
 
     /**
      * <p>The job type. It is either ArchiveRetrieval or InventoryRetrieval.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The job type. It is either ArchiveRetrieval or InventoryRetrieval.</p>
      */
-    inline DescribeJobResult& WithAction(ActionCode&& value) { SetAction(value); return *this;}
+    inline DescribeJobResult& WithAction(ActionCode&& value) { SetAction(std::move(value)); return *this;}
 
     /**
      * <p>For an ArchiveRetrieval job, this is the archive ID requested for download.
@@ -158,7 +159,7 @@ namespace Model
      * <p>For an ArchiveRetrieval job, this is the archive ID requested for download.
      * Otherwise, this field is null.</p>
      */
-    inline void SetArchiveId(Aws::String&& value) { m_archiveId = value; }
+    inline void SetArchiveId(Aws::String&& value) { m_archiveId = std::move(value); }
 
     /**
      * <p>For an ArchiveRetrieval job, this is the archive ID requested for download.
@@ -176,7 +177,7 @@ namespace Model
      * <p>For an ArchiveRetrieval job, this is the archive ID requested for download.
      * Otherwise, this field is null.</p>
      */
-    inline DescribeJobResult& WithArchiveId(Aws::String&& value) { SetArchiveId(value); return *this;}
+    inline DescribeJobResult& WithArchiveId(Aws::String&& value) { SetArchiveId(std::move(value)); return *this;}
 
     /**
      * <p>For an ArchiveRetrieval job, this is the archive ID requested for download.
@@ -200,7 +201,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the vault from which the archive retrieval
      * was requested.</p>
      */
-    inline void SetVaultARN(Aws::String&& value) { m_vaultARN = value; }
+    inline void SetVaultARN(Aws::String&& value) { m_vaultARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the vault from which the archive retrieval
@@ -218,7 +219,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the vault from which the archive retrieval
      * was requested.</p>
      */
-    inline DescribeJobResult& WithVaultARN(Aws::String&& value) { SetVaultARN(value); return *this;}
+    inline DescribeJobResult& WithVaultARN(Aws::String&& value) { SetVaultARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the vault from which the archive retrieval
@@ -242,7 +243,7 @@ namespace Model
      * <p>The UTC date when the job was created. A string representation of ISO 8601
      * date format, for example, "2012-03-20T17:03:43.221Z".</p>
      */
-    inline void SetCreationDate(Aws::String&& value) { m_creationDate = value; }
+    inline void SetCreationDate(Aws::String&& value) { m_creationDate = std::move(value); }
 
     /**
      * <p>The UTC date when the job was created. A string representation of ISO 8601
@@ -260,7 +261,7 @@ namespace Model
      * <p>The UTC date when the job was created. A string representation of ISO 8601
      * date format, for example, "2012-03-20T17:03:43.221Z".</p>
      */
-    inline DescribeJobResult& WithCreationDate(Aws::String&& value) { SetCreationDate(value); return *this;}
+    inline DescribeJobResult& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
 
     /**
      * <p>The UTC date when the job was created. A string representation of ISO 8601
@@ -299,7 +300,7 @@ namespace Model
      * <p>The status code can be InProgress, Succeeded, or Failed, and indicates the
      * status of the job.</p>
      */
-    inline void SetStatusCode(StatusCode&& value) { m_statusCode = value; }
+    inline void SetStatusCode(StatusCode&& value) { m_statusCode = std::move(value); }
 
     /**
      * <p>The status code can be InProgress, Succeeded, or Failed, and indicates the
@@ -311,7 +312,7 @@ namespace Model
      * <p>The status code can be InProgress, Succeeded, or Failed, and indicates the
      * status of the job.</p>
      */
-    inline DescribeJobResult& WithStatusCode(StatusCode&& value) { SetStatusCode(value); return *this;}
+    inline DescribeJobResult& WithStatusCode(StatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
 
     /**
      * <p>A friendly message that describes the job status.</p>
@@ -326,7 +327,7 @@ namespace Model
     /**
      * <p>A friendly message that describes the job status.</p>
      */
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = value; }
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
 
     /**
      * <p>A friendly message that describes the job status.</p>
@@ -341,7 +342,7 @@ namespace Model
     /**
      * <p>A friendly message that describes the job status.</p>
      */
-    inline DescribeJobResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(value); return *this;}
+    inline DescribeJobResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
      * <p>A friendly message that describes the job status.</p>
@@ -400,7 +401,7 @@ namespace Model
      * <p>An Amazon Simple Notification Service (Amazon SNS) topic that receives
      * notification.</p>
      */
-    inline void SetSNSTopic(Aws::String&& value) { m_sNSTopic = value; }
+    inline void SetSNSTopic(Aws::String&& value) { m_sNSTopic = std::move(value); }
 
     /**
      * <p>An Amazon Simple Notification Service (Amazon SNS) topic that receives
@@ -418,7 +419,7 @@ namespace Model
      * <p>An Amazon Simple Notification Service (Amazon SNS) topic that receives
      * notification.</p>
      */
-    inline DescribeJobResult& WithSNSTopic(Aws::String&& value) { SetSNSTopic(value); return *this;}
+    inline DescribeJobResult& WithSNSTopic(Aws::String&& value) { SetSNSTopic(std::move(value)); return *this;}
 
     /**
      * <p>An Amazon Simple Notification Service (Amazon SNS) topic that receives
@@ -442,7 +443,7 @@ namespace Model
      * <p>The UTC time that the archive retrieval request completed. While the job is
      * in progress, the value will be null.</p>
      */
-    inline void SetCompletionDate(Aws::String&& value) { m_completionDate = value; }
+    inline void SetCompletionDate(Aws::String&& value) { m_completionDate = std::move(value); }
 
     /**
      * <p>The UTC time that the archive retrieval request completed. While the job is
@@ -460,7 +461,7 @@ namespace Model
      * <p>The UTC time that the archive retrieval request completed. While the job is
      * in progress, the value will be null.</p>
      */
-    inline DescribeJobResult& WithCompletionDate(Aws::String&& value) { SetCompletionDate(value); return *this;}
+    inline DescribeJobResult& WithCompletionDate(Aws::String&& value) { SetCompletionDate(std::move(value)); return *this;}
 
     /**
      * <p>The UTC time that the archive retrieval request completed. While the job is
@@ -508,7 +509,7 @@ namespace Model
      * range that is equal to the whole archive and the job status is InProgress.</p>
      * </li> </ul> <ul> <li> <p>Inventory jobs.</p> </li> </ul>
      */
-    inline void SetSHA256TreeHash(Aws::String&& value) { m_sHA256TreeHash = value; }
+    inline void SetSHA256TreeHash(Aws::String&& value) { m_sHA256TreeHash = std::move(value); }
 
     /**
      * <p>For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise,
@@ -550,7 +551,7 @@ namespace Model
      * range that is equal to the whole archive and the job status is InProgress.</p>
      * </li> </ul> <ul> <li> <p>Inventory jobs.</p> </li> </ul>
      */
-    inline DescribeJobResult& WithSHA256TreeHash(Aws::String&& value) { SetSHA256TreeHash(value); return *this;}
+    inline DescribeJobResult& WithSHA256TreeHash(Aws::String&& value) { SetSHA256TreeHash(std::move(value)); return *this;}
 
     /**
      * <p>For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise,
@@ -582,7 +583,7 @@ namespace Model
      * <p>The SHA256 tree hash of the entire archive for an archive retrieval. For
      * inventory retrieval jobs, this field is null.</p>
      */
-    inline void SetArchiveSHA256TreeHash(Aws::String&& value) { m_archiveSHA256TreeHash = value; }
+    inline void SetArchiveSHA256TreeHash(Aws::String&& value) { m_archiveSHA256TreeHash = std::move(value); }
 
     /**
      * <p>The SHA256 tree hash of the entire archive for an archive retrieval. For
@@ -600,7 +601,7 @@ namespace Model
      * <p>The SHA256 tree hash of the entire archive for an archive retrieval. For
      * inventory retrieval jobs, this field is null.</p>
      */
-    inline DescribeJobResult& WithArchiveSHA256TreeHash(Aws::String&& value) { SetArchiveSHA256TreeHash(value); return *this;}
+    inline DescribeJobResult& WithArchiveSHA256TreeHash(Aws::String&& value) { SetArchiveSHA256TreeHash(std::move(value)); return *this;}
 
     /**
      * <p>The SHA256 tree hash of the entire archive for an archive retrieval. For
@@ -633,7 +634,7 @@ namespace Model
      * equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For
      * inventory retrieval jobs this field is null. </p>
      */
-    inline void SetRetrievalByteRange(Aws::String&& value) { m_retrievalByteRange = value; }
+    inline void SetRetrievalByteRange(Aws::String&& value) { m_retrievalByteRange = std::move(value); }
 
     /**
      * <p>The retrieved byte range for archive retrieval jobs in the form
@@ -660,7 +661,7 @@ namespace Model
      * equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For
      * inventory retrieval jobs this field is null. </p>
      */
-    inline DescribeJobResult& WithRetrievalByteRange(Aws::String&& value) { SetRetrievalByteRange(value); return *this;}
+    inline DescribeJobResult& WithRetrievalByteRange(Aws::String&& value) { SetRetrievalByteRange(std::move(value)); return *this;}
 
     /**
      * <p>The retrieved byte range for archive retrieval jobs in the form
@@ -690,7 +691,7 @@ namespace Model
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
-    inline void SetTier(Aws::String&& value) { m_tier = value; }
+    inline void SetTier(Aws::String&& value) { m_tier = std::move(value); }
 
     /**
      * <p>The retrieval option to use for the archive retrieval. Valid values are
@@ -711,7 +712,7 @@ namespace Model
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
-    inline DescribeJobResult& WithTier(Aws::String&& value) { SetTier(value); return *this;}
+    inline DescribeJobResult& WithTier(Aws::String&& value) { SetTier(std::move(value)); return *this;}
 
     /**
      * <p>The retrieval option to use for the archive retrieval. Valid values are
@@ -733,7 +734,7 @@ namespace Model
     /**
      * <p>Parameters used for range inventory retrieval.</p>
      */
-    inline void SetInventoryRetrievalParameters(InventoryRetrievalJobDescription&& value) { m_inventoryRetrievalParameters = value; }
+    inline void SetInventoryRetrievalParameters(InventoryRetrievalJobDescription&& value) { m_inventoryRetrievalParameters = std::move(value); }
 
     /**
      * <p>Parameters used for range inventory retrieval.</p>
@@ -743,7 +744,7 @@ namespace Model
     /**
      * <p>Parameters used for range inventory retrieval.</p>
      */
-    inline DescribeJobResult& WithInventoryRetrievalParameters(InventoryRetrievalJobDescription&& value) { SetInventoryRetrievalParameters(value); return *this;}
+    inline DescribeJobResult& WithInventoryRetrievalParameters(InventoryRetrievalJobDescription&& value) { SetInventoryRetrievalParameters(std::move(value)); return *this;}
 
   private:
     Aws::String m_jobId;

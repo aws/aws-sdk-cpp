@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/model/QualificationType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The created Qualification type, returned as a QualificationType data
      * structure.</p>
      */
-    inline void SetQualificationType(QualificationType&& value) { m_qualificationType = value; }
+    inline void SetQualificationType(QualificationType&& value) { m_qualificationType = std::move(value); }
 
     /**
      * <p>The created Qualification type, returned as a QualificationType data
@@ -67,7 +68,7 @@ namespace Model
      * <p>The created Qualification type, returned as a QualificationType data
      * structure.</p>
      */
-    inline CreateQualificationTypeResult& WithQualificationType(QualificationType&& value) { SetQualificationType(value); return *this;}
+    inline CreateQualificationTypeResult& WithQualificationType(QualificationType&& value) { SetQualificationType(std::move(value)); return *this;}
 
   private:
     QualificationType m_qualificationType;

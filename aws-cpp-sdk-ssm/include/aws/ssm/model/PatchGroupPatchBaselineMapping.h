@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/PatchBaselineIdentity.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The name of the patch group registered with the patch baseline.</p>
      */
-    inline void SetPatchGroup(Aws::String&& value) { m_patchGroupHasBeenSet = true; m_patchGroup = value; }
+    inline void SetPatchGroup(Aws::String&& value) { m_patchGroupHasBeenSet = true; m_patchGroup = std::move(value); }
 
     /**
      * <p>The name of the patch group registered with the patch baseline.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The name of the patch group registered with the patch baseline.</p>
      */
-    inline PatchGroupPatchBaselineMapping& WithPatchGroup(Aws::String&& value) { SetPatchGroup(value); return *this;}
+    inline PatchGroupPatchBaselineMapping& WithPatchGroup(Aws::String&& value) { SetPatchGroup(std::move(value)); return *this;}
 
     /**
      * <p>The name of the patch group registered with the patch baseline.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The patch baseline the patch group is registered with.</p>
      */
-    inline void SetBaselineIdentity(PatchBaselineIdentity&& value) { m_baselineIdentityHasBeenSet = true; m_baselineIdentity = value; }
+    inline void SetBaselineIdentity(PatchBaselineIdentity&& value) { m_baselineIdentityHasBeenSet = true; m_baselineIdentity = std::move(value); }
 
     /**
      * <p>The patch baseline the patch group is registered with.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The patch baseline the patch group is registered with.</p>
      */
-    inline PatchGroupPatchBaselineMapping& WithBaselineIdentity(PatchBaselineIdentity&& value) { SetBaselineIdentity(value); return *this;}
+    inline PatchGroupPatchBaselineMapping& WithBaselineIdentity(PatchBaselineIdentity&& value) { SetBaselineIdentity(std::move(value)); return *this;}
 
   private:
     Aws::String m_patchGroup;

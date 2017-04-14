@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/PolicyType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string
      * requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the policy.</p> <p>The <a
@@ -86,7 +87,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string
      * requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
      */
-    inline PolicySummary& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline PolicySummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the policy.</p> <p>The <a
@@ -120,7 +121,7 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p> <p>For more information
@@ -147,7 +148,7 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
-    inline PolicySummary& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline PolicySummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p> <p>For more information
@@ -180,7 +181,7 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The friendly name of the policy.</p> <p>The <a
@@ -204,7 +205,7 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline PolicySummary& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline PolicySummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The friendly name of the policy.</p> <p>The <a
@@ -227,7 +228,7 @@ namespace Model
     /**
      * <p>The description of the policy.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the policy.</p>
@@ -242,7 +243,7 @@ namespace Model
     /**
      * <p>The description of the policy.</p>
      */
-    inline PolicySummary& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline PolicySummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the policy.</p>
@@ -262,7 +263,7 @@ namespace Model
     /**
      * <p>The type of policy.</p>
      */
-    inline void SetType(PolicyType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(PolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of policy.</p>
@@ -272,7 +273,7 @@ namespace Model
     /**
      * <p>The type of policy.</p>
      */
-    inline PolicySummary& WithType(PolicyType&& value) { SetType(value); return *this;}
+    inline PolicySummary& WithType(PolicyType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>A boolean value that indicates whether the specified policy is an AWS managed

@@ -16,6 +16,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
      * <code>GroupTotalInstances</code> </p> </li> </ul>
      */
-    inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = value; }
+    inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
 
     /**
      * <p>One of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
@@ -116,7 +117,7 @@ namespace Model
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
      * <code>GroupTotalInstances</code> </p> </li> </ul>
      */
-    inline EnabledMetric& WithMetric(Aws::String&& value) { SetMetric(value); return *this;}
+    inline EnabledMetric& WithMetric(Aws::String&& value) { SetMetric(std::move(value)); return *this;}
 
     /**
      * <p>One of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
@@ -146,7 +147,7 @@ namespace Model
      * <p>The granularity of the metric. The only valid value is
      * <code>1Minute</code>.</p>
      */
-    inline void SetGranularity(Aws::String&& value) { m_granularityHasBeenSet = true; m_granularity = value; }
+    inline void SetGranularity(Aws::String&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
 
     /**
      * <p>The granularity of the metric. The only valid value is
@@ -164,7 +165,7 @@ namespace Model
      * <p>The granularity of the metric. The only valid value is
      * <code>1Minute</code>.</p>
      */
-    inline EnabledMetric& WithGranularity(Aws::String&& value) { SetGranularity(value); return *this;}
+    inline EnabledMetric& WithGranularity(Aws::String&& value) { SetGranularity(std::move(value)); return *this;}
 
     /**
      * <p>The granularity of the metric. The only valid value is

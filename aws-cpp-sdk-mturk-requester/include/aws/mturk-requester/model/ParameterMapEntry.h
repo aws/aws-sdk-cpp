@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * Mechanical Turk to score as part of the ScoreMyKnownAnswers/2011-09-01 Review
      * Policy. </p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p> The QuestionID from the HIT that is used to identify which question requires
@@ -85,7 +86,7 @@ namespace Model
      * Mechanical Turk to score as part of the ScoreMyKnownAnswers/2011-09-01 Review
      * Policy. </p>
      */
-    inline ParameterMapEntry& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline ParameterMapEntry& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p> The QuestionID from the HIT that is used to identify which question requires
@@ -113,7 +114,7 @@ namespace Model
      * The Worker must match all values in order for the answer to be scored correctly.
      * </p>
      */
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
+    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <p> The list of answers to the question specified in the MapEntry Key element.
@@ -127,7 +128,7 @@ namespace Model
      * The Worker must match all values in order for the answer to be scored correctly.
      * </p>
      */
-    inline ParameterMapEntry& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
+    inline ParameterMapEntry& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <p> The list of answers to the question specified in the MapEntry Key element.
@@ -141,7 +142,7 @@ namespace Model
      * The Worker must match all values in order for the answer to be scored correctly.
      * </p>
      */
-    inline ParameterMapEntry& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    inline ParameterMapEntry& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
      * <p> The list of answers to the question specified in the MapEntry Key element.

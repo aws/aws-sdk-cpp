@@ -18,6 +18,7 @@
 #include <aws/route53/model/TagResourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
      * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
      */
-    inline void SetResourceType(TagResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(TagResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of the resources.</p> <ul> <li> <p>The resource type for health
@@ -72,7 +73,7 @@ namespace Model
      * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
      * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
      */
-    inline ListTagsForResourcesRequest& WithResourceType(TagResourceType&& value) { SetResourceType(value); return *this;}
+    inline ListTagsForResourcesRequest& WithResourceType(TagResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that contains the ResourceId element for each resource for
@@ -90,7 +91,7 @@ namespace Model
      * <p>A complex type that contains the ResourceId element for each resource for
      * which you want to get a list of tags.</p>
      */
-    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
+    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
 
     /**
      * <p>A complex type that contains the ResourceId element for each resource for
@@ -102,7 +103,7 @@ namespace Model
      * <p>A complex type that contains the ResourceId element for each resource for
      * which you want to get a list of tags.</p>
      */
-    inline ListTagsForResourcesRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(value); return *this;}
+    inline ListTagsForResourcesRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that contains the ResourceId element for each resource for
@@ -114,7 +115,7 @@ namespace Model
      * <p>A complex type that contains the ResourceId element for each resource for
      * which you want to get a list of tags.</p>
      */
-    inline ListTagsForResourcesRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
+    inline ListTagsForResourcesRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A complex type that contains the ResourceId element for each resource for

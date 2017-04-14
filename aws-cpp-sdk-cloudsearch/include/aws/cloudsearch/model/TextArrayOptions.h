@@ -16,6 +16,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * A value to use for the field if the field isn't specified for a document.
      */
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
 
     /**
      * A value to use for the field if the field isn't specified for a document.
@@ -77,7 +78,7 @@ namespace Model
     /**
      * A value to use for the field if the field isn't specified for a document.
      */
-    inline TextArrayOptions& WithDefaultValue(Aws::String&& value) { SetDefaultValue(value); return *this;}
+    inline TextArrayOptions& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
 
     /**
      * A value to use for the field if the field isn't specified for a document.
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>A list of source fields to map to the field. </p>
      */
-    inline void SetSourceFields(Aws::String&& value) { m_sourceFieldsHasBeenSet = true; m_sourceFields = value; }
+    inline void SetSourceFields(Aws::String&& value) { m_sourceFieldsHasBeenSet = true; m_sourceFields = std::move(value); }
 
     /**
      * <p>A list of source fields to map to the field. </p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>A list of source fields to map to the field. </p>
      */
-    inline TextArrayOptions& WithSourceFields(Aws::String&& value) { SetSourceFields(value); return *this;}
+    inline TextArrayOptions& WithSourceFields(Aws::String&& value) { SetSourceFields(std::move(value)); return *this;}
 
     /**
      * <p>A list of source fields to map to the field. </p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>The name of an analysis scheme for a <code>text-array</code> field.</p>
      */
-    inline void SetAnalysisScheme(Aws::String&& value) { m_analysisSchemeHasBeenSet = true; m_analysisScheme = value; }
+    inline void SetAnalysisScheme(Aws::String&& value) { m_analysisSchemeHasBeenSet = true; m_analysisScheme = std::move(value); }
 
     /**
      * <p>The name of an analysis scheme for a <code>text-array</code> field.</p>
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>The name of an analysis scheme for a <code>text-array</code> field.</p>
      */
-    inline TextArrayOptions& WithAnalysisScheme(Aws::String&& value) { SetAnalysisScheme(value); return *this;}
+    inline TextArrayOptions& WithAnalysisScheme(Aws::String&& value) { SetAnalysisScheme(std::move(value)); return *this;}
 
     /**
      * <p>The name of an analysis scheme for a <code>text-array</code> field.</p>

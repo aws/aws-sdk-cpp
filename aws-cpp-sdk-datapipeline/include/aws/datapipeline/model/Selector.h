@@ -16,6 +16,7 @@
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datapipeline/model/Operator.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * is used by the AWS Data Pipeline API. If the field is not set on the object, the
      * condition fails.</p>
      */
-    inline void SetFieldName(Aws::String&& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
+    inline void SetFieldName(Aws::String&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::move(value); }
 
     /**
      * <p>The name of the field that the operator will be applied to. The field name is
@@ -91,7 +92,7 @@ namespace Model
      * is used by the AWS Data Pipeline API. If the field is not set on the object, the
      * condition fails.</p>
      */
-    inline Selector& WithFieldName(Aws::String&& value) { SetFieldName(value); return *this;}
+    inline Selector& WithFieldName(Aws::String&& value) { SetFieldName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the field that the operator will be applied to. The field name is
@@ -108,13 +109,13 @@ namespace Model
     inline void SetOperator(const Operator& value) { m_operatorHasBeenSet = true; m_operator = value; }
 
     
-    inline void SetOperator(Operator&& value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline void SetOperator(Operator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
 
     
     inline Selector& WithOperator(const Operator& value) { SetOperator(value); return *this;}
 
     
-    inline Selector& WithOperator(Operator&& value) { SetOperator(value); return *this;}
+    inline Selector& WithOperator(Operator&& value) { SetOperator(std::move(value)); return *this;}
 
   private:
     Aws::String m_fieldName;

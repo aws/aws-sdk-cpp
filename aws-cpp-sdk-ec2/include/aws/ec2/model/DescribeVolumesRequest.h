@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>One or more volume IDs.</p>
      */
-    inline void SetVolumeIds(Aws::Vector<Aws::String>&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = value; }
+    inline void SetVolumeIds(Aws::Vector<Aws::String>&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = std::move(value); }
 
     /**
      * <p>One or more volume IDs.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>One or more volume IDs.</p>
      */
-    inline DescribeVolumesRequest& WithVolumeIds(Aws::Vector<Aws::String>&& value) { SetVolumeIds(value); return *this;}
+    inline DescribeVolumesRequest& WithVolumeIds(Aws::Vector<Aws::String>&& value) { SetVolumeIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more volume IDs.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>One or more volume IDs.</p>
      */
-    inline DescribeVolumesRequest& AddVolumeIds(Aws::String&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
+    inline DescribeVolumesRequest& AddVolumeIds(Aws::String&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more volume IDs.</p>
@@ -224,7 +225,7 @@ namespace Model
      * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold
      * HDD, or <code>standard</code> for Magnetic volumes.</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> -
@@ -304,7 +305,7 @@ namespace Model
      * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold
      * HDD, or <code>standard</code> for Magnetic volumes.</p> </li> </ul>
      */
-    inline DescribeVolumesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeVolumesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> -
@@ -384,7 +385,7 @@ namespace Model
      * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold
      * HDD, or <code>standard</code> for Magnetic volumes.</p> </li> </ul>
      */
-    inline DescribeVolumesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeVolumesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The <code>NextToken</code> value returned from a previous paginated
@@ -411,7 +412,7 @@ namespace Model
      * end of the previous results that returned the <code>NextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>NextToken</code> value returned from a previous paginated
@@ -438,7 +439,7 @@ namespace Model
      * end of the previous results that returned the <code>NextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p>
      */
-    inline DescribeVolumesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeVolumesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>NextToken</code> value returned from a previous paginated

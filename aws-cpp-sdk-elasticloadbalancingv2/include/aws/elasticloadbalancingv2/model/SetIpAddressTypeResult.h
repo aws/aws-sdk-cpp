@@ -16,6 +16,7 @@
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/elasticloadbalancingv2/model/IpAddressType.h>
 #include <aws/elasticloadbalancingv2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The IP address type.</p>
      */
-    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressType = value; }
+    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressType = std::move(value); }
 
     /**
      * <p>The IP address type.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The IP address type.</p>
      */
-    inline SetIpAddressTypeResult& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(value); return *this;}
+    inline SetIpAddressTypeResult& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -72,13 +73,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline SetIpAddressTypeResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline SetIpAddressTypeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline SetIpAddressTypeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     IpAddressType m_ipAddressType;

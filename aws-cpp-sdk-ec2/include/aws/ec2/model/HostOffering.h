@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/PaymentOption.h>
 #include <aws/ec2/model/CurrencyCodeValues.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The ID of the offering.</p>
      */
-    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
+    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::move(value); }
 
     /**
      * <p>The ID of the offering.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the offering.</p>
      */
-    inline HostOffering& WithOfferingId(Aws::String&& value) { SetOfferingId(value); return *this;}
+    inline HostOffering& WithOfferingId(Aws::String&& value) { SetOfferingId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the offering.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The instance family of the offering.</p>
      */
-    inline void SetInstanceFamily(Aws::String&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = value; }
+    inline void SetInstanceFamily(Aws::String&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = std::move(value); }
 
     /**
      * <p>The instance family of the offering.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The instance family of the offering.</p>
      */
-    inline HostOffering& WithInstanceFamily(Aws::String&& value) { SetInstanceFamily(value); return *this;}
+    inline HostOffering& WithInstanceFamily(Aws::String&& value) { SetInstanceFamily(std::move(value)); return *this;}
 
     /**
      * <p>The instance family of the offering.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The available payment option.</p>
      */
-    inline void SetPaymentOption(PaymentOption&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
+    inline void SetPaymentOption(PaymentOption&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::move(value); }
 
     /**
      * <p>The available payment option.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The available payment option.</p>
      */
-    inline HostOffering& WithPaymentOption(PaymentOption&& value) { SetPaymentOption(value); return *this;}
+    inline HostOffering& WithPaymentOption(PaymentOption&& value) { SetPaymentOption(std::move(value)); return *this;}
 
     /**
      * <p>The upfront price of the offering. Does not apply to No Upfront
@@ -160,7 +161,7 @@ namespace Model
      * <p>The upfront price of the offering. Does not apply to No Upfront
      * offerings.</p>
      */
-    inline void SetUpfrontPrice(Aws::String&& value) { m_upfrontPriceHasBeenSet = true; m_upfrontPrice = value; }
+    inline void SetUpfrontPrice(Aws::String&& value) { m_upfrontPriceHasBeenSet = true; m_upfrontPrice = std::move(value); }
 
     /**
      * <p>The upfront price of the offering. Does not apply to No Upfront
@@ -178,7 +179,7 @@ namespace Model
      * <p>The upfront price of the offering. Does not apply to No Upfront
      * offerings.</p>
      */
-    inline HostOffering& WithUpfrontPrice(Aws::String&& value) { SetUpfrontPrice(value); return *this;}
+    inline HostOffering& WithUpfrontPrice(Aws::String&& value) { SetUpfrontPrice(std::move(value)); return *this;}
 
     /**
      * <p>The upfront price of the offering. Does not apply to No Upfront
@@ -199,7 +200,7 @@ namespace Model
     /**
      * <p>The hourly price of the offering.</p>
      */
-    inline void SetHourlyPrice(Aws::String&& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = value; }
+    inline void SetHourlyPrice(Aws::String&& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = std::move(value); }
 
     /**
      * <p>The hourly price of the offering.</p>
@@ -214,7 +215,7 @@ namespace Model
     /**
      * <p>The hourly price of the offering.</p>
      */
-    inline HostOffering& WithHourlyPrice(Aws::String&& value) { SetHourlyPrice(value); return *this;}
+    inline HostOffering& WithHourlyPrice(Aws::String&& value) { SetHourlyPrice(std::move(value)); return *this;}
 
     /**
      * <p>The hourly price of the offering.</p>
@@ -234,7 +235,7 @@ namespace Model
     /**
      * <p>The currency of the offering.</p>
      */
-    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
+    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
      * <p>The currency of the offering.</p>
@@ -244,7 +245,7 @@ namespace Model
     /**
      * <p>The currency of the offering.</p>
      */
-    inline HostOffering& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(value); return *this;}
+    inline HostOffering& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
      * <p>The duration of the offering (in seconds).</p>

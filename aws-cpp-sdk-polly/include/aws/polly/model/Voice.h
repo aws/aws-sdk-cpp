@@ -18,6 +18,7 @@
 #include <aws/polly/model/VoiceId.h>
 #include <aws/polly/model/LanguageCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Gender of the voice.</p>
      */
-    inline void SetGender(Gender&& value) { m_genderHasBeenSet = true; m_gender = value; }
+    inline void SetGender(Gender&& value) { m_genderHasBeenSet = true; m_gender = std::move(value); }
 
     /**
      * <p>Gender of the voice.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Gender of the voice.</p>
      */
-    inline Voice& WithGender(Gender&& value) { SetGender(value); return *this;}
+    inline Voice& WithGender(Gender&& value) { SetGender(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling
@@ -87,7 +88,7 @@ namespace Model
      * <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling
      * the <code>SynthesizeSpeech</code> operation.</p>
      */
-    inline void SetId(VoiceId&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(VoiceId&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling
@@ -99,7 +100,7 @@ namespace Model
      * <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling
      * the <code>SynthesizeSpeech</code> operation.</p>
      */
-    inline Voice& WithId(VoiceId&& value) { SetId(value); return *this;}
+    inline Voice& WithId(VoiceId&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>Language code of the voice.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>Language code of the voice.</p>
      */
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
      * <p>Language code of the voice.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>Language code of the voice.</p>
      */
-    inline Voice& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(value); return *this;}
+    inline Voice& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
     /**
      * <p>Human readable name of the language in English.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>Human readable name of the language in English.</p>
      */
-    inline void SetLanguageName(Aws::String&& value) { m_languageNameHasBeenSet = true; m_languageName = value; }
+    inline void SetLanguageName(Aws::String&& value) { m_languageNameHasBeenSet = true; m_languageName = std::move(value); }
 
     /**
      * <p>Human readable name of the language in English.</p>
@@ -154,7 +155,7 @@ namespace Model
     /**
      * <p>Human readable name of the language in English.</p>
      */
-    inline Voice& WithLanguageName(Aws::String&& value) { SetLanguageName(value); return *this;}
+    inline Voice& WithLanguageName(Aws::String&& value) { SetLanguageName(std::move(value)); return *this;}
 
     /**
      * <p>Human readable name of the language in English.</p>
@@ -177,7 +178,7 @@ namespace Model
      * <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human
      * readable voice name that you might display in your application.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human
@@ -195,7 +196,7 @@ namespace Model
      * <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human
      * readable voice name that you might display in your application.</p>
      */
-    inline Voice& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Voice& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human

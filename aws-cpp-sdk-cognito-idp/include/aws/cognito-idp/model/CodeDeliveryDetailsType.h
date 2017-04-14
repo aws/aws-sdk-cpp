@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cognito-idp/model/DeliveryMediumType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The destination for the code delivery details.</p>
      */
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = value; }
+    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
      * <p>The destination for the code delivery details.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The destination for the code delivery details.</p>
      */
-    inline CodeDeliveryDetailsType& WithDestination(Aws::String&& value) { SetDestination(value); return *this;}
+    inline CodeDeliveryDetailsType& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
      * <p>The destination for the code delivery details.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The delivery medium (email message or phone number).</p>
      */
-    inline void SetDeliveryMedium(DeliveryMediumType&& value) { m_deliveryMediumHasBeenSet = true; m_deliveryMedium = value; }
+    inline void SetDeliveryMedium(DeliveryMediumType&& value) { m_deliveryMediumHasBeenSet = true; m_deliveryMedium = std::move(value); }
 
     /**
      * <p>The delivery medium (email message or phone number).</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The delivery medium (email message or phone number).</p>
      */
-    inline CodeDeliveryDetailsType& WithDeliveryMedium(DeliveryMediumType&& value) { SetDeliveryMedium(value); return *this;}
+    inline CodeDeliveryDetailsType& WithDeliveryMedium(DeliveryMediumType&& value) { SetDeliveryMedium(std::move(value)); return *this;}
 
     /**
      * <p>The name of the attribute in the code delivery details type.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The name of the attribute in the code delivery details type.</p>
      */
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
      * <p>The name of the attribute in the code delivery details type.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The name of the attribute in the code delivery details type.</p>
      */
-    inline CodeDeliveryDetailsType& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
+    inline CodeDeliveryDetailsType& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the attribute in the code delivery details type.</p>

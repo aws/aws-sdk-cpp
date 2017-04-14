@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Specifies the name of the DB cluster option group.</p>
      */
-    inline void SetDBClusterOptionGroupName(Aws::String&& value) { m_dBClusterOptionGroupNameHasBeenSet = true; m_dBClusterOptionGroupName = value; }
+    inline void SetDBClusterOptionGroupName(Aws::String&& value) { m_dBClusterOptionGroupNameHasBeenSet = true; m_dBClusterOptionGroupName = std::move(value); }
 
     /**
      * <p>Specifies the name of the DB cluster option group.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>Specifies the name of the DB cluster option group.</p>
      */
-    inline DBClusterOptionGroupStatus& WithDBClusterOptionGroupName(Aws::String&& value) { SetDBClusterOptionGroupName(value); return *this;}
+    inline DBClusterOptionGroupStatus& WithDBClusterOptionGroupName(Aws::String&& value) { SetDBClusterOptionGroupName(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the DB cluster option group.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>Specifies the status of the DB cluster option group.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Specifies the status of the DB cluster option group.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>Specifies the status of the DB cluster option group.</p>
      */
-    inline DBClusterOptionGroupStatus& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline DBClusterOptionGroupStatus& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the status of the DB cluster option group.</p>

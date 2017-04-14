@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of the volume to mount.</p>
      */
-    inline void SetSourceVolume(Aws::String&& value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume = value; }
+    inline void SetSourceVolume(Aws::String&& value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume = std::move(value); }
 
     /**
      * <p>The name of the volume to mount.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The name of the volume to mount.</p>
      */
-    inline MountPoint& WithSourceVolume(Aws::String&& value) { SetSourceVolume(value); return *this;}
+    inline MountPoint& WithSourceVolume(Aws::String&& value) { SetSourceVolume(std::move(value)); return *this;}
 
     /**
      * <p>The name of the volume to mount.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The path on the container to mount the host volume at.</p>
      */
-    inline void SetContainerPath(Aws::String&& value) { m_containerPathHasBeenSet = true; m_containerPath = value; }
+    inline void SetContainerPath(Aws::String&& value) { m_containerPathHasBeenSet = true; m_containerPath = std::move(value); }
 
     /**
      * <p>The path on the container to mount the host volume at.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The path on the container to mount the host volume at.</p>
      */
-    inline MountPoint& WithContainerPath(Aws::String&& value) { SetContainerPath(value); return *this;}
+    inline MountPoint& WithContainerPath(Aws::String&& value) { SetContainerPath(std::move(value)); return *this;}
 
     /**
      * <p>The path on the container to mount the host volume at.</p>

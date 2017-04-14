@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/GenderType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>Gender of the face.</p>
      */
-    inline void SetValue(GenderType&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(GenderType&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>Gender of the face.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Gender of the face.</p>
      */
-    inline Gender& WithValue(GenderType&& value) { SetValue(value); return *this;}
+    inline Gender& WithValue(GenderType&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>Level of confidence in the determination.</p>

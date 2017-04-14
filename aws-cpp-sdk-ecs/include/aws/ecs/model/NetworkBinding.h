@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/TransportProtocol.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The IP address that the container is bound to on the container instance.</p>
      */
-    inline void SetBindIP(Aws::String&& value) { m_bindIPHasBeenSet = true; m_bindIP = value; }
+    inline void SetBindIP(Aws::String&& value) { m_bindIPHasBeenSet = true; m_bindIP = std::move(value); }
 
     /**
      * <p>The IP address that the container is bound to on the container instance.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The IP address that the container is bound to on the container instance.</p>
      */
-    inline NetworkBinding& WithBindIP(Aws::String&& value) { SetBindIP(value); return *this;}
+    inline NetworkBinding& WithBindIP(Aws::String&& value) { SetBindIP(std::move(value)); return *this;}
 
     /**
      * <p>The IP address that the container is bound to on the container instance.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The protocol used for the network binding.</p>
      */
-    inline void SetProtocol(TransportProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline void SetProtocol(TransportProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol used for the network binding.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>The protocol used for the network binding.</p>
      */
-    inline NetworkBinding& WithProtocol(TransportProtocol&& value) { SetProtocol(value); return *this;}
+    inline NetworkBinding& WithProtocol(TransportProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
   private:
     Aws::String m_bindIP;

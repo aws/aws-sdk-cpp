@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/RecurringCharge.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The offering identifier.</p>
      */
-    inline void SetReservedNodeOfferingId(Aws::String&& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = value; }
+    inline void SetReservedNodeOfferingId(Aws::String&& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = std::move(value); }
 
     /**
      * <p>The offering identifier.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The offering identifier.</p>
      */
-    inline ReservedNodeOffering& WithReservedNodeOfferingId(Aws::String&& value) { SetReservedNodeOfferingId(value); return *this;}
+    inline ReservedNodeOffering& WithReservedNodeOfferingId(Aws::String&& value) { SetReservedNodeOfferingId(std::move(value)); return *this;}
 
     /**
      * <p>The offering identifier.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The node type offered by the reserved node offering.</p>
      */
-    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
+    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
     /**
      * <p>The node type offered by the reserved node offering.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The node type offered by the reserved node offering.</p>
      */
-    inline ReservedNodeOffering& WithNodeType(Aws::String&& value) { SetNodeType(value); return *this;}
+    inline ReservedNodeOffering& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
 
     /**
      * <p>The node type offered by the reserved node offering.</p>
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p>The currency code for the compute nodes offering.</p>
      */
-    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
+    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
      * <p>The currency code for the compute nodes offering.</p>
@@ -197,7 +198,7 @@ namespace Model
     /**
      * <p>The currency code for the compute nodes offering.</p>
      */
-    inline ReservedNodeOffering& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(value); return *this;}
+    inline ReservedNodeOffering& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
      * <p>The currency code for the compute nodes offering.</p>
@@ -220,7 +221,7 @@ namespace Model
      * <p>The anticipated utilization of the reserved node, as defined in the reserved
      * node offering.</p>
      */
-    inline void SetOfferingType(Aws::String&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
+    inline void SetOfferingType(Aws::String&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::move(value); }
 
     /**
      * <p>The anticipated utilization of the reserved node, as defined in the reserved
@@ -238,7 +239,7 @@ namespace Model
      * <p>The anticipated utilization of the reserved node, as defined in the reserved
      * node offering.</p>
      */
-    inline ReservedNodeOffering& WithOfferingType(Aws::String&& value) { SetOfferingType(value); return *this;}
+    inline ReservedNodeOffering& WithOfferingType(Aws::String&& value) { SetOfferingType(std::move(value)); return *this;}
 
     /**
      * <p>The anticipated utilization of the reserved node, as defined in the reserved
@@ -265,7 +266,7 @@ namespace Model
      * clusters using the node offering. Recurring charges are only in effect for
      * heavy-utilization reserved nodes.</p>
      */
-    inline void SetRecurringCharges(Aws::Vector<RecurringCharge>&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
+    inline void SetRecurringCharges(Aws::Vector<RecurringCharge>&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = std::move(value); }
 
     /**
      * <p>The charge to your account regardless of whether you are creating any
@@ -279,7 +280,7 @@ namespace Model
      * clusters using the node offering. Recurring charges are only in effect for
      * heavy-utilization reserved nodes.</p>
      */
-    inline ReservedNodeOffering& WithRecurringCharges(Aws::Vector<RecurringCharge>&& value) { SetRecurringCharges(value); return *this;}
+    inline ReservedNodeOffering& WithRecurringCharges(Aws::Vector<RecurringCharge>&& value) { SetRecurringCharges(std::move(value)); return *this;}
 
     /**
      * <p>The charge to your account regardless of whether you are creating any
@@ -293,7 +294,7 @@ namespace Model
      * clusters using the node offering. Recurring charges are only in effect for
      * heavy-utilization reserved nodes.</p>
      */
-    inline ReservedNodeOffering& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
+    inline ReservedNodeOffering& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_reservedNodeOfferingId;

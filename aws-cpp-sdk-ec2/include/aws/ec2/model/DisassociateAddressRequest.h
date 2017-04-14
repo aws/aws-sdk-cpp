@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
      */
-    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
+    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
 
     /**
      * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
      */
-    inline DisassociateAddressRequest& WithPublicIp(Aws::String&& value) { SetPublicIp(value); return *this;}
+    inline DisassociateAddressRequest& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
      */
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
 
     /**
      * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
      */
-    inline DisassociateAddressRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(value); return *this;}
+    inline DisassociateAddressRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>

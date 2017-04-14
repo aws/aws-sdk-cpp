@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/Directory.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Metadata about the directory.</p>
      */
-    inline void SetDirectory(Directory&& value) { m_directory = value; }
+    inline void SetDirectory(Directory&& value) { m_directory = std::move(value); }
 
     /**
      * <p>Metadata about the directory.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Metadata about the directory.</p>
      */
-    inline GetDirectoryResult& WithDirectory(Directory&& value) { SetDirectory(value); return *this;}
+    inline GetDirectoryResult& WithDirectory(Directory&& value) { SetDirectory(std::move(value)); return *this;}
 
   private:
     Directory m_directory;

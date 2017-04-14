@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/model/GatewayType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The type of VPN connection this virtual private gateway supports.</p>
      */
-    inline void SetType(GatewayType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(GatewayType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of VPN connection this virtual private gateway supports.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The type of VPN connection this virtual private gateway supports.</p>
      */
-    inline CreateVpnGatewayRequest& WithType(GatewayType&& value) { SetType(value); return *this;}
+    inline CreateVpnGatewayRequest& WithType(GatewayType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone for the virtual private gateway.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The Availability Zone for the virtual private gateway.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone for the virtual private gateway.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The Availability Zone for the virtual private gateway.</p>
      */
-    inline CreateVpnGatewayRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline CreateVpnGatewayRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone for the virtual private gateway.</p>

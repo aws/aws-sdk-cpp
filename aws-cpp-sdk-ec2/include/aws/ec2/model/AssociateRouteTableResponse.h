@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The route table association ID (needed to disassociate the route table).</p>
      */
-    inline void SetAssociationId(Aws::String&& value) { m_associationId = value; }
+    inline void SetAssociationId(Aws::String&& value) { m_associationId = std::move(value); }
 
     /**
      * <p>The route table association ID (needed to disassociate the route table).</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The route table association ID (needed to disassociate the route table).</p>
      */
-    inline AssociateRouteTableResponse& WithAssociationId(Aws::String&& value) { SetAssociationId(value); return *this;}
+    inline AssociateRouteTableResponse& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
      * <p>The route table association ID (needed to disassociate the route table).</p>
@@ -87,13 +88,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline AssociateRouteTableResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline AssociateRouteTableResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline AssociateRouteTableResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_associationId;

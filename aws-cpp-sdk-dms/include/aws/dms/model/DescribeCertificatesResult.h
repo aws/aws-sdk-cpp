@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/model/Certificate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline DescribeCertificatesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeCertificatesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>
@@ -92,7 +93,7 @@ namespace Model
      * <p>The Secure Sockets Layer (SSL) certificates associated with the replication
      * instance.</p>
      */
-    inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificates = value; }
+    inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificates = std::move(value); }
 
     /**
      * <p>The Secure Sockets Layer (SSL) certificates associated with the replication
@@ -104,7 +105,7 @@ namespace Model
      * <p>The Secure Sockets Layer (SSL) certificates associated with the replication
      * instance.</p>
      */
-    inline DescribeCertificatesResult& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(value); return *this;}
+    inline DescribeCertificatesResult& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(std::move(value)); return *this;}
 
     /**
      * <p>The Secure Sockets Layer (SSL) certificates associated with the replication
@@ -116,7 +117,7 @@ namespace Model
      * <p>The Secure Sockets Layer (SSL) certificates associated with the replication
      * instance.</p>
      */
-    inline DescribeCertificatesResult& AddCertificates(Certificate&& value) { m_certificates.push_back(value); return *this; }
+    inline DescribeCertificatesResult& AddCertificates(Certificate&& value) { m_certificates.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_marker;

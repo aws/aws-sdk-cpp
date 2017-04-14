@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The ID of the association between a route table and a subnet.</p>
      */
-    inline void SetRouteTableAssociationId(Aws::String&& value) { m_routeTableAssociationIdHasBeenSet = true; m_routeTableAssociationId = value; }
+    inline void SetRouteTableAssociationId(Aws::String&& value) { m_routeTableAssociationIdHasBeenSet = true; m_routeTableAssociationId = std::move(value); }
 
     /**
      * <p>The ID of the association between a route table and a subnet.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The ID of the association between a route table and a subnet.</p>
      */
-    inline RouteTableAssociation& WithRouteTableAssociationId(Aws::String&& value) { SetRouteTableAssociationId(value); return *this;}
+    inline RouteTableAssociation& WithRouteTableAssociationId(Aws::String&& value) { SetRouteTableAssociationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the association between a route table and a subnet.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The ID of the route table.</p>
      */
-    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
+    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
 
     /**
      * <p>The ID of the route table.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The ID of the route table.</p>
      */
-    inline RouteTableAssociation& WithRouteTableId(Aws::String&& value) { SetRouteTableId(value); return *this;}
+    inline RouteTableAssociation& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the route table.</p>
@@ -133,7 +134,7 @@ namespace Model
      * <p>The ID of the subnet. A subnet ID is not returned for an implicit
      * association.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>The ID of the subnet. A subnet ID is not returned for an implicit
@@ -151,7 +152,7 @@ namespace Model
      * <p>The ID of the subnet. A subnet ID is not returned for an implicit
      * association.</p>
      */
-    inline RouteTableAssociation& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+    inline RouteTableAssociation& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the subnet. A subnet ID is not returned for an implicit

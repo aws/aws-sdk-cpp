@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
      * string requires exactly 12 digits.</p>
      */
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the account that you want to move.</p> <p>The
@@ -75,7 +76,7 @@ namespace Model
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
      * string requires exactly 12 digits.</p>
      */
-    inline MoveAccountRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline MoveAccountRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the account that you want to move.</p> <p>The
@@ -121,7 +122,7 @@ namespace Model
      * followed by a second "-" dash and from 8 to 32 additional lower-case letters or
      * digits.</p> </li> </ul>
      */
-    inline void SetSourceParentId(Aws::String&& value) { m_sourceParentIdHasBeenSet = true; m_sourceParentId = value; }
+    inline void SetSourceParentId(Aws::String&& value) { m_sourceParentIdHasBeenSet = true; m_sourceParentId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the root or organizational unit that you want
@@ -160,7 +161,7 @@ namespace Model
      * followed by a second "-" dash and from 8 to 32 additional lower-case letters or
      * digits.</p> </li> </ul>
      */
-    inline MoveAccountRequest& WithSourceParentId(Aws::String&& value) { SetSourceParentId(value); return *this;}
+    inline MoveAccountRequest& WithSourceParentId(Aws::String&& value) { SetSourceParentId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the root or organizational unit that you want
@@ -212,7 +213,7 @@ namespace Model
      * followed by a second "-" dash and from 8 to 32 additional lower-case letters or
      * digits.</p> </li> </ul>
      */
-    inline void SetDestinationParentId(Aws::String&& value) { m_destinationParentIdHasBeenSet = true; m_destinationParentId = value; }
+    inline void SetDestinationParentId(Aws::String&& value) { m_destinationParentIdHasBeenSet = true; m_destinationParentId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the root or organizational unit that you want
@@ -251,7 +252,7 @@ namespace Model
      * followed by a second "-" dash and from 8 to 32 additional lower-case letters or
      * digits.</p> </li> </ul>
      */
-    inline MoveAccountRequest& WithDestinationParentId(Aws::String&& value) { SetDestinationParentId(value); return *this;}
+    inline MoveAccountRequest& WithDestinationParentId(Aws::String&& value) { SetDestinationParentId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the root or organizational unit that you want

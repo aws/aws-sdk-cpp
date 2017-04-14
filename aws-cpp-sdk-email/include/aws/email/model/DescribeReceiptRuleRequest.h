@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
      */
-    inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
+    inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::move(value); }
 
     /**
      * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
      */
-    inline DescribeReceiptRuleRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(value); return *this;}
+    inline DescribeReceiptRuleRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The name of the receipt rule.</p>
      */
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
+    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
 
     /**
      * <p>The name of the receipt rule.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The name of the receipt rule.</p>
      */
-    inline DescribeReceiptRuleRequest& WithRuleName(Aws::String&& value) { SetRuleName(value); return *this;}
+    inline DescribeReceiptRuleRequest& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the receipt rule.</p>

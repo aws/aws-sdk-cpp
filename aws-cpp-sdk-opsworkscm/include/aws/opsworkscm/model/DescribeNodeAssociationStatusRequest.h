@@ -16,6 +16,7 @@
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
 #include <aws/opsworkscm/OpsWorksCMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -42,7 +43,7 @@ namespace Model
     inline void SetNodeAssociationStatusToken(const Aws::String& value) { m_nodeAssociationStatusTokenHasBeenSet = true; m_nodeAssociationStatusToken = value; }
 
     
-    inline void SetNodeAssociationStatusToken(Aws::String&& value) { m_nodeAssociationStatusTokenHasBeenSet = true; m_nodeAssociationStatusToken = value; }
+    inline void SetNodeAssociationStatusToken(Aws::String&& value) { m_nodeAssociationStatusTokenHasBeenSet = true; m_nodeAssociationStatusToken = std::move(value); }
 
     
     inline void SetNodeAssociationStatusToken(const char* value) { m_nodeAssociationStatusTokenHasBeenSet = true; m_nodeAssociationStatusToken.assign(value); }
@@ -51,7 +52,7 @@ namespace Model
     inline DescribeNodeAssociationStatusRequest& WithNodeAssociationStatusToken(const Aws::String& value) { SetNodeAssociationStatusToken(value); return *this;}
 
     
-    inline DescribeNodeAssociationStatusRequest& WithNodeAssociationStatusToken(Aws::String&& value) { SetNodeAssociationStatusToken(value); return *this;}
+    inline DescribeNodeAssociationStatusRequest& WithNodeAssociationStatusToken(Aws::String&& value) { SetNodeAssociationStatusToken(std::move(value)); return *this;}
 
     
     inline DescribeNodeAssociationStatusRequest& WithNodeAssociationStatusToken(const char* value) { SetNodeAssociationStatusToken(value); return *this;}
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The name of the server from which to disassociate the node. </p>
      */
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
+    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
 
     /**
      * <p>The name of the server from which to disassociate the node. </p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The name of the server from which to disassociate the node. </p>
      */
-    inline DescribeNodeAssociationStatusRequest& WithServerName(Aws::String&& value) { SetServerName(value); return *this;}
+    inline DescribeNodeAssociationStatusRequest& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the server from which to disassociate the node. </p>

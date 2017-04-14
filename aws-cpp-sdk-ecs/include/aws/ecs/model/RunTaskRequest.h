@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/PlacementConstraint.h>
 #include <aws/ecs/model/PlacementStrategy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * run your task. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
@@ -79,7 +80,7 @@ namespace Model
      * run your task. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
-    inline RunTaskRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
+    inline RunTaskRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
@@ -110,7 +111,7 @@ namespace Model
      * definition to run. If a <code>revision</code> is not specified, the latest
      * <code>ACTIVE</code> revision is used.</p>
      */
-    inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
+    inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
@@ -134,7 +135,7 @@ namespace Model
      * definition to run. If a <code>revision</code> is not specified, the latest
      * <code>ACTIVE</code> revision is used.</p>
      */
-    inline RunTaskRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(value); return *this;}
+    inline RunTaskRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
@@ -181,7 +182,7 @@ namespace Model
      * characters are allowed for overrides. This limit includes the JSON formatting
      * characters of the override structure.</p> </note>
      */
-    inline void SetOverrides(TaskOverride&& value) { m_overridesHasBeenSet = true; m_overrides = value; }
+    inline void SetOverrides(TaskOverride&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
 
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
@@ -207,7 +208,7 @@ namespace Model
      * characters are allowed for overrides. This limit includes the JSON formatting
      * characters of the override structure.</p> </note>
      */
-    inline RunTaskRequest& WithOverrides(TaskOverride&& value) { SetOverrides(value); return *this;}
+    inline RunTaskRequest& WithOverrides(TaskOverride&& value) { SetOverrides(std::move(value)); return *this;}
 
     /**
      * <p>The number of instantiations of the specified task to place on your cluster.
@@ -264,7 +265,7 @@ namespace Model
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */
-    inline void SetStartedBy(Aws::String&& value) { m_startedByHasBeenSet = true; m_startedBy = value; }
+    inline void SetStartedBy(Aws::String&& value) { m_startedByHasBeenSet = true; m_startedBy = std::move(value); }
 
     /**
      * <p>An optional tag specified when a task is started. For example if you
@@ -303,7 +304,7 @@ namespace Model
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */
-    inline RunTaskRequest& WithStartedBy(Aws::String&& value) { SetStartedBy(value); return *this;}
+    inline RunTaskRequest& WithStartedBy(Aws::String&& value) { SetStartedBy(std::move(value)); return *this;}
 
     /**
      * <p>An optional tag specified when a task is started. For example if you
@@ -334,7 +335,7 @@ namespace Model
      * <p>The name of the task group to associate with the task. The default value is
      * the family name of the task definition (for example, family:my-family-name).</p>
      */
-    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = value; }
+    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
 
     /**
      * <p>The name of the task group to associate with the task. The default value is
@@ -352,7 +353,7 @@ namespace Model
      * <p>The name of the task group to associate with the task. The default value is
      * the family name of the task definition (for example, family:my-family-name).</p>
      */
-    inline RunTaskRequest& WithGroup(Aws::String&& value) { SetGroup(value); return *this;}
+    inline RunTaskRequest& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
 
     /**
      * <p>The name of the task group to associate with the task. The default value is
@@ -379,7 +380,7 @@ namespace Model
      * up to 10 constraints per task (including constraints in the task definition and
      * those specified at run time).</p>
      */
-    inline void SetPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
+    inline void SetPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = std::move(value); }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
@@ -393,7 +394,7 @@ namespace Model
      * up to 10 constraints per task (including constraints in the task definition and
      * those specified at run time).</p>
      */
-    inline RunTaskRequest& WithPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { SetPlacementConstraints(value); return *this;}
+    inline RunTaskRequest& WithPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { SetPlacementConstraints(std::move(value)); return *this;}
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
@@ -407,7 +408,7 @@ namespace Model
      * up to 10 constraints per task (including constraints in the task definition and
      * those specified at run time).</p>
      */
-    inline RunTaskRequest& AddPlacementConstraints(PlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
+    inline RunTaskRequest& AddPlacementConstraints(PlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
@@ -425,7 +426,7 @@ namespace Model
      * <p>The placement strategy objects to use for the task. You can specify a maximum
      * of 5 strategy rules per task.</p>
      */
-    inline void SetPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = value; }
+    inline void SetPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = std::move(value); }
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
@@ -437,7 +438,7 @@ namespace Model
      * <p>The placement strategy objects to use for the task. You can specify a maximum
      * of 5 strategy rules per task.</p>
      */
-    inline RunTaskRequest& WithPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { SetPlacementStrategy(value); return *this;}
+    inline RunTaskRequest& WithPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { SetPlacementStrategy(std::move(value)); return *this;}
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
@@ -449,7 +450,7 @@ namespace Model
      * <p>The placement strategy objects to use for the task. You can specify a maximum
      * of 5 strategy rules per task.</p>
      */
-    inline RunTaskRequest& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(value); return *this; }
+    inline RunTaskRequest& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_cluster;

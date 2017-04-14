@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/kinesisanalytics/model/ApplicationSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * Analytics returns a response with a summary of the application it created,
      * including the application Amazon Resource Name (ARN), name, and status.</p>
      */
-    inline void SetApplicationSummary(ApplicationSummary&& value) { m_applicationSummary = value; }
+    inline void SetApplicationSummary(ApplicationSummary&& value) { m_applicationSummary = std::move(value); }
 
     /**
      * <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis
@@ -77,7 +78,7 @@ namespace Model
      * Analytics returns a response with a summary of the application it created,
      * including the application Amazon Resource Name (ARN), name, and status.</p>
      */
-    inline CreateApplicationResult& WithApplicationSummary(ApplicationSummary&& value) { SetApplicationSummary(value); return *this;}
+    inline CreateApplicationResult& WithApplicationSummary(ApplicationSummary&& value) { SetApplicationSummary(std::move(value)); return *this;}
 
   private:
     ApplicationSummary m_applicationSummary;

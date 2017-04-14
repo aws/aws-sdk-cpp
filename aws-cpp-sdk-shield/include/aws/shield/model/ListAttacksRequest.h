@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/shield/model/TimeRange.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is
      * left blank, all applicable resources for this account will be included.</p>
      */
-    inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
+    inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::move(value); }
 
     /**
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is
@@ -65,7 +66,7 @@ namespace Model
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is
      * left blank, all applicable resources for this account will be included.</p>
      */
-    inline ListAttacksRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(value); return *this;}
+    inline ListAttacksRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
 
     /**
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is
@@ -77,7 +78,7 @@ namespace Model
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is
      * left blank, all applicable resources for this account will be included.</p>
      */
-    inline ListAttacksRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
+    inline ListAttacksRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The time period for the attacks.</p>
      */
-    inline void SetStartTime(TimeRange&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(TimeRange&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The time period for the attacks.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The time period for the attacks.</p>
      */
-    inline ListAttacksRequest& WithStartTime(TimeRange&& value) { SetStartTime(value); return *this;}
+    inline ListAttacksRequest& WithStartTime(TimeRange&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The end of the time period for the attacks.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The end of the time period for the attacks.</p>
      */
-    inline void SetEndTime(TimeRange&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(TimeRange&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The end of the time period for the attacks.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The end of the time period for the attacks.</p>
      */
-    inline ListAttacksRequest& WithEndTime(TimeRange&& value) { SetEndTime(value); return *this;}
+    inline ListAttacksRequest& WithEndTime(TimeRange&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to
@@ -151,7 +152,7 @@ namespace Model
      * <p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to
      * <code>ListAttacksRequest</code>. Pass null if this is the first call.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to
@@ -169,7 +170,7 @@ namespace Model
      * <p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to
      * <code>ListAttacksRequest</code>. Pass null if this is the first call.</p>
      */
-    inline ListAttacksRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListAttacksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to

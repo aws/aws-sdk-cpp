@@ -17,6 +17,7 @@
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/PolicyType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
      * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
      */
-    inline void SetRootId(Aws::String&& value) { m_rootIdHasBeenSet = true; m_rootId = value; }
+    inline void SetRootId(Aws::String&& value) { m_rootIdHasBeenSet = true; m_rootId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the root in which you want to disable a policy
@@ -82,7 +83,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
      * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
      */
-    inline DisablePolicyTypeRequest& WithRootId(Aws::String&& value) { SetRootId(value); return *this;}
+    inline DisablePolicyTypeRequest& WithRootId(Aws::String&& value) { SetRootId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the root in which you want to disable a policy
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The policy type that you want to disable in this root.</p>
      */
-    inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
+    inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
      * <p>The policy type that you want to disable in this root.</p>
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>The policy type that you want to disable in this root.</p>
      */
-    inline DisablePolicyTypeRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(value); return *this;}
+    inline DisablePolicyTypeRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
 
   private:
     Aws::String m_rootId;

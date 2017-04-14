@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/model/Handshake.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>A structure that contains details about the handshake that you canceled.</p>
      */
-    inline void SetHandshake(Handshake&& value) { m_handshake = value; }
+    inline void SetHandshake(Handshake&& value) { m_handshake = std::move(value); }
 
     /**
      * <p>A structure that contains details about the handshake that you canceled.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>A structure that contains details about the handshake that you canceled.</p>
      */
-    inline CancelHandshakeResult& WithHandshake(Handshake&& value) { SetHandshake(value); return *this;}
+    inline CancelHandshakeResult& WithHandshake(Handshake&& value) { SetHandshake(std::move(value)); return *this;}
 
   private:
     Handshake m_handshake;

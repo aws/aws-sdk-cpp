@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The error code returned by the environment error object.</p>
      */
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
      * <p>The error code returned by the environment error object.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The error code returned by the environment error object.</p>
      */
-    inline EnvironmentError& WithErrorCode(Aws::String&& value) { SetErrorCode(value); return *this;}
+    inline EnvironmentError& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
      * <p>The error code returned by the environment error object.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The message returned by the environment error object.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The message returned by the environment error object.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The message returned by the environment error object.</p>
      */
-    inline EnvironmentError& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline EnvironmentError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The message returned by the environment error object.</p>

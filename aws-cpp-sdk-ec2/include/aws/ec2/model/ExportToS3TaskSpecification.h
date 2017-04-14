@@ -18,6 +18,7 @@
 #include <aws/ec2/model/DiskImageFormat.h>
 #include <aws/ec2/model/ContainerFormat.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The format for the exported image.</p>
      */
-    inline void SetDiskImageFormat(DiskImageFormat&& value) { m_diskImageFormatHasBeenSet = true; m_diskImageFormat = value; }
+    inline void SetDiskImageFormat(DiskImageFormat&& value) { m_diskImageFormatHasBeenSet = true; m_diskImageFormat = std::move(value); }
 
     /**
      * <p>The format for the exported image.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The format for the exported image.</p>
      */
-    inline ExportToS3TaskSpecification& WithDiskImageFormat(DiskImageFormat&& value) { SetDiskImageFormat(value); return *this;}
+    inline ExportToS3TaskSpecification& WithDiskImageFormat(DiskImageFormat&& value) { SetDiskImageFormat(std::move(value)); return *this;}
 
     /**
      * <p>The container format used to combine disk images with metadata (such as OVF).
@@ -89,7 +90,7 @@ namespace Model
      * <p>The container format used to combine disk images with metadata (such as OVF).
      * If absent, only the disk image is exported.</p>
      */
-    inline void SetContainerFormat(ContainerFormat&& value) { m_containerFormatHasBeenSet = true; m_containerFormat = value; }
+    inline void SetContainerFormat(ContainerFormat&& value) { m_containerFormatHasBeenSet = true; m_containerFormat = std::move(value); }
 
     /**
      * <p>The container format used to combine disk images with metadata (such as OVF).
@@ -101,7 +102,7 @@ namespace Model
      * <p>The container format used to combine disk images with metadata (such as OVF).
      * If absent, only the disk image is exported.</p>
      */
-    inline ExportToS3TaskSpecification& WithContainerFormat(ContainerFormat&& value) { SetContainerFormat(value); return *this;}
+    inline ExportToS3TaskSpecification& WithContainerFormat(ContainerFormat&& value) { SetContainerFormat(std::move(value)); return *this;}
 
     /**
      * <p>The S3 bucket for the destination image. The destination bucket must exist
@@ -122,7 +123,7 @@ namespace Model
      * and grant WRITE and READ_ACP permissions to the AWS account
      * <code>vm-import-export@amazon.com</code>.</p>
      */
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
+    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
      * <p>The S3 bucket for the destination image. The destination bucket must exist
@@ -143,7 +144,7 @@ namespace Model
      * and grant WRITE and READ_ACP permissions to the AWS account
      * <code>vm-import-export@amazon.com</code>.</p>
      */
-    inline ExportToS3TaskSpecification& WithS3Bucket(Aws::String&& value) { SetS3Bucket(value); return *this;}
+    inline ExportToS3TaskSpecification& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
      * <p>The S3 bucket for the destination image. The destination bucket must exist
@@ -168,7 +169,7 @@ namespace Model
      * <p>The image is written to a single object in the S3 bucket at the S3 key
      * s3prefix + exportTaskId + '.' + diskImageFormat.</p>
      */
-    inline void SetS3Prefix(Aws::String&& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = value; }
+    inline void SetS3Prefix(Aws::String&& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = std::move(value); }
 
     /**
      * <p>The image is written to a single object in the S3 bucket at the S3 key
@@ -186,7 +187,7 @@ namespace Model
      * <p>The image is written to a single object in the S3 bucket at the S3 key
      * s3prefix + exportTaskId + '.' + diskImageFormat.</p>
      */
-    inline ExportToS3TaskSpecification& WithS3Prefix(Aws::String&& value) { SetS3Prefix(value); return *this;}
+    inline ExportToS3TaskSpecification& WithS3Prefix(Aws::String&& value) { SetS3Prefix(std::move(value)); return *this;}
 
     /**
      * <p>The image is written to a single object in the S3 bucket at the S3 key

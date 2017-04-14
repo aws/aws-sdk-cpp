@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/storagegateway/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>he Amazon Resource Name (ARN) of the resource for which you want to list
      * tags.</p>
      */
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARN = value; }
+    inline void SetResourceARN(Aws::String&& value) { m_resourceARN = std::move(value); }
 
     /**
      * <p>he Amazon Resource Name (ARN) of the resource for which you want to list
@@ -80,7 +81,7 @@ namespace Model
      * <p>he Amazon Resource Name (ARN) of the resource for which you want to list
      * tags.</p>
      */
-    inline ListTagsForResourceResult& WithResourceARN(Aws::String&& value) { SetResourceARN(value); return *this;}
+    inline ListTagsForResourceResult& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
      * <p>he Amazon Resource Name (ARN) of the resource for which you want to list
@@ -104,7 +105,7 @@ namespace Model
      * <p>An opaque string that indicates the position at which to stop returning the
      * list of tags.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>An opaque string that indicates the position at which to stop returning the
@@ -122,7 +123,7 @@ namespace Model
      * <p>An opaque string that indicates the position at which to stop returning the
      * list of tags.</p>
      */
-    inline ListTagsForResourceResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListTagsForResourceResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An opaque string that indicates the position at which to stop returning the
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>An array that contains the tags for the specified resource.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
      * <p>An array that contains the tags for the specified resource.</p>
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p>An array that contains the tags for the specified resource.</p>
      */
-    inline ListTagsForResourceResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline ListTagsForResourceResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>An array that contains the tags for the specified resource.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>An array that contains the tags for the specified resource.</p>
      */
-    inline ListTagsForResourceResult& AddTags(Tag&& value) { m_tags.push_back(value); return *this; }
+    inline ListTagsForResourceResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_resourceARN;

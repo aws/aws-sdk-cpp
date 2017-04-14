@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
      */
-    inline AttachClassicLinkVpcRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline AttachClassicLinkVpcRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The ID of a ClassicLink-enabled VPC.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of a ClassicLink-enabled VPC.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The ID of a ClassicLink-enabled VPC.</p>
      */
-    inline AttachClassicLinkVpcRequest& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline AttachClassicLinkVpcRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of a ClassicLink-enabled VPC.</p>
@@ -152,7 +153,7 @@ namespace Model
      * <p>The ID of one or more of the VPC's security groups. You cannot specify
      * security groups from a different VPC.</p>
      */
-    inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = value; }
+    inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
      * <p>The ID of one or more of the VPC's security groups. You cannot specify
@@ -164,7 +165,7 @@ namespace Model
      * <p>The ID of one or more of the VPC's security groups. You cannot specify
      * security groups from a different VPC.</p>
      */
-    inline AttachClassicLinkVpcRequest& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(value); return *this;}
+    inline AttachClassicLinkVpcRequest& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
      * <p>The ID of one or more of the VPC's security groups. You cannot specify
@@ -176,7 +177,7 @@ namespace Model
      * <p>The ID of one or more of the VPC's security groups. You cannot specify
      * security groups from a different VPC.</p>
      */
-    inline AttachClassicLinkVpcRequest& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
+    inline AttachClassicLinkVpcRequest& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ID of one or more of the VPC's security groups. You cannot specify

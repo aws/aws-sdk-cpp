@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline CreateImageRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline CreateImageRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -120,7 +121,7 @@ namespace Model
      * parentheses (()), square brackets ([]), spaces ( ), periods (.), slashes (/),
      * dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>A name for the new image.</p> <p>Constraints: 3-128 alphanumeric characters,
@@ -141,7 +142,7 @@ namespace Model
      * parentheses (()), square brackets ([]), spaces ( ), periods (.), slashes (/),
      * dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
      */
-    inline CreateImageRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateImageRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A name for the new image.</p> <p>Constraints: 3-128 alphanumeric characters,
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>A description for the new image.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description for the new image.</p>
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>A description for the new image.</p>
      */
-    inline CreateImageRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateImageRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description for the new image.</p>
@@ -222,7 +223,7 @@ namespace Model
     /**
      * <p>Information about one or more block device mappings.</p>
      */
-    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
+    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
      * <p>Information about one or more block device mappings.</p>
@@ -232,7 +233,7 @@ namespace Model
     /**
      * <p>Information about one or more block device mappings.</p>
      */
-    inline CreateImageRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(value); return *this;}
+    inline CreateImageRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
      * <p>Information about one or more block device mappings.</p>
@@ -242,7 +243,7 @@ namespace Model
     /**
      * <p>Information about one or more block device mappings.</p>
      */
-    inline CreateImageRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
+    inline CreateImageRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

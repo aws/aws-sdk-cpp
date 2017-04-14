@@ -17,6 +17,7 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/model/StatusType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: =,.@-</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the IAM user associated with the service-specific credential. If
@@ -96,7 +97,7 @@ namespace Model
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: =,.@-</p>
      */
-    inline UpdateServiceSpecificCredentialRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline UpdateServiceSpecificCredentialRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IAM user associated with the service-specific credential. If
@@ -130,7 +131,7 @@ namespace Model
      * pattern</a>) a string of characters that can consist of any upper or lowercased
      * letter or digit.</p>
      */
-    inline void SetServiceSpecificCredentialId(Aws::String&& value) { m_serviceSpecificCredentialIdHasBeenSet = true; m_serviceSpecificCredentialId = value; }
+    inline void SetServiceSpecificCredentialId(Aws::String&& value) { m_serviceSpecificCredentialIdHasBeenSet = true; m_serviceSpecificCredentialId = std::move(value); }
 
     /**
      * <p>The unique identifier of the service-specific credential.</p> <p>This
@@ -154,7 +155,7 @@ namespace Model
      * pattern</a>) a string of characters that can consist of any upper or lowercased
      * letter or digit.</p>
      */
-    inline UpdateServiceSpecificCredentialRequest& WithServiceSpecificCredentialId(Aws::String&& value) { SetServiceSpecificCredentialId(value); return *this;}
+    inline UpdateServiceSpecificCredentialRequest& WithServiceSpecificCredentialId(Aws::String&& value) { SetServiceSpecificCredentialId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the service-specific credential.</p> <p>This
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>The status to be assigned to the service-specific credential.</p>
      */
-    inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status to be assigned to the service-specific credential.</p>
@@ -187,7 +188,7 @@ namespace Model
     /**
      * <p>The status to be assigned to the service-specific credential.</p>
      */
-    inline UpdateServiceSpecificCredentialRequest& WithStatus(StatusType&& value) { SetStatus(value); return *this;}
+    inline UpdateServiceSpecificCredentialRequest& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_userName;

@@ -17,6 +17,7 @@
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/IAMUserAccessToBilling.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The email address of the owner to assign to the new member account. This
      * email address must not already be associated with another AWS account.</p>
      */
-    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = value; }
+    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
 
     /**
      * <p>The email address of the owner to assign to the new member account. This
@@ -70,7 +71,7 @@ namespace Model
      * <p>The email address of the owner to assign to the new member account. This
      * email address must not already be associated with another AWS account.</p>
      */
-    inline CreateAccountRequest& WithEmail(Aws::String&& value) { SetEmail(value); return *this;}
+    inline CreateAccountRequest& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
 
     /**
      * <p>The email address of the owner to assign to the new member account. This
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The friendly name of the member account.</p>
      */
-    inline void SetAccountName(Aws::String&& value) { m_accountNameHasBeenSet = true; m_accountName = value; }
+    inline void SetAccountName(Aws::String&& value) { m_accountNameHasBeenSet = true; m_accountName = std::move(value); }
 
     /**
      * <p>The friendly name of the member account.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The friendly name of the member account.</p>
      */
-    inline CreateAccountRequest& WithAccountName(Aws::String&& value) { SetAccountName(value); return *this;}
+    inline CreateAccountRequest& WithAccountName(Aws::String&& value) { SetAccountName(std::move(value)); return *this;}
 
     /**
      * <p>The friendly name of the member account.</p>
@@ -171,7 +172,7 @@ namespace Model
      * that can consist of uppercase letters, lowercase letters, digits with no spaces,
      * and any of the following characters: =,.@-</p>
      */
-    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
+    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
 
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that Organizations automatically
@@ -231,7 +232,7 @@ namespace Model
      * that can consist of uppercase letters, lowercase letters, digits with no spaces,
      * and any of the following characters: =,.@-</p>
      */
-    inline CreateAccountRequest& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
+    inline CreateAccountRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that Organizations automatically
@@ -284,7 +285,7 @@ namespace Model
      * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
      * Cost Management User Guide</i>.</p>
      */
-    inline void SetIamUserAccessToBilling(IAMUserAccessToBilling&& value) { m_iamUserAccessToBillingHasBeenSet = true; m_iamUserAccessToBilling = value; }
+    inline void SetIamUserAccessToBilling(IAMUserAccessToBilling&& value) { m_iamUserAccessToBillingHasBeenSet = true; m_iamUserAccessToBilling = std::move(value); }
 
     /**
      * <p>If set to <code>ALLOW</code>, the new account enables IAM users to access
@@ -306,7 +307,7 @@ namespace Model
      * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
      * Cost Management User Guide</i>.</p>
      */
-    inline CreateAccountRequest& WithIamUserAccessToBilling(IAMUserAccessToBilling&& value) { SetIamUserAccessToBilling(value); return *this;}
+    inline CreateAccountRequest& WithIamUserAccessToBilling(IAMUserAccessToBilling&& value) { SetIamUserAccessToBilling(std::move(value)); return *this;}
 
   private:
     Aws::String m_email;

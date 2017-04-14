@@ -16,6 +16,7 @@
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/cloudtrail/CloudTrailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,7 +73,7 @@ namespace Model
      * invalid.</p> </li> <li> <p>Not be in IP address format (for example,
      * 192.168.5.4)</p> </li> </ul>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Specifies the name of the trail. The name must meet the following
@@ -108,7 +109,7 @@ namespace Model
      * invalid.</p> </li> <li> <p>Not be in IP address format (for example,
      * 192.168.5.4)</p> </li> </ul>
      */
-    inline CreateTrailRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateTrailRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the trail. The name must meet the following
@@ -144,7 +145,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
      * S3 Bucket Naming Requirements</a>.</p>
      */
-    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
+    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
 
     /**
      * <p>Specifies the name of the Amazon S3 bucket designated for publishing log
@@ -168,7 +169,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
      * S3 Bucket Naming Requirements</a>.</p>
      */
-    inline CreateTrailRequest& WithS3BucketName(Aws::String&& value) { SetS3BucketName(value); return *this;}
+    inline CreateTrailRequest& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the Amazon S3 bucket designated for publishing log
@@ -200,7 +201,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
      * Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
      */
-    inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = value; }
+    inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = std::move(value); }
 
     /**
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
@@ -224,7 +225,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
      * Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
      */
-    inline CreateTrailRequest& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(value); return *this;}
+    inline CreateTrailRequest& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
@@ -250,7 +251,7 @@ namespace Model
      * <p>Specifies the name of the Amazon SNS topic defined for notification of log
      * file delivery. The maximum length is 256 characters.</p>
      */
-    inline void SetSnsTopicName(Aws::String&& value) { m_snsTopicNameHasBeenSet = true; m_snsTopicName = value; }
+    inline void SetSnsTopicName(Aws::String&& value) { m_snsTopicNameHasBeenSet = true; m_snsTopicName = std::move(value); }
 
     /**
      * <p>Specifies the name of the Amazon SNS topic defined for notification of log
@@ -268,7 +269,7 @@ namespace Model
      * <p>Specifies the name of the Amazon SNS topic defined for notification of log
      * file delivery. The maximum length is 256 characters.</p>
      */
-    inline CreateTrailRequest& WithSnsTopicName(Aws::String&& value) { SetSnsTopicName(value); return *this;}
+    inline CreateTrailRequest& WithSnsTopicName(Aws::String&& value) { SetSnsTopicName(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the Amazon SNS topic defined for notification of log
@@ -370,7 +371,7 @@ namespace Model
      * identifier that represents the log group to which CloudTrail logs will be
      * delivered. Not required unless you specify CloudWatchLogsRoleArn.</p>
      */
-    inline void SetCloudWatchLogsLogGroupArn(Aws::String&& value) { m_cloudWatchLogsLogGroupArnHasBeenSet = true; m_cloudWatchLogsLogGroupArn = value; }
+    inline void SetCloudWatchLogsLogGroupArn(Aws::String&& value) { m_cloudWatchLogsLogGroupArnHasBeenSet = true; m_cloudWatchLogsLogGroupArn = std::move(value); }
 
     /**
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
@@ -391,7 +392,7 @@ namespace Model
      * identifier that represents the log group to which CloudTrail logs will be
      * delivered. Not required unless you specify CloudWatchLogsRoleArn.</p>
      */
-    inline CreateTrailRequest& WithCloudWatchLogsLogGroupArn(Aws::String&& value) { SetCloudWatchLogsLogGroupArn(value); return *this;}
+    inline CreateTrailRequest& WithCloudWatchLogsLogGroupArn(Aws::String&& value) { SetCloudWatchLogsLogGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
@@ -416,7 +417,7 @@ namespace Model
      * <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a
      * user's log group.</p>
      */
-    inline void SetCloudWatchLogsRoleArn(Aws::String&& value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn = value; }
+    inline void SetCloudWatchLogsRoleArn(Aws::String&& value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn = std::move(value); }
 
     /**
      * <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a
@@ -434,7 +435,7 @@ namespace Model
      * <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a
      * user's log group.</p>
      */
-    inline CreateTrailRequest& WithCloudWatchLogsRoleArn(Aws::String&& value) { SetCloudWatchLogsRoleArn(value); return *this;}
+    inline CreateTrailRequest& WithCloudWatchLogsRoleArn(Aws::String&& value) { SetCloudWatchLogsRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a
@@ -473,7 +474,7 @@ namespace Model
      * <p>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail.
@@ -506,7 +507,7 @@ namespace Model
      * <p>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
-    inline CreateTrailRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
+    inline CreateTrailRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail.

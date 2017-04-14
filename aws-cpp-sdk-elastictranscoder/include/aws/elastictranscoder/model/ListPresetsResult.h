@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elastictranscoder/model/Preset.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>An array of <code>Preset</code> objects.</p>
      */
-    inline void SetPresets(Aws::Vector<Preset>&& value) { m_presets = value; }
+    inline void SetPresets(Aws::Vector<Preset>&& value) { m_presets = std::move(value); }
 
     /**
      * <p>An array of <code>Preset</code> objects.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>An array of <code>Preset</code> objects.</p>
      */
-    inline ListPresetsResult& WithPresets(Aws::Vector<Preset>&& value) { SetPresets(value); return *this;}
+    inline ListPresetsResult& WithPresets(Aws::Vector<Preset>&& value) { SetPresets(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>Preset</code> objects.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>An array of <code>Preset</code> objects.</p>
      */
-    inline ListPresetsResult& AddPresets(Preset&& value) { m_presets.push_back(value); return *this; }
+    inline ListPresetsResult& AddPresets(Preset&& value) { m_presets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A value that you use to access the second and subsequent pages of results, if
@@ -100,7 +101,7 @@ namespace Model
      * any. When the presets fit on one page or when you've reached the last page of
      * results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>A value that you use to access the second and subsequent pages of results, if
@@ -121,7 +122,7 @@ namespace Model
      * any. When the presets fit on one page or when you've reached the last page of
      * results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
      */
-    inline ListPresetsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline ListPresetsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>A value that you use to access the second and subsequent pages of results, if

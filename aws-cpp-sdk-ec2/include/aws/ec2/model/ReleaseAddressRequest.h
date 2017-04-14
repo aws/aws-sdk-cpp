@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
      */
-    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
+    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
 
     /**
      * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
      */
-    inline ReleaseAddressRequest& WithPublicIp(Aws::String&& value) { SetPublicIp(value); return *this;}
+    inline ReleaseAddressRequest& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
      */
-    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
+    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
 
     /**
      * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
      */
-    inline ReleaseAddressRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(value); return *this;}
+    inline ReleaseAddressRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>

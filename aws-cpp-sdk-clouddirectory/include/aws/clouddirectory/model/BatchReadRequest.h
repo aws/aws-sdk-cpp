@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/clouddirectory/model/ConsistencyLevel.h>
 #include <aws/clouddirectory/model/BatchReadOperation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a>. For more information, see
      * <a>arns</a>.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>ARN associated with the <a>Directory</a>. For more information, see
@@ -72,7 +73,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a>. For more information, see
      * <a>arns</a>.</p>
      */
-    inline BatchReadRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline BatchReadRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN associated with the <a>Directory</a>. For more information, see
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>List of operations that are part of the batch.</p>
      */
-    inline void SetOperations(Aws::Vector<BatchReadOperation>&& value) { m_operationsHasBeenSet = true; m_operations = value; }
+    inline void SetOperations(Aws::Vector<BatchReadOperation>&& value) { m_operationsHasBeenSet = true; m_operations = std::move(value); }
 
     /**
      * <p>List of operations that are part of the batch.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>List of operations that are part of the batch.</p>
      */
-    inline BatchReadRequest& WithOperations(Aws::Vector<BatchReadOperation>&& value) { SetOperations(value); return *this;}
+    inline BatchReadRequest& WithOperations(Aws::Vector<BatchReadOperation>&& value) { SetOperations(std::move(value)); return *this;}
 
     /**
      * <p>List of operations that are part of the batch.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>List of operations that are part of the batch.</p>
      */
-    inline BatchReadRequest& AddOperations(BatchReadOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
+    inline BatchReadRequest& AddOperations(BatchReadOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Represents the manner and timing in which the successful write or update of
@@ -131,7 +132,7 @@ namespace Model
      * <p>Represents the manner and timing in which the successful write or update of
      * an object is reflected in a subsequent read operation of that same object.</p>
      */
-    inline void SetConsistencyLevel(ConsistencyLevel&& value) { m_consistencyLevelHasBeenSet = true; m_consistencyLevel = value; }
+    inline void SetConsistencyLevel(ConsistencyLevel&& value) { m_consistencyLevelHasBeenSet = true; m_consistencyLevel = std::move(value); }
 
     /**
      * <p>Represents the manner and timing in which the successful write or update of
@@ -143,7 +144,7 @@ namespace Model
      * <p>Represents the manner and timing in which the successful write or update of
      * an object is reflected in a subsequent read operation of that same object.</p>
      */
-    inline BatchReadRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(value); return *this;}
+    inline BatchReadRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(std::move(value)); return *this;}
 
   private:
     Aws::String m_directoryArn;

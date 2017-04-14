@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The registry ID associated with the request.</p>
      */
-    inline void SetRegistryId(Aws::String&& value) { m_registryId = value; }
+    inline void SetRegistryId(Aws::String&& value) { m_registryId = std::move(value); }
 
     /**
      * <p>The registry ID associated with the request.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The registry ID associated with the request.</p>
      */
-    inline GetRepositoryPolicyResult& WithRegistryId(Aws::String&& value) { SetRegistryId(value); return *this;}
+    inline GetRepositoryPolicyResult& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
      * <p>The registry ID associated with the request.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The repository name associated with the request.</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryName = std::move(value); }
 
     /**
      * <p>The repository name associated with the request.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The repository name associated with the request.</p>
      */
-    inline GetRepositoryPolicyResult& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline GetRepositoryPolicyResult& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The repository name associated with the request.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The JSON repository policy text associated with the repository.</p>
      */
-    inline void SetPolicyText(Aws::String&& value) { m_policyText = value; }
+    inline void SetPolicyText(Aws::String&& value) { m_policyText = std::move(value); }
 
     /**
      * <p>The JSON repository policy text associated with the repository.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The JSON repository policy text associated with the repository.</p>
      */
-    inline GetRepositoryPolicyResult& WithPolicyText(Aws::String&& value) { SetPolicyText(value); return *this;}
+    inline GetRepositoryPolicyResult& WithPolicyText(Aws::String&& value) { SetPolicyText(std::move(value)); return *this;}
 
     /**
      * <p>The JSON repository policy text associated with the repository.</p>

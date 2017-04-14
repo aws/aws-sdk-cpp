@@ -19,6 +19,7 @@
 #include <aws/elasticache/model/AZMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * must be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
      */
-    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
+    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
 
     /**
      * <p>The node group (shard) identifier. This parameter is stored as a lowercase
@@ -96,7 +97,7 @@ namespace Model
      * must be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
      */
-    inline CreateCacheClusterRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(value); return *this;}
+    inline CreateCacheClusterRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The node group (shard) identifier. This parameter is stored as a lowercase
@@ -150,7 +151,7 @@ namespace Model
      * Availability Zones.</p> <note> <p>This parameter is only valid if the
      * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
-    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
+    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::move(value); }
 
     /**
      * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
@@ -195,7 +196,7 @@ namespace Model
      * Availability Zones.</p> <note> <p>This parameter is only valid if the
      * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
-    inline CreateCacheClusterRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(value); return *this;}
+    inline CreateCacheClusterRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(std::move(value)); return *this;}
 
     /**
      * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
@@ -240,7 +241,7 @@ namespace Model
      * <code>PreferredAvailabilityZones</code> are not specified, ElastiCache assumes
      * <code>single-az</code> mode.</p>
      */
-    inline void SetAZMode(AZMode&& value) { m_aZModeHasBeenSet = true; m_aZMode = value; }
+    inline void SetAZMode(AZMode&& value) { m_aZModeHasBeenSet = true; m_aZMode = std::move(value); }
 
     /**
      * <p>Specifies whether the nodes in this Memcached cluster are created in a single
@@ -260,7 +261,7 @@ namespace Model
      * <code>PreferredAvailabilityZones</code> are not specified, ElastiCache assumes
      * <code>single-az</code> mode.</p>
      */
-    inline CreateCacheClusterRequest& WithAZMode(AZMode&& value) { SetAZMode(value); return *this;}
+    inline CreateCacheClusterRequest& WithAZMode(AZMode&& value) { SetAZMode(std::move(value)); return *this;}
 
     /**
      * <p>The EC2 Availability Zone in which the cache cluster is created.</p> <p>All
@@ -287,7 +288,7 @@ namespace Model
      * Zones, use <code>PreferredAvailabilityZones</code>.</p> <p>Default: System
      * chosen Availability Zone.</p>
      */
-    inline void SetPreferredAvailabilityZone(Aws::String&& value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone = value; }
+    inline void SetPreferredAvailabilityZone(Aws::String&& value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone = std::move(value); }
 
     /**
      * <p>The EC2 Availability Zone in which the cache cluster is created.</p> <p>All
@@ -314,7 +315,7 @@ namespace Model
      * Zones, use <code>PreferredAvailabilityZones</code>.</p> <p>Default: System
      * chosen Availability Zone.</p>
      */
-    inline CreateCacheClusterRequest& WithPreferredAvailabilityZone(Aws::String&& value) { SetPreferredAvailabilityZone(value); return *this;}
+    inline CreateCacheClusterRequest& WithPreferredAvailabilityZone(Aws::String&& value) { SetPreferredAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The EC2 Availability Zone in which the cache cluster is created.</p> <p>All
@@ -365,7 +366,7 @@ namespace Model
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p>
      */
-    inline void SetPreferredAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones = value; }
+    inline void SetPreferredAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones = std::move(value); }
 
     /**
      * <p>A list of the Availability Zones in which cache nodes are created. The order
@@ -393,7 +394,7 @@ namespace Model
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p>
      */
-    inline CreateCacheClusterRequest& WithPreferredAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetPreferredAvailabilityZones(value); return *this;}
+    inline CreateCacheClusterRequest& WithPreferredAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetPreferredAvailabilityZones(std::move(value)); return *this;}
 
     /**
      * <p>A list of the Availability Zones in which cache nodes are created. The order
@@ -421,7 +422,7 @@ namespace Model
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p>
      */
-    inline CreateCacheClusterRequest& AddPreferredAvailabilityZones(Aws::String&& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones.push_back(value); return *this; }
+    inline CreateCacheClusterRequest& AddPreferredAvailabilityZones(Aws::String&& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of the Availability Zones in which cache nodes are created. The order
@@ -570,7 +571,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
      * Node Type-Specific Parameters for Redis</a>.</p>
      */
-    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
+    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::move(value); }
 
     /**
      * <p>The compute and memory capacity of the nodes in the node group (shard).</p>
@@ -675,7 +676,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
      * Node Type-Specific Parameters for Redis</a>.</p>
      */
-    inline CreateCacheClusterRequest& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(value); return *this;}
+    inline CreateCacheClusterRequest& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(std::move(value)); return *this;}
 
     /**
      * <p>The compute and memory capacity of the nodes in the node group (shard).</p>
@@ -728,7 +729,7 @@ namespace Model
      * <p>The name of the cache engine to be used for this cache cluster.</p> <p>Valid
      * values for this parameter are: <code>memcached</code> | <code>redis</code> </p>
      */
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The name of the cache engine to be used for this cache cluster.</p> <p>Valid
@@ -746,7 +747,7 @@ namespace Model
      * <p>The name of the cache engine to be used for this cache cluster.</p> <p>Valid
      * values for this parameter are: <code>memcached</code> | <code>redis</code> </p>
      */
-    inline CreateCacheClusterRequest& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
+    inline CreateCacheClusterRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cache engine to be used for this cache cluster.</p> <p>Valid
@@ -791,7 +792,7 @@ namespace Model
      * existing cache cluster or replication group and create it anew with the earlier
      * engine version. </p>
      */
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>The version number of the cache engine to be used for this cache cluster. To
@@ -830,7 +831,7 @@ namespace Model
      * existing cache cluster or replication group and create it anew with the earlier
      * engine version. </p>
      */
-    inline CreateCacheClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
+    inline CreateCacheClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version number of the cache engine to be used for this cache cluster. To
@@ -867,7 +868,7 @@ namespace Model
      * used. You cannot use any parameter group which has
      * <code>cluster-enabled='yes'</code> when creating a cluster.</p>
      */
-    inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
+    inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the parameter group to associate with this cache cluster. If this
@@ -891,7 +892,7 @@ namespace Model
      * used. You cannot use any parameter group which has
      * <code>cluster-enabled='yes'</code> when creating a cluster.</p>
      */
-    inline CreateCacheClusterRequest& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(value); return *this;}
+    inline CreateCacheClusterRequest& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the parameter group to associate with this cache cluster. If this
@@ -932,7 +933,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets
      * and Subnet Groups</a>.</p> </important>
      */
-    inline void SetCacheSubnetGroupName(Aws::String&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
+    inline void SetCacheSubnetGroupName(Aws::String&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = std::move(value); }
 
     /**
      * <p>The name of the subnet group to be used for the cache cluster.</p> <p>Use
@@ -965,7 +966,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets
      * and Subnet Groups</a>.</p> </important>
      */
-    inline CreateCacheClusterRequest& WithCacheSubnetGroupName(Aws::String&& value) { SetCacheSubnetGroupName(value); return *this;}
+    inline CreateCacheClusterRequest& WithCacheSubnetGroupName(Aws::String&& value) { SetCacheSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the subnet group to be used for the cache cluster.</p> <p>Use
@@ -997,7 +998,7 @@ namespace Model
      * <p>Use this parameter only when you are creating a cache cluster outside of an
      * Amazon Virtual Private Cloud (Amazon VPC).</p>
      */
-    inline void SetCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = value; }
+    inline void SetCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = std::move(value); }
 
     /**
      * <p>A list of security group names to associate with this cache cluster.</p>
@@ -1011,7 +1012,7 @@ namespace Model
      * <p>Use this parameter only when you are creating a cache cluster outside of an
      * Amazon Virtual Private Cloud (Amazon VPC).</p>
      */
-    inline CreateCacheClusterRequest& WithCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { SetCacheSecurityGroupNames(value); return *this;}
+    inline CreateCacheClusterRequest& WithCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { SetCacheSecurityGroupNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of security group names to associate with this cache cluster.</p>
@@ -1025,7 +1026,7 @@ namespace Model
      * <p>Use this parameter only when you are creating a cache cluster outside of an
      * Amazon Virtual Private Cloud (Amazon VPC).</p>
      */
-    inline CreateCacheClusterRequest& AddCacheSecurityGroupNames(Aws::String&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
+    inline CreateCacheClusterRequest& AddCacheSecurityGroupNames(Aws::String&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of security group names to associate with this cache cluster.</p>
@@ -1053,7 +1054,7 @@ namespace Model
      * this parameter only when you are creating a cache cluster in an Amazon Virtual
      * Private Cloud (Amazon VPC).</p>
      */
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
+    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p>One or more VPC security groups associated with the cache cluster.</p> <p>Use
@@ -1067,7 +1068,7 @@ namespace Model
      * this parameter only when you are creating a cache cluster in an Amazon Virtual
      * Private Cloud (Amazon VPC).</p>
      */
-    inline CreateCacheClusterRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(value); return *this;}
+    inline CreateCacheClusterRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more VPC security groups associated with the cache cluster.</p> <p>Use
@@ -1081,7 +1082,7 @@ namespace Model
      * this parameter only when you are creating a cache cluster in an Amazon Virtual
      * Private Cloud (Amazon VPC).</p>
      */
-    inline CreateCacheClusterRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    inline CreateCacheClusterRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more VPC security groups associated with the cache cluster.</p> <p>Use
@@ -1106,7 +1107,7 @@ namespace Model
      * <p>A list of cost allocation tags to be added to this resource. A tag is a
      * key-value pair. A tag key must be accompanied by a tag value.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of cost allocation tags to be added to this resource. A tag is a
@@ -1118,7 +1119,7 @@ namespace Model
      * <p>A list of cost allocation tags to be added to this resource. A tag is a
      * key-value pair. A tag key must be accompanied by a tag value.</p>
      */
-    inline CreateCacheClusterRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline CreateCacheClusterRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of cost allocation tags to be added to this resource. A tag is a
@@ -1130,7 +1131,7 @@ namespace Model
      * <p>A list of cost allocation tags to be added to this resource. A tag is a
      * key-value pair. A tag key must be accompanied by a tag value.</p>
      */
-    inline CreateCacheClusterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateCacheClusterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A single-element string list containing an Amazon Resource Name (ARN) that
@@ -1160,7 +1161,7 @@ namespace Model
      * the <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example
      * of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
-    inline void SetSnapshotArns(Aws::Vector<Aws::String>&& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns = value; }
+    inline void SetSnapshotArns(Aws::Vector<Aws::String>&& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns = std::move(value); }
 
     /**
      * <p>A single-element string list containing an Amazon Resource Name (ARN) that
@@ -1180,7 +1181,7 @@ namespace Model
      * the <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example
      * of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
-    inline CreateCacheClusterRequest& WithSnapshotArns(Aws::Vector<Aws::String>&& value) { SetSnapshotArns(value); return *this;}
+    inline CreateCacheClusterRequest& WithSnapshotArns(Aws::Vector<Aws::String>&& value) { SetSnapshotArns(std::move(value)); return *this;}
 
     /**
      * <p>A single-element string list containing an Amazon Resource Name (ARN) that
@@ -1200,7 +1201,7 @@ namespace Model
      * the <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example
      * of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
-    inline CreateCacheClusterRequest& AddSnapshotArns(Aws::String&& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns.push_back(value); return *this; }
+    inline CreateCacheClusterRequest& AddSnapshotArns(Aws::String&& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A single-element string list containing an Amazon Resource Name (ARN) that
@@ -1234,7 +1235,7 @@ namespace Model
      * new node group (shard) is being created.</p> <note> <p>This parameter is only
      * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
-    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
+    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::move(value); }
 
     /**
      * <p>The name of a Redis snapshot from which to restore data into the new node
@@ -1258,7 +1259,7 @@ namespace Model
      * new node group (shard) is being created.</p> <note> <p>This parameter is only
      * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
-    inline CreateCacheClusterRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(value); return *this;}
+    inline CreateCacheClusterRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a Redis snapshot from which to restore data into the new node
@@ -1314,7 +1315,7 @@ namespace Model
      * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      */
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
+    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cache cluster
@@ -1362,7 +1363,7 @@ namespace Model
      * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      */
-    inline CreateCacheClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(value); return *this;}
+    inline CreateCacheClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cache cluster
@@ -1414,7 +1415,7 @@ namespace Model
      * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
      * owner must be the same as the cache cluster owner.</p> </note>
      */
-    inline void SetNotificationTopicArn(Aws::String&& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = value; }
+    inline void SetNotificationTopicArn(Aws::String&& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
@@ -1435,7 +1436,7 @@ namespace Model
      * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
      * owner must be the same as the cache cluster owner.</p> </note>
      */
-    inline CreateCacheClusterRequest& WithNotificationTopicArn(Aws::String&& value) { SetNotificationTopicArn(value); return *this;}
+    inline CreateCacheClusterRequest& WithNotificationTopicArn(Aws::String&& value) { SetNotificationTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
@@ -1514,7 +1515,7 @@ namespace Model
      * an appropriate time range.</p> <p> <b>Note:</b> This parameter is only valid if
      * the <code>Engine</code> parameter is <code>redis</code>.</p>
      */
-    inline void SetSnapshotWindow(Aws::String&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = value; }
+    inline void SetSnapshotWindow(Aws::String&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = std::move(value); }
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
@@ -1541,7 +1542,7 @@ namespace Model
      * an appropriate time range.</p> <p> <b>Note:</b> This parameter is only valid if
      * the <code>Engine</code> parameter is <code>redis</code>.</p>
      */
-    inline CreateCacheClusterRequest& WithSnapshotWindow(Aws::String&& value) { SetSnapshotWindow(value); return *this;}
+    inline CreateCacheClusterRequest& WithSnapshotWindow(Aws::String&& value) { SetSnapshotWindow(std::move(value)); return *this;}
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
@@ -1583,7 +1584,7 @@ namespace Model
      * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * Redis.</p>
      */
-    inline void SetAuthToken(Aws::String&& value) { m_authTokenHasBeenSet = true; m_authToken = value; }
+    inline void SetAuthToken(Aws::String&& value) { m_authTokenHasBeenSet = true; m_authToken = std::move(value); }
 
     /**
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
@@ -1616,7 +1617,7 @@ namespace Model
      * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * Redis.</p>
      */
-    inline CreateCacheClusterRequest& WithAuthToken(Aws::String&& value) { SetAuthToken(value); return *this;}
+    inline CreateCacheClusterRequest& WithAuthToken(Aws::String&& value) { SetAuthToken(std::move(value)); return *this;}
 
     /**
      * <p> <b>Reserved parameter.</b> The password used to access a password protected

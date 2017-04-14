@@ -16,6 +16,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/BatchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
      * <p>The name and revision (<code>name:revision</code>) or full Amazon Resource
      * Name (ARN) of the job definition to deregister. </p>
      */
-    inline void SetJobDefinition(Aws::String&& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = value; }
+    inline void SetJobDefinition(Aws::String&& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = std::move(value); }
 
     /**
      * <p>The name and revision (<code>name:revision</code>) or full Amazon Resource
@@ -67,7 +68,7 @@ namespace Model
      * <p>The name and revision (<code>name:revision</code>) or full Amazon Resource
      * Name (ARN) of the job definition to deregister. </p>
      */
-    inline DeregisterJobDefinitionRequest& WithJobDefinition(Aws::String&& value) { SetJobDefinition(value); return *this;}
+    inline DeregisterJobDefinitionRequest& WithJobDefinition(Aws::String&& value) { SetJobDefinition(std::move(value)); return *this;}
 
     /**
      * <p>The name and revision (<code>name:revision</code>) or full Amazon Resource

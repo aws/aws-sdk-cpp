@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/OriginProtocolPolicy.h>
 #include <aws/cloudfront/model/OriginSslProtocols.h>
+#include <utility>
 
 namespace Aws
 {
@@ -88,7 +89,7 @@ namespace Model
     /**
      * The origin protocol policy to apply to your origin.
      */
-    inline void SetOriginProtocolPolicy(OriginProtocolPolicy&& value) { m_originProtocolPolicyHasBeenSet = true; m_originProtocolPolicy = value; }
+    inline void SetOriginProtocolPolicy(OriginProtocolPolicy&& value) { m_originProtocolPolicyHasBeenSet = true; m_originProtocolPolicy = std::move(value); }
 
     /**
      * The origin protocol policy to apply to your origin.
@@ -98,7 +99,7 @@ namespace Model
     /**
      * The origin protocol policy to apply to your origin.
      */
-    inline CustomOriginConfig& WithOriginProtocolPolicy(OriginProtocolPolicy&& value) { SetOriginProtocolPolicy(value); return *this;}
+    inline CustomOriginConfig& WithOriginProtocolPolicy(OriginProtocolPolicy&& value) { SetOriginProtocolPolicy(std::move(value)); return *this;}
 
     /**
      * The SSL/TLS protocols that you want CloudFront to use when communicating with
@@ -116,7 +117,7 @@ namespace Model
      * The SSL/TLS protocols that you want CloudFront to use when communicating with
      * your origin over HTTPS.
      */
-    inline void SetOriginSslProtocols(OriginSslProtocols&& value) { m_originSslProtocolsHasBeenSet = true; m_originSslProtocols = value; }
+    inline void SetOriginSslProtocols(OriginSslProtocols&& value) { m_originSslProtocolsHasBeenSet = true; m_originSslProtocols = std::move(value); }
 
     /**
      * The SSL/TLS protocols that you want CloudFront to use when communicating with
@@ -128,7 +129,7 @@ namespace Model
      * The SSL/TLS protocols that you want CloudFront to use when communicating with
      * your origin over HTTPS.
      */
-    inline CustomOriginConfig& WithOriginSslProtocols(OriginSslProtocols&& value) { SetOriginSslProtocols(value); return *this;}
+    inline CustomOriginConfig& WithOriginSslProtocols(OriginSslProtocols&& value) { SetOriginSslProtocols(std::move(value)); return *this;}
 
   private:
     int m_hTTPPort;

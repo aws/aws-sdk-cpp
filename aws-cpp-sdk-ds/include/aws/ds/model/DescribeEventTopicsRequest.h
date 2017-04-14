@@ -17,6 +17,7 @@
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The Directory ID for which to get the list of associated SNS topics. If this
      * member is null, associations for all Directory IDs are returned.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>The Directory ID for which to get the list of associated SNS topics. If this
@@ -73,7 +74,7 @@ namespace Model
      * <p>The Directory ID for which to get the list of associated SNS topics. If this
      * member is null, associations for all Directory IDs are returned.</p>
      */
-    inline DescribeEventTopicsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline DescribeEventTopicsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>The Directory ID for which to get the list of associated SNS topics. If this
@@ -103,7 +104,7 @@ namespace Model
      * empty list results in an <code>InvalidParameterException</code> being
      * thrown.</p>
      */
-    inline void SetTopicNames(Aws::Vector<Aws::String>&& value) { m_topicNamesHasBeenSet = true; m_topicNames = value; }
+    inline void SetTopicNames(Aws::Vector<Aws::String>&& value) { m_topicNamesHasBeenSet = true; m_topicNames = std::move(value); }
 
     /**
      * <p>A list of SNS topic names for which to obtain the information. If this member
@@ -119,7 +120,7 @@ namespace Model
      * empty list results in an <code>InvalidParameterException</code> being
      * thrown.</p>
      */
-    inline DescribeEventTopicsRequest& WithTopicNames(Aws::Vector<Aws::String>&& value) { SetTopicNames(value); return *this;}
+    inline DescribeEventTopicsRequest& WithTopicNames(Aws::Vector<Aws::String>&& value) { SetTopicNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of SNS topic names for which to obtain the information. If this member
@@ -135,7 +136,7 @@ namespace Model
      * empty list results in an <code>InvalidParameterException</code> being
      * thrown.</p>
      */
-    inline DescribeEventTopicsRequest& AddTopicNames(Aws::String&& value) { m_topicNamesHasBeenSet = true; m_topicNames.push_back(value); return *this; }
+    inline DescribeEventTopicsRequest& AddTopicNames(Aws::String&& value) { m_topicNamesHasBeenSet = true; m_topicNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of SNS topic names for which to obtain the information. If this member

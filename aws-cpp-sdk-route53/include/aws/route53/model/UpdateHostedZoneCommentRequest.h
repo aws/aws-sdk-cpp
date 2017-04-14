@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The ID for the hosted zone for which you want to update the comment.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The ID for the hosted zone for which you want to update the comment.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ID for the hosted zone for which you want to update the comment.</p>
      */
-    inline UpdateHostedZoneCommentRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline UpdateHostedZoneCommentRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID for the hosted zone for which you want to update the comment.</p>
@@ -91,7 +92,7 @@ namespace Model
      * <code>Comment</code>, Amazon Route 53 deletes the existing value of the
      * <code>Comment</code> element, if any.</p>
      */
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
+    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
      * <p>The new comment for the hosted zone. If you don't specify a value for
@@ -112,7 +113,7 @@ namespace Model
      * <code>Comment</code>, Amazon Route 53 deletes the existing value of the
      * <code>Comment</code> element, if any.</p>
      */
-    inline UpdateHostedZoneCommentRequest& WithComment(Aws::String&& value) { SetComment(value); return *this;}
+    inline UpdateHostedZoneCommentRequest& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
      * <p>The new comment for the hosted zone. If you don't specify a value for

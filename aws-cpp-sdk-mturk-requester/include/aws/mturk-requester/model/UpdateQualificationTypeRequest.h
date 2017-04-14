@@ -17,6 +17,7 @@
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mturk-requester/model/QualificationTypeStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The ID of the Qualification type to update.</p>
      */
-    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
+    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = std::move(value); }
 
     /**
      * <p>The ID of the Qualification type to update.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The ID of the Qualification type to update.</p>
      */
-    inline UpdateQualificationTypeRequest& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(value); return *this;}
+    inline UpdateQualificationTypeRequest& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Qualification type to update.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The new description of the Qualification type.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The new description of the Qualification type.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The new description of the Qualification type.</p>
      */
-    inline UpdateQualificationTypeRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline UpdateQualificationTypeRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The new description of the Qualification type.</p>
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>The new status of the Qualification type - Active | Inactive</p>
      */
-    inline void SetQualificationTypeStatus(QualificationTypeStatus&& value) { m_qualificationTypeStatusHasBeenSet = true; m_qualificationTypeStatus = value; }
+    inline void SetQualificationTypeStatus(QualificationTypeStatus&& value) { m_qualificationTypeStatusHasBeenSet = true; m_qualificationTypeStatus = std::move(value); }
 
     /**
      * <p>The new status of the Qualification type - Active | Inactive</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The new status of the Qualification type - Active | Inactive</p>
      */
-    inline UpdateQualificationTypeRequest& WithQualificationTypeStatus(QualificationTypeStatus&& value) { SetQualificationTypeStatus(value); return *this;}
+    inline UpdateQualificationTypeRequest& WithQualificationTypeStatus(QualificationTypeStatus&& value) { SetQualificationTypeStatus(std::move(value)); return *this;}
 
     /**
      * <p>The questions for the Qualification test a Worker must answer correctly to
@@ -162,7 +163,7 @@ namespace Model
      * If not specified, the Worker may request the Qualification without answering any
      * questions.</p>
      */
-    inline void SetTest(Aws::String&& value) { m_testHasBeenSet = true; m_test = value; }
+    inline void SetTest(Aws::String&& value) { m_testHasBeenSet = true; m_test = std::move(value); }
 
     /**
      * <p>The questions for the Qualification test a Worker must answer correctly to
@@ -195,7 +196,7 @@ namespace Model
      * If not specified, the Worker may request the Qualification without answering any
      * questions.</p>
      */
-    inline UpdateQualificationTypeRequest& WithTest(Aws::String&& value) { SetTest(value); return *this;}
+    inline UpdateQualificationTypeRequest& WithTest(Aws::String&& value) { SetTest(std::move(value)); return *this;}
 
     /**
      * <p>The questions for the Qualification test a Worker must answer correctly to
@@ -224,7 +225,7 @@ namespace Model
      * <p>The answers to the Qualification test specified in the Test parameter, in the
      * form of an AnswerKey data structure.</p>
      */
-    inline void SetAnswerKey(Aws::String&& value) { m_answerKeyHasBeenSet = true; m_answerKey = value; }
+    inline void SetAnswerKey(Aws::String&& value) { m_answerKeyHasBeenSet = true; m_answerKey = std::move(value); }
 
     /**
      * <p>The answers to the Qualification test specified in the Test parameter, in the
@@ -242,7 +243,7 @@ namespace Model
      * <p>The answers to the Qualification test specified in the Test parameter, in the
      * form of an AnswerKey data structure.</p>
      */
-    inline UpdateQualificationTypeRequest& WithAnswerKey(Aws::String&& value) { SetAnswerKey(value); return *this;}
+    inline UpdateQualificationTypeRequest& WithAnswerKey(Aws::String&& value) { SetAnswerKey(std::move(value)); return *this;}
 
     /**
      * <p>The answers to the Qualification test specified in the Test parameter, in the

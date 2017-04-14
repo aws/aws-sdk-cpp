@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/support/model/TrustedAdvisorCostOptimizingSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The summary information about cost savings for a Trusted Advisor check that
      * is in the Cost Optimizing category.</p>
      */
-    inline void SetCostOptimizing(TrustedAdvisorCostOptimizingSummary&& value) { m_costOptimizingHasBeenSet = true; m_costOptimizing = value; }
+    inline void SetCostOptimizing(TrustedAdvisorCostOptimizingSummary&& value) { m_costOptimizingHasBeenSet = true; m_costOptimizing = std::move(value); }
 
     /**
      * <p>The summary information about cost savings for a Trusted Advisor check that
@@ -72,7 +73,7 @@ namespace Model
      * <p>The summary information about cost savings for a Trusted Advisor check that
      * is in the Cost Optimizing category.</p>
      */
-    inline TrustedAdvisorCategorySpecificSummary& WithCostOptimizing(TrustedAdvisorCostOptimizingSummary&& value) { SetCostOptimizing(value); return *this;}
+    inline TrustedAdvisorCategorySpecificSummary& WithCostOptimizing(TrustedAdvisorCostOptimizingSummary&& value) { SetCostOptimizing(std::move(value)); return *this;}
 
   private:
     TrustedAdvisorCostOptimizingSummary m_costOptimizing;

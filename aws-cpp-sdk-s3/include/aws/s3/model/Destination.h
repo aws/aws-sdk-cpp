@@ -16,6 +16,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/StorageClass.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
      * replicas of the object identified by the rule.
      */
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
@@ -74,7 +75,7 @@ namespace Model
      * Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
      * replicas of the object identified by the rule.
      */
-    inline Destination& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline Destination& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
@@ -95,7 +96,7 @@ namespace Model
     /**
      * The class of storage used to store the object.
      */
-    inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+    inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
      * The class of storage used to store the object.
@@ -105,7 +106,7 @@ namespace Model
     /**
      * The class of storage used to store the object.
      */
-    inline Destination& WithStorageClass(StorageClass&& value) { SetStorageClass(value); return *this;}
+    inline Destination& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
   private:
     Aws::String m_bucket;

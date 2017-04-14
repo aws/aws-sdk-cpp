@@ -16,6 +16,7 @@
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/swf/model/WorkflowTypeInfo.h>
 #include <aws/swf/model/WorkflowTypeConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -76,7 +77,7 @@ namespace Model
      * but is still in use. You should keep workers supporting this type running. You
      * cannot create new workflow executions of this type.</li> </ul>
      */
-    inline void SetTypeInfo(WorkflowTypeInfo&& value) { m_typeInfo = value; }
+    inline void SetTypeInfo(WorkflowTypeInfo&& value) { m_typeInfo = std::move(value); }
 
     /**
      * <p>General information about the workflow type.</p> <p>The status of the
@@ -98,7 +99,7 @@ namespace Model
      * but is still in use. You should keep workers supporting this type running. You
      * cannot create new workflow executions of this type.</li> </ul>
      */
-    inline DescribeWorkflowTypeResult& WithTypeInfo(WorkflowTypeInfo&& value) { SetTypeInfo(value); return *this;}
+    inline DescribeWorkflowTypeResult& WithTypeInfo(WorkflowTypeInfo&& value) { SetTypeInfo(std::move(value)); return *this;}
 
     /**
      * <p>Configuration settings of the workflow type registered through
@@ -116,7 +117,7 @@ namespace Model
      * <p>Configuration settings of the workflow type registered through
      * <a>RegisterWorkflowType</a></p>
      */
-    inline void SetConfiguration(WorkflowTypeConfiguration&& value) { m_configuration = value; }
+    inline void SetConfiguration(WorkflowTypeConfiguration&& value) { m_configuration = std::move(value); }
 
     /**
      * <p>Configuration settings of the workflow type registered through
@@ -128,7 +129,7 @@ namespace Model
      * <p>Configuration settings of the workflow type registered through
      * <a>RegisterWorkflowType</a></p>
      */
-    inline DescribeWorkflowTypeResult& WithConfiguration(WorkflowTypeConfiguration&& value) { SetConfiguration(value); return *this;}
+    inline DescribeWorkflowTypeResult& WithConfiguration(WorkflowTypeConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
   private:
     WorkflowTypeInfo m_typeInfo;

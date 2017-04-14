@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/cloudformation/model/ResourceStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The logical name of the resource specified in the template.</p>
      */
-    inline void SetLogicalResourceId(Aws::String&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = value; }
+    inline void SetLogicalResourceId(Aws::String&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = std::move(value); }
 
     /**
      * <p>The logical name of the resource specified in the template.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The logical name of the resource specified in the template.</p>
      */
-    inline StackResourceSummary& WithLogicalResourceId(Aws::String&& value) { SetLogicalResourceId(value); return *this;}
+    inline StackResourceSummary& WithLogicalResourceId(Aws::String&& value) { SetLogicalResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The logical name of the resource specified in the template.</p>
@@ -100,7 +101,7 @@ namespace Model
      * <p>The name or unique identifier that corresponds to a physical instance ID of
      * the resource.</p>
      */
-    inline void SetPhysicalResourceId(Aws::String&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = value; }
+    inline void SetPhysicalResourceId(Aws::String&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = std::move(value); }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of
@@ -118,7 +119,7 @@ namespace Model
      * <p>The name or unique identifier that corresponds to a physical instance ID of
      * the resource.</p>
      */
-    inline StackResourceSummary& WithPhysicalResourceId(Aws::String&& value) { SetPhysicalResourceId(value); return *this;}
+    inline StackResourceSummary& WithPhysicalResourceId(Aws::String&& value) { SetPhysicalResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of
@@ -145,7 +146,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
      * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
      */
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>Type of resource. (For more information, go to <a
@@ -166,7 +167,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
      * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
      */
-    inline StackResourceSummary& WithResourceType(Aws::String&& value) { SetResourceType(value); return *this;}
+    inline StackResourceSummary& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>Type of resource. (For more information, go to <a
@@ -188,7 +189,7 @@ namespace Model
     /**
      * <p>Time the status was updated.</p>
      */
-    inline void SetLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = value; }
+    inline void SetLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = std::move(value); }
 
     /**
      * <p>Time the status was updated.</p>
@@ -198,7 +199,7 @@ namespace Model
     /**
      * <p>Time the status was updated.</p>
      */
-    inline StackResourceSummary& WithLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdatedTimestamp(value); return *this;}
+    inline StackResourceSummary& WithLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdatedTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>Current status of the resource.</p>
@@ -213,7 +214,7 @@ namespace Model
     /**
      * <p>Current status of the resource.</p>
      */
-    inline void SetResourceStatus(ResourceStatus&& value) { m_resourceStatusHasBeenSet = true; m_resourceStatus = value; }
+    inline void SetResourceStatus(ResourceStatus&& value) { m_resourceStatusHasBeenSet = true; m_resourceStatus = std::move(value); }
 
     /**
      * <p>Current status of the resource.</p>
@@ -223,7 +224,7 @@ namespace Model
     /**
      * <p>Current status of the resource.</p>
      */
-    inline StackResourceSummary& WithResourceStatus(ResourceStatus&& value) { SetResourceStatus(value); return *this;}
+    inline StackResourceSummary& WithResourceStatus(ResourceStatus&& value) { SetResourceStatus(std::move(value)); return *this;}
 
     /**
      * <p>Success/failure message associated with the resource.</p>
@@ -238,7 +239,7 @@ namespace Model
     /**
      * <p>Success/failure message associated with the resource.</p>
      */
-    inline void SetResourceStatusReason(Aws::String&& value) { m_resourceStatusReasonHasBeenSet = true; m_resourceStatusReason = value; }
+    inline void SetResourceStatusReason(Aws::String&& value) { m_resourceStatusReasonHasBeenSet = true; m_resourceStatusReason = std::move(value); }
 
     /**
      * <p>Success/failure message associated with the resource.</p>
@@ -253,7 +254,7 @@ namespace Model
     /**
      * <p>Success/failure message associated with the resource.</p>
      */
-    inline StackResourceSummary& WithResourceStatusReason(Aws::String&& value) { SetResourceStatusReason(value); return *this;}
+    inline StackResourceSummary& WithResourceStatusReason(Aws::String&& value) { SetResourceStatusReason(std::move(value)); return *this;}
 
     /**
      * <p>Success/failure message associated with the resource.</p>

@@ -17,6 +17,7 @@
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>The unique identifier of the cluster to be modified.</p> <p>Example:
      * <code>examplecluster</code> </p>
      */
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     /**
      * <p>The unique identifier of the cluster to be modified.</p> <p>Example:
@@ -75,7 +76,7 @@ namespace Model
      * <p>The unique identifier of the cluster to be modified.</p> <p>Example:
      * <code>examplecluster</code> </p>
      */
-    inline ModifyClusterRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
+    inline ModifyClusterRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the cluster to be modified.</p> <p>Example:
@@ -114,7 +115,7 @@ namespace Model
      * resize request. </p> <p>Valid Values: <code> multi-node | single-node </code>
      * </p>
      */
-    inline void SetClusterType(Aws::String&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
+    inline void SetClusterType(Aws::String&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = std::move(value); }
 
     /**
      * <p>The new cluster type.</p> <p>When you submit your cluster resize request,
@@ -147,7 +148,7 @@ namespace Model
      * resize request. </p> <p>Valid Values: <code> multi-node | single-node </code>
      * </p>
      */
-    inline ModifyClusterRequest& WithClusterType(Aws::String&& value) { SetClusterType(value); return *this;}
+    inline ModifyClusterRequest& WithClusterType(Aws::String&& value) { SetClusterType(std::move(value)); return *this;}
 
     /**
      * <p>The new cluster type.</p> <p>When you submit your cluster resize request,
@@ -203,7 +204,7 @@ namespace Model
      * <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> | <code>ds2.8xlarge</code> |
      * <code>dc1.large</code> | <code>dc1.8xlarge</code>.</p>
      */
-    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
+    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
     /**
      * <p>The new node type of the cluster. If you specify a new node type, you must
@@ -248,7 +249,7 @@ namespace Model
      * <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> | <code>ds2.8xlarge</code> |
      * <code>dc1.large</code> | <code>dc1.8xlarge</code>.</p>
      */
-    inline ModifyClusterRequest& WithNodeType(Aws::String&& value) { SetNodeType(value); return *this;}
+    inline ModifyClusterRequest& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
 
     /**
      * <p>The new node type of the cluster. If you specify a new node type, you must
@@ -335,7 +336,7 @@ namespace Model
      * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens</p> </li> </ul>
      */
-    inline void SetClusterSecurityGroups(Aws::Vector<Aws::String>&& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups = value; }
+    inline void SetClusterSecurityGroups(Aws::Vector<Aws::String>&& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups = std::move(value); }
 
     /**
      * <p>A list of cluster security groups to be authorized on this cluster. This
@@ -357,7 +358,7 @@ namespace Model
      * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens</p> </li> </ul>
      */
-    inline ModifyClusterRequest& WithClusterSecurityGroups(Aws::Vector<Aws::String>&& value) { SetClusterSecurityGroups(value); return *this;}
+    inline ModifyClusterRequest& WithClusterSecurityGroups(Aws::Vector<Aws::String>&& value) { SetClusterSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of cluster security groups to be authorized on this cluster. This
@@ -379,7 +380,7 @@ namespace Model
      * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens</p> </li> </ul>
      */
-    inline ModifyClusterRequest& AddClusterSecurityGroups(Aws::String&& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups.push_back(value); return *this; }
+    inline ModifyClusterRequest& AddClusterSecurityGroups(Aws::String&& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of cluster security groups to be authorized on this cluster. This
@@ -408,7 +409,7 @@ namespace Model
      * <p>A list of virtual private cloud (VPC) security groups to be associated with
      * the cluster.</p>
      */
-    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
+    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
     /**
      * <p>A list of virtual private cloud (VPC) security groups to be associated with
@@ -420,7 +421,7 @@ namespace Model
      * <p>A list of virtual private cloud (VPC) security groups to be associated with
      * the cluster.</p>
      */
-    inline ModifyClusterRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(value); return *this;}
+    inline ModifyClusterRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of virtual private cloud (VPC) security groups to be associated with
@@ -432,7 +433,7 @@ namespace Model
      * <p>A list of virtual private cloud (VPC) security groups to be associated with
      * the cluster.</p>
      */
-    inline ModifyClusterRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+    inline ModifyClusterRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of virtual private cloud (VPC) security groups to be associated with
@@ -486,7 +487,7 @@ namespace Model
      * <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except '
      * (single quote), " (double quote), \, /, @, or space.</p> </li> </ul>
      */
-    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
+    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
      * <p>The new password for the cluster master user. This change is asynchronously
@@ -534,7 +535,7 @@ namespace Model
      * <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except '
      * (single quote), " (double quote), \, /, @, or space.</p> </li> </ul>
      */
-    inline ModifyClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(value); return *this;}
+    inline ModifyClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
      * <p>The new password for the cluster master user. This change is asynchronously
@@ -577,7 +578,7 @@ namespace Model
      * <p>Constraints: The cluster parameter group must be in the same parameter group
      * family that matches the cluster version.</p>
      */
-    inline void SetClusterParameterGroupName(Aws::String&& value) { m_clusterParameterGroupNameHasBeenSet = true; m_clusterParameterGroupName = value; }
+    inline void SetClusterParameterGroupName(Aws::String&& value) { m_clusterParameterGroupNameHasBeenSet = true; m_clusterParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the cluster parameter group to apply to this cluster. This change
@@ -604,7 +605,7 @@ namespace Model
      * <p>Constraints: The cluster parameter group must be in the same parameter group
      * family that matches the cluster version.</p>
      */
-    inline ModifyClusterRequest& WithClusterParameterGroupName(Aws::String&& value) { SetClusterParameterGroupName(value); return *this;}
+    inline ModifyClusterRequest& WithClusterParameterGroupName(Aws::String&& value) { SetClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cluster parameter group to apply to this cluster. This change
@@ -685,7 +686,7 @@ namespace Model
      * <code>wed:07:30-wed:08:00</code>.</p> <p>Valid Days: Mon | Tue | Wed | Thu | Fri
      * | Sat | Sun</p> <p>Constraints: Must be at least 30 minutes.</p>
      */
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
+    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p>The weekly time range (in UTC) during which system maintenance can occur, if
@@ -724,7 +725,7 @@ namespace Model
      * <code>wed:07:30-wed:08:00</code>.</p> <p>Valid Days: Mon | Tue | Wed | Thu | Fri
      * | Sat | Sun</p> <p>Constraints: Must be at least 30 minutes.</p>
      */
-    inline ModifyClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(value); return *this;}
+    inline ModifyClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p>The weekly time range (in UTC) during which system maintenance can occur, if
@@ -776,7 +777,7 @@ namespace Model
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Example: <code>1.0</code> </p>
      */
-    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = value; }
+    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = std::move(value); }
 
     /**
      * <p>The new version number of the Amazon Redshift engine to upgrade to.</p>
@@ -815,7 +816,7 @@ namespace Model
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Example: <code>1.0</code> </p>
      */
-    inline ModifyClusterRequest& WithClusterVersion(Aws::String&& value) { SetClusterVersion(value); return *this;}
+    inline ModifyClusterRequest& WithClusterVersion(Aws::String&& value) { SetClusterVersion(std::move(value)); return *this;}
 
     /**
      * <p>The new version number of the Amazon Redshift engine to upgrade to.</p>
@@ -867,7 +868,7 @@ namespace Model
      * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
      * uses to retrieve the data encryption keys stored in an HSM.</p>
      */
-    inline void SetHsmClientCertificateIdentifier(Aws::String&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
+    inline void SetHsmClientCertificateIdentifier(Aws::String&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = std::move(value); }
 
     /**
      * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
@@ -885,7 +886,7 @@ namespace Model
      * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
      * uses to retrieve the data encryption keys stored in an HSM.</p>
      */
-    inline ModifyClusterRequest& WithHsmClientCertificateIdentifier(Aws::String&& value) { SetHsmClientCertificateIdentifier(value); return *this;}
+    inline ModifyClusterRequest& WithHsmClientCertificateIdentifier(Aws::String&& value) { SetHsmClientCertificateIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
@@ -909,7 +910,7 @@ namespace Model
      * <p>Specifies the name of the HSM configuration that contains the information the
      * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
      */
-    inline void SetHsmConfigurationIdentifier(Aws::String&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
+    inline void SetHsmConfigurationIdentifier(Aws::String&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = std::move(value); }
 
     /**
      * <p>Specifies the name of the HSM configuration that contains the information the
@@ -927,7 +928,7 @@ namespace Model
      * <p>Specifies the name of the HSM configuration that contains the information the
      * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
      */
-    inline ModifyClusterRequest& WithHsmConfigurationIdentifier(Aws::String&& value) { SetHsmConfigurationIdentifier(value); return *this;}
+    inline ModifyClusterRequest& WithHsmConfigurationIdentifier(Aws::String&& value) { SetHsmConfigurationIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the HSM configuration that contains the information the
@@ -963,7 +964,7 @@ namespace Model
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
      * AWS account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
      */
-    inline void SetNewClusterIdentifier(Aws::String&& value) { m_newClusterIdentifierHasBeenSet = true; m_newClusterIdentifier = value; }
+    inline void SetNewClusterIdentifier(Aws::String&& value) { m_newClusterIdentifierHasBeenSet = true; m_newClusterIdentifier = std::move(value); }
 
     /**
      * <p>The new identifier for the cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must
@@ -993,7 +994,7 @@ namespace Model
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
      * AWS account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
      */
-    inline ModifyClusterRequest& WithNewClusterIdentifier(Aws::String&& value) { SetNewClusterIdentifier(value); return *this;}
+    inline ModifyClusterRequest& WithNewClusterIdentifier(Aws::String&& value) { SetNewClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The new identifier for the cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must
@@ -1051,7 +1052,7 @@ namespace Model
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
      */
-    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
+    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = std::move(value); }
 
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
@@ -1081,7 +1082,7 @@ namespace Model
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
      */
-    inline ModifyClusterRequest& WithElasticIp(Aws::String&& value) { SetElasticIp(value); return *this;}
+    inline ModifyClusterRequest& WithElasticIp(Aws::String&& value) { SetElasticIp(std::move(value)); return *this;}
 
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster

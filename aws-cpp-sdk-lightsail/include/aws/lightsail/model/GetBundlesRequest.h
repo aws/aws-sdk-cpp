@@ -16,6 +16,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * <p>A token used for advancing to the next page of results from your get bundles
      * request.</p>
      */
-    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
+    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
 
     /**
      * <p>A token used for advancing to the next page of results from your get bundles
@@ -87,7 +88,7 @@ namespace Model
      * <p>A token used for advancing to the next page of results from your get bundles
      * request.</p>
      */
-    inline GetBundlesRequest& WithPageToken(Aws::String&& value) { SetPageToken(value); return *this;}
+    inline GetBundlesRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
 
     /**
      * <p>A token used for advancing to the next page of results from your get bundles

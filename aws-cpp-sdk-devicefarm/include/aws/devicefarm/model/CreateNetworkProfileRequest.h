@@ -17,6 +17,7 @@
 #include <aws/devicefarm/DeviceFarmRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/NetworkProfileType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the project for which you want to create a
      * network profile.</p>
      */
-    inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
+    inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the project for which you want to create a
@@ -70,7 +71,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the project for which you want to create a
      * network profile.</p>
      */
-    inline CreateNetworkProfileRequest& WithProjectArn(Aws::String&& value) { SetProjectArn(value); return *this;}
+    inline CreateNetworkProfileRequest& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the project for which you want to create a
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The name you wish to specify for the new network profile.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name you wish to specify for the new network profile.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The name you wish to specify for the new network profile.</p>
      */
-    inline CreateNetworkProfileRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateNetworkProfileRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name you wish to specify for the new network profile.</p>
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>The description of the network profile.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the network profile.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The description of the network profile.</p>
      */
-    inline CreateNetworkProfileRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateNetworkProfileRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the network profile.</p>
@@ -164,7 +165,7 @@ namespace Model
      * <p>The type of network profile you wish to create. Valid values are listed
      * below.</p>
      */
-    inline void SetType(NetworkProfileType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(NetworkProfileType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of network profile you wish to create. Valid values are listed
@@ -176,7 +177,7 @@ namespace Model
      * <p>The type of network profile you wish to create. Valid values are listed
      * below.</p>
      */
-    inline CreateNetworkProfileRequest& WithType(NetworkProfileType&& value) { SetType(value); return *this;}
+    inline CreateNetworkProfileRequest& WithType(NetworkProfileType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The data throughput rate in bits per second, as an integer from 0 to

@@ -16,6 +16,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>An array of strings (face IDs) of the faces that were deleted.</p>
      */
-    inline void SetDeletedFaces(Aws::Vector<Aws::String>&& value) { m_deletedFaces = value; }
+    inline void SetDeletedFaces(Aws::Vector<Aws::String>&& value) { m_deletedFaces = std::move(value); }
 
     /**
      * <p>An array of strings (face IDs) of the faces that were deleted.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>An array of strings (face IDs) of the faces that were deleted.</p>
      */
-    inline DeleteFacesResult& WithDeletedFaces(Aws::Vector<Aws::String>&& value) { SetDeletedFaces(value); return *this;}
+    inline DeleteFacesResult& WithDeletedFaces(Aws::Vector<Aws::String>&& value) { SetDeletedFaces(std::move(value)); return *this;}
 
     /**
      * <p>An array of strings (face IDs) of the faces that were deleted.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>An array of strings (face IDs) of the faces that were deleted.</p>
      */
-    inline DeleteFacesResult& AddDeletedFaces(Aws::String&& value) { m_deletedFaces.push_back(value); return *this; }
+    inline DeleteFacesResult& AddDeletedFaces(Aws::String&& value) { m_deletedFaces.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of strings (face IDs) of the faces that were deleted.</p>

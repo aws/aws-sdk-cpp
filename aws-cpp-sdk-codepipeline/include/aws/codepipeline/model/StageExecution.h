@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/StageExecutionStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ID of the pipeline execution associated with the stage.</p>
      */
-    inline void SetPipelineExecutionId(Aws::String&& value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId = value; }
+    inline void SetPipelineExecutionId(Aws::String&& value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId = std::move(value); }
 
     /**
      * <p>The ID of the pipeline execution associated with the stage.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ID of the pipeline execution associated with the stage.</p>
      */
-    inline StageExecution& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(value); return *this;}
+    inline StageExecution& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the pipeline execution associated with the stage.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>The status of the stage, or for a completed stage, the last status of the
      * stage.</p>
      */
-    inline void SetStatus(StageExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(StageExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the stage, or for a completed stage, the last status of the
@@ -108,7 +109,7 @@ namespace Model
      * <p>The status of the stage, or for a completed stage, the last status of the
      * stage.</p>
      */
-    inline StageExecution& WithStatus(StageExecutionStatus&& value) { SetStatus(value); return *this;}
+    inline StageExecution& WithStatus(StageExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_pipelineExecutionId;

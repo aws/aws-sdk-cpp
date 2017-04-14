@@ -16,6 +16,7 @@
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
 #include <aws/elasticfilesystem/EFSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
      * <code>DescribeTags</code> operation (String). If present, it specifies to
      * continue the list from where the previous call left off.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>(Optional) Opaque pagination token returned from a previous
@@ -100,7 +101,7 @@ namespace Model
      * <code>DescribeTags</code> operation (String). If present, it specifies to
      * continue the list from where the previous call left off.</p>
      */
-    inline DescribeTagsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeTagsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) Opaque pagination token returned from a previous
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>ID of the file system whose tag set you want to retrieve.</p>
      */
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
+    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
 
     /**
      * <p>ID of the file system whose tag set you want to retrieve.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>ID of the file system whose tag set you want to retrieve.</p>
      */
-    inline DescribeTagsRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(value); return *this;}
+    inline DescribeTagsRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
 
     /**
      * <p>ID of the file system whose tag set you want to retrieve.</p>

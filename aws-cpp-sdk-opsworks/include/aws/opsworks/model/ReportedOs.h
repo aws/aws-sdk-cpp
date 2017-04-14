@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The operating system family.</p>
      */
-    inline void SetFamily(Aws::String&& value) { m_familyHasBeenSet = true; m_family = value; }
+    inline void SetFamily(Aws::String&& value) { m_familyHasBeenSet = true; m_family = std::move(value); }
 
     /**
      * <p>The operating system family.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The operating system family.</p>
      */
-    inline ReportedOs& WithFamily(Aws::String&& value) { SetFamily(value); return *this;}
+    inline ReportedOs& WithFamily(Aws::String&& value) { SetFamily(std::move(value)); return *this;}
 
     /**
      * <p>The operating system family.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The operating system name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The operating system name.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The operating system name.</p>
      */
-    inline ReportedOs& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ReportedOs& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The operating system name.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The operating system version.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The operating system version.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The operating system version.</p>
      */
-    inline ReportedOs& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline ReportedOs& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The operating system version.</p>

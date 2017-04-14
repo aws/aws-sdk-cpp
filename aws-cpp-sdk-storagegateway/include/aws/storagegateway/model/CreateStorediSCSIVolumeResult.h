@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the configured volume.</p>
      */
-    inline void SetVolumeARN(Aws::String&& value) { m_volumeARN = value; }
+    inline void SetVolumeARN(Aws::String&& value) { m_volumeARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the configured volume.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the configured volume.</p>
      */
-    inline CreateStorediSCSIVolumeResult& WithVolumeARN(Aws::String&& value) { SetVolumeARN(value); return *this;}
+    inline CreateStorediSCSIVolumeResult& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the configured volume.</p>
@@ -110,7 +111,7 @@ namespace Model
      * <p>he Amazon Resource Name (ARN) of the volume target that includes the iSCSI
      * name that initiators can use to connect to the target.</p>
      */
-    inline void SetTargetARN(Aws::String&& value) { m_targetARN = value; }
+    inline void SetTargetARN(Aws::String&& value) { m_targetARN = std::move(value); }
 
     /**
      * <p>he Amazon Resource Name (ARN) of the volume target that includes the iSCSI
@@ -128,7 +129,7 @@ namespace Model
      * <p>he Amazon Resource Name (ARN) of the volume target that includes the iSCSI
      * name that initiators can use to connect to the target.</p>
      */
-    inline CreateStorediSCSIVolumeResult& WithTargetARN(Aws::String&& value) { SetTargetARN(value); return *this;}
+    inline CreateStorediSCSIVolumeResult& WithTargetARN(Aws::String&& value) { SetTargetARN(std::move(value)); return *this;}
 
     /**
      * <p>he Amazon Resource Name (ARN) of the volume target that includes the iSCSI

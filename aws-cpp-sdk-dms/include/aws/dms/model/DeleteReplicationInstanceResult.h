@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/dms/model/ReplicationInstance.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The replication instance that was deleted.</p>
      */
-    inline void SetReplicationInstance(ReplicationInstance&& value) { m_replicationInstance = value; }
+    inline void SetReplicationInstance(ReplicationInstance&& value) { m_replicationInstance = std::move(value); }
 
     /**
      * <p>The replication instance that was deleted.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The replication instance that was deleted.</p>
      */
-    inline DeleteReplicationInstanceResult& WithReplicationInstance(ReplicationInstance&& value) { SetReplicationInstance(value); return *this;}
+    inline DeleteReplicationInstanceResult& WithReplicationInstance(ReplicationInstance&& value) { SetReplicationInstance(std::move(value)); return *this;}
 
   private:
     ReplicationInstance m_replicationInstance;

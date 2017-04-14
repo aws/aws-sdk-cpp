@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/ProductCode.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The ID of the volume.</p>
      */
-    inline void SetVolumeId(Aws::String&& value) { m_volumeId = value; }
+    inline void SetVolumeId(Aws::String&& value) { m_volumeId = std::move(value); }
 
     /**
      * <p>The ID of the volume.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The ID of the volume.</p>
      */
-    inline DescribeVolumeAttributeResponse& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
+    inline DescribeVolumeAttributeResponse& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the volume.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The state of <code>autoEnableIO</code> attribute.</p>
      */
-    inline void SetAutoEnableIO(AttributeBooleanValue&& value) { m_autoEnableIO = value; }
+    inline void SetAutoEnableIO(AttributeBooleanValue&& value) { m_autoEnableIO = std::move(value); }
 
     /**
      * <p>The state of <code>autoEnableIO</code> attribute.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The state of <code>autoEnableIO</code> attribute.</p>
      */
-    inline DescribeVolumeAttributeResponse& WithAutoEnableIO(AttributeBooleanValue&& value) { SetAutoEnableIO(value); return *this;}
+    inline DescribeVolumeAttributeResponse& WithAutoEnableIO(AttributeBooleanValue&& value) { SetAutoEnableIO(std::move(value)); return *this;}
 
     /**
      * <p>A list of product codes.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>A list of product codes.</p>
      */
-    inline void SetProductCodes(Aws::Vector<ProductCode>&& value) { m_productCodes = value; }
+    inline void SetProductCodes(Aws::Vector<ProductCode>&& value) { m_productCodes = std::move(value); }
 
     /**
      * <p>A list of product codes.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>A list of product codes.</p>
      */
-    inline DescribeVolumeAttributeResponse& WithProductCodes(Aws::Vector<ProductCode>&& value) { SetProductCodes(value); return *this;}
+    inline DescribeVolumeAttributeResponse& WithProductCodes(Aws::Vector<ProductCode>&& value) { SetProductCodes(std::move(value)); return *this;}
 
     /**
      * <p>A list of product codes.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>A list of product codes.</p>
      */
-    inline DescribeVolumeAttributeResponse& AddProductCodes(ProductCode&& value) { m_productCodes.push_back(value); return *this; }
+    inline DescribeVolumeAttributeResponse& AddProductCodes(ProductCode&& value) { m_productCodes.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -150,13 +151,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeVolumeAttributeResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeVolumeAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeVolumeAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_volumeId;

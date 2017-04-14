@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
      * snapshot can be restored in.</p>
      */
-    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
+    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
      * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
@@ -80,7 +81,7 @@ namespace Model
      * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
      * snapshot can be restored in.</p>
      */
-    inline DBClusterSnapshot& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(value); return *this;}
+    inline DBClusterSnapshot& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
      * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
@@ -92,7 +93,7 @@ namespace Model
      * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
      * snapshot can be restored in.</p>
      */
-    inline DBClusterSnapshot& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+    inline DBClusterSnapshot& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>Specifies the identifier for the DB cluster snapshot.</p>
      */
-    inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
+    inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = std::move(value); }
 
     /**
      * <p>Specifies the identifier for the DB cluster snapshot.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>Specifies the identifier for the DB cluster snapshot.</p>
      */
-    inline DBClusterSnapshot& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(value); return *this;}
+    inline DBClusterSnapshot& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the identifier for the DB cluster snapshot.</p>
@@ -151,7 +152,7 @@ namespace Model
      * <p>Specifies the DB cluster identifier of the DB cluster that this DB cluster
      * snapshot was created from.</p>
      */
-    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
+    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
      * <p>Specifies the DB cluster identifier of the DB cluster that this DB cluster
@@ -169,7 +170,7 @@ namespace Model
      * <p>Specifies the DB cluster identifier of the DB cluster that this DB cluster
      * snapshot was created from.</p>
      */
-    inline DBClusterSnapshot& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(value); return *this;}
+    inline DBClusterSnapshot& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the DB cluster identifier of the DB cluster that this DB cluster
@@ -193,7 +194,7 @@ namespace Model
      * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
      * (UTC).</p>
      */
-    inline void SetSnapshotCreateTime(Aws::Utils::DateTime&& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
+    inline void SetSnapshotCreateTime(Aws::Utils::DateTime&& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = std::move(value); }
 
     /**
      * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
@@ -205,7 +206,7 @@ namespace Model
      * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
      * (UTC).</p>
      */
-    inline DBClusterSnapshot& WithSnapshotCreateTime(Aws::Utils::DateTime&& value) { SetSnapshotCreateTime(value); return *this;}
+    inline DBClusterSnapshot& WithSnapshotCreateTime(Aws::Utils::DateTime&& value) { SetSnapshotCreateTime(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the database engine.</p>
@@ -220,7 +221,7 @@ namespace Model
     /**
      * <p>Specifies the name of the database engine.</p>
      */
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>Specifies the name of the database engine.</p>
@@ -235,7 +236,7 @@ namespace Model
     /**
      * <p>Specifies the name of the database engine.</p>
      */
-    inline DBClusterSnapshot& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
+    inline DBClusterSnapshot& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the database engine.</p>
@@ -270,7 +271,7 @@ namespace Model
     /**
      * <p>Specifies the status of this DB cluster snapshot.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Specifies the status of this DB cluster snapshot.</p>
@@ -285,7 +286,7 @@ namespace Model
     /**
      * <p>Specifies the status of this DB cluster snapshot.</p>
      */
-    inline DBClusterSnapshot& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline DBClusterSnapshot& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the status of this DB cluster snapshot.</p>
@@ -323,7 +324,7 @@ namespace Model
     /**
      * <p>Provides the VPC ID associated with the DB cluster snapshot.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>Provides the VPC ID associated with the DB cluster snapshot.</p>
@@ -338,7 +339,7 @@ namespace Model
     /**
      * <p>Provides the VPC ID associated with the DB cluster snapshot.</p>
      */
-    inline DBClusterSnapshot& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline DBClusterSnapshot& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>Provides the VPC ID associated with the DB cluster snapshot.</p>
@@ -361,7 +362,7 @@ namespace Model
      * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
      * Time (UTC).</p>
      */
-    inline void SetClusterCreateTime(Aws::Utils::DateTime&& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
+    inline void SetClusterCreateTime(Aws::Utils::DateTime&& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = std::move(value); }
 
     /**
      * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
@@ -373,7 +374,7 @@ namespace Model
      * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
      * Time (UTC).</p>
      */
-    inline DBClusterSnapshot& WithClusterCreateTime(Aws::Utils::DateTime&& value) { SetClusterCreateTime(value); return *this;}
+    inline DBClusterSnapshot& WithClusterCreateTime(Aws::Utils::DateTime&& value) { SetClusterCreateTime(std::move(value)); return *this;}
 
     /**
      * <p>Provides the master username for the DB cluster snapshot.</p>
@@ -388,7 +389,7 @@ namespace Model
     /**
      * <p>Provides the master username for the DB cluster snapshot.</p>
      */
-    inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
+    inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
      * <p>Provides the master username for the DB cluster snapshot.</p>
@@ -403,7 +404,7 @@ namespace Model
     /**
      * <p>Provides the master username for the DB cluster snapshot.</p>
      */
-    inline DBClusterSnapshot& WithMasterUsername(Aws::String&& value) { SetMasterUsername(value); return *this;}
+    inline DBClusterSnapshot& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
      * <p>Provides the master username for the DB cluster snapshot.</p>
@@ -423,7 +424,7 @@ namespace Model
     /**
      * <p>Provides the version of the database engine for this DB cluster snapshot.</p>
      */
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>Provides the version of the database engine for this DB cluster snapshot.</p>
@@ -438,7 +439,7 @@ namespace Model
     /**
      * <p>Provides the version of the database engine for this DB cluster snapshot.</p>
      */
-    inline DBClusterSnapshot& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
+    inline DBClusterSnapshot& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>Provides the version of the database engine for this DB cluster snapshot.</p>
@@ -458,7 +459,7 @@ namespace Model
     /**
      * <p>Provides the license model information for this DB cluster snapshot.</p>
      */
-    inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
+    inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
     /**
      * <p>Provides the license model information for this DB cluster snapshot.</p>
@@ -473,7 +474,7 @@ namespace Model
     /**
      * <p>Provides the license model information for this DB cluster snapshot.</p>
      */
-    inline DBClusterSnapshot& WithLicenseModel(Aws::String&& value) { SetLicenseModel(value); return *this;}
+    inline DBClusterSnapshot& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
     /**
      * <p>Provides the license model information for this DB cluster snapshot.</p>
@@ -493,7 +494,7 @@ namespace Model
     /**
      * <p>Provides the type of the DB cluster snapshot.</p>
      */
-    inline void SetSnapshotType(Aws::String&& value) { m_snapshotTypeHasBeenSet = true; m_snapshotType = value; }
+    inline void SetSnapshotType(Aws::String&& value) { m_snapshotTypeHasBeenSet = true; m_snapshotType = std::move(value); }
 
     /**
      * <p>Provides the type of the DB cluster snapshot.</p>
@@ -508,7 +509,7 @@ namespace Model
     /**
      * <p>Provides the type of the DB cluster snapshot.</p>
      */
-    inline DBClusterSnapshot& WithSnapshotType(Aws::String&& value) { SetSnapshotType(value); return *this;}
+    inline DBClusterSnapshot& WithSnapshotType(Aws::String&& value) { SetSnapshotType(std::move(value)); return *this;}
 
     /**
      * <p>Provides the type of the DB cluster snapshot.</p>
@@ -561,7 +562,7 @@ namespace Model
      * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
      * encrypted DB cluster snapshot.</p>
      */
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
@@ -579,7 +580,7 @@ namespace Model
      * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
      * encrypted DB cluster snapshot.</p>
      */
-    inline DBClusterSnapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
+    inline DBClusterSnapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
@@ -600,7 +601,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
      */
-    inline void SetDBClusterSnapshotArn(Aws::String&& value) { m_dBClusterSnapshotArnHasBeenSet = true; m_dBClusterSnapshotArn = value; }
+    inline void SetDBClusterSnapshotArn(Aws::String&& value) { m_dBClusterSnapshotArnHasBeenSet = true; m_dBClusterSnapshotArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
@@ -615,7 +616,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
      */
-    inline DBClusterSnapshot& WithDBClusterSnapshotArn(Aws::String&& value) { SetDBClusterSnapshotArn(value); return *this;}
+    inline DBClusterSnapshot& WithDBClusterSnapshotArn(Aws::String&& value) { SetDBClusterSnapshotArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>

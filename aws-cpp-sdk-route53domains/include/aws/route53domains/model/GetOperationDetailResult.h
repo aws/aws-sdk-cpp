@@ -18,6 +18,7 @@
 #include <aws/route53domains/model/OperationStatus.h>
 #include <aws/route53domains/model/OperationType.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The identifier for the operation.</p> <p>Type: String</p>
      */
-    inline void SetOperationId(Aws::String&& value) { m_operationId = value; }
+    inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
 
     /**
      * <p>The identifier for the operation.</p> <p>Type: String</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The identifier for the operation.</p> <p>Type: String</p>
      */
-    inline GetOperationDetailResult& WithOperationId(Aws::String&& value) { SetOperationId(value); return *this;}
+    inline GetOperationDetailResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the operation.</p> <p>Type: String</p>
@@ -99,7 +100,7 @@ namespace Model
      * <p>The current status of the requested operation in the system.</p> <p>Type:
      * String</p>
      */
-    inline void SetStatus(OperationStatus&& value) { m_status = value; }
+    inline void SetStatus(OperationStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The current status of the requested operation in the system.</p> <p>Type:
@@ -111,7 +112,7 @@ namespace Model
      * <p>The current status of the requested operation in the system.</p> <p>Type:
      * String</p>
      */
-    inline GetOperationDetailResult& WithStatus(OperationStatus&& value) { SetStatus(value); return *this;}
+    inline GetOperationDetailResult& WithStatus(OperationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Detailed information on the status including possible errors.</p> <p>Type:
@@ -129,7 +130,7 @@ namespace Model
      * <p>Detailed information on the status including possible errors.</p> <p>Type:
      * String</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
 
     /**
      * <p>Detailed information on the status including possible errors.</p> <p>Type:
@@ -147,7 +148,7 @@ namespace Model
      * <p>Detailed information on the status including possible errors.</p> <p>Type:
      * String</p>
      */
-    inline GetOperationDetailResult& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline GetOperationDetailResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>Detailed information on the status including possible errors.</p> <p>Type:
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>The name of a domain.</p> <p>Type: String</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainName = std::move(value); }
 
     /**
      * <p>The name of a domain.</p> <p>Type: String</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>The name of a domain.</p> <p>Type: String</p>
      */
-    inline GetOperationDetailResult& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline GetOperationDetailResult& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a domain.</p> <p>Type: String</p>
@@ -203,7 +204,7 @@ namespace Model
     /**
      * <p>The type of operation that was requested.</p> <p>Type: String</p>
      */
-    inline void SetType(OperationType&& value) { m_type = value; }
+    inline void SetType(OperationType&& value) { m_type = std::move(value); }
 
     /**
      * <p>The type of operation that was requested.</p> <p>Type: String</p>
@@ -213,7 +214,7 @@ namespace Model
     /**
      * <p>The type of operation that was requested.</p> <p>Type: String</p>
      */
-    inline GetOperationDetailResult& WithType(OperationType&& value) { SetType(value); return *this;}
+    inline GetOperationDetailResult& WithType(OperationType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The date when the request was submitted.</p>
@@ -228,7 +229,7 @@ namespace Model
     /**
      * <p>The date when the request was submitted.</p>
      */
-    inline void SetSubmittedDate(Aws::Utils::DateTime&& value) { m_submittedDate = value; }
+    inline void SetSubmittedDate(Aws::Utils::DateTime&& value) { m_submittedDate = std::move(value); }
 
     /**
      * <p>The date when the request was submitted.</p>
@@ -238,7 +239,7 @@ namespace Model
     /**
      * <p>The date when the request was submitted.</p>
      */
-    inline GetOperationDetailResult& WithSubmittedDate(Aws::Utils::DateTime&& value) { SetSubmittedDate(value); return *this;}
+    inline GetOperationDetailResult& WithSubmittedDate(Aws::Utils::DateTime&& value) { SetSubmittedDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_operationId;

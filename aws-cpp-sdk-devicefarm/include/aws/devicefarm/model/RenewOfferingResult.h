@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/OfferingTransaction.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>Represents the status of the offering transaction for the renewal.</p>
      */
-    inline void SetOfferingTransaction(OfferingTransaction&& value) { m_offeringTransaction = value; }
+    inline void SetOfferingTransaction(OfferingTransaction&& value) { m_offeringTransaction = std::move(value); }
 
     /**
      * <p>Represents the status of the offering transaction for the renewal.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Represents the status of the offering transaction for the renewal.</p>
      */
-    inline RenewOfferingResult& WithOfferingTransaction(OfferingTransaction&& value) { SetOfferingTransaction(value); return *this;}
+    inline RenewOfferingResult& WithOfferingTransaction(OfferingTransaction&& value) { SetOfferingTransaction(std::move(value)); return *this;}
 
   private:
     OfferingTransaction m_offeringTransaction;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/ContainerInstance.h>
 #include <aws/ecs/model/Failure.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The list of container instances.</p>
      */
-    inline void SetContainerInstances(Aws::Vector<ContainerInstance>&& value) { m_containerInstances = value; }
+    inline void SetContainerInstances(Aws::Vector<ContainerInstance>&& value) { m_containerInstances = std::move(value); }
 
     /**
      * <p>The list of container instances.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The list of container instances.</p>
      */
-    inline UpdateContainerInstancesStateResult& WithContainerInstances(Aws::Vector<ContainerInstance>&& value) { SetContainerInstances(value); return *this;}
+    inline UpdateContainerInstancesStateResult& WithContainerInstances(Aws::Vector<ContainerInstance>&& value) { SetContainerInstances(std::move(value)); return *this;}
 
     /**
      * <p>The list of container instances.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The list of container instances.</p>
      */
-    inline UpdateContainerInstancesStateResult& AddContainerInstances(ContainerInstance&& value) { m_containerInstances.push_back(value); return *this; }
+    inline UpdateContainerInstancesStateResult& AddContainerInstances(ContainerInstance&& value) { m_containerInstances.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Any failures associated with the call.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = value; }
+    inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = std::move(value); }
 
     /**
      * <p>Any failures associated with the call.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline UpdateContainerInstancesStateResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(value); return *this;}
+    inline UpdateContainerInstancesStateResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(std::move(value)); return *this;}
 
     /**
      * <p>Any failures associated with the call.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline UpdateContainerInstancesStateResult& AddFailures(Failure&& value) { m_failures.push_back(value); return *this; }
+    inline UpdateContainerInstancesStateResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ContainerInstance> m_containerInstances;

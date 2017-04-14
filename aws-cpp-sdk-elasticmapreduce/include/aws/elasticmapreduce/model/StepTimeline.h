@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The date and time when the cluster step was created.</p>
      */
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
+    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
 
     /**
      * <p>The date and time when the cluster step was created.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The date and time when the cluster step was created.</p>
      */
-    inline StepTimeline& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(value); return *this;}
+    inline StepTimeline& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
 
     /**
      * <p>The date and time when the cluster step execution started.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>The date and time when the cluster step execution started.</p>
      */
-    inline void SetStartDateTime(Aws::Utils::DateTime&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
+    inline void SetStartDateTime(Aws::Utils::DateTime&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = std::move(value); }
 
     /**
      * <p>The date and time when the cluster step execution started.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The date and time when the cluster step execution started.</p>
      */
-    inline StepTimeline& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(value); return *this;}
+    inline StepTimeline& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(std::move(value)); return *this;}
 
     /**
      * <p>The date and time when the cluster step execution completed or failed.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The date and time when the cluster step execution completed or failed.</p>
      */
-    inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
+    inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::move(value); }
 
     /**
      * <p>The date and time when the cluster step execution completed or failed.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The date and time when the cluster step execution completed or failed.</p>
      */
-    inline StepTimeline& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(value); return *this;}
+    inline StepTimeline& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(std::move(value)); return *this;}
 
   private:
     Aws::Utils::DateTime m_creationDateTime;

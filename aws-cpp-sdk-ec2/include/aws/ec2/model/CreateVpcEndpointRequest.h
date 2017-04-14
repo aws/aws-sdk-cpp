@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The ID of the VPC in which the endpoint will be used.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC in which the endpoint will be used.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The ID of the VPC in which the endpoint will be used.</p>
      */
-    inline CreateVpcEndpointRequest& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline CreateVpcEndpointRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC in which the endpoint will be used.</p>
@@ -119,7 +120,7 @@ namespace Model
      * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
      * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
      */
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
+    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
      * <p>The AWS service name, in the form
@@ -140,7 +141,7 @@ namespace Model
      * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
      * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
      */
-    inline CreateVpcEndpointRequest& WithServiceName(Aws::String&& value) { SetServiceName(value); return *this;}
+    inline CreateVpcEndpointRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
      * <p>The AWS service name, in the form
@@ -168,7 +169,7 @@ namespace Model
      * policy must be in valid JSON format. If this parameter is not specified, we
      * attach a default policy that allows full access to the service.</p>
      */
-    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
+    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
 
     /**
      * <p>A policy to attach to the endpoint that controls access to the service. The
@@ -189,7 +190,7 @@ namespace Model
      * policy must be in valid JSON format. If this parameter is not specified, we
      * attach a default policy that allows full access to the service.</p>
      */
-    inline CreateVpcEndpointRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
+    inline CreateVpcEndpointRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
 
     /**
      * <p>A policy to attach to the endpoint that controls access to the service. The
@@ -211,7 +212,7 @@ namespace Model
     /**
      * <p>One or more route table IDs.</p>
      */
-    inline void SetRouteTableIds(Aws::Vector<Aws::String>&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = value; }
+    inline void SetRouteTableIds(Aws::Vector<Aws::String>&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = std::move(value); }
 
     /**
      * <p>One or more route table IDs.</p>
@@ -221,7 +222,7 @@ namespace Model
     /**
      * <p>One or more route table IDs.</p>
      */
-    inline CreateVpcEndpointRequest& WithRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRouteTableIds(value); return *this;}
+    inline CreateVpcEndpointRequest& WithRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRouteTableIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more route table IDs.</p>
@@ -231,7 +232,7 @@ namespace Model
     /**
      * <p>One or more route table IDs.</p>
      */
-    inline CreateVpcEndpointRequest& AddRouteTableIds(Aws::String&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
+    inline CreateVpcEndpointRequest& AddRouteTableIds(Aws::String&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more route table IDs.</p>
@@ -260,7 +261,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -284,7 +285,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
-    inline CreateVpcEndpointRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline CreateVpcEndpointRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of

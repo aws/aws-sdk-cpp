@@ -17,6 +17,7 @@
 #include <aws/kinesisanalytics/KinesisAnalyticsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesisanalytics/model/ReferenceDataSource.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Name of an existing application.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>Name of an existing application.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Name of an existing application.</p>
      */
-    inline AddApplicationReferenceDataSourceRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline AddApplicationReferenceDataSourceRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>Name of an existing application.</p>
@@ -126,7 +127,7 @@ namespace Model
      * role with the necessary permissions that Amazon Kinesis Analytics can assume to
      * read the object from your S3 bucket on your behalf.</p>
      */
-    inline void SetReferenceDataSource(ReferenceDataSource&& value) { m_referenceDataSourceHasBeenSet = true; m_referenceDataSource = value; }
+    inline void SetReferenceDataSource(ReferenceDataSource&& value) { m_referenceDataSourceHasBeenSet = true; m_referenceDataSource = std::move(value); }
 
     /**
      * <p>The reference data source can be an object in your Amazon S3 bucket. Amazon
@@ -146,7 +147,7 @@ namespace Model
      * role with the necessary permissions that Amazon Kinesis Analytics can assume to
      * read the object from your S3 bucket on your behalf.</p>
      */
-    inline AddApplicationReferenceDataSourceRequest& WithReferenceDataSource(ReferenceDataSource&& value) { SetReferenceDataSource(value); return *this;}
+    inline AddApplicationReferenceDataSourceRequest& WithReferenceDataSource(ReferenceDataSource&& value) { SetReferenceDataSource(std::move(value)); return *this;}
 
   private:
     Aws::String m_applicationName;

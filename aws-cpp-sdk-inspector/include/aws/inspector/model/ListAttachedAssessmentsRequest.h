@@ -17,6 +17,7 @@
 #include <aws/inspector/InspectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector/model/AssessmentsFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The ARN specifying the rules package whose assessments you want to list.</p>
      */
-    inline void SetRulesPackageArn(Aws::String&& value) { m_rulesPackageArnHasBeenSet = true; m_rulesPackageArn = value; }
+    inline void SetRulesPackageArn(Aws::String&& value) { m_rulesPackageArnHasBeenSet = true; m_rulesPackageArn = std::move(value); }
 
     /**
      * <p>The ARN specifying the rules package whose assessments you want to list.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The ARN specifying the rules package whose assessments you want to list.</p>
      */
-    inline ListAttachedAssessmentsRequest& WithRulesPackageArn(Aws::String&& value) { SetRulesPackageArn(value); return *this;}
+    inline ListAttachedAssessmentsRequest& WithRulesPackageArn(Aws::String&& value) { SetRulesPackageArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN specifying the rules package whose assessments you want to list.</p>
@@ -93,7 +94,7 @@ namespace Model
      * attributes must match. When multiple values are specified for a filter
      * attribute, any of the values can match.</p>
      */
-    inline void SetFilter(AssessmentsFilter&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(AssessmentsFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>You can use this parameter to specify a subset of data to be included in the
@@ -109,7 +110,7 @@ namespace Model
      * attributes must match. When multiple values are specified for a filter
      * attribute, any of the values can match.</p>
      */
-    inline ListAttachedAssessmentsRequest& WithFilter(AssessmentsFilter&& value) { SetFilter(value); return *this;}
+    inline ListAttachedAssessmentsRequest& WithFilter(AssessmentsFilter&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
@@ -136,7 +137,7 @@ namespace Model
      * the value of <b>NextToken</b> from previous response to continue listing
      * data.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
@@ -163,7 +164,7 @@ namespace Model
      * the value of <b>NextToken</b> from previous response to continue listing
      * data.</p>
      */
-    inline ListAttachedAssessmentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListAttachedAssessmentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this

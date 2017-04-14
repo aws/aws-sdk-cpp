@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
      * <a>DeleteXssMatchSet</a>).</p> <p> <code>XssMatchSetId</code> is returned by
      * <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
      */
-    inline void SetXssMatchSetId(Aws::String&& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = value; }
+    inline void SetXssMatchSetId(Aws::String&& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = std::move(value); }
 
     /**
      * <p>A unique identifier for an <code>XssMatchSet</code>. You use
@@ -114,7 +115,7 @@ namespace Model
      * <a>DeleteXssMatchSet</a>).</p> <p> <code>XssMatchSetId</code> is returned by
      * <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
      */
-    inline XssMatchSetSummary& WithXssMatchSetId(Aws::String&& value) { SetXssMatchSetId(value); return *this;}
+    inline XssMatchSetSummary& WithXssMatchSetId(Aws::String&& value) { SetXssMatchSetId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for an <code>XssMatchSet</code>. You use
@@ -144,7 +145,7 @@ namespace Model
      * <p>The name of the <code>XssMatchSet</code>, if any, specified by
      * <code>Id</code>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the <code>XssMatchSet</code>, if any, specified by
@@ -162,7 +163,7 @@ namespace Model
      * <p>The name of the <code>XssMatchSet</code>, if any, specified by
      * <code>Id</code>.</p>
      */
-    inline XssMatchSetSummary& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline XssMatchSetSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the <code>XssMatchSet</code>, if any, specified by

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The usage instruction type for the value.</p>
      */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The usage instruction type for the value.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The usage instruction type for the value.</p>
      */
-    inline UsageInstruction& WithType(Aws::String&& value) { SetType(value); return *this;}
+    inline UsageInstruction& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The usage instruction type for the value.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The usage instruction value for this type.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The usage instruction value for this type.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The usage instruction value for this type.</p>
      */
-    inline UsageInstruction& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline UsageInstruction& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The usage instruction value for this type.</p>

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesis/model/ShardIteratorType.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The name of the Amazon Kinesis stream.</p>
      */
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
 
     /**
      * <p>The name of the Amazon Kinesis stream.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The name of the Amazon Kinesis stream.</p>
      */
-    inline GetShardIteratorRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
+    inline GetShardIteratorRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon Kinesis stream.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The shard ID of the Amazon Kinesis shard to get the iterator for.</p>
      */
-    inline void SetShardId(Aws::String&& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
+    inline void SetShardId(Aws::String&& value) { m_shardIdHasBeenSet = true; m_shardId = std::move(value); }
 
     /**
      * <p>The shard ID of the Amazon Kinesis shard to get the iterator for.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The shard ID of the Amazon Kinesis shard to get the iterator for.</p>
      */
-    inline GetShardIteratorRequest& WithShardId(Aws::String&& value) { SetShardId(value); return *this;}
+    inline GetShardIteratorRequest& WithShardId(Aws::String&& value) { SetShardId(std::move(value)); return *this;}
 
     /**
      * <p>The shard ID of the Amazon Kinesis shard to get the iterator for.</p>
@@ -160,7 +161,7 @@ namespace Model
      * <li><p>LATEST - Start reading just after the most recent record in the shard, so
      * that you always read the most recent data in the shard.</p> </li> </ul>
      */
-    inline void SetShardIteratorType(ShardIteratorType&& value) { m_shardIteratorTypeHasBeenSet = true; m_shardIteratorType = value; }
+    inline void SetShardIteratorType(ShardIteratorType&& value) { m_shardIteratorTypeHasBeenSet = true; m_shardIteratorType = std::move(value); }
 
     /**
      * <p>Determines how the shard iterator is used to start reading data records from
@@ -194,7 +195,7 @@ namespace Model
      * <li><p>LATEST - Start reading just after the most recent record in the shard, so
      * that you always read the most recent data in the shard.</p> </li> </ul>
      */
-    inline GetShardIteratorRequest& WithShardIteratorType(ShardIteratorType&& value) { SetShardIteratorType(value); return *this;}
+    inline GetShardIteratorRequest& WithShardIteratorType(ShardIteratorType&& value) { SetShardIteratorType(std::move(value)); return *this;}
 
     /**
      * <p>The sequence number of the data record in the shard from which to start
@@ -215,7 +216,7 @@ namespace Model
      * reading. Used with shard iterator type AT_SEQUENCE_NUMBER and
      * AFTER_SEQUENCE_NUMBER.</p>
      */
-    inline void SetStartingSequenceNumber(Aws::String&& value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber = value; }
+    inline void SetStartingSequenceNumber(Aws::String&& value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber = std::move(value); }
 
     /**
      * <p>The sequence number of the data record in the shard from which to start
@@ -236,7 +237,7 @@ namespace Model
      * reading. Used with shard iterator type AT_SEQUENCE_NUMBER and
      * AFTER_SEQUENCE_NUMBER.</p>
      */
-    inline GetShardIteratorRequest& WithStartingSequenceNumber(Aws::String&& value) { SetStartingSequenceNumber(value); return *this;}
+    inline GetShardIteratorRequest& WithStartingSequenceNumber(Aws::String&& value) { SetStartingSequenceNumber(std::move(value)); return *this;}
 
     /**
      * <p>The sequence number of the data record in the shard from which to start
@@ -276,7 +277,7 @@ namespace Model
      * older than the current trim horizon, the iterator returned is for the oldest
      * untrimmed data record (TRIM_HORIZON).</p>
      */
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
      * <p>The timestamp of the data record from which to start reading. Used with shard
@@ -298,7 +299,7 @@ namespace Model
      * older than the current trim horizon, the iterator returned is for the oldest
      * untrimmed data record (TRIM_HORIZON).</p>
      */
-    inline GetShardIteratorRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
+    inline GetShardIteratorRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
   private:
     Aws::String m_streamName;

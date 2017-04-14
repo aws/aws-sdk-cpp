@@ -21,6 +21,7 @@
 #include <aws/xray/model/TraceUser.h>
 #include <aws/xray/model/ServiceId.h>
 #include <aws/xray/model/ValueWithServiceIds.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * <p>The unique identifier for the request that generated the trace's segments and
      * subsegments.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique identifier for the request that generated the trace's segments and
@@ -84,7 +85,7 @@ namespace Model
      * <p>The unique identifier for the request that generated the trace's segments and
      * subsegments.</p>
      */
-    inline TraceSummary& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline TraceSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the request that generated the trace's segments and
@@ -207,7 +208,7 @@ namespace Model
     /**
      * <p>Information about the HTTP request served by the trace.</p>
      */
-    inline void SetHttp(Http&& value) { m_httpHasBeenSet = true; m_http = value; }
+    inline void SetHttp(Http&& value) { m_httpHasBeenSet = true; m_http = std::move(value); }
 
     /**
      * <p>Information about the HTTP request served by the trace.</p>
@@ -217,7 +218,7 @@ namespace Model
     /**
      * <p>Information about the HTTP request served by the trace.</p>
      */
-    inline TraceSummary& WithHttp(Http&& value) { SetHttp(value); return *this;}
+    inline TraceSummary& WithHttp(Http&& value) { SetHttp(std::move(value)); return *this;}
 
     /**
      * <p>Annotations from the trace's segment documents.</p>
@@ -232,7 +233,7 @@ namespace Model
     /**
      * <p>Annotations from the trace's segment documents.</p>
      */
-    inline void SetAnnotations(Aws::Map<Aws::String, Aws::Vector<ValueWithServiceIds>>&& value) { m_annotationsHasBeenSet = true; m_annotations = value; }
+    inline void SetAnnotations(Aws::Map<Aws::String, Aws::Vector<ValueWithServiceIds>>&& value) { m_annotationsHasBeenSet = true; m_annotations = std::move(value); }
 
     /**
      * <p>Annotations from the trace's segment documents.</p>
@@ -242,37 +243,37 @@ namespace Model
     /**
      * <p>Annotations from the trace's segment documents.</p>
      */
-    inline TraceSummary& WithAnnotations(Aws::Map<Aws::String, Aws::Vector<ValueWithServiceIds>>&& value) { SetAnnotations(value); return *this;}
+    inline TraceSummary& WithAnnotations(Aws::Map<Aws::String, Aws::Vector<ValueWithServiceIds>>&& value) { SetAnnotations(std::move(value)); return *this;}
 
     /**
      * <p>Annotations from the trace's segment documents.</p>
      */
-    inline TraceSummary& AddAnnotations(const Aws::String& key, const Aws::Vector<ValueWithServiceIds>& value) { m_annotationsHasBeenSet = true; m_annotations[key] = value; return *this; }
+    inline TraceSummary& AddAnnotations(const Aws::String& key, const Aws::Vector<ValueWithServiceIds>& value) { m_annotationsHasBeenSet = true; m_annotations.emplace(key, value); return *this; }
 
     /**
      * <p>Annotations from the trace's segment documents.</p>
      */
-    inline TraceSummary& AddAnnotations(Aws::String&& key, const Aws::Vector<ValueWithServiceIds>& value) { m_annotationsHasBeenSet = true; m_annotations[key] = value; return *this; }
+    inline TraceSummary& AddAnnotations(Aws::String&& key, const Aws::Vector<ValueWithServiceIds>& value) { m_annotationsHasBeenSet = true; m_annotations.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Annotations from the trace's segment documents.</p>
      */
-    inline TraceSummary& AddAnnotations(const Aws::String& key, Aws::Vector<ValueWithServiceIds>&& value) { m_annotationsHasBeenSet = true; m_annotations[key] = value; return *this; }
+    inline TraceSummary& AddAnnotations(const Aws::String& key, Aws::Vector<ValueWithServiceIds>&& value) { m_annotationsHasBeenSet = true; m_annotations.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Annotations from the trace's segment documents.</p>
      */
-    inline TraceSummary& AddAnnotations(Aws::String&& key, Aws::Vector<ValueWithServiceIds>&& value) { m_annotationsHasBeenSet = true; m_annotations[key] = value; return *this; }
+    inline TraceSummary& AddAnnotations(Aws::String&& key, Aws::Vector<ValueWithServiceIds>&& value) { m_annotationsHasBeenSet = true; m_annotations.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Annotations from the trace's segment documents.</p>
      */
-    inline TraceSummary& AddAnnotations(const char* key, Aws::Vector<ValueWithServiceIds>&& value) { m_annotationsHasBeenSet = true; m_annotations[key] = value; return *this; }
+    inline TraceSummary& AddAnnotations(const char* key, Aws::Vector<ValueWithServiceIds>&& value) { m_annotationsHasBeenSet = true; m_annotations.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Annotations from the trace's segment documents.</p>
      */
-    inline TraceSummary& AddAnnotations(const char* key, const Aws::Vector<ValueWithServiceIds>& value) { m_annotationsHasBeenSet = true; m_annotations[key] = value; return *this; }
+    inline TraceSummary& AddAnnotations(const char* key, const Aws::Vector<ValueWithServiceIds>& value) { m_annotationsHasBeenSet = true; m_annotations.emplace(key, value); return *this; }
 
     /**
      * <p>Users from the trace's segment documents.</p>
@@ -287,7 +288,7 @@ namespace Model
     /**
      * <p>Users from the trace's segment documents.</p>
      */
-    inline void SetUsers(Aws::Vector<TraceUser>&& value) { m_usersHasBeenSet = true; m_users = value; }
+    inline void SetUsers(Aws::Vector<TraceUser>&& value) { m_usersHasBeenSet = true; m_users = std::move(value); }
 
     /**
      * <p>Users from the trace's segment documents.</p>
@@ -297,7 +298,7 @@ namespace Model
     /**
      * <p>Users from the trace's segment documents.</p>
      */
-    inline TraceSummary& WithUsers(Aws::Vector<TraceUser>&& value) { SetUsers(value); return *this;}
+    inline TraceSummary& WithUsers(Aws::Vector<TraceUser>&& value) { SetUsers(std::move(value)); return *this;}
 
     /**
      * <p>Users from the trace's segment documents.</p>
@@ -307,7 +308,7 @@ namespace Model
     /**
      * <p>Users from the trace's segment documents.</p>
      */
-    inline TraceSummary& AddUsers(TraceUser&& value) { m_usersHasBeenSet = true; m_users.push_back(value); return *this; }
+    inline TraceSummary& AddUsers(TraceUser&& value) { m_usersHasBeenSet = true; m_users.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Service IDs from the trace's segment documents.</p>
@@ -322,7 +323,7 @@ namespace Model
     /**
      * <p>Service IDs from the trace's segment documents.</p>
      */
-    inline void SetServiceIds(Aws::Vector<ServiceId>&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds = value; }
+    inline void SetServiceIds(Aws::Vector<ServiceId>&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds = std::move(value); }
 
     /**
      * <p>Service IDs from the trace's segment documents.</p>
@@ -332,7 +333,7 @@ namespace Model
     /**
      * <p>Service IDs from the trace's segment documents.</p>
      */
-    inline TraceSummary& WithServiceIds(Aws::Vector<ServiceId>&& value) { SetServiceIds(value); return *this;}
+    inline TraceSummary& WithServiceIds(Aws::Vector<ServiceId>&& value) { SetServiceIds(std::move(value)); return *this;}
 
     /**
      * <p>Service IDs from the trace's segment documents.</p>
@@ -342,7 +343,7 @@ namespace Model
     /**
      * <p>Service IDs from the trace's segment documents.</p>
      */
-    inline TraceSummary& AddServiceIds(ServiceId&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(value); return *this; }
+    inline TraceSummary& AddServiceIds(ServiceId&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_id;

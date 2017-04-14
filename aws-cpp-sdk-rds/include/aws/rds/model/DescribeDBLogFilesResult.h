@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/ResponseMetadata.h>
 #include <aws/rds/model/DescribeDBLogFilesDetails.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The DB log files returned.</p>
      */
-    inline void SetDescribeDBLogFiles(Aws::Vector<DescribeDBLogFilesDetails>&& value) { m_describeDBLogFiles = value; }
+    inline void SetDescribeDBLogFiles(Aws::Vector<DescribeDBLogFilesDetails>&& value) { m_describeDBLogFiles = std::move(value); }
 
     /**
      * <p>The DB log files returned.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The DB log files returned.</p>
      */
-    inline DescribeDBLogFilesResult& WithDescribeDBLogFiles(Aws::Vector<DescribeDBLogFilesDetails>&& value) { SetDescribeDBLogFiles(value); return *this;}
+    inline DescribeDBLogFilesResult& WithDescribeDBLogFiles(Aws::Vector<DescribeDBLogFilesDetails>&& value) { SetDescribeDBLogFiles(std::move(value)); return *this;}
 
     /**
      * <p>The DB log files returned.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>The DB log files returned.</p>
      */
-    inline DescribeDBLogFilesResult& AddDescribeDBLogFiles(DescribeDBLogFilesDetails&& value) { m_describeDBLogFiles.push_back(value); return *this; }
+    inline DescribeDBLogFilesResult& AddDescribeDBLogFiles(DescribeDBLogFilesDetails&& value) { m_describeDBLogFiles.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A pagination token that can be used in a subsequent DescribeDBLogFiles
@@ -99,7 +100,7 @@ namespace Model
      * <p>A pagination token that can be used in a subsequent DescribeDBLogFiles
      * request.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>A pagination token that can be used in a subsequent DescribeDBLogFiles
@@ -117,7 +118,7 @@ namespace Model
      * <p>A pagination token that can be used in a subsequent DescribeDBLogFiles
      * request.</p>
      */
-    inline DescribeDBLogFilesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeDBLogFilesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>A pagination token that can be used in a subsequent DescribeDBLogFiles
@@ -132,13 +133,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeDBLogFilesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeDBLogFilesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeDBLogFilesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<DescribeDBLogFilesDetails> m_describeDBLogFiles;

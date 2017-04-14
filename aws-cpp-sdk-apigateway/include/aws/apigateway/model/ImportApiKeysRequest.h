@@ -17,6 +17,7 @@
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/Array.h>
 #include <aws/apigateway/model/ApiKeysFormat.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>A query parameter to specify the input format to imported API keys.
      * Currently, only the <code>csv</code> format is supported.</p>
      */
-    inline void SetFormat(ApiKeysFormat&& value) { m_formatHasBeenSet = true; m_format = value; }
+    inline void SetFormat(ApiKeysFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
      * <p>A query parameter to specify the input format to imported API keys.
@@ -70,7 +71,7 @@ namespace Model
      * <p>A query parameter to specify the input format to imported API keys.
      * Currently, only the <code>csv</code> format is supported.</p>
      */
-    inline ImportApiKeysRequest& WithFormat(ApiKeysFormat&& value) { SetFormat(value); return *this;}
+    inline ImportApiKeysRequest& WithFormat(ApiKeysFormat&& value) { SetFormat(std::move(value)); return *this;}
 
     /**
      * <p>A query parameter to indicate whether to rollback <a>ApiKey</a> importation

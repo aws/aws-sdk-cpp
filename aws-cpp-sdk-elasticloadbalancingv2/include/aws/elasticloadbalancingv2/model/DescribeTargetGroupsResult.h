@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticloadbalancingv2/model/ResponseMetadata.h>
 #include <aws/elasticloadbalancingv2/model/TargetGroup.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>Information about the target groups.</p>
      */
-    inline void SetTargetGroups(Aws::Vector<TargetGroup>&& value) { m_targetGroups = value; }
+    inline void SetTargetGroups(Aws::Vector<TargetGroup>&& value) { m_targetGroups = std::move(value); }
 
     /**
      * <p>Information about the target groups.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>Information about the target groups.</p>
      */
-    inline DescribeTargetGroupsResult& WithTargetGroups(Aws::Vector<TargetGroup>&& value) { SetTargetGroups(value); return *this;}
+    inline DescribeTargetGroupsResult& WithTargetGroups(Aws::Vector<TargetGroup>&& value) { SetTargetGroups(std::move(value)); return *this;}
 
     /**
      * <p>Information about the target groups.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>Information about the target groups.</p>
      */
-    inline DescribeTargetGroupsResult& AddTargetGroups(TargetGroup&& value) { m_targetGroups.push_back(value); return *this; }
+    inline DescribeTargetGroupsResult& AddTargetGroups(TargetGroup&& value) { m_targetGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The marker to use when requesting the next set of results. If there are no
@@ -93,7 +94,7 @@ namespace Model
      * <p>The marker to use when requesting the next set of results. If there are no
      * additional results, the string is empty.</p>
      */
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
      * <p>The marker to use when requesting the next set of results. If there are no
@@ -111,7 +112,7 @@ namespace Model
      * <p>The marker to use when requesting the next set of results. If there are no
      * additional results, the string is empty.</p>
      */
-    inline DescribeTargetGroupsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
+    inline DescribeTargetGroupsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>The marker to use when requesting the next set of results. If there are no
@@ -126,13 +127,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeTargetGroupsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeTargetGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeTargetGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<TargetGroup> m_targetGroups;

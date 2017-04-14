@@ -17,6 +17,7 @@
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/lightsail/model/PortInfo.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the port
      * mappings.</p>
      */
-    inline void SetPortInfo(PortInfo&& value) { m_portInfoHasBeenSet = true; m_portInfo = value; }
+    inline void SetPortInfo(PortInfo&& value) { m_portInfoHasBeenSet = true; m_portInfo = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about the port
@@ -64,7 +65,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the port
      * mappings.</p>
      */
-    inline OpenInstancePublicPortsRequest& WithPortInfo(PortInfo&& value) { SetPortInfo(value); return *this;}
+    inline OpenInstancePublicPortsRequest& WithPortInfo(PortInfo&& value) { SetPortInfo(std::move(value)); return *this;}
 
     /**
      * <p>The name of the instance for which you want to open the public ports.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The name of the instance for which you want to open the public ports.</p>
      */
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
+    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
 
     /**
      * <p>The name of the instance for which you want to open the public ports.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The name of the instance for which you want to open the public ports.</p>
      */
-    inline OpenInstancePublicPortsRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(value); return *this;}
+    inline OpenInstancePublicPortsRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the instance for which you want to open the public ports.</p>

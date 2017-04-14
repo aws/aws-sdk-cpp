@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/Distribution.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * The distribution's information.
      */
-    inline void SetDistribution(Distribution&& value) { m_distribution = value; }
+    inline void SetDistribution(Distribution&& value) { m_distribution = std::move(value); }
 
     /**
      * The distribution's information.
@@ -68,7 +69,7 @@ namespace Model
     /**
      * The distribution's information.
      */
-    inline CreateDistribution2016_01_28Result& WithDistribution(Distribution&& value) { SetDistribution(value); return *this;}
+    inline CreateDistribution2016_01_28Result& WithDistribution(Distribution&& value) { SetDistribution(std::move(value)); return *this;}
 
     /**
      * The fully qualified URI of the new distribution resource just created. For
@@ -89,7 +90,7 @@ namespace Model
      * example:
      * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
      */
-    inline void SetLocation(Aws::String&& value) { m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
 
     /**
      * The fully qualified URI of the new distribution resource just created. For
@@ -110,7 +111,7 @@ namespace Model
      * example:
      * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
      */
-    inline CreateDistribution2016_01_28Result& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline CreateDistribution2016_01_28Result& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * The fully qualified URI of the new distribution resource just created. For
@@ -132,7 +133,7 @@ namespace Model
     /**
      * The current version of the distribution created.
      */
-    inline void SetETag(Aws::String&& value) { m_eTag = value; }
+    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
 
     /**
      * The current version of the distribution created.
@@ -147,7 +148,7 @@ namespace Model
     /**
      * The current version of the distribution created.
      */
-    inline CreateDistribution2016_01_28Result& WithETag(Aws::String&& value) { SetETag(value); return *this;}
+    inline CreateDistribution2016_01_28Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
      * The current version of the distribution created.

@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>The ID of the hosted zone for which you want a list of VPCs that can be
      * associated with the hosted zone.</p>
      */
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
+    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
 
     /**
      * <p>The ID of the hosted zone for which you want a list of VPCs that can be
@@ -77,7 +78,7 @@ namespace Model
      * <p>The ID of the hosted zone for which you want a list of VPCs that can be
      * associated with the hosted zone.</p>
      */
-    inline ListVPCAssociationAuthorizationsRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
+    inline ListVPCAssociationAuthorizationsRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the hosted zone for which you want a list of VPCs that can be
@@ -113,7 +114,7 @@ namespace Model
      * <code>NextToken</code> parameter in another
      * <code>ListVPCAssociationAuthorizations</code> request.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element,
@@ -143,7 +144,7 @@ namespace Model
      * <code>NextToken</code> parameter in another
      * <code>ListVPCAssociationAuthorizations</code> request.</p>
      */
-    inline ListVPCAssociationAuthorizationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListVPCAssociationAuthorizationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element,
@@ -171,7 +172,7 @@ namespace Model
      * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
      * you want Amazon Route 53 to return.</p>
      */
-    inline void SetMaxResults(Aws::String&& value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(Aws::String&& value) { m_maxResultsHasBeenSet = true; m_maxResults = std::move(value); }
 
     /**
      * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
@@ -189,7 +190,7 @@ namespace Model
      * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
      * you want Amazon Route 53 to return.</p>
      */
-    inline ListVPCAssociationAuthorizationsRequest& WithMaxResults(Aws::String&& value) { SetMaxResults(value); return *this;}
+    inline ListVPCAssociationAuthorizationsRequest& WithMaxResults(Aws::String&& value) { SetMaxResults(std::move(value)); return *this;}
 
     /**
      * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that

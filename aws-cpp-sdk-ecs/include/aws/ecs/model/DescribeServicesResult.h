@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/Service.h>
 #include <aws/ecs/model/Failure.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The list of services described.</p>
      */
-    inline void SetServices(Aws::Vector<Service>&& value) { m_services = value; }
+    inline void SetServices(Aws::Vector<Service>&& value) { m_services = std::move(value); }
 
     /**
      * <p>The list of services described.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The list of services described.</p>
      */
-    inline DescribeServicesResult& WithServices(Aws::Vector<Service>&& value) { SetServices(value); return *this;}
+    inline DescribeServicesResult& WithServices(Aws::Vector<Service>&& value) { SetServices(std::move(value)); return *this;}
 
     /**
      * <p>The list of services described.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The list of services described.</p>
      */
-    inline DescribeServicesResult& AddServices(Service&& value) { m_services.push_back(value); return *this; }
+    inline DescribeServicesResult& AddServices(Service&& value) { m_services.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Any failures associated with the call.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = value; }
+    inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = std::move(value); }
 
     /**
      * <p>Any failures associated with the call.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline DescribeServicesResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(value); return *this;}
+    inline DescribeServicesResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(std::move(value)); return *this;}
 
     /**
      * <p>Any failures associated with the call.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline DescribeServicesResult& AddFailures(Failure&& value) { m_failures.push_back(value); return *this; }
+    inline DescribeServicesResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Service> m_services;

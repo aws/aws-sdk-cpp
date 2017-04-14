@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/support/model/TrustedAdvisorCheckRefreshStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>The current refresh status for a check, including the amount of time until
      * the check is eligible for refresh.</p>
      */
-    inline void SetStatus(TrustedAdvisorCheckRefreshStatus&& value) { m_status = value; }
+    inline void SetStatus(TrustedAdvisorCheckRefreshStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The current refresh status for a check, including the amount of time until
@@ -73,7 +74,7 @@ namespace Model
      * <p>The current refresh status for a check, including the amount of time until
      * the check is eligible for refresh.</p>
      */
-    inline RefreshTrustedAdvisorCheckResult& WithStatus(TrustedAdvisorCheckRefreshStatus&& value) { SetStatus(value); return *this;}
+    inline RefreshTrustedAdvisorCheckResult& WithStatus(TrustedAdvisorCheckRefreshStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     TrustedAdvisorCheckRefreshStatus m_status;

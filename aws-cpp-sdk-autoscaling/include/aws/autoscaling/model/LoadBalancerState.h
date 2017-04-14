@@ -16,6 +16,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
 
     /**
      * <p>The name of the load balancer.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline LoadBalancerState& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
+    inline LoadBalancerState& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the load balancer.</p>
@@ -129,7 +130,7 @@ namespace Model
      * deregistering the instances.</p> </li> <li> <p> <code>Removed</code> - All
      * instances in the group are deregistered from the load balancer.</p> </li> </ul>
      */
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>One of the following load balancer states:</p> <ul> <li> <p>
@@ -171,7 +172,7 @@ namespace Model
      * deregistering the instances.</p> </li> <li> <p> <code>Removed</code> - All
      * instances in the group are deregistered from the load balancer.</p> </li> </ul>
      */
-    inline LoadBalancerState& WithState(Aws::String&& value) { SetState(value); return *this;}
+    inline LoadBalancerState& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>One of the following load balancer states:</p> <ul> <li> <p>

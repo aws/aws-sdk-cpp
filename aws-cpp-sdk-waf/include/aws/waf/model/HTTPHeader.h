@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name of one of the headers in the sampled web request.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of one of the headers in the sampled web request.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name of one of the headers in the sampled web request.</p>
      */
-    inline HTTPHeader& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline HTTPHeader& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of one of the headers in the sampled web request.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The value of one of the headers in the sampled web request.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of one of the headers in the sampled web request.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The value of one of the headers in the sampled web request.</p>
      */
-    inline HTTPHeader& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline HTTPHeader& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of one of the headers in the sampled web request.</p>

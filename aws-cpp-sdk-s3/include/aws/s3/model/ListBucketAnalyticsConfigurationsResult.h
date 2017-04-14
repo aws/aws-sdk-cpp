@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/model/AnalyticsConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
     /**
      * The ContinuationToken that represents where this request began.
      */
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = value; }
+    inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = std::move(value); }
 
     /**
      * The ContinuationToken that represents where this request began.
@@ -90,7 +91,7 @@ namespace Model
     /**
      * The ContinuationToken that represents where this request began.
      */
-    inline ListBucketAnalyticsConfigurationsResult& WithContinuationToken(Aws::String&& value) { SetContinuationToken(value); return *this;}
+    inline ListBucketAnalyticsConfigurationsResult& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
      * The ContinuationToken that represents where this request began.
@@ -116,7 +117,7 @@ namespace Model
      * there are more analytics configurations to list. The next request must include
      * this NextContinuationToken. The token is obfuscated and is not a usable value.
      */
-    inline void SetNextContinuationToken(Aws::String&& value) { m_nextContinuationToken = value; }
+    inline void SetNextContinuationToken(Aws::String&& value) { m_nextContinuationToken = std::move(value); }
 
     /**
      * NextContinuationToken is sent when isTruncated is true, which indicates that
@@ -137,7 +138,7 @@ namespace Model
      * there are more analytics configurations to list. The next request must include
      * this NextContinuationToken. The token is obfuscated and is not a usable value.
      */
-    inline ListBucketAnalyticsConfigurationsResult& WithNextContinuationToken(Aws::String&& value) { SetNextContinuationToken(value); return *this;}
+    inline ListBucketAnalyticsConfigurationsResult& WithNextContinuationToken(Aws::String&& value) { SetNextContinuationToken(std::move(value)); return *this;}
 
     /**
      * NextContinuationToken is sent when isTruncated is true, which indicates that
@@ -159,7 +160,7 @@ namespace Model
     /**
      * The list of analytics configurations for a bucket.
      */
-    inline void SetAnalyticsConfigurationList(Aws::Vector<AnalyticsConfiguration>&& value) { m_analyticsConfigurationList = value; }
+    inline void SetAnalyticsConfigurationList(Aws::Vector<AnalyticsConfiguration>&& value) { m_analyticsConfigurationList = std::move(value); }
 
     /**
      * The list of analytics configurations for a bucket.
@@ -169,7 +170,7 @@ namespace Model
     /**
      * The list of analytics configurations for a bucket.
      */
-    inline ListBucketAnalyticsConfigurationsResult& WithAnalyticsConfigurationList(Aws::Vector<AnalyticsConfiguration>&& value) { SetAnalyticsConfigurationList(value); return *this;}
+    inline ListBucketAnalyticsConfigurationsResult& WithAnalyticsConfigurationList(Aws::Vector<AnalyticsConfiguration>&& value) { SetAnalyticsConfigurationList(std::move(value)); return *this;}
 
     /**
      * The list of analytics configurations for a bucket.
@@ -179,7 +180,7 @@ namespace Model
     /**
      * The list of analytics configurations for a bucket.
      */
-    inline ListBucketAnalyticsConfigurationsResult& AddAnalyticsConfigurationList(AnalyticsConfiguration&& value) { m_analyticsConfigurationList.push_back(value); return *this; }
+    inline ListBucketAnalyticsConfigurationsResult& AddAnalyticsConfigurationList(AnalyticsConfiguration&& value) { m_analyticsConfigurationList.push_back(std::move(value)); return *this; }
 
   private:
     bool m_isTruncated;

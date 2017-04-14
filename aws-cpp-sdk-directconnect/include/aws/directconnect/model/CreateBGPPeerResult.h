@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/model/VirtualInterface.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,13 +53,13 @@ namespace Model
     inline void SetVirtualInterface(const VirtualInterface& value) { m_virtualInterface = value; }
 
     
-    inline void SetVirtualInterface(VirtualInterface&& value) { m_virtualInterface = value; }
+    inline void SetVirtualInterface(VirtualInterface&& value) { m_virtualInterface = std::move(value); }
 
     
     inline CreateBGPPeerResult& WithVirtualInterface(const VirtualInterface& value) { SetVirtualInterface(value); return *this;}
 
     
-    inline CreateBGPPeerResult& WithVirtualInterface(VirtualInterface&& value) { SetVirtualInterface(value); return *this;}
+    inline CreateBGPPeerResult& WithVirtualInterface(VirtualInterface&& value) { SetVirtualInterface(std::move(value)); return *this;}
 
   private:
     VirtualInterface m_virtualInterface;

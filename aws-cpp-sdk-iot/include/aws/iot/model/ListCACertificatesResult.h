@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/CACertificate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The CA certificates registered in your AWS account.</p>
      */
-    inline void SetCertificates(Aws::Vector<CACertificate>&& value) { m_certificates = value; }
+    inline void SetCertificates(Aws::Vector<CACertificate>&& value) { m_certificates = std::move(value); }
 
     /**
      * <p>The CA certificates registered in your AWS account.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The CA certificates registered in your AWS account.</p>
      */
-    inline ListCACertificatesResult& WithCertificates(Aws::Vector<CACertificate>&& value) { SetCertificates(value); return *this;}
+    inline ListCACertificatesResult& WithCertificates(Aws::Vector<CACertificate>&& value) { SetCertificates(std::move(value)); return *this;}
 
     /**
      * <p>The CA certificates registered in your AWS account.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The CA certificates registered in your AWS account.</p>
      */
-    inline ListCACertificatesResult& AddCertificates(CACertificate&& value) { m_certificates.push_back(value); return *this; }
+    inline ListCACertificatesResult& AddCertificates(CACertificate&& value) { m_certificates.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The current position within the list of CA certificates.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The current position within the list of CA certificates.</p>
      */
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
      * <p>The current position within the list of CA certificates.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The current position within the list of CA certificates.</p>
      */
-    inline ListCACertificatesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
+    inline ListCACertificatesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>The current position within the list of CA certificates.</p>

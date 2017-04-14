@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/support/model/Attachment.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * the response. If an <code>attachmentSetId</code> is specified, the attachments
      * are added to the specified set, if it exists.</p>
      */
-    inline void SetAttachmentSetId(Aws::String&& value) { m_attachmentSetIdHasBeenSet = true; m_attachmentSetId = value; }
+    inline void SetAttachmentSetId(Aws::String&& value) { m_attachmentSetIdHasBeenSet = true; m_attachmentSetId = std::move(value); }
 
     /**
      * <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not
@@ -86,7 +87,7 @@ namespace Model
      * the response. If an <code>attachmentSetId</code> is specified, the attachments
      * are added to the specified set, if it exists.</p>
      */
-    inline AddAttachmentsToSetRequest& WithAttachmentSetId(Aws::String&& value) { SetAttachmentSetId(value); return *this;}
+    inline AddAttachmentsToSetRequest& WithAttachmentSetId(Aws::String&& value) { SetAttachmentSetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not
@@ -112,7 +113,7 @@ namespace Model
      * <p>One or more attachments to add to the set. The limit is 3 attachments per
      * set, and the size limit is 5 MB per attachment.</p>
      */
-    inline void SetAttachments(Aws::Vector<Attachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
+    inline void SetAttachments(Aws::Vector<Attachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
 
     /**
      * <p>One or more attachments to add to the set. The limit is 3 attachments per
@@ -124,7 +125,7 @@ namespace Model
      * <p>One or more attachments to add to the set. The limit is 3 attachments per
      * set, and the size limit is 5 MB per attachment.</p>
      */
-    inline AddAttachmentsToSetRequest& WithAttachments(Aws::Vector<Attachment>&& value) { SetAttachments(value); return *this;}
+    inline AddAttachmentsToSetRequest& WithAttachments(Aws::Vector<Attachment>&& value) { SetAttachments(std::move(value)); return *this;}
 
     /**
      * <p>One or more attachments to add to the set. The limit is 3 attachments per
@@ -136,7 +137,7 @@ namespace Model
      * <p>One or more attachments to add to the set. The limit is 3 attachments per
      * set, and the size limit is 5 MB per attachment.</p>
      */
-    inline AddAttachmentsToSetRequest& AddAttachments(Attachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
+    inline AddAttachmentsToSetRequest& AddAttachments(Attachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_attachmentSetId;

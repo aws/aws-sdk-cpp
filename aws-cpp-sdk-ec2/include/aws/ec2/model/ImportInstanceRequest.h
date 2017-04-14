@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/PlatformValues.h>
 #include <aws/ec2/model/DiskImage.h>
+#include <utility>
 
 namespace Aws
 {
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>A description for the instance being imported.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description for the instance being imported.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>A description for the instance being imported.</p>
      */
-    inline ImportInstanceRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline ImportInstanceRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description for the instance being imported.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The launch specification.</p>
      */
-    inline void SetLaunchSpecification(ImportInstanceLaunchSpecification&& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = value; }
+    inline void SetLaunchSpecification(ImportInstanceLaunchSpecification&& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = std::move(value); }
 
     /**
      * <p>The launch specification.</p>
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>The launch specification.</p>
      */
-    inline ImportInstanceRequest& WithLaunchSpecification(ImportInstanceLaunchSpecification&& value) { SetLaunchSpecification(value); return *this;}
+    inline ImportInstanceRequest& WithLaunchSpecification(ImportInstanceLaunchSpecification&& value) { SetLaunchSpecification(std::move(value)); return *this;}
 
     /**
      * <p>The disk image.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The disk image.</p>
      */
-    inline void SetDiskImages(Aws::Vector<DiskImage>&& value) { m_diskImagesHasBeenSet = true; m_diskImages = value; }
+    inline void SetDiskImages(Aws::Vector<DiskImage>&& value) { m_diskImagesHasBeenSet = true; m_diskImages = std::move(value); }
 
     /**
      * <p>The disk image.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>The disk image.</p>
      */
-    inline ImportInstanceRequest& WithDiskImages(Aws::Vector<DiskImage>&& value) { SetDiskImages(value); return *this;}
+    inline ImportInstanceRequest& WithDiskImages(Aws::Vector<DiskImage>&& value) { SetDiskImages(std::move(value)); return *this;}
 
     /**
      * <p>The disk image.</p>
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>The disk image.</p>
      */
-    inline ImportInstanceRequest& AddDiskImages(DiskImage&& value) { m_diskImagesHasBeenSet = true; m_diskImages.push_back(value); return *this; }
+    inline ImportInstanceRequest& AddDiskImages(DiskImage&& value) { m_diskImagesHasBeenSet = true; m_diskImages.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The instance operating system.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>The instance operating system.</p>
      */
-    inline void SetPlatform(PlatformValues&& value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline void SetPlatform(PlatformValues&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
      * <p>The instance operating system.</p>
@@ -186,7 +187,7 @@ namespace Model
     /**
      * <p>The instance operating system.</p>
      */
-    inline ImportInstanceRequest& WithPlatform(PlatformValues&& value) { SetPlatform(value); return *this;}
+    inline ImportInstanceRequest& WithPlatform(PlatformValues&& value) { SetPlatform(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

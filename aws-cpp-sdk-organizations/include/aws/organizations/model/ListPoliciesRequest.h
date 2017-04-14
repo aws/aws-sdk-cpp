@@ -17,6 +17,7 @@
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/organizations/model/PolicyType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>Specifies the type of policy that you want to include in the response.</p>
      */
-    inline void SetFilter(PolicyType&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(PolicyType&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>Specifies the type of policy that you want to include in the response.</p>
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Specifies the type of policy that you want to include in the response.</p>
      */
-    inline ListPoliciesRequest& WithFilter(PolicyType&& value) { SetFilter(value); return *this;}
+    inline ListPoliciesRequest& WithFilter(PolicyType&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a
@@ -83,7 +84,7 @@ namespace Model
      * the value of the previous call's <code>NextToken</code> response to indicate
      * where the output should continue from.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a
@@ -107,7 +108,7 @@ namespace Model
      * the value of the previous call's <code>NextToken</code> response to indicate
      * where the output should continue from.</p>
      */
-    inline ListPoliciesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListPoliciesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a

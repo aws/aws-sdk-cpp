@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/ThingTypeProperties.h>
 #include <aws/iot/model/ThingTypeMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the thing type.</p>
      */
-    inline void SetThingTypeName(Aws::String&& value) { m_thingTypeName = value; }
+    inline void SetThingTypeName(Aws::String&& value) { m_thingTypeName = std::move(value); }
 
     /**
      * <p>The name of the thing type.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the thing type.</p>
      */
-    inline DescribeThingTypeResult& WithThingTypeName(Aws::String&& value) { SetThingTypeName(value); return *this;}
+    inline DescribeThingTypeResult& WithThingTypeName(Aws::String&& value) { SetThingTypeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the thing type.</p>
@@ -97,7 +98,7 @@ namespace Model
      * <p>The ThingTypeProperties contains information about the thing type including
      * description, and a list of searchable thing attribute names.</p>
      */
-    inline void SetThingTypeProperties(ThingTypeProperties&& value) { m_thingTypeProperties = value; }
+    inline void SetThingTypeProperties(ThingTypeProperties&& value) { m_thingTypeProperties = std::move(value); }
 
     /**
      * <p>The ThingTypeProperties contains information about the thing type including
@@ -109,7 +110,7 @@ namespace Model
      * <p>The ThingTypeProperties contains information about the thing type including
      * description, and a list of searchable thing attribute names.</p>
      */
-    inline DescribeThingTypeResult& WithThingTypeProperties(ThingTypeProperties&& value) { SetThingTypeProperties(value); return *this;}
+    inline DescribeThingTypeResult& WithThingTypeProperties(ThingTypeProperties&& value) { SetThingTypeProperties(std::move(value)); return *this;}
 
     
     inline const ThingTypeMetadata& GetThingTypeMetadata() const{ return m_thingTypeMetadata; }
@@ -118,13 +119,13 @@ namespace Model
     inline void SetThingTypeMetadata(const ThingTypeMetadata& value) { m_thingTypeMetadata = value; }
 
     
-    inline void SetThingTypeMetadata(ThingTypeMetadata&& value) { m_thingTypeMetadata = value; }
+    inline void SetThingTypeMetadata(ThingTypeMetadata&& value) { m_thingTypeMetadata = std::move(value); }
 
     
     inline DescribeThingTypeResult& WithThingTypeMetadata(const ThingTypeMetadata& value) { SetThingTypeMetadata(value); return *this;}
 
     
-    inline DescribeThingTypeResult& WithThingTypeMetadata(ThingTypeMetadata&& value) { SetThingTypeMetadata(value); return *this;}
+    inline DescribeThingTypeResult& WithThingTypeMetadata(ThingTypeMetadata&& value) { SetThingTypeMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_thingTypeName;

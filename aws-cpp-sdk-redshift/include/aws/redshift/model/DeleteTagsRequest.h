@@ -17,6 +17,7 @@
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags.
      * For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
      */
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
+    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags.
@@ -76,7 +77,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags.
      * For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
      */
-    inline DeleteTagsRequest& WithResourceName(Aws::String&& value) { SetResourceName(value); return *this;}
+    inline DeleteTagsRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags.
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The tag key that you want to delete.</p>
      */
-    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
+    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
      * <p>The tag key that you want to delete.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The tag key that you want to delete.</p>
      */
-    inline DeleteTagsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
+    inline DeleteTagsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
      * <p>The tag key that you want to delete.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>The tag key that you want to delete.</p>
      */
-    inline DeleteTagsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+    inline DeleteTagsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The tag key that you want to delete.</p>

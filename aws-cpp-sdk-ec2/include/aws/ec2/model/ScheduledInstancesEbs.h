@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The ID of the snapshot.</p>
      */
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
+    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     /**
      * <p>The ID of the snapshot.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The ID of the snapshot.</p>
      */
-    inline ScheduledInstancesEbs& WithSnapshotId(Aws::String&& value) { SetSnapshotId(value); return *this;}
+    inline ScheduledInstancesEbs& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the snapshot.</p>
@@ -140,7 +141,7 @@ namespace Model
      * HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.</p> <p>Default:
      * <code>standard</code> </p>
      */
-    inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
+    inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
      * <p>The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code>
@@ -164,7 +165,7 @@ namespace Model
      * HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.</p> <p>Default:
      * <code>standard</code> </p>
      */
-    inline ScheduledInstancesEbs& WithVolumeType(Aws::String&& value) { SetVolumeType(value); return *this;}
+    inline ScheduledInstancesEbs& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
 
     /**
      * <p>The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code>

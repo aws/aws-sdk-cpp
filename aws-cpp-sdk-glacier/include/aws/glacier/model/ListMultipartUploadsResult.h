@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glacier/model/UploadListElement.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>A list of in-progress multipart uploads.</p>
      */
-    inline void SetUploadsList(Aws::Vector<UploadListElement>&& value) { m_uploadsList = value; }
+    inline void SetUploadsList(Aws::Vector<UploadListElement>&& value) { m_uploadsList = std::move(value); }
 
     /**
      * <p>A list of in-progress multipart uploads.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>A list of in-progress multipart uploads.</p>
      */
-    inline ListMultipartUploadsResult& WithUploadsList(Aws::Vector<UploadListElement>&& value) { SetUploadsList(value); return *this;}
+    inline ListMultipartUploadsResult& WithUploadsList(Aws::Vector<UploadListElement>&& value) { SetUploadsList(std::move(value)); return *this;}
 
     /**
      * <p>A list of in-progress multipart uploads.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>A list of in-progress multipart uploads.</p>
      */
-    inline ListMultipartUploadsResult& AddUploadsList(UploadListElement&& value) { m_uploadsList.push_back(value); return *this; }
+    inline ListMultipartUploadsResult& AddUploadsList(UploadListElement&& value) { m_uploadsList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An opaque string that represents where to continue pagination of the results.
@@ -104,7 +105,7 @@ namespace Model
      * uploads in the list. If there are no more uploads, this value is
      * <code>null</code>.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>An opaque string that represents where to continue pagination of the results.
@@ -128,7 +129,7 @@ namespace Model
      * uploads in the list. If there are no more uploads, this value is
      * <code>null</code>.</p>
      */
-    inline ListMultipartUploadsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListMultipartUploadsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An opaque string that represents where to continue pagination of the results.

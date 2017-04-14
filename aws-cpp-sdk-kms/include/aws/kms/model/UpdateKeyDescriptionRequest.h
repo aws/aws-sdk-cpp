@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/kms/KMSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * </li> <li> <p>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>A unique identifier for the CMK. This value can be a globally unique
@@ -93,7 +94,7 @@ namespace Model
      * </li> <li> <p>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
-    inline UpdateKeyDescriptionRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline UpdateKeyDescriptionRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the CMK. This value can be a globally unique
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>New description for the CMK.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>New description for the CMK.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>New description for the CMK.</p>
      */
-    inline UpdateKeyDescriptionRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline UpdateKeyDescriptionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>New description for the CMK.</p>

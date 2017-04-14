@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/TransitionStorageClass.h>
+#include <utility>
 
 namespace Aws
 {
@@ -92,7 +93,7 @@ namespace Model
     /**
      * The class of storage used to store the object.
      */
-    inline void SetStorageClass(TransitionStorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+    inline void SetStorageClass(TransitionStorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
      * The class of storage used to store the object.
@@ -102,7 +103,7 @@ namespace Model
     /**
      * The class of storage used to store the object.
      */
-    inline NoncurrentVersionTransition& WithStorageClass(TransitionStorageClass&& value) { SetStorageClass(value); return *this;}
+    inline NoncurrentVersionTransition& WithStorageClass(TransitionStorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
   private:
     int m_noncurrentDays;

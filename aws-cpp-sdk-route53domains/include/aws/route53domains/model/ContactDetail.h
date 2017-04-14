@@ -19,6 +19,7 @@
 #include <aws/route53domains/model/CountryCode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53domains/model/ExtraParam.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code> </p> <p>Required: Yes</p>
      */
-    inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
+    inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = std::move(value); }
 
     /**
      * <p>First name of contact.</p> <p>Type: String</p> <p>Default: None</p>
@@ -93,7 +94,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code> </p> <p>Required: Yes</p>
      */
-    inline ContactDetail& WithFirstName(Aws::String&& value) { SetFirstName(value); return *this;}
+    inline ContactDetail& WithFirstName(Aws::String&& value) { SetFirstName(std::move(value)); return *this;}
 
     /**
      * <p>First name of contact.</p> <p>Type: String</p> <p>Default: None</p>
@@ -125,7 +126,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
      */
-    inline void SetLastName(Aws::String&& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
+    inline void SetLastName(Aws::String&& value) { m_lastNameHasBeenSet = true; m_lastName = std::move(value); }
 
     /**
      * <p>Last name of contact.</p> <p>Type: String</p> <p>Default: None</p>
@@ -149,7 +150,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
      */
-    inline ContactDetail& WithLastName(Aws::String&& value) { SetLastName(value); return *this;}
+    inline ContactDetail& WithLastName(Aws::String&& value) { SetLastName(std::move(value)); return *this;}
 
     /**
      * <p>Last name of contact.</p> <p>Type: String</p> <p>Default: None</p>
@@ -193,7 +194,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code> </p> <p>Required: Yes</p>
      */
-    inline void SetContactType(ContactType&& value) { m_contactTypeHasBeenSet = true; m_contactType = value; }
+    inline void SetContactType(ContactType&& value) { m_contactTypeHasBeenSet = true; m_contactType = std::move(value); }
 
     /**
      * <p>Indicates whether the contact is a person, company, association, or public
@@ -217,7 +218,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code> </p> <p>Required: Yes</p>
      */
-    inline ContactDetail& WithContactType(ContactType&& value) { SetContactType(value); return *this;}
+    inline ContactDetail& WithContactType(ContactType&& value) { SetContactType(std::move(value)); return *this;}
 
     /**
      * <p>Name of the organization for contact types other than
@@ -244,7 +245,7 @@ namespace Model
      * <code>PERSON</code>.</p> <p>Parents: <code>RegistrantContact</code>,
      * <code>AdminContact</code>, <code>TechContact</code></p> <p>Required: No</p>
      */
-    inline void SetOrganizationName(Aws::String&& value) { m_organizationNameHasBeenSet = true; m_organizationName = value; }
+    inline void SetOrganizationName(Aws::String&& value) { m_organizationNameHasBeenSet = true; m_organizationName = std::move(value); }
 
     /**
      * <p>Name of the organization for contact types other than
@@ -271,7 +272,7 @@ namespace Model
      * <code>PERSON</code>.</p> <p>Parents: <code>RegistrantContact</code>,
      * <code>AdminContact</code>, <code>TechContact</code></p> <p>Required: No</p>
      */
-    inline ContactDetail& WithOrganizationName(Aws::String&& value) { SetOrganizationName(value); return *this;}
+    inline ContactDetail& WithOrganizationName(Aws::String&& value) { SetOrganizationName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the organization for contact types other than
@@ -304,7 +305,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
      */
-    inline void SetAddressLine1(Aws::String&& value) { m_addressLine1HasBeenSet = true; m_addressLine1 = value; }
+    inline void SetAddressLine1(Aws::String&& value) { m_addressLine1HasBeenSet = true; m_addressLine1 = std::move(value); }
 
     /**
      * <p>First line of the contact&apos;s address.</p> <p>Type: String</p> <p>Default:
@@ -328,7 +329,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
      */
-    inline ContactDetail& WithAddressLine1(Aws::String&& value) { SetAddressLine1(value); return *this;}
+    inline ContactDetail& WithAddressLine1(Aws::String&& value) { SetAddressLine1(std::move(value)); return *this;}
 
     /**
      * <p>First line of the contact&apos;s address.</p> <p>Type: String</p> <p>Default:
@@ -360,7 +361,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
      */
-    inline void SetAddressLine2(Aws::String&& value) { m_addressLine2HasBeenSet = true; m_addressLine2 = value; }
+    inline void SetAddressLine2(Aws::String&& value) { m_addressLine2HasBeenSet = true; m_addressLine2 = std::move(value); }
 
     /**
      * <p>Second line of contact&apos;s address, if any.</p> <p>Type: String</p>
@@ -384,7 +385,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
      */
-    inline ContactDetail& WithAddressLine2(Aws::String&& value) { SetAddressLine2(value); return *this;}
+    inline ContactDetail& WithAddressLine2(Aws::String&& value) { SetAddressLine2(std::move(value)); return *this;}
 
     /**
      * <p>Second line of contact&apos;s address, if any.</p> <p>Type: String</p>
@@ -416,7 +417,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
      */
-    inline void SetCity(Aws::String&& value) { m_cityHasBeenSet = true; m_city = value; }
+    inline void SetCity(Aws::String&& value) { m_cityHasBeenSet = true; m_city = std::move(value); }
 
     /**
      * <p>The city of the contact&apos;s address.</p> <p>Type: String</p> <p>Default:
@@ -440,7 +441,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
      */
-    inline ContactDetail& WithCity(Aws::String&& value) { SetCity(value); return *this;}
+    inline ContactDetail& WithCity(Aws::String&& value) { SetCity(std::move(value)); return *this;}
 
     /**
      * <p>The city of the contact&apos;s address.</p> <p>Type: String</p> <p>Default:
@@ -472,7 +473,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
      */
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state or province of the contact&apos;s city.</p> <p>Type: String</p>
@@ -496,7 +497,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
      */
-    inline ContactDetail& WithState(Aws::String&& value) { SetState(value); return *this;}
+    inline ContactDetail& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The state or province of the contact&apos;s city.</p> <p>Type: String</p>
@@ -528,7 +529,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
      */
-    inline void SetCountryCode(CountryCode&& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
+    inline void SetCountryCode(CountryCode&& value) { m_countryCodeHasBeenSet = true; m_countryCode = std::move(value); }
 
     /**
      * <p>Code for the country of the contact&apos;s address.</p> <p>Type: String</p>
@@ -544,7 +545,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
      */
-    inline ContactDetail& WithCountryCode(CountryCode&& value) { SetCountryCode(value); return *this;}
+    inline ContactDetail& WithCountryCode(CountryCode&& value) { SetCountryCode(std::move(value)); return *this;}
 
     /**
      * <p>The zip or postal code of the contact&apos;s address.</p> <p>Type: String</p>
@@ -568,7 +569,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
      */
-    inline void SetZipCode(Aws::String&& value) { m_zipCodeHasBeenSet = true; m_zipCode = value; }
+    inline void SetZipCode(Aws::String&& value) { m_zipCodeHasBeenSet = true; m_zipCode = std::move(value); }
 
     /**
      * <p>The zip or postal code of the contact&apos;s address.</p> <p>Type: String</p>
@@ -592,7 +593,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
      */
-    inline ContactDetail& WithZipCode(Aws::String&& value) { SetZipCode(value); return *this;}
+    inline ContactDetail& WithZipCode(Aws::String&& value) { SetZipCode(std::move(value)); return *this;}
 
     /**
      * <p>The zip or postal code of the contact&apos;s address.</p> <p>Type: String</p>
@@ -630,7 +631,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
      */
-    inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
+    inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::move(value); }
 
     /**
      * <p>The phone number of the contact.</p> <p>Type: String</p> <p>Default: None</p>
@@ -660,7 +661,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
      */
-    inline ContactDetail& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(value); return *this;}
+    inline ContactDetail& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(std::move(value)); return *this;}
 
     /**
      * <p>The phone number of the contact.</p> <p>Type: String</p> <p>Default: None</p>
@@ -694,7 +695,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code> </p> <p>Required: Yes</p>
      */
-    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = value; }
+    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
 
     /**
      * <p>Email address of the contact.</p> <p>Type: String</p> <p>Default: None</p>
@@ -718,7 +719,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code> </p> <p>Required: Yes</p>
      */
-    inline ContactDetail& WithEmail(Aws::String&& value) { SetEmail(value); return *this;}
+    inline ContactDetail& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
 
     /**
      * <p>Email address of the contact.</p> <p>Type: String</p> <p>Default: None</p>
@@ -756,7 +757,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
      */
-    inline void SetFax(Aws::String&& value) { m_faxHasBeenSet = true; m_fax = value; }
+    inline void SetFax(Aws::String&& value) { m_faxHasBeenSet = true; m_fax = std::move(value); }
 
     /**
      * <p>Fax number of the contact.</p> <p>Type: String</p> <p>Default: None</p>
@@ -786,7 +787,7 @@ namespace Model
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
      */
-    inline ContactDetail& WithFax(Aws::String&& value) { SetFax(value); return *this;}
+    inline ContactDetail& WithFax(Aws::String&& value) { SetFax(std::move(value)); return *this;}
 
     /**
      * <p>Fax number of the contact.</p> <p>Type: String</p> <p>Default: None</p>
@@ -823,7 +824,7 @@ namespace Model
      * <code>TechContact</code></p> <p>Children: <code>Name</code>,
      * <code>Value</code></p> <p>Required: No</p>
      */
-    inline void SetExtraParams(Aws::Vector<ExtraParam>&& value) { m_extraParamsHasBeenSet = true; m_extraParams = value; }
+    inline void SetExtraParams(Aws::Vector<ExtraParam>&& value) { m_extraParamsHasBeenSet = true; m_extraParams = std::move(value); }
 
     /**
      * <p>A list of name-value pairs for parameters required by certain top-level
@@ -841,7 +842,7 @@ namespace Model
      * <code>TechContact</code></p> <p>Children: <code>Name</code>,
      * <code>Value</code></p> <p>Required: No</p>
      */
-    inline ContactDetail& WithExtraParams(Aws::Vector<ExtraParam>&& value) { SetExtraParams(value); return *this;}
+    inline ContactDetail& WithExtraParams(Aws::Vector<ExtraParam>&& value) { SetExtraParams(std::move(value)); return *this;}
 
     /**
      * <p>A list of name-value pairs for parameters required by certain top-level
@@ -859,7 +860,7 @@ namespace Model
      * <code>TechContact</code></p> <p>Children: <code>Name</code>,
      * <code>Value</code></p> <p>Required: No</p>
      */
-    inline ContactDetail& AddExtraParams(ExtraParam&& value) { m_extraParamsHasBeenSet = true; m_extraParams.push_back(value); return *this; }
+    inline ContactDetail& AddExtraParams(ExtraParam&& value) { m_extraParamsHasBeenSet = true; m_extraParams.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_firstName;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * The DNS name of the S3 origin.
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * The DNS name of the S3 origin.
@@ -74,7 +75,7 @@ namespace Model
     /**
      * The DNS name of the S3 origin.
      */
-    inline S3Origin& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline S3Origin& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * The DNS name of the S3 origin.
@@ -94,7 +95,7 @@ namespace Model
     /**
      * Your S3 origin's origin access identity.
      */
-    inline void SetOriginAccessIdentity(Aws::String&& value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity = value; }
+    inline void SetOriginAccessIdentity(Aws::String&& value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity = std::move(value); }
 
     /**
      * Your S3 origin's origin access identity.
@@ -109,7 +110,7 @@ namespace Model
     /**
      * Your S3 origin's origin access identity.
      */
-    inline S3Origin& WithOriginAccessIdentity(Aws::String&& value) { SetOriginAccessIdentity(value); return *this;}
+    inline S3Origin& WithOriginAccessIdentity(Aws::String&& value) { SetOriginAccessIdentity(std::move(value)); return *this;}
 
     /**
      * Your S3 origin's origin access identity.

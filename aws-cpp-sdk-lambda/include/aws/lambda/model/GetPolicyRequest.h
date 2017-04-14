@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -82,7 +83,7 @@ namespace Model
      * applies only to the ARN. If you specify only the function name, it is limited to
      * 64 character in length. </p>
      */
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
      * <p>Function name whose resource policy you want to retrieve.</p> <p> You can
@@ -124,7 +125,7 @@ namespace Model
      * applies only to the ARN. If you specify only the function name, it is limited to
      * 64 character in length. </p>
      */
-    inline GetPolicyRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
+    inline GetPolicyRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>Function name whose resource policy you want to retrieve.</p> <p> You can
@@ -162,7 +163,7 @@ namespace Model
      * with the specific qualified ARN. If you don't provide this parameter, the API
      * will return permissions that apply to the unqualified function ARN.</p>
      */
-    inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
+    inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
 
     /**
      * <p>You can specify this optional query parameter to specify a function version
@@ -186,7 +187,7 @@ namespace Model
      * with the specific qualified ARN. If you don't provide this parameter, the API
      * will return permissions that apply to the unqualified function ARN.</p>
      */
-    inline GetPolicyRequest& WithQualifier(Aws::String&& value) { SetQualifier(value); return *this;}
+    inline GetPolicyRequest& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
 
     /**
      * <p>You can specify this optional query parameter to specify a function version

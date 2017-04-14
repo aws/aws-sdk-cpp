@@ -16,6 +16,7 @@
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/SnowballRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * of <code>JobListEntry</code> objects, you have the option of specifying
      * <code>NextToken</code> as the starting point for your returned list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>HTTP requests are stateless. To identify what object comes "next" in the list
@@ -90,7 +91,7 @@ namespace Model
      * of <code>JobListEntry</code> objects, you have the option of specifying
      * <code>NextToken</code> as the starting point for your returned list.</p>
      */
-    inline ListJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>HTTP requests are stateless. To identify what object comes "next" in the list

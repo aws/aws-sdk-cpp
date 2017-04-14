@@ -17,6 +17,7 @@
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/TargetType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster to list
      * attributes. If you do not specify a cluster, the default cluster is assumed.</p>
      */
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster to list
@@ -70,7 +71,7 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster to list
      * attributes. If you do not specify a cluster, the default cluster is assumed.</p>
      */
-    inline ListAttributesRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
+    inline ListAttributesRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster to list
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The type of the target with which to list attributes.</p>
      */
-    inline void SetTargetType(TargetType&& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+    inline void SetTargetType(TargetType&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
     /**
      * <p>The type of the target with which to list attributes.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The type of the target with which to list attributes.</p>
      */
-    inline ListAttributesRequest& WithTargetType(TargetType&& value) { SetTargetType(value); return *this;}
+    inline ListAttributesRequest& WithTargetType(TargetType&& value) { SetTargetType(std::move(value)); return *this;}
 
     /**
      * <p>The name of the attribute with which to filter the results. </p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The name of the attribute with which to filter the results. </p>
      */
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
      * <p>The name of the attribute with which to filter the results. </p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The name of the attribute with which to filter the results. </p>
      */
-    inline ListAttributesRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
+    inline ListAttributesRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the attribute with which to filter the results. </p>
@@ -154,7 +155,7 @@ namespace Model
      * <p>The value of the attribute with which to filter results. You must also
      * specify an attribute name to use this parameter.</p>
      */
-    inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
+    inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::move(value); }
 
     /**
      * <p>The value of the attribute with which to filter results. You must also
@@ -172,7 +173,7 @@ namespace Model
      * <p>The value of the attribute with which to filter results. You must also
      * specify an attribute name to use this parameter.</p>
      */
-    inline ListAttributesRequest& WithAttributeValue(Aws::String&& value) { SetAttributeValue(value); return *this;}
+    inline ListAttributesRequest& WithAttributeValue(Aws::String&& value) { SetAttributeValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the attribute with which to filter results. You must also
@@ -214,7 +215,7 @@ namespace Model
      * retrieve the next items in a list and not for other programmatic purposes.</p>
      * </note>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -250,7 +251,7 @@ namespace Model
      * retrieve the next items in a list and not for other programmatic purposes.</p>
      * </note>
      */
-    inline ListAttributesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListAttributesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated

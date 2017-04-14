@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/StepConfig.h>
 #include <aws/elasticmapreduce/model/StepExecutionStatusDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The step configuration.</p>
      */
-    inline void SetStepConfig(StepConfig&& value) { m_stepConfigHasBeenSet = true; m_stepConfig = value; }
+    inline void SetStepConfig(StepConfig&& value) { m_stepConfigHasBeenSet = true; m_stepConfig = std::move(value); }
 
     /**
      * <p>The step configuration.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The step configuration.</p>
      */
-    inline StepDetail& WithStepConfig(StepConfig&& value) { SetStepConfig(value); return *this;}
+    inline StepDetail& WithStepConfig(StepConfig&& value) { SetStepConfig(std::move(value)); return *this;}
 
     /**
      * <p>The description of the step status.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The description of the step status.</p>
      */
-    inline void SetExecutionStatusDetail(StepExecutionStatusDetail&& value) { m_executionStatusDetailHasBeenSet = true; m_executionStatusDetail = value; }
+    inline void SetExecutionStatusDetail(StepExecutionStatusDetail&& value) { m_executionStatusDetailHasBeenSet = true; m_executionStatusDetail = std::move(value); }
 
     /**
      * <p>The description of the step status.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The description of the step status.</p>
      */
-    inline StepDetail& WithExecutionStatusDetail(StepExecutionStatusDetail&& value) { SetExecutionStatusDetail(value); return *this;}
+    inline StepDetail& WithExecutionStatusDetail(StepExecutionStatusDetail&& value) { SetExecutionStatusDetail(std::move(value)); return *this;}
 
   private:
     StepConfig m_stepConfig;

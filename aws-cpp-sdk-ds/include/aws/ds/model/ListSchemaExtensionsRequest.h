@@ -16,6 +16,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The identifier of the directory from which to retrieve the schema extension
      * information.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>The identifier of the directory from which to retrieve the schema extension
@@ -69,7 +70,7 @@ namespace Model
      * <p>The identifier of the directory from which to retrieve the schema extension
      * information.</p>
      */
-    inline ListSchemaExtensionsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline ListSchemaExtensionsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the directory from which to retrieve the schema extension
@@ -93,7 +94,7 @@ namespace Model
      * <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
      * <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
@@ -111,7 +112,7 @@ namespace Model
      * <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
      * <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
      */
-    inline ListSchemaExtensionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListSchemaExtensionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to

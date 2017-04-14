@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/model/Connection.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>A list of connections.</p>
      */
-    inline void SetConnections(Aws::Vector<Connection>&& value) { m_connections = value; }
+    inline void SetConnections(Aws::Vector<Connection>&& value) { m_connections = std::move(value); }
 
     /**
      * <p>A list of connections.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>A list of connections.</p>
      */
-    inline DescribeHostedConnectionsResult& WithConnections(Aws::Vector<Connection>&& value) { SetConnections(value); return *this;}
+    inline DescribeHostedConnectionsResult& WithConnections(Aws::Vector<Connection>&& value) { SetConnections(std::move(value)); return *this;}
 
     /**
      * <p>A list of connections.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>A list of connections.</p>
      */
-    inline DescribeHostedConnectionsResult& AddConnections(Connection&& value) { m_connections.push_back(value); return *this; }
+    inline DescribeHostedConnectionsResult& AddConnections(Connection&& value) { m_connections.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Connection> m_connections;

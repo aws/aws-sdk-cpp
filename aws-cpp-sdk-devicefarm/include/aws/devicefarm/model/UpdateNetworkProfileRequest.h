@@ -17,6 +17,7 @@
 #include <aws/devicefarm/DeviceFarmRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/NetworkProfileType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the project that you wish to update network
      * profile settings.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the project that you wish to update network
@@ -70,7 +71,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the project that you wish to update network
      * profile settings.</p>
      */
-    inline UpdateNetworkProfileRequest& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline UpdateNetworkProfileRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the project that you wish to update network
@@ -94,7 +95,7 @@ namespace Model
      * <p>The name of the network profile about which you are returning
      * information.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the network profile about which you are returning
@@ -112,7 +113,7 @@ namespace Model
      * <p>The name of the network profile about which you are returning
      * information.</p>
      */
-    inline UpdateNetworkProfileRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateNetworkProfileRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the network profile about which you are returning
@@ -136,7 +137,7 @@ namespace Model
      * <p>The descriptoin of the network profile about which you are returning
      * information.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The descriptoin of the network profile about which you are returning
@@ -154,7 +155,7 @@ namespace Model
      * <p>The descriptoin of the network profile about which you are returning
      * information.</p>
      */
-    inline UpdateNetworkProfileRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline UpdateNetworkProfileRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The descriptoin of the network profile about which you are returning
@@ -178,7 +179,7 @@ namespace Model
      * <p>The type of network profile you wish to return information about. Valid
      * values are listed below.</p>
      */
-    inline void SetType(NetworkProfileType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(NetworkProfileType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of network profile you wish to return information about. Valid
@@ -190,7 +191,7 @@ namespace Model
      * <p>The type of network profile you wish to return information about. Valid
      * values are listed below.</p>
      */
-    inline UpdateNetworkProfileRequest& WithType(NetworkProfileType&& value) { SetType(value); return *this;}
+    inline UpdateNetworkProfileRequest& WithType(NetworkProfileType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The data throughput rate in bits per second, as an integer from 0 to

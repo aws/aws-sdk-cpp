@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ds/model/SchemaExtensionStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The identifier of the directory to which the schema extension is applied.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>The identifier of the directory to which the schema extension is applied.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The identifier of the directory to which the schema extension is applied.</p>
      */
-    inline SchemaExtensionInfo& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline SchemaExtensionInfo& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the directory to which the schema extension is applied.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The identifier of the schema extension.</p>
      */
-    inline void SetSchemaExtensionId(Aws::String&& value) { m_schemaExtensionIdHasBeenSet = true; m_schemaExtensionId = value; }
+    inline void SetSchemaExtensionId(Aws::String&& value) { m_schemaExtensionIdHasBeenSet = true; m_schemaExtensionId = std::move(value); }
 
     /**
      * <p>The identifier of the schema extension.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The identifier of the schema extension.</p>
      */
-    inline SchemaExtensionInfo& WithSchemaExtensionId(Aws::String&& value) { SetSchemaExtensionId(value); return *this;}
+    inline SchemaExtensionInfo& WithSchemaExtensionId(Aws::String&& value) { SetSchemaExtensionId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the schema extension.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>A description of the schema extension.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description of the schema extension.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>A description of the schema extension.</p>
      */
-    inline SchemaExtensionInfo& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline SchemaExtensionInfo& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description of the schema extension.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>The current status of the schema extension.</p>
      */
-    inline void SetSchemaExtensionStatus(SchemaExtensionStatus&& value) { m_schemaExtensionStatusHasBeenSet = true; m_schemaExtensionStatus = value; }
+    inline void SetSchemaExtensionStatus(SchemaExtensionStatus&& value) { m_schemaExtensionStatusHasBeenSet = true; m_schemaExtensionStatus = std::move(value); }
 
     /**
      * <p>The current status of the schema extension.</p>
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>The current status of the schema extension.</p>
      */
-    inline SchemaExtensionInfo& WithSchemaExtensionStatus(SchemaExtensionStatus&& value) { SetSchemaExtensionStatus(value); return *this;}
+    inline SchemaExtensionInfo& WithSchemaExtensionStatus(SchemaExtensionStatus&& value) { SetSchemaExtensionStatus(std::move(value)); return *this;}
 
     /**
      * <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
@@ -188,7 +189,7 @@ namespace Model
     /**
      * <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
      */
-    inline void SetSchemaExtensionStatusReason(Aws::String&& value) { m_schemaExtensionStatusReasonHasBeenSet = true; m_schemaExtensionStatusReason = value; }
+    inline void SetSchemaExtensionStatusReason(Aws::String&& value) { m_schemaExtensionStatusReasonHasBeenSet = true; m_schemaExtensionStatusReason = std::move(value); }
 
     /**
      * <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
@@ -203,7 +204,7 @@ namespace Model
     /**
      * <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
      */
-    inline SchemaExtensionInfo& WithSchemaExtensionStatusReason(Aws::String&& value) { SetSchemaExtensionStatusReason(value); return *this;}
+    inline SchemaExtensionInfo& WithSchemaExtensionStatusReason(Aws::String&& value) { SetSchemaExtensionStatusReason(std::move(value)); return *this;}
 
     /**
      * <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
@@ -226,7 +227,7 @@ namespace Model
      * <p>The date and time that the schema extension started being applied to the
      * directory.</p>
      */
-    inline void SetStartDateTime(Aws::Utils::DateTime&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
+    inline void SetStartDateTime(Aws::Utils::DateTime&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = std::move(value); }
 
     /**
      * <p>The date and time that the schema extension started being applied to the
@@ -238,7 +239,7 @@ namespace Model
      * <p>The date and time that the schema extension started being applied to the
      * directory.</p>
      */
-    inline SchemaExtensionInfo& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(value); return *this;}
+    inline SchemaExtensionInfo& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(std::move(value)); return *this;}
 
     /**
      * <p>The date and time that the schema extension was completed.</p>
@@ -253,7 +254,7 @@ namespace Model
     /**
      * <p>The date and time that the schema extension was completed.</p>
      */
-    inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
+    inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::move(value); }
 
     /**
      * <p>The date and time that the schema extension was completed.</p>
@@ -263,7 +264,7 @@ namespace Model
     /**
      * <p>The date and time that the schema extension was completed.</p>
      */
-    inline SchemaExtensionInfo& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(value); return *this;}
+    inline SchemaExtensionInfo& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(std::move(value)); return *this;}
 
   private:
     Aws::String m_directoryId;

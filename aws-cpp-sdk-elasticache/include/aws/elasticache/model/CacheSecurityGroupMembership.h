@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name of the cache security group.</p>
      */
-    inline void SetCacheSecurityGroupName(Aws::String&& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
+    inline void SetCacheSecurityGroupName(Aws::String&& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = std::move(value); }
 
     /**
      * <p>The name of the cache security group.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name of the cache security group.</p>
      */
-    inline CacheSecurityGroupMembership& WithCacheSecurityGroupName(Aws::String&& value) { SetCacheSecurityGroupName(value); return *this;}
+    inline CacheSecurityGroupMembership& WithCacheSecurityGroupName(Aws::String&& value) { SetCacheSecurityGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cache security group.</p>
@@ -101,7 +102,7 @@ namespace Model
      * cache security group is modified, or when the cache security groups assigned to
      * a cache cluster are modified.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The membership status in the cache security group. The status changes when a
@@ -122,7 +123,7 @@ namespace Model
      * cache security group is modified, or when the cache security groups assigned to
      * a cache cluster are modified.</p>
      */
-    inline CacheSecurityGroupMembership& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline CacheSecurityGroupMembership& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The membership status in the cache security group. The status changes when a

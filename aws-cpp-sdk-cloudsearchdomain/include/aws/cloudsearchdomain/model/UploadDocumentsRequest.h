@@ -16,6 +16,7 @@
 #include <aws/cloudsearchdomain/CloudSearchDomain_EXPORTS.h>
 #include <aws/cloudsearchdomain/CloudSearchDomainRequest.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {

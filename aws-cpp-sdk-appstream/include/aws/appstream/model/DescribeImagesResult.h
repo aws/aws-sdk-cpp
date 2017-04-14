@@ -16,6 +16,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appstream/model/Image.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The list of images.</p>
      */
-    inline void SetImages(Aws::Vector<Image>&& value) { m_images = value; }
+    inline void SetImages(Aws::Vector<Image>&& value) { m_images = std::move(value); }
 
     /**
      * <p>The list of images.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The list of images.</p>
      */
-    inline DescribeImagesResult& WithImages(Aws::Vector<Image>&& value) { SetImages(value); return *this;}
+    inline DescribeImagesResult& WithImages(Aws::Vector<Image>&& value) { SetImages(std::move(value)); return *this;}
 
     /**
      * <p>The list of images.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The list of images.</p>
      */
-    inline DescribeImagesResult& AddImages(Image&& value) { m_images.push_back(value); return *this; }
+    inline DescribeImagesResult& AddImages(Image&& value) { m_images.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Image> m_images;

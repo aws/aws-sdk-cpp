@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>API Id of the associated API stage in a usage plan.</p>
      */
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
+    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
 
     /**
      * <p>API Id of the associated API stage in a usage plan.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>API Id of the associated API stage in a usage plan.</p>
      */
-    inline ApiStage& WithApiId(Aws::String&& value) { SetApiId(value); return *this;}
+    inline ApiStage& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
 
     /**
      * <p>API Id of the associated API stage in a usage plan.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>API stage name of the associated API stage in a usage plan.</p>
      */
-    inline void SetStage(Aws::String&& value) { m_stageHasBeenSet = true; m_stage = value; }
+    inline void SetStage(Aws::String&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
 
     /**
      * <p>API stage name of the associated API stage in a usage plan.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>API stage name of the associated API stage in a usage plan.</p>
      */
-    inline ApiStage& WithStage(Aws::String&& value) { SetStage(value); return *this;}
+    inline ApiStage& WithStage(Aws::String&& value) { SetStage(std::move(value)); return *this;}
 
     /**
      * <p>API stage name of the associated API stage in a usage plan.</p>

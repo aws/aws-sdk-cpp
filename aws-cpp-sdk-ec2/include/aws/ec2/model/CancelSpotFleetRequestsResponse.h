@@ -18,6 +18,7 @@
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/CancelSpotFleetRequestsErrorItem.h>
 #include <aws/ec2/model/CancelSpotFleetRequestsSuccessItem.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>Information about the Spot fleet requests that are not successfully
      * canceled.</p>
      */
-    inline void SetUnsuccessfulFleetRequests(Aws::Vector<CancelSpotFleetRequestsErrorItem>&& value) { m_unsuccessfulFleetRequests = value; }
+    inline void SetUnsuccessfulFleetRequests(Aws::Vector<CancelSpotFleetRequestsErrorItem>&& value) { m_unsuccessfulFleetRequests = std::move(value); }
 
     /**
      * <p>Information about the Spot fleet requests that are not successfully
@@ -75,7 +76,7 @@ namespace Model
      * <p>Information about the Spot fleet requests that are not successfully
      * canceled.</p>
      */
-    inline CancelSpotFleetRequestsResponse& WithUnsuccessfulFleetRequests(Aws::Vector<CancelSpotFleetRequestsErrorItem>&& value) { SetUnsuccessfulFleetRequests(value); return *this;}
+    inline CancelSpotFleetRequestsResponse& WithUnsuccessfulFleetRequests(Aws::Vector<CancelSpotFleetRequestsErrorItem>&& value) { SetUnsuccessfulFleetRequests(std::move(value)); return *this;}
 
     /**
      * <p>Information about the Spot fleet requests that are not successfully
@@ -87,7 +88,7 @@ namespace Model
      * <p>Information about the Spot fleet requests that are not successfully
      * canceled.</p>
      */
-    inline CancelSpotFleetRequestsResponse& AddUnsuccessfulFleetRequests(CancelSpotFleetRequestsErrorItem&& value) { m_unsuccessfulFleetRequests.push_back(value); return *this; }
+    inline CancelSpotFleetRequestsResponse& AddUnsuccessfulFleetRequests(CancelSpotFleetRequestsErrorItem&& value) { m_unsuccessfulFleetRequests.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Information about the Spot fleet requests that are successfully canceled.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>Information about the Spot fleet requests that are successfully canceled.</p>
      */
-    inline void SetSuccessfulFleetRequests(Aws::Vector<CancelSpotFleetRequestsSuccessItem>&& value) { m_successfulFleetRequests = value; }
+    inline void SetSuccessfulFleetRequests(Aws::Vector<CancelSpotFleetRequestsSuccessItem>&& value) { m_successfulFleetRequests = std::move(value); }
 
     /**
      * <p>Information about the Spot fleet requests that are successfully canceled.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>Information about the Spot fleet requests that are successfully canceled.</p>
      */
-    inline CancelSpotFleetRequestsResponse& WithSuccessfulFleetRequests(Aws::Vector<CancelSpotFleetRequestsSuccessItem>&& value) { SetSuccessfulFleetRequests(value); return *this;}
+    inline CancelSpotFleetRequestsResponse& WithSuccessfulFleetRequests(Aws::Vector<CancelSpotFleetRequestsSuccessItem>&& value) { SetSuccessfulFleetRequests(std::move(value)); return *this;}
 
     /**
      * <p>Information about the Spot fleet requests that are successfully canceled.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>Information about the Spot fleet requests that are successfully canceled.</p>
      */
-    inline CancelSpotFleetRequestsResponse& AddSuccessfulFleetRequests(CancelSpotFleetRequestsSuccessItem&& value) { m_successfulFleetRequests.push_back(value); return *this; }
+    inline CancelSpotFleetRequestsResponse& AddSuccessfulFleetRequests(CancelSpotFleetRequestsSuccessItem&& value) { m_successfulFleetRequests.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -131,13 +132,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CancelSpotFleetRequestsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CancelSpotFleetRequestsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CancelSpotFleetRequestsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<CancelSpotFleetRequestsErrorItem> m_unsuccessfulFleetRequests;

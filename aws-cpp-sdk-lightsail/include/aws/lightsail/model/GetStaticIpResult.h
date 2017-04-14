@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/model/StaticIp.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the requested static
      * IP.</p>
      */
-    inline void SetStaticIp(StaticIp&& value) { m_staticIp = value; }
+    inline void SetStaticIp(StaticIp&& value) { m_staticIp = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about the requested static
@@ -67,7 +68,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the requested static
      * IP.</p>
      */
-    inline GetStaticIpResult& WithStaticIp(StaticIp&& value) { SetStaticIp(value); return *this;}
+    inline GetStaticIpResult& WithStaticIp(StaticIp&& value) { SetStaticIp(std::move(value)); return *this;}
 
   private:
     StaticIp m_staticIp;

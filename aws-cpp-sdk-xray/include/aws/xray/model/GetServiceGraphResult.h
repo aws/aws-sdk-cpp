@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/xray/model/Service.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The start of the time frame for which the graph was generated.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
 
     /**
      * <p>The start of the time frame for which the graph was generated.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The start of the time frame for which the graph was generated.</p>
      */
-    inline GetServiceGraphResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline GetServiceGraphResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The end of the time frame for which the graph was generated.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The end of the time frame for which the graph was generated.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
 
     /**
      * <p>The end of the time frame for which the graph was generated.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The end of the time frame for which the graph was generated.</p>
      */
-    inline GetServiceGraphResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline GetServiceGraphResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>The services that have processed a traced request during the specified time
@@ -108,7 +109,7 @@ namespace Model
      * <p>The services that have processed a traced request during the specified time
      * frame.</p>
      */
-    inline void SetServices(Aws::Vector<Service>&& value) { m_services = value; }
+    inline void SetServices(Aws::Vector<Service>&& value) { m_services = std::move(value); }
 
     /**
      * <p>The services that have processed a traced request during the specified time
@@ -120,7 +121,7 @@ namespace Model
      * <p>The services that have processed a traced request during the specified time
      * frame.</p>
      */
-    inline GetServiceGraphResult& WithServices(Aws::Vector<Service>&& value) { SetServices(value); return *this;}
+    inline GetServiceGraphResult& WithServices(Aws::Vector<Service>&& value) { SetServices(std::move(value)); return *this;}
 
     /**
      * <p>The services that have processed a traced request during the specified time
@@ -132,7 +133,7 @@ namespace Model
      * <p>The services that have processed a traced request during the specified time
      * frame.</p>
      */
-    inline GetServiceGraphResult& AddServices(Service&& value) { m_services.push_back(value); return *this; }
+    inline GetServiceGraphResult& AddServices(Service&& value) { m_services.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Pagination token. Not used.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>Pagination token. Not used.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>Pagination token. Not used.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>Pagination token. Not used.</p>
      */
-    inline GetServiceGraphResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline GetServiceGraphResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Pagination token. Not used.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/dms/model/Endpoint.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The endpoint that was deleted.</p>
      */
-    inline void SetEndpoint(Endpoint&& value) { m_endpoint = value; }
+    inline void SetEndpoint(Endpoint&& value) { m_endpoint = std::move(value); }
 
     /**
      * <p>The endpoint that was deleted.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The endpoint that was deleted.</p>
      */
-    inline DeleteEndpointResult& WithEndpoint(Endpoint&& value) { SetEndpoint(value); return *this;}
+    inline DeleteEndpointResult& WithEndpoint(Endpoint&& value) { SetEndpoint(std::move(value)); return *this;}
 
   private:
     Endpoint m_endpoint;

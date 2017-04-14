@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>Name of the column created in the in-application input stream or reference
      * table.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Name of the column created in the in-application input stream or reference
@@ -79,7 +80,7 @@ namespace Model
      * <p>Name of the column created in the in-application input stream or reference
      * table.</p>
      */
-    inline RecordColumn& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline RecordColumn& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the column created in the in-application input stream or reference
@@ -103,7 +104,7 @@ namespace Model
      * <p>Reference to the data element in the streaming input of the reference data
      * source.</p>
      */
-    inline void SetMapping(Aws::String&& value) { m_mappingHasBeenSet = true; m_mapping = value; }
+    inline void SetMapping(Aws::String&& value) { m_mappingHasBeenSet = true; m_mapping = std::move(value); }
 
     /**
      * <p>Reference to the data element in the streaming input of the reference data
@@ -121,7 +122,7 @@ namespace Model
      * <p>Reference to the data element in the streaming input of the reference data
      * source.</p>
      */
-    inline RecordColumn& WithMapping(Aws::String&& value) { SetMapping(value); return *this;}
+    inline RecordColumn& WithMapping(Aws::String&& value) { SetMapping(std::move(value)); return *this;}
 
     /**
      * <p>Reference to the data element in the streaming input of the reference data
@@ -145,7 +146,7 @@ namespace Model
      * <p>Type of column created in the in-application input stream or reference
      * table.</p>
      */
-    inline void SetSqlType(Aws::String&& value) { m_sqlTypeHasBeenSet = true; m_sqlType = value; }
+    inline void SetSqlType(Aws::String&& value) { m_sqlTypeHasBeenSet = true; m_sqlType = std::move(value); }
 
     /**
      * <p>Type of column created in the in-application input stream or reference
@@ -163,7 +164,7 @@ namespace Model
      * <p>Type of column created in the in-application input stream or reference
      * table.</p>
      */
-    inline RecordColumn& WithSqlType(Aws::String&& value) { SetSqlType(value); return *this;}
+    inline RecordColumn& WithSqlType(Aws::String&& value) { SetSqlType(std::move(value)); return *this;}
 
     /**
      * <p>Type of column created in the in-application input stream or reference

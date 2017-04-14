@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -89,7 +90,7 @@ namespace Model
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
      * security groups by name.</p> <p>Default: Describes all your security groups.</p>
      */
-    inline void SetGroupNames(Aws::Vector<Aws::String>&& value) { m_groupNamesHasBeenSet = true; m_groupNames = value; }
+    inline void SetGroupNames(Aws::Vector<Aws::String>&& value) { m_groupNamesHasBeenSet = true; m_groupNames = std::move(value); }
 
     /**
      * <p>[EC2-Classic and default VPC only] One or more security group names. You can
@@ -105,7 +106,7 @@ namespace Model
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
      * security groups by name.</p> <p>Default: Describes all your security groups.</p>
      */
-    inline DescribeSecurityGroupsRequest& WithGroupNames(Aws::Vector<Aws::String>&& value) { SetGroupNames(value); return *this;}
+    inline DescribeSecurityGroupsRequest& WithGroupNames(Aws::Vector<Aws::String>&& value) { SetGroupNames(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-Classic and default VPC only] One or more security group names. You can
@@ -121,7 +122,7 @@ namespace Model
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
      * security groups by name.</p> <p>Default: Describes all your security groups.</p>
      */
-    inline DescribeSecurityGroupsRequest& AddGroupNames(Aws::String&& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
+    inline DescribeSecurityGroupsRequest& AddGroupNames(Aws::String&& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>[EC2-Classic and default VPC only] One or more security group names. You can
@@ -147,7 +148,7 @@ namespace Model
      * <p>One or more security group IDs. Required for security groups in a nondefault
      * VPC.</p> <p>Default: Describes all your security groups.</p>
      */
-    inline void SetGroupIds(Aws::Vector<Aws::String>&& value) { m_groupIdsHasBeenSet = true; m_groupIds = value; }
+    inline void SetGroupIds(Aws::Vector<Aws::String>&& value) { m_groupIdsHasBeenSet = true; m_groupIds = std::move(value); }
 
     /**
      * <p>One or more security group IDs. Required for security groups in a nondefault
@@ -159,7 +160,7 @@ namespace Model
      * <p>One or more security group IDs. Required for security groups in a nondefault
      * VPC.</p> <p>Default: Describes all your security groups.</p>
      */
-    inline DescribeSecurityGroupsRequest& WithGroupIds(Aws::Vector<Aws::String>&& value) { SetGroupIds(value); return *this;}
+    inline DescribeSecurityGroupsRequest& WithGroupIds(Aws::Vector<Aws::String>&& value) { SetGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more security group IDs. Required for security groups in a nondefault
@@ -171,7 +172,7 @@ namespace Model
      * <p>One or more security group IDs. Required for security groups in a nondefault
      * VPC.</p> <p>Default: Describes all your security groups.</p>
      */
-    inline DescribeSecurityGroupsRequest& AddGroupIds(Aws::String&& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
+    inline DescribeSecurityGroupsRequest& AddGroupIds(Aws::String&& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more security group IDs. Required for security groups in a nondefault
@@ -273,7 +274,7 @@ namespace Model
      * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC specified when the
      * security group was created.</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters. If using multiple filters for rules, the results include
@@ -337,7 +338,7 @@ namespace Model
      * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC specified when the
      * security group was created.</p> </li> </ul>
      */
-    inline DescribeSecurityGroupsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeSecurityGroupsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters. If using multiple filters for rules, the results include
@@ -401,7 +402,7 @@ namespace Model
      * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC specified when the
      * security group was created.</p> </li> </ul>
      */
-    inline DescribeSecurityGroupsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeSecurityGroupsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

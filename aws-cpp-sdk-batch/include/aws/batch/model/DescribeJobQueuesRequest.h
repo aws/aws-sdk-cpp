@@ -17,6 +17,7 @@
 #include <aws/batch/BatchRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
      * <p>A list of up to 100 queue names or full queue Amazon Resource Name (ARN)
      * entries.</p>
      */
-    inline void SetJobQueues(Aws::Vector<Aws::String>&& value) { m_jobQueuesHasBeenSet = true; m_jobQueues = value; }
+    inline void SetJobQueues(Aws::Vector<Aws::String>&& value) { m_jobQueuesHasBeenSet = true; m_jobQueues = std::move(value); }
 
     /**
      * <p>A list of up to 100 queue names or full queue Amazon Resource Name (ARN)
@@ -62,7 +63,7 @@ namespace Model
      * <p>A list of up to 100 queue names or full queue Amazon Resource Name (ARN)
      * entries.</p>
      */
-    inline DescribeJobQueuesRequest& WithJobQueues(Aws::Vector<Aws::String>&& value) { SetJobQueues(value); return *this;}
+    inline DescribeJobQueuesRequest& WithJobQueues(Aws::Vector<Aws::String>&& value) { SetJobQueues(std::move(value)); return *this;}
 
     /**
      * <p>A list of up to 100 queue names or full queue Amazon Resource Name (ARN)
@@ -74,7 +75,7 @@ namespace Model
      * <p>A list of up to 100 queue names or full queue Amazon Resource Name (ARN)
      * entries.</p>
      */
-    inline DescribeJobQueuesRequest& AddJobQueues(Aws::String&& value) { m_jobQueuesHasBeenSet = true; m_jobQueues.push_back(value); return *this; }
+    inline DescribeJobQueuesRequest& AddJobQueues(Aws::String&& value) { m_jobQueuesHasBeenSet = true; m_jobQueues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of up to 100 queue names or full queue Amazon Resource Name (ARN)
@@ -152,7 +153,7 @@ namespace Model
      * to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -188,7 +189,7 @@ namespace Model
      * to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
      */
-    inline DescribeJobQueuesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeJobQueuesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated

@@ -16,6 +16,7 @@
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -82,7 +83,7 @@ namespace Model
      * <a>ESPartitionInstanceType</a> </code> upto which you don't need any master
      * nodes to govern them. </ul> </p>
      */
-    inline void SetLimitName(Aws::String&& value) { m_limitNameHasBeenSet = true; m_limitName = value; }
+    inline void SetLimitName(Aws::String&& value) { m_limitNameHasBeenSet = true; m_limitName = std::move(value); }
 
     /**
      * <p> Name of Additional Limit is specific to a given InstanceType and for each of
@@ -121,7 +122,7 @@ namespace Model
      * <a>ESPartitionInstanceType</a> </code> upto which you don't need any master
      * nodes to govern them. </ul> </p>
      */
-    inline AdditionalLimit& WithLimitName(Aws::String&& value) { SetLimitName(value); return *this;}
+    inline AdditionalLimit& WithLimitName(Aws::String&& value) { SetLimitName(std::move(value)); return *this;}
 
     /**
      * <p> Name of Additional Limit is specific to a given InstanceType and for each of
@@ -149,7 +150,7 @@ namespace Model
     /**
      * <p> Value for given <code> <a>AdditionalLimit$LimitName</a> </code> . </p>
      */
-    inline void SetLimitValues(Aws::Vector<Aws::String>&& value) { m_limitValuesHasBeenSet = true; m_limitValues = value; }
+    inline void SetLimitValues(Aws::Vector<Aws::String>&& value) { m_limitValuesHasBeenSet = true; m_limitValues = std::move(value); }
 
     /**
      * <p> Value for given <code> <a>AdditionalLimit$LimitName</a> </code> . </p>
@@ -159,7 +160,7 @@ namespace Model
     /**
      * <p> Value for given <code> <a>AdditionalLimit$LimitName</a> </code> . </p>
      */
-    inline AdditionalLimit& WithLimitValues(Aws::Vector<Aws::String>&& value) { SetLimitValues(value); return *this;}
+    inline AdditionalLimit& WithLimitValues(Aws::Vector<Aws::String>&& value) { SetLimitValues(std::move(value)); return *this;}
 
     /**
      * <p> Value for given <code> <a>AdditionalLimit$LimitName</a> </code> . </p>
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p> Value for given <code> <a>AdditionalLimit$LimitName</a> </code> . </p>
      */
-    inline AdditionalLimit& AddLimitValues(Aws::String&& value) { m_limitValuesHasBeenSet = true; m_limitValues.push_back(value); return *this; }
+    inline AdditionalLimit& AddLimitValues(Aws::String&& value) { m_limitValuesHasBeenSet = true; m_limitValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p> Value for given <code> <a>AdditionalLimit$LimitName</a> </code> . </p>

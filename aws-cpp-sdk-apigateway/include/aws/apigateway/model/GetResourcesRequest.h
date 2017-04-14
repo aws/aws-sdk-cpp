@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier for the Resource.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The <a>RestApi</a> identifier for the Resource.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier for the Resource.</p>
      */
-    inline GetResourcesRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline GetResourcesRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The <a>RestApi</a> identifier for the Resource.</p>
@@ -79,65 +80,55 @@ namespace Model
     inline GetResourcesRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>The position of the next set of results in the current <a>Resources</a>
-     * resource to get information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline const Aws::String& GetPosition() const{ return m_position; }
 
     /**
-     * <p>The position of the next set of results in the current <a>Resources</a>
-     * resource to get information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
-     * <p>The position of the next set of results in the current <a>Resources</a>
-     * resource to get information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = value; }
+    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
-     * <p>The position of the next set of results in the current <a>Resources</a>
-     * resource to get information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
 
     /**
-     * <p>The position of the next set of results in the current <a>Resources</a>
-     * resource to get information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetResourcesRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The position of the next set of results in the current <a>Resources</a>
-     * resource to get information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
-    inline GetResourcesRequest& WithPosition(Aws::String&& value) { SetPosition(value); return *this;}
+    inline GetResourcesRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
-     * <p>The position of the next set of results in the current <a>Resources</a>
-     * resource to get information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetResourcesRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The maximum number of <a>Resource</a> resources in the collection to get
-     * information about. The default limit is 25. It should be an integer between 1 -
-     * 500.</p>
+     * <p>The maximum number of returned results per page. The value is 25 by default
+     * and could be between 1 - 500.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of <a>Resource</a> resources in the collection to get
-     * information about. The default limit is 25. It should be an integer between 1 -
-     * 500.</p>
+     * <p>The maximum number of returned results per page. The value is 25 by default
+     * and could be between 1 - 500.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of <a>Resource</a> resources in the collection to get
-     * information about. The default limit is 25. It should be an integer between 1 -
-     * 500.</p>
+     * <p>The maximum number of returned results per page. The value is 25 by default
+     * and could be between 1 - 500.</p>
      */
     inline GetResourcesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

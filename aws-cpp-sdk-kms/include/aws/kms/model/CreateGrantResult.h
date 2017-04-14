@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
-    inline void SetGrantToken(Aws::String&& value) { m_grantToken = value; }
+    inline void SetGrantToken(Aws::String&& value) { m_grantToken = std::move(value); }
 
     /**
      * <p>The grant token.</p> <p>For more information, see <a
@@ -79,7 +80,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
-    inline CreateGrantResult& WithGrantToken(Aws::String&& value) { SetGrantToken(value); return *this;}
+    inline CreateGrantResult& WithGrantToken(Aws::String&& value) { SetGrantToken(std::move(value)); return *this;}
 
     /**
      * <p>The grant token.</p> <p>For more information, see <a
@@ -107,7 +108,7 @@ namespace Model
      * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
      * operation.</p>
      */
-    inline void SetGrantId(Aws::String&& value) { m_grantId = value; }
+    inline void SetGrantId(Aws::String&& value) { m_grantId = std::move(value); }
 
     /**
      * <p>The unique identifier for the grant.</p> <p>You can use the
@@ -128,7 +129,7 @@ namespace Model
      * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
      * operation.</p>
      */
-    inline CreateGrantResult& WithGrantId(Aws::String&& value) { SetGrantId(value); return *this;}
+    inline CreateGrantResult& WithGrantId(Aws::String&& value) { SetGrantId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the grant.</p> <p>You can use the

@@ -16,6 +16,7 @@
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The time when the event occurred. </p>
      */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
      * <p>The time when the event occurred. </p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The time when the event occurred. </p>
      */
-    inline ServerEvent& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
+    inline ServerEvent& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
      * <p>The name of the server on or for which the event occurred. </p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The name of the server on or for which the event occurred. </p>
      */
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
+    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
 
     /**
      * <p>The name of the server on or for which the event occurred. </p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The name of the server on or for which the event occurred. </p>
      */
-    inline ServerEvent& WithServerName(Aws::String&& value) { SetServerName(value); return *this;}
+    inline ServerEvent& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the server on or for which the event occurred. </p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>A human-readable informational or status message.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>A human-readable informational or status message.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>A human-readable informational or status message.</p>
      */
-    inline ServerEvent& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline ServerEvent& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>A human-readable informational or status message.</p>
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p>The Amazon S3 URL of the event's log file.</p>
      */
-    inline void SetLogUrl(Aws::String&& value) { m_logUrlHasBeenSet = true; m_logUrl = value; }
+    inline void SetLogUrl(Aws::String&& value) { m_logUrlHasBeenSet = true; m_logUrl = std::move(value); }
 
     /**
      * <p>The Amazon S3 URL of the event's log file.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>The Amazon S3 URL of the event's log file.</p>
      */
-    inline ServerEvent& WithLogUrl(Aws::String&& value) { SetLogUrl(value); return *this;}
+    inline ServerEvent& WithLogUrl(Aws::String&& value) { SetLogUrl(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 URL of the event's log file.</p>

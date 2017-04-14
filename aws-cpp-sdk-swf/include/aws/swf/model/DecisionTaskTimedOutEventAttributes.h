@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/swf/model/DecisionTaskTimeoutType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The type of timeout that expired before the decision task could be
      * completed.</p>
      */
-    inline void SetTimeoutType(DecisionTaskTimeoutType&& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = value; }
+    inline void SetTimeoutType(DecisionTaskTimeoutType&& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = std::move(value); }
 
     /**
      * <p>The type of timeout that expired before the decision task could be
@@ -72,7 +73,7 @@ namespace Model
      * <p>The type of timeout that expired before the decision task could be
      * completed.</p>
      */
-    inline DecisionTaskTimedOutEventAttributes& WithTimeoutType(DecisionTaskTimeoutType&& value) { SetTimeoutType(value); return *this;}
+    inline DecisionTaskTimedOutEventAttributes& WithTimeoutType(DecisionTaskTimeoutType&& value) { SetTimeoutType(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when

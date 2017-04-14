@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The <a>RestApi</a> identifier.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier.</p>
      */
-    inline GetModelsRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline GetModelsRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The <a>RestApi</a> identifier.</p>
@@ -79,62 +80,55 @@ namespace Model
     inline GetModelsRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>The position of the next set of results in the <a>Models</a> resource to get
-     * information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline const Aws::String& GetPosition() const{ return m_position; }
 
     /**
-     * <p>The position of the next set of results in the <a>Models</a> resource to get
-     * information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
-     * <p>The position of the next set of results in the <a>Models</a> resource to get
-     * information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = value; }
+    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
-     * <p>The position of the next set of results in the <a>Models</a> resource to get
-     * information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
 
     /**
-     * <p>The position of the next set of results in the <a>Models</a> resource to get
-     * information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetModelsRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The position of the next set of results in the <a>Models</a> resource to get
-     * information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
-    inline GetModelsRequest& WithPosition(Aws::String&& value) { SetPosition(value); return *this;}
+    inline GetModelsRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
-     * <p>The position of the next set of results in the <a>Models</a> resource to get
-     * information about.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetModelsRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The maximum number of models in the collection to get information about. The
-     * default limit is 25. It should be an integer between 1 - 500.</p>
+     * <p>The maximum number of returned results per page. The value is 25 by default
+     * and could be between 1 - 500.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of models in the collection to get information about. The
-     * default limit is 25. It should be an integer between 1 - 500.</p>
+     * <p>The maximum number of returned results per page. The value is 25 by default
+     * and could be between 1 - 500.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of models in the collection to get information about. The
-     * default limit is 25. It should be an integer between 1 - 500.</p>
+     * <p>The maximum number of returned results per page. The value is 25 by default
+     * and could be between 1 - 500.</p>
      */
     inline GetModelsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

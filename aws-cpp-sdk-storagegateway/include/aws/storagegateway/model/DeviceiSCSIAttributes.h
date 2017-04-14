@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI
      * qualified name(iqn) of a tape drive or media changer target.</p>
      */
-    inline void SetTargetARN(Aws::String&& value) { m_targetARNHasBeenSet = true; m_targetARN = value; }
+    inline void SetTargetARN(Aws::String&& value) { m_targetARNHasBeenSet = true; m_targetARN = std::move(value); }
 
     /**
      * <p>Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI
@@ -77,7 +78,7 @@ namespace Model
      * <p>Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI
      * qualified name(iqn) of a tape drive or media changer target.</p>
      */
-    inline DeviceiSCSIAttributes& WithTargetARN(Aws::String&& value) { SetTargetARN(value); return *this;}
+    inline DeviceiSCSIAttributes& WithTargetARN(Aws::String&& value) { SetTargetARN(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The network interface identifier of the VTL device.</p>
      */
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
 
     /**
      * <p>The network interface identifier of the VTL device.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The network interface identifier of the VTL device.</p>
      */
-    inline DeviceiSCSIAttributes& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(value); return *this;}
+    inline DeviceiSCSIAttributes& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
 
     /**
      * <p>The network interface identifier of the VTL device.</p>

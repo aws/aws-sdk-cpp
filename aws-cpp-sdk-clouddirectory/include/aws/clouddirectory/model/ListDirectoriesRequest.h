@@ -17,6 +17,7 @@
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/DirectoryState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,7 +48,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline ListDirectoriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListDirectoriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>
@@ -100,7 +101,7 @@ namespace Model
      * <p>The state of the directories in the list. Can be either Enabled, Disabled, or
      * Deleted.</p>
      */
-    inline void SetState(DirectoryState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(DirectoryState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the directories in the list. Can be either Enabled, Disabled, or
@@ -112,7 +113,7 @@ namespace Model
      * <p>The state of the directories in the list. Can be either Enabled, Disabled, or
      * Deleted.</p>
      */
-    inline ListDirectoriesRequest& WithState(DirectoryState&& value) { SetState(value); return *this;}
+    inline ListDirectoriesRequest& WithState(DirectoryState&& value) { SetState(std::move(value)); return *this;}
 
   private:
     Aws::String m_nextToken;

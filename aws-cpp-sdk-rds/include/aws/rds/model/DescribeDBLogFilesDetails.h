@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name of the log file for the specified DB instance.</p>
      */
-    inline void SetLogFileName(Aws::String&& value) { m_logFileNameHasBeenSet = true; m_logFileName = value; }
+    inline void SetLogFileName(Aws::String&& value) { m_logFileNameHasBeenSet = true; m_logFileName = std::move(value); }
 
     /**
      * <p>The name of the log file for the specified DB instance.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name of the log file for the specified DB instance.</p>
      */
-    inline DescribeDBLogFilesDetails& WithLogFileName(Aws::String&& value) { SetLogFileName(value); return *this;}
+    inline DescribeDBLogFilesDetails& WithLogFileName(Aws::String&& value) { SetLogFileName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the log file for the specified DB instance.</p>

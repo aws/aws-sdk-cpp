@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
      * <p>The name of the exported output value. AWS CloudFormation returns the stack
      * names that are importing this value. </p>
      */
-    inline void SetExportName(Aws::String&& value) { m_exportNameHasBeenSet = true; m_exportName = value; }
+    inline void SetExportName(Aws::String&& value) { m_exportNameHasBeenSet = true; m_exportName = std::move(value); }
 
     /**
      * <p>The name of the exported output value. AWS CloudFormation returns the stack
@@ -71,7 +72,7 @@ namespace Model
      * <p>The name of the exported output value. AWS CloudFormation returns the stack
      * names that are importing this value. </p>
      */
-    inline ListImportsRequest& WithExportName(Aws::String&& value) { SetExportName(value); return *this;}
+    inline ListImportsRequest& WithExportName(Aws::String&& value) { SetExportName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the exported output value. AWS CloudFormation returns the stack
@@ -98,7 +99,7 @@ namespace Model
      * the next page of stacks that are importing the specified exported output value.
      * </p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>A string (provided by the <a>ListImports</a> response output) that identifies
@@ -119,7 +120,7 @@ namespace Model
      * the next page of stacks that are importing the specified exported output value.
      * </p>
      */
-    inline ListImportsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListImportsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A string (provided by the <a>ListImports</a> response output) that identifies

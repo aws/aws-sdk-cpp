@@ -20,6 +20,7 @@
 #include <aws/datapipeline/model/PipelineObject.h>
 #include <aws/datapipeline/model/ParameterObject.h>
 #include <aws/datapipeline/model/ParameterValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
-    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
+    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::move(value); }
 
     /**
      * <p>The ID of the pipeline.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
-    inline ValidatePipelineDefinitionRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
+    inline ValidatePipelineDefinitionRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the pipeline.</p>
@@ -94,7 +95,7 @@ namespace Model
      * <p>The objects that define the pipeline changes to validate against the
      * pipeline.</p>
      */
-    inline void SetPipelineObjects(Aws::Vector<PipelineObject>&& value) { m_pipelineObjectsHasBeenSet = true; m_pipelineObjects = value; }
+    inline void SetPipelineObjects(Aws::Vector<PipelineObject>&& value) { m_pipelineObjectsHasBeenSet = true; m_pipelineObjects = std::move(value); }
 
     /**
      * <p>The objects that define the pipeline changes to validate against the
@@ -106,7 +107,7 @@ namespace Model
      * <p>The objects that define the pipeline changes to validate against the
      * pipeline.</p>
      */
-    inline ValidatePipelineDefinitionRequest& WithPipelineObjects(Aws::Vector<PipelineObject>&& value) { SetPipelineObjects(value); return *this;}
+    inline ValidatePipelineDefinitionRequest& WithPipelineObjects(Aws::Vector<PipelineObject>&& value) { SetPipelineObjects(std::move(value)); return *this;}
 
     /**
      * <p>The objects that define the pipeline changes to validate against the
@@ -118,7 +119,7 @@ namespace Model
      * <p>The objects that define the pipeline changes to validate against the
      * pipeline.</p>
      */
-    inline ValidatePipelineDefinitionRequest& AddPipelineObjects(PipelineObject&& value) { m_pipelineObjectsHasBeenSet = true; m_pipelineObjects.push_back(value); return *this; }
+    inline ValidatePipelineDefinitionRequest& AddPipelineObjects(PipelineObject&& value) { m_pipelineObjectsHasBeenSet = true; m_pipelineObjects.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The parameter objects used with the pipeline.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The parameter objects used with the pipeline.</p>
      */
-    inline void SetParameterObjects(Aws::Vector<ParameterObject>&& value) { m_parameterObjectsHasBeenSet = true; m_parameterObjects = value; }
+    inline void SetParameterObjects(Aws::Vector<ParameterObject>&& value) { m_parameterObjectsHasBeenSet = true; m_parameterObjects = std::move(value); }
 
     /**
      * <p>The parameter objects used with the pipeline.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The parameter objects used with the pipeline.</p>
      */
-    inline ValidatePipelineDefinitionRequest& WithParameterObjects(Aws::Vector<ParameterObject>&& value) { SetParameterObjects(value); return *this;}
+    inline ValidatePipelineDefinitionRequest& WithParameterObjects(Aws::Vector<ParameterObject>&& value) { SetParameterObjects(std::move(value)); return *this;}
 
     /**
      * <p>The parameter objects used with the pipeline.</p>
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p>The parameter objects used with the pipeline.</p>
      */
-    inline ValidatePipelineDefinitionRequest& AddParameterObjects(ParameterObject&& value) { m_parameterObjectsHasBeenSet = true; m_parameterObjects.push_back(value); return *this; }
+    inline ValidatePipelineDefinitionRequest& AddParameterObjects(ParameterObject&& value) { m_parameterObjectsHasBeenSet = true; m_parameterObjects.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The parameter values used with the pipeline.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>The parameter values used with the pipeline.</p>
      */
-    inline void SetParameterValues(Aws::Vector<ParameterValue>&& value) { m_parameterValuesHasBeenSet = true; m_parameterValues = value; }
+    inline void SetParameterValues(Aws::Vector<ParameterValue>&& value) { m_parameterValuesHasBeenSet = true; m_parameterValues = std::move(value); }
 
     /**
      * <p>The parameter values used with the pipeline.</p>
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>The parameter values used with the pipeline.</p>
      */
-    inline ValidatePipelineDefinitionRequest& WithParameterValues(Aws::Vector<ParameterValue>&& value) { SetParameterValues(value); return *this;}
+    inline ValidatePipelineDefinitionRequest& WithParameterValues(Aws::Vector<ParameterValue>&& value) { SetParameterValues(std::move(value)); return *this;}
 
     /**
      * <p>The parameter values used with the pipeline.</p>
@@ -188,7 +189,7 @@ namespace Model
     /**
      * <p>The parameter values used with the pipeline.</p>
      */
-    inline ValidatePipelineDefinitionRequest& AddParameterValues(ParameterValue&& value) { m_parameterValuesHasBeenSet = true; m_parameterValues.push_back(value); return *this; }
+    inline ValidatePipelineDefinitionRequest& AddParameterValues(ParameterValue&& value) { m_parameterValuesHasBeenSet = true; m_parameterValues.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_pipelineId;

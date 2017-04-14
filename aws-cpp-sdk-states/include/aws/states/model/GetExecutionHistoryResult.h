@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/states/model/HistoryEvent.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The list of events that occurred in the execution.</p>
      */
-    inline void SetEvents(Aws::Vector<HistoryEvent>&& value) { m_events = value; }
+    inline void SetEvents(Aws::Vector<HistoryEvent>&& value) { m_events = std::move(value); }
 
     /**
      * <p>The list of events that occurred in the execution.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The list of events that occurred in the execution.</p>
      */
-    inline GetExecutionHistoryResult& WithEvents(Aws::Vector<HistoryEvent>&& value) { SetEvents(value); return *this;}
+    inline GetExecutionHistoryResult& WithEvents(Aws::Vector<HistoryEvent>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
      * <p>The list of events that occurred in the execution.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The list of events that occurred in the execution.</p>
      */
-    inline GetExecutionHistoryResult& AddEvents(HistoryEvent&& value) { m_events.push_back(value); return *this; }
+    inline GetExecutionHistoryResult& AddEvents(HistoryEvent&& value) { m_events.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If a <code>nextToken</code> is returned, there are more results available. To
@@ -101,7 +102,7 @@ namespace Model
      * configured <code>maxResults</code> determines how many results can be returned
      * in a single call.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If a <code>nextToken</code> is returned, there are more results available. To
@@ -128,7 +129,7 @@ namespace Model
      * configured <code>maxResults</code> determines how many results can be returned
      * in a single call.</p>
      */
-    inline GetExecutionHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline GetExecutionHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If a <code>nextToken</code> is returned, there are more results available. To

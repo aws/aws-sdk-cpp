@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/shield/model/SummarizedAttackVector.h>
 #include <aws/shield/model/SummarizedCounter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The <code>SubResource</code> type.</p>
      */
-    inline void SetType(SubResourceType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(SubResourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The <code>SubResource</code> type.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The <code>SubResource</code> type.</p>
      */
-    inline SubResourceSummary& WithType(SubResourceType&& value) { SetType(value); return *this;}
+    inline SubResourceSummary& WithType(SubResourceType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
      */
-    inline SubResourceSummary& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline SubResourceSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The list of attack types and associated counters.</p>
      */
-    inline void SetAttackVectors(Aws::Vector<SummarizedAttackVector>&& value) { m_attackVectorsHasBeenSet = true; m_attackVectors = value; }
+    inline void SetAttackVectors(Aws::Vector<SummarizedAttackVector>&& value) { m_attackVectorsHasBeenSet = true; m_attackVectors = std::move(value); }
 
     /**
      * <p>The list of attack types and associated counters.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The list of attack types and associated counters.</p>
      */
-    inline SubResourceSummary& WithAttackVectors(Aws::Vector<SummarizedAttackVector>&& value) { SetAttackVectors(value); return *this;}
+    inline SubResourceSummary& WithAttackVectors(Aws::Vector<SummarizedAttackVector>&& value) { SetAttackVectors(std::move(value)); return *this;}
 
     /**
      * <p>The list of attack types and associated counters.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The list of attack types and associated counters.</p>
      */
-    inline SubResourceSummary& AddAttackVectors(SummarizedAttackVector&& value) { m_attackVectorsHasBeenSet = true; m_attackVectors.push_back(value); return *this; }
+    inline SubResourceSummary& AddAttackVectors(SummarizedAttackVector&& value) { m_attackVectorsHasBeenSet = true; m_attackVectors.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The counters that describe the details of the attack.</p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>The counters that describe the details of the attack.</p>
      */
-    inline void SetCounters(Aws::Vector<SummarizedCounter>&& value) { m_countersHasBeenSet = true; m_counters = value; }
+    inline void SetCounters(Aws::Vector<SummarizedCounter>&& value) { m_countersHasBeenSet = true; m_counters = std::move(value); }
 
     /**
      * <p>The counters that describe the details of the attack.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>The counters that describe the details of the attack.</p>
      */
-    inline SubResourceSummary& WithCounters(Aws::Vector<SummarizedCounter>&& value) { SetCounters(value); return *this;}
+    inline SubResourceSummary& WithCounters(Aws::Vector<SummarizedCounter>&& value) { SetCounters(std::move(value)); return *this;}
 
     /**
      * <p>The counters that describe the details of the attack.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>The counters that describe the details of the attack.</p>
      */
-    inline SubResourceSummary& AddCounters(SummarizedCounter&& value) { m_countersHasBeenSet = true; m_counters.push_back(value); return *this; }
+    inline SubResourceSummary& AddCounters(SummarizedCounter&& value) { m_countersHasBeenSet = true; m_counters.push_back(std::move(value)); return *this; }
 
   private:
     SubResourceType m_type;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VpcCidrBlockState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The IPv6 CIDR block.</p>
      */
-    inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
+    inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = std::move(value); }
 
     /**
      * <p>The IPv6 CIDR block.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The IPv6 CIDR block.</p>
      */
-    inline VpcIpv6CidrBlockAssociation& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(value); return *this;}
+    inline VpcIpv6CidrBlockAssociation& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The IPv6 CIDR block.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>Information about the state of the CIDR block.</p>
      */
-    inline void SetIpv6CidrBlockState(VpcCidrBlockState&& value) { m_ipv6CidrBlockStateHasBeenSet = true; m_ipv6CidrBlockState = value; }
+    inline void SetIpv6CidrBlockState(VpcCidrBlockState&& value) { m_ipv6CidrBlockStateHasBeenSet = true; m_ipv6CidrBlockState = std::move(value); }
 
     /**
      * <p>Information about the state of the CIDR block.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>Information about the state of the CIDR block.</p>
      */
-    inline VpcIpv6CidrBlockAssociation& WithIpv6CidrBlockState(VpcCidrBlockState&& value) { SetIpv6CidrBlockState(value); return *this;}
+    inline VpcIpv6CidrBlockAssociation& WithIpv6CidrBlockState(VpcCidrBlockState&& value) { SetIpv6CidrBlockState(std::move(value)); return *this;}
 
     /**
      * <p>The association ID for the IPv6 CIDR block.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The association ID for the IPv6 CIDR block.</p>
      */
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
 
     /**
      * <p>The association ID for the IPv6 CIDR block.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The association ID for the IPv6 CIDR block.</p>
      */
-    inline VpcIpv6CidrBlockAssociation& WithAssociationId(Aws::String&& value) { SetAssociationId(value); return *this;}
+    inline VpcIpv6CidrBlockAssociation& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
      * <p>The association ID for the IPv6 CIDR block.</p>

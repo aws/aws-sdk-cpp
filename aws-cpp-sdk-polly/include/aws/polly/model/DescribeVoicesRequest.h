@@ -17,6 +17,7 @@
 #include <aws/polly/PollyRequest.h>
 #include <aws/polly/model/LanguageCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * country code) for filtering the list of voices returned. If you don't specify
      * this optional parameter, all available voices are returned. </p>
      */
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
      * <p> The language identification tag (ISO 639 code for the language name-ISO 3166
@@ -73,7 +74,7 @@ namespace Model
      * country code) for filtering the list of voices returned. If you don't specify
      * this optional parameter, all available voices are returned. </p>
      */
-    inline DescribeVoicesRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(value); return *this;}
+    inline DescribeVoicesRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
     /**
      * <p>An opaque pagination token returned from the previous
@@ -94,7 +95,7 @@ namespace Model
      * <code>DescribeVoices</code> operation. If present, this indicates where to
      * continue the listing.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>An opaque pagination token returned from the previous
@@ -115,7 +116,7 @@ namespace Model
      * <code>DescribeVoices</code> operation. If present, this indicates where to
      * continue the listing.</p>
      */
-    inline DescribeVoicesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeVoicesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An opaque pagination token returned from the previous

@@ -16,6 +16,7 @@
 #include <aws/sdb/SimpleDB_EXPORTS.h>
 #include <aws/sdb/SimpleDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * The expression used to query the domain.
      */
-    inline void SetSelectExpression(Aws::String&& value) { m_selectExpressionHasBeenSet = true; m_selectExpression = value; }
+    inline void SetSelectExpression(Aws::String&& value) { m_selectExpressionHasBeenSet = true; m_selectExpression = std::move(value); }
 
     /**
      * The expression used to query the domain.
@@ -65,7 +66,7 @@ namespace Model
     /**
      * The expression used to query the domain.
      */
-    inline SelectRequest& WithSelectExpression(Aws::String&& value) { SetSelectExpression(value); return *this;}
+    inline SelectRequest& WithSelectExpression(Aws::String&& value) { SetSelectExpression(std::move(value)); return *this;}
 
     /**
      * The expression used to query the domain.
@@ -88,7 +89,7 @@ namespace Model
      * A string informing Amazon SimpleDB where to start the next list of
      * <code>ItemNames</code>.
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * A string informing Amazon SimpleDB where to start the next list of
@@ -106,7 +107,7 @@ namespace Model
      * A string informing Amazon SimpleDB where to start the next list of
      * <code>ItemNames</code>.
      */
-    inline SelectRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline SelectRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * A string informing Amazon SimpleDB where to start the next list of

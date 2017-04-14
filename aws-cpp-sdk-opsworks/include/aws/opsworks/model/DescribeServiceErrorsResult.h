@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/ServiceError.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>An array of <code>ServiceError</code> objects that describe the specified
      * service errors.</p>
      */
-    inline void SetServiceErrors(Aws::Vector<ServiceError>&& value) { m_serviceErrors = value; }
+    inline void SetServiceErrors(Aws::Vector<ServiceError>&& value) { m_serviceErrors = std::move(value); }
 
     /**
      * <p>An array of <code>ServiceError</code> objects that describe the specified
@@ -74,7 +75,7 @@ namespace Model
      * <p>An array of <code>ServiceError</code> objects that describe the specified
      * service errors.</p>
      */
-    inline DescribeServiceErrorsResult& WithServiceErrors(Aws::Vector<ServiceError>&& value) { SetServiceErrors(value); return *this;}
+    inline DescribeServiceErrorsResult& WithServiceErrors(Aws::Vector<ServiceError>&& value) { SetServiceErrors(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>ServiceError</code> objects that describe the specified
@@ -86,7 +87,7 @@ namespace Model
      * <p>An array of <code>ServiceError</code> objects that describe the specified
      * service errors.</p>
      */
-    inline DescribeServiceErrorsResult& AddServiceErrors(ServiceError&& value) { m_serviceErrors.push_back(value); return *this; }
+    inline DescribeServiceErrorsResult& AddServiceErrors(ServiceError&& value) { m_serviceErrors.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ServiceError> m_serviceErrors;

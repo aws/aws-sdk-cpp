@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ARN of the schema to update.</p>
      */
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
+    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
 
     /**
      * <p>The ARN of the schema to update.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ARN of the schema to update.</p>
      */
-    inline PutSchemaFromJsonRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(value); return *this;}
+    inline PutSchemaFromJsonRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the schema to update.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The replacement JSON schema.</p>
      */
-    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = value; }
+    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
 
     /**
      * <p>The replacement JSON schema.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The replacement JSON schema.</p>
      */
-    inline PutSchemaFromJsonRequest& WithDocument(Aws::String&& value) { SetDocument(value); return *this;}
+    inline PutSchemaFromJsonRequest& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
 
     /**
      * <p>The replacement JSON schema.</p>

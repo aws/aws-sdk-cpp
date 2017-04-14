@@ -19,6 +19,7 @@
 #include <aws/ec2/model/RuleAction.h>
 #include <aws/ec2/model/IcmpTypeCode.h>
 #include <aws/ec2/model/PortRange.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The protocol. A value of <code>-1</code> means all protocols.</p>
      */
-    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol. A value of <code>-1</code> means all protocols.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The protocol. A value of <code>-1</code> means all protocols.</p>
      */
-    inline NetworkAclEntry& WithProtocol(Aws::String&& value) { SetProtocol(value); return *this;}
+    inline NetworkAclEntry& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
      * <p>The protocol. A value of <code>-1</code> means all protocols.</p>
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
      */
-    inline void SetRuleAction(RuleAction&& value) { m_ruleActionHasBeenSet = true; m_ruleAction = value; }
+    inline void SetRuleAction(RuleAction&& value) { m_ruleActionHasBeenSet = true; m_ruleAction = std::move(value); }
 
     /**
      * <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
      */
-    inline NetworkAclEntry& WithRuleAction(RuleAction&& value) { SetRuleAction(value); return *this;}
+    inline NetworkAclEntry& WithRuleAction(RuleAction&& value) { SetRuleAction(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether the rule is an egress rule (applied to traffic leaving the
@@ -158,7 +159,7 @@ namespace Model
     /**
      * <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
      */
-    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
+    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
 
     /**
      * <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
      */
-    inline NetworkAclEntry& WithCidrBlock(Aws::String&& value) { SetCidrBlock(value); return *this;}
+    inline NetworkAclEntry& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
@@ -193,7 +194,7 @@ namespace Model
     /**
      * <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
      */
-    inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
+    inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = std::move(value); }
 
     /**
      * <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
@@ -208,7 +209,7 @@ namespace Model
     /**
      * <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
      */
-    inline NetworkAclEntry& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(value); return *this;}
+    inline NetworkAclEntry& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
@@ -228,7 +229,7 @@ namespace Model
     /**
      * <p>ICMP protocol: The ICMP type and code.</p>
      */
-    inline void SetIcmpTypeCode(IcmpTypeCode&& value) { m_icmpTypeCodeHasBeenSet = true; m_icmpTypeCode = value; }
+    inline void SetIcmpTypeCode(IcmpTypeCode&& value) { m_icmpTypeCodeHasBeenSet = true; m_icmpTypeCode = std::move(value); }
 
     /**
      * <p>ICMP protocol: The ICMP type and code.</p>
@@ -238,7 +239,7 @@ namespace Model
     /**
      * <p>ICMP protocol: The ICMP type and code.</p>
      */
-    inline NetworkAclEntry& WithIcmpTypeCode(IcmpTypeCode&& value) { SetIcmpTypeCode(value); return *this;}
+    inline NetworkAclEntry& WithIcmpTypeCode(IcmpTypeCode&& value) { SetIcmpTypeCode(std::move(value)); return *this;}
 
     /**
      * <p>TCP or UDP protocols: The range of ports the rule applies to.</p>
@@ -253,7 +254,7 @@ namespace Model
     /**
      * <p>TCP or UDP protocols: The range of ports the rule applies to.</p>
      */
-    inline void SetPortRange(PortRange&& value) { m_portRangeHasBeenSet = true; m_portRange = value; }
+    inline void SetPortRange(PortRange&& value) { m_portRangeHasBeenSet = true; m_portRange = std::move(value); }
 
     /**
      * <p>TCP or UDP protocols: The range of ports the rule applies to.</p>
@@ -263,7 +264,7 @@ namespace Model
     /**
      * <p>TCP or UDP protocols: The range of ports the rule applies to.</p>
      */
-    inline NetworkAclEntry& WithPortRange(PortRange&& value) { SetPortRange(value); return *this;}
+    inline NetworkAclEntry& WithPortRange(PortRange&& value) { SetPortRange(std::move(value)); return *this;}
 
   private:
     int m_ruleNumber;

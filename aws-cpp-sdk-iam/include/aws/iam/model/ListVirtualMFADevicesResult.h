@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/model/ResponseMetadata.h>
 #include <aws/iam/model/VirtualMFADevice.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p> The list of virtual MFA devices in the current account that match the
      * <code>AssignmentStatus</code> value that was passed in the request.</p>
      */
-    inline void SetVirtualMFADevices(Aws::Vector<VirtualMFADevice>&& value) { m_virtualMFADevices = value; }
+    inline void SetVirtualMFADevices(Aws::Vector<VirtualMFADevice>&& value) { m_virtualMFADevices = std::move(value); }
 
     /**
      * <p> The list of virtual MFA devices in the current account that match the
@@ -76,7 +77,7 @@ namespace Model
      * <p> The list of virtual MFA devices in the current account that match the
      * <code>AssignmentStatus</code> value that was passed in the request.</p>
      */
-    inline ListVirtualMFADevicesResult& WithVirtualMFADevices(Aws::Vector<VirtualMFADevice>&& value) { SetVirtualMFADevices(value); return *this;}
+    inline ListVirtualMFADevicesResult& WithVirtualMFADevices(Aws::Vector<VirtualMFADevice>&& value) { SetVirtualMFADevices(std::move(value)); return *this;}
 
     /**
      * <p> The list of virtual MFA devices in the current account that match the
@@ -88,7 +89,7 @@ namespace Model
      * <p> The list of virtual MFA devices in the current account that match the
      * <code>AssignmentStatus</code> value that was passed in the request.</p>
      */
-    inline ListVirtualMFADevicesResult& AddVirtualMFADevices(VirtualMFADevice&& value) { m_virtualMFADevices.push_back(value); return *this; }
+    inline ListVirtualMFADevicesResult& AddVirtualMFADevices(VirtualMFADevice&& value) { m_virtualMFADevices.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
@@ -142,7 +143,7 @@ namespace Model
      * and contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -163,7 +164,7 @@ namespace Model
      * and contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.</p>
      */
-    inline ListVirtualMFADevicesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListVirtualMFADevicesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -179,13 +180,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListVirtualMFADevicesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListVirtualMFADevicesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListVirtualMFADevicesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<VirtualMFADevice> m_virtualMFADevices;

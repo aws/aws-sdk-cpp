@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -73,7 +74,7 @@ namespace Model
      * <code>ByteMatchSet</code> from AWS WAF.</p> <p> <code>ByteMatchSetId</code> is
      * returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
      */
-    inline void SetByteMatchSetId(Aws::String&& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = value; }
+    inline void SetByteMatchSetId(Aws::String&& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = std::move(value); }
 
     /**
      * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
@@ -103,7 +104,7 @@ namespace Model
      * <code>ByteMatchSet</code> from AWS WAF.</p> <p> <code>ByteMatchSetId</code> is
      * returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
      */
-    inline ByteMatchSetSummary& WithByteMatchSetId(Aws::String&& value) { SetByteMatchSetId(value); return *this;}
+    inline ByteMatchSetSummary& WithByteMatchSetId(Aws::String&& value) { SetByteMatchSetId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
@@ -131,7 +132,7 @@ namespace Model
      * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change
      * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change
@@ -149,7 +150,7 @@ namespace Model
      * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change
      * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
      */
-    inline ByteMatchSetSummary& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ByteMatchSetSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/InstanceInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Information about the on-premises instance.</p>
      */
-    inline void SetInstanceInfo(InstanceInfo&& value) { m_instanceInfo = value; }
+    inline void SetInstanceInfo(InstanceInfo&& value) { m_instanceInfo = std::move(value); }
 
     /**
      * <p>Information about the on-premises instance.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Information about the on-premises instance.</p>
      */
-    inline GetOnPremisesInstanceResult& WithInstanceInfo(InstanceInfo&& value) { SetInstanceInfo(value); return *this;}
+    inline GetOnPremisesInstanceResult& WithInstanceInfo(InstanceInfo&& value) { SetInstanceInfo(std::move(value)); return *this;}
 
   private:
     InstanceInfo m_instanceInfo;

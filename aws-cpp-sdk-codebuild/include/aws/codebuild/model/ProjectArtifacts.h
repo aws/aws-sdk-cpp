@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codebuild/model/ArtifactNamespace.h>
 #include <aws/codebuild/model/ArtifactPackaging.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * <code>S3</code>: The build project will store build output in Amazon Simple
      * Storage Service (Amazon S3).</p> </li> </ul>
      */
-    inline void SetType(ArtifactsType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(ArtifactsType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
@@ -95,7 +96,7 @@ namespace Model
      * <code>S3</code>: The build project will store build output in Amazon Simple
      * Storage Service (Amazon S3).</p> </li> </ul>
      */
-    inline ProjectArtifacts& WithType(ArtifactsType&& value) { SetType(value); return *this;}
+    inline ProjectArtifacts& WithType(ArtifactsType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>Information about the build output artifact location, as follows:</p> <ul>
@@ -131,7 +132,7 @@ namespace Model
      * produced.</p> </li> <li> <p>If <code>type</code> is set to <code>S3</code>, this
      * is the name of the output bucket.</p> </li> </ul>
      */
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
      * <p>Information about the build output artifact location, as follows:</p> <ul>
@@ -167,7 +168,7 @@ namespace Model
      * produced.</p> </li> <li> <p>If <code>type</code> is set to <code>S3</code>, this
      * is the name of the output bucket.</p> </li> </ul>
      */
-    inline ProjectArtifacts& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline ProjectArtifacts& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * <p>Information about the build output artifact location, as follows:</p> <ul>
@@ -233,7 +234,7 @@ namespace Model
      * <code>MyArtifact.zip</code>, then the output artifact would be stored in the
      * output bucket at <code>MyArtifacts/MyArtifact.zip</code>.</p>
      */
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that
@@ -287,7 +288,7 @@ namespace Model
      * <code>MyArtifact.zip</code>, then the output artifact would be stored in the
      * output bucket at <code>MyArtifacts/MyArtifact.zip</code>.</p>
      */
-    inline ProjectArtifacts& WithPath(Aws::String&& value) { SetPath(value); return *this;}
+    inline ProjectArtifacts& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that
@@ -368,7 +369,7 @@ namespace Model
      * <code>MyArtifact.zip</code>, then the output artifact would be stored in
      * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
      */
-    inline void SetNamespaceType(ArtifactNamespace&& value) { m_namespaceTypeHasBeenSet = true; m_namespaceType = value; }
+    inline void SetNamespaceType(ArtifactNamespace&& value) { m_namespaceTypeHasBeenSet = true; m_namespaceType = std::move(value); }
 
     /**
      * <p>Along with <code>path</code> and <code>name</code>, the pattern that AWS
@@ -410,7 +411,7 @@ namespace Model
      * <code>MyArtifact.zip</code>, then the output artifact would be stored in
      * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
      */
-    inline ProjectArtifacts& WithNamespaceType(ArtifactNamespace&& value) { SetNamespaceType(value); return *this;}
+    inline ProjectArtifacts& WithNamespaceType(ArtifactNamespace&& value) { SetNamespaceType(std::move(value)); return *this;}
 
     /**
      * <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that
@@ -461,7 +462,7 @@ namespace Model
      * <code>MyArtifact.zip</code>, then the output artifact would be stored in
      * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that
@@ -512,7 +513,7 @@ namespace Model
      * <code>MyArtifact.zip</code>, then the output artifact would be stored in
      * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
      */
-    inline ProjectArtifacts& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ProjectArtifacts& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that
@@ -577,7 +578,7 @@ namespace Model
      * AWS CodeBuild will create in the output bucket a ZIP file containing the build
      * output.</p> </li> </ul> </li> </ul>
      */
-    inline void SetPackaging(ArtifactPackaging&& value) { m_packagingHasBeenSet = true; m_packaging = value; }
+    inline void SetPackaging(ArtifactPackaging&& value) { m_packagingHasBeenSet = true; m_packaging = std::move(value); }
 
     /**
      * <p>The type of build output artifact to create, as follows:</p> <ul> <li> <p>If
@@ -609,7 +610,7 @@ namespace Model
      * AWS CodeBuild will create in the output bucket a ZIP file containing the build
      * output.</p> </li> </ul> </li> </ul>
      */
-    inline ProjectArtifacts& WithPackaging(ArtifactPackaging&& value) { SetPackaging(value); return *this;}
+    inline ProjectArtifacts& WithPackaging(ArtifactPackaging&& value) { SetPackaging(std::move(value)); return *this;}
 
   private:
     ArtifactsType m_type;

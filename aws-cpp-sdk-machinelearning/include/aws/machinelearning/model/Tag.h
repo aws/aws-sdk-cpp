@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>A unique identifier for the tag. Valid characters include Unicode letters,
      * digits, white space, _, ., /, =, +, -, %, and @.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>A unique identifier for the tag. Valid characters include Unicode letters,
@@ -78,7 +79,7 @@ namespace Model
      * <p>A unique identifier for the tag. Valid characters include Unicode letters,
      * digits, white space, _, ., /, =, +, -, %, and @.</p>
      */
-    inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the tag. Valid characters include Unicode letters,
@@ -105,7 +106,7 @@ namespace Model
      * characters include Unicode letters, digits, white space, _, ., /, =, +, -, %,
      * and @.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>An optional string, typically used to describe or define the tag. Valid
@@ -126,7 +127,7 @@ namespace Model
      * characters include Unicode letters, digits, white space, _, ., /, =, +, -, %,
      * and @.</p>
      */
-    inline Tag& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>An optional string, typically used to describe or define the tag. Valid

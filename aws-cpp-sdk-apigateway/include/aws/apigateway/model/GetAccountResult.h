@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/apigateway/model/ThrottleSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
      */
-    inline void SetCloudwatchRoleArn(Aws::String&& value) { m_cloudwatchRoleArn = value; }
+    inline void SetCloudwatchRoleArn(Aws::String&& value) { m_cloudwatchRoleArn = std::move(value); }
 
     /**
      * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
      */
-    inline GetAccountResult& WithCloudwatchRoleArn(Aws::String&& value) { SetCloudwatchRoleArn(value); return *this;}
+    inline GetAccountResult& WithCloudwatchRoleArn(Aws::String&& value) { SetCloudwatchRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
@@ -126,7 +127,7 @@ namespace Model
      * <p>Specifies the API request limits configured for the current
      * <a>Account</a>.</p>
      */
-    inline void SetThrottleSettings(ThrottleSettings&& value) { m_throttleSettings = value; }
+    inline void SetThrottleSettings(ThrottleSettings&& value) { m_throttleSettings = std::move(value); }
 
     /**
      * <p>Specifies the API request limits configured for the current
@@ -138,7 +139,7 @@ namespace Model
      * <p>Specifies the API request limits configured for the current
      * <a>Account</a>.</p>
      */
-    inline GetAccountResult& WithThrottleSettings(ThrottleSettings&& value) { SetThrottleSettings(value); return *this;}
+    inline GetAccountResult& WithThrottleSettings(ThrottleSettings&& value) { SetThrottleSettings(std::move(value)); return *this;}
 
     /**
      * <p>A list of features supported for the account. When usage plans are enabled,
@@ -156,7 +157,7 @@ namespace Model
      * <p>A list of features supported for the account. When usage plans are enabled,
      * the features list will include an entry of <code>"UsagePlans"</code>.</p>
      */
-    inline void SetFeatures(Aws::Vector<Aws::String>&& value) { m_features = value; }
+    inline void SetFeatures(Aws::Vector<Aws::String>&& value) { m_features = std::move(value); }
 
     /**
      * <p>A list of features supported for the account. When usage plans are enabled,
@@ -168,7 +169,7 @@ namespace Model
      * <p>A list of features supported for the account. When usage plans are enabled,
      * the features list will include an entry of <code>"UsagePlans"</code>.</p>
      */
-    inline GetAccountResult& WithFeatures(Aws::Vector<Aws::String>&& value) { SetFeatures(value); return *this;}
+    inline GetAccountResult& WithFeatures(Aws::Vector<Aws::String>&& value) { SetFeatures(std::move(value)); return *this;}
 
     /**
      * <p>A list of features supported for the account. When usage plans are enabled,
@@ -180,7 +181,7 @@ namespace Model
      * <p>A list of features supported for the account. When usage plans are enabled,
      * the features list will include an entry of <code>"UsagePlans"</code>.</p>
      */
-    inline GetAccountResult& AddFeatures(Aws::String&& value) { m_features.push_back(value); return *this; }
+    inline GetAccountResult& AddFeatures(Aws::String&& value) { m_features.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of features supported for the account. When usage plans are enabled,
@@ -201,7 +202,7 @@ namespace Model
     /**
      * <p>The version of the API keys used for the account.</p>
      */
-    inline void SetApiKeyVersion(Aws::String&& value) { m_apiKeyVersion = value; }
+    inline void SetApiKeyVersion(Aws::String&& value) { m_apiKeyVersion = std::move(value); }
 
     /**
      * <p>The version of the API keys used for the account.</p>
@@ -216,7 +217,7 @@ namespace Model
     /**
      * <p>The version of the API keys used for the account.</p>
      */
-    inline GetAccountResult& WithApiKeyVersion(Aws::String&& value) { SetApiKeyVersion(value); return *this;}
+    inline GetAccountResult& WithApiKeyVersion(Aws::String&& value) { SetApiKeyVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the API keys used for the account.</p>

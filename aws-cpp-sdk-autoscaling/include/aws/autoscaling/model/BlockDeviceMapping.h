@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/autoscaling/model/Ebs.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
      */
-    inline void SetVirtualName(Aws::String&& value) { m_virtualNameHasBeenSet = true; m_virtualName = value; }
+    inline void SetVirtualName(Aws::String&& value) { m_virtualNameHasBeenSet = true; m_virtualName = std::move(value); }
 
     /**
      * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
      */
-    inline BlockDeviceMapping& WithVirtualName(Aws::String&& value) { SetVirtualName(value); return *this;}
+    inline BlockDeviceMapping& WithVirtualName(Aws::String&& value) { SetVirtualName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
@@ -98,7 +99,7 @@ namespace Model
      * <p>The device name exposed to the EC2 instance (for example,
      * <code>/dev/sdh</code> or <code>xvdh</code>).</p>
      */
-    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
+    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
 
     /**
      * <p>The device name exposed to the EC2 instance (for example,
@@ -116,7 +117,7 @@ namespace Model
      * <p>The device name exposed to the EC2 instance (for example,
      * <code>/dev/sdh</code> or <code>xvdh</code>).</p>
      */
-    inline BlockDeviceMapping& WithDeviceName(Aws::String&& value) { SetDeviceName(value); return *this;}
+    inline BlockDeviceMapping& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
 
     /**
      * <p>The device name exposed to the EC2 instance (for example,
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The information about the Amazon EBS volume.</p>
      */
-    inline void SetEbs(Ebs&& value) { m_ebsHasBeenSet = true; m_ebs = value; }
+    inline void SetEbs(Ebs&& value) { m_ebsHasBeenSet = true; m_ebs = std::move(value); }
 
     /**
      * <p>The information about the Amazon EBS volume.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The information about the Amazon EBS volume.</p>
      */
-    inline BlockDeviceMapping& WithEbs(Ebs&& value) { SetEbs(value); return *this;}
+    inline BlockDeviceMapping& WithEbs(Ebs&& value) { SetEbs(std::move(value)); return *this;}
 
     /**
      * <p>Suppresses a device mapping.</p> <p>If this parameter is true for the root

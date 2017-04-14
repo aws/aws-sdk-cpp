@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/polly/Polly_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>Lexicon content in string format. The content of a lexicon must be in PLS
      * format.</p>
      */
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = value; }
+    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
      * <p>Lexicon content in string format. The content of a lexicon must be in PLS
@@ -80,7 +81,7 @@ namespace Model
      * <p>Lexicon content in string format. The content of a lexicon must be in PLS
      * format.</p>
      */
-    inline Lexicon& WithContent(Aws::String&& value) { SetContent(value); return *this;}
+    inline Lexicon& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
      * <p>Lexicon content in string format. The content of a lexicon must be in PLS
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>Name of the lexicon.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Name of the lexicon.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>Name of the lexicon.</p>
      */
-    inline Lexicon& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Lexicon& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the lexicon.</p>

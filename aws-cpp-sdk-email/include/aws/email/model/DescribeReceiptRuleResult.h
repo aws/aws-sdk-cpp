@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/model/ReceiptRule.h>
 #include <aws/email/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * recipients, domains, enabled status, scan status, and Transport Layer Security
      * (TLS) policy.</p>
      */
-    inline void SetRule(ReceiptRule&& value) { m_rule = value; }
+    inline void SetRule(ReceiptRule&& value) { m_rule = std::move(value); }
 
     /**
      * <p>A data structure that contains the specified receipt rule's name, actions,
@@ -78,7 +79,7 @@ namespace Model
      * recipients, domains, enabled status, scan status, and Transport Layer Security
      * (TLS) policy.</p>
      */
-    inline DescribeReceiptRuleResult& WithRule(ReceiptRule&& value) { SetRule(value); return *this;}
+    inline DescribeReceiptRuleResult& WithRule(ReceiptRule&& value) { SetRule(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -87,13 +88,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeReceiptRuleResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeReceiptRuleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeReceiptRuleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     ReceiptRule m_rule;

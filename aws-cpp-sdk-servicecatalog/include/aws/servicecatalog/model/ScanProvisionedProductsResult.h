@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/model/ProvisionedProductDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of ProvisionedProduct detail objects.</p>
      */
-    inline void SetProvisionedProducts(Aws::Vector<ProvisionedProductDetail>&& value) { m_provisionedProducts = value; }
+    inline void SetProvisionedProducts(Aws::Vector<ProvisionedProductDetail>&& value) { m_provisionedProducts = std::move(value); }
 
     /**
      * <p>A list of ProvisionedProduct detail objects.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of ProvisionedProduct detail objects.</p>
      */
-    inline ScanProvisionedProductsResult& WithProvisionedProducts(Aws::Vector<ProvisionedProductDetail>&& value) { SetProvisionedProducts(value); return *this;}
+    inline ScanProvisionedProductsResult& WithProvisionedProducts(Aws::Vector<ProvisionedProductDetail>&& value) { SetProvisionedProducts(std::move(value)); return *this;}
 
     /**
      * <p>A list of ProvisionedProduct detail objects.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of ProvisionedProduct detail objects.</p>
      */
-    inline ScanProvisionedProductsResult& AddProvisionedProducts(ProvisionedProductDetail&& value) { m_provisionedProducts.push_back(value); return *this; }
+    inline ScanProvisionedProductsResult& AddProvisionedProducts(ProvisionedProductDetail&& value) { m_provisionedProducts.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -92,7 +93,7 @@ namespace Model
      * <p>The page token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -110,7 +111,7 @@ namespace Model
      * <p>The page token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline ScanProvisionedProductsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline ScanProvisionedProductsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>The page token to use to retrieve the next page of results for this

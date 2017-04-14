@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
+    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -77,7 +78,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline UpdatePortfolioRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(value); return *this;}
+    inline UpdatePortfolioRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The identifier of the portfolio for the update request.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The identifier of the portfolio for the update request.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The identifier of the portfolio for the update request.</p>
      */
-    inline UpdatePortfolioRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline UpdatePortfolioRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the portfolio for the update request.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>The name to use for display purposes.</p>
      */
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
      * <p>The name to use for display purposes.</p>
@@ -149,7 +150,7 @@ namespace Model
     /**
      * <p>The name to use for display purposes.</p>
      */
-    inline UpdatePortfolioRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(value); return *this;}
+    inline UpdatePortfolioRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
      * <p>The name to use for display purposes.</p>
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p>The updated text description of the portfolio.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The updated text description of the portfolio.</p>
@@ -184,7 +185,7 @@ namespace Model
     /**
      * <p>The updated text description of the portfolio.</p>
      */
-    inline UpdatePortfolioRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline UpdatePortfolioRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The updated text description of the portfolio.</p>
@@ -204,7 +205,7 @@ namespace Model
     /**
      * <p>The updated name of the portfolio provider.</p>
      */
-    inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
+    inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = std::move(value); }
 
     /**
      * <p>The updated name of the portfolio provider.</p>
@@ -219,7 +220,7 @@ namespace Model
     /**
      * <p>The updated name of the portfolio provider.</p>
      */
-    inline UpdatePortfolioRequest& WithProviderName(Aws::String&& value) { SetProviderName(value); return *this;}
+    inline UpdatePortfolioRequest& WithProviderName(Aws::String&& value) { SetProviderName(std::move(value)); return *this;}
 
     /**
      * <p>The updated name of the portfolio provider.</p>
@@ -239,7 +240,7 @@ namespace Model
     /**
      * <p>Tags to add to the existing list of tags associated with the portfolio.</p>
      */
-    inline void SetAddTags(Aws::Vector<Tag>&& value) { m_addTagsHasBeenSet = true; m_addTags = value; }
+    inline void SetAddTags(Aws::Vector<Tag>&& value) { m_addTagsHasBeenSet = true; m_addTags = std::move(value); }
 
     /**
      * <p>Tags to add to the existing list of tags associated with the portfolio.</p>
@@ -249,7 +250,7 @@ namespace Model
     /**
      * <p>Tags to add to the existing list of tags associated with the portfolio.</p>
      */
-    inline UpdatePortfolioRequest& WithAddTags(Aws::Vector<Tag>&& value) { SetAddTags(value); return *this;}
+    inline UpdatePortfolioRequest& WithAddTags(Aws::Vector<Tag>&& value) { SetAddTags(std::move(value)); return *this;}
 
     /**
      * <p>Tags to add to the existing list of tags associated with the portfolio.</p>
@@ -259,7 +260,7 @@ namespace Model
     /**
      * <p>Tags to add to the existing list of tags associated with the portfolio.</p>
      */
-    inline UpdatePortfolioRequest& AddAddTags(Tag&& value) { m_addTagsHasBeenSet = true; m_addTags.push_back(value); return *this; }
+    inline UpdatePortfolioRequest& AddAddTags(Tag&& value) { m_addTagsHasBeenSet = true; m_addTags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Tags to remove from the existing list of tags associated with the
@@ -277,7 +278,7 @@ namespace Model
      * <p>Tags to remove from the existing list of tags associated with the
      * portfolio.</p>
      */
-    inline void SetRemoveTags(Aws::Vector<Aws::String>&& value) { m_removeTagsHasBeenSet = true; m_removeTags = value; }
+    inline void SetRemoveTags(Aws::Vector<Aws::String>&& value) { m_removeTagsHasBeenSet = true; m_removeTags = std::move(value); }
 
     /**
      * <p>Tags to remove from the existing list of tags associated with the
@@ -289,7 +290,7 @@ namespace Model
      * <p>Tags to remove from the existing list of tags associated with the
      * portfolio.</p>
      */
-    inline UpdatePortfolioRequest& WithRemoveTags(Aws::Vector<Aws::String>&& value) { SetRemoveTags(value); return *this;}
+    inline UpdatePortfolioRequest& WithRemoveTags(Aws::Vector<Aws::String>&& value) { SetRemoveTags(std::move(value)); return *this;}
 
     /**
      * <p>Tags to remove from the existing list of tags associated with the
@@ -301,7 +302,7 @@ namespace Model
      * <p>Tags to remove from the existing list of tags associated with the
      * portfolio.</p>
      */
-    inline UpdatePortfolioRequest& AddRemoveTags(Aws::String&& value) { m_removeTagsHasBeenSet = true; m_removeTags.push_back(value); return *this; }
+    inline UpdatePortfolioRequest& AddRemoveTags(Aws::String&& value) { m_removeTagsHasBeenSet = true; m_removeTags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Tags to remove from the existing list of tags associated with the

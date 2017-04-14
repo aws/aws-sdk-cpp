@@ -21,6 +21,7 @@
 #include <aws/snowball/model/SnowballType.h>
 #include <aws/snowball/model/ShippingOption.h>
 #include <aws/snowball/model/Notification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The type of job for this cluster. Currently, the only job type supported for
      * clusters is <code>LOCAL_USE</code>.</p>
      */
-    inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+    inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
 
     /**
      * <p>The type of job for this cluster. Currently, the only job type supported for
@@ -68,7 +69,7 @@ namespace Model
      * <p>The type of job for this cluster. Currently, the only job type supported for
      * clusters is <code>LOCAL_USE</code>.</p>
      */
-    inline CreateClusterRequest& WithJobType(JobType&& value) { SetJobType(value); return *this;}
+    inline CreateClusterRequest& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
 
     /**
      * <p>The resources associated with the cluster job. These resources include Amazon
@@ -89,7 +90,7 @@ namespace Model
      * S3 buckets and optional AWS Lambda functions written in the Python language.
      * </p>
      */
-    inline void SetResources(JobResource&& value) { m_resourcesHasBeenSet = true; m_resources = value; }
+    inline void SetResources(JobResource&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
      * <p>The resources associated with the cluster job. These resources include Amazon
@@ -103,7 +104,7 @@ namespace Model
      * S3 buckets and optional AWS Lambda functions written in the Python language.
      * </p>
      */
-    inline CreateClusterRequest& WithResources(JobResource&& value) { SetResources(value); return *this;}
+    inline CreateClusterRequest& WithResources(JobResource&& value) { SetResources(std::move(value)); return *this;}
 
     /**
      * <p>An optional description of this specific cluster, for example
@@ -121,7 +122,7 @@ namespace Model
      * <p>An optional description of this specific cluster, for example
      * <code>Environmental Data Cluster-01</code>.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>An optional description of this specific cluster, for example
@@ -139,7 +140,7 @@ namespace Model
      * <p>An optional description of this specific cluster, for example
      * <code>Environmental Data Cluster-01</code>.</p>
      */
-    inline CreateClusterRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateClusterRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>An optional description of this specific cluster, for example
@@ -160,7 +161,7 @@ namespace Model
     /**
      * <p>The ID for the address that you want the cluster shipped to.&gt;</p>
      */
-    inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = value; }
+    inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = std::move(value); }
 
     /**
      * <p>The ID for the address that you want the cluster shipped to.&gt;</p>
@@ -175,7 +176,7 @@ namespace Model
     /**
      * <p>The ID for the address that you want the cluster shipped to.&gt;</p>
      */
-    inline CreateClusterRequest& WithAddressId(Aws::String&& value) { SetAddressId(value); return *this;}
+    inline CreateClusterRequest& WithAddressId(Aws::String&& value) { SetAddressId(std::move(value)); return *this;}
 
     /**
      * <p>The ID for the address that you want the cluster shipped to.&gt;</p>
@@ -204,7 +205,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
      * API action in AWS Key Management Service (AWS KMS). </p>
      */
-    inline void SetKmsKeyARN(Aws::String&& value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN = value; }
+    inline void SetKmsKeyARN(Aws::String&& value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN = std::move(value); }
 
     /**
      * <p>The <code>KmsKeyARN</code> value that you want to associate with this
@@ -228,7 +229,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
      * API action in AWS Key Management Service (AWS KMS). </p>
      */
-    inline CreateClusterRequest& WithKmsKeyARN(Aws::String&& value) { SetKmsKeyARN(value); return *this;}
+    inline CreateClusterRequest& WithKmsKeyARN(Aws::String&& value) { SetKmsKeyARN(std::move(value)); return *this;}
 
     /**
      * <p>The <code>KmsKeyARN</code> value that you want to associate with this
@@ -260,7 +261,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The <code>RoleARN</code> that you want to associate with this cluster.
@@ -284,7 +285,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
-    inline CreateClusterRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+    inline CreateClusterRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The <code>RoleARN</code> that you want to associate with this cluster.
@@ -310,7 +311,7 @@ namespace Model
      * <p>The type of AWS Snowball appliance to use for this cluster. Currently, the
      * only supported appliance type for cluster jobs is <code>EDGE</code>.</p>
      */
-    inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
+    inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
      * <p>The type of AWS Snowball appliance to use for this cluster. Currently, the
@@ -322,7 +323,7 @@ namespace Model
      * <p>The type of AWS Snowball appliance to use for this cluster. Currently, the
      * only supported appliance type for cluster jobs is <code>EDGE</code>.</p>
      */
-    inline CreateClusterRequest& WithSnowballType(SnowballType&& value) { SetSnowballType(value); return *this;}
+    inline CreateClusterRequest& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 
     /**
      * <p>The shipping speed for each node in this cluster. This speed doesn't dictate
@@ -370,7 +371,7 @@ namespace Model
      * the US, you have access to one-day shipping and two-day shipping.</p> </li>
      * </ul>
      */
-    inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
+    inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = std::move(value); }
 
     /**
      * <p>The shipping speed for each node in this cluster. This speed doesn't dictate
@@ -402,7 +403,7 @@ namespace Model
      * the US, you have access to one-day shipping and two-day shipping.</p> </li>
      * </ul>
      */
-    inline CreateClusterRequest& WithShippingOption(ShippingOption&& value) { SetShippingOption(value); return *this;}
+    inline CreateClusterRequest& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for
@@ -420,7 +421,7 @@ namespace Model
      * <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for
      * this cluster.</p>
      */
-    inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = value; }
+    inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
 
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for
@@ -432,7 +433,7 @@ namespace Model
      * <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for
      * this cluster.</p>
      */
-    inline CreateClusterRequest& WithNotification(Notification&& value) { SetNotification(value); return *this;}
+    inline CreateClusterRequest& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
 
   private:
     JobType m_jobType;

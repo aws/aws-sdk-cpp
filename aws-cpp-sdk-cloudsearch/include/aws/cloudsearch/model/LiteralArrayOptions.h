@@ -16,6 +16,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * A value to use for the field if the field isn't specified for a document.
      */
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
 
     /**
      * A value to use for the field if the field isn't specified for a document.
@@ -77,7 +78,7 @@ namespace Model
     /**
      * A value to use for the field if the field isn't specified for a document.
      */
-    inline LiteralArrayOptions& WithDefaultValue(Aws::String&& value) { SetDefaultValue(value); return *this;}
+    inline LiteralArrayOptions& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
 
     /**
      * A value to use for the field if the field isn't specified for a document.
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>A list of source fields to map to the field. </p>
      */
-    inline void SetSourceFields(Aws::String&& value) { m_sourceFieldsHasBeenSet = true; m_sourceFields = value; }
+    inline void SetSourceFields(Aws::String&& value) { m_sourceFieldsHasBeenSet = true; m_sourceFields = std::move(value); }
 
     /**
      * <p>A list of source fields to map to the field. </p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>A list of source fields to map to the field. </p>
      */
-    inline LiteralArrayOptions& WithSourceFields(Aws::String&& value) { SetSourceFields(value); return *this;}
+    inline LiteralArrayOptions& WithSourceFields(Aws::String&& value) { SetSourceFields(std::move(value)); return *this;}
 
     /**
      * <p>A list of source fields to map to the field. </p>

@@ -17,6 +17,7 @@
 #include <aws/swf/SWFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/swf/model/TaskList.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The name of the domain that contains the task list.</p>
      */
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The name of the domain that contains the task list.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name of the domain that contains the task list.</p>
      */
-    inline CountPendingDecisionTasksRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+    inline CountPendingDecisionTasksRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain that contains the task list.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The name of the task list.</p>
      */
-    inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = value; }
+    inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
 
     /**
      * <p>The name of the task list.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The name of the task list.</p>
      */
-    inline CountPendingDecisionTasksRequest& WithTaskList(TaskList&& value) { SetTaskList(value); return *this;}
+    inline CountPendingDecisionTasksRequest& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
 
   private:
     Aws::String m_domain;

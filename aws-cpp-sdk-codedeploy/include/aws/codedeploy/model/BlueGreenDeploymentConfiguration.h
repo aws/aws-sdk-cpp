@@ -17,6 +17,7 @@
 #include <aws/codedeploy/model/BlueInstanceTerminationOption.h>
 #include <aws/codedeploy/model/DeploymentReadyOption.h>
 #include <aws/codedeploy/model/GreenFleetProvisioningOption.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>Information about whether to terminate instances in the original fleet during
      * a blue/green deployment.</p>
      */
-    inline void SetTerminateBlueInstancesOnDeploymentSuccess(BlueInstanceTerminationOption&& value) { m_terminateBlueInstancesOnDeploymentSuccessHasBeenSet = true; m_terminateBlueInstancesOnDeploymentSuccess = value; }
+    inline void SetTerminateBlueInstancesOnDeploymentSuccess(BlueInstanceTerminationOption&& value) { m_terminateBlueInstancesOnDeploymentSuccessHasBeenSet = true; m_terminateBlueInstancesOnDeploymentSuccess = std::move(value); }
 
     /**
      * <p>Information about whether to terminate instances in the original fleet during
@@ -74,7 +75,7 @@ namespace Model
      * <p>Information about whether to terminate instances in the original fleet during
      * a blue/green deployment.</p>
      */
-    inline BlueGreenDeploymentConfiguration& WithTerminateBlueInstancesOnDeploymentSuccess(BlueInstanceTerminationOption&& value) { SetTerminateBlueInstancesOnDeploymentSuccess(value); return *this;}
+    inline BlueGreenDeploymentConfiguration& WithTerminateBlueInstancesOnDeploymentSuccess(BlueInstanceTerminationOption&& value) { SetTerminateBlueInstancesOnDeploymentSuccess(std::move(value)); return *this;}
 
     /**
      * <p>Information about the action to take when newly provisioned instances are
@@ -92,7 +93,7 @@ namespace Model
      * <p>Information about the action to take when newly provisioned instances are
      * ready to receive traffic in a blue/green deployment.</p>
      */
-    inline void SetDeploymentReadyOption(DeploymentReadyOption&& value) { m_deploymentReadyOptionHasBeenSet = true; m_deploymentReadyOption = value; }
+    inline void SetDeploymentReadyOption(DeploymentReadyOption&& value) { m_deploymentReadyOptionHasBeenSet = true; m_deploymentReadyOption = std::move(value); }
 
     /**
      * <p>Information about the action to take when newly provisioned instances are
@@ -104,7 +105,7 @@ namespace Model
      * <p>Information about the action to take when newly provisioned instances are
      * ready to receive traffic in a blue/green deployment.</p>
      */
-    inline BlueGreenDeploymentConfiguration& WithDeploymentReadyOption(DeploymentReadyOption&& value) { SetDeploymentReadyOption(value); return *this;}
+    inline BlueGreenDeploymentConfiguration& WithDeploymentReadyOption(DeploymentReadyOption&& value) { SetDeploymentReadyOption(std::move(value)); return *this;}
 
     /**
      * <p>Information about how instances are provisioned for a replacement environment
@@ -122,7 +123,7 @@ namespace Model
      * <p>Information about how instances are provisioned for a replacement environment
      * in a blue/green deployment.</p>
      */
-    inline void SetGreenFleetProvisioningOption(GreenFleetProvisioningOption&& value) { m_greenFleetProvisioningOptionHasBeenSet = true; m_greenFleetProvisioningOption = value; }
+    inline void SetGreenFleetProvisioningOption(GreenFleetProvisioningOption&& value) { m_greenFleetProvisioningOptionHasBeenSet = true; m_greenFleetProvisioningOption = std::move(value); }
 
     /**
      * <p>Information about how instances are provisioned for a replacement environment
@@ -134,7 +135,7 @@ namespace Model
      * <p>Information about how instances are provisioned for a replacement environment
      * in a blue/green deployment.</p>
      */
-    inline BlueGreenDeploymentConfiguration& WithGreenFleetProvisioningOption(GreenFleetProvisioningOption&& value) { SetGreenFleetProvisioningOption(value); return *this;}
+    inline BlueGreenDeploymentConfiguration& WithGreenFleetProvisioningOption(GreenFleetProvisioningOption&& value) { SetGreenFleetProvisioningOption(std::move(value)); return *this;}
 
   private:
     BlueInstanceTerminationOption m_terminateBlueInstancesOnDeploymentSuccess;

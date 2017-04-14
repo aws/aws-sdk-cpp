@@ -17,6 +17,7 @@
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mturk-requester/model/QualificationStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The ID of the Qualification type of the Qualifications to return.</p>
      */
-    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
+    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = std::move(value); }
 
     /**
      * <p>The ID of the Qualification type of the Qualifications to return.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The ID of the Qualification type of the Qualifications to return.</p>
      */
-    inline ListWorkersWithQualificationTypeRequest& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(value); return *this;}
+    inline ListWorkersWithQualificationTypeRequest& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Qualification type of the Qualifications to return.</p>
@@ -87,7 +88,7 @@ namespace Model
      * <p> The status of the Qualifications to return. Can be <code>Granted |
      * Revoked</code>. </p>
      */
-    inline void SetStatus(QualificationStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(QualificationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p> The status of the Qualifications to return. Can be <code>Granted |
@@ -99,7 +100,7 @@ namespace Model
      * <p> The status of the Qualifications to return. Can be <code>Granted |
      * Revoked</code>. </p>
      */
-    inline ListWorkersWithQualificationTypeRequest& WithStatus(QualificationStatus&& value) { SetStatus(value); return *this;}
+    inline ListWorkersWithQualificationTypeRequest& WithStatus(QualificationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Pagination Token</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>Pagination Token</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Pagination Token</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>Pagination Token</p>
      */
-    inline ListWorkersWithQualificationTypeRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListWorkersWithQualificationTypeRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Pagination Token</p>

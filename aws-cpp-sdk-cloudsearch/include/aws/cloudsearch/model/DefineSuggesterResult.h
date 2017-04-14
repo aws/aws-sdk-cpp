@@ -16,6 +16,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/cloudsearch/model/SuggesterStatus.h>
 #include <aws/cloudsearch/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,13 +54,13 @@ namespace Model
     inline void SetSuggester(const SuggesterStatus& value) { m_suggester = value; }
 
     
-    inline void SetSuggester(SuggesterStatus&& value) { m_suggester = value; }
+    inline void SetSuggester(SuggesterStatus&& value) { m_suggester = std::move(value); }
 
     
     inline DefineSuggesterResult& WithSuggester(const SuggesterStatus& value) { SetSuggester(value); return *this;}
 
     
-    inline DefineSuggesterResult& WithSuggester(SuggesterStatus&& value) { SetSuggester(value); return *this;}
+    inline DefineSuggesterResult& WithSuggester(SuggesterStatus&& value) { SetSuggester(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -68,13 +69,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DefineSuggesterResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DefineSuggesterResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DefineSuggesterResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     SuggesterStatus m_suggester;

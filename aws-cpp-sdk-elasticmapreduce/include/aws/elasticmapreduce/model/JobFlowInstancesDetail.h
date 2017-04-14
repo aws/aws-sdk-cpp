@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/PlacementType.h>
 #include <aws/elasticmapreduce/model/InstanceGroupDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The Amazon EC2 master node instance type.</p>
      */
-    inline void SetMasterInstanceType(Aws::String&& value) { m_masterInstanceTypeHasBeenSet = true; m_masterInstanceType = value; }
+    inline void SetMasterInstanceType(Aws::String&& value) { m_masterInstanceTypeHasBeenSet = true; m_masterInstanceType = std::move(value); }
 
     /**
      * <p>The Amazon EC2 master node instance type.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The Amazon EC2 master node instance type.</p>
      */
-    inline JobFlowInstancesDetail& WithMasterInstanceType(Aws::String&& value) { SetMasterInstanceType(value); return *this;}
+    inline JobFlowInstancesDetail& WithMasterInstanceType(Aws::String&& value) { SetMasterInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon EC2 master node instance type.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The DNS name of the master node.</p>
      */
-    inline void SetMasterPublicDnsName(Aws::String&& value) { m_masterPublicDnsNameHasBeenSet = true; m_masterPublicDnsName = value; }
+    inline void SetMasterPublicDnsName(Aws::String&& value) { m_masterPublicDnsNameHasBeenSet = true; m_masterPublicDnsName = std::move(value); }
 
     /**
      * <p>The DNS name of the master node.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The DNS name of the master node.</p>
      */
-    inline JobFlowInstancesDetail& WithMasterPublicDnsName(Aws::String&& value) { SetMasterPublicDnsName(value); return *this;}
+    inline JobFlowInstancesDetail& WithMasterPublicDnsName(Aws::String&& value) { SetMasterPublicDnsName(std::move(value)); return *this;}
 
     /**
      * <p>The DNS name of the master node.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance identifier of the master node.</p>
      */
-    inline void SetMasterInstanceId(Aws::String&& value) { m_masterInstanceIdHasBeenSet = true; m_masterInstanceId = value; }
+    inline void SetMasterInstanceId(Aws::String&& value) { m_masterInstanceIdHasBeenSet = true; m_masterInstanceId = std::move(value); }
 
     /**
      * <p>The Amazon EC2 instance identifier of the master node.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance identifier of the master node.</p>
      */
-    inline JobFlowInstancesDetail& WithMasterInstanceId(Aws::String&& value) { SetMasterInstanceId(value); return *this;}
+    inline JobFlowInstancesDetail& WithMasterInstanceId(Aws::String&& value) { SetMasterInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon EC2 instance identifier of the master node.</p>
@@ -165,7 +166,7 @@ namespace Model
     /**
      * <p>The Amazon EC2 slave node instance type.</p>
      */
-    inline void SetSlaveInstanceType(Aws::String&& value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType = value; }
+    inline void SetSlaveInstanceType(Aws::String&& value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType = std::move(value); }
 
     /**
      * <p>The Amazon EC2 slave node instance type.</p>
@@ -180,7 +181,7 @@ namespace Model
     /**
      * <p>The Amazon EC2 slave node instance type.</p>
      */
-    inline JobFlowInstancesDetail& WithSlaveInstanceType(Aws::String&& value) { SetSlaveInstanceType(value); return *this;}
+    inline JobFlowInstancesDetail& WithSlaveInstanceType(Aws::String&& value) { SetSlaveInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon EC2 slave node instance type.</p>
@@ -221,7 +222,7 @@ namespace Model
     /**
      * <p>Details about the instance groups in a cluster.</p>
      */
-    inline void SetInstanceGroups(Aws::Vector<InstanceGroupDetail>&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
+    inline void SetInstanceGroups(Aws::Vector<InstanceGroupDetail>&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = std::move(value); }
 
     /**
      * <p>Details about the instance groups in a cluster.</p>
@@ -231,7 +232,7 @@ namespace Model
     /**
      * <p>Details about the instance groups in a cluster.</p>
      */
-    inline JobFlowInstancesDetail& WithInstanceGroups(Aws::Vector<InstanceGroupDetail>&& value) { SetInstanceGroups(value); return *this;}
+    inline JobFlowInstancesDetail& WithInstanceGroups(Aws::Vector<InstanceGroupDetail>&& value) { SetInstanceGroups(std::move(value)); return *this;}
 
     /**
      * <p>Details about the instance groups in a cluster.</p>
@@ -241,7 +242,7 @@ namespace Model
     /**
      * <p>Details about the instance groups in a cluster.</p>
      */
-    inline JobFlowInstancesDetail& AddInstanceGroups(InstanceGroupDetail&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
+    inline JobFlowInstancesDetail& AddInstanceGroups(InstanceGroupDetail&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
@@ -289,7 +290,7 @@ namespace Model
      * <p>The name of an Amazon EC2 key pair that can be used to ssh to the master
      * node.</p>
      */
-    inline void SetEc2KeyName(Aws::String&& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = value; }
+    inline void SetEc2KeyName(Aws::String&& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = std::move(value); }
 
     /**
      * <p>The name of an Amazon EC2 key pair that can be used to ssh to the master
@@ -307,7 +308,7 @@ namespace Model
      * <p>The name of an Amazon EC2 key pair that can be used to ssh to the master
      * node.</p>
      */
-    inline JobFlowInstancesDetail& WithEc2KeyName(Aws::String&& value) { SetEc2KeyName(value); return *this;}
+    inline JobFlowInstancesDetail& WithEc2KeyName(Aws::String&& value) { SetEc2KeyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of an Amazon EC2 key pair that can be used to ssh to the master
@@ -331,7 +332,7 @@ namespace Model
      * <p>For clusters launched within Amazon Virtual Private Cloud, this is the
      * identifier of the subnet where the cluster was launched.</p>
      */
-    inline void SetEc2SubnetId(Aws::String&& value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId = value; }
+    inline void SetEc2SubnetId(Aws::String&& value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId = std::move(value); }
 
     /**
      * <p>For clusters launched within Amazon Virtual Private Cloud, this is the
@@ -349,7 +350,7 @@ namespace Model
      * <p>For clusters launched within Amazon Virtual Private Cloud, this is the
      * identifier of the subnet where the cluster was launched.</p>
      */
-    inline JobFlowInstancesDetail& WithEc2SubnetId(Aws::String&& value) { SetEc2SubnetId(value); return *this;}
+    inline JobFlowInstancesDetail& WithEc2SubnetId(Aws::String&& value) { SetEc2SubnetId(std::move(value)); return *this;}
 
     /**
      * <p>For clusters launched within Amazon Virtual Private Cloud, this is the
@@ -370,7 +371,7 @@ namespace Model
     /**
      * <p>The Amazon EC2 Availability Zone for the cluster.</p>
      */
-    inline void SetPlacement(PlacementType&& value) { m_placementHasBeenSet = true; m_placement = value; }
+    inline void SetPlacement(PlacementType&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
 
     /**
      * <p>The Amazon EC2 Availability Zone for the cluster.</p>
@@ -380,7 +381,7 @@ namespace Model
     /**
      * <p>The Amazon EC2 Availability Zone for the cluster.</p>
      */
-    inline JobFlowInstancesDetail& WithPlacement(PlacementType&& value) { SetPlacement(value); return *this;}
+    inline JobFlowInstancesDetail& WithPlacement(PlacementType&& value) { SetPlacement(std::move(value)); return *this;}
 
     /**
      * <p>Specifies whether the cluster should remain available after completing all
@@ -434,7 +435,7 @@ namespace Model
     /**
      * <p>The Hadoop version for the cluster.</p>
      */
-    inline void SetHadoopVersion(Aws::String&& value) { m_hadoopVersionHasBeenSet = true; m_hadoopVersion = value; }
+    inline void SetHadoopVersion(Aws::String&& value) { m_hadoopVersionHasBeenSet = true; m_hadoopVersion = std::move(value); }
 
     /**
      * <p>The Hadoop version for the cluster.</p>
@@ -449,7 +450,7 @@ namespace Model
     /**
      * <p>The Hadoop version for the cluster.</p>
      */
-    inline JobFlowInstancesDetail& WithHadoopVersion(Aws::String&& value) { SetHadoopVersion(value); return *this;}
+    inline JobFlowInstancesDetail& WithHadoopVersion(Aws::String&& value) { SetHadoopVersion(std::move(value)); return *this;}
 
     /**
      * <p>The Hadoop version for the cluster.</p>

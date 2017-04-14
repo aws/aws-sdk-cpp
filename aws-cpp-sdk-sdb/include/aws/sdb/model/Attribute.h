@@ -16,6 +16,7 @@
 #include <aws/sdb/SimpleDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * The name of the attribute.
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * The name of the attribute.
@@ -74,7 +75,7 @@ namespace Model
     /**
      * The name of the attribute.
      */
-    inline Attribute& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Attribute& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * The name of the attribute.
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline void SetAlternateNameEncoding(Aws::String&& value) { m_alternateNameEncodingHasBeenSet = true; m_alternateNameEncoding = value; }
+    inline void SetAlternateNameEncoding(Aws::String&& value) { m_alternateNameEncodingHasBeenSet = true; m_alternateNameEncoding = std::move(value); }
 
     /**
      * <p></p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline Attribute& WithAlternateNameEncoding(Aws::String&& value) { SetAlternateNameEncoding(value); return *this;}
+    inline Attribute& WithAlternateNameEncoding(Aws::String&& value) { SetAlternateNameEncoding(std::move(value)); return *this;}
 
     /**
      * <p></p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * The value of the attribute.
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * The value of the attribute.
@@ -144,7 +145,7 @@ namespace Model
     /**
      * The value of the attribute.
      */
-    inline Attribute& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Attribute& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * The value of the attribute.
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline void SetAlternateValueEncoding(Aws::String&& value) { m_alternateValueEncodingHasBeenSet = true; m_alternateValueEncoding = value; }
+    inline void SetAlternateValueEncoding(Aws::String&& value) { m_alternateValueEncodingHasBeenSet = true; m_alternateValueEncoding = std::move(value); }
 
     /**
      * <p></p>
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline Attribute& WithAlternateValueEncoding(Aws::String&& value) { SetAlternateValueEncoding(value); return *this;}
+    inline Attribute& WithAlternateValueEncoding(Aws::String&& value) { SetAlternateValueEncoding(std::move(value)); return *this;}
 
     /**
      * <p></p>

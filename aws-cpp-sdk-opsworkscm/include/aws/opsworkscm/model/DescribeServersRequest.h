@@ -16,6 +16,7 @@
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
 #include <aws/opsworkscm/OpsWorksCMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>Describes the server with the specified ServerName.</p>
      */
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
+    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
 
     /**
      * <p>Describes the server with the specified ServerName.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Describes the server with the specified ServerName.</p>
      */
-    inline DescribeServersRequest& WithServerName(Aws::String&& value) { SetServerName(value); return *this;}
+    inline DescribeServersRequest& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
 
     /**
      * <p>Describes the server with the specified ServerName.</p>
@@ -107,7 +108,7 @@ namespace Model
      * in your previous results causes an <code>InvalidNextTokenException</code> to
      * occur. </p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>NextToken is a string that is returned in some command responses. It
@@ -146,7 +147,7 @@ namespace Model
      * in your previous results causes an <code>InvalidNextTokenException</code> to
      * occur. </p>
      */
-    inline DescribeServersRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeServersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>NextToken is a string that is returned in some command responses. It

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -76,7 +77,7 @@ namespace Model
      * operations. It is not returned in the response to the <a>CreatePolicyVersion</a>
      * or <a>ListPolicyVersions</a> operations. </p>
      */
-    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = value; }
+    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
 
     /**
      * <p>The policy document.</p> <p>The policy document is returned in the response
@@ -100,7 +101,7 @@ namespace Model
      * operations. It is not returned in the response to the <a>CreatePolicyVersion</a>
      * or <a>ListPolicyVersions</a> operations. </p>
      */
-    inline PolicyVersion& WithDocument(Aws::String&& value) { SetDocument(value); return *this;}
+    inline PolicyVersion& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
 
     /**
      * <p>The policy document.</p> <p>The policy document is returned in the response
@@ -129,7 +130,7 @@ namespace Model
      * always begin with <code>v</code> (always lowercase). When a policy is created,
      * the first policy version is <code>v1</code>. </p>
      */
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     /**
      * <p>The identifier for the policy version.</p> <p>Policy version identifiers
@@ -150,7 +151,7 @@ namespace Model
      * always begin with <code>v</code> (always lowercase). When a policy is created,
      * the first policy version is <code>v1</code>. </p>
      */
-    inline PolicyVersion& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
+    inline PolicyVersion& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the policy version.</p> <p>Policy version identifiers
@@ -193,7 +194,7 @@ namespace Model
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the policy version was created.</p>
      */
-    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = value; }
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -205,7 +206,7 @@ namespace Model
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the policy version was created.</p>
      */
-    inline PolicyVersion& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(value); return *this;}
+    inline PolicyVersion& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_document;

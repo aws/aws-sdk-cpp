@@ -16,6 +16,7 @@
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/cloudtrail/CloudTrailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * <p>If you specify a trail ARN, it must be in the format:</p> <p>
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
      */
-    inline void SetTrailName(Aws::String&& value) { m_trailNameHasBeenSet = true; m_trailName = value; }
+    inline void SetTrailName(Aws::String&& value) { m_trailNameHasBeenSet = true; m_trailName = std::move(value); }
 
     /**
      * <p>Specifies the name of the trail or trail ARN. If you specify a trail name,
@@ -117,7 +118,7 @@ namespace Model
      * <p>If you specify a trail ARN, it must be in the format:</p> <p>
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
      */
-    inline GetEventSelectorsRequest& WithTrailName(Aws::String&& value) { SetTrailName(value); return *this;}
+    inline GetEventSelectorsRequest& WithTrailName(Aws::String&& value) { SetTrailName(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the trail or trail ARN. If you specify a trail name,

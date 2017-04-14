@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/StepStateChangeReasonCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The programmable code for the state change reason. Note: Currently, the
      * service provides no code for the state change.</p>
      */
-    inline void SetCode(StepStateChangeReasonCode&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(StepStateChangeReasonCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>The programmable code for the state change reason. Note: Currently, the
@@ -72,7 +73,7 @@ namespace Model
      * <p>The programmable code for the state change reason. Note: Currently, the
      * service provides no code for the state change.</p>
      */
-    inline StepStateChangeReason& WithCode(StepStateChangeReasonCode&& value) { SetCode(value); return *this;}
+    inline StepStateChangeReason& WithCode(StepStateChangeReasonCode&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>The descriptive message for the state change reason.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The descriptive message for the state change reason.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The descriptive message for the state change reason.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The descriptive message for the state change reason.</p>
      */
-    inline StepStateChangeReason& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline StepStateChangeReason& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The descriptive message for the state change reason.</p>

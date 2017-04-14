@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
      * applies only to the ARN. If you specify only the function name, it is limited to
      * 64 character in length. </p>
      */
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
      * <p>The Lambda function to delete.</p> <p> You can specify the function name (for
@@ -121,7 +122,7 @@ namespace Model
      * applies only to the ARN. If you specify only the function name, it is limited to
      * 64 character in length. </p>
      */
-    inline DeleteFunctionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
+    inline DeleteFunctionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>The Lambda function to delete.</p> <p> You can specify the function name (for
@@ -180,7 +181,7 @@ namespace Model
      * using its alias.</p> <p>If you don't specify this parameter, AWS Lambda will
      * delete the function, including all of its versions and aliases.</p>
      */
-    inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
+    inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
 
     /**
      * <p>Using this optional parameter you can specify a function version (but not the
@@ -225,7 +226,7 @@ namespace Model
      * using its alias.</p> <p>If you don't specify this parameter, AWS Lambda will
      * delete the function, including all of its versions and aliases.</p>
      */
-    inline DeleteFunctionRequest& WithQualifier(Aws::String&& value) { SetQualifier(value); return *this;}
+    inline DeleteFunctionRequest& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
 
     /**
      * <p>Using this optional parameter you can specify a function version (but not the

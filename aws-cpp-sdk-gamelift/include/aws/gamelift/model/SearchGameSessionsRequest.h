@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>Unique identifier for a fleet to search for active game sessions. Each
      * request must reference either a fleet ID or alias ID, but not both.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet to search for active game sessions. Each
@@ -72,7 +73,7 @@ namespace Model
      * <p>Unique identifier for a fleet to search for active game sessions. Each
      * request must reference either a fleet ID or alias ID, but not both.</p>
      */
-    inline SearchGameSessionsRequest& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline SearchGameSessionsRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet to search for active game sessions. Each
@@ -99,7 +100,7 @@ namespace Model
      * game sessions. Each request must reference either a fleet ID or alias ID, but
      * not both.</p>
      */
-    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
+    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
 
     /**
      * <p>Unique identifier for an alias associated with the fleet to search for active
@@ -120,7 +121,7 @@ namespace Model
      * game sessions. Each request must reference either a fleet ID or alias ID, but
      * not both.</p>
      */
-    inline SearchGameSessionsRequest& WithAliasId(Aws::String&& value) { SetAliasId(value); return *this;}
+    inline SearchGameSessionsRequest& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for an alias associated with the fleet to search for active
@@ -223,7 +224,7 @@ namespace Model
      * an open player slot: <code>"maximumSessions&gt;=10 AND
      * hasAvailablePlayerSessions=true"</code>. </p>
      */
-    inline void SetFilterExpression(Aws::String&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = value; }
+    inline void SetFilterExpression(Aws::String&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = std::move(value); }
 
     /**
      * <p>String containing the search criteria for the session search. If no filter
@@ -319,7 +320,7 @@ namespace Model
      * an open player slot: <code>"maximumSessions&gt;=10 AND
      * hasAvailablePlayerSessions=true"</code>. </p>
      */
-    inline SearchGameSessionsRequest& WithFilterExpression(Aws::String&& value) { SetFilterExpression(value); return *this;}
+    inline SearchGameSessionsRequest& WithFilterExpression(Aws::String&& value) { SetFilterExpression(std::move(value)); return *this;}
 
     /**
      * <p>String containing the search criteria for the session search. If no filter
@@ -399,7 +400,7 @@ namespace Model
      * ASC"</code>. Results with a null value for the sort operand are returned at the
      * end of the list.</p>
      */
-    inline void SetSortExpression(Aws::String&& value) { m_sortExpressionHasBeenSet = true; m_sortExpression = value; }
+    inline void SetSortExpression(Aws::String&& value) { m_sortExpressionHasBeenSet = true; m_sortExpression = std::move(value); }
 
     /**
      * <p>Instructions on how to sort the search results. If no sort expression is
@@ -447,7 +448,7 @@ namespace Model
      * ASC"</code>. Results with a null value for the sort operand are returned at the
      * end of the list.</p>
      */
-    inline SearchGameSessionsRequest& WithSortExpression(Aws::String&& value) { SetSortExpression(value); return *this;}
+    inline SearchGameSessionsRequest& WithSortExpression(Aws::String&& value) { SetSortExpression(std::move(value)); return *this;}
 
     /**
      * <p>Instructions on how to sort the search results. If no sort expression is
@@ -508,7 +509,7 @@ namespace Model
      * the token that is returned with a previous call to this action. To specify the
      * start of the result set, do not specify a value.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
@@ -529,7 +530,7 @@ namespace Model
      * the token that is returned with a previous call to this action. To specify the
      * start of the result set, do not specify a value.</p>
      */
-    inline SearchGameSessionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline SearchGameSessionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use

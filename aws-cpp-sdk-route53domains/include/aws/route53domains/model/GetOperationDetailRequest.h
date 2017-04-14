@@ -16,6 +16,7 @@
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/route53domains/Route53DomainsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * Route 53 returned the identifier in the response to the original request.</p>
      * <p>Type: String</p> <p>Default: None</p> <p>Required: Yes</p>
      */
-    inline void SetOperationId(Aws::String&& value) { m_operationIdHasBeenSet = true; m_operationId = value; }
+    inline void SetOperationId(Aws::String&& value) { m_operationIdHasBeenSet = true; m_operationId = std::move(value); }
 
     /**
      * <p>The identifier for the operation for which you want to get the status. Amazon
@@ -79,7 +80,7 @@ namespace Model
      * Route 53 returned the identifier in the response to the original request.</p>
      * <p>Type: String</p> <p>Default: None</p> <p>Required: Yes</p>
      */
-    inline GetOperationDetailRequest& WithOperationId(Aws::String&& value) { SetOperationId(value); return *this;}
+    inline GetOperationDetailRequest& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the operation for which you want to get the status. Amazon

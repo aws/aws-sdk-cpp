@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to associate the IAM role with.</p>
      */
-    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
+    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
      * <p>The name of the DB cluster to associate the IAM role with.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to associate the IAM role with.</p>
      */
-    inline AddRoleToDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(value); return *this;}
+    inline AddRoleToDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB cluster to associate the IAM role with.</p>
@@ -91,7 +92,7 @@ namespace Model
      * DB cluster, for example
      * <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora
@@ -112,7 +113,7 @@ namespace Model
      * DB cluster, for example
      * <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
      */
-    inline AddRoleToDBClusterRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline AddRoleToDBClusterRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora

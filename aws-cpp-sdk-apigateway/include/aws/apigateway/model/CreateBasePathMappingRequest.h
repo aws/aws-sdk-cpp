@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The domain name of the <a>BasePathMapping</a> resource to create.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The domain name of the <a>BasePathMapping</a> resource to create.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The domain name of the <a>BasePathMapping</a> resource to create.</p>
      */
-    inline CreateBasePathMappingRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline CreateBasePathMappingRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The domain name of the <a>BasePathMapping</a> resource to create.</p>
@@ -94,7 +95,7 @@ namespace Model
      * a single API. Leave this blank if you do not want callers to specify a base path
      * name after the domain name.</p>
      */
-    inline void SetBasePath(Aws::String&& value) { m_basePathHasBeenSet = true; m_basePath = value; }
+    inline void SetBasePath(Aws::String&& value) { m_basePathHasBeenSet = true; m_basePath = std::move(value); }
 
     /**
      * <p>The base path name that callers of the API must provide as part of the URL
@@ -118,7 +119,7 @@ namespace Model
      * a single API. Leave this blank if you do not want callers to specify a base path
      * name after the domain name.</p>
      */
-    inline CreateBasePathMappingRequest& WithBasePath(Aws::String&& value) { SetBasePath(value); return *this;}
+    inline CreateBasePathMappingRequest& WithBasePath(Aws::String&& value) { SetBasePath(std::move(value)); return *this;}
 
     /**
      * <p>The base path name that callers of the API must provide as part of the URL
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The name of the API that you want to apply this mapping to.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The name of the API that you want to apply this mapping to.</p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>The name of the API that you want to apply this mapping to.</p>
      */
-    inline CreateBasePathMappingRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline CreateBasePathMappingRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The name of the API that you want to apply this mapping to.</p>
@@ -182,7 +183,7 @@ namespace Model
      * blank if you do not want callers to explicitly specify the stage name after any
      * base path name.</p>
      */
-    inline void SetStage(Aws::String&& value) { m_stageHasBeenSet = true; m_stage = value; }
+    inline void SetStage(Aws::String&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
 
     /**
      * <p>The name of the API's stage that you want to use for this mapping. Leave this
@@ -203,7 +204,7 @@ namespace Model
      * blank if you do not want callers to explicitly specify the stage name after any
      * base path name.</p>
      */
-    inline CreateBasePathMappingRequest& WithStage(Aws::String&& value) { SetStage(value); return *this;}
+    inline CreateBasePathMappingRequest& WithStage(Aws::String&& value) { SetStage(std::move(value)); return *this;}
 
     /**
      * <p>The name of the API's stage that you want to use for this mapping. Leave this

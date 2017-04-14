@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -73,7 +74,7 @@ namespace Model
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
-    inline void SetProvisioned(Aws::String&& value) { m_provisionedHasBeenSet = true; m_provisioned = value; }
+    inline void SetProvisioned(Aws::String&& value) { m_provisionedHasBeenSet = true; m_provisioned = std::move(value); }
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
@@ -97,7 +98,7 @@ namespace Model
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
-    inline ProvisionedBandwidth& WithProvisioned(Aws::String&& value) { SetProvisioned(value); return *this;}
+    inline ProvisionedBandwidth& WithProvisioned(Aws::String&& value) { SetProvisioned(std::move(value)); return *this;}
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
@@ -129,7 +130,7 @@ namespace Model
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
-    inline void SetRequested(Aws::String&& value) { m_requestedHasBeenSet = true; m_requested = value; }
+    inline void SetRequested(Aws::String&& value) { m_requestedHasBeenSet = true; m_requested = std::move(value); }
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
@@ -153,7 +154,7 @@ namespace Model
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
-    inline ProvisionedBandwidth& WithRequested(Aws::String&& value) { SetRequested(value); return *this;}
+    inline ProvisionedBandwidth& WithRequested(Aws::String&& value) { SetRequested(std::move(value)); return *this;}
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
@@ -185,7 +186,7 @@ namespace Model
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
-    inline void SetRequestTime(Aws::Utils::DateTime&& value) { m_requestTimeHasBeenSet = true; m_requestTime = value; }
+    inline void SetRequestTime(Aws::Utils::DateTime&& value) { m_requestTimeHasBeenSet = true; m_requestTime = std::move(value); }
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
@@ -201,7 +202,7 @@ namespace Model
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
-    inline ProvisionedBandwidth& WithRequestTime(Aws::Utils::DateTime&& value) { SetRequestTime(value); return *this;}
+    inline ProvisionedBandwidth& WithRequestTime(Aws::Utils::DateTime&& value) { SetRequestTime(std::move(value)); return *this;}
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
@@ -225,7 +226,7 @@ namespace Model
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
-    inline void SetProvisionTime(Aws::Utils::DateTime&& value) { m_provisionTimeHasBeenSet = true; m_provisionTime = value; }
+    inline void SetProvisionTime(Aws::Utils::DateTime&& value) { m_provisionTimeHasBeenSet = true; m_provisionTime = std::move(value); }
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
@@ -241,7 +242,7 @@ namespace Model
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
-    inline ProvisionedBandwidth& WithProvisionTime(Aws::Utils::DateTime&& value) { SetProvisionTime(value); return *this;}
+    inline ProvisionedBandwidth& WithProvisionTime(Aws::Utils::DateTime&& value) { SetProvisionTime(std::move(value)); return *this;}
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
@@ -265,7 +266,7 @@ namespace Model
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
@@ -289,7 +290,7 @@ namespace Model
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
-    inline ProvisionedBandwidth& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline ProvisionedBandwidth& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a

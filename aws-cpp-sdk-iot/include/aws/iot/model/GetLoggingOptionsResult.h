@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/LogLevel.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that grants access.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
      * <p>The ARN of the IAM role that grants access.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that grants access.</p>
      */
-    inline GetLoggingOptionsResult& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline GetLoggingOptionsResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM role that grants access.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The logging level.</p>
      */
-    inline void SetLogLevel(LogLevel&& value) { m_logLevel = value; }
+    inline void SetLogLevel(LogLevel&& value) { m_logLevel = std::move(value); }
 
     /**
      * <p>The logging level.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The logging level.</p>
      */
-    inline GetLoggingOptionsResult& WithLogLevel(LogLevel&& value) { SetLogLevel(value); return *this;}
+    inline GetLoggingOptionsResult& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
 
   private:
     Aws::String m_roleArn;

@@ -20,6 +20,7 @@
 #include <aws/shield/model/SubResourceSummary.h>
 #include <aws/shield/model/SummarizedCounter.h>
 #include <aws/shield/model/Mitigation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The unique identifier (ID) of the attack.</p>
      */
-    inline void SetAttackId(Aws::String&& value) { m_attackIdHasBeenSet = true; m_attackId = value; }
+    inline void SetAttackId(Aws::String&& value) { m_attackIdHasBeenSet = true; m_attackId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the attack.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The unique identifier (ID) of the attack.</p>
      */
-    inline AttackDetail& WithAttackId(Aws::String&& value) { SetAttackId(value); return *this;}
+    inline AttackDetail& WithAttackId(Aws::String&& value) { SetAttackId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the attack.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
      */
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
      */
-    inline AttackDetail& WithResourceArn(Aws::String&& value) { SetResourceArn(value); return *this;}
+    inline AttackDetail& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
@@ -134,7 +135,7 @@ namespace Model
      * <p>If applicable, additional detail about the resource being attacked, for
      * example, IP address or URL.</p>
      */
-    inline void SetSubResources(Aws::Vector<SubResourceSummary>&& value) { m_subResourcesHasBeenSet = true; m_subResources = value; }
+    inline void SetSubResources(Aws::Vector<SubResourceSummary>&& value) { m_subResourcesHasBeenSet = true; m_subResources = std::move(value); }
 
     /**
      * <p>If applicable, additional detail about the resource being attacked, for
@@ -146,7 +147,7 @@ namespace Model
      * <p>If applicable, additional detail about the resource being attacked, for
      * example, IP address or URL.</p>
      */
-    inline AttackDetail& WithSubResources(Aws::Vector<SubResourceSummary>&& value) { SetSubResources(value); return *this;}
+    inline AttackDetail& WithSubResources(Aws::Vector<SubResourceSummary>&& value) { SetSubResources(std::move(value)); return *this;}
 
     /**
      * <p>If applicable, additional detail about the resource being attacked, for
@@ -158,7 +159,7 @@ namespace Model
      * <p>If applicable, additional detail about the resource being attacked, for
      * example, IP address or URL.</p>
      */
-    inline AttackDetail& AddSubResources(SubResourceSummary&& value) { m_subResourcesHasBeenSet = true; m_subResources.push_back(value); return *this; }
+    inline AttackDetail& AddSubResources(SubResourceSummary&& value) { m_subResourcesHasBeenSet = true; m_subResources.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The time the attack started, in the format 2016-12-16T13:50Z.</p>
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>The time the attack started, in the format 2016-12-16T13:50Z.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The time the attack started, in the format 2016-12-16T13:50Z.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>The time the attack started, in the format 2016-12-16T13:50Z.</p>
      */
-    inline AttackDetail& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline AttackDetail& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The time the attack ended, in the format 2016-12-16T13:50Z.</p>
@@ -198,7 +199,7 @@ namespace Model
     /**
      * <p>The time the attack ended, in the format 2016-12-16T13:50Z.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The time the attack ended, in the format 2016-12-16T13:50Z.</p>
@@ -208,7 +209,7 @@ namespace Model
     /**
      * <p>The time the attack ended, in the format 2016-12-16T13:50Z.</p>
      */
-    inline AttackDetail& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline AttackDetail& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>List of counters that describe the attack for the specified time period.</p>
@@ -223,7 +224,7 @@ namespace Model
     /**
      * <p>List of counters that describe the attack for the specified time period.</p>
      */
-    inline void SetAttackCounters(Aws::Vector<SummarizedCounter>&& value) { m_attackCountersHasBeenSet = true; m_attackCounters = value; }
+    inline void SetAttackCounters(Aws::Vector<SummarizedCounter>&& value) { m_attackCountersHasBeenSet = true; m_attackCounters = std::move(value); }
 
     /**
      * <p>List of counters that describe the attack for the specified time period.</p>
@@ -233,7 +234,7 @@ namespace Model
     /**
      * <p>List of counters that describe the attack for the specified time period.</p>
      */
-    inline AttackDetail& WithAttackCounters(Aws::Vector<SummarizedCounter>&& value) { SetAttackCounters(value); return *this;}
+    inline AttackDetail& WithAttackCounters(Aws::Vector<SummarizedCounter>&& value) { SetAttackCounters(std::move(value)); return *this;}
 
     /**
      * <p>List of counters that describe the attack for the specified time period.</p>
@@ -243,7 +244,7 @@ namespace Model
     /**
      * <p>List of counters that describe the attack for the specified time period.</p>
      */
-    inline AttackDetail& AddAttackCounters(SummarizedCounter&& value) { m_attackCountersHasBeenSet = true; m_attackCounters.push_back(value); return *this; }
+    inline AttackDetail& AddAttackCounters(SummarizedCounter&& value) { m_attackCountersHasBeenSet = true; m_attackCounters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>List of mitigation actions taken for the attack.</p>
@@ -258,7 +259,7 @@ namespace Model
     /**
      * <p>List of mitigation actions taken for the attack.</p>
      */
-    inline void SetMitigations(Aws::Vector<Mitigation>&& value) { m_mitigationsHasBeenSet = true; m_mitigations = value; }
+    inline void SetMitigations(Aws::Vector<Mitigation>&& value) { m_mitigationsHasBeenSet = true; m_mitigations = std::move(value); }
 
     /**
      * <p>List of mitigation actions taken for the attack.</p>
@@ -268,7 +269,7 @@ namespace Model
     /**
      * <p>List of mitigation actions taken for the attack.</p>
      */
-    inline AttackDetail& WithMitigations(Aws::Vector<Mitigation>&& value) { SetMitigations(value); return *this;}
+    inline AttackDetail& WithMitigations(Aws::Vector<Mitigation>&& value) { SetMitigations(std::move(value)); return *this;}
 
     /**
      * <p>List of mitigation actions taken for the attack.</p>
@@ -278,7 +279,7 @@ namespace Model
     /**
      * <p>List of mitigation actions taken for the attack.</p>
      */
-    inline AttackDetail& AddMitigations(Mitigation&& value) { m_mitigationsHasBeenSet = true; m_mitigations.push_back(value); return *this; }
+    inline AttackDetail& AddMitigations(Mitigation&& value) { m_mitigationsHasBeenSet = true; m_mitigations.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_attackId;

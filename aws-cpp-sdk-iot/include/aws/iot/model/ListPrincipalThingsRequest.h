@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>The token for the next set of results, or <b>null</b> if there are no
      * additional results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of results, or <b>null</b> if there are no
@@ -79,7 +80,7 @@ namespace Model
      * <p>The token for the next set of results, or <b>null</b> if there are no
      * additional results.</p>
      */
-    inline ListPrincipalThingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListPrincipalThingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of results, or <b>null</b> if there are no
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>The principal.</p>
      */
-    inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = value; }
+    inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
     /**
      * <p>The principal.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The principal.</p>
      */
-    inline ListPrincipalThingsRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(value); return *this;}
+    inline ListPrincipalThingsRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
 
     /**
      * <p>The principal.</p>

@@ -20,6 +20,7 @@
 #include <aws/elasticloadbalancingv2/model/LoadBalancerSchemeEnum.h>
 #include <aws/elasticloadbalancingv2/model/IpAddressType.h>
 #include <aws/elasticloadbalancingv2/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -42,50 +43,50 @@ namespace Model
 
   public:
     /**
-     * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, can have a maximum of 32 characters, must contain only alphanumeric
+     * <p>The name of the load balancer.</p> <p>This name must be unique per region per
+     * account, can have a maximum of 32 characters, must contain only alphanumeric
      * characters or hyphens, and must not begin or end with a hyphen.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, can have a maximum of 32 characters, must contain only alphanumeric
+     * <p>The name of the load balancer.</p> <p>This name must be unique per region per
+     * account, can have a maximum of 32 characters, must contain only alphanumeric
      * characters or hyphens, and must not begin or end with a hyphen.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, can have a maximum of 32 characters, must contain only alphanumeric
+     * <p>The name of the load balancer.</p> <p>This name must be unique per region per
+     * account, can have a maximum of 32 characters, must contain only alphanumeric
      * characters or hyphens, and must not begin or end with a hyphen.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, can have a maximum of 32 characters, must contain only alphanumeric
+     * <p>The name of the load balancer.</p> <p>This name must be unique per region per
+     * account, can have a maximum of 32 characters, must contain only alphanumeric
      * characters or hyphens, and must not begin or end with a hyphen.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, can have a maximum of 32 characters, must contain only alphanumeric
+     * <p>The name of the load balancer.</p> <p>This name must be unique per region per
+     * account, can have a maximum of 32 characters, must contain only alphanumeric
      * characters or hyphens, and must not begin or end with a hyphen.</p>
      */
     inline CreateLoadBalancerRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, can have a maximum of 32 characters, must contain only alphanumeric
+     * <p>The name of the load balancer.</p> <p>This name must be unique per region per
+     * account, can have a maximum of 32 characters, must contain only alphanumeric
      * characters or hyphens, and must not begin or end with a hyphen.</p>
      */
-    inline CreateLoadBalancerRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateLoadBalancerRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, can have a maximum of 32 characters, must contain only alphanumeric
+     * <p>The name of the load balancer.</p> <p>This name must be unique per region per
+     * account, can have a maximum of 32 characters, must contain only alphanumeric
      * characters or hyphens, and must not begin or end with a hyphen.</p>
      */
     inline CreateLoadBalancerRequest& WithName(const char* value) { SetName(value); return *this;}
@@ -109,7 +110,7 @@ namespace Model
      * one subnet per Availability Zone. You must specify subnets from at least two
      * Availability Zones.</p>
      */
-    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
+    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
@@ -123,7 +124,7 @@ namespace Model
      * one subnet per Availability Zone. You must specify subnets from at least two
      * Availability Zones.</p>
      */
-    inline CreateLoadBalancerRequest& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(value); return *this;}
+    inline CreateLoadBalancerRequest& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
@@ -137,7 +138,7 @@ namespace Model
      * one subnet per Availability Zone. You must specify subnets from at least two
      * Availability Zones.</p>
      */
-    inline CreateLoadBalancerRequest& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+    inline CreateLoadBalancerRequest& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
@@ -159,7 +160,7 @@ namespace Model
     /**
      * <p>The IDs of the security groups to assign to the load balancer.</p>
      */
-    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
+    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
      * <p>The IDs of the security groups to assign to the load balancer.</p>
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p>The IDs of the security groups to assign to the load balancer.</p>
      */
-    inline CreateLoadBalancerRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(value); return *this;}
+    inline CreateLoadBalancerRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the security groups to assign to the load balancer.</p>
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p>The IDs of the security groups to assign to the load balancer.</p>
      */
-    inline CreateLoadBalancerRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+    inline CreateLoadBalancerRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the security groups to assign to the load balancer.</p>
@@ -223,7 +224,7 @@ namespace Model
      * access to the VPC for the load balancer.</p> <p>The default is an
      * Internet-facing load balancer.</p>
      */
-    inline void SetScheme(LoadBalancerSchemeEnum&& value) { m_schemeHasBeenSet = true; m_scheme = value; }
+    inline void SetScheme(LoadBalancerSchemeEnum&& value) { m_schemeHasBeenSet = true; m_scheme = std::move(value); }
 
     /**
      * <p>The nodes of an Internet-facing load balancer have public IP addresses. The
@@ -249,7 +250,7 @@ namespace Model
      * access to the VPC for the load balancer.</p> <p>The default is an
      * Internet-facing load balancer.</p>
      */
-    inline CreateLoadBalancerRequest& WithScheme(LoadBalancerSchemeEnum&& value) { SetScheme(value); return *this;}
+    inline CreateLoadBalancerRequest& WithScheme(LoadBalancerSchemeEnum&& value) { SetScheme(std::move(value)); return *this;}
 
     /**
      * <p>One or more tags to assign to the load balancer.</p>
@@ -264,7 +265,7 @@ namespace Model
     /**
      * <p>One or more tags to assign to the load balancer.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>One or more tags to assign to the load balancer.</p>
@@ -274,7 +275,7 @@ namespace Model
     /**
      * <p>One or more tags to assign to the load balancer.</p>
      */
-    inline CreateLoadBalancerRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline CreateLoadBalancerRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>One or more tags to assign to the load balancer.</p>
@@ -284,7 +285,7 @@ namespace Model
     /**
      * <p>One or more tags to assign to the load balancer.</p>
      */
-    inline CreateLoadBalancerRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateLoadBalancerRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The type of IP addresses used by the subnets for your load balancer. The
@@ -308,7 +309,7 @@ namespace Model
      * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
      * must use <code>ipv4</code>.</p>
      */
-    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
 
     /**
      * <p>The type of IP addresses used by the subnets for your load balancer. The
@@ -324,7 +325,7 @@ namespace Model
      * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
      * must use <code>ipv4</code>.</p>
      */
-    inline CreateLoadBalancerRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(value); return *this;}
+    inline CreateLoadBalancerRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

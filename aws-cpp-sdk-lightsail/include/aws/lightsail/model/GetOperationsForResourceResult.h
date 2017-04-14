@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/Operation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * get operations for resource request.</p>
      */
-    inline void SetOperations(Aws::Vector<Operation>&& value) { m_operations = value; }
+    inline void SetOperations(Aws::Vector<Operation>&& value) { m_operations = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -69,7 +70,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * get operations for resource request.</p>
      */
-    inline GetOperationsForResourceResult& WithOperations(Aws::Vector<Operation>&& value) { SetOperations(value); return *this;}
+    inline GetOperationsForResourceResult& WithOperations(Aws::Vector<Operation>&& value) { SetOperations(std::move(value)); return *this;}
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -81,7 +82,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * get operations for resource request.</p>
      */
-    inline GetOperationsForResourceResult& AddOperations(Operation&& value) { m_operations.push_back(value); return *this; }
+    inline GetOperationsForResourceResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Returns the number of pages of results that remain.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>Returns the number of pages of results that remain.</p>
      */
-    inline void SetNextPageCount(Aws::String&& value) { m_nextPageCount = value; }
+    inline void SetNextPageCount(Aws::String&& value) { m_nextPageCount = std::move(value); }
 
     /**
      * <p>Returns the number of pages of results that remain.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>Returns the number of pages of results that remain.</p>
      */
-    inline GetOperationsForResourceResult& WithNextPageCount(Aws::String&& value) { SetNextPageCount(value); return *this;}
+    inline GetOperationsForResourceResult& WithNextPageCount(Aws::String&& value) { SetNextPageCount(std::move(value)); return *this;}
 
     /**
      * <p>Returns the number of pages of results that remain.</p>

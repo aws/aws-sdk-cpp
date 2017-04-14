@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Access key for an AWS account.</p>
      */
-    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
+    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
 
     /**
      * <p>Access key for an AWS account.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Access key for an AWS account.</p>
      */
-    inline AwsCredentials& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(value); return *this;}
+    inline AwsCredentials& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
 
     /**
      * <p>Access key for an AWS account.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>Secret key for an AWS account.</p>
      */
-    inline void SetSecretAccessKey(Aws::String&& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = value; }
+    inline void SetSecretAccessKey(Aws::String&& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = std::move(value); }
 
     /**
      * <p>Secret key for an AWS account.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>Secret key for an AWS account.</p>
      */
-    inline AwsCredentials& WithSecretAccessKey(Aws::String&& value) { SetSecretAccessKey(value); return *this;}
+    inline AwsCredentials& WithSecretAccessKey(Aws::String&& value) { SetSecretAccessKey(std::move(value)); return *this;}
 
     /**
      * <p>Secret key for an AWS account.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>Token specific to a build ID.</p>
      */
-    inline void SetSessionToken(Aws::String&& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = value; }
+    inline void SetSessionToken(Aws::String&& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = std::move(value); }
 
     /**
      * <p>Token specific to a build ID.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>Token specific to a build ID.</p>
      */
-    inline AwsCredentials& WithSessionToken(Aws::String&& value) { SetSessionToken(value); return *this;}
+    inline AwsCredentials& WithSessionToken(Aws::String&& value) { SetSessionToken(std::move(value)); return *this;}
 
     /**
      * <p>Token specific to a build ID.</p>

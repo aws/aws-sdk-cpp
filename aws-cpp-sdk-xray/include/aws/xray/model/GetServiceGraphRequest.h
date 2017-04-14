@@ -17,6 +17,7 @@
 #include <aws/xray/XRayRequest.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,7 +48,7 @@ namespace Model
     /**
      * <p>The start of the time frame for which to generate a graph.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The start of the time frame for which to generate a graph.</p>
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The start of the time frame for which to generate a graph.</p>
      */
-    inline GetServiceGraphRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline GetServiceGraphRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The end of the time frame for which to generate a graph.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The end of the time frame for which to generate a graph.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The end of the time frame for which to generate a graph.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The end of the time frame for which to generate a graph.</p>
      */
-    inline GetServiceGraphRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline GetServiceGraphRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>Pagination token. Not used.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>Pagination token. Not used.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Pagination token. Not used.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>Pagination token. Not used.</p>
      */
-    inline GetServiceGraphRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline GetServiceGraphRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Pagination token. Not used.</p>

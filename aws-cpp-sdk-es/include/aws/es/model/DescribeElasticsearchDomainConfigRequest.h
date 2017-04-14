@@ -16,6 +16,7 @@
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/ElasticsearchServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The Elasticsearch domain that you want to get information about.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The Elasticsearch domain that you want to get information about.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The Elasticsearch domain that you want to get information about.</p>
      */
-    inline DescribeElasticsearchDomainConfigRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DescribeElasticsearchDomainConfigRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The Elasticsearch domain that you want to get information about.</p>

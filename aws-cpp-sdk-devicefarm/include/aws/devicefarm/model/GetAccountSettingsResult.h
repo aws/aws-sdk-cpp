@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/AccountSettings.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The account settings.</p>
      */
-    inline void SetAccountSettings(AccountSettings&& value) { m_accountSettings = value; }
+    inline void SetAccountSettings(AccountSettings&& value) { m_accountSettings = std::move(value); }
 
     /**
      * <p>The account settings.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The account settings.</p>
      */
-    inline GetAccountSettingsResult& WithAccountSettings(AccountSettings&& value) { SetAccountSettings(value); return *this;}
+    inline GetAccountSettingsResult& WithAccountSettings(AccountSettings&& value) { SetAccountSettings(std::move(value)); return *this;}
 
   private:
     AccountSettings m_accountSettings;

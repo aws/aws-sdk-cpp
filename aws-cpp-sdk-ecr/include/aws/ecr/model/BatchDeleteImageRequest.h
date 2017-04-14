@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecr/model/ImageIdentifier.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>The AWS account ID associated with the registry that contains the image to
      * delete. If you do not specify a registry, the default registry is assumed.</p>
      */
-    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
+    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
      * <p>The AWS account ID associated with the registry that contains the image to
@@ -76,7 +77,7 @@ namespace Model
      * <p>The AWS account ID associated with the registry that contains the image to
      * delete. If you do not specify a registry, the default registry is assumed.</p>
      */
-    inline BatchDeleteImageRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(value); return *this;}
+    inline BatchDeleteImageRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID associated with the registry that contains the image to
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The repository that contains the image to delete.</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The repository that contains the image to delete.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The repository that contains the image to delete.</p>
      */
-    inline BatchDeleteImageRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline BatchDeleteImageRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The repository that contains the image to delete.</p>
@@ -138,7 +139,7 @@ namespace Model
      * of the <code>imageIds</code> reference is <code>imageTag=tag</code> or
      * <code>imageDigest=digest</code>.</p>
      */
-    inline void SetImageIds(Aws::Vector<ImageIdentifier>&& value) { m_imageIdsHasBeenSet = true; m_imageIds = value; }
+    inline void SetImageIds(Aws::Vector<ImageIdentifier>&& value) { m_imageIdsHasBeenSet = true; m_imageIds = std::move(value); }
 
     /**
      * <p>A list of image ID references that correspond to images to delete. The format
@@ -152,7 +153,7 @@ namespace Model
      * of the <code>imageIds</code> reference is <code>imageTag=tag</code> or
      * <code>imageDigest=digest</code>.</p>
      */
-    inline BatchDeleteImageRequest& WithImageIds(Aws::Vector<ImageIdentifier>&& value) { SetImageIds(value); return *this;}
+    inline BatchDeleteImageRequest& WithImageIds(Aws::Vector<ImageIdentifier>&& value) { SetImageIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of image ID references that correspond to images to delete. The format
@@ -166,7 +167,7 @@ namespace Model
      * of the <code>imageIds</code> reference is <code>imageTag=tag</code> or
      * <code>imageDigest=digest</code>.</p>
      */
-    inline BatchDeleteImageRequest& AddImageIds(ImageIdentifier&& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
+    inline BatchDeleteImageRequest& AddImageIds(ImageIdentifier&& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_registryId;

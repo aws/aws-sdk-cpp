@@ -18,6 +18,7 @@
 #include <aws/ec2/model/ResourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * <p>The type of resource to tag. Currently, the resource types that support
      * tagging on creation are <code>instance</code> and <code>volume</code>. </p>
      */
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
@@ -77,7 +78,7 @@ namespace Model
      * <p>The type of resource to tag. Currently, the resource types that support
      * tagging on creation are <code>instance</code> and <code>volume</code>. </p>
      */
-    inline TagSpecification& WithResourceType(ResourceType&& value) { SetResourceType(value); return *this;}
+    inline TagSpecification& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The tags to apply to the resource.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The tags to apply to the resource.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags to apply to the resource.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The tags to apply to the resource.</p>
      */
-    inline TagSpecification& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline TagSpecification& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags to apply to the resource.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The tags to apply to the resource.</p>
      */
-    inline TagSpecification& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline TagSpecification& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     ResourceType m_resourceType;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/lookup_supported_resourcetypes.html">Resource
      * Types Supported for Event Lookup</a>.</p>
      */
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of a resource referenced by the event returned. When the resource
@@ -108,7 +109,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/lookup_supported_resourcetypes.html">Resource
      * Types Supported for Event Lookup</a>.</p>
      */
-    inline Resource& WithResourceType(Aws::String&& value) { SetResourceType(value); return *this;}
+    inline Resource& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The type of a resource referenced by the event returned. When the resource
@@ -143,7 +144,7 @@ namespace Model
      * resource name might be "auto-scaling-test-group" for an Auto Scaling Group or
      * "i-1234567" for an EC2 Instance.</p>
      */
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
+    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
     /**
      * <p>The name of the resource referenced by the event returned. These are
@@ -167,7 +168,7 @@ namespace Model
      * resource name might be "auto-scaling-test-group" for an Auto Scaling Group or
      * "i-1234567" for an EC2 Instance.</p>
      */
-    inline Resource& WithResourceName(Aws::String&& value) { SetResourceName(value); return *this;}
+    inline Resource& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the resource referenced by the event returned. These are

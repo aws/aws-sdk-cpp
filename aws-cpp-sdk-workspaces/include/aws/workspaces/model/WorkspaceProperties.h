@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/model/RunningMode.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * AutoStop WorkSpaces are billed by the hour and stopped when no longer being used
      * in order to save on costs.</p>
      */
-    inline void SetRunningMode(RunningMode&& value) { m_runningModeHasBeenSet = true; m_runningMode = value; }
+    inline void SetRunningMode(RunningMode&& value) { m_runningModeHasBeenSet = true; m_runningMode = std::move(value); }
 
     /**
      * <p>The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly.
@@ -76,7 +77,7 @@ namespace Model
      * AutoStop WorkSpaces are billed by the hour and stopped when no longer being used
      * in order to save on costs.</p>
      */
-    inline WorkspaceProperties& WithRunningMode(RunningMode&& value) { SetRunningMode(value); return *this;}
+    inline WorkspaceProperties& WithRunningMode(RunningMode&& value) { SetRunningMode(std::move(value)); return *this;}
 
     /**
      * <p>The time after a user logs off when WorkSpaces are automatically stopped.

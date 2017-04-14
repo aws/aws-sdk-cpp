@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/VolumeType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p> Specifies the volume type for EBS-based storage.</p>
      */
-    inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
+    inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
      * <p> Specifies the volume type for EBS-based storage.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p> Specifies the volume type for EBS-based storage.</p>
      */
-    inline EBSOptions& WithVolumeType(VolumeType&& value) { SetVolumeType(value); return *this;}
+    inline EBSOptions& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
     /**
      * <p> Integer to specify the size of an EBS volume.</p>

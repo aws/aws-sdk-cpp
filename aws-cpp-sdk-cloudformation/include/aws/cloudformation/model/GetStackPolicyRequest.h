@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The name or unique stack ID that is associated with the stack whose policy
      * you want to get.</p>
      */
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
+    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
      * <p>The name or unique stack ID that is associated with the stack whose policy
@@ -74,7 +75,7 @@ namespace Model
      * <p>The name or unique stack ID that is associated with the stack whose policy
      * you want to get.</p>
      */
-    inline GetStackPolicyRequest& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
+    inline GetStackPolicyRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name or unique stack ID that is associated with the stack whose policy

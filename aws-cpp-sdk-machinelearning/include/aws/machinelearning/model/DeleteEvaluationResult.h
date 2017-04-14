@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * value should be identical to the value of the <code>EvaluationId</code> in the
      * request.</p>
      */
-    inline void SetEvaluationId(Aws::String&& value) { m_evaluationId = value; }
+    inline void SetEvaluationId(Aws::String&& value) { m_evaluationId = std::move(value); }
 
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>. This
@@ -89,7 +90,7 @@ namespace Model
      * value should be identical to the value of the <code>EvaluationId</code> in the
      * request.</p>
      */
-    inline DeleteEvaluationResult& WithEvaluationId(Aws::String&& value) { SetEvaluationId(value); return *this;}
+    inline DeleteEvaluationResult& WithEvaluationId(Aws::String&& value) { SetEvaluationId(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>. This

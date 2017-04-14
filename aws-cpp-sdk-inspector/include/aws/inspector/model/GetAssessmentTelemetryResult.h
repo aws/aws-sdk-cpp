@@ -16,6 +16,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector/model/Telemetry.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>Telemetry details.</p>
      */
-    inline void SetTelemetry(Aws::Vector<Telemetry>&& value) { m_telemetry = value; }
+    inline void SetTelemetry(Aws::Vector<Telemetry>&& value) { m_telemetry = std::move(value); }
 
     /**
      * <p>Telemetry details.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Telemetry details.</p>
      */
-    inline GetAssessmentTelemetryResult& WithTelemetry(Aws::Vector<Telemetry>&& value) { SetTelemetry(value); return *this;}
+    inline GetAssessmentTelemetryResult& WithTelemetry(Aws::Vector<Telemetry>&& value) { SetTelemetry(std::move(value)); return *this;}
 
     /**
      * <p>Telemetry details.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>Telemetry details.</p>
      */
-    inline GetAssessmentTelemetryResult& AddTelemetry(Telemetry&& value) { m_telemetry.push_back(value); return *this; }
+    inline GetAssessmentTelemetryResult& AddTelemetry(Telemetry&& value) { m_telemetry.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Telemetry> m_telemetry;

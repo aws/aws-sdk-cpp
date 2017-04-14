@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ReservedInstancesConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * modification request. This field is only available when the modification is
      * fulfilled.</p>
      */
-    inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
+    inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = std::move(value); }
 
     /**
      * <p>The ID for the Reserved Instances that were created as part of the
@@ -87,7 +88,7 @@ namespace Model
      * modification request. This field is only available when the modification is
      * fulfilled.</p>
      */
-    inline ReservedInstancesModificationResponse& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(value); return *this;}
+    inline ReservedInstancesModificationResponse& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(std::move(value)); return *this;}
 
     /**
      * <p>The ID for the Reserved Instances that were created as part of the
@@ -112,7 +113,7 @@ namespace Model
      * <p>The target Reserved Instances configurations supplied as part of the
      * modification request.</p>
      */
-    inline void SetTargetConfiguration(ReservedInstancesConfiguration&& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = value; }
+    inline void SetTargetConfiguration(ReservedInstancesConfiguration&& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = std::move(value); }
 
     /**
      * <p>The target Reserved Instances configurations supplied as part of the
@@ -124,7 +125,7 @@ namespace Model
      * <p>The target Reserved Instances configurations supplied as part of the
      * modification request.</p>
      */
-    inline ReservedInstancesModificationResponse& WithTargetConfiguration(ReservedInstancesConfiguration&& value) { SetTargetConfiguration(value); return *this;}
+    inline ReservedInstancesModificationResponse& WithTargetConfiguration(ReservedInstancesConfiguration&& value) { SetTargetConfiguration(std::move(value)); return *this;}
 
   private:
     Aws::String m_reservedInstancesId;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/DevicePool.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The newly created device pool.</p>
      */
-    inline void SetDevicePool(DevicePool&& value) { m_devicePool = value; }
+    inline void SetDevicePool(DevicePool&& value) { m_devicePool = std::move(value); }
 
     /**
      * <p>The newly created device pool.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The newly created device pool.</p>
      */
-    inline CreateDevicePoolResult& WithDevicePool(DevicePool&& value) { SetDevicePool(value); return *this;}
+    inline CreateDevicePoolResult& WithDevicePool(DevicePool&& value) { SetDevicePool(std::move(value)); return *this;}
 
   private:
     DevicePool m_devicePool;

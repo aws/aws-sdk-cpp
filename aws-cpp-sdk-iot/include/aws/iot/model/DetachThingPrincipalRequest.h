@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of the thing.</p>
      */
-    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
+    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
 
     /**
      * <p>The name of the thing.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the thing.</p>
      */
-    inline DetachThingPrincipalRequest& WithThingName(Aws::String&& value) { SetThingName(value); return *this;}
+    inline DetachThingPrincipalRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the thing.</p>
@@ -93,7 +94,7 @@ namespace Model
      * If the principal is an Amazon Cognito identity, this value must be the ID of the
      * Amazon Cognito identity.</p>
      */
-    inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = value; }
+    inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
     /**
      * <p>If the principal is a certificate, this value must be ARN of the certificate.
@@ -114,7 +115,7 @@ namespace Model
      * If the principal is an Amazon Cognito identity, this value must be the ID of the
      * Amazon Cognito identity.</p>
      */
-    inline DetachThingPrincipalRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(value); return *this;}
+    inline DetachThingPrincipalRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
 
     /**
      * <p>If the principal is a certificate, this value must be ARN of the certificate.

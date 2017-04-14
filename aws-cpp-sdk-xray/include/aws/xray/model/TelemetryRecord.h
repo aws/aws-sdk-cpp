@@ -16,6 +16,7 @@
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/xray/model/BackendConnectionErrors.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
      * <p></p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline TelemetryRecord& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
+    inline TelemetryRecord& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
     /**
      * <p></p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline void SetBackendConnectionErrors(BackendConnectionErrors&& value) { m_backendConnectionErrorsHasBeenSet = true; m_backendConnectionErrors = value; }
+    inline void SetBackendConnectionErrors(BackendConnectionErrors&& value) { m_backendConnectionErrorsHasBeenSet = true; m_backendConnectionErrors = std::move(value); }
 
     /**
      * <p></p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline TelemetryRecord& WithBackendConnectionErrors(BackendConnectionErrors&& value) { SetBackendConnectionErrors(value); return *this;}
+    inline TelemetryRecord& WithBackendConnectionErrors(BackendConnectionErrors&& value) { SetBackendConnectionErrors(std::move(value)); return *this;}
 
   private:
     Aws::Utils::DateTime m_timestamp;

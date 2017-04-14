@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/storagegateway/model/ChapInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -91,7 +92,7 @@ namespace Model
      * (e.g. Windows client).</p> </li> <li> <p> <b>TargetARN</b>: The Amazon Resource
      * Name (ARN) of the storage volume.</p> </li> </ul>
      */
-    inline void SetChapCredentials(Aws::Vector<ChapInfo>&& value) { m_chapCredentials = value; }
+    inline void SetChapCredentials(Aws::Vector<ChapInfo>&& value) { m_chapCredentials = std::move(value); }
 
     /**
      * <p>An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each
@@ -123,7 +124,7 @@ namespace Model
      * (e.g. Windows client).</p> </li> <li> <p> <b>TargetARN</b>: The Amazon Resource
      * Name (ARN) of the storage volume.</p> </li> </ul>
      */
-    inline DescribeChapCredentialsResult& WithChapCredentials(Aws::Vector<ChapInfo>&& value) { SetChapCredentials(value); return *this;}
+    inline DescribeChapCredentialsResult& WithChapCredentials(Aws::Vector<ChapInfo>&& value) { SetChapCredentials(std::move(value)); return *this;}
 
     /**
      * <p>An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each
@@ -155,7 +156,7 @@ namespace Model
      * (e.g. Windows client).</p> </li> <li> <p> <b>TargetARN</b>: The Amazon Resource
      * Name (ARN) of the storage volume.</p> </li> </ul>
      */
-    inline DescribeChapCredentialsResult& AddChapCredentials(ChapInfo&& value) { m_chapCredentials.push_back(value); return *this; }
+    inline DescribeChapCredentialsResult& AddChapCredentials(ChapInfo&& value) { m_chapCredentials.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ChapInfo> m_chapCredentials;

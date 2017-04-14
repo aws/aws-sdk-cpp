@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * the task to stop. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
@@ -75,7 +76,7 @@ namespace Model
      * the task to stop. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
-    inline StopTaskRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
+    inline StopTaskRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The task ID or full Amazon Resource Name (ARN) entry of the task to stop.</p>
      */
-    inline void SetTask(Aws::String&& value) { m_taskHasBeenSet = true; m_task = value; }
+    inline void SetTask(Aws::String&& value) { m_taskHasBeenSet = true; m_task = std::move(value); }
 
     /**
      * <p>The task ID or full Amazon Resource Name (ARN) entry of the task to stop.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The task ID or full Amazon Resource Name (ARN) entry of the task to stop.</p>
      */
-    inline StopTaskRequest& WithTask(Aws::String&& value) { SetTask(value); return *this;}
+    inline StopTaskRequest& WithTask(Aws::String&& value) { SetTask(std::move(value)); return *this;}
 
     /**
      * <p>The task ID or full Amazon Resource Name (ARN) entry of the task to stop.</p>
@@ -144,7 +145,7 @@ namespace Model
      * <a>DescribeTasks</a> API operations on this task. Up to 255 characters are
      * allowed in this message.</p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p>An optional message specified when a task is stopped. For example, if you are
@@ -171,7 +172,7 @@ namespace Model
      * <a>DescribeTasks</a> API operations on this task. Up to 255 characters are
      * allowed in this message.</p>
      */
-    inline StopTaskRequest& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline StopTaskRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p>An optional message specified when a task is stopped. For example, if you are

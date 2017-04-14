@@ -17,6 +17,7 @@
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns
      * descriptions of the instances associated with the specified stack.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
      * <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns
@@ -70,7 +71,7 @@ namespace Model
      * <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns
      * descriptions of the instances associated with the specified stack.</p>
      */
-    inline DescribeInstancesRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline DescribeInstancesRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns
@@ -94,7 +95,7 @@ namespace Model
      * <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns
      * descriptions of the instances associated with the specified layer.</p>
      */
-    inline void SetLayerId(Aws::String&& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
+    inline void SetLayerId(Aws::String&& value) { m_layerIdHasBeenSet = true; m_layerId = std::move(value); }
 
     /**
      * <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns
@@ -112,7 +113,7 @@ namespace Model
      * <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns
      * descriptions of the instances associated with the specified layer.</p>
      */
-    inline DescribeInstancesRequest& WithLayerId(Aws::String&& value) { SetLayerId(value); return *this;}
+    inline DescribeInstancesRequest& WithLayerId(Aws::String&& value) { SetLayerId(std::move(value)); return *this;}
 
     /**
      * <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns
@@ -139,7 +140,7 @@ namespace Model
      * <code>DescribeInstances</code> returns a description of the specified instances.
      * Otherwise, it returns a description of every instance.</p>
      */
-    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
+    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
      * <p>An array of instance IDs to be described. If you use this parameter,
@@ -153,7 +154,7 @@ namespace Model
      * <code>DescribeInstances</code> returns a description of the specified instances.
      * Otherwise, it returns a description of every instance.</p>
      */
-    inline DescribeInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
+    inline DescribeInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of instance IDs to be described. If you use this parameter,
@@ -167,7 +168,7 @@ namespace Model
      * <code>DescribeInstances</code> returns a description of the specified instances.
      * Otherwise, it returns a description of every instance.</p>
      */
-    inline DescribeInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+    inline DescribeInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of instance IDs to be described. If you use this parameter,

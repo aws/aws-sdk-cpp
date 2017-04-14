@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * to the ARN. If you specify only the function name, it is limited to 64 character
      * in length. </p>
      */
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
      * <p>The Lambda function name. You can specify a function name (for example,
@@ -106,7 +107,7 @@ namespace Model
      * to the ARN. If you specify only the function name, it is limited to 64 character
      * in length. </p>
      */
-    inline PublishVersionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
+    inline PublishVersionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>The Lambda function name. You can specify a function name (for example,
@@ -139,7 +140,7 @@ namespace Model
      * validation on the code you are publishing. If you provide this parameter value
      * must match the SHA256 of the $LATEST version for the publication to succeed.</p>
      */
-    inline void SetCodeSha256(Aws::String&& value) { m_codeSha256HasBeenSet = true; m_codeSha256 = value; }
+    inline void SetCodeSha256(Aws::String&& value) { m_codeSha256HasBeenSet = true; m_codeSha256 = std::move(value); }
 
     /**
      * <p>The SHA256 hash of the deployment package you want to publish. This provides
@@ -160,7 +161,7 @@ namespace Model
      * validation on the code you are publishing. If you provide this parameter value
      * must match the SHA256 of the $LATEST version for the publication to succeed.</p>
      */
-    inline PublishVersionRequest& WithCodeSha256(Aws::String&& value) { SetCodeSha256(value); return *this;}
+    inline PublishVersionRequest& WithCodeSha256(Aws::String&& value) { SetCodeSha256(std::move(value)); return *this;}
 
     /**
      * <p>The SHA256 hash of the deployment package you want to publish. This provides
@@ -185,7 +186,7 @@ namespace Model
      * <p>The description for the version you are publishing. If not provided, AWS
      * Lambda copies the description from the $LATEST version.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description for the version you are publishing. If not provided, AWS
@@ -203,7 +204,7 @@ namespace Model
      * <p>The description for the version you are publishing. If not provided, AWS
      * Lambda copies the description from the $LATEST version.</p>
      */
-    inline PublishVersionRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline PublishVersionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description for the version you are publishing. If not provided, AWS

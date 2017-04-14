@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/DocumentFilterKey.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of the filter.</p>
      */
-    inline void SetKey(DocumentFilterKey&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(DocumentFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The name of the filter.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the filter.</p>
      */
-    inline DocumentFilter& WithKey(DocumentFilterKey&& value) { SetKey(value); return *this;}
+    inline DocumentFilter& WithKey(DocumentFilterKey&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The value of the filter.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The value of the filter.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of the filter.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The value of the filter.</p>
      */
-    inline DocumentFilter& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline DocumentFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the filter.</p>

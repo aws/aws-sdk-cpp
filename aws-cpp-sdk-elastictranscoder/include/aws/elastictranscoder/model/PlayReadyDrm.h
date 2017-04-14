@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The type of DRM, if any, that you want Elastic Transcoder to apply to the
      * output files associated with this playlist.</p>
      */
-    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = value; }
+    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
      * <p>The type of DRM, if any, that you want Elastic Transcoder to apply to the
@@ -81,7 +82,7 @@ namespace Model
      * <p>The type of DRM, if any, that you want Elastic Transcoder to apply to the
      * output files associated with this playlist.</p>
      */
-    inline PlayReadyDrm& WithFormat(Aws::String&& value) { SetFormat(value); return *this;}
+    inline PlayReadyDrm& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
 
     /**
      * <p>The type of DRM, if any, that you want Elastic Transcoder to apply to the
@@ -111,7 +112,7 @@ namespace Model
      * being base64-encoded:</p> <p> <code>128</code>, <code>192</code>, or
      * <code>256</code>. </p> <p>The key must also be encrypted by using AWS KMS.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The DRM key for your file, provided by your DRM license provider. The key
@@ -135,7 +136,7 @@ namespace Model
      * being base64-encoded:</p> <p> <code>128</code>, <code>192</code>, or
      * <code>256</code>. </p> <p>The key must also be encrypted by using AWS KMS.</p>
      */
-    inline PlayReadyDrm& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline PlayReadyDrm& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The DRM key for your file, provided by your DRM license provider. The key
@@ -167,7 +168,7 @@ namespace Model
      * in transit. The key MD5 must be base64-encoded, and it must be exactly 16 bytes
      * before being base64-encoded.</p>
      */
-    inline void SetKeyMd5(Aws::String&& value) { m_keyMd5HasBeenSet = true; m_keyMd5 = value; }
+    inline void SetKeyMd5(Aws::String&& value) { m_keyMd5HasBeenSet = true; m_keyMd5 = std::move(value); }
 
     /**
      * <p>The MD5 digest of the key used for DRM on your file, and that you want
@@ -191,7 +192,7 @@ namespace Model
      * in transit. The key MD5 must be base64-encoded, and it must be exactly 16 bytes
      * before being base64-encoded.</p>
      */
-    inline PlayReadyDrm& WithKeyMd5(Aws::String&& value) { SetKeyMd5(value); return *this;}
+    inline PlayReadyDrm& WithKeyMd5(Aws::String&& value) { SetKeyMd5(std::move(value)); return *this;}
 
     /**
      * <p>The MD5 digest of the key used for DRM on your file, and that you want
@@ -226,7 +227,7 @@ namespace Model
      * DRM headers. If you are unsure whether your license server provides your key ID
      * in big or little endian, check with your DRM provider.</p>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>The ID for your DRM key, so that your DRM license provider knows which key to
@@ -253,7 +254,7 @@ namespace Model
      * DRM headers. If you are unsure whether your license server provides your key ID
      * in big or little endian, check with your DRM provider.</p>
      */
-    inline PlayReadyDrm& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline PlayReadyDrm& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The ID for your DRM key, so that your DRM license provider knows which key to
@@ -289,7 +290,7 @@ namespace Model
      * 8 bytes long before being base64-encoded. If no initialization vector is
      * provided, Elastic Transcoder generates one for you.</p>
      */
-    inline void SetInitializationVector(Aws::String&& value) { m_initializationVectorHasBeenSet = true; m_initializationVector = value; }
+    inline void SetInitializationVector(Aws::String&& value) { m_initializationVectorHasBeenSet = true; m_initializationVector = std::move(value); }
 
     /**
      * <p>The series of random bits created by a random bit generator, unique for every
@@ -316,7 +317,7 @@ namespace Model
      * 8 bytes long before being base64-encoded. If no initialization vector is
      * provided, Elastic Transcoder generates one for you.</p>
      */
-    inline PlayReadyDrm& WithInitializationVector(Aws::String&& value) { SetInitializationVector(value); return *this;}
+    inline PlayReadyDrm& WithInitializationVector(Aws::String&& value) { SetInitializationVector(std::move(value)); return *this;}
 
     /**
      * <p>The series of random bits created by a random bit generator, unique for every
@@ -355,7 +356,7 @@ namespace Model
      * HLS playlist outputs. An example URL looks like this:
      * <code>https://www.example.com/exampleKey/</code> </p>
      */
-    inline void SetLicenseAcquisitionUrl(Aws::String&& value) { m_licenseAcquisitionUrlHasBeenSet = true; m_licenseAcquisitionUrl = value; }
+    inline void SetLicenseAcquisitionUrl(Aws::String&& value) { m_licenseAcquisitionUrlHasBeenSet = true; m_licenseAcquisitionUrl = std::move(value); }
 
     /**
      * <p>The location of the license key required to play DRM content. The URL must be
@@ -385,7 +386,7 @@ namespace Model
      * HLS playlist outputs. An example URL looks like this:
      * <code>https://www.example.com/exampleKey/</code> </p>
      */
-    inline PlayReadyDrm& WithLicenseAcquisitionUrl(Aws::String&& value) { SetLicenseAcquisitionUrl(value); return *this;}
+    inline PlayReadyDrm& WithLicenseAcquisitionUrl(Aws::String&& value) { SetLicenseAcquisitionUrl(std::move(value)); return *this;}
 
     /**
      * <p>The location of the license key required to play DRM content. The URL must be

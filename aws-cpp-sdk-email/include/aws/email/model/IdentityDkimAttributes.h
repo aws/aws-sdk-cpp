@@ -18,6 +18,7 @@
 #include <aws/email/model/VerificationStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -86,7 +87,7 @@ namespace Model
      * (tokens) published in the domain name's DNS. (This only applies to domain
      * identities, not email address identities.)</p>
      */
-    inline void SetDkimVerificationStatus(VerificationStatus&& value) { m_dkimVerificationStatusHasBeenSet = true; m_dkimVerificationStatus = value; }
+    inline void SetDkimVerificationStatus(VerificationStatus&& value) { m_dkimVerificationStatusHasBeenSet = true; m_dkimVerificationStatus = std::move(value); }
 
     /**
      * <p>Describes whether Amazon SES has successfully verified the DKIM DNS records
@@ -100,7 +101,7 @@ namespace Model
      * (tokens) published in the domain name's DNS. (This only applies to domain
      * identities, not email address identities.)</p>
      */
-    inline IdentityDkimAttributes& WithDkimVerificationStatus(VerificationStatus&& value) { SetDkimVerificationStatus(value); return *this;}
+    inline IdentityDkimAttributes& WithDkimVerificationStatus(VerificationStatus&& value) { SetDkimVerificationStatus(std::move(value)); return *this;}
 
     /**
      * <p>A set of character strings that represent the domain's identity. Using these
@@ -142,7 +143,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
      * SES Developer Guide</a>.</p>
      */
-    inline void SetDkimTokens(Aws::Vector<Aws::String>&& value) { m_dkimTokensHasBeenSet = true; m_dkimTokens = value; }
+    inline void SetDkimTokens(Aws::Vector<Aws::String>&& value) { m_dkimTokensHasBeenSet = true; m_dkimTokens = std::move(value); }
 
     /**
      * <p>A set of character strings that represent the domain's identity. Using these
@@ -170,7 +171,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
      * SES Developer Guide</a>.</p>
      */
-    inline IdentityDkimAttributes& WithDkimTokens(Aws::Vector<Aws::String>&& value) { SetDkimTokens(value); return *this;}
+    inline IdentityDkimAttributes& WithDkimTokens(Aws::Vector<Aws::String>&& value) { SetDkimTokens(std::move(value)); return *this;}
 
     /**
      * <p>A set of character strings that represent the domain's identity. Using these
@@ -198,7 +199,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
      * SES Developer Guide</a>.</p>
      */
-    inline IdentityDkimAttributes& AddDkimTokens(Aws::String&& value) { m_dkimTokensHasBeenSet = true; m_dkimTokens.push_back(value); return *this; }
+    inline IdentityDkimAttributes& AddDkimTokens(Aws::String&& value) { m_dkimTokensHasBeenSet = true; m_dkimTokens.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A set of character strings that represent the domain's identity. Using these

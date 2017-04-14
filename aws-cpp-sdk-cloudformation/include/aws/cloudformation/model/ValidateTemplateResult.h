@@ -19,6 +19,7 @@
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/TemplateParameter.h>
 #include <aws/cloudformation/model/Capability.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>A list of <code>TemplateParameter</code> structures.</p>
      */
-    inline void SetParameters(Aws::Vector<TemplateParameter>&& value) { m_parameters = value; }
+    inline void SetParameters(Aws::Vector<TemplateParameter>&& value) { m_parameters = std::move(value); }
 
     /**
      * <p>A list of <code>TemplateParameter</code> structures.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>A list of <code>TemplateParameter</code> structures.</p>
      */
-    inline ValidateTemplateResult& WithParameters(Aws::Vector<TemplateParameter>&& value) { SetParameters(value); return *this;}
+    inline ValidateTemplateResult& WithParameters(Aws::Vector<TemplateParameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>TemplateParameter</code> structures.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>A list of <code>TemplateParameter</code> structures.</p>
      */
-    inline ValidateTemplateResult& AddParameters(TemplateParameter&& value) { m_parameters.push_back(value); return *this; }
+    inline ValidateTemplateResult& AddParameters(TemplateParameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The description found within the template.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The description found within the template.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
      * <p>The description found within the template.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The description found within the template.</p>
      */
-    inline ValidateTemplateResult& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline ValidateTemplateResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description found within the template.</p>
@@ -149,7 +150,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
-    inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilities = value; }
+    inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilities = std::move(value); }
 
     /**
      * <p>The capabilities found within the template. If your template contains IAM
@@ -171,7 +172,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
-    inline ValidateTemplateResult& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(value); return *this;}
+    inline ValidateTemplateResult& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
 
     /**
      * <p>The capabilities found within the template. If your template contains IAM
@@ -193,7 +194,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
-    inline ValidateTemplateResult& AddCapabilities(Capability&& value) { m_capabilities.push_back(value); return *this; }
+    inline ValidateTemplateResult& AddCapabilities(Capability&& value) { m_capabilities.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of resources that generated the values in the
@@ -211,7 +212,7 @@ namespace Model
      * <p>The list of resources that generated the values in the
      * <code>Capabilities</code> response element.</p>
      */
-    inline void SetCapabilitiesReason(Aws::String&& value) { m_capabilitiesReason = value; }
+    inline void SetCapabilitiesReason(Aws::String&& value) { m_capabilitiesReason = std::move(value); }
 
     /**
      * <p>The list of resources that generated the values in the
@@ -229,7 +230,7 @@ namespace Model
      * <p>The list of resources that generated the values in the
      * <code>Capabilities</code> response element.</p>
      */
-    inline ValidateTemplateResult& WithCapabilitiesReason(Aws::String&& value) { SetCapabilitiesReason(value); return *this;}
+    inline ValidateTemplateResult& WithCapabilitiesReason(Aws::String&& value) { SetCapabilitiesReason(std::move(value)); return *this;}
 
     /**
      * <p>The list of resources that generated the values in the
@@ -250,7 +251,7 @@ namespace Model
     /**
      * <p>A list of the transforms that are declared in the template.</p>
      */
-    inline void SetDeclaredTransforms(Aws::Vector<Aws::String>&& value) { m_declaredTransforms = value; }
+    inline void SetDeclaredTransforms(Aws::Vector<Aws::String>&& value) { m_declaredTransforms = std::move(value); }
 
     /**
      * <p>A list of the transforms that are declared in the template.</p>
@@ -260,7 +261,7 @@ namespace Model
     /**
      * <p>A list of the transforms that are declared in the template.</p>
      */
-    inline ValidateTemplateResult& WithDeclaredTransforms(Aws::Vector<Aws::String>&& value) { SetDeclaredTransforms(value); return *this;}
+    inline ValidateTemplateResult& WithDeclaredTransforms(Aws::Vector<Aws::String>&& value) { SetDeclaredTransforms(std::move(value)); return *this;}
 
     /**
      * <p>A list of the transforms that are declared in the template.</p>
@@ -270,7 +271,7 @@ namespace Model
     /**
      * <p>A list of the transforms that are declared in the template.</p>
      */
-    inline ValidateTemplateResult& AddDeclaredTransforms(Aws::String&& value) { m_declaredTransforms.push_back(value); return *this; }
+    inline ValidateTemplateResult& AddDeclaredTransforms(Aws::String&& value) { m_declaredTransforms.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of the transforms that are declared in the template.</p>
@@ -284,13 +285,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ValidateTemplateResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ValidateTemplateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ValidateTemplateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<TemplateParameter> m_parameters;

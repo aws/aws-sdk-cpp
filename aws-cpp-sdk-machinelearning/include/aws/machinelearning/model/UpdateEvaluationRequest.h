@@ -16,6 +16,7 @@
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/machinelearning/MachineLearningRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
      */
-    inline void SetEvaluationId(Aws::String&& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = value; }
+    inline void SetEvaluationId(Aws::String&& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = std::move(value); }
 
     /**
      * <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
      */
-    inline UpdateEvaluationRequest& WithEvaluationId(Aws::String&& value) { SetEvaluationId(value); return *this;}
+    inline UpdateEvaluationRequest& WithEvaluationId(Aws::String&& value) { SetEvaluationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
@@ -86,7 +87,7 @@ namespace Model
      * <p>A new user-supplied name or description of the <code>Evaluation</code> that
      * will replace the current content. </p>
      */
-    inline void SetEvaluationName(Aws::String&& value) { m_evaluationNameHasBeenSet = true; m_evaluationName = value; }
+    inline void SetEvaluationName(Aws::String&& value) { m_evaluationNameHasBeenSet = true; m_evaluationName = std::move(value); }
 
     /**
      * <p>A new user-supplied name or description of the <code>Evaluation</code> that
@@ -104,7 +105,7 @@ namespace Model
      * <p>A new user-supplied name or description of the <code>Evaluation</code> that
      * will replace the current content. </p>
      */
-    inline UpdateEvaluationRequest& WithEvaluationName(Aws::String&& value) { SetEvaluationName(value); return *this;}
+    inline UpdateEvaluationRequest& WithEvaluationName(Aws::String&& value) { SetEvaluationName(std::move(value)); return *this;}
 
     /**
      * <p>A new user-supplied name or description of the <code>Evaluation</code> that

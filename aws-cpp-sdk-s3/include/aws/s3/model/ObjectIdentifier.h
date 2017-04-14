@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * Key name of the object to delete.
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * Key name of the object to delete.
@@ -67,7 +68,7 @@ namespace Model
     /**
      * Key name of the object to delete.
      */
-    inline ObjectIdentifier& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline ObjectIdentifier& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * Key name of the object to delete.
@@ -87,7 +88,7 @@ namespace Model
     /**
      * VersionId for the specific version of the object to delete.
      */
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     /**
      * VersionId for the specific version of the object to delete.
@@ -102,7 +103,7 @@ namespace Model
     /**
      * VersionId for the specific version of the object to delete.
      */
-    inline ObjectIdentifier& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
+    inline ObjectIdentifier& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
      * VersionId for the specific version of the object to delete.

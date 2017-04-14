@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/Domain.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about each of the domain
      * entries in the user's account.</p>
      */
-    inline void SetDomains(Aws::Vector<Domain>&& value) { m_domains = value; }
+    inline void SetDomains(Aws::Vector<Domain>&& value) { m_domains = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about each of the domain
@@ -69,7 +70,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about each of the domain
      * entries in the user's account.</p>
      */
-    inline GetDomainsResult& WithDomains(Aws::Vector<Domain>&& value) { SetDomains(value); return *this;}
+    inline GetDomainsResult& WithDomains(Aws::Vector<Domain>&& value) { SetDomains(std::move(value)); return *this;}
 
     /**
      * <p>An array of key-value pairs containing information about each of the domain
@@ -81,7 +82,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about each of the domain
      * entries in the user's account.</p>
      */
-    inline GetDomainsResult& AddDomains(Domain&& value) { m_domains.push_back(value); return *this; }
+    inline GetDomainsResult& AddDomains(Domain&& value) { m_domains.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A token used for advancing to the next page of results from your get active
@@ -99,7 +100,7 @@ namespace Model
      * <p>A token used for advancing to the next page of results from your get active
      * names request.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>A token used for advancing to the next page of results from your get active
@@ -117,7 +118,7 @@ namespace Model
      * <p>A token used for advancing to the next page of results from your get active
      * names request.</p>
      */
-    inline GetDomainsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline GetDomainsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>A token used for advancing to the next page of results from your get active

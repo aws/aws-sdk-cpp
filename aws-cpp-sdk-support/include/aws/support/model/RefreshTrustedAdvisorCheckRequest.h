@@ -16,6 +16,7 @@
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/support/SupportRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * Specifying the check ID of a check that is automatically refreshed causes an
      * <code>InvalidParameterValue</code> error.</p>
      */
-    inline void SetCheckId(Aws::String&& value) { m_checkIdHasBeenSet = true; m_checkId = value; }
+    inline void SetCheckId(Aws::String&& value) { m_checkIdHasBeenSet = true; m_checkId = std::move(value); }
 
     /**
      * <p>The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b>
@@ -78,7 +79,7 @@ namespace Model
      * Specifying the check ID of a check that is automatically refreshed causes an
      * <code>InvalidParameterValue</code> error.</p>
      */
-    inline RefreshTrustedAdvisorCheckRequest& WithCheckId(Aws::String&& value) { SetCheckId(value); return *this;}
+    inline RefreshTrustedAdvisorCheckRequest& WithCheckId(Aws::String&& value) { SetCheckId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b>

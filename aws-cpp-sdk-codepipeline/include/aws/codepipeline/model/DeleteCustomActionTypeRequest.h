@@ -17,6 +17,7 @@
 #include <aws/codepipeline/CodePipelineRequest.h>
 #include <aws/codepipeline/model/ActionCategory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The category of the custom action that you want to delete, such as source or
      * deploy.</p>
      */
-    inline void SetCategory(ActionCategory&& value) { m_categoryHasBeenSet = true; m_category = value; }
+    inline void SetCategory(ActionCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
 
     /**
      * <p>The category of the custom action that you want to delete, such as source or
@@ -68,7 +69,7 @@ namespace Model
      * <p>The category of the custom action that you want to delete, such as source or
      * deploy.</p>
      */
-    inline DeleteCustomActionTypeRequest& WithCategory(ActionCategory&& value) { SetCategory(value); return *this;}
+    inline DeleteCustomActionTypeRequest& WithCategory(ActionCategory&& value) { SetCategory(std::move(value)); return *this;}
 
     /**
      * <p>The provider of the service used in the custom action, such as AWS
@@ -86,7 +87,7 @@ namespace Model
      * <p>The provider of the service used in the custom action, such as AWS
      * CodeDeploy.</p>
      */
-    inline void SetProvider(Aws::String&& value) { m_providerHasBeenSet = true; m_provider = value; }
+    inline void SetProvider(Aws::String&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
 
     /**
      * <p>The provider of the service used in the custom action, such as AWS
@@ -104,7 +105,7 @@ namespace Model
      * <p>The provider of the service used in the custom action, such as AWS
      * CodeDeploy.</p>
      */
-    inline DeleteCustomActionTypeRequest& WithProvider(Aws::String&& value) { SetProvider(value); return *this;}
+    inline DeleteCustomActionTypeRequest& WithProvider(Aws::String&& value) { SetProvider(std::move(value)); return *this;}
 
     /**
      * <p>The provider of the service used in the custom action, such as AWS
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>The version of the custom action to delete.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The version of the custom action to delete.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The version of the custom action to delete.</p>
      */
-    inline DeleteCustomActionTypeRequest& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline DeleteCustomActionTypeRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the custom action to delete.</p>

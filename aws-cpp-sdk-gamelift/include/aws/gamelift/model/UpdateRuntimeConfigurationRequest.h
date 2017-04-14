@@ -17,6 +17,7 @@
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/RuntimeConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to update runtime configuration for.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet to update runtime configuration for.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to update runtime configuration for.</p>
      */
-    inline UpdateRuntimeConfigurationRequest& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline UpdateRuntimeConfigurationRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet to update runtime configuration for.</p>
@@ -102,7 +103,7 @@ namespace Model
      * launch parameters, and the number of concurrent processes with that
      * configuration to maintain on each instance.</p>
      */
-    inline void SetRuntimeConfiguration(RuntimeConfiguration&& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = value; }
+    inline void SetRuntimeConfiguration(RuntimeConfiguration&& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = std::move(value); }
 
     /**
      * <p>Instructions for launching server processes on each instance in the fleet.
@@ -122,7 +123,7 @@ namespace Model
      * launch parameters, and the number of concurrent processes with that
      * configuration to maintain on each instance.</p>
      */
-    inline UpdateRuntimeConfigurationRequest& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(value); return *this;}
+    inline UpdateRuntimeConfigurationRequest& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(std::move(value)); return *this;}
 
   private:
     Aws::String m_fleetId;

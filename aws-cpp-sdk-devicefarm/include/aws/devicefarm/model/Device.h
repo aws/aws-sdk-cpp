@@ -19,6 +19,7 @@
 #include <aws/devicefarm/model/DevicePlatform.h>
 #include <aws/devicefarm/model/CPU.h>
 #include <aws/devicefarm/model/Resolution.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The device's ARN.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The device's ARN.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The device's ARN.</p>
      */
-    inline Device& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Device& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The device's ARN.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The device's display name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The device's display name.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The device's display name.</p>
      */
-    inline Device& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Device& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The device's display name.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The device's manufacturer name.</p>
      */
-    inline void SetManufacturer(Aws::String&& value) { m_manufacturerHasBeenSet = true; m_manufacturer = value; }
+    inline void SetManufacturer(Aws::String&& value) { m_manufacturerHasBeenSet = true; m_manufacturer = std::move(value); }
 
     /**
      * <p>The device's manufacturer name.</p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>The device's manufacturer name.</p>
      */
-    inline Device& WithManufacturer(Aws::String&& value) { SetManufacturer(value); return *this;}
+    inline Device& WithManufacturer(Aws::String&& value) { SetManufacturer(std::move(value)); return *this;}
 
     /**
      * <p>The device's manufacturer name.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>The device's model name.</p>
      */
-    inline void SetModel(Aws::String&& value) { m_modelHasBeenSet = true; m_model = value; }
+    inline void SetModel(Aws::String&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
 
     /**
      * <p>The device's model name.</p>
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>The device's model name.</p>
      */
-    inline Device& WithModel(Aws::String&& value) { SetModel(value); return *this;}
+    inline Device& WithModel(Aws::String&& value) { SetModel(std::move(value)); return *this;}
 
     /**
      * <p>The device's model name.</p>
@@ -207,7 +208,7 @@ namespace Model
      * <p>PHONE: The phone form factor.</p> </li> <li> <p>TABLET: The tablet form
      * factor.</p> </li> </ul>
      */
-    inline void SetFormFactor(DeviceFormFactor&& value) { m_formFactorHasBeenSet = true; m_formFactor = value; }
+    inline void SetFormFactor(DeviceFormFactor&& value) { m_formFactorHasBeenSet = true; m_formFactor = std::move(value); }
 
     /**
      * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul> <li>
@@ -221,7 +222,7 @@ namespace Model
      * <p>PHONE: The phone form factor.</p> </li> <li> <p>TABLET: The tablet form
      * factor.</p> </li> </ul>
      */
-    inline Device& WithFormFactor(DeviceFormFactor&& value) { SetFormFactor(value); return *this;}
+    inline Device& WithFormFactor(DeviceFormFactor&& value) { SetFormFactor(std::move(value)); return *this;}
 
     /**
      * <p>The device's platform.</p> <p>Allowed values include:</p> <ul> <li>
@@ -242,7 +243,7 @@ namespace Model
      * <p>ANDROID: The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p>
      * </li> </ul>
      */
-    inline void SetPlatform(DevicePlatform&& value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline void SetPlatform(DevicePlatform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
      * <p>The device's platform.</p> <p>Allowed values include:</p> <ul> <li>
@@ -256,7 +257,7 @@ namespace Model
      * <p>ANDROID: The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p>
      * </li> </ul>
      */
-    inline Device& WithPlatform(DevicePlatform&& value) { SetPlatform(value); return *this;}
+    inline Device& WithPlatform(DevicePlatform&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
      * <p>The device's operating system type.</p>
@@ -271,7 +272,7 @@ namespace Model
     /**
      * <p>The device's operating system type.</p>
      */
-    inline void SetOs(Aws::String&& value) { m_osHasBeenSet = true; m_os = value; }
+    inline void SetOs(Aws::String&& value) { m_osHasBeenSet = true; m_os = std::move(value); }
 
     /**
      * <p>The device's operating system type.</p>
@@ -286,7 +287,7 @@ namespace Model
     /**
      * <p>The device's operating system type.</p>
      */
-    inline Device& WithOs(Aws::String&& value) { SetOs(value); return *this;}
+    inline Device& WithOs(Aws::String&& value) { SetOs(std::move(value)); return *this;}
 
     /**
      * <p>The device's operating system type.</p>
@@ -306,7 +307,7 @@ namespace Model
     /**
      * <p>Information about the device's CPU.</p>
      */
-    inline void SetCpu(CPU&& value) { m_cpuHasBeenSet = true; m_cpu = value; }
+    inline void SetCpu(CPU&& value) { m_cpuHasBeenSet = true; m_cpu = std::move(value); }
 
     /**
      * <p>Information about the device's CPU.</p>
@@ -316,7 +317,7 @@ namespace Model
     /**
      * <p>Information about the device's CPU.</p>
      */
-    inline Device& WithCpu(CPU&& value) { SetCpu(value); return *this;}
+    inline Device& WithCpu(CPU&& value) { SetCpu(std::move(value)); return *this;}
 
     /**
      * <p>The resolution of the device.</p>
@@ -331,7 +332,7 @@ namespace Model
     /**
      * <p>The resolution of the device.</p>
      */
-    inline void SetResolution(Resolution&& value) { m_resolutionHasBeenSet = true; m_resolution = value; }
+    inline void SetResolution(Resolution&& value) { m_resolutionHasBeenSet = true; m_resolution = std::move(value); }
 
     /**
      * <p>The resolution of the device.</p>
@@ -341,7 +342,7 @@ namespace Model
     /**
      * <p>The resolution of the device.</p>
      */
-    inline Device& WithResolution(Resolution&& value) { SetResolution(value); return *this;}
+    inline Device& WithResolution(Resolution&& value) { SetResolution(std::move(value)); return *this;}
 
     /**
      * <p>The device's heap size, expressed in bytes.</p>
@@ -386,7 +387,7 @@ namespace Model
     /**
      * <p>The device's image name.</p>
      */
-    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = value; }
+    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
      * <p>The device's image name.</p>
@@ -401,7 +402,7 @@ namespace Model
     /**
      * <p>The device's image name.</p>
      */
-    inline Device& WithImage(Aws::String&& value) { SetImage(value); return *this;}
+    inline Device& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
 
     /**
      * <p>The device's image name.</p>
@@ -421,7 +422,7 @@ namespace Model
     /**
      * <p>The device's carrier.</p>
      */
-    inline void SetCarrier(Aws::String&& value) { m_carrierHasBeenSet = true; m_carrier = value; }
+    inline void SetCarrier(Aws::String&& value) { m_carrierHasBeenSet = true; m_carrier = std::move(value); }
 
     /**
      * <p>The device's carrier.</p>
@@ -436,7 +437,7 @@ namespace Model
     /**
      * <p>The device's carrier.</p>
      */
-    inline Device& WithCarrier(Aws::String&& value) { SetCarrier(value); return *this;}
+    inline Device& WithCarrier(Aws::String&& value) { SetCarrier(std::move(value)); return *this;}
 
     /**
      * <p>The device's carrier.</p>
@@ -456,7 +457,7 @@ namespace Model
     /**
      * <p>The device's radio.</p>
      */
-    inline void SetRadio(Aws::String&& value) { m_radioHasBeenSet = true; m_radio = value; }
+    inline void SetRadio(Aws::String&& value) { m_radioHasBeenSet = true; m_radio = std::move(value); }
 
     /**
      * <p>The device's radio.</p>
@@ -471,7 +472,7 @@ namespace Model
     /**
      * <p>The device's radio.</p>
      */
-    inline Device& WithRadio(Aws::String&& value) { SetRadio(value); return *this;}
+    inline Device& WithRadio(Aws::String&& value) { SetRadio(std::move(value)); return *this;}
 
     /**
      * <p>The device's radio.</p>
@@ -512,7 +513,7 @@ namespace Model
      * <p>The type of fleet to which this device belongs. Possible values for fleet
      * type are PRIVATE and PUBLIC.</p>
      */
-    inline void SetFleetType(Aws::String&& value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
+    inline void SetFleetType(Aws::String&& value) { m_fleetTypeHasBeenSet = true; m_fleetType = std::move(value); }
 
     /**
      * <p>The type of fleet to which this device belongs. Possible values for fleet
@@ -530,7 +531,7 @@ namespace Model
      * <p>The type of fleet to which this device belongs. Possible values for fleet
      * type are PRIVATE and PUBLIC.</p>
      */
-    inline Device& WithFleetType(Aws::String&& value) { SetFleetType(value); return *this;}
+    inline Device& WithFleetType(Aws::String&& value) { SetFleetType(std::move(value)); return *this;}
 
     /**
      * <p>The type of fleet to which this device belongs. Possible values for fleet
@@ -551,7 +552,7 @@ namespace Model
     /**
      * <p>The name of the fleet to which this device belongs.</p>
      */
-    inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = value; }
+    inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = std::move(value); }
 
     /**
      * <p>The name of the fleet to which this device belongs.</p>
@@ -566,7 +567,7 @@ namespace Model
     /**
      * <p>The name of the fleet to which this device belongs.</p>
      */
-    inline Device& WithFleetName(Aws::String&& value) { SetFleetName(value); return *this;}
+    inline Device& WithFleetName(Aws::String&& value) { SetFleetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the fleet to which this device belongs.</p>

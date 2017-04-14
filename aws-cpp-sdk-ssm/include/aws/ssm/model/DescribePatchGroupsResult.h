@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/PatchGroupPatchBaselineMapping.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</p> <p>PatchBaselineIdentity: A
      * PatchBaselineIdentity element. </p>
      */
-    inline void SetMappings(Aws::Vector<PatchGroupPatchBaselineMapping>&& value) { m_mappings = value; }
+    inline void SetMappings(Aws::Vector<PatchGroupPatchBaselineMapping>&& value) { m_mappings = std::move(value); }
 
     /**
      * <p>Each entry in the array contains:</p> <p>PatchGroup: string (1 ≤ length ≤
@@ -74,7 +75,7 @@ namespace Model
      * 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</p> <p>PatchBaselineIdentity: A
      * PatchBaselineIdentity element. </p>
      */
-    inline DescribePatchGroupsResult& WithMappings(Aws::Vector<PatchGroupPatchBaselineMapping>&& value) { SetMappings(value); return *this;}
+    inline DescribePatchGroupsResult& WithMappings(Aws::Vector<PatchGroupPatchBaselineMapping>&& value) { SetMappings(std::move(value)); return *this;}
 
     /**
      * <p>Each entry in the array contains:</p> <p>PatchGroup: string (1 ≤ length ≤
@@ -88,7 +89,7 @@ namespace Model
      * 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</p> <p>PatchBaselineIdentity: A
      * PatchBaselineIdentity element. </p>
      */
-    inline DescribePatchGroupsResult& AddMappings(PatchGroupPatchBaselineMapping&& value) { m_mappings.push_back(value); return *this; }
+    inline DescribePatchGroupsResult& AddMappings(PatchGroupPatchBaselineMapping&& value) { m_mappings.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -106,7 +107,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -124,7 +125,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline DescribePatchGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribePatchGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no

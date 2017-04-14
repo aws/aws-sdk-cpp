@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The user pool ID for the user pool.</p>
      */
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
+    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
      * <p>The user pool ID for the user pool.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The user pool ID for the user pool.</p>
      */
-    inline AdminRemoveUserFromGroupRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(value); return *this;}
+    inline AdminRemoveUserFromGroupRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
      * <p>The user pool ID for the user pool.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The username for the user.</p>
      */
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
+    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
      * <p>The username for the user.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The username for the user.</p>
      */
-    inline AdminRemoveUserFromGroupRequest& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
+    inline AdminRemoveUserFromGroupRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
      * <p>The username for the user.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The group name.</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>The group name.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The group name.</p>
      */
-    inline AdminRemoveUserFromGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
+    inline AdminRemoveUserFromGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The group name.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/budgets/model/Spend.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,13 +52,13 @@ namespace Model
     inline void SetActualSpend(const Spend& value) { m_actualSpendHasBeenSet = true; m_actualSpend = value; }
 
     
-    inline void SetActualSpend(Spend&& value) { m_actualSpendHasBeenSet = true; m_actualSpend = value; }
+    inline void SetActualSpend(Spend&& value) { m_actualSpendHasBeenSet = true; m_actualSpend = std::move(value); }
 
     
     inline CalculatedSpend& WithActualSpend(const Spend& value) { SetActualSpend(value); return *this;}
 
     
-    inline CalculatedSpend& WithActualSpend(Spend&& value) { SetActualSpend(value); return *this;}
+    inline CalculatedSpend& WithActualSpend(Spend&& value) { SetActualSpend(std::move(value)); return *this;}
 
     
     inline const Spend& GetForecastedSpend() const{ return m_forecastedSpend; }
@@ -66,13 +67,13 @@ namespace Model
     inline void SetForecastedSpend(const Spend& value) { m_forecastedSpendHasBeenSet = true; m_forecastedSpend = value; }
 
     
-    inline void SetForecastedSpend(Spend&& value) { m_forecastedSpendHasBeenSet = true; m_forecastedSpend = value; }
+    inline void SetForecastedSpend(Spend&& value) { m_forecastedSpendHasBeenSet = true; m_forecastedSpend = std::move(value); }
 
     
     inline CalculatedSpend& WithForecastedSpend(const Spend& value) { SetForecastedSpend(value); return *this;}
 
     
-    inline CalculatedSpend& WithForecastedSpend(Spend&& value) { SetForecastedSpend(value); return *this;}
+    inline CalculatedSpend& WithForecastedSpend(Spend&& value) { SetForecastedSpend(std::move(value)); return *this;}
 
   private:
     Spend m_actualSpend;

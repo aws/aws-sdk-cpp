@@ -17,6 +17,7 @@
 #include <aws/cloudhsm/CloudHSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The ARN of the high-availability partition group to modify.</p>
      */
-    inline void SetHapgArn(Aws::String&& value) { m_hapgArnHasBeenSet = true; m_hapgArn = value; }
+    inline void SetHapgArn(Aws::String&& value) { m_hapgArnHasBeenSet = true; m_hapgArn = std::move(value); }
 
     /**
      * <p>The ARN of the high-availability partition group to modify.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The ARN of the high-availability partition group to modify.</p>
      */
-    inline ModifyHapgRequest& WithHapgArn(Aws::String&& value) { SetHapgArn(value); return *this;}
+    inline ModifyHapgRequest& WithHapgArn(Aws::String&& value) { SetHapgArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the high-availability partition group to modify.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The new label for the high-availability partition group.</p>
      */
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = value; }
+    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
 
     /**
      * <p>The new label for the high-availability partition group.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The new label for the high-availability partition group.</p>
      */
-    inline ModifyHapgRequest& WithLabel(Aws::String&& value) { SetLabel(value); return *this;}
+    inline ModifyHapgRequest& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
 
     /**
      * <p>The new label for the high-availability partition group.</p>
@@ -122,7 +123,7 @@ namespace Model
      * <p>The list of partition serial numbers to make members of the high-availability
      * partition group.</p>
      */
-    inline void SetPartitionSerialList(Aws::Vector<Aws::String>&& value) { m_partitionSerialListHasBeenSet = true; m_partitionSerialList = value; }
+    inline void SetPartitionSerialList(Aws::Vector<Aws::String>&& value) { m_partitionSerialListHasBeenSet = true; m_partitionSerialList = std::move(value); }
 
     /**
      * <p>The list of partition serial numbers to make members of the high-availability
@@ -134,7 +135,7 @@ namespace Model
      * <p>The list of partition serial numbers to make members of the high-availability
      * partition group.</p>
      */
-    inline ModifyHapgRequest& WithPartitionSerialList(Aws::Vector<Aws::String>&& value) { SetPartitionSerialList(value); return *this;}
+    inline ModifyHapgRequest& WithPartitionSerialList(Aws::Vector<Aws::String>&& value) { SetPartitionSerialList(std::move(value)); return *this;}
 
     /**
      * <p>The list of partition serial numbers to make members of the high-availability
@@ -146,7 +147,7 @@ namespace Model
      * <p>The list of partition serial numbers to make members of the high-availability
      * partition group.</p>
      */
-    inline ModifyHapgRequest& AddPartitionSerialList(Aws::String&& value) { m_partitionSerialListHasBeenSet = true; m_partitionSerialList.push_back(value); return *this; }
+    inline ModifyHapgRequest& AddPartitionSerialList(Aws::String&& value) { m_partitionSerialListHasBeenSet = true; m_partitionSerialList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of partition serial numbers to make members of the high-availability

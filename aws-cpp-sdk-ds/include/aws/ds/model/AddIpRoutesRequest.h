@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ds/model/IpRoute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>Identifier (ID) of the directory to which to add the address block.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>Identifier (ID) of the directory to which to add the address block.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>Identifier (ID) of the directory to which to add the address block.</p>
      */
-    inline AddIpRoutesRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline AddIpRoutesRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>Identifier (ID) of the directory to which to add the address block.</p>
@@ -88,7 +89,7 @@ namespace Model
      * <p>IP address blocks, using CIDR format, of the traffic to route. This is often
      * the IP address block of the DNS server used for your on-premises domain.</p>
      */
-    inline void SetIpRoutes(Aws::Vector<IpRoute>&& value) { m_ipRoutesHasBeenSet = true; m_ipRoutes = value; }
+    inline void SetIpRoutes(Aws::Vector<IpRoute>&& value) { m_ipRoutesHasBeenSet = true; m_ipRoutes = std::move(value); }
 
     /**
      * <p>IP address blocks, using CIDR format, of the traffic to route. This is often
@@ -100,7 +101,7 @@ namespace Model
      * <p>IP address blocks, using CIDR format, of the traffic to route. This is often
      * the IP address block of the DNS server used for your on-premises domain.</p>
      */
-    inline AddIpRoutesRequest& WithIpRoutes(Aws::Vector<IpRoute>&& value) { SetIpRoutes(value); return *this;}
+    inline AddIpRoutesRequest& WithIpRoutes(Aws::Vector<IpRoute>&& value) { SetIpRoutes(std::move(value)); return *this;}
 
     /**
      * <p>IP address blocks, using CIDR format, of the traffic to route. This is often
@@ -112,7 +113,7 @@ namespace Model
      * <p>IP address blocks, using CIDR format, of the traffic to route. This is often
      * the IP address block of the DNS server used for your on-premises domain.</p>
      */
-    inline AddIpRoutesRequest& AddIpRoutes(IpRoute&& value) { m_ipRoutesHasBeenSet = true; m_ipRoutes.push_back(value); return *this; }
+    inline AddIpRoutesRequest& AddIpRoutes(IpRoute&& value) { m_ipRoutesHasBeenSet = true; m_ipRoutes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If set to true, updates the inbound and outbound rules of the security group

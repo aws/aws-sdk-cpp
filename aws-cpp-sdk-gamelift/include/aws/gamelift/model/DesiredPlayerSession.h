@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Unique identifier for a player to associate with the player session.</p>
      */
-    inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
+    inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = std::move(value); }
 
     /**
      * <p>Unique identifier for a player to associate with the player session.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>Unique identifier for a player to associate with the player session.</p>
      */
-    inline DesiredPlayerSession& WithPlayerId(Aws::String&& value) { SetPlayerId(value); return *this;}
+    inline DesiredPlayerSession& WithPlayerId(Aws::String&& value) { SetPlayerId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a player to associate with the player session.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>Developer-defined information related to a player. Amazon GameLift does not
      * use this data, so it can be formatted as needed for use in the game.</p>
      */
-    inline void SetPlayerData(Aws::String&& value) { m_playerDataHasBeenSet = true; m_playerData = value; }
+    inline void SetPlayerData(Aws::String&& value) { m_playerDataHasBeenSet = true; m_playerData = std::move(value); }
 
     /**
      * <p>Developer-defined information related to a player. Amazon GameLift does not
@@ -114,7 +115,7 @@ namespace Model
      * <p>Developer-defined information related to a player. Amazon GameLift does not
      * use this data, so it can be formatted as needed for use in the game.</p>
      */
-    inline DesiredPlayerSession& WithPlayerData(Aws::String&& value) { SetPlayerData(value); return *this;}
+    inline DesiredPlayerSession& WithPlayerData(Aws::String&& value) { SetPlayerData(std::move(value)); return *this;}
 
     /**
      * <p>Developer-defined information related to a player. Amazon GameLift does not

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ExportEnvironment.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The ID of the resource being exported.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the resource being exported.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The ID of the resource being exported.</p>
      */
-    inline InstanceExportDetails& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline InstanceExportDetails& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the resource being exported.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The target virtualization environment.</p>
      */
-    inline void SetTargetEnvironment(ExportEnvironment&& value) { m_targetEnvironmentHasBeenSet = true; m_targetEnvironment = value; }
+    inline void SetTargetEnvironment(ExportEnvironment&& value) { m_targetEnvironmentHasBeenSet = true; m_targetEnvironment = std::move(value); }
 
     /**
      * <p>The target virtualization environment.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The target virtualization environment.</p>
      */
-    inline InstanceExportDetails& WithTargetEnvironment(ExportEnvironment&& value) { SetTargetEnvironment(value); return *this;}
+    inline InstanceExportDetails& WithTargetEnvironment(ExportEnvironment&& value) { SetTargetEnvironment(std::move(value)); return *this;}
 
   private:
     Aws::String m_instanceId;

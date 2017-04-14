@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/CreateAccountStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * the accountId number, are present in the output only after the account has been
      * successfully created.</p>
      */
-    inline void SetCreateAccountStatuses(Aws::Vector<CreateAccountStatus>&& value) { m_createAccountStatuses = value; }
+    inline void SetCreateAccountStatuses(Aws::Vector<CreateAccountStatus>&& value) { m_createAccountStatuses = std::move(value); }
 
     /**
      * <p>A list of objects with details about the requests. Certain elements, such as
@@ -74,7 +75,7 @@ namespace Model
      * the accountId number, are present in the output only after the account has been
      * successfully created.</p>
      */
-    inline ListCreateAccountStatusResult& WithCreateAccountStatuses(Aws::Vector<CreateAccountStatus>&& value) { SetCreateAccountStatuses(value); return *this;}
+    inline ListCreateAccountStatusResult& WithCreateAccountStatuses(Aws::Vector<CreateAccountStatus>&& value) { SetCreateAccountStatuses(std::move(value)); return *this;}
 
     /**
      * <p>A list of objects with details about the requests. Certain elements, such as
@@ -88,7 +89,7 @@ namespace Model
      * the accountId number, are present in the output only after the account has been
      * successfully created.</p>
      */
-    inline ListCreateAccountStatusResult& AddCreateAccountStatuses(CreateAccountStatus&& value) { m_createAccountStatuses.push_back(value); return *this; }
+    inline ListCreateAccountStatusResult& AddCreateAccountStatuses(CreateAccountStatus&& value) { m_createAccountStatuses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -115,7 +116,7 @@ namespace Model
      * the output. You should repeat this until the <code>NextToken</code> response
      * element comes back as <code>null</code>.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -142,7 +143,7 @@ namespace Model
      * the output. You should repeat this until the <code>NextToken</code> response
      * element comes back as <code>null</code>.</p>
      */
-    inline ListCreateAccountStatusResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListCreateAccountStatusResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If present, this value indicates that there is more output available than is

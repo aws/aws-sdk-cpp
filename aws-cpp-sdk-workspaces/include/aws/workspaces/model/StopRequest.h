@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The ID of the WorkSpace.</p>
      */
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
+    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
 
     /**
      * <p>The ID of the WorkSpace.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The ID of the WorkSpace.</p>
      */
-    inline StopRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(value); return *this;}
+    inline StopRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the WorkSpace.</p>

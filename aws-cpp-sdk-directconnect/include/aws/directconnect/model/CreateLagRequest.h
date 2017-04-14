@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -73,7 +74,7 @@ namespace Model
      * <p>The AWS Direct Connect location in which the LAG should be allocated.</p>
      * <p>Example: EqSV5</p> <p>Default: None</p>
      */
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
      * <p>The AWS Direct Connect location in which the LAG should be allocated.</p>
@@ -91,7 +92,7 @@ namespace Model
      * <p>The AWS Direct Connect location in which the LAG should be allocated.</p>
      * <p>Example: EqSV5</p> <p>Default: None</p>
      */
-    inline CreateLagRequest& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline CreateLagRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Direct Connect location in which the LAG should be allocated.</p>
@@ -115,7 +116,7 @@ namespace Model
      * <p>The bandwidth of the individual physical connections bundled by the LAG.</p>
      * <p>Default: None</p> <p>Available values: 1Gbps, 10Gbps</p>
      */
-    inline void SetConnectionsBandwidth(Aws::String&& value) { m_connectionsBandwidthHasBeenSet = true; m_connectionsBandwidth = value; }
+    inline void SetConnectionsBandwidth(Aws::String&& value) { m_connectionsBandwidthHasBeenSet = true; m_connectionsBandwidth = std::move(value); }
 
     /**
      * <p>The bandwidth of the individual physical connections bundled by the LAG.</p>
@@ -133,7 +134,7 @@ namespace Model
      * <p>The bandwidth of the individual physical connections bundled by the LAG.</p>
      * <p>Default: None</p> <p>Available values: 1Gbps, 10Gbps</p>
      */
-    inline CreateLagRequest& WithConnectionsBandwidth(Aws::String&& value) { SetConnectionsBandwidth(value); return *this;}
+    inline CreateLagRequest& WithConnectionsBandwidth(Aws::String&& value) { SetConnectionsBandwidth(std::move(value)); return *this;}
 
     /**
      * <p>The bandwidth of the individual physical connections bundled by the LAG.</p>
@@ -157,7 +158,7 @@ namespace Model
      * <p>The name of the LAG.</p> <p>Example: "<code>3x10G LAG to AWS</code>"</p>
      * <p>Default: None</p>
      */
-    inline void SetLagName(Aws::String&& value) { m_lagNameHasBeenSet = true; m_lagName = value; }
+    inline void SetLagName(Aws::String&& value) { m_lagNameHasBeenSet = true; m_lagName = std::move(value); }
 
     /**
      * <p>The name of the LAG.</p> <p>Example: "<code>3x10G LAG to AWS</code>"</p>
@@ -175,7 +176,7 @@ namespace Model
      * <p>The name of the LAG.</p> <p>Example: "<code>3x10G LAG to AWS</code>"</p>
      * <p>Default: None</p>
      */
-    inline CreateLagRequest& WithLagName(Aws::String&& value) { SetLagName(value); return *this;}
+    inline CreateLagRequest& WithLagName(Aws::String&& value) { SetLagName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the LAG.</p> <p>Example: "<code>3x10G LAG to AWS</code>"</p>
@@ -199,7 +200,7 @@ namespace Model
      * <p>The ID of an existing connection to migrate to the LAG.</p> <p>Default:
      * None</p>
      */
-    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
+    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
     /**
      * <p>The ID of an existing connection to migrate to the LAG.</p> <p>Default:
@@ -217,7 +218,7 @@ namespace Model
      * <p>The ID of an existing connection to migrate to the LAG.</p> <p>Default:
      * None</p>
      */
-    inline CreateLagRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(value); return *this;}
+    inline CreateLagRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of an existing connection to migrate to the LAG.</p> <p>Default:

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * <code>"$"</code> refers to the root and path <code>"$.vehicle.Model"</code>
      * refers to the specific <code>"Model"</code> key in the JSON.</p>
      */
-    inline void SetRecordRowPath(Aws::String&& value) { m_recordRowPathHasBeenSet = true; m_recordRowPath = value; }
+    inline void SetRecordRowPath(Aws::String&& value) { m_recordRowPathHasBeenSet = true; m_recordRowPath = std::move(value); }
 
     /**
      * <p>Path to the top-level parent that contains the records.</p> <p>For example,
@@ -90,7 +91,7 @@ namespace Model
      * <code>"$"</code> refers to the root and path <code>"$.vehicle.Model"</code>
      * refers to the specific <code>"Model"</code> key in the JSON.</p>
      */
-    inline JSONMappingParameters& WithRecordRowPath(Aws::String&& value) { SetRecordRowPath(value); return *this;}
+    inline JSONMappingParameters& WithRecordRowPath(Aws::String&& value) { SetRecordRowPath(std::move(value)); return *this;}
 
     /**
      * <p>Path to the top-level parent that contains the records.</p> <p>For example,

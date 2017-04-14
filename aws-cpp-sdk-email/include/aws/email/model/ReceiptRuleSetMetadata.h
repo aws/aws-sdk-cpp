@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
      * dashes (-).</p> </li> <li> <p>Start and end with a letter or number.</p> </li>
      * <li> <p>Contain less than 64 characters.</p> </li> </ul>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the receipt rule set. The name must:</p> <ul> <li> <p>Contain
@@ -98,7 +99,7 @@ namespace Model
      * dashes (-).</p> </li> <li> <p>Start and end with a letter or number.</p> </li>
      * <li> <p>Contain less than 64 characters.</p> </li> </ul>
      */
-    inline ReceiptRuleSetMetadata& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ReceiptRuleSetMetadata& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the receipt rule set. The name must:</p> <ul> <li> <p>Contain
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The date and time the receipt rule set was created.</p>
      */
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
+    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
 
     /**
      * <p>The date and time the receipt rule set was created.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The date and time the receipt rule set was created.</p>
      */
-    inline ReceiptRuleSetMetadata& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(value); return *this;}
+    inline ReceiptRuleSetMetadata& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

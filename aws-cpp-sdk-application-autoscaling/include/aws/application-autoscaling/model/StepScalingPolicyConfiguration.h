@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/application-autoscaling/model/MetricAggregationType.h>
 #include <aws/application-autoscaling/model/StepAdjustment.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The adjustment type, which specifies how the <code>ScalingAdjustment</code>
      * parameter in a <a>StepAdjustment</a> is interpreted.</p>
      */
-    inline void SetAdjustmentType(AdjustmentType&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
+    inline void SetAdjustmentType(AdjustmentType&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = std::move(value); }
 
     /**
      * <p>The adjustment type, which specifies how the <code>ScalingAdjustment</code>
@@ -74,7 +75,7 @@ namespace Model
      * <p>The adjustment type, which specifies how the <code>ScalingAdjustment</code>
      * parameter in a <a>StepAdjustment</a> is interpreted.</p>
      */
-    inline StepScalingPolicyConfiguration& WithAdjustmentType(AdjustmentType&& value) { SetAdjustmentType(value); return *this;}
+    inline StepScalingPolicyConfiguration& WithAdjustmentType(AdjustmentType&& value) { SetAdjustmentType(std::move(value)); return *this;}
 
     /**
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
@@ -92,7 +93,7 @@ namespace Model
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
      * breach.</p>
      */
-    inline void SetStepAdjustments(Aws::Vector<StepAdjustment>&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments = value; }
+    inline void SetStepAdjustments(Aws::Vector<StepAdjustment>&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments = std::move(value); }
 
     /**
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
@@ -104,7 +105,7 @@ namespace Model
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
      * breach.</p>
      */
-    inline StepScalingPolicyConfiguration& WithStepAdjustments(Aws::Vector<StepAdjustment>&& value) { SetStepAdjustments(value); return *this;}
+    inline StepScalingPolicyConfiguration& WithStepAdjustments(Aws::Vector<StepAdjustment>&& value) { SetStepAdjustments(std::move(value)); return *this;}
 
     /**
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
@@ -116,7 +117,7 @@ namespace Model
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
      * breach.</p>
      */
-    inline StepScalingPolicyConfiguration& AddStepAdjustments(StepAdjustment&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments.push_back(value); return *this; }
+    inline StepScalingPolicyConfiguration& AddStepAdjustments(StepAdjustment&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The minimum number to adjust your scalable dimension as a result of a scaling
@@ -227,7 +228,7 @@ namespace Model
      * <p>The aggregation type for the CloudWatch metrics. Valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
      */
-    inline void SetMetricAggregationType(MetricAggregationType&& value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType = value; }
+    inline void SetMetricAggregationType(MetricAggregationType&& value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType = std::move(value); }
 
     /**
      * <p>The aggregation type for the CloudWatch metrics. Valid values are
@@ -239,7 +240,7 @@ namespace Model
      * <p>The aggregation type for the CloudWatch metrics. Valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
      */
-    inline StepScalingPolicyConfiguration& WithMetricAggregationType(MetricAggregationType&& value) { SetMetricAggregationType(value); return *this;}
+    inline StepScalingPolicyConfiguration& WithMetricAggregationType(MetricAggregationType&& value) { SetMetricAggregationType(std::move(value)); return *this;}
 
   private:
     AdjustmentType m_adjustmentType;

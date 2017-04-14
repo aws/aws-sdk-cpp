@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/model/BranchInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The name of the branch.</p>
      */
-    inline void SetBranch(BranchInfo&& value) { m_branch = value; }
+    inline void SetBranch(BranchInfo&& value) { m_branch = std::move(value); }
 
     /**
      * <p>The name of the branch.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the branch.</p>
      */
-    inline GetBranchResult& WithBranch(BranchInfo&& value) { SetBranch(value); return *this;}
+    inline GetBranchResult& WithBranch(BranchInfo&& value) { SetBranch(std::move(value)); return *this;}
 
   private:
     BranchInfo m_branch;

@@ -17,6 +17,7 @@
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/ChildType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * that the OU is in) followed by a second "-" dash and from 8 to 32 additional
      * lower-case letters or digits.</p> </li> </ul>
      */
-    inline void SetParentId(Aws::String&& value) { m_parentIdHasBeenSet = true; m_parentId = value; }
+    inline void SetParentId(Aws::String&& value) { m_parentIdHasBeenSet = true; m_parentId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) for the parent root or OU whose children you want
@@ -106,7 +107,7 @@ namespace Model
      * that the OU is in) followed by a second "-" dash and from 8 to 32 additional
      * lower-case letters or digits.</p> </li> </ul>
      */
-    inline ListChildrenRequest& WithParentId(Aws::String&& value) { SetParentId(value); return *this;}
+    inline ListChildrenRequest& WithParentId(Aws::String&& value) { SetParentId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) for the parent root or OU whose children you want
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>Filters the output to include only the specified child type.</p>
      */
-    inline void SetChildType(ChildType&& value) { m_childTypeHasBeenSet = true; m_childType = value; }
+    inline void SetChildType(ChildType&& value) { m_childTypeHasBeenSet = true; m_childType = std::move(value); }
 
     /**
      * <p>Filters the output to include only the specified child type.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>Filters the output to include only the specified child type.</p>
      */
-    inline ListChildrenRequest& WithChildType(ChildType&& value) { SetChildType(value); return *this;}
+    inline ListChildrenRequest& WithChildType(ChildType&& value) { SetChildType(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a
@@ -167,7 +168,7 @@ namespace Model
      * the value of the previous call's <code>NextToken</code> response to indicate
      * where the output should continue from.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a
@@ -191,7 +192,7 @@ namespace Model
      * the value of the previous call's <code>NextToken</code> response to indicate
      * where the output should continue from.</p>
      */
-    inline ListChildrenRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListChildrenRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a

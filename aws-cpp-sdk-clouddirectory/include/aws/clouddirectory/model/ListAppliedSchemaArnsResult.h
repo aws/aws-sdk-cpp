@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The ARNs of schemas that are applied to the directory.</p>
      */
-    inline void SetSchemaArns(Aws::Vector<Aws::String>&& value) { m_schemaArns = value; }
+    inline void SetSchemaArns(Aws::Vector<Aws::String>&& value) { m_schemaArns = std::move(value); }
 
     /**
      * <p>The ARNs of schemas that are applied to the directory.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ARNs of schemas that are applied to the directory.</p>
      */
-    inline ListAppliedSchemaArnsResult& WithSchemaArns(Aws::Vector<Aws::String>&& value) { SetSchemaArns(value); return *this;}
+    inline ListAppliedSchemaArnsResult& WithSchemaArns(Aws::Vector<Aws::String>&& value) { SetSchemaArns(std::move(value)); return *this;}
 
     /**
      * <p>The ARNs of schemas that are applied to the directory.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ARNs of schemas that are applied to the directory.</p>
      */
-    inline ListAppliedSchemaArnsResult& AddSchemaArns(Aws::String&& value) { m_schemaArns.push_back(value); return *this; }
+    inline ListAppliedSchemaArnsResult& AddSchemaArns(Aws::String&& value) { m_schemaArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ARNs of schemas that are applied to the directory.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline ListAppliedSchemaArnsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListAppliedSchemaArnsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>

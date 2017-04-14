@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The IAM role that allows access to the CloudWatch alarm.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The IAM role that allows access to the CloudWatch alarm.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The IAM role that allows access to the CloudWatch alarm.</p>
      */
-    inline CloudwatchAlarmAction& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline CloudwatchAlarmAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The IAM role that allows access to the CloudWatch alarm.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The CloudWatch alarm name.</p>
      */
-    inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
+    inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::move(value); }
 
     /**
      * <p>The CloudWatch alarm name.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The CloudWatch alarm name.</p>
      */
-    inline CloudwatchAlarmAction& WithAlarmName(Aws::String&& value) { SetAlarmName(value); return *this;}
+    inline CloudwatchAlarmAction& WithAlarmName(Aws::String&& value) { SetAlarmName(std::move(value)); return *this;}
 
     /**
      * <p>The CloudWatch alarm name.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The reason for the alarm change.</p>
      */
-    inline void SetStateReason(Aws::String&& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
+    inline void SetStateReason(Aws::String&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::move(value); }
 
     /**
      * <p>The reason for the alarm change.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The reason for the alarm change.</p>
      */
-    inline CloudwatchAlarmAction& WithStateReason(Aws::String&& value) { SetStateReason(value); return *this;}
+    inline CloudwatchAlarmAction& WithStateReason(Aws::String&& value) { SetStateReason(std::move(value)); return *this;}
 
     /**
      * <p>The reason for the alarm change.</p>
@@ -165,7 +166,7 @@ namespace Model
      * <p>The value of the alarm state. Acceptable values are: OK, ALARM,
      * INSUFFICIENT_DATA.</p>
      */
-    inline void SetStateValue(Aws::String&& value) { m_stateValueHasBeenSet = true; m_stateValue = value; }
+    inline void SetStateValue(Aws::String&& value) { m_stateValueHasBeenSet = true; m_stateValue = std::move(value); }
 
     /**
      * <p>The value of the alarm state. Acceptable values are: OK, ALARM,
@@ -183,7 +184,7 @@ namespace Model
      * <p>The value of the alarm state. Acceptable values are: OK, ALARM,
      * INSUFFICIENT_DATA.</p>
      */
-    inline CloudwatchAlarmAction& WithStateValue(Aws::String&& value) { SetStateValue(value); return *this;}
+    inline CloudwatchAlarmAction& WithStateValue(Aws::String&& value) { SetStateValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the alarm state. Acceptable values are: OK, ALARM,

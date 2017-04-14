@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/RdsDbInstance.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>An a array of <code>RdsDbInstance</code> objects that describe the
      * instances.</p>
      */
-    inline void SetRdsDbInstances(Aws::Vector<RdsDbInstance>&& value) { m_rdsDbInstances = value; }
+    inline void SetRdsDbInstances(Aws::Vector<RdsDbInstance>&& value) { m_rdsDbInstances = std::move(value); }
 
     /**
      * <p>An a array of <code>RdsDbInstance</code> objects that describe the
@@ -74,7 +75,7 @@ namespace Model
      * <p>An a array of <code>RdsDbInstance</code> objects that describe the
      * instances.</p>
      */
-    inline DescribeRdsDbInstancesResult& WithRdsDbInstances(Aws::Vector<RdsDbInstance>&& value) { SetRdsDbInstances(value); return *this;}
+    inline DescribeRdsDbInstancesResult& WithRdsDbInstances(Aws::Vector<RdsDbInstance>&& value) { SetRdsDbInstances(std::move(value)); return *this;}
 
     /**
      * <p>An a array of <code>RdsDbInstance</code> objects that describe the
@@ -86,7 +87,7 @@ namespace Model
      * <p>An a array of <code>RdsDbInstance</code> objects that describe the
      * instances.</p>
      */
-    inline DescribeRdsDbInstancesResult& AddRdsDbInstances(RdsDbInstance&& value) { m_rdsDbInstances.push_back(value); return *this; }
+    inline DescribeRdsDbInstancesResult& AddRdsDbInstances(RdsDbInstance&& value) { m_rdsDbInstances.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<RdsDbInstance> m_rdsDbInstances;

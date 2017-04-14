@@ -16,6 +16,7 @@
 #include <aws/sdb/SimpleDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * The name of the replaceable attribute.
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * The name of the replaceable attribute.
@@ -74,7 +75,7 @@ namespace Model
     /**
      * The name of the replaceable attribute.
      */
-    inline ReplaceableAttribute& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ReplaceableAttribute& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * The name of the replaceable attribute.
@@ -94,7 +95,7 @@ namespace Model
     /**
      * The value of the replaceable attribute.
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * The value of the replaceable attribute.
@@ -109,7 +110,7 @@ namespace Model
     /**
      * The value of the replaceable attribute.
      */
-    inline ReplaceableAttribute& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline ReplaceableAttribute& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * The value of the replaceable attribute.

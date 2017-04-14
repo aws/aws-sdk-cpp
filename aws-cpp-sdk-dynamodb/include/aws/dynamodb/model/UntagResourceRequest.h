@@ -17,6 +17,7 @@
 #include <aws/dynamodb/DynamoDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The Amazon DyanamoDB resource the tags will be removed from. This value is an
      * Amazon Resource Name (ARN).</p>
      */
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
      * <p>The Amazon DyanamoDB resource the tags will be removed from. This value is an
@@ -70,7 +71,7 @@ namespace Model
      * <p>The Amazon DyanamoDB resource the tags will be removed from. This value is an
      * Amazon Resource Name (ARN).</p>
      */
-    inline UntagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(value); return *this;}
+    inline UntagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon DyanamoDB resource the tags will be removed from. This value is an
@@ -94,7 +95,7 @@ namespace Model
      * <p>A list of tag keys. Existing tags of the resource whose keys are members of
      * this list will be removed from the Amazon DynamoDB resource.</p>
      */
-    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
+    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
      * <p>A list of tag keys. Existing tags of the resource whose keys are members of
@@ -106,7 +107,7 @@ namespace Model
      * <p>A list of tag keys. Existing tags of the resource whose keys are members of
      * this list will be removed from the Amazon DynamoDB resource.</p>
      */
-    inline UntagResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
+    inline UntagResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
      * <p>A list of tag keys. Existing tags of the resource whose keys are members of
@@ -118,7 +119,7 @@ namespace Model
      * <p>A list of tag keys. Existing tags of the resource whose keys are members of
      * this list will be removed from the Amazon DynamoDB resource.</p>
      */
-    inline UntagResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+    inline UntagResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of tag keys. Existing tags of the resource whose keys are members of

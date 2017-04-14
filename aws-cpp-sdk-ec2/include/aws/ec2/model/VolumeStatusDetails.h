@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/VolumeStatusName.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name of the volume status.</p>
      */
-    inline void SetName(VolumeStatusName&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(VolumeStatusName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the volume status.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The name of the volume status.</p>
      */
-    inline VolumeStatusDetails& WithName(VolumeStatusName&& value) { SetName(value); return *this;}
+    inline VolumeStatusDetails& WithName(VolumeStatusName&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The intended status of the volume status.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The intended status of the volume status.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The intended status of the volume status.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The intended status of the volume status.</p>
      */
-    inline VolumeStatusDetails& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline VolumeStatusDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The intended status of the volume status.</p>

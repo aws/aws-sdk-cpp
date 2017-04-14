@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
      */
-    inline void SetPolicyARN(Aws::String&& value) { m_policyARN = value; }
+    inline void SetPolicyARN(Aws::String&& value) { m_policyARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
      */
-    inline PutScalingPolicyResult& WithPolicyARN(Aws::String&& value) { SetPolicyARN(value); return *this;}
+    inline PutScalingPolicyResult& WithPolicyARN(Aws::String&& value) { SetPolicyARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>

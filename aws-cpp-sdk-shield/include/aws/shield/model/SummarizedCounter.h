@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The counter name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The counter name.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The counter name.</p>
      */
-    inline SummarizedCounter& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline SummarizedCounter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The counter name.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>The unit of the counters.</p>
      */
-    inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
     /**
      * <p>The unit of the counters.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>The unit of the counters.</p>
      */
-    inline SummarizedCounter& WithUnit(Aws::String&& value) { SetUnit(value); return *this;}
+    inline SummarizedCounter& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
 
     /**
      * <p>The unit of the counters.</p>

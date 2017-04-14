@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/Artifact.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Information about the artifacts.</p>
      */
-    inline void SetArtifacts(Aws::Vector<Artifact>&& value) { m_artifacts = value; }
+    inline void SetArtifacts(Aws::Vector<Artifact>&& value) { m_artifacts = std::move(value); }
 
     /**
      * <p>Information about the artifacts.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Information about the artifacts.</p>
      */
-    inline ListArtifactsResult& WithArtifacts(Aws::Vector<Artifact>&& value) { SetArtifacts(value); return *this;}
+    inline ListArtifactsResult& WithArtifacts(Aws::Vector<Artifact>&& value) { SetArtifacts(std::move(value)); return *this;}
 
     /**
      * <p>Information about the artifacts.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>Information about the artifacts.</p>
      */
-    inline ListArtifactsResult& AddArtifacts(Artifact&& value) { m_artifacts.push_back(value); return *this; }
+    inline ListArtifactsResult& AddArtifacts(Artifact&& value) { m_artifacts.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -101,7 +102,7 @@ namespace Model
      * identifier that is also returned, which can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -122,7 +123,7 @@ namespace Model
      * identifier that is also returned, which can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
-    inline ListArtifactsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListArtifactsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an

@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan
      * customer.</p>
      */
-    inline void SetUsagePlanId(Aws::String&& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
+    inline void SetUsagePlanId(Aws::String&& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = std::move(value); }
 
     /**
      * <p>The Id of the <a>UsagePlan</a> resource representing the usage plan
@@ -83,7 +84,7 @@ namespace Model
      * containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan
      * customer.</p>
      */
-    inline GetUsagePlanKeysRequest& WithUsagePlanId(Aws::String&& value) { SetUsagePlanId(value); return *this;}
+    inline GetUsagePlanKeysRequest& WithUsagePlanId(Aws::String&& value) { SetUsagePlanId(std::move(value)); return *this;}
 
     /**
      * <p>The Id of the <a>UsagePlan</a> resource representing the usage plan
@@ -93,62 +94,52 @@ namespace Model
     inline GetUsagePlanKeysRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
 
     /**
-     * <p>A query parameter specifying the zero-based index specifying the position of
-     * a usage plan key.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline const Aws::String& GetPosition() const{ return m_position; }
 
     /**
-     * <p>A query parameter specifying the zero-based index specifying the position of
-     * a usage plan key.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
-     * <p>A query parameter specifying the zero-based index specifying the position of
-     * a usage plan key.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = value; }
+    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
-     * <p>A query parameter specifying the zero-based index specifying the position of
-     * a usage plan key.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
 
     /**
-     * <p>A query parameter specifying the zero-based index specifying the position of
-     * a usage plan key.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetUsagePlanKeysRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
 
     /**
-     * <p>A query parameter specifying the zero-based index specifying the position of
-     * a usage plan key.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
-    inline GetUsagePlanKeysRequest& WithPosition(Aws::String&& value) { SetPosition(value); return *this;}
+    inline GetUsagePlanKeysRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
-     * <p>A query parameter specifying the zero-based index specifying the position of
-     * a usage plan key.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetUsagePlanKeysRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>A query parameter specifying the maximum number usage plan keys returned by
-     * the GET request.</p>
+     * <p>The maximum number of returned results per page.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>A query parameter specifying the maximum number usage plan keys returned by
-     * the GET request.</p>
+     * <p>The maximum number of returned results per page.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>A query parameter specifying the maximum number usage plan keys returned by
-     * the GET request.</p>
+     * <p>The maximum number of returned results per page.</p>
      */
     inline GetUsagePlanKeysRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
@@ -168,7 +159,7 @@ namespace Model
      * <p>A query parameter specifying the name of the to-be-returned usage plan
      * keys.</p>
      */
-    inline void SetNameQuery(Aws::String&& value) { m_nameQueryHasBeenSet = true; m_nameQuery = value; }
+    inline void SetNameQuery(Aws::String&& value) { m_nameQueryHasBeenSet = true; m_nameQuery = std::move(value); }
 
     /**
      * <p>A query parameter specifying the name of the to-be-returned usage plan
@@ -186,7 +177,7 @@ namespace Model
      * <p>A query parameter specifying the name of the to-be-returned usage plan
      * keys.</p>
      */
-    inline GetUsagePlanKeysRequest& WithNameQuery(Aws::String&& value) { SetNameQuery(value); return *this;}
+    inline GetUsagePlanKeysRequest& WithNameQuery(Aws::String&& value) { SetNameQuery(std::move(value)); return *this;}
 
     /**
      * <p>A query parameter specifying the name of the to-be-returned usage plan

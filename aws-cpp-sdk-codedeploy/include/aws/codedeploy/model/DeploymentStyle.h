@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/DeploymentType.h>
 #include <aws/codedeploy/model/DeploymentOption.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>Indicates whether to run a standard deployment or a blue/green
      * deployment.</p>
      */
-    inline void SetDeploymentType(DeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
+    inline void SetDeploymentType(DeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
      * <p>Indicates whether to run a standard deployment or a blue/green
@@ -74,7 +75,7 @@ namespace Model
      * <p>Indicates whether to run a standard deployment or a blue/green
      * deployment.</p>
      */
-    inline DeploymentStyle& WithDeploymentType(DeploymentType&& value) { SetDeploymentType(value); return *this;}
+    inline DeploymentStyle& WithDeploymentType(DeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether to route deployment traffic behind a load balancer.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>Indicates whether to route deployment traffic behind a load balancer.</p>
      */
-    inline void SetDeploymentOption(DeploymentOption&& value) { m_deploymentOptionHasBeenSet = true; m_deploymentOption = value; }
+    inline void SetDeploymentOption(DeploymentOption&& value) { m_deploymentOptionHasBeenSet = true; m_deploymentOption = std::move(value); }
 
     /**
      * <p>Indicates whether to route deployment traffic behind a load balancer.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>Indicates whether to route deployment traffic behind a load balancer.</p>
      */
-    inline DeploymentStyle& WithDeploymentOption(DeploymentOption&& value) { SetDeploymentOption(value); return *this;}
+    inline DeploymentStyle& WithDeploymentOption(DeploymentOption&& value) { SetDeploymentOption(std::move(value)); return *this;}
 
   private:
     DeploymentType m_deploymentType;

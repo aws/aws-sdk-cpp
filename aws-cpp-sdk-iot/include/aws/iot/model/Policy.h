@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The policy name.</p>
      */
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
      * <p>The policy name.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The policy name.</p>
      */
-    inline Policy& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
+    inline Policy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
      * <p>The policy name.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The policy ARN.</p>
      */
-    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
+    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
     /**
      * <p>The policy ARN.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The policy ARN.</p>
      */
-    inline Policy& WithPolicyArn(Aws::String&& value) { SetPolicyArn(value); return *this;}
+    inline Policy& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
     /**
      * <p>The policy ARN.</p>

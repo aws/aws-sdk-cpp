@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul>
      */
-    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
+    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
@@ -92,7 +93,7 @@ namespace Model
      * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul>
      */
-    inline DownloadDBLogFilePortionRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(value); return *this;}
+    inline DownloadDBLogFilePortionRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The name of the log file to be downloaded.</p>
      */
-    inline void SetLogFileName(Aws::String&& value) { m_logFileNameHasBeenSet = true; m_logFileName = value; }
+    inline void SetLogFileName(Aws::String&& value) { m_logFileNameHasBeenSet = true; m_logFileName = std::move(value); }
 
     /**
      * <p>The name of the log file to be downloaded.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The name of the log file to be downloaded.</p>
      */
-    inline DownloadDBLogFilePortionRequest& WithLogFileName(Aws::String&& value) { SetLogFileName(value); return *this;}
+    inline DownloadDBLogFilePortionRequest& WithLogFileName(Aws::String&& value) { SetLogFileName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the log file to be downloaded.</p>
@@ -157,7 +158,7 @@ namespace Model
      * parameter is specified the response includes only records beyond the marker
      * until the end of the file or up to NumberOfLines.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>The pagination token provided in the previous request or "0". If the Marker
@@ -178,7 +179,7 @@ namespace Model
      * parameter is specified the response includes only records beyond the marker
      * until the end of the file or up to NumberOfLines.</p>
      */
-    inline DownloadDBLogFilePortionRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DownloadDBLogFilePortionRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token provided in the previous request or "0". If the Marker

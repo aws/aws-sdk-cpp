@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codecommit/model/RepositoryTrigger.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The system-generated unique ID for the trigger.</p>
      */
-    inline void SetConfigurationId(Aws::String&& value) { m_configurationId = value; }
+    inline void SetConfigurationId(Aws::String&& value) { m_configurationId = std::move(value); }
 
     /**
      * <p>The system-generated unique ID for the trigger.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The system-generated unique ID for the trigger.</p>
      */
-    inline GetRepositoryTriggersResult& WithConfigurationId(Aws::String&& value) { SetConfigurationId(value); return *this;}
+    inline GetRepositoryTriggersResult& WithConfigurationId(Aws::String&& value) { SetConfigurationId(std::move(value)); return *this;}
 
     /**
      * <p>The system-generated unique ID for the trigger.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The JSON block of configuration information for each trigger.</p>
      */
-    inline void SetTriggers(Aws::Vector<RepositoryTrigger>&& value) { m_triggers = value; }
+    inline void SetTriggers(Aws::Vector<RepositoryTrigger>&& value) { m_triggers = std::move(value); }
 
     /**
      * <p>The JSON block of configuration information for each trigger.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The JSON block of configuration information for each trigger.</p>
      */
-    inline GetRepositoryTriggersResult& WithTriggers(Aws::Vector<RepositoryTrigger>&& value) { SetTriggers(value); return *this;}
+    inline GetRepositoryTriggersResult& WithTriggers(Aws::Vector<RepositoryTrigger>&& value) { SetTriggers(std::move(value)); return *this;}
 
     /**
      * <p>The JSON block of configuration information for each trigger.</p>
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>The JSON block of configuration information for each trigger.</p>
      */
-    inline GetRepositoryTriggersResult& AddTriggers(RepositoryTrigger&& value) { m_triggers.push_back(value); return *this; }
+    inline GetRepositoryTriggersResult& AddTriggers(RepositoryTrigger&& value) { m_triggers.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_configurationId;

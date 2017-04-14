@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The name of the AWS Config rule that was used in the evaluation.</p>
      */
-    inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
+    inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
 
     /**
      * <p>The name of the AWS Config rule that was used in the evaluation.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The name of the AWS Config rule that was used in the evaluation.</p>
      */
-    inline EvaluationResultQualifier& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(value); return *this;}
+    inline EvaluationResultQualifier& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the AWS Config rule that was used in the evaluation.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The type of AWS resource that was evaluated.</p>
      */
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of AWS resource that was evaluated.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The type of AWS resource that was evaluated.</p>
      */
-    inline EvaluationResultQualifier& WithResourceType(Aws::String&& value) { SetResourceType(value); return *this;}
+    inline EvaluationResultQualifier& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The type of AWS resource that was evaluated.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The ID of the evaluated AWS resource.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The ID of the evaluated AWS resource.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The ID of the evaluated AWS resource.</p>
      */
-    inline EvaluationResultQualifier& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline EvaluationResultQualifier& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the evaluated AWS resource.</p>

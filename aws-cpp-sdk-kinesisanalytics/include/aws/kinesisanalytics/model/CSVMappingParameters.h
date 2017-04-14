@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>Row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row
      * delimiter.</p>
      */
-    inline void SetRecordRowDelimiter(Aws::String&& value) { m_recordRowDelimiterHasBeenSet = true; m_recordRowDelimiter = value; }
+    inline void SetRecordRowDelimiter(Aws::String&& value) { m_recordRowDelimiterHasBeenSet = true; m_recordRowDelimiter = std::move(value); }
 
     /**
      * <p>Row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row
@@ -81,7 +82,7 @@ namespace Model
      * <p>Row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row
      * delimiter.</p>
      */
-    inline CSVMappingParameters& WithRecordRowDelimiter(Aws::String&& value) { SetRecordRowDelimiter(value); return *this;}
+    inline CSVMappingParameters& WithRecordRowDelimiter(Aws::String&& value) { SetRecordRowDelimiter(std::move(value)); return *this;}
 
     /**
      * <p>Row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row
@@ -105,7 +106,7 @@ namespace Model
      * <p>Column delimiter. For example, in a CSV format, a comma (",") is the typical
      * column delimiter.</p>
      */
-    inline void SetRecordColumnDelimiter(Aws::String&& value) { m_recordColumnDelimiterHasBeenSet = true; m_recordColumnDelimiter = value; }
+    inline void SetRecordColumnDelimiter(Aws::String&& value) { m_recordColumnDelimiterHasBeenSet = true; m_recordColumnDelimiter = std::move(value); }
 
     /**
      * <p>Column delimiter. For example, in a CSV format, a comma (",") is the typical
@@ -123,7 +124,7 @@ namespace Model
      * <p>Column delimiter. For example, in a CSV format, a comma (",") is the typical
      * column delimiter.</p>
      */
-    inline CSVMappingParameters& WithRecordColumnDelimiter(Aws::String&& value) { SetRecordColumnDelimiter(value); return *this;}
+    inline CSVMappingParameters& WithRecordColumnDelimiter(Aws::String&& value) { SetRecordColumnDelimiter(std::move(value)); return *this;}
 
     /**
      * <p>Column delimiter. For example, in a CSV format, a comma (",") is the typical

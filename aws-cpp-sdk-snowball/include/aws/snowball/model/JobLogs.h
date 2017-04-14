@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
      * <p>A link to an Amazon S3 presigned URL where the job completion report is
      * located.</p>
      */
-    inline void SetJobCompletionReportURI(Aws::String&& value) { m_jobCompletionReportURIHasBeenSet = true; m_jobCompletionReportURI = value; }
+    inline void SetJobCompletionReportURI(Aws::String&& value) { m_jobCompletionReportURIHasBeenSet = true; m_jobCompletionReportURI = std::move(value); }
 
     /**
      * <p>A link to an Amazon S3 presigned URL where the job completion report is
@@ -92,7 +93,7 @@ namespace Model
      * <p>A link to an Amazon S3 presigned URL where the job completion report is
      * located.</p>
      */
-    inline JobLogs& WithJobCompletionReportURI(Aws::String&& value) { SetJobCompletionReportURI(value); return *this;}
+    inline JobLogs& WithJobCompletionReportURI(Aws::String&& value) { SetJobCompletionReportURI(std::move(value)); return *this;}
 
     /**
      * <p>A link to an Amazon S3 presigned URL where the job completion report is
@@ -116,7 +117,7 @@ namespace Model
      * <p>A link to an Amazon S3 presigned URL where the job success log is
      * located.</p>
      */
-    inline void SetJobSuccessLogURI(Aws::String&& value) { m_jobSuccessLogURIHasBeenSet = true; m_jobSuccessLogURI = value; }
+    inline void SetJobSuccessLogURI(Aws::String&& value) { m_jobSuccessLogURIHasBeenSet = true; m_jobSuccessLogURI = std::move(value); }
 
     /**
      * <p>A link to an Amazon S3 presigned URL where the job success log is
@@ -134,7 +135,7 @@ namespace Model
      * <p>A link to an Amazon S3 presigned URL where the job success log is
      * located.</p>
      */
-    inline JobLogs& WithJobSuccessLogURI(Aws::String&& value) { SetJobSuccessLogURI(value); return *this;}
+    inline JobLogs& WithJobSuccessLogURI(Aws::String&& value) { SetJobSuccessLogURI(std::move(value)); return *this;}
 
     /**
      * <p>A link to an Amazon S3 presigned URL where the job success log is
@@ -158,7 +159,7 @@ namespace Model
      * <p>A link to an Amazon S3 presigned URL where the job failure log is
      * located.</p>
      */
-    inline void SetJobFailureLogURI(Aws::String&& value) { m_jobFailureLogURIHasBeenSet = true; m_jobFailureLogURI = value; }
+    inline void SetJobFailureLogURI(Aws::String&& value) { m_jobFailureLogURIHasBeenSet = true; m_jobFailureLogURI = std::move(value); }
 
     /**
      * <p>A link to an Amazon S3 presigned URL where the job failure log is
@@ -176,7 +177,7 @@ namespace Model
      * <p>A link to an Amazon S3 presigned URL where the job failure log is
      * located.</p>
      */
-    inline JobLogs& WithJobFailureLogURI(Aws::String&& value) { SetJobFailureLogURI(value); return *this;}
+    inline JobLogs& WithJobFailureLogURI(Aws::String&& value) { SetJobFailureLogURI(std::move(value)); return *this;}
 
     /**
      * <p>A link to an Amazon S3 presigned URL where the job failure log is

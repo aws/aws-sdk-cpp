@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/WafActionType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -85,7 +86,7 @@ namespace Model
      * <code>COUNT</code> for the default action for a <code>WebACL</code>.</p> </li>
      * </ul>
      */
-    inline void SetType(WafActionType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(WafActionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>Specifies how you want AWS WAF to respond to requests that match the settings
@@ -111,7 +112,7 @@ namespace Model
      * <code>COUNT</code> for the default action for a <code>WebACL</code>.</p> </li>
      * </ul>
      */
-    inline WafAction& WithType(WafActionType&& value) { SetType(value); return *this;}
+    inline WafAction& WithType(WafActionType&& value) { SetType(std::move(value)); return *this;}
 
   private:
     WafActionType m_type;

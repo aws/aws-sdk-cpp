@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/RoutingStrategy.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Unique identifier for an alias; alias IDs are unique within a region.</p>
      */
-    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
+    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
 
     /**
      * <p>Unique identifier for an alias; alias IDs are unique within a region.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>Unique identifier for an alias; alias IDs are unique within a region.</p>
      */
-    inline Alias& WithAliasId(Aws::String&& value) { SetAliasId(value); return *this;}
+    inline Alias& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for an alias; alias IDs are unique within a region.</p>
@@ -100,7 +101,7 @@ namespace Model
      * <p>Descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Descriptive label that is associated with an alias. Alias names do not need
@@ -118,7 +119,7 @@ namespace Model
      * <p>Descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>
      */
-    inline Alias& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Alias& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with an alias. Alias names do not need
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>Unique identifier for an alias; alias ARNs are unique across all regions.</p>
      */
-    inline void SetAliasArn(Aws::String&& value) { m_aliasArnHasBeenSet = true; m_aliasArn = value; }
+    inline void SetAliasArn(Aws::String&& value) { m_aliasArnHasBeenSet = true; m_aliasArn = std::move(value); }
 
     /**
      * <p>Unique identifier for an alias; alias ARNs are unique across all regions.</p>
@@ -154,7 +155,7 @@ namespace Model
     /**
      * <p>Unique identifier for an alias; alias ARNs are unique across all regions.</p>
      */
-    inline Alias& WithAliasArn(Aws::String&& value) { SetAliasArn(value); return *this;}
+    inline Alias& WithAliasArn(Aws::String&& value) { SetAliasArn(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for an alias; alias ARNs are unique across all regions.</p>
@@ -174,7 +175,7 @@ namespace Model
     /**
      * <p>Human-readable description of an alias.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Human-readable description of an alias.</p>
@@ -189,7 +190,7 @@ namespace Model
     /**
      * <p>Human-readable description of an alias.</p>
      */
-    inline Alias& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline Alias& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Human-readable description of an alias.</p>
@@ -209,7 +210,7 @@ namespace Model
     /**
      * <p>Alias configuration for the alias, including routing type and settings.</p>
      */
-    inline void SetRoutingStrategy(RoutingStrategy&& value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = value; }
+    inline void SetRoutingStrategy(RoutingStrategy&& value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = std::move(value); }
 
     /**
      * <p>Alias configuration for the alias, including routing type and settings.</p>
@@ -219,7 +220,7 @@ namespace Model
     /**
      * <p>Alias configuration for the alias, including routing type and settings.</p>
      */
-    inline Alias& WithRoutingStrategy(RoutingStrategy&& value) { SetRoutingStrategy(value); return *this;}
+    inline Alias& WithRoutingStrategy(RoutingStrategy&& value) { SetRoutingStrategy(std::move(value)); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
@@ -237,7 +238,7 @@ namespace Model
      * <p>Time stamp indicating when this data object was created. Format is a number
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
@@ -249,7 +250,7 @@ namespace Model
      * <p>Time stamp indicating when this data object was created. Format is a number
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
-    inline Alias& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
+    inline Alias& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was last modified. Format is a
@@ -270,7 +271,7 @@ namespace Model
      * number expressed in Unix time as milliseconds (for example
      * "1469498468.057").</p>
      */
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
+    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
 
     /**
      * <p>Time stamp indicating when this data object was last modified. Format is a
@@ -284,7 +285,7 @@ namespace Model
      * number expressed in Unix time as milliseconds (for example
      * "1469498468.057").</p>
      */
-    inline Alias& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(value); return *this;}
+    inline Alias& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
   private:
     Aws::String m_aliasId;

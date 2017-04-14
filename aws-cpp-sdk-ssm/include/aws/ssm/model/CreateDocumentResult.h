@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/DocumentDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Information about the Systems Manager document.</p>
      */
-    inline void SetDocumentDescription(DocumentDescription&& value) { m_documentDescription = value; }
+    inline void SetDocumentDescription(DocumentDescription&& value) { m_documentDescription = std::move(value); }
 
     /**
      * <p>Information about the Systems Manager document.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Information about the Systems Manager document.</p>
      */
-    inline CreateDocumentResult& WithDocumentDescription(DocumentDescription&& value) { SetDocumentDescription(value); return *this;}
+    inline CreateDocumentResult& WithDocumentDescription(DocumentDescription&& value) { SetDocumentDescription(std::move(value)); return *this;}
 
   private:
     DocumentDescription m_documentDescription;

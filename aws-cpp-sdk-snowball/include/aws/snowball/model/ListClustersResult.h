@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/snowball/model/ClusterListEntry.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a
      * cluster's ID, and other important status information.</p>
      */
-    inline void SetClusterListEntries(Aws::Vector<ClusterListEntry>&& value) { m_clusterListEntries = value; }
+    inline void SetClusterListEntries(Aws::Vector<ClusterListEntry>&& value) { m_clusterListEntries = std::move(value); }
 
     /**
      * <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a
@@ -69,7 +70,7 @@ namespace Model
      * <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a
      * cluster's ID, and other important status information.</p>
      */
-    inline ListClustersResult& WithClusterListEntries(Aws::Vector<ClusterListEntry>&& value) { SetClusterListEntries(value); return *this;}
+    inline ListClustersResult& WithClusterListEntries(Aws::Vector<ClusterListEntry>&& value) { SetClusterListEntries(std::move(value)); return *this;}
 
     /**
      * <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a
@@ -81,7 +82,7 @@ namespace Model
      * <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a
      * cluster's ID, and other important status information.</p>
      */
-    inline ListClustersResult& AddClusterListEntries(ClusterListEntry&& value) { m_clusterListEntries.push_back(value); return *this; }
+    inline ListClustersResult& AddClusterListEntries(ClusterListEntry&& value) { m_clusterListEntries.push_back(std::move(value)); return *this; }
 
     /**
      * <p>HTTP requests are stateless. If you use the automatically generated
@@ -102,7 +103,7 @@ namespace Model
      * <code>NextToken</code> value in your next <code>ClusterListEntry</code> call,
      * your list of returned clusters will start from this point in the array.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>HTTP requests are stateless. If you use the automatically generated
@@ -123,7 +124,7 @@ namespace Model
      * <code>NextToken</code> value in your next <code>ClusterListEntry</code> call,
      * your list of returned clusters will start from this point in the array.</p>
      */
-    inline ListClustersResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListClustersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>HTTP requests are stateless. If you use the automatically generated

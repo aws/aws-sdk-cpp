@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/ParameterType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the parameter.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
-    inline Parameter& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Parameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the parameter.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>The type of parameter. Valid values include the following: String, String
      * list, Secure string.</p>
      */
-    inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of parameter. Valid values include the following: String, String
@@ -108,7 +109,7 @@ namespace Model
      * <p>The type of parameter. Valid values include the following: String, String
      * list, Secure string.</p>
      */
-    inline Parameter& WithType(ParameterType&& value) { SetType(value); return *this;}
+    inline Parameter& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The parameter value.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The parameter value.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The parameter value.</p>
@@ -138,7 +139,7 @@ namespace Model
     /**
      * <p>The parameter value.</p>
      */
-    inline Parameter& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Parameter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The parameter value.</p>

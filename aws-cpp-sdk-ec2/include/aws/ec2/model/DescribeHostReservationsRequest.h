@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>One or more host reservation IDs.</p>
      */
-    inline void SetHostReservationIdSet(Aws::Vector<Aws::String>&& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet = value; }
+    inline void SetHostReservationIdSet(Aws::Vector<Aws::String>&& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet = std::move(value); }
 
     /**
      * <p>One or more host reservation IDs.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>One or more host reservation IDs.</p>
      */
-    inline DescribeHostReservationsRequest& WithHostReservationIdSet(Aws::Vector<Aws::String>&& value) { SetHostReservationIdSet(value); return *this;}
+    inline DescribeHostReservationsRequest& WithHostReservationIdSet(Aws::Vector<Aws::String>&& value) { SetHostReservationIdSet(std::move(value)); return *this;}
 
     /**
      * <p>One or more host reservation IDs.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>One or more host reservation IDs.</p>
      */
-    inline DescribeHostReservationsRequest& AddHostReservationIdSet(Aws::String&& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet.push_back(value); return *this; }
+    inline DescribeHostReservationsRequest& AddHostReservationIdSet(Aws::String&& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more host reservation IDs.</p>
@@ -110,7 +111,7 @@ namespace Model
      * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
      * </li> </ul>
      */
-    inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
@@ -132,7 +133,7 @@ namespace Model
      * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
      * </li> </ul>
      */
-    inline DescribeHostReservationsRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(value); return *this;}
+    inline DescribeHostReservationsRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
@@ -154,7 +155,7 @@ namespace Model
      * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
      * </li> </ul>
      */
-    inline DescribeHostReservationsRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
+    inline DescribeHostReservationsRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The maximum number of results to return for the request in a single page. The
@@ -196,7 +197,7 @@ namespace Model
     /**
      * <p>The token to use to retrieve the next page of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use to retrieve the next page of results.</p>
@@ -211,7 +212,7 @@ namespace Model
     /**
      * <p>The token to use to retrieve the next page of results.</p>
      */
-    inline DescribeHostReservationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeHostReservationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use to retrieve the next page of results.</p>

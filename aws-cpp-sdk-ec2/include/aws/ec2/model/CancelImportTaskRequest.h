@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the import image or import snapshot task to be canceled.</p>
      */
-    inline void SetImportTaskId(Aws::String&& value) { m_importTaskIdHasBeenSet = true; m_importTaskId = value; }
+    inline void SetImportTaskId(Aws::String&& value) { m_importTaskIdHasBeenSet = true; m_importTaskId = std::move(value); }
 
     /**
      * <p>The ID of the import image or import snapshot task to be canceled.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The ID of the import image or import snapshot task to be canceled.</p>
      */
-    inline CancelImportTaskRequest& WithImportTaskId(Aws::String&& value) { SetImportTaskId(value); return *this;}
+    inline CancelImportTaskRequest& WithImportTaskId(Aws::String&& value) { SetImportTaskId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the import image or import snapshot task to be canceled.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The reason for canceling the task.</p>
      */
-    inline void SetCancelReason(Aws::String&& value) { m_cancelReasonHasBeenSet = true; m_cancelReason = value; }
+    inline void SetCancelReason(Aws::String&& value) { m_cancelReasonHasBeenSet = true; m_cancelReason = std::move(value); }
 
     /**
      * <p>The reason for canceling the task.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The reason for canceling the task.</p>
      */
-    inline CancelImportTaskRequest& WithCancelReason(Aws::String&& value) { SetCancelReason(value); return *this;}
+    inline CancelImportTaskRequest& WithCancelReason(Aws::String&& value) { SetCancelReason(std::move(value)); return *this;}
 
     /**
      * <p>The reason for canceling the task.</p>

@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of the security configuration.</p>
      */
-    inline void SetName(Aws::String&& value) { m_name = value; }
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
      * <p>The name of the security configuration.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the security configuration.</p>
      */
-    inline CreateSecurityConfigurationResult& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateSecurityConfigurationResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the security configuration.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The date and time the security configuration was created.</p>
      */
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTime = value; }
+    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTime = std::move(value); }
 
     /**
      * <p>The date and time the security configuration was created.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The date and time the security configuration was created.</p>
      */
-    inline CreateSecurityConfigurationResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(value); return *this;}
+    inline CreateSecurityConfigurationResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

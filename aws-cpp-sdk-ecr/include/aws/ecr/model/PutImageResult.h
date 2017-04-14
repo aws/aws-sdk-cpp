@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/ecr/model/Image.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Details of the image uploaded.</p>
      */
-    inline void SetImage(Image&& value) { m_image = value; }
+    inline void SetImage(Image&& value) { m_image = std::move(value); }
 
     /**
      * <p>Details of the image uploaded.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Details of the image uploaded.</p>
      */
-    inline PutImageResult& WithImage(Image&& value) { SetImage(value); return *this;}
+    inline PutImageResult& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
 
   private:
     Image m_image;

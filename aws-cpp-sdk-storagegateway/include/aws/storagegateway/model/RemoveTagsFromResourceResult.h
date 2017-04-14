@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource that the tags were removed
      * from.</p>
      */
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARN = value; }
+    inline void SetResourceARN(Aws::String&& value) { m_resourceARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource that the tags were removed
@@ -78,7 +79,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource that the tags were removed
      * from.</p>
      */
-    inline RemoveTagsFromResourceResult& WithResourceARN(Aws::String&& value) { SetResourceARN(value); return *this;}
+    inline RemoveTagsFromResourceResult& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource that the tags were removed

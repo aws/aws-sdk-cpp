@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/Paths.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -73,7 +74,7 @@ namespace Model
      * encode those characters. Do not URL encode any other characters in the path, or
      * CloudFront will not invalidate the old version of the updated object.
      */
-    inline void SetPaths(Paths&& value) { m_pathsHasBeenSet = true; m_paths = value; }
+    inline void SetPaths(Paths&& value) { m_pathsHasBeenSet = true; m_paths = std::move(value); }
 
     /**
      * The path of the object to invalidate. The path is relative to the distribution
@@ -93,7 +94,7 @@ namespace Model
      * encode those characters. Do not URL encode any other characters in the path, or
      * CloudFront will not invalidate the old version of the updated object.
      */
-    inline InvalidationBatch& WithPaths(Paths&& value) { SetPaths(value); return *this;}
+    inline InvalidationBatch& WithPaths(Paths&& value) { SetPaths(std::move(value)); return *this;}
 
     /**
      * A unique name that ensures the request can't be replayed. If the CallerReference
@@ -132,7 +133,7 @@ namespace Model
      * is different from the original request, CloudFront returns an
      * InvalidationBatchAlreadyExists error.
      */
-    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
+    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
 
     /**
      * A unique name that ensures the request can't be replayed. If the CallerReference
@@ -171,7 +172,7 @@ namespace Model
      * is different from the original request, CloudFront returns an
      * InvalidationBatchAlreadyExists error.
      */
-    inline InvalidationBatch& WithCallerReference(Aws::String&& value) { SetCallerReference(value); return *this;}
+    inline InvalidationBatch& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
 
     /**
      * A unique name that ensures the request can't be replayed. If the CallerReference

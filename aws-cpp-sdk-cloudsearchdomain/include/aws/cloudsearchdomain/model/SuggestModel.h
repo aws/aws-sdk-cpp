@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudsearchdomain/model/SuggestionMatch.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The query string specified in the suggest request.</p>
      */
-    inline void SetQuery(Aws::String&& value) { m_queryHasBeenSet = true; m_query = value; }
+    inline void SetQuery(Aws::String&& value) { m_queryHasBeenSet = true; m_query = std::move(value); }
 
     /**
      * <p>The query string specified in the suggest request.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The query string specified in the suggest request.</p>
      */
-    inline SuggestModel& WithQuery(Aws::String&& value) { SetQuery(value); return *this;}
+    inline SuggestModel& WithQuery(Aws::String&& value) { SetQuery(std::move(value)); return *this;}
 
     /**
      * <p>The query string specified in the suggest request.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The documents that match the query string.</p>
      */
-    inline void SetSuggestions(Aws::Vector<SuggestionMatch>&& value) { m_suggestionsHasBeenSet = true; m_suggestions = value; }
+    inline void SetSuggestions(Aws::Vector<SuggestionMatch>&& value) { m_suggestionsHasBeenSet = true; m_suggestions = std::move(value); }
 
     /**
      * <p>The documents that match the query string.</p>
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>The documents that match the query string.</p>
      */
-    inline SuggestModel& WithSuggestions(Aws::Vector<SuggestionMatch>&& value) { SetSuggestions(value); return *this;}
+    inline SuggestModel& WithSuggestions(Aws::Vector<SuggestionMatch>&& value) { SetSuggestions(std::move(value)); return *this;}
 
     /**
      * <p>The documents that match the query string.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The documents that match the query string.</p>
      */
-    inline SuggestModel& AddSuggestions(SuggestionMatch&& value) { m_suggestionsHasBeenSet = true; m_suggestions.push_back(value); return *this; }
+    inline SuggestModel& AddSuggestions(SuggestionMatch&& value) { m_suggestionsHasBeenSet = true; m_suggestions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_query;

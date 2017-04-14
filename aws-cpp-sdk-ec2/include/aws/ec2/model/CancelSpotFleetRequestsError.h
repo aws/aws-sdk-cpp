@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/CancelBatchErrorCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The error code.</p>
      */
-    inline void SetCode(CancelBatchErrorCode&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(CancelBatchErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>The error code.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The error code.</p>
      */
-    inline CancelSpotFleetRequestsError& WithCode(CancelBatchErrorCode&& value) { SetCode(value); return *this;}
+    inline CancelSpotFleetRequestsError& WithCode(CancelBatchErrorCode&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>The description for the error code.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The description for the error code.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The description for the error code.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The description for the error code.</p>
      */
-    inline CancelSpotFleetRequestsError& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline CancelSpotFleetRequestsError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The description for the error code.</p>

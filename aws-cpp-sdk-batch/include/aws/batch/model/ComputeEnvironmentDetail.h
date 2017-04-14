@@ -19,6 +19,7 @@
 #include <aws/batch/model/CEState.h>
 #include <aws/batch/model/CEStatus.h>
 #include <aws/batch/model/ComputeResource.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The name of the compute environment. </p>
      */
-    inline void SetComputeEnvironmentName(Aws::String&& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = value; }
+    inline void SetComputeEnvironmentName(Aws::String&& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = std::move(value); }
 
     /**
      * <p>The name of the compute environment. </p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The name of the compute environment. </p>
      */
-    inline ComputeEnvironmentDetail& WithComputeEnvironmentName(Aws::String&& value) { SetComputeEnvironmentName(value); return *this;}
+    inline ComputeEnvironmentDetail& WithComputeEnvironmentName(Aws::String&& value) { SetComputeEnvironmentName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the compute environment. </p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the compute environment. </p>
      */
-    inline void SetComputeEnvironmentArn(Aws::String&& value) { m_computeEnvironmentArnHasBeenSet = true; m_computeEnvironmentArn = value; }
+    inline void SetComputeEnvironmentArn(Aws::String&& value) { m_computeEnvironmentArnHasBeenSet = true; m_computeEnvironmentArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the compute environment. </p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the compute environment. </p>
      */
-    inline ComputeEnvironmentDetail& WithComputeEnvironmentArn(Aws::String&& value) { SetComputeEnvironmentArn(value); return *this;}
+    inline ComputeEnvironmentDetail& WithComputeEnvironmentArn(Aws::String&& value) { SetComputeEnvironmentArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the compute environment. </p>
@@ -134,7 +135,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by
      * the compute environment. </p>
      */
-    inline void SetEcsClusterArn(Aws::String&& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
+    inline void SetEcsClusterArn(Aws::String&& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by
@@ -152,7 +153,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by
      * the compute environment. </p>
      */
-    inline ComputeEnvironmentDetail& WithEcsClusterArn(Aws::String&& value) { SetEcsClusterArn(value); return *this;}
+    inline ComputeEnvironmentDetail& WithEcsClusterArn(Aws::String&& value) { SetEcsClusterArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>The type of the compute environment.</p>
      */
-    inline void SetType(CEType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(CEType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of the compute environment.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>The type of the compute environment.</p>
      */
-    inline ComputeEnvironmentDetail& WithType(CEType&& value) { SetType(value); return *this;}
+    inline ComputeEnvironmentDetail& WithType(CEType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The state of the compute environment. The valid values are
@@ -207,7 +208,7 @@ namespace Model
      * indicates that you can register instances with the compute environment and that
      * the associated instances can accept jobs. </p>
      */
-    inline void SetState(CEState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(CEState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the compute environment. The valid values are
@@ -223,7 +224,7 @@ namespace Model
      * indicates that you can register instances with the compute environment and that
      * the associated instances can accept jobs. </p>
      */
-    inline ComputeEnvironmentDetail& WithState(CEState&& value) { SetState(value); return *this;}
+    inline ComputeEnvironmentDetail& WithState(CEState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The current status of the compute environment (for example,
@@ -241,7 +242,7 @@ namespace Model
      * <p>The current status of the compute environment (for example,
      * <code>CREATING</code> or <code>VALID</code>).</p>
      */
-    inline void SetStatus(CEStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(CEStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The current status of the compute environment (for example,
@@ -253,7 +254,7 @@ namespace Model
      * <p>The current status of the compute environment (for example,
      * <code>CREATING</code> or <code>VALID</code>).</p>
      */
-    inline ComputeEnvironmentDetail& WithStatus(CEStatus&& value) { SetStatus(value); return *this;}
+    inline ComputeEnvironmentDetail& WithStatus(CEStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>A short, human-readable string to provide additional details about the
@@ -271,7 +272,7 @@ namespace Model
      * <p>A short, human-readable string to provide additional details about the
      * current status of the compute environment.</p>
      */
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
 
     /**
      * <p>A short, human-readable string to provide additional details about the
@@ -289,7 +290,7 @@ namespace Model
      * <p>A short, human-readable string to provide additional details about the
      * current status of the compute environment.</p>
      */
-    inline ComputeEnvironmentDetail& WithStatusReason(Aws::String&& value) { SetStatusReason(value); return *this;}
+    inline ComputeEnvironmentDetail& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
      * <p>A short, human-readable string to provide additional details about the
@@ -310,7 +311,7 @@ namespace Model
     /**
      * <p>The compute resources defined for the compute environment. </p>
      */
-    inline void SetComputeResources(ComputeResource&& value) { m_computeResourcesHasBeenSet = true; m_computeResources = value; }
+    inline void SetComputeResources(ComputeResource&& value) { m_computeResourcesHasBeenSet = true; m_computeResources = std::move(value); }
 
     /**
      * <p>The compute resources defined for the compute environment. </p>
@@ -320,7 +321,7 @@ namespace Model
     /**
      * <p>The compute resources defined for the compute environment. </p>
      */
-    inline ComputeEnvironmentDetail& WithComputeResources(ComputeResource&& value) { SetComputeResources(value); return *this;}
+    inline ComputeEnvironmentDetail& WithComputeResources(ComputeResource&& value) { SetComputeResources(std::move(value)); return *this;}
 
     /**
      * <p>The service role associated with the compute environment that allows AWS
@@ -338,7 +339,7 @@ namespace Model
      * <p>The service role associated with the compute environment that allows AWS
      * Batch to make calls to AWS API operations on your behalf.</p>
      */
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
      * <p>The service role associated with the compute environment that allows AWS
@@ -356,7 +357,7 @@ namespace Model
      * <p>The service role associated with the compute environment that allows AWS
      * Batch to make calls to AWS API operations on your behalf.</p>
      */
-    inline ComputeEnvironmentDetail& WithServiceRole(Aws::String&& value) { SetServiceRole(value); return *this;}
+    inline ComputeEnvironmentDetail& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
      * <p>The service role associated with the compute environment that allows AWS

@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The deployment ID of the blue/green deployment for which you want to start
      * rerouting traffic to the replacement environment.</p>
      */
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
+    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
      * <p>The deployment ID of the blue/green deployment for which you want to start
@@ -69,7 +70,7 @@ namespace Model
      * <p>The deployment ID of the blue/green deployment for which you want to start
      * rerouting traffic to the replacement environment.</p>
      */
-    inline ContinueDeploymentRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
+    inline ContinueDeploymentRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
      * <p>The deployment ID of the blue/green deployment for which you want to start

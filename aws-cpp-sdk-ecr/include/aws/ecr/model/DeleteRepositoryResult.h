@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/ecr/model/Repository.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The repository that was deleted.</p>
      */
-    inline void SetRepository(Repository&& value) { m_repository = value; }
+    inline void SetRepository(Repository&& value) { m_repository = std::move(value); }
 
     /**
      * <p>The repository that was deleted.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The repository that was deleted.</p>
      */
-    inline DeleteRepositoryResult& WithRepository(Repository&& value) { SetRepository(value); return *this;}
+    inline DeleteRepositoryResult& WithRepository(Repository&& value) { SetRepository(std::move(value)); return *this;}
 
   private:
     Repository m_repository;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/model/Organization.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>A structure that contains details about the newly created organization.</p>
      */
-    inline void SetOrganization(Organization&& value) { m_organization = value; }
+    inline void SetOrganization(Organization&& value) { m_organization = std::move(value); }
 
     /**
      * <p>A structure that contains details about the newly created organization.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>A structure that contains details about the newly created organization.</p>
      */
-    inline CreateOrganizationResult& WithOrganization(Organization&& value) { SetOrganization(value); return *this;}
+    inline CreateOrganizationResult& WithOrganization(Organization&& value) { SetOrganization(std::move(value)); return *this;}
 
   private:
     Organization m_organization;

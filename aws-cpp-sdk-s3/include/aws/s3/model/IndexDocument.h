@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * key name images/index.html) The suffix must not be empty and must not include a
      * slash character.
      */
-    inline void SetSuffix(Aws::String&& value) { m_suffixHasBeenSet = true; m_suffix = value; }
+    inline void SetSuffix(Aws::String&& value) { m_suffixHasBeenSet = true; m_suffix = std::move(value); }
 
     /**
      * A suffix that is appended to a request that is for a directory on the website
@@ -91,7 +92,7 @@ namespace Model
      * key name images/index.html) The suffix must not be empty and must not include a
      * slash character.
      */
-    inline IndexDocument& WithSuffix(Aws::String&& value) { SetSuffix(value); return *this;}
+    inline IndexDocument& WithSuffix(Aws::String&& value) { SetSuffix(std::move(value)); return *this;}
 
     /**
      * A suffix that is appended to a request that is for a directory on the website

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/dms/model/Certificate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The certificate to be uploaded.</p>
      */
-    inline void SetCertificate(Certificate&& value) { m_certificate = value; }
+    inline void SetCertificate(Certificate&& value) { m_certificate = std::move(value); }
 
     /**
      * <p>The certificate to be uploaded.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The certificate to be uploaded.</p>
      */
-    inline ImportCertificateResult& WithCertificate(Certificate&& value) { SetCertificate(value); return *this;}
+    inline ImportCertificateResult& WithCertificate(Certificate&& value) { SetCertificate(std::move(value)); return *this;}
 
   private:
     Certificate m_certificate;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the email source.</p>
      */
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
+    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the email source.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the email source.</p>
      */
-    inline EmailConfigurationType& WithSourceArn(Aws::String&& value) { SetSourceArn(value); return *this;}
+    inline EmailConfigurationType& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the email source.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The REPLY-TO email address.</p>
      */
-    inline void SetReplyToEmailAddress(Aws::String&& value) { m_replyToEmailAddressHasBeenSet = true; m_replyToEmailAddress = value; }
+    inline void SetReplyToEmailAddress(Aws::String&& value) { m_replyToEmailAddressHasBeenSet = true; m_replyToEmailAddress = std::move(value); }
 
     /**
      * <p>The REPLY-TO email address.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The REPLY-TO email address.</p>
      */
-    inline EmailConfigurationType& WithReplyToEmailAddress(Aws::String&& value) { SetReplyToEmailAddress(value); return *this;}
+    inline EmailConfigurationType& WithReplyToEmailAddress(Aws::String&& value) { SetReplyToEmailAddress(std::move(value)); return *this;}
 
     /**
      * <p>The REPLY-TO email address.</p>

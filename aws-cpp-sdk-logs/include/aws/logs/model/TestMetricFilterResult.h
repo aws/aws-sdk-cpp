@@ -16,6 +16,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/logs/model/MetricFilterMatchRecord.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The matched events.</p>
      */
-    inline void SetMatches(Aws::Vector<MetricFilterMatchRecord>&& value) { m_matches = value; }
+    inline void SetMatches(Aws::Vector<MetricFilterMatchRecord>&& value) { m_matches = std::move(value); }
 
     /**
      * <p>The matched events.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The matched events.</p>
      */
-    inline TestMetricFilterResult& WithMatches(Aws::Vector<MetricFilterMatchRecord>&& value) { SetMatches(value); return *this;}
+    inline TestMetricFilterResult& WithMatches(Aws::Vector<MetricFilterMatchRecord>&& value) { SetMatches(std::move(value)); return *this;}
 
     /**
      * <p>The matched events.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The matched events.</p>
      */
-    inline TestMetricFilterResult& AddMatches(MetricFilterMatchRecord&& value) { m_matches.push_back(value); return *this; }
+    inline TestMetricFilterResult& AddMatches(MetricFilterMatchRecord&& value) { m_matches.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<MetricFilterMatchRecord> m_matches;

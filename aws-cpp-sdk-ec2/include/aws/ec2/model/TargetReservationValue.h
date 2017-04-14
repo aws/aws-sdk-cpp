@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/TargetConfiguration.h>
 #include <aws/ec2/model/ReservationValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>The configuration of the Convertible Reserved Instances that make up the
      * exchange.</p>
      */
-    inline void SetTargetConfiguration(TargetConfiguration&& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = value; }
+    inline void SetTargetConfiguration(TargetConfiguration&& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = std::move(value); }
 
     /**
      * <p>The configuration of the Convertible Reserved Instances that make up the
@@ -76,7 +77,7 @@ namespace Model
      * <p>The configuration of the Convertible Reserved Instances that make up the
      * exchange.</p>
      */
-    inline TargetReservationValue& WithTargetConfiguration(TargetConfiguration&& value) { SetTargetConfiguration(value); return *this;}
+    inline TargetReservationValue& WithTargetConfiguration(TargetConfiguration&& value) { SetTargetConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The total value of the Convertible Reserved Instances that make up the
@@ -97,7 +98,7 @@ namespace Model
      * exchange. This is the sum of the list value, remaining upfront price, and
      * additional upfront cost of the exchange.</p>
      */
-    inline void SetReservationValue(ReservationValue&& value) { m_reservationValueHasBeenSet = true; m_reservationValue = value; }
+    inline void SetReservationValue(ReservationValue&& value) { m_reservationValueHasBeenSet = true; m_reservationValue = std::move(value); }
 
     /**
      * <p>The total value of the Convertible Reserved Instances that make up the
@@ -111,7 +112,7 @@ namespace Model
      * exchange. This is the sum of the list value, remaining upfront price, and
      * additional upfront cost of the exchange.</p>
      */
-    inline TargetReservationValue& WithReservationValue(ReservationValue&& value) { SetReservationValue(value); return *this;}
+    inline TargetReservationValue& WithReservationValue(ReservationValue&& value) { SetReservationValue(std::move(value)); return *this;}
 
   private:
     TargetConfiguration m_targetConfiguration;

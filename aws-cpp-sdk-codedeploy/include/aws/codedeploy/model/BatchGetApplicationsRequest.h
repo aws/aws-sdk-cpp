@@ -17,6 +17,7 @@
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>A list of application names separated by spaces.</p>
      */
-    inline void SetApplicationNames(Aws::Vector<Aws::String>&& value) { m_applicationNamesHasBeenSet = true; m_applicationNames = value; }
+    inline void SetApplicationNames(Aws::Vector<Aws::String>&& value) { m_applicationNamesHasBeenSet = true; m_applicationNames = std::move(value); }
 
     /**
      * <p>A list of application names separated by spaces.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>A list of application names separated by spaces.</p>
      */
-    inline BatchGetApplicationsRequest& WithApplicationNames(Aws::Vector<Aws::String>&& value) { SetApplicationNames(value); return *this;}
+    inline BatchGetApplicationsRequest& WithApplicationNames(Aws::Vector<Aws::String>&& value) { SetApplicationNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of application names separated by spaces.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>A list of application names separated by spaces.</p>
      */
-    inline BatchGetApplicationsRequest& AddApplicationNames(Aws::String&& value) { m_applicationNamesHasBeenSet = true; m_applicationNames.push_back(value); return *this; }
+    inline BatchGetApplicationsRequest& AddApplicationNames(Aws::String&& value) { m_applicationNamesHasBeenSet = true; m_applicationNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of application names separated by spaces.</p>

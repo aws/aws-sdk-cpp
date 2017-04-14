@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/GameSessionPlacement.h>
+#include <utility>
 
 namespace Aws
 {
@@ -32,6 +33,12 @@ namespace GameLift
 {
 namespace Model
 {
+  /**
+   * <p>Represents the returned data in response to a request action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionPlacementOutput">AWS
+   * API Reference</a></p>
+   */
   class AWS_GAMELIFT_API DescribeGameSessionPlacementResult
   {
   public:
@@ -52,7 +59,7 @@ namespace Model
     /**
      * <p>Object that describes the requested game session placement.</p>
      */
-    inline void SetGameSessionPlacement(GameSessionPlacement&& value) { m_gameSessionPlacement = value; }
+    inline void SetGameSessionPlacement(GameSessionPlacement&& value) { m_gameSessionPlacement = std::move(value); }
 
     /**
      * <p>Object that describes the requested game session placement.</p>
@@ -62,7 +69,7 @@ namespace Model
     /**
      * <p>Object that describes the requested game session placement.</p>
      */
-    inline DescribeGameSessionPlacementResult& WithGameSessionPlacement(GameSessionPlacement&& value) { SetGameSessionPlacement(value); return *this;}
+    inline DescribeGameSessionPlacementResult& WithGameSessionPlacement(GameSessionPlacement&& value) { SetGameSessionPlacement(std::move(value)); return *this;}
 
   private:
     GameSessionPlacement m_gameSessionPlacement;

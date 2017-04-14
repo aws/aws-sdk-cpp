@@ -17,6 +17,7 @@
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -111,7 +112,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming
      * Model</a>. </p>
      */
-    inline void SetFunctionError(Aws::String&& value) { m_functionError = value; }
+    inline void SetFunctionError(Aws::String&& value) { m_functionError = std::move(value); }
 
     /**
      * <p>Indicates whether an error occurred while executing the Lambda function. If
@@ -150,7 +151,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming
      * Model</a>. </p>
      */
-    inline InvokeResult& WithFunctionError(Aws::String&& value) { SetFunctionError(value); return *this;}
+    inline InvokeResult& WithFunctionError(Aws::String&& value) { SetFunctionError(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether an error occurred while executing the Lambda function. If
@@ -184,7 +185,7 @@ namespace Model
      * present only if the invocation type is <code>RequestResponse</code> and the logs
      * were requested. </p>
      */
-    inline void SetLogResult(Aws::String&& value) { m_logResult = value; }
+    inline void SetLogResult(Aws::String&& value) { m_logResult = std::move(value); }
 
     /**
      * <p> It is the base64-encoded logs for the Lambda function invocation. This is
@@ -205,7 +206,7 @@ namespace Model
      * present only if the invocation type is <code>RequestResponse</code> and the logs
      * were requested. </p>
      */
-    inline InvokeResult& WithLogResult(Aws::String&& value) { SetLogResult(value); return *this;}
+    inline InvokeResult& WithLogResult(Aws::String&& value) { SetLogResult(std::move(value)); return *this;}
 
     /**
      * <p> It is the base64-encoded logs for the Lambda function invocation. This is

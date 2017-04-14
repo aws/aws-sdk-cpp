@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <li> <p>Must be the name of an existing cluster parameter group.</p> </li> <li>
      * <p>Cannot delete a default cluster parameter group.</p> </li> </ul>
      */
-    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
+    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the parameter group to be deleted.</p> <p>Constraints:</p> <ul>
@@ -80,7 +81,7 @@ namespace Model
      * <li> <p>Must be the name of an existing cluster parameter group.</p> </li> <li>
      * <p>Cannot delete a default cluster parameter group.</p> </li> </ul>
      */
-    inline DeleteClusterParameterGroupRequest& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(value); return *this;}
+    inline DeleteClusterParameterGroupRequest& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the parameter group to be deleted.</p> <p>Constraints:</p> <ul>

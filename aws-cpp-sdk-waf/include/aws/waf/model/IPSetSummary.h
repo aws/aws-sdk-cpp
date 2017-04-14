@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <code>IPSetId</code> in a <a>GetIPSet</a> request to get detailed information
      * about an <a>IPSet</a>.</p>
      */
-    inline void SetIPSetId(Aws::String&& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = value; }
+    inline void SetIPSetId(Aws::String&& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = std::move(value); }
 
     /**
      * <p>The <code>IPSetId</code> for an <a>IPSet</a>. You can use
@@ -84,7 +85,7 @@ namespace Model
      * <code>IPSetId</code> in a <a>GetIPSet</a> request to get detailed information
      * about an <a>IPSet</a>.</p>
      */
-    inline IPSetSummary& WithIPSetId(Aws::String&& value) { SetIPSetId(value); return *this;}
+    inline IPSetSummary& WithIPSetId(Aws::String&& value) { SetIPSetId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>IPSetId</code> for an <a>IPSet</a>. You can use
@@ -109,7 +110,7 @@ namespace Model
      * <p>A friendly name or description of the <a>IPSet</a>. You can't change the name
      * of an <code>IPSet</code> after you create it.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>A friendly name or description of the <a>IPSet</a>. You can't change the name
@@ -127,7 +128,7 @@ namespace Model
      * <p>A friendly name or description of the <a>IPSet</a>. You can't change the name
      * of an <code>IPSet</code> after you create it.</p>
      */
-    inline IPSetSummary& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline IPSetSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A friendly name or description of the <a>IPSet</a>. You can't change the name

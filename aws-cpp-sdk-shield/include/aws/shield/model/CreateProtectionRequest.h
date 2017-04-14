@@ -16,6 +16,7 @@
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/shield/ShieldRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>Friendly name for the <code>Protection</code> you are creating.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Friendly name for the <code>Protection</code> you are creating.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Friendly name for the <code>Protection</code> you are creating.</p>
      */
-    inline CreateProtectionRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateProtectionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Friendly name for the <code>Protection</code> you are creating.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
      */
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
      * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
      */
-    inline CreateProtectionRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(value); return *this;}
+    inline CreateProtectionRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>

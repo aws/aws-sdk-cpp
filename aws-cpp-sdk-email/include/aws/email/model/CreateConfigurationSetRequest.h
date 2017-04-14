@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/SESRequest.h>
 #include <aws/email/model/ConfigurationSet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>A data structure that contains the name of the configuration set.</p>
      */
-    inline void SetConfigurationSet(ConfigurationSet&& value) { m_configurationSetHasBeenSet = true; m_configurationSet = value; }
+    inline void SetConfigurationSet(ConfigurationSet&& value) { m_configurationSetHasBeenSet = true; m_configurationSet = std::move(value); }
 
     /**
      * <p>A data structure that contains the name of the configuration set.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>A data structure that contains the name of the configuration set.</p>
      */
-    inline CreateConfigurationSetRequest& WithConfigurationSet(ConfigurationSet&& value) { SetConfigurationSet(value); return *this;}
+    inline CreateConfigurationSetRequest& WithConfigurationSet(ConfigurationSet&& value) { SetConfigurationSet(std::move(value)); return *this;}
 
   private:
     ConfigurationSet m_configurationSet;

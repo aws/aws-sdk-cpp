@@ -17,6 +17,7 @@
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/CertificateStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The certificate data, in PEM format.</p>
      */
-    inline void SetCertificatePem(Aws::String&& value) { m_certificatePemHasBeenSet = true; m_certificatePem = value; }
+    inline void SetCertificatePem(Aws::String&& value) { m_certificatePemHasBeenSet = true; m_certificatePem = std::move(value); }
 
     /**
      * <p>The certificate data, in PEM format.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The certificate data, in PEM format.</p>
      */
-    inline RegisterCertificateRequest& WithCertificatePem(Aws::String&& value) { SetCertificatePem(value); return *this;}
+    inline RegisterCertificateRequest& WithCertificatePem(Aws::String&& value) { SetCertificatePem(std::move(value)); return *this;}
 
     /**
      * <p>The certificate data, in PEM format.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The CA certificate used to sign the device certificate being registered.</p>
      */
-    inline void SetCaCertificatePem(Aws::String&& value) { m_caCertificatePemHasBeenSet = true; m_caCertificatePem = value; }
+    inline void SetCaCertificatePem(Aws::String&& value) { m_caCertificatePemHasBeenSet = true; m_caCertificatePem = std::move(value); }
 
     /**
      * <p>The CA certificate used to sign the device certificate being registered.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The CA certificate used to sign the device certificate being registered.</p>
      */
-    inline RegisterCertificateRequest& WithCaCertificatePem(Aws::String&& value) { SetCaCertificatePem(value); return *this;}
+    inline RegisterCertificateRequest& WithCaCertificatePem(Aws::String&& value) { SetCaCertificatePem(std::move(value)); return *this;}
 
     /**
      * <p>The CA certificate used to sign the device certificate being registered.</p>
@@ -114,13 +115,13 @@ namespace Model
     inline void SetStatus(const CertificateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     
-    inline void SetStatus(CertificateStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(CertificateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     
     inline RegisterCertificateRequest& WithStatus(const CertificateStatus& value) { SetStatus(value); return *this;}
 
     
-    inline RegisterCertificateRequest& WithStatus(CertificateStatus&& value) { SetStatus(value); return *this;}
+    inline RegisterCertificateRequest& WithStatus(CertificateStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_certificatePem;

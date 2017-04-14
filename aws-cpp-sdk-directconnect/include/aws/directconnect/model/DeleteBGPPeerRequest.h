@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The ID of the virtual interface from which the BGP peer will be deleted.</p>
      * <p>Example: dxvif-456abc78</p> <p>Default: None</p>
      */
-    inline void SetVirtualInterfaceId(Aws::String&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = value; }
+    inline void SetVirtualInterfaceId(Aws::String&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = std::move(value); }
 
     /**
      * <p>The ID of the virtual interface from which the BGP peer will be deleted.</p>
@@ -73,7 +74,7 @@ namespace Model
      * <p>The ID of the virtual interface from which the BGP peer will be deleted.</p>
      * <p>Example: dxvif-456abc78</p> <p>Default: None</p>
      */
-    inline DeleteBGPPeerRequest& WithVirtualInterfaceId(Aws::String&& value) { SetVirtualInterfaceId(value); return *this;}
+    inline DeleteBGPPeerRequest& WithVirtualInterfaceId(Aws::String&& value) { SetVirtualInterfaceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the virtual interface from which the BGP peer will be deleted.</p>
@@ -97,7 +98,7 @@ namespace Model
     inline void SetCustomerAddress(const Aws::String& value) { m_customerAddressHasBeenSet = true; m_customerAddress = value; }
 
     
-    inline void SetCustomerAddress(Aws::String&& value) { m_customerAddressHasBeenSet = true; m_customerAddress = value; }
+    inline void SetCustomerAddress(Aws::String&& value) { m_customerAddressHasBeenSet = true; m_customerAddress = std::move(value); }
 
     
     inline void SetCustomerAddress(const char* value) { m_customerAddressHasBeenSet = true; m_customerAddress.assign(value); }
@@ -106,7 +107,7 @@ namespace Model
     inline DeleteBGPPeerRequest& WithCustomerAddress(const Aws::String& value) { SetCustomerAddress(value); return *this;}
 
     
-    inline DeleteBGPPeerRequest& WithCustomerAddress(Aws::String&& value) { SetCustomerAddress(value); return *this;}
+    inline DeleteBGPPeerRequest& WithCustomerAddress(Aws::String&& value) { SetCustomerAddress(std::move(value)); return *this;}
 
     
     inline DeleteBGPPeerRequest& WithCustomerAddress(const char* value) { SetCustomerAddress(value); return *this;}

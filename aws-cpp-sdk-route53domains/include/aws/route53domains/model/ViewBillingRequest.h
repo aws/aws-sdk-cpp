@@ -17,6 +17,7 @@
 #include <aws/route53domains/Route53DomainsRequest.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * billing records. Specify the date in Unix time format.</p> <p>Type: Double</p>
      * <p>Default: None</p> <p>Required: Yes</p>
      */
-    inline void SetStart(Aws::Utils::DateTime&& value) { m_startHasBeenSet = true; m_start = value; }
+    inline void SetStart(Aws::Utils::DateTime&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
 
     /**
      * <p>The beginning date and time for the time period for which you want a list of
@@ -73,7 +74,7 @@ namespace Model
      * billing records. Specify the date in Unix time format.</p> <p>Type: Double</p>
      * <p>Default: None</p> <p>Required: Yes</p>
      */
-    inline ViewBillingRequest& WithStart(Aws::Utils::DateTime&& value) { SetStart(value); return *this;}
+    inline ViewBillingRequest& WithStart(Aws::Utils::DateTime&& value) { SetStart(std::move(value)); return *this;}
 
     /**
      * <p>The end date and time for the time period for which you want a list of
@@ -94,7 +95,7 @@ namespace Model
      * billing records. Specify the date in Unix time format.</p> <p>Type: Double</p>
      * <p>Default: None</p> <p>Required: Yes</p>
      */
-    inline void SetEnd(Aws::Utils::DateTime&& value) { m_endHasBeenSet = true; m_end = value; }
+    inline void SetEnd(Aws::Utils::DateTime&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
 
     /**
      * <p>The end date and time for the time period for which you want a list of
@@ -108,7 +109,7 @@ namespace Model
      * billing records. Specify the date in Unix time format.</p> <p>Type: Double</p>
      * <p>Default: None</p> <p>Required: Yes</p>
      */
-    inline ViewBillingRequest& WithEnd(Aws::Utils::DateTime&& value) { SetEnd(value); return *this;}
+    inline ViewBillingRequest& WithEnd(Aws::Utils::DateTime&& value) { SetEnd(std::move(value)); return *this;}
 
     /**
      * <p>For an initial request for a list of billing records, omit this element. If
@@ -150,7 +151,7 @@ namespace Model
      * of <code>NextPageMarker</code> that was returned in the previous response.</p>
      * <p>Required: No</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>For an initial request for a list of billing records, omit this element. If
@@ -192,7 +193,7 @@ namespace Model
      * of <code>NextPageMarker</code> that was returned in the previous response.</p>
      * <p>Required: No</p>
      */
-    inline ViewBillingRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ViewBillingRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>For an initial request for a list of billing records, omit this element. If

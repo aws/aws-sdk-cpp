@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
      */
-    inline DelegationSet& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline DelegationSet& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
@@ -109,7 +110,7 @@ namespace Model
      * <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code>
      * can be any unique string, for example, a date/time stamp.</p>
      */
-    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
+    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
 
     /**
      * <p>A unique string that identifies the request, and that allows you to retry
@@ -139,7 +140,7 @@ namespace Model
      * <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code>
      * can be any unique string, for example, a date/time stamp.</p>
      */
-    inline DelegationSet& WithCallerReference(Aws::String&& value) { SetCallerReference(value); return *this;}
+    inline DelegationSet& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that identifies the request, and that allows you to retry
@@ -167,7 +168,7 @@ namespace Model
      * <p>A complex type that contains a list of the authoritative name servers for the
      * hosted zone.</p>
      */
-    inline void SetNameServers(Aws::Vector<Aws::String>&& value) { m_nameServersHasBeenSet = true; m_nameServers = value; }
+    inline void SetNameServers(Aws::Vector<Aws::String>&& value) { m_nameServersHasBeenSet = true; m_nameServers = std::move(value); }
 
     /**
      * <p>A complex type that contains a list of the authoritative name servers for the
@@ -179,7 +180,7 @@ namespace Model
      * <p>A complex type that contains a list of the authoritative name servers for the
      * hosted zone.</p>
      */
-    inline DelegationSet& WithNameServers(Aws::Vector<Aws::String>&& value) { SetNameServers(value); return *this;}
+    inline DelegationSet& WithNameServers(Aws::Vector<Aws::String>&& value) { SetNameServers(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that contains a list of the authoritative name servers for the
@@ -191,7 +192,7 @@ namespace Model
      * <p>A complex type that contains a list of the authoritative name servers for the
      * hosted zone.</p>
      */
-    inline DelegationSet& AddNameServers(Aws::String&& value) { m_nameServersHasBeenSet = true; m_nameServers.push_back(value); return *this; }
+    inline DelegationSet& AddNameServers(Aws::String&& value) { m_nameServersHasBeenSet = true; m_nameServers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A complex type that contains a list of the authoritative name servers for the

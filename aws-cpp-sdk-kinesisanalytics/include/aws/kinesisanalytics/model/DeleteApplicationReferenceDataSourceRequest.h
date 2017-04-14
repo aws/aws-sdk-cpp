@@ -16,6 +16,7 @@
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/kinesisanalytics/KinesisAnalyticsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>Name of an existing application.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>Name of an existing application.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Name of an existing application.</p>
      */
-    inline DeleteApplicationReferenceDataSourceRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline DeleteApplicationReferenceDataSourceRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>Name of an existing application.</p>
@@ -116,7 +117,7 @@ namespace Model
      * Analytics assigns an ID. You can use the <a>DescribeApplication</a> operation to
      * get the reference ID. </p>
      */
-    inline void SetReferenceId(Aws::String&& value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
+    inline void SetReferenceId(Aws::String&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::move(value); }
 
     /**
      * <p>ID of the reference data source. When you add a reference data source to your
@@ -140,7 +141,7 @@ namespace Model
      * Analytics assigns an ID. You can use the <a>DescribeApplication</a> operation to
      * get the reference ID. </p>
      */
-    inline DeleteApplicationReferenceDataSourceRequest& WithReferenceId(Aws::String&& value) { SetReferenceId(value); return *this;}
+    inline DeleteApplicationReferenceDataSourceRequest& WithReferenceId(Aws::String&& value) { SetReferenceId(std::move(value)); return *this;}
 
     /**
      * <p>ID of the reference data source. When you add a reference data source to your

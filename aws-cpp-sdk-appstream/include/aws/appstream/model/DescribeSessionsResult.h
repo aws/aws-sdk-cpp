@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appstream/model/Session.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The list of streaming sessions.</p>
      */
-    inline void SetSessions(Aws::Vector<Session>&& value) { m_sessions = value; }
+    inline void SetSessions(Aws::Vector<Session>&& value) { m_sessions = std::move(value); }
 
     /**
      * <p>The list of streaming sessions.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The list of streaming sessions.</p>
      */
-    inline DescribeSessionsResult& WithSessions(Aws::Vector<Session>&& value) { SetSessions(value); return *this;}
+    inline DescribeSessionsResult& WithSessions(Aws::Vector<Session>&& value) { SetSessions(std::move(value)); return *this;}
 
     /**
      * <p>The list of streaming sessions.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The list of streaming sessions.</p>
      */
-    inline DescribeSessionsResult& AddSessions(Session&& value) { m_sessions.push_back(value); return *this; }
+    inline DescribeSessionsResult& AddSessions(Session&& value) { m_sessions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
@@ -92,7 +93,7 @@ namespace Model
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
@@ -110,7 +111,7 @@ namespace Model
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline DescribeSessionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeSessionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this

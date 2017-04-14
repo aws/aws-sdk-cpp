@@ -16,6 +16,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
      */
-    inline ListTagsForResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline ListTagsForResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Reserved for future use.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
-    inline ListTagsForResourceRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListTagsForResourceRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Reserved for future use.</p>

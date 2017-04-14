@@ -16,6 +16,7 @@
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/sqs/SQSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
      * (<code>_</code>).</p> <p>Queue names are case-sensitive.</p>
      */
-    inline void SetQueueName(Aws::String&& value) { m_queueNameHasBeenSet = true; m_queueName = value; }
+    inline void SetQueueName(Aws::String&& value) { m_queueNameHasBeenSet = true; m_queueName = std::move(value); }
 
     /**
      * <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid
@@ -80,7 +81,7 @@ namespace Model
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
      * (<code>_</code>).</p> <p>Queue names are case-sensitive.</p>
      */
-    inline GetQueueUrlRequest& WithQueueName(Aws::String&& value) { SetQueueName(value); return *this;}
+    inline GetQueueUrlRequest& WithQueueName(Aws::String&& value) { SetQueueName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The AWS account ID of the account that created the queue.</p>
      */
-    inline void SetQueueOwnerAWSAccountId(Aws::String&& value) { m_queueOwnerAWSAccountIdHasBeenSet = true; m_queueOwnerAWSAccountId = value; }
+    inline void SetQueueOwnerAWSAccountId(Aws::String&& value) { m_queueOwnerAWSAccountIdHasBeenSet = true; m_queueOwnerAWSAccountId = std::move(value); }
 
     /**
      * <p>The AWS account ID of the account that created the queue.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>The AWS account ID of the account that created the queue.</p>
      */
-    inline GetQueueUrlRequest& WithQueueOwnerAWSAccountId(Aws::String&& value) { SetQueueOwnerAWSAccountId(value); return *this;}
+    inline GetQueueUrlRequest& WithQueueOwnerAWSAccountId(Aws::String&& value) { SetQueueOwnerAWSAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID of the account that created the queue.</p>

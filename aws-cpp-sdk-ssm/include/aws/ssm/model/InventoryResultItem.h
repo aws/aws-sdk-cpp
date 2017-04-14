@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The name of the inventory result item type.</p>
      */
-    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
+    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
      * <p>The name of the inventory result item type.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The name of the inventory result item type.</p>
      */
-    inline InventoryResultItem& WithTypeName(Aws::String&& value) { SetTypeName(value); return *this;}
+    inline InventoryResultItem& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the inventory result item type.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The schema version for the inventory result item/</p>
      */
-    inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
+    inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::move(value); }
 
     /**
      * <p>The schema version for the inventory result item/</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The schema version for the inventory result item/</p>
      */
-    inline InventoryResultItem& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(value); return *this;}
+    inline InventoryResultItem& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(std::move(value)); return *this;}
 
     /**
      * <p>The schema version for the inventory result item/</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The time inventory item data was captured.</p>
      */
-    inline void SetCaptureTime(Aws::String&& value) { m_captureTimeHasBeenSet = true; m_captureTime = value; }
+    inline void SetCaptureTime(Aws::String&& value) { m_captureTimeHasBeenSet = true; m_captureTime = std::move(value); }
 
     /**
      * <p>The time inventory item data was captured.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The time inventory item data was captured.</p>
      */
-    inline InventoryResultItem& WithCaptureTime(Aws::String&& value) { SetCaptureTime(value); return *this;}
+    inline InventoryResultItem& WithCaptureTime(Aws::String&& value) { SetCaptureTime(std::move(value)); return *this;}
 
     /**
      * <p>The time inventory item data was captured.</p>
@@ -172,7 +173,7 @@ namespace Model
      * API does not update the inventory item type contents if the MD5 hash has not
      * changed since last update. </p>
      */
-    inline void SetContentHash(Aws::String&& value) { m_contentHashHasBeenSet = true; m_contentHash = value; }
+    inline void SetContentHash(Aws::String&& value) { m_contentHashHasBeenSet = true; m_contentHash = std::move(value); }
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
@@ -196,7 +197,7 @@ namespace Model
      * API does not update the inventory item type contents if the MD5 hash has not
      * changed since last update. </p>
      */
-    inline InventoryResultItem& WithContentHash(Aws::String&& value) { SetContentHash(value); return *this;}
+    inline InventoryResultItem& WithContentHash(Aws::String&& value) { SetContentHash(std::move(value)); return *this;}
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
@@ -222,7 +223,7 @@ namespace Model
      * <p>Contains all the inventory data of the item type. Results include attribute
      * names and values. </p>
      */
-    inline void SetContent(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { m_contentHasBeenSet = true; m_content = value; }
+    inline void SetContent(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
      * <p>Contains all the inventory data of the item type. Results include attribute
@@ -234,7 +235,7 @@ namespace Model
      * <p>Contains all the inventory data of the item type. Results include attribute
      * names and values. </p>
      */
-    inline InventoryResultItem& WithContent(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { SetContent(value); return *this;}
+    inline InventoryResultItem& WithContent(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { SetContent(std::move(value)); return *this;}
 
     /**
      * <p>Contains all the inventory data of the item type. Results include attribute
@@ -246,7 +247,7 @@ namespace Model
      * <p>Contains all the inventory data of the item type. Results include attribute
      * names and values. </p>
      */
-    inline InventoryResultItem& AddContent(Aws::Map<Aws::String, Aws::String>&& value) { m_contentHasBeenSet = true; m_content.push_back(value); return *this; }
+    inline InventoryResultItem& AddContent(Aws::Map<Aws::String, Aws::String>&& value) { m_contentHasBeenSet = true; m_content.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_typeName;

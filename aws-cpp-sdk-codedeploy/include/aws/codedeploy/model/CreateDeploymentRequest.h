@@ -19,6 +19,7 @@
 #include <aws/codedeploy/model/RevisionLocation.h>
 #include <aws/codedeploy/model/TargetInstances.h>
 #include <aws/codedeploy/model/AutoRollbackConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
      * user or AWS account.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
@@ -76,7 +77,7 @@ namespace Model
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
      * user or AWS account.</p>
      */
-    inline CreateDeploymentRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline CreateDeploymentRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The name of the deployment group.</p>
      */
-    inline void SetDeploymentGroupName(Aws::String&& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
+    inline void SetDeploymentGroupName(Aws::String&& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = std::move(value); }
 
     /**
      * <p>The name of the deployment group.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The name of the deployment group.</p>
      */
-    inline CreateDeploymentRequest& WithDeploymentGroupName(Aws::String&& value) { SetDeploymentGroupName(value); return *this;}
+    inline CreateDeploymentRequest& WithDeploymentGroupName(Aws::String&& value) { SetDeploymentGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the deployment group.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The type and location of the revision to deploy.</p>
      */
-    inline void SetRevision(RevisionLocation&& value) { m_revisionHasBeenSet = true; m_revision = value; }
+    inline void SetRevision(RevisionLocation&& value) { m_revisionHasBeenSet = true; m_revision = std::move(value); }
 
     /**
      * <p>The type and location of the revision to deploy.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The type and location of the revision to deploy.</p>
      */
-    inline CreateDeploymentRequest& WithRevision(RevisionLocation&& value) { SetRevision(value); return *this;}
+    inline CreateDeploymentRequest& WithRevision(RevisionLocation&& value) { SetRevision(std::move(value)); return *this;}
 
     /**
      * <p>The name of a deployment configuration associated with the applicable IAM
@@ -169,7 +170,7 @@ namespace Model
      * have a deployment configuration associated with it, then
      * CodeDeployDefault.OneAtATime will be used by default.</p>
      */
-    inline void SetDeploymentConfigName(Aws::String&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
+    inline void SetDeploymentConfigName(Aws::String&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = std::move(value); }
 
     /**
      * <p>The name of a deployment configuration associated with the applicable IAM
@@ -196,7 +197,7 @@ namespace Model
      * have a deployment configuration associated with it, then
      * CodeDeployDefault.OneAtATime will be used by default.</p>
      */
-    inline CreateDeploymentRequest& WithDeploymentConfigName(Aws::String&& value) { SetDeploymentConfigName(value); return *this;}
+    inline CreateDeploymentRequest& WithDeploymentConfigName(Aws::String&& value) { SetDeploymentConfigName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a deployment configuration associated with the applicable IAM
@@ -220,7 +221,7 @@ namespace Model
     /**
      * <p>A comment about the deployment.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A comment about the deployment.</p>
@@ -235,7 +236,7 @@ namespace Model
     /**
      * <p>A comment about the deployment.</p>
      */
-    inline CreateDeploymentRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateDeploymentRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A comment about the deployment.</p>
@@ -291,7 +292,7 @@ namespace Model
      * <p>Information about the instances that will belong to the replacement
      * environment in a blue/green deployment.</p>
      */
-    inline void SetTargetInstances(TargetInstances&& value) { m_targetInstancesHasBeenSet = true; m_targetInstances = value; }
+    inline void SetTargetInstances(TargetInstances&& value) { m_targetInstancesHasBeenSet = true; m_targetInstances = std::move(value); }
 
     /**
      * <p>Information about the instances that will belong to the replacement
@@ -303,7 +304,7 @@ namespace Model
      * <p>Information about the instances that will belong to the replacement
      * environment in a blue/green deployment.</p>
      */
-    inline CreateDeploymentRequest& WithTargetInstances(TargetInstances&& value) { SetTargetInstances(value); return *this;}
+    inline CreateDeploymentRequest& WithTargetInstances(TargetInstances&& value) { SetTargetInstances(std::move(value)); return *this;}
 
     /**
      * <p>Configuration information for an automatic rollback that is added when a
@@ -321,7 +322,7 @@ namespace Model
      * <p>Configuration information for an automatic rollback that is added when a
      * deployment is created.</p>
      */
-    inline void SetAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = value; }
+    inline void SetAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = std::move(value); }
 
     /**
      * <p>Configuration information for an automatic rollback that is added when a
@@ -333,7 +334,7 @@ namespace Model
      * <p>Configuration information for an automatic rollback that is added when a
      * deployment is created.</p>
      */
-    inline CreateDeploymentRequest& WithAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { SetAutoRollbackConfiguration(value); return *this;}
+    inline CreateDeploymentRequest& WithAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { SetAutoRollbackConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether to deploy to all instances or only to instances that are

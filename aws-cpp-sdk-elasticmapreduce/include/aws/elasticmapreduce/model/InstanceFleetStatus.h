@@ -17,6 +17,7 @@
 #include <aws/elasticmapreduce/model/InstanceFleetState.h>
 #include <aws/elasticmapreduce/model/InstanceFleetStateChangeReason.h>
 #include <aws/elasticmapreduce/model/InstanceFleetTimeline.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>A code representing the instance fleet status.</p>
      */
-    inline void SetState(InstanceFleetState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(InstanceFleetState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>A code representing the instance fleet status.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>A code representing the instance fleet status.</p>
      */
-    inline InstanceFleetStatus& WithState(InstanceFleetState&& value) { SetState(value); return *this;}
+    inline InstanceFleetStatus& WithState(InstanceFleetState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>Provides status change reason details for the instance fleet.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>Provides status change reason details for the instance fleet.</p>
      */
-    inline void SetStateChangeReason(InstanceFleetStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
+    inline void SetStateChangeReason(InstanceFleetStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = std::move(value); }
 
     /**
      * <p>Provides status change reason details for the instance fleet.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>Provides status change reason details for the instance fleet.</p>
      */
-    inline InstanceFleetStatus& WithStateChangeReason(InstanceFleetStateChangeReason&& value) { SetStateChangeReason(value); return *this;}
+    inline InstanceFleetStatus& WithStateChangeReason(InstanceFleetStateChangeReason&& value) { SetStateChangeReason(std::move(value)); return *this;}
 
     /**
      * <p>Provides historical timestamps for the instance fleet, including the time of
@@ -113,7 +114,7 @@ namespace Model
      * <p>Provides historical timestamps for the instance fleet, including the time of
      * creation, the time it became ready to run jobs, and the time of termination.</p>
      */
-    inline void SetTimeline(InstanceFleetTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = value; }
+    inline void SetTimeline(InstanceFleetTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = std::move(value); }
 
     /**
      * <p>Provides historical timestamps for the instance fleet, including the time of
@@ -125,7 +126,7 @@ namespace Model
      * <p>Provides historical timestamps for the instance fleet, including the time of
      * creation, the time it became ready to run jobs, and the time of termination.</p>
      */
-    inline InstanceFleetStatus& WithTimeline(InstanceFleetTimeline&& value) { SetTimeline(value); return *this;}
+    inline InstanceFleetStatus& WithTimeline(InstanceFleetTimeline&& value) { SetTimeline(std::move(value)); return *this;}
 
   private:
     InstanceFleetState m_state;

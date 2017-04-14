@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>Identity of the decider making the request. This enables diagnostic tracing
      * when problems arise. The form of this identity is user defined.</p>
      */
-    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = value; }
+    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
 
     /**
      * <p>Identity of the decider making the request. This enables diagnostic tracing
@@ -78,7 +79,7 @@ namespace Model
      * <p>Identity of the decider making the request. This enables diagnostic tracing
      * when problems arise. The form of this identity is user defined.</p>
      */
-    inline DecisionTaskStartedEventAttributes& WithIdentity(Aws::String&& value) { SetIdentity(value); return *this;}
+    inline DecisionTaskStartedEventAttributes& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
 
     /**
      * <p>Identity of the decider making the request. This enables diagnostic tracing

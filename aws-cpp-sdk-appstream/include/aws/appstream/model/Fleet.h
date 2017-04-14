@@ -21,6 +21,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appstream/model/FleetError.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The ARN for the fleet.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The ARN for the fleet.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ARN for the fleet.</p>
      */
-    inline Fleet& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Fleet& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN for the fleet.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The name of the fleet.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the fleet.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The name of the fleet.</p>
      */
-    inline Fleet& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Fleet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the fleet.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The name displayed to end users on the AppStream 2.0 portal.</p>
      */
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
      * <p>The name displayed to end users on the AppStream 2.0 portal.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The name displayed to end users on the AppStream 2.0 portal.</p>
      */
-    inline Fleet& WithDisplayName(Aws::String&& value) { SetDisplayName(value); return *this;}
+    inline Fleet& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
      * <p>The name displayed to end users on the AppStream 2.0 portal.</p>
@@ -167,7 +168,7 @@ namespace Model
     /**
      * <p>The description displayed to end users on the AppStream 2.0 portal.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description displayed to end users on the AppStream 2.0 portal.</p>
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p>The description displayed to end users on the AppStream 2.0 portal.</p>
      */
-    inline Fleet& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline Fleet& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description displayed to end users on the AppStream 2.0 portal.</p>
@@ -202,7 +203,7 @@ namespace Model
     /**
      * <p>The image used by the fleet.</p>
      */
-    inline void SetImageName(Aws::String&& value) { m_imageNameHasBeenSet = true; m_imageName = value; }
+    inline void SetImageName(Aws::String&& value) { m_imageNameHasBeenSet = true; m_imageName = std::move(value); }
 
     /**
      * <p>The image used by the fleet.</p>
@@ -217,7 +218,7 @@ namespace Model
     /**
      * <p>The image used by the fleet.</p>
      */
-    inline Fleet& WithImageName(Aws::String&& value) { SetImageName(value); return *this;}
+    inline Fleet& WithImageName(Aws::String&& value) { SetImageName(std::move(value)); return *this;}
 
     /**
      * <p>The image used by the fleet.</p>
@@ -240,7 +241,7 @@ namespace Model
      * <p>The instance type of compute resources for the fleet. The fleet instances are
      * launched from this instance type. </p>
      */
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type of compute resources for the fleet. The fleet instances are
@@ -258,7 +259,7 @@ namespace Model
      * <p>The instance type of compute resources for the fleet. The fleet instances are
      * launched from this instance type. </p>
      */
-    inline Fleet& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
+    inline Fleet& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The instance type of compute resources for the fleet. The fleet instances are
@@ -279,7 +280,7 @@ namespace Model
     /**
      * <p>The capacity information for the fleet.</p>
      */
-    inline void SetComputeCapacityStatus(ComputeCapacityStatus&& value) { m_computeCapacityStatusHasBeenSet = true; m_computeCapacityStatus = value; }
+    inline void SetComputeCapacityStatus(ComputeCapacityStatus&& value) { m_computeCapacityStatusHasBeenSet = true; m_computeCapacityStatus = std::move(value); }
 
     /**
      * <p>The capacity information for the fleet.</p>
@@ -289,7 +290,7 @@ namespace Model
     /**
      * <p>The capacity information for the fleet.</p>
      */
-    inline Fleet& WithComputeCapacityStatus(ComputeCapacityStatus&& value) { SetComputeCapacityStatus(value); return *this;}
+    inline Fleet& WithComputeCapacityStatus(ComputeCapacityStatus&& value) { SetComputeCapacityStatus(std::move(value)); return *this;}
 
     /**
      * <p>The maximum time during which a streaming session can run.</p>
@@ -340,7 +341,7 @@ namespace Model
     /**
      * <p>The current state for the fleet.</p>
      */
-    inline void SetState(FleetState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(FleetState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The current state for the fleet.</p>
@@ -350,7 +351,7 @@ namespace Model
     /**
      * <p>The current state for the fleet.</p>
      */
-    inline Fleet& WithState(FleetState&& value) { SetState(value); return *this;}
+    inline Fleet& WithState(FleetState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The VPC configuration for the fleet.</p>
@@ -365,7 +366,7 @@ namespace Model
     /**
      * <p>The VPC configuration for the fleet.</p>
      */
-    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
 
     /**
      * <p>The VPC configuration for the fleet.</p>
@@ -375,7 +376,7 @@ namespace Model
     /**
      * <p>The VPC configuration for the fleet.</p>
      */
-    inline Fleet& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(value); return *this;}
+    inline Fleet& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
     /**
      * <p>The time at which the fleet was created.</p>
@@ -390,7 +391,7 @@ namespace Model
     /**
      * <p>The time at which the fleet was created.</p>
      */
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
      * <p>The time at which the fleet was created.</p>
@@ -400,7 +401,7 @@ namespace Model
     /**
      * <p>The time at which the fleet was created.</p>
      */
-    inline Fleet& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(value); return *this;}
+    inline Fleet& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
     /**
      * <p>The list of fleet errors is appended to this list.</p>
@@ -415,7 +416,7 @@ namespace Model
     /**
      * <p>The list of fleet errors is appended to this list.</p>
      */
-    inline void SetFleetErrors(Aws::Vector<FleetError>&& value) { m_fleetErrorsHasBeenSet = true; m_fleetErrors = value; }
+    inline void SetFleetErrors(Aws::Vector<FleetError>&& value) { m_fleetErrorsHasBeenSet = true; m_fleetErrors = std::move(value); }
 
     /**
      * <p>The list of fleet errors is appended to this list.</p>
@@ -425,7 +426,7 @@ namespace Model
     /**
      * <p>The list of fleet errors is appended to this list.</p>
      */
-    inline Fleet& WithFleetErrors(Aws::Vector<FleetError>&& value) { SetFleetErrors(value); return *this;}
+    inline Fleet& WithFleetErrors(Aws::Vector<FleetError>&& value) { SetFleetErrors(std::move(value)); return *this;}
 
     /**
      * <p>The list of fleet errors is appended to this list.</p>
@@ -435,7 +436,7 @@ namespace Model
     /**
      * <p>The list of fleet errors is appended to this list.</p>
      */
-    inline Fleet& AddFleetErrors(FleetError&& value) { m_fleetErrorsHasBeenSet = true; m_fleetErrors.push_back(value); return *this; }
+    inline Fleet& AddFleetErrors(FleetError&& value) { m_fleetErrorsHasBeenSet = true; m_fleetErrors.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_arn;

@@ -17,6 +17,7 @@
 #include <aws/batch/BatchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/batch/model/JobStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
      * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
      * list jobs.</p>
      */
-    inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = value; }
+    inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::move(value); }
 
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
@@ -68,7 +69,7 @@ namespace Model
      * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
      * list jobs.</p>
      */
-    inline ListJobsRequest& WithJobQueue(Aws::String&& value) { SetJobQueue(value); return *this;}
+    inline ListJobsRequest& WithJobQueue(Aws::String&& value) { SetJobQueue(std::move(value)); return *this;}
 
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The job status with which to filter jobs in the specified queue.</p>
      */
-    inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
+    inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
 
     /**
      * <p>The job status with which to filter jobs in the specified queue.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The job status with which to filter jobs in the specified queue.</p>
      */
-    inline ListJobsRequest& WithJobStatus(JobStatus&& value) { SetJobStatus(value); return *this;}
+    inline ListJobsRequest& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of results returned by <code>ListJobs</code> in paginated
@@ -171,7 +172,7 @@ namespace Model
      * retrieve the next items in a list and not for other programmatic purposes.</p>
      * </note>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -207,7 +208,7 @@ namespace Model
      * retrieve the next items in a list and not for other programmatic purposes.</p>
      * </note>
      */
-    inline ListJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated

@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/config/model/DeliveryChannelStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A list that contains the status of a specified delivery channel.</p>
      */
-    inline void SetDeliveryChannelsStatus(Aws::Vector<DeliveryChannelStatus>&& value) { m_deliveryChannelsStatus = value; }
+    inline void SetDeliveryChannelsStatus(Aws::Vector<DeliveryChannelStatus>&& value) { m_deliveryChannelsStatus = std::move(value); }
 
     /**
      * <p>A list that contains the status of a specified delivery channel.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A list that contains the status of a specified delivery channel.</p>
      */
-    inline DescribeDeliveryChannelStatusResult& WithDeliveryChannelsStatus(Aws::Vector<DeliveryChannelStatus>&& value) { SetDeliveryChannelsStatus(value); return *this;}
+    inline DescribeDeliveryChannelStatusResult& WithDeliveryChannelsStatus(Aws::Vector<DeliveryChannelStatus>&& value) { SetDeliveryChannelsStatus(std::move(value)); return *this;}
 
     /**
      * <p>A list that contains the status of a specified delivery channel.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>A list that contains the status of a specified delivery channel.</p>
      */
-    inline DescribeDeliveryChannelStatusResult& AddDeliveryChannelsStatus(DeliveryChannelStatus&& value) { m_deliveryChannelsStatus.push_back(value); return *this; }
+    inline DescribeDeliveryChannelStatusResult& AddDeliveryChannelsStatus(DeliveryChannelStatus&& value) { m_deliveryChannelsStatus.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<DeliveryChannelStatus> m_deliveryChannelsStatus;

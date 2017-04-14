@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * launched and exposed to the instance via the instance metadata service in the
      * form of a JSON representation of an object.</p>
      */
-    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = value; }
+    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
 
     /**
      * <p>A description of an EC2 instance that is generated when the instance is
@@ -90,7 +91,7 @@ namespace Model
      * launched and exposed to the instance via the instance metadata service in the
      * form of a JSON representation of an object.</p>
      */
-    inline InstanceIdentity& WithDocument(Aws::String&& value) { SetDocument(value); return *this;}
+    inline InstanceIdentity& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
 
     /**
      * <p>A description of an EC2 instance that is generated when the instance is
@@ -115,7 +116,7 @@ namespace Model
      * <p>A signature which can be used to verify the accuracy and authenticity of the
      * information provided in the instance identity document.</p>
      */
-    inline void SetSignature(Aws::String&& value) { m_signatureHasBeenSet = true; m_signature = value; }
+    inline void SetSignature(Aws::String&& value) { m_signatureHasBeenSet = true; m_signature = std::move(value); }
 
     /**
      * <p>A signature which can be used to verify the accuracy and authenticity of the
@@ -133,7 +134,7 @@ namespace Model
      * <p>A signature which can be used to verify the accuracy and authenticity of the
      * information provided in the instance identity document.</p>
      */
-    inline InstanceIdentity& WithSignature(Aws::String&& value) { SetSignature(value); return *this;}
+    inline InstanceIdentity& WithSignature(Aws::String&& value) { SetSignature(std::move(value)); return *this;}
 
     /**
      * <p>A signature which can be used to verify the accuracy and authenticity of the

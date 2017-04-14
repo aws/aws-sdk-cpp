@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
      */
-    inline void SetDevice(Aws::String&& value) { m_deviceHasBeenSet = true; m_device = value; }
+    inline void SetDevice(Aws::String&& value) { m_deviceHasBeenSet = true; m_device = std::move(value); }
 
     /**
      * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
      */
-    inline EbsVolume& WithDevice(Aws::String&& value) { SetDevice(value); return *this;}
+    inline EbsVolume& WithDevice(Aws::String&& value) { SetDevice(std::move(value)); return *this;}
 
     /**
      * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The volume identifier of the EBS volume.</p>
      */
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     /**
      * <p>The volume identifier of the EBS volume.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The volume identifier of the EBS volume.</p>
      */
-    inline EbsVolume& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
+    inline EbsVolume& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
      * <p>The volume identifier of the EBS volume.</p>

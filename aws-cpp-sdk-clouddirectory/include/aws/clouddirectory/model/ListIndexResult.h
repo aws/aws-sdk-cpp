@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/IndexAttachment.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The objects and indexed values attached to the index.</p>
      */
-    inline void SetIndexAttachments(Aws::Vector<IndexAttachment>&& value) { m_indexAttachments = value; }
+    inline void SetIndexAttachments(Aws::Vector<IndexAttachment>&& value) { m_indexAttachments = std::move(value); }
 
     /**
      * <p>The objects and indexed values attached to the index.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The objects and indexed values attached to the index.</p>
      */
-    inline ListIndexResult& WithIndexAttachments(Aws::Vector<IndexAttachment>&& value) { SetIndexAttachments(value); return *this;}
+    inline ListIndexResult& WithIndexAttachments(Aws::Vector<IndexAttachment>&& value) { SetIndexAttachments(std::move(value)); return *this;}
 
     /**
      * <p>The objects and indexed values attached to the index.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The objects and indexed values attached to the index.</p>
      */
-    inline ListIndexResult& AddIndexAttachments(IndexAttachment&& value) { m_indexAttachments.push_back(value); return *this; }
+    inline ListIndexResult& AddIndexAttachments(IndexAttachment&& value) { m_indexAttachments.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The pagination token.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline ListIndexResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListIndexResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>

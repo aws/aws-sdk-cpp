@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/waf/model/XssMatchSetUpdate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * to update. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a>
      * and by <a>ListXssMatchSets</a>.</p>
      */
-    inline void SetXssMatchSetId(Aws::String&& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = value; }
+    inline void SetXssMatchSetId(Aws::String&& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = std::move(value); }
 
     /**
      * <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want
@@ -80,7 +81,7 @@ namespace Model
      * to update. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a>
      * and by <a>ListXssMatchSets</a>.</p>
      */
-    inline UpdateXssMatchSetRequest& WithXssMatchSetId(Aws::String&& value) { SetXssMatchSetId(value); return *this;}
+    inline UpdateXssMatchSetRequest& WithXssMatchSetId(Aws::String&& value) { SetXssMatchSetId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
+    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline UpdateXssMatchSetRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(value); return *this;}
+    inline UpdateXssMatchSetRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -155,7 +156,7 @@ namespace Model
      * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
      * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
-    inline void SetUpdates(Aws::Vector<XssMatchSetUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = value; }
+    inline void SetUpdates(Aws::Vector<XssMatchSetUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = std::move(value); }
 
     /**
      * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert
@@ -177,7 +178,7 @@ namespace Model
      * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
      * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
-    inline UpdateXssMatchSetRequest& WithUpdates(Aws::Vector<XssMatchSetUpdate>&& value) { SetUpdates(value); return *this;}
+    inline UpdateXssMatchSetRequest& WithUpdates(Aws::Vector<XssMatchSetUpdate>&& value) { SetUpdates(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert
@@ -199,7 +200,7 @@ namespace Model
      * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
      * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
-    inline UpdateXssMatchSetRequest& AddUpdates(XssMatchSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
+    inline UpdateXssMatchSetRequest& AddUpdates(XssMatchSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_xssMatchSetId;

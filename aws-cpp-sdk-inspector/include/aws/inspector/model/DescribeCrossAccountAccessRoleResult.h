@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The ARN specifying the IAM role that Inspector uses to access your AWS
      * account.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
      * <p>The ARN specifying the IAM role that Inspector uses to access your AWS
@@ -73,7 +74,7 @@ namespace Model
      * <p>The ARN specifying the IAM role that Inspector uses to access your AWS
      * account.</p>
      */
-    inline DescribeCrossAccountAccessRoleResult& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline DescribeCrossAccountAccessRoleResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN specifying the IAM role that Inspector uses to access your AWS

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/InstancePatchStateFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
      * <p>The name of the patch group for which the patch state information should be
      * retrieved.</p>
      */
-    inline void SetPatchGroup(Aws::String&& value) { m_patchGroupHasBeenSet = true; m_patchGroup = value; }
+    inline void SetPatchGroup(Aws::String&& value) { m_patchGroupHasBeenSet = true; m_patchGroup = std::move(value); }
 
     /**
      * <p>The name of the patch group for which the patch state information should be
@@ -71,7 +72,7 @@ namespace Model
      * <p>The name of the patch group for which the patch state information should be
      * retrieved.</p>
      */
-    inline DescribeInstancePatchStatesForPatchGroupRequest& WithPatchGroup(Aws::String&& value) { SetPatchGroup(value); return *this;}
+    inline DescribeInstancePatchStatesForPatchGroupRequest& WithPatchGroup(Aws::String&& value) { SetPatchGroup(std::move(value)); return *this;}
 
     /**
      * <p>The name of the patch group for which the patch state information should be
@@ -98,7 +99,7 @@ namespace Model
      * length ≤ 200)</p> <p> Values (array containing a single string)</p> <p> Type
      * (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)</p>
      */
-    inline void SetFilters(Aws::Vector<InstancePatchStateFilter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<InstancePatchStateFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string 1 ≤
@@ -112,7 +113,7 @@ namespace Model
      * length ≤ 200)</p> <p> Values (array containing a single string)</p> <p> Type
      * (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)</p>
      */
-    inline DescribeInstancePatchStatesForPatchGroupRequest& WithFilters(Aws::Vector<InstancePatchStateFilter>&& value) { SetFilters(value); return *this;}
+    inline DescribeInstancePatchStatesForPatchGroupRequest& WithFilters(Aws::Vector<InstancePatchStateFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string 1 ≤
@@ -126,7 +127,7 @@ namespace Model
      * length ≤ 200)</p> <p> Values (array containing a single string)</p> <p> Type
      * (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)</p>
      */
-    inline DescribeInstancePatchStatesForPatchGroupRequest& AddFilters(InstancePatchStateFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeInstancePatchStatesForPatchGroupRequest& AddFilters(InstancePatchStateFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -144,7 +145,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -162,7 +163,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline DescribeInstancePatchStatesForPatchGroupRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeInstancePatchStatesForPatchGroupRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

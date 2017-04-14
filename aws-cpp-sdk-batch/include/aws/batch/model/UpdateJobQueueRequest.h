@@ -19,6 +19,7 @@
 #include <aws/batch/model/JQState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/batch/model/ComputeEnvironmentOrder.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
      */
-    inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = value; }
+    inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::move(value); }
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
      */
-    inline UpdateJobQueueRequest& WithJobQueue(Aws::String&& value) { SetJobQueue(value); return *this;}
+    inline UpdateJobQueueRequest& WithJobQueue(Aws::String&& value) { SetJobQueue(std::move(value)); return *this;}
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>Describes the queue's ability to accept new jobs.</p>
      */
-    inline void SetState(JQState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(JQState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>Describes the queue's ability to accept new jobs.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>Describes the queue's ability to accept new jobs.</p>
      */
-    inline UpdateJobQueueRequest& WithState(JQState&& value) { SetState(value); return *this;}
+    inline UpdateJobQueueRequest& WithState(JQState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The priority of the job queue. Job queues with a higher priority (or a lower
@@ -145,7 +146,7 @@ namespace Model
      * relative to each other. This is one of the parameters used by the job scheduler
      * to determine which compute environment should execute a given job. </p>
      */
-    inline void SetComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = value; }
+    inline void SetComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = std::move(value); }
 
     /**
      * <p>Details the set of compute environments mapped to a job queue and their order
@@ -159,7 +160,7 @@ namespace Model
      * relative to each other. This is one of the parameters used by the job scheduler
      * to determine which compute environment should execute a given job. </p>
      */
-    inline UpdateJobQueueRequest& WithComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { SetComputeEnvironmentOrder(value); return *this;}
+    inline UpdateJobQueueRequest& WithComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { SetComputeEnvironmentOrder(std::move(value)); return *this;}
 
     /**
      * <p>Details the set of compute environments mapped to a job queue and their order
@@ -173,7 +174,7 @@ namespace Model
      * relative to each other. This is one of the parameters used by the job scheduler
      * to determine which compute environment should execute a given job. </p>
      */
-    inline UpdateJobQueueRequest& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(value); return *this; }
+    inline UpdateJobQueueRequest& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_jobQueue;

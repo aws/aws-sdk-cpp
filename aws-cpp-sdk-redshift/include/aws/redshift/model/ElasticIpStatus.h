@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The elastic IP (EIP) address for the cluster.</p>
      */
-    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
+    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = std::move(value); }
 
     /**
      * <p>The elastic IP (EIP) address for the cluster.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The elastic IP (EIP) address for the cluster.</p>
      */
-    inline ElasticIpStatus& WithElasticIp(Aws::String&& value) { SetElasticIp(value); return *this;}
+    inline ElasticIpStatus& WithElasticIp(Aws::String&& value) { SetElasticIp(std::move(value)); return *this;}
 
     /**
      * <p>The elastic IP (EIP) address for the cluster.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The status of the elastic IP (EIP) address.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the elastic IP (EIP) address.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The status of the elastic IP (EIP) address.</p>
      */
-    inline ElasticIpStatus& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline ElasticIpStatus& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the elastic IP (EIP) address.</p>

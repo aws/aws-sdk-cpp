@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ID of the repository that was deleted.</p>
      */
-    inline void SetRepositoryId(Aws::String&& value) { m_repositoryId = value; }
+    inline void SetRepositoryId(Aws::String&& value) { m_repositoryId = std::move(value); }
 
     /**
      * <p>The ID of the repository that was deleted.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ID of the repository that was deleted.</p>
      */
-    inline DeleteRepositoryResult& WithRepositoryId(Aws::String&& value) { SetRepositoryId(value); return *this;}
+    inline DeleteRepositoryResult& WithRepositoryId(Aws::String&& value) { SetRepositoryId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the repository that was deleted.</p>

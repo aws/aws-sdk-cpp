@@ -17,6 +17,7 @@
 #include <aws/kinesisanalytics/KinesisAnalyticsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesisanalytics/model/Output.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>Name of the application to which you want to add the output
      * configuration.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>Name of the application to which you want to add the output
@@ -73,7 +74,7 @@ namespace Model
      * <p>Name of the application to which you want to add the output
      * configuration.</p>
      */
-    inline AddApplicationOutputRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline AddApplicationOutputRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the application to which you want to add the output
@@ -127,7 +128,7 @@ namespace Model
      * (that is, an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery
      * stream), and record the formation to use when writing to the destination.</p>
      */
-    inline void SetOutput(Output&& value) { m_outputHasBeenSet = true; m_output = value; }
+    inline void SetOutput(Output&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
 
     /**
      * <p>An array of objects, each describing one output configuration. In the output
@@ -143,7 +144,7 @@ namespace Model
      * (that is, an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery
      * stream), and record the formation to use when writing to the destination.</p>
      */
-    inline AddApplicationOutputRequest& WithOutput(Output&& value) { SetOutput(value); return *this;}
+    inline AddApplicationOutputRequest& WithOutput(Output&& value) { SetOutput(std::move(value)); return *this;}
 
   private:
     Aws::String m_applicationName;

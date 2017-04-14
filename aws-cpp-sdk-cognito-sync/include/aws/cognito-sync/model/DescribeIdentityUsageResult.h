@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/cognito-sync/model/IdentityUsage.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * Usage information for the identity.
      */
-    inline void SetIdentityUsage(IdentityUsage&& value) { m_identityUsage = value; }
+    inline void SetIdentityUsage(IdentityUsage&& value) { m_identityUsage = std::move(value); }
 
     /**
      * Usage information for the identity.
@@ -68,7 +69,7 @@ namespace Model
     /**
      * Usage information for the identity.
      */
-    inline DescribeIdentityUsageResult& WithIdentityUsage(IdentityUsage&& value) { SetIdentityUsage(value); return *this;}
+    inline DescribeIdentityUsageResult& WithIdentityUsage(IdentityUsage&& value) { SetIdentityUsage(std::move(value)); return *this;}
 
   private:
     IdentityUsage m_identityUsage;

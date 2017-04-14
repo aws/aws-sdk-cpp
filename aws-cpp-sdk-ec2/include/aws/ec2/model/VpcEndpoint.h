@@ -19,6 +19,7 @@
 #include <aws/ec2/model/State.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The ID of the VPC endpoint.</p>
      */
-    inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
+    inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
 
     /**
      * <p>The ID of the VPC endpoint.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the VPC endpoint.</p>
      */
-    inline VpcEndpoint& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(value); return *this;}
+    inline VpcEndpoint& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC endpoint.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The ID of the VPC to which the endpoint is associated.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC to which the endpoint is associated.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The ID of the VPC to which the endpoint is associated.</p>
      */
-    inline VpcEndpoint& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline VpcEndpoint& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC to which the endpoint is associated.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The name of the AWS service to which the endpoint is associated.</p>
      */
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
+    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
      * <p>The name of the AWS service to which the endpoint is associated.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The name of the AWS service to which the endpoint is associated.</p>
      */
-    inline VpcEndpoint& WithServiceName(Aws::String&& value) { SetServiceName(value); return *this;}
+    inline VpcEndpoint& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the AWS service to which the endpoint is associated.</p>
@@ -167,7 +168,7 @@ namespace Model
     /**
      * <p>The state of the VPC endpoint.</p>
      */
-    inline void SetState(State&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(State&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the VPC endpoint.</p>
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>The state of the VPC endpoint.</p>
      */
-    inline VpcEndpoint& WithState(State&& value) { SetState(value); return *this;}
+    inline VpcEndpoint& WithState(State&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The policy document associated with the endpoint.</p>
@@ -192,7 +193,7 @@ namespace Model
     /**
      * <p>The policy document associated with the endpoint.</p>
      */
-    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
+    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
 
     /**
      * <p>The policy document associated with the endpoint.</p>
@@ -207,7 +208,7 @@ namespace Model
     /**
      * <p>The policy document associated with the endpoint.</p>
      */
-    inline VpcEndpoint& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
+    inline VpcEndpoint& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
 
     /**
      * <p>The policy document associated with the endpoint.</p>
@@ -227,7 +228,7 @@ namespace Model
     /**
      * <p>One or more route tables associated with the endpoint.</p>
      */
-    inline void SetRouteTableIds(Aws::Vector<Aws::String>&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = value; }
+    inline void SetRouteTableIds(Aws::Vector<Aws::String>&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = std::move(value); }
 
     /**
      * <p>One or more route tables associated with the endpoint.</p>
@@ -237,7 +238,7 @@ namespace Model
     /**
      * <p>One or more route tables associated with the endpoint.</p>
      */
-    inline VpcEndpoint& WithRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRouteTableIds(value); return *this;}
+    inline VpcEndpoint& WithRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRouteTableIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more route tables associated with the endpoint.</p>
@@ -247,7 +248,7 @@ namespace Model
     /**
      * <p>One or more route tables associated with the endpoint.</p>
      */
-    inline VpcEndpoint& AddRouteTableIds(Aws::String&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
+    inline VpcEndpoint& AddRouteTableIds(Aws::String&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more route tables associated with the endpoint.</p>
@@ -267,7 +268,7 @@ namespace Model
     /**
      * <p>The date and time the VPC endpoint was created.</p>
      */
-    inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
+    inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::move(value); }
 
     /**
      * <p>The date and time the VPC endpoint was created.</p>
@@ -277,7 +278,7 @@ namespace Model
     /**
      * <p>The date and time the VPC endpoint was created.</p>
      */
-    inline VpcEndpoint& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(value); return *this;}
+    inline VpcEndpoint& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
 
   private:
     Aws::String m_vpcEndpointId;

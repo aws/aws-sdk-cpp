@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/apigateway/model/Stage.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>An individual <a>Stage</a> resource.</p>
      */
-    inline void SetItem(Aws::Vector<Stage>&& value) { m_item = value; }
+    inline void SetItem(Aws::Vector<Stage>&& value) { m_item = std::move(value); }
 
     /**
      * <p>An individual <a>Stage</a> resource.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>An individual <a>Stage</a> resource.</p>
      */
-    inline GetStagesResult& WithItem(Aws::Vector<Stage>&& value) { SetItem(value); return *this;}
+    inline GetStagesResult& WithItem(Aws::Vector<Stage>&& value) { SetItem(std::move(value)); return *this;}
 
     /**
      * <p>An individual <a>Stage</a> resource.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>An individual <a>Stage</a> resource.</p>
      */
-    inline GetStagesResult& AddItem(Stage&& value) { m_item.push_back(value); return *this; }
+    inline GetStagesResult& AddItem(Stage&& value) { m_item.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Stage> m_item;

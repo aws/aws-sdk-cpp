@@ -19,6 +19,7 @@
 #include <aws/ec2/model/CurrencyCodeValues.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/Purchase.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>Describes the details of the purchase.</p>
      */
-    inline void SetPurchase(Aws::Vector<Purchase>&& value) { m_purchase = value; }
+    inline void SetPurchase(Aws::Vector<Purchase>&& value) { m_purchase = std::move(value); }
 
     /**
      * <p>Describes the details of the purchase.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>Describes the details of the purchase.</p>
      */
-    inline PurchaseHostReservationResponse& WithPurchase(Aws::Vector<Purchase>&& value) { SetPurchase(value); return *this;}
+    inline PurchaseHostReservationResponse& WithPurchase(Aws::Vector<Purchase>&& value) { SetPurchase(std::move(value)); return *this;}
 
     /**
      * <p>Describes the details of the purchase.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>Describes the details of the purchase.</p>
      */
-    inline PurchaseHostReservationResponse& AddPurchase(Purchase&& value) { m_purchase.push_back(value); return *this; }
+    inline PurchaseHostReservationResponse& AddPurchase(Purchase&& value) { m_purchase.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The total amount that will be charged to your account when you purchase the
@@ -94,7 +95,7 @@ namespace Model
      * <p>The total amount that will be charged to your account when you purchase the
      * reservation.</p>
      */
-    inline void SetTotalUpfrontPrice(Aws::String&& value) { m_totalUpfrontPrice = value; }
+    inline void SetTotalUpfrontPrice(Aws::String&& value) { m_totalUpfrontPrice = std::move(value); }
 
     /**
      * <p>The total amount that will be charged to your account when you purchase the
@@ -112,7 +113,7 @@ namespace Model
      * <p>The total amount that will be charged to your account when you purchase the
      * reservation.</p>
      */
-    inline PurchaseHostReservationResponse& WithTotalUpfrontPrice(Aws::String&& value) { SetTotalUpfrontPrice(value); return *this;}
+    inline PurchaseHostReservationResponse& WithTotalUpfrontPrice(Aws::String&& value) { SetTotalUpfrontPrice(std::move(value)); return *this;}
 
     /**
      * <p>The total amount that will be charged to your account when you purchase the
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The total hourly price of the reservation calculated per hour.</p>
      */
-    inline void SetTotalHourlyPrice(Aws::String&& value) { m_totalHourlyPrice = value; }
+    inline void SetTotalHourlyPrice(Aws::String&& value) { m_totalHourlyPrice = std::move(value); }
 
     /**
      * <p>The total hourly price of the reservation calculated per hour.</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>The total hourly price of the reservation calculated per hour.</p>
      */
-    inline PurchaseHostReservationResponse& WithTotalHourlyPrice(Aws::String&& value) { SetTotalHourlyPrice(value); return *this;}
+    inline PurchaseHostReservationResponse& WithTotalHourlyPrice(Aws::String&& value) { SetTotalHourlyPrice(std::move(value)); return *this;}
 
     /**
      * <p>The total hourly price of the reservation calculated per hour.</p>
@@ -174,7 +175,7 @@ namespace Model
      * <code>totalHourlyPrice</code> amounts are specified. At this time, the only
      * supported currency is <code>USD</code>.</p>
      */
-    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCode = value; }
+    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCode = std::move(value); }
 
     /**
      * <p>The currency in which the <code>totalUpfrontPrice</code> and
@@ -188,7 +189,7 @@ namespace Model
      * <code>totalHourlyPrice</code> amounts are specified. At this time, the only
      * supported currency is <code>USD</code>.</p>
      */
-    inline PurchaseHostReservationResponse& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(value); return *this;}
+    inline PurchaseHostReservationResponse& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
@@ -215,7 +216,7 @@ namespace Model
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
      * </p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
@@ -242,7 +243,7 @@ namespace Model
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
      * </p>
      */
-    inline PurchaseHostReservationResponse& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline PurchaseHostReservationResponse& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
@@ -260,13 +261,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline PurchaseHostReservationResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline PurchaseHostReservationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline PurchaseHostReservationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Purchase> m_purchase;

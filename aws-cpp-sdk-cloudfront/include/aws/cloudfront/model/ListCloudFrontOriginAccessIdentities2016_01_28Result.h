@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/CloudFrontOriginAccessIdentityList.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * The CloudFrontOriginAccessIdentityList type.
      */
-    inline void SetCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList&& value) { m_cloudFrontOriginAccessIdentityList = value; }
+    inline void SetCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList&& value) { m_cloudFrontOriginAccessIdentityList = std::move(value); }
 
     /**
      * The CloudFrontOriginAccessIdentityList type.
@@ -67,7 +68,7 @@ namespace Model
     /**
      * The CloudFrontOriginAccessIdentityList type.
      */
-    inline ListCloudFrontOriginAccessIdentities2016_01_28Result& WithCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList&& value) { SetCloudFrontOriginAccessIdentityList(value); return *this;}
+    inline ListCloudFrontOriginAccessIdentities2016_01_28Result& WithCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList&& value) { SetCloudFrontOriginAccessIdentityList(std::move(value)); return *this;}
 
   private:
     CloudFrontOriginAccessIdentityList m_cloudFrontOriginAccessIdentityList;

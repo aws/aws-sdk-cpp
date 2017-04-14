@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/email/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>A TXT record that must be placed in the DNS settings for the domain, in order
      * to complete domain verification.</p>
      */
-    inline void SetVerificationToken(Aws::String&& value) { m_verificationToken = value; }
+    inline void SetVerificationToken(Aws::String&& value) { m_verificationToken = std::move(value); }
 
     /**
      * <p>A TXT record that must be placed in the DNS settings for the domain, in order
@@ -80,7 +81,7 @@ namespace Model
      * <p>A TXT record that must be placed in the DNS settings for the domain, in order
      * to complete domain verification.</p>
      */
-    inline VerifyDomainIdentityResult& WithVerificationToken(Aws::String&& value) { SetVerificationToken(value); return *this;}
+    inline VerifyDomainIdentityResult& WithVerificationToken(Aws::String&& value) { SetVerificationToken(std::move(value)); return *this;}
 
     /**
      * <p>A TXT record that must be placed in the DNS settings for the domain, in order
@@ -95,13 +96,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline VerifyDomainIdentityResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline VerifyDomainIdentityResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline VerifyDomainIdentityResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_verificationToken;

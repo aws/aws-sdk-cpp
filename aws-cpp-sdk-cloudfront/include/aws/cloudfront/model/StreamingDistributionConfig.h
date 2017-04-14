@@ -20,6 +20,7 @@
 #include <aws/cloudfront/model/StreamingLoggingConfig.h>
 #include <aws/cloudfront/model/TrustedSigners.h>
 #include <aws/cloudfront/model/PriceClass.h>
+#include <utility>
 
 namespace Aws
 {
@@ -89,7 +90,7 @@ namespace Model
      * the StreamingDistributionConfig is different from the original request,
      * CloudFront returns a DistributionAlreadyExists error.
      */
-    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
+    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
 
     /**
      * A unique number that ensures the request can't be replayed. If the
@@ -131,7 +132,7 @@ namespace Model
      * the StreamingDistributionConfig is different from the original request,
      * CloudFront returns a DistributionAlreadyExists error.
      */
-    inline StreamingDistributionConfig& WithCallerReference(Aws::String&& value) { SetCallerReference(value); return *this;}
+    inline StreamingDistributionConfig& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
 
     /**
      * A unique number that ensures the request can't be replayed. If the
@@ -163,7 +164,7 @@ namespace Model
      * A complex type that contains information about the Amazon S3 bucket from which
      * you want CloudFront to get your media files for distribution.
      */
-    inline void SetS3Origin(S3Origin&& value) { m_s3OriginHasBeenSet = true; m_s3Origin = value; }
+    inline void SetS3Origin(S3Origin&& value) { m_s3OriginHasBeenSet = true; m_s3Origin = std::move(value); }
 
     /**
      * A complex type that contains information about the Amazon S3 bucket from which
@@ -175,7 +176,7 @@ namespace Model
      * A complex type that contains information about the Amazon S3 bucket from which
      * you want CloudFront to get your media files for distribution.
      */
-    inline StreamingDistributionConfig& WithS3Origin(S3Origin&& value) { SetS3Origin(value); return *this;}
+    inline StreamingDistributionConfig& WithS3Origin(S3Origin&& value) { SetS3Origin(std::move(value)); return *this;}
 
     /**
      * A complex type that contains information about CNAMEs (alternate domain names),
@@ -193,7 +194,7 @@ namespace Model
      * A complex type that contains information about CNAMEs (alternate domain names),
      * if any, for this streaming distribution.
      */
-    inline void SetAliases(Aliases&& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
+    inline void SetAliases(Aliases&& value) { m_aliasesHasBeenSet = true; m_aliases = std::move(value); }
 
     /**
      * A complex type that contains information about CNAMEs (alternate domain names),
@@ -205,7 +206,7 @@ namespace Model
      * A complex type that contains information about CNAMEs (alternate domain names),
      * if any, for this streaming distribution.
      */
-    inline StreamingDistributionConfig& WithAliases(Aliases&& value) { SetAliases(value); return *this;}
+    inline StreamingDistributionConfig& WithAliases(Aliases&& value) { SetAliases(std::move(value)); return *this;}
 
     /**
      * Any comments you want to include about the streaming distribution.
@@ -220,7 +221,7 @@ namespace Model
     /**
      * Any comments you want to include about the streaming distribution.
      */
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
+    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
      * Any comments you want to include about the streaming distribution.
@@ -235,7 +236,7 @@ namespace Model
     /**
      * Any comments you want to include about the streaming distribution.
      */
-    inline StreamingDistributionConfig& WithComment(Aws::String&& value) { SetComment(value); return *this;}
+    inline StreamingDistributionConfig& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
      * Any comments you want to include about the streaming distribution.
@@ -258,7 +259,7 @@ namespace Model
      * A complex type that controls whether access logs are written for the streaming
      * distribution.
      */
-    inline void SetLogging(StreamingLoggingConfig&& value) { m_loggingHasBeenSet = true; m_logging = value; }
+    inline void SetLogging(StreamingLoggingConfig&& value) { m_loggingHasBeenSet = true; m_logging = std::move(value); }
 
     /**
      * A complex type that controls whether access logs are written for the streaming
@@ -270,7 +271,7 @@ namespace Model
      * A complex type that controls whether access logs are written for the streaming
      * distribution.
      */
-    inline StreamingDistributionConfig& WithLogging(StreamingLoggingConfig&& value) { SetLogging(value); return *this;}
+    inline StreamingDistributionConfig& WithLogging(StreamingLoggingConfig&& value) { SetLogging(std::move(value)); return *this;}
 
     /**
      * A complex type that specifies the AWS accounts, if any, that you want to allow
@@ -315,7 +316,7 @@ namespace Model
      * change Quantity as applicable, and specify all of the trusted signers that you
      * want to include in the updated distribution.
      */
-    inline void SetTrustedSigners(TrustedSigners&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = value; }
+    inline void SetTrustedSigners(TrustedSigners&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = std::move(value); }
 
     /**
      * A complex type that specifies the AWS accounts, if any, that you want to allow
@@ -345,7 +346,7 @@ namespace Model
      * change Quantity as applicable, and specify all of the trusted signers that you
      * want to include in the updated distribution.
      */
-    inline StreamingDistributionConfig& WithTrustedSigners(TrustedSigners&& value) { SetTrustedSigners(value); return *this;}
+    inline StreamingDistributionConfig& WithTrustedSigners(TrustedSigners&& value) { SetTrustedSigners(std::move(value)); return *this;}
 
     /**
      * A complex type that contains information about price class for this streaming
@@ -363,7 +364,7 @@ namespace Model
      * A complex type that contains information about price class for this streaming
      * distribution.
      */
-    inline void SetPriceClass(PriceClass&& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
+    inline void SetPriceClass(PriceClass&& value) { m_priceClassHasBeenSet = true; m_priceClass = std::move(value); }
 
     /**
      * A complex type that contains information about price class for this streaming
@@ -375,7 +376,7 @@ namespace Model
      * A complex type that contains information about price class for this streaming
      * distribution.
      */
-    inline StreamingDistributionConfig& WithPriceClass(PriceClass&& value) { SetPriceClass(value); return *this;}
+    inline StreamingDistributionConfig& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
 
     /**
      * Whether the streaming distribution is enabled to accept end user requests for

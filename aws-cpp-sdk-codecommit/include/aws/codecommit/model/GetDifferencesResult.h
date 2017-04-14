@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codecommit/model/Difference.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * differences, including whether the difference is added, modified, or deleted (A,
      * D, M).</p>
      */
-    inline void SetDifferences(Aws::Vector<Difference>&& value) { m_differences = value; }
+    inline void SetDifferences(Aws::Vector<Difference>&& value) { m_differences = std::move(value); }
 
     /**
      * <p>A differences data type object that contains information about the
@@ -74,7 +75,7 @@ namespace Model
      * differences, including whether the difference is added, modified, or deleted (A,
      * D, M).</p>
      */
-    inline GetDifferencesResult& WithDifferences(Aws::Vector<Difference>&& value) { SetDifferences(value); return *this;}
+    inline GetDifferencesResult& WithDifferences(Aws::Vector<Difference>&& value) { SetDifferences(std::move(value)); return *this;}
 
     /**
      * <p>A differences data type object that contains information about the
@@ -88,7 +89,7 @@ namespace Model
      * differences, including whether the difference is added, modified, or deleted (A,
      * D, M).</p>
      */
-    inline GetDifferencesResult& AddDifferences(Difference&& value) { m_differences.push_back(value); return *this; }
+    inline GetDifferencesResult& AddDifferences(Difference&& value) { m_differences.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An enumeration token that can be used in a request to return the next batch
@@ -106,7 +107,7 @@ namespace Model
      * <p>An enumeration token that can be used in a request to return the next batch
      * of the results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>An enumeration token that can be used in a request to return the next batch
@@ -124,7 +125,7 @@ namespace Model
      * <p>An enumeration token that can be used in a request to return the next batch
      * of the results.</p>
      */
-    inline GetDifferencesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline GetDifferencesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An enumeration token that can be used in a request to return the next batch

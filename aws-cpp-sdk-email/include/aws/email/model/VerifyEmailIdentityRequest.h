@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The email address to be verified.</p>
      */
-    inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
+    inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
 
     /**
      * <p>The email address to be verified.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The email address to be verified.</p>
      */
-    inline VerifyEmailIdentityRequest& WithEmailAddress(Aws::String&& value) { SetEmailAddress(value); return *this;}
+    inline VerifyEmailIdentityRequest& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
 
     /**
      * <p>The email address to be verified.</p>

@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/model/HITReviewStatus.h>
 #include <aws/mturk-requester/model/QualificationRequirement.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p> A unique identifier for the HIT.</p>
      */
-    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
+    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = std::move(value); }
 
     /**
      * <p> A unique identifier for the HIT.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p> A unique identifier for the HIT.</p>
      */
-    inline HIT& WithHITId(Aws::String&& value) { SetHITId(value); return *this;}
+    inline HIT& WithHITId(Aws::String&& value) { SetHITId(std::move(value)); return *this;}
 
     /**
      * <p> A unique identifier for the HIT.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The ID of the HIT type of this HIT</p>
      */
-    inline void SetHITTypeId(Aws::String&& value) { m_hITTypeIdHasBeenSet = true; m_hITTypeId = value; }
+    inline void SetHITTypeId(Aws::String&& value) { m_hITTypeIdHasBeenSet = true; m_hITTypeId = std::move(value); }
 
     /**
      * <p>The ID of the HIT type of this HIT</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The ID of the HIT type of this HIT</p>
      */
-    inline HIT& WithHITTypeId(Aws::String&& value) { SetHITTypeId(value); return *this;}
+    inline HIT& WithHITTypeId(Aws::String&& value) { SetHITTypeId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the HIT type of this HIT</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p> The ID of the HIT Group of this HIT.</p>
      */
-    inline void SetHITGroupId(Aws::String&& value) { m_hITGroupIdHasBeenSet = true; m_hITGroupId = value; }
+    inline void SetHITGroupId(Aws::String&& value) { m_hITGroupIdHasBeenSet = true; m_hITGroupId = std::move(value); }
 
     /**
      * <p> The ID of the HIT Group of this HIT.</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p> The ID of the HIT Group of this HIT.</p>
      */
-    inline HIT& WithHITGroupId(Aws::String&& value) { SetHITGroupId(value); return *this;}
+    inline HIT& WithHITGroupId(Aws::String&& value) { SetHITGroupId(std::move(value)); return *this;}
 
     /**
      * <p> The ID of the HIT Group of this HIT.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p> The ID of the HIT Layout of this HIT.</p>
      */
-    inline void SetHITLayoutId(Aws::String&& value) { m_hITLayoutIdHasBeenSet = true; m_hITLayoutId = value; }
+    inline void SetHITLayoutId(Aws::String&& value) { m_hITLayoutIdHasBeenSet = true; m_hITLayoutId = std::move(value); }
 
     /**
      * <p> The ID of the HIT Layout of this HIT.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p> The ID of the HIT Layout of this HIT.</p>
      */
-    inline HIT& WithHITLayoutId(Aws::String&& value) { SetHITLayoutId(value); return *this;}
+    inline HIT& WithHITLayoutId(Aws::String&& value) { SetHITLayoutId(std::move(value)); return *this;}
 
     /**
      * <p> The ID of the HIT Layout of this HIT.</p>
@@ -203,7 +204,7 @@ namespace Model
     /**
      * <p> The date and time the HIT was created.</p>
      */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
      * <p> The date and time the HIT was created.</p>
@@ -213,7 +214,7 @@ namespace Model
     /**
      * <p> The date and time the HIT was created.</p>
      */
-    inline HIT& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
+    inline HIT& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
     /**
      * <p> The title of the HIT.</p>
@@ -228,7 +229,7 @@ namespace Model
     /**
      * <p> The title of the HIT.</p>
      */
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = value; }
+    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
      * <p> The title of the HIT.</p>
@@ -243,7 +244,7 @@ namespace Model
     /**
      * <p> The title of the HIT.</p>
      */
-    inline HIT& WithTitle(Aws::String&& value) { SetTitle(value); return *this;}
+    inline HIT& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
      * <p> The title of the HIT.</p>
@@ -263,7 +264,7 @@ namespace Model
     /**
      * <p> A general description of the HIT.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p> A general description of the HIT.</p>
@@ -278,7 +279,7 @@ namespace Model
     /**
      * <p> A general description of the HIT.</p>
      */
-    inline HIT& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline HIT& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p> A general description of the HIT.</p>
@@ -304,7 +305,7 @@ namespace Model
      * either either a QuestionForm, HTMLQuestion or an ExternalQuestion data
      * structure.</p>
      */
-    inline void SetQuestion(Aws::String&& value) { m_questionHasBeenSet = true; m_question = value; }
+    inline void SetQuestion(Aws::String&& value) { m_questionHasBeenSet = true; m_question = std::move(value); }
 
     /**
      * <p> The data the Worker completing the HIT uses produce the results. This is
@@ -325,7 +326,7 @@ namespace Model
      * either either a QuestionForm, HTMLQuestion or an ExternalQuestion data
      * structure.</p>
      */
-    inline HIT& WithQuestion(Aws::String&& value) { SetQuestion(value); return *this;}
+    inline HIT& WithQuestion(Aws::String&& value) { SetQuestion(std::move(value)); return *this;}
 
     /**
      * <p> The data the Worker completing the HIT uses produce the results. This is
@@ -353,7 +354,7 @@ namespace Model
      * Search terms similar to the keywords of a HIT are more likely to have the HIT in
      * the search results.</p>
      */
-    inline void SetKeywords(Aws::String&& value) { m_keywordsHasBeenSet = true; m_keywords = value; }
+    inline void SetKeywords(Aws::String&& value) { m_keywordsHasBeenSet = true; m_keywords = std::move(value); }
 
     /**
      * <p> One or more words or phrases that describe the HIT, separated by commas.
@@ -374,7 +375,7 @@ namespace Model
      * Search terms similar to the keywords of a HIT are more likely to have the HIT in
      * the search results.</p>
      */
-    inline HIT& WithKeywords(Aws::String&& value) { SetKeywords(value); return *this;}
+    inline HIT& WithKeywords(Aws::String&& value) { SetKeywords(std::move(value)); return *this;}
 
     /**
      * <p> One or more words or phrases that describe the HIT, separated by commas.
@@ -399,7 +400,7 @@ namespace Model
      * <p>The status of the HIT and its assignments. Valid Values are Assignable |
      * Unassignable | Reviewable | Reviewing | Disposed. </p>
      */
-    inline void SetHITStatus(HITStatus&& value) { m_hITStatusHasBeenSet = true; m_hITStatus = value; }
+    inline void SetHITStatus(HITStatus&& value) { m_hITStatusHasBeenSet = true; m_hITStatus = std::move(value); }
 
     /**
      * <p>The status of the HIT and its assignments. Valid Values are Assignable |
@@ -411,7 +412,7 @@ namespace Model
      * <p>The status of the HIT and its assignments. Valid Values are Assignable |
      * Unassignable | Reviewable | Reviewing | Disposed. </p>
      */
-    inline HIT& WithHITStatus(HITStatus&& value) { SetHITStatus(value); return *this;}
+    inline HIT& WithHITStatus(HITStatus&& value) { SetHITStatus(std::move(value)); return *this;}
 
     /**
      * <p>The number of times the HIT can be accepted and completed before the HIT
@@ -438,7 +439,7 @@ namespace Model
     inline void SetReward(const Aws::String& value) { m_rewardHasBeenSet = true; m_reward = value; }
 
     
-    inline void SetReward(Aws::String&& value) { m_rewardHasBeenSet = true; m_reward = value; }
+    inline void SetReward(Aws::String&& value) { m_rewardHasBeenSet = true; m_reward = std::move(value); }
 
     
     inline void SetReward(const char* value) { m_rewardHasBeenSet = true; m_reward.assign(value); }
@@ -447,7 +448,7 @@ namespace Model
     inline HIT& WithReward(const Aws::String& value) { SetReward(value); return *this;}
 
     
-    inline HIT& WithReward(Aws::String&& value) { SetReward(value); return *this;}
+    inline HIT& WithReward(Aws::String&& value) { SetReward(std::move(value)); return *this;}
 
     
     inline HIT& WithReward(const char* value) { SetReward(value); return *this;}
@@ -489,7 +490,7 @@ namespace Model
     /**
      * <p>The date and time the HIT expires.</p>
      */
-    inline void SetExpiration(Aws::Utils::DateTime&& value) { m_expirationHasBeenSet = true; m_expiration = value; }
+    inline void SetExpiration(Aws::Utils::DateTime&& value) { m_expirationHasBeenSet = true; m_expiration = std::move(value); }
 
     /**
      * <p>The date and time the HIT expires.</p>
@@ -499,7 +500,7 @@ namespace Model
     /**
      * <p>The date and time the HIT expires.</p>
      */
-    inline HIT& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(value); return *this;}
+    inline HIT& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(std::move(value)); return *this;}
 
     /**
      * <p> The length of time, in seconds, that a Worker has to complete the HIT after
@@ -535,7 +536,7 @@ namespace Model
      * <p> An arbitrary data field the Requester who created the HIT can use. This
      * field is visible only to the creator of the HIT.</p>
      */
-    inline void SetRequesterAnnotation(Aws::String&& value) { m_requesterAnnotationHasBeenSet = true; m_requesterAnnotation = value; }
+    inline void SetRequesterAnnotation(Aws::String&& value) { m_requesterAnnotationHasBeenSet = true; m_requesterAnnotation = std::move(value); }
 
     /**
      * <p> An arbitrary data field the Requester who created the HIT can use. This
@@ -553,7 +554,7 @@ namespace Model
      * <p> An arbitrary data field the Requester who created the HIT can use. This
      * field is visible only to the creator of the HIT.</p>
      */
-    inline HIT& WithRequesterAnnotation(Aws::String&& value) { SetRequesterAnnotation(value); return *this;}
+    inline HIT& WithRequesterAnnotation(Aws::String&& value) { SetRequesterAnnotation(std::move(value)); return *this;}
 
     /**
      * <p> An arbitrary data field the Requester who created the HIT can use. This
@@ -583,7 +584,7 @@ namespace Model
      * requirements must be met by a Worker's Qualifications for the Worker to accept
      * the HIT.</p>
      */
-    inline void SetQualificationRequirements(Aws::Vector<QualificationRequirement>&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements = value; }
+    inline void SetQualificationRequirements(Aws::Vector<QualificationRequirement>&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements = std::move(value); }
 
     /**
      * <p> A condition that a Worker's Qualifications must meet in order to accept the
@@ -599,7 +600,7 @@ namespace Model
      * requirements must be met by a Worker's Qualifications for the Worker to accept
      * the HIT.</p>
      */
-    inline HIT& WithQualificationRequirements(Aws::Vector<QualificationRequirement>&& value) { SetQualificationRequirements(value); return *this;}
+    inline HIT& WithQualificationRequirements(Aws::Vector<QualificationRequirement>&& value) { SetQualificationRequirements(std::move(value)); return *this;}
 
     /**
      * <p> A condition that a Worker's Qualifications must meet in order to accept the
@@ -615,7 +616,7 @@ namespace Model
      * requirements must be met by a Worker's Qualifications for the Worker to accept
      * the HIT.</p>
      */
-    inline HIT& AddQualificationRequirements(QualificationRequirement&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements.push_back(value); return *this; }
+    inline HIT& AddQualificationRequirements(QualificationRequirement&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements.push_back(std::move(value)); return *this; }
 
     /**
      * <p> Indicates the review status of the HIT. Valid Values are NotReviewed |
@@ -633,7 +634,7 @@ namespace Model
      * <p> Indicates the review status of the HIT. Valid Values are NotReviewed |
      * MarkedForReview | ReviewedAppropriate | ReviewedInappropriate.</p>
      */
-    inline void SetHITReviewStatus(HITReviewStatus&& value) { m_hITReviewStatusHasBeenSet = true; m_hITReviewStatus = value; }
+    inline void SetHITReviewStatus(HITReviewStatus&& value) { m_hITReviewStatusHasBeenSet = true; m_hITReviewStatus = std::move(value); }
 
     /**
      * <p> Indicates the review status of the HIT. Valid Values are NotReviewed |
@@ -645,7 +646,7 @@ namespace Model
      * <p> Indicates the review status of the HIT. Valid Values are NotReviewed |
      * MarkedForReview | ReviewedAppropriate | ReviewedInappropriate.</p>
      */
-    inline HIT& WithHITReviewStatus(HITReviewStatus&& value) { SetHITReviewStatus(value); return *this;}
+    inline HIT& WithHITReviewStatus(HITReviewStatus&& value) { SetHITReviewStatus(std::move(value)); return *this;}
 
     /**
      * <p> The number of assignments for this HIT that are being previewed or have been

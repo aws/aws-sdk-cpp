@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|”AssociationStatus”|”Tag
      * Key”</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The filter key name to describe your instances. For example:</p>
@@ -85,7 +86,7 @@ namespace Model
      * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|”AssociationStatus”|”Tag
      * Key”</p>
      */
-    inline InstanceInformationStringFilter& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline InstanceInformationStringFilter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The filter key name to describe your instances. For example:</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The filter values.</p>
      */
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
+    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <p>The filter values.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>The filter values.</p>
      */
-    inline InstanceInformationStringFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
+    inline InstanceInformationStringFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <p>The filter values.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The filter values.</p>
      */
-    inline InstanceInformationStringFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    inline InstanceInformationStringFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The filter values.</p>

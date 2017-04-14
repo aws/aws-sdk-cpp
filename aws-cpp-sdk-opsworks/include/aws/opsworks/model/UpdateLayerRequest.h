@@ -17,11 +17,13 @@
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/opsworks/model/CloudWatchLogsConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/Recipes.h>
 #include <aws/opsworks/model/LifecycleEventConfiguration.h>
 #include <aws/opsworks/model/LayerAttributesKeys.h>
 #include <aws/opsworks/model/VolumeConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +56,7 @@ namespace Model
     /**
      * <p>The layer ID.</p>
      */
-    inline void SetLayerId(Aws::String&& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
+    inline void SetLayerId(Aws::String&& value) { m_layerIdHasBeenSet = true; m_layerId = std::move(value); }
 
     /**
      * <p>The layer ID.</p>
@@ -69,7 +71,7 @@ namespace Model
     /**
      * <p>The layer ID.</p>
      */
-    inline UpdateLayerRequest& WithLayerId(Aws::String&& value) { SetLayerId(value); return *this;}
+    inline UpdateLayerRequest& WithLayerId(Aws::String&& value) { SetLayerId(std::move(value)); return *this;}
 
     /**
      * <p>The layer ID.</p>
@@ -89,7 +91,7 @@ namespace Model
     /**
      * <p>The layer name, which is used by the console.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The layer name, which is used by the console.</p>
@@ -104,7 +106,7 @@ namespace Model
     /**
      * <p>The layer name, which is used by the console.</p>
      */
-    inline UpdateLayerRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateLayerRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The layer name, which is used by the console.</p>
@@ -113,11 +115,11 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorksand by Chef. The short name is also used
-     * as the name for the directory where your app files are installed. It can have a
-     * maximum of 200 characters and must be in the following format:
+     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
+     * also used as the name for the directory where your app files are installed. It
+     * can have a maximum of 200 characters and must be in the following format:
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks. For more information, see the <a
+     * AWS OpsWorks Stacks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a> </p>
      */
@@ -125,11 +127,11 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorksand by Chef. The short name is also used
-     * as the name for the directory where your app files are installed. It can have a
-     * maximum of 200 characters and must be in the following format:
+     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
+     * also used as the name for the directory where your app files are installed. It
+     * can have a maximum of 200 characters and must be in the following format:
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks. For more information, see the <a
+     * AWS OpsWorks Stacks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a> </p>
      */
@@ -137,23 +139,23 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorksand by Chef. The short name is also used
-     * as the name for the directory where your app files are installed. It can have a
-     * maximum of 200 characters and must be in the following format:
+     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
+     * also used as the name for the directory where your app files are installed. It
+     * can have a maximum of 200 characters and must be in the following format:
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks. For more information, see the <a
+     * AWS OpsWorks Stacks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a> </p>
      */
-    inline void SetShortname(Aws::String&& value) { m_shortnameHasBeenSet = true; m_shortname = value; }
+    inline void SetShortname(Aws::String&& value) { m_shortnameHasBeenSet = true; m_shortname = std::move(value); }
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorksand by Chef. The short name is also used
-     * as the name for the directory where your app files are installed. It can have a
-     * maximum of 200 characters and must be in the following format:
+     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
+     * also used as the name for the directory where your app files are installed. It
+     * can have a maximum of 200 characters and must be in the following format:
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks. For more information, see the <a
+     * AWS OpsWorks Stacks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a> </p>
      */
@@ -161,11 +163,11 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorksand by Chef. The short name is also used
-     * as the name for the directory where your app files are installed. It can have a
-     * maximum of 200 characters and must be in the following format:
+     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
+     * also used as the name for the directory where your app files are installed. It
+     * can have a maximum of 200 characters and must be in the following format:
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks. For more information, see the <a
+     * AWS OpsWorks Stacks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a> </p>
      */
@@ -173,23 +175,23 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorksand by Chef. The short name is also used
-     * as the name for the directory where your app files are installed. It can have a
-     * maximum of 200 characters and must be in the following format:
+     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
+     * also used as the name for the directory where your app files are installed. It
+     * can have a maximum of 200 characters and must be in the following format:
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks. For more information, see the <a
+     * AWS OpsWorks Stacks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a> </p>
      */
-    inline UpdateLayerRequest& WithShortname(Aws::String&& value) { SetShortname(value); return *this;}
+    inline UpdateLayerRequest& WithShortname(Aws::String&& value) { SetShortname(std::move(value)); return *this;}
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorksand by Chef. The short name is also used
-     * as the name for the directory where your app files are installed. It can have a
-     * maximum of 200 characters and must be in the following format:
+     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
+     * also used as the name for the directory where your app files are installed. It
+     * can have a maximum of 200 characters and must be in the following format:
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks. For more information, see the <a
+     * AWS OpsWorks Stacks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a> </p>
      */
@@ -211,7 +213,7 @@ namespace Model
      * <p>One or more user-defined key/value pairs to be added to the stack
      * attributes.</p>
      */
-    inline void SetAttributes(Aws::Map<LayerAttributesKeys, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Map<LayerAttributesKeys, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>One or more user-defined key/value pairs to be added to the stack
@@ -223,43 +225,73 @@ namespace Model
      * <p>One or more user-defined key/value pairs to be added to the stack
      * attributes.</p>
      */
-    inline UpdateLayerRequest& WithAttributes(Aws::Map<LayerAttributesKeys, Aws::String>&& value) { SetAttributes(value); return *this;}
+    inline UpdateLayerRequest& WithAttributes(Aws::Map<LayerAttributesKeys, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>One or more user-defined key/value pairs to be added to the stack
      * attributes.</p>
      */
-    inline UpdateLayerRequest& AddAttributes(const LayerAttributesKeys& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline UpdateLayerRequest& AddAttributes(const LayerAttributesKeys& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>One or more user-defined key/value pairs to be added to the stack
      * attributes.</p>
      */
-    inline UpdateLayerRequest& AddAttributes(LayerAttributesKeys&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline UpdateLayerRequest& AddAttributes(LayerAttributesKeys&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>One or more user-defined key/value pairs to be added to the stack
      * attributes.</p>
      */
-    inline UpdateLayerRequest& AddAttributes(const LayerAttributesKeys& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline UpdateLayerRequest& AddAttributes(const LayerAttributesKeys& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>One or more user-defined key/value pairs to be added to the stack
      * attributes.</p>
      */
-    inline UpdateLayerRequest& AddAttributes(LayerAttributesKeys&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline UpdateLayerRequest& AddAttributes(LayerAttributesKeys&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>One or more user-defined key/value pairs to be added to the stack
      * attributes.</p>
      */
-    inline UpdateLayerRequest& AddAttributes(LayerAttributesKeys&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline UpdateLayerRequest& AddAttributes(LayerAttributesKeys&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>One or more user-defined key/value pairs to be added to the stack
      * attributes.</p>
      */
-    inline UpdateLayerRequest& AddAttributes(const LayerAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline UpdateLayerRequest& AddAttributes(const LayerAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+
+    /**
+     * <p>Specifies CloudWatch Logs configuration options for the layer. For more
+     * information, see <a>CloudWatchLogsLogStream</a>.</p>
+     */
+    inline const CloudWatchLogsConfiguration& GetCloudWatchLogsConfiguration() const{ return m_cloudWatchLogsConfiguration; }
+
+    /**
+     * <p>Specifies CloudWatch Logs configuration options for the layer. For more
+     * information, see <a>CloudWatchLogsLogStream</a>.</p>
+     */
+    inline void SetCloudWatchLogsConfiguration(const CloudWatchLogsConfiguration& value) { m_cloudWatchLogsConfigurationHasBeenSet = true; m_cloudWatchLogsConfiguration = value; }
+
+    /**
+     * <p>Specifies CloudWatch Logs configuration options for the layer. For more
+     * information, see <a>CloudWatchLogsLogStream</a>.</p>
+     */
+    inline void SetCloudWatchLogsConfiguration(CloudWatchLogsConfiguration&& value) { m_cloudWatchLogsConfigurationHasBeenSet = true; m_cloudWatchLogsConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies CloudWatch Logs configuration options for the layer. For more
+     * information, see <a>CloudWatchLogsLogStream</a>.</p>
+     */
+    inline UpdateLayerRequest& WithCloudWatchLogsConfiguration(const CloudWatchLogsConfiguration& value) { SetCloudWatchLogsConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies CloudWatch Logs configuration options for the layer. For more
+     * information, see <a>CloudWatchLogsLogStream</a>.</p>
+     */
+    inline UpdateLayerRequest& WithCloudWatchLogsConfiguration(CloudWatchLogsConfiguration&& value) { SetCloudWatchLogsConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances.
@@ -283,7 +315,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
-    inline void SetCustomInstanceProfileArn(Aws::String&& value) { m_customInstanceProfileArnHasBeenSet = true; m_customInstanceProfileArn = value; }
+    inline void SetCustomInstanceProfileArn(Aws::String&& value) { m_customInstanceProfileArnHasBeenSet = true; m_customInstanceProfileArn = std::move(value); }
 
     /**
      * <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances.
@@ -307,7 +339,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
-    inline UpdateLayerRequest& WithCustomInstanceProfileArn(Aws::String&& value) { SetCustomInstanceProfileArn(value); return *this;}
+    inline UpdateLayerRequest& WithCustomInstanceProfileArn(Aws::String&& value) { SetCustomInstanceProfileArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances.
@@ -342,7 +374,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
      * Using Custom JSON</a>. </p>
      */
-    inline void SetCustomJson(Aws::String&& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
+    inline void SetCustomJson(Aws::String&& value) { m_customJsonHasBeenSet = true; m_customJson = std::move(value); }
 
     /**
      * <p>A JSON-formatted string containing custom stack configuration and deployment
@@ -369,7 +401,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
      * Using Custom JSON</a>. </p>
      */
-    inline UpdateLayerRequest& WithCustomJson(Aws::String&& value) { SetCustomJson(value); return *this;}
+    inline UpdateLayerRequest& WithCustomJson(Aws::String&& value) { SetCustomJson(std::move(value)); return *this;}
 
     /**
      * <p>A JSON-formatted string containing custom stack configuration and deployment
@@ -393,7 +425,7 @@ namespace Model
     /**
      * <p>An array containing the layer's custom security group IDs.</p>
      */
-    inline void SetCustomSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_customSecurityGroupIdsHasBeenSet = true; m_customSecurityGroupIds = value; }
+    inline void SetCustomSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_customSecurityGroupIdsHasBeenSet = true; m_customSecurityGroupIds = std::move(value); }
 
     /**
      * <p>An array containing the layer's custom security group IDs.</p>
@@ -403,7 +435,7 @@ namespace Model
     /**
      * <p>An array containing the layer's custom security group IDs.</p>
      */
-    inline UpdateLayerRequest& WithCustomSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetCustomSecurityGroupIds(value); return *this;}
+    inline UpdateLayerRequest& WithCustomSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetCustomSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>An array containing the layer's custom security group IDs.</p>
@@ -413,7 +445,7 @@ namespace Model
     /**
      * <p>An array containing the layer's custom security group IDs.</p>
      */
-    inline UpdateLayerRequest& AddCustomSecurityGroupIds(Aws::String&& value) { m_customSecurityGroupIdsHasBeenSet = true; m_customSecurityGroupIds.push_back(value); return *this; }
+    inline UpdateLayerRequest& AddCustomSecurityGroupIds(Aws::String&& value) { m_customSecurityGroupIdsHasBeenSet = true; m_customSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array containing the layer's custom security group IDs.</p>
@@ -436,7 +468,7 @@ namespace Model
      * <p>An array of <code>Package</code> objects that describe the layer's
      * packages.</p>
      */
-    inline void SetPackages(Aws::Vector<Aws::String>&& value) { m_packagesHasBeenSet = true; m_packages = value; }
+    inline void SetPackages(Aws::Vector<Aws::String>&& value) { m_packagesHasBeenSet = true; m_packages = std::move(value); }
 
     /**
      * <p>An array of <code>Package</code> objects that describe the layer's
@@ -448,7 +480,7 @@ namespace Model
      * <p>An array of <code>Package</code> objects that describe the layer's
      * packages.</p>
      */
-    inline UpdateLayerRequest& WithPackages(Aws::Vector<Aws::String>&& value) { SetPackages(value); return *this;}
+    inline UpdateLayerRequest& WithPackages(Aws::Vector<Aws::String>&& value) { SetPackages(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>Package</code> objects that describe the layer's
@@ -460,7 +492,7 @@ namespace Model
      * <p>An array of <code>Package</code> objects that describe the layer's
      * packages.</p>
      */
-    inline UpdateLayerRequest& AddPackages(Aws::String&& value) { m_packagesHasBeenSet = true; m_packages.push_back(value); return *this; }
+    inline UpdateLayerRequest& AddPackages(Aws::String&& value) { m_packagesHasBeenSet = true; m_packages.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of <code>Package</code> objects that describe the layer's
@@ -484,7 +516,7 @@ namespace Model
      * <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon
      * EBS volumes.</p>
      */
-    inline void SetVolumeConfigurations(Aws::Vector<VolumeConfiguration>&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = value; }
+    inline void SetVolumeConfigurations(Aws::Vector<VolumeConfiguration>&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = std::move(value); }
 
     /**
      * <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon
@@ -496,7 +528,7 @@ namespace Model
      * <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon
      * EBS volumes.</p>
      */
-    inline UpdateLayerRequest& WithVolumeConfigurations(Aws::Vector<VolumeConfiguration>&& value) { SetVolumeConfigurations(value); return *this;}
+    inline UpdateLayerRequest& WithVolumeConfigurations(Aws::Vector<VolumeConfiguration>&& value) { SetVolumeConfigurations(std::move(value)); return *this;}
 
     /**
      * <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon
@@ -508,7 +540,7 @@ namespace Model
      * <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon
      * EBS volumes.</p>
      */
-    inline UpdateLayerRequest& AddVolumeConfigurations(VolumeConfiguration&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(value); return *this; }
+    inline UpdateLayerRequest& AddVolumeConfigurations(VolumeConfiguration&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Whether to disable auto healing for the layer.</p>
@@ -592,7 +624,7 @@ namespace Model
      * <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom
      * recipes.</p>
      */
-    inline void SetCustomRecipes(Recipes&& value) { m_customRecipesHasBeenSet = true; m_customRecipes = value; }
+    inline void SetCustomRecipes(Recipes&& value) { m_customRecipesHasBeenSet = true; m_customRecipes = std::move(value); }
 
     /**
      * <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom
@@ -604,7 +636,7 @@ namespace Model
      * <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom
      * recipes.</p>
      */
-    inline UpdateLayerRequest& WithCustomRecipes(Recipes&& value) { SetCustomRecipes(value); return *this;}
+    inline UpdateLayerRequest& WithCustomRecipes(Recipes&& value) { SetCustomRecipes(std::move(value)); return *this;}
 
     /**
      * <p>Whether to install operating system and package updates when the instance
@@ -673,7 +705,7 @@ namespace Model
     /**
      * <p/>
      */
-    inline void SetLifecycleEventConfiguration(LifecycleEventConfiguration&& value) { m_lifecycleEventConfigurationHasBeenSet = true; m_lifecycleEventConfiguration = value; }
+    inline void SetLifecycleEventConfiguration(LifecycleEventConfiguration&& value) { m_lifecycleEventConfigurationHasBeenSet = true; m_lifecycleEventConfiguration = std::move(value); }
 
     /**
      * <p/>
@@ -683,7 +715,7 @@ namespace Model
     /**
      * <p/>
      */
-    inline UpdateLayerRequest& WithLifecycleEventConfiguration(LifecycleEventConfiguration&& value) { SetLifecycleEventConfiguration(value); return *this;}
+    inline UpdateLayerRequest& WithLifecycleEventConfiguration(LifecycleEventConfiguration&& value) { SetLifecycleEventConfiguration(std::move(value)); return *this;}
 
   private:
     Aws::String m_layerId;
@@ -694,6 +726,8 @@ namespace Model
     bool m_shortnameHasBeenSet;
     Aws::Map<LayerAttributesKeys, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
+    CloudWatchLogsConfiguration m_cloudWatchLogsConfiguration;
+    bool m_cloudWatchLogsConfigurationHasBeenSet;
     Aws::String m_customInstanceProfileArn;
     bool m_customInstanceProfileArnHasBeenSet;
     Aws::String m_customJson;

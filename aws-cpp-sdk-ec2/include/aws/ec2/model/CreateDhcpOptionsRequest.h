@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/NewDhcpConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>A DHCP configuration option.</p>
      */
-    inline void SetDhcpConfigurations(Aws::Vector<NewDhcpConfiguration>&& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations = value; }
+    inline void SetDhcpConfigurations(Aws::Vector<NewDhcpConfiguration>&& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations = std::move(value); }
 
     /**
      * <p>A DHCP configuration option.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>A DHCP configuration option.</p>
      */
-    inline CreateDhcpOptionsRequest& WithDhcpConfigurations(Aws::Vector<NewDhcpConfiguration>&& value) { SetDhcpConfigurations(value); return *this;}
+    inline CreateDhcpOptionsRequest& WithDhcpConfigurations(Aws::Vector<NewDhcpConfiguration>&& value) { SetDhcpConfigurations(std::move(value)); return *this;}
 
     /**
      * <p>A DHCP configuration option.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>A DHCP configuration option.</p>
      */
-    inline CreateDhcpOptionsRequest& AddDhcpConfigurations(NewDhcpConfiguration&& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations.push_back(value); return *this; }
+    inline CreateDhcpOptionsRequest& AddDhcpConfigurations(NewDhcpConfiguration&& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticbeanstalk/model/ApplicationResourceLifecycleConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The name of the application.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of the application.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The name of the application.</p>
      */
-    inline ApplicationDescription& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline ApplicationDescription& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the application.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>User-defined description of the application.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>User-defined description of the application.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>User-defined description of the application.</p>
      */
-    inline ApplicationDescription& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline ApplicationDescription& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>User-defined description of the application.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The date when the application was created.</p>
      */
-    inline void SetDateCreated(Aws::Utils::DateTime&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
+    inline void SetDateCreated(Aws::Utils::DateTime&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::move(value); }
 
     /**
      * <p>The date when the application was created.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The date when the application was created.</p>
      */
-    inline ApplicationDescription& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(value); return *this;}
+    inline ApplicationDescription& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(std::move(value)); return *this;}
 
     /**
      * <p>The date when the application was last modified.</p>
@@ -157,7 +158,7 @@ namespace Model
     /**
      * <p>The date when the application was last modified.</p>
      */
-    inline void SetDateUpdated(Aws::Utils::DateTime&& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = value; }
+    inline void SetDateUpdated(Aws::Utils::DateTime&& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = std::move(value); }
 
     /**
      * <p>The date when the application was last modified.</p>
@@ -167,7 +168,7 @@ namespace Model
     /**
      * <p>The date when the application was last modified.</p>
      */
-    inline ApplicationDescription& WithDateUpdated(Aws::Utils::DateTime&& value) { SetDateUpdated(value); return *this;}
+    inline ApplicationDescription& WithDateUpdated(Aws::Utils::DateTime&& value) { SetDateUpdated(std::move(value)); return *this;}
 
     /**
      * <p>The names of the versions for this application.</p>
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p>The names of the versions for this application.</p>
      */
-    inline void SetVersions(Aws::Vector<Aws::String>&& value) { m_versionsHasBeenSet = true; m_versions = value; }
+    inline void SetVersions(Aws::Vector<Aws::String>&& value) { m_versionsHasBeenSet = true; m_versions = std::move(value); }
 
     /**
      * <p>The names of the versions for this application.</p>
@@ -192,7 +193,7 @@ namespace Model
     /**
      * <p>The names of the versions for this application.</p>
      */
-    inline ApplicationDescription& WithVersions(Aws::Vector<Aws::String>&& value) { SetVersions(value); return *this;}
+    inline ApplicationDescription& WithVersions(Aws::Vector<Aws::String>&& value) { SetVersions(std::move(value)); return *this;}
 
     /**
      * <p>The names of the versions for this application.</p>
@@ -202,7 +203,7 @@ namespace Model
     /**
      * <p>The names of the versions for this application.</p>
      */
-    inline ApplicationDescription& AddVersions(Aws::String&& value) { m_versionsHasBeenSet = true; m_versions.push_back(value); return *this; }
+    inline ApplicationDescription& AddVersions(Aws::String&& value) { m_versionsHasBeenSet = true; m_versions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of the versions for this application.</p>
@@ -225,7 +226,7 @@ namespace Model
      * <p>The names of the configuration templates associated with this
      * application.</p>
      */
-    inline void SetConfigurationTemplates(Aws::Vector<Aws::String>&& value) { m_configurationTemplatesHasBeenSet = true; m_configurationTemplates = value; }
+    inline void SetConfigurationTemplates(Aws::Vector<Aws::String>&& value) { m_configurationTemplatesHasBeenSet = true; m_configurationTemplates = std::move(value); }
 
     /**
      * <p>The names of the configuration templates associated with this
@@ -237,7 +238,7 @@ namespace Model
      * <p>The names of the configuration templates associated with this
      * application.</p>
      */
-    inline ApplicationDescription& WithConfigurationTemplates(Aws::Vector<Aws::String>&& value) { SetConfigurationTemplates(value); return *this;}
+    inline ApplicationDescription& WithConfigurationTemplates(Aws::Vector<Aws::String>&& value) { SetConfigurationTemplates(std::move(value)); return *this;}
 
     /**
      * <p>The names of the configuration templates associated with this
@@ -249,7 +250,7 @@ namespace Model
      * <p>The names of the configuration templates associated with this
      * application.</p>
      */
-    inline ApplicationDescription& AddConfigurationTemplates(Aws::String&& value) { m_configurationTemplatesHasBeenSet = true; m_configurationTemplates.push_back(value); return *this; }
+    inline ApplicationDescription& AddConfigurationTemplates(Aws::String&& value) { m_configurationTemplatesHasBeenSet = true; m_configurationTemplates.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of the configuration templates associated with this
@@ -270,7 +271,7 @@ namespace Model
     /**
      * <p>The lifecycle settings for the application.</p>
      */
-    inline void SetResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { m_resourceLifecycleConfigHasBeenSet = true; m_resourceLifecycleConfig = value; }
+    inline void SetResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { m_resourceLifecycleConfigHasBeenSet = true; m_resourceLifecycleConfig = std::move(value); }
 
     /**
      * <p>The lifecycle settings for the application.</p>
@@ -280,7 +281,7 @@ namespace Model
     /**
      * <p>The lifecycle settings for the application.</p>
      */
-    inline ApplicationDescription& WithResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { SetResourceLifecycleConfig(value); return *this;}
+    inline ApplicationDescription& WithResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { SetResourceLifecycleConfig(std::move(value)); return *this;}
 
   private:
     Aws::String m_applicationName;

@@ -17,6 +17,7 @@
 #include <aws/ecr/ECRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * repositories to be described. If you do not specify a registry, the default
      * registry is assumed.</p>
      */
-    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
+    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
      * <p>The AWS account ID associated with the registry that contains the
@@ -76,7 +77,7 @@ namespace Model
      * repositories to be described. If you do not specify a registry, the default
      * registry is assumed.</p>
      */
-    inline DescribeRepositoriesRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(value); return *this;}
+    inline DescribeRepositoriesRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID associated with the registry that contains the
@@ -101,7 +102,7 @@ namespace Model
      * <p>A list of repositories to describe. If this parameter is omitted, then all
      * repositories in a registry are described.</p>
      */
-    inline void SetRepositoryNames(Aws::Vector<Aws::String>&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames = value; }
+    inline void SetRepositoryNames(Aws::Vector<Aws::String>&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames = std::move(value); }
 
     /**
      * <p>A list of repositories to describe. If this parameter is omitted, then all
@@ -113,7 +114,7 @@ namespace Model
      * <p>A list of repositories to describe. If this parameter is omitted, then all
      * repositories in a registry are described.</p>
      */
-    inline DescribeRepositoriesRequest& WithRepositoryNames(Aws::Vector<Aws::String>&& value) { SetRepositoryNames(value); return *this;}
+    inline DescribeRepositoriesRequest& WithRepositoryNames(Aws::Vector<Aws::String>&& value) { SetRepositoryNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of repositories to describe. If this parameter is omitted, then all
@@ -125,7 +126,7 @@ namespace Model
      * <p>A list of repositories to describe. If this parameter is omitted, then all
      * repositories in a registry are described.</p>
      */
-    inline DescribeRepositoriesRequest& AddRepositoryNames(Aws::String&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(value); return *this; }
+    inline DescribeRepositoriesRequest& AddRepositoryNames(Aws::String&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of repositories to describe. If this parameter is omitted, then all
@@ -167,7 +168,7 @@ namespace Model
      * to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -203,7 +204,7 @@ namespace Model
      * to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
      */
-    inline DescribeRepositoriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeRepositoriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated

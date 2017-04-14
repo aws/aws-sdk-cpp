@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/model/Event.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
@@ -57,7 +58,7 @@ namespace Model
     inline CloudFunctionConfiguration& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     
-    inline CloudFunctionConfiguration& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline CloudFunctionConfiguration& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     
     inline CloudFunctionConfiguration& WithId(const char* value) { SetId(value); return *this;}
@@ -69,19 +70,19 @@ namespace Model
     inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     
-    inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = value; }
+    inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     
     inline CloudFunctionConfiguration& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
 
     
-    inline CloudFunctionConfiguration& WithEvents(Aws::Vector<Event>&& value) { SetEvents(value); return *this;}
+    inline CloudFunctionConfiguration& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
 
     
     inline CloudFunctionConfiguration& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
     
-    inline CloudFunctionConfiguration& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
+    inline CloudFunctionConfiguration& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
     
     inline const Aws::String& GetCloudFunction() const{ return m_cloudFunction; }
@@ -90,7 +91,7 @@ namespace Model
     inline void SetCloudFunction(const Aws::String& value) { m_cloudFunctionHasBeenSet = true; m_cloudFunction = value; }
 
     
-    inline void SetCloudFunction(Aws::String&& value) { m_cloudFunctionHasBeenSet = true; m_cloudFunction = value; }
+    inline void SetCloudFunction(Aws::String&& value) { m_cloudFunctionHasBeenSet = true; m_cloudFunction = std::move(value); }
 
     
     inline void SetCloudFunction(const char* value) { m_cloudFunctionHasBeenSet = true; m_cloudFunction.assign(value); }
@@ -99,7 +100,7 @@ namespace Model
     inline CloudFunctionConfiguration& WithCloudFunction(const Aws::String& value) { SetCloudFunction(value); return *this;}
 
     
-    inline CloudFunctionConfiguration& WithCloudFunction(Aws::String&& value) { SetCloudFunction(value); return *this;}
+    inline CloudFunctionConfiguration& WithCloudFunction(Aws::String&& value) { SetCloudFunction(std::move(value)); return *this;}
 
     
     inline CloudFunctionConfiguration& WithCloudFunction(const char* value) { SetCloudFunction(value); return *this;}
@@ -111,7 +112,7 @@ namespace Model
     inline void SetInvocationRole(const Aws::String& value) { m_invocationRoleHasBeenSet = true; m_invocationRole = value; }
 
     
-    inline void SetInvocationRole(Aws::String&& value) { m_invocationRoleHasBeenSet = true; m_invocationRole = value; }
+    inline void SetInvocationRole(Aws::String&& value) { m_invocationRoleHasBeenSet = true; m_invocationRole = std::move(value); }
 
     
     inline void SetInvocationRole(const char* value) { m_invocationRoleHasBeenSet = true; m_invocationRole.assign(value); }
@@ -120,7 +121,7 @@ namespace Model
     inline CloudFunctionConfiguration& WithInvocationRole(const Aws::String& value) { SetInvocationRole(value); return *this;}
 
     
-    inline CloudFunctionConfiguration& WithInvocationRole(Aws::String&& value) { SetInvocationRole(value); return *this;}
+    inline CloudFunctionConfiguration& WithInvocationRole(Aws::String&& value) { SetInvocationRole(std::move(value)); return *this;}
 
     
     inline CloudFunctionConfiguration& WithInvocationRole(const char* value) { SetInvocationRole(value); return *this;}

@@ -16,6 +16,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/lightsail/model/MetricUnit.h>
+#include <utility>
 
 namespace Aws
 {
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
      */
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
      * <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
      */
-    inline MetricDatapoint& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
+    inline MetricDatapoint& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The unit. </p>
@@ -157,7 +158,7 @@ namespace Model
     /**
      * <p>The unit. </p>
      */
-    inline void SetUnit(MetricUnit&& value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline void SetUnit(MetricUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
     /**
      * <p>The unit. </p>
@@ -167,7 +168,7 @@ namespace Model
     /**
      * <p>The unit. </p>
      */
-    inline MetricDatapoint& WithUnit(MetricUnit&& value) { SetUnit(value); return *this;}
+    inline MetricDatapoint& WithUnit(MetricUnit&& value) { SetUnit(std::move(value)); return *this;}
 
   private:
     double m_average;

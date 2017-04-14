@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>the IDs of instances that are running on the Dedicated Host.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>the IDs of instances that are running on the Dedicated Host.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>the IDs of instances that are running on the Dedicated Host.</p>
      */
-    inline HostInstance& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline HostInstance& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>the IDs of instances that are running on the Dedicated Host.</p>
@@ -97,7 +98,7 @@ namespace Model
      * <p>The instance type size (for example, <code>m3.medium</code>) of the running
      * instance.</p>
      */
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type size (for example, <code>m3.medium</code>) of the running
@@ -115,7 +116,7 @@ namespace Model
      * <p>The instance type size (for example, <code>m3.medium</code>) of the running
      * instance.</p>
      */
-    inline HostInstance& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
+    inline HostInstance& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The instance type size (for example, <code>m3.medium</code>) of the running

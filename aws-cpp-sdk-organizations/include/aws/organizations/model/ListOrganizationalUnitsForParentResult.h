@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/OrganizationalUnit.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of the OUs in the specified root or parent OU.</p>
      */
-    inline void SetOrganizationalUnits(Aws::Vector<OrganizationalUnit>&& value) { m_organizationalUnits = value; }
+    inline void SetOrganizationalUnits(Aws::Vector<OrganizationalUnit>&& value) { m_organizationalUnits = std::move(value); }
 
     /**
      * <p>A list of the OUs in the specified root or parent OU.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of the OUs in the specified root or parent OU.</p>
      */
-    inline ListOrganizationalUnitsForParentResult& WithOrganizationalUnits(Aws::Vector<OrganizationalUnit>&& value) { SetOrganizationalUnits(value); return *this;}
+    inline ListOrganizationalUnitsForParentResult& WithOrganizationalUnits(Aws::Vector<OrganizationalUnit>&& value) { SetOrganizationalUnits(std::move(value)); return *this;}
 
     /**
      * <p>A list of the OUs in the specified root or parent OU.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of the OUs in the specified root or parent OU.</p>
      */
-    inline ListOrganizationalUnitsForParentResult& AddOrganizationalUnits(OrganizationalUnit&& value) { m_organizationalUnits.push_back(value); return *this; }
+    inline ListOrganizationalUnitsForParentResult& AddOrganizationalUnits(OrganizationalUnit&& value) { m_organizationalUnits.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -101,7 +102,7 @@ namespace Model
      * the output. You should repeat this until the <code>NextToken</code> response
      * element comes back as <code>null</code>.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -128,7 +129,7 @@ namespace Model
      * the output. You should repeat this until the <code>NextToken</code> response
      * element comes back as <code>null</code>.</p>
      */
-    inline ListOrganizationalUnitsForParentResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListOrganizationalUnitsForParentResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If present, this value indicates that there is more output available than is

@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The ID of the instance. This information is available only for
      * <code>instanceChange</code> events.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance. This information is available only for
@@ -80,7 +81,7 @@ namespace Model
      * <p>The ID of the instance. This information is available only for
      * <code>instanceChange</code> events.</p>
      */
-    inline EventInformation& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline EventInformation& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance. This information is available only for
@@ -200,7 +201,7 @@ namespace Model
      * </li> <li> <p> <code>terminated</code> - An instance was terminated by the
      * user.</p> </li> </ul>
      */
-    inline void SetEventSubType(Aws::String&& value) { m_eventSubTypeHasBeenSet = true; m_eventSubType = value; }
+    inline void SetEventSubType(Aws::String&& value) { m_eventSubTypeHasBeenSet = true; m_eventSubType = std::move(value); }
 
     /**
      * <p>The event.</p> <p>The following are the <code>error</code> events.</p> <ul>
@@ -314,7 +315,7 @@ namespace Model
      * </li> <li> <p> <code>terminated</code> - An instance was terminated by the
      * user.</p> </li> </ul>
      */
-    inline EventInformation& WithEventSubType(Aws::String&& value) { SetEventSubType(value); return *this;}
+    inline EventInformation& WithEventSubType(Aws::String&& value) { SetEventSubType(std::move(value)); return *this;}
 
     /**
      * <p>The event.</p> <p>The following are the <code>error</code> events.</p> <ul>
@@ -367,7 +368,7 @@ namespace Model
     /**
      * <p>The description of the event.</p>
      */
-    inline void SetEventDescription(Aws::String&& value) { m_eventDescriptionHasBeenSet = true; m_eventDescription = value; }
+    inline void SetEventDescription(Aws::String&& value) { m_eventDescriptionHasBeenSet = true; m_eventDescription = std::move(value); }
 
     /**
      * <p>The description of the event.</p>
@@ -382,7 +383,7 @@ namespace Model
     /**
      * <p>The description of the event.</p>
      */
-    inline EventInformation& WithEventDescription(Aws::String&& value) { SetEventDescription(value); return *this;}
+    inline EventInformation& WithEventDescription(Aws::String&& value) { SetEventDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the event.</p>

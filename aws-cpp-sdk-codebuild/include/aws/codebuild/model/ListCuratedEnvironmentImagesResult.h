@@ -16,6 +16,7 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codebuild/model/EnvironmentPlatform.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>Information about supported platforms for Docker images that are managed by
      * AWS CodeBuild.</p>
      */
-    inline void SetPlatforms(Aws::Vector<EnvironmentPlatform>&& value) { m_platforms = value; }
+    inline void SetPlatforms(Aws::Vector<EnvironmentPlatform>&& value) { m_platforms = std::move(value); }
 
     /**
      * <p>Information about supported platforms for Docker images that are managed by
@@ -68,7 +69,7 @@ namespace Model
      * <p>Information about supported platforms for Docker images that are managed by
      * AWS CodeBuild.</p>
      */
-    inline ListCuratedEnvironmentImagesResult& WithPlatforms(Aws::Vector<EnvironmentPlatform>&& value) { SetPlatforms(value); return *this;}
+    inline ListCuratedEnvironmentImagesResult& WithPlatforms(Aws::Vector<EnvironmentPlatform>&& value) { SetPlatforms(std::move(value)); return *this;}
 
     /**
      * <p>Information about supported platforms for Docker images that are managed by
@@ -80,7 +81,7 @@ namespace Model
      * <p>Information about supported platforms for Docker images that are managed by
      * AWS CodeBuild.</p>
      */
-    inline ListCuratedEnvironmentImagesResult& AddPlatforms(EnvironmentPlatform&& value) { m_platforms.push_back(value); return *this; }
+    inline ListCuratedEnvironmentImagesResult& AddPlatforms(EnvironmentPlatform&& value) { m_platforms.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<EnvironmentPlatform> m_platforms;

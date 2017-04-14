@@ -18,6 +18,7 @@
 #include <aws/datapipeline/model/PipelineObject.h>
 #include <aws/datapipeline/model/ParameterObject.h>
 #include <aws/datapipeline/model/ParameterValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The objects defined in the pipeline.</p>
      */
-    inline void SetPipelineObjects(Aws::Vector<PipelineObject>&& value) { m_pipelineObjects = value; }
+    inline void SetPipelineObjects(Aws::Vector<PipelineObject>&& value) { m_pipelineObjects = std::move(value); }
 
     /**
      * <p>The objects defined in the pipeline.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The objects defined in the pipeline.</p>
      */
-    inline GetPipelineDefinitionResult& WithPipelineObjects(Aws::Vector<PipelineObject>&& value) { SetPipelineObjects(value); return *this;}
+    inline GetPipelineDefinitionResult& WithPipelineObjects(Aws::Vector<PipelineObject>&& value) { SetPipelineObjects(std::move(value)); return *this;}
 
     /**
      * <p>The objects defined in the pipeline.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The objects defined in the pipeline.</p>
      */
-    inline GetPipelineDefinitionResult& AddPipelineObjects(PipelineObject&& value) { m_pipelineObjects.push_back(value); return *this; }
+    inline GetPipelineDefinitionResult& AddPipelineObjects(PipelineObject&& value) { m_pipelineObjects.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The parameter objects used in the pipeline definition.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The parameter objects used in the pipeline definition.</p>
      */
-    inline void SetParameterObjects(Aws::Vector<ParameterObject>&& value) { m_parameterObjects = value; }
+    inline void SetParameterObjects(Aws::Vector<ParameterObject>&& value) { m_parameterObjects = std::move(value); }
 
     /**
      * <p>The parameter objects used in the pipeline definition.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The parameter objects used in the pipeline definition.</p>
      */
-    inline GetPipelineDefinitionResult& WithParameterObjects(Aws::Vector<ParameterObject>&& value) { SetParameterObjects(value); return *this;}
+    inline GetPipelineDefinitionResult& WithParameterObjects(Aws::Vector<ParameterObject>&& value) { SetParameterObjects(std::move(value)); return *this;}
 
     /**
      * <p>The parameter objects used in the pipeline definition.</p>
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>The parameter objects used in the pipeline definition.</p>
      */
-    inline GetPipelineDefinitionResult& AddParameterObjects(ParameterObject&& value) { m_parameterObjects.push_back(value); return *this; }
+    inline GetPipelineDefinitionResult& AddParameterObjects(ParameterObject&& value) { m_parameterObjects.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The parameter values used in the pipeline definition.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The parameter values used in the pipeline definition.</p>
      */
-    inline void SetParameterValues(Aws::Vector<ParameterValue>&& value) { m_parameterValues = value; }
+    inline void SetParameterValues(Aws::Vector<ParameterValue>&& value) { m_parameterValues = std::move(value); }
 
     /**
      * <p>The parameter values used in the pipeline definition.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The parameter values used in the pipeline definition.</p>
      */
-    inline GetPipelineDefinitionResult& WithParameterValues(Aws::Vector<ParameterValue>&& value) { SetParameterValues(value); return *this;}
+    inline GetPipelineDefinitionResult& WithParameterValues(Aws::Vector<ParameterValue>&& value) { SetParameterValues(std::move(value)); return *this;}
 
     /**
      * <p>The parameter values used in the pipeline definition.</p>
@@ -150,7 +151,7 @@ namespace Model
     /**
      * <p>The parameter values used in the pipeline definition.</p>
      */
-    inline GetPipelineDefinitionResult& AddParameterValues(ParameterValue&& value) { m_parameterValues.push_back(value); return *this; }
+    inline GetPipelineDefinitionResult& AddParameterValues(ParameterValue&& value) { m_parameterValues.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<PipelineObject> m_pipelineObjects;

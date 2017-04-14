@@ -17,6 +17,7 @@
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>An array containing the Amazon Resource Name (ARN) of each file share to be
      * described. </p>
      */
-    inline void SetFileShareARNList(Aws::Vector<Aws::String>&& value) { m_fileShareARNListHasBeenSet = true; m_fileShareARNList = value; }
+    inline void SetFileShareARNList(Aws::Vector<Aws::String>&& value) { m_fileShareARNListHasBeenSet = true; m_fileShareARNList = std::move(value); }
 
     /**
      * <p>An array containing the Amazon Resource Name (ARN) of each file share to be
@@ -67,7 +68,7 @@ namespace Model
      * <p>An array containing the Amazon Resource Name (ARN) of each file share to be
      * described. </p>
      */
-    inline DescribeNFSFileSharesRequest& WithFileShareARNList(Aws::Vector<Aws::String>&& value) { SetFileShareARNList(value); return *this;}
+    inline DescribeNFSFileSharesRequest& WithFileShareARNList(Aws::Vector<Aws::String>&& value) { SetFileShareARNList(std::move(value)); return *this;}
 
     /**
      * <p>An array containing the Amazon Resource Name (ARN) of each file share to be
@@ -79,7 +80,7 @@ namespace Model
      * <p>An array containing the Amazon Resource Name (ARN) of each file share to be
      * described. </p>
      */
-    inline DescribeNFSFileSharesRequest& AddFileShareARNList(Aws::String&& value) { m_fileShareARNListHasBeenSet = true; m_fileShareARNList.push_back(value); return *this; }
+    inline DescribeNFSFileSharesRequest& AddFileShareARNList(Aws::String&& value) { m_fileShareARNListHasBeenSet = true; m_fileShareARNList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array containing the Amazon Resource Name (ARN) of each file share to be

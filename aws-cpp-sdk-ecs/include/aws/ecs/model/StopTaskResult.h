@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/Task.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The task that was stopped.</p>
      */
-    inline void SetTask(Task&& value) { m_task = value; }
+    inline void SetTask(Task&& value) { m_task = std::move(value); }
 
     /**
      * <p>The task that was stopped.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The task that was stopped.</p>
      */
-    inline StopTaskResult& WithTask(Task&& value) { SetTask(value); return *this;}
+    inline StopTaskResult& WithTask(Task&& value) { SetTask(std::move(value)); return *this;}
 
   private:
     Task m_task;

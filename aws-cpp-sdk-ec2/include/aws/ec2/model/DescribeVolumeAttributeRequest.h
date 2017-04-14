@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VolumeAttributeName.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The ID of the volume.</p>
      */
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     /**
      * <p>The ID of the volume.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The ID of the volume.</p>
      */
-    inline DescribeVolumeAttributeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
+    inline DescribeVolumeAttributeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the volume.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The instance attribute.</p>
      */
-    inline void SetAttribute(VolumeAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline void SetAttribute(VolumeAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
      * <p>The instance attribute.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The instance attribute.</p>
      */
-    inline DescribeVolumeAttributeRequest& WithAttribute(VolumeAttributeName&& value) { SetAttribute(value); return *this;}
+    inline DescribeVolumeAttributeRequest& WithAttribute(VolumeAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

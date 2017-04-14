@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * StartSupportDataExport operation. This identifier can be used to correlate a
      * request with notifications from the SNS topic.
      */
-    inline void SetDataSetRequestId(Aws::String&& value) { m_dataSetRequestId = value; }
+    inline void SetDataSetRequestId(Aws::String&& value) { m_dataSetRequestId = std::move(value); }
 
     /**
      * A unique identifier representing a specific request to the
@@ -85,7 +86,7 @@ namespace Model
      * StartSupportDataExport operation. This identifier can be used to correlate a
      * request with notifications from the SNS topic.
      */
-    inline StartSupportDataExportResult& WithDataSetRequestId(Aws::String&& value) { SetDataSetRequestId(value); return *this;}
+    inline StartSupportDataExportResult& WithDataSetRequestId(Aws::String&& value) { SetDataSetRequestId(std::move(value)); return *this;}
 
     /**
      * A unique identifier representing a specific request to the

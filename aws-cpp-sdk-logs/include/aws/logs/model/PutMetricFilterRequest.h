@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/logs/model/MetricTransformation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
      * <p>The name of the log group.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline PutMetricFilterRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
+    inline PutMetricFilterRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the log group.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>A name for the metric filter.</p>
      */
-    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
+    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = std::move(value); }
 
     /**
      * <p>A name for the metric filter.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>A name for the metric filter.</p>
      */
-    inline PutMetricFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(value); return *this;}
+    inline PutMetricFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(std::move(value)); return *this;}
 
     /**
      * <p>A name for the metric filter.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>A filter pattern for extracting metric data out of ingested log events.</p>
      */
-    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
+    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = std::move(value); }
 
     /**
      * <p>A filter pattern for extracting metric data out of ingested log events.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>A filter pattern for extracting metric data out of ingested log events.</p>
      */
-    inline PutMetricFilterRequest& WithFilterPattern(Aws::String&& value) { SetFilterPattern(value); return *this;}
+    inline PutMetricFilterRequest& WithFilterPattern(Aws::String&& value) { SetFilterPattern(std::move(value)); return *this;}
 
     /**
      * <p>A filter pattern for extracting metric data out of ingested log events.</p>
@@ -158,7 +159,7 @@ namespace Model
      * <p>A collection of information needed to define how metric data gets
      * emitted.</p>
      */
-    inline void SetMetricTransformations(Aws::Vector<MetricTransformation>&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations = value; }
+    inline void SetMetricTransformations(Aws::Vector<MetricTransformation>&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations = std::move(value); }
 
     /**
      * <p>A collection of information needed to define how metric data gets
@@ -170,7 +171,7 @@ namespace Model
      * <p>A collection of information needed to define how metric data gets
      * emitted.</p>
      */
-    inline PutMetricFilterRequest& WithMetricTransformations(Aws::Vector<MetricTransformation>&& value) { SetMetricTransformations(value); return *this;}
+    inline PutMetricFilterRequest& WithMetricTransformations(Aws::Vector<MetricTransformation>&& value) { SetMetricTransformations(std::move(value)); return *this;}
 
     /**
      * <p>A collection of information needed to define how metric data gets
@@ -182,7 +183,7 @@ namespace Model
      * <p>A collection of information needed to define how metric data gets
      * emitted.</p>
      */
-    inline PutMetricFilterRequest& AddMetricTransformations(MetricTransformation&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.push_back(value); return *this; }
+    inline PutMetricFilterRequest& AddMetricTransformations(MetricTransformation&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_logGroupName;

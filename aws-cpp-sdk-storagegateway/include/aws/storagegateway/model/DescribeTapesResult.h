@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/model/Tape.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>An array of virtual tape descriptions.</p>
      */
-    inline void SetTapes(Aws::Vector<Tape>&& value) { m_tapes = value; }
+    inline void SetTapes(Aws::Vector<Tape>&& value) { m_tapes = std::move(value); }
 
     /**
      * <p>An array of virtual tape descriptions.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>An array of virtual tape descriptions.</p>
      */
-    inline DescribeTapesResult& WithTapes(Aws::Vector<Tape>&& value) { SetTapes(value); return *this;}
+    inline DescribeTapesResult& WithTapes(Aws::Vector<Tape>&& value) { SetTapes(std::move(value)); return *this;}
 
     /**
      * <p>An array of virtual tape descriptions.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>An array of virtual tape descriptions.</p>
      */
-    inline DescribeTapesResult& AddTapes(Tape&& value) { m_tapes.push_back(value); return *this; }
+    inline DescribeTapesResult& AddTapes(Tape&& value) { m_tapes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An opaque string which can be used as part of a subsequent DescribeTapes call
@@ -100,7 +101,7 @@ namespace Model
      * to retrieve the next page of results.</p> <p>If a response does not contain a
      * marker, then there are no more results to be retrieved.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>An opaque string which can be used as part of a subsequent DescribeTapes call
@@ -121,7 +122,7 @@ namespace Model
      * to retrieve the next page of results.</p> <p>If a response does not contain a
      * marker, then there are no more results to be retrieved.</p>
      */
-    inline DescribeTapesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeTapesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An opaque string which can be used as part of a subsequent DescribeTapes call

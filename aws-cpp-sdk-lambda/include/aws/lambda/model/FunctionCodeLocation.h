@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The repository from which you can download the function.</p>
      */
-    inline void SetRepositoryType(Aws::String&& value) { m_repositoryTypeHasBeenSet = true; m_repositoryType = value; }
+    inline void SetRepositoryType(Aws::String&& value) { m_repositoryTypeHasBeenSet = true; m_repositoryType = std::move(value); }
 
     /**
      * <p>The repository from which you can download the function.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The repository from which you can download the function.</p>
      */
-    inline FunctionCodeLocation& WithRepositoryType(Aws::String&& value) { SetRepositoryType(value); return *this;}
+    inline FunctionCodeLocation& WithRepositoryType(Aws::String&& value) { SetRepositoryType(std::move(value)); return *this;}
 
     /**
      * <p>The repository from which you can download the function.</p>
@@ -94,7 +95,7 @@ namespace Model
      * <p>The presigned URL you can use to download the function's .zip file that you
      * previously uploaded. The URL is valid for up to 10 minutes.</p>
      */
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
      * <p>The presigned URL you can use to download the function's .zip file that you
@@ -112,7 +113,7 @@ namespace Model
      * <p>The presigned URL you can use to download the function's .zip file that you
      * previously uploaded. The URL is valid for up to 10 minutes.</p>
      */
-    inline FunctionCodeLocation& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline FunctionCodeLocation& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * <p>The presigned URL you can use to download the function's .zip file that you

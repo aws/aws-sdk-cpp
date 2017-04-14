@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>One or more endpoint IDs.</p>
      */
-    inline void SetVpcEndpointIds(Aws::Vector<Aws::String>&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = value; }
+    inline void SetVpcEndpointIds(Aws::Vector<Aws::String>&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = std::move(value); }
 
     /**
      * <p>One or more endpoint IDs.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>One or more endpoint IDs.</p>
      */
-    inline DescribeVpcEndpointsRequest& WithVpcEndpointIds(Aws::Vector<Aws::String>&& value) { SetVpcEndpointIds(value); return *this;}
+    inline DescribeVpcEndpointsRequest& WithVpcEndpointIds(Aws::Vector<Aws::String>&& value) { SetVpcEndpointIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more endpoint IDs.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>One or more endpoint IDs.</p>
      */
-    inline DescribeVpcEndpointsRequest& AddVpcEndpointIds(Aws::String&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
+    inline DescribeVpcEndpointsRequest& AddVpcEndpointIds(Aws::String&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more endpoint IDs.</p>
@@ -135,7 +136,7 @@ namespace Model
      * state of the endpoint. (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
@@ -155,7 +156,7 @@ namespace Model
      * state of the endpoint. (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
      */
-    inline DescribeVpcEndpointsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeVpcEndpointsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
@@ -175,7 +176,7 @@ namespace Model
      * state of the endpoint. (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
      */
-    inline DescribeVpcEndpointsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeVpcEndpointsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The maximum number of items to return for this request. The request returns a
@@ -217,7 +218,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a prior call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -235,7 +236,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a prior call.)</p>
      */
-    inline DescribeVpcEndpointsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeVpcEndpointsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

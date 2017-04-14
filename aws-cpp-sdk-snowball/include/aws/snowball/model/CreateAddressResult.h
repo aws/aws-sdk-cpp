@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * when you create a job to specify which address you want the Snowball for that
      * job shipped to.</p>
      */
-    inline void SetAddressId(Aws::String&& value) { m_addressId = value; }
+    inline void SetAddressId(Aws::String&& value) { m_addressId = std::move(value); }
 
     /**
      * <p>The automatically generated ID for a specific address. You'll use this ID
@@ -79,7 +80,7 @@ namespace Model
      * when you create a job to specify which address you want the Snowball for that
      * job shipped to.</p>
      */
-    inline CreateAddressResult& WithAddressId(Aws::String&& value) { SetAddressId(value); return *this;}
+    inline CreateAddressResult& WithAddressId(Aws::String&& value) { SetAddressId(std::move(value)); return *this;}
 
     /**
      * <p>The automatically generated ID for a specific address. You'll use this ID

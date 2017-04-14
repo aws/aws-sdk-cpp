@@ -17,6 +17,7 @@
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/RoutingStrategy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>Unique identifier for a fleet alias. Specify the alias you want to
      * update.</p>
      */
-    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
+    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet alias. Specify the alias you want to
@@ -73,7 +74,7 @@ namespace Model
      * <p>Unique identifier for a fleet alias. Specify the alias you want to
      * update.</p>
      */
-    inline UpdateAliasRequest& WithAliasId(Aws::String&& value) { SetAliasId(value); return *this;}
+    inline UpdateAliasRequest& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet alias. Specify the alias you want to
@@ -97,7 +98,7 @@ namespace Model
      * <p>Descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Descriptive label that is associated with an alias. Alias names do not need
@@ -115,7 +116,7 @@ namespace Model
      * <p>Descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>
      */
-    inline UpdateAliasRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateAliasRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with an alias. Alias names do not need
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>Human-readable description of an alias.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Human-readable description of an alias.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>Human-readable description of an alias.</p>
      */
-    inline UpdateAliasRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline UpdateAliasRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Human-readable description of an alias.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>Object that specifies the fleet and routing type to use for the alias.</p>
      */
-    inline void SetRoutingStrategy(RoutingStrategy&& value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = value; }
+    inline void SetRoutingStrategy(RoutingStrategy&& value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = std::move(value); }
 
     /**
      * <p>Object that specifies the fleet and routing type to use for the alias.</p>
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>Object that specifies the fleet and routing type to use for the alias.</p>
      */
-    inline UpdateAliasRequest& WithRoutingStrategy(RoutingStrategy&& value) { SetRoutingStrategy(value); return *this;}
+    inline UpdateAliasRequest& WithRoutingStrategy(RoutingStrategy&& value) { SetRoutingStrategy(std::move(value)); return *this;}
 
   private:
     Aws::String m_aliasId;

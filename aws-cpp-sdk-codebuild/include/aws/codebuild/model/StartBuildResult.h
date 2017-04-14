@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/codebuild/model/Build.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Information about the build to be run.</p>
      */
-    inline void SetBuild(Build&& value) { m_build = value; }
+    inline void SetBuild(Build&& value) { m_build = std::move(value); }
 
     /**
      * <p>Information about the build to be run.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Information about the build to be run.</p>
      */
-    inline StartBuildResult& WithBuild(Build&& value) { SetBuild(value); return *this;}
+    inline StartBuildResult& WithBuild(Build&& value) { SetBuild(std::move(value)); return *this;}
 
   private:
     Build m_build;

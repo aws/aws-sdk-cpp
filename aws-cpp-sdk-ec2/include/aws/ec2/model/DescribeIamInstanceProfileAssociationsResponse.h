@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/IamInstanceProfileAssociation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>Information about one or more IAM instance profile associations.</p>
      */
-    inline void SetIamInstanceProfileAssociations(Aws::Vector<IamInstanceProfileAssociation>&& value) { m_iamInstanceProfileAssociations = value; }
+    inline void SetIamInstanceProfileAssociations(Aws::Vector<IamInstanceProfileAssociation>&& value) { m_iamInstanceProfileAssociations = std::move(value); }
 
     /**
      * <p>Information about one or more IAM instance profile associations.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>Information about one or more IAM instance profile associations.</p>
      */
-    inline DescribeIamInstanceProfileAssociationsResponse& WithIamInstanceProfileAssociations(Aws::Vector<IamInstanceProfileAssociation>&& value) { SetIamInstanceProfileAssociations(value); return *this;}
+    inline DescribeIamInstanceProfileAssociationsResponse& WithIamInstanceProfileAssociations(Aws::Vector<IamInstanceProfileAssociation>&& value) { SetIamInstanceProfileAssociations(std::move(value)); return *this;}
 
     /**
      * <p>Information about one or more IAM instance profile associations.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>Information about one or more IAM instance profile associations.</p>
      */
-    inline DescribeIamInstanceProfileAssociationsResponse& AddIamInstanceProfileAssociations(IamInstanceProfileAssociation&& value) { m_iamInstanceProfileAssociations.push_back(value); return *this; }
+    inline DescribeIamInstanceProfileAssociationsResponse& AddIamInstanceProfileAssociations(IamInstanceProfileAssociation&& value) { m_iamInstanceProfileAssociations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -93,7 +94,7 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -111,7 +112,7 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline DescribeIamInstanceProfileAssociationsResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeIamInstanceProfileAssociationsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -126,13 +127,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeIamInstanceProfileAssociationsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeIamInstanceProfileAssociationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeIamInstanceProfileAssociationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<IamInstanceProfileAssociation> m_iamInstanceProfileAssociations;

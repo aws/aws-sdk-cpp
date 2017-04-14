@@ -17,6 +17,7 @@
 #include <aws/rekognition/RekognitionRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>Collection from which to remove the specific faces.</p>
      */
-    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
+    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::move(value); }
 
     /**
      * <p>Collection from which to remove the specific faces.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Collection from which to remove the specific faces.</p>
      */
-    inline DeleteFacesRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(value); return *this;}
+    inline DeleteFacesRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(std::move(value)); return *this;}
 
     /**
      * <p>Collection from which to remove the specific faces.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>An array of face IDs to delete.</p>
      */
-    inline void SetFaceIds(Aws::Vector<Aws::String>&& value) { m_faceIdsHasBeenSet = true; m_faceIds = value; }
+    inline void SetFaceIds(Aws::Vector<Aws::String>&& value) { m_faceIdsHasBeenSet = true; m_faceIds = std::move(value); }
 
     /**
      * <p>An array of face IDs to delete.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>An array of face IDs to delete.</p>
      */
-    inline DeleteFacesRequest& WithFaceIds(Aws::Vector<Aws::String>&& value) { SetFaceIds(value); return *this;}
+    inline DeleteFacesRequest& WithFaceIds(Aws::Vector<Aws::String>&& value) { SetFaceIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of face IDs to delete.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>An array of face IDs to delete.</p>
      */
-    inline DeleteFacesRequest& AddFaceIds(Aws::String&& value) { m_faceIdsHasBeenSet = true; m_faceIds.push_back(value); return *this; }
+    inline DeleteFacesRequest& AddFaceIds(Aws::String&& value) { m_faceIdsHasBeenSet = true; m_faceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of face IDs to delete.</p>

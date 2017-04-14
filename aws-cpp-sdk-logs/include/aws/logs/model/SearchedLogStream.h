@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The name of the log stream.</p>
      */
-    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
+    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::move(value); }
 
     /**
      * <p>The name of the log stream.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of the log stream.</p>
      */
-    inline SearchedLogStream& WithLogStreamName(Aws::String&& value) { SetLogStreamName(value); return *this;}
+    inline SearchedLogStream& WithLogStreamName(Aws::String&& value) { SetLogStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the log stream.</p>

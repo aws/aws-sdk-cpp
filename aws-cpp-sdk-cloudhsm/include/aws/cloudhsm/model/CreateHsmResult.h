@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ARN of the HSM.</p>
      */
-    inline void SetHsmArn(Aws::String&& value) { m_hsmArn = value; }
+    inline void SetHsmArn(Aws::String&& value) { m_hsmArn = std::move(value); }
 
     /**
      * <p>The ARN of the HSM.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ARN of the HSM.</p>
      */
-    inline CreateHsmResult& WithHsmArn(Aws::String&& value) { SetHsmArn(value); return *this;}
+    inline CreateHsmResult& WithHsmArn(Aws::String&& value) { SetHsmArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the HSM.</p>

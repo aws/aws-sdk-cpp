@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * resource to add the client ID to. You can get a list of OIDC provider ARNs by
      * using the <a>ListOpenIDConnectProviders</a> action.</p>
      */
-    inline void SetOpenIDConnectProviderArn(Aws::String&& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = value; }
+    inline void SetOpenIDConnectProviderArn(Aws::String&& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
@@ -77,7 +78,7 @@ namespace Model
      * resource to add the client ID to. You can get a list of OIDC provider ARNs by
      * using the <a>ListOpenIDConnectProviders</a> action.</p>
      */
-    inline AddClientIDToOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(Aws::String&& value) { SetOpenIDConnectProviderArn(value); return *this;}
+    inline AddClientIDToOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(Aws::String&& value) { SetOpenIDConnectProviderArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
@@ -102,7 +103,7 @@ namespace Model
      * <p>The client ID (also known as audience) to add to the IAM OpenID Connect
      * provider resource.</p>
      */
-    inline void SetClientID(Aws::String&& value) { m_clientIDHasBeenSet = true; m_clientID = value; }
+    inline void SetClientID(Aws::String&& value) { m_clientIDHasBeenSet = true; m_clientID = std::move(value); }
 
     /**
      * <p>The client ID (also known as audience) to add to the IAM OpenID Connect
@@ -120,7 +121,7 @@ namespace Model
      * <p>The client ID (also known as audience) to add to the IAM OpenID Connect
      * provider resource.</p>
      */
-    inline AddClientIDToOpenIDConnectProviderRequest& WithClientID(Aws::String&& value) { SetClientID(value); return *this;}
+    inline AddClientIDToOpenIDConnectProviderRequest& WithClientID(Aws::String&& value) { SetClientID(std::move(value)); return *this;}
 
     /**
      * <p>The client ID (also known as audience) to add to the IAM OpenID Connect

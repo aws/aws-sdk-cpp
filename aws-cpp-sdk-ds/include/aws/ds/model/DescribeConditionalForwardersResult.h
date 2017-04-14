@@ -16,6 +16,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ds/model/ConditionalForwarder.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The list of conditional forwarders that have been created.</p>
      */
-    inline void SetConditionalForwarders(Aws::Vector<ConditionalForwarder>&& value) { m_conditionalForwarders = value; }
+    inline void SetConditionalForwarders(Aws::Vector<ConditionalForwarder>&& value) { m_conditionalForwarders = std::move(value); }
 
     /**
      * <p>The list of conditional forwarders that have been created.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The list of conditional forwarders that have been created.</p>
      */
-    inline DescribeConditionalForwardersResult& WithConditionalForwarders(Aws::Vector<ConditionalForwarder>&& value) { SetConditionalForwarders(value); return *this;}
+    inline DescribeConditionalForwardersResult& WithConditionalForwarders(Aws::Vector<ConditionalForwarder>&& value) { SetConditionalForwarders(std::move(value)); return *this;}
 
     /**
      * <p>The list of conditional forwarders that have been created.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The list of conditional forwarders that have been created.</p>
      */
-    inline DescribeConditionalForwardersResult& AddConditionalForwarders(ConditionalForwarder&& value) { m_conditionalForwarders.push_back(value); return *this; }
+    inline DescribeConditionalForwardersResult& AddConditionalForwarders(ConditionalForwarder&& value) { m_conditionalForwarders.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ConditionalForwarder> m_conditionalForwarders;

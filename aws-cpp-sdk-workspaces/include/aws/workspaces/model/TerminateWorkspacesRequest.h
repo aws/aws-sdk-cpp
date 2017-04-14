@@ -17,6 +17,7 @@
 #include <aws/workspaces/WorkSpacesRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/model/TerminateRequest.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>An array of structures that specify the WorkSpaces to terminate.</p>
      */
-    inline void SetTerminateWorkspaceRequests(Aws::Vector<TerminateRequest>&& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests = value; }
+    inline void SetTerminateWorkspaceRequests(Aws::Vector<TerminateRequest>&& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests = std::move(value); }
 
     /**
      * <p>An array of structures that specify the WorkSpaces to terminate.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>An array of structures that specify the WorkSpaces to terminate.</p>
      */
-    inline TerminateWorkspacesRequest& WithTerminateWorkspaceRequests(Aws::Vector<TerminateRequest>&& value) { SetTerminateWorkspaceRequests(value); return *this;}
+    inline TerminateWorkspacesRequest& WithTerminateWorkspaceRequests(Aws::Vector<TerminateRequest>&& value) { SetTerminateWorkspaceRequests(std::move(value)); return *this;}
 
     /**
      * <p>An array of structures that specify the WorkSpaces to terminate.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>An array of structures that specify the WorkSpaces to terminate.</p>
      */
-    inline TerminateWorkspacesRequest& AddTerminateWorkspaceRequests(TerminateRequest&& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests.push_back(value); return *this; }
+    inline TerminateWorkspacesRequest& AddTerminateWorkspaceRequests(TerminateRequest&& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<TerminateRequest> m_terminateWorkspaceRequests;

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/redshift/model/SourceType.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -85,7 +86,7 @@ namespace Model
      * snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p>
      * </li> </ul>
      */
-    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
+    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the event source for which events will be returned. If this
@@ -130,7 +131,7 @@ namespace Model
      * snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p>
      * </li> </ul>
      */
-    inline DescribeEventsRequest& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(value); return *this;}
+    inline DescribeEventsRequest& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the event source for which events will be returned. If this
@@ -187,7 +188,7 @@ namespace Model
      * <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot
      * identifier.</p> </li> </ul>
      */
-    inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
      * <p>The event source to retrieve events for. If no value is specified, all events
@@ -215,7 +216,7 @@ namespace Model
      * <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot
      * identifier.</p> </li> </ul>
      */
-    inline DescribeEventsRequest& WithSourceType(SourceType&& value) { SetSourceType(value); return *this;}
+    inline DescribeEventsRequest& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
 
     /**
      * <p>The beginning of the time interval to retrieve events for, specified in ISO
@@ -239,7 +240,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: <code>2009-07-08T18:00Z</code> </p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The beginning of the time interval to retrieve events for, specified in ISO
@@ -255,7 +256,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: <code>2009-07-08T18:00Z</code> </p>
      */
-    inline DescribeEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline DescribeEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The end of the time interval for which to retrieve events, specified in ISO
@@ -279,7 +280,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: <code>2009-07-08T18:00Z</code> </p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The end of the time interval for which to retrieve events, specified in ISO
@@ -295,7 +296,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: <code>2009-07-08T18:00Z</code> </p>
      */
-    inline DescribeEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline DescribeEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>The number of minutes prior to the time of the request for which to retrieve
@@ -379,7 +380,7 @@ namespace Model
      * response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -409,7 +410,7 @@ namespace Model
      * response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline DescribeEventsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeEventsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of

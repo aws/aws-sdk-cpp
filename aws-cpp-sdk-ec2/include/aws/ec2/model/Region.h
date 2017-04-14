@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the region.</p>
      */
-    inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
+    inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
 
     /**
      * <p>The name of the region.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the region.</p>
      */
-    inline Region& WithRegionName(Aws::String&& value) { SetRegionName(value); return *this;}
+    inline Region& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the region.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The region service endpoint.</p>
      */
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
+    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
      * <p>The region service endpoint.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The region service endpoint.</p>
      */
-    inline Region& WithEndpoint(Aws::String&& value) { SetEndpoint(value); return *this;}
+    inline Region& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
 
     /**
      * <p>The region service endpoint.</p>

@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan
      * customer.</p>
      */
-    inline void SetUsagePlanId(Aws::String&& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
+    inline void SetUsagePlanId(Aws::String&& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = std::move(value); }
 
     /**
      * <p>The Id of the <a>UsagePlan</a> resource representing the usage plan
@@ -77,7 +78,7 @@ namespace Model
      * containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan
      * customer.</p>
      */
-    inline GetUsagePlanKeyRequest& WithUsagePlanId(Aws::String&& value) { SetUsagePlanId(value); return *this;}
+    inline GetUsagePlanKeyRequest& WithUsagePlanId(Aws::String&& value) { SetUsagePlanId(std::move(value)); return *this;}
 
     /**
      * <p>The Id of the <a>UsagePlan</a> resource representing the usage plan
@@ -102,7 +103,7 @@ namespace Model
      * <p>The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource representing a
      * plan customer.</p>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource representing a
@@ -120,7 +121,7 @@ namespace Model
      * <p>The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource representing a
      * plan customer.</p>
      */
-    inline GetUsagePlanKeyRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline GetUsagePlanKeyRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource representing a

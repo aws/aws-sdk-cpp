@@ -17,6 +17,7 @@
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/AccelerateConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,7 +48,7 @@ namespace Model
     /**
      * Name of the bucket for which the accelerate configuration is set.
      */
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * Name of the bucket for which the accelerate configuration is set.
@@ -62,7 +63,7 @@ namespace Model
     /**
      * Name of the bucket for which the accelerate configuration is set.
      */
-    inline PutBucketAccelerateConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline PutBucketAccelerateConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * Name of the bucket for which the accelerate configuration is set.
@@ -82,7 +83,7 @@ namespace Model
     /**
      * Specifies the Accelerate Configuration you want to set for the bucket.
      */
-    inline void SetAccelerateConfiguration(AccelerateConfiguration&& value) { m_accelerateConfigurationHasBeenSet = true; m_accelerateConfiguration = value; }
+    inline void SetAccelerateConfiguration(AccelerateConfiguration&& value) { m_accelerateConfigurationHasBeenSet = true; m_accelerateConfiguration = std::move(value); }
 
     /**
      * Specifies the Accelerate Configuration you want to set for the bucket.
@@ -92,7 +93,7 @@ namespace Model
     /**
      * Specifies the Accelerate Configuration you want to set for the bucket.
      */
-    inline PutBucketAccelerateConfigurationRequest& WithAccelerateConfiguration(AccelerateConfiguration&& value) { SetAccelerateConfiguration(value); return *this;}
+    inline PutBucketAccelerateConfigurationRequest& WithAccelerateConfiguration(AccelerateConfiguration&& value) { SetAccelerateConfiguration(std::move(value)); return *this;}
 
   private:
     Aws::String m_bucket;

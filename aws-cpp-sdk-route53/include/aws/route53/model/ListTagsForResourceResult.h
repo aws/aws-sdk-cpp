@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/ResourceTagSet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>A <code>ResourceTagSet</code> containing tags associated with the specified
      * resource.</p>
      */
-    inline void SetResourceTagSet(ResourceTagSet&& value) { m_resourceTagSet = value; }
+    inline void SetResourceTagSet(ResourceTagSet&& value) { m_resourceTagSet = std::move(value); }
 
     /**
      * <p>A <code>ResourceTagSet</code> containing tags associated with the specified
@@ -73,7 +74,7 @@ namespace Model
      * <p>A <code>ResourceTagSet</code> containing tags associated with the specified
      * resource.</p>
      */
-    inline ListTagsForResourceResult& WithResourceTagSet(ResourceTagSet&& value) { SetResourceTagSet(value); return *this;}
+    inline ListTagsForResourceResult& WithResourceTagSet(ResourceTagSet&& value) { SetResourceTagSet(std::move(value)); return *this;}
 
   private:
     ResourceTagSet m_resourceTagSet;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/mobileanalytics/MobileAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A unique identifier for the session</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>A unique identifier for the session</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A unique identifier for the session</p>
      */
-    inline Session& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline Session& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the session</p>
@@ -107,7 +108,7 @@ namespace Model
      * <p>The time the event started in ISO 8601 standard date time format. For
      * example, 2014-06-30T19:07:47.885Z</p>
      */
-    inline void SetStartTimestamp(Aws::String&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
+    inline void SetStartTimestamp(Aws::String&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = std::move(value); }
 
     /**
      * <p>The time the event started in ISO 8601 standard date time format. For
@@ -125,7 +126,7 @@ namespace Model
      * <p>The time the event started in ISO 8601 standard date time format. For
      * example, 2014-06-30T19:07:47.885Z</p>
      */
-    inline Session& WithStartTimestamp(Aws::String&& value) { SetStartTimestamp(value); return *this;}
+    inline Session& WithStartTimestamp(Aws::String&& value) { SetStartTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The time the event started in ISO 8601 standard date time format. For
@@ -149,7 +150,7 @@ namespace Model
      * <p>The time the event terminated in ISO 8601 standard date time format. For
      * example, 2014-06-30T19:07:47.885Z</p>
      */
-    inline void SetStopTimestamp(Aws::String&& value) { m_stopTimestampHasBeenSet = true; m_stopTimestamp = value; }
+    inline void SetStopTimestamp(Aws::String&& value) { m_stopTimestampHasBeenSet = true; m_stopTimestamp = std::move(value); }
 
     /**
      * <p>The time the event terminated in ISO 8601 standard date time format. For
@@ -167,7 +168,7 @@ namespace Model
      * <p>The time the event terminated in ISO 8601 standard date time format. For
      * example, 2014-06-30T19:07:47.885Z</p>
      */
-    inline Session& WithStopTimestamp(Aws::String&& value) { SetStopTimestamp(value); return *this;}
+    inline Session& WithStopTimestamp(Aws::String&& value) { SetStopTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The time the event terminated in ISO 8601 standard date time format. For

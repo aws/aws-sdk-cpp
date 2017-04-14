@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector/model/Attribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * property must be the exact match of the value of the <b>rulesPackageArn</b>
      * property of the <a>Finding</a> data type.</p>
      */
-    inline void SetRulesPackageArns(Aws::Vector<Aws::String>&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns = value; }
+    inline void SetRulesPackageArns(Aws::Vector<Aws::String>&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns = std::move(value); }
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -77,7 +78,7 @@ namespace Model
      * property must be the exact match of the value of the <b>rulesPackageArn</b>
      * property of the <a>Finding</a> data type.</p>
      */
-    inline FindingsFilter& WithRulesPackageArns(Aws::Vector<Aws::String>&& value) { SetRulesPackageArns(value); return *this;}
+    inline FindingsFilter& WithRulesPackageArns(Aws::Vector<Aws::String>&& value) { SetRulesPackageArns(std::move(value)); return *this;}
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -91,7 +92,7 @@ namespace Model
      * property must be the exact match of the value of the <b>rulesPackageArn</b>
      * property of the <a>Finding</a> data type.</p>
      */
-    inline FindingsFilter& AddRulesPackageArns(Aws::String&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(value); return *this; }
+    inline FindingsFilter& AddRulesPackageArns(Aws::String&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -119,7 +120,7 @@ namespace Model
      * property must be the exact match of the value of the <b>ruleName</b> property of
      * the <a>Finding</a> data type.</p>
      */
-    inline void SetRuleNames(Aws::Vector<Aws::String>&& value) { m_ruleNamesHasBeenSet = true; m_ruleNames = value; }
+    inline void SetRuleNames(Aws::Vector<Aws::String>&& value) { m_ruleNamesHasBeenSet = true; m_ruleNames = std::move(value); }
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -133,7 +134,7 @@ namespace Model
      * property must be the exact match of the value of the <b>ruleName</b> property of
      * the <a>Finding</a> data type.</p>
      */
-    inline FindingsFilter& WithRuleNames(Aws::Vector<Aws::String>&& value) { SetRuleNames(value); return *this;}
+    inline FindingsFilter& WithRuleNames(Aws::Vector<Aws::String>&& value) { SetRuleNames(std::move(value)); return *this;}
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -147,7 +148,7 @@ namespace Model
      * property must be the exact match of the value of the <b>ruleName</b> property of
      * the <a>Finding</a> data type.</p>
      */
-    inline FindingsFilter& AddRuleNames(Aws::String&& value) { m_ruleNamesHasBeenSet = true; m_ruleNames.push_back(value); return *this; }
+    inline FindingsFilter& AddRuleNames(Aws::String&& value) { m_ruleNamesHasBeenSet = true; m_ruleNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -175,7 +176,7 @@ namespace Model
      * property must be the exact match of the value of the <b>severity</b> property of
      * the <a>Finding</a> data type.</p>
      */
-    inline void SetSeverities(Aws::Vector<Aws::String>&& value) { m_severitiesHasBeenSet = true; m_severities = value; }
+    inline void SetSeverities(Aws::Vector<Aws::String>&& value) { m_severitiesHasBeenSet = true; m_severities = std::move(value); }
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -189,7 +190,7 @@ namespace Model
      * property must be the exact match of the value of the <b>severity</b> property of
      * the <a>Finding</a> data type.</p>
      */
-    inline FindingsFilter& WithSeverities(Aws::Vector<Aws::String>&& value) { SetSeverities(value); return *this;}
+    inline FindingsFilter& WithSeverities(Aws::Vector<Aws::String>&& value) { SetSeverities(std::move(value)); return *this;}
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -203,7 +204,7 @@ namespace Model
      * property must be the exact match of the value of the <b>severity</b> property of
      * the <a>Finding</a> data type.</p>
      */
-    inline FindingsFilter& AddSeverities(Aws::String&& value) { m_severitiesHasBeenSet = true; m_severities.push_back(value); return *this; }
+    inline FindingsFilter& AddSeverities(Aws::String&& value) { m_severitiesHasBeenSet = true; m_severities.push_back(std::move(value)); return *this; }
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -231,7 +232,7 @@ namespace Model
      * property must be the exact match of the value of the <b>attributes</b> property
      * of the <a>Finding</a> data type.</p>
      */
-    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -245,7 +246,7 @@ namespace Model
      * property must be the exact match of the value of the <b>attributes</b> property
      * of the <a>Finding</a> data type.</p>
      */
-    inline FindingsFilter& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(value); return *this;}
+    inline FindingsFilter& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -259,7 +260,7 @@ namespace Model
      * property must be the exact match of the value of the <b>attributes</b> property
      * of the <a>Finding</a> data type.</p>
      */
-    inline FindingsFilter& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+    inline FindingsFilter& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -280,7 +281,7 @@ namespace Model
      * property must be the exact match of the value of the <b>userAttributes</b>
      * property of the <a>Finding</a> data type.</p>
      */
-    inline void SetUserAttributes(Aws::Vector<Attribute>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = value; }
+    inline void SetUserAttributes(Aws::Vector<Attribute>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = std::move(value); }
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -294,7 +295,7 @@ namespace Model
      * property must be the exact match of the value of the <b>userAttributes</b>
      * property of the <a>Finding</a> data type.</p>
      */
-    inline FindingsFilter& WithUserAttributes(Aws::Vector<Attribute>&& value) { SetUserAttributes(value); return *this;}
+    inline FindingsFilter& WithUserAttributes(Aws::Vector<Attribute>&& value) { SetUserAttributes(std::move(value)); return *this;}
 
     /**
      * <p>For a record to match a filter, the value specified for this data type
@@ -308,7 +309,7 @@ namespace Model
      * property must be the exact match of the value of the <b>userAttributes</b>
      * property of the <a>Finding</a> data type.</p>
      */
-    inline FindingsFilter& AddUserAttributes(Attribute&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(value); return *this; }
+    inline FindingsFilter& AddUserAttributes(Attribute&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Aws::String> m_rulesPackageArns;

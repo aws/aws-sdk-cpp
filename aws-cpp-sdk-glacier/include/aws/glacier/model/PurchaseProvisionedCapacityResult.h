@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID that identifies the provisioned capacity unit.</p>
      */
-    inline void SetCapacityId(Aws::String&& value) { m_capacityId = value; }
+    inline void SetCapacityId(Aws::String&& value) { m_capacityId = std::move(value); }
 
     /**
      * <p>The ID that identifies the provisioned capacity unit.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID that identifies the provisioned capacity unit.</p>
      */
-    inline PurchaseProvisionedCapacityResult& WithCapacityId(Aws::String&& value) { SetCapacityId(value); return *this;}
+    inline PurchaseProvisionedCapacityResult& WithCapacityId(Aws::String&& value) { SetCapacityId(std::move(value)); return *this;}
 
     /**
      * <p>The ID that identifies the provisioned capacity unit.</p>

@@ -18,6 +18,7 @@
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/UnsuccessfulItem.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The IDs of the Dedicated Hosts that were successfully released.</p>
      */
-    inline void SetSuccessful(Aws::Vector<Aws::String>&& value) { m_successful = value; }
+    inline void SetSuccessful(Aws::Vector<Aws::String>&& value) { m_successful = std::move(value); }
 
     /**
      * <p>The IDs of the Dedicated Hosts that were successfully released.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The IDs of the Dedicated Hosts that were successfully released.</p>
      */
-    inline ReleaseHostsResponse& WithSuccessful(Aws::Vector<Aws::String>&& value) { SetSuccessful(value); return *this;}
+    inline ReleaseHostsResponse& WithSuccessful(Aws::Vector<Aws::String>&& value) { SetSuccessful(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the Dedicated Hosts that were successfully released.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The IDs of the Dedicated Hosts that were successfully released.</p>
      */
-    inline ReleaseHostsResponse& AddSuccessful(Aws::String&& value) { m_successful.push_back(value); return *this; }
+    inline ReleaseHostsResponse& AddSuccessful(Aws::String&& value) { m_successful.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the Dedicated Hosts that were successfully released.</p>
@@ -103,7 +104,7 @@ namespace Model
      * <p>The IDs of the Dedicated Hosts that could not be released, including an error
      * message.</p>
      */
-    inline void SetUnsuccessful(Aws::Vector<UnsuccessfulItem>&& value) { m_unsuccessful = value; }
+    inline void SetUnsuccessful(Aws::Vector<UnsuccessfulItem>&& value) { m_unsuccessful = std::move(value); }
 
     /**
      * <p>The IDs of the Dedicated Hosts that could not be released, including an error
@@ -115,7 +116,7 @@ namespace Model
      * <p>The IDs of the Dedicated Hosts that could not be released, including an error
      * message.</p>
      */
-    inline ReleaseHostsResponse& WithUnsuccessful(Aws::Vector<UnsuccessfulItem>&& value) { SetUnsuccessful(value); return *this;}
+    inline ReleaseHostsResponse& WithUnsuccessful(Aws::Vector<UnsuccessfulItem>&& value) { SetUnsuccessful(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the Dedicated Hosts that could not be released, including an error
@@ -127,7 +128,7 @@ namespace Model
      * <p>The IDs of the Dedicated Hosts that could not be released, including an error
      * message.</p>
      */
-    inline ReleaseHostsResponse& AddUnsuccessful(UnsuccessfulItem&& value) { m_unsuccessful.push_back(value); return *this; }
+    inline ReleaseHostsResponse& AddUnsuccessful(UnsuccessfulItem&& value) { m_unsuccessful.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -136,13 +137,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ReleaseHostsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ReleaseHostsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ReleaseHostsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_successful;

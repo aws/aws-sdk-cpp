@@ -16,6 +16,7 @@
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of a domain.</p> <p>Type: String</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The name of a domain.</p> <p>Type: String</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of a domain.</p> <p>Type: String</p>
      */
-    inline DomainSummary& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DomainSummary& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a domain.</p> <p>Type: String</p>
@@ -129,7 +130,7 @@ namespace Model
      * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
      * <p>Type: Long</p>
      */
-    inline void SetExpiry(Aws::Utils::DateTime&& value) { m_expiryHasBeenSet = true; m_expiry = value; }
+    inline void SetExpiry(Aws::Utils::DateTime&& value) { m_expiryHasBeenSet = true; m_expiry = std::move(value); }
 
     /**
      * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
@@ -141,7 +142,7 @@ namespace Model
      * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
      * <p>Type: Long</p>
      */
-    inline DomainSummary& WithExpiry(Aws::Utils::DateTime&& value) { SetExpiry(value); return *this;}
+    inline DomainSummary& WithExpiry(Aws::Utils::DateTime&& value) { SetExpiry(std::move(value)); return *this;}
 
   private:
     Aws::String m_domainName;

@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/AutoScalingGroup.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
      * could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2
      * instances in the Auto Scaling group.</p>
      */
-    inline void SetHooksNotCleanedUp(Aws::Vector<AutoScalingGroup>&& value) { m_hooksNotCleanedUp = value; }
+    inline void SetHooksNotCleanedUp(Aws::Vector<AutoScalingGroup>&& value) { m_hooksNotCleanedUp = std::move(value); }
 
     /**
      * <p>If the output contains no data, and the corresponding deployment group
@@ -94,7 +95,7 @@ namespace Model
      * could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2
      * instances in the Auto Scaling group.</p>
      */
-    inline DeleteDeploymentGroupResult& WithHooksNotCleanedUp(Aws::Vector<AutoScalingGroup>&& value) { SetHooksNotCleanedUp(value); return *this;}
+    inline DeleteDeploymentGroupResult& WithHooksNotCleanedUp(Aws::Vector<AutoScalingGroup>&& value) { SetHooksNotCleanedUp(std::move(value)); return *this;}
 
     /**
      * <p>If the output contains no data, and the corresponding deployment group
@@ -114,7 +115,7 @@ namespace Model
      * could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2
      * instances in the Auto Scaling group.</p>
      */
-    inline DeleteDeploymentGroupResult& AddHooksNotCleanedUp(AutoScalingGroup&& value) { m_hooksNotCleanedUp.push_back(value); return *this; }
+    inline DeleteDeploymentGroupResult& AddHooksNotCleanedUp(AutoScalingGroup&& value) { m_hooksNotCleanedUp.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<AutoScalingGroup> m_hooksNotCleanedUp;

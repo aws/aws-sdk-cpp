@@ -17,6 +17,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/machinelearning/model/RealtimeEndpointStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
      * <p>The time that the request to create the real-time endpoint for the
      * <code>MLModel</code> was received. The time is expressed in epoch time.</p>
      */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
      * <p>The time that the request to create the real-time endpoint for the
@@ -92,7 +93,7 @@ namespace Model
      * <p>The time that the request to create the real-time endpoint for the
      * <code>MLModel</code> was received. The time is expressed in epoch time.</p>
      */
-    inline RealtimeEndpointInfo& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
+    inline RealtimeEndpointInfo& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
@@ -113,7 +114,7 @@ namespace Model
      * <code>MLModel</code>.</p> <note><title>Note</title> <p>The application must wait
      * until the real-time endpoint is ready before using this URI.</p> </note>
      */
-    inline void SetEndpointUrl(Aws::String&& value) { m_endpointUrlHasBeenSet = true; m_endpointUrl = value; }
+    inline void SetEndpointUrl(Aws::String&& value) { m_endpointUrlHasBeenSet = true; m_endpointUrl = std::move(value); }
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
@@ -134,7 +135,7 @@ namespace Model
      * <code>MLModel</code>.</p> <note><title>Note</title> <p>The application must wait
      * until the real-time endpoint is ready before using this URI.</p> </note>
      */
-    inline RealtimeEndpointInfo& WithEndpointUrl(Aws::String&& value) { SetEndpointUrl(value); return *this;}
+    inline RealtimeEndpointInfo& WithEndpointUrl(Aws::String&& value) { SetEndpointUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
@@ -171,7 +172,7 @@ namespace Model
      * predictions.</li> <li> <code>UPDATING</code> - Updating/creating the endpoint.
      * </li> </ul>
      */
-    inline void SetEndpointStatus(RealtimeEndpointStatus&& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = value; }
+    inline void SetEndpointStatus(RealtimeEndpointStatus&& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = std::move(value); }
 
     /**
      * <p> The current status of the real-time endpoint for the <code>MLModel</code>.
@@ -191,7 +192,7 @@ namespace Model
      * predictions.</li> <li> <code>UPDATING</code> - Updating/creating the endpoint.
      * </li> </ul>
      */
-    inline RealtimeEndpointInfo& WithEndpointStatus(RealtimeEndpointStatus&& value) { SetEndpointStatus(value); return *this;}
+    inline RealtimeEndpointInfo& WithEndpointStatus(RealtimeEndpointStatus&& value) { SetEndpointStatus(std::move(value)); return *this;}
 
   private:
     int m_peakRequestsPerSecond;

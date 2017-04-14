@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/ActionType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Provides details of the action types.</p>
      */
-    inline void SetActionTypes(Aws::Vector<ActionType>&& value) { m_actionTypes = value; }
+    inline void SetActionTypes(Aws::Vector<ActionType>&& value) { m_actionTypes = std::move(value); }
 
     /**
      * <p>Provides details of the action types.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Provides details of the action types.</p>
      */
-    inline ListActionTypesResult& WithActionTypes(Aws::Vector<ActionType>&& value) { SetActionTypes(value); return *this;}
+    inline ListActionTypesResult& WithActionTypes(Aws::Vector<ActionType>&& value) { SetActionTypes(std::move(value)); return *this;}
 
     /**
      * <p>Provides details of the action types.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>Provides details of the action types.</p>
      */
-    inline ListActionTypesResult& AddActionTypes(ActionType&& value) { m_actionTypes.push_back(value); return *this; }
+    inline ListActionTypesResult& AddActionTypes(ActionType&& value) { m_actionTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If the amount of returned information is significantly large, an identifier
@@ -101,7 +102,7 @@ namespace Model
      * is also returned which can be used in a subsequent list action types call to
      * return the next set of action types in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the amount of returned information is significantly large, an identifier
@@ -122,7 +123,7 @@ namespace Model
      * is also returned which can be used in a subsequent list action types call to
      * return the next set of action types in the list.</p>
      */
-    inline ListActionTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListActionTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the amount of returned information is significantly large, an identifier

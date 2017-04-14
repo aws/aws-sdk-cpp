@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The identifier of the directory.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryId = std::move(value); }
 
     /**
      * <p>The identifier of the directory.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The identifier of the directory.</p>
      */
-    inline CreateAliasResult& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline CreateAliasResult& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the directory.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The alias for the directory.</p>
      */
-    inline void SetAlias(Aws::String&& value) { m_alias = value; }
+    inline void SetAlias(Aws::String&& value) { m_alias = std::move(value); }
 
     /**
      * <p>The alias for the directory.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The alias for the directory.</p>
      */
-    inline CreateAliasResult& WithAlias(Aws::String&& value) { SetAlias(value); return *this;}
+    inline CreateAliasResult& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
 
     /**
      * <p>The alias for the directory.</p>

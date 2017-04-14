@@ -21,6 +21,7 @@
 #include <aws/codebuild/model/ProjectEnvironment.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codebuild/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The name of the build project.</p> <note> <p>You cannot change a build
      * project's name.</p> </note>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the build project.</p> <note> <p>You cannot change a build
@@ -74,7 +75,7 @@ namespace Model
      * <p>The name of the build project.</p> <note> <p>You cannot change a build
      * project's name.</p> </note>
      */
-    inline UpdateProjectRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateProjectRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the build project.</p> <note> <p>You cannot change a build
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>A new or replacement description of the build project.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A new or replacement description of the build project.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>A new or replacement description of the build project.</p>
      */
-    inline UpdateProjectRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline UpdateProjectRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A new or replacement description of the build project.</p>
@@ -133,7 +134,7 @@ namespace Model
      * <p>Information to be changed about the build input source code for the build
      * project.</p>
      */
-    inline void SetSource(ProjectSource&& value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline void SetSource(ProjectSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
      * <p>Information to be changed about the build input source code for the build
@@ -145,7 +146,7 @@ namespace Model
      * <p>Information to be changed about the build input source code for the build
      * project.</p>
      */
-    inline UpdateProjectRequest& WithSource(ProjectSource&& value) { SetSource(value); return *this;}
+    inline UpdateProjectRequest& WithSource(ProjectSource&& value) { SetSource(std::move(value)); return *this;}
 
     /**
      * <p>Information to be changed about the build output artifacts for the build
@@ -163,7 +164,7 @@ namespace Model
      * <p>Information to be changed about the build output artifacts for the build
      * project.</p>
      */
-    inline void SetArtifacts(ProjectArtifacts&& value) { m_artifactsHasBeenSet = true; m_artifacts = value; }
+    inline void SetArtifacts(ProjectArtifacts&& value) { m_artifactsHasBeenSet = true; m_artifacts = std::move(value); }
 
     /**
      * <p>Information to be changed about the build output artifacts for the build
@@ -175,7 +176,7 @@ namespace Model
      * <p>Information to be changed about the build output artifacts for the build
      * project.</p>
      */
-    inline UpdateProjectRequest& WithArtifacts(ProjectArtifacts&& value) { SetArtifacts(value); return *this;}
+    inline UpdateProjectRequest& WithArtifacts(ProjectArtifacts&& value) { SetArtifacts(std::move(value)); return *this;}
 
     /**
      * <p>Information to be changed about the build environment for the build
@@ -193,7 +194,7 @@ namespace Model
      * <p>Information to be changed about the build environment for the build
      * project.</p>
      */
-    inline void SetEnvironment(ProjectEnvironment&& value) { m_environmentHasBeenSet = true; m_environment = value; }
+    inline void SetEnvironment(ProjectEnvironment&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
     /**
      * <p>Information to be changed about the build environment for the build
@@ -205,7 +206,7 @@ namespace Model
      * <p>Information to be changed about the build environment for the build
      * project.</p>
      */
-    inline UpdateProjectRequest& WithEnvironment(ProjectEnvironment&& value) { SetEnvironment(value); return *this;}
+    inline UpdateProjectRequest& WithEnvironment(ProjectEnvironment&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
      * <p>The replacement ARN of the AWS Identity and Access Management (IAM) role that
@@ -226,7 +227,7 @@ namespace Model
      * enables AWS CodeBuild to interact with dependent AWS services on behalf of the
      * AWS account.</p>
      */
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
      * <p>The replacement ARN of the AWS Identity and Access Management (IAM) role that
@@ -247,7 +248,7 @@ namespace Model
      * enables AWS CodeBuild to interact with dependent AWS services on behalf of the
      * AWS account.</p>
      */
-    inline UpdateProjectRequest& WithServiceRole(Aws::String&& value) { SetServiceRole(value); return *this;}
+    inline UpdateProjectRequest& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
      * <p>The replacement ARN of the AWS Identity and Access Management (IAM) role that
@@ -299,7 +300,7 @@ namespace Model
      * specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's
      * alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
-    inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
+    inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
     /**
      * <p>The replacement AWS Key Management Service (AWS KMS) customer master key
@@ -323,7 +324,7 @@ namespace Model
      * specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's
      * alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
-    inline UpdateProjectRequest& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(value); return *this;}
+    inline UpdateProjectRequest& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
     /**
      * <p>The replacement AWS Key Management Service (AWS KMS) customer master key
@@ -352,7 +353,7 @@ namespace Model
      * available for use by AWS services that support AWS CodeBuild build project
      * tags.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The replacement set of tags for this build project.</p> <p>These tags are
@@ -366,7 +367,7 @@ namespace Model
      * available for use by AWS services that support AWS CodeBuild build project
      * tags.</p>
      */
-    inline UpdateProjectRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline UpdateProjectRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The replacement set of tags for this build project.</p> <p>These tags are
@@ -380,7 +381,7 @@ namespace Model
      * available for use by AWS services that support AWS CodeBuild build project
      * tags.</p>
      */
-    inline UpdateProjectRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline UpdateProjectRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_name;

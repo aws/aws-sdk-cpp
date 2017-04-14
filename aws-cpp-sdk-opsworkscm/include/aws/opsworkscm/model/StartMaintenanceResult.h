@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
 #include <aws/opsworkscm/model/Server.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Contains the response to a <code>StartMaintenance</code> request. </p>
      */
-    inline void SetServer(Server&& value) { m_server = value; }
+    inline void SetServer(Server&& value) { m_server = std::move(value); }
 
     /**
      * <p>Contains the response to a <code>StartMaintenance</code> request. </p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Contains the response to a <code>StartMaintenance</code> request. </p>
      */
-    inline StartMaintenanceResult& WithServer(Server&& value) { SetServer(value); return *this;}
+    inline StartMaintenanceResult& WithServer(Server&& value) { SetServer(std::move(value)); return *this;}
 
   private:
     Server m_server;

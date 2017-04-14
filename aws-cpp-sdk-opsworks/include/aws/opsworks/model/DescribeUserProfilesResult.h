@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/UserProfile.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A <code>Users</code> object that describes the specified users.</p>
      */
-    inline void SetUserProfiles(Aws::Vector<UserProfile>&& value) { m_userProfiles = value; }
+    inline void SetUserProfiles(Aws::Vector<UserProfile>&& value) { m_userProfiles = std::move(value); }
 
     /**
      * <p>A <code>Users</code> object that describes the specified users.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A <code>Users</code> object that describes the specified users.</p>
      */
-    inline DescribeUserProfilesResult& WithUserProfiles(Aws::Vector<UserProfile>&& value) { SetUserProfiles(value); return *this;}
+    inline DescribeUserProfilesResult& WithUserProfiles(Aws::Vector<UserProfile>&& value) { SetUserProfiles(std::move(value)); return *this;}
 
     /**
      * <p>A <code>Users</code> object that describes the specified users.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>A <code>Users</code> object that describes the specified users.</p>
      */
-    inline DescribeUserProfilesResult& AddUserProfiles(UserProfile&& value) { m_userProfiles.push_back(value); return *this; }
+    inline DescribeUserProfilesResult& AddUserProfiles(UserProfile&& value) { m_userProfiles.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<UserProfile> m_userProfiles;

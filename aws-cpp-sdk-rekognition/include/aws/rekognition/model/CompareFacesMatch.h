@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/ComparedFace.h>
+#include <utility>
 
 namespace Aws
 {
@@ -76,7 +77,7 @@ namespace Model
      * <p>Provides face metadata (bounding box and confidence that the bounding box
      * actually contains a face).</p>
      */
-    inline void SetFace(ComparedFace&& value) { m_faceHasBeenSet = true; m_face = value; }
+    inline void SetFace(ComparedFace&& value) { m_faceHasBeenSet = true; m_face = std::move(value); }
 
     /**
      * <p>Provides face metadata (bounding box and confidence that the bounding box
@@ -88,7 +89,7 @@ namespace Model
      * <p>Provides face metadata (bounding box and confidence that the bounding box
      * actually contains a face).</p>
      */
-    inline CompareFacesMatch& WithFace(ComparedFace&& value) { SetFace(value); return *this;}
+    inline CompareFacesMatch& WithFace(ComparedFace&& value) { SetFace(std::move(value)); return *this;}
 
   private:
     double m_similarity;

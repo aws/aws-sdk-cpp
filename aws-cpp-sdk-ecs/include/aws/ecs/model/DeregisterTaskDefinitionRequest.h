@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
      * definition to deregister. You must specify a <code>revision</code>.</p>
      */
-    inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
+    inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
@@ -75,7 +76,7 @@ namespace Model
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
      * definition to deregister. You must specify a <code>revision</code>.</p>
      */
-    inline DeregisterTaskDefinitionRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(value); return *this;}
+    inline DeregisterTaskDefinitionRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
     /**
      * <p>The <code>family</code> and <code>revision</code>

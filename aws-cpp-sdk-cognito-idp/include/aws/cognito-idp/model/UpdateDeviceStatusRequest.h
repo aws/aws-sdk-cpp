@@ -17,6 +17,7 @@
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cognito-idp/model/DeviceRememberedStatusType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The access token.</p>
      */
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
+    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
      * <p>The access token.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The access token.</p>
      */
-    inline UpdateDeviceStatusRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(value); return *this;}
+    inline UpdateDeviceStatusRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
      * <p>The access token.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The device key.</p>
      */
-    inline void SetDeviceKey(Aws::String&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = value; }
+    inline void SetDeviceKey(Aws::String&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = std::move(value); }
 
     /**
      * <p>The device key.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The device key.</p>
      */
-    inline UpdateDeviceStatusRequest& WithDeviceKey(Aws::String&& value) { SetDeviceKey(value); return *this;}
+    inline UpdateDeviceStatusRequest& WithDeviceKey(Aws::String&& value) { SetDeviceKey(std::move(value)); return *this;}
 
     /**
      * <p>The device key.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The status of whether a device is remembered.</p>
      */
-    inline void SetDeviceRememberedStatus(DeviceRememberedStatusType&& value) { m_deviceRememberedStatusHasBeenSet = true; m_deviceRememberedStatus = value; }
+    inline void SetDeviceRememberedStatus(DeviceRememberedStatusType&& value) { m_deviceRememberedStatusHasBeenSet = true; m_deviceRememberedStatus = std::move(value); }
 
     /**
      * <p>The status of whether a device is remembered.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The status of whether a device is remembered.</p>
      */
-    inline UpdateDeviceStatusRequest& WithDeviceRememberedStatus(DeviceRememberedStatusType&& value) { SetDeviceRememberedStatus(value); return *this;}
+    inline UpdateDeviceStatusRequest& WithDeviceRememberedStatus(DeviceRememberedStatusType&& value) { SetDeviceRememberedStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_accessToken;

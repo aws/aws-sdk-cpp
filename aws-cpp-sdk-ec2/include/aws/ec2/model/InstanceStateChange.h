@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InstanceState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline InstanceStateChange& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline InstanceStateChange& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The current state of the instance.</p>
      */
-    inline void SetCurrentState(InstanceState&& value) { m_currentStateHasBeenSet = true; m_currentState = value; }
+    inline void SetCurrentState(InstanceState&& value) { m_currentStateHasBeenSet = true; m_currentState = std::move(value); }
 
     /**
      * <p>The current state of the instance.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The current state of the instance.</p>
      */
-    inline InstanceStateChange& WithCurrentState(InstanceState&& value) { SetCurrentState(value); return *this;}
+    inline InstanceStateChange& WithCurrentState(InstanceState&& value) { SetCurrentState(std::move(value)); return *this;}
 
     /**
      * <p>The previous state of the instance.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>The previous state of the instance.</p>
      */
-    inline void SetPreviousState(InstanceState&& value) { m_previousStateHasBeenSet = true; m_previousState = value; }
+    inline void SetPreviousState(InstanceState&& value) { m_previousStateHasBeenSet = true; m_previousState = std::move(value); }
 
     /**
      * <p>The previous state of the instance.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The previous state of the instance.</p>
      */
-    inline InstanceStateChange& WithPreviousState(InstanceState&& value) { SetPreviousState(value); return *this;}
+    inline InstanceStateChange& WithPreviousState(InstanceState&& value) { SetPreviousState(std::move(value)); return *this;}
 
   private:
     Aws::String m_instanceId;

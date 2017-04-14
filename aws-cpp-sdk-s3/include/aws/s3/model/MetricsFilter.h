@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/Tag.h>
 #include <aws/s3/model/MetricsAndOperator.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * The prefix used when evaluating a metrics filter.
      */
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * The prefix used when evaluating a metrics filter.
@@ -69,7 +70,7 @@ namespace Model
     /**
      * The prefix used when evaluating a metrics filter.
      */
-    inline MetricsFilter& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
+    inline MetricsFilter& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * The prefix used when evaluating a metrics filter.
@@ -89,7 +90,7 @@ namespace Model
     /**
      * The tag used when evaluating a metrics filter.
      */
-    inline void SetTag(Tag&& value) { m_tagHasBeenSet = true; m_tag = value; }
+    inline void SetTag(Tag&& value) { m_tagHasBeenSet = true; m_tag = std::move(value); }
 
     /**
      * The tag used when evaluating a metrics filter.
@@ -99,7 +100,7 @@ namespace Model
     /**
      * The tag used when evaluating a metrics filter.
      */
-    inline MetricsFilter& WithTag(Tag&& value) { SetTag(value); return *this;}
+    inline MetricsFilter& WithTag(Tag&& value) { SetTag(std::move(value)); return *this;}
 
     /**
      * A conjunction (logical AND) of predicates, which is used in evaluating a metrics
@@ -120,7 +121,7 @@ namespace Model
      * filter. The operator must have at least two predicates, and an object must match
      * all of the predicates in order for the filter to apply.
      */
-    inline void SetAnd(MetricsAndOperator&& value) { m_andHasBeenSet = true; m_and = value; }
+    inline void SetAnd(MetricsAndOperator&& value) { m_andHasBeenSet = true; m_and = std::move(value); }
 
     /**
      * A conjunction (logical AND) of predicates, which is used in evaluating a metrics
@@ -134,7 +135,7 @@ namespace Model
      * filter. The operator must have at least two predicates, and an object must match
      * all of the predicates in order for the filter to apply.
      */
-    inline MetricsFilter& WithAnd(MetricsAndOperator&& value) { SetAnd(value); return *this;}
+    inline MetricsFilter& WithAnd(MetricsAndOperator&& value) { SetAnd(std::move(value)); return *this;}
 
   private:
     Aws::String m_prefix;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/model/StreamViewType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -102,7 +103,7 @@ namespace Model
      * <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the
      * item are written to the stream.</p> </li> </ul>
      */
-    inline void SetStreamViewType(StreamViewType&& value) { m_streamViewTypeHasBeenSet = true; m_streamViewType = value; }
+    inline void SetStreamViewType(StreamViewType&& value) { m_streamViewTypeHasBeenSet = true; m_streamViewType = std::move(value); }
 
     /**
      * <p> When an item in the table is modified, <code>StreamViewType</code>
@@ -130,7 +131,7 @@ namespace Model
      * <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the
      * item are written to the stream.</p> </li> </ul>
      */
-    inline StreamSpecification& WithStreamViewType(StreamViewType&& value) { SetStreamViewType(value); return *this;}
+    inline StreamSpecification& WithStreamViewType(StreamViewType&& value) { SetStreamViewType(std::move(value)); return *this;}
 
   private:
     bool m_streamEnabled;

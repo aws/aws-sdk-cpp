@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/config/model/ComplianceSummaryByResourceType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * numbers are returned for each resource type. The maximum number returned is
      * 100.</p>
      */
-    inline void SetComplianceSummariesByResourceType(Aws::Vector<ComplianceSummaryByResourceType>&& value) { m_complianceSummariesByResourceType = value; }
+    inline void SetComplianceSummariesByResourceType(Aws::Vector<ComplianceSummaryByResourceType>&& value) { m_complianceSummariesByResourceType = std::move(value); }
 
     /**
      * <p>The number of resources that are compliant and the number that are
@@ -83,7 +84,7 @@ namespace Model
      * numbers are returned for each resource type. The maximum number returned is
      * 100.</p>
      */
-    inline GetComplianceSummaryByResourceTypeResult& WithComplianceSummariesByResourceType(Aws::Vector<ComplianceSummaryByResourceType>&& value) { SetComplianceSummariesByResourceType(value); return *this;}
+    inline GetComplianceSummaryByResourceTypeResult& WithComplianceSummariesByResourceType(Aws::Vector<ComplianceSummaryByResourceType>&& value) { SetComplianceSummariesByResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The number of resources that are compliant and the number that are
@@ -99,7 +100,7 @@ namespace Model
      * numbers are returned for each resource type. The maximum number returned is
      * 100.</p>
      */
-    inline GetComplianceSummaryByResourceTypeResult& AddComplianceSummariesByResourceType(ComplianceSummaryByResourceType&& value) { m_complianceSummariesByResourceType.push_back(value); return *this; }
+    inline GetComplianceSummaryByResourceTypeResult& AddComplianceSummariesByResourceType(ComplianceSummaryByResourceType&& value) { m_complianceSummariesByResourceType.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ComplianceSummaryByResourceType> m_complianceSummariesByResourceType;

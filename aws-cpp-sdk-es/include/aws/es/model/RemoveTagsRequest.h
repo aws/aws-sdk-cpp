@@ -17,6 +17,7 @@
 #include <aws/es/ElasticsearchServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>Specifies the <code>ARN</code> for the Elasticsearch domain from which you
      * want to delete the specified tags.</p>
      */
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
 
     /**
      * <p>Specifies the <code>ARN</code> for the Elasticsearch domain from which you
@@ -73,7 +74,7 @@ namespace Model
      * <p>Specifies the <code>ARN</code> for the Elasticsearch domain from which you
      * want to delete the specified tags.</p>
      */
-    inline RemoveTagsRequest& WithARN(Aws::String&& value) { SetARN(value); return *this;}
+    inline RemoveTagsRequest& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the <code>ARN</code> for the Elasticsearch domain from which you
@@ -97,7 +98,7 @@ namespace Model
      * <p>Specifies the <code>TagKey</code> list which you want to remove from the
      * Elasticsearch domain.</p>
      */
-    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
+    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
      * <p>Specifies the <code>TagKey</code> list which you want to remove from the
@@ -109,7 +110,7 @@ namespace Model
      * <p>Specifies the <code>TagKey</code> list which you want to remove from the
      * Elasticsearch domain.</p>
      */
-    inline RemoveTagsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
+    inline RemoveTagsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the <code>TagKey</code> list which you want to remove from the
@@ -121,7 +122,7 @@ namespace Model
      * <p>Specifies the <code>TagKey</code> list which you want to remove from the
      * Elasticsearch domain.</p>
      */
-    inline RemoveTagsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+    inline RemoveTagsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specifies the <code>TagKey</code> list which you want to remove from the

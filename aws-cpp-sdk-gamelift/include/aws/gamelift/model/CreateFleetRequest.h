@@ -22,6 +22,7 @@
 #include <aws/gamelift/model/RuntimeConfiguration.h>
 #include <aws/gamelift/model/ResourceCreationLimitPolicy.h>
 #include <aws/gamelift/model/IpPermission.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
      * be unique.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
@@ -78,7 +79,7 @@ namespace Model
      * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
      * be unique.</p>
      */
-    inline CreateFleetRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateFleetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>Human-readable description of a fleet.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Human-readable description of a fleet.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>Human-readable description of a fleet.</p>
      */
-    inline CreateFleetRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateFleetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Human-readable description of a fleet.</p>
@@ -143,7 +144,7 @@ namespace Model
      * <code>READY</code> status. This fleet setting cannot be changed once the fleet
      * is created.</p>
      */
-    inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
+    inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = std::move(value); }
 
     /**
      * <p>Unique identifier for a build to be deployed on the new fleet. The build must
@@ -167,7 +168,7 @@ namespace Model
      * <code>READY</code> status. This fleet setting cannot be changed once the fleet
      * is created.</p>
      */
-    inline CreateFleetRequest& WithBuildId(Aws::String&& value) { SetBuildId(value); return *this;}
+    inline CreateFleetRequest& WithBuildId(Aws::String&& value) { SetBuildId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a build to be deployed on the new fleet. The build must
@@ -199,7 +200,7 @@ namespace Model
      * launch path and launch parameters instead of a runtime configuration will
      * continue to work.)</p>
      */
-    inline void SetServerLaunchPath(Aws::String&& value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath = value; }
+    inline void SetServerLaunchPath(Aws::String&& value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath = std::move(value); }
 
     /**
      * <p>This parameter is no longer used. Instead, specify a server launch path using
@@ -223,7 +224,7 @@ namespace Model
      * launch path and launch parameters instead of a runtime configuration will
      * continue to work.)</p>
      */
-    inline CreateFleetRequest& WithServerLaunchPath(Aws::String&& value) { SetServerLaunchPath(value); return *this;}
+    inline CreateFleetRequest& WithServerLaunchPath(Aws::String&& value) { SetServerLaunchPath(std::move(value)); return *this;}
 
     /**
      * <p>This parameter is no longer used. Instead, specify a server launch path using
@@ -255,7 +256,7 @@ namespace Model
      * server launch path and launch parameters instead of a runtime configuration will
      * continue to work.)</p>
      */
-    inline void SetServerLaunchParameters(Aws::String&& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = value; }
+    inline void SetServerLaunchParameters(Aws::String&& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = std::move(value); }
 
     /**
      * <p>This parameter is no longer used. Instead, specify server launch parameters
@@ -279,7 +280,7 @@ namespace Model
      * server launch path and launch parameters instead of a runtime configuration will
      * continue to work.)</p>
      */
-    inline CreateFleetRequest& WithServerLaunchParameters(Aws::String&& value) { SetServerLaunchParameters(value); return *this;}
+    inline CreateFleetRequest& WithServerLaunchParameters(Aws::String&& value) { SetServerLaunchParameters(std::move(value)); return *this;}
 
     /**
      * <p>This parameter is no longer used. Instead, specify server launch parameters
@@ -317,7 +318,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
      */
-    inline void SetLogPaths(Aws::Vector<Aws::String>&& value) { m_logPathsHasBeenSet = true; m_logPaths = value; }
+    inline void SetLogPaths(Aws::Vector<Aws::String>&& value) { m_logPathsHasBeenSet = true; m_logPaths = std::move(value); }
 
     /**
      * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
@@ -337,7 +338,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
      */
-    inline CreateFleetRequest& WithLogPaths(Aws::Vector<Aws::String>&& value) { SetLogPaths(value); return *this;}
+    inline CreateFleetRequest& WithLogPaths(Aws::Vector<Aws::String>&& value) { SetLogPaths(std::move(value)); return *this;}
 
     /**
      * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
@@ -357,7 +358,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
      */
-    inline CreateFleetRequest& AddLogPaths(Aws::String&& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
+    inline CreateFleetRequest& AddLogPaths(Aws::String&& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(std::move(value)); return *this; }
 
     /**
      * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
@@ -397,7 +398,7 @@ namespace Model
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
-    inline void SetEC2InstanceType(EC2InstanceType&& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = value; }
+    inline void SetEC2InstanceType(EC2InstanceType&& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = std::move(value); }
 
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
@@ -417,7 +418,7 @@ namespace Model
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
-    inline CreateFleetRequest& WithEC2InstanceType(EC2InstanceType&& value) { SetEC2InstanceType(value); return *this;}
+    inline CreateFleetRequest& WithEC2InstanceType(EC2InstanceType&& value) { SetEC2InstanceType(std::move(value)); return *this;}
 
     /**
      * <p>Range of IP addresses and port settings that permit inbound traffic to access
@@ -444,7 +445,7 @@ namespace Model
      * fleet cannot accept connections. You can specify one or more sets of permissions
      * for a fleet.</p>
      */
-    inline void SetEC2InboundPermissions(Aws::Vector<IpPermission>&& value) { m_eC2InboundPermissionsHasBeenSet = true; m_eC2InboundPermissions = value; }
+    inline void SetEC2InboundPermissions(Aws::Vector<IpPermission>&& value) { m_eC2InboundPermissionsHasBeenSet = true; m_eC2InboundPermissions = std::move(value); }
 
     /**
      * <p>Range of IP addresses and port settings that permit inbound traffic to access
@@ -462,7 +463,7 @@ namespace Model
      * fleet cannot accept connections. You can specify one or more sets of permissions
      * for a fleet.</p>
      */
-    inline CreateFleetRequest& WithEC2InboundPermissions(Aws::Vector<IpPermission>&& value) { SetEC2InboundPermissions(value); return *this;}
+    inline CreateFleetRequest& WithEC2InboundPermissions(Aws::Vector<IpPermission>&& value) { SetEC2InboundPermissions(std::move(value)); return *this;}
 
     /**
      * <p>Range of IP addresses and port settings that permit inbound traffic to access
@@ -480,7 +481,7 @@ namespace Model
      * fleet cannot accept connections. You can specify one or more sets of permissions
      * for a fleet.</p>
      */
-    inline CreateFleetRequest& AddEC2InboundPermissions(IpPermission&& value) { m_eC2InboundPermissionsHasBeenSet = true; m_eC2InboundPermissions.push_back(value); return *this; }
+    inline CreateFleetRequest& AddEC2InboundPermissions(IpPermission&& value) { m_eC2InboundPermissionsHasBeenSet = true; m_eC2InboundPermissions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Game session protection policy to apply to all instances in this fleet. If
@@ -519,7 +520,7 @@ namespace Model
      * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</p> </li> </ul>
      */
-    inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
+    inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = std::move(value); }
 
     /**
      * <p>Game session protection policy to apply to all instances in this fleet. If
@@ -545,7 +546,7 @@ namespace Model
      * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</p> </li> </ul>
      */
-    inline CreateFleetRequest& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
+    inline CreateFleetRequest& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(std::move(value)); return *this;}
 
     /**
      * <p>Instructions for launching server processes on each instance in the fleet.
@@ -590,7 +591,7 @@ namespace Model
      * <code>ServerLaunchParameters</code>; requests that contain values for these
      * parameters instead of a runtime configuration will continue to work.) </p>
      */
-    inline void SetRuntimeConfiguration(RuntimeConfiguration&& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = value; }
+    inline void SetRuntimeConfiguration(RuntimeConfiguration&& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = std::move(value); }
 
     /**
      * <p>Instructions for launching server processes on each instance in the fleet.
@@ -620,7 +621,7 @@ namespace Model
      * <code>ServerLaunchParameters</code>; requests that contain values for these
      * parameters instead of a runtime configuration will continue to work.) </p>
      */
-    inline CreateFleetRequest& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(value); return *this;}
+    inline CreateFleetRequest& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>Policy that limits the number of game sessions an individual player can
@@ -638,7 +639,7 @@ namespace Model
      * <p>Policy that limits the number of game sessions an individual player can
      * create over a span of time for this fleet.</p>
      */
-    inline void SetResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { m_resourceCreationLimitPolicyHasBeenSet = true; m_resourceCreationLimitPolicy = value; }
+    inline void SetResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { m_resourceCreationLimitPolicyHasBeenSet = true; m_resourceCreationLimitPolicy = std::move(value); }
 
     /**
      * <p>Policy that limits the number of game sessions an individual player can
@@ -650,7 +651,7 @@ namespace Model
      * <p>Policy that limits the number of game sessions an individual player can
      * create over a span of time for this fleet.</p>
      */
-    inline CreateFleetRequest& WithResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { SetResourceCreationLimitPolicy(value); return *this;}
+    inline CreateFleetRequest& WithResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { SetResourceCreationLimitPolicy(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

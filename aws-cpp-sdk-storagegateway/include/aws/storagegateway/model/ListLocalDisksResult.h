@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/storagegateway/model/Disk.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
 
     
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = value; }
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
 
     
     inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
@@ -57,7 +58,7 @@ namespace Model
     inline ListLocalDisksResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     
-    inline ListLocalDisksResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline ListLocalDisksResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     
     inline ListLocalDisksResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
@@ -69,19 +70,19 @@ namespace Model
     inline void SetDisks(const Aws::Vector<Disk>& value) { m_disks = value; }
 
     
-    inline void SetDisks(Aws::Vector<Disk>&& value) { m_disks = value; }
+    inline void SetDisks(Aws::Vector<Disk>&& value) { m_disks = std::move(value); }
 
     
     inline ListLocalDisksResult& WithDisks(const Aws::Vector<Disk>& value) { SetDisks(value); return *this;}
 
     
-    inline ListLocalDisksResult& WithDisks(Aws::Vector<Disk>&& value) { SetDisks(value); return *this;}
+    inline ListLocalDisksResult& WithDisks(Aws::Vector<Disk>&& value) { SetDisks(std::move(value)); return *this;}
 
     
     inline ListLocalDisksResult& AddDisks(const Disk& value) { m_disks.push_back(value); return *this; }
 
     
-    inline ListLocalDisksResult& AddDisks(Disk&& value) { m_disks.push_back(value); return *this; }
+    inline ListLocalDisksResult& AddDisks(Disk&& value) { m_disks.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_gatewayARN;

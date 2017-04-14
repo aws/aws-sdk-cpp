@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The list of container instances with full Amazon Resource Name (ARN) entries
      * for each container instance associated with the specified cluster.</p>
      */
-    inline void SetContainerInstanceArns(Aws::Vector<Aws::String>&& value) { m_containerInstanceArns = value; }
+    inline void SetContainerInstanceArns(Aws::Vector<Aws::String>&& value) { m_containerInstanceArns = std::move(value); }
 
     /**
      * <p>The list of container instances with full Amazon Resource Name (ARN) entries
@@ -68,7 +69,7 @@ namespace Model
      * <p>The list of container instances with full Amazon Resource Name (ARN) entries
      * for each container instance associated with the specified cluster.</p>
      */
-    inline ListContainerInstancesResult& WithContainerInstanceArns(Aws::Vector<Aws::String>&& value) { SetContainerInstanceArns(value); return *this;}
+    inline ListContainerInstancesResult& WithContainerInstanceArns(Aws::Vector<Aws::String>&& value) { SetContainerInstanceArns(std::move(value)); return *this;}
 
     /**
      * <p>The list of container instances with full Amazon Resource Name (ARN) entries
@@ -80,7 +81,7 @@ namespace Model
      * <p>The list of container instances with full Amazon Resource Name (ARN) entries
      * for each container instance associated with the specified cluster.</p>
      */
-    inline ListContainerInstancesResult& AddContainerInstanceArns(Aws::String&& value) { m_containerInstanceArns.push_back(value); return *this; }
+    inline ListContainerInstancesResult& AddContainerInstanceArns(Aws::String&& value) { m_containerInstanceArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of container instances with full Amazon Resource Name (ARN) entries
@@ -113,7 +114,7 @@ namespace Model
      * value can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -140,7 +141,7 @@ namespace Model
      * value can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline ListContainerInstancesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListContainerInstancesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value to include in a future

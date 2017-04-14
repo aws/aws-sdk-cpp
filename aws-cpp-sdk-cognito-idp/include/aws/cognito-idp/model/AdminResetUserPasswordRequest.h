@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The user pool ID for the user pool where you want to reset the user's
      * password.</p>
      */
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
+    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
      * <p>The user pool ID for the user pool where you want to reset the user's
@@ -73,7 +74,7 @@ namespace Model
      * <p>The user pool ID for the user pool where you want to reset the user's
      * password.</p>
      */
-    inline AdminResetUserPasswordRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(value); return *this;}
+    inline AdminResetUserPasswordRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
      * <p>The user pool ID for the user pool where you want to reset the user's
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The user name of the user whose password you wish to reset.</p>
      */
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
+    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
      * <p>The user name of the user whose password you wish to reset.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The user name of the user whose password you wish to reset.</p>
      */
-    inline AdminResetUserPasswordRequest& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
+    inline AdminResetUserPasswordRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
      * <p>The user name of the user whose password you wish to reset.</p>

@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>ARN of the key used to perform the decryption. This value is returned if no
      * errors are encountered during the operation.</p>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
 
     /**
      * <p>ARN of the key used to perform the decryption. This value is returned if no
@@ -74,7 +75,7 @@ namespace Model
      * <p>ARN of the key used to perform the decryption. This value is returned if no
      * errors are encountered during the operation.</p>
      */
-    inline DecryptResult& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline DecryptResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>ARN of the key used to perform the decryption. This value is returned if no
@@ -98,7 +99,7 @@ namespace Model
      * <p>Decrypted plaintext data. This value may not be returned if the customer
      * master key is not available or if you didn't have permission to use it.</p>
      */
-    inline void SetPlaintext(Aws::Utils::ByteBuffer&& value) { m_plaintext = value; }
+    inline void SetPlaintext(Aws::Utils::ByteBuffer&& value) { m_plaintext = std::move(value); }
 
     /**
      * <p>Decrypted plaintext data. This value may not be returned if the customer
@@ -110,7 +111,7 @@ namespace Model
      * <p>Decrypted plaintext data. This value may not be returned if the customer
      * master key is not available or if you didn't have permission to use it.</p>
      */
-    inline DecryptResult& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(value); return *this;}
+    inline DecryptResult& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(std::move(value)); return *this;}
 
   private:
     Aws::String m_keyId;

@@ -16,6 +16,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/InspectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ARN specifying the application that you want to describe.</p>
      */
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
+    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
 
     /**
      * <p>The ARN specifying the application that you want to describe.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ARN specifying the application that you want to describe.</p>
      */
-    inline DescribeApplicationRequest& WithApplicationArn(Aws::String&& value) { SetApplicationArn(value); return *this;}
+    inline DescribeApplicationRequest& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN specifying the application that you want to describe.</p>

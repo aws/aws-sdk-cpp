@@ -16,6 +16,7 @@
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,34 +63,34 @@ namespace Model
     inline void SetProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
 
     
-    inline void SetProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_propertiesHasBeenSet = true; m_properties = value; }
+    inline void SetProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
 
     
     inline PerformanceMetrics& WithProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetProperties(value); return *this;}
 
     
-    inline PerformanceMetrics& WithProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetProperties(value); return *this;}
+    inline PerformanceMetrics& WithProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetProperties(std::move(value)); return *this;}
 
     
-    inline PerformanceMetrics& AddProperties(const Aws::String& key, const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+    inline PerformanceMetrics& AddProperties(const Aws::String& key, const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
 
     
-    inline PerformanceMetrics& AddProperties(Aws::String&& key, const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+    inline PerformanceMetrics& AddProperties(Aws::String&& key, const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), value); return *this; }
 
     
-    inline PerformanceMetrics& AddProperties(const Aws::String& key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+    inline PerformanceMetrics& AddProperties(const Aws::String& key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
 
     
-    inline PerformanceMetrics& AddProperties(Aws::String&& key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+    inline PerformanceMetrics& AddProperties(Aws::String&& key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), std::move(value)); return *this; }
 
     
-    inline PerformanceMetrics& AddProperties(const char* key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+    inline PerformanceMetrics& AddProperties(const char* key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
 
     
-    inline PerformanceMetrics& AddProperties(Aws::String&& key, const char* value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+    inline PerformanceMetrics& AddProperties(Aws::String&& key, const char* value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), value); return *this; }
 
     
-    inline PerformanceMetrics& AddProperties(const char* key, const char* value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+    inline PerformanceMetrics& AddProperties(const char* key, const char* value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
 
   private:
     Aws::Map<Aws::String, Aws::String> m_properties;

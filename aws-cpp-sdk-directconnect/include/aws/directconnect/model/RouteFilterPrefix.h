@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * commas.</p> <p>IPv6 CIDRs must be at least a /64 or shorter</p> <p>Example:
      * 10.10.10.0/24,10.10.11.0/24,2001:db8::/64</p>
      */
-    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = value; }
+    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
 
     /**
      * <p>CIDR notation for the advertised route. Multiple routes are separated by
@@ -84,7 +85,7 @@ namespace Model
      * commas.</p> <p>IPv6 CIDRs must be at least a /64 or shorter</p> <p>Example:
      * 10.10.10.0/24,10.10.11.0/24,2001:db8::/64</p>
      */
-    inline RouteFilterPrefix& WithCidr(Aws::String&& value) { SetCidr(value); return *this;}
+    inline RouteFilterPrefix& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
 
     /**
      * <p>CIDR notation for the advertised route. Multiple routes are separated by

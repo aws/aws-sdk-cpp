@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ID of the task being canceled.</p>
      */
-    inline void SetImportTaskId(Aws::String&& value) { m_importTaskId = value; }
+    inline void SetImportTaskId(Aws::String&& value) { m_importTaskId = std::move(value); }
 
     /**
      * <p>The ID of the task being canceled.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ID of the task being canceled.</p>
      */
-    inline CancelImportTaskResponse& WithImportTaskId(Aws::String&& value) { SetImportTaskId(value); return *this;}
+    inline CancelImportTaskResponse& WithImportTaskId(Aws::String&& value) { SetImportTaskId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the task being canceled.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The current state of the task being canceled.</p>
      */
-    inline void SetState(Aws::String&& value) { m_state = value; }
+    inline void SetState(Aws::String&& value) { m_state = std::move(value); }
 
     /**
      * <p>The current state of the task being canceled.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The current state of the task being canceled.</p>
      */
-    inline CancelImportTaskResponse& WithState(Aws::String&& value) { SetState(value); return *this;}
+    inline CancelImportTaskResponse& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The current state of the task being canceled.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The current state of the task being canceled.</p>
      */
-    inline void SetPreviousState(Aws::String&& value) { m_previousState = value; }
+    inline void SetPreviousState(Aws::String&& value) { m_previousState = std::move(value); }
 
     /**
      * <p>The current state of the task being canceled.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The current state of the task being canceled.</p>
      */
-    inline CancelImportTaskResponse& WithPreviousState(Aws::String&& value) { SetPreviousState(value); return *this;}
+    inline CancelImportTaskResponse& WithPreviousState(Aws::String&& value) { SetPreviousState(std::move(value)); return *this;}
 
     /**
      * <p>The current state of the task being canceled.</p>
@@ -157,13 +158,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CancelImportTaskResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CancelImportTaskResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CancelImportTaskResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_importTaskId;

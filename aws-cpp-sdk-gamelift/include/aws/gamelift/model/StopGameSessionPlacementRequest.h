@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -25,6 +26,9 @@ namespace Model
 {
 
   /**
+   * <p>Represents the input for a request action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacementInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API StopGameSessionPlacementRequest : public GameLiftRequest
   {
@@ -48,7 +52,7 @@ namespace Model
     /**
      * <p>Unique identifier for a game session placement to cancel.</p>
      */
-    inline void SetPlacementId(Aws::String&& value) { m_placementIdHasBeenSet = true; m_placementId = value; }
+    inline void SetPlacementId(Aws::String&& value) { m_placementIdHasBeenSet = true; m_placementId = std::move(value); }
 
     /**
      * <p>Unique identifier for a game session placement to cancel.</p>
@@ -63,7 +67,7 @@ namespace Model
     /**
      * <p>Unique identifier for a game session placement to cancel.</p>
      */
-    inline StopGameSessionPlacementRequest& WithPlacementId(Aws::String&& value) { SetPlacementId(value); return *this;}
+    inline StopGameSessionPlacementRequest& WithPlacementId(Aws::String&& value) { SetPlacementId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a game session placement to cancel.</p>

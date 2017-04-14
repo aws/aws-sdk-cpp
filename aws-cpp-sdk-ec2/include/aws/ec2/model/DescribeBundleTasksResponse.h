@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/BundleTask.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Information about one or more bundle tasks.</p>
      */
-    inline void SetBundleTasks(Aws::Vector<BundleTask>&& value) { m_bundleTasks = value; }
+    inline void SetBundleTasks(Aws::Vector<BundleTask>&& value) { m_bundleTasks = std::move(value); }
 
     /**
      * <p>Information about one or more bundle tasks.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Information about one or more bundle tasks.</p>
      */
-    inline DescribeBundleTasksResponse& WithBundleTasks(Aws::Vector<BundleTask>&& value) { SetBundleTasks(value); return *this;}
+    inline DescribeBundleTasksResponse& WithBundleTasks(Aws::Vector<BundleTask>&& value) { SetBundleTasks(std::move(value)); return *this;}
 
     /**
      * <p>Information about one or more bundle tasks.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>Information about one or more bundle tasks.</p>
      */
-    inline DescribeBundleTasksResponse& AddBundleTasks(BundleTask&& value) { m_bundleTasks.push_back(value); return *this; }
+    inline DescribeBundleTasksResponse& AddBundleTasks(BundleTask&& value) { m_bundleTasks.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -88,13 +89,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeBundleTasksResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeBundleTasksResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeBundleTasksResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<BundleTask> m_bundleTasks;

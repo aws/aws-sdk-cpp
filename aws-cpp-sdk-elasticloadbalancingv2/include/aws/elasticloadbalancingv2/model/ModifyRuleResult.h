@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/ResponseMetadata.h>
 #include <aws/elasticloadbalancingv2/model/Rule.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>Information about the rule.</p>
      */
-    inline void SetRules(Aws::Vector<Rule>&& value) { m_rules = value; }
+    inline void SetRules(Aws::Vector<Rule>&& value) { m_rules = std::move(value); }
 
     /**
      * <p>Information about the rule.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Information about the rule.</p>
      */
-    inline ModifyRuleResult& WithRules(Aws::Vector<Rule>&& value) { SetRules(value); return *this;}
+    inline ModifyRuleResult& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
      * <p>Information about the rule.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Information about the rule.</p>
      */
-    inline ModifyRuleResult& AddRules(Rule&& value) { m_rules.push_back(value); return *this; }
+    inline ModifyRuleResult& AddRules(Rule&& value) { m_rules.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -83,13 +84,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ModifyRuleResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ModifyRuleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ModifyRuleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Rule> m_rules;

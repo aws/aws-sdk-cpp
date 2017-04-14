@@ -16,6 +16,7 @@
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/swf/model/WorkflowExecutionTimeoutType.h>
 #include <aws/swf/model/ChildPolicy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The type of timeout that caused this event.</p>
      */
-    inline void SetTimeoutType(WorkflowExecutionTimeoutType&& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = value; }
+    inline void SetTimeoutType(WorkflowExecutionTimeoutType&& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = std::move(value); }
 
     /**
      * <p>The type of timeout that caused this event.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The type of timeout that caused this event.</p>
      */
-    inline WorkflowExecutionTimedOutEventAttributes& WithTimeoutType(WorkflowExecutionTimeoutType&& value) { SetTimeoutType(value); return *this;}
+    inline WorkflowExecutionTimedOutEventAttributes& WithTimeoutType(WorkflowExecutionTimeoutType&& value) { SetTimeoutType(std::move(value)); return *this;}
 
     /**
      * <p>The policy used for the child workflow executions of this workflow
@@ -104,7 +105,7 @@ namespace Model
      * receives an execution history with this event.</li> <li><b>ABANDON:</b> no
      * action will be taken. The child executions will continue to run.</li> </ul>
      */
-    inline void SetChildPolicy(ChildPolicy&& value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
+    inline void SetChildPolicy(ChildPolicy&& value) { m_childPolicyHasBeenSet = true; m_childPolicy = std::move(value); }
 
     /**
      * <p>The policy used for the child workflow executions of this workflow
@@ -128,7 +129,7 @@ namespace Model
      * receives an execution history with this event.</li> <li><b>ABANDON:</b> no
      * action will be taken. The child executions will continue to run.</li> </ul>
      */
-    inline WorkflowExecutionTimedOutEventAttributes& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(value); return *this;}
+    inline WorkflowExecutionTimedOutEventAttributes& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
 
   private:
     WorkflowExecutionTimeoutType m_timeoutType;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/PermissionGroup.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>The specific AWS account ID that is to be added or removed from a volume's
      * list of create volume permissions.</p>
      */
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = value; }
+    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
      * <p>The specific AWS account ID that is to be added or removed from a volume's
@@ -82,7 +83,7 @@ namespace Model
      * <p>The specific AWS account ID that is to be added or removed from a volume's
      * list of create volume permissions.</p>
      */
-    inline CreateVolumePermission& WithUserId(Aws::String&& value) { SetUserId(value); return *this;}
+    inline CreateVolumePermission& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
      * <p>The specific AWS account ID that is to be added or removed from a volume's
@@ -106,7 +107,7 @@ namespace Model
      * <p>The specific group that is to be added or removed from a volume's list of
      * create volume permissions.</p>
      */
-    inline void SetGroup(PermissionGroup&& value) { m_groupHasBeenSet = true; m_group = value; }
+    inline void SetGroup(PermissionGroup&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
 
     /**
      * <p>The specific group that is to be added or removed from a volume's list of
@@ -118,7 +119,7 @@ namespace Model
      * <p>The specific group that is to be added or removed from a volume's list of
      * create volume permissions.</p>
      */
-    inline CreateVolumePermission& WithGroup(PermissionGroup&& value) { SetGroup(value); return *this;}
+    inline CreateVolumePermission& WithGroup(PermissionGroup&& value) { SetGroup(std::move(value)); return *this;}
 
   private:
     Aws::String m_userId;

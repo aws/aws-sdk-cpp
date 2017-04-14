@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/CodePipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of the pipeline about which you want to get execution details.</p>
      */
-    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
+    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
 
     /**
      * <p>The name of the pipeline about which you want to get execution details.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the pipeline about which you want to get execution details.</p>
      */
-    inline GetPipelineExecutionRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(value); return *this;}
+    inline GetPipelineExecutionRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the pipeline about which you want to get execution details.</p>
@@ -90,7 +91,7 @@ namespace Model
      * <p>The ID of the pipeline execution about which you want to get execution
      * details.</p>
      */
-    inline void SetPipelineExecutionId(Aws::String&& value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId = value; }
+    inline void SetPipelineExecutionId(Aws::String&& value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId = std::move(value); }
 
     /**
      * <p>The ID of the pipeline execution about which you want to get execution
@@ -108,7 +109,7 @@ namespace Model
      * <p>The ID of the pipeline execution about which you want to get execution
      * details.</p>
      */
-    inline GetPipelineExecutionRequest& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(value); return *this;}
+    inline GetPipelineExecutionRequest& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the pipeline execution about which you want to get execution

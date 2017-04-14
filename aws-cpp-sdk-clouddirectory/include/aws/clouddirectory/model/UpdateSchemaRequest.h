@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>ARN of the development schema. For more information, see <a>arns</a>.</p>
      */
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
+    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
 
     /**
      * <p>ARN of the development schema. For more information, see <a>arns</a>.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>ARN of the development schema. For more information, see <a>arns</a>.</p>
      */
-    inline UpdateSchemaRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(value); return *this;}
+    inline UpdateSchemaRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN of the development schema. For more information, see <a>arns</a>.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>Name of the schema.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Name of the schema.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>Name of the schema.</p>
      */
-    inline UpdateSchemaRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateSchemaRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the schema.</p>

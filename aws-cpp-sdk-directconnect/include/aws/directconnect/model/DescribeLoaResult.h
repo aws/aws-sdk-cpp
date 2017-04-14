@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/Array.h>
 #include <aws/directconnect/model/LoaContentType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,13 +54,13 @@ namespace Model
     inline void SetLoaContent(const Aws::Utils::ByteBuffer& value) { m_loaContent = value; }
 
     
-    inline void SetLoaContent(Aws::Utils::ByteBuffer&& value) { m_loaContent = value; }
+    inline void SetLoaContent(Aws::Utils::ByteBuffer&& value) { m_loaContent = std::move(value); }
 
     
     inline DescribeLoaResult& WithLoaContent(const Aws::Utils::ByteBuffer& value) { SetLoaContent(value); return *this;}
 
     
-    inline DescribeLoaResult& WithLoaContent(Aws::Utils::ByteBuffer&& value) { SetLoaContent(value); return *this;}
+    inline DescribeLoaResult& WithLoaContent(Aws::Utils::ByteBuffer&& value) { SetLoaContent(std::move(value)); return *this;}
 
     
     inline const LoaContentType& GetLoaContentType() const{ return m_loaContentType; }
@@ -68,13 +69,13 @@ namespace Model
     inline void SetLoaContentType(const LoaContentType& value) { m_loaContentType = value; }
 
     
-    inline void SetLoaContentType(LoaContentType&& value) { m_loaContentType = value; }
+    inline void SetLoaContentType(LoaContentType&& value) { m_loaContentType = std::move(value); }
 
     
     inline DescribeLoaResult& WithLoaContentType(const LoaContentType& value) { SetLoaContentType(value); return *this;}
 
     
-    inline DescribeLoaResult& WithLoaContentType(LoaContentType&& value) { SetLoaContentType(value); return *this;}
+    inline DescribeLoaResult& WithLoaContentType(LoaContentType&& value) { SetLoaContentType(std::move(value)); return *this;}
 
   private:
     Aws::Utils::ByteBuffer m_loaContent;

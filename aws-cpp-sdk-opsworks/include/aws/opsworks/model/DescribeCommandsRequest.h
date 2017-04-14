@@ -17,6 +17,7 @@
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <code>DescribeCommands</code> returns a description of the commands associated
      * with the specified deployment.</p>
      */
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
+    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
      * <p>The deployment ID. If you include this parameter,
@@ -76,7 +77,7 @@ namespace Model
      * <code>DescribeCommands</code> returns a description of the commands associated
      * with the specified deployment.</p>
      */
-    inline DescribeCommandsRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
+    inline DescribeCommandsRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
      * <p>The deployment ID. If you include this parameter,
@@ -104,7 +105,7 @@ namespace Model
      * returns a description of the commands associated with the specified
      * instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The instance ID. If you include this parameter, <code>DescribeCommands</code>
@@ -125,7 +126,7 @@ namespace Model
      * returns a description of the commands associated with the specified
      * instance.</p>
      */
-    inline DescribeCommandsRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline DescribeCommandsRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The instance ID. If you include this parameter, <code>DescribeCommands</code>
@@ -153,7 +154,7 @@ namespace Model
      * <code>DescribeCommands</code> returns a description of the specified commands.
      * Otherwise, it returns a description of every command.</p>
      */
-    inline void SetCommandIds(Aws::Vector<Aws::String>&& value) { m_commandIdsHasBeenSet = true; m_commandIds = value; }
+    inline void SetCommandIds(Aws::Vector<Aws::String>&& value) { m_commandIdsHasBeenSet = true; m_commandIds = std::move(value); }
 
     /**
      * <p>An array of command IDs. If you include this parameter,
@@ -167,7 +168,7 @@ namespace Model
      * <code>DescribeCommands</code> returns a description of the specified commands.
      * Otherwise, it returns a description of every command.</p>
      */
-    inline DescribeCommandsRequest& WithCommandIds(Aws::Vector<Aws::String>&& value) { SetCommandIds(value); return *this;}
+    inline DescribeCommandsRequest& WithCommandIds(Aws::Vector<Aws::String>&& value) { SetCommandIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of command IDs. If you include this parameter,
@@ -181,7 +182,7 @@ namespace Model
      * <code>DescribeCommands</code> returns a description of the specified commands.
      * Otherwise, it returns a description of every command.</p>
      */
-    inline DescribeCommandsRequest& AddCommandIds(Aws::String&& value) { m_commandIdsHasBeenSet = true; m_commandIds.push_back(value); return *this; }
+    inline DescribeCommandsRequest& AddCommandIds(Aws::String&& value) { m_commandIdsHasBeenSet = true; m_commandIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of command IDs. If you include this parameter,

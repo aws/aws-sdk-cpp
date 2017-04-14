@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/apigateway/model/Integration.h>
 #include <aws/apigateway/model/MethodResponse.h>
+#include <utility>
 
 namespace Aws
 {
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>The method's HTTP verb.</p>
      */
-    inline void SetHttpMethod(Aws::String&& value) { m_httpMethod = value; }
+    inline void SetHttpMethod(Aws::String&& value) { m_httpMethod = std::move(value); }
 
     /**
      * <p>The method's HTTP verb.</p>
@@ -160,7 +161,7 @@ namespace Model
     /**
      * <p>The method's HTTP verb.</p>
      */
-    inline GetMethodResult& WithHttpMethod(Aws::String&& value) { SetHttpMethod(value); return *this;}
+    inline GetMethodResult& WithHttpMethod(Aws::String&& value) { SetHttpMethod(std::move(value)); return *this;}
 
     /**
      * <p>The method's HTTP verb.</p>
@@ -168,37 +169,58 @@ namespace Model
     inline GetMethodResult& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>The method's authorization type.</p>
+     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
+     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
+     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
+     * Cognito user pool.</p>
      */
     inline const Aws::String& GetAuthorizationType() const{ return m_authorizationType; }
 
     /**
-     * <p>The method's authorization type.</p>
+     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
+     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
+     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
+     * Cognito user pool.</p>
      */
     inline void SetAuthorizationType(const Aws::String& value) { m_authorizationType = value; }
 
     /**
-     * <p>The method's authorization type.</p>
+     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
+     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
+     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
+     * Cognito user pool.</p>
      */
-    inline void SetAuthorizationType(Aws::String&& value) { m_authorizationType = value; }
+    inline void SetAuthorizationType(Aws::String&& value) { m_authorizationType = std::move(value); }
 
     /**
-     * <p>The method's authorization type.</p>
+     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
+     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
+     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
+     * Cognito user pool.</p>
      */
     inline void SetAuthorizationType(const char* value) { m_authorizationType.assign(value); }
 
     /**
-     * <p>The method's authorization type.</p>
+     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
+     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
+     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
+     * Cognito user pool.</p>
      */
     inline GetMethodResult& WithAuthorizationType(const Aws::String& value) { SetAuthorizationType(value); return *this;}
 
     /**
-     * <p>The method's authorization type.</p>
+     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
+     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
+     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
+     * Cognito user pool.</p>
      */
-    inline GetMethodResult& WithAuthorizationType(Aws::String&& value) { SetAuthorizationType(value); return *this;}
+    inline GetMethodResult& WithAuthorizationType(Aws::String&& value) { SetAuthorizationType(std::move(value)); return *this;}
 
     /**
-     * <p>The method's authorization type.</p>
+     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
+     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
+     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
+     * Cognito user pool.</p>
      */
     inline GetMethodResult& WithAuthorizationType(const char* value) { SetAuthorizationType(value); return *this;}
 
@@ -218,7 +240,7 @@ namespace Model
      * <p>The identifier of an <a>Authorizer</a> to use on this method. The
      * <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
      */
-    inline void SetAuthorizerId(Aws::String&& value) { m_authorizerId = value; }
+    inline void SetAuthorizerId(Aws::String&& value) { m_authorizerId = std::move(value); }
 
     /**
      * <p>The identifier of an <a>Authorizer</a> to use on this method. The
@@ -236,7 +258,7 @@ namespace Model
      * <p>The identifier of an <a>Authorizer</a> to use on this method. The
      * <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
      */
-    inline GetMethodResult& WithAuthorizerId(Aws::String&& value) { SetAuthorizerId(value); return *this;}
+    inline GetMethodResult& WithAuthorizerId(Aws::String&& value) { SetAuthorizerId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of an <a>Authorizer</a> to use on this method. The
@@ -263,6 +285,41 @@ namespace Model
     inline GetMethodResult& WithApiKeyRequired(bool value) { SetApiKeyRequired(value); return *this;}
 
     /**
+     * <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+     */
+    inline const Aws::String& GetRequestValidatorId() const{ return m_requestValidatorId; }
+
+    /**
+     * <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+     */
+    inline void SetRequestValidatorId(const Aws::String& value) { m_requestValidatorId = value; }
+
+    /**
+     * <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+     */
+    inline void SetRequestValidatorId(Aws::String&& value) { m_requestValidatorId = std::move(value); }
+
+    /**
+     * <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+     */
+    inline void SetRequestValidatorId(const char* value) { m_requestValidatorId.assign(value); }
+
+    /**
+     * <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+     */
+    inline GetMethodResult& WithRequestValidatorId(const Aws::String& value) { SetRequestValidatorId(value); return *this;}
+
+    /**
+     * <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+     */
+    inline GetMethodResult& WithRequestValidatorId(Aws::String&& value) { SetRequestValidatorId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+     */
+    inline GetMethodResult& WithRequestValidatorId(const char* value) { SetRequestValidatorId(value); return *this;}
+
+    /**
      * <p>A human-friendly operation identifier for the method. For example, you can
      * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
      * /pets</code> method in <a
@@ -287,7 +344,7 @@ namespace Model
      * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
      * example.</p>
      */
-    inline void SetOperationName(Aws::String&& value) { m_operationName = value; }
+    inline void SetOperationName(Aws::String&& value) { m_operationName = std::move(value); }
 
     /**
      * <p>A human-friendly operation identifier for the method. For example, you can
@@ -314,7 +371,7 @@ namespace Model
      * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
      * example.</p>
      */
-    inline GetMethodResult& WithOperationName(Aws::String&& value) { SetOperationName(value); return *this;}
+    inline GetMethodResult& WithOperationName(Aws::String&& value) { SetOperationName(std::move(value)); return *this;}
 
     /**
      * <p>A human-friendly operation identifier for the method. For example, you can
@@ -362,7 +419,7 @@ namespace Model
      * method request parameter names defined here are available in <a>Integration</a>
      * to be mapped to integration request parameters or templates.</p>
      */
-    inline void SetRequestParameters(Aws::Map<Aws::String, bool>&& value) { m_requestParameters = value; }
+    inline void SetRequestParameters(Aws::Map<Aws::String, bool>&& value) { m_requestParameters = std::move(value); }
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
@@ -388,7 +445,7 @@ namespace Model
      * method request parameter names defined here are available in <a>Integration</a>
      * to be mapped to integration request parameters or templates.</p>
      */
-    inline GetMethodResult& WithRequestParameters(Aws::Map<Aws::String, bool>&& value) { SetRequestParameters(value); return *this;}
+    inline GetMethodResult& WithRequestParameters(Aws::Map<Aws::String, bool>&& value) { SetRequestParameters(std::move(value)); return *this;}
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
@@ -401,7 +458,7 @@ namespace Model
      * method request parameter names defined here are available in <a>Integration</a>
      * to be mapped to integration request parameters or templates.</p>
      */
-    inline GetMethodResult& AddRequestParameters(const Aws::String& key, bool value) { m_requestParameters[key] = value; return *this; }
+    inline GetMethodResult& AddRequestParameters(const Aws::String& key, bool value) { m_requestParameters.emplace(key, value); return *this; }
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
@@ -414,7 +471,7 @@ namespace Model
      * method request parameter names defined here are available in <a>Integration</a>
      * to be mapped to integration request parameters or templates.</p>
      */
-    inline GetMethodResult& AddRequestParameters(Aws::String&& key, bool value) { m_requestParameters[key] = value; return *this; }
+    inline GetMethodResult& AddRequestParameters(Aws::String&& key, bool value) { m_requestParameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
@@ -427,7 +484,7 @@ namespace Model
      * method request parameter names defined here are available in <a>Integration</a>
      * to be mapped to integration request parameters or templates.</p>
      */
-    inline GetMethodResult& AddRequestParameters(const char* key, bool value) { m_requestParameters[key] = value; return *this; }
+    inline GetMethodResult& AddRequestParameters(const char* key, bool value) { m_requestParameters.emplace(key, value); return *this; }
 
     /**
      * <p>A key-value map specifying data schemas, represented by <a>Model</a>
@@ -448,7 +505,7 @@ namespace Model
      * resources, (as the mapped value) of the request payloads of given content types
      * (as the mapping key).</p>
      */
-    inline void SetRequestModels(Aws::Map<Aws::String, Aws::String>&& value) { m_requestModels = value; }
+    inline void SetRequestModels(Aws::Map<Aws::String, Aws::String>&& value) { m_requestModels = std::move(value); }
 
     /**
      * <p>A key-value map specifying data schemas, represented by <a>Model</a>
@@ -462,56 +519,56 @@ namespace Model
      * resources, (as the mapped value) of the request payloads of given content types
      * (as the mapping key).</p>
      */
-    inline GetMethodResult& WithRequestModels(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestModels(value); return *this;}
+    inline GetMethodResult& WithRequestModels(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestModels(std::move(value)); return *this;}
 
     /**
      * <p>A key-value map specifying data schemas, represented by <a>Model</a>
      * resources, (as the mapped value) of the request payloads of given content types
      * (as the mapping key).</p>
      */
-    inline GetMethodResult& AddRequestModels(const Aws::String& key, const Aws::String& value) { m_requestModels[key] = value; return *this; }
+    inline GetMethodResult& AddRequestModels(const Aws::String& key, const Aws::String& value) { m_requestModels.emplace(key, value); return *this; }
 
     /**
      * <p>A key-value map specifying data schemas, represented by <a>Model</a>
      * resources, (as the mapped value) of the request payloads of given content types
      * (as the mapping key).</p>
      */
-    inline GetMethodResult& AddRequestModels(Aws::String&& key, const Aws::String& value) { m_requestModels[key] = value; return *this; }
+    inline GetMethodResult& AddRequestModels(Aws::String&& key, const Aws::String& value) { m_requestModels.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key-value map specifying data schemas, represented by <a>Model</a>
      * resources, (as the mapped value) of the request payloads of given content types
      * (as the mapping key).</p>
      */
-    inline GetMethodResult& AddRequestModels(const Aws::String& key, Aws::String&& value) { m_requestModels[key] = value; return *this; }
+    inline GetMethodResult& AddRequestModels(const Aws::String& key, Aws::String&& value) { m_requestModels.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A key-value map specifying data schemas, represented by <a>Model</a>
      * resources, (as the mapped value) of the request payloads of given content types
      * (as the mapping key).</p>
      */
-    inline GetMethodResult& AddRequestModels(Aws::String&& key, Aws::String&& value) { m_requestModels[key] = value; return *this; }
+    inline GetMethodResult& AddRequestModels(Aws::String&& key, Aws::String&& value) { m_requestModels.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A key-value map specifying data schemas, represented by <a>Model</a>
      * resources, (as the mapped value) of the request payloads of given content types
      * (as the mapping key).</p>
      */
-    inline GetMethodResult& AddRequestModels(const char* key, Aws::String&& value) { m_requestModels[key] = value; return *this; }
+    inline GetMethodResult& AddRequestModels(const char* key, Aws::String&& value) { m_requestModels.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A key-value map specifying data schemas, represented by <a>Model</a>
      * resources, (as the mapped value) of the request payloads of given content types
      * (as the mapping key).</p>
      */
-    inline GetMethodResult& AddRequestModels(Aws::String&& key, const char* value) { m_requestModels[key] = value; return *this; }
+    inline GetMethodResult& AddRequestModels(Aws::String&& key, const char* value) { m_requestModels.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key-value map specifying data schemas, represented by <a>Model</a>
      * resources, (as the mapped value) of the request payloads of given content types
      * (as the mapping key).</p>
      */
-    inline GetMethodResult& AddRequestModels(const char* key, const char* value) { m_requestModels[key] = value; return *this; }
+    inline GetMethodResult& AddRequestModels(const char* key, const char* value) { m_requestModels.emplace(key, value); return *this; }
 
     /**
      * <p>Gets a method response associated with a given HTTP status code. </p> <div
@@ -604,7 +661,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS
      * CLI</a> </div>
      */
-    inline void SetMethodResponses(Aws::Map<Aws::String, MethodResponse>&& value) { m_methodResponses = value; }
+    inline void SetMethodResponses(Aws::Map<Aws::String, MethodResponse>&& value) { m_methodResponses = std::move(value); }
 
     /**
      * <p>Gets a method response associated with a given HTTP status code. </p> <div
@@ -666,7 +723,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS
      * CLI</a> </div>
      */
-    inline GetMethodResult& WithMethodResponses(Aws::Map<Aws::String, MethodResponse>&& value) { SetMethodResponses(value); return *this;}
+    inline GetMethodResult& WithMethodResponses(Aws::Map<Aws::String, MethodResponse>&& value) { SetMethodResponses(std::move(value)); return *this;}
 
     /**
      * <p>Gets a method response associated with a given HTTP status code. </p> <div
@@ -697,7 +754,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS
      * CLI</a> </div>
      */
-    inline GetMethodResult& AddMethodResponses(const Aws::String& key, const MethodResponse& value) { m_methodResponses[key] = value; return *this; }
+    inline GetMethodResult& AddMethodResponses(const Aws::String& key, const MethodResponse& value) { m_methodResponses.emplace(key, value); return *this; }
 
     /**
      * <p>Gets a method response associated with a given HTTP status code. </p> <div
@@ -728,7 +785,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS
      * CLI</a> </div>
      */
-    inline GetMethodResult& AddMethodResponses(Aws::String&& key, const MethodResponse& value) { m_methodResponses[key] = value; return *this; }
+    inline GetMethodResult& AddMethodResponses(Aws::String&& key, const MethodResponse& value) { m_methodResponses.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Gets a method response associated with a given HTTP status code. </p> <div
@@ -759,7 +816,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS
      * CLI</a> </div>
      */
-    inline GetMethodResult& AddMethodResponses(const Aws::String& key, MethodResponse&& value) { m_methodResponses[key] = value; return *this; }
+    inline GetMethodResult& AddMethodResponses(const Aws::String& key, MethodResponse&& value) { m_methodResponses.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Gets a method response associated with a given HTTP status code. </p> <div
@@ -790,7 +847,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS
      * CLI</a> </div>
      */
-    inline GetMethodResult& AddMethodResponses(Aws::String&& key, MethodResponse&& value) { m_methodResponses[key] = value; return *this; }
+    inline GetMethodResult& AddMethodResponses(Aws::String&& key, MethodResponse&& value) { m_methodResponses.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Gets a method response associated with a given HTTP status code. </p> <div
@@ -821,7 +878,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS
      * CLI</a> </div>
      */
-    inline GetMethodResult& AddMethodResponses(const char* key, MethodResponse&& value) { m_methodResponses[key] = value; return *this; }
+    inline GetMethodResult& AddMethodResponses(const char* key, MethodResponse&& value) { m_methodResponses.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Gets a method response associated with a given HTTP status code. </p> <div
@@ -852,7 +909,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS
      * CLI</a> </div>
      */
-    inline GetMethodResult& AddMethodResponses(const char* key, const MethodResponse& value) { m_methodResponses[key] = value; return *this; }
+    inline GetMethodResult& AddMethodResponses(const char* key, const MethodResponse& value) { m_methodResponses.emplace(key, value); return *this; }
 
     /**
      * <p>Gets the method's integration responsible for passing the client-submitted
@@ -1008,7 +1065,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS
      * CLI</a> </div>
      */
-    inline void SetMethodIntegration(Integration&& value) { m_methodIntegration = value; }
+    inline void SetMethodIntegration(Integration&& value) { m_methodIntegration = std::move(value); }
 
     /**
      * <p>Gets the method's integration responsible for passing the client-submitted
@@ -1112,13 +1169,14 @@ namespace Model
      * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS
      * CLI</a> </div>
      */
-    inline GetMethodResult& WithMethodIntegration(Integration&& value) { SetMethodIntegration(value); return *this;}
+    inline GetMethodResult& WithMethodIntegration(Integration&& value) { SetMethodIntegration(std::move(value)); return *this;}
 
   private:
     Aws::String m_httpMethod;
     Aws::String m_authorizationType;
     Aws::String m_authorizerId;
     bool m_apiKeyRequired;
+    Aws::String m_requestValidatorId;
     Aws::String m_operationName;
     Aws::Map<Aws::String, bool> m_requestParameters;
     Aws::Map<Aws::String, Aws::String> m_requestModels;

@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,7 +48,7 @@ namespace Model
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
@@ -56,7 +57,7 @@ namespace Model
     inline DeleteBandwidthRateLimitRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     
-    inline DeleteBandwidthRateLimitRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline DeleteBandwidthRateLimitRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     
     inline DeleteBandwidthRateLimitRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
@@ -80,7 +81,7 @@ namespace Model
      * limit to delete.</p> <p>Valid Values: <code>Upload</code>,
      * <code>Download</code>, <code>All</code>.</p>
      */
-    inline void SetBandwidthType(Aws::String&& value) { m_bandwidthTypeHasBeenSet = true; m_bandwidthType = value; }
+    inline void SetBandwidthType(Aws::String&& value) { m_bandwidthTypeHasBeenSet = true; m_bandwidthType = std::move(value); }
 
     /**
      * <p>One of the BandwidthType values that indicates the gateway bandwidth rate
@@ -101,7 +102,7 @@ namespace Model
      * limit to delete.</p> <p>Valid Values: <code>Upload</code>,
      * <code>Download</code>, <code>All</code>.</p>
      */
-    inline DeleteBandwidthRateLimitRequest& WithBandwidthType(Aws::String&& value) { SetBandwidthType(value); return *this;}
+    inline DeleteBandwidthRateLimitRequest& WithBandwidthType(Aws::String&& value) { SetBandwidthType(std::move(value)); return *this;}
 
     /**
      * <p>One of the BandwidthType values that indicates the gateway bandwidth rate

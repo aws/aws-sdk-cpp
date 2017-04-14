@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of the CloudWatch metric.</p>
      */
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
      * <p>The name of the CloudWatch metric.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The name of the CloudWatch metric.</p>
      */
-    inline MetricTransformation& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
+    inline MetricTransformation& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the CloudWatch metric.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The namespace of the CloudWatch metric.</p>
      */
-    inline void SetMetricNamespace(Aws::String&& value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace = value; }
+    inline void SetMetricNamespace(Aws::String&& value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace = std::move(value); }
 
     /**
      * <p>The namespace of the CloudWatch metric.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The namespace of the CloudWatch metric.</p>
      */
-    inline MetricTransformation& WithMetricNamespace(Aws::String&& value) { SetMetricNamespace(value); return *this;}
+    inline MetricTransformation& WithMetricNamespace(Aws::String&& value) { SetMetricNamespace(std::move(value)); return *this;}
 
     /**
      * <p>The namespace of the CloudWatch metric.</p>
@@ -130,7 +131,7 @@ namespace Model
      * <p>The value to publish to the CloudWatch metric when a filter pattern matches a
      * log event.</p>
      */
-    inline void SetMetricValue(Aws::String&& value) { m_metricValueHasBeenSet = true; m_metricValue = value; }
+    inline void SetMetricValue(Aws::String&& value) { m_metricValueHasBeenSet = true; m_metricValue = std::move(value); }
 
     /**
      * <p>The value to publish to the CloudWatch metric when a filter pattern matches a
@@ -148,7 +149,7 @@ namespace Model
      * <p>The value to publish to the CloudWatch metric when a filter pattern matches a
      * log event.</p>
      */
-    inline MetricTransformation& WithMetricValue(Aws::String&& value) { SetMetricValue(value); return *this;}
+    inline MetricTransformation& WithMetricValue(Aws::String&& value) { SetMetricValue(std::move(value)); return *this;}
 
     /**
      * <p>The value to publish to the CloudWatch metric when a filter pattern matches a

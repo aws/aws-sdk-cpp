@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * characters. Cannot be the word "Default".</p> <p>Example:
      * <code>mysecuritygroup</code> </p>
      */
-    inline void SetCacheSecurityGroupName(Aws::String&& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
+    inline void SetCacheSecurityGroupName(Aws::String&& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = std::move(value); }
 
     /**
      * <p>A name for the cache security group. This value is stored as a lowercase
@@ -87,7 +88,7 @@ namespace Model
      * characters. Cannot be the word "Default".</p> <p>Example:
      * <code>mysecuritygroup</code> </p>
      */
-    inline CreateCacheSecurityGroupRequest& WithCacheSecurityGroupName(Aws::String&& value) { SetCacheSecurityGroupName(value); return *this;}
+    inline CreateCacheSecurityGroupRequest& WithCacheSecurityGroupName(Aws::String&& value) { SetCacheSecurityGroupName(std::move(value)); return *this;}
 
     /**
      * <p>A name for the cache security group. This value is stored as a lowercase
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>A description for the cache security group.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description for the cache security group.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>A description for the cache security group.</p>
      */
-    inline CreateCacheSecurityGroupRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateCacheSecurityGroupRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description for the cache security group.</p>

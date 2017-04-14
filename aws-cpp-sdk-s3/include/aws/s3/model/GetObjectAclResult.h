@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/model/RequestCharged.h>
 #include <aws/s3/model/Grant.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,13 +50,13 @@ namespace Model
     inline void SetOwner(const Owner& value) { m_owner = value; }
 
     
-    inline void SetOwner(Owner&& value) { m_owner = value; }
+    inline void SetOwner(Owner&& value) { m_owner = std::move(value); }
 
     
     inline GetObjectAclResult& WithOwner(const Owner& value) { SetOwner(value); return *this;}
 
     
-    inline GetObjectAclResult& WithOwner(Owner&& value) { SetOwner(value); return *this;}
+    inline GetObjectAclResult& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
      * A list of grants.
@@ -70,7 +71,7 @@ namespace Model
     /**
      * A list of grants.
      */
-    inline void SetGrants(Aws::Vector<Grant>&& value) { m_grants = value; }
+    inline void SetGrants(Aws::Vector<Grant>&& value) { m_grants = std::move(value); }
 
     /**
      * A list of grants.
@@ -80,7 +81,7 @@ namespace Model
     /**
      * A list of grants.
      */
-    inline GetObjectAclResult& WithGrants(Aws::Vector<Grant>&& value) { SetGrants(value); return *this;}
+    inline GetObjectAclResult& WithGrants(Aws::Vector<Grant>&& value) { SetGrants(std::move(value)); return *this;}
 
     /**
      * A list of grants.
@@ -90,7 +91,7 @@ namespace Model
     /**
      * A list of grants.
      */
-    inline GetObjectAclResult& AddGrants(Grant&& value) { m_grants.push_back(value); return *this; }
+    inline GetObjectAclResult& AddGrants(Grant&& value) { m_grants.push_back(std::move(value)); return *this; }
 
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
@@ -99,13 +100,13 @@ namespace Model
     inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
 
     
-    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = value; }
+    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = std::move(value); }
 
     
     inline GetObjectAclResult& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
 
     
-    inline GetObjectAclResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(value); return *this;}
+    inline GetObjectAclResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
   private:
     Owner m_owner;

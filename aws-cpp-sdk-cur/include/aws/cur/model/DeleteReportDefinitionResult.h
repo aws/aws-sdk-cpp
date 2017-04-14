@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cur/CostandUsageReportService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     inline void SetResponseMessage(const Aws::String& value) { m_responseMessage = value; }
 
     
-    inline void SetResponseMessage(Aws::String&& value) { m_responseMessage = value; }
+    inline void SetResponseMessage(Aws::String&& value) { m_responseMessage = std::move(value); }
 
     
     inline void SetResponseMessage(const char* value) { m_responseMessage.assign(value); }
@@ -60,7 +61,7 @@ namespace Model
     inline DeleteReportDefinitionResult& WithResponseMessage(const Aws::String& value) { SetResponseMessage(value); return *this;}
 
     
-    inline DeleteReportDefinitionResult& WithResponseMessage(Aws::String&& value) { SetResponseMessage(value); return *this;}
+    inline DeleteReportDefinitionResult& WithResponseMessage(Aws::String&& value) { SetResponseMessage(std::move(value)); return *this;}
 
     
     inline DeleteReportDefinitionResult& WithResponseMessage(const char* value) { SetResponseMessage(value); return *this;}

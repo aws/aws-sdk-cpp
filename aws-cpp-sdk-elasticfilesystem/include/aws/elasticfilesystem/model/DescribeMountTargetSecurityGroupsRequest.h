@@ -16,6 +16,7 @@
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
 #include <aws/elasticfilesystem/EFSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>ID of the mount target whose security groups you want to retrieve.</p>
      */
-    inline void SetMountTargetId(Aws::String&& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = value; }
+    inline void SetMountTargetId(Aws::String&& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = std::move(value); }
 
     /**
      * <p>ID of the mount target whose security groups you want to retrieve.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>ID of the mount target whose security groups you want to retrieve.</p>
      */
-    inline DescribeMountTargetSecurityGroupsRequest& WithMountTargetId(Aws::String&& value) { SetMountTargetId(value); return *this;}
+    inline DescribeMountTargetSecurityGroupsRequest& WithMountTargetId(Aws::String&& value) { SetMountTargetId(std::move(value)); return *this;}
 
     /**
      * <p>ID of the mount target whose security groups you want to retrieve.</p>

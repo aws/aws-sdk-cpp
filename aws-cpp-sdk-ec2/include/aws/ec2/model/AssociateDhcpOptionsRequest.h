@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -81,7 +82,7 @@ namespace Model
      * <p>The ID of the DHCP options set, or <code>default</code> to associate no DHCP
      * options with the VPC.</p>
      */
-    inline void SetDhcpOptionsId(Aws::String&& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = value; }
+    inline void SetDhcpOptionsId(Aws::String&& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = std::move(value); }
 
     /**
      * <p>The ID of the DHCP options set, or <code>default</code> to associate no DHCP
@@ -99,7 +100,7 @@ namespace Model
      * <p>The ID of the DHCP options set, or <code>default</code> to associate no DHCP
      * options with the VPC.</p>
      */
-    inline AssociateDhcpOptionsRequest& WithDhcpOptionsId(Aws::String&& value) { SetDhcpOptionsId(value); return *this;}
+    inline AssociateDhcpOptionsRequest& WithDhcpOptionsId(Aws::String&& value) { SetDhcpOptionsId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the DHCP options set, or <code>default</code> to associate no DHCP
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline AssociateDhcpOptionsRequest& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline AssociateDhcpOptionsRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC.</p>

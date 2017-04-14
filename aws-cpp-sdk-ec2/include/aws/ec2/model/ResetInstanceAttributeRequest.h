@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InstanceAttributeName.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline ResetInstanceAttributeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline ResetInstanceAttributeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -123,7 +124,7 @@ namespace Model
      * <code>sourceDestCheck</code>. To change an instance attribute, use
      * <a>ModifyInstanceAttribute</a>.</p> </important>
      */
-    inline void SetAttribute(InstanceAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline void SetAttribute(InstanceAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
      * <p>The attribute to reset.</p> <important> <p>You can only reset the following
@@ -139,7 +140,7 @@ namespace Model
      * <code>sourceDestCheck</code>. To change an instance attribute, use
      * <a>ModifyInstanceAttribute</a>.</p> </important>
      */
-    inline ResetInstanceAttributeRequest& WithAttribute(InstanceAttributeName&& value) { SetAttribute(value); return *this;}
+    inline ResetInstanceAttributeRequest& WithAttribute(InstanceAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

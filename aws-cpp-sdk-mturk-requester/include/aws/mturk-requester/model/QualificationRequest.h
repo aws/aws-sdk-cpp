@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>The ID of the Qualification request, a unique identifier generated when the
      * request was submitted. </p>
      */
-    inline void SetQualificationRequestId(Aws::String&& value) { m_qualificationRequestIdHasBeenSet = true; m_qualificationRequestId = value; }
+    inline void SetQualificationRequestId(Aws::String&& value) { m_qualificationRequestIdHasBeenSet = true; m_qualificationRequestId = std::move(value); }
 
     /**
      * <p>The ID of the Qualification request, a unique identifier generated when the
@@ -79,7 +80,7 @@ namespace Model
      * <p>The ID of the Qualification request, a unique identifier generated when the
      * request was submitted. </p>
      */
-    inline QualificationRequest& WithQualificationRequestId(Aws::String&& value) { SetQualificationRequestId(value); return *this;}
+    inline QualificationRequest& WithQualificationRequestId(Aws::String&& value) { SetQualificationRequestId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Qualification request, a unique identifier generated when the
@@ -103,7 +104,7 @@ namespace Model
      * <p> The ID of the Qualification type the Worker is requesting, as returned by
      * the CreateQualificationType operation. </p>
      */
-    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
+    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = std::move(value); }
 
     /**
      * <p> The ID of the Qualification type the Worker is requesting, as returned by
@@ -121,7 +122,7 @@ namespace Model
      * <p> The ID of the Qualification type the Worker is requesting, as returned by
      * the CreateQualificationType operation. </p>
      */
-    inline QualificationRequest& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(value); return *this;}
+    inline QualificationRequest& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(std::move(value)); return *this;}
 
     /**
      * <p> The ID of the Qualification type the Worker is requesting, as returned by
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p> The ID of the Worker requesting the Qualification.</p>
      */
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
+    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
 
     /**
      * <p> The ID of the Worker requesting the Qualification.</p>
@@ -157,7 +158,7 @@ namespace Model
     /**
      * <p> The ID of the Worker requesting the Qualification.</p>
      */
-    inline QualificationRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(value); return *this;}
+    inline QualificationRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
 
     /**
      * <p> The ID of the Worker requesting the Qualification.</p>
@@ -186,7 +187,7 @@ namespace Model
      * identical to the QuestionForm associated with the Qualification type at the time
      * the Worker requests the Qualification.</p>
      */
-    inline void SetTest(Aws::String&& value) { m_testHasBeenSet = true; m_test = value; }
+    inline void SetTest(Aws::String&& value) { m_testHasBeenSet = true; m_test = std::move(value); }
 
     /**
      * <p> The contents of the Qualification test that was presented to the Worker, if
@@ -210,7 +211,7 @@ namespace Model
      * identical to the QuestionForm associated with the Qualification type at the time
      * the Worker requests the Qualification.</p>
      */
-    inline QualificationRequest& WithTest(Aws::String&& value) { SetTest(value); return *this;}
+    inline QualificationRequest& WithTest(Aws::String&& value) { SetTest(std::move(value)); return *this;}
 
     /**
      * <p> The contents of the Qualification test that was presented to the Worker, if
@@ -242,7 +243,7 @@ namespace Model
      * submitted answers. If the Worker does not provide any answers, Answer may be
      * empty. </p>
      */
-    inline void SetAnswer(Aws::String&& value) { m_answerHasBeenSet = true; m_answer = value; }
+    inline void SetAnswer(Aws::String&& value) { m_answerHasBeenSet = true; m_answer = std::move(value); }
 
     /**
      * <p> The Worker's answers for the Qualification type's test contained in a
@@ -266,7 +267,7 @@ namespace Model
      * submitted answers. If the Worker does not provide any answers, Answer may be
      * empty. </p>
      */
-    inline QualificationRequest& WithAnswer(Aws::String&& value) { SetAnswer(value); return *this;}
+    inline QualificationRequest& WithAnswer(Aws::String&& value) { SetAnswer(std::move(value)); return *this;}
 
     /**
      * <p> The Worker's answers for the Qualification type's test contained in a
@@ -298,7 +299,7 @@ namespace Model
      * time the Worker requested the Qualification if the Qualification type does not
      * have a test. </p>
      */
-    inline void SetSubmitTime(Aws::Utils::DateTime&& value) { m_submitTimeHasBeenSet = true; m_submitTime = value; }
+    inline void SetSubmitTime(Aws::Utils::DateTime&& value) { m_submitTimeHasBeenSet = true; m_submitTime = std::move(value); }
 
     /**
      * <p>The date and time the Qualification request had a status of Submitted. This
@@ -314,7 +315,7 @@ namespace Model
      * time the Worker requested the Qualification if the Qualification type does not
      * have a test. </p>
      */
-    inline QualificationRequest& WithSubmitTime(Aws::Utils::DateTime&& value) { SetSubmitTime(value); return *this;}
+    inline QualificationRequest& WithSubmitTime(Aws::Utils::DateTime&& value) { SetSubmitTime(std::move(value)); return *this;}
 
   private:
     Aws::String m_qualificationRequestId;

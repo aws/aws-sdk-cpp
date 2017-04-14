@@ -17,6 +17,7 @@
 #include <aws/codepipeline/CodePipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/FailureDetails.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The unique system-generated ID of the job that failed. This is the same ID
      * returned from PollForJobs.</p>
      */
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
      * <p>The unique system-generated ID of the job that failed. This is the same ID
@@ -74,7 +75,7 @@ namespace Model
      * <p>The unique system-generated ID of the job that failed. This is the same ID
      * returned from PollForJobs.</p>
      */
-    inline PutJobFailureResultRequest& WithJobId(Aws::String&& value) { SetJobId(value); return *this;}
+    inline PutJobFailureResultRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
      * <p>The unique system-generated ID of the job that failed. This is the same ID
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The details about the failure of a job.</p>
      */
-    inline void SetFailureDetails(FailureDetails&& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = value; }
+    inline void SetFailureDetails(FailureDetails&& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = std::move(value); }
 
     /**
      * <p>The details about the failure of a job.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The details about the failure of a job.</p>
      */
-    inline PutJobFailureResultRequest& WithFailureDetails(FailureDetails&& value) { SetFailureDetails(value); return *this;}
+    inline PutJobFailureResultRequest& WithFailureDetails(FailureDetails&& value) { SetFailureDetails(std::move(value)); return *this;}
 
   private:
     Aws::String m_jobId;

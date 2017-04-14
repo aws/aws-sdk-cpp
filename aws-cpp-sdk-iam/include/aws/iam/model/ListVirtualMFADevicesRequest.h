@@ -17,6 +17,7 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/iam/model/AssignmentStatusType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * defaults to <code>Any</code> which lists both assigned and unassigned virtual
      * MFA devices.</p>
      */
-    inline void SetAssignmentStatus(AssignmentStatusType&& value) { m_assignmentStatusHasBeenSet = true; m_assignmentStatus = value; }
+    inline void SetAssignmentStatus(AssignmentStatusType&& value) { m_assignmentStatusHasBeenSet = true; m_assignmentStatus = std::move(value); }
 
     /**
      * <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices
@@ -76,7 +77,7 @@ namespace Model
      * defaults to <code>Any</code> which lists both assigned and unassigned virtual
      * MFA devices.</p>
      */
-    inline ListVirtualMFADevicesRequest& WithAssignmentStatus(AssignmentStatusType&& value) { SetAssignmentStatus(value); return *this;}
+    inline ListVirtualMFADevicesRequest& WithAssignmentStatus(AssignmentStatusType&& value) { SetAssignmentStatus(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
@@ -100,7 +101,7 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
@@ -124,7 +125,7 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline ListVirtualMFADevicesRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListVirtualMFADevicesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a

@@ -17,6 +17,7 @@
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * returned.</p> <p>An empty list results in an
      * <code>InvalidParameterException</code> being thrown.</p>
      */
-    inline void SetDirectoryIds(Aws::Vector<Aws::String>&& value) { m_directoryIdsHasBeenSet = true; m_directoryIds = value; }
+    inline void SetDirectoryIds(Aws::Vector<Aws::String>&& value) { m_directoryIdsHasBeenSet = true; m_directoryIds = std::move(value); }
 
     /**
      * <p>A list of identifiers of the directories for which to obtain the information.
@@ -78,7 +79,7 @@ namespace Model
      * returned.</p> <p>An empty list results in an
      * <code>InvalidParameterException</code> being thrown.</p>
      */
-    inline DescribeDirectoriesRequest& WithDirectoryIds(Aws::Vector<Aws::String>&& value) { SetDirectoryIds(value); return *this;}
+    inline DescribeDirectoriesRequest& WithDirectoryIds(Aws::Vector<Aws::String>&& value) { SetDirectoryIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of identifiers of the directories for which to obtain the information.
@@ -94,7 +95,7 @@ namespace Model
      * returned.</p> <p>An empty list results in an
      * <code>InvalidParameterException</code> being thrown.</p>
      */
-    inline DescribeDirectoriesRequest& AddDirectoryIds(Aws::String&& value) { m_directoryIdsHasBeenSet = true; m_directoryIds.push_back(value); return *this; }
+    inline DescribeDirectoriesRequest& AddDirectoryIds(Aws::String&& value) { m_directoryIdsHasBeenSet = true; m_directoryIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of identifiers of the directories for which to obtain the information.
@@ -120,7 +121,7 @@ namespace Model
      * <p>The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to
      * <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to
@@ -138,7 +139,7 @@ namespace Model
      * <p>The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to
      * <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
      */
-    inline DescribeDirectoriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeDirectoriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to

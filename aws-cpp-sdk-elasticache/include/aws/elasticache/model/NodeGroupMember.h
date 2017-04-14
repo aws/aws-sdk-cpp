@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticache/model/Endpoint.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The ID of the cache cluster to which the node belongs.</p>
      */
-    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
+    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
 
     /**
      * <p>The ID of the cache cluster to which the node belongs.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The ID of the cache cluster to which the node belongs.</p>
      */
-    inline NodeGroupMember& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(value); return *this;}
+    inline NodeGroupMember& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the cache cluster to which the node belongs.</p>
@@ -99,7 +100,7 @@ namespace Model
      * <p>The ID of the node within its cache cluster. A node ID is a numeric
      * identifier (0001, 0002, etc.).</p>
      */
-    inline void SetCacheNodeId(Aws::String&& value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId = value; }
+    inline void SetCacheNodeId(Aws::String&& value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId = std::move(value); }
 
     /**
      * <p>The ID of the node within its cache cluster. A node ID is a numeric
@@ -117,7 +118,7 @@ namespace Model
      * <p>The ID of the node within its cache cluster. A node ID is a numeric
      * identifier (0001, 0002, etc.).</p>
      */
-    inline NodeGroupMember& WithCacheNodeId(Aws::String&& value) { SetCacheNodeId(value); return *this;}
+    inline NodeGroupMember& WithCacheNodeId(Aws::String&& value) { SetCacheNodeId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the node within its cache cluster. A node ID is a numeric
@@ -132,13 +133,13 @@ namespace Model
     inline void SetReadEndpoint(const Endpoint& value) { m_readEndpointHasBeenSet = true; m_readEndpoint = value; }
 
     
-    inline void SetReadEndpoint(Endpoint&& value) { m_readEndpointHasBeenSet = true; m_readEndpoint = value; }
+    inline void SetReadEndpoint(Endpoint&& value) { m_readEndpointHasBeenSet = true; m_readEndpoint = std::move(value); }
 
     
     inline NodeGroupMember& WithReadEndpoint(const Endpoint& value) { SetReadEndpoint(value); return *this;}
 
     
-    inline NodeGroupMember& WithReadEndpoint(Endpoint&& value) { SetReadEndpoint(value); return *this;}
+    inline NodeGroupMember& WithReadEndpoint(Endpoint&& value) { SetReadEndpoint(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Availability Zone in which the node is located.</p>
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p>The name of the Availability Zone in which the node is located.</p>
      */
-    inline void SetPreferredAvailabilityZone(Aws::String&& value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone = value; }
+    inline void SetPreferredAvailabilityZone(Aws::String&& value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone = std::move(value); }
 
     /**
      * <p>The name of the Availability Zone in which the node is located.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>The name of the Availability Zone in which the node is located.</p>
      */
-    inline NodeGroupMember& WithPreferredAvailabilityZone(Aws::String&& value) { SetPreferredAvailabilityZone(value); return *this;}
+    inline NodeGroupMember& WithPreferredAvailabilityZone(Aws::String&& value) { SetPreferredAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Availability Zone in which the node is located.</p>
@@ -191,7 +192,7 @@ namespace Model
      * <p>The role that is currently assigned to the node - <code>primary</code> or
      * <code>replica</code>.</p>
      */
-    inline void SetCurrentRole(Aws::String&& value) { m_currentRoleHasBeenSet = true; m_currentRole = value; }
+    inline void SetCurrentRole(Aws::String&& value) { m_currentRoleHasBeenSet = true; m_currentRole = std::move(value); }
 
     /**
      * <p>The role that is currently assigned to the node - <code>primary</code> or
@@ -209,7 +210,7 @@ namespace Model
      * <p>The role that is currently assigned to the node - <code>primary</code> or
      * <code>replica</code>.</p>
      */
-    inline NodeGroupMember& WithCurrentRole(Aws::String&& value) { SetCurrentRole(value); return *this;}
+    inline NodeGroupMember& WithCurrentRole(Aws::String&& value) { SetCurrentRole(std::move(value)); return *this;}
 
     /**
      * <p>The role that is currently assigned to the node - <code>primary</code> or

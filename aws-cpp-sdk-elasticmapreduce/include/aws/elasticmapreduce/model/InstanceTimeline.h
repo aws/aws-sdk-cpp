@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The creation date and time of the instance.</p>
      */
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
+    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
 
     /**
      * <p>The creation date and time of the instance.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The creation date and time of the instance.</p>
      */
-    inline InstanceTimeline& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(value); return *this;}
+    inline InstanceTimeline& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
 
     /**
      * <p>The date and time when the instance was ready to perform tasks.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>The date and time when the instance was ready to perform tasks.</p>
      */
-    inline void SetReadyDateTime(Aws::Utils::DateTime&& value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = value; }
+    inline void SetReadyDateTime(Aws::Utils::DateTime&& value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = std::move(value); }
 
     /**
      * <p>The date and time when the instance was ready to perform tasks.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The date and time when the instance was ready to perform tasks.</p>
      */
-    inline InstanceTimeline& WithReadyDateTime(Aws::Utils::DateTime&& value) { SetReadyDateTime(value); return *this;}
+    inline InstanceTimeline& WithReadyDateTime(Aws::Utils::DateTime&& value) { SetReadyDateTime(std::move(value)); return *this;}
 
     /**
      * <p>The date and time when the instance was terminated.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The date and time when the instance was terminated.</p>
      */
-    inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
+    inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::move(value); }
 
     /**
      * <p>The date and time when the instance was terminated.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The date and time when the instance was terminated.</p>
      */
-    inline InstanceTimeline& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(value); return *this;}
+    inline InstanceTimeline& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(std::move(value)); return *this;}
 
   private:
     Aws::Utils::DateTime m_creationDateTime;

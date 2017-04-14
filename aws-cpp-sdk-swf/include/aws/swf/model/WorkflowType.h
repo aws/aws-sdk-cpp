@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p><b>Required.</b> The name of the workflow type.</p> <note>The combination of
      * workflow type name and version must be unique with in a domain.</note>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p><b>Required.</b> The name of the workflow type.</p> <note>The combination of
@@ -77,7 +78,7 @@ namespace Model
      * <p><b>Required.</b> The name of the workflow type.</p> <note>The combination of
      * workflow type name and version must be unique with in a domain.</note>
      */
-    inline WorkflowType& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline WorkflowType& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p><b>Required.</b> The name of the workflow type.</p> <note>The combination of
@@ -101,7 +102,7 @@ namespace Model
      * <p><b>Required.</b> The version of the workflow type.</p> <note>The combination
      * of workflow type name and version must be unique with in a domain.</note>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p><b>Required.</b> The version of the workflow type.</p> <note>The combination
@@ -119,7 +120,7 @@ namespace Model
      * <p><b>Required.</b> The version of the workflow type.</p> <note>The combination
      * of workflow type name and version must be unique with in a domain.</note>
      */
-    inline WorkflowType& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline WorkflowType& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p><b>Required.</b> The version of the workflow type.</p> <note>The combination

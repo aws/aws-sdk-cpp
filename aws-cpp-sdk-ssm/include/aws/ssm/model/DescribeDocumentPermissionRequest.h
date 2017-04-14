@@ -17,6 +17,7 @@
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/DocumentPermissionType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The name of the document for which you are the owner.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the document for which you are the owner.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name of the document for which you are the owner.</p>
      */
-    inline DescribeDocumentPermissionRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline DescribeDocumentPermissionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the document for which you are the owner.</p>
@@ -87,7 +88,7 @@ namespace Model
      * <p>The permission type for the document. The permission type can be
      * <i>Share</i>.</p>
      */
-    inline void SetPermissionType(DocumentPermissionType&& value) { m_permissionTypeHasBeenSet = true; m_permissionType = value; }
+    inline void SetPermissionType(DocumentPermissionType&& value) { m_permissionTypeHasBeenSet = true; m_permissionType = std::move(value); }
 
     /**
      * <p>The permission type for the document. The permission type can be
@@ -99,7 +100,7 @@ namespace Model
      * <p>The permission type for the document. The permission type can be
      * <i>Share</i>.</p>
      */
-    inline DescribeDocumentPermissionRequest& WithPermissionType(DocumentPermissionType&& value) { SetPermissionType(value); return *this;}
+    inline DescribeDocumentPermissionRequest& WithPermissionType(DocumentPermissionType&& value) { SetPermissionType(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

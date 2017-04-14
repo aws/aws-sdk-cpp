@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53domains/model/Nameserver.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
      * supported.</p> <p>Required: Yes</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
@@ -87,7 +88,7 @@ namespace Model
      * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
      * supported.</p> <p>Required: Yes</p>
      */
-    inline UpdateDomainNameserversRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline UpdateDomainNameserversRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The authorization key for .fi domains</p>
      */
-    inline void SetFIAuthKey(Aws::String&& value) { m_fIAuthKeyHasBeenSet = true; m_fIAuthKey = value; }
+    inline void SetFIAuthKey(Aws::String&& value) { m_fIAuthKeyHasBeenSet = true; m_fIAuthKey = std::move(value); }
 
     /**
      * <p>The authorization key for .fi domains</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>The authorization key for .fi domains</p>
      */
-    inline UpdateDomainNameserversRequest& WithFIAuthKey(Aws::String&& value) { SetFIAuthKey(value); return *this;}
+    inline UpdateDomainNameserversRequest& WithFIAuthKey(Aws::String&& value) { SetFIAuthKey(std::move(value)); return *this;}
 
     /**
      * <p>The authorization key for .fi domains</p>
@@ -148,7 +149,7 @@ namespace Model
      * <p>A list of new name servers for the domain.</p> <p>Type: Complex</p>
      * <p>Children: <code>Name</code>, <code>GlueIps</code></p> <p>Required: Yes</p>
      */
-    inline void SetNameservers(Aws::Vector<Nameserver>&& value) { m_nameserversHasBeenSet = true; m_nameservers = value; }
+    inline void SetNameservers(Aws::Vector<Nameserver>&& value) { m_nameserversHasBeenSet = true; m_nameservers = std::move(value); }
 
     /**
      * <p>A list of new name servers for the domain.</p> <p>Type: Complex</p>
@@ -160,7 +161,7 @@ namespace Model
      * <p>A list of new name servers for the domain.</p> <p>Type: Complex</p>
      * <p>Children: <code>Name</code>, <code>GlueIps</code></p> <p>Required: Yes</p>
      */
-    inline UpdateDomainNameserversRequest& WithNameservers(Aws::Vector<Nameserver>&& value) { SetNameservers(value); return *this;}
+    inline UpdateDomainNameserversRequest& WithNameservers(Aws::Vector<Nameserver>&& value) { SetNameservers(std::move(value)); return *this;}
 
     /**
      * <p>A list of new name servers for the domain.</p> <p>Type: Complex</p>
@@ -172,7 +173,7 @@ namespace Model
      * <p>A list of new name servers for the domain.</p> <p>Type: Complex</p>
      * <p>Children: <code>Name</code>, <code>GlueIps</code></p> <p>Required: Yes</p>
      */
-    inline UpdateDomainNameserversRequest& AddNameservers(Nameserver&& value) { m_nameserversHasBeenSet = true; m_nameservers.push_back(value); return *this; }
+    inline UpdateDomainNameserversRequest& AddNameservers(Nameserver&& value) { m_nameserversHasBeenSet = true; m_nameservers.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_domainName;

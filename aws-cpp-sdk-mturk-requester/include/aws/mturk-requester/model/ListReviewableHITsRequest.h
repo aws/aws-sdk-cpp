@@ -17,6 +17,7 @@
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mturk-requester/model/ReviewableHITStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p> The ID of the HIT type of the HITs to consider for the query. If not
      * specified, all HITs for the Reviewer are considered </p>
      */
-    inline void SetHITTypeId(Aws::String&& value) { m_hITTypeIdHasBeenSet = true; m_hITTypeId = value; }
+    inline void SetHITTypeId(Aws::String&& value) { m_hITTypeIdHasBeenSet = true; m_hITTypeId = std::move(value); }
 
     /**
      * <p> The ID of the HIT type of the HITs to consider for the query. If not
@@ -70,7 +71,7 @@ namespace Model
      * <p> The ID of the HIT type of the HITs to consider for the query. If not
      * specified, all HITs for the Reviewer are considered </p>
      */
-    inline ListReviewableHITsRequest& WithHITTypeId(Aws::String&& value) { SetHITTypeId(value); return *this;}
+    inline ListReviewableHITsRequest& WithHITTypeId(Aws::String&& value) { SetHITTypeId(std::move(value)); return *this;}
 
     /**
      * <p> The ID of the HIT type of the HITs to consider for the query. If not
@@ -94,7 +95,7 @@ namespace Model
      * <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable
      * is the default value. </p>
      */
-    inline void SetStatus(ReviewableHITStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ReviewableHITStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable
@@ -106,7 +107,7 @@ namespace Model
      * <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable
      * is the default value. </p>
      */
-    inline ListReviewableHITsRequest& WithStatus(ReviewableHITStatus&& value) { SetStatus(value); return *this;}
+    inline ListReviewableHITsRequest& WithStatus(ReviewableHITStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Pagination Token</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>Pagination Token</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Pagination Token</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>Pagination Token</p>
      */
-    inline ListReviewableHITsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListReviewableHITsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Pagination Token</p>

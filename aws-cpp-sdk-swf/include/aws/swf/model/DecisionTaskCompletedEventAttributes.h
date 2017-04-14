@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>User defined context for the workflow execution.</p>
      */
-    inline void SetExecutionContext(Aws::String&& value) { m_executionContextHasBeenSet = true; m_executionContext = value; }
+    inline void SetExecutionContext(Aws::String&& value) { m_executionContextHasBeenSet = true; m_executionContext = std::move(value); }
 
     /**
      * <p>User defined context for the workflow execution.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>User defined context for the workflow execution.</p>
      */
-    inline DecisionTaskCompletedEventAttributes& WithExecutionContext(Aws::String&& value) { SetExecutionContext(value); return *this;}
+    inline DecisionTaskCompletedEventAttributes& WithExecutionContext(Aws::String&& value) { SetExecutionContext(std::move(value)); return *this;}
 
     /**
      * <p>User defined context for the workflow execution.</p>

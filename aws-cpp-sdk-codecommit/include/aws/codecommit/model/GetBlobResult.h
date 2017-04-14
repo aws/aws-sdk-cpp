@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The content of the blob, usually a file.</p>
      */
-    inline void SetContent(Aws::Utils::ByteBuffer&& value) { m_content = value; }
+    inline void SetContent(Aws::Utils::ByteBuffer&& value) { m_content = std::move(value); }
 
     /**
      * <p>The content of the blob, usually a file.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The content of the blob, usually a file.</p>
      */
-    inline GetBlobResult& WithContent(Aws::Utils::ByteBuffer&& value) { SetContent(value); return *this;}
+    inline GetBlobResult& WithContent(Aws::Utils::ByteBuffer&& value) { SetContent(std::move(value)); return *this;}
 
   private:
     Aws::Utils::ByteBuffer m_content;

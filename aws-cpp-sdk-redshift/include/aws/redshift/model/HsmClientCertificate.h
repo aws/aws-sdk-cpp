@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The identifier of the HSM client certificate.</p>
      */
-    inline void SetHsmClientCertificateIdentifier(Aws::String&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
+    inline void SetHsmClientCertificateIdentifier(Aws::String&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the HSM client certificate.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The identifier of the HSM client certificate.</p>
      */
-    inline HsmClientCertificate& WithHsmClientCertificateIdentifier(Aws::String&& value) { SetHsmClientCertificateIdentifier(value); return *this;}
+    inline HsmClientCertificate& WithHsmClientCertificateIdentifier(Aws::String&& value) { SetHsmClientCertificateIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the HSM client certificate.</p>
@@ -101,7 +102,7 @@ namespace Model
      * <p>The public key that the Amazon Redshift cluster will use to connect to the
      * HSM. You must register the public key in the HSM.</p>
      */
-    inline void SetHsmClientCertificatePublicKey(Aws::String&& value) { m_hsmClientCertificatePublicKeyHasBeenSet = true; m_hsmClientCertificatePublicKey = value; }
+    inline void SetHsmClientCertificatePublicKey(Aws::String&& value) { m_hsmClientCertificatePublicKeyHasBeenSet = true; m_hsmClientCertificatePublicKey = std::move(value); }
 
     /**
      * <p>The public key that the Amazon Redshift cluster will use to connect to the
@@ -119,7 +120,7 @@ namespace Model
      * <p>The public key that the Amazon Redshift cluster will use to connect to the
      * HSM. You must register the public key in the HSM.</p>
      */
-    inline HsmClientCertificate& WithHsmClientCertificatePublicKey(Aws::String&& value) { SetHsmClientCertificatePublicKey(value); return *this;}
+    inline HsmClientCertificate& WithHsmClientCertificatePublicKey(Aws::String&& value) { SetHsmClientCertificatePublicKey(std::move(value)); return *this;}
 
     /**
      * <p>The public key that the Amazon Redshift cluster will use to connect to the
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The list of tags for the HSM client certificate.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The list of tags for the HSM client certificate.</p>
@@ -150,7 +151,7 @@ namespace Model
     /**
      * <p>The list of tags for the HSM client certificate.</p>
      */
-    inline HsmClientCertificate& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline HsmClientCertificate& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The list of tags for the HSM client certificate.</p>
@@ -160,7 +161,7 @@ namespace Model
     /**
      * <p>The list of tags for the HSM client certificate.</p>
      */
-    inline HsmClientCertificate& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline HsmClientCertificate& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_hsmClientCertificateIdentifier;

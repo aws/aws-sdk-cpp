@@ -17,6 +17,7 @@
 #include <aws/sns/SNSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>PlatformApplicationArn returned from CreatePlatformApplication is used to
      * create a an endpoint.</p>
      */
-    inline void SetPlatformApplicationArn(Aws::String&& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
+    inline void SetPlatformApplicationArn(Aws::String&& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = std::move(value); }
 
     /**
      * <p>PlatformApplicationArn returned from CreatePlatformApplication is used to
@@ -75,7 +76,7 @@ namespace Model
      * <p>PlatformApplicationArn returned from CreatePlatformApplication is used to
      * create a an endpoint.</p>
      */
-    inline CreatePlatformEndpointRequest& WithPlatformApplicationArn(Aws::String&& value) { SetPlatformApplicationArn(value); return *this;}
+    inline CreatePlatformEndpointRequest& WithPlatformApplicationArn(Aws::String&& value) { SetPlatformApplicationArn(std::move(value)); return *this;}
 
     /**
      * <p>PlatformApplicationArn returned from CreatePlatformApplication is used to
@@ -108,7 +109,7 @@ namespace Model
      * need the device token. Alternatively, when using GCM or ADM, the device token
      * equivalent is called the registration ID.</p>
      */
-    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = value; }
+    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
 
     /**
      * <p>Unique identifier created by the notification service for an app on a device.
@@ -135,7 +136,7 @@ namespace Model
      * need the device token. Alternatively, when using GCM or ADM, the device token
      * equivalent is called the registration ID.</p>
      */
-    inline CreatePlatformEndpointRequest& WithToken(Aws::String&& value) { SetToken(value); return *this;}
+    inline CreatePlatformEndpointRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier created by the notification service for an app on a device.
@@ -162,7 +163,7 @@ namespace Model
      * <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use
      * this data. The data must be in UTF-8 format and less than 2KB.</p>
      */
-    inline void SetCustomUserData(Aws::String&& value) { m_customUserDataHasBeenSet = true; m_customUserData = value; }
+    inline void SetCustomUserData(Aws::String&& value) { m_customUserDataHasBeenSet = true; m_customUserData = std::move(value); }
 
     /**
      * <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use
@@ -180,7 +181,7 @@ namespace Model
      * <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use
      * this data. The data must be in UTF-8 format and less than 2KB.</p>
      */
-    inline CreatePlatformEndpointRequest& WithCustomUserData(Aws::String&& value) { SetCustomUserData(value); return *this;}
+    inline CreatePlatformEndpointRequest& WithCustomUserData(Aws::String&& value) { SetCustomUserData(std::move(value)); return *this;}
 
     /**
      * <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use
@@ -204,7 +205,7 @@ namespace Model
      * <p>For a list of attributes, see <a
      * href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
      */
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>For a list of attributes, see <a
@@ -216,49 +217,49 @@ namespace Model
      * <p>For a list of attributes, see <a
      * href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
      */
-    inline CreatePlatformEndpointRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(value); return *this;}
+    inline CreatePlatformEndpointRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>For a list of attributes, see <a
      * href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
      */
-    inline CreatePlatformEndpointRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CreatePlatformEndpointRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>For a list of attributes, see <a
      * href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
      */
-    inline CreatePlatformEndpointRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CreatePlatformEndpointRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>For a list of attributes, see <a
      * href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
      */
-    inline CreatePlatformEndpointRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CreatePlatformEndpointRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>For a list of attributes, see <a
      * href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
      */
-    inline CreatePlatformEndpointRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CreatePlatformEndpointRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>For a list of attributes, see <a
      * href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
      */
-    inline CreatePlatformEndpointRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CreatePlatformEndpointRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>For a list of attributes, see <a
      * href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
      */
-    inline CreatePlatformEndpointRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CreatePlatformEndpointRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>For a list of attributes, see <a
      * href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
      */
-    inline CreatePlatformEndpointRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CreatePlatformEndpointRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
   private:
     Aws::String m_platformApplicationArn;

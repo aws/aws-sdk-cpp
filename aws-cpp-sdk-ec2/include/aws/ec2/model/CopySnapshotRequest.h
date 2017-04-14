@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the region that contains the snapshot to be copied.</p>
      */
-    inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
+    inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
 
     /**
      * <p>The ID of the region that contains the snapshot to be copied.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The ID of the region that contains the snapshot to be copied.</p>
      */
-    inline CopySnapshotRequest& WithSourceRegion(Aws::String&& value) { SetSourceRegion(value); return *this;}
+    inline CopySnapshotRequest& WithSourceRegion(Aws::String&& value) { SetSourceRegion(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the region that contains the snapshot to be copied.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The ID of the EBS snapshot to copy.</p>
      */
-    inline void SetSourceSnapshotId(Aws::String&& value) { m_sourceSnapshotIdHasBeenSet = true; m_sourceSnapshotId = value; }
+    inline void SetSourceSnapshotId(Aws::String&& value) { m_sourceSnapshotIdHasBeenSet = true; m_sourceSnapshotId = std::move(value); }
 
     /**
      * <p>The ID of the EBS snapshot to copy.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The ID of the EBS snapshot to copy.</p>
      */
-    inline CopySnapshotRequest& WithSourceSnapshotId(Aws::String&& value) { SetSourceSnapshotId(value); return *this;}
+    inline CopySnapshotRequest& WithSourceSnapshotId(Aws::String&& value) { SetSourceSnapshotId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the EBS snapshot to copy.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>A description for the EBS snapshot.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description for the EBS snapshot.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>A description for the EBS snapshot.</p>
      */
-    inline CopySnapshotRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CopySnapshotRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description for the EBS snapshot.</p>
@@ -203,7 +204,7 @@ namespace Model
      * the <code>--region</code> parameter or the default region in your AWS
      * configuration file).</p> </note>
      */
-    inline void SetDestinationRegion(Aws::String&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = value; }
+    inline void SetDestinationRegion(Aws::String&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = std::move(value); }
 
     /**
      * <p>The destination region to use in the <code>PresignedUrl</code> parameter of a
@@ -239,7 +240,7 @@ namespace Model
      * the <code>--region</code> parameter or the default region in your AWS
      * configuration file).</p> </note>
      */
-    inline CopySnapshotRequest& WithDestinationRegion(Aws::String&& value) { SetDestinationRegion(value); return *this;}
+    inline CopySnapshotRequest& WithDestinationRegion(Aws::String&& value) { SetDestinationRegion(std::move(value)); return *this;}
 
     /**
      * <p>The destination region to use in the <code>PresignedUrl</code> parameter of a
@@ -305,7 +306,7 @@ namespace Model
      * signed <code>PresignedUrl</code> will cause the copy operation to fail
      * asynchronously, and the snapshot will move to an <code>error</code> state.</p>
      */
-    inline void SetPresignedUrl(Aws::String&& value) { m_presignedUrlHasBeenSet = true; m_presignedUrl = value; }
+    inline void SetPresignedUrl(Aws::String&& value) { m_presignedUrlHasBeenSet = true; m_presignedUrl = std::move(value); }
 
     /**
      * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
@@ -359,7 +360,7 @@ namespace Model
      * signed <code>PresignedUrl</code> will cause the copy operation to fail
      * asynchronously, and the snapshot will move to an <code>error</code> state.</p>
      */
-    inline CopySnapshotRequest& WithPresignedUrl(Aws::String&& value) { SetPresignedUrl(value); return *this;}
+    inline CopySnapshotRequest& WithPresignedUrl(Aws::String&& value) { SetPresignedUrl(std::move(value)); return *this;}
 
     /**
      * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
@@ -452,7 +453,7 @@ namespace Model
      * If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must
      * also be set.</p>
      */
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when
@@ -494,7 +495,7 @@ namespace Model
      * If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must
      * also be set.</p>
      */
-    inline CopySnapshotRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
+    inline CopySnapshotRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when

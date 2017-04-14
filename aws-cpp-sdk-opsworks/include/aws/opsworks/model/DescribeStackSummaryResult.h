@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/opsworks/model/StackSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>A <code>StackSummary</code> object that contains the results.</p>
      */
-    inline void SetStackSummary(StackSummary&& value) { m_stackSummary = value; }
+    inline void SetStackSummary(StackSummary&& value) { m_stackSummary = std::move(value); }
 
     /**
      * <p>A <code>StackSummary</code> object that contains the results.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>A <code>StackSummary</code> object that contains the results.</p>
      */
-    inline DescribeStackSummaryResult& WithStackSummary(StackSummary&& value) { SetStackSummary(value); return *this;}
+    inline DescribeStackSummaryResult& WithStackSummary(StackSummary&& value) { SetStackSummary(std::move(value)); return *this;}
 
   private:
     StackSummary m_stackSummary;

@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/Layer.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>An array of <code>Layer</code> objects that describe the layers.</p>
      */
-    inline void SetLayers(Aws::Vector<Layer>&& value) { m_layers = value; }
+    inline void SetLayers(Aws::Vector<Layer>&& value) { m_layers = std::move(value); }
 
     /**
      * <p>An array of <code>Layer</code> objects that describe the layers.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>An array of <code>Layer</code> objects that describe the layers.</p>
      */
-    inline DescribeLayersResult& WithLayers(Aws::Vector<Layer>&& value) { SetLayers(value); return *this;}
+    inline DescribeLayersResult& WithLayers(Aws::Vector<Layer>&& value) { SetLayers(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>Layer</code> objects that describe the layers.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>An array of <code>Layer</code> objects that describe the layers.</p>
      */
-    inline DescribeLayersResult& AddLayers(Layer&& value) { m_layers.push_back(value); return *this; }
+    inline DescribeLayersResult& AddLayers(Layer&& value) { m_layers.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Layer> m_layers;

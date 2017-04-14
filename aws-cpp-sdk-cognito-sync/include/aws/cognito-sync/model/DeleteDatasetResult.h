@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/cognito-sync/model/Dataset.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * automatically created if they don't exist. Data is synced by dataset, and a
      * dataset can hold up to 1MB of key-value pairs.
      */
-    inline void SetDataset(Dataset&& value) { m_dataset = value; }
+    inline void SetDataset(Dataset&& value) { m_dataset = std::move(value); }
 
     /**
      * A collection of data for an identity pool. An identity pool can have multiple
@@ -87,7 +88,7 @@ namespace Model
      * automatically created if they don't exist. Data is synced by dataset, and a
      * dataset can hold up to 1MB of key-value pairs.
      */
-    inline DeleteDatasetResult& WithDataset(Dataset&& value) { SetDataset(value); return *this;}
+    inline DeleteDatasetResult& WithDataset(Dataset&& value) { SetDataset(std::move(value)); return *this;}
 
   private:
     Dataset m_dataset;

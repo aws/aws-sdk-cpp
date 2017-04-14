@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p> The ID of the Worker who accepted the HIT.</p>
      */
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
+    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
 
     /**
      * <p> The ID of the Worker who accepted the HIT.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p> The ID of the Worker who accepted the HIT.</p>
      */
-    inline WorkerBlock& WithWorkerId(Aws::String&& value) { SetWorkerId(value); return *this;}
+    inline WorkerBlock& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
 
     /**
      * <p> The ID of the Worker who accepted the HIT.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p> A message explaining the reason the Worker was blocked. </p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p> A message explaining the reason the Worker was blocked. </p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p> A message explaining the reason the Worker was blocked. </p>
      */
-    inline WorkerBlock& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline WorkerBlock& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p> A message explaining the reason the Worker was blocked. </p>

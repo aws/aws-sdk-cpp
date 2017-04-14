@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/model/TableDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The properties of the table.</p>
      */
-    inline void SetTable(TableDescription&& value) { m_table = value; }
+    inline void SetTable(TableDescription&& value) { m_table = std::move(value); }
 
     /**
      * <p>The properties of the table.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The properties of the table.</p>
      */
-    inline DescribeTableResult& WithTable(TableDescription&& value) { SetTable(value); return *this;}
+    inline DescribeTableResult& WithTable(TableDescription&& value) { SetTable(std::move(value)); return *this;}
 
   private:
     TableDescription m_table;

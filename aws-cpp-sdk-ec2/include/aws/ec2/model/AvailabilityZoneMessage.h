@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The message about the Availability Zone.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The message about the Availability Zone.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The message about the Availability Zone.</p>
      */
-    inline AvailabilityZoneMessage& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline AvailabilityZoneMessage& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The message about the Availability Zone.</p>

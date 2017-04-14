@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Any comments that you want to include about the hosted zone.</p>
      */
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
+    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
      * <p>Any comments that you want to include about the hosted zone.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Any comments that you want to include about the hosted zone.</p>
      */
-    inline HostedZoneConfig& WithComment(Aws::String&& value) { SetComment(value); return *this;}
+    inline HostedZoneConfig& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
      * <p>Any comments that you want to include about the hosted zone.</p>

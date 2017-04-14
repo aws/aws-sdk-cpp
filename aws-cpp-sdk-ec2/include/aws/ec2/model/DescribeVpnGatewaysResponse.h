@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/VpnGateway.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Information about one or more virtual private gateways.</p>
      */
-    inline void SetVpnGateways(Aws::Vector<VpnGateway>&& value) { m_vpnGateways = value; }
+    inline void SetVpnGateways(Aws::Vector<VpnGateway>&& value) { m_vpnGateways = std::move(value); }
 
     /**
      * <p>Information about one or more virtual private gateways.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Information about one or more virtual private gateways.</p>
      */
-    inline DescribeVpnGatewaysResponse& WithVpnGateways(Aws::Vector<VpnGateway>&& value) { SetVpnGateways(value); return *this;}
+    inline DescribeVpnGatewaysResponse& WithVpnGateways(Aws::Vector<VpnGateway>&& value) { SetVpnGateways(std::move(value)); return *this;}
 
     /**
      * <p>Information about one or more virtual private gateways.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>Information about one or more virtual private gateways.</p>
      */
-    inline DescribeVpnGatewaysResponse& AddVpnGateways(VpnGateway&& value) { m_vpnGateways.push_back(value); return *this; }
+    inline DescribeVpnGatewaysResponse& AddVpnGateways(VpnGateway&& value) { m_vpnGateways.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -88,13 +89,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeVpnGatewaysResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeVpnGatewaysResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeVpnGatewaysResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<VpnGateway> m_vpnGateways;

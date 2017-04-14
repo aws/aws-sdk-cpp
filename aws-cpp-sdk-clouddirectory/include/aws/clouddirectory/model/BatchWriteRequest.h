@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/clouddirectory/model/BatchWriteOperation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a>. For more information, see
      * <a>arns</a>.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>ARN associated with the <a>Directory</a>. For more information, see
@@ -71,7 +72,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a>. For more information, see
      * <a>arns</a>.</p>
      */
-    inline BatchWriteRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline BatchWriteRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN associated with the <a>Directory</a>. For more information, see
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>List of operations that are part of the batch.</p>
      */
-    inline void SetOperations(Aws::Vector<BatchWriteOperation>&& value) { m_operationsHasBeenSet = true; m_operations = value; }
+    inline void SetOperations(Aws::Vector<BatchWriteOperation>&& value) { m_operationsHasBeenSet = true; m_operations = std::move(value); }
 
     /**
      * <p>List of operations that are part of the batch.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>List of operations that are part of the batch.</p>
      */
-    inline BatchWriteRequest& WithOperations(Aws::Vector<BatchWriteOperation>&& value) { SetOperations(value); return *this;}
+    inline BatchWriteRequest& WithOperations(Aws::Vector<BatchWriteOperation>&& value) { SetOperations(std::move(value)); return *this;}
 
     /**
      * <p>List of operations that are part of the batch.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>List of operations that are part of the batch.</p>
      */
-    inline BatchWriteRequest& AddOperations(BatchWriteOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
+    inline BatchWriteRequest& AddOperations(BatchWriteOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_directoryArn;

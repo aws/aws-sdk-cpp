@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Reference of the object for which child objects are being listed.</p>
      */
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
+    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
 
     /**
      * <p>Reference of the object for which child objects are being listed.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Reference of the object for which child objects are being listed.</p>
      */
-    inline BatchListObjectChildren& WithObjectReference(ObjectReference&& value) { SetObjectReference(value); return *this;}
+    inline BatchListObjectChildren& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline BatchListObjectChildren& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline BatchListObjectChildren& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>

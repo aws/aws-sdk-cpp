@@ -16,6 +16,7 @@
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elastictranscoder/model/AudioCodecOptions.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <code>flac</code>, <code>mp2</code>, <code>mp3</code>, <code>pcm</code>, and
      * <code>vorbis</code>.</p>
      */
-    inline void SetCodec(Aws::String&& value) { m_codecHasBeenSet = true; m_codec = value; }
+    inline void SetCodec(Aws::String&& value) { m_codecHasBeenSet = true; m_codec = std::move(value); }
 
     /**
      * <p>The audio codec for the output file. Valid values include <code>aac</code>,
@@ -84,7 +85,7 @@ namespace Model
      * <code>flac</code>, <code>mp2</code>, <code>mp3</code>, <code>pcm</code>, and
      * <code>vorbis</code>.</p>
      */
-    inline AudioParameters& WithCodec(Aws::String&& value) { SetCodec(value); return *this;}
+    inline AudioParameters& WithCodec(Aws::String&& value) { SetCodec(std::move(value)); return *this;}
 
     /**
      * <p>The audio codec for the output file. Valid values include <code>aac</code>,
@@ -118,7 +119,7 @@ namespace Model
      * </p> <p>If you specify <code>auto</code>, Elastic Transcoder automatically
      * detects the sample rate.</p>
      */
-    inline void SetSampleRate(Aws::String&& value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
+    inline void SetSampleRate(Aws::String&& value) { m_sampleRateHasBeenSet = true; m_sampleRate = std::move(value); }
 
     /**
      * <p>The sample rate of the audio stream in the output file, in Hertz. Valid
@@ -145,7 +146,7 @@ namespace Model
      * </p> <p>If you specify <code>auto</code>, Elastic Transcoder automatically
      * detects the sample rate.</p>
      */
-    inline AudioParameters& WithSampleRate(Aws::String&& value) { SetSampleRate(value); return *this;}
+    inline AudioParameters& WithSampleRate(Aws::String&& value) { SetSampleRate(std::move(value)); return *this;}
 
     /**
      * <p>The sample rate of the audio stream in the output file, in Hertz. Valid
@@ -172,7 +173,7 @@ namespace Model
      * <p>The bit rate of the audio stream in the output file, in kilobits/second.
      * Enter an integer between 64 and 320, inclusive.</p>
      */
-    inline void SetBitRate(Aws::String&& value) { m_bitRateHasBeenSet = true; m_bitRate = value; }
+    inline void SetBitRate(Aws::String&& value) { m_bitRateHasBeenSet = true; m_bitRate = std::move(value); }
 
     /**
      * <p>The bit rate of the audio stream in the output file, in kilobits/second.
@@ -190,7 +191,7 @@ namespace Model
      * <p>The bit rate of the audio stream in the output file, in kilobits/second.
      * Enter an integer between 64 and 320, inclusive.</p>
      */
-    inline AudioParameters& WithBitRate(Aws::String&& value) { SetBitRate(value); return *this;}
+    inline AudioParameters& WithBitRate(Aws::String&& value) { SetBitRate(std::move(value)); return *this;}
 
     /**
      * <p>The bit rate of the audio stream in the output file, in kilobits/second.
@@ -262,7 +263,7 @@ namespace Model
      * about how Elastic Transcoder organizes channels and tracks, see
      * <code>Audio:AudioPackingMode</code>.</p>
      */
-    inline void SetChannels(Aws::String&& value) { m_channelsHasBeenSet = true; m_channels = value; }
+    inline void SetChannels(Aws::String&& value) { m_channelsHasBeenSet = true; m_channels = std::move(value); }
 
     /**
      * <p>The number of audio channels in the output file. The following values are
@@ -328,7 +329,7 @@ namespace Model
      * about how Elastic Transcoder organizes channels and tracks, see
      * <code>Audio:AudioPackingMode</code>.</p>
      */
-    inline AudioParameters& WithChannels(Aws::String&& value) { SetChannels(value); return *this;}
+    inline AudioParameters& WithChannels(Aws::String&& value) { SetChannels(std::move(value)); return *this;}
 
     /**
      * <p>The number of audio channels in the output file. The following values are
@@ -563,7 +564,7 @@ namespace Model
      * one channel each, plus MOS tracks until there are eight tracks in all</p> </li>
      * </ul>
      */
-    inline void SetAudioPackingMode(Aws::String&& value) { m_audioPackingModeHasBeenSet = true; m_audioPackingMode = value; }
+    inline void SetAudioPackingMode(Aws::String&& value) { m_audioPackingModeHasBeenSet = true; m_audioPackingMode = std::move(value); }
 
     /**
      * <p>The method of organizing audio channels and tracks. Use
@@ -776,7 +777,7 @@ namespace Model
      * one channel each, plus MOS tracks until there are eight tracks in all</p> </li>
      * </ul>
      */
-    inline AudioParameters& WithAudioPackingMode(Aws::String&& value) { SetAudioPackingMode(value); return *this;}
+    inline AudioParameters& WithAudioPackingMode(Aws::String&& value) { SetAudioPackingMode(std::move(value)); return *this;}
 
     /**
      * <p>The method of organizing audio channels and tracks. Use
@@ -874,7 +875,7 @@ namespace Model
      * <code>HE-AACv2</code> </p> <p>If you specify <code>auto</code>, Elastic
      * Transcoder chooses a profile based on the bit rate of the output file.</p>
      */
-    inline void SetCodecOptions(AudioCodecOptions&& value) { m_codecOptionsHasBeenSet = true; m_codecOptions = value; }
+    inline void SetCodecOptions(AudioCodecOptions&& value) { m_codecOptionsHasBeenSet = true; m_codecOptions = std::move(value); }
 
     /**
      * <p>If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is the
@@ -892,7 +893,7 @@ namespace Model
      * <code>HE-AACv2</code> </p> <p>If you specify <code>auto</code>, Elastic
      * Transcoder chooses a profile based on the bit rate of the output file.</p>
      */
-    inline AudioParameters& WithCodecOptions(AudioCodecOptions&& value) { SetCodecOptions(value); return *this;}
+    inline AudioParameters& WithCodecOptions(AudioCodecOptions&& value) { SetCodecOptions(std::move(value)); return *this;}
 
   private:
     Aws::String m_codec;

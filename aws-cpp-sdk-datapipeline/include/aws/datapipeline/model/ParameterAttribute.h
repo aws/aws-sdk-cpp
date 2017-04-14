@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The field identifier.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The field identifier.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The field identifier.</p>
      */
-    inline ParameterAttribute& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline ParameterAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The field identifier.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The field value, expressed as a String.</p>
      */
-    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
+    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
 
     /**
      * <p>The field value, expressed as a String.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The field value, expressed as a String.</p>
      */
-    inline ParameterAttribute& WithStringValue(Aws::String&& value) { SetStringValue(value); return *this;}
+    inline ParameterAttribute& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
 
     /**
      * <p>The field value, expressed as a String.</p>

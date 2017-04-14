@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/VolumeStatusItem.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>A list of volumes.</p>
      */
-    inline void SetVolumeStatuses(Aws::Vector<VolumeStatusItem>&& value) { m_volumeStatuses = value; }
+    inline void SetVolumeStatuses(Aws::Vector<VolumeStatusItem>&& value) { m_volumeStatuses = std::move(value); }
 
     /**
      * <p>A list of volumes.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>A list of volumes.</p>
      */
-    inline DescribeVolumeStatusResponse& WithVolumeStatuses(Aws::Vector<VolumeStatusItem>&& value) { SetVolumeStatuses(value); return *this;}
+    inline DescribeVolumeStatusResponse& WithVolumeStatuses(Aws::Vector<VolumeStatusItem>&& value) { SetVolumeStatuses(std::move(value)); return *this;}
 
     /**
      * <p>A list of volumes.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>A list of volumes.</p>
      */
-    inline DescribeVolumeStatusResponse& AddVolumeStatuses(VolumeStatusItem&& value) { m_volumeStatuses.push_back(value); return *this; }
+    inline DescribeVolumeStatusResponse& AddVolumeStatuses(VolumeStatusItem&& value) { m_volumeStatuses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -98,7 +99,7 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -116,7 +117,7 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline DescribeVolumeStatusResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeVolumeStatusResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -131,13 +132,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeVolumeStatusResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeVolumeStatusResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeVolumeStatusResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<VolumeStatusItem> m_volumeStatuses;

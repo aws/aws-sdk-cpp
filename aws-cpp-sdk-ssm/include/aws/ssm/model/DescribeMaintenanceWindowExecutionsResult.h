@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/MaintenanceWindowExecution.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>Information about the Maintenance Windows execution.</p>
      */
-    inline void SetWindowExecutions(Aws::Vector<MaintenanceWindowExecution>&& value) { m_windowExecutions = value; }
+    inline void SetWindowExecutions(Aws::Vector<MaintenanceWindowExecution>&& value) { m_windowExecutions = std::move(value); }
 
     /**
      * <p>Information about the Maintenance Windows execution.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Information about the Maintenance Windows execution.</p>
      */
-    inline DescribeMaintenanceWindowExecutionsResult& WithWindowExecutions(Aws::Vector<MaintenanceWindowExecution>&& value) { SetWindowExecutions(value); return *this;}
+    inline DescribeMaintenanceWindowExecutionsResult& WithWindowExecutions(Aws::Vector<MaintenanceWindowExecution>&& value) { SetWindowExecutions(std::move(value)); return *this;}
 
     /**
      * <p>Information about the Maintenance Windows execution.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Information about the Maintenance Windows execution.</p>
      */
-    inline DescribeMaintenanceWindowExecutionsResult& AddWindowExecutions(MaintenanceWindowExecution&& value) { m_windowExecutions.push_back(value); return *this; }
+    inline DescribeMaintenanceWindowExecutionsResult& AddWindowExecutions(MaintenanceWindowExecution&& value) { m_windowExecutions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -92,7 +93,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -110,7 +111,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline DescribeMaintenanceWindowExecutionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeMaintenanceWindowExecutionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no

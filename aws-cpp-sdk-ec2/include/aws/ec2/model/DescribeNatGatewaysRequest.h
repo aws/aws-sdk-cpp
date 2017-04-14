@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>One or more NAT gateway IDs.</p>
      */
-    inline void SetNatGatewayIds(Aws::Vector<Aws::String>&& value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds = value; }
+    inline void SetNatGatewayIds(Aws::Vector<Aws::String>&& value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds = std::move(value); }
 
     /**
      * <p>One or more NAT gateway IDs.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>One or more NAT gateway IDs.</p>
      */
-    inline DescribeNatGatewaysRequest& WithNatGatewayIds(Aws::Vector<Aws::String>&& value) { SetNatGatewayIds(value); return *this;}
+    inline DescribeNatGatewaysRequest& WithNatGatewayIds(Aws::Vector<Aws::String>&& value) { SetNatGatewayIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more NAT gateway IDs.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>One or more NAT gateway IDs.</p>
      */
-    inline DescribeNatGatewaysRequest& AddNatGatewayIds(Aws::String&& value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds.push_back(value); return *this; }
+    inline DescribeNatGatewaysRequest& AddNatGatewayIds(Aws::String&& value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more NAT gateway IDs.</p>
@@ -114,7 +115,7 @@ namespace Model
      * resides.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the
      * NAT gateway resides.</p> </li> </ul>
      */
-    inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
@@ -136,7 +137,7 @@ namespace Model
      * resides.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the
      * NAT gateway resides.</p> </li> </ul>
      */
-    inline DescribeNatGatewaysRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(value); return *this;}
+    inline DescribeNatGatewaysRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
@@ -158,7 +159,7 @@ namespace Model
      * resides.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the
      * NAT gateway resides.</p> </li> </ul>
      */
-    inline DescribeNatGatewaysRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
+    inline DescribeNatGatewaysRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The maximum number of items to return for this request. The request returns a
@@ -197,7 +198,7 @@ namespace Model
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -212,7 +213,7 @@ namespace Model
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
-    inline DescribeNatGatewaysRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeNatGatewaysRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to retrieve the next page of results.</p>

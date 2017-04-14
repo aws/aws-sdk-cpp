@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * followed by a second "-" dash and from 8 to 32 additional lower-case letters or
      * digits.</p>
      */
-    inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = value; }
+    inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the organizational unit that you want details
@@ -99,7 +100,7 @@ namespace Model
      * followed by a second "-" dash and from 8 to 32 additional lower-case letters or
      * digits.</p>
      */
-    inline DescribeOrganizationalUnitRequest& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(value); return *this;}
+    inline DescribeOrganizationalUnitRequest& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the organizational unit that you want details

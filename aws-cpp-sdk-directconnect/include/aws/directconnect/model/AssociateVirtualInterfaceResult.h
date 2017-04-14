@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/model/RouteFilterPrefix.h>
 #include <aws/directconnect/model/BGPPeer.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The AWS account that will own the new virtual interface.</p>
      */
-    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccount = value; }
+    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccount = std::move(value); }
 
     /**
      * <p>The AWS account that will own the new virtual interface.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The AWS account that will own the new virtual interface.</p>
      */
-    inline AssociateVirtualInterfaceResult& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(value); return *this;}
+    inline AssociateVirtualInterfaceResult& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account that will own the new virtual interface.</p>
@@ -92,7 +93,7 @@ namespace Model
     inline void SetVirtualInterfaceId(const Aws::String& value) { m_virtualInterfaceId = value; }
 
     
-    inline void SetVirtualInterfaceId(Aws::String&& value) { m_virtualInterfaceId = value; }
+    inline void SetVirtualInterfaceId(Aws::String&& value) { m_virtualInterfaceId = std::move(value); }
 
     
     inline void SetVirtualInterfaceId(const char* value) { m_virtualInterfaceId.assign(value); }
@@ -101,7 +102,7 @@ namespace Model
     inline AssociateVirtualInterfaceResult& WithVirtualInterfaceId(const Aws::String& value) { SetVirtualInterfaceId(value); return *this;}
 
     
-    inline AssociateVirtualInterfaceResult& WithVirtualInterfaceId(Aws::String&& value) { SetVirtualInterfaceId(value); return *this;}
+    inline AssociateVirtualInterfaceResult& WithVirtualInterfaceId(Aws::String&& value) { SetVirtualInterfaceId(std::move(value)); return *this;}
 
     
     inline AssociateVirtualInterfaceResult& WithVirtualInterfaceId(const char* value) { SetVirtualInterfaceId(value); return *this;}
@@ -113,7 +114,7 @@ namespace Model
     inline void SetLocation(const Aws::String& value) { m_location = value; }
 
     
-    inline void SetLocation(Aws::String&& value) { m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
 
     
     inline void SetLocation(const char* value) { m_location.assign(value); }
@@ -122,7 +123,7 @@ namespace Model
     inline AssociateVirtualInterfaceResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     
-    inline AssociateVirtualInterfaceResult& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline AssociateVirtualInterfaceResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     
     inline AssociateVirtualInterfaceResult& WithLocation(const char* value) { SetLocation(value); return *this;}
@@ -134,7 +135,7 @@ namespace Model
     inline void SetConnectionId(const Aws::String& value) { m_connectionId = value; }
 
     
-    inline void SetConnectionId(Aws::String&& value) { m_connectionId = value; }
+    inline void SetConnectionId(Aws::String&& value) { m_connectionId = std::move(value); }
 
     
     inline void SetConnectionId(const char* value) { m_connectionId.assign(value); }
@@ -143,7 +144,7 @@ namespace Model
     inline AssociateVirtualInterfaceResult& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
 
     
-    inline AssociateVirtualInterfaceResult& WithConnectionId(Aws::String&& value) { SetConnectionId(value); return *this;}
+    inline AssociateVirtualInterfaceResult& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     
     inline AssociateVirtualInterfaceResult& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
@@ -155,7 +156,7 @@ namespace Model
     inline void SetVirtualInterfaceType(const Aws::String& value) { m_virtualInterfaceType = value; }
 
     
-    inline void SetVirtualInterfaceType(Aws::String&& value) { m_virtualInterfaceType = value; }
+    inline void SetVirtualInterfaceType(Aws::String&& value) { m_virtualInterfaceType = std::move(value); }
 
     
     inline void SetVirtualInterfaceType(const char* value) { m_virtualInterfaceType.assign(value); }
@@ -164,7 +165,7 @@ namespace Model
     inline AssociateVirtualInterfaceResult& WithVirtualInterfaceType(const Aws::String& value) { SetVirtualInterfaceType(value); return *this;}
 
     
-    inline AssociateVirtualInterfaceResult& WithVirtualInterfaceType(Aws::String&& value) { SetVirtualInterfaceType(value); return *this;}
+    inline AssociateVirtualInterfaceResult& WithVirtualInterfaceType(Aws::String&& value) { SetVirtualInterfaceType(std::move(value)); return *this;}
 
     
     inline AssociateVirtualInterfaceResult& WithVirtualInterfaceType(const char* value) { SetVirtualInterfaceType(value); return *this;}
@@ -176,7 +177,7 @@ namespace Model
     inline void SetVirtualInterfaceName(const Aws::String& value) { m_virtualInterfaceName = value; }
 
     
-    inline void SetVirtualInterfaceName(Aws::String&& value) { m_virtualInterfaceName = value; }
+    inline void SetVirtualInterfaceName(Aws::String&& value) { m_virtualInterfaceName = std::move(value); }
 
     
     inline void SetVirtualInterfaceName(const char* value) { m_virtualInterfaceName.assign(value); }
@@ -185,7 +186,7 @@ namespace Model
     inline AssociateVirtualInterfaceResult& WithVirtualInterfaceName(const Aws::String& value) { SetVirtualInterfaceName(value); return *this;}
 
     
-    inline AssociateVirtualInterfaceResult& WithVirtualInterfaceName(Aws::String&& value) { SetVirtualInterfaceName(value); return *this;}
+    inline AssociateVirtualInterfaceResult& WithVirtualInterfaceName(Aws::String&& value) { SetVirtualInterfaceName(std::move(value)); return *this;}
 
     
     inline AssociateVirtualInterfaceResult& WithVirtualInterfaceName(const char* value) { SetVirtualInterfaceName(value); return *this;}
@@ -215,7 +216,7 @@ namespace Model
     inline void SetAuthKey(const Aws::String& value) { m_authKey = value; }
 
     
-    inline void SetAuthKey(Aws::String&& value) { m_authKey = value; }
+    inline void SetAuthKey(Aws::String&& value) { m_authKey = std::move(value); }
 
     
     inline void SetAuthKey(const char* value) { m_authKey.assign(value); }
@@ -224,7 +225,7 @@ namespace Model
     inline AssociateVirtualInterfaceResult& WithAuthKey(const Aws::String& value) { SetAuthKey(value); return *this;}
 
     
-    inline AssociateVirtualInterfaceResult& WithAuthKey(Aws::String&& value) { SetAuthKey(value); return *this;}
+    inline AssociateVirtualInterfaceResult& WithAuthKey(Aws::String&& value) { SetAuthKey(std::move(value)); return *this;}
 
     
     inline AssociateVirtualInterfaceResult& WithAuthKey(const char* value) { SetAuthKey(value); return *this;}
@@ -236,7 +237,7 @@ namespace Model
     inline void SetAmazonAddress(const Aws::String& value) { m_amazonAddress = value; }
 
     
-    inline void SetAmazonAddress(Aws::String&& value) { m_amazonAddress = value; }
+    inline void SetAmazonAddress(Aws::String&& value) { m_amazonAddress = std::move(value); }
 
     
     inline void SetAmazonAddress(const char* value) { m_amazonAddress.assign(value); }
@@ -245,7 +246,7 @@ namespace Model
     inline AssociateVirtualInterfaceResult& WithAmazonAddress(const Aws::String& value) { SetAmazonAddress(value); return *this;}
 
     
-    inline AssociateVirtualInterfaceResult& WithAmazonAddress(Aws::String&& value) { SetAmazonAddress(value); return *this;}
+    inline AssociateVirtualInterfaceResult& WithAmazonAddress(Aws::String&& value) { SetAmazonAddress(std::move(value)); return *this;}
 
     
     inline AssociateVirtualInterfaceResult& WithAmazonAddress(const char* value) { SetAmazonAddress(value); return *this;}
@@ -257,7 +258,7 @@ namespace Model
     inline void SetCustomerAddress(const Aws::String& value) { m_customerAddress = value; }
 
     
-    inline void SetCustomerAddress(Aws::String&& value) { m_customerAddress = value; }
+    inline void SetCustomerAddress(Aws::String&& value) { m_customerAddress = std::move(value); }
 
     
     inline void SetCustomerAddress(const char* value) { m_customerAddress.assign(value); }
@@ -266,7 +267,7 @@ namespace Model
     inline AssociateVirtualInterfaceResult& WithCustomerAddress(const Aws::String& value) { SetCustomerAddress(value); return *this;}
 
     
-    inline AssociateVirtualInterfaceResult& WithCustomerAddress(Aws::String&& value) { SetCustomerAddress(value); return *this;}
+    inline AssociateVirtualInterfaceResult& WithCustomerAddress(Aws::String&& value) { SetCustomerAddress(std::move(value)); return *this;}
 
     
     inline AssociateVirtualInterfaceResult& WithCustomerAddress(const char* value) { SetCustomerAddress(value); return *this;}
@@ -278,13 +279,13 @@ namespace Model
     inline void SetAddressFamily(const AddressFamily& value) { m_addressFamily = value; }
 
     
-    inline void SetAddressFamily(AddressFamily&& value) { m_addressFamily = value; }
+    inline void SetAddressFamily(AddressFamily&& value) { m_addressFamily = std::move(value); }
 
     
     inline AssociateVirtualInterfaceResult& WithAddressFamily(const AddressFamily& value) { SetAddressFamily(value); return *this;}
 
     
-    inline AssociateVirtualInterfaceResult& WithAddressFamily(AddressFamily&& value) { SetAddressFamily(value); return *this;}
+    inline AssociateVirtualInterfaceResult& WithAddressFamily(AddressFamily&& value) { SetAddressFamily(std::move(value)); return *this;}
 
     
     inline const VirtualInterfaceState& GetVirtualInterfaceState() const{ return m_virtualInterfaceState; }
@@ -293,13 +294,13 @@ namespace Model
     inline void SetVirtualInterfaceState(const VirtualInterfaceState& value) { m_virtualInterfaceState = value; }
 
     
-    inline void SetVirtualInterfaceState(VirtualInterfaceState&& value) { m_virtualInterfaceState = value; }
+    inline void SetVirtualInterfaceState(VirtualInterfaceState&& value) { m_virtualInterfaceState = std::move(value); }
 
     
     inline AssociateVirtualInterfaceResult& WithVirtualInterfaceState(const VirtualInterfaceState& value) { SetVirtualInterfaceState(value); return *this;}
 
     
-    inline AssociateVirtualInterfaceResult& WithVirtualInterfaceState(VirtualInterfaceState&& value) { SetVirtualInterfaceState(value); return *this;}
+    inline AssociateVirtualInterfaceResult& WithVirtualInterfaceState(VirtualInterfaceState&& value) { SetVirtualInterfaceState(std::move(value)); return *this;}
 
     /**
      * <p>Information for generating the customer router configuration.</p>
@@ -314,7 +315,7 @@ namespace Model
     /**
      * <p>Information for generating the customer router configuration.</p>
      */
-    inline void SetCustomerRouterConfig(Aws::String&& value) { m_customerRouterConfig = value; }
+    inline void SetCustomerRouterConfig(Aws::String&& value) { m_customerRouterConfig = std::move(value); }
 
     /**
      * <p>Information for generating the customer router configuration.</p>
@@ -329,7 +330,7 @@ namespace Model
     /**
      * <p>Information for generating the customer router configuration.</p>
      */
-    inline AssociateVirtualInterfaceResult& WithCustomerRouterConfig(Aws::String&& value) { SetCustomerRouterConfig(value); return *this;}
+    inline AssociateVirtualInterfaceResult& WithCustomerRouterConfig(Aws::String&& value) { SetCustomerRouterConfig(std::move(value)); return *this;}
 
     /**
      * <p>Information for generating the customer router configuration.</p>
@@ -343,7 +344,7 @@ namespace Model
     inline void SetVirtualGatewayId(const Aws::String& value) { m_virtualGatewayId = value; }
 
     
-    inline void SetVirtualGatewayId(Aws::String&& value) { m_virtualGatewayId = value; }
+    inline void SetVirtualGatewayId(Aws::String&& value) { m_virtualGatewayId = std::move(value); }
 
     
     inline void SetVirtualGatewayId(const char* value) { m_virtualGatewayId.assign(value); }
@@ -352,7 +353,7 @@ namespace Model
     inline AssociateVirtualInterfaceResult& WithVirtualGatewayId(const Aws::String& value) { SetVirtualGatewayId(value); return *this;}
 
     
-    inline AssociateVirtualInterfaceResult& WithVirtualGatewayId(Aws::String&& value) { SetVirtualGatewayId(value); return *this;}
+    inline AssociateVirtualInterfaceResult& WithVirtualGatewayId(Aws::String&& value) { SetVirtualGatewayId(std::move(value)); return *this;}
 
     
     inline AssociateVirtualInterfaceResult& WithVirtualGatewayId(const char* value) { SetVirtualGatewayId(value); return *this;}
@@ -364,19 +365,19 @@ namespace Model
     inline void SetRouteFilterPrefixes(const Aws::Vector<RouteFilterPrefix>& value) { m_routeFilterPrefixes = value; }
 
     
-    inline void SetRouteFilterPrefixes(Aws::Vector<RouteFilterPrefix>&& value) { m_routeFilterPrefixes = value; }
+    inline void SetRouteFilterPrefixes(Aws::Vector<RouteFilterPrefix>&& value) { m_routeFilterPrefixes = std::move(value); }
 
     
     inline AssociateVirtualInterfaceResult& WithRouteFilterPrefixes(const Aws::Vector<RouteFilterPrefix>& value) { SetRouteFilterPrefixes(value); return *this;}
 
     
-    inline AssociateVirtualInterfaceResult& WithRouteFilterPrefixes(Aws::Vector<RouteFilterPrefix>&& value) { SetRouteFilterPrefixes(value); return *this;}
+    inline AssociateVirtualInterfaceResult& WithRouteFilterPrefixes(Aws::Vector<RouteFilterPrefix>&& value) { SetRouteFilterPrefixes(std::move(value)); return *this;}
 
     
     inline AssociateVirtualInterfaceResult& AddRouteFilterPrefixes(const RouteFilterPrefix& value) { m_routeFilterPrefixes.push_back(value); return *this; }
 
     
-    inline AssociateVirtualInterfaceResult& AddRouteFilterPrefixes(RouteFilterPrefix&& value) { m_routeFilterPrefixes.push_back(value); return *this; }
+    inline AssociateVirtualInterfaceResult& AddRouteFilterPrefixes(RouteFilterPrefix&& value) { m_routeFilterPrefixes.push_back(std::move(value)); return *this; }
 
     
     inline const Aws::Vector<BGPPeer>& GetBgpPeers() const{ return m_bgpPeers; }
@@ -385,19 +386,19 @@ namespace Model
     inline void SetBgpPeers(const Aws::Vector<BGPPeer>& value) { m_bgpPeers = value; }
 
     
-    inline void SetBgpPeers(Aws::Vector<BGPPeer>&& value) { m_bgpPeers = value; }
+    inline void SetBgpPeers(Aws::Vector<BGPPeer>&& value) { m_bgpPeers = std::move(value); }
 
     
     inline AssociateVirtualInterfaceResult& WithBgpPeers(const Aws::Vector<BGPPeer>& value) { SetBgpPeers(value); return *this;}
 
     
-    inline AssociateVirtualInterfaceResult& WithBgpPeers(Aws::Vector<BGPPeer>&& value) { SetBgpPeers(value); return *this;}
+    inline AssociateVirtualInterfaceResult& WithBgpPeers(Aws::Vector<BGPPeer>&& value) { SetBgpPeers(std::move(value)); return *this;}
 
     
     inline AssociateVirtualInterfaceResult& AddBgpPeers(const BGPPeer& value) { m_bgpPeers.push_back(value); return *this; }
 
     
-    inline AssociateVirtualInterfaceResult& AddBgpPeers(BGPPeer&& value) { m_bgpPeers.push_back(value); return *this; }
+    inline AssociateVirtualInterfaceResult& AddBgpPeers(BGPPeer&& value) { m_bgpPeers.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_ownerAccount;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>The data blob, which is base64-encoded when the blob is serialized. The
      * maximum size of the data blob, before base64-encoding, is 1,000 KB.</p>
      */
-    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = value; }
+    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
      * <p>The data blob, which is base64-encoded when the blob is serialized. The
@@ -71,7 +72,7 @@ namespace Model
      * <p>The data blob, which is base64-encoded when the blob is serialized. The
      * maximum size of the data blob, before base64-encoding, is 1,000 KB.</p>
      */
-    inline Record& WithData(Aws::Utils::ByteBuffer&& value) { SetData(value); return *this;}
+    inline Record& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
 
   private:
     Aws::Utils::ByteBuffer m_data;

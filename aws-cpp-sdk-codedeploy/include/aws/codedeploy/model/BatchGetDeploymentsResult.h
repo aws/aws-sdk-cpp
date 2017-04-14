@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/DeploymentInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Information about the deployments.</p>
      */
-    inline void SetDeploymentsInfo(Aws::Vector<DeploymentInfo>&& value) { m_deploymentsInfo = value; }
+    inline void SetDeploymentsInfo(Aws::Vector<DeploymentInfo>&& value) { m_deploymentsInfo = std::move(value); }
 
     /**
      * <p>Information about the deployments.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Information about the deployments.</p>
      */
-    inline BatchGetDeploymentsResult& WithDeploymentsInfo(Aws::Vector<DeploymentInfo>&& value) { SetDeploymentsInfo(value); return *this;}
+    inline BatchGetDeploymentsResult& WithDeploymentsInfo(Aws::Vector<DeploymentInfo>&& value) { SetDeploymentsInfo(std::move(value)); return *this;}
 
     /**
      * <p>Information about the deployments.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>Information about the deployments.</p>
      */
-    inline BatchGetDeploymentsResult& AddDeploymentsInfo(DeploymentInfo&& value) { m_deploymentsInfo.push_back(value); return *this; }
+    inline BatchGetDeploymentsResult& AddDeploymentsInfo(DeploymentInfo&& value) { m_deploymentsInfo.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<DeploymentInfo> m_deploymentsInfo;

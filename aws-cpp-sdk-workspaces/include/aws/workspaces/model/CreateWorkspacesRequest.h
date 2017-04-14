@@ -17,6 +17,7 @@
 #include <aws/workspaces/WorkSpacesRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/model/WorkspaceRequest.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>An array of structures that specify the WorkSpaces to create.</p>
      */
-    inline void SetWorkspaces(Aws::Vector<WorkspaceRequest>&& value) { m_workspacesHasBeenSet = true; m_workspaces = value; }
+    inline void SetWorkspaces(Aws::Vector<WorkspaceRequest>&& value) { m_workspacesHasBeenSet = true; m_workspaces = std::move(value); }
 
     /**
      * <p>An array of structures that specify the WorkSpaces to create.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>An array of structures that specify the WorkSpaces to create.</p>
      */
-    inline CreateWorkspacesRequest& WithWorkspaces(Aws::Vector<WorkspaceRequest>&& value) { SetWorkspaces(value); return *this;}
+    inline CreateWorkspacesRequest& WithWorkspaces(Aws::Vector<WorkspaceRequest>&& value) { SetWorkspaces(std::move(value)); return *this;}
 
     /**
      * <p>An array of structures that specify the WorkSpaces to create.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>An array of structures that specify the WorkSpaces to create.</p>
      */
-    inline CreateWorkspacesRequest& AddWorkspaces(WorkspaceRequest&& value) { m_workspacesHasBeenSet = true; m_workspaces.push_back(value); return *this; }
+    inline CreateWorkspacesRequest& AddWorkspaces(WorkspaceRequest&& value) { m_workspacesHasBeenSet = true; m_workspaces.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<WorkspaceRequest> m_workspaces;

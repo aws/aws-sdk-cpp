@@ -16,6 +16,7 @@
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/glacier/GlacierRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * with the credentials used to sign the request. If you use an account ID, don't
      * include any hyphens ('-') in the ID. </p>
      */
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
@@ -85,7 +86,7 @@ namespace Model
      * with the credentials used to sign the request. If you use an account ID, don't
      * include any hyphens ('-') in the ID. </p>
      */
-    inline ListProvisionedCapacityRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline ListProvisionedCapacityRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that

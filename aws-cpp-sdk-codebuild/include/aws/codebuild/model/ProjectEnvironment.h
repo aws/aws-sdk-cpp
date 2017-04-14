@@ -19,6 +19,7 @@
 #include <aws/codebuild/model/ComputeType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codebuild/model/EnvironmentVariable.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The type of build environment to use for related builds.</p>
      */
-    inline void SetType(EnvironmentType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(EnvironmentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of build environment to use for related builds.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The type of build environment to use for related builds.</p>
      */
-    inline ProjectEnvironment& WithType(EnvironmentType&& value) { SetType(value); return *this;}
+    inline ProjectEnvironment& WithType(EnvironmentType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Docker image to use for this build project.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The ID of the Docker image to use for this build project.</p>
      */
-    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = value; }
+    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
      * <p>The ID of the Docker image to use for this build project.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The ID of the Docker image to use for this build project.</p>
      */
-    inline ProjectEnvironment& WithImage(Aws::String&& value) { SetImage(value); return *this;}
+    inline ProjectEnvironment& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Docker image to use for this build project.</p>
@@ -136,7 +137,7 @@ namespace Model
      * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB
      * memory and 8 vCPUs for builds.</p> </li> </ul>
      */
-    inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
+    inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
 
     /**
      * <p>Information about the compute resources the build project will use. Available
@@ -156,7 +157,7 @@ namespace Model
      * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB
      * memory and 8 vCPUs for builds.</p> </li> </ul>
      */
-    inline ProjectEnvironment& WithComputeType(ComputeType&& value) { SetComputeType(value); return *this;}
+    inline ProjectEnvironment& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
 
     /**
      * <p>A set of environment variables to make available to builds for this build
@@ -174,7 +175,7 @@ namespace Model
      * <p>A set of environment variables to make available to builds for this build
      * project.</p>
      */
-    inline void SetEnvironmentVariables(Aws::Vector<EnvironmentVariable>&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = value; }
+    inline void SetEnvironmentVariables(Aws::Vector<EnvironmentVariable>&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = std::move(value); }
 
     /**
      * <p>A set of environment variables to make available to builds for this build
@@ -186,7 +187,7 @@ namespace Model
      * <p>A set of environment variables to make available to builds for this build
      * project.</p>
      */
-    inline ProjectEnvironment& WithEnvironmentVariables(Aws::Vector<EnvironmentVariable>&& value) { SetEnvironmentVariables(value); return *this;}
+    inline ProjectEnvironment& WithEnvironmentVariables(Aws::Vector<EnvironmentVariable>&& value) { SetEnvironmentVariables(std::move(value)); return *this;}
 
     /**
      * <p>A set of environment variables to make available to builds for this build
@@ -198,7 +199,7 @@ namespace Model
      * <p>A set of environment variables to make available to builds for this build
      * project.</p>
      */
-    inline ProjectEnvironment& AddEnvironmentVariables(EnvironmentVariable&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.push_back(value); return *this; }
+    inline ProjectEnvironment& AddEnvironmentVariables(EnvironmentVariable&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.push_back(std::move(value)); return *this; }
 
   private:
     EnvironmentType m_type;

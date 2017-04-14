@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that grants access.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The ARN of the IAM role that grants access.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that grants access.</p>
      */
-    inline SqsAction& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline SqsAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM role that grants access.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The URL of the Amazon SQS queue.</p>
      */
-    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
+    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::move(value); }
 
     /**
      * <p>The URL of the Amazon SQS queue.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The URL of the Amazon SQS queue.</p>
      */
-    inline SqsAction& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
+    inline SqsAction& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL of the Amazon SQS queue.</p>

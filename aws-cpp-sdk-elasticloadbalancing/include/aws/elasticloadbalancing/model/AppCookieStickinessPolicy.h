@@ -16,6 +16,7 @@
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The mnemonic name for the policy being created. The name must be unique
      * within a set of policies for this load balancer.</p>
      */
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
      * <p>The mnemonic name for the policy being created. The name must be unique
@@ -81,7 +82,7 @@ namespace Model
      * <p>The mnemonic name for the policy being created. The name must be unique
      * within a set of policies for this load balancer.</p>
      */
-    inline AppCookieStickinessPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
+    inline AppCookieStickinessPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
      * <p>The mnemonic name for the policy being created. The name must be unique
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The name of the application cookie used for stickiness.</p>
      */
-    inline void SetCookieName(Aws::String&& value) { m_cookieNameHasBeenSet = true; m_cookieName = value; }
+    inline void SetCookieName(Aws::String&& value) { m_cookieNameHasBeenSet = true; m_cookieName = std::move(value); }
 
     /**
      * <p>The name of the application cookie used for stickiness.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>The name of the application cookie used for stickiness.</p>
      */
-    inline AppCookieStickinessPolicy& WithCookieName(Aws::String&& value) { SetCookieName(value); return *this;}
+    inline AppCookieStickinessPolicy& WithCookieName(Aws::String&& value) { SetCookieName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the application cookie used for stickiness.</p>

@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ExportTask.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Information about the instance export task.</p>
      */
-    inline void SetExportTask(ExportTask&& value) { m_exportTask = value; }
+    inline void SetExportTask(ExportTask&& value) { m_exportTask = std::move(value); }
 
     /**
      * <p>Information about the instance export task.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Information about the instance export task.</p>
      */
-    inline CreateInstanceExportTaskResponse& WithExportTask(ExportTask&& value) { SetExportTask(value); return *this;}
+    inline CreateInstanceExportTaskResponse& WithExportTask(ExportTask&& value) { SetExportTask(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -78,13 +79,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CreateInstanceExportTaskResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CreateInstanceExportTaskResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CreateInstanceExportTaskResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     ExportTask m_exportTask;

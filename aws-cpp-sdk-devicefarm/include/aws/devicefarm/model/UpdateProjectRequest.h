@@ -16,6 +16,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/DeviceFarmRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the project whose name you wish to
      * update.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the project whose name you wish to
@@ -73,7 +74,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the project whose name you wish to
      * update.</p>
      */
-    inline UpdateProjectRequest& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline UpdateProjectRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the project whose name you wish to
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>A string representing the new name of the project that you are updating.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>A string representing the new name of the project that you are updating.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>A string representing the new name of the project that you are updating.</p>
      */
-    inline UpdateProjectRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateProjectRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A string representing the new name of the project that you are updating.</p>

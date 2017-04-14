@@ -16,6 +16,7 @@
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or
      * SSL.</p>
      */
-    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or
@@ -84,7 +85,7 @@ namespace Model
      * <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or
      * SSL.</p>
      */
-    inline Listener& WithProtocol(Aws::String&& value) { SetProtocol(value); return *this;}
+    inline Listener& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
      * <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or
@@ -150,7 +151,7 @@ namespace Model
      * <code>InstanceProtocol</code> is HTTP or TCP, the listener's
      * <code>InstanceProtocol</code> must be HTTP or TCP.</p>
      */
-    inline void SetInstanceProtocol(Aws::String&& value) { m_instanceProtocolHasBeenSet = true; m_instanceProtocol = value; }
+    inline void SetInstanceProtocol(Aws::String&& value) { m_instanceProtocolHasBeenSet = true; m_instanceProtocol = std::move(value); }
 
     /**
      * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
@@ -189,7 +190,7 @@ namespace Model
      * <code>InstanceProtocol</code> is HTTP or TCP, the listener's
      * <code>InstanceProtocol</code> must be HTTP or TCP.</p>
      */
-    inline Listener& WithInstanceProtocol(Aws::String&& value) { SetInstanceProtocol(value); return *this;}
+    inline Listener& WithInstanceProtocol(Aws::String&& value) { SetInstanceProtocol(std::move(value)); return *this;}
 
     /**
      * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
@@ -232,7 +233,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the server certificate.</p>
      */
-    inline void SetSSLCertificateId(Aws::String&& value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId = value; }
+    inline void SetSSLCertificateId(Aws::String&& value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the server certificate.</p>
@@ -247,7 +248,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the server certificate.</p>
      */
-    inline Listener& WithSSLCertificateId(Aws::String&& value) { SetSSLCertificateId(value); return *this;}
+    inline Listener& WithSSLCertificateId(Aws::String&& value) { SetSSLCertificateId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the server certificate.</p>

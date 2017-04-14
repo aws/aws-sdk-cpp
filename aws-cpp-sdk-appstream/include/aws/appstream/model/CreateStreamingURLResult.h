@@ -16,6 +16,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The URL to start the AppStream 2.0 streaming session.</p>
      */
-    inline void SetStreamingURL(Aws::String&& value) { m_streamingURL = value; }
+    inline void SetStreamingURL(Aws::String&& value) { m_streamingURL = std::move(value); }
 
     /**
      * <p>The URL to start the AppStream 2.0 streaming session.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The URL to start the AppStream 2.0 streaming session.</p>
      */
-    inline CreateStreamingURLResult& WithStreamingURL(Aws::String&& value) { SetStreamingURL(value); return *this;}
+    inline CreateStreamingURLResult& WithStreamingURL(Aws::String&& value) { SetStreamingURL(std::move(value)); return *this;}
 
     /**
      * <p>The URL to start the AppStream 2.0 streaming session.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>Elapsed seconds after the Unix epoch, at which time this URL expires.</p>
      */
-    inline void SetExpires(Aws::Utils::DateTime&& value) { m_expires = value; }
+    inline void SetExpires(Aws::Utils::DateTime&& value) { m_expires = std::move(value); }
 
     /**
      * <p>Elapsed seconds after the Unix epoch, at which time this URL expires.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>Elapsed seconds after the Unix epoch, at which time this URL expires.</p>
      */
-    inline CreateStreamingURLResult& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(value); return *this;}
+    inline CreateStreamingURLResult& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(std::move(value)); return *this;}
 
   private:
     Aws::String m_streamingURL;

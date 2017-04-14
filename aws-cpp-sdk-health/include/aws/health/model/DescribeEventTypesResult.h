@@ -16,6 +16,7 @@
 #include <aws/health/Health_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example,
      * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
      */
-    inline void SetEventTypes(Aws::Vector<Aws::String>&& value) { m_eventTypes = value; }
+    inline void SetEventTypes(Aws::Vector<Aws::String>&& value) { m_eventTypes = std::move(value); }
 
     /**
      * <p>A list of event types that match the filter criteria. Event types have a
@@ -88,7 +89,7 @@ namespace Model
      * (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example,
      * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
      */
-    inline DescribeEventTypesResult& WithEventTypes(Aws::Vector<Aws::String>&& value) { SetEventTypes(value); return *this;}
+    inline DescribeEventTypesResult& WithEventTypes(Aws::Vector<Aws::String>&& value) { SetEventTypes(std::move(value)); return *this;}
 
     /**
      * <p>A list of event types that match the filter criteria. Event types have a
@@ -108,7 +109,7 @@ namespace Model
      * (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example,
      * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
      */
-    inline DescribeEventTypesResult& AddEventTypes(Aws::String&& value) { m_eventTypes.push_back(value); return *this; }
+    inline DescribeEventTypesResult& AddEventTypes(Aws::String&& value) { m_eventTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of event types that match the filter criteria. Event types have a
@@ -145,7 +146,7 @@ namespace Model
      * include the returned token. When all results have been returned, the response
      * does not contain a pagination token value.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the results of a search are large, only a portion of the results are
@@ -172,7 +173,7 @@ namespace Model
      * include the returned token. When all results have been returned, the response
      * does not contain a pagination token value.</p>
      */
-    inline DescribeEventTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeEventTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the results of a search are large, only a portion of the results are

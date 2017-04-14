@@ -16,6 +16,7 @@
 #include <aws/sts/STS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The string that identifies the federated user associated with the
      * credentials, similar to the unique ID of an IAM user.</p>
      */
-    inline void SetFederatedUserId(Aws::String&& value) { m_federatedUserIdHasBeenSet = true; m_federatedUserId = value; }
+    inline void SetFederatedUserId(Aws::String&& value) { m_federatedUserIdHasBeenSet = true; m_federatedUserId = std::move(value); }
 
     /**
      * <p>The string that identifies the federated user associated with the
@@ -81,7 +82,7 @@ namespace Model
      * <p>The string that identifies the federated user associated with the
      * credentials, similar to the unique ID of an IAM user.</p>
      */
-    inline FederatedUser& WithFederatedUserId(Aws::String&& value) { SetFederatedUserId(value); return *this;}
+    inline FederatedUser& WithFederatedUserId(Aws::String&& value) { SetFederatedUserId(std::move(value)); return *this;}
 
     /**
      * <p>The string that identifies the federated user associated with the
@@ -114,7 +115,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in <i>Using IAM</i>. </p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The ARN that specifies the federated user that is associated with the
@@ -141,7 +142,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in <i>Using IAM</i>. </p>
      */
-    inline FederatedUser& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline FederatedUser& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN that specifies the federated user that is associated with the

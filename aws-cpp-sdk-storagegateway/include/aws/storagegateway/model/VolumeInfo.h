@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * </p> <p> Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and
      * hyphens (-).</p>
      */
-    inline void SetVolumeARN(Aws::String&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
+    inline void SetVolumeARN(Aws::String&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the storage volume. For example, the
@@ -95,7 +96,7 @@ namespace Model
      * </p> <p> Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and
      * hyphens (-).</p>
      */
-    inline VolumeInfo& WithVolumeARN(Aws::String&& value) { SetVolumeARN(value); return *this;}
+    inline VolumeInfo& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the storage volume. For example, the
@@ -128,7 +129,7 @@ namespace Model
      * operations.</p> <p> Valid Values: 50 to 500 lowercase letters, numbers, periods
      * (.), and hyphens (-).</p>
      */
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     /**
      * <p>The unique identifier assigned to the volume. This ID becomes part of the
@@ -152,7 +153,7 @@ namespace Model
      * operations.</p> <p> Valid Values: 50 to 500 lowercase letters, numbers, periods
      * (.), and hyphens (-).</p>
      */
-    inline VolumeInfo& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
+    inline VolumeInfo& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier assigned to the volume. This ID becomes part of the
@@ -169,7 +170,7 @@ namespace Model
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
@@ -178,7 +179,7 @@ namespace Model
     inline VolumeInfo& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     
-    inline VolumeInfo& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline VolumeInfo& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     
     inline VolumeInfo& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
@@ -205,7 +206,7 @@ namespace Model
      * for other operations.</p> <p> Valid Values: 50 to 500 lowercase letters,
      * numbers, periods (.), and hyphens (-).</p>
      */
-    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
+    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
 
     /**
      * <p>The unique identifier assigned to your gateway during activation. This ID
@@ -229,7 +230,7 @@ namespace Model
      * for other operations.</p> <p> Valid Values: 50 to 500 lowercase letters,
      * numbers, periods (.), and hyphens (-).</p>
      */
-    inline VolumeInfo& WithGatewayId(Aws::String&& value) { SetGatewayId(value); return *this;}
+    inline VolumeInfo& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier assigned to your gateway during activation. This ID
@@ -246,7 +247,7 @@ namespace Model
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     
-    inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
+    inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     
     inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
@@ -255,7 +256,7 @@ namespace Model
     inline VolumeInfo& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
 
     
-    inline VolumeInfo& WithVolumeType(Aws::String&& value) { SetVolumeType(value); return *this;}
+    inline VolumeInfo& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
 
     
     inline VolumeInfo& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}

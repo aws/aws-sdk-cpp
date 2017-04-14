@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The ID of the <a>RestApi</a> under which the model exists.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The ID of the <a>RestApi</a> under which the model exists.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ID of the <a>RestApi</a> under which the model exists.</p>
      */
-    inline GetModelTemplateRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline GetModelTemplateRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the <a>RestApi</a> under which the model exists.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The name of the model for which to generate a template.</p>
      */
-    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
+    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
 
     /**
      * <p>The name of the model for which to generate a template.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The name of the model for which to generate a template.</p>
      */
-    inline GetModelTemplateRequest& WithModelName(Aws::String&& value) { SetModelName(value); return *this;}
+    inline GetModelTemplateRequest& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the model for which to generate a template.</p>

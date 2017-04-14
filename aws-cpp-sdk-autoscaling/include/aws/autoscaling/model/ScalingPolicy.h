@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/StepAdjustment.h>
 #include <aws/autoscaling/model/Alarm.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group associated with this scaling policy.</p>
      */
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
 
     /**
      * <p>The name of the Auto Scaling group associated with this scaling policy.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group associated with this scaling policy.</p>
      */
-    inline ScalingPolicy& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
+    inline ScalingPolicy& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Auto Scaling group associated with this scaling policy.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The name of the scaling policy.</p>
      */
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
      * <p>The name of the scaling policy.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The name of the scaling policy.</p>
      */
-    inline ScalingPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
+    inline ScalingPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the scaling policy.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p>
      */
-    inline void SetPolicyARN(Aws::String&& value) { m_policyARNHasBeenSet = true; m_policyARN = value; }
+    inline void SetPolicyARN(Aws::String&& value) { m_policyARNHasBeenSet = true; m_policyARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p>
      */
-    inline ScalingPolicy& WithPolicyARN(Aws::String&& value) { SetPolicyARN(value); return *this;}
+    inline ScalingPolicy& WithPolicyARN(Aws::String&& value) { SetPolicyARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p>
@@ -170,7 +171,7 @@ namespace Model
      * <p>The policy type. Valid values are <code>SimpleScaling</code> and
      * <code>StepScaling</code>.</p>
      */
-    inline void SetPolicyType(Aws::String&& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
+    inline void SetPolicyType(Aws::String&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
      * <p>The policy type. Valid values are <code>SimpleScaling</code> and
@@ -188,7 +189,7 @@ namespace Model
      * <p>The policy type. Valid values are <code>SimpleScaling</code> and
      * <code>StepScaling</code>.</p>
      */
-    inline ScalingPolicy& WithPolicyType(Aws::String&& value) { SetPolicyType(value); return *this;}
+    inline ScalingPolicy& WithPolicyType(Aws::String&& value) { SetPolicyType(std::move(value)); return *this;}
 
     /**
      * <p>The policy type. Valid values are <code>SimpleScaling</code> and
@@ -215,7 +216,7 @@ namespace Model
      * interpreted. Valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
-    inline void SetAdjustmentType(Aws::String&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
+    inline void SetAdjustmentType(Aws::String&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = std::move(value); }
 
     /**
      * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
@@ -236,7 +237,7 @@ namespace Model
      * interpreted. Valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
-    inline ScalingPolicy& WithAdjustmentType(Aws::String&& value) { SetAdjustmentType(value); return *this;}
+    inline ScalingPolicy& WithAdjustmentType(Aws::String&& value) { SetAdjustmentType(std::move(value)); return *this;}
 
     /**
      * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
@@ -345,7 +346,7 @@ namespace Model
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
      * breach.</p>
      */
-    inline void SetStepAdjustments(Aws::Vector<StepAdjustment>&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments = value; }
+    inline void SetStepAdjustments(Aws::Vector<StepAdjustment>&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments = std::move(value); }
 
     /**
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
@@ -357,7 +358,7 @@ namespace Model
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
      * breach.</p>
      */
-    inline ScalingPolicy& WithStepAdjustments(Aws::Vector<StepAdjustment>&& value) { SetStepAdjustments(value); return *this;}
+    inline ScalingPolicy& WithStepAdjustments(Aws::Vector<StepAdjustment>&& value) { SetStepAdjustments(std::move(value)); return *this;}
 
     /**
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
@@ -369,7 +370,7 @@ namespace Model
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
      * breach.</p>
      */
-    inline ScalingPolicy& AddStepAdjustments(StepAdjustment&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments.push_back(value); return *this; }
+    inline ScalingPolicy& AddStepAdjustments(StepAdjustment&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The aggregation type for the CloudWatch metrics. Valid values are
@@ -387,7 +388,7 @@ namespace Model
      * <p>The aggregation type for the CloudWatch metrics. Valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
      */
-    inline void SetMetricAggregationType(Aws::String&& value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType = value; }
+    inline void SetMetricAggregationType(Aws::String&& value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType = std::move(value); }
 
     /**
      * <p>The aggregation type for the CloudWatch metrics. Valid values are
@@ -405,7 +406,7 @@ namespace Model
      * <p>The aggregation type for the CloudWatch metrics. Valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
      */
-    inline ScalingPolicy& WithMetricAggregationType(Aws::String&& value) { SetMetricAggregationType(value); return *this;}
+    inline ScalingPolicy& WithMetricAggregationType(Aws::String&& value) { SetMetricAggregationType(std::move(value)); return *this;}
 
     /**
      * <p>The aggregation type for the CloudWatch metrics. Valid values are
@@ -444,7 +445,7 @@ namespace Model
     /**
      * <p>The CloudWatch alarms related to the policy.</p>
      */
-    inline void SetAlarms(Aws::Vector<Alarm>&& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
+    inline void SetAlarms(Aws::Vector<Alarm>&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
 
     /**
      * <p>The CloudWatch alarms related to the policy.</p>
@@ -454,7 +455,7 @@ namespace Model
     /**
      * <p>The CloudWatch alarms related to the policy.</p>
      */
-    inline ScalingPolicy& WithAlarms(Aws::Vector<Alarm>&& value) { SetAlarms(value); return *this;}
+    inline ScalingPolicy& WithAlarms(Aws::Vector<Alarm>&& value) { SetAlarms(std::move(value)); return *this;}
 
     /**
      * <p>The CloudWatch alarms related to the policy.</p>
@@ -464,7 +465,7 @@ namespace Model
     /**
      * <p>The CloudWatch alarms related to the policy.</p>
      */
-    inline ScalingPolicy& AddAlarms(Alarm&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(value); return *this; }
+    inline ScalingPolicy& AddAlarms(Alarm&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_autoScalingGroupName;

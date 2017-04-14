@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/machinelearning/model/MLModel.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>A list of <code>MLModel</code> that meet the search criteria.</p>
      */
-    inline void SetResults(Aws::Vector<MLModel>&& value) { m_results = value; }
+    inline void SetResults(Aws::Vector<MLModel>&& value) { m_results = std::move(value); }
 
     /**
      * <p>A list of <code>MLModel</code> that meet the search criteria.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>A list of <code>MLModel</code> that meet the search criteria.</p>
      */
-    inline DescribeMLModelsResult& WithResults(Aws::Vector<MLModel>&& value) { SetResults(value); return *this;}
+    inline DescribeMLModelsResult& WithResults(Aws::Vector<MLModel>&& value) { SetResults(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>MLModel</code> that meet the search criteria.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>A list of <code>MLModel</code> that meet the search criteria.</p>
      */
-    inline DescribeMLModelsResult& AddResults(MLModel&& value) { m_results.push_back(value); return *this; }
+    inline DescribeMLModelsResult& AddResults(MLModel&& value) { m_results.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ID of the next page in the paginated results that indicates at least one
@@ -99,7 +100,7 @@ namespace Model
      * <p>The ID of the next page in the paginated results that indicates at least one
      * more page follows.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The ID of the next page in the paginated results that indicates at least one
@@ -117,7 +118,7 @@ namespace Model
      * <p>The ID of the next page in the paginated results that indicates at least one
      * more page follows.</p>
      */
-    inline DescribeMLModelsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeMLModelsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the next page in the paginated results that indicates at least one

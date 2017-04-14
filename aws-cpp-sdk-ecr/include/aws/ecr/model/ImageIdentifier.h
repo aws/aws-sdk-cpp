@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The <code>sha256</code> digest of the image manifest.</p>
      */
-    inline void SetImageDigest(Aws::String&& value) { m_imageDigestHasBeenSet = true; m_imageDigest = value; }
+    inline void SetImageDigest(Aws::String&& value) { m_imageDigestHasBeenSet = true; m_imageDigest = std::move(value); }
 
     /**
      * <p>The <code>sha256</code> digest of the image manifest.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The <code>sha256</code> digest of the image manifest.</p>
      */
-    inline ImageIdentifier& WithImageDigest(Aws::String&& value) { SetImageDigest(value); return *this;}
+    inline ImageIdentifier& WithImageDigest(Aws::String&& value) { SetImageDigest(std::move(value)); return *this;}
 
     /**
      * <p>The <code>sha256</code> digest of the image manifest.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The tag used for the image.</p>
      */
-    inline void SetImageTag(Aws::String&& value) { m_imageTagHasBeenSet = true; m_imageTag = value; }
+    inline void SetImageTag(Aws::String&& value) { m_imageTagHasBeenSet = true; m_imageTag = std::move(value); }
 
     /**
      * <p>The tag used for the image.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The tag used for the image.</p>
      */
-    inline ImageIdentifier& WithImageTag(Aws::String&& value) { SetImageTag(value); return *this;}
+    inline ImageIdentifier& WithImageTag(Aws::String&& value) { SetImageTag(std::move(value)); return *this;}
 
     /**
      * <p>The tag used for the image.</p>

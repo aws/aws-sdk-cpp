@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/UserPoolClientType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>The user pool client value from the response from the server when an update
      * user pool client request is made.</p>
      */
-    inline void SetUserPoolClient(UserPoolClientType&& value) { m_userPoolClient = value; }
+    inline void SetUserPoolClient(UserPoolClientType&& value) { m_userPoolClient = std::move(value); }
 
     /**
      * <p>The user pool client value from the response from the server when an update
@@ -73,7 +74,7 @@ namespace Model
      * <p>The user pool client value from the response from the server when an update
      * user pool client request is made.</p>
      */
-    inline UpdateUserPoolClientResult& WithUserPoolClient(UserPoolClientType&& value) { SetUserPoolClient(value); return *this;}
+    inline UpdateUserPoolClientResult& WithUserPoolClient(UserPoolClientType&& value) { SetUserPoolClient(std::move(value)); return *this;}
 
   private:
     UserPoolClientType m_userPoolClient;

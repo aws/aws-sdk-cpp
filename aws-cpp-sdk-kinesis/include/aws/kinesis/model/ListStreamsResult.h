@@ -16,6 +16,7 @@
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The names of the streams that are associated with the AWS account making the
      * <code>ListStreams</code> request.</p>
      */
-    inline void SetStreamNames(Aws::Vector<Aws::String>&& value) { m_streamNames = value; }
+    inline void SetStreamNames(Aws::Vector<Aws::String>&& value) { m_streamNames = std::move(value); }
 
     /**
      * <p>The names of the streams that are associated with the AWS account making the
@@ -74,7 +75,7 @@ namespace Model
      * <p>The names of the streams that are associated with the AWS account making the
      * <code>ListStreams</code> request.</p>
      */
-    inline ListStreamsResult& WithStreamNames(Aws::Vector<Aws::String>&& value) { SetStreamNames(value); return *this;}
+    inline ListStreamsResult& WithStreamNames(Aws::Vector<Aws::String>&& value) { SetStreamNames(std::move(value)); return *this;}
 
     /**
      * <p>The names of the streams that are associated with the AWS account making the
@@ -86,7 +87,7 @@ namespace Model
      * <p>The names of the streams that are associated with the AWS account making the
      * <code>ListStreams</code> request.</p>
      */
-    inline ListStreamsResult& AddStreamNames(Aws::String&& value) { m_streamNames.push_back(value); return *this; }
+    inline ListStreamsResult& AddStreamNames(Aws::String&& value) { m_streamNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of the streams that are associated with the AWS account making the

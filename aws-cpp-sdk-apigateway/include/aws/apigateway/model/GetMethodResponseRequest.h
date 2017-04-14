@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier for the <a>MethodResponse</a> resource.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The <a>RestApi</a> identifier for the <a>MethodResponse</a> resource.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier for the <a>MethodResponse</a> resource.</p>
      */
-    inline GetMethodResponseRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline GetMethodResponseRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The <a>RestApi</a> identifier for the <a>MethodResponse</a> resource.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
      */
-    inline GetMethodResponseRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline GetMethodResponseRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
-    inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
+    inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::move(value); }
 
     /**
      * <p>The HTTP verb of the <a>Method</a> resource.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
-    inline GetMethodResponseRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(value); return *this;}
+    inline GetMethodResponseRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(std::move(value)); return *this;}
 
     /**
      * <p>The HTTP verb of the <a>Method</a> resource.</p>
@@ -155,7 +156,7 @@ namespace Model
     /**
      * <p>The status code for the <a>MethodResponse</a> resource.</p>
      */
-    inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
 
     /**
      * <p>The status code for the <a>MethodResponse</a> resource.</p>
@@ -170,7 +171,7 @@ namespace Model
     /**
      * <p>The status code for the <a>MethodResponse</a> resource.</p>
      */
-    inline GetMethodResponseRequest& WithStatusCode(Aws::String&& value) { SetStatusCode(value); return *this;}
+    inline GetMethodResponseRequest& WithStatusCode(Aws::String&& value) { SetStatusCode(std::move(value)); return *this;}
 
     /**
      * <p>The status code for the <a>MethodResponse</a> resource.</p>

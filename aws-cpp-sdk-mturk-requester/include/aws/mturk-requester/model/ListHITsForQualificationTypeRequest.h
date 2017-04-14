@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p> The ID of the Qualification type to use when querying HITs. </p>
      */
-    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
+    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = std::move(value); }
 
     /**
      * <p> The ID of the Qualification type to use when querying HITs. </p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p> The ID of the Qualification type to use when querying HITs. </p>
      */
-    inline ListHITsForQualificationTypeRequest& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(value); return *this;}
+    inline ListHITsForQualificationTypeRequest& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(std::move(value)); return *this;}
 
     /**
      * <p> The ID of the Qualification type to use when querying HITs. </p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>Pagination Token</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Pagination Token</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>Pagination Token</p>
      */
-    inline ListHITsForQualificationTypeRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListHITsForQualificationTypeRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Pagination Token</p>

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/ContainerOverride.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>One or more container overrides sent to a task.</p>
      */
-    inline void SetContainerOverrides(Aws::Vector<ContainerOverride>&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = value; }
+    inline void SetContainerOverrides(Aws::Vector<ContainerOverride>&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = std::move(value); }
 
     /**
      * <p>One or more container overrides sent to a task.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>One or more container overrides sent to a task.</p>
      */
-    inline TaskOverride& WithContainerOverrides(Aws::Vector<ContainerOverride>&& value) { SetContainerOverrides(value); return *this;}
+    inline TaskOverride& WithContainerOverrides(Aws::Vector<ContainerOverride>&& value) { SetContainerOverrides(std::move(value)); return *this;}
 
     /**
      * <p>One or more container overrides sent to a task.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>One or more container overrides sent to a task.</p>
      */
-    inline TaskOverride& AddContainerOverrides(ContainerOverride&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides.push_back(value); return *this; }
+    inline TaskOverride& AddContainerOverrides(ContainerOverride&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
@@ -99,7 +100,7 @@ namespace Model
      * can assume. All containers in this task are granted the permissions that are
      * specified in this role.</p>
      */
-    inline void SetTaskRoleArn(Aws::String&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
+    inline void SetTaskRoleArn(Aws::String&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
@@ -120,7 +121,7 @@ namespace Model
      * can assume. All containers in this task are granted the permissions that are
      * specified in this role.</p>
      */
-    inline TaskOverride& WithTaskRoleArn(Aws::String&& value) { SetTaskRoleArn(value); return *this;}
+    inline TaskOverride& WithTaskRoleArn(Aws::String&& value) { SetTaskRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task

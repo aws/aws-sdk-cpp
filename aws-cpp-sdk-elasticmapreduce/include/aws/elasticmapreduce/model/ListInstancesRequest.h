@@ -20,6 +20,7 @@
 #include <aws/elasticmapreduce/model/InstanceFleetType.h>
 #include <aws/elasticmapreduce/model/InstanceGroupType.h>
 #include <aws/elasticmapreduce/model/InstanceState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The identifier of the cluster for which to list the instances.</p>
      */
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
 
     /**
      * <p>The identifier of the cluster for which to list the instances.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The identifier of the cluster for which to list the instances.</p>
      */
-    inline ListInstancesRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+    inline ListInstancesRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the cluster for which to list the instances.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The identifier of the instance group for which to list the instances.</p>
      */
-    inline void SetInstanceGroupId(Aws::String&& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = value; }
+    inline void SetInstanceGroupId(Aws::String&& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = std::move(value); }
 
     /**
      * <p>The identifier of the instance group for which to list the instances.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The identifier of the instance group for which to list the instances.</p>
      */
-    inline ListInstancesRequest& WithInstanceGroupId(Aws::String&& value) { SetInstanceGroupId(value); return *this;}
+    inline ListInstancesRequest& WithInstanceGroupId(Aws::String&& value) { SetInstanceGroupId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the instance group for which to list the instances.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>The type of instance group for which to list the instances.</p>
      */
-    inline void SetInstanceGroupTypes(Aws::Vector<InstanceGroupType>&& value) { m_instanceGroupTypesHasBeenSet = true; m_instanceGroupTypes = value; }
+    inline void SetInstanceGroupTypes(Aws::Vector<InstanceGroupType>&& value) { m_instanceGroupTypesHasBeenSet = true; m_instanceGroupTypes = std::move(value); }
 
     /**
      * <p>The type of instance group for which to list the instances.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>The type of instance group for which to list the instances.</p>
      */
-    inline ListInstancesRequest& WithInstanceGroupTypes(Aws::Vector<InstanceGroupType>&& value) { SetInstanceGroupTypes(value); return *this;}
+    inline ListInstancesRequest& WithInstanceGroupTypes(Aws::Vector<InstanceGroupType>&& value) { SetInstanceGroupTypes(std::move(value)); return *this;}
 
     /**
      * <p>The type of instance group for which to list the instances.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>The type of instance group for which to list the instances.</p>
      */
-    inline ListInstancesRequest& AddInstanceGroupTypes(InstanceGroupType&& value) { m_instanceGroupTypesHasBeenSet = true; m_instanceGroupTypes.push_back(value); return *this; }
+    inline ListInstancesRequest& AddInstanceGroupTypes(InstanceGroupType&& value) { m_instanceGroupTypesHasBeenSet = true; m_instanceGroupTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The unique identifier of the instance fleet.</p>
@@ -160,7 +161,7 @@ namespace Model
     /**
      * <p>The unique identifier of the instance fleet.</p>
      */
-    inline void SetInstanceFleetId(Aws::String&& value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId = value; }
+    inline void SetInstanceFleetId(Aws::String&& value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId = std::move(value); }
 
     /**
      * <p>The unique identifier of the instance fleet.</p>
@@ -175,7 +176,7 @@ namespace Model
     /**
      * <p>The unique identifier of the instance fleet.</p>
      */
-    inline ListInstancesRequest& WithInstanceFleetId(Aws::String&& value) { SetInstanceFleetId(value); return *this;}
+    inline ListInstancesRequest& WithInstanceFleetId(Aws::String&& value) { SetInstanceFleetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the instance fleet.</p>
@@ -195,7 +196,7 @@ namespace Model
     /**
      * <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
      */
-    inline void SetInstanceFleetType(InstanceFleetType&& value) { m_instanceFleetTypeHasBeenSet = true; m_instanceFleetType = value; }
+    inline void SetInstanceFleetType(InstanceFleetType&& value) { m_instanceFleetTypeHasBeenSet = true; m_instanceFleetType = std::move(value); }
 
     /**
      * <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
@@ -205,7 +206,7 @@ namespace Model
     /**
      * <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
      */
-    inline ListInstancesRequest& WithInstanceFleetType(InstanceFleetType&& value) { SetInstanceFleetType(value); return *this;}
+    inline ListInstancesRequest& WithInstanceFleetType(InstanceFleetType&& value) { SetInstanceFleetType(std::move(value)); return *this;}
 
     /**
      * <p>A list of instance states that will filter the instances returned with this
@@ -223,7 +224,7 @@ namespace Model
      * <p>A list of instance states that will filter the instances returned with this
      * request.</p>
      */
-    inline void SetInstanceStates(Aws::Vector<InstanceState>&& value) { m_instanceStatesHasBeenSet = true; m_instanceStates = value; }
+    inline void SetInstanceStates(Aws::Vector<InstanceState>&& value) { m_instanceStatesHasBeenSet = true; m_instanceStates = std::move(value); }
 
     /**
      * <p>A list of instance states that will filter the instances returned with this
@@ -235,7 +236,7 @@ namespace Model
      * <p>A list of instance states that will filter the instances returned with this
      * request.</p>
      */
-    inline ListInstancesRequest& WithInstanceStates(Aws::Vector<InstanceState>&& value) { SetInstanceStates(value); return *this;}
+    inline ListInstancesRequest& WithInstanceStates(Aws::Vector<InstanceState>&& value) { SetInstanceStates(std::move(value)); return *this;}
 
     /**
      * <p>A list of instance states that will filter the instances returned with this
@@ -247,7 +248,7 @@ namespace Model
      * <p>A list of instance states that will filter the instances returned with this
      * request.</p>
      */
-    inline ListInstancesRequest& AddInstanceStates(InstanceState&& value) { m_instanceStatesHasBeenSet = true; m_instanceStates.push_back(value); return *this; }
+    inline ListInstancesRequest& AddInstanceStates(InstanceState&& value) { m_instanceStatesHasBeenSet = true; m_instanceStates.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -262,7 +263,7 @@ namespace Model
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -277,7 +278,7 @@ namespace Model
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
-    inline ListInstancesRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListInstancesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>

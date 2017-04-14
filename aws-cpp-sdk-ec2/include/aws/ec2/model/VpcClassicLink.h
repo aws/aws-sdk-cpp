@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline VpcClassicLink& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline VpcClassicLink& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>Any tags assigned to the VPC.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>Any tags assigned to the VPC.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>Any tags assigned to the VPC.</p>
      */
-    inline VpcClassicLink& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline VpcClassicLink& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Any tags assigned to the VPC.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>Any tags assigned to the VPC.</p>
      */
-    inline VpcClassicLink& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline VpcClassicLink& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_vpcId;

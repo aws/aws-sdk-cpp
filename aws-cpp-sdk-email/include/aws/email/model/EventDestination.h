@@ -20,6 +20,7 @@
 #include <aws/email/model/KinesisFirehoseDestination.h>
 #include <aws/email/model/CloudWatchDestination.h>
 #include <aws/email/model/EventType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
      * only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
      * (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the event destination. The name must:</p> <ul> <li> <p>Contain
@@ -98,7 +99,7 @@ namespace Model
      * only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
      * (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
      */
-    inline EventDestination& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline EventDestination& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the event destination. The name must:</p> <ul> <li> <p>Contain
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>The type of email sending events to publish to the event destination.</p>
      */
-    inline void SetMatchingEventTypes(Aws::Vector<EventType>&& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes = value; }
+    inline void SetMatchingEventTypes(Aws::Vector<EventType>&& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes = std::move(value); }
 
     /**
      * <p>The type of email sending events to publish to the event destination.</p>
@@ -154,7 +155,7 @@ namespace Model
     /**
      * <p>The type of email sending events to publish to the event destination.</p>
      */
-    inline EventDestination& WithMatchingEventTypes(Aws::Vector<EventType>&& value) { SetMatchingEventTypes(value); return *this;}
+    inline EventDestination& WithMatchingEventTypes(Aws::Vector<EventType>&& value) { SetMatchingEventTypes(std::move(value)); return *this;}
 
     /**
      * <p>The type of email sending events to publish to the event destination.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>The type of email sending events to publish to the event destination.</p>
      */
-    inline EventDestination& AddMatchingEventTypes(EventType&& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes.push_back(value); return *this; }
+    inline EventDestination& AddMatchingEventTypes(EventType&& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An object that contains the delivery stream ARN and the IAM role ARN
@@ -182,7 +183,7 @@ namespace Model
      * <p>An object that contains the delivery stream ARN and the IAM role ARN
      * associated with an Amazon Kinesis Firehose event destination.</p>
      */
-    inline void SetKinesisFirehoseDestination(KinesisFirehoseDestination&& value) { m_kinesisFirehoseDestinationHasBeenSet = true; m_kinesisFirehoseDestination = value; }
+    inline void SetKinesisFirehoseDestination(KinesisFirehoseDestination&& value) { m_kinesisFirehoseDestinationHasBeenSet = true; m_kinesisFirehoseDestination = std::move(value); }
 
     /**
      * <p>An object that contains the delivery stream ARN and the IAM role ARN
@@ -194,7 +195,7 @@ namespace Model
      * <p>An object that contains the delivery stream ARN and the IAM role ARN
      * associated with an Amazon Kinesis Firehose event destination.</p>
      */
-    inline EventDestination& WithKinesisFirehoseDestination(KinesisFirehoseDestination&& value) { SetKinesisFirehoseDestination(value); return *this;}
+    inline EventDestination& WithKinesisFirehoseDestination(KinesisFirehoseDestination&& value) { SetKinesisFirehoseDestination(std::move(value)); return *this;}
 
     /**
      * <p>An object that contains the names, default values, and sources of the
@@ -212,7 +213,7 @@ namespace Model
      * <p>An object that contains the names, default values, and sources of the
      * dimensions associated with an Amazon CloudWatch event destination.</p>
      */
-    inline void SetCloudWatchDestination(CloudWatchDestination&& value) { m_cloudWatchDestinationHasBeenSet = true; m_cloudWatchDestination = value; }
+    inline void SetCloudWatchDestination(CloudWatchDestination&& value) { m_cloudWatchDestinationHasBeenSet = true; m_cloudWatchDestination = std::move(value); }
 
     /**
      * <p>An object that contains the names, default values, and sources of the
@@ -224,7 +225,7 @@ namespace Model
      * <p>An object that contains the names, default values, and sources of the
      * dimensions associated with an Amazon CloudWatch event destination.</p>
      */
-    inline EventDestination& WithCloudWatchDestination(CloudWatchDestination&& value) { SetCloudWatchDestination(value); return *this;}
+    inline EventDestination& WithCloudWatchDestination(CloudWatchDestination&& value) { SetCloudWatchDestination(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

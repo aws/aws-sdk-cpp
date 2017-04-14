@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/config/model/ConfigurationRecorderStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A list that contains status of the specified recorders.</p>
      */
-    inline void SetConfigurationRecordersStatus(Aws::Vector<ConfigurationRecorderStatus>&& value) { m_configurationRecordersStatus = value; }
+    inline void SetConfigurationRecordersStatus(Aws::Vector<ConfigurationRecorderStatus>&& value) { m_configurationRecordersStatus = std::move(value); }
 
     /**
      * <p>A list that contains status of the specified recorders.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A list that contains status of the specified recorders.</p>
      */
-    inline DescribeConfigurationRecorderStatusResult& WithConfigurationRecordersStatus(Aws::Vector<ConfigurationRecorderStatus>&& value) { SetConfigurationRecordersStatus(value); return *this;}
+    inline DescribeConfigurationRecorderStatusResult& WithConfigurationRecordersStatus(Aws::Vector<ConfigurationRecorderStatus>&& value) { SetConfigurationRecordersStatus(std::move(value)); return *this;}
 
     /**
      * <p>A list that contains status of the specified recorders.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>A list that contains status of the specified recorders.</p>
      */
-    inline DescribeConfigurationRecorderStatusResult& AddConfigurationRecordersStatus(ConfigurationRecorderStatus&& value) { m_configurationRecordersStatus.push_back(value); return *this; }
+    inline DescribeConfigurationRecorderStatusResult& AddConfigurationRecordersStatus(ConfigurationRecorderStatus&& value) { m_configurationRecordersStatus.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ConfigurationRecorderStatus> m_configurationRecordersStatus;

@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/HandshakePartyType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
      * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) for the party.</p> <p>The <a
@@ -84,7 +85,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
      * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
      */
-    inline HandshakeParty& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline HandshakeParty& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) for the party.</p> <p>The <a
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The type of party.</p>
      */
-    inline void SetType(HandshakePartyType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(HandshakePartyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of party.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The type of party.</p>
      */
-    inline HandshakeParty& WithType(HandshakePartyType&& value) { SetType(value); return *this;}
+    inline HandshakeParty& WithType(HandshakePartyType&& value) { SetType(std::move(value)); return *this;}
 
   private:
     Aws::String m_id;

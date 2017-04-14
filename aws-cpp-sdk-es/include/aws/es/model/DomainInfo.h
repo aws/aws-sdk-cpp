@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p> Specifies the <code>DomainName</code>.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p> Specifies the <code>DomainName</code>.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p> Specifies the <code>DomainName</code>.</p>
      */
-    inline DomainInfo& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DomainInfo& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p> Specifies the <code>DomainName</code>.</p>

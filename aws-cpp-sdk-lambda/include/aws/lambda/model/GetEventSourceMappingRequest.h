@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The AWS Lambda assigned ID of the event source mapping.</p>
      */
-    inline void SetUUID(Aws::String&& value) { m_uUIDHasBeenSet = true; m_uUID = value; }
+    inline void SetUUID(Aws::String&& value) { m_uUIDHasBeenSet = true; m_uUID = std::move(value); }
 
     /**
      * <p>The AWS Lambda assigned ID of the event source mapping.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The AWS Lambda assigned ID of the event source mapping.</p>
      */
-    inline GetEventSourceMappingRequest& WithUUID(Aws::String&& value) { SetUUID(value); return *this;}
+    inline GetEventSourceMappingRequest& WithUUID(Aws::String&& value) { SetUUID(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Lambda assigned ID of the event source mapping.</p>

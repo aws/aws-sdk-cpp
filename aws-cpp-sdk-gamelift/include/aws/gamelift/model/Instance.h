@@ -19,6 +19,7 @@
 #include <aws/gamelift/model/EC2InstanceType.h>
 #include <aws/gamelift/model/InstanceStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet that the instance is in.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet that the instance is in.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet that the instance is in.</p>
      */
-    inline Instance& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline Instance& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet that the instance is in.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>Unique identifier for an instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>Unique identifier for an instance.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>Unique identifier for an instance.</p>
      */
-    inline Instance& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline Instance& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for an instance.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>IP address assigned to the instance.</p>
      */
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
+    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
      * <p>IP address assigned to the instance.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>IP address assigned to the instance.</p>
      */
-    inline Instance& WithIpAddress(Aws::String&& value) { SetIpAddress(value); return *this;}
+    inline Instance& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>IP address assigned to the instance.</p>
@@ -167,7 +168,7 @@ namespace Model
     /**
      * <p>Operating system that is running on this instance. </p>
      */
-    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
+    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
 
     /**
      * <p>Operating system that is running on this instance. </p>
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>Operating system that is running on this instance. </p>
      */
-    inline Instance& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(value); return *this;}
+    inline Instance& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
     /**
      * <p>EC2 instance type that defines the computing resources of this instance. </p>
@@ -192,7 +193,7 @@ namespace Model
     /**
      * <p>EC2 instance type that defines the computing resources of this instance. </p>
      */
-    inline void SetType(EC2InstanceType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(EC2InstanceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>EC2 instance type that defines the computing resources of this instance. </p>
@@ -202,7 +203,7 @@ namespace Model
     /**
      * <p>EC2 instance type that defines the computing resources of this instance. </p>
      */
-    inline Instance& WithType(EC2InstanceType&& value) { SetType(value); return *this;}
+    inline Instance& WithType(EC2InstanceType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>Current status of the instance. Possible statuses include the following:</p>
@@ -244,7 +245,7 @@ namespace Model
      * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
-    inline void SetStatus(InstanceStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(InstanceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Current status of the instance. Possible statuses include the following:</p>
@@ -272,7 +273,7 @@ namespace Model
      * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
-    inline Instance& WithStatus(InstanceStatus&& value) { SetStatus(value); return *this;}
+    inline Instance& WithStatus(InstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
@@ -290,7 +291,7 @@ namespace Model
      * <p>Time stamp indicating when this data object was created. Format is a number
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
@@ -302,7 +303,7 @@ namespace Model
      * <p>Time stamp indicating when this data object was created. Format is a number
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
-    inline Instance& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
+    inline Instance& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
   private:
     Aws::String m_fleetId;

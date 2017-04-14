@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/CommandInvocation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>(Optional) A list of all invocations. </p>
      */
-    inline void SetCommandInvocations(Aws::Vector<CommandInvocation>&& value) { m_commandInvocations = value; }
+    inline void SetCommandInvocations(Aws::Vector<CommandInvocation>&& value) { m_commandInvocations = std::move(value); }
 
     /**
      * <p>(Optional) A list of all invocations. </p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>(Optional) A list of all invocations. </p>
      */
-    inline ListCommandInvocationsResult& WithCommandInvocations(Aws::Vector<CommandInvocation>&& value) { SetCommandInvocations(value); return *this;}
+    inline ListCommandInvocationsResult& WithCommandInvocations(Aws::Vector<CommandInvocation>&& value) { SetCommandInvocations(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) A list of all invocations. </p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>(Optional) A list of all invocations. </p>
      */
-    inline ListCommandInvocationsResult& AddCommandInvocations(CommandInvocation&& value) { m_commandInvocations.push_back(value); return *this; }
+    inline ListCommandInvocationsResult& AddCommandInvocations(CommandInvocation&& value) { m_commandInvocations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>(Optional) The token for the next set of items to return. (You received this
@@ -92,7 +93,7 @@ namespace Model
      * <p>(Optional) The token for the next set of items to return. (You received this
      * token from a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>(Optional) The token for the next set of items to return. (You received this
@@ -110,7 +111,7 @@ namespace Model
      * <p>(Optional) The token for the next set of items to return. (You received this
      * token from a previous call.)</p>
      */
-    inline ListCommandInvocationsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListCommandInvocationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) The token for the next set of items to return. (You received this

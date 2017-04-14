@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name of the <a>DomainName</a> resource.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The name of the <a>DomainName</a> resource.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name of the <a>DomainName</a> resource.</p>
      */
-    inline DomainName& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DomainName& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the <a>DomainName</a> resource.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The name of the certificate.</p>
      */
-    inline void SetCertificateName(Aws::String&& value) { m_certificateNameHasBeenSet = true; m_certificateName = value; }
+    inline void SetCertificateName(Aws::String&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::move(value); }
 
     /**
      * <p>The name of the certificate.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The name of the certificate.</p>
      */
-    inline DomainName& WithCertificateName(Aws::String&& value) { SetCertificateName(value); return *this;}
+    inline DomainName& WithCertificateName(Aws::String&& value) { SetCertificateName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the certificate.</p>
@@ -133,7 +134,7 @@ namespace Model
      * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
      * only supported source.</p>
      */
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
 
     /**
      * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
@@ -151,7 +152,7 @@ namespace Model
      * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
      * only supported source.</p>
      */
-    inline DomainName& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
+    inline DomainName& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
@@ -172,7 +173,7 @@ namespace Model
     /**
      * <p>The timestamp when the certificate was uploaded.</p>
      */
-    inline void SetCertificateUploadDate(Aws::Utils::DateTime&& value) { m_certificateUploadDateHasBeenSet = true; m_certificateUploadDate = value; }
+    inline void SetCertificateUploadDate(Aws::Utils::DateTime&& value) { m_certificateUploadDateHasBeenSet = true; m_certificateUploadDate = std::move(value); }
 
     /**
      * <p>The timestamp when the certificate was uploaded.</p>
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p>The timestamp when the certificate was uploaded.</p>
      */
-    inline DomainName& WithCertificateUploadDate(Aws::Utils::DateTime&& value) { SetCertificateUploadDate(value); return *this;}
+    inline DomainName& WithCertificateUploadDate(Aws::Utils::DateTime&& value) { SetCertificateUploadDate(std::move(value)); return *this;}
 
     /**
      * <p>The domain name of the Amazon CloudFront distribution. For more information,
@@ -203,7 +204,7 @@ namespace Model
      * see the <a href="http://aws.amazon.com/documentation/cloudfront/"
      * target="_blank">Amazon CloudFront documentation</a>.</p>
      */
-    inline void SetDistributionDomainName(Aws::String&& value) { m_distributionDomainNameHasBeenSet = true; m_distributionDomainName = value; }
+    inline void SetDistributionDomainName(Aws::String&& value) { m_distributionDomainNameHasBeenSet = true; m_distributionDomainName = std::move(value); }
 
     /**
      * <p>The domain name of the Amazon CloudFront distribution. For more information,
@@ -224,7 +225,7 @@ namespace Model
      * see the <a href="http://aws.amazon.com/documentation/cloudfront/"
      * target="_blank">Amazon CloudFront documentation</a>.</p>
      */
-    inline DomainName& WithDistributionDomainName(Aws::String&& value) { SetDistributionDomainName(value); return *this;}
+    inline DomainName& WithDistributionDomainName(Aws::String&& value) { SetDistributionDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The domain name of the Amazon CloudFront distribution. For more information,

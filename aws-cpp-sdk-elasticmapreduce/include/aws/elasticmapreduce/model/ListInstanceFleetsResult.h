@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/model/InstanceFleet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The list of instance fleets for the cluster and given filters.</p>
      */
-    inline void SetInstanceFleets(Aws::Vector<InstanceFleet>&& value) { m_instanceFleets = value; }
+    inline void SetInstanceFleets(Aws::Vector<InstanceFleet>&& value) { m_instanceFleets = std::move(value); }
 
     /**
      * <p>The list of instance fleets for the cluster and given filters.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The list of instance fleets for the cluster and given filters.</p>
      */
-    inline ListInstanceFleetsResult& WithInstanceFleets(Aws::Vector<InstanceFleet>&& value) { SetInstanceFleets(value); return *this;}
+    inline ListInstanceFleetsResult& WithInstanceFleets(Aws::Vector<InstanceFleet>&& value) { SetInstanceFleets(std::move(value)); return *this;}
 
     /**
      * <p>The list of instance fleets for the cluster and given filters.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The list of instance fleets for the cluster and given filters.</p>
      */
-    inline ListInstanceFleetsResult& AddInstanceFleets(InstanceFleet&& value) { m_instanceFleets.push_back(value); return *this; }
+    inline ListInstanceFleetsResult& AddInstanceFleets(InstanceFleet&& value) { m_instanceFleets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
-    inline ListInstanceFleetsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListInstanceFleetsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>

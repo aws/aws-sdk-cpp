@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/codepipeline/model/StageState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The name of the pipeline for which you want to get the state.</p>
      */
-    inline void SetPipelineName(Aws::String&& value) { m_pipelineName = value; }
+    inline void SetPipelineName(Aws::String&& value) { m_pipelineName = std::move(value); }
 
     /**
      * <p>The name of the pipeline for which you want to get the state.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The name of the pipeline for which you want to get the state.</p>
      */
-    inline GetPipelineStateResult& WithPipelineName(Aws::String&& value) { SetPipelineName(value); return *this;}
+    inline GetPipelineStateResult& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the pipeline for which you want to get the state.</p>
@@ -117,7 +118,7 @@ namespace Model
      * <p>A list of the pipeline stage output information, including stage name, state,
      * most recent run details, whether the stage is disabled, and other data.</p>
      */
-    inline void SetStageStates(Aws::Vector<StageState>&& value) { m_stageStates = value; }
+    inline void SetStageStates(Aws::Vector<StageState>&& value) { m_stageStates = std::move(value); }
 
     /**
      * <p>A list of the pipeline stage output information, including stage name, state,
@@ -129,7 +130,7 @@ namespace Model
      * <p>A list of the pipeline stage output information, including stage name, state,
      * most recent run details, whether the stage is disabled, and other data.</p>
      */
-    inline GetPipelineStateResult& WithStageStates(Aws::Vector<StageState>&& value) { SetStageStates(value); return *this;}
+    inline GetPipelineStateResult& WithStageStates(Aws::Vector<StageState>&& value) { SetStageStates(std::move(value)); return *this;}
 
     /**
      * <p>A list of the pipeline stage output information, including stage name, state,
@@ -141,7 +142,7 @@ namespace Model
      * <p>A list of the pipeline stage output information, including stage name, state,
      * most recent run details, whether the stage is disabled, and other data.</p>
      */
-    inline GetPipelineStateResult& AddStageStates(StageState&& value) { m_stageStates.push_back(value); return *this; }
+    inline GetPipelineStateResult& AddStageStates(StageState&& value) { m_stageStates.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The date and time the pipeline was created, in timestamp format.</p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>The date and time the pipeline was created, in timestamp format.</p>
      */
-    inline void SetCreated(Aws::Utils::DateTime&& value) { m_created = value; }
+    inline void SetCreated(Aws::Utils::DateTime&& value) { m_created = std::move(value); }
 
     /**
      * <p>The date and time the pipeline was created, in timestamp format.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>The date and time the pipeline was created, in timestamp format.</p>
      */
-    inline GetPipelineStateResult& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(value); return *this;}
+    inline GetPipelineStateResult& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
 
     /**
      * <p>The date and time the pipeline was last updated, in timestamp format.</p>
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>The date and time the pipeline was last updated, in timestamp format.</p>
      */
-    inline void SetUpdated(Aws::Utils::DateTime&& value) { m_updated = value; }
+    inline void SetUpdated(Aws::Utils::DateTime&& value) { m_updated = std::move(value); }
 
     /**
      * <p>The date and time the pipeline was last updated, in timestamp format.</p>
@@ -191,7 +192,7 @@ namespace Model
     /**
      * <p>The date and time the pipeline was last updated, in timestamp format.</p>
      */
-    inline GetPipelineStateResult& WithUpdated(Aws::Utils::DateTime&& value) { SetUpdated(value); return *this;}
+    inline GetPipelineStateResult& WithUpdated(Aws::Utils::DateTime&& value) { SetUpdated(std::move(value)); return *this;}
 
   private:
     Aws::String m_pipelineName;

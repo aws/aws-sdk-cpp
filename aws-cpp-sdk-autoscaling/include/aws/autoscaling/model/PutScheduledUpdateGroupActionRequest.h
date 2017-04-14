@@ -17,6 +17,7 @@
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</p>
      */
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</p>
      */
-    inline PutScheduledUpdateGroupActionRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
+    inline PutScheduledUpdateGroupActionRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The name of this scaling action.</p>
      */
-    inline void SetScheduledActionName(Aws::String&& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = value; }
+    inline void SetScheduledActionName(Aws::String&& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = std::move(value); }
 
     /**
      * <p>The name of this scaling action.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The name of this scaling action.</p>
      */
-    inline PutScheduledUpdateGroupActionRequest& WithScheduledActionName(Aws::String&& value) { SetScheduledActionName(value); return *this;}
+    inline PutScheduledUpdateGroupActionRequest& WithScheduledActionName(Aws::String&& value) { SetScheduledActionName(std::move(value)); return *this;}
 
     /**
      * <p>The name of this scaling action.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>This parameter is deprecated.</p>
      */
-    inline void SetTime(Aws::Utils::DateTime&& value) { m_timeHasBeenSet = true; m_time = value; }
+    inline void SetTime(Aws::Utils::DateTime&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
 
     /**
      * <p>This parameter is deprecated.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>This parameter is deprecated.</p>
      */
-    inline PutScheduledUpdateGroupActionRequest& WithTime(Aws::Utils::DateTime&& value) { SetTime(value); return *this;}
+    inline PutScheduledUpdateGroupActionRequest& WithTime(Aws::Utils::DateTime&& value) { SetTime(std::move(value)); return *this;}
 
     /**
      * <p>The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
@@ -165,7 +166,7 @@ namespace Model
      * specified recurrence.</p> <p>If you try to schedule your action in the past,
      * Auto Scaling returns an error message.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
@@ -185,7 +186,7 @@ namespace Model
      * specified recurrence.</p> <p>If you try to schedule your action in the past,
      * Auto Scaling returns an error message.</p>
      */
-    inline PutScheduledUpdateGroupActionRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline PutScheduledUpdateGroupActionRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The time for the recurring schedule to end. Auto Scaling does not perform the
@@ -203,7 +204,7 @@ namespace Model
      * <p>The time for the recurring schedule to end. Auto Scaling does not perform the
      * action after this time.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The time for the recurring schedule to end. Auto Scaling does not perform the
@@ -215,7 +216,7 @@ namespace Model
      * <p>The time for the recurring schedule to end. Auto Scaling does not perform the
      * action after this time.</p>
      */
-    inline PutScheduledUpdateGroupActionRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline PutScheduledUpdateGroupActionRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>The recurring schedule for this action, in Unix cron syntax format. For more
@@ -236,7 +237,7 @@ namespace Model
      * information, see <a href="http://en.wikipedia.org/wiki/Cron">Cron</a> in
      * Wikipedia.</p>
      */
-    inline void SetRecurrence(Aws::String&& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
+    inline void SetRecurrence(Aws::String&& value) { m_recurrenceHasBeenSet = true; m_recurrence = std::move(value); }
 
     /**
      * <p>The recurring schedule for this action, in Unix cron syntax format. For more
@@ -257,7 +258,7 @@ namespace Model
      * information, see <a href="http://en.wikipedia.org/wiki/Cron">Cron</a> in
      * Wikipedia.</p>
      */
-    inline PutScheduledUpdateGroupActionRequest& WithRecurrence(Aws::String&& value) { SetRecurrence(value); return *this;}
+    inline PutScheduledUpdateGroupActionRequest& WithRecurrence(Aws::String&& value) { SetRecurrence(std::move(value)); return *this;}
 
     /**
      * <p>The recurring schedule for this action, in Unix cron syntax format. For more

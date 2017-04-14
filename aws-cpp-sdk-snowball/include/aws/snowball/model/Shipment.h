@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>Status information for a shipment. Valid statuses include <code>NEW</code>,
      * <code>IN_TRANSIT</code>, and <code>DELIVERED</code>.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Status information for a shipment. Valid statuses include <code>NEW</code>,
@@ -78,7 +79,7 @@ namespace Model
      * <p>Status information for a shipment. Valid statuses include <code>NEW</code>,
      * <code>IN_TRANSIT</code>, and <code>DELIVERED</code>.</p>
      */
-    inline Shipment& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline Shipment& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Status information for a shipment. Valid statuses include <code>NEW</code>,
@@ -108,7 +109,7 @@ namespace Model
      * it.</p> <p>For India, the carrier is Amazon Logistics. For all other regions,
      * UPS is the carrier.</p>
      */
-    inline void SetTrackingNumber(Aws::String&& value) { m_trackingNumberHasBeenSet = true; m_trackingNumber = value; }
+    inline void SetTrackingNumber(Aws::String&& value) { m_trackingNumberHasBeenSet = true; m_trackingNumber = std::move(value); }
 
     /**
      * <p>The tracking number for this job. Using this tracking number with your
@@ -132,7 +133,7 @@ namespace Model
      * it.</p> <p>For India, the carrier is Amazon Logistics. For all other regions,
      * UPS is the carrier.</p>
      */
-    inline Shipment& WithTrackingNumber(Aws::String&& value) { SetTrackingNumber(value); return *this;}
+    inline Shipment& WithTrackingNumber(Aws::String&& value) { SetTrackingNumber(std::move(value)); return *this;}
 
     /**
      * <p>The tracking number for this job. Using this tracking number with your

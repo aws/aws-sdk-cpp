@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The reencrypted data.</p>
      */
-    inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlob = value; }
+    inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlob = std::move(value); }
 
     /**
      * <p>The reencrypted data.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The reencrypted data.</p>
      */
-    inline ReEncryptResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(value); return *this;}
+    inline ReEncryptResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier of the CMK used to originally encrypt the data.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>Unique identifier of the CMK used to originally encrypt the data.</p>
      */
-    inline void SetSourceKeyId(Aws::String&& value) { m_sourceKeyId = value; }
+    inline void SetSourceKeyId(Aws::String&& value) { m_sourceKeyId = std::move(value); }
 
     /**
      * <p>Unique identifier of the CMK used to originally encrypt the data.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>Unique identifier of the CMK used to originally encrypt the data.</p>
      */
-    inline ReEncryptResult& WithSourceKeyId(Aws::String&& value) { SetSourceKeyId(value); return *this;}
+    inline ReEncryptResult& WithSourceKeyId(Aws::String&& value) { SetSourceKeyId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier of the CMK used to originally encrypt the data.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>Unique identifier of the CMK used to reencrypt the data.</p>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
 
     /**
      * <p>Unique identifier of the CMK used to reencrypt the data.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>Unique identifier of the CMK used to reencrypt the data.</p>
      */
-    inline ReEncryptResult& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline ReEncryptResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier of the CMK used to reencrypt the data.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/kinesis/model/StreamDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>The current status of the stream, the stream ARN, an array of shard objects
      * that comprise the stream, and whether there are more shards available.</p>
      */
-    inline void SetStreamDescription(StreamDescription&& value) { m_streamDescription = value; }
+    inline void SetStreamDescription(StreamDescription&& value) { m_streamDescription = std::move(value); }
 
     /**
      * <p>The current status of the stream, the stream ARN, an array of shard objects
@@ -73,7 +74,7 @@ namespace Model
      * <p>The current status of the stream, the stream ARN, an array of shard objects
      * that comprise the stream, and whether there are more shards available.</p>
      */
-    inline DescribeStreamResult& WithStreamDescription(StreamDescription&& value) { SetStreamDescription(value); return *this;}
+    inline DescribeStreamResult& WithStreamDescription(StreamDescription&& value) { SetStreamDescription(std::move(value)); return *this;}
 
   private:
     StreamDescription m_streamDescription;

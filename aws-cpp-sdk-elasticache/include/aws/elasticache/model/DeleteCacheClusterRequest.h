@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>The cache cluster identifier for the cluster to be deleted. This parameter is
      * not case sensitive.</p>
      */
-    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
+    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
 
     /**
      * <p>The cache cluster identifier for the cluster to be deleted. This parameter is
@@ -75,7 +76,7 @@ namespace Model
      * <p>The cache cluster identifier for the cluster to be deleted. This parameter is
      * not case sensitive.</p>
      */
-    inline DeleteCacheClusterRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(value); return *this;}
+    inline DeleteCacheClusterRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The cache cluster identifier for the cluster to be deleted. This parameter is
@@ -102,7 +103,7 @@ namespace Model
      * name that identifies the snapshot. ElastiCache creates the snapshot, and then
      * deletes the cache cluster immediately afterward.</p>
      */
-    inline void SetFinalSnapshotIdentifier(Aws::String&& value) { m_finalSnapshotIdentifierHasBeenSet = true; m_finalSnapshotIdentifier = value; }
+    inline void SetFinalSnapshotIdentifier(Aws::String&& value) { m_finalSnapshotIdentifierHasBeenSet = true; m_finalSnapshotIdentifier = std::move(value); }
 
     /**
      * <p>The user-supplied name of a final cache cluster snapshot. This is the unique
@@ -123,7 +124,7 @@ namespace Model
      * name that identifies the snapshot. ElastiCache creates the snapshot, and then
      * deletes the cache cluster immediately afterward.</p>
      */
-    inline DeleteCacheClusterRequest& WithFinalSnapshotIdentifier(Aws::String&& value) { SetFinalSnapshotIdentifier(value); return *this;}
+    inline DeleteCacheClusterRequest& WithFinalSnapshotIdentifier(Aws::String&& value) { SetFinalSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The user-supplied name of a final cache cluster snapshot. This is the unique

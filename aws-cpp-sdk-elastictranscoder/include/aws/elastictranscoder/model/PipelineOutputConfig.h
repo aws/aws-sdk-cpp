@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elastictranscoder/model/Permission.h>
+#include <utility>
 
 namespace Aws
 {
@@ -95,7 +96,7 @@ namespace Model
      * storage class, omit OutputBucket and specify values for
      * <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead. </p>
      */
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * <p> The Amazon S3 bucket in which you want Elastic Transcoder to save the
@@ -146,7 +147,7 @@ namespace Model
      * storage class, omit OutputBucket and specify values for
      * <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead. </p>
      */
-    inline PipelineOutputConfig& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline PipelineOutputConfig& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * <p> The Amazon S3 bucket in which you want Elastic Transcoder to save the
@@ -184,7 +185,7 @@ namespace Model
      * <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
      * the video files and playlists that it stores in your Amazon S3 bucket. </p>
      */
-    inline void SetStorageClass(Aws::String&& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+    inline void SetStorageClass(Aws::String&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
      * <p> The Amazon S3 storage class, <code>Standard</code> or
@@ -205,7 +206,7 @@ namespace Model
      * <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
      * the video files and playlists that it stores in your Amazon S3 bucket. </p>
      */
-    inline PipelineOutputConfig& WithStorageClass(Aws::String&& value) { SetStorageClass(value); return *this;}
+    inline PipelineOutputConfig& WithStorageClass(Aws::String&& value) { SetStorageClass(std::move(value)); return *this;}
 
     /**
      * <p> The Amazon S3 storage class, <code>Standard</code> or
@@ -260,7 +261,7 @@ namespace Model
      * <code>Role</code>, and grants no other permissions to any other user or
      * group.</p>
      */
-    inline void SetPermissions(Aws::Vector<Permission>&& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
+    inline void SetPermissions(Aws::Vector<Permission>&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
 
     /**
      * <p>Optional. The <code>Permissions</code> object specifies which users and/or
@@ -292,7 +293,7 @@ namespace Model
      * <code>Role</code>, and grants no other permissions to any other user or
      * group.</p>
      */
-    inline PipelineOutputConfig& WithPermissions(Aws::Vector<Permission>&& value) { SetPermissions(value); return *this;}
+    inline PipelineOutputConfig& WithPermissions(Aws::Vector<Permission>&& value) { SetPermissions(std::move(value)); return *this;}
 
     /**
      * <p>Optional. The <code>Permissions</code> object specifies which users and/or
@@ -324,7 +325,7 @@ namespace Model
      * <code>Role</code>, and grants no other permissions to any other user or
      * group.</p>
      */
-    inline PipelineOutputConfig& AddPermissions(Permission&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
+    inline PipelineOutputConfig& AddPermissions(Permission&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_bucket;

@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <code>AvailabilityZone</code> is used for uniform instance groups, while
      * <code>AvailabilityZones</code> (plural) is used for instance fleets.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Amazon EC2 Availability Zone for the cluster.
@@ -85,7 +86,7 @@ namespace Model
      * <code>AvailabilityZone</code> is used for uniform instance groups, while
      * <code>AvailabilityZones</code> (plural) is used for instance fleets.</p>
      */
-    inline PlacementType& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline PlacementType& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon EC2 Availability Zone for the cluster.
@@ -122,7 +123,7 @@ namespace Model
      * groups.</p> <note> <p>The instance fleet configuration is available only in
      * Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
      */
-    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
+    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
      * <p>When multiple Availability Zones are specified, Amazon EMR evaluates them and
@@ -142,7 +143,7 @@ namespace Model
      * groups.</p> <note> <p>The instance fleet configuration is available only in
      * Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
      */
-    inline PlacementType& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(value); return *this;}
+    inline PlacementType& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
      * <p>When multiple Availability Zones are specified, Amazon EMR evaluates them and
@@ -162,7 +163,7 @@ namespace Model
      * groups.</p> <note> <p>The instance fleet configuration is available only in
      * Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
      */
-    inline PlacementType& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+    inline PlacementType& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
     /**
      * <p>When multiple Availability Zones are specified, Amazon EMR evaluates them and

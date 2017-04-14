@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/RecurringChargeFrequency.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The frequency of the recurring charge.</p>
      */
-    inline void SetFrequency(RecurringChargeFrequency&& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
+    inline void SetFrequency(RecurringChargeFrequency&& value) { m_frequencyHasBeenSet = true; m_frequency = std::move(value); }
 
     /**
      * <p>The frequency of the recurring charge.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The frequency of the recurring charge.</p>
      */
-    inline RecurringCharge& WithFrequency(RecurringChargeFrequency&& value) { SetFrequency(value); return *this;}
+    inline RecurringCharge& WithFrequency(RecurringChargeFrequency&& value) { SetFrequency(std::move(value)); return *this;}
 
     /**
      * <p>The amount of the recurring charge.</p>

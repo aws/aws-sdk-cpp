@@ -19,6 +19,7 @@
 #include <aws/codebuild/model/ProjectArtifacts.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codebuild/model/EnvironmentVariable.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The name of the build project to start running a build.</p>
      */
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
+    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
 
     /**
      * <p>The name of the build project to start running a build.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The name of the build project to start running a build.</p>
      */
-    inline StartBuildRequest& WithProjectName(Aws::String&& value) { SetProjectName(value); return *this;}
+    inline StartBuildRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the build project to start running a build.</p>
@@ -98,7 +99,7 @@ namespace Model
      * <p>For Amazon Simple Storage Service (Amazon S3): the version ID of the object
      * representing the build input ZIP file to use.</p> </li> </ul>
      */
-    inline void SetSourceVersion(Aws::String&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = value; }
+    inline void SetSourceVersion(Aws::String&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::move(value); }
 
     /**
      * <p>A version of the build input to be built, for this build only. If not
@@ -125,7 +126,7 @@ namespace Model
      * <p>For Amazon Simple Storage Service (Amazon S3): the version ID of the object
      * representing the build input ZIP file to use.</p> </li> </ul>
      */
-    inline StartBuildRequest& WithSourceVersion(Aws::String&& value) { SetSourceVersion(value); return *this;}
+    inline StartBuildRequest& WithSourceVersion(Aws::String&& value) { SetSourceVersion(std::move(value)); return *this;}
 
     /**
      * <p>A version of the build input to be built, for this build only. If not
@@ -152,7 +153,7 @@ namespace Model
      * <p>Build output artifact settings that override, for this build only, the latest
      * ones already defined in the build project.</p>
      */
-    inline void SetArtifactsOverride(ProjectArtifacts&& value) { m_artifactsOverrideHasBeenSet = true; m_artifactsOverride = value; }
+    inline void SetArtifactsOverride(ProjectArtifacts&& value) { m_artifactsOverrideHasBeenSet = true; m_artifactsOverride = std::move(value); }
 
     /**
      * <p>Build output artifact settings that override, for this build only, the latest
@@ -164,7 +165,7 @@ namespace Model
      * <p>Build output artifact settings that override, for this build only, the latest
      * ones already defined in the build project.</p>
      */
-    inline StartBuildRequest& WithArtifactsOverride(ProjectArtifacts&& value) { SetArtifactsOverride(value); return *this;}
+    inline StartBuildRequest& WithArtifactsOverride(ProjectArtifacts&& value) { SetArtifactsOverride(std::move(value)); return *this;}
 
     /**
      * <p>A set of environment variables that overrides, for this build only, the
@@ -182,7 +183,7 @@ namespace Model
      * <p>A set of environment variables that overrides, for this build only, the
      * latest ones already defined in the build project.</p>
      */
-    inline void SetEnvironmentVariablesOverride(Aws::Vector<EnvironmentVariable>&& value) { m_environmentVariablesOverrideHasBeenSet = true; m_environmentVariablesOverride = value; }
+    inline void SetEnvironmentVariablesOverride(Aws::Vector<EnvironmentVariable>&& value) { m_environmentVariablesOverrideHasBeenSet = true; m_environmentVariablesOverride = std::move(value); }
 
     /**
      * <p>A set of environment variables that overrides, for this build only, the
@@ -194,7 +195,7 @@ namespace Model
      * <p>A set of environment variables that overrides, for this build only, the
      * latest ones already defined in the build project.</p>
      */
-    inline StartBuildRequest& WithEnvironmentVariablesOverride(Aws::Vector<EnvironmentVariable>&& value) { SetEnvironmentVariablesOverride(value); return *this;}
+    inline StartBuildRequest& WithEnvironmentVariablesOverride(Aws::Vector<EnvironmentVariable>&& value) { SetEnvironmentVariablesOverride(std::move(value)); return *this;}
 
     /**
      * <p>A set of environment variables that overrides, for this build only, the
@@ -206,7 +207,7 @@ namespace Model
      * <p>A set of environment variables that overrides, for this build only, the
      * latest ones already defined in the build project.</p>
      */
-    inline StartBuildRequest& AddEnvironmentVariablesOverride(EnvironmentVariable&& value) { m_environmentVariablesOverrideHasBeenSet = true; m_environmentVariablesOverride.push_back(value); return *this; }
+    inline StartBuildRequest& AddEnvironmentVariablesOverride(EnvironmentVariable&& value) { m_environmentVariablesOverrideHasBeenSet = true; m_environmentVariablesOverride.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A build spec declaration that overrides, for this build only, the latest one
@@ -224,7 +225,7 @@ namespace Model
      * <p>A build spec declaration that overrides, for this build only, the latest one
      * already defined in the build project.</p>
      */
-    inline void SetBuildspecOverride(Aws::String&& value) { m_buildspecOverrideHasBeenSet = true; m_buildspecOverride = value; }
+    inline void SetBuildspecOverride(Aws::String&& value) { m_buildspecOverrideHasBeenSet = true; m_buildspecOverride = std::move(value); }
 
     /**
      * <p>A build spec declaration that overrides, for this build only, the latest one
@@ -242,7 +243,7 @@ namespace Model
      * <p>A build spec declaration that overrides, for this build only, the latest one
      * already defined in the build project.</p>
      */
-    inline StartBuildRequest& WithBuildspecOverride(Aws::String&& value) { SetBuildspecOverride(value); return *this;}
+    inline StartBuildRequest& WithBuildspecOverride(Aws::String&& value) { SetBuildspecOverride(std::move(value)); return *this;}
 
     /**
      * <p>A build spec declaration that overrides, for this build only, the latest one

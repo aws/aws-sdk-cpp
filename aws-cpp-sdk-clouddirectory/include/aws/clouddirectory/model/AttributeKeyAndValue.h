@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/AttributeKey.h>
 #include <aws/clouddirectory/model/TypedAttributeValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The key of the attribute.</p>
      */
-    inline void SetKey(AttributeKey&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(AttributeKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The key of the attribute.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The key of the attribute.</p>
      */
-    inline AttributeKeyAndValue& WithKey(AttributeKey&& value) { SetKey(value); return *this;}
+    inline AttributeKeyAndValue& WithKey(AttributeKey&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The value of the attribute.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The value of the attribute.</p>
      */
-    inline void SetValue(TypedAttributeValue&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(TypedAttributeValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of the attribute.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The value of the attribute.</p>
      */
-    inline AttributeKeyAndValue& WithValue(TypedAttributeValue&& value) { SetValue(value); return *this;}
+    inline AttributeKeyAndValue& WithValue(TypedAttributeValue&& value) { SetValue(std::move(value)); return *this;}
 
   private:
     AttributeKey m_key;

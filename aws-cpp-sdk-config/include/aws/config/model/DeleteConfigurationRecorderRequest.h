@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * name of your configuration recorder by using the
      * <code>DescribeConfigurationRecorders</code> action.</p>
      */
-    inline void SetConfigurationRecorderName(Aws::String&& value) { m_configurationRecorderNameHasBeenSet = true; m_configurationRecorderName = value; }
+    inline void SetConfigurationRecorderName(Aws::String&& value) { m_configurationRecorderNameHasBeenSet = true; m_configurationRecorderName = std::move(value); }
 
     /**
      * <p>The name of the configuration recorder to be deleted. You can retrieve the
@@ -79,7 +80,7 @@ namespace Model
      * name of your configuration recorder by using the
      * <code>DescribeConfigurationRecorders</code> action.</p>
      */
-    inline DeleteConfigurationRecorderRequest& WithConfigurationRecorderName(Aws::String&& value) { SetConfigurationRecorderName(value); return *this;}
+    inline DeleteConfigurationRecorderRequest& WithConfigurationRecorderName(Aws::String&& value) { SetConfigurationRecorderName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the configuration recorder to be deleted. You can retrieve the

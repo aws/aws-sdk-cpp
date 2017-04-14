@@ -20,6 +20,7 @@
 #include <aws/es/model/EBSOptions.h>
 #include <aws/es/model/SnapshotOptions.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * must start with a letter or number and can contain the following characters: a-z
      * (lowercase), 0-9, and - (hyphen).</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The name of the Elasticsearch domain that you are creating. Domain names are
@@ -83,7 +84,7 @@ namespace Model
      * must start with a letter or number and can contain the following characters: a-z
      * (lowercase), 0-9, and - (hyphen).</p>
      */
-    inline CreateElasticsearchDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline CreateElasticsearchDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Elasticsearch domain that you are creating. Domain names are
@@ -118,7 +119,7 @@ namespace Model
      * target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon
      * Elasticsearch Service Developer Guide</i>.</p>
      */
-    inline void SetElasticsearchVersion(Aws::String&& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = value; }
+    inline void SetElasticsearchVersion(Aws::String&& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = std::move(value); }
 
     /**
      * <p>String of format X.Y to specify version for the Elasticsearch domain eg.
@@ -145,7 +146,7 @@ namespace Model
      * target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon
      * Elasticsearch Service Developer Guide</i>.</p>
      */
-    inline CreateElasticsearchDomainRequest& WithElasticsearchVersion(Aws::String&& value) { SetElasticsearchVersion(value); return *this;}
+    inline CreateElasticsearchDomainRequest& WithElasticsearchVersion(Aws::String&& value) { SetElasticsearchVersion(std::move(value)); return *this;}
 
     /**
      * <p>String of format X.Y to specify version for the Elasticsearch domain eg.
@@ -172,7 +173,7 @@ namespace Model
      * <p>Configuration options for an Elasticsearch domain. Specifies the instance
      * type and number of instances in the domain cluster. </p>
      */
-    inline void SetElasticsearchClusterConfig(ElasticsearchClusterConfig&& value) { m_elasticsearchClusterConfigHasBeenSet = true; m_elasticsearchClusterConfig = value; }
+    inline void SetElasticsearchClusterConfig(ElasticsearchClusterConfig&& value) { m_elasticsearchClusterConfigHasBeenSet = true; m_elasticsearchClusterConfig = std::move(value); }
 
     /**
      * <p>Configuration options for an Elasticsearch domain. Specifies the instance
@@ -184,7 +185,7 @@ namespace Model
      * <p>Configuration options for an Elasticsearch domain. Specifies the instance
      * type and number of instances in the domain cluster. </p>
      */
-    inline CreateElasticsearchDomainRequest& WithElasticsearchClusterConfig(ElasticsearchClusterConfig&& value) { SetElasticsearchClusterConfig(value); return *this;}
+    inline CreateElasticsearchDomainRequest& WithElasticsearchClusterConfig(ElasticsearchClusterConfig&& value) { SetElasticsearchClusterConfig(std::move(value)); return *this;}
 
     /**
      * <p>Options to enable, disable and specify the type and size of EBS storage
@@ -202,7 +203,7 @@ namespace Model
      * <p>Options to enable, disable and specify the type and size of EBS storage
      * volumes. </p>
      */
-    inline void SetEBSOptions(EBSOptions&& value) { m_eBSOptionsHasBeenSet = true; m_eBSOptions = value; }
+    inline void SetEBSOptions(EBSOptions&& value) { m_eBSOptionsHasBeenSet = true; m_eBSOptions = std::move(value); }
 
     /**
      * <p>Options to enable, disable and specify the type and size of EBS storage
@@ -214,7 +215,7 @@ namespace Model
      * <p>Options to enable, disable and specify the type and size of EBS storage
      * volumes. </p>
      */
-    inline CreateElasticsearchDomainRequest& WithEBSOptions(EBSOptions&& value) { SetEBSOptions(value); return *this;}
+    inline CreateElasticsearchDomainRequest& WithEBSOptions(EBSOptions&& value) { SetEBSOptions(std::move(value)); return *this;}
 
     /**
      * <p> IAM access policy as a JSON-formatted string.</p>
@@ -229,7 +230,7 @@ namespace Model
     /**
      * <p> IAM access policy as a JSON-formatted string.</p>
      */
-    inline void SetAccessPolicies(Aws::String&& value) { m_accessPoliciesHasBeenSet = true; m_accessPolicies = value; }
+    inline void SetAccessPolicies(Aws::String&& value) { m_accessPoliciesHasBeenSet = true; m_accessPolicies = std::move(value); }
 
     /**
      * <p> IAM access policy as a JSON-formatted string.</p>
@@ -244,7 +245,7 @@ namespace Model
     /**
      * <p> IAM access policy as a JSON-formatted string.</p>
      */
-    inline CreateElasticsearchDomainRequest& WithAccessPolicies(Aws::String&& value) { SetAccessPolicies(value); return *this;}
+    inline CreateElasticsearchDomainRequest& WithAccessPolicies(Aws::String&& value) { SetAccessPolicies(std::move(value)); return *this;}
 
     /**
      * <p> IAM access policy as a JSON-formatted string.</p>
@@ -267,7 +268,7 @@ namespace Model
      * <p>Option to set time, in UTC format, of the daily automated snapshot. Default
      * value is 0 hours. </p>
      */
-    inline void SetSnapshotOptions(SnapshotOptions&& value) { m_snapshotOptionsHasBeenSet = true; m_snapshotOptions = value; }
+    inline void SetSnapshotOptions(SnapshotOptions&& value) { m_snapshotOptionsHasBeenSet = true; m_snapshotOptions = std::move(value); }
 
     /**
      * <p>Option to set time, in UTC format, of the daily automated snapshot. Default
@@ -279,7 +280,7 @@ namespace Model
      * <p>Option to set time, in UTC format, of the daily automated snapshot. Default
      * value is 0 hours. </p>
      */
-    inline CreateElasticsearchDomainRequest& WithSnapshotOptions(SnapshotOptions&& value) { SetSnapshotOptions(value); return *this;}
+    inline CreateElasticsearchDomainRequest& WithSnapshotOptions(SnapshotOptions&& value) { SetSnapshotOptions(std::move(value)); return *this;}
 
     /**
      * <p> Option to allow references to indices in an HTTP request body. Must be
@@ -306,7 +307,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuration Advanced Options</a> for more information.</p>
      */
-    inline void SetAdvancedOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions = value; }
+    inline void SetAdvancedOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions = std::move(value); }
 
     /**
      * <p> Option to allow references to indices in an HTTP request body. Must be
@@ -324,7 +325,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuration Advanced Options</a> for more information.</p>
      */
-    inline CreateElasticsearchDomainRequest& WithAdvancedOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetAdvancedOptions(value); return *this;}
+    inline CreateElasticsearchDomainRequest& WithAdvancedOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetAdvancedOptions(std::move(value)); return *this;}
 
     /**
      * <p> Option to allow references to indices in an HTTP request body. Must be
@@ -333,7 +334,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuration Advanced Options</a> for more information.</p>
      */
-    inline CreateElasticsearchDomainRequest& AddAdvancedOptions(const Aws::String& key, const Aws::String& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions[key] = value; return *this; }
+    inline CreateElasticsearchDomainRequest& AddAdvancedOptions(const Aws::String& key, const Aws::String& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(key, value); return *this; }
 
     /**
      * <p> Option to allow references to indices in an HTTP request body. Must be
@@ -342,7 +343,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuration Advanced Options</a> for more information.</p>
      */
-    inline CreateElasticsearchDomainRequest& AddAdvancedOptions(Aws::String&& key, const Aws::String& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions[key] = value; return *this; }
+    inline CreateElasticsearchDomainRequest& AddAdvancedOptions(Aws::String&& key, const Aws::String& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(std::move(key), value); return *this; }
 
     /**
      * <p> Option to allow references to indices in an HTTP request body. Must be
@@ -351,7 +352,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuration Advanced Options</a> for more information.</p>
      */
-    inline CreateElasticsearchDomainRequest& AddAdvancedOptions(const Aws::String& key, Aws::String&& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions[key] = value; return *this; }
+    inline CreateElasticsearchDomainRequest& AddAdvancedOptions(const Aws::String& key, Aws::String&& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p> Option to allow references to indices in an HTTP request body. Must be
@@ -360,7 +361,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuration Advanced Options</a> for more information.</p>
      */
-    inline CreateElasticsearchDomainRequest& AddAdvancedOptions(Aws::String&& key, Aws::String&& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions[key] = value; return *this; }
+    inline CreateElasticsearchDomainRequest& AddAdvancedOptions(Aws::String&& key, Aws::String&& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p> Option to allow references to indices in an HTTP request body. Must be
@@ -369,7 +370,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuration Advanced Options</a> for more information.</p>
      */
-    inline CreateElasticsearchDomainRequest& AddAdvancedOptions(const char* key, Aws::String&& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions[key] = value; return *this; }
+    inline CreateElasticsearchDomainRequest& AddAdvancedOptions(const char* key, Aws::String&& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p> Option to allow references to indices in an HTTP request body. Must be
@@ -378,7 +379,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuration Advanced Options</a> for more information.</p>
      */
-    inline CreateElasticsearchDomainRequest& AddAdvancedOptions(Aws::String&& key, const char* value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions[key] = value; return *this; }
+    inline CreateElasticsearchDomainRequest& AddAdvancedOptions(Aws::String&& key, const char* value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(std::move(key), value); return *this; }
 
     /**
      * <p> Option to allow references to indices in an HTTP request body. Must be
@@ -387,7 +388,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuration Advanced Options</a> for more information.</p>
      */
-    inline CreateElasticsearchDomainRequest& AddAdvancedOptions(const char* key, const char* value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions[key] = value; return *this; }
+    inline CreateElasticsearchDomainRequest& AddAdvancedOptions(const char* key, const char* value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(key, value); return *this; }
 
   private:
     Aws::String m_domainName;

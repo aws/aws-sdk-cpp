@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name of the character set.</p>
      */
-    inline void SetCharacterSetName(Aws::String&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = value; }
+    inline void SetCharacterSetName(Aws::String&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = std::move(value); }
 
     /**
      * <p>The name of the character set.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name of the character set.</p>
      */
-    inline CharacterSet& WithCharacterSetName(Aws::String&& value) { SetCharacterSetName(value); return *this;}
+    inline CharacterSet& WithCharacterSetName(Aws::String&& value) { SetCharacterSetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the character set.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The description of the character set.</p>
      */
-    inline void SetCharacterSetDescription(Aws::String&& value) { m_characterSetDescriptionHasBeenSet = true; m_characterSetDescription = value; }
+    inline void SetCharacterSetDescription(Aws::String&& value) { m_characterSetDescriptionHasBeenSet = true; m_characterSetDescription = std::move(value); }
 
     /**
      * <p>The description of the character set.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The description of the character set.</p>
      */
-    inline CharacterSet& WithCharacterSetDescription(Aws::String&& value) { SetCharacterSetDescription(value); return *this;}
+    inline CharacterSet& WithCharacterSetDescription(Aws::String&& value) { SetCharacterSetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the character set.</p>

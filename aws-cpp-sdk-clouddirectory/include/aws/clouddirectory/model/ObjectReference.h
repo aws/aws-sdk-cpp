@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -71,7 +72,7 @@ namespace Model
      * <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
      * </ul>
      */
-    inline void SetSelector(Aws::String&& value) { m_selectorHasBeenSet = true; m_selector = value; }
+    inline void SetSelector(Aws::String&& value) { m_selectorHasBeenSet = true; m_selector = std::move(value); }
 
     /**
      * <p>Allows you to specify an object. You can identify an object in one of the
@@ -101,7 +102,7 @@ namespace Model
      * <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
      * </ul>
      */
-    inline ObjectReference& WithSelector(Aws::String&& value) { SetSelector(value); return *this;}
+    inline ObjectReference& WithSelector(Aws::String&& value) { SetSelector(std::move(value)); return *this;}
 
     /**
      * <p>Allows you to specify an object. You can identify an object in one of the

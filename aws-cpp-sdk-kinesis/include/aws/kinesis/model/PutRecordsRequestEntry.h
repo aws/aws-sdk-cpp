@@ -16,6 +16,7 @@
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * to the partition key size, the total size must not exceed the maximum record
      * size (1 MB).</p>
      */
-    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = value; }
+    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
      * <p>The data blob to put into the record, which is base64-encoded when the blob
@@ -83,7 +84,7 @@ namespace Model
      * to the partition key size, the total size must not exceed the maximum record
      * size (1 MB).</p>
      */
-    inline PutRecordsRequestEntry& WithData(Aws::Utils::ByteBuffer&& value) { SetData(value); return *this;}
+    inline PutRecordsRequestEntry& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
 
     /**
      * <p>The hash value used to determine explicitly the shard that the data record is
@@ -101,7 +102,7 @@ namespace Model
      * <p>The hash value used to determine explicitly the shard that the data record is
      * assigned to by overriding the partition key hash.</p>
      */
-    inline void SetExplicitHashKey(Aws::String&& value) { m_explicitHashKeyHasBeenSet = true; m_explicitHashKey = value; }
+    inline void SetExplicitHashKey(Aws::String&& value) { m_explicitHashKeyHasBeenSet = true; m_explicitHashKey = std::move(value); }
 
     /**
      * <p>The hash value used to determine explicitly the shard that the data record is
@@ -119,7 +120,7 @@ namespace Model
      * <p>The hash value used to determine explicitly the shard that the data record is
      * assigned to by overriding the partition key hash.</p>
      */
-    inline PutRecordsRequestEntry& WithExplicitHashKey(Aws::String&& value) { SetExplicitHashKey(value); return *this;}
+    inline PutRecordsRequestEntry& WithExplicitHashKey(Aws::String&& value) { SetExplicitHashKey(std::move(value)); return *this;}
 
     /**
      * <p>The hash value used to determine explicitly the shard that the data record is
@@ -161,7 +162,7 @@ namespace Model
      * hashing mechanism, all data records with the same partition key map to the same
      * shard within the stream.</p>
      */
-    inline void SetPartitionKey(Aws::String&& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = value; }
+    inline void SetPartitionKey(Aws::String&& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = std::move(value); }
 
     /**
      * <p>Determines which shard in the stream the data record is assigned to.
@@ -197,7 +198,7 @@ namespace Model
      * hashing mechanism, all data records with the same partition key map to the same
      * shard within the stream.</p>
      */
-    inline PutRecordsRequestEntry& WithPartitionKey(Aws::String&& value) { SetPartitionKey(value); return *this;}
+    inline PutRecordsRequestEntry& WithPartitionKey(Aws::String&& value) { SetPartitionKey(std::move(value)); return *this;}
 
     /**
      * <p>Determines which shard in the stream the data record is assigned to.

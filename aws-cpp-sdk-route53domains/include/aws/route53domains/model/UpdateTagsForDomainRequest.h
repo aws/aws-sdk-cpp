@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53domains/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,7 +73,7 @@ namespace Model
      * end of a label. To specify an Internationalized Domain Name, you must convert
      * the name to Punycode.</p> <p>Required: Yes</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The domain for which you want to add or update tags.</p> <p>The name of a
@@ -105,7 +106,7 @@ namespace Model
      * end of a label. To specify an Internationalized Domain Name, you must convert
      * the name to Punycode.</p> <p>Required: Yes</p>
      */
-    inline UpdateTagsForDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline UpdateTagsForDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The domain for which you want to add or update tags.</p> <p>The name of a
@@ -161,7 +162,7 @@ namespace Model
      * alphanumeric, space, and ".:/=+\-@"</p> <p>Constraints: Each value can be 0-256
      * characters long.</p> <p>Required: Yes</p> </li> </ul>
      */
-    inline void SetTagsToUpdate(Aws::Vector<Tag>&& value) { m_tagsToUpdateHasBeenSet = true; m_tagsToUpdate = value; }
+    inline void SetTagsToUpdate(Aws::Vector<Tag>&& value) { m_tagsToUpdateHasBeenSet = true; m_tagsToUpdate = std::move(value); }
 
     /**
      * <p>A list of the tag keys and values that you want to add or update. If you
@@ -191,7 +192,7 @@ namespace Model
      * alphanumeric, space, and ".:/=+\-@"</p> <p>Constraints: Each value can be 0-256
      * characters long.</p> <p>Required: Yes</p> </li> </ul>
      */
-    inline UpdateTagsForDomainRequest& WithTagsToUpdate(Aws::Vector<Tag>&& value) { SetTagsToUpdate(value); return *this;}
+    inline UpdateTagsForDomainRequest& WithTagsToUpdate(Aws::Vector<Tag>&& value) { SetTagsToUpdate(std::move(value)); return *this;}
 
     /**
      * <p>A list of the tag keys and values that you want to add or update. If you
@@ -221,7 +222,7 @@ namespace Model
      * alphanumeric, space, and ".:/=+\-@"</p> <p>Constraints: Each value can be 0-256
      * characters long.</p> <p>Required: Yes</p> </li> </ul>
      */
-    inline UpdateTagsForDomainRequest& AddTagsToUpdate(Tag&& value) { m_tagsToUpdateHasBeenSet = true; m_tagsToUpdate.push_back(value); return *this; }
+    inline UpdateTagsForDomainRequest& AddTagsToUpdate(Tag&& value) { m_tagsToUpdateHasBeenSet = true; m_tagsToUpdate.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_domainName;

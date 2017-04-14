@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/codebuild/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The name of the build project.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the build project.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The name of the build project.</p>
      */
-    inline Project& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Project& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the build project.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the build project.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the build project.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the build project.</p>
      */
-    inline Project& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Project& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the build project.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>A description that makes the build project easy to identify.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description that makes the build project easy to identify.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>A description that makes the build project easy to identify.</p>
      */
-    inline Project& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline Project& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description that makes the build project easy to identify.</p>
@@ -167,7 +168,7 @@ namespace Model
     /**
      * <p>Information about the build input source code for this build project.</p>
      */
-    inline void SetSource(ProjectSource&& value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline void SetSource(ProjectSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
      * <p>Information about the build input source code for this build project.</p>
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>Information about the build input source code for this build project.</p>
      */
-    inline Project& WithSource(ProjectSource&& value) { SetSource(value); return *this;}
+    inline Project& WithSource(ProjectSource&& value) { SetSource(std::move(value)); return *this;}
 
     /**
      * <p>Information about the build output artifacts for the build project.</p>
@@ -192,7 +193,7 @@ namespace Model
     /**
      * <p>Information about the build output artifacts for the build project.</p>
      */
-    inline void SetArtifacts(ProjectArtifacts&& value) { m_artifactsHasBeenSet = true; m_artifacts = value; }
+    inline void SetArtifacts(ProjectArtifacts&& value) { m_artifactsHasBeenSet = true; m_artifacts = std::move(value); }
 
     /**
      * <p>Information about the build output artifacts for the build project.</p>
@@ -202,7 +203,7 @@ namespace Model
     /**
      * <p>Information about the build output artifacts for the build project.</p>
      */
-    inline Project& WithArtifacts(ProjectArtifacts&& value) { SetArtifacts(value); return *this;}
+    inline Project& WithArtifacts(ProjectArtifacts&& value) { SetArtifacts(std::move(value)); return *this;}
 
     /**
      * <p>Information about the build environment for this build project.</p>
@@ -217,7 +218,7 @@ namespace Model
     /**
      * <p>Information about the build environment for this build project.</p>
      */
-    inline void SetEnvironment(ProjectEnvironment&& value) { m_environmentHasBeenSet = true; m_environment = value; }
+    inline void SetEnvironment(ProjectEnvironment&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
     /**
      * <p>Information about the build environment for this build project.</p>
@@ -227,7 +228,7 @@ namespace Model
     /**
      * <p>Information about the build environment for this build project.</p>
      */
-    inline Project& WithEnvironment(ProjectEnvironment&& value) { SetEnvironment(value); return *this;}
+    inline Project& WithEnvironment(ProjectEnvironment&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the AWS Identity and Access Management (IAM) role that enables AWS
@@ -248,7 +249,7 @@ namespace Model
      * CodeBuild to interact with dependent AWS services on behalf of the AWS
      * account.</p>
      */
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
      * <p>The ARN of the AWS Identity and Access Management (IAM) role that enables AWS
@@ -269,7 +270,7 @@ namespace Model
      * CodeBuild to interact with dependent AWS services on behalf of the AWS
      * account.</p>
      */
-    inline Project& WithServiceRole(Aws::String&& value) { SetServiceRole(value); return *this;}
+    inline Project& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the AWS Identity and Access Management (IAM) role that enables AWS
@@ -321,7 +322,7 @@ namespace Model
      * the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
      * the format <code>alias/<i>alias-name</i> </code>).</p>
      */
-    inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
+    inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
@@ -345,7 +346,7 @@ namespace Model
      * the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
      * the format <code>alias/<i>alias-name</i> </code>).</p>
      */
-    inline Project& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(value); return *this;}
+    inline Project& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
@@ -371,7 +372,7 @@ namespace Model
      * <p>The tags for this build project.</p> <p>These tags are available for use by
      * AWS services that support AWS CodeBuild build project tags.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags for this build project.</p> <p>These tags are available for use by
@@ -383,7 +384,7 @@ namespace Model
      * <p>The tags for this build project.</p> <p>These tags are available for use by
      * AWS services that support AWS CodeBuild build project tags.</p>
      */
-    inline Project& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline Project& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags for this build project.</p> <p>These tags are available for use by
@@ -395,7 +396,7 @@ namespace Model
      * <p>The tags for this build project.</p> <p>These tags are available for use by
      * AWS services that support AWS CodeBuild build project tags.</p>
      */
-    inline Project& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline Project& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>When the build project was created, expressed in Unix time format.</p>
@@ -410,7 +411,7 @@ namespace Model
     /**
      * <p>When the build project was created, expressed in Unix time format.</p>
      */
-    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = value; }
+    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
 
     /**
      * <p>When the build project was created, expressed in Unix time format.</p>
@@ -420,7 +421,7 @@ namespace Model
     /**
      * <p>When the build project was created, expressed in Unix time format.</p>
      */
-    inline Project& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(value); return *this;}
+    inline Project& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
 
     /**
      * <p>When the build project's settings were last modified, expressed in Unix time
@@ -438,7 +439,7 @@ namespace Model
      * <p>When the build project's settings were last modified, expressed in Unix time
      * format.</p>
      */
-    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
+    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
 
     /**
      * <p>When the build project's settings were last modified, expressed in Unix time
@@ -450,7 +451,7 @@ namespace Model
      * <p>When the build project's settings were last modified, expressed in Unix time
      * format.</p>
      */
-    inline Project& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(value); return *this;}
+    inline Project& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <zonbook> <simpara>The ID of the target.</simpara> </zonbook> <xhtml> <p>The ID
      * of the target.</p> </xhtml>
      */
-    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
+    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
 
     /**
      * <zonbook> <simpara>The ID of the target.</simpara> </zonbook> <xhtml> <p>The ID
@@ -77,7 +78,7 @@ namespace Model
      * <zonbook> <simpara>The ID of the target.</simpara> </zonbook> <xhtml> <p>The ID
      * of the target.</p> </xhtml>
      */
-    inline RemoveTargetsResultEntry& WithTargetId(Aws::String&& value) { SetTargetId(value); return *this;}
+    inline RemoveTargetsResultEntry& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The ID of the target.</simpara> </zonbook> <xhtml> <p>The ID
@@ -104,7 +105,7 @@ namespace Model
      * failed.</simpara> </zonbook> <xhtml> <p>The error code that indicates why the
      * target removal failed.</p> </xhtml>
      */
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
      * <zonbook> <simpara>The error code that indicates why the target removal
@@ -125,7 +126,7 @@ namespace Model
      * failed.</simpara> </zonbook> <xhtml> <p>The error code that indicates why the
      * target removal failed.</p> </xhtml>
      */
-    inline RemoveTargetsResultEntry& WithErrorCode(Aws::String&& value) { SetErrorCode(value); return *this;}
+    inline RemoveTargetsResultEntry& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The error code that indicates why the target removal
@@ -153,7 +154,7 @@ namespace Model
      * failed.</simpara> </zonbook> <xhtml> <p>The error message that explains why the
      * target removal failed.</p> </xhtml>
      */
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
      * <zonbook> <simpara>The error message that explains why the target removal
@@ -174,7 +175,7 @@ namespace Model
      * failed.</simpara> </zonbook> <xhtml> <p>The error message that explains why the
      * target removal failed.</p> </xhtml>
      */
-    inline RemoveTargetsResultEntry& WithErrorMessage(Aws::String&& value) { SetErrorMessage(value); return *this;}
+    inline RemoveTargetsResultEntry& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The error message that explains why the target removal

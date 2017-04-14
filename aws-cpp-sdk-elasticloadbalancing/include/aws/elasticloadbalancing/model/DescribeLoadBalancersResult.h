@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticloadbalancing/model/ResponseMetadata.h>
 #include <aws/elasticloadbalancing/model/LoadBalancerDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>Information about the load balancers.</p>
      */
-    inline void SetLoadBalancerDescriptions(Aws::Vector<LoadBalancerDescription>&& value) { m_loadBalancerDescriptions = value; }
+    inline void SetLoadBalancerDescriptions(Aws::Vector<LoadBalancerDescription>&& value) { m_loadBalancerDescriptions = std::move(value); }
 
     /**
      * <p>Information about the load balancers.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>Information about the load balancers.</p>
      */
-    inline DescribeLoadBalancersResult& WithLoadBalancerDescriptions(Aws::Vector<LoadBalancerDescription>&& value) { SetLoadBalancerDescriptions(value); return *this;}
+    inline DescribeLoadBalancersResult& WithLoadBalancerDescriptions(Aws::Vector<LoadBalancerDescription>&& value) { SetLoadBalancerDescriptions(std::move(value)); return *this;}
 
     /**
      * <p>Information about the load balancers.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>Information about the load balancers.</p>
      */
-    inline DescribeLoadBalancersResult& AddLoadBalancerDescriptions(LoadBalancerDescription&& value) { m_loadBalancerDescriptions.push_back(value); return *this; }
+    inline DescribeLoadBalancersResult& AddLoadBalancerDescriptions(LoadBalancerDescription&& value) { m_loadBalancerDescriptions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The marker to use when requesting the next set of results. If there are no
@@ -99,7 +100,7 @@ namespace Model
      * <p>The marker to use when requesting the next set of results. If there are no
      * additional results, the string is empty.</p>
      */
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
      * <p>The marker to use when requesting the next set of results. If there are no
@@ -117,7 +118,7 @@ namespace Model
      * <p>The marker to use when requesting the next set of results. If there are no
      * additional results, the string is empty.</p>
      */
-    inline DescribeLoadBalancersResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
+    inline DescribeLoadBalancersResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>The marker to use when requesting the next set of results. If there are no
@@ -132,13 +133,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeLoadBalancersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeLoadBalancersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeLoadBalancersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<LoadBalancerDescription> m_loadBalancerDescriptions;

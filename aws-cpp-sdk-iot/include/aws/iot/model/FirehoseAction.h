@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
      */
-    inline FirehoseAction& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline FirehoseAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The delivery stream name.</p>
      */
-    inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
+    inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = std::move(value); }
 
     /**
      * <p>The delivery stream name.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The delivery stream name.</p>
      */
-    inline FirehoseAction& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(value); return *this;}
+    inline FirehoseAction& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The delivery stream name.</p>
@@ -133,7 +134,7 @@ namespace Model
      * Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows
      * newline), ',' (comma).</p>
      */
-    inline void SetSeparator(Aws::String&& value) { m_separatorHasBeenSet = true; m_separator = value; }
+    inline void SetSeparator(Aws::String&& value) { m_separatorHasBeenSet = true; m_separator = std::move(value); }
 
     /**
      * <p>A character separator that will be used to separate records written to the
@@ -154,7 +155,7 @@ namespace Model
      * Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows
      * newline), ',' (comma).</p>
      */
-    inline FirehoseAction& WithSeparator(Aws::String&& value) { SetSeparator(value); return *this;}
+    inline FirehoseAction& WithSeparator(Aws::String&& value) { SetSeparator(std::move(value)); return *this;}
 
     /**
      * <p>A character separator that will be used to separate records written to the

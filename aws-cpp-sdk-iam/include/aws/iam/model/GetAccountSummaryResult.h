@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iam/model/ResponseMetadata.h>
 #include <aws/iam/model/SummaryKeyType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>A set of key value pairs containing information about IAM entity usage and
      * IAM quotas.</p>
      */
-    inline void SetSummaryMap(Aws::Map<SummaryKeyType, int>&& value) { m_summaryMap = value; }
+    inline void SetSummaryMap(Aws::Map<SummaryKeyType, int>&& value) { m_summaryMap = std::move(value); }
 
     /**
      * <p>A set of key value pairs containing information about IAM entity usage and
@@ -75,19 +76,19 @@ namespace Model
      * <p>A set of key value pairs containing information about IAM entity usage and
      * IAM quotas.</p>
      */
-    inline GetAccountSummaryResult& WithSummaryMap(Aws::Map<SummaryKeyType, int>&& value) { SetSummaryMap(value); return *this;}
+    inline GetAccountSummaryResult& WithSummaryMap(Aws::Map<SummaryKeyType, int>&& value) { SetSummaryMap(std::move(value)); return *this;}
 
     /**
      * <p>A set of key value pairs containing information about IAM entity usage and
      * IAM quotas.</p>
      */
-    inline GetAccountSummaryResult& AddSummaryMap(const SummaryKeyType& key, int value) { m_summaryMap[key] = value; return *this; }
+    inline GetAccountSummaryResult& AddSummaryMap(const SummaryKeyType& key, int value) { m_summaryMap.emplace(key, value); return *this; }
 
     /**
      * <p>A set of key value pairs containing information about IAM entity usage and
      * IAM quotas.</p>
      */
-    inline GetAccountSummaryResult& AddSummaryMap(SummaryKeyType&& key, int value) { m_summaryMap[key] = value; return *this; }
+    inline GetAccountSummaryResult& AddSummaryMap(SummaryKeyType&& key, int value) { m_summaryMap.emplace(std::move(key), value); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -96,13 +97,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline GetAccountSummaryResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline GetAccountSummaryResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline GetAccountSummaryResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Map<SummaryKeyType, int> m_summaryMap;

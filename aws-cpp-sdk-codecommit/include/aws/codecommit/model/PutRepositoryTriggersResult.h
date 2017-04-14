@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The system-generated unique ID for the create or update operation.</p>
      */
-    inline void SetConfigurationId(Aws::String&& value) { m_configurationId = value; }
+    inline void SetConfigurationId(Aws::String&& value) { m_configurationId = std::move(value); }
 
     /**
      * <p>The system-generated unique ID for the create or update operation.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The system-generated unique ID for the create or update operation.</p>
      */
-    inline PutRepositoryTriggersResult& WithConfigurationId(Aws::String&& value) { SetConfigurationId(value); return *this;}
+    inline PutRepositoryTriggersResult& WithConfigurationId(Aws::String&& value) { SetConfigurationId(std::move(value)); return *this;}
 
     /**
      * <p>The system-generated unique ID for the create or update operation.</p>

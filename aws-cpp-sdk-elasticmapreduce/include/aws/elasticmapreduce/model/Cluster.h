@@ -23,6 +23,7 @@
 #include <aws/elasticmapreduce/model/Application.h>
 #include <aws/elasticmapreduce/model/Tag.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The unique identifier for the cluster.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique identifier for the cluster.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The unique identifier for the cluster.</p>
      */
-    inline Cluster& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline Cluster& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the cluster.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The name of the cluster.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the cluster.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The name of the cluster.</p>
      */
-    inline Cluster& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Cluster& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cluster.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>The current status details about the cluster.</p>
      */
-    inline void SetStatus(ClusterStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ClusterStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The current status details about the cluster.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>The current status details about the cluster.</p>
      */
-    inline Cluster& WithStatus(ClusterStatus&& value) { SetStatus(value); return *this;}
+    inline Cluster& WithStatus(ClusterStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Provides information about the EC2 instances in a cluster grouped by
@@ -162,7 +163,7 @@ namespace Model
      * <p>Provides information about the EC2 instances in a cluster grouped by
      * category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
      */
-    inline void SetEc2InstanceAttributes(Ec2InstanceAttributes&& value) { m_ec2InstanceAttributesHasBeenSet = true; m_ec2InstanceAttributes = value; }
+    inline void SetEc2InstanceAttributes(Ec2InstanceAttributes&& value) { m_ec2InstanceAttributesHasBeenSet = true; m_ec2InstanceAttributes = std::move(value); }
 
     /**
      * <p>Provides information about the EC2 instances in a cluster grouped by
@@ -174,7 +175,7 @@ namespace Model
      * <p>Provides information about the EC2 instances in a cluster grouped by
      * category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
      */
-    inline Cluster& WithEc2InstanceAttributes(Ec2InstanceAttributes&& value) { SetEc2InstanceAttributes(value); return *this;}
+    inline Cluster& WithEc2InstanceAttributes(Ec2InstanceAttributes&& value) { SetEc2InstanceAttributes(std::move(value)); return *this;}
 
     /**
      * <note> <p>The instance fleet configuration is available only in Amazon EMR
@@ -201,7 +202,7 @@ namespace Model
      * indicates a uniform instance group configuration. A value of
      * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
      */
-    inline void SetInstanceCollectionType(InstanceCollectionType&& value) { m_instanceCollectionTypeHasBeenSet = true; m_instanceCollectionType = value; }
+    inline void SetInstanceCollectionType(InstanceCollectionType&& value) { m_instanceCollectionTypeHasBeenSet = true; m_instanceCollectionType = std::move(value); }
 
     /**
      * <note> <p>The instance fleet configuration is available only in Amazon EMR
@@ -219,7 +220,7 @@ namespace Model
      * indicates a uniform instance group configuration. A value of
      * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
      */
-    inline Cluster& WithInstanceCollectionType(InstanceCollectionType&& value) { SetInstanceCollectionType(value); return *this;}
+    inline Cluster& WithInstanceCollectionType(InstanceCollectionType&& value) { SetInstanceCollectionType(std::move(value)); return *this;}
 
     /**
      * <p>The path to the Amazon S3 location where logs for this cluster are
@@ -237,7 +238,7 @@ namespace Model
      * <p>The path to the Amazon S3 location where logs for this cluster are
      * stored.</p>
      */
-    inline void SetLogUri(Aws::String&& value) { m_logUriHasBeenSet = true; m_logUri = value; }
+    inline void SetLogUri(Aws::String&& value) { m_logUriHasBeenSet = true; m_logUri = std::move(value); }
 
     /**
      * <p>The path to the Amazon S3 location where logs for this cluster are
@@ -255,7 +256,7 @@ namespace Model
      * <p>The path to the Amazon S3 location where logs for this cluster are
      * stored.</p>
      */
-    inline Cluster& WithLogUri(Aws::String&& value) { SetLogUri(value); return *this;}
+    inline Cluster& WithLogUri(Aws::String&& value) { SetLogUri(std::move(value)); return *this;}
 
     /**
      * <p>The path to the Amazon S3 location where logs for this cluster are
@@ -276,7 +277,7 @@ namespace Model
     /**
      * <p>The AMI version requested for this cluster.</p>
      */
-    inline void SetRequestedAmiVersion(Aws::String&& value) { m_requestedAmiVersionHasBeenSet = true; m_requestedAmiVersion = value; }
+    inline void SetRequestedAmiVersion(Aws::String&& value) { m_requestedAmiVersionHasBeenSet = true; m_requestedAmiVersion = std::move(value); }
 
     /**
      * <p>The AMI version requested for this cluster.</p>
@@ -291,7 +292,7 @@ namespace Model
     /**
      * <p>The AMI version requested for this cluster.</p>
      */
-    inline Cluster& WithRequestedAmiVersion(Aws::String&& value) { SetRequestedAmiVersion(value); return *this;}
+    inline Cluster& WithRequestedAmiVersion(Aws::String&& value) { SetRequestedAmiVersion(std::move(value)); return *this;}
 
     /**
      * <p>The AMI version requested for this cluster.</p>
@@ -311,7 +312,7 @@ namespace Model
     /**
      * <p>The AMI version running on this cluster.</p>
      */
-    inline void SetRunningAmiVersion(Aws::String&& value) { m_runningAmiVersionHasBeenSet = true; m_runningAmiVersion = value; }
+    inline void SetRunningAmiVersion(Aws::String&& value) { m_runningAmiVersionHasBeenSet = true; m_runningAmiVersion = std::move(value); }
 
     /**
      * <p>The AMI version running on this cluster.</p>
@@ -326,7 +327,7 @@ namespace Model
     /**
      * <p>The AMI version running on this cluster.</p>
      */
-    inline Cluster& WithRunningAmiVersion(Aws::String&& value) { SetRunningAmiVersion(value); return *this;}
+    inline Cluster& WithRunningAmiVersion(Aws::String&& value) { SetRunningAmiVersion(std::move(value)); return *this;}
 
     /**
      * <p>The AMI version running on this cluster.</p>
@@ -349,7 +350,7 @@ namespace Model
      * <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
      * AMIs, use amiVersion instead instead of ReleaseLabel.</p>
      */
-    inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
+    inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::move(value); }
 
     /**
      * <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
@@ -367,7 +368,7 @@ namespace Model
      * <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
      * AMIs, use amiVersion instead instead of ReleaseLabel.</p>
      */
-    inline Cluster& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(value); return *this;}
+    inline Cluster& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
 
     /**
      * <p>The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
@@ -457,7 +458,7 @@ namespace Model
     /**
      * <p>The applications installed on this cluster.</p>
      */
-    inline void SetApplications(Aws::Vector<Application>&& value) { m_applicationsHasBeenSet = true; m_applications = value; }
+    inline void SetApplications(Aws::Vector<Application>&& value) { m_applicationsHasBeenSet = true; m_applications = std::move(value); }
 
     /**
      * <p>The applications installed on this cluster.</p>
@@ -467,7 +468,7 @@ namespace Model
     /**
      * <p>The applications installed on this cluster.</p>
      */
-    inline Cluster& WithApplications(Aws::Vector<Application>&& value) { SetApplications(value); return *this;}
+    inline Cluster& WithApplications(Aws::Vector<Application>&& value) { SetApplications(std::move(value)); return *this;}
 
     /**
      * <p>The applications installed on this cluster.</p>
@@ -477,7 +478,7 @@ namespace Model
     /**
      * <p>The applications installed on this cluster.</p>
      */
-    inline Cluster& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
+    inline Cluster& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of tags associated with a cluster.</p>
@@ -492,7 +493,7 @@ namespace Model
     /**
      * <p>A list of tags associated with a cluster.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of tags associated with a cluster.</p>
@@ -502,7 +503,7 @@ namespace Model
     /**
      * <p>A list of tags associated with a cluster.</p>
      */
-    inline Cluster& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline Cluster& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of tags associated with a cluster.</p>
@@ -512,7 +513,7 @@ namespace Model
     /**
      * <p>A list of tags associated with a cluster.</p>
      */
-    inline Cluster& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline Cluster& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
@@ -530,7 +531,7 @@ namespace Model
      * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
      * resources on your behalf.</p>
      */
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
@@ -548,7 +549,7 @@ namespace Model
      * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
      * resources on your behalf.</p>
      */
-    inline Cluster& WithServiceRole(Aws::String&& value) { SetServiceRole(value); return *this;}
+    inline Cluster& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
@@ -599,7 +600,7 @@ namespace Model
     /**
      * <p>The public DNS name of the master EC2 instance.</p>
      */
-    inline void SetMasterPublicDnsName(Aws::String&& value) { m_masterPublicDnsNameHasBeenSet = true; m_masterPublicDnsName = value; }
+    inline void SetMasterPublicDnsName(Aws::String&& value) { m_masterPublicDnsNameHasBeenSet = true; m_masterPublicDnsName = std::move(value); }
 
     /**
      * <p>The public DNS name of the master EC2 instance.</p>
@@ -614,7 +615,7 @@ namespace Model
     /**
      * <p>The public DNS name of the master EC2 instance.</p>
      */
-    inline Cluster& WithMasterPublicDnsName(Aws::String&& value) { SetMasterPublicDnsName(value); return *this;}
+    inline Cluster& WithMasterPublicDnsName(Aws::String&& value) { SetMasterPublicDnsName(std::move(value)); return *this;}
 
     /**
      * <p>The public DNS name of the master EC2 instance.</p>
@@ -637,7 +638,7 @@ namespace Model
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
      * Configurations supplied to the EMR cluster.</p>
      */
-    inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
+    inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
 
     /**
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
@@ -649,7 +650,7 @@ namespace Model
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
      * Configurations supplied to the EMR cluster.</p>
      */
-    inline Cluster& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(value); return *this;}
+    inline Cluster& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(std::move(value)); return *this;}
 
     /**
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
@@ -661,7 +662,7 @@ namespace Model
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
      * Configurations supplied to the EMR cluster.</p>
      */
-    inline Cluster& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
+    inline Cluster& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The name of the security configuration applied to the cluster.</p>
@@ -676,7 +677,7 @@ namespace Model
     /**
      * <p>The name of the security configuration applied to the cluster.</p>
      */
-    inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
+    inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::move(value); }
 
     /**
      * <p>The name of the security configuration applied to the cluster.</p>
@@ -691,7 +692,7 @@ namespace Model
     /**
      * <p>The name of the security configuration applied to the cluster.</p>
      */
-    inline Cluster& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(value); return *this;}
+    inline Cluster& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The name of the security configuration applied to the cluster.</p>
@@ -720,7 +721,7 @@ namespace Model
      * the automatic scaling feature requires to launch and terminate EC2 instances in
      * an instance group.</p>
      */
-    inline void SetAutoScalingRole(Aws::String&& value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole = value; }
+    inline void SetAutoScalingRole(Aws::String&& value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole = std::move(value); }
 
     /**
      * <p>An IAM role for automatic scaling policies. The default role is
@@ -744,7 +745,7 @@ namespace Model
      * the automatic scaling feature requires to launch and terminate EC2 instances in
      * an instance group.</p>
      */
-    inline Cluster& WithAutoScalingRole(Aws::String&& value) { SetAutoScalingRole(value); return *this;}
+    inline Cluster& WithAutoScalingRole(Aws::String&& value) { SetAutoScalingRole(std::move(value)); return *this;}
 
     /**
      * <p>An IAM role for automatic scaling policies. The default role is
@@ -803,7 +804,7 @@ namespace Model
      * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
      * Amazon EMR earlier than 5.1.0.</p>
      */
-    inline void SetScaleDownBehavior(ScaleDownBehavior&& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = value; }
+    inline void SetScaleDownBehavior(ScaleDownBehavior&& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = std::move(value); }
 
     /**
      * <p>The way that individual Amazon EC2 instances terminate when an automatic
@@ -837,7 +838,7 @@ namespace Model
      * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
      * Amazon EMR earlier than 5.1.0.</p>
      */
-    inline Cluster& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(value); return *this;}
+    inline Cluster& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(std::move(value)); return *this;}
 
   private:
     Aws::String m_id;

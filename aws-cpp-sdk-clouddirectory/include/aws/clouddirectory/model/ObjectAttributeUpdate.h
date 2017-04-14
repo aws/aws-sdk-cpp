@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/AttributeKey.h>
 #include <aws/clouddirectory/model/ObjectAttributeAction.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The key of the attribute being updated.</p>
      */
-    inline void SetObjectAttributeKey(AttributeKey&& value) { m_objectAttributeKeyHasBeenSet = true; m_objectAttributeKey = value; }
+    inline void SetObjectAttributeKey(AttributeKey&& value) { m_objectAttributeKeyHasBeenSet = true; m_objectAttributeKey = std::move(value); }
 
     /**
      * <p>The key of the attribute being updated.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The key of the attribute being updated.</p>
      */
-    inline ObjectAttributeUpdate& WithObjectAttributeKey(AttributeKey&& value) { SetObjectAttributeKey(value); return *this;}
+    inline ObjectAttributeUpdate& WithObjectAttributeKey(AttributeKey&& value) { SetObjectAttributeKey(std::move(value)); return *this;}
 
     /**
      * <p>The action to perform as part of the attribute update.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The action to perform as part of the attribute update.</p>
      */
-    inline void SetObjectAttributeAction(ObjectAttributeAction&& value) { m_objectAttributeActionHasBeenSet = true; m_objectAttributeAction = value; }
+    inline void SetObjectAttributeAction(ObjectAttributeAction&& value) { m_objectAttributeActionHasBeenSet = true; m_objectAttributeAction = std::move(value); }
 
     /**
      * <p>The action to perform as part of the attribute update.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The action to perform as part of the attribute update.</p>
      */
-    inline ObjectAttributeUpdate& WithObjectAttributeAction(ObjectAttributeAction&& value) { SetObjectAttributeAction(value); return *this;}
+    inline ObjectAttributeUpdate& WithObjectAttributeAction(ObjectAttributeAction&& value) { SetObjectAttributeAction(std::move(value)); return *this;}
 
   private:
     AttributeKey m_objectAttributeKey;

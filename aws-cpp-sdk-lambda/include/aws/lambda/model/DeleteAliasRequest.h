@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
      * <p>The Lambda function name for which the alias is created. Deleting an alias
      * does not delete the function version to which it is pointing.</p>
      */
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
      * <p>The Lambda function name for which the alias is created. Deleting an alias
@@ -67,7 +68,7 @@ namespace Model
      * <p>The Lambda function name for which the alias is created. Deleting an alias
      * does not delete the function version to which it is pointing.</p>
      */
-    inline DeleteAliasRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
+    inline DeleteAliasRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>The Lambda function name for which the alias is created. Deleting an alias
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>Name of the alias to delete.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Name of the alias to delete.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>Name of the alias to delete.</p>
      */
-    inline DeleteAliasRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline DeleteAliasRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the alias to delete.</p>

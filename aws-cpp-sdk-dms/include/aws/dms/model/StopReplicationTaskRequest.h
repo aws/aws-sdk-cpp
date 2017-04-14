@@ -16,6 +16,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/dms/DatabaseMigrationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Number(ARN) of the replication task to be stopped.</p>
      */
-    inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
+    inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Number(ARN) of the replication task to be stopped.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Number(ARN) of the replication task to be stopped.</p>
      */
-    inline StopReplicationTaskRequest& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(value); return *this;}
+    inline StopReplicationTaskRequest& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Number(ARN) of the replication task to be stopped.</p>

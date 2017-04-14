@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/EvaluationResultQualifier.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>Identifies an AWS Config rule used to evaluate an AWS resource, and provides
      * the type and ID of the evaluated resource.</p>
      */
-    inline void SetEvaluationResultQualifier(EvaluationResultQualifier&& value) { m_evaluationResultQualifierHasBeenSet = true; m_evaluationResultQualifier = value; }
+    inline void SetEvaluationResultQualifier(EvaluationResultQualifier&& value) { m_evaluationResultQualifierHasBeenSet = true; m_evaluationResultQualifier = std::move(value); }
 
     /**
      * <p>Identifies an AWS Config rule used to evaluate an AWS resource, and provides
@@ -72,7 +73,7 @@ namespace Model
      * <p>Identifies an AWS Config rule used to evaluate an AWS resource, and provides
      * the type and ID of the evaluated resource.</p>
      */
-    inline EvaluationResultIdentifier& WithEvaluationResultQualifier(EvaluationResultQualifier&& value) { SetEvaluationResultQualifier(value); return *this;}
+    inline EvaluationResultIdentifier& WithEvaluationResultQualifier(EvaluationResultQualifier&& value) { SetEvaluationResultQualifier(std::move(value)); return *this;}
 
     /**
      * <p>The time of the event that triggered the evaluation of your AWS resources.
@@ -96,7 +97,7 @@ namespace Model
      * notification, or it can indicate when AWS Config delivered the configuration
      * snapshot, depending on which event triggered the evaluation.</p>
      */
-    inline void SetOrderingTimestamp(Aws::Utils::DateTime&& value) { m_orderingTimestampHasBeenSet = true; m_orderingTimestamp = value; }
+    inline void SetOrderingTimestamp(Aws::Utils::DateTime&& value) { m_orderingTimestampHasBeenSet = true; m_orderingTimestamp = std::move(value); }
 
     /**
      * <p>The time of the event that triggered the evaluation of your AWS resources.
@@ -112,7 +113,7 @@ namespace Model
      * notification, or it can indicate when AWS Config delivered the configuration
      * snapshot, depending on which event triggered the evaluation.</p>
      */
-    inline EvaluationResultIdentifier& WithOrderingTimestamp(Aws::Utils::DateTime&& value) { SetOrderingTimestamp(value); return *this;}
+    inline EvaluationResultIdentifier& WithOrderingTimestamp(Aws::Utils::DateTime&& value) { SetOrderingTimestamp(std::move(value)); return *this;}
 
   private:
     EvaluationResultQualifier m_evaluationResultQualifier;

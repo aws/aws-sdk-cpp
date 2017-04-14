@@ -17,6 +17,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/EnvironmentInfoType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
      * error.</p>
      */
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
+    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
 
     /**
      * <p>The ID of the data's environment.</p> <p>If no such environment is found,
@@ -94,7 +95,7 @@ namespace Model
      * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
      * error.</p>
      */
-    inline RetrieveEnvironmentInfoRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(value); return *this;}
+    inline RetrieveEnvironmentInfoRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the data's environment.</p> <p>If no such environment is found,
@@ -130,7 +131,7 @@ namespace Model
      * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
      * error. </p>
      */
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
+    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
 
     /**
      * <p>The name of the data's environment.</p> <p> If no such environment is found,
@@ -157,7 +158,7 @@ namespace Model
      * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
      * error. </p>
      */
-    inline RetrieveEnvironmentInfoRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
+    inline RetrieveEnvironmentInfoRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the data's environment.</p> <p> If no such environment is found,
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>The type of information to retrieve.</p>
      */
-    inline void SetInfoType(EnvironmentInfoType&& value) { m_infoTypeHasBeenSet = true; m_infoType = value; }
+    inline void SetInfoType(EnvironmentInfoType&& value) { m_infoTypeHasBeenSet = true; m_infoType = std::move(value); }
 
     /**
      * <p>The type of information to retrieve.</p>
@@ -191,7 +192,7 @@ namespace Model
     /**
      * <p>The type of information to retrieve.</p>
      */
-    inline RetrieveEnvironmentInfoRequest& WithInfoType(EnvironmentInfoType&& value) { SetInfoType(value); return *this;}
+    inline RetrieveEnvironmentInfoRequest& WithInfoType(EnvironmentInfoType&& value) { SetInfoType(std::move(value)); return *this;}
 
   private:
     Aws::String m_environmentId;

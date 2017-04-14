@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -81,7 +82,7 @@ namespace Model
      * <p>One or more instance IDs.</p> <p>Constraints: Up to 1000 instance IDs. We
      * recommend breaking up this request into smaller batches.</p>
      */
-    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
+    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
      * <p>One or more instance IDs.</p> <p>Constraints: Up to 1000 instance IDs. We
@@ -93,7 +94,7 @@ namespace Model
      * <p>One or more instance IDs.</p> <p>Constraints: Up to 1000 instance IDs. We
      * recommend breaking up this request into smaller batches.</p>
      */
-    inline TerminateInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
+    inline TerminateInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more instance IDs.</p> <p>Constraints: Up to 1000 instance IDs. We
@@ -105,7 +106,7 @@ namespace Model
      * <p>One or more instance IDs.</p> <p>Constraints: Up to 1000 instance IDs. We
      * recommend breaking up this request into smaller batches.</p>
      */
-    inline TerminateInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+    inline TerminateInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more instance IDs.</p> <p>Constraints: Up to 1000 instance IDs. We

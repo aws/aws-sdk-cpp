@@ -16,6 +16,7 @@
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/kinesisanalytics/model/RecordFormatType.h>
 #include <aws/kinesisanalytics/model/MappingParameters.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The type of record format.</p>
      */
-    inline void SetRecordFormatType(RecordFormatType&& value) { m_recordFormatTypeHasBeenSet = true; m_recordFormatType = value; }
+    inline void SetRecordFormatType(RecordFormatType&& value) { m_recordFormatTypeHasBeenSet = true; m_recordFormatType = std::move(value); }
 
     /**
      * <p>The type of record format.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The type of record format.</p>
      */
-    inline RecordFormat& WithRecordFormatType(RecordFormatType&& value) { SetRecordFormatType(value); return *this;}
+    inline RecordFormat& WithRecordFormatType(RecordFormatType&& value) { SetRecordFormatType(std::move(value)); return *this;}
 
     
     inline const MappingParameters& GetMappingParameters() const{ return m_mappingParameters; }
@@ -77,13 +78,13 @@ namespace Model
     inline void SetMappingParameters(const MappingParameters& value) { m_mappingParametersHasBeenSet = true; m_mappingParameters = value; }
 
     
-    inline void SetMappingParameters(MappingParameters&& value) { m_mappingParametersHasBeenSet = true; m_mappingParameters = value; }
+    inline void SetMappingParameters(MappingParameters&& value) { m_mappingParametersHasBeenSet = true; m_mappingParameters = std::move(value); }
 
     
     inline RecordFormat& WithMappingParameters(const MappingParameters& value) { SetMappingParameters(value); return *this;}
 
     
-    inline RecordFormat& WithMappingParameters(MappingParameters&& value) { SetMappingParameters(value); return *this;}
+    inline RecordFormat& WithMappingParameters(MappingParameters&& value) { SetMappingParameters(std::move(value)); return *this;}
 
   private:
     RecordFormatType m_recordFormatType;

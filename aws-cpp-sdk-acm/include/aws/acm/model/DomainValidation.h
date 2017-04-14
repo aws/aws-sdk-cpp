@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/acm/model/DomainStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>A fully qualified domain name (FQDN) in the certificate. For example,
      * <code>www.example.com</code> or <code>example.com</code>.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>A fully qualified domain name (FQDN) in the certificate. For example,
@@ -80,7 +81,7 @@ namespace Model
      * <p>A fully qualified domain name (FQDN) in the certificate. For example,
      * <code>www.example.com</code> or <code>example.com</code>.</p>
      */
-    inline DomainValidation& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DomainValidation& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>A fully qualified domain name (FQDN) in the certificate. For example,
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>A list of email addresses that ACM used to send domain validation emails.</p>
      */
-    inline void SetValidationEmails(Aws::Vector<Aws::String>&& value) { m_validationEmailsHasBeenSet = true; m_validationEmails = value; }
+    inline void SetValidationEmails(Aws::Vector<Aws::String>&& value) { m_validationEmailsHasBeenSet = true; m_validationEmails = std::move(value); }
 
     /**
      * <p>A list of email addresses that ACM used to send domain validation emails.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>A list of email addresses that ACM used to send domain validation emails.</p>
      */
-    inline DomainValidation& WithValidationEmails(Aws::Vector<Aws::String>&& value) { SetValidationEmails(value); return *this;}
+    inline DomainValidation& WithValidationEmails(Aws::Vector<Aws::String>&& value) { SetValidationEmails(std::move(value)); return *this;}
 
     /**
      * <p>A list of email addresses that ACM used to send domain validation emails.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>A list of email addresses that ACM used to send domain validation emails.</p>
      */
-    inline DomainValidation& AddValidationEmails(Aws::String&& value) { m_validationEmailsHasBeenSet = true; m_validationEmails.push_back(value); return *this; }
+    inline DomainValidation& AddValidationEmails(Aws::String&& value) { m_validationEmailsHasBeenSet = true; m_validationEmails.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of email addresses that ACM used to send domain validation emails.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The domain name that ACM used to send domain validation emails.</p>
      */
-    inline void SetValidationDomain(Aws::String&& value) { m_validationDomainHasBeenSet = true; m_validationDomain = value; }
+    inline void SetValidationDomain(Aws::String&& value) { m_validationDomainHasBeenSet = true; m_validationDomain = std::move(value); }
 
     /**
      * <p>The domain name that ACM used to send domain validation emails.</p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>The domain name that ACM used to send domain validation emails.</p>
      */
-    inline DomainValidation& WithValidationDomain(Aws::String&& value) { SetValidationDomain(value); return *this;}
+    inline DomainValidation& WithValidationDomain(Aws::String&& value) { SetValidationDomain(std::move(value)); return *this;}
 
     /**
      * <p>The domain name that ACM used to send domain validation emails.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>The validation status of the domain name.</p>
      */
-    inline void SetValidationStatus(DomainStatus&& value) { m_validationStatusHasBeenSet = true; m_validationStatus = value; }
+    inline void SetValidationStatus(DomainStatus&& value) { m_validationStatusHasBeenSet = true; m_validationStatus = std::move(value); }
 
     /**
      * <p>The validation status of the domain name.</p>
@@ -186,7 +187,7 @@ namespace Model
     /**
      * <p>The validation status of the domain name.</p>
      */
-    inline DomainValidation& WithValidationStatus(DomainStatus&& value) { SetValidationStatus(value); return *this;}
+    inline DomainValidation& WithValidationStatus(DomainStatus&& value) { SetValidationStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_domainName;

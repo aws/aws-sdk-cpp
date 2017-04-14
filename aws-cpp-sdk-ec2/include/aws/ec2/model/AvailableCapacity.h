@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/InstanceCapacity.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The total number of instances that the Dedicated Host supports.</p>
      */
-    inline void SetAvailableInstanceCapacity(Aws::Vector<InstanceCapacity>&& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity = value; }
+    inline void SetAvailableInstanceCapacity(Aws::Vector<InstanceCapacity>&& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity = std::move(value); }
 
     /**
      * <p>The total number of instances that the Dedicated Host supports.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The total number of instances that the Dedicated Host supports.</p>
      */
-    inline AvailableCapacity& WithAvailableInstanceCapacity(Aws::Vector<InstanceCapacity>&& value) { SetAvailableInstanceCapacity(value); return *this;}
+    inline AvailableCapacity& WithAvailableInstanceCapacity(Aws::Vector<InstanceCapacity>&& value) { SetAvailableInstanceCapacity(std::move(value)); return *this;}
 
     /**
      * <p>The total number of instances that the Dedicated Host supports.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>The total number of instances that the Dedicated Host supports.</p>
      */
-    inline AvailableCapacity& AddAvailableInstanceCapacity(InstanceCapacity&& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity.push_back(value); return *this; }
+    inline AvailableCapacity& AddAvailableInstanceCapacity(InstanceCapacity&& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The number of vCPUs available on the Dedicated Host.</p>

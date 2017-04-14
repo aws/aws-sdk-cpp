@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/elasticbeanstalk/model/CPUUtilization.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>CPU utilization metrics for the instance.</p>
      */
-    inline void SetCPUUtilization(CPUUtilization&& value) { m_cPUUtilizationHasBeenSet = true; m_cPUUtilization = value; }
+    inline void SetCPUUtilization(CPUUtilization&& value) { m_cPUUtilizationHasBeenSet = true; m_cPUUtilization = std::move(value); }
 
     /**
      * <p>CPU utilization metrics for the instance.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>CPU utilization metrics for the instance.</p>
      */
-    inline SystemStatus& WithCPUUtilization(CPUUtilization&& value) { SetCPUUtilization(value); return *this;}
+    inline SystemStatus& WithCPUUtilization(CPUUtilization&& value) { SetCPUUtilization(std::move(value)); return *this;}
 
     /**
      * <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more
@@ -95,7 +96,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating
      * System Metrics</a>.</p>
      */
-    inline void SetLoadAverage(Aws::Vector<double>&& value) { m_loadAverageHasBeenSet = true; m_loadAverage = value; }
+    inline void SetLoadAverage(Aws::Vector<double>&& value) { m_loadAverageHasBeenSet = true; m_loadAverage = std::move(value); }
 
     /**
      * <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more
@@ -111,7 +112,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating
      * System Metrics</a>.</p>
      */
-    inline SystemStatus& WithLoadAverage(Aws::Vector<double>&& value) { SetLoadAverage(value); return *this;}
+    inline SystemStatus& WithLoadAverage(Aws::Vector<double>&& value) { SetLoadAverage(std::move(value)); return *this;}
 
     /**
      * <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more

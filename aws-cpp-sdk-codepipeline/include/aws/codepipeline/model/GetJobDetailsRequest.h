@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/CodePipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The unique system-generated ID for the job.</p>
      */
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
      * <p>The unique system-generated ID for the job.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The unique system-generated ID for the job.</p>
      */
-    inline GetJobDetailsRequest& WithJobId(Aws::String&& value) { SetJobId(value); return *this;}
+    inline GetJobDetailsRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
      * <p>The unique system-generated ID for the job.</p>

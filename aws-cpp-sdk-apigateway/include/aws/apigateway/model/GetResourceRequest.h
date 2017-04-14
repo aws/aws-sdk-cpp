@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier for the resource.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The <a>RestApi</a> identifier for the resource.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier for the resource.</p>
      */
-    inline GetResourceRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline GetResourceRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The <a>RestApi</a> identifier for the resource.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The identifier for the <a>Resource</a> resource.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The identifier for the <a>Resource</a> resource.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The identifier for the <a>Resource</a> resource.</p>
      */
-    inline GetResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline GetResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the <a>Resource</a> resource.</p>

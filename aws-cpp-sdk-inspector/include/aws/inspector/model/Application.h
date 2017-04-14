@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The ARN specifying the Inspector application. </p>
      */
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
+    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
 
     /**
      * <p>The ARN specifying the Inspector application. </p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The ARN specifying the Inspector application. </p>
      */
-    inline Application& WithApplicationArn(Aws::String&& value) { SetApplicationArn(value); return *this;}
+    inline Application& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN specifying the Inspector application. </p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The name of the Inspector application. </p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of the Inspector application. </p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The name of the Inspector application. </p>
      */
-    inline Application& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline Application& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Inspector application. </p>
@@ -128,7 +129,7 @@ namespace Model
      * <p>The ARN specifying the resource group that is associated with the
      * application. </p>
      */
-    inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = value; }
+    inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = std::move(value); }
 
     /**
      * <p>The ARN specifying the resource group that is associated with the
@@ -146,7 +147,7 @@ namespace Model
      * <p>The ARN specifying the resource group that is associated with the
      * application. </p>
      */
-    inline Application& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(value); return *this;}
+    inline Application& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN specifying the resource group that is associated with the

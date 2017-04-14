@@ -17,6 +17,7 @@
 #include <aws/events/CloudWatchEventsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/events/model/RuleState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * updating.</simpara> </zonbook> <xhtml> <p>The name of the rule that you are
      * creating or updating.</p> </xhtml>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <zonbook> <simpara>The name of the rule that you are creating or
@@ -76,7 +77,7 @@ namespace Model
      * updating.</simpara> </zonbook> <xhtml> <p>The name of the rule that you are
      * creating or updating.</p> </xhtml>
      */
-    inline PutRuleRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline PutRuleRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The name of the rule that you are creating or
@@ -104,7 +105,7 @@ namespace Model
      * "rate(5 minutes)".</simpara> </zonbook> <xhtml> <p>The scheduling expression.
      * For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p> </xhtml>
      */
-    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
+    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
 
     /**
      * <zonbook> <simpara>The scheduling expression. For example, "cron(0 20 * * ? *)",
@@ -125,7 +126,7 @@ namespace Model
      * "rate(5 minutes)".</simpara> </zonbook> <xhtml> <p>The scheduling expression.
      * For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p> </xhtml>
      */
-    inline PutRuleRequest& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(value); return *this;}
+    inline PutRuleRequest& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The scheduling expression. For example, "cron(0 20 * * ? *)",
@@ -150,7 +151,7 @@ namespace Model
      * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
      * pattern.</p> </xhtml>
      */
-    inline void SetEventPattern(Aws::String&& value) { m_eventPatternHasBeenSet = true; m_eventPattern = value; }
+    inline void SetEventPattern(Aws::String&& value) { m_eventPatternHasBeenSet = true; m_eventPattern = std::move(value); }
 
     /**
      * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
@@ -168,7 +169,7 @@ namespace Model
      * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
      * pattern.</p> </xhtml>
      */
-    inline PutRuleRequest& WithEventPattern(Aws::String&& value) { SetEventPattern(value); return *this;}
+    inline PutRuleRequest& WithEventPattern(Aws::String&& value) { SetEventPattern(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
@@ -195,7 +196,7 @@ namespace Model
      * </zonbook> <xhtml> <p>Indicates whether the rule is enabled or disabled.</p>
      * </xhtml>
      */
-    inline void SetState(RuleState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(RuleState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <zonbook> <simpara>Indicates whether the rule is enabled or disabled.</simpara>
@@ -209,7 +210,7 @@ namespace Model
      * </zonbook> <xhtml> <p>Indicates whether the rule is enabled or disabled.</p>
      * </xhtml>
      */
-    inline PutRuleRequest& WithState(RuleState&& value) { SetState(value); return *this;}
+    inline PutRuleRequest& WithState(RuleState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>A description of the rule.</simpara> </zonbook> <xhtml> <p>A
@@ -227,7 +228,7 @@ namespace Model
      * <zonbook> <simpara>A description of the rule.</simpara> </zonbook> <xhtml> <p>A
      * description of the rule.</p> </xhtml>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <zonbook> <simpara>A description of the rule.</simpara> </zonbook> <xhtml> <p>A
@@ -245,7 +246,7 @@ namespace Model
      * <zonbook> <simpara>A description of the rule.</simpara> </zonbook> <xhtml> <p>A
      * description of the rule.</p> </xhtml>
      */
-    inline PutRuleRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline PutRuleRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>A description of the rule.</simpara> </zonbook> <xhtml> <p>A
@@ -272,7 +273,7 @@ namespace Model
      * with the rule.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of
      * the IAM role associated with the rule.</p> </xhtml>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the IAM role associated
@@ -293,7 +294,7 @@ namespace Model
      * with the rule.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of
      * the IAM role associated with the rule.</p> </xhtml>
      */
-    inline PutRuleRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline PutRuleRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the IAM role associated

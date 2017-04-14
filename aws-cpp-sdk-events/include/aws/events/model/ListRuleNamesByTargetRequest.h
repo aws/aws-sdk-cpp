@@ -16,6 +16,7 @@
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/events/CloudWatchEventsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * resource.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the
      * target resource.</p> </xhtml>
      */
-    inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
+    inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the target
@@ -75,7 +76,7 @@ namespace Model
      * resource.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the
      * target resource.</p> </xhtml>
      */
-    inline ListRuleNamesByTargetRequest& WithTargetArn(Aws::String&& value) { SetTargetArn(value); return *this;}
+    inline ListRuleNamesByTargetRequest& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the target
@@ -103,7 +104,7 @@ namespace Model
      * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
      * call to retrieve the next set of results.</p> </xhtml>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <zonbook> <simpara>The token returned by a previous call to retrieve the next
@@ -124,7 +125,7 @@ namespace Model
      * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
      * call to retrieve the next set of results.</p> </xhtml>
      */
-    inline ListRuleNamesByTargetRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListRuleNamesByTargetRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The token returned by a previous call to retrieve the next

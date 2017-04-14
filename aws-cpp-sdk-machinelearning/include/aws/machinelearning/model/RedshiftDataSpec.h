@@ -17,6 +17,7 @@
 #include <aws/machinelearning/model/RedshiftDatabase.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/machinelearning/model/RedshiftDatabaseCredentials.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>Describes the <code>DatabaseName</code> and <code>ClusterIdentifier</code>
      * for an Amazon Redshift <code>DataSource</code>.</p>
      */
-    inline void SetDatabaseInformation(RedshiftDatabase&& value) { m_databaseInformationHasBeenSet = true; m_databaseInformation = value; }
+    inline void SetDatabaseInformation(RedshiftDatabase&& value) { m_databaseInformationHasBeenSet = true; m_databaseInformation = std::move(value); }
 
     /**
      * <p>Describes the <code>DatabaseName</code> and <code>ClusterIdentifier</code>
@@ -74,7 +75,7 @@ namespace Model
      * <p>Describes the <code>DatabaseName</code> and <code>ClusterIdentifier</code>
      * for an Amazon Redshift <code>DataSource</code>.</p>
      */
-    inline RedshiftDataSpec& WithDatabaseInformation(RedshiftDatabase&& value) { SetDatabaseInformation(value); return *this;}
+    inline RedshiftDataSpec& WithDatabaseInformation(RedshiftDatabase&& value) { SetDatabaseInformation(std::move(value)); return *this;}
 
     /**
      * <p>Describes the SQL Query to execute on an Amazon Redshift database for an
@@ -92,7 +93,7 @@ namespace Model
      * <p>Describes the SQL Query to execute on an Amazon Redshift database for an
      * Amazon Redshift <code>DataSource</code>.</p>
      */
-    inline void SetSelectSqlQuery(Aws::String&& value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery = value; }
+    inline void SetSelectSqlQuery(Aws::String&& value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery = std::move(value); }
 
     /**
      * <p>Describes the SQL Query to execute on an Amazon Redshift database for an
@@ -110,7 +111,7 @@ namespace Model
      * <p>Describes the SQL Query to execute on an Amazon Redshift database for an
      * Amazon Redshift <code>DataSource</code>.</p>
      */
-    inline RedshiftDataSpec& WithSelectSqlQuery(Aws::String&& value) { SetSelectSqlQuery(value); return *this;}
+    inline RedshiftDataSpec& WithSelectSqlQuery(Aws::String&& value) { SetSelectSqlQuery(std::move(value)); return *this;}
 
     /**
      * <p>Describes the SQL Query to execute on an Amazon Redshift database for an
@@ -134,7 +135,7 @@ namespace Model
      * <p>Describes AWS Identity and Access Management (IAM) credentials that are used
      * connect to the Amazon Redshift database.</p>
      */
-    inline void SetDatabaseCredentials(RedshiftDatabaseCredentials&& value) { m_databaseCredentialsHasBeenSet = true; m_databaseCredentials = value; }
+    inline void SetDatabaseCredentials(RedshiftDatabaseCredentials&& value) { m_databaseCredentialsHasBeenSet = true; m_databaseCredentials = std::move(value); }
 
     /**
      * <p>Describes AWS Identity and Access Management (IAM) credentials that are used
@@ -146,7 +147,7 @@ namespace Model
      * <p>Describes AWS Identity and Access Management (IAM) credentials that are used
      * connect to the Amazon Redshift database.</p>
      */
-    inline RedshiftDataSpec& WithDatabaseCredentials(RedshiftDatabaseCredentials&& value) { SetDatabaseCredentials(value); return *this;}
+    inline RedshiftDataSpec& WithDatabaseCredentials(RedshiftDatabaseCredentials&& value) { SetDatabaseCredentials(std::move(value)); return *this;}
 
     /**
      * <p>Describes an Amazon S3 location to store the result set of the
@@ -164,7 +165,7 @@ namespace Model
      * <p>Describes an Amazon S3 location to store the result set of the
      * <code>SelectSqlQuery</code> query.</p>
      */
-    inline void SetS3StagingLocation(Aws::String&& value) { m_s3StagingLocationHasBeenSet = true; m_s3StagingLocation = value; }
+    inline void SetS3StagingLocation(Aws::String&& value) { m_s3StagingLocationHasBeenSet = true; m_s3StagingLocation = std::move(value); }
 
     /**
      * <p>Describes an Amazon S3 location to store the result set of the
@@ -182,7 +183,7 @@ namespace Model
      * <p>Describes an Amazon S3 location to store the result set of the
      * <code>SelectSqlQuery</code> query.</p>
      */
-    inline RedshiftDataSpec& WithS3StagingLocation(Aws::String&& value) { SetS3StagingLocation(value); return *this;}
+    inline RedshiftDataSpec& WithS3StagingLocation(Aws::String&& value) { SetS3StagingLocation(std::move(value)); return *this;}
 
     /**
      * <p>Describes an Amazon S3 location to store the result set of the
@@ -377,7 +378,7 @@ namespace Model
      * "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv",
      * "complement":"true"}}</code></p> </li> </ul>
      */
-    inline void SetDataRearrangement(Aws::String&& value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement = value; }
+    inline void SetDataRearrangement(Aws::String&& value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement = std::move(value); }
 
     /**
      * <p>A JSON string that represents the splitting and rearrangement processing to
@@ -566,7 +567,7 @@ namespace Model
      * "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv",
      * "complement":"true"}}</code></p> </li> </ul>
      */
-    inline RedshiftDataSpec& WithDataRearrangement(Aws::String&& value) { SetDataRearrangement(value); return *this;}
+    inline RedshiftDataSpec& WithDataRearrangement(Aws::String&& value) { SetDataRearrangement(std::move(value)); return *this;}
 
     /**
      * <p>A JSON string that represents the splitting and rearrangement processing to
@@ -695,7 +696,7 @@ namespace Model
      * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p> <p>
      * "excludedVariableNames": [ "F6" ] } </p>
      */
-    inline void SetDataSchema(Aws::String&& value) { m_dataSchemaHasBeenSet = true; m_dataSchema = value; }
+    inline void SetDataSchema(Aws::String&& value) { m_dataSchemaHasBeenSet = true; m_dataSchema = std::move(value); }
 
     /**
      * <p>A JSON string that represents the schema for an Amazon Redshift
@@ -761,7 +762,7 @@ namespace Model
      * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p> <p>
      * "excludedVariableNames": [ "F6" ] } </p>
      */
-    inline RedshiftDataSpec& WithDataSchema(Aws::String&& value) { SetDataSchema(value); return *this;}
+    inline RedshiftDataSpec& WithDataSchema(Aws::String&& value) { SetDataSchema(std::move(value)); return *this;}
 
     /**
      * <p>A JSON string that represents the schema for an Amazon Redshift
@@ -801,7 +802,7 @@ namespace Model
      * <p>Describes the schema location for an Amazon Redshift
      * <code>DataSource</code>.</p>
      */
-    inline void SetDataSchemaUri(Aws::String&& value) { m_dataSchemaUriHasBeenSet = true; m_dataSchemaUri = value; }
+    inline void SetDataSchemaUri(Aws::String&& value) { m_dataSchemaUriHasBeenSet = true; m_dataSchemaUri = std::move(value); }
 
     /**
      * <p>Describes the schema location for an Amazon Redshift
@@ -819,7 +820,7 @@ namespace Model
      * <p>Describes the schema location for an Amazon Redshift
      * <code>DataSource</code>.</p>
      */
-    inline RedshiftDataSpec& WithDataSchemaUri(Aws::String&& value) { SetDataSchemaUri(value); return *this;}
+    inline RedshiftDataSpec& WithDataSchemaUri(Aws::String&& value) { SetDataSchemaUri(std::move(value)); return *this;}
 
     /**
      * <p>Describes the schema location for an Amazon Redshift

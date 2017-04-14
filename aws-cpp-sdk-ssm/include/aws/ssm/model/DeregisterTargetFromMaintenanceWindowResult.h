@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window the target was removed from.</p>
      */
-    inline void SetWindowId(Aws::String&& value) { m_windowId = value; }
+    inline void SetWindowId(Aws::String&& value) { m_windowId = std::move(value); }
 
     /**
      * <p>The ID of the Maintenance Window the target was removed from.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window the target was removed from.</p>
      */
-    inline DeregisterTargetFromMaintenanceWindowResult& WithWindowId(Aws::String&& value) { SetWindowId(value); return *this;}
+    inline DeregisterTargetFromMaintenanceWindowResult& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Maintenance Window the target was removed from.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The ID of the removed target definition.</p>
      */
-    inline void SetWindowTargetId(Aws::String&& value) { m_windowTargetId = value; }
+    inline void SetWindowTargetId(Aws::String&& value) { m_windowTargetId = std::move(value); }
 
     /**
      * <p>The ID of the removed target definition.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The ID of the removed target definition.</p>
      */
-    inline DeregisterTargetFromMaintenanceWindowResult& WithWindowTargetId(Aws::String&& value) { SetWindowTargetId(value); return *this;}
+    inline DeregisterTargetFromMaintenanceWindowResult& WithWindowTargetId(Aws::String&& value) { SetWindowTargetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the removed target definition.</p>

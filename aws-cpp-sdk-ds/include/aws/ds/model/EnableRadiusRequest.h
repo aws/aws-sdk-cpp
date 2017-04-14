@@ -17,6 +17,7 @@
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ds/model/RadiusSettings.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The identifier of the directory for which to enable MFA.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>The identifier of the directory for which to enable MFA.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The identifier of the directory for which to enable MFA.</p>
      */
-    inline EnableRadiusRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline EnableRadiusRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the directory for which to enable MFA.</p>
@@ -91,7 +92,7 @@ namespace Model
      * <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
      * server.</p>
      */
-    inline void SetRadiusSettings(RadiusSettings&& value) { m_radiusSettingsHasBeenSet = true; m_radiusSettings = value; }
+    inline void SetRadiusSettings(RadiusSettings&& value) { m_radiusSettingsHasBeenSet = true; m_radiusSettings = std::move(value); }
 
     /**
      * <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
@@ -103,7 +104,7 @@ namespace Model
      * <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
      * server.</p>
      */
-    inline EnableRadiusRequest& WithRadiusSettings(RadiusSettings&& value) { SetRadiusSettings(value); return *this;}
+    inline EnableRadiusRequest& WithRadiusSettings(RadiusSettings&& value) { SetRadiusSettings(std::move(value)); return *this;}
 
   private:
     Aws::String m_directoryId;

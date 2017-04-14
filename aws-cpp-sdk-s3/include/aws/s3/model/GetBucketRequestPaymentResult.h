@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/Payer.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * Specifies who pays for the download and request fees.
      */
-    inline void SetPayer(Payer&& value) { m_payer = value; }
+    inline void SetPayer(Payer&& value) { m_payer = std::move(value); }
 
     /**
      * Specifies who pays for the download and request fees.
@@ -62,7 +63,7 @@ namespace Model
     /**
      * Specifies who pays for the download and request fees.
      */
-    inline GetBucketRequestPaymentResult& WithPayer(Payer&& value) { SetPayer(value); return *this;}
+    inline GetBucketRequestPaymentResult& WithPayer(Payer&& value) { SetPayer(std::move(value)); return *this;}
 
   private:
     Payer m_payer;

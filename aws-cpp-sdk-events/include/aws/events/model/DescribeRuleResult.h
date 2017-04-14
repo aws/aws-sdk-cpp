@@ -16,6 +16,7 @@
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/events/model/RuleState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
      * name of the rule.</p> </xhtml>
      */
-    inline void SetName(Aws::String&& value) { m_name = value; }
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
      * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
@@ -74,7 +75,7 @@ namespace Model
      * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
      * name of the rule.</p> </xhtml>
      */
-    inline DescribeRuleResult& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline DescribeRuleResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
@@ -98,7 +99,7 @@ namespace Model
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
      * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the rule.</p> </xhtml>
      */
-    inline void SetArn(Aws::String&& value) { m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
@@ -116,7 +117,7 @@ namespace Model
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
      * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the rule.</p> </xhtml>
      */
-    inline DescribeRuleResult& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline DescribeRuleResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
@@ -140,7 +141,7 @@ namespace Model
      * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
      * pattern.</p> </xhtml>
      */
-    inline void SetEventPattern(Aws::String&& value) { m_eventPattern = value; }
+    inline void SetEventPattern(Aws::String&& value) { m_eventPattern = std::move(value); }
 
     /**
      * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
@@ -158,7 +159,7 @@ namespace Model
      * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
      * pattern.</p> </xhtml>
      */
-    inline DescribeRuleResult& WithEventPattern(Aws::String&& value) { SetEventPattern(value); return *this;}
+    inline DescribeRuleResult& WithEventPattern(Aws::String&& value) { SetEventPattern(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
@@ -185,7 +186,7 @@ namespace Model
      * "rate(5 minutes)".</simpara> </zonbook> <xhtml> <p>The scheduling expression.
      * For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p> </xhtml>
      */
-    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpression = value; }
+    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpression = std::move(value); }
 
     /**
      * <zonbook> <simpara>The scheduling expression. For example, "cron(0 20 * * ? *)",
@@ -206,7 +207,7 @@ namespace Model
      * "rate(5 minutes)".</simpara> </zonbook> <xhtml> <p>The scheduling expression.
      * For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p> </xhtml>
      */
-    inline DescribeRuleResult& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(value); return *this;}
+    inline DescribeRuleResult& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The scheduling expression. For example, "cron(0 20 * * ? *)",
@@ -234,7 +235,7 @@ namespace Model
      * </zonbook> <xhtml> <p>Specifies whether the rule is enabled or disabled.</p>
      * </xhtml>
      */
-    inline void SetState(RuleState&& value) { m_state = value; }
+    inline void SetState(RuleState&& value) { m_state = std::move(value); }
 
     /**
      * <zonbook> <simpara>Specifies whether the rule is enabled or disabled.</simpara>
@@ -248,7 +249,7 @@ namespace Model
      * </zonbook> <xhtml> <p>Specifies whether the rule is enabled or disabled.</p>
      * </xhtml>
      */
-    inline DescribeRuleResult& WithState(RuleState&& value) { SetState(value); return *this;}
+    inline DescribeRuleResult& WithState(RuleState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The description of the rule.</simpara> </zonbook> <xhtml>
@@ -266,7 +267,7 @@ namespace Model
      * <zonbook> <simpara>The description of the rule.</simpara> </zonbook> <xhtml>
      * <p>The description of the rule.</p> </xhtml>
      */
-    inline void SetDescription(Aws::String&& value) { m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
      * <zonbook> <simpara>The description of the rule.</simpara> </zonbook> <xhtml>
@@ -284,7 +285,7 @@ namespace Model
      * <zonbook> <simpara>The description of the rule.</simpara> </zonbook> <xhtml>
      * <p>The description of the rule.</p> </xhtml>
      */
-    inline DescribeRuleResult& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline DescribeRuleResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The description of the rule.</simpara> </zonbook> <xhtml>
@@ -311,7 +312,7 @@ namespace Model
      * with the rule.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of
      * the IAM role associated with the rule.</p> </xhtml>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the IAM role associated
@@ -332,7 +333,7 @@ namespace Model
      * with the rule.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of
      * the IAM role associated with the rule.</p> </xhtml>
      */
-    inline DescribeRuleResult& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline DescribeRuleResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the IAM role associated

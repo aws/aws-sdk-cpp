@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/health/Health_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * </code>. Example:
      * <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>
      */
-    inline void SetEventArn(Aws::String&& value) { m_eventArnHasBeenSet = true; m_eventArn = value; }
+    inline void SetEventArn(Aws::String&& value) { m_eventArnHasBeenSet = true; m_eventArn = std::move(value); }
 
     /**
      * <p>The unique identifier for the event. Format:
@@ -90,7 +91,7 @@ namespace Model
      * </code>. Example:
      * <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>
      */
-    inline EntityAggregate& WithEventArn(Aws::String&& value) { SetEventArn(value); return *this;}
+    inline EntityAggregate& WithEventArn(Aws::String&& value) { SetEventArn(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the event. Format:

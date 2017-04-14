@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ConversionTask.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Information about the conversion task.</p>
      */
-    inline void SetConversionTask(ConversionTask&& value) { m_conversionTask = value; }
+    inline void SetConversionTask(ConversionTask&& value) { m_conversionTask = std::move(value); }
 
     /**
      * <p>Information about the conversion task.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Information about the conversion task.</p>
      */
-    inline ImportInstanceResponse& WithConversionTask(ConversionTask&& value) { SetConversionTask(value); return *this;}
+    inline ImportInstanceResponse& WithConversionTask(ConversionTask&& value) { SetConversionTask(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -77,13 +78,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ImportInstanceResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ImportInstanceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ImportInstanceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     ConversionTask m_conversionTask;

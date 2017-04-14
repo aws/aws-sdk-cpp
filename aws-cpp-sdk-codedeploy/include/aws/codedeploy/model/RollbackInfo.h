@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The ID of the deployment rollback.</p>
      */
-    inline void SetRollbackDeploymentId(Aws::String&& value) { m_rollbackDeploymentIdHasBeenSet = true; m_rollbackDeploymentId = value; }
+    inline void SetRollbackDeploymentId(Aws::String&& value) { m_rollbackDeploymentIdHasBeenSet = true; m_rollbackDeploymentId = std::move(value); }
 
     /**
      * <p>The ID of the deployment rollback.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The ID of the deployment rollback.</p>
      */
-    inline RollbackInfo& WithRollbackDeploymentId(Aws::String&& value) { SetRollbackDeploymentId(value); return *this;}
+    inline RollbackInfo& WithRollbackDeploymentId(Aws::String&& value) { SetRollbackDeploymentId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the deployment rollback.</p>
@@ -94,7 +95,7 @@ namespace Model
      * <p>The deployment ID of the deployment that was underway and triggered a
      * rollback deployment because it failed or was stopped.</p>
      */
-    inline void SetRollbackTriggeringDeploymentId(Aws::String&& value) { m_rollbackTriggeringDeploymentIdHasBeenSet = true; m_rollbackTriggeringDeploymentId = value; }
+    inline void SetRollbackTriggeringDeploymentId(Aws::String&& value) { m_rollbackTriggeringDeploymentIdHasBeenSet = true; m_rollbackTriggeringDeploymentId = std::move(value); }
 
     /**
      * <p>The deployment ID of the deployment that was underway and triggered a
@@ -112,7 +113,7 @@ namespace Model
      * <p>The deployment ID of the deployment that was underway and triggered a
      * rollback deployment because it failed or was stopped.</p>
      */
-    inline RollbackInfo& WithRollbackTriggeringDeploymentId(Aws::String&& value) { SetRollbackTriggeringDeploymentId(value); return *this;}
+    inline RollbackInfo& WithRollbackTriggeringDeploymentId(Aws::String&& value) { SetRollbackTriggeringDeploymentId(std::move(value)); return *this;}
 
     /**
      * <p>The deployment ID of the deployment that was underway and triggered a
@@ -139,7 +140,7 @@ namespace Model
      * whether the deployment can't be rolled back, is in progress, failed, or
      * succeeded. </p>
      */
-    inline void SetRollbackMessage(Aws::String&& value) { m_rollbackMessageHasBeenSet = true; m_rollbackMessage = value; }
+    inline void SetRollbackMessage(Aws::String&& value) { m_rollbackMessageHasBeenSet = true; m_rollbackMessage = std::move(value); }
 
     /**
      * <p>Information describing the status of a deployment rollback; for example,
@@ -160,7 +161,7 @@ namespace Model
      * whether the deployment can't be rolled back, is in progress, failed, or
      * succeeded. </p>
      */
-    inline RollbackInfo& WithRollbackMessage(Aws::String&& value) { SetRollbackMessage(value); return *this;}
+    inline RollbackInfo& WithRollbackMessage(Aws::String&& value) { SetRollbackMessage(std::move(value)); return *this;}
 
     /**
      * <p>Information describing the status of a deployment rollback; for example,

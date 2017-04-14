@@ -16,6 +16,7 @@
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The list of ARNs that identify the HSMs.</p>
      */
-    inline void SetHsmList(Aws::Vector<Aws::String>&& value) { m_hsmList = value; }
+    inline void SetHsmList(Aws::Vector<Aws::String>&& value) { m_hsmList = std::move(value); }
 
     /**
      * <p>The list of ARNs that identify the HSMs.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The list of ARNs that identify the HSMs.</p>
      */
-    inline ListHsmsResult& WithHsmList(Aws::Vector<Aws::String>&& value) { SetHsmList(value); return *this;}
+    inline ListHsmsResult& WithHsmList(Aws::Vector<Aws::String>&& value) { SetHsmList(std::move(value)); return *this;}
 
     /**
      * <p>The list of ARNs that identify the HSMs.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The list of ARNs that identify the HSMs.</p>
      */
-    inline ListHsmsResult& AddHsmList(Aws::String&& value) { m_hsmList.push_back(value); return *this; }
+    inline ListHsmsResult& AddHsmList(Aws::String&& value) { m_hsmList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of ARNs that identify the HSMs.</p>
@@ -102,7 +103,7 @@ namespace Model
      * <p>If not null, more results are available. Pass this value to <a>ListHsms</a>
      * to retrieve the next set of items.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If not null, more results are available. Pass this value to <a>ListHsms</a>
@@ -120,7 +121,7 @@ namespace Model
      * <p>If not null, more results are available. Pass this value to <a>ListHsms</a>
      * to retrieve the next set of items.</p>
      */
-    inline ListHsmsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListHsmsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If not null, more results are available. Pass this value to <a>ListHsms</a>

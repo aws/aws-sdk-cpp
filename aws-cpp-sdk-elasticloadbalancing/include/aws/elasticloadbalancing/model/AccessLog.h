@@ -16,6 +16,7 @@
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
      */
-    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
+    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
 
     /**
      * <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
      */
-    inline AccessLog& WithS3BucketName(Aws::String&& value) { SetS3BucketName(value); return *this;}
+    inline AccessLog& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
@@ -134,7 +135,7 @@ namespace Model
      * <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is
      * placed at the root level of the bucket.</p>
      */
-    inline void SetS3BucketPrefix(Aws::String&& value) { m_s3BucketPrefixHasBeenSet = true; m_s3BucketPrefix = value; }
+    inline void SetS3BucketPrefix(Aws::String&& value) { m_s3BucketPrefixHasBeenSet = true; m_s3BucketPrefix = std::move(value); }
 
     /**
      * <p>The logical hierarchy you created for your Amazon S3 bucket, for example
@@ -155,7 +156,7 @@ namespace Model
      * <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is
      * placed at the root level of the bucket.</p>
      */
-    inline AccessLog& WithS3BucketPrefix(Aws::String&& value) { SetS3BucketPrefix(value); return *this;}
+    inline AccessLog& WithS3BucketPrefix(Aws::String&& value) { SetS3BucketPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The logical hierarchy you created for your Amazon S3 bucket, for example

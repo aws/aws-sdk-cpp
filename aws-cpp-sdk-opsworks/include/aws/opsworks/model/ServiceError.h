@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -31,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an AWS OpsWorks service error.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an AWS OpsWorks Stacks service error.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ServiceError">AWS
    * API Reference</a></p>
    */
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The error ID.</p>
      */
-    inline void SetServiceErrorId(Aws::String&& value) { m_serviceErrorIdHasBeenSet = true; m_serviceErrorId = value; }
+    inline void SetServiceErrorId(Aws::String&& value) { m_serviceErrorIdHasBeenSet = true; m_serviceErrorId = std::move(value); }
 
     /**
      * <p>The error ID.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The error ID.</p>
      */
-    inline ServiceError& WithServiceErrorId(Aws::String&& value) { SetServiceErrorId(value); return *this;}
+    inline ServiceError& WithServiceErrorId(Aws::String&& value) { SetServiceErrorId(std::move(value)); return *this;}
 
     /**
      * <p>The error ID.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
      * <p>The stack ID.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
-    inline ServiceError& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline ServiceError& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>The stack ID.</p>
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The instance ID.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
-    inline ServiceError& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline ServiceError& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The instance ID.</p>
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>The error type.</p>
      */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The error type.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>The error type.</p>
      */
-    inline ServiceError& WithType(Aws::String&& value) { SetType(value); return *this;}
+    inline ServiceError& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The error type.</p>
@@ -196,7 +197,7 @@ namespace Model
     /**
      * <p>A message that describes the error.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>A message that describes the error.</p>
@@ -211,7 +212,7 @@ namespace Model
     /**
      * <p>A message that describes the error.</p>
      */
-    inline ServiceError& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline ServiceError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>A message that describes the error.</p>
@@ -231,7 +232,7 @@ namespace Model
     /**
      * <p>When the error occurred.</p>
      */
-    inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
      * <p>When the error occurred.</p>
@@ -246,7 +247,7 @@ namespace Model
     /**
      * <p>When the error occurred.</p>
      */
-    inline ServiceError& WithCreatedAt(Aws::String&& value) { SetCreatedAt(value); return *this;}
+    inline ServiceError& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
      * <p>When the error occurred.</p>

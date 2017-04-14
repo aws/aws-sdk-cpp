@@ -16,6 +16,7 @@
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/route53domains/Route53DomainsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
      * supported.</p> <p>Required: Yes</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
@@ -85,7 +86,7 @@ namespace Model
      * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
      * supported.</p> <p>Required: Yes</p>
      */
-    inline CheckDomainAvailabilityRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline CheckDomainAvailabilityRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
-    inline void SetIdnLangCode(Aws::String&& value) { m_idnLangCodeHasBeenSet = true; m_idnLangCode = value; }
+    inline void SetIdnLangCode(Aws::String&& value) { m_idnLangCodeHasBeenSet = true; m_idnLangCode = std::move(value); }
 
     /**
      * <p>Reserved for future use.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
-    inline CheckDomainAvailabilityRequest& WithIdnLangCode(Aws::String&& value) { SetIdnLangCode(value); return *this;}
+    inline CheckDomainAvailabilityRequest& WithIdnLangCode(Aws::String&& value) { SetIdnLangCode(std::move(value)); return *this;}
 
     /**
      * <p>Reserved for future use.</p>

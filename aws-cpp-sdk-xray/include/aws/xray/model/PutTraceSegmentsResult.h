@@ -16,6 +16,7 @@
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/xray/model/UnprocessedTraceSegment.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>Segments that failed processing.</p>
      */
-    inline void SetUnprocessedTraceSegments(Aws::Vector<UnprocessedTraceSegment>&& value) { m_unprocessedTraceSegments = value; }
+    inline void SetUnprocessedTraceSegments(Aws::Vector<UnprocessedTraceSegment>&& value) { m_unprocessedTraceSegments = std::move(value); }
 
     /**
      * <p>Segments that failed processing.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Segments that failed processing.</p>
      */
-    inline PutTraceSegmentsResult& WithUnprocessedTraceSegments(Aws::Vector<UnprocessedTraceSegment>&& value) { SetUnprocessedTraceSegments(value); return *this;}
+    inline PutTraceSegmentsResult& WithUnprocessedTraceSegments(Aws::Vector<UnprocessedTraceSegment>&& value) { SetUnprocessedTraceSegments(std::move(value)); return *this;}
 
     /**
      * <p>Segments that failed processing.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>Segments that failed processing.</p>
      */
-    inline PutTraceSegmentsResult& AddUnprocessedTraceSegments(UnprocessedTraceSegment&& value) { m_unprocessedTraceSegments.push_back(value); return *this; }
+    inline PutTraceSegmentsResult& AddUnprocessedTraceSegments(UnprocessedTraceSegment&& value) { m_unprocessedTraceSegments.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<UnprocessedTraceSegment> m_unprocessedTraceSegments;

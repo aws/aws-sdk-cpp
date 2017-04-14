@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>
      */
-    inline void SetClientCertificateId(Aws::String&& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = value; }
+    inline void SetClientCertificateId(Aws::String&& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = std::move(value); }
 
     /**
      * <p>The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>
      */
-    inline DeleteClientCertificateRequest& WithClientCertificateId(Aws::String&& value) { SetClientCertificateId(value); return *this;}
+    inline DeleteClientCertificateRequest& WithClientCertificateId(Aws::String&& value) { SetClientCertificateId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>

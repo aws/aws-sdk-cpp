@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudsearch/model/ServiceEndpoint.h>
 #include <aws/cloudsearch/model/Limits.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
 
     
-    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
+    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
 
     
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
@@ -64,7 +65,7 @@ namespace Model
     inline DomainStatus& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
 
     
-    inline DomainStatus& WithDomainId(Aws::String&& value) { SetDomainId(value); return *this;}
+    inline DomainStatus& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
 
     
     inline DomainStatus& WithDomainId(const char* value) { SetDomainId(value); return *this;}
@@ -76,7 +77,7 @@ namespace Model
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
@@ -85,7 +86,7 @@ namespace Model
     inline DomainStatus& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     
-    inline DomainStatus& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DomainStatus& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     
     inline DomainStatus& WithDomainName(const char* value) { SetDomainName(value); return *this;}
@@ -97,7 +98,7 @@ namespace Model
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
     
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
 
     
     inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
@@ -106,7 +107,7 @@ namespace Model
     inline DomainStatus& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     
-    inline DomainStatus& WithARN(Aws::String&& value) { SetARN(value); return *this;}
+    inline DomainStatus& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     
     inline DomainStatus& WithARN(const char* value) { SetARN(value); return *this;}
@@ -175,7 +176,7 @@ namespace Model
     /**
      * <p>The service endpoint for updating documents in a search domain.</p>
      */
-    inline void SetDocService(ServiceEndpoint&& value) { m_docServiceHasBeenSet = true; m_docService = value; }
+    inline void SetDocService(ServiceEndpoint&& value) { m_docServiceHasBeenSet = true; m_docService = std::move(value); }
 
     /**
      * <p>The service endpoint for updating documents in a search domain.</p>
@@ -185,7 +186,7 @@ namespace Model
     /**
      * <p>The service endpoint for updating documents in a search domain.</p>
      */
-    inline DomainStatus& WithDocService(ServiceEndpoint&& value) { SetDocService(value); return *this;}
+    inline DomainStatus& WithDocService(ServiceEndpoint&& value) { SetDocService(std::move(value)); return *this;}
 
     /**
      * <p>The service endpoint for requesting search results from a search domain.</p>
@@ -200,7 +201,7 @@ namespace Model
     /**
      * <p>The service endpoint for requesting search results from a search domain.</p>
      */
-    inline void SetSearchService(ServiceEndpoint&& value) { m_searchServiceHasBeenSet = true; m_searchService = value; }
+    inline void SetSearchService(ServiceEndpoint&& value) { m_searchServiceHasBeenSet = true; m_searchService = std::move(value); }
 
     /**
      * <p>The service endpoint for requesting search results from a search domain.</p>
@@ -210,7 +211,7 @@ namespace Model
     /**
      * <p>The service endpoint for requesting search results from a search domain.</p>
      */
-    inline DomainStatus& WithSearchService(ServiceEndpoint&& value) { SetSearchService(value); return *this;}
+    inline DomainStatus& WithSearchService(ServiceEndpoint&& value) { SetSearchService(std::move(value)); return *this;}
 
     /**
      * <p>True if <a>IndexDocuments</a> needs to be called to activate the current
@@ -261,7 +262,7 @@ namespace Model
     /**
      * <p>The instance type that is being used to process search requests.</p>
      */
-    inline void SetSearchInstanceType(Aws::String&& value) { m_searchInstanceTypeHasBeenSet = true; m_searchInstanceType = value; }
+    inline void SetSearchInstanceType(Aws::String&& value) { m_searchInstanceTypeHasBeenSet = true; m_searchInstanceType = std::move(value); }
 
     /**
      * <p>The instance type that is being used to process search requests.</p>
@@ -276,7 +277,7 @@ namespace Model
     /**
      * <p>The instance type that is being used to process search requests.</p>
      */
-    inline DomainStatus& WithSearchInstanceType(Aws::String&& value) { SetSearchInstanceType(value); return *this;}
+    inline DomainStatus& WithSearchInstanceType(Aws::String&& value) { SetSearchInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The instance type that is being used to process search requests.</p>
@@ -323,13 +324,13 @@ namespace Model
     inline void SetLimits(const Limits& value) { m_limitsHasBeenSet = true; m_limits = value; }
 
     
-    inline void SetLimits(Limits&& value) { m_limitsHasBeenSet = true; m_limits = value; }
+    inline void SetLimits(Limits&& value) { m_limitsHasBeenSet = true; m_limits = std::move(value); }
 
     
     inline DomainStatus& WithLimits(const Limits& value) { SetLimits(value); return *this;}
 
     
-    inline DomainStatus& WithLimits(Limits&& value) { SetLimits(value); return *this;}
+    inline DomainStatus& WithLimits(Limits&& value) { SetLimits(std::move(value)); return *this;}
 
   private:
     Aws::String m_domainId;

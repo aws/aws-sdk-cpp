@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/model/Event.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
@@ -57,7 +58,7 @@ namespace Model
     inline TopicConfigurationDeprecated& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     
-    inline TopicConfigurationDeprecated& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline TopicConfigurationDeprecated& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     
     inline TopicConfigurationDeprecated& WithId(const char* value) { SetId(value); return *this;}
@@ -69,19 +70,19 @@ namespace Model
     inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     
-    inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = value; }
+    inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     
     inline TopicConfigurationDeprecated& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
 
     
-    inline TopicConfigurationDeprecated& WithEvents(Aws::Vector<Event>&& value) { SetEvents(value); return *this;}
+    inline TopicConfigurationDeprecated& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
 
     
     inline TopicConfigurationDeprecated& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
     
-    inline TopicConfigurationDeprecated& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
+    inline TopicConfigurationDeprecated& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
     /**
      * Amazon SNS topic to which Amazon S3 will publish a message to report the
@@ -99,7 +100,7 @@ namespace Model
      * Amazon SNS topic to which Amazon S3 will publish a message to report the
      * specified events for the bucket.
      */
-    inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = value; }
+    inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = std::move(value); }
 
     /**
      * Amazon SNS topic to which Amazon S3 will publish a message to report the
@@ -117,7 +118,7 @@ namespace Model
      * Amazon SNS topic to which Amazon S3 will publish a message to report the
      * specified events for the bucket.
      */
-    inline TopicConfigurationDeprecated& WithTopic(Aws::String&& value) { SetTopic(value); return *this;}
+    inline TopicConfigurationDeprecated& WithTopic(Aws::String&& value) { SetTopic(std::move(value)); return *this;}
 
     /**
      * Amazon SNS topic to which Amazon S3 will publish a message to report the

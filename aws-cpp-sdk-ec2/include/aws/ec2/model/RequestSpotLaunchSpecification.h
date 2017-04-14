@@ -23,6 +23,7 @@
 #include <aws/ec2/model/RunInstancesMonitoringEnabled.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the AMI.</p>
      */
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
      * <p>The ID of the AMI.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The ID of the AMI.</p>
      */
-    inline RequestSpotLaunchSpecification& WithImageId(Aws::String&& value) { SetImageId(value); return *this;}
+    inline RequestSpotLaunchSpecification& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the AMI.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The name of the key pair.</p>
      */
-    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
+    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
 
     /**
      * <p>The name of the key pair.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>The name of the key pair.</p>
      */
-    inline RequestSpotLaunchSpecification& WithKeyName(Aws::String&& value) { SetKeyName(value); return *this;}
+    inline RequestSpotLaunchSpecification& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the key pair.</p>
@@ -131,19 +132,19 @@ namespace Model
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     
-    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
+    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     
     inline RequestSpotLaunchSpecification& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     
-    inline RequestSpotLaunchSpecification& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(value); return *this;}
+    inline RequestSpotLaunchSpecification& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     
     inline RequestSpotLaunchSpecification& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     
-    inline RequestSpotLaunchSpecification& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+    inline RequestSpotLaunchSpecification& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     
     inline RequestSpotLaunchSpecification& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
@@ -167,7 +168,7 @@ namespace Model
      * or command line tool, Base64-encoding is performed for you, and you can load the
      * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
-    inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = value; }
+    inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
      * <p>The user data to make available to the instances. If you are using an AWS SDK
@@ -188,7 +189,7 @@ namespace Model
      * or command line tool, Base64-encoding is performed for you, and you can load the
      * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
-    inline RequestSpotLaunchSpecification& WithUserData(Aws::String&& value) { SetUserData(value); return *this;}
+    inline RequestSpotLaunchSpecification& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
      * <p>The user data to make available to the instances. If you are using an AWS SDK
@@ -210,7 +211,7 @@ namespace Model
     /**
      * <p>Deprecated.</p>
      */
-    inline void SetAddressingType(Aws::String&& value) { m_addressingTypeHasBeenSet = true; m_addressingType = value; }
+    inline void SetAddressingType(Aws::String&& value) { m_addressingTypeHasBeenSet = true; m_addressingType = std::move(value); }
 
     /**
      * <p>Deprecated.</p>
@@ -225,7 +226,7 @@ namespace Model
     /**
      * <p>Deprecated.</p>
      */
-    inline RequestSpotLaunchSpecification& WithAddressingType(Aws::String&& value) { SetAddressingType(value); return *this;}
+    inline RequestSpotLaunchSpecification& WithAddressingType(Aws::String&& value) { SetAddressingType(std::move(value)); return *this;}
 
     /**
      * <p>Deprecated.</p>
@@ -245,7 +246,7 @@ namespace Model
     /**
      * <p>The instance type.</p>
      */
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type.</p>
@@ -255,7 +256,7 @@ namespace Model
     /**
      * <p>The instance type.</p>
      */
-    inline RequestSpotLaunchSpecification& WithInstanceType(InstanceType&& value) { SetInstanceType(value); return *this;}
+    inline RequestSpotLaunchSpecification& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The placement information for the instance.</p>
@@ -270,7 +271,7 @@ namespace Model
     /**
      * <p>The placement information for the instance.</p>
      */
-    inline void SetPlacement(SpotPlacement&& value) { m_placementHasBeenSet = true; m_placement = value; }
+    inline void SetPlacement(SpotPlacement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
 
     /**
      * <p>The placement information for the instance.</p>
@@ -280,7 +281,7 @@ namespace Model
     /**
      * <p>The placement information for the instance.</p>
      */
-    inline RequestSpotLaunchSpecification& WithPlacement(SpotPlacement&& value) { SetPlacement(value); return *this;}
+    inline RequestSpotLaunchSpecification& WithPlacement(SpotPlacement&& value) { SetPlacement(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the kernel.</p>
@@ -295,7 +296,7 @@ namespace Model
     /**
      * <p>The ID of the kernel.</p>
      */
-    inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
+    inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::move(value); }
 
     /**
      * <p>The ID of the kernel.</p>
@@ -310,7 +311,7 @@ namespace Model
     /**
      * <p>The ID of the kernel.</p>
      */
-    inline RequestSpotLaunchSpecification& WithKernelId(Aws::String&& value) { SetKernelId(value); return *this;}
+    inline RequestSpotLaunchSpecification& WithKernelId(Aws::String&& value) { SetKernelId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the kernel.</p>
@@ -330,7 +331,7 @@ namespace Model
     /**
      * <p>The ID of the RAM disk.</p>
      */
-    inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
+    inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::move(value); }
 
     /**
      * <p>The ID of the RAM disk.</p>
@@ -345,7 +346,7 @@ namespace Model
     /**
      * <p>The ID of the RAM disk.</p>
      */
-    inline RequestSpotLaunchSpecification& WithRamdiskId(Aws::String&& value) { SetRamdiskId(value); return *this;}
+    inline RequestSpotLaunchSpecification& WithRamdiskId(Aws::String&& value) { SetRamdiskId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the RAM disk.</p>
@@ -371,7 +372,7 @@ namespace Model
      * encrypted EBS volumes in this block device mapping for your Spot Instances,
      * these volumes are not encrypted.</p>
      */
-    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
+    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
      * <p>One or more block device mapping entries.</p> <p>Although you can specify
@@ -385,7 +386,7 @@ namespace Model
      * encrypted EBS volumes in this block device mapping for your Spot Instances,
      * these volumes are not encrypted.</p>
      */
-    inline RequestSpotLaunchSpecification& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(value); return *this;}
+    inline RequestSpotLaunchSpecification& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
      * <p>One or more block device mapping entries.</p> <p>Although you can specify
@@ -399,7 +400,7 @@ namespace Model
      * encrypted EBS volumes in this block device mapping for your Spot Instances,
      * these volumes are not encrypted.</p>
      */
-    inline RequestSpotLaunchSpecification& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
+    inline RequestSpotLaunchSpecification& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ID of the subnet in which to launch the instance.</p>
@@ -414,7 +415,7 @@ namespace Model
     /**
      * <p>The ID of the subnet in which to launch the instance.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>The ID of the subnet in which to launch the instance.</p>
@@ -429,7 +430,7 @@ namespace Model
     /**
      * <p>The ID of the subnet in which to launch the instance.</p>
      */
-    inline RequestSpotLaunchSpecification& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+    inline RequestSpotLaunchSpecification& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the subnet in which to launch the instance.</p>
@@ -452,7 +453,7 @@ namespace Model
      * <p>One or more network interfaces. If you specify a network interface, you must
      * specify subnet IDs and security group IDs using the network interface.</p>
      */
-    inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
+    inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
@@ -464,7 +465,7 @@ namespace Model
      * <p>One or more network interfaces. If you specify a network interface, you must
      * specify subnet IDs and security group IDs using the network interface.</p>
      */
-    inline RequestSpotLaunchSpecification& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { SetNetworkInterfaces(value); return *this;}
+    inline RequestSpotLaunchSpecification& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
@@ -476,7 +477,7 @@ namespace Model
      * <p>One or more network interfaces. If you specify a network interface, you must
      * specify subnet IDs and security group IDs using the network interface.</p>
      */
-    inline RequestSpotLaunchSpecification& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
+    inline RequestSpotLaunchSpecification& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IAM instance profile.</p>
@@ -491,7 +492,7 @@ namespace Model
     /**
      * <p>The IAM instance profile.</p>
      */
-    inline void SetIamInstanceProfile(IamInstanceProfileSpecification&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
+    inline void SetIamInstanceProfile(IamInstanceProfileSpecification&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
 
     /**
      * <p>The IAM instance profile.</p>
@@ -501,7 +502,7 @@ namespace Model
     /**
      * <p>The IAM instance profile.</p>
      */
-    inline RequestSpotLaunchSpecification& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(value); return *this;}
+    inline RequestSpotLaunchSpecification& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
@@ -537,13 +538,13 @@ namespace Model
     inline void SetMonitoring(const RunInstancesMonitoringEnabled& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
 
     
-    inline void SetMonitoring(RunInstancesMonitoringEnabled&& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
+    inline void SetMonitoring(RunInstancesMonitoringEnabled&& value) { m_monitoringHasBeenSet = true; m_monitoring = std::move(value); }
 
     
     inline RequestSpotLaunchSpecification& WithMonitoring(const RunInstancesMonitoringEnabled& value) { SetMonitoring(value); return *this;}
 
     
-    inline RequestSpotLaunchSpecification& WithMonitoring(RunInstancesMonitoringEnabled&& value) { SetMonitoring(value); return *this;}
+    inline RequestSpotLaunchSpecification& WithMonitoring(RunInstancesMonitoringEnabled&& value) { SetMonitoring(std::move(value)); return *this;}
 
     
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
@@ -552,19 +553,19 @@ namespace Model
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
+    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     
     inline RequestSpotLaunchSpecification& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     
-    inline RequestSpotLaunchSpecification& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(value); return *this;}
+    inline RequestSpotLaunchSpecification& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     
     inline RequestSpotLaunchSpecification& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     
-    inline RequestSpotLaunchSpecification& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    inline RequestSpotLaunchSpecification& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     
     inline RequestSpotLaunchSpecification& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }

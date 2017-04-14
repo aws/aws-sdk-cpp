@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/snowball/model/JobState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -83,7 +84,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
      * AWS Simple Notification Service (SNS) API action.</p>
      */
-    inline void SetSnsTopicARN(Aws::String&& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = value; }
+    inline void SetSnsTopicARN(Aws::String&& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = std::move(value); }
 
     /**
      * <p>The new SNS <code>TopicArn</code> that you want to associate with this job.
@@ -116,7 +117,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
      * AWS Simple Notification Service (SNS) API action.</p>
      */
-    inline Notification& WithSnsTopicARN(Aws::String&& value) { SetSnsTopicARN(value); return *this;}
+    inline Notification& WithSnsTopicARN(Aws::String&& value) { SetSnsTopicARN(std::move(value)); return *this;}
 
     /**
      * <p>The new SNS <code>TopicArn</code> that you want to associate with this job.
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The list of job states that will trigger a notification for this job.</p>
      */
-    inline void SetJobStatesToNotify(Aws::Vector<JobState>&& value) { m_jobStatesToNotifyHasBeenSet = true; m_jobStatesToNotify = value; }
+    inline void SetJobStatesToNotify(Aws::Vector<JobState>&& value) { m_jobStatesToNotifyHasBeenSet = true; m_jobStatesToNotify = std::move(value); }
 
     /**
      * <p>The list of job states that will trigger a notification for this job.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>The list of job states that will trigger a notification for this job.</p>
      */
-    inline Notification& WithJobStatesToNotify(Aws::Vector<JobState>&& value) { SetJobStatesToNotify(value); return *this;}
+    inline Notification& WithJobStatesToNotify(Aws::Vector<JobState>&& value) { SetJobStatesToNotify(std::move(value)); return *this;}
 
     /**
      * <p>The list of job states that will trigger a notification for this job.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>The list of job states that will trigger a notification for this job.</p>
      */
-    inline Notification& AddJobStatesToNotify(JobState&& value) { m_jobStatesToNotifyHasBeenSet = true; m_jobStatesToNotify.push_back(value); return *this; }
+    inline Notification& AddJobStatesToNotify(JobState&& value) { m_jobStatesToNotifyHasBeenSet = true; m_jobStatesToNotify.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Any change in job state will trigger a notification for this job.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * different following actions.</p> <p>Output artifact names must be unique within
      * a pipeline.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the output of an artifact, such as "My App".</p> <p>The input
@@ -108,7 +109,7 @@ namespace Model
      * different following actions.</p> <p>Output artifact names must be unique within
      * a pipeline.</p>
      */
-    inline OutputArtifact& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline OutputArtifact& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the output of an artifact, such as "My App".</p> <p>The input

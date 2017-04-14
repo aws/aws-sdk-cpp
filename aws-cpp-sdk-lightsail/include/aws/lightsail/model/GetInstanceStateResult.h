@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/model/InstanceState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The state of the instance.</p>
      */
-    inline void SetState(InstanceState&& value) { m_state = value; }
+    inline void SetState(InstanceState&& value) { m_state = std::move(value); }
 
     /**
      * <p>The state of the instance.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The state of the instance.</p>
      */
-    inline GetInstanceStateResult& WithState(InstanceState&& value) { SetState(value); return *this;}
+    inline GetInstanceStateResult& WithState(InstanceState&& value) { SetState(std::move(value)); return *this;}
 
   private:
     InstanceState m_state;

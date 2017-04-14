@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/kms/model/KeyMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Metadata associated with the CMK.</p>
      */
-    inline void SetKeyMetadata(KeyMetadata&& value) { m_keyMetadata = value; }
+    inline void SetKeyMetadata(KeyMetadata&& value) { m_keyMetadata = std::move(value); }
 
     /**
      * <p>Metadata associated with the CMK.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Metadata associated with the CMK.</p>
      */
-    inline CreateKeyResult& WithKeyMetadata(KeyMetadata&& value) { SetKeyMetadata(value); return *this;}
+    inline CreateKeyResult& WithKeyMetadata(KeyMetadata&& value) { SetKeyMetadata(std::move(value)); return *this;}
 
   private:
     KeyMetadata m_keyMetadata;

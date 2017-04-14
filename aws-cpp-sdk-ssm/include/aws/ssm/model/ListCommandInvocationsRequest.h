@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/CommandFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>(Optional) The invocations for a specific command ID.</p>
      */
-    inline void SetCommandId(Aws::String&& value) { m_commandIdHasBeenSet = true; m_commandId = value; }
+    inline void SetCommandId(Aws::String&& value) { m_commandIdHasBeenSet = true; m_commandId = std::move(value); }
 
     /**
      * <p>(Optional) The invocations for a specific command ID.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>(Optional) The invocations for a specific command ID.</p>
      */
-    inline ListCommandInvocationsRequest& WithCommandId(Aws::String&& value) { SetCommandId(value); return *this;}
+    inline ListCommandInvocationsRequest& WithCommandId(Aws::String&& value) { SetCommandId(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) The invocations for a specific command ID.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>(Optional) The command execution details for a specific instance ID.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>(Optional) The command execution details for a specific instance ID.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>(Optional) The command execution details for a specific instance ID.</p>
      */
-    inline ListCommandInvocationsRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline ListCommandInvocationsRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) The command execution details for a specific instance ID.</p>
@@ -144,7 +145,7 @@ namespace Model
      * <p>(Optional) The token for the next set of items to return. (You received this
      * token from a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>(Optional) The token for the next set of items to return. (You received this
@@ -162,7 +163,7 @@ namespace Model
      * <p>(Optional) The token for the next set of items to return. (You received this
      * token from a previous call.)</p>
      */
-    inline ListCommandInvocationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListCommandInvocationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) The token for the next set of items to return. (You received this
@@ -186,7 +187,7 @@ namespace Model
      * <p>(Optional) One or more filters. Use a filter to return a more specific list
      * of results.</p>
      */
-    inline void SetFilters(Aws::Vector<CommandFilter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<CommandFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>(Optional) One or more filters. Use a filter to return a more specific list
@@ -198,7 +199,7 @@ namespace Model
      * <p>(Optional) One or more filters. Use a filter to return a more specific list
      * of results.</p>
      */
-    inline ListCommandInvocationsRequest& WithFilters(Aws::Vector<CommandFilter>&& value) { SetFilters(value); return *this;}
+    inline ListCommandInvocationsRequest& WithFilters(Aws::Vector<CommandFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) One or more filters. Use a filter to return a more specific list
@@ -210,7 +211,7 @@ namespace Model
      * <p>(Optional) One or more filters. Use a filter to return a more specific list
      * of results.</p>
      */
-    inline ListCommandInvocationsRequest& AddFilters(CommandFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline ListCommandInvocationsRequest& AddFilters(CommandFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>(Optional) If set this returns the response of the command executions and any

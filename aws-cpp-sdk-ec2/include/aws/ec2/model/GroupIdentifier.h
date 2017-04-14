@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the security group.</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>The name of the security group.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the security group.</p>
      */
-    inline GroupIdentifier& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
+    inline GroupIdentifier& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the security group.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The ID of the security group.</p>
      */
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
+    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
      * <p>The ID of the security group.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The ID of the security group.</p>
      */
-    inline GroupIdentifier& WithGroupId(Aws::String&& value) { SetGroupId(value); return *this;}
+    inline GroupIdentifier& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the security group.</p>

@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The API identifier of the stage to flush its cache.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The API identifier of the stage to flush its cache.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The API identifier of the stage to flush its cache.</p>
      */
-    inline FlushStageCacheRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline FlushStageCacheRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The API identifier of the stage to flush its cache.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The name of the stage to flush its cache.</p>
      */
-    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
+    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
      * <p>The name of the stage to flush its cache.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The name of the stage to flush its cache.</p>
      */
-    inline FlushStageCacheRequest& WithStageName(Aws::String&& value) { SetStageName(value); return *this;}
+    inline FlushStageCacheRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the stage to flush its cache.</p>

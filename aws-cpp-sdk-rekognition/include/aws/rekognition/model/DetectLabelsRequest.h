@@ -16,6 +16,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/RekognitionRequest.h>
 #include <aws/rekognition/model/Image.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The input image. You can provide a blob of image bytes or an S3 object.</p>
      */
-    inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = value; }
+    inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
      * <p>The input image. You can provide a blob of image bytes or an S3 object.</p>
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The input image. You can provide a blob of image bytes or an S3 object.</p>
      */
-    inline DetectLabelsRequest& WithImage(Image&& value) { SetImage(value); return *this;}
+    inline DetectLabelsRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
 
     /**
      * <p>Maximum number of labels you want the service to return in the response. The

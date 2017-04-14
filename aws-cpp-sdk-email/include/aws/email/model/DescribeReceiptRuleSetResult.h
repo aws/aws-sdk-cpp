@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/email/model/ResponseMetadata.h>
 #include <aws/email/model/ReceiptRule.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>The metadata for the receipt rule set, which consists of the rule set name
      * and the timestamp of when the rule set was created.</p>
      */
-    inline void SetMetadata(ReceiptRuleSetMetadata&& value) { m_metadata = value; }
+    inline void SetMetadata(ReceiptRuleSetMetadata&& value) { m_metadata = std::move(value); }
 
     /**
      * <p>The metadata for the receipt rule set, which consists of the rule set name
@@ -76,7 +77,7 @@ namespace Model
      * <p>The metadata for the receipt rule set, which consists of the rule set name
      * and the timestamp of when the rule set was created.</p>
      */
-    inline DescribeReceiptRuleSetResult& WithMetadata(ReceiptRuleSetMetadata&& value) { SetMetadata(value); return *this;}
+    inline DescribeReceiptRuleSetResult& WithMetadata(ReceiptRuleSetMetadata&& value) { SetMetadata(std::move(value)); return *this;}
 
     /**
      * <p>A list of the receipt rules that belong to the specified receipt rule
@@ -94,7 +95,7 @@ namespace Model
      * <p>A list of the receipt rules that belong to the specified receipt rule
      * set.</p>
      */
-    inline void SetRules(Aws::Vector<ReceiptRule>&& value) { m_rules = value; }
+    inline void SetRules(Aws::Vector<ReceiptRule>&& value) { m_rules = std::move(value); }
 
     /**
      * <p>A list of the receipt rules that belong to the specified receipt rule
@@ -106,7 +107,7 @@ namespace Model
      * <p>A list of the receipt rules that belong to the specified receipt rule
      * set.</p>
      */
-    inline DescribeReceiptRuleSetResult& WithRules(Aws::Vector<ReceiptRule>&& value) { SetRules(value); return *this;}
+    inline DescribeReceiptRuleSetResult& WithRules(Aws::Vector<ReceiptRule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
      * <p>A list of the receipt rules that belong to the specified receipt rule
@@ -118,7 +119,7 @@ namespace Model
      * <p>A list of the receipt rules that belong to the specified receipt rule
      * set.</p>
      */
-    inline DescribeReceiptRuleSetResult& AddRules(ReceiptRule&& value) { m_rules.push_back(value); return *this; }
+    inline DescribeReceiptRuleSetResult& AddRules(ReceiptRule&& value) { m_rules.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -127,13 +128,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeReceiptRuleSetResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeReceiptRuleSetResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeReceiptRuleSetResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     ReceiptRuleSetMetadata m_metadata;

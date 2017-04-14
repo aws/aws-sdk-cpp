@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/codepipeline/model/ErrorDetails.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The status of the action, or for a completed action, the last status of the
      * action.</p>
      */
-    inline void SetStatus(ActionExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ActionExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the action, or for a completed action, the last status of the
@@ -75,7 +76,7 @@ namespace Model
      * <p>The status of the action, or for a completed action, the last status of the
      * action.</p>
      */
-    inline ActionExecution& WithStatus(ActionExecutionStatus&& value) { SetStatus(value); return *this;}
+    inline ActionExecution& WithStatus(ActionExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>A summary of the run of the action.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>A summary of the run of the action.</p>
      */
-    inline void SetSummary(Aws::String&& value) { m_summaryHasBeenSet = true; m_summary = value; }
+    inline void SetSummary(Aws::String&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
 
     /**
      * <p>A summary of the run of the action.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>A summary of the run of the action.</p>
      */
-    inline ActionExecution& WithSummary(Aws::String&& value) { SetSummary(value); return *this;}
+    inline ActionExecution& WithSummary(Aws::String&& value) { SetSummary(std::move(value)); return *this;}
 
     /**
      * <p>A summary of the run of the action.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>The last status change of the action.</p>
      */
-    inline void SetLastStatusChange(Aws::Utils::DateTime&& value) { m_lastStatusChangeHasBeenSet = true; m_lastStatusChange = value; }
+    inline void SetLastStatusChange(Aws::Utils::DateTime&& value) { m_lastStatusChangeHasBeenSet = true; m_lastStatusChange = std::move(value); }
 
     /**
      * <p>The last status change of the action.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>The last status change of the action.</p>
      */
-    inline ActionExecution& WithLastStatusChange(Aws::Utils::DateTime&& value) { SetLastStatusChange(value); return *this;}
+    inline ActionExecution& WithLastStatusChange(Aws::Utils::DateTime&& value) { SetLastStatusChange(std::move(value)); return *this;}
 
     /**
      * <p>The system-generated token used to identify a unique approval request. The
@@ -159,7 +160,7 @@ namespace Model
      * command and is used to validate that the approval request corresponding to this
      * token is still valid.</p>
      */
-    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = value; }
+    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
 
     /**
      * <p>The system-generated token used to identify a unique approval request. The
@@ -183,7 +184,7 @@ namespace Model
      * command and is used to validate that the approval request corresponding to this
      * token is still valid.</p>
      */
-    inline ActionExecution& WithToken(Aws::String&& value) { SetToken(value); return *this;}
+    inline ActionExecution& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
 
     /**
      * <p>The system-generated token used to identify a unique approval request. The
@@ -206,7 +207,7 @@ namespace Model
     /**
      * <p>The ARN of the user who last changed the pipeline.</p>
      */
-    inline void SetLastUpdatedBy(Aws::String&& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = value; }
+    inline void SetLastUpdatedBy(Aws::String&& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = std::move(value); }
 
     /**
      * <p>The ARN of the user who last changed the pipeline.</p>
@@ -221,7 +222,7 @@ namespace Model
     /**
      * <p>The ARN of the user who last changed the pipeline.</p>
      */
-    inline ActionExecution& WithLastUpdatedBy(Aws::String&& value) { SetLastUpdatedBy(value); return *this;}
+    inline ActionExecution& WithLastUpdatedBy(Aws::String&& value) { SetLastUpdatedBy(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the user who last changed the pipeline.</p>
@@ -241,7 +242,7 @@ namespace Model
     /**
      * <p>The external ID of the run of the action.</p>
      */
-    inline void SetExternalExecutionId(Aws::String&& value) { m_externalExecutionIdHasBeenSet = true; m_externalExecutionId = value; }
+    inline void SetExternalExecutionId(Aws::String&& value) { m_externalExecutionIdHasBeenSet = true; m_externalExecutionId = std::move(value); }
 
     /**
      * <p>The external ID of the run of the action.</p>
@@ -256,7 +257,7 @@ namespace Model
     /**
      * <p>The external ID of the run of the action.</p>
      */
-    inline ActionExecution& WithExternalExecutionId(Aws::String&& value) { SetExternalExecutionId(value); return *this;}
+    inline ActionExecution& WithExternalExecutionId(Aws::String&& value) { SetExternalExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The external ID of the run of the action.</p>
@@ -279,7 +280,7 @@ namespace Model
      * <p>The URL of a resource external to AWS that will be used when running the
      * action, for example an external repository URL.</p>
      */
-    inline void SetExternalExecutionUrl(Aws::String&& value) { m_externalExecutionUrlHasBeenSet = true; m_externalExecutionUrl = value; }
+    inline void SetExternalExecutionUrl(Aws::String&& value) { m_externalExecutionUrlHasBeenSet = true; m_externalExecutionUrl = std::move(value); }
 
     /**
      * <p>The URL of a resource external to AWS that will be used when running the
@@ -297,7 +298,7 @@ namespace Model
      * <p>The URL of a resource external to AWS that will be used when running the
      * action, for example an external repository URL.</p>
      */
-    inline ActionExecution& WithExternalExecutionUrl(Aws::String&& value) { SetExternalExecutionUrl(value); return *this;}
+    inline ActionExecution& WithExternalExecutionUrl(Aws::String&& value) { SetExternalExecutionUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL of a resource external to AWS that will be used when running the
@@ -333,7 +334,7 @@ namespace Model
     /**
      * <p>The details of an error returned by a URL external to AWS.</p>
      */
-    inline void SetErrorDetails(ErrorDetails&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = value; }
+    inline void SetErrorDetails(ErrorDetails&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::move(value); }
 
     /**
      * <p>The details of an error returned by a URL external to AWS.</p>
@@ -343,7 +344,7 @@ namespace Model
     /**
      * <p>The details of an error returned by a URL external to AWS.</p>
      */
-    inline ActionExecution& WithErrorDetails(ErrorDetails&& value) { SetErrorDetails(value); return *this;}
+    inline ActionExecution& WithErrorDetails(ErrorDetails&& value) { SetErrorDetails(std::move(value)); return *this;}
 
   private:
     ActionExecutionStatus m_status;

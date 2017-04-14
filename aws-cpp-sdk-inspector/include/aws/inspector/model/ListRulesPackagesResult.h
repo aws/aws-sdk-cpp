@@ -16,6 +16,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The list of ARNs specifying the rules packages returned by the action.</p>
      */
-    inline void SetRulesPackageArnList(Aws::Vector<Aws::String>&& value) { m_rulesPackageArnList = value; }
+    inline void SetRulesPackageArnList(Aws::Vector<Aws::String>&& value) { m_rulesPackageArnList = std::move(value); }
 
     /**
      * <p>The list of ARNs specifying the rules packages returned by the action.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The list of ARNs specifying the rules packages returned by the action.</p>
      */
-    inline ListRulesPackagesResult& WithRulesPackageArnList(Aws::Vector<Aws::String>&& value) { SetRulesPackageArnList(value); return *this;}
+    inline ListRulesPackagesResult& WithRulesPackageArnList(Aws::Vector<Aws::String>&& value) { SetRulesPackageArnList(std::move(value)); return *this;}
 
     /**
      * <p>The list of ARNs specifying the rules packages returned by the action.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The list of ARNs specifying the rules packages returned by the action.</p>
      */
-    inline ListRulesPackagesResult& AddRulesPackageArnList(Aws::String&& value) { m_rulesPackageArnList.push_back(value); return *this; }
+    inline ListRulesPackagesResult& AddRulesPackageArnList(Aws::String&& value) { m_rulesPackageArnList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of ARNs specifying the rules packages returned by the action.</p>
@@ -102,7 +103,7 @@ namespace Model
      * <b>nextToken</b> parameter in a subsequent pagination request. If there is no
      * more data to be listed, this parameter is set to 'null'.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p> When a response is generated, if there is more data to be listed, this
@@ -126,7 +127,7 @@ namespace Model
      * <b>nextToken</b> parameter in a subsequent pagination request. If there is no
      * more data to be listed, this parameter is set to 'null'.</p>
      */
-    inline ListRulesPackagesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListRulesPackagesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p> When a response is generated, if there is more data to be listed, this

@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The encrypted plaintext. If you are using the CLI, the value is Base64
      * encoded. Otherwise, it is not encoded.</p>
      */
-    inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlob = value; }
+    inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlob = std::move(value); }
 
     /**
      * <p>The encrypted plaintext. If you are using the CLI, the value is Base64
@@ -68,7 +69,7 @@ namespace Model
      * <p>The encrypted plaintext. If you are using the CLI, the value is Base64
      * encoded. Otherwise, it is not encoded.</p>
      */
-    inline EncryptResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(value); return *this;}
+    inline EncryptResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the key used during encryption.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The ID of the key used during encryption.</p>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
 
     /**
      * <p>The ID of the key used during encryption.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The ID of the key used during encryption.</p>
      */
-    inline EncryptResult& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline EncryptResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the key used during encryption.</p>

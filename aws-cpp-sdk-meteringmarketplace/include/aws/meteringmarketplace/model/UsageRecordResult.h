@@ -17,6 +17,7 @@
 #include <aws/meteringmarketplace/model/UsageRecord.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/meteringmarketplace/model/UsageRecordResultStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The UsageRecord that was part of the BatchMeterUsage request.</p>
      */
-    inline void SetUsageRecord(UsageRecord&& value) { m_usageRecordHasBeenSet = true; m_usageRecord = value; }
+    inline void SetUsageRecord(UsageRecord&& value) { m_usageRecordHasBeenSet = true; m_usageRecord = std::move(value); }
 
     /**
      * <p>The UsageRecord that was part of the BatchMeterUsage request.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The UsageRecord that was part of the BatchMeterUsage request.</p>
      */
-    inline UsageRecordResult& WithUsageRecord(UsageRecord&& value) { SetUsageRecord(value); return *this;}
+    inline UsageRecordResult& WithUsageRecord(UsageRecord&& value) { SetUsageRecord(std::move(value)); return *this;}
 
     /**
      * <p>The MeteringRecordId is a unique identifier for this metering event.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The MeteringRecordId is a unique identifier for this metering event.</p>
      */
-    inline void SetMeteringRecordId(Aws::String&& value) { m_meteringRecordIdHasBeenSet = true; m_meteringRecordId = value; }
+    inline void SetMeteringRecordId(Aws::String&& value) { m_meteringRecordIdHasBeenSet = true; m_meteringRecordId = std::move(value); }
 
     /**
      * <p>The MeteringRecordId is a unique identifier for this metering event.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The MeteringRecordId is a unique identifier for this metering event.</p>
      */
-    inline UsageRecordResult& WithMeteringRecordId(Aws::String&& value) { SetMeteringRecordId(value); return *this;}
+    inline UsageRecordResult& WithMeteringRecordId(Aws::String&& value) { SetMeteringRecordId(std::move(value)); return *this;}
 
     /**
      * <p>The MeteringRecordId is a unique identifier for this metering event.</p>
@@ -143,7 +144,7 @@ namespace Model
      * honored. A previously metered UsageRecord had the same customer, dimension, and
      * time, but a different quantity.</p> </li> </ul>
      */
-    inline void SetStatus(UsageRecordResultStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(UsageRecordResultStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The UsageRecordResult Status indicates the status of an individual
@@ -169,7 +170,7 @@ namespace Model
      * honored. A previously metered UsageRecord had the same customer, dimension, and
      * time, but a different quantity.</p> </li> </ul>
      */
-    inline UsageRecordResult& WithStatus(UsageRecordResultStatus&& value) { SetStatus(value); return *this;}
+    inline UsageRecordResult& WithStatus(UsageRecordResultStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     UsageRecord m_usageRecord;

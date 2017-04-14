@@ -16,6 +16,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the export task.</p>
      */
-    inline void SetTaskName(Aws::String&& value) { m_taskNameHasBeenSet = true; m_taskName = value; }
+    inline void SetTaskName(Aws::String&& value) { m_taskNameHasBeenSet = true; m_taskName = std::move(value); }
 
     /**
      * <p>The name of the export task.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the export task.</p>
      */
-    inline CreateExportTaskRequest& WithTaskName(Aws::String&& value) { SetTaskName(value); return *this;}
+    inline CreateExportTaskRequest& WithTaskName(Aws::String&& value) { SetTaskName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the export task.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
      * <p>The name of the log group.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline CreateExportTaskRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
+    inline CreateExportTaskRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the log group.</p>
@@ -121,7 +122,7 @@ namespace Model
      * <p>Export only log streams that match the provided prefix. If you don't specify
      * a value, no prefix filter is applied.</p>
      */
-    inline void SetLogStreamNamePrefix(Aws::String&& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = value; }
+    inline void SetLogStreamNamePrefix(Aws::String&& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = std::move(value); }
 
     /**
      * <p>Export only log streams that match the provided prefix. If you don't specify
@@ -139,7 +140,7 @@ namespace Model
      * <p>Export only log streams that match the provided prefix. If you don't specify
      * a value, no prefix filter is applied.</p>
      */
-    inline CreateExportTaskRequest& WithLogStreamNamePrefix(Aws::String&& value) { SetLogStreamNamePrefix(value); return *this;}
+    inline CreateExportTaskRequest& WithLogStreamNamePrefix(Aws::String&& value) { SetLogStreamNamePrefix(std::move(value)); return *this;}
 
     /**
      * <p>Export only log streams that match the provided prefix. If you don't specify
@@ -205,7 +206,7 @@ namespace Model
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
      * same AWS region.</p>
      */
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = value; }
+    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
@@ -223,7 +224,7 @@ namespace Model
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
      * same AWS region.</p>
      */
-    inline CreateExportTaskRequest& WithDestination(Aws::String&& value) { SetDestination(value); return *this;}
+    inline CreateExportTaskRequest& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
@@ -247,7 +248,7 @@ namespace Model
      * <p>The prefix used as the start of the key for every object exported. If you
      * don't specify a value, the default is <code>exportedlogs</code>.</p>
      */
-    inline void SetDestinationPrefix(Aws::String&& value) { m_destinationPrefixHasBeenSet = true; m_destinationPrefix = value; }
+    inline void SetDestinationPrefix(Aws::String&& value) { m_destinationPrefixHasBeenSet = true; m_destinationPrefix = std::move(value); }
 
     /**
      * <p>The prefix used as the start of the key for every object exported. If you
@@ -265,7 +266,7 @@ namespace Model
      * <p>The prefix used as the start of the key for every object exported. If you
      * don't specify a value, the default is <code>exportedlogs</code>.</p>
      */
-    inline CreateExportTaskRequest& WithDestinationPrefix(Aws::String&& value) { SetDestinationPrefix(value); return *this;}
+    inline CreateExportTaskRequest& WithDestinationPrefix(Aws::String&& value) { SetDestinationPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The prefix used as the start of the key for every object exported. If you

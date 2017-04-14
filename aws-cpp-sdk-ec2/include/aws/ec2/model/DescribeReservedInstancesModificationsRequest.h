@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>IDs for the submitted modification request.</p>
      */
-    inline void SetReservedInstancesModificationIds(Aws::Vector<Aws::String>&& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds = value; }
+    inline void SetReservedInstancesModificationIds(Aws::Vector<Aws::String>&& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds = std::move(value); }
 
     /**
      * <p>IDs for the submitted modification request.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>IDs for the submitted modification request.</p>
      */
-    inline DescribeReservedInstancesModificationsRequest& WithReservedInstancesModificationIds(Aws::Vector<Aws::String>&& value) { SetReservedInstancesModificationIds(value); return *this;}
+    inline DescribeReservedInstancesModificationsRequest& WithReservedInstancesModificationIds(Aws::Vector<Aws::String>&& value) { SetReservedInstancesModificationIds(std::move(value)); return *this;}
 
     /**
      * <p>IDs for the submitted modification request.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>IDs for the submitted modification request.</p>
      */
-    inline DescribeReservedInstancesModificationsRequest& AddReservedInstancesModificationIds(Aws::String&& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds.push_back(value); return *this; }
+    inline DescribeReservedInstancesModificationsRequest& AddReservedInstancesModificationIds(Aws::String&& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>IDs for the submitted modification request.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
-    inline DescribeReservedInstancesModificationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeReservedInstancesModificationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -200,7 +201,7 @@ namespace Model
      * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
      * when the modification request was last updated.</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>client-token</code> - The
@@ -256,7 +257,7 @@ namespace Model
      * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
      * when the modification request was last updated.</p> </li> </ul>
      */
-    inline DescribeReservedInstancesModificationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeReservedInstancesModificationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>client-token</code> - The
@@ -312,7 +313,7 @@ namespace Model
      * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
      * when the modification request was last updated.</p> </li> </ul>
      */
-    inline DescribeReservedInstancesModificationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeReservedInstancesModificationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Aws::String> m_reservedInstancesModificationIds;

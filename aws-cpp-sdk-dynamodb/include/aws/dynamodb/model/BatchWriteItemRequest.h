@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/WriteRequest.h>
+#include <utility>
 
 namespace Aws
 {
@@ -120,7 +121,7 @@ namespace Model
      * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
-    inline void SetRequestItems(Aws::Map<Aws::String, Aws::Vector<WriteRequest>>&& value) { m_requestItemsHasBeenSet = true; m_requestItems = value; }
+    inline void SetRequestItems(Aws::Map<Aws::String, Aws::Vector<WriteRequest>>&& value) { m_requestItemsHasBeenSet = true; m_requestItems = std::move(value); }
 
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
@@ -172,7 +173,7 @@ namespace Model
      * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
-    inline BatchWriteItemRequest& WithRequestItems(Aws::Map<Aws::String, Aws::Vector<WriteRequest>>&& value) { SetRequestItems(value); return *this;}
+    inline BatchWriteItemRequest& WithRequestItems(Aws::Map<Aws::String, Aws::Vector<WriteRequest>>&& value) { SetRequestItems(std::move(value)); return *this;}
 
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
@@ -198,7 +199,7 @@ namespace Model
      * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
-    inline BatchWriteItemRequest& AddRequestItems(const Aws::String& key, const Aws::Vector<WriteRequest>& value) { m_requestItemsHasBeenSet = true; m_requestItems[key] = value; return *this; }
+    inline BatchWriteItemRequest& AddRequestItems(const Aws::String& key, const Aws::Vector<WriteRequest>& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, value); return *this; }
 
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
@@ -224,7 +225,7 @@ namespace Model
      * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
-    inline BatchWriteItemRequest& AddRequestItems(Aws::String&& key, const Aws::Vector<WriteRequest>& value) { m_requestItemsHasBeenSet = true; m_requestItems[key] = value; return *this; }
+    inline BatchWriteItemRequest& AddRequestItems(Aws::String&& key, const Aws::Vector<WriteRequest>& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
@@ -250,7 +251,7 @@ namespace Model
      * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
-    inline BatchWriteItemRequest& AddRequestItems(const Aws::String& key, Aws::Vector<WriteRequest>&& value) { m_requestItemsHasBeenSet = true; m_requestItems[key] = value; return *this; }
+    inline BatchWriteItemRequest& AddRequestItems(const Aws::String& key, Aws::Vector<WriteRequest>&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
@@ -276,7 +277,7 @@ namespace Model
      * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
-    inline BatchWriteItemRequest& AddRequestItems(Aws::String&& key, Aws::Vector<WriteRequest>&& value) { m_requestItemsHasBeenSet = true; m_requestItems[key] = value; return *this; }
+    inline BatchWriteItemRequest& AddRequestItems(Aws::String&& key, Aws::Vector<WriteRequest>&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
@@ -302,7 +303,7 @@ namespace Model
      * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
-    inline BatchWriteItemRequest& AddRequestItems(const char* key, Aws::Vector<WriteRequest>&& value) { m_requestItemsHasBeenSet = true; m_requestItems[key] = value; return *this; }
+    inline BatchWriteItemRequest& AddRequestItems(const char* key, Aws::Vector<WriteRequest>&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
@@ -328,7 +329,7 @@ namespace Model
      * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
-    inline BatchWriteItemRequest& AddRequestItems(const char* key, const Aws::Vector<WriteRequest>& value) { m_requestItemsHasBeenSet = true; m_requestItems[key] = value; return *this; }
+    inline BatchWriteItemRequest& AddRequestItems(const char* key, const Aws::Vector<WriteRequest>& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, value); return *this; }
 
     
     inline const ReturnConsumedCapacity& GetReturnConsumedCapacity() const{ return m_returnConsumedCapacity; }
@@ -337,13 +338,13 @@ namespace Model
     inline void SetReturnConsumedCapacity(const ReturnConsumedCapacity& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = value; }
 
     
-    inline void SetReturnConsumedCapacity(ReturnConsumedCapacity&& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = value; }
+    inline void SetReturnConsumedCapacity(ReturnConsumedCapacity&& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = std::move(value); }
 
     
     inline BatchWriteItemRequest& WithReturnConsumedCapacity(const ReturnConsumedCapacity& value) { SetReturnConsumedCapacity(value); return *this;}
 
     
-    inline BatchWriteItemRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(value); return *this;}
+    inline BatchWriteItemRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(std::move(value)); return *this;}
 
     /**
      * <p>Determines whether item collection metrics are returned. If set to
@@ -367,7 +368,7 @@ namespace Model
      * any, that were modified during the operation are returned in the response. If
      * set to <code>NONE</code> (the default), no statistics are returned.</p>
      */
-    inline void SetReturnItemCollectionMetrics(ReturnItemCollectionMetrics&& value) { m_returnItemCollectionMetricsHasBeenSet = true; m_returnItemCollectionMetrics = value; }
+    inline void SetReturnItemCollectionMetrics(ReturnItemCollectionMetrics&& value) { m_returnItemCollectionMetricsHasBeenSet = true; m_returnItemCollectionMetrics = std::move(value); }
 
     /**
      * <p>Determines whether item collection metrics are returned. If set to
@@ -383,7 +384,7 @@ namespace Model
      * any, that were modified during the operation are returned in the response. If
      * set to <code>NONE</code> (the default), no statistics are returned.</p>
      */
-    inline BatchWriteItemRequest& WithReturnItemCollectionMetrics(ReturnItemCollectionMetrics&& value) { SetReturnItemCollectionMetrics(value); return *this;}
+    inline BatchWriteItemRequest& WithReturnItemCollectionMetrics(ReturnItemCollectionMetrics&& value) { SetReturnItemCollectionMetrics(std::move(value)); return *this;}
 
   private:
     Aws::Map<Aws::String, Aws::Vector<WriteRequest>> m_requestItems;

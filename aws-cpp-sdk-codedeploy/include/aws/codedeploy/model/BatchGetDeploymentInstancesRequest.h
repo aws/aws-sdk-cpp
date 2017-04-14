@@ -17,6 +17,7 @@
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The unique ID of a deployment.</p>
      */
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
+    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
      * <p>The unique ID of a deployment.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The unique ID of a deployment.</p>
      */
-    inline BatchGetDeploymentInstancesRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
+    inline BatchGetDeploymentInstancesRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
      * <p>The unique ID of a deployment.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The unique IDs of instances in the deployment group.</p>
      */
-    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
+    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
      * <p>The unique IDs of instances in the deployment group.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The unique IDs of instances in the deployment group.</p>
      */
-    inline BatchGetDeploymentInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
+    inline BatchGetDeploymentInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
      * <p>The unique IDs of instances in the deployment group.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The unique IDs of instances in the deployment group.</p>
      */
-    inline BatchGetDeploymentInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+    inline BatchGetDeploymentInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The unique IDs of instances in the deployment group.</p>

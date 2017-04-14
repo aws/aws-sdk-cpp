@@ -17,6 +17,7 @@
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The name of the cluster that hosts the service to describe. If you do not
      * specify a cluster, the default cluster is assumed.</p>
      */
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
 
     /**
      * <p>The name of the cluster that hosts the service to describe. If you do not
@@ -70,7 +71,7 @@ namespace Model
      * <p>The name of the cluster that hosts the service to describe. If you do not
      * specify a cluster, the default cluster is assumed.</p>
      */
-    inline DescribeServicesRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
+    inline DescribeServicesRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cluster that hosts the service to describe. If you do not
@@ -94,7 +95,7 @@ namespace Model
      * <p>A list of services to describe. You may specify up to 10 services to describe
      * in a single operation.</p>
      */
-    inline void SetServices(Aws::Vector<Aws::String>&& value) { m_servicesHasBeenSet = true; m_services = value; }
+    inline void SetServices(Aws::Vector<Aws::String>&& value) { m_servicesHasBeenSet = true; m_services = std::move(value); }
 
     /**
      * <p>A list of services to describe. You may specify up to 10 services to describe
@@ -106,7 +107,7 @@ namespace Model
      * <p>A list of services to describe. You may specify up to 10 services to describe
      * in a single operation.</p>
      */
-    inline DescribeServicesRequest& WithServices(Aws::Vector<Aws::String>&& value) { SetServices(value); return *this;}
+    inline DescribeServicesRequest& WithServices(Aws::Vector<Aws::String>&& value) { SetServices(std::move(value)); return *this;}
 
     /**
      * <p>A list of services to describe. You may specify up to 10 services to describe
@@ -118,7 +119,7 @@ namespace Model
      * <p>A list of services to describe. You may specify up to 10 services to describe
      * in a single operation.</p>
      */
-    inline DescribeServicesRequest& AddServices(Aws::String&& value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
+    inline DescribeServicesRequest& AddServices(Aws::String&& value) { m_servicesHasBeenSet = true; m_services.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of services to describe. You may specify up to 10 services to describe

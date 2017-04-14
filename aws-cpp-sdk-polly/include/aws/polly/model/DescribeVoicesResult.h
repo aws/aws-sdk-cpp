@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/polly/model/Voice.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of voices with their properties.</p>
      */
-    inline void SetVoices(Aws::Vector<Voice>&& value) { m_voices = value; }
+    inline void SetVoices(Aws::Vector<Voice>&& value) { m_voices = std::move(value); }
 
     /**
      * <p>A list of voices with their properties.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of voices with their properties.</p>
      */
-    inline DescribeVoicesResult& WithVoices(Aws::Vector<Voice>&& value) { SetVoices(value); return *this;}
+    inline DescribeVoicesResult& WithVoices(Aws::Vector<Voice>&& value) { SetVoices(std::move(value)); return *this;}
 
     /**
      * <p>A list of voices with their properties.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of voices with their properties.</p>
      */
-    inline DescribeVoicesResult& AddVoices(Voice&& value) { m_voices.push_back(value); return *this; }
+    inline DescribeVoicesResult& AddVoices(Voice&& value) { m_voices.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The pagination token to use in the next request to continue the listing of
@@ -95,7 +96,7 @@ namespace Model
      * voices. <code>NextToken</code> is returned only if the response is
      * truncated.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token to use in the next request to continue the listing of
@@ -116,7 +117,7 @@ namespace Model
      * voices. <code>NextToken</code> is returned only if the response is
      * truncated.</p>
      */
-    inline DescribeVoicesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeVoicesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token to use in the next request to continue the listing of

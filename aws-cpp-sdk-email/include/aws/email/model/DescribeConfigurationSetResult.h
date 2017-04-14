@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/email/model/ResponseMetadata.h>
 #include <aws/email/model/EventDestination.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * <p>The configuration set object associated with the specified configuration
      * set.</p>
      */
-    inline void SetConfigurationSet(ConfigurationSet&& value) { m_configurationSet = value; }
+    inline void SetConfigurationSet(ConfigurationSet&& value) { m_configurationSet = std::move(value); }
 
     /**
      * <p>The configuration set object associated with the specified configuration
@@ -79,7 +80,7 @@ namespace Model
      * <p>The configuration set object associated with the specified configuration
      * set.</p>
      */
-    inline DescribeConfigurationSetResult& WithConfigurationSet(ConfigurationSet&& value) { SetConfigurationSet(value); return *this;}
+    inline DescribeConfigurationSetResult& WithConfigurationSet(ConfigurationSet&& value) { SetConfigurationSet(std::move(value)); return *this;}
 
     /**
      * <p>A list of event destinations associated with the configuration set. </p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>A list of event destinations associated with the configuration set. </p>
      */
-    inline void SetEventDestinations(Aws::Vector<EventDestination>&& value) { m_eventDestinations = value; }
+    inline void SetEventDestinations(Aws::Vector<EventDestination>&& value) { m_eventDestinations = std::move(value); }
 
     /**
      * <p>A list of event destinations associated with the configuration set. </p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>A list of event destinations associated with the configuration set. </p>
      */
-    inline DescribeConfigurationSetResult& WithEventDestinations(Aws::Vector<EventDestination>&& value) { SetEventDestinations(value); return *this;}
+    inline DescribeConfigurationSetResult& WithEventDestinations(Aws::Vector<EventDestination>&& value) { SetEventDestinations(std::move(value)); return *this;}
 
     /**
      * <p>A list of event destinations associated with the configuration set. </p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>A list of event destinations associated with the configuration set. </p>
      */
-    inline DescribeConfigurationSetResult& AddEventDestinations(EventDestination&& value) { m_eventDestinations.push_back(value); return *this; }
+    inline DescribeConfigurationSetResult& AddEventDestinations(EventDestination&& value) { m_eventDestinations.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -123,13 +124,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeConfigurationSetResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeConfigurationSetResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeConfigurationSetResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     ConfigurationSet m_configurationSet;

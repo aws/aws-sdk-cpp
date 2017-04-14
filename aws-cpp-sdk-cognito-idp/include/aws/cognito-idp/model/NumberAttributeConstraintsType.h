@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The minimum value of an attribute that is of the number data type.</p>
      */
-    inline void SetMinValue(Aws::String&& value) { m_minValueHasBeenSet = true; m_minValue = value; }
+    inline void SetMinValue(Aws::String&& value) { m_minValueHasBeenSet = true; m_minValue = std::move(value); }
 
     /**
      * <p>The minimum value of an attribute that is of the number data type.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The minimum value of an attribute that is of the number data type.</p>
      */
-    inline NumberAttributeConstraintsType& WithMinValue(Aws::String&& value) { SetMinValue(value); return *this;}
+    inline NumberAttributeConstraintsType& WithMinValue(Aws::String&& value) { SetMinValue(std::move(value)); return *this;}
 
     /**
      * <p>The minimum value of an attribute that is of the number data type.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The maximum value of an attribute that is of the number data type.</p>
      */
-    inline void SetMaxValue(Aws::String&& value) { m_maxValueHasBeenSet = true; m_maxValue = value; }
+    inline void SetMaxValue(Aws::String&& value) { m_maxValueHasBeenSet = true; m_maxValue = std::move(value); }
 
     /**
      * <p>The maximum value of an attribute that is of the number data type.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The maximum value of an attribute that is of the number data type.</p>
      */
-    inline NumberAttributeConstraintsType& WithMaxValue(Aws::String&& value) { SetMaxValue(value); return *this;}
+    inline NumberAttributeConstraintsType& WithMaxValue(Aws::String&& value) { SetMaxValue(std::move(value)); return *this;}
 
     /**
      * <p>The maximum value of an attribute that is of the number data type.</p>

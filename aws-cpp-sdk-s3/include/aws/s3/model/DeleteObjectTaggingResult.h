@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * The versionId of the object the tag-set was removed from.
      */
-    inline void SetVersionId(Aws::String&& value) { m_versionId = value; }
+    inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
 
     /**
      * The versionId of the object the tag-set was removed from.
@@ -67,7 +68,7 @@ namespace Model
     /**
      * The versionId of the object the tag-set was removed from.
      */
-    inline DeleteObjectTaggingResult& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
+    inline DeleteObjectTaggingResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
      * The versionId of the object the tag-set was removed from.

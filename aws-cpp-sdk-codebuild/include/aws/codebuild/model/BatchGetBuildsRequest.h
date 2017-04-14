@@ -17,6 +17,7 @@
 #include <aws/codebuild/CodeBuildRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The IDs of the builds.</p>
      */
-    inline void SetIds(Aws::Vector<Aws::String>&& value) { m_idsHasBeenSet = true; m_ids = value; }
+    inline void SetIds(Aws::Vector<Aws::String>&& value) { m_idsHasBeenSet = true; m_ids = std::move(value); }
 
     /**
      * <p>The IDs of the builds.</p>
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The IDs of the builds.</p>
      */
-    inline BatchGetBuildsRequest& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(value); return *this;}
+    inline BatchGetBuildsRequest& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the builds.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The IDs of the builds.</p>
      */
-    inline BatchGetBuildsRequest& AddIds(Aws::String&& value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
+    inline BatchGetBuildsRequest& AddIds(Aws::String&& value) { m_idsHasBeenSet = true; m_ids.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the builds.</p>

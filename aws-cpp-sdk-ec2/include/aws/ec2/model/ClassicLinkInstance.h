@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline ClassicLinkInstance& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline ClassicLinkInstance& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline ClassicLinkInstance& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline ClassicLinkInstance& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>A list of security groups.</p>
      */
-    inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groupsHasBeenSet = true; m_groups = value; }
+    inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
      * <p>A list of security groups.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>A list of security groups.</p>
      */
-    inline ClassicLinkInstance& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(value); return *this;}
+    inline ClassicLinkInstance& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of security groups.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>A list of security groups.</p>
      */
-    inline ClassicLinkInstance& AddGroups(GroupIdentifier&& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
+    inline ClassicLinkInstance& AddGroups(GroupIdentifier&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Any tags assigned to the instance.</p>
@@ -167,7 +168,7 @@ namespace Model
     /**
      * <p>Any tags assigned to the instance.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>Any tags assigned to the instance.</p>
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>Any tags assigned to the instance.</p>
      */
-    inline ClassicLinkInstance& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline ClassicLinkInstance& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Any tags assigned to the instance.</p>
@@ -187,7 +188,7 @@ namespace Model
     /**
      * <p>Any tags assigned to the instance.</p>
      */
-    inline ClassicLinkInstance& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline ClassicLinkInstance& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_instanceId;

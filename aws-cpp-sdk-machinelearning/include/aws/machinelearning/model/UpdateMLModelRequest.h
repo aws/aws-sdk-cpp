@@ -16,6 +16,7 @@
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/machinelearning/MachineLearningRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
      */
-    inline void SetMLModelId(Aws::String&& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = value; }
+    inline void SetMLModelId(Aws::String&& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = std::move(value); }
 
     /**
      * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
      */
-    inline UpdateMLModelRequest& WithMLModelId(Aws::String&& value) { SetMLModelId(value); return *this;}
+    inline UpdateMLModelRequest& WithMLModelId(Aws::String&& value) { SetMLModelId(std::move(value)); return *this;}
 
     /**
      * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
      */
-    inline void SetMLModelName(Aws::String&& value) { m_mLModelNameHasBeenSet = true; m_mLModelName = value; }
+    inline void SetMLModelName(Aws::String&& value) { m_mLModelNameHasBeenSet = true; m_mLModelName = std::move(value); }
 
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
      */
-    inline UpdateMLModelRequest& WithMLModelName(Aws::String&& value) { SetMLModelName(value); return *this;}
+    inline UpdateMLModelRequest& WithMLModelName(Aws::String&& value) { SetMLModelName(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>

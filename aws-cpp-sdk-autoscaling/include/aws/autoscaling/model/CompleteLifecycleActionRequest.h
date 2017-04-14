@@ -16,6 +16,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The name of the lifecycle hook.</p>
      */
-    inline void SetLifecycleHookName(Aws::String&& value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName = value; }
+    inline void SetLifecycleHookName(Aws::String&& value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName = std::move(value); }
 
     /**
      * <p>The name of the lifecycle hook.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The name of the lifecycle hook.</p>
      */
-    inline CompleteLifecycleActionRequest& WithLifecycleHookName(Aws::String&& value) { SetLifecycleHookName(value); return *this;}
+    inline CompleteLifecycleActionRequest& WithLifecycleHookName(Aws::String&& value) { SetLifecycleHookName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the lifecycle hook.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The name of the group for the lifecycle hook.</p>
      */
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
 
     /**
      * <p>The name of the group for the lifecycle hook.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The name of the group for the lifecycle hook.</p>
      */
-    inline CompleteLifecycleActionRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
+    inline CompleteLifecycleActionRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the group for the lifecycle hook.</p>
@@ -130,7 +131,7 @@ namespace Model
      * action associated with an instance. Auto Scaling sends this token to the
      * notification target you specified when you created the lifecycle hook.</p>
      */
-    inline void SetLifecycleActionToken(Aws::String&& value) { m_lifecycleActionTokenHasBeenSet = true; m_lifecycleActionToken = value; }
+    inline void SetLifecycleActionToken(Aws::String&& value) { m_lifecycleActionTokenHasBeenSet = true; m_lifecycleActionToken = std::move(value); }
 
     /**
      * <p>A universally unique identifier (UUID) that identifies a specific lifecycle
@@ -151,7 +152,7 @@ namespace Model
      * action associated with an instance. Auto Scaling sends this token to the
      * notification target you specified when you created the lifecycle hook.</p>
      */
-    inline CompleteLifecycleActionRequest& WithLifecycleActionToken(Aws::String&& value) { SetLifecycleActionToken(value); return *this;}
+    inline CompleteLifecycleActionRequest& WithLifecycleActionToken(Aws::String&& value) { SetLifecycleActionToken(std::move(value)); return *this;}
 
     /**
      * <p>A universally unique identifier (UUID) that identifies a specific lifecycle
@@ -176,7 +177,7 @@ namespace Model
      * <p>The action for the group to take. This parameter can be either
      * <code>CONTINUE</code> or <code>ABANDON</code>.</p>
      */
-    inline void SetLifecycleActionResult(Aws::String&& value) { m_lifecycleActionResultHasBeenSet = true; m_lifecycleActionResult = value; }
+    inline void SetLifecycleActionResult(Aws::String&& value) { m_lifecycleActionResultHasBeenSet = true; m_lifecycleActionResult = std::move(value); }
 
     /**
      * <p>The action for the group to take. This parameter can be either
@@ -194,7 +195,7 @@ namespace Model
      * <p>The action for the group to take. This parameter can be either
      * <code>CONTINUE</code> or <code>ABANDON</code>.</p>
      */
-    inline CompleteLifecycleActionRequest& WithLifecycleActionResult(Aws::String&& value) { SetLifecycleActionResult(value); return *this;}
+    inline CompleteLifecycleActionRequest& WithLifecycleActionResult(Aws::String&& value) { SetLifecycleActionResult(std::move(value)); return *this;}
 
     /**
      * <p>The action for the group to take. This parameter can be either
@@ -215,7 +216,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -230,7 +231,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline CompleteLifecycleActionRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline CompleteLifecycleActionRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>

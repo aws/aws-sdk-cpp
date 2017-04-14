@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A list of application names.</p>
      */
-    inline void SetApplications(Aws::Vector<Aws::String>&& value) { m_applications = value; }
+    inline void SetApplications(Aws::Vector<Aws::String>&& value) { m_applications = std::move(value); }
 
     /**
      * <p>A list of application names.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A list of application names.</p>
      */
-    inline ListApplicationsResult& WithApplications(Aws::Vector<Aws::String>&& value) { SetApplications(value); return *this;}
+    inline ListApplicationsResult& WithApplications(Aws::Vector<Aws::String>&& value) { SetApplications(std::move(value)); return *this;}
 
     /**
      * <p>A list of application names.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>A list of application names.</p>
      */
-    inline ListApplicationsResult& AddApplications(Aws::String&& value) { m_applications.push_back(value); return *this; }
+    inline ListApplicationsResult& AddApplications(Aws::String&& value) { m_applications.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of application names.</p>
@@ -105,7 +106,7 @@ namespace Model
      * It can be used in a subsequent list applications call to return the next set of
      * applications, will also be returned. in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
@@ -126,7 +127,7 @@ namespace Model
      * It can be used in a subsequent list applications call to return the next set of
      * applications, will also be returned. in the list.</p>
      */
-    inline ListApplicationsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListApplicationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.

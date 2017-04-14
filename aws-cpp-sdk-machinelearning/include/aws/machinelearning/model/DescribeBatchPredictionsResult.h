@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/machinelearning/model/BatchPrediction.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>A list of <code>BatchPrediction</code> objects that meet the search criteria.
      * </p>
      */
-    inline void SetResults(Aws::Vector<BatchPrediction>&& value) { m_results = value; }
+    inline void SetResults(Aws::Vector<BatchPrediction>&& value) { m_results = std::move(value); }
 
     /**
      * <p>A list of <code>BatchPrediction</code> objects that meet the search criteria.
@@ -76,7 +77,7 @@ namespace Model
      * <p>A list of <code>BatchPrediction</code> objects that meet the search criteria.
      * </p>
      */
-    inline DescribeBatchPredictionsResult& WithResults(Aws::Vector<BatchPrediction>&& value) { SetResults(value); return *this;}
+    inline DescribeBatchPredictionsResult& WithResults(Aws::Vector<BatchPrediction>&& value) { SetResults(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>BatchPrediction</code> objects that meet the search criteria.
@@ -88,7 +89,7 @@ namespace Model
      * <p>A list of <code>BatchPrediction</code> objects that meet the search criteria.
      * </p>
      */
-    inline DescribeBatchPredictionsResult& AddResults(BatchPrediction&& value) { m_results.push_back(value); return *this; }
+    inline DescribeBatchPredictionsResult& AddResults(BatchPrediction&& value) { m_results.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ID of the next page in the paginated results that indicates at least one
@@ -106,7 +107,7 @@ namespace Model
      * <p>The ID of the next page in the paginated results that indicates at least one
      * more page follows.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The ID of the next page in the paginated results that indicates at least one
@@ -124,7 +125,7 @@ namespace Model
      * <p>The ID of the next page in the paginated results that indicates at least one
      * more page follows.</p>
      */
-    inline DescribeBatchPredictionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeBatchPredictionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the next page in the paginated results that indicates at least one

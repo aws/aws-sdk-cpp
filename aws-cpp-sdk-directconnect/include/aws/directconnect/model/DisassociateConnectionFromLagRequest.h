@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The ID of the connection to disassociate from the LAG.</p> <p>Example:
      * dxcon-abc123</p> <p>Default: None</p>
      */
-    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
+    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
     /**
      * <p>The ID of the connection to disassociate from the LAG.</p> <p>Example:
@@ -73,7 +74,7 @@ namespace Model
      * <p>The ID of the connection to disassociate from the LAG.</p> <p>Example:
      * dxcon-abc123</p> <p>Default: None</p>
      */
-    inline DisassociateConnectionFromLagRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(value); return *this;}
+    inline DisassociateConnectionFromLagRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the connection to disassociate from the LAG.</p> <p>Example:
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The ID of the LAG.</p> <p>Example: dxlag-abc123</p> <p>Default: None</p>
      */
-    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
+    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = std::move(value); }
 
     /**
      * <p>The ID of the LAG.</p> <p>Example: dxlag-abc123</p> <p>Default: None</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The ID of the LAG.</p> <p>Example: dxlag-abc123</p> <p>Default: None</p>
      */
-    inline DisassociateConnectionFromLagRequest& WithLagId(Aws::String&& value) { SetLagId(value); return *this;}
+    inline DisassociateConnectionFromLagRequest& WithLagId(Aws::String&& value) { SetLagId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the LAG.</p> <p>Example: dxlag-abc123</p> <p>Default: None</p>

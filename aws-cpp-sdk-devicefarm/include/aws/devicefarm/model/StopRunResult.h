@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/Run.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The run that was stopped.</p>
      */
-    inline void SetRun(Run&& value) { m_run = value; }
+    inline void SetRun(Run&& value) { m_run = std::move(value); }
 
     /**
      * <p>The run that was stopped.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The run that was stopped.</p>
      */
-    inline StopRunResult& WithRun(Run&& value) { SetRun(value); return *this;}
+    inline StopRunResult& WithRun(Run&& value) { SetRun(std::move(value)); return *this;}
 
   private:
     Run m_run;

@@ -16,6 +16,7 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/states/SFNRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -87,7 +88,7 @@ namespace Model
      * unchanged.</p> <p>The configured <code>maxResults</code> determines how many
      * results can be returned in a single call.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>If a <code>nextToken</code> was returned by a previous call, there are more
@@ -114,7 +115,7 @@ namespace Model
      * unchanged.</p> <p>The configured <code>maxResults</code> determines how many
      * results can be returned in a single call.</p>
      */
-    inline ListActivitiesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListActivitiesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If a <code>nextToken</code> was returned by a previous call, there are more

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline GetDeployablePatchSnapshotForInstanceResult& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline GetDeployablePatchSnapshotForInstanceResult& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The user-defined snapshot ID.</p>
      */
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotId = value; }
+    inline void SetSnapshotId(Aws::String&& value) { m_snapshotId = std::move(value); }
 
     /**
      * <p>The user-defined snapshot ID.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The user-defined snapshot ID.</p>
      */
-    inline GetDeployablePatchSnapshotForInstanceResult& WithSnapshotId(Aws::String&& value) { SetSnapshotId(value); return *this;}
+    inline GetDeployablePatchSnapshotForInstanceResult& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
      * <p>The user-defined snapshot ID.</p>
@@ -125,7 +126,7 @@ namespace Model
      * <p>A pre-signed Amazon S3 URL that can be used to download the patch
      * snapshot.</p>
      */
-    inline void SetSnapshotDownloadUrl(Aws::String&& value) { m_snapshotDownloadUrl = value; }
+    inline void SetSnapshotDownloadUrl(Aws::String&& value) { m_snapshotDownloadUrl = std::move(value); }
 
     /**
      * <p>A pre-signed Amazon S3 URL that can be used to download the patch
@@ -143,7 +144,7 @@ namespace Model
      * <p>A pre-signed Amazon S3 URL that can be used to download the patch
      * snapshot.</p>
      */
-    inline GetDeployablePatchSnapshotForInstanceResult& WithSnapshotDownloadUrl(Aws::String&& value) { SetSnapshotDownloadUrl(value); return *this;}
+    inline GetDeployablePatchSnapshotForInstanceResult& WithSnapshotDownloadUrl(Aws::String&& value) { SetSnapshotDownloadUrl(std::move(value)); return *this;}
 
     /**
      * <p>A pre-signed Amazon S3 URL that can be used to download the patch

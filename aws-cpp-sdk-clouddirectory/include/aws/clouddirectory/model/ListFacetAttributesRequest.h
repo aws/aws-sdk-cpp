@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ARN of the schema where the facet resides.</p>
      */
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
+    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
 
     /**
      * <p>The ARN of the schema where the facet resides.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ARN of the schema where the facet resides.</p>
      */
-    inline ListFacetAttributesRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(value); return *this;}
+    inline ListFacetAttributesRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the schema where the facet resides.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The name of the facet whose attributes will be retrieved.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the facet whose attributes will be retrieved.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The name of the facet whose attributes will be retrieved.</p>
      */
-    inline ListFacetAttributesRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ListFacetAttributesRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the facet whose attributes will be retrieved.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline ListFacetAttributesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListFacetAttributesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>

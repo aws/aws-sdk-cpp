@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The status of the case when the <a>ResolveCase</a> request was sent.</p>
      */
-    inline void SetInitialCaseStatus(Aws::String&& value) { m_initialCaseStatus = value; }
+    inline void SetInitialCaseStatus(Aws::String&& value) { m_initialCaseStatus = std::move(value); }
 
     /**
      * <p>The status of the case when the <a>ResolveCase</a> request was sent.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The status of the case when the <a>ResolveCase</a> request was sent.</p>
      */
-    inline ResolveCaseResult& WithInitialCaseStatus(Aws::String&& value) { SetInitialCaseStatus(value); return *this;}
+    inline ResolveCaseResult& WithInitialCaseStatus(Aws::String&& value) { SetInitialCaseStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the case when the <a>ResolveCase</a> request was sent.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>The status of the case after the <a>ResolveCase</a> request was
      * processed.</p>
      */
-    inline void SetFinalCaseStatus(Aws::String&& value) { m_finalCaseStatus = value; }
+    inline void SetFinalCaseStatus(Aws::String&& value) { m_finalCaseStatus = std::move(value); }
 
     /**
      * <p>The status of the case after the <a>ResolveCase</a> request was
@@ -114,7 +115,7 @@ namespace Model
      * <p>The status of the case after the <a>ResolveCase</a> request was
      * processed.</p>
      */
-    inline ResolveCaseResult& WithFinalCaseStatus(Aws::String&& value) { SetFinalCaseStatus(value); return *this;}
+    inline ResolveCaseResult& WithFinalCaseStatus(Aws::String&& value) { SetFinalCaseStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the case after the <a>ResolveCase</a> request was

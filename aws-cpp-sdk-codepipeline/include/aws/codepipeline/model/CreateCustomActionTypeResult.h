@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/model/ActionType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,13 +53,13 @@ namespace Model
     inline void SetActionType(const ActionType& value) { m_actionType = value; }
 
     
-    inline void SetActionType(ActionType&& value) { m_actionType = value; }
+    inline void SetActionType(ActionType&& value) { m_actionType = std::move(value); }
 
     
     inline CreateCustomActionTypeResult& WithActionType(const ActionType& value) { SetActionType(value); return *this;}
 
     
-    inline CreateCustomActionTypeResult& WithActionType(ActionType&& value) { SetActionType(value); return *this;}
+    inline CreateCustomActionTypeResult& WithActionType(ActionType&& value) { SetActionType(std::move(value)); return *this;}
 
   private:
     ActionType m_actionType;

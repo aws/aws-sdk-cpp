@@ -18,6 +18,7 @@
 #include <aws/health/model/EventFilter.h>
 #include <aws/health/model/EventAggregateField.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>Values to narrow the results returned.</p>
      */
-    inline void SetFilter(EventFilter&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(EventFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>Values to narrow the results returned.</p>
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Values to narrow the results returned.</p>
      */
-    inline DescribeEventAggregatesRequest& WithFilter(EventFilter&& value) { SetFilter(value); return *this;}
+    inline DescribeEventAggregatesRequest& WithFilter(EventFilter&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
      */
-    inline void SetAggregateField(EventAggregateField&& value) { m_aggregateFieldHasBeenSet = true; m_aggregateField = value; }
+    inline void SetAggregateField(EventAggregateField&& value) { m_aggregateFieldHasBeenSet = true; m_aggregateField = std::move(value); }
 
     /**
      * <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
      */
-    inline DescribeEventAggregatesRequest& WithAggregateField(EventAggregateField&& value) { SetAggregateField(value); return *this;}
+    inline DescribeEventAggregatesRequest& WithAggregateField(EventAggregateField&& value) { SetAggregateField(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of items to return in one batch, between 10 and 100,
@@ -130,7 +131,7 @@ namespace Model
      * include the returned token. When all results have been returned, the response
      * does not contain a pagination token value.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>If the results of a search are large, only a portion of the results are
@@ -157,7 +158,7 @@ namespace Model
      * include the returned token. When all results have been returned, the response
      * does not contain a pagination token value.</p>
      */
-    inline DescribeEventAggregatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeEventAggregatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the results of a search are large, only a portion of the results are

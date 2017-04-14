@@ -16,6 +16,7 @@
 #include <aws/cloudsearchdomain/CloudSearchDomain_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudsearchdomain/model/Bucket.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>A list of the calculated facet values and counts.</p>
      */
-    inline void SetBuckets(Aws::Vector<Bucket>&& value) { m_bucketsHasBeenSet = true; m_buckets = value; }
+    inline void SetBuckets(Aws::Vector<Bucket>&& value) { m_bucketsHasBeenSet = true; m_buckets = std::move(value); }
 
     /**
      * <p>A list of the calculated facet values and counts.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>A list of the calculated facet values and counts.</p>
      */
-    inline BucketInfo& WithBuckets(Aws::Vector<Bucket>&& value) { SetBuckets(value); return *this;}
+    inline BucketInfo& WithBuckets(Aws::Vector<Bucket>&& value) { SetBuckets(std::move(value)); return *this;}
 
     /**
      * <p>A list of the calculated facet values and counts.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>A list of the calculated facet values and counts.</p>
      */
-    inline BucketInfo& AddBuckets(Bucket&& value) { m_bucketsHasBeenSet = true; m_buckets.push_back(value); return *this; }
+    inline BucketInfo& AddBuckets(Bucket&& value) { m_bucketsHasBeenSet = true; m_buckets.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Bucket> m_buckets;

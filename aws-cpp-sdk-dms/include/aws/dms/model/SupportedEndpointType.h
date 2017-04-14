@@ -16,6 +16,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/ReplicationEndpointTypeValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES,
      * MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
      */
-    inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
+    inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
      * <p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES,
@@ -78,7 +79,7 @@ namespace Model
      * <p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES,
      * MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
      */
-    inline SupportedEndpointType& WithEngineName(Aws::String&& value) { SetEngineName(value); return *this;}
+    inline SupportedEndpointType& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
      * <p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES,
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The type of endpoint.</p>
      */
-    inline void SetEndpointType(ReplicationEndpointTypeValue&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
+    inline void SetEndpointType(ReplicationEndpointTypeValue&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
     /**
      * <p>The type of endpoint.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The type of endpoint.</p>
      */
-    inline SupportedEndpointType& WithEndpointType(ReplicationEndpointTypeValue&& value) { SetEndpointType(value); return *this;}
+    inline SupportedEndpointType& WithEndpointType(ReplicationEndpointTypeValue&& value) { SetEndpointType(std::move(value)); return *this;}
 
   private:
     Aws::String m_engineName;

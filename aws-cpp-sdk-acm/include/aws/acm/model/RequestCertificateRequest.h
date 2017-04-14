@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/acm/model/DomainValidationOption.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * example, *.example.com protects www.example.com, site.example.com, and
      * images.example.com.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>Fully qualified domain name (FQDN), such as www.example.com, of the site that
@@ -89,7 +90,7 @@ namespace Model
      * example, *.example.com protects www.example.com, site.example.com, and
      * images.example.com.</p>
      */
-    inline RequestCertificateRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline RequestCertificateRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>Fully qualified domain name (FQDN), such as www.example.com, of the site that
@@ -122,7 +123,7 @@ namespace Model
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name.</p>
      */
-    inline void SetSubjectAlternativeNames(Aws::Vector<Aws::String>&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = value; }
+    inline void SetSubjectAlternativeNames(Aws::Vector<Aws::String>&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = std::move(value); }
 
     /**
      * <p>Additional FQDNs to be included in the Subject Alternative Name extension of
@@ -138,7 +139,7 @@ namespace Model
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name.</p>
      */
-    inline RequestCertificateRequest& WithSubjectAlternativeNames(Aws::Vector<Aws::String>&& value) { SetSubjectAlternativeNames(value); return *this;}
+    inline RequestCertificateRequest& WithSubjectAlternativeNames(Aws::Vector<Aws::String>&& value) { SetSubjectAlternativeNames(std::move(value)); return *this;}
 
     /**
      * <p>Additional FQDNs to be included in the Subject Alternative Name extension of
@@ -154,7 +155,7 @@ namespace Model
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name.</p>
      */
-    inline RequestCertificateRequest& AddSubjectAlternativeNames(Aws::String&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
+    inline RequestCertificateRequest& AddSubjectAlternativeNames(Aws::String&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Additional FQDNs to be included in the Subject Alternative Name extension of
@@ -195,7 +196,7 @@ namespace Model
      * token for each call, ACM recognizes that you are requesting multiple
      * certificates.</p>
      */
-    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
+    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
     /**
      * <p>Customer chosen string that can be used to distinguish between calls to
@@ -228,7 +229,7 @@ namespace Model
      * token for each call, ACM recognizes that you are requesting multiple
      * certificates.</p>
      */
-    inline RequestCertificateRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(value); return *this;}
+    inline RequestCertificateRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
     /**
      * <p>Customer chosen string that can be used to distinguish between calls to
@@ -257,7 +258,7 @@ namespace Model
      * <p>The domain name that you want ACM to use to send you emails to validate your
      * ownership of the domain.</p>
      */
-    inline void SetDomainValidationOptions(Aws::Vector<DomainValidationOption>&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
+    inline void SetDomainValidationOptions(Aws::Vector<DomainValidationOption>&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = std::move(value); }
 
     /**
      * <p>The domain name that you want ACM to use to send you emails to validate your
@@ -269,7 +270,7 @@ namespace Model
      * <p>The domain name that you want ACM to use to send you emails to validate your
      * ownership of the domain.</p>
      */
-    inline RequestCertificateRequest& WithDomainValidationOptions(Aws::Vector<DomainValidationOption>&& value) { SetDomainValidationOptions(value); return *this;}
+    inline RequestCertificateRequest& WithDomainValidationOptions(Aws::Vector<DomainValidationOption>&& value) { SetDomainValidationOptions(std::move(value)); return *this;}
 
     /**
      * <p>The domain name that you want ACM to use to send you emails to validate your
@@ -281,7 +282,7 @@ namespace Model
      * <p>The domain name that you want ACM to use to send you emails to validate your
      * ownership of the domain.</p>
      */
-    inline RequestCertificateRequest& AddDomainValidationOptions(DomainValidationOption&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(value); return *this; }
+    inline RequestCertificateRequest& AddDomainValidationOptions(DomainValidationOption&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_domainName;

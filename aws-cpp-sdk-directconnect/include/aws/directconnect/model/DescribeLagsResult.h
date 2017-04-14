@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/model/Lag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>A list of LAGs.</p>
      */
-    inline void SetLags(Aws::Vector<Lag>&& value) { m_lags = value; }
+    inline void SetLags(Aws::Vector<Lag>&& value) { m_lags = std::move(value); }
 
     /**
      * <p>A list of LAGs.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>A list of LAGs.</p>
      */
-    inline DescribeLagsResult& WithLags(Aws::Vector<Lag>&& value) { SetLags(value); return *this;}
+    inline DescribeLagsResult& WithLags(Aws::Vector<Lag>&& value) { SetLags(std::move(value)); return *this;}
 
     /**
      * <p>A list of LAGs.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>A list of LAGs.</p>
      */
-    inline DescribeLagsResult& AddLags(Lag&& value) { m_lags.push_back(value); return *this; }
+    inline DescribeLagsResult& AddLags(Lag&& value) { m_lags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Lag> m_lags;

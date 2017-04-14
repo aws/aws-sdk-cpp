@@ -18,6 +18,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/s3/model/ObjectStorageClass.h>
 #include <aws/s3/model/Owner.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
@@ -58,7 +59,7 @@ namespace Model
     inline Object& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     
-    inline Object& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline Object& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     
     inline Object& WithKey(const char* value) { SetKey(value); return *this;}
@@ -70,13 +71,13 @@ namespace Model
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     
-    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
+    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
 
     
     inline Object& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
 
     
-    inline Object& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(value); return *this;}
+    inline Object& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 
     
     inline const Aws::String& GetETag() const{ return m_eTag; }
@@ -85,7 +86,7 @@ namespace Model
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
     
-    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = value; }
+    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
 
     
     inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
@@ -94,7 +95,7 @@ namespace Model
     inline Object& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
     
-    inline Object& WithETag(Aws::String&& value) { SetETag(value); return *this;}
+    inline Object& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     
     inline Object& WithETag(const char* value) { SetETag(value); return *this;}
@@ -121,7 +122,7 @@ namespace Model
     /**
      * The class of storage used to store the object.
      */
-    inline void SetStorageClass(ObjectStorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+    inline void SetStorageClass(ObjectStorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
      * The class of storage used to store the object.
@@ -131,7 +132,7 @@ namespace Model
     /**
      * The class of storage used to store the object.
      */
-    inline Object& WithStorageClass(ObjectStorageClass&& value) { SetStorageClass(value); return *this;}
+    inline Object& WithStorageClass(ObjectStorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
     
     inline const Owner& GetOwner() const{ return m_owner; }
@@ -140,13 +141,13 @@ namespace Model
     inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     
-    inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = value; }
+    inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     
     inline Object& WithOwner(const Owner& value) { SetOwner(value); return *this;}
 
     
-    inline Object& WithOwner(Owner&& value) { SetOwner(value); return *this;}
+    inline Object& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
   private:
     Aws::String m_key;

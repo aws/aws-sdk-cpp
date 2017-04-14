@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -83,7 +84,7 @@ namespace Model
      * <p>One or more bundle task IDs.</p> <p>Default: Describes all your bundle
      * tasks.</p>
      */
-    inline void SetBundleIds(Aws::Vector<Aws::String>&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds = value; }
+    inline void SetBundleIds(Aws::Vector<Aws::String>&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds = std::move(value); }
 
     /**
      * <p>One or more bundle task IDs.</p> <p>Default: Describes all your bundle
@@ -95,7 +96,7 @@ namespace Model
      * <p>One or more bundle task IDs.</p> <p>Default: Describes all your bundle
      * tasks.</p>
      */
-    inline DescribeBundleTasksRequest& WithBundleIds(Aws::Vector<Aws::String>&& value) { SetBundleIds(value); return *this;}
+    inline DescribeBundleTasksRequest& WithBundleIds(Aws::Vector<Aws::String>&& value) { SetBundleIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more bundle task IDs.</p> <p>Default: Describes all your bundle
@@ -107,7 +108,7 @@ namespace Model
      * <p>One or more bundle task IDs.</p> <p>Default: Describes all your bundle
      * tasks.</p>
      */
-    inline DescribeBundleTasksRequest& AddBundleIds(Aws::String&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds.push_back(value); return *this; }
+    inline DescribeBundleTasksRequest& AddBundleIds(Aws::String&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more bundle task IDs.</p> <p>Default: Describes all your bundle
@@ -170,7 +171,7 @@ namespace Model
      * </li> <li> <p> <code>update-time</code> - The time of the most recent update for
      * the task.</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>bundle-id</code> - The ID of the
@@ -208,7 +209,7 @@ namespace Model
      * </li> <li> <p> <code>update-time</code> - The time of the most recent update for
      * the task.</p> </li> </ul>
      */
-    inline DescribeBundleTasksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeBundleTasksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>bundle-id</code> - The ID of the
@@ -246,7 +247,7 @@ namespace Model
      * </li> <li> <p> <code>update-time</code> - The time of the most recent update for
      * the task.</p> </li> </ul>
      */
-    inline DescribeBundleTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeBundleTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

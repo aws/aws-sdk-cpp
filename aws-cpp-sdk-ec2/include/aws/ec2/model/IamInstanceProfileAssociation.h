@@ -19,6 +19,7 @@
 #include <aws/ec2/model/IamInstanceProfile.h>
 #include <aws/ec2/model/IamInstanceProfileAssociationState.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID of the association.</p>
      */
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
 
     /**
      * <p>The ID of the association.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The ID of the association.</p>
      */
-    inline IamInstanceProfileAssociation& WithAssociationId(Aws::String&& value) { SetAssociationId(value); return *this;}
+    inline IamInstanceProfileAssociation& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the association.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline IamInstanceProfileAssociation& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline IamInstanceProfileAssociation& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The IAM instance profile.</p>
      */
-    inline void SetIamInstanceProfile(IamInstanceProfile&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
+    inline void SetIamInstanceProfile(IamInstanceProfile&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
 
     /**
      * <p>The IAM instance profile.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The IAM instance profile.</p>
      */
-    inline IamInstanceProfileAssociation& WithIamInstanceProfile(IamInstanceProfile&& value) { SetIamInstanceProfile(value); return *this;}
+    inline IamInstanceProfileAssociation& WithIamInstanceProfile(IamInstanceProfile&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
 
     /**
      * <p>The state of the association.</p>
@@ -158,7 +159,7 @@ namespace Model
     /**
      * <p>The state of the association.</p>
      */
-    inline void SetState(IamInstanceProfileAssociationState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(IamInstanceProfileAssociationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the association.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>The state of the association.</p>
      */
-    inline IamInstanceProfileAssociation& WithState(IamInstanceProfileAssociationState&& value) { SetState(value); return *this;}
+    inline IamInstanceProfileAssociation& WithState(IamInstanceProfileAssociationState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The time the IAM instance profile was associated with the instance.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>The time the IAM instance profile was associated with the instance.</p>
      */
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
      * <p>The time the IAM instance profile was associated with the instance.</p>
@@ -193,7 +194,7 @@ namespace Model
     /**
      * <p>The time the IAM instance profile was associated with the instance.</p>
      */
-    inline IamInstanceProfileAssociation& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
+    inline IamInstanceProfileAssociation& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
   private:
     Aws::String m_associationId;

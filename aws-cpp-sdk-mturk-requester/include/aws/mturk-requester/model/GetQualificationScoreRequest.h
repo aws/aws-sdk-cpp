@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ID of the QualificationType.</p>
      */
-    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
+    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = std::move(value); }
 
     /**
      * <p>The ID of the QualificationType.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID of the QualificationType.</p>
      */
-    inline GetQualificationScoreRequest& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(value); return *this;}
+    inline GetQualificationScoreRequest& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the QualificationType.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The ID of the Worker whose Qualification is being updated.</p>
      */
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
+    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
 
     /**
      * <p>The ID of the Worker whose Qualification is being updated.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The ID of the Worker whose Qualification is being updated.</p>
      */
-    inline GetQualificationScoreRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(value); return *this;}
+    inline GetQualificationScoreRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Worker whose Qualification is being updated.</p>

@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the IAM user to associate the SSH public key with.</p> <p>This
@@ -89,7 +90,7 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-</p>
      */
-    inline UploadSSHPublicKeyRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline UploadSSHPublicKeyRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IAM user to associate the SSH public key with.</p> <p>This
@@ -134,7 +135,7 @@ namespace Model
      * the special characters tab (\u0009), line feed (\u000A), and carriage return
      * (\u000D).</p>
      */
-    inline void SetSSHPublicKeyBody(Aws::String&& value) { m_sSHPublicKeyBodyHasBeenSet = true; m_sSHPublicKeyBody = value; }
+    inline void SetSSHPublicKeyBody(Aws::String&& value) { m_sSHPublicKeyBodyHasBeenSet = true; m_sSHPublicKeyBody = std::move(value); }
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
@@ -170,7 +171,7 @@ namespace Model
      * the special characters tab (\u0009), line feed (\u000A), and carriage return
      * (\u000D).</p>
      */
-    inline UploadSSHPublicKeyRequest& WithSSHPublicKeyBody(Aws::String&& value) { SetSSHPublicKeyBody(value); return *this;}
+    inline UploadSSHPublicKeyRequest& WithSSHPublicKeyBody(Aws::String&& value) { SetSSHPublicKeyBody(std::move(value)); return *this;}
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM

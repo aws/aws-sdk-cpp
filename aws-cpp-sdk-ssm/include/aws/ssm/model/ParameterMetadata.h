@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/ParameterType.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The parameter name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The parameter name.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The parameter name.</p>
      */
-    inline ParameterMetadata& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ParameterMetadata& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The parameter name.</p>
@@ -97,7 +98,7 @@ namespace Model
      * <p>The type of parameter. Valid parameter types include the following: String,
      * String list, Secure string.</p>
      */
-    inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of parameter. Valid parameter types include the following: String,
@@ -109,7 +110,7 @@ namespace Model
      * <p>The type of parameter. Valid parameter types include the following: String,
      * String list, Secure string.</p>
      */
-    inline ParameterMetadata& WithType(ParameterType&& value) { SetType(value); return *this;}
+    inline ParameterMetadata& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the query key used for this parameter.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The ID of the query key used for this parameter.</p>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>The ID of the query key used for this parameter.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>The ID of the query key used for this parameter.</p>
      */
-    inline ParameterMetadata& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline ParameterMetadata& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the query key used for this parameter.</p>
@@ -159,7 +160,7 @@ namespace Model
     /**
      * <p>Date the parameter was last changed or updated.</p>
      */
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
 
     /**
      * <p>Date the parameter was last changed or updated.</p>
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p>Date the parameter was last changed or updated.</p>
      */
-    inline ParameterMetadata& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(value); return *this;}
+    inline ParameterMetadata& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
@@ -187,7 +188,7 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
      * parameter.</p>
      */
-    inline void SetLastModifiedUser(Aws::String&& value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser = value; }
+    inline void SetLastModifiedUser(Aws::String&& value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser = std::move(value); }
 
     /**
      * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
@@ -205,7 +206,7 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
      * parameter.</p>
      */
-    inline ParameterMetadata& WithLastModifiedUser(Aws::String&& value) { SetLastModifiedUser(value); return *this;}
+    inline ParameterMetadata& WithLastModifiedUser(Aws::String&& value) { SetLastModifiedUser(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
@@ -226,7 +227,7 @@ namespace Model
     /**
      * <p>Description of the parameter actions.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Description of the parameter actions.</p>
@@ -241,7 +242,7 @@ namespace Model
     /**
      * <p>Description of the parameter actions.</p>
      */
-    inline ParameterMetadata& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline ParameterMetadata& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Description of the parameter actions.</p>

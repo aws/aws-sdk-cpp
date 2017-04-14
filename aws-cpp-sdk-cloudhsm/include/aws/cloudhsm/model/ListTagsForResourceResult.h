@@ -16,6 +16,7 @@
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudhsm/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>One or more tags.</p>
      */
-    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagList = value; }
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagList = std::move(value); }
 
     /**
      * <p>One or more tags.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>One or more tags.</p>
      */
-    inline ListTagsForResourceResult& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(value); return *this;}
+    inline ListTagsForResourceResult& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
 
     /**
      * <p>One or more tags.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>One or more tags.</p>
      */
-    inline ListTagsForResourceResult& AddTagList(Tag&& value) { m_tagList.push_back(value); return *this; }
+    inline ListTagsForResourceResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Tag> m_tagList;

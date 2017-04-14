@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>The name or ARN of the change set that you want use to update the specified
      * stack.</p>
      */
-    inline void SetChangeSetName(Aws::String&& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = value; }
+    inline void SetChangeSetName(Aws::String&& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = std::move(value); }
 
     /**
      * <p>The name or ARN of the change set that you want use to update the specified
@@ -75,7 +76,7 @@ namespace Model
      * <p>The name or ARN of the change set that you want use to update the specified
      * stack.</p>
      */
-    inline ExecuteChangeSetRequest& WithChangeSetName(Aws::String&& value) { SetChangeSetName(value); return *this;}
+    inline ExecuteChangeSetRequest& WithChangeSetName(Aws::String&& value) { SetChangeSetName(std::move(value)); return *this;}
 
     /**
      * <p>The name or ARN of the change set that you want use to update the specified
@@ -99,7 +100,7 @@ namespace Model
      * <p>If you specified the name of a change set, specify the stack name or ID (ARN)
      * that is associated with the change set you want to execute.</p>
      */
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
+    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
      * <p>If you specified the name of a change set, specify the stack name or ID (ARN)
@@ -117,7 +118,7 @@ namespace Model
      * <p>If you specified the name of a change set, specify the stack name or ID (ARN)
      * that is associated with the change set you want to execute.</p>
      */
-    inline ExecuteChangeSetRequest& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
+    inline ExecuteChangeSetRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>If you specified the name of a change set, specify the stack name or ID (ARN)

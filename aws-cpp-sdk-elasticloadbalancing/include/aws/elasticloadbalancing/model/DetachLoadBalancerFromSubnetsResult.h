@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancing/model/ResponseMetadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The IDs of the remaining subnets for the load balancer.</p>
      */
-    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnets = value; }
+    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnets = std::move(value); }
 
     /**
      * <p>The IDs of the remaining subnets for the load balancer.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The IDs of the remaining subnets for the load balancer.</p>
      */
-    inline DetachLoadBalancerFromSubnetsResult& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(value); return *this;}
+    inline DetachLoadBalancerFromSubnetsResult& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the remaining subnets for the load balancer.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The IDs of the remaining subnets for the load balancer.</p>
      */
-    inline DetachLoadBalancerFromSubnetsResult& AddSubnets(Aws::String&& value) { m_subnets.push_back(value); return *this; }
+    inline DetachLoadBalancerFromSubnetsResult& AddSubnets(Aws::String&& value) { m_subnets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the remaining subnets for the load balancer.</p>
@@ -94,13 +95,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DetachLoadBalancerFromSubnetsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DetachLoadBalancerFromSubnetsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DetachLoadBalancerFromSubnetsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_subnets;

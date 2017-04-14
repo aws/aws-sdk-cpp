@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/ResponseMetadata.h>
 #include <aws/elasticache/model/ReservedCacheNode.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
-    inline DescribeReservedCacheNodesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeReservedCacheNodesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -99,7 +100,7 @@ namespace Model
      * <p>A list of reserved cache nodes. Each element in the list contains detailed
      * information about one node.</p>
      */
-    inline void SetReservedCacheNodes(Aws::Vector<ReservedCacheNode>&& value) { m_reservedCacheNodes = value; }
+    inline void SetReservedCacheNodes(Aws::Vector<ReservedCacheNode>&& value) { m_reservedCacheNodes = std::move(value); }
 
     /**
      * <p>A list of reserved cache nodes. Each element in the list contains detailed
@@ -111,7 +112,7 @@ namespace Model
      * <p>A list of reserved cache nodes. Each element in the list contains detailed
      * information about one node.</p>
      */
-    inline DescribeReservedCacheNodesResult& WithReservedCacheNodes(Aws::Vector<ReservedCacheNode>&& value) { SetReservedCacheNodes(value); return *this;}
+    inline DescribeReservedCacheNodesResult& WithReservedCacheNodes(Aws::Vector<ReservedCacheNode>&& value) { SetReservedCacheNodes(std::move(value)); return *this;}
 
     /**
      * <p>A list of reserved cache nodes. Each element in the list contains detailed
@@ -123,7 +124,7 @@ namespace Model
      * <p>A list of reserved cache nodes. Each element in the list contains detailed
      * information about one node.</p>
      */
-    inline DescribeReservedCacheNodesResult& AddReservedCacheNodes(ReservedCacheNode&& value) { m_reservedCacheNodes.push_back(value); return *this; }
+    inline DescribeReservedCacheNodesResult& AddReservedCacheNodes(ReservedCacheNode&& value) { m_reservedCacheNodes.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -132,13 +133,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeReservedCacheNodesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeReservedCacheNodesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeReservedCacheNodesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_marker;

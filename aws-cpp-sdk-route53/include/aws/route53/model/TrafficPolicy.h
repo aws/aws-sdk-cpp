@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/RRType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The ID that Amazon Route 53 assigned to a traffic policy when you created
      * it.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The ID that Amazon Route 53 assigned to a traffic policy when you created
@@ -80,7 +81,7 @@ namespace Model
      * <p>The ID that Amazon Route 53 assigned to a traffic policy when you created
      * it.</p>
      */
-    inline TrafficPolicy& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline TrafficPolicy& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID that Amazon Route 53 assigned to a traffic policy when you created
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>The name that you specified when you created the traffic policy.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name that you specified when you created the traffic policy.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>The name that you specified when you created the traffic policy.</p>
      */
-    inline TrafficPolicy& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline TrafficPolicy& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name that you specified when you created the traffic policy.</p>
@@ -157,7 +158,7 @@ namespace Model
      * <p>The DNS type of the resource record sets that Amazon Route 53 creates when
      * you use a traffic policy to create a traffic policy instance.</p>
      */
-    inline void SetType(RRType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(RRType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The DNS type of the resource record sets that Amazon Route 53 creates when
@@ -169,7 +170,7 @@ namespace Model
      * <p>The DNS type of the resource record sets that Amazon Route 53 creates when
      * you use a traffic policy to create a traffic policy instance.</p>
      */
-    inline TrafficPolicy& WithType(RRType&& value) { SetType(value); return *this;}
+    inline TrafficPolicy& WithType(RRType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The definition of a traffic policy in JSON format. You specify the JSON
@@ -196,7 +197,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
      * Policy Document Format</a>.</p>
      */
-    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = value; }
+    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
 
     /**
      * <p>The definition of a traffic policy in JSON format. You specify the JSON
@@ -223,7 +224,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
      * Policy Document Format</a>.</p>
      */
-    inline TrafficPolicy& WithDocument(Aws::String&& value) { SetDocument(value); return *this;}
+    inline TrafficPolicy& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
 
     /**
      * <p>The definition of a traffic policy in JSON format. You specify the JSON
@@ -250,7 +251,7 @@ namespace Model
      * <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request,
      * if any.</p>
      */
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
+    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
      * <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request,
@@ -268,7 +269,7 @@ namespace Model
      * <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request,
      * if any.</p>
      */
-    inline TrafficPolicy& WithComment(Aws::String&& value) { SetComment(value); return *this;}
+    inline TrafficPolicy& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
      * <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request,

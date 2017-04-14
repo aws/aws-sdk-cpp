@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/autoscaling/model/ResponseMetadata.h>
 #include <aws/autoscaling/model/Activity.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>The scaling activities. Activities are sorted by start time. Activities still
      * in progress are described first.</p>
      */
-    inline void SetActivities(Aws::Vector<Activity>&& value) { m_activities = value; }
+    inline void SetActivities(Aws::Vector<Activity>&& value) { m_activities = std::move(value); }
 
     /**
      * <p>The scaling activities. Activities are sorted by start time. Activities still
@@ -76,7 +77,7 @@ namespace Model
      * <p>The scaling activities. Activities are sorted by start time. Activities still
      * in progress are described first.</p>
      */
-    inline DescribeScalingActivitiesResult& WithActivities(Aws::Vector<Activity>&& value) { SetActivities(value); return *this;}
+    inline DescribeScalingActivitiesResult& WithActivities(Aws::Vector<Activity>&& value) { SetActivities(std::move(value)); return *this;}
 
     /**
      * <p>The scaling activities. Activities are sorted by start time. Activities still
@@ -88,7 +89,7 @@ namespace Model
      * <p>The scaling activities. Activities are sorted by start time. Activities still
      * in progress are described first.</p>
      */
-    inline DescribeScalingActivitiesResult& AddActivities(Activity&& value) { m_activities.push_back(value); return *this; }
+    inline DescribeScalingActivitiesResult& AddActivities(Activity&& value) { m_activities.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -106,7 +107,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -124,7 +125,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline DescribeScalingActivitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeScalingActivitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -139,13 +140,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeScalingActivitiesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeScalingActivitiesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeScalingActivitiesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Activity> m_activities;

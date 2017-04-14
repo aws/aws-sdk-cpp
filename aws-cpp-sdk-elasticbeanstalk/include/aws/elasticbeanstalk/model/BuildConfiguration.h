@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/ComputeType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip.
      * </p>
      */
-    inline void SetArtifactName(Aws::String&& value) { m_artifactNameHasBeenSet = true; m_artifactName = value; }
+    inline void SetArtifactName(Aws::String&& value) { m_artifactNameHasBeenSet = true; m_artifactName = std::move(value); }
 
     /**
      * <p>The name of the artifact of the CodeBuild build. If provided, Elastic
@@ -105,7 +106,7 @@ namespace Model
      * <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip.
      * </p>
      */
-    inline BuildConfiguration& WithArtifactName(Aws::String&& value) { SetArtifactName(value); return *this;}
+    inline BuildConfiguration& WithArtifactName(Aws::String&& value) { SetArtifactName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the artifact of the CodeBuild build. If provided, Elastic
@@ -136,7 +137,7 @@ namespace Model
      * (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on
      * behalf of the AWS account.</p>
      */
-    inline void SetCodeBuildServiceRole(Aws::String&& value) { m_codeBuildServiceRoleHasBeenSet = true; m_codeBuildServiceRole = value; }
+    inline void SetCodeBuildServiceRole(Aws::String&& value) { m_codeBuildServiceRoleHasBeenSet = true; m_codeBuildServiceRole = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
@@ -157,7 +158,7 @@ namespace Model
      * (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on
      * behalf of the AWS account.</p>
      */
-    inline BuildConfiguration& WithCodeBuildServiceRole(Aws::String&& value) { SetCodeBuildServiceRole(value); return *this;}
+    inline BuildConfiguration& WithCodeBuildServiceRole(Aws::String&& value) { SetCodeBuildServiceRole(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
@@ -194,7 +195,7 @@ namespace Model
      * <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code>
      * </p> </li> </ul>
      */
-    inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
+    inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
 
     /**
      * <p>Information about the compute resources the build project will use.</p> <ul>
@@ -214,7 +215,7 @@ namespace Model
      * <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code>
      * </p> </li> </ul>
      */
-    inline BuildConfiguration& WithComputeType(ComputeType&& value) { SetComputeType(value); return *this;}
+    inline BuildConfiguration& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Docker image to use for this build project.</p>
@@ -229,7 +230,7 @@ namespace Model
     /**
      * <p>The ID of the Docker image to use for this build project.</p>
      */
-    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = value; }
+    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
      * <p>The ID of the Docker image to use for this build project.</p>
@@ -244,7 +245,7 @@ namespace Model
     /**
      * <p>The ID of the Docker image to use for this build project.</p>
      */
-    inline BuildConfiguration& WithImage(Aws::String&& value) { SetImage(value); return *this;}
+    inline BuildConfiguration& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Docker image to use for this build project.</p>

@@ -18,6 +18,7 @@
 #include <aws/iam/model/ReportFormatType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iam/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>Contains the credential report. The report is Base64-encoded.</p>
      */
-    inline void SetContent(Aws::Utils::ByteBuffer&& value) { m_content = value; }
+    inline void SetContent(Aws::Utils::ByteBuffer&& value) { m_content = std::move(value); }
 
     /**
      * <p>Contains the credential report. The report is Base64-encoded.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>Contains the credential report. The report is Base64-encoded.</p>
      */
-    inline GetCredentialReportResult& WithContent(Aws::Utils::ByteBuffer&& value) { SetContent(value); return *this;}
+    inline GetCredentialReportResult& WithContent(Aws::Utils::ByteBuffer&& value) { SetContent(std::move(value)); return *this;}
 
     /**
      * <p>The format (MIME type) of the credential report.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The format (MIME type) of the credential report.</p>
      */
-    inline void SetReportFormat(ReportFormatType&& value) { m_reportFormat = value; }
+    inline void SetReportFormat(ReportFormatType&& value) { m_reportFormat = std::move(value); }
 
     /**
      * <p>The format (MIME type) of the credential report.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The format (MIME type) of the credential report.</p>
      */
-    inline GetCredentialReportResult& WithReportFormat(ReportFormatType&& value) { SetReportFormat(value); return *this;}
+    inline GetCredentialReportResult& WithReportFormat(ReportFormatType&& value) { SetReportFormat(std::move(value)); return *this;}
 
     /**
      * <p> The date and time when the credential report was created, in <a
@@ -114,7 +115,7 @@ namespace Model
      * <p> The date and time when the credential report was created, in <a
      * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
      */
-    inline void SetGeneratedTime(Aws::Utils::DateTime&& value) { m_generatedTime = value; }
+    inline void SetGeneratedTime(Aws::Utils::DateTime&& value) { m_generatedTime = std::move(value); }
 
     /**
      * <p> The date and time when the credential report was created, in <a
@@ -126,7 +127,7 @@ namespace Model
      * <p> The date and time when the credential report was created, in <a
      * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
      */
-    inline GetCredentialReportResult& WithGeneratedTime(Aws::Utils::DateTime&& value) { SetGeneratedTime(value); return *this;}
+    inline GetCredentialReportResult& WithGeneratedTime(Aws::Utils::DateTime&& value) { SetGeneratedTime(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -135,13 +136,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline GetCredentialReportResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline GetCredentialReportResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline GetCredentialReportResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Utils::ByteBuffer m_content;

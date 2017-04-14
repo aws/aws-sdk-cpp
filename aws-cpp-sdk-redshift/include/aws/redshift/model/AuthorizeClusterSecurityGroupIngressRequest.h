@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of the security group to which the ingress rule is added.</p>
      */
-    inline void SetClusterSecurityGroupName(Aws::String&& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
+    inline void SetClusterSecurityGroupName(Aws::String&& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = std::move(value); }
 
     /**
      * <p>The name of the security group to which the ingress rule is added.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the security group to which the ingress rule is added.</p>
      */
-    inline AuthorizeClusterSecurityGroupIngressRequest& WithClusterSecurityGroupName(Aws::String&& value) { SetClusterSecurityGroupName(value); return *this;}
+    inline AuthorizeClusterSecurityGroupIngressRequest& WithClusterSecurityGroupName(Aws::String&& value) { SetClusterSecurityGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the security group to which the ingress rule is added.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The IP range to be added the Amazon Redshift security group.</p>
      */
-    inline void SetCIDRIP(Aws::String&& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = value; }
+    inline void SetCIDRIP(Aws::String&& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = std::move(value); }
 
     /**
      * <p>The IP range to be added the Amazon Redshift security group.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The IP range to be added the Amazon Redshift security group.</p>
      */
-    inline AuthorizeClusterSecurityGroupIngressRequest& WithCIDRIP(Aws::String&& value) { SetCIDRIP(value); return *this;}
+    inline AuthorizeClusterSecurityGroupIngressRequest& WithCIDRIP(Aws::String&& value) { SetCIDRIP(std::move(value)); return *this;}
 
     /**
      * <p>The IP range to be added the Amazon Redshift security group.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The EC2 security group to be added the Amazon Redshift security group.</p>
      */
-    inline void SetEC2SecurityGroupName(Aws::String&& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = value; }
+    inline void SetEC2SecurityGroupName(Aws::String&& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = std::move(value); }
 
     /**
      * <p>The EC2 security group to be added the Amazon Redshift security group.</p>
@@ -138,7 +139,7 @@ namespace Model
     /**
      * <p>The EC2 security group to be added the Amazon Redshift security group.</p>
      */
-    inline AuthorizeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupName(Aws::String&& value) { SetEC2SecurityGroupName(value); return *this;}
+    inline AuthorizeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupName(Aws::String&& value) { SetEC2SecurityGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The EC2 security group to be added the Amazon Redshift security group.</p>
@@ -164,7 +165,7 @@ namespace Model
      * <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
      * acceptable value. </p> <p>Example: <code>111122223333</code> </p>
      */
-    inline void SetEC2SecurityGroupOwnerId(Aws::String&& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = value; }
+    inline void SetEC2SecurityGroupOwnerId(Aws::String&& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = std::move(value); }
 
     /**
      * <p>The AWS account number of the owner of the security group specified by the
@@ -185,7 +186,7 @@ namespace Model
      * <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
      * acceptable value. </p> <p>Example: <code>111122223333</code> </p>
      */
-    inline AuthorizeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(Aws::String&& value) { SetEC2SecurityGroupOwnerId(value); return *this;}
+    inline AuthorizeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(Aws::String&& value) { SetEC2SecurityGroupOwnerId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account number of the owner of the security group specified by the

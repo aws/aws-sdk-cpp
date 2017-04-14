@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudfront/model/DistributionSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * The value you provided for the Marker request parameter.
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * The value you provided for the Marker request parameter.
@@ -74,7 +75,7 @@ namespace Model
     /**
      * The value you provided for the Marker request parameter.
      */
-    inline DistributionList& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DistributionList& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * The value you provided for the Marker request parameter.
@@ -100,7 +101,7 @@ namespace Model
      * use for the Marker request parameter to continue listing your distributions
      * where they left off.
      */
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::move(value); }
 
     /**
      * If IsTruncated is true, this element is present and contains the value you can
@@ -121,7 +122,7 @@ namespace Model
      * use for the Marker request parameter to continue listing your distributions
      * where they left off.
      */
-    inline DistributionList& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
+    inline DistributionList& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * If IsTruncated is true, this element is present and contains the value you can
@@ -197,7 +198,7 @@ namespace Model
      * A complex type that contains one DistributionSummary element for each
      * distribution that was created by the current AWS account.
      */
-    inline void SetItems(Aws::Vector<DistributionSummary>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+    inline void SetItems(Aws::Vector<DistributionSummary>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * A complex type that contains one DistributionSummary element for each
@@ -209,7 +210,7 @@ namespace Model
      * A complex type that contains one DistributionSummary element for each
      * distribution that was created by the current AWS account.
      */
-    inline DistributionList& WithItems(Aws::Vector<DistributionSummary>&& value) { SetItems(value); return *this;}
+    inline DistributionList& WithItems(Aws::Vector<DistributionSummary>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * A complex type that contains one DistributionSummary element for each
@@ -221,7 +222,7 @@ namespace Model
      * A complex type that contains one DistributionSummary element for each
      * distribution that was created by the current AWS account.
      */
-    inline DistributionList& AddItems(DistributionSummary&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+    inline DistributionList& AddItems(DistributionSummary&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_marker;

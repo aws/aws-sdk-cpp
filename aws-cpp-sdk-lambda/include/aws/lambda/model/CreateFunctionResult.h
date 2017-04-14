@@ -19,6 +19,7 @@
 #include <aws/lambda/model/VpcConfigResponse.h>
 #include <aws/lambda/model/DeadLetterConfig.h>
 #include <aws/lambda/model/EnvironmentResponse.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The name of the function.</p>
      */
-    inline void SetFunctionName(Aws::String&& value) { m_functionName = value; }
+    inline void SetFunctionName(Aws::String&& value) { m_functionName = std::move(value); }
 
     /**
      * <p>The name of the function.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The name of the function.</p>
      */
-    inline CreateFunctionResult& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
+    inline CreateFunctionResult& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the function.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) assigned to the function.</p>
      */
-    inline void SetFunctionArn(Aws::String&& value) { m_functionArn = value; }
+    inline void SetFunctionArn(Aws::String&& value) { m_functionArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) assigned to the function.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) assigned to the function.</p>
      */
-    inline CreateFunctionResult& WithFunctionArn(Aws::String&& value) { SetFunctionArn(value); return *this;}
+    inline CreateFunctionResult& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) assigned to the function.</p>
@@ -138,7 +139,7 @@ namespace Model
      * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
      * set the value to "nodejs".</p>
      */
-    inline void SetRuntime(Runtime&& value) { m_runtime = value; }
+    inline void SetRuntime(Runtime&& value) { m_runtime = std::move(value); }
 
     /**
      * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
@@ -152,7 +153,7 @@ namespace Model
      * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
      * set the value to "nodejs".</p>
      */
-    inline CreateFunctionResult& WithRuntime(Runtime&& value) { SetRuntime(value); return *this;}
+    inline CreateFunctionResult& WithRuntime(Runtime&& value) { SetRuntime(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it
@@ -173,7 +174,7 @@ namespace Model
      * executes your function to access any other Amazon Web Services (AWS)
      * resources.</p>
      */
-    inline void SetRole(Aws::String&& value) { m_role = value; }
+    inline void SetRole(Aws::String&& value) { m_role = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it
@@ -194,7 +195,7 @@ namespace Model
      * executes your function to access any other Amazon Web Services (AWS)
      * resources.</p>
      */
-    inline CreateFunctionResult& WithRole(Aws::String&& value) { SetRole(value); return *this;}
+    inline CreateFunctionResult& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it
@@ -216,7 +217,7 @@ namespace Model
     /**
      * <p>The function Lambda calls to begin executing your function.</p>
      */
-    inline void SetHandler(Aws::String&& value) { m_handler = value; }
+    inline void SetHandler(Aws::String&& value) { m_handler = std::move(value); }
 
     /**
      * <p>The function Lambda calls to begin executing your function.</p>
@@ -231,7 +232,7 @@ namespace Model
     /**
      * <p>The function Lambda calls to begin executing your function.</p>
      */
-    inline CreateFunctionResult& WithHandler(Aws::String&& value) { SetHandler(value); return *this;}
+    inline CreateFunctionResult& WithHandler(Aws::String&& value) { SetHandler(std::move(value)); return *this;}
 
     /**
      * <p>The function Lambda calls to begin executing your function.</p>
@@ -266,7 +267,7 @@ namespace Model
     /**
      * <p>The user-provided description.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
      * <p>The user-provided description.</p>
@@ -281,7 +282,7 @@ namespace Model
     /**
      * <p>The user-provided description.</p>
      */
-    inline CreateFunctionResult& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateFunctionResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The user-provided description.</p>
@@ -340,7 +341,7 @@ namespace Model
     /**
      * <p>The time stamp of the last time you updated the function.</p>
      */
-    inline void SetLastModified(Aws::String&& value) { m_lastModified = value; }
+    inline void SetLastModified(Aws::String&& value) { m_lastModified = std::move(value); }
 
     /**
      * <p>The time stamp of the last time you updated the function.</p>
@@ -355,7 +356,7 @@ namespace Model
     /**
      * <p>The time stamp of the last time you updated the function.</p>
      */
-    inline CreateFunctionResult& WithLastModified(Aws::String&& value) { SetLastModified(value); return *this;}
+    inline CreateFunctionResult& WithLastModified(Aws::String&& value) { SetLastModified(std::move(value)); return *this;}
 
     /**
      * <p>The time stamp of the last time you updated the function.</p>
@@ -375,7 +376,7 @@ namespace Model
     /**
      * <p>It is the SHA256 hash of your function deployment package.</p>
      */
-    inline void SetCodeSha256(Aws::String&& value) { m_codeSha256 = value; }
+    inline void SetCodeSha256(Aws::String&& value) { m_codeSha256 = std::move(value); }
 
     /**
      * <p>It is the SHA256 hash of your function deployment package.</p>
@@ -390,7 +391,7 @@ namespace Model
     /**
      * <p>It is the SHA256 hash of your function deployment package.</p>
      */
-    inline CreateFunctionResult& WithCodeSha256(Aws::String&& value) { SetCodeSha256(value); return *this;}
+    inline CreateFunctionResult& WithCodeSha256(Aws::String&& value) { SetCodeSha256(std::move(value)); return *this;}
 
     /**
      * <p>It is the SHA256 hash of your function deployment package.</p>
@@ -410,7 +411,7 @@ namespace Model
     /**
      * <p>The version of the Lambda function.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
 
     /**
      * <p>The version of the Lambda function.</p>
@@ -425,7 +426,7 @@ namespace Model
     /**
      * <p>The version of the Lambda function.</p>
      */
-    inline CreateFunctionResult& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline CreateFunctionResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the Lambda function.</p>
@@ -445,7 +446,7 @@ namespace Model
     /**
      * <p>VPC configuration associated with your Lambda function.</p>
      */
-    inline void SetVpcConfig(VpcConfigResponse&& value) { m_vpcConfig = value; }
+    inline void SetVpcConfig(VpcConfigResponse&& value) { m_vpcConfig = std::move(value); }
 
     /**
      * <p>VPC configuration associated with your Lambda function.</p>
@@ -455,7 +456,7 @@ namespace Model
     /**
      * <p>VPC configuration associated with your Lambda function.</p>
      */
-    inline CreateFunctionResult& WithVpcConfig(VpcConfigResponse&& value) { SetVpcConfig(value); return *this;}
+    inline CreateFunctionResult& WithVpcConfig(VpcConfigResponse&& value) { SetVpcConfig(std::move(value)); return *this;}
 
     /**
      * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
@@ -473,7 +474,7 @@ namespace Model
      * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
-    inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfig = value; }
+    inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfig = std::move(value); }
 
     /**
      * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
@@ -485,7 +486,7 @@ namespace Model
      * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
-    inline CreateFunctionResult& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(value); return *this;}
+    inline CreateFunctionResult& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
 
     /**
      * <p>The parent object that contains your environment's configuration
@@ -503,7 +504,7 @@ namespace Model
      * <p>The parent object that contains your environment's configuration
      * settings.</p>
      */
-    inline void SetEnvironment(EnvironmentResponse&& value) { m_environment = value; }
+    inline void SetEnvironment(EnvironmentResponse&& value) { m_environment = std::move(value); }
 
     /**
      * <p>The parent object that contains your environment's configuration
@@ -515,7 +516,7 @@ namespace Model
      * <p>The parent object that contains your environment's configuration
      * settings.</p>
      */
-    inline CreateFunctionResult& WithEnvironment(EnvironmentResponse&& value) { SetEnvironment(value); return *this;}
+    inline CreateFunctionResult& WithEnvironment(EnvironmentResponse&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
@@ -536,7 +537,7 @@ namespace Model
      * environment variables. If empty, it means you are using the AWS Lambda default
      * service key.</p>
      */
-    inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArn = value; }
+    inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
@@ -557,7 +558,7 @@ namespace Model
      * environment variables. If empty, it means you are using the AWS Lambda default
      * service key.</p>
      */
-    inline CreateFunctionResult& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(value); return *this;}
+    inline CreateFunctionResult& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's

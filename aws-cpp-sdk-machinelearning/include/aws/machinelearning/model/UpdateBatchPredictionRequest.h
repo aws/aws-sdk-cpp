@@ -16,6 +16,7 @@
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/machinelearning/MachineLearningRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
      */
-    inline void SetBatchPredictionId(Aws::String&& value) { m_batchPredictionIdHasBeenSet = true; m_batchPredictionId = value; }
+    inline void SetBatchPredictionId(Aws::String&& value) { m_batchPredictionIdHasBeenSet = true; m_batchPredictionId = std::move(value); }
 
     /**
      * <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
      */
-    inline UpdateBatchPredictionRequest& WithBatchPredictionId(Aws::String&& value) { SetBatchPredictionId(value); return *this;}
+    inline UpdateBatchPredictionRequest& WithBatchPredictionId(Aws::String&& value) { SetBatchPredictionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
@@ -86,7 +87,7 @@ namespace Model
      * <p>A new user-supplied name or description of the
      * <code>BatchPrediction</code>.</p>
      */
-    inline void SetBatchPredictionName(Aws::String&& value) { m_batchPredictionNameHasBeenSet = true; m_batchPredictionName = value; }
+    inline void SetBatchPredictionName(Aws::String&& value) { m_batchPredictionNameHasBeenSet = true; m_batchPredictionName = std::move(value); }
 
     /**
      * <p>A new user-supplied name or description of the
@@ -104,7 +105,7 @@ namespace Model
      * <p>A new user-supplied name or description of the
      * <code>BatchPrediction</code>.</p>
      */
-    inline UpdateBatchPredictionRequest& WithBatchPredictionName(Aws::String&& value) { SetBatchPredictionName(value); return *this;}
+    inline UpdateBatchPredictionRequest& WithBatchPredictionName(Aws::String&& value) { SetBatchPredictionName(std::move(value)); return *this;}
 
     /**
      * <p>A new user-supplied name or description of the

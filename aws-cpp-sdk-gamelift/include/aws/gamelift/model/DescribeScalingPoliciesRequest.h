@@ -17,6 +17,7 @@
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/ScalingStatusType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to retrieve scaling policies for.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet to retrieve scaling policies for.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to retrieve scaling policies for.</p>
      */
-    inline DescribeScalingPoliciesRequest& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline DescribeScalingPoliciesRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet to retrieve scaling policies for.</p>
@@ -114,7 +115,7 @@ namespace Model
      * deleted.</p> </li> <li> <p> <b>ERROR</b> – An error occurred in creating the
      * policy. It should be removed and recreated.</p> </li> </ul>
      */
-    inline void SetStatusFilter(ScalingStatusType&& value) { m_statusFilterHasBeenSet = true; m_statusFilter = value; }
+    inline void SetStatusFilter(ScalingStatusType&& value) { m_statusFilterHasBeenSet = true; m_statusFilter = std::move(value); }
 
     /**
      * <p>Scaling policy status to filter results on. A scaling policy is only in force
@@ -142,7 +143,7 @@ namespace Model
      * deleted.</p> </li> <li> <p> <b>ERROR</b> – An error occurred in creating the
      * policy. It should be removed and recreated.</p> </li> </ul>
      */
-    inline DescribeScalingPoliciesRequest& WithStatusFilter(ScalingStatusType&& value) { SetStatusFilter(value); return *this;}
+    inline DescribeScalingPoliciesRequest& WithStatusFilter(ScalingStatusType&& value) { SetStatusFilter(std::move(value)); return *this;}
 
     /**
      * <p>Maximum number of results to return. Use this parameter with
@@ -181,7 +182,7 @@ namespace Model
      * the token that is returned with a previous call to this action. To specify the
      * start of the result set, do not specify a value.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
@@ -202,7 +203,7 @@ namespace Model
      * the token that is returned with a previous call to this action. To specify the
      * start of the result set, do not specify a value.</p>
      */
-    inline DescribeScalingPoliciesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeScalingPoliciesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use

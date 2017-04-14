@@ -17,6 +17,7 @@
 #include <aws/swf/SWFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/swf/model/WorkflowExecution.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The name of the domain containing the workflow execution.</p>
      */
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The name of the domain containing the workflow execution.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name of the domain containing the workflow execution.</p>
      */
-    inline GetWorkflowExecutionHistoryRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+    inline GetWorkflowExecutionHistoryRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain containing the workflow execution.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>Specifies the workflow execution for which to return the history.</p>
      */
-    inline void SetExecution(WorkflowExecution&& value) { m_executionHasBeenSet = true; m_execution = value; }
+    inline void SetExecution(WorkflowExecution&& value) { m_executionHasBeenSet = true; m_execution = std::move(value); }
 
     /**
      * <p>Specifies the workflow execution for which to return the history.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>Specifies the workflow execution for which to return the history.</p>
      */
-    inline GetWorkflowExecutionHistoryRequest& WithExecution(WorkflowExecution&& value) { SetExecution(value); return *this;}
+    inline GetWorkflowExecutionHistoryRequest& WithExecution(WorkflowExecution&& value) { SetExecution(std::move(value)); return *this;}
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -121,7 +122,7 @@ namespace Model
      * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
      * determines how many results can be returned in a single call.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -148,7 +149,7 @@ namespace Model
      * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
      * determines how many results can be returned in a single call.</p>
      */
-    inline GetWorkflowExecutionHistoryRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline GetWorkflowExecutionHistoryRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are

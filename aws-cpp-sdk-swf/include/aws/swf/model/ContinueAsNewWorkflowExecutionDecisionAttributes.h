@@ -18,6 +18,7 @@
 #include <aws/swf/model/TaskList.h>
 #include <aws/swf/model/ChildPolicy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The input provided to the new workflow execution.</p>
      */
-    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = value; }
+    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
      * <p>The input provided to the new workflow execution.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The input provided to the new workflow execution.</p>
      */
-    inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithInput(Aws::String&& value) { SetInput(value); return *this;}
+    inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
      * <p>The input provided to the new workflow execution.</p>
@@ -134,7 +135,7 @@ namespace Model
      * start-to-close timeout was specified at registration time then a fault will be
      * returned.</note>
      */
-    inline void SetExecutionStartToCloseTimeout(Aws::String&& value) { m_executionStartToCloseTimeoutHasBeenSet = true; m_executionStartToCloseTimeout = value; }
+    inline void SetExecutionStartToCloseTimeout(Aws::String&& value) { m_executionStartToCloseTimeoutHasBeenSet = true; m_executionStartToCloseTimeout = std::move(value); }
 
     /**
      * <p>If set, specifies the total duration for this workflow execution. This
@@ -173,7 +174,7 @@ namespace Model
      * start-to-close timeout was specified at registration time then a fault will be
      * returned.</note>
      */
-    inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithExecutionStartToCloseTimeout(Aws::String&& value) { SetExecutionStartToCloseTimeout(value); return *this;}
+    inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithExecutionStartToCloseTimeout(Aws::String&& value) { SetExecutionStartToCloseTimeout(std::move(value)); return *this;}
 
     /**
      * <p>If set, specifies the total duration for this workflow execution. This
@@ -195,13 +196,13 @@ namespace Model
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
 
     
-    inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = value; }
+    inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
 
     
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
 
     
-    inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskList(TaskList&& value) { SetTaskList(value); return *this;}
+    inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
 
     /**
      * <p><i>Optional.</i> The task priority that, if set, specifies the priority for
@@ -237,7 +238,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
      */
-    inline void SetTaskPriority(Aws::String&& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = value; }
+    inline void SetTaskPriority(Aws::String&& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = std::move(value); }
 
     /**
      * <p><i>Optional.</i> The task priority that, if set, specifies the priority for
@@ -273,7 +274,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
      */
-    inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskPriority(Aws::String&& value) { SetTaskPriority(value); return *this;}
+    inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskPriority(Aws::String&& value) { SetTaskPriority(std::move(value)); return *this;}
 
     /**
      * <p><i>Optional.</i> The task priority that, if set, specifies the priority for
@@ -327,7 +328,7 @@ namespace Model
      * nor a default task start-to-close timeout was specified at registration time
      * then a fault will be returned.</note>
      */
-    inline void SetTaskStartToCloseTimeout(Aws::String&& value) { m_taskStartToCloseTimeoutHasBeenSet = true; m_taskStartToCloseTimeout = value; }
+    inline void SetTaskStartToCloseTimeout(Aws::String&& value) { m_taskStartToCloseTimeoutHasBeenSet = true; m_taskStartToCloseTimeout = std::move(value); }
 
     /**
      * <p>Specifies the maximum duration of decision tasks for the new workflow
@@ -369,7 +370,7 @@ namespace Model
      * nor a default task start-to-close timeout was specified at registration time
      * then a fault will be returned.</note>
      */
-    inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskStartToCloseTimeout(Aws::String&& value) { SetTaskStartToCloseTimeout(value); return *this;}
+    inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskStartToCloseTimeout(Aws::String&& value) { SetTaskStartToCloseTimeout(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the maximum duration of decision tasks for the new workflow
@@ -440,7 +441,7 @@ namespace Model
      * or through this parameter. If neither this parameter is set nor a default child
      * policy was specified at registration time then a fault will be returned.</note>
      */
-    inline void SetChildPolicy(ChildPolicy&& value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
+    inline void SetChildPolicy(ChildPolicy&& value) { m_childPolicyHasBeenSet = true; m_childPolicy = std::move(value); }
 
     /**
      * <p>If set, specifies the policy to use for the child workflow executions of the
@@ -478,7 +479,7 @@ namespace Model
      * or through this parameter. If neither this parameter is set nor a default child
      * policy was specified at registration time then a fault will be returned.</note>
      */
-    inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(value); return *this;}
+    inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
 
     /**
      * <p>The list of tags to associate with the new workflow execution. A maximum of 5
@@ -502,7 +503,7 @@ namespace Model
      * calling <a>ListOpenWorkflowExecutions</a> or <a>ListClosedWorkflowExecutions</a>
      * and specifying a <a>TagFilter</a>.</p>
      */
-    inline void SetTagList(Aws::Vector<Aws::String>&& value) { m_tagListHasBeenSet = true; m_tagList = value; }
+    inline void SetTagList(Aws::Vector<Aws::String>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
 
     /**
      * <p>The list of tags to associate with the new workflow execution. A maximum of 5
@@ -518,7 +519,7 @@ namespace Model
      * calling <a>ListOpenWorkflowExecutions</a> or <a>ListClosedWorkflowExecutions</a>
      * and specifying a <a>TagFilter</a>.</p>
      */
-    inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTagList(Aws::Vector<Aws::String>&& value) { SetTagList(value); return *this;}
+    inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTagList(Aws::Vector<Aws::String>&& value) { SetTagList(std::move(value)); return *this;}
 
     /**
      * <p>The list of tags to associate with the new workflow execution. A maximum of 5
@@ -534,7 +535,7 @@ namespace Model
      * calling <a>ListOpenWorkflowExecutions</a> or <a>ListClosedWorkflowExecutions</a>
      * and specifying a <a>TagFilter</a>.</p>
      */
-    inline ContinueAsNewWorkflowExecutionDecisionAttributes& AddTagList(Aws::String&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
+    inline ContinueAsNewWorkflowExecutionDecisionAttributes& AddTagList(Aws::String&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of tags to associate with the new workflow execution. A maximum of 5
@@ -551,7 +552,7 @@ namespace Model
     inline void SetWorkflowTypeVersion(const Aws::String& value) { m_workflowTypeVersionHasBeenSet = true; m_workflowTypeVersion = value; }
 
     
-    inline void SetWorkflowTypeVersion(Aws::String&& value) { m_workflowTypeVersionHasBeenSet = true; m_workflowTypeVersion = value; }
+    inline void SetWorkflowTypeVersion(Aws::String&& value) { m_workflowTypeVersionHasBeenSet = true; m_workflowTypeVersion = std::move(value); }
 
     
     inline void SetWorkflowTypeVersion(const char* value) { m_workflowTypeVersionHasBeenSet = true; m_workflowTypeVersion.assign(value); }
@@ -560,7 +561,7 @@ namespace Model
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithWorkflowTypeVersion(const Aws::String& value) { SetWorkflowTypeVersion(value); return *this;}
 
     
-    inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithWorkflowTypeVersion(Aws::String&& value) { SetWorkflowTypeVersion(value); return *this;}
+    inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithWorkflowTypeVersion(Aws::String&& value) { SetWorkflowTypeVersion(std::move(value)); return *this;}
 
     
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithWorkflowTypeVersion(const char* value) { SetWorkflowTypeVersion(value); return *this;}
@@ -587,7 +588,7 @@ namespace Model
      * functions, an appropriate IAM role must be specified either as a default for the
      * workflow type or through this field.</note>
      */
-    inline void SetLambdaRole(Aws::String&& value) { m_lambdaRoleHasBeenSet = true; m_lambdaRole = value; }
+    inline void SetLambdaRole(Aws::String&& value) { m_lambdaRoleHasBeenSet = true; m_lambdaRole = std::move(value); }
 
     /**
      * <p>The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda
@@ -611,7 +612,7 @@ namespace Model
      * functions, an appropriate IAM role must be specified either as a default for the
      * workflow type or through this field.</note>
      */
-    inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithLambdaRole(Aws::String&& value) { SetLambdaRole(value); return *this;}
+    inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithLambdaRole(Aws::String&& value) { SetLambdaRole(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda

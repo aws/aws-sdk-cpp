@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the scheduled lambda function.</p>
      */
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = value; }
+    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the scheduled lambda function.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the scheduled lambda function.</p>
      */
-    inline LambdaFunctionScheduledEventDetails& WithResource(Aws::String&& value) { SetResource(value); return *this;}
+    inline LambdaFunctionScheduledEventDetails& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the scheduled lambda function.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The JSON data input to the lambda function.</p>
      */
-    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = value; }
+    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
      * <p>The JSON data input to the lambda function.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The JSON data input to the lambda function.</p>
      */
-    inline LambdaFunctionScheduledEventDetails& WithInput(Aws::String&& value) { SetInput(value); return *this;}
+    inline LambdaFunctionScheduledEventDetails& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
      * <p>The JSON data input to the lambda function.</p>

@@ -16,6 +16,7 @@
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/machinelearning/model/RedshiftDatabase.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,13 +53,13 @@ namespace Model
     inline void SetRedshiftDatabase(const RedshiftDatabase& value) { m_redshiftDatabaseHasBeenSet = true; m_redshiftDatabase = value; }
 
     
-    inline void SetRedshiftDatabase(RedshiftDatabase&& value) { m_redshiftDatabaseHasBeenSet = true; m_redshiftDatabase = value; }
+    inline void SetRedshiftDatabase(RedshiftDatabase&& value) { m_redshiftDatabaseHasBeenSet = true; m_redshiftDatabase = std::move(value); }
 
     
     inline RedshiftMetadata& WithRedshiftDatabase(const RedshiftDatabase& value) { SetRedshiftDatabase(value); return *this;}
 
     
-    inline RedshiftMetadata& WithRedshiftDatabase(RedshiftDatabase&& value) { SetRedshiftDatabase(value); return *this;}
+    inline RedshiftMetadata& WithRedshiftDatabase(RedshiftDatabase&& value) { SetRedshiftDatabase(std::move(value)); return *this;}
 
     
     inline const Aws::String& GetDatabaseUserName() const{ return m_databaseUserName; }
@@ -67,7 +68,7 @@ namespace Model
     inline void SetDatabaseUserName(const Aws::String& value) { m_databaseUserNameHasBeenSet = true; m_databaseUserName = value; }
 
     
-    inline void SetDatabaseUserName(Aws::String&& value) { m_databaseUserNameHasBeenSet = true; m_databaseUserName = value; }
+    inline void SetDatabaseUserName(Aws::String&& value) { m_databaseUserNameHasBeenSet = true; m_databaseUserName = std::move(value); }
 
     
     inline void SetDatabaseUserName(const char* value) { m_databaseUserNameHasBeenSet = true; m_databaseUserName.assign(value); }
@@ -76,7 +77,7 @@ namespace Model
     inline RedshiftMetadata& WithDatabaseUserName(const Aws::String& value) { SetDatabaseUserName(value); return *this;}
 
     
-    inline RedshiftMetadata& WithDatabaseUserName(Aws::String&& value) { SetDatabaseUserName(value); return *this;}
+    inline RedshiftMetadata& WithDatabaseUserName(Aws::String&& value) { SetDatabaseUserName(std::move(value)); return *this;}
 
     
     inline RedshiftMetadata& WithDatabaseUserName(const char* value) { SetDatabaseUserName(value); return *this;}
@@ -97,7 +98,7 @@ namespace Model
      * <p> The SQL query that is specified during <a>CreateDataSourceFromRedshift</a>.
      * Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
      */
-    inline void SetSelectSqlQuery(Aws::String&& value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery = value; }
+    inline void SetSelectSqlQuery(Aws::String&& value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery = std::move(value); }
 
     /**
      * <p> The SQL query that is specified during <a>CreateDataSourceFromRedshift</a>.
@@ -115,7 +116,7 @@ namespace Model
      * <p> The SQL query that is specified during <a>CreateDataSourceFromRedshift</a>.
      * Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
      */
-    inline RedshiftMetadata& WithSelectSqlQuery(Aws::String&& value) { SetSelectSqlQuery(value); return *this;}
+    inline RedshiftMetadata& WithSelectSqlQuery(Aws::String&& value) { SetSelectSqlQuery(std::move(value)); return *this;}
 
     /**
      * <p> The SQL query that is specified during <a>CreateDataSourceFromRedshift</a>.

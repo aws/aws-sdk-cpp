@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The ID of the prefix.</p>
      */
-    inline void SetPrefixListId(Aws::String&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = value; }
+    inline void SetPrefixListId(Aws::String&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = std::move(value); }
 
     /**
      * <p>The ID of the prefix.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The ID of the prefix.</p>
      */
-    inline PrefixList& WithPrefixListId(Aws::String&& value) { SetPrefixListId(value); return *this;}
+    inline PrefixList& WithPrefixListId(Aws::String&& value) { SetPrefixListId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the prefix.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The name of the prefix.</p>
      */
-    inline void SetPrefixListName(Aws::String&& value) { m_prefixListNameHasBeenSet = true; m_prefixListName = value; }
+    inline void SetPrefixListName(Aws::String&& value) { m_prefixListNameHasBeenSet = true; m_prefixListName = std::move(value); }
 
     /**
      * <p>The name of the prefix.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The name of the prefix.</p>
      */
-    inline PrefixList& WithPrefixListName(Aws::String&& value) { SetPrefixListName(value); return *this;}
+    inline PrefixList& WithPrefixListName(Aws::String&& value) { SetPrefixListName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the prefix.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The IP address range of the AWS service.</p>
      */
-    inline void SetCidrs(Aws::Vector<Aws::String>&& value) { m_cidrsHasBeenSet = true; m_cidrs = value; }
+    inline void SetCidrs(Aws::Vector<Aws::String>&& value) { m_cidrsHasBeenSet = true; m_cidrs = std::move(value); }
 
     /**
      * <p>The IP address range of the AWS service.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The IP address range of the AWS service.</p>
      */
-    inline PrefixList& WithCidrs(Aws::Vector<Aws::String>&& value) { SetCidrs(value); return *this;}
+    inline PrefixList& WithCidrs(Aws::Vector<Aws::String>&& value) { SetCidrs(std::move(value)); return *this;}
 
     /**
      * <p>The IP address range of the AWS service.</p>
@@ -150,7 +151,7 @@ namespace Model
     /**
      * <p>The IP address range of the AWS service.</p>
      */
-    inline PrefixList& AddCidrs(Aws::String&& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
+    inline PrefixList& AddCidrs(Aws::String&& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IP address range of the AWS service.</p>

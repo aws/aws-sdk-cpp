@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * application is found with this name, <code>UpdateApplication</code> returns an
      * <code>InvalidParameterValue</code> error.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of the application associated with this version.</p> <p> If no
@@ -80,7 +81,7 @@ namespace Model
      * application is found with this name, <code>UpdateApplication</code> returns an
      * <code>InvalidParameterValue</code> error.</p>
      */
-    inline UpdateApplicationVersionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline UpdateApplicationVersionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the application associated with this version.</p> <p> If no
@@ -108,7 +109,7 @@ namespace Model
      * with this label, <code>UpdateApplication</code> returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
-    inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
+    inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::move(value); }
 
     /**
      * <p>The name of the version to update.</p> <p>If no application version is found
@@ -129,7 +130,7 @@ namespace Model
      * with this label, <code>UpdateApplication</code> returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
-    inline UpdateApplicationVersionRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(value); return *this;}
+    inline UpdateApplicationVersionRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
 
     /**
      * <p>The name of the version to update.</p> <p>If no application version is found
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>A new description for this version.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A new description for this version.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>A new description for this version.</p>
      */
-    inline UpdateApplicationVersionRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline UpdateApplicationVersionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A new description for this version.</p>

@@ -18,6 +18,7 @@
 #include <aws/elasticbeanstalk/model/EnvironmentInfoType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The type of information retrieved.</p>
      */
-    inline void SetInfoType(EnvironmentInfoType&& value) { m_infoTypeHasBeenSet = true; m_infoType = value; }
+    inline void SetInfoType(EnvironmentInfoType&& value) { m_infoTypeHasBeenSet = true; m_infoType = std::move(value); }
 
     /**
      * <p>The type of information retrieved.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The type of information retrieved.</p>
      */
-    inline EnvironmentInfoDescription& WithInfoType(EnvironmentInfoType&& value) { SetInfoType(value); return *this;}
+    inline EnvironmentInfoDescription& WithInfoType(EnvironmentInfoType&& value) { SetInfoType(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon EC2 Instance ID for this information.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The Amazon EC2 Instance ID for this information.</p>
      */
-    inline void SetEc2InstanceId(Aws::String&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = value; }
+    inline void SetEc2InstanceId(Aws::String&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = std::move(value); }
 
     /**
      * <p>The Amazon EC2 Instance ID for this information.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The Amazon EC2 Instance ID for this information.</p>
      */
-    inline EnvironmentInfoDescription& WithEc2InstanceId(Aws::String&& value) { SetEc2InstanceId(value); return *this;}
+    inline EnvironmentInfoDescription& WithEc2InstanceId(Aws::String&& value) { SetEc2InstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon EC2 Instance ID for this information.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The time stamp when this information was retrieved.</p>
      */
-    inline void SetSampleTimestamp(Aws::Utils::DateTime&& value) { m_sampleTimestampHasBeenSet = true; m_sampleTimestamp = value; }
+    inline void SetSampleTimestamp(Aws::Utils::DateTime&& value) { m_sampleTimestampHasBeenSet = true; m_sampleTimestamp = std::move(value); }
 
     /**
      * <p>The time stamp when this information was retrieved.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The time stamp when this information was retrieved.</p>
      */
-    inline EnvironmentInfoDescription& WithSampleTimestamp(Aws::Utils::DateTime&& value) { SetSampleTimestamp(value); return *this;}
+    inline EnvironmentInfoDescription& WithSampleTimestamp(Aws::Utils::DateTime&& value) { SetSampleTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The retrieved information.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The retrieved information.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The retrieved information.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>The retrieved information.</p>
      */
-    inline EnvironmentInfoDescription& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline EnvironmentInfoDescription& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The retrieved information.</p>

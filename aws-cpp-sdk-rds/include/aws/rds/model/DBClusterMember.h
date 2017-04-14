@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Specifies the instance identifier for this member of the DB cluster.</p>
      */
-    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
+    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>Specifies the instance identifier for this member of the DB cluster.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>Specifies the instance identifier for this member of the DB cluster.</p>
      */
-    inline DBClusterMember& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(value); return *this;}
+    inline DBClusterMember& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the instance identifier for this member of the DB cluster.</p>
@@ -116,7 +117,7 @@ namespace Model
      * <p>Specifies the status of the DB cluster parameter group for this member of the
      * DB cluster.</p>
      */
-    inline void SetDBClusterParameterGroupStatus(Aws::String&& value) { m_dBClusterParameterGroupStatusHasBeenSet = true; m_dBClusterParameterGroupStatus = value; }
+    inline void SetDBClusterParameterGroupStatus(Aws::String&& value) { m_dBClusterParameterGroupStatusHasBeenSet = true; m_dBClusterParameterGroupStatus = std::move(value); }
 
     /**
      * <p>Specifies the status of the DB cluster parameter group for this member of the
@@ -134,7 +135,7 @@ namespace Model
      * <p>Specifies the status of the DB cluster parameter group for this member of the
      * DB cluster.</p>
      */
-    inline DBClusterMember& WithDBClusterParameterGroupStatus(Aws::String&& value) { SetDBClusterParameterGroupStatus(value); return *this;}
+    inline DBClusterMember& WithDBClusterParameterGroupStatus(Aws::String&& value) { SetDBClusterParameterGroupStatus(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the status of the DB cluster parameter group for this member of the

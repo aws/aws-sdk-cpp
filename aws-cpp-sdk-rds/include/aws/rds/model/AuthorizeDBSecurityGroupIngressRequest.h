@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of the DB security group to add authorization to.</p>
      */
-    inline void SetDBSecurityGroupName(Aws::String&& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
+    inline void SetDBSecurityGroupName(Aws::String&& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = std::move(value); }
 
     /**
      * <p>The name of the DB security group to add authorization to.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the DB security group to add authorization to.</p>
      */
-    inline AuthorizeDBSecurityGroupIngressRequest& WithDBSecurityGroupName(Aws::String&& value) { SetDBSecurityGroupName(value); return *this;}
+    inline AuthorizeDBSecurityGroupIngressRequest& WithDBSecurityGroupName(Aws::String&& value) { SetDBSecurityGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB security group to add authorization to.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The IP range to authorize.</p>
      */
-    inline void SetCIDRIP(Aws::String&& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = value; }
+    inline void SetCIDRIP(Aws::String&& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = std::move(value); }
 
     /**
      * <p>The IP range to authorize.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The IP range to authorize.</p>
      */
-    inline AuthorizeDBSecurityGroupIngressRequest& WithCIDRIP(Aws::String&& value) { SetCIDRIP(value); return *this;}
+    inline AuthorizeDBSecurityGroupIngressRequest& WithCIDRIP(Aws::String&& value) { SetCIDRIP(std::move(value)); return *this;}
 
     /**
      * <p>The IP range to authorize.</p>
@@ -135,7 +136,7 @@ namespace Model
      * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be
      * provided. </p>
      */
-    inline void SetEC2SecurityGroupName(Aws::String&& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = value; }
+    inline void SetEC2SecurityGroupName(Aws::String&& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = std::move(value); }
 
     /**
      * <p> Name of the EC2 security group to authorize. For VPC DB security groups,
@@ -162,7 +163,7 @@ namespace Model
      * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be
      * provided. </p>
      */
-    inline AuthorizeDBSecurityGroupIngressRequest& WithEC2SecurityGroupName(Aws::String&& value) { SetEC2SecurityGroupName(value); return *this;}
+    inline AuthorizeDBSecurityGroupIngressRequest& WithEC2SecurityGroupName(Aws::String&& value) { SetEC2SecurityGroupName(std::move(value)); return *this;}
 
     /**
      * <p> Name of the EC2 security group to authorize. For VPC DB security groups,
@@ -198,7 +199,7 @@ namespace Model
      * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be
      * provided. </p>
      */
-    inline void SetEC2SecurityGroupId(Aws::String&& value) { m_eC2SecurityGroupIdHasBeenSet = true; m_eC2SecurityGroupId = value; }
+    inline void SetEC2SecurityGroupId(Aws::String&& value) { m_eC2SecurityGroupIdHasBeenSet = true; m_eC2SecurityGroupId = std::move(value); }
 
     /**
      * <p> Id of the EC2 security group to authorize. For VPC DB security groups,
@@ -225,7 +226,7 @@ namespace Model
      * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be
      * provided. </p>
      */
-    inline AuthorizeDBSecurityGroupIngressRequest& WithEC2SecurityGroupId(Aws::String&& value) { SetEC2SecurityGroupId(value); return *this;}
+    inline AuthorizeDBSecurityGroupIngressRequest& WithEC2SecurityGroupId(Aws::String&& value) { SetEC2SecurityGroupId(std::move(value)); return *this;}
 
     /**
      * <p> Id of the EC2 security group to authorize. For VPC DB security groups,
@@ -264,7 +265,7 @@ namespace Model
      * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be
      * provided. </p>
      */
-    inline void SetEC2SecurityGroupOwnerId(Aws::String&& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = value; }
+    inline void SetEC2SecurityGroupOwnerId(Aws::String&& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = std::move(value); }
 
     /**
      * <p> AWS account number of the owner of the EC2 security group specified in the
@@ -294,7 +295,7 @@ namespace Model
      * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be
      * provided. </p>
      */
-    inline AuthorizeDBSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(Aws::String&& value) { SetEC2SecurityGroupOwnerId(value); return *this;}
+    inline AuthorizeDBSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(Aws::String&& value) { SetEC2SecurityGroupOwnerId(std::move(value)); return *this;}
 
     /**
      * <p> AWS account number of the owner of the EC2 security group specified in the

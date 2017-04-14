@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/states/model/ActivityListItem.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The list of activities.</p>
      */
-    inline void SetActivities(Aws::Vector<ActivityListItem>&& value) { m_activities = value; }
+    inline void SetActivities(Aws::Vector<ActivityListItem>&& value) { m_activities = std::move(value); }
 
     /**
      * <p>The list of activities.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The list of activities.</p>
      */
-    inline ListActivitiesResult& WithActivities(Aws::Vector<ActivityListItem>&& value) { SetActivities(value); return *this;}
+    inline ListActivitiesResult& WithActivities(Aws::Vector<ActivityListItem>&& value) { SetActivities(std::move(value)); return *this;}
 
     /**
      * <p>The list of activities.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The list of activities.</p>
      */
-    inline ListActivitiesResult& AddActivities(ActivityListItem&& value) { m_activities.push_back(value); return *this; }
+    inline ListActivitiesResult& AddActivities(ActivityListItem&& value) { m_activities.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If a <code>nextToken</code> is returned, there are more results available. To
@@ -101,7 +102,7 @@ namespace Model
      * configured <code>maxResults</code> determines how many results can be returned
      * in a single call.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If a <code>nextToken</code> is returned, there are more results available. To
@@ -128,7 +129,7 @@ namespace Model
      * configured <code>maxResults</code> determines how many results can be returned
      * in a single call.</p>
      */
-    inline ListActivitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListActivitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If a <code>nextToken</code> is returned, there are more results available. To

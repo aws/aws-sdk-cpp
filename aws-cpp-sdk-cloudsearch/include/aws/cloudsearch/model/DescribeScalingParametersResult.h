@@ -16,6 +16,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/cloudsearch/model/ScalingParametersStatus.h>
 #include <aws/cloudsearch/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,13 +55,13 @@ namespace Model
     inline void SetScalingParameters(const ScalingParametersStatus& value) { m_scalingParameters = value; }
 
     
-    inline void SetScalingParameters(ScalingParametersStatus&& value) { m_scalingParameters = value; }
+    inline void SetScalingParameters(ScalingParametersStatus&& value) { m_scalingParameters = std::move(value); }
 
     
     inline DescribeScalingParametersResult& WithScalingParameters(const ScalingParametersStatus& value) { SetScalingParameters(value); return *this;}
 
     
-    inline DescribeScalingParametersResult& WithScalingParameters(ScalingParametersStatus&& value) { SetScalingParameters(value); return *this;}
+    inline DescribeScalingParametersResult& WithScalingParameters(ScalingParametersStatus&& value) { SetScalingParameters(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -69,13 +70,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeScalingParametersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeScalingParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeScalingParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     ScalingParametersStatus m_scalingParameters;

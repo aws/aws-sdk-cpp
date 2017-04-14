@@ -17,6 +17,7 @@
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p> The HIT to update. </p>
      */
-    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
+    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = std::move(value); }
 
     /**
      * <p> The HIT to update. </p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p> The HIT to update. </p>
      */
-    inline UpdateExpirationForHITRequest& WithHITId(Aws::String&& value) { SetHITId(value); return *this;}
+    inline UpdateExpirationForHITRequest& WithHITId(Aws::String&& value) { SetHITId(std::move(value)); return *this;}
 
     /**
      * <p> The HIT to update. </p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p> The date and time at which you want the HIT to expire </p>
      */
-    inline void SetExpireAt(Aws::Utils::DateTime&& value) { m_expireAtHasBeenSet = true; m_expireAt = value; }
+    inline void SetExpireAt(Aws::Utils::DateTime&& value) { m_expireAtHasBeenSet = true; m_expireAt = std::move(value); }
 
     /**
      * <p> The date and time at which you want the HIT to expire </p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p> The date and time at which you want the HIT to expire </p>
      */
-    inline UpdateExpirationForHITRequest& WithExpireAt(Aws::Utils::DateTime&& value) { SetExpireAt(value); return *this;}
+    inline UpdateExpirationForHITRequest& WithExpireAt(Aws::Utils::DateTime&& value) { SetExpireAt(std::move(value)); return *this;}
 
   private:
     Aws::String m_hITId;

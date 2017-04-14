@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The document name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The document name.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The document name.</p>
      */
-    inline DocumentVersionInfo& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline DocumentVersionInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The document name.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The document version.</p>
      */
-    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
      * <p>The document version.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The document version.</p>
      */
-    inline DocumentVersionInfo& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(value); return *this;}
+    inline DocumentVersionInfo& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
      * <p>The document version.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The date the document was created.</p>
      */
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
 
     /**
      * <p>The date the document was created.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The date the document was created.</p>
      */
-    inline DocumentVersionInfo& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
+    inline DocumentVersionInfo& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
     /**
      * <p>An identifier for the default version of the document.</p>

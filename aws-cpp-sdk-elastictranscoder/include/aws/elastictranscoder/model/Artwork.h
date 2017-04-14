@@ -16,6 +16,7 @@
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elastictranscoder/model/Encryption.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
      * for example, <code>cooking/pie.jpg</code>, include the prefix in the key. If the
      * file isn't in the specified bucket, Elastic Transcoder returns an error.</p>
      */
-    inline void SetInputKey(Aws::String&& value) { m_inputKeyHasBeenSet = true; m_inputKey = value; }
+    inline void SetInputKey(Aws::String&& value) { m_inputKeyHasBeenSet = true; m_inputKey = std::move(value); }
 
     /**
      * <p>The name of the file to be used as album art. To determine which Amazon S3
@@ -108,7 +109,7 @@ namespace Model
      * for example, <code>cooking/pie.jpg</code>, include the prefix in the key. If the
      * file isn't in the specified bucket, Elastic Transcoder returns an error.</p>
      */
-    inline Artwork& WithInputKey(Aws::String&& value) { SetInputKey(value); return *this;}
+    inline Artwork& WithInputKey(Aws::String&& value) { SetInputKey(std::move(value)); return *this;}
 
     /**
      * <p>The name of the file to be used as album art. To determine which Amazon S3
@@ -142,7 +143,7 @@ namespace Model
      * specify a numeric value, enter an even integer between 32 and 4096,
      * inclusive.</p>
      */
-    inline void SetMaxWidth(Aws::String&& value) { m_maxWidthHasBeenSet = true; m_maxWidth = value; }
+    inline void SetMaxWidth(Aws::String&& value) { m_maxWidthHasBeenSet = true; m_maxWidth = std::move(value); }
 
     /**
      * <p>The maximum width of the output album art in pixels. If you specify
@@ -166,7 +167,7 @@ namespace Model
      * specify a numeric value, enter an even integer between 32 and 4096,
      * inclusive.</p>
      */
-    inline Artwork& WithMaxWidth(Aws::String&& value) { SetMaxWidth(value); return *this;}
+    inline Artwork& WithMaxWidth(Aws::String&& value) { SetMaxWidth(std::move(value)); return *this;}
 
     /**
      * <p>The maximum width of the output album art in pixels. If you specify
@@ -198,7 +199,7 @@ namespace Model
      * specify a numeric value, enter an even integer between 32 and 3072,
      * inclusive.</p>
      */
-    inline void SetMaxHeight(Aws::String&& value) { m_maxHeightHasBeenSet = true; m_maxHeight = value; }
+    inline void SetMaxHeight(Aws::String&& value) { m_maxHeightHasBeenSet = true; m_maxHeight = std::move(value); }
 
     /**
      * <p>The maximum height of the output album art in pixels. If you specify
@@ -222,7 +223,7 @@ namespace Model
      * specify a numeric value, enter an even integer between 32 and 3072,
      * inclusive.</p>
      */
-    inline Artwork& WithMaxHeight(Aws::String&& value) { SetMaxHeight(value); return *this;}
+    inline Artwork& WithMaxHeight(Aws::String&& value) { SetMaxHeight(std::move(value)); return *this;}
 
     /**
      * <p>The maximum height of the output album art in pixels. If you specify
@@ -317,7 +318,7 @@ namespace Model
      * either value. If you specify this option, Elastic Transcoder does not scale the
      * art up.</p> </li> </ul>
      */
-    inline void SetSizingPolicy(Aws::String&& value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy = value; }
+    inline void SetSizingPolicy(Aws::String&& value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy = std::move(value); }
 
     /**
      * <p>Specify one of the following values to control scaling of the output album
@@ -404,7 +405,7 @@ namespace Model
      * either value. If you specify this option, Elastic Transcoder does not scale the
      * art up.</p> </li> </ul>
      */
-    inline Artwork& WithSizingPolicy(Aws::String&& value) { SetSizingPolicy(value); return *this;}
+    inline Artwork& WithSizingPolicy(Aws::String&& value) { SetSizingPolicy(std::move(value)); return *this;}
 
     /**
      * <p>Specify one of the following values to control scaling of the output album
@@ -460,7 +461,7 @@ namespace Model
      * values that you specified for <code>MaxWidth</code> and
      * <code>MaxHeight</code>.</p>
      */
-    inline void SetPaddingPolicy(Aws::String&& value) { m_paddingPolicyHasBeenSet = true; m_paddingPolicy = value; }
+    inline void SetPaddingPolicy(Aws::String&& value) { m_paddingPolicyHasBeenSet = true; m_paddingPolicy = std::move(value); }
 
     /**
      * <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic
@@ -487,7 +488,7 @@ namespace Model
      * values that you specified for <code>MaxWidth</code> and
      * <code>MaxHeight</code>.</p>
      */
-    inline Artwork& WithPaddingPolicy(Aws::String&& value) { SetPaddingPolicy(value); return *this;}
+    inline Artwork& WithPaddingPolicy(Aws::String&& value) { SetPaddingPolicy(std::move(value)); return *this;}
 
     /**
      * <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic
@@ -514,7 +515,7 @@ namespace Model
      * <p>The format of album art, if any. Valid formats are <code>.jpg</code> and
      * <code>.png</code>.</p>
      */
-    inline void SetAlbumArtFormat(Aws::String&& value) { m_albumArtFormatHasBeenSet = true; m_albumArtFormat = value; }
+    inline void SetAlbumArtFormat(Aws::String&& value) { m_albumArtFormatHasBeenSet = true; m_albumArtFormat = std::move(value); }
 
     /**
      * <p>The format of album art, if any. Valid formats are <code>.jpg</code> and
@@ -532,7 +533,7 @@ namespace Model
      * <p>The format of album art, if any. Valid formats are <code>.jpg</code> and
      * <code>.png</code>.</p>
      */
-    inline Artwork& WithAlbumArtFormat(Aws::String&& value) { SetAlbumArtFormat(value); return *this;}
+    inline Artwork& WithAlbumArtFormat(Aws::String&& value) { SetAlbumArtFormat(std::move(value)); return *this;}
 
     /**
      * <p>The format of album art, if any. Valid formats are <code>.jpg</code> and
@@ -556,7 +557,7 @@ namespace Model
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
      * your artwork.</p>
      */
-    inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
+    inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
 
     /**
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
@@ -568,7 +569,7 @@ namespace Model
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
      * your artwork.</p>
      */
-    inline Artwork& WithEncryption(Encryption&& value) { SetEncryption(value); return *this;}
+    inline Artwork& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
 
   private:
     Aws::String m_inputKey;

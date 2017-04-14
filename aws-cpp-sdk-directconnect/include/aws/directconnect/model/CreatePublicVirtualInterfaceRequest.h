@@ -17,6 +17,7 @@
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/model/NewPublicVirtualInterface.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,7 +48,7 @@ namespace Model
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
     
-    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
+    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
     
     inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
@@ -56,7 +57,7 @@ namespace Model
     inline CreatePublicVirtualInterfaceRequest& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
 
     
-    inline CreatePublicVirtualInterfaceRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(value); return *this;}
+    inline CreatePublicVirtualInterfaceRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     
     inline CreatePublicVirtualInterfaceRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
@@ -77,7 +78,7 @@ namespace Model
      * <p>Detailed information for the public virtual interface to be created.</p>
      * <p>Default: None</p>
      */
-    inline void SetNewPublicVirtualInterface(NewPublicVirtualInterface&& value) { m_newPublicVirtualInterfaceHasBeenSet = true; m_newPublicVirtualInterface = value; }
+    inline void SetNewPublicVirtualInterface(NewPublicVirtualInterface&& value) { m_newPublicVirtualInterfaceHasBeenSet = true; m_newPublicVirtualInterface = std::move(value); }
 
     /**
      * <p>Detailed information for the public virtual interface to be created.</p>
@@ -89,7 +90,7 @@ namespace Model
      * <p>Detailed information for the public virtual interface to be created.</p>
      * <p>Default: None</p>
      */
-    inline CreatePublicVirtualInterfaceRequest& WithNewPublicVirtualInterface(NewPublicVirtualInterface&& value) { SetNewPublicVirtualInterface(value); return *this;}
+    inline CreatePublicVirtualInterfaceRequest& WithNewPublicVirtualInterface(NewPublicVirtualInterface&& value) { SetNewPublicVirtualInterface(std::move(value)); return *this;}
 
   private:
     Aws::String m_connectionId;

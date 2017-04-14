@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datapipeline/model/PipelineIdName.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * pipelines, you can use these identifiers to call <a>DescribePipelines</a> and
      * <a>GetPipelineDefinition</a>.</p>
      */
-    inline void SetPipelineIdList(Aws::Vector<PipelineIdName>&& value) { m_pipelineIdList = value; }
+    inline void SetPipelineIdList(Aws::Vector<PipelineIdName>&& value) { m_pipelineIdList = std::move(value); }
 
     /**
      * <p>The pipeline identifiers. If you require additional information about the
@@ -79,7 +80,7 @@ namespace Model
      * pipelines, you can use these identifiers to call <a>DescribePipelines</a> and
      * <a>GetPipelineDefinition</a>.</p>
      */
-    inline ListPipelinesResult& WithPipelineIdList(Aws::Vector<PipelineIdName>&& value) { SetPipelineIdList(value); return *this;}
+    inline ListPipelinesResult& WithPipelineIdList(Aws::Vector<PipelineIdName>&& value) { SetPipelineIdList(std::move(value)); return *this;}
 
     /**
      * <p>The pipeline identifiers. If you require additional information about the
@@ -93,7 +94,7 @@ namespace Model
      * pipelines, you can use these identifiers to call <a>DescribePipelines</a> and
      * <a>GetPipelineDefinition</a>.</p>
      */
-    inline ListPipelinesResult& AddPipelineIdList(PipelineIdName&& value) { m_pipelineIdList.push_back(value); return *this; }
+    inline ListPipelinesResult& AddPipelineIdList(PipelineIdName&& value) { m_pipelineIdList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The starting point for the next page of results. To view the next page of
@@ -114,7 +115,7 @@ namespace Model
      * results, call <code>ListPipelinesOutput</code> again with this marker value. If
      * the value is null, there are no more results.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>The starting point for the next page of results. To view the next page of
@@ -135,7 +136,7 @@ namespace Model
      * results, call <code>ListPipelinesOutput</code> again with this marker value. If
      * the value is null, there are no more results.</p>
      */
-    inline ListPipelinesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListPipelinesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>The starting point for the next page of results. To view the next page of

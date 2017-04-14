@@ -17,6 +17,7 @@
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>A user-defined description of the resource that you want to register with
      * Amazon EC2. </p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A user-defined description of the resource that you want to register with
@@ -70,7 +71,7 @@ namespace Model
      * <p>A user-defined description of the resource that you want to register with
      * Amazon EC2. </p>
      */
-    inline CreateActivationRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateActivationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A user-defined description of the resource that you want to register with
@@ -97,7 +98,7 @@ namespace Model
      * EC2 console or when you use the AWS command line tools to list EC2
      * resources.</p>
      */
-    inline void SetDefaultInstanceName(Aws::String&& value) { m_defaultInstanceNameHasBeenSet = true; m_defaultInstanceName = value; }
+    inline void SetDefaultInstanceName(Aws::String&& value) { m_defaultInstanceNameHasBeenSet = true; m_defaultInstanceName = std::move(value); }
 
     /**
      * <p>The name of the registered, managed instance as it will appear in the Amazon
@@ -118,7 +119,7 @@ namespace Model
      * EC2 console or when you use the AWS command line tools to list EC2
      * resources.</p>
      */
-    inline CreateActivationRequest& WithDefaultInstanceName(Aws::String&& value) { SetDefaultInstanceName(value); return *this;}
+    inline CreateActivationRequest& WithDefaultInstanceName(Aws::String&& value) { SetDefaultInstanceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the registered, managed instance as it will appear in the Amazon
@@ -143,7 +144,7 @@ namespace Model
      * <p>The Amazon Identity and Access Management (IAM) role that you want to assign
      * to the managed instance. </p>
      */
-    inline void SetIamRole(Aws::String&& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
+    inline void SetIamRole(Aws::String&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::move(value); }
 
     /**
      * <p>The Amazon Identity and Access Management (IAM) role that you want to assign
@@ -161,7 +162,7 @@ namespace Model
      * <p>The Amazon Identity and Access Management (IAM) role that you want to assign
      * to the managed instance. </p>
      */
-    inline CreateActivationRequest& WithIamRole(Aws::String&& value) { SetIamRole(value); return *this;}
+    inline CreateActivationRequest& WithIamRole(Aws::String&& value) { SetIamRole(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Identity and Access Management (IAM) role that you want to assign
@@ -203,7 +204,7 @@ namespace Model
      * <p>The date by which this activation request should expire. The default value is
      * 24 hours.</p>
      */
-    inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = value; }
+    inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::move(value); }
 
     /**
      * <p>The date by which this activation request should expire. The default value is
@@ -215,7 +216,7 @@ namespace Model
      * <p>The date by which this activation request should expire. The default value is
      * 24 hours.</p>
      */
-    inline CreateActivationRequest& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(value); return *this;}
+    inline CreateActivationRequest& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_description;

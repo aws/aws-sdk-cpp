@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
      * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the rule.</p> </xhtml>
      */
-    inline void SetRuleArn(Aws::String&& value) { m_ruleArn = value; }
+    inline void SetRuleArn(Aws::String&& value) { m_ruleArn = std::move(value); }
 
     /**
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
@@ -73,7 +74,7 @@ namespace Model
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
      * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the rule.</p> </xhtml>
      */
-    inline PutRuleResult& WithRuleArn(Aws::String&& value) { SetRuleArn(value); return *this;}
+    inline PutRuleResult& WithRuleArn(Aws::String&& value) { SetRuleArn(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/Offering.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>A value representing the list offering results.</p>
      */
-    inline void SetOfferings(Aws::Vector<Offering>&& value) { m_offerings = value; }
+    inline void SetOfferings(Aws::Vector<Offering>&& value) { m_offerings = std::move(value); }
 
     /**
      * <p>A value representing the list offering results.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>A value representing the list offering results.</p>
      */
-    inline ListOfferingsResult& WithOfferings(Aws::Vector<Offering>&& value) { SetOfferings(value); return *this;}
+    inline ListOfferingsResult& WithOfferings(Aws::Vector<Offering>&& value) { SetOfferings(std::move(value)); return *this;}
 
     /**
      * <p>A value representing the list offering results.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>A value representing the list offering results.</p>
      */
-    inline ListOfferingsResult& AddOfferings(Offering&& value) { m_offerings.push_back(value); return *this; }
+    inline ListOfferingsResult& AddOfferings(Offering&& value) { m_offerings.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -98,7 +99,7 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -116,7 +117,7 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
      */
-    inline ListOfferingsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListOfferingsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,

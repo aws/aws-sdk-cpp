@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/IpPermission.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The ID of the security group.</p>
      */
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
+    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
      * <p>The ID of the security group.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The ID of the security group.</p>
      */
-    inline AuthorizeSecurityGroupEgressRequest& WithGroupId(Aws::String&& value) { SetGroupId(value); return *this;}
+    inline AuthorizeSecurityGroupEgressRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the security group.</p>
@@ -121,7 +122,7 @@ namespace Model
      * destination security group, we recommend that you use a set of IP permissions
      * instead.</p>
      */
-    inline void SetSourceSecurityGroupName(Aws::String&& value) { m_sourceSecurityGroupNameHasBeenSet = true; m_sourceSecurityGroupName = value; }
+    inline void SetSourceSecurityGroupName(Aws::String&& value) { m_sourceSecurityGroupNameHasBeenSet = true; m_sourceSecurityGroupName = std::move(value); }
 
     /**
      * <p>The name of a destination security group. To authorize outbound access to a
@@ -142,7 +143,7 @@ namespace Model
      * destination security group, we recommend that you use a set of IP permissions
      * instead.</p>
      */
-    inline AuthorizeSecurityGroupEgressRequest& WithSourceSecurityGroupName(Aws::String&& value) { SetSourceSecurityGroupName(value); return *this;}
+    inline AuthorizeSecurityGroupEgressRequest& WithSourceSecurityGroupName(Aws::String&& value) { SetSourceSecurityGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a destination security group. To authorize outbound access to a
@@ -170,7 +171,7 @@ namespace Model
      * outbound access to a destination security group, we recommend that you use a set
      * of IP permissions instead.</p>
      */
-    inline void SetSourceSecurityGroupOwnerId(Aws::String&& value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId = value; }
+    inline void SetSourceSecurityGroupOwnerId(Aws::String&& value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId = std::move(value); }
 
     /**
      * <p>The AWS account number for a destination security group. To authorize
@@ -191,7 +192,7 @@ namespace Model
      * outbound access to a destination security group, we recommend that you use a set
      * of IP permissions instead.</p>
      */
-    inline AuthorizeSecurityGroupEgressRequest& WithSourceSecurityGroupOwnerId(Aws::String&& value) { SetSourceSecurityGroupOwnerId(value); return *this;}
+    inline AuthorizeSecurityGroupEgressRequest& WithSourceSecurityGroupOwnerId(Aws::String&& value) { SetSourceSecurityGroupOwnerId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account number for a destination security group. To authorize
@@ -216,7 +217,7 @@ namespace Model
      * <p>The IP protocol name or number. We recommend that you specify the protocol in
      * a set of IP permissions instead.</p>
      */
-    inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
+    inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = std::move(value); }
 
     /**
      * <p>The IP protocol name or number. We recommend that you specify the protocol in
@@ -234,7 +235,7 @@ namespace Model
      * <p>The IP protocol name or number. We recommend that you specify the protocol in
      * a set of IP permissions instead.</p>
      */
-    inline AuthorizeSecurityGroupEgressRequest& WithIpProtocol(Aws::String&& value) { SetIpProtocol(value); return *this;}
+    inline AuthorizeSecurityGroupEgressRequest& WithIpProtocol(Aws::String&& value) { SetIpProtocol(std::move(value)); return *this;}
 
     /**
      * <p>The IP protocol name or number. We recommend that you specify the protocol in
@@ -300,7 +301,7 @@ namespace Model
      * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
      * a set of IP permissions instead.</p>
      */
-    inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
+    inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = std::move(value); }
 
     /**
      * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
@@ -318,7 +319,7 @@ namespace Model
      * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
      * a set of IP permissions instead.</p>
      */
-    inline AuthorizeSecurityGroupEgressRequest& WithCidrIp(Aws::String&& value) { SetCidrIp(value); return *this;}
+    inline AuthorizeSecurityGroupEgressRequest& WithCidrIp(Aws::String&& value) { SetCidrIp(std::move(value)); return *this;}
 
     /**
      * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
@@ -342,7 +343,7 @@ namespace Model
      * <p>A set of IP permissions. You can't specify a destination security group and a
      * CIDR IP address range.</p>
      */
-    inline void SetIpPermissions(Aws::Vector<IpPermission>&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
+    inline void SetIpPermissions(Aws::Vector<IpPermission>&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = std::move(value); }
 
     /**
      * <p>A set of IP permissions. You can't specify a destination security group and a
@@ -354,7 +355,7 @@ namespace Model
      * <p>A set of IP permissions. You can't specify a destination security group and a
      * CIDR IP address range.</p>
      */
-    inline AuthorizeSecurityGroupEgressRequest& WithIpPermissions(Aws::Vector<IpPermission>&& value) { SetIpPermissions(value); return *this;}
+    inline AuthorizeSecurityGroupEgressRequest& WithIpPermissions(Aws::Vector<IpPermission>&& value) { SetIpPermissions(std::move(value)); return *this;}
 
     /**
      * <p>A set of IP permissions. You can't specify a destination security group and a
@@ -366,7 +367,7 @@ namespace Model
      * <p>A set of IP permissions. You can't specify a destination security group and a
      * CIDR IP address range.</p>
      */
-    inline AuthorizeSecurityGroupEgressRequest& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(value); return *this; }
+    inline AuthorizeSecurityGroupEgressRequest& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

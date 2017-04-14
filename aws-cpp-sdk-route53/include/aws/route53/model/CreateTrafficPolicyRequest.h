@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The name of the traffic policy.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the traffic policy.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The name of the traffic policy.</p>
      */
-    inline CreateTrafficPolicyRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateTrafficPolicyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the traffic policy.</p>
@@ -94,7 +95,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
      * Policy Document Format</a>.</p>
      */
-    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = value; }
+    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
 
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
@@ -118,7 +119,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
      * Policy Document Format</a>.</p>
      */
-    inline CreateTrafficPolicyRequest& WithDocument(Aws::String&& value) { SetDocument(value); return *this;}
+    inline CreateTrafficPolicyRequest& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
 
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
@@ -144,7 +145,7 @@ namespace Model
      * <p>(Optional) Any comments that you want to include about the traffic
      * policy.</p>
      */
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
+    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
      * <p>(Optional) Any comments that you want to include about the traffic
@@ -162,7 +163,7 @@ namespace Model
      * <p>(Optional) Any comments that you want to include about the traffic
      * policy.</p>
      */
-    inline CreateTrafficPolicyRequest& WithComment(Aws::String&& value) { SetComment(value); return *this;}
+    inline CreateTrafficPolicyRequest& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) Any comments that you want to include about the traffic

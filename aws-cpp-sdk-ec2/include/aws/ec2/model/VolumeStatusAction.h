@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The code identifying the operation, for example,
      * <code>enable-volume-io</code>.</p>
      */
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>The code identifying the operation, for example,
@@ -80,7 +81,7 @@ namespace Model
      * <p>The code identifying the operation, for example,
      * <code>enable-volume-io</code>.</p>
      */
-    inline VolumeStatusAction& WithCode(Aws::String&& value) { SetCode(value); return *this;}
+    inline VolumeStatusAction& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>The code identifying the operation, for example,
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>A description of the operation.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description of the operation.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>A description of the operation.</p>
      */
-    inline VolumeStatusAction& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline VolumeStatusAction& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description of the operation.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The event type associated with this operation.</p>
      */
-    inline void SetEventType(Aws::String&& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline void SetEventType(Aws::String&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
 
     /**
      * <p>The event type associated with this operation.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>The event type associated with this operation.</p>
      */
-    inline VolumeStatusAction& WithEventType(Aws::String&& value) { SetEventType(value); return *this;}
+    inline VolumeStatusAction& WithEventType(Aws::String&& value) { SetEventType(std::move(value)); return *this;}
 
     /**
      * <p>The event type associated with this operation.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>The ID of the event associated with this operation.</p>
      */
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
+    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
 
     /**
      * <p>The ID of the event associated with this operation.</p>
@@ -186,7 +187,7 @@ namespace Model
     /**
      * <p>The ID of the event associated with this operation.</p>
      */
-    inline VolumeStatusAction& WithEventId(Aws::String&& value) { SetEventId(value); return *this;}
+    inline VolumeStatusAction& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the event associated with this operation.</p>

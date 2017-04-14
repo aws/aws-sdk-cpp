@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * Indicates at what date the object is to be moved or deleted. Should be in GMT
      * ISO 8601 Format.
      */
-    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = value; }
+    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
 
     /**
      * Indicates at what date the object is to be moved or deleted. Should be in GMT
@@ -67,7 +68,7 @@ namespace Model
      * Indicates at what date the object is to be moved or deleted. Should be in GMT
      * ISO 8601 Format.
      */
-    inline LifecycleExpiration& WithDate(Aws::Utils::DateTime&& value) { SetDate(value); return *this;}
+    inline LifecycleExpiration& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
 
     /**
      * Indicates the lifetime, in days, of the objects that are subject to the rule.

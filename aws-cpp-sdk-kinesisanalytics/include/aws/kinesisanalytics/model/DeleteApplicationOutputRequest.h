@@ -16,6 +16,7 @@
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/kinesisanalytics/KinesisAnalyticsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>Amazon Kinesis Analytics application name.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>Amazon Kinesis Analytics application name.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>Amazon Kinesis Analytics application name.</p>
      */
-    inline DeleteApplicationOutputRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline DeleteApplicationOutputRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Kinesis Analytics application name.</p>
@@ -125,7 +126,7 @@ namespace Model
      * from the application configuration. You can use the <a>DescribeApplication</a>
      * operation to get the specific <code>OutputId</code>. </p>
      */
-    inline void SetOutputId(Aws::String&& value) { m_outputIdHasBeenSet = true; m_outputId = value; }
+    inline void SetOutputId(Aws::String&& value) { m_outputIdHasBeenSet = true; m_outputId = std::move(value); }
 
     /**
      * <p>The ID of the configuration to delete. Each output configuration that is
@@ -155,7 +156,7 @@ namespace Model
      * from the application configuration. You can use the <a>DescribeApplication</a>
      * operation to get the specific <code>OutputId</code>. </p>
      */
-    inline DeleteApplicationOutputRequest& WithOutputId(Aws::String&& value) { SetOutputId(value); return *this;}
+    inline DeleteApplicationOutputRequest& WithOutputId(Aws::String&& value) { SetOutputId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the configuration to delete. Each output configuration that is

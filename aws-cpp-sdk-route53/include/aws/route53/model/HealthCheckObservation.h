@@ -17,6 +17,7 @@
 #include <aws/route53/model/HealthCheckRegion.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/StatusReport.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The region of the Amazon Route 53 health checker that provided the status in
      * StatusReport.</p>
      */
-    inline void SetRegion(HealthCheckRegion&& value) { m_regionHasBeenSet = true; m_region = value; }
+    inline void SetRegion(HealthCheckRegion&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
      * <p>The region of the Amazon Route 53 health checker that provided the status in
@@ -75,7 +76,7 @@ namespace Model
      * <p>The region of the Amazon Route 53 health checker that provided the status in
      * StatusReport.</p>
      */
-    inline HealthCheckObservation& WithRegion(HealthCheckRegion&& value) { SetRegion(value); return *this;}
+    inline HealthCheckObservation& WithRegion(HealthCheckRegion&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
      * <p>The IP address of the Amazon Route 53 health checker that provided the
@@ -93,7 +94,7 @@ namespace Model
      * <p>The IP address of the Amazon Route 53 health checker that provided the
      * failure reason in <code>StatusReport</code>.</p>
      */
-    inline void SetIPAddress(Aws::String&& value) { m_iPAddressHasBeenSet = true; m_iPAddress = value; }
+    inline void SetIPAddress(Aws::String&& value) { m_iPAddressHasBeenSet = true; m_iPAddress = std::move(value); }
 
     /**
      * <p>The IP address of the Amazon Route 53 health checker that provided the
@@ -111,7 +112,7 @@ namespace Model
      * <p>The IP address of the Amazon Route 53 health checker that provided the
      * failure reason in <code>StatusReport</code>.</p>
      */
-    inline HealthCheckObservation& WithIPAddress(Aws::String&& value) { SetIPAddress(value); return *this;}
+    inline HealthCheckObservation& WithIPAddress(Aws::String&& value) { SetIPAddress(std::move(value)); return *this;}
 
     /**
      * <p>The IP address of the Amazon Route 53 health checker that provided the
@@ -135,7 +136,7 @@ namespace Model
      * <p>A complex type that contains the last failure reason as reported by one
      * Amazon Route 53 health checker and the time of the failed health check.</p>
      */
-    inline void SetStatusReport(StatusReport&& value) { m_statusReportHasBeenSet = true; m_statusReport = value; }
+    inline void SetStatusReport(StatusReport&& value) { m_statusReportHasBeenSet = true; m_statusReport = std::move(value); }
 
     /**
      * <p>A complex type that contains the last failure reason as reported by one
@@ -147,7 +148,7 @@ namespace Model
      * <p>A complex type that contains the last failure reason as reported by one
      * Amazon Route 53 health checker and the time of the failed health check.</p>
      */
-    inline HealthCheckObservation& WithStatusReport(StatusReport&& value) { SetStatusReport(value); return *this;}
+    inline HealthCheckObservation& WithStatusReport(StatusReport&& value) { SetStatusReport(std::move(value)); return *this;}
 
   private:
     HealthCheckRegion m_region;

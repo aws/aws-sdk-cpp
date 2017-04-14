@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/machinelearning/model/Prediction.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,13 +47,13 @@ namespace Model
     inline void SetPrediction(const Prediction& value) { m_prediction = value; }
 
     
-    inline void SetPrediction(Prediction&& value) { m_prediction = value; }
+    inline void SetPrediction(Prediction&& value) { m_prediction = std::move(value); }
 
     
     inline PredictResult& WithPrediction(const Prediction& value) { SetPrediction(value); return *this;}
 
     
-    inline PredictResult& WithPrediction(Prediction&& value) { SetPrediction(value); return *this;}
+    inline PredictResult& WithPrediction(Prediction&& value) { SetPrediction(std::move(value)); return *this;}
 
   private:
     Prediction m_prediction;

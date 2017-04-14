@@ -16,6 +16,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The ARN of the stack.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The ARN of the stack.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The ARN of the stack.</p>
      */
-    inline Stack& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Stack& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the stack.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The unique identifier of the stack.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The unique identifier of the stack.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The unique identifier of the stack.</p>
      */
-    inline Stack& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Stack& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the stack.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>A meaningful description for the stack.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A meaningful description for the stack.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>A meaningful description for the stack.</p>
      */
-    inline Stack& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline Stack& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A meaningful description for the stack.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>A display name for the stack.</p>
      */
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
      * <p>A display name for the stack.</p>
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>A display name for the stack.</p>
      */
-    inline Stack& WithDisplayName(Aws::String&& value) { SetDisplayName(value); return *this;}
+    inline Stack& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
      * <p>A display name for the stack.</p>
@@ -197,7 +198,7 @@ namespace Model
     /**
      * <p>The timestamp when the stack was created.</p>
      */
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
      * <p>The timestamp when the stack was created.</p>
@@ -207,7 +208,7 @@ namespace Model
     /**
      * <p>The timestamp when the stack was created.</p>
      */
-    inline Stack& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(value); return *this;}
+    inline Stack& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
   private:
     Aws::String m_arn;

@@ -17,6 +17,7 @@
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the command you want to cancel.</p>
      */
-    inline void SetCommandId(Aws::String&& value) { m_commandIdHasBeenSet = true; m_commandId = value; }
+    inline void SetCommandId(Aws::String&& value) { m_commandIdHasBeenSet = true; m_commandId = std::move(value); }
 
     /**
      * <p>The ID of the command you want to cancel.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the command you want to cancel.</p>
      */
-    inline CancelCommandRequest& WithCommandId(Aws::String&& value) { SetCommandId(value); return *this;}
+    inline CancelCommandRequest& WithCommandId(Aws::String&& value) { SetCommandId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the command you want to cancel.</p>
@@ -93,7 +94,7 @@ namespace Model
      * not provided, the command is canceled on every instance on which it was
      * requested.</p>
      */
-    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
+    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
      * <p>(Optional) A list of instance IDs on which you want to cancel the command. If
@@ -107,7 +108,7 @@ namespace Model
      * not provided, the command is canceled on every instance on which it was
      * requested.</p>
      */
-    inline CancelCommandRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
+    inline CancelCommandRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) A list of instance IDs on which you want to cancel the command. If
@@ -121,7 +122,7 @@ namespace Model
      * not provided, the command is canceled on every instance on which it was
      * requested.</p>
      */
-    inline CancelCommandRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+    inline CancelCommandRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>(Optional) A list of instance IDs on which you want to cancel the command. If

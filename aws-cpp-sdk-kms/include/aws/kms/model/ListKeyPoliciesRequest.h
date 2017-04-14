@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/kms/KMSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>A unique identifier for the customer master key (CMK). You can use the unique
@@ -93,7 +94,7 @@ namespace Model
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul>
      */
-    inline ListKeyPoliciesRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline ListKeyPoliciesRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the customer master key (CMK). You can use the unique
@@ -154,7 +155,7 @@ namespace Model
      * truncated results. Set it to the value of <code>NextMarker</code> from the
      * truncated response you just received.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>Use this parameter in a subsequent request after you receive a response with
@@ -175,7 +176,7 @@ namespace Model
      * truncated results. Set it to the value of <code>NextMarker</code> from the
      * truncated response you just received.</p>
      */
-    inline ListKeyPoliciesRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListKeyPoliciesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter in a subsequent request after you receive a response with

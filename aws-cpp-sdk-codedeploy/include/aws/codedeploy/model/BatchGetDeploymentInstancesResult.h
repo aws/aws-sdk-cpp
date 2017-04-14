@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codedeploy/model/InstanceSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Information about the instance.</p>
      */
-    inline void SetInstancesSummary(Aws::Vector<InstanceSummary>&& value) { m_instancesSummary = value; }
+    inline void SetInstancesSummary(Aws::Vector<InstanceSummary>&& value) { m_instancesSummary = std::move(value); }
 
     /**
      * <p>Information about the instance.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Information about the instance.</p>
      */
-    inline BatchGetDeploymentInstancesResult& WithInstancesSummary(Aws::Vector<InstanceSummary>&& value) { SetInstancesSummary(value); return *this;}
+    inline BatchGetDeploymentInstancesResult& WithInstancesSummary(Aws::Vector<InstanceSummary>&& value) { SetInstancesSummary(std::move(value)); return *this;}
 
     /**
      * <p>Information about the instance.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>Information about the instance.</p>
      */
-    inline BatchGetDeploymentInstancesResult& AddInstancesSummary(InstanceSummary&& value) { m_instancesSummary.push_back(value); return *this; }
+    inline BatchGetDeploymentInstancesResult& AddInstancesSummary(InstanceSummary&& value) { m_instancesSummary.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Information about errors that may have occurred during the API call.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>Information about errors that may have occurred during the API call.</p>
      */
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = value; }
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
 
     /**
      * <p>Information about errors that may have occurred during the API call.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>Information about errors that may have occurred during the API call.</p>
      */
-    inline BatchGetDeploymentInstancesResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(value); return *this;}
+    inline BatchGetDeploymentInstancesResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
      * <p>Information about errors that may have occurred during the API call.</p>

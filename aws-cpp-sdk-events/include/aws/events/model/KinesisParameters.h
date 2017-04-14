@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -86,7 +87,7 @@ namespace Model
      * Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer
      * Guide</i>.</p> </xhtml>
      */
-    inline void SetPartitionKeyPath(Aws::String&& value) { m_partitionKeyPathHasBeenSet = true; m_partitionKeyPath = value; }
+    inline void SetPartitionKeyPath(Aws::String&& value) { m_partitionKeyPathHasBeenSet = true; m_partitionKeyPath = std::move(value); }
 
     /**
      * <zonbook> <simpara>The JSON path to be extracted from the event and used as the
@@ -125,7 +126,7 @@ namespace Model
      * Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer
      * Guide</i>.</p> </xhtml>
      */
-    inline KinesisParameters& WithPartitionKeyPath(Aws::String&& value) { SetPartitionKeyPath(value); return *this;}
+    inline KinesisParameters& WithPartitionKeyPath(Aws::String&& value) { SetPartitionKeyPath(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The JSON path to be extracted from the event and used as the

@@ -16,6 +16,7 @@
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -85,7 +86,7 @@ namespace Model
      * applicable for given storage type.It can be empty if it is not applicable. </ol>
      * </p>
      */
-    inline void SetLimitName(Aws::String&& value) { m_limitNameHasBeenSet = true; m_limitName = value; }
+    inline void SetLimitName(Aws::String&& value) { m_limitNameHasBeenSet = true; m_limitName = std::move(value); }
 
     /**
      * <p> Name of storage limits that are applicable for given storage type. If <code>
@@ -127,7 +128,7 @@ namespace Model
      * applicable for given storage type.It can be empty if it is not applicable. </ol>
      * </p>
      */
-    inline StorageTypeLimit& WithLimitName(Aws::String&& value) { SetLimitName(value); return *this;}
+    inline StorageTypeLimit& WithLimitName(Aws::String&& value) { SetLimitName(std::move(value)); return *this;}
 
     /**
      * <p> Name of storage limits that are applicable for given storage type. If <code>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p> Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> . </p>
      */
-    inline void SetLimitValues(Aws::Vector<Aws::String>&& value) { m_limitValuesHasBeenSet = true; m_limitValues = value; }
+    inline void SetLimitValues(Aws::Vector<Aws::String>&& value) { m_limitValuesHasBeenSet = true; m_limitValues = std::move(value); }
 
     /**
      * <p> Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> . </p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p> Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> . </p>
      */
-    inline StorageTypeLimit& WithLimitValues(Aws::Vector<Aws::String>&& value) { SetLimitValues(value); return *this;}
+    inline StorageTypeLimit& WithLimitValues(Aws::Vector<Aws::String>&& value) { SetLimitValues(std::move(value)); return *this;}
 
     /**
      * <p> Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> . </p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p> Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> . </p>
      */
-    inline StorageTypeLimit& AddLimitValues(Aws::String&& value) { m_limitValuesHasBeenSet = true; m_limitValues.push_back(value); return *this; }
+    inline StorageTypeLimit& AddLimitValues(Aws::String&& value) { m_limitValuesHasBeenSet = true; m_limitValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p> Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> . </p>

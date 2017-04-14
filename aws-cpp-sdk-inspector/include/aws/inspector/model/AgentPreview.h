@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The id of the EC2 instance where the agent is intalled.</p>
      */
-    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
+    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
 
     /**
      * <p>The id of the EC2 instance where the agent is intalled.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The id of the EC2 instance where the agent is intalled.</p>
      */
-    inline AgentPreview& WithAgentId(Aws::String&& value) { SetAgentId(value); return *this;}
+    inline AgentPreview& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
 
     /**
      * <p>The id of the EC2 instance where the agent is intalled.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The autoscaling group for the EC2 instance where the agent is installed.</p>
      */
-    inline void SetAutoScalingGroup(Aws::String&& value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup = value; }
+    inline void SetAutoScalingGroup(Aws::String&& value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup = std::move(value); }
 
     /**
      * <p>The autoscaling group for the EC2 instance where the agent is installed.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The autoscaling group for the EC2 instance where the agent is installed.</p>
      */
-    inline AgentPreview& WithAutoScalingGroup(Aws::String&& value) { SetAutoScalingGroup(value); return *this;}
+    inline AgentPreview& WithAutoScalingGroup(Aws::String&& value) { SetAutoScalingGroup(std::move(value)); return *this;}
 
     /**
      * <p>The autoscaling group for the EC2 instance where the agent is installed.</p>

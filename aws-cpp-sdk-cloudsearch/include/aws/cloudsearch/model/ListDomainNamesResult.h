@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/cloudsearch/model/ResponseMetadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The names of the search domains owned by an account.</p>
      */
-    inline void SetDomainNames(Aws::Map<Aws::String, Aws::String>&& value) { m_domainNames = value; }
+    inline void SetDomainNames(Aws::Map<Aws::String, Aws::String>&& value) { m_domainNames = std::move(value); }
 
     /**
      * <p>The names of the search domains owned by an account.</p>
@@ -70,42 +71,42 @@ namespace Model
     /**
      * <p>The names of the search domains owned by an account.</p>
      */
-    inline ListDomainNamesResult& WithDomainNames(Aws::Map<Aws::String, Aws::String>&& value) { SetDomainNames(value); return *this;}
+    inline ListDomainNamesResult& WithDomainNames(Aws::Map<Aws::String, Aws::String>&& value) { SetDomainNames(std::move(value)); return *this;}
 
     /**
      * <p>The names of the search domains owned by an account.</p>
      */
-    inline ListDomainNamesResult& AddDomainNames(const Aws::String& key, const Aws::String& value) { m_domainNames[key] = value; return *this; }
+    inline ListDomainNamesResult& AddDomainNames(const Aws::String& key, const Aws::String& value) { m_domainNames.emplace(key, value); return *this; }
 
     /**
      * <p>The names of the search domains owned by an account.</p>
      */
-    inline ListDomainNamesResult& AddDomainNames(Aws::String&& key, const Aws::String& value) { m_domainNames[key] = value; return *this; }
+    inline ListDomainNamesResult& AddDomainNames(Aws::String&& key, const Aws::String& value) { m_domainNames.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The names of the search domains owned by an account.</p>
      */
-    inline ListDomainNamesResult& AddDomainNames(const Aws::String& key, Aws::String&& value) { m_domainNames[key] = value; return *this; }
+    inline ListDomainNamesResult& AddDomainNames(const Aws::String& key, Aws::String&& value) { m_domainNames.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The names of the search domains owned by an account.</p>
      */
-    inline ListDomainNamesResult& AddDomainNames(Aws::String&& key, Aws::String&& value) { m_domainNames[key] = value; return *this; }
+    inline ListDomainNamesResult& AddDomainNames(Aws::String&& key, Aws::String&& value) { m_domainNames.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The names of the search domains owned by an account.</p>
      */
-    inline ListDomainNamesResult& AddDomainNames(const char* key, Aws::String&& value) { m_domainNames[key] = value; return *this; }
+    inline ListDomainNamesResult& AddDomainNames(const char* key, Aws::String&& value) { m_domainNames.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The names of the search domains owned by an account.</p>
      */
-    inline ListDomainNamesResult& AddDomainNames(Aws::String&& key, const char* value) { m_domainNames[key] = value; return *this; }
+    inline ListDomainNamesResult& AddDomainNames(Aws::String&& key, const char* value) { m_domainNames.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The names of the search domains owned by an account.</p>
      */
-    inline ListDomainNamesResult& AddDomainNames(const char* key, const char* value) { m_domainNames[key] = value; return *this; }
+    inline ListDomainNamesResult& AddDomainNames(const char* key, const char* value) { m_domainNames.emplace(key, value); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -114,13 +115,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListDomainNamesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListDomainNamesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListDomainNamesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Map<Aws::String, Aws::String> m_domainNames;

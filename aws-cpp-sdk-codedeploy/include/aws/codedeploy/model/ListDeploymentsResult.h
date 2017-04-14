@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A list of deployment IDs.</p>
      */
-    inline void SetDeployments(Aws::Vector<Aws::String>&& value) { m_deployments = value; }
+    inline void SetDeployments(Aws::Vector<Aws::String>&& value) { m_deployments = std::move(value); }
 
     /**
      * <p>A list of deployment IDs.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A list of deployment IDs.</p>
      */
-    inline ListDeploymentsResult& WithDeployments(Aws::Vector<Aws::String>&& value) { SetDeployments(value); return *this;}
+    inline ListDeploymentsResult& WithDeployments(Aws::Vector<Aws::String>&& value) { SetDeployments(std::move(value)); return *this;}
 
     /**
      * <p>A list of deployment IDs.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>A list of deployment IDs.</p>
      */
-    inline ListDeploymentsResult& AddDeployments(Aws::String&& value) { m_deployments.push_back(value); return *this; }
+    inline ListDeploymentsResult& AddDeployments(Aws::String&& value) { m_deployments.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of deployment IDs.</p>
@@ -105,7 +106,7 @@ namespace Model
      * It can be used in a subsequent list deployments call to return the next set of
      * deployments in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
@@ -126,7 +127,7 @@ namespace Model
      * It can be used in a subsequent list deployments call to return the next set of
      * deployments in the list.</p>
      */
-    inline ListDeploymentsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListDeploymentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.

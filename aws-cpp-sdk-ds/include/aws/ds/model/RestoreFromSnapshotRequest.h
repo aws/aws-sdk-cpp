@@ -16,6 +16,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The identifier of the snapshot to restore from.</p>
      */
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
+    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     /**
      * <p>The identifier of the snapshot to restore from.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The identifier of the snapshot to restore from.</p>
      */
-    inline RestoreFromSnapshotRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(value); return *this;}
+    inline RestoreFromSnapshotRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the snapshot to restore from.</p>

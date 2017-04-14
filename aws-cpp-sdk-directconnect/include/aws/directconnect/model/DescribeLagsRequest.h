@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the LAG.</p> <p>Example: dxlag-abc123</p> <p>Default: None</p>
      */
-    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
+    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = std::move(value); }
 
     /**
      * <p>The ID of the LAG.</p> <p>Example: dxlag-abc123</p> <p>Default: None</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the LAG.</p> <p>Example: dxlag-abc123</p> <p>Default: None</p>
      */
-    inline DescribeLagsRequest& WithLagId(Aws::String&& value) { SetLagId(value); return *this;}
+    inline DescribeLagsRequest& WithLagId(Aws::String&& value) { SetLagId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the LAG.</p> <p>Example: dxlag-abc123</p> <p>Default: None</p>

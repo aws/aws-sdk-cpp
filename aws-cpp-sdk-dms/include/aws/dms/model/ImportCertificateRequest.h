@@ -17,6 +17,7 @@
 #include <aws/dms/DatabaseMigrationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The customer-assigned name of the certificate. Valid characters are A-z and
      * 0-9.</p>
      */
-    inline void SetCertificateIdentifier(Aws::String&& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = value; }
+    inline void SetCertificateIdentifier(Aws::String&& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = std::move(value); }
 
     /**
      * <p>The customer-assigned name of the certificate. Valid characters are A-z and
@@ -70,7 +71,7 @@ namespace Model
      * <p>The customer-assigned name of the certificate. Valid characters are A-z and
      * 0-9.</p>
      */
-    inline ImportCertificateRequest& WithCertificateIdentifier(Aws::String&& value) { SetCertificateIdentifier(value); return *this;}
+    inline ImportCertificateRequest& WithCertificateIdentifier(Aws::String&& value) { SetCertificateIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The customer-assigned name of the certificate. Valid characters are A-z and
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
-    inline void SetCertificatePem(Aws::String&& value) { m_certificatePemHasBeenSet = true; m_certificatePem = value; }
+    inline void SetCertificatePem(Aws::String&& value) { m_certificatePemHasBeenSet = true; m_certificatePem = std::move(value); }
 
     /**
      * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
-    inline ImportCertificateRequest& WithCertificatePem(Aws::String&& value) { SetCertificatePem(value); return *this;}
+    inline ImportCertificateRequest& WithCertificatePem(Aws::String&& value) { SetCertificatePem(std::move(value)); return *this;}
 
     /**
      * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
      */
-    inline void SetCertificateWallet(Aws::Utils::ByteBuffer&& value) { m_certificateWalletHasBeenSet = true; m_certificateWallet = value; }
+    inline void SetCertificateWallet(Aws::Utils::ByteBuffer&& value) { m_certificateWalletHasBeenSet = true; m_certificateWallet = std::move(value); }
 
     /**
      * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
      */
-    inline ImportCertificateRequest& WithCertificateWallet(Aws::Utils::ByteBuffer&& value) { SetCertificateWallet(value); return *this;}
+    inline ImportCertificateRequest& WithCertificateWallet(Aws::Utils::ByteBuffer&& value) { SetCertificateWallet(std::move(value)); return *this;}
 
   private:
     Aws::String m_certificateIdentifier;

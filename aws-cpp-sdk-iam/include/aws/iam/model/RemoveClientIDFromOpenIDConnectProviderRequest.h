@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
-    inline void SetOpenIDConnectProviderArn(Aws::String&& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = value; }
+    inline void SetOpenIDConnectProviderArn(Aws::String&& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove
@@ -101,7 +102,7 @@ namespace Model
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
-    inline RemoveClientIDFromOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(Aws::String&& value) { SetOpenIDConnectProviderArn(value); return *this;}
+    inline RemoveClientIDFromOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(Aws::String&& value) { SetOpenIDConnectProviderArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove
@@ -133,7 +134,7 @@ namespace Model
      * resource. For more information about client IDs, see
      * <a>CreateOpenIDConnectProvider</a>.</p>
      */
-    inline void SetClientID(Aws::String&& value) { m_clientIDHasBeenSet = true; m_clientID = value; }
+    inline void SetClientID(Aws::String&& value) { m_clientIDHasBeenSet = true; m_clientID = std::move(value); }
 
     /**
      * <p>The client ID (also known as audience) to remove from the IAM OIDC provider
@@ -154,7 +155,7 @@ namespace Model
      * resource. For more information about client IDs, see
      * <a>CreateOpenIDConnectProvider</a>.</p>
      */
-    inline RemoveClientIDFromOpenIDConnectProviderRequest& WithClientID(Aws::String&& value) { SetClientID(value); return *this;}
+    inline RemoveClientIDFromOpenIDConnectProviderRequest& WithClientID(Aws::String&& value) { SetClientID(std::move(value)); return *this;}
 
     /**
      * <p>The client ID (also known as audience) to remove from the IAM OIDC provider

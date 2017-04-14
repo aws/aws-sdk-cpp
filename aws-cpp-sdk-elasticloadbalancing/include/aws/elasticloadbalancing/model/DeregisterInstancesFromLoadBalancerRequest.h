@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancing/model/Instance.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
 
     /**
      * <p>The name of the load balancer.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline DeregisterInstancesFromLoadBalancerRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
+    inline DeregisterInstancesFromLoadBalancerRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the load balancer.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The IDs of the instances.</p>
      */
-    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instancesHasBeenSet = true; m_instances = value; }
+    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
 
     /**
      * <p>The IDs of the instances.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The IDs of the instances.</p>
      */
-    inline DeregisterInstancesFromLoadBalancerRequest& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(value); return *this;}
+    inline DeregisterInstancesFromLoadBalancerRequest& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the instances.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The IDs of the instances.</p>
      */
-    inline DeregisterInstancesFromLoadBalancerRequest& AddInstances(Instance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
+    inline DeregisterInstancesFromLoadBalancerRequest& AddInstances(Instance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_loadBalancerName;

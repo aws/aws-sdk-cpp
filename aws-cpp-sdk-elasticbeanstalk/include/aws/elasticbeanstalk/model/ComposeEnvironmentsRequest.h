@@ -17,6 +17,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The name of the application to which the specified source bundles belong.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of the application to which the specified source bundles belong.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The name of the application to which the specified source bundles belong.</p>
      */
-    inline ComposeEnvironmentsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline ComposeEnvironmentsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the application to which the specified source bundles belong.</p>
@@ -102,7 +103,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>The name of the group to which the target environments belong. Specify a
@@ -129,7 +130,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
-    inline ComposeEnvironmentsRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
+    inline ComposeEnvironmentsRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the group to which the target environments belong. Specify a
@@ -165,7 +166,7 @@ namespace Model
      * the solution stack to use, and optionally can specify environment links to
      * create.</p>
      */
-    inline void SetVersionLabels(Aws::Vector<Aws::String>&& value) { m_versionLabelsHasBeenSet = true; m_versionLabels = value; }
+    inline void SetVersionLabels(Aws::Vector<Aws::String>&& value) { m_versionLabelsHasBeenSet = true; m_versionLabels = std::move(value); }
 
     /**
      * <p>A list of version labels, specifying one or more application source bundles
@@ -183,7 +184,7 @@ namespace Model
      * the solution stack to use, and optionally can specify environment links to
      * create.</p>
      */
-    inline ComposeEnvironmentsRequest& WithVersionLabels(Aws::Vector<Aws::String>&& value) { SetVersionLabels(value); return *this;}
+    inline ComposeEnvironmentsRequest& WithVersionLabels(Aws::Vector<Aws::String>&& value) { SetVersionLabels(std::move(value)); return *this;}
 
     /**
      * <p>A list of version labels, specifying one or more application source bundles
@@ -201,7 +202,7 @@ namespace Model
      * the solution stack to use, and optionally can specify environment links to
      * create.</p>
      */
-    inline ComposeEnvironmentsRequest& AddVersionLabels(Aws::String&& value) { m_versionLabelsHasBeenSet = true; m_versionLabels.push_back(value); return *this; }
+    inline ComposeEnvironmentsRequest& AddVersionLabels(Aws::String&& value) { m_versionLabelsHasBeenSet = true; m_versionLabels.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of version labels, specifying one or more application source bundles

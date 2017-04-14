@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * returns the same as a string using a backslash ("\") as an escape character in
      * the JSON.</p>
      */
-    inline void SetPolicy(Aws::String&& value) { m_policy = value; }
+    inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
 
     /**
      * <p>The resource policy associated with the specified function. The response
@@ -84,7 +85,7 @@ namespace Model
      * returns the same as a string using a backslash ("\") as an escape character in
      * the JSON.</p>
      */
-    inline GetPolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
+    inline GetPolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
      * <p>The resource policy associated with the specified function. The response

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/model/TimeToLiveDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p/>
      */
-    inline void SetTimeToLiveDescription(TimeToLiveDescription&& value) { m_timeToLiveDescription = value; }
+    inline void SetTimeToLiveDescription(TimeToLiveDescription&& value) { m_timeToLiveDescription = std::move(value); }
 
     /**
      * <p/>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p/>
      */
-    inline DescribeTimeToLiveResult& WithTimeToLiveDescription(TimeToLiveDescription&& value) { SetTimeToLiveDescription(value); return *this;}
+    inline DescribeTimeToLiveResult& WithTimeToLiveDescription(TimeToLiveDescription&& value) { SetTimeToLiveDescription(std::move(value)); return *this;}
 
   private:
     TimeToLiveDescription m_timeToLiveDescription;

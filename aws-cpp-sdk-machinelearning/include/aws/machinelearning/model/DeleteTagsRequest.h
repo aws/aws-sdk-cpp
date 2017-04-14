@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/machinelearning/model/TaggableResourceType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>One or more tags to delete.</p>
      */
-    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
+    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
      * <p>One or more tags to delete.</p>
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>One or more tags to delete.</p>
      */
-    inline DeleteTagsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
+    inline DeleteTagsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
      * <p>One or more tags to delete.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>One or more tags to delete.</p>
      */
-    inline DeleteTagsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+    inline DeleteTagsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more tags to delete.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
      */
-    inline DeleteTagsRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline DeleteTagsRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>The type of the tagged ML object.</p>
      */
-    inline void SetResourceType(TaggableResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(TaggableResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of the tagged ML object.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>The type of the tagged ML object.</p>
      */
-    inline DeleteTagsRequest& WithResourceType(TaggableResourceType&& value) { SetResourceType(value); return *this;}
+    inline DeleteTagsRequest& WithResourceType(TaggableResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_tagKeys;

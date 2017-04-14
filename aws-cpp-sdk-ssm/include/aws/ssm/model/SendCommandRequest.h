@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm/model/NotificationConfig.h>
 #include <aws/ssm/model/Target.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>Required. The instance IDs where the command should execute. You can specify
      * a maximum of 50 IDs.</p>
      */
-    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
+    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
      * <p>Required. The instance IDs where the command should execute. You can specify
@@ -68,7 +69,7 @@ namespace Model
      * <p>Required. The instance IDs where the command should execute. You can specify
      * a maximum of 50 IDs.</p>
      */
-    inline SendCommandRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
+    inline SendCommandRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
      * <p>Required. The instance IDs where the command should execute. You can specify
@@ -80,7 +81,7 @@ namespace Model
      * <p>Required. The instance IDs where the command should execute. You can specify
      * a maximum of 50 IDs.</p>
      */
-    inline SendCommandRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+    inline SendCommandRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Required. The instance IDs where the command should execute. You can specify
@@ -116,7 +117,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
-    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = value; }
+    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
      * <p>(Optional) An array of search criteria that targets instances using a
@@ -136,7 +137,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
-    inline SendCommandRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(value); return *this;}
+    inline SendCommandRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) An array of search criteria that targets instances using a
@@ -156,7 +157,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
-    inline SendCommandRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+    inline SendCommandRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Required. The name of the Systems Manager document to execute. This can be a
@@ -174,7 +175,7 @@ namespace Model
      * <p>Required. The name of the Systems Manager document to execute. This can be a
      * public document or a custom document.</p>
      */
-    inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
+    inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = std::move(value); }
 
     /**
      * <p>Required. The name of the Systems Manager document to execute. This can be a
@@ -192,7 +193,7 @@ namespace Model
      * <p>Required. The name of the Systems Manager document to execute. This can be a
      * public document or a custom document.</p>
      */
-    inline SendCommandRequest& WithDocumentName(Aws::String&& value) { SetDocumentName(value); return *this;}
+    inline SendCommandRequest& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
 
     /**
      * <p>Required. The name of the Systems Manager document to execute. This can be a
@@ -216,7 +217,7 @@ namespace Model
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
      * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
      */
-    inline void SetDocumentHash(Aws::String&& value) { m_documentHashHasBeenSet = true; m_documentHash = value; }
+    inline void SetDocumentHash(Aws::String&& value) { m_documentHashHasBeenSet = true; m_documentHash = std::move(value); }
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
@@ -234,7 +235,7 @@ namespace Model
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
      * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
      */
-    inline SendCommandRequest& WithDocumentHash(Aws::String&& value) { SetDocumentHash(value); return *this;}
+    inline SendCommandRequest& WithDocumentHash(Aws::String&& value) { SetDocumentHash(std::move(value)); return *this;}
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
@@ -255,7 +256,7 @@ namespace Model
     /**
      * <p>Sha256 or Sha1.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
      */
-    inline void SetDocumentHashType(DocumentHashType&& value) { m_documentHashTypeHasBeenSet = true; m_documentHashType = value; }
+    inline void SetDocumentHashType(DocumentHashType&& value) { m_documentHashTypeHasBeenSet = true; m_documentHashType = std::move(value); }
 
     /**
      * <p>Sha256 or Sha1.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
@@ -265,7 +266,7 @@ namespace Model
     /**
      * <p>Sha256 or Sha1.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
      */
-    inline SendCommandRequest& WithDocumentHashType(DocumentHashType&& value) { SetDocumentHashType(value); return *this;}
+    inline SendCommandRequest& WithDocumentHashType(DocumentHashType&& value) { SetDocumentHashType(std::move(value)); return *this;}
 
     /**
      * <p>If this time is reached and the command has not already started executing, it
@@ -301,7 +302,7 @@ namespace Model
      * <p>User-specified information about the command, such as a brief description of
      * what the command should do.</p>
      */
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
+    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
      * <p>User-specified information about the command, such as a brief description of
@@ -319,7 +320,7 @@ namespace Model
      * <p>User-specified information about the command, such as a brief description of
      * what the command should do.</p>
      */
-    inline SendCommandRequest& WithComment(Aws::String&& value) { SetComment(value); return *this;}
+    inline SendCommandRequest& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
      * <p>User-specified information about the command, such as a brief description of
@@ -343,7 +344,7 @@ namespace Model
      * <p>The required and optional parameters specified in the document being
      * executed.</p>
      */
-    inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>The required and optional parameters specified in the document being
@@ -355,43 +356,43 @@ namespace Model
      * <p>The required and optional parameters specified in the document being
      * executed.</p>
      */
-    inline SendCommandRequest& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(value); return *this;}
+    inline SendCommandRequest& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>The required and optional parameters specified in the document being
      * executed.</p>
      */
-    inline SendCommandRequest& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline SendCommandRequest& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>The required and optional parameters specified in the document being
      * executed.</p>
      */
-    inline SendCommandRequest& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline SendCommandRequest& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The required and optional parameters specified in the document being
      * executed.</p>
      */
-    inline SendCommandRequest& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline SendCommandRequest& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The required and optional parameters specified in the document being
      * executed.</p>
      */
-    inline SendCommandRequest& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline SendCommandRequest& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The required and optional parameters specified in the document being
      * executed.</p>
      */
-    inline SendCommandRequest& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline SendCommandRequest& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The required and optional parameters specified in the document being
      * executed.</p>
      */
-    inline SendCommandRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline SendCommandRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>(Optional) The region where the Amazon Simple Storage Service (Amazon S3)
@@ -412,7 +413,7 @@ namespace Model
      * output bucket is located. The default value is the region where Run Command is
      * being called.</p>
      */
-    inline void SetOutputS3Region(Aws::String&& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = value; }
+    inline void SetOutputS3Region(Aws::String&& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = std::move(value); }
 
     /**
      * <p>(Optional) The region where the Amazon Simple Storage Service (Amazon S3)
@@ -433,7 +434,7 @@ namespace Model
      * output bucket is located. The default value is the region where Run Command is
      * being called.</p>
      */
-    inline SendCommandRequest& WithOutputS3Region(Aws::String&& value) { SetOutputS3Region(value); return *this;}
+    inline SendCommandRequest& WithOutputS3Region(Aws::String&& value) { SetOutputS3Region(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) The region where the Amazon Simple Storage Service (Amazon S3)
@@ -458,7 +459,7 @@ namespace Model
      * <p>The name of the S3 bucket where command execution responses should be
      * stored.</p>
      */
-    inline void SetOutputS3BucketName(Aws::String&& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = value; }
+    inline void SetOutputS3BucketName(Aws::String&& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = std::move(value); }
 
     /**
      * <p>The name of the S3 bucket where command execution responses should be
@@ -476,7 +477,7 @@ namespace Model
      * <p>The name of the S3 bucket where command execution responses should be
      * stored.</p>
      */
-    inline SendCommandRequest& WithOutputS3BucketName(Aws::String&& value) { SetOutputS3BucketName(value); return *this;}
+    inline SendCommandRequest& WithOutputS3BucketName(Aws::String&& value) { SetOutputS3BucketName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the S3 bucket where command execution responses should be
@@ -500,7 +501,7 @@ namespace Model
      * <p>The directory structure within the S3 bucket where the responses should be
      * stored.</p>
      */
-    inline void SetOutputS3KeyPrefix(Aws::String&& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = value; }
+    inline void SetOutputS3KeyPrefix(Aws::String&& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = std::move(value); }
 
     /**
      * <p>The directory structure within the S3 bucket where the responses should be
@@ -518,7 +519,7 @@ namespace Model
      * <p>The directory structure within the S3 bucket where the responses should be
      * stored.</p>
      */
-    inline SendCommandRequest& WithOutputS3KeyPrefix(Aws::String&& value) { SetOutputS3KeyPrefix(value); return *this;}
+    inline SendCommandRequest& WithOutputS3KeyPrefix(Aws::String&& value) { SetOutputS3KeyPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The directory structure within the S3 bucket where the responses should be
@@ -554,7 +555,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
-    inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
+    inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
 
     /**
      * <p>(Optional) The maximum number of instances that are allowed to execute the
@@ -584,7 +585,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
-    inline SendCommandRequest& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(value); return *this;}
+    inline SendCommandRequest& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) The maximum number of instances that are allowed to execute the
@@ -627,7 +628,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
-    inline void SetMaxErrors(Aws::String&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
+    inline void SetMaxErrors(Aws::String&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::move(value); }
 
     /**
      * <p>The maximum number of errors allowed without the command failing. When the
@@ -660,7 +661,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
-    inline SendCommandRequest& WithMaxErrors(Aws::String&& value) { SetMaxErrors(value); return *this;}
+    inline SendCommandRequest& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of errors allowed without the command failing. When the
@@ -686,7 +687,7 @@ namespace Model
     /**
      * <p>The IAM role that Systems Manager uses to send notifications. </p>
      */
-    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
+    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
      * <p>The IAM role that Systems Manager uses to send notifications. </p>
@@ -701,7 +702,7 @@ namespace Model
     /**
      * <p>The IAM role that Systems Manager uses to send notifications. </p>
      */
-    inline SendCommandRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(value); return *this;}
+    inline SendCommandRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The IAM role that Systems Manager uses to send notifications. </p>
@@ -721,7 +722,7 @@ namespace Model
     /**
      * <p>Configurations for sending notifications.</p>
      */
-    inline void SetNotificationConfig(NotificationConfig&& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = value; }
+    inline void SetNotificationConfig(NotificationConfig&& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = std::move(value); }
 
     /**
      * <p>Configurations for sending notifications.</p>
@@ -731,7 +732,7 @@ namespace Model
     /**
      * <p>Configurations for sending notifications.</p>
      */
-    inline SendCommandRequest& WithNotificationConfig(NotificationConfig&& value) { SetNotificationConfig(value); return *this;}
+    inline SendCommandRequest& WithNotificationConfig(NotificationConfig&& value) { SetNotificationConfig(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_instanceIds;

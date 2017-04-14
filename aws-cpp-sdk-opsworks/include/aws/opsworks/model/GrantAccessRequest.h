@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -36,37 +37,37 @@ namespace Model
 
 
     /**
-     * <p>The instance's AWS OpsWorks ID.</p>
+     * <p>The instance's AWS OpsWorks Stacks ID.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The instance's AWS OpsWorks ID.</p>
+     * <p>The instance's AWS OpsWorks Stacks ID.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The instance's AWS OpsWorks ID.</p>
+     * <p>The instance's AWS OpsWorks Stacks ID.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The instance's AWS OpsWorks ID.</p>
+     * <p>The instance's AWS OpsWorks Stacks ID.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The instance's AWS OpsWorks ID.</p>
+     * <p>The instance's AWS OpsWorks Stacks ID.</p>
      */
     inline GrantAccessRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The instance's AWS OpsWorks ID.</p>
+     * <p>The instance's AWS OpsWorks Stacks ID.</p>
      */
-    inline GrantAccessRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline GrantAccessRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The instance's AWS OpsWorks ID.</p>
+     * <p>The instance's AWS OpsWorks Stacks ID.</p>
      */
     inline GrantAccessRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/waf/model/SizeConstraint.h>
+#include <utility>
 
 namespace Aws
 {
@@ -89,7 +90,7 @@ namespace Model
      * returned by <a>CreateSizeConstraintSet</a> and by
      * <a>ListSizeConstraintSets</a>.</p>
      */
-    inline void SetSizeConstraintSetId(Aws::String&& value) { m_sizeConstraintSetIdHasBeenSet = true; m_sizeConstraintSetId = value; }
+    inline void SetSizeConstraintSetId(Aws::String&& value) { m_sizeConstraintSetIdHasBeenSet = true; m_sizeConstraintSetId = std::move(value); }
 
     /**
      * <p>A unique identifier for a <code>SizeConstraintSet</code>. You use
@@ -131,7 +132,7 @@ namespace Model
      * returned by <a>CreateSizeConstraintSet</a> and by
      * <a>ListSizeConstraintSets</a>.</p>
      */
-    inline SizeConstraintSet& WithSizeConstraintSetId(Aws::String&& value) { SetSizeConstraintSetId(value); return *this;}
+    inline SizeConstraintSet& WithSizeConstraintSetId(Aws::String&& value) { SetSizeConstraintSetId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for a <code>SizeConstraintSet</code>. You use
@@ -160,7 +161,7 @@ namespace Model
     /**
      * <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
@@ -175,7 +176,7 @@ namespace Model
     /**
      * <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
      */
-    inline SizeConstraintSet& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline SizeConstraintSet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
@@ -195,7 +196,7 @@ namespace Model
     /**
      * <p>Specifies the parts of web requests that you want to inspect the size of.</p>
      */
-    inline void SetSizeConstraints(Aws::Vector<SizeConstraint>&& value) { m_sizeConstraintsHasBeenSet = true; m_sizeConstraints = value; }
+    inline void SetSizeConstraints(Aws::Vector<SizeConstraint>&& value) { m_sizeConstraintsHasBeenSet = true; m_sizeConstraints = std::move(value); }
 
     /**
      * <p>Specifies the parts of web requests that you want to inspect the size of.</p>
@@ -205,7 +206,7 @@ namespace Model
     /**
      * <p>Specifies the parts of web requests that you want to inspect the size of.</p>
      */
-    inline SizeConstraintSet& WithSizeConstraints(Aws::Vector<SizeConstraint>&& value) { SetSizeConstraints(value); return *this;}
+    inline SizeConstraintSet& WithSizeConstraints(Aws::Vector<SizeConstraint>&& value) { SetSizeConstraints(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the parts of web requests that you want to inspect the size of.</p>
@@ -215,7 +216,7 @@ namespace Model
     /**
      * <p>Specifies the parts of web requests that you want to inspect the size of.</p>
      */
-    inline SizeConstraintSet& AddSizeConstraints(SizeConstraint&& value) { m_sizeConstraintsHasBeenSet = true; m_sizeConstraints.push_back(value); return *this; }
+    inline SizeConstraintSet& AddSizeConstraints(SizeConstraint&& value) { m_sizeConstraintsHasBeenSet = true; m_sizeConstraints.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_sizeConstraintSetId;

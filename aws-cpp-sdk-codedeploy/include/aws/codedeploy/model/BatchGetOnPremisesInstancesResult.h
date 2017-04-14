@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/InstanceInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Information about the on-premises instances.</p>
      */
-    inline void SetInstanceInfos(Aws::Vector<InstanceInfo>&& value) { m_instanceInfos = value; }
+    inline void SetInstanceInfos(Aws::Vector<InstanceInfo>&& value) { m_instanceInfos = std::move(value); }
 
     /**
      * <p>Information about the on-premises instances.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Information about the on-premises instances.</p>
      */
-    inline BatchGetOnPremisesInstancesResult& WithInstanceInfos(Aws::Vector<InstanceInfo>&& value) { SetInstanceInfos(value); return *this;}
+    inline BatchGetOnPremisesInstancesResult& WithInstanceInfos(Aws::Vector<InstanceInfo>&& value) { SetInstanceInfos(std::move(value)); return *this;}
 
     /**
      * <p>Information about the on-premises instances.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>Information about the on-premises instances.</p>
      */
-    inline BatchGetOnPremisesInstancesResult& AddInstanceInfos(InstanceInfo&& value) { m_instanceInfos.push_back(value); return *this; }
+    inline BatchGetOnPremisesInstancesResult& AddInstanceInfos(InstanceInfo&& value) { m_instanceInfos.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<InstanceInfo> m_instanceInfos;

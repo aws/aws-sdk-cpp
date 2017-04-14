@@ -16,6 +16,7 @@
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * submits a registration token through the browser. The registration token is
      * resolved to obtain a CustomerIdentifier and product code.</p>
      */
-    inline void SetRegistrationToken(Aws::String&& value) { m_registrationTokenHasBeenSet = true; m_registrationToken = value; }
+    inline void SetRegistrationToken(Aws::String&& value) { m_registrationTokenHasBeenSet = true; m_registrationToken = std::move(value); }
 
     /**
      * <p>When a buyer visits your website during the registration process, the buyer
@@ -79,7 +80,7 @@ namespace Model
      * submits a registration token through the browser. The registration token is
      * resolved to obtain a CustomerIdentifier and product code.</p>
      */
-    inline ResolveCustomerRequest& WithRegistrationToken(Aws::String&& value) { SetRegistrationToken(value); return *this;}
+    inline ResolveCustomerRequest& WithRegistrationToken(Aws::String&& value) { SetRegistrationToken(std::move(value)); return *this;}
 
     /**
      * <p>When a buyer visits your website during the registration process, the buyer

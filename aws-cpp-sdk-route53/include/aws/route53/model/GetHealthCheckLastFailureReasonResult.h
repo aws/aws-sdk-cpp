@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/model/HealthCheckObservation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>A list that contains one <code>Observation</code> element for each Amazon
      * Route 53 health checker that is reporting a last failure reason. </p>
      */
-    inline void SetHealthCheckObservations(Aws::Vector<HealthCheckObservation>&& value) { m_healthCheckObservations = value; }
+    inline void SetHealthCheckObservations(Aws::Vector<HealthCheckObservation>&& value) { m_healthCheckObservations = std::move(value); }
 
     /**
      * <p>A list that contains one <code>Observation</code> element for each Amazon
@@ -75,7 +76,7 @@ namespace Model
      * <p>A list that contains one <code>Observation</code> element for each Amazon
      * Route 53 health checker that is reporting a last failure reason. </p>
      */
-    inline GetHealthCheckLastFailureReasonResult& WithHealthCheckObservations(Aws::Vector<HealthCheckObservation>&& value) { SetHealthCheckObservations(value); return *this;}
+    inline GetHealthCheckLastFailureReasonResult& WithHealthCheckObservations(Aws::Vector<HealthCheckObservation>&& value) { SetHealthCheckObservations(std::move(value)); return *this;}
 
     /**
      * <p>A list that contains one <code>Observation</code> element for each Amazon
@@ -87,7 +88,7 @@ namespace Model
      * <p>A list that contains one <code>Observation</code> element for each Amazon
      * Route 53 health checker that is reporting a last failure reason. </p>
      */
-    inline GetHealthCheckLastFailureReasonResult& AddHealthCheckObservations(HealthCheckObservation&& value) { m_healthCheckObservations.push_back(value); return *this; }
+    inline GetHealthCheckLastFailureReasonResult& AddHealthCheckObservations(HealthCheckObservation&& value) { m_healthCheckObservations.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<HealthCheckObservation> m_healthCheckObservations;

@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm/model/StepExecution.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The execution ID.</p>
      */
-    inline void SetAutomationExecutionId(Aws::String&& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = value; }
+    inline void SetAutomationExecutionId(Aws::String&& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = std::move(value); }
 
     /**
      * <p>The execution ID.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The execution ID.</p>
      */
-    inline AutomationExecution& WithAutomationExecutionId(Aws::String&& value) { SetAutomationExecutionId(value); return *this;}
+    inline AutomationExecution& WithAutomationExecutionId(Aws::String&& value) { SetAutomationExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The execution ID.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The name of the Automation document used during the execution.</p>
      */
-    inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
+    inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = std::move(value); }
 
     /**
      * <p>The name of the Automation document used during the execution.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The name of the Automation document used during the execution.</p>
      */
-    inline AutomationExecution& WithDocumentName(Aws::String&& value) { SetDocumentName(value); return *this;}
+    inline AutomationExecution& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Automation document used during the execution.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The version of the document to use during execution.</p>
      */
-    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
      * <p>The version of the document to use during execution.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The version of the document to use during execution.</p>
      */
-    inline AutomationExecution& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(value); return *this;}
+    inline AutomationExecution& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the document to use during execution.</p>
@@ -167,7 +168,7 @@ namespace Model
     /**
      * <p>The time the execution started.</p>
      */
-    inline void SetExecutionStartTime(Aws::Utils::DateTime&& value) { m_executionStartTimeHasBeenSet = true; m_executionStartTime = value; }
+    inline void SetExecutionStartTime(Aws::Utils::DateTime&& value) { m_executionStartTimeHasBeenSet = true; m_executionStartTime = std::move(value); }
 
     /**
      * <p>The time the execution started.</p>
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>The time the execution started.</p>
      */
-    inline AutomationExecution& WithExecutionStartTime(Aws::Utils::DateTime&& value) { SetExecutionStartTime(value); return *this;}
+    inline AutomationExecution& WithExecutionStartTime(Aws::Utils::DateTime&& value) { SetExecutionStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The time the execution finished.</p>
@@ -192,7 +193,7 @@ namespace Model
     /**
      * <p>The time the execution finished.</p>
      */
-    inline void SetExecutionEndTime(Aws::Utils::DateTime&& value) { m_executionEndTimeHasBeenSet = true; m_executionEndTime = value; }
+    inline void SetExecutionEndTime(Aws::Utils::DateTime&& value) { m_executionEndTimeHasBeenSet = true; m_executionEndTime = std::move(value); }
 
     /**
      * <p>The time the execution finished.</p>
@@ -202,7 +203,7 @@ namespace Model
     /**
      * <p>The time the execution finished.</p>
      */
-    inline AutomationExecution& WithExecutionEndTime(Aws::Utils::DateTime&& value) { SetExecutionEndTime(value); return *this;}
+    inline AutomationExecution& WithExecutionEndTime(Aws::Utils::DateTime&& value) { SetExecutionEndTime(std::move(value)); return *this;}
 
     /**
      * <p>The execution status of the Automation.</p>
@@ -217,7 +218,7 @@ namespace Model
     /**
      * <p>The execution status of the Automation.</p>
      */
-    inline void SetAutomationExecutionStatus(AutomationExecutionStatus&& value) { m_automationExecutionStatusHasBeenSet = true; m_automationExecutionStatus = value; }
+    inline void SetAutomationExecutionStatus(AutomationExecutionStatus&& value) { m_automationExecutionStatusHasBeenSet = true; m_automationExecutionStatus = std::move(value); }
 
     /**
      * <p>The execution status of the Automation.</p>
@@ -227,7 +228,7 @@ namespace Model
     /**
      * <p>The execution status of the Automation.</p>
      */
-    inline AutomationExecution& WithAutomationExecutionStatus(AutomationExecutionStatus&& value) { SetAutomationExecutionStatus(value); return *this;}
+    inline AutomationExecution& WithAutomationExecutionStatus(AutomationExecutionStatus&& value) { SetAutomationExecutionStatus(std::move(value)); return *this;}
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
@@ -248,7 +249,7 @@ namespace Model
      * execution. An Automation document contains a list of steps that are executed in
      * order.</p>
      */
-    inline void SetStepExecutions(Aws::Vector<StepExecution>&& value) { m_stepExecutionsHasBeenSet = true; m_stepExecutions = value; }
+    inline void SetStepExecutions(Aws::Vector<StepExecution>&& value) { m_stepExecutionsHasBeenSet = true; m_stepExecutions = std::move(value); }
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
@@ -262,7 +263,7 @@ namespace Model
      * execution. An Automation document contains a list of steps that are executed in
      * order.</p>
      */
-    inline AutomationExecution& WithStepExecutions(Aws::Vector<StepExecution>&& value) { SetStepExecutions(value); return *this;}
+    inline AutomationExecution& WithStepExecutions(Aws::Vector<StepExecution>&& value) { SetStepExecutions(std::move(value)); return *this;}
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
@@ -276,7 +277,7 @@ namespace Model
      * execution. An Automation document contains a list of steps that are executed in
      * order.</p>
      */
-    inline AutomationExecution& AddStepExecutions(StepExecution&& value) { m_stepExecutionsHasBeenSet = true; m_stepExecutions.push_back(value); return *this; }
+    inline AutomationExecution& AddStepExecutions(StepExecution&& value) { m_stepExecutionsHasBeenSet = true; m_stepExecutions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
@@ -294,7 +295,7 @@ namespace Model
      * <p>The key-value map of execution parameters, which were supplied when calling
      * <code>StartAutomationExecution</code>.</p>
      */
-    inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
@@ -306,43 +307,43 @@ namespace Model
      * <p>The key-value map of execution parameters, which were supplied when calling
      * <code>StartAutomationExecution</code>.</p>
      */
-    inline AutomationExecution& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(value); return *this;}
+    inline AutomationExecution& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
      * <code>StartAutomationExecution</code>.</p>
      */
-    inline AutomationExecution& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline AutomationExecution& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
      * <code>StartAutomationExecution</code>.</p>
      */
-    inline AutomationExecution& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline AutomationExecution& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
      * <code>StartAutomationExecution</code>.</p>
      */
-    inline AutomationExecution& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline AutomationExecution& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
      * <code>StartAutomationExecution</code>.</p>
      */
-    inline AutomationExecution& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline AutomationExecution& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
      * <code>StartAutomationExecution</code>.</p>
      */
-    inline AutomationExecution& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline AutomationExecution& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
      * <code>StartAutomationExecution</code>.</p>
      */
-    inline AutomationExecution& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline AutomationExecution& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>The list of execution outputs as defined in the automation document.</p>
@@ -357,7 +358,7 @@ namespace Model
     /**
      * <p>The list of execution outputs as defined in the automation document.</p>
      */
-    inline void SetOutputs(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_outputsHasBeenSet = true; m_outputs = value; }
+    inline void SetOutputs(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_outputsHasBeenSet = true; m_outputs = std::move(value); }
 
     /**
      * <p>The list of execution outputs as defined in the automation document.</p>
@@ -367,37 +368,37 @@ namespace Model
     /**
      * <p>The list of execution outputs as defined in the automation document.</p>
      */
-    inline AutomationExecution& WithOutputs(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetOutputs(value); return *this;}
+    inline AutomationExecution& WithOutputs(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetOutputs(std::move(value)); return *this;}
 
     /**
      * <p>The list of execution outputs as defined in the automation document.</p>
      */
-    inline AutomationExecution& AddOutputs(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_outputsHasBeenSet = true; m_outputs[key] = value; return *this; }
+    inline AutomationExecution& AddOutputs(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_outputsHasBeenSet = true; m_outputs.emplace(key, value); return *this; }
 
     /**
      * <p>The list of execution outputs as defined in the automation document.</p>
      */
-    inline AutomationExecution& AddOutputs(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_outputsHasBeenSet = true; m_outputs[key] = value; return *this; }
+    inline AutomationExecution& AddOutputs(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_outputsHasBeenSet = true; m_outputs.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The list of execution outputs as defined in the automation document.</p>
      */
-    inline AutomationExecution& AddOutputs(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_outputsHasBeenSet = true; m_outputs[key] = value; return *this; }
+    inline AutomationExecution& AddOutputs(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_outputsHasBeenSet = true; m_outputs.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The list of execution outputs as defined in the automation document.</p>
      */
-    inline AutomationExecution& AddOutputs(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_outputsHasBeenSet = true; m_outputs[key] = value; return *this; }
+    inline AutomationExecution& AddOutputs(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_outputsHasBeenSet = true; m_outputs.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The list of execution outputs as defined in the automation document.</p>
      */
-    inline AutomationExecution& AddOutputs(const char* key, Aws::Vector<Aws::String>&& value) { m_outputsHasBeenSet = true; m_outputs[key] = value; return *this; }
+    inline AutomationExecution& AddOutputs(const char* key, Aws::Vector<Aws::String>&& value) { m_outputsHasBeenSet = true; m_outputs.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The list of execution outputs as defined in the automation document.</p>
      */
-    inline AutomationExecution& AddOutputs(const char* key, const Aws::Vector<Aws::String>& value) { m_outputsHasBeenSet = true; m_outputs[key] = value; return *this; }
+    inline AutomationExecution& AddOutputs(const char* key, const Aws::Vector<Aws::String>& value) { m_outputsHasBeenSet = true; m_outputs.emplace(key, value); return *this; }
 
     /**
      * <p>A message describing why an execution has failed, if the status is set to
@@ -415,7 +416,7 @@ namespace Model
      * <p>A message describing why an execution has failed, if the status is set to
      * Failed.</p>
      */
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
+    inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::move(value); }
 
     /**
      * <p>A message describing why an execution has failed, if the status is set to
@@ -433,7 +434,7 @@ namespace Model
      * <p>A message describing why an execution has failed, if the status is set to
      * Failed.</p>
      */
-    inline AutomationExecution& WithFailureMessage(Aws::String&& value) { SetFailureMessage(value); return *this;}
+    inline AutomationExecution& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
 
     /**
      * <p>A message describing why an execution has failed, if the status is set to

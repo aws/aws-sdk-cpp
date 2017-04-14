@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/iam/model/ServerCertificateMetadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * <p>The meta information of the server certificate, such as its name, path, ID,
      * and ARN.</p>
      */
-    inline void SetServerCertificateMetadata(ServerCertificateMetadata&& value) { m_serverCertificateMetadataHasBeenSet = true; m_serverCertificateMetadata = value; }
+    inline void SetServerCertificateMetadata(ServerCertificateMetadata&& value) { m_serverCertificateMetadataHasBeenSet = true; m_serverCertificateMetadata = std::move(value); }
 
     /**
      * <p>The meta information of the server certificate, such as its name, path, ID,
@@ -77,7 +78,7 @@ namespace Model
      * <p>The meta information of the server certificate, such as its name, path, ID,
      * and ARN.</p>
      */
-    inline ServerCertificate& WithServerCertificateMetadata(ServerCertificateMetadata&& value) { SetServerCertificateMetadata(value); return *this;}
+    inline ServerCertificate& WithServerCertificateMetadata(ServerCertificateMetadata&& value) { SetServerCertificateMetadata(std::move(value)); return *this;}
 
     /**
      * <p>The contents of the public key certificate.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The contents of the public key certificate.</p>
      */
-    inline void SetCertificateBody(Aws::String&& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
+    inline void SetCertificateBody(Aws::String&& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = std::move(value); }
 
     /**
      * <p>The contents of the public key certificate.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The contents of the public key certificate.</p>
      */
-    inline ServerCertificate& WithCertificateBody(Aws::String&& value) { SetCertificateBody(value); return *this;}
+    inline ServerCertificate& WithCertificateBody(Aws::String&& value) { SetCertificateBody(std::move(value)); return *this;}
 
     /**
      * <p>The contents of the public key certificate.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The contents of the public key certificate chain.</p>
      */
-    inline void SetCertificateChain(Aws::String&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = value; }
+    inline void SetCertificateChain(Aws::String&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = std::move(value); }
 
     /**
      * <p>The contents of the public key certificate chain.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The contents of the public key certificate chain.</p>
      */
-    inline ServerCertificate& WithCertificateChain(Aws::String&& value) { SetCertificateChain(value); return *this;}
+    inline ServerCertificate& WithCertificateChain(Aws::String&& value) { SetCertificateChain(std::move(value)); return *this;}
 
     /**
      * <p>The contents of the public key certificate chain.</p>

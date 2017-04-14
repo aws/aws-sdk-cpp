@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/AutomationExecutionMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>The list of details about each automation execution which has occurred which
      * matches the filter specification, if any.</p>
      */
-    inline void SetAutomationExecutionMetadataList(Aws::Vector<AutomationExecutionMetadata>&& value) { m_automationExecutionMetadataList = value; }
+    inline void SetAutomationExecutionMetadataList(Aws::Vector<AutomationExecutionMetadata>&& value) { m_automationExecutionMetadataList = std::move(value); }
 
     /**
      * <p>The list of details about each automation execution which has occurred which
@@ -69,7 +70,7 @@ namespace Model
      * <p>The list of details about each automation execution which has occurred which
      * matches the filter specification, if any.</p>
      */
-    inline DescribeAutomationExecutionsResult& WithAutomationExecutionMetadataList(Aws::Vector<AutomationExecutionMetadata>&& value) { SetAutomationExecutionMetadataList(value); return *this;}
+    inline DescribeAutomationExecutionsResult& WithAutomationExecutionMetadataList(Aws::Vector<AutomationExecutionMetadata>&& value) { SetAutomationExecutionMetadataList(std::move(value)); return *this;}
 
     /**
      * <p>The list of details about each automation execution which has occurred which
@@ -81,7 +82,7 @@ namespace Model
      * <p>The list of details about each automation execution which has occurred which
      * matches the filter specification, if any.</p>
      */
-    inline DescribeAutomationExecutionsResult& AddAutomationExecutionMetadataList(AutomationExecutionMetadata&& value) { m_automationExecutionMetadataList.push_back(value); return *this; }
+    inline DescribeAutomationExecutionsResult& AddAutomationExecutionMetadataList(AutomationExecutionMetadata&& value) { m_automationExecutionMetadataList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -99,7 +100,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -117,7 +118,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline DescribeAutomationExecutionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeAutomationExecutionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no

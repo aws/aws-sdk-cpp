@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/EC2TagFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The tag filter key, type, and value used to identify Amazon EC2 instances in
      * a replacement environment for a blue/green deployment.</p>
      */
-    inline void SetTagFilters(Aws::Vector<EC2TagFilter>&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = value; }
+    inline void SetTagFilters(Aws::Vector<EC2TagFilter>&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = std::move(value); }
 
     /**
      * <p>The tag filter key, type, and value used to identify Amazon EC2 instances in
@@ -74,7 +75,7 @@ namespace Model
      * <p>The tag filter key, type, and value used to identify Amazon EC2 instances in
      * a replacement environment for a blue/green deployment.</p>
      */
-    inline TargetInstances& WithTagFilters(Aws::Vector<EC2TagFilter>&& value) { SetTagFilters(value); return *this;}
+    inline TargetInstances& WithTagFilters(Aws::Vector<EC2TagFilter>&& value) { SetTagFilters(std::move(value)); return *this;}
 
     /**
      * <p>The tag filter key, type, and value used to identify Amazon EC2 instances in
@@ -86,7 +87,7 @@ namespace Model
      * <p>The tag filter key, type, and value used to identify Amazon EC2 instances in
      * a replacement environment for a blue/green deployment.</p>
      */
-    inline TargetInstances& AddTagFilters(EC2TagFilter&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(value); return *this; }
+    inline TargetInstances& AddTagFilters(EC2TagFilter&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of one or more Auto Scaling groups to identify a replacement
@@ -104,7 +105,7 @@ namespace Model
      * <p>The names of one or more Auto Scaling groups to identify a replacement
      * environment for a blue/green deployment.</p>
      */
-    inline void SetAutoScalingGroups(Aws::Vector<Aws::String>&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = value; }
+    inline void SetAutoScalingGroups(Aws::Vector<Aws::String>&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = std::move(value); }
 
     /**
      * <p>The names of one or more Auto Scaling groups to identify a replacement
@@ -116,7 +117,7 @@ namespace Model
      * <p>The names of one or more Auto Scaling groups to identify a replacement
      * environment for a blue/green deployment.</p>
      */
-    inline TargetInstances& WithAutoScalingGroups(Aws::Vector<Aws::String>&& value) { SetAutoScalingGroups(value); return *this;}
+    inline TargetInstances& WithAutoScalingGroups(Aws::Vector<Aws::String>&& value) { SetAutoScalingGroups(std::move(value)); return *this;}
 
     /**
      * <p>The names of one or more Auto Scaling groups to identify a replacement
@@ -128,7 +129,7 @@ namespace Model
      * <p>The names of one or more Auto Scaling groups to identify a replacement
      * environment for a blue/green deployment.</p>
      */
-    inline TargetInstances& AddAutoScalingGroups(Aws::String&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
+    inline TargetInstances& AddAutoScalingGroups(Aws::String&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of one or more Auto Scaling groups to identify a replacement

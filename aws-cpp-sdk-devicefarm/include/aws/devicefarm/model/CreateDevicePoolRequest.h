@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devicefarm/model/Rule.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The ARN of the project for the device pool.</p>
      */
-    inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
+    inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::move(value); }
 
     /**
      * <p>The ARN of the project for the device pool.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The ARN of the project for the device pool.</p>
      */
-    inline CreateDevicePoolRequest& WithProjectArn(Aws::String&& value) { SetProjectArn(value); return *this;}
+    inline CreateDevicePoolRequest& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the project for the device pool.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The device pool's name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The device pool's name.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The device pool's name.</p>
      */
-    inline CreateDevicePoolRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateDevicePoolRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The device pool's name.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The device pool's description.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The device pool's description.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>The device pool's description.</p>
      */
-    inline CreateDevicePoolRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateDevicePoolRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The device pool's description.</p>
@@ -159,7 +160,7 @@ namespace Model
     /**
      * <p>The device pool's rules.</p>
      */
-    inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = value; }
+    inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
      * <p>The device pool's rules.</p>
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p>The device pool's rules.</p>
      */
-    inline CreateDevicePoolRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(value); return *this;}
+    inline CreateDevicePoolRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
      * <p>The device pool's rules.</p>
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p>The device pool's rules.</p>
      */
-    inline CreateDevicePoolRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
+    inline CreateDevicePoolRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_projectArn;

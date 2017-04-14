@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The ARN of the schema that contains the facet and attribute.</p>
      */
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
+    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
 
     /**
      * <p>The ARN of the schema that contains the facet and attribute.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The ARN of the schema that contains the facet and attribute.</p>
      */
-    inline AttributeKey& WithSchemaArn(Aws::String&& value) { SetSchemaArn(value); return *this;}
+    inline AttributeKey& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the schema that contains the facet and attribute.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The name of the facet the attribute exists within.</p>
      */
-    inline void SetFacetName(Aws::String&& value) { m_facetNameHasBeenSet = true; m_facetName = value; }
+    inline void SetFacetName(Aws::String&& value) { m_facetNameHasBeenSet = true; m_facetName = std::move(value); }
 
     /**
      * <p>The name of the facet the attribute exists within.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The name of the facet the attribute exists within.</p>
      */
-    inline AttributeKey& WithFacetName(Aws::String&& value) { SetFacetName(value); return *this;}
+    inline AttributeKey& WithFacetName(Aws::String&& value) { SetFacetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the facet the attribute exists within.</p>
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>The name of the attribute.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the attribute.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The name of the attribute.</p>
      */
-    inline AttributeKey& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline AttributeKey& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the attribute.</p>

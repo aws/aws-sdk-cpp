@@ -19,6 +19,7 @@
 #include <aws/ec2/model/SlotStartTimeRangeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>One or more Scheduled Instance IDs.</p>
      */
-    inline void SetScheduledInstanceIds(Aws::Vector<Aws::String>&& value) { m_scheduledInstanceIdsHasBeenSet = true; m_scheduledInstanceIds = value; }
+    inline void SetScheduledInstanceIds(Aws::Vector<Aws::String>&& value) { m_scheduledInstanceIdsHasBeenSet = true; m_scheduledInstanceIds = std::move(value); }
 
     /**
      * <p>One or more Scheduled Instance IDs.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>One or more Scheduled Instance IDs.</p>
      */
-    inline DescribeScheduledInstancesRequest& WithScheduledInstanceIds(Aws::Vector<Aws::String>&& value) { SetScheduledInstanceIds(value); return *this;}
+    inline DescribeScheduledInstancesRequest& WithScheduledInstanceIds(Aws::Vector<Aws::String>&& value) { SetScheduledInstanceIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more Scheduled Instance IDs.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>One or more Scheduled Instance IDs.</p>
      */
-    inline DescribeScheduledInstancesRequest& AddScheduledInstanceIds(Aws::String&& value) { m_scheduledInstanceIdsHasBeenSet = true; m_scheduledInstanceIds.push_back(value); return *this; }
+    inline DescribeScheduledInstancesRequest& AddScheduledInstanceIds(Aws::String&& value) { m_scheduledInstanceIdsHasBeenSet = true; m_scheduledInstanceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more Scheduled Instance IDs.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The time period for the first schedule to start.</p>
      */
-    inline void SetSlotStartTimeRange(SlotStartTimeRangeRequest&& value) { m_slotStartTimeRangeHasBeenSet = true; m_slotStartTimeRange = value; }
+    inline void SetSlotStartTimeRange(SlotStartTimeRangeRequest&& value) { m_slotStartTimeRangeHasBeenSet = true; m_slotStartTimeRange = std::move(value); }
 
     /**
      * <p>The time period for the first schedule to start.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The time period for the first schedule to start.</p>
      */
-    inline DescribeScheduledInstancesRequest& WithSlotStartTimeRange(SlotStartTimeRangeRequest&& value) { SetSlotStartTimeRange(value); return *this;}
+    inline DescribeScheduledInstancesRequest& WithSlotStartTimeRange(SlotStartTimeRangeRequest&& value) { SetSlotStartTimeRange(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of results.</p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>The token for the next set of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of results.</p>
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>The token for the next set of results.</p>
      */
-    inline DescribeScheduledInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeScheduledInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of results.</p>
@@ -220,7 +221,7 @@ namespace Model
      * <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or
      * <code>Windows</code>).</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
@@ -242,7 +243,7 @@ namespace Model
      * <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or
      * <code>Windows</code>).</p> </li> </ul>
      */
-    inline DescribeScheduledInstancesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeScheduledInstancesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
@@ -264,7 +265,7 @@ namespace Model
      * <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or
      * <code>Windows</code>).</p> </li> </ul>
      */
-    inline DescribeScheduledInstancesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeScheduledInstancesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

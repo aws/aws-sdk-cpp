@@ -16,6 +16,7 @@
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kinesis/model/MetricsName.h>
+#include <utility>
 
 namespace Aws
 {
@@ -90,7 +91,7 @@ namespace Model
      * the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon
      * Kinesis Streams Developer Guide</i>.</p>
      */
-    inline void SetShardLevelMetrics(Aws::Vector<MetricsName>&& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics = value; }
+    inline void SetShardLevelMetrics(Aws::Vector<MetricsName>&& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics = std::move(value); }
 
     /**
      * <p>List of shard-level metrics.</p> <p>The following are the valid shard-level
@@ -122,7 +123,7 @@ namespace Model
      * the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon
      * Kinesis Streams Developer Guide</i>.</p>
      */
-    inline EnhancedMetrics& WithShardLevelMetrics(Aws::Vector<MetricsName>&& value) { SetShardLevelMetrics(value); return *this;}
+    inline EnhancedMetrics& WithShardLevelMetrics(Aws::Vector<MetricsName>&& value) { SetShardLevelMetrics(std::move(value)); return *this;}
 
     /**
      * <p>List of shard-level metrics.</p> <p>The following are the valid shard-level
@@ -154,7 +155,7 @@ namespace Model
      * the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon
      * Kinesis Streams Developer Guide</i>.</p>
      */
-    inline EnhancedMetrics& AddShardLevelMetrics(MetricsName&& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics.push_back(value); return *this; }
+    inline EnhancedMetrics& AddShardLevelMetrics(MetricsName&& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<MetricsName> m_shardLevelMetrics;

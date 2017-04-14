@@ -16,6 +16,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/InspectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ARN of the resource group that is used to create an application.</p>
      */
-    inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = value; }
+    inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = std::move(value); }
 
     /**
      * <p>The ARN of the resource group that is used to create an application.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ARN of the resource group that is used to create an application.</p>
      */
-    inline PreviewAgentsForResourceGroupRequest& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(value); return *this;}
+    inline PreviewAgentsForResourceGroupRequest& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the resource group that is used to create an application.</p>
@@ -95,7 +96,7 @@ namespace Model
      * <b>nextToken</b> in the request with the value of <b>NextToken</b> from previous
      * response to continue listing data.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
@@ -122,7 +123,7 @@ namespace Model
      * <b>nextToken</b> in the request with the value of <b>NextToken</b> from previous
      * response to continue listing data.</p>
      */
-    inline PreviewAgentsForResourceGroupRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline PreviewAgentsForResourceGroupRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this

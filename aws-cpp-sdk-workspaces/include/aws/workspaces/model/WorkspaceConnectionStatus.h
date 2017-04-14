@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces/model/ConnectionState.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ID of the WorkSpace.</p>
      */
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
+    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
 
     /**
      * <p>The ID of the WorkSpace.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ID of the WorkSpace.</p>
      */
-    inline WorkspaceConnectionStatus& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(value); return *this;}
+    inline WorkspaceConnectionStatus& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the WorkSpace.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in
      * a Stopped state.</p>
      */
-    inline void SetConnectionState(ConnectionState&& value) { m_connectionStateHasBeenSet = true; m_connectionState = value; }
+    inline void SetConnectionState(ConnectionState&& value) { m_connectionStateHasBeenSet = true; m_connectionState = std::move(value); }
 
     /**
      * <p>The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in
@@ -108,7 +109,7 @@ namespace Model
      * <p>The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in
      * a Stopped state.</p>
      */
-    inline WorkspaceConnectionStatus& WithConnectionState(ConnectionState&& value) { SetConnectionState(value); return *this;}
+    inline WorkspaceConnectionStatus& WithConnectionState(ConnectionState&& value) { SetConnectionState(std::move(value)); return *this;}
 
     /**
      * <p>The timestamp of the connection state check.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The timestamp of the connection state check.</p>
      */
-    inline void SetConnectionStateCheckTimestamp(Aws::Utils::DateTime&& value) { m_connectionStateCheckTimestampHasBeenSet = true; m_connectionStateCheckTimestamp = value; }
+    inline void SetConnectionStateCheckTimestamp(Aws::Utils::DateTime&& value) { m_connectionStateCheckTimestampHasBeenSet = true; m_connectionStateCheckTimestamp = std::move(value); }
 
     /**
      * <p>The timestamp of the connection state check.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The timestamp of the connection state check.</p>
      */
-    inline WorkspaceConnectionStatus& WithConnectionStateCheckTimestamp(Aws::Utils::DateTime&& value) { SetConnectionStateCheckTimestamp(value); return *this;}
+    inline WorkspaceConnectionStatus& WithConnectionStateCheckTimestamp(Aws::Utils::DateTime&& value) { SetConnectionStateCheckTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The timestamp of the last known user connection.</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>The timestamp of the last known user connection.</p>
      */
-    inline void SetLastKnownUserConnectionTimestamp(Aws::Utils::DateTime&& value) { m_lastKnownUserConnectionTimestampHasBeenSet = true; m_lastKnownUserConnectionTimestamp = value; }
+    inline void SetLastKnownUserConnectionTimestamp(Aws::Utils::DateTime&& value) { m_lastKnownUserConnectionTimestampHasBeenSet = true; m_lastKnownUserConnectionTimestamp = std::move(value); }
 
     /**
      * <p>The timestamp of the last known user connection.</p>
@@ -158,7 +159,7 @@ namespace Model
     /**
      * <p>The timestamp of the last known user connection.</p>
      */
-    inline WorkspaceConnectionStatus& WithLastKnownUserConnectionTimestamp(Aws::Utils::DateTime&& value) { SetLastKnownUserConnectionTimestamp(value); return *this;}
+    inline WorkspaceConnectionStatus& WithLastKnownUserConnectionTimestamp(Aws::Utils::DateTime&& value) { SetLastKnownUserConnectionTimestamp(std::move(value)); return *this;}
 
   private:
     Aws::String m_workspaceId;

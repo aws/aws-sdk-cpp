@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The name of the Availability Zone.</p>
      */
-    inline void SetZoneName(Aws::String&& value) { m_zoneNameHasBeenSet = true; m_zoneName = value; }
+    inline void SetZoneName(Aws::String&& value) { m_zoneNameHasBeenSet = true; m_zoneName = std::move(value); }
 
     /**
      * <p>The name of the Availability Zone.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of the Availability Zone.</p>
      */
-    inline AvailabilityZone& WithZoneName(Aws::String&& value) { SetZoneName(value); return *this;}
+    inline AvailabilityZone& WithZoneName(Aws::String&& value) { SetZoneName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Availability Zone.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The state of the Availability Zone.</p>
      */
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the Availability Zone.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The state of the Availability Zone.</p>
      */
-    inline AvailabilityZone& WithState(Aws::String&& value) { SetState(value); return *this;}
+    inline AvailabilityZone& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The state of the Availability Zone.</p>

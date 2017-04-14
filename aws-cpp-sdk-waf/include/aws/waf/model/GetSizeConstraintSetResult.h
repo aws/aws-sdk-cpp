@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/SizeConstraintSet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
      * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p> </li>
      * </ul>
      */
-    inline void SetSizeConstraintSet(SizeConstraintSet&& value) { m_sizeConstraintSet = value; }
+    inline void SetSizeConstraintSet(SizeConstraintSet&& value) { m_sizeConstraintSet = std::move(value); }
 
     /**
      * <p>Information about the <a>SizeConstraintSet</a> that you specified in the
@@ -107,7 +108,7 @@ namespace Model
      * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p> </li>
      * </ul>
      */
-    inline GetSizeConstraintSetResult& WithSizeConstraintSet(SizeConstraintSet&& value) { SetSizeConstraintSet(value); return *this;}
+    inline GetSizeConstraintSetResult& WithSizeConstraintSet(SizeConstraintSet&& value) { SetSizeConstraintSet(std::move(value)); return *this;}
 
   private:
     SizeConstraintSet m_sizeConstraintSet;

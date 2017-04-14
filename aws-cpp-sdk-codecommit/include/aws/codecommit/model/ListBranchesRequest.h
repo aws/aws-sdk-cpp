@@ -16,6 +16,7 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/CodeCommitRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of the repository that contains the branches.</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The name of the repository that contains the branches.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the repository that contains the branches.</p>
      */
-    inline ListBranchesRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline ListBranchesRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the repository that contains the branches.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>An enumeration token that allows the operation to batch the results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>An enumeration token that allows the operation to batch the results.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>An enumeration token that allows the operation to batch the results.</p>
      */
-    inline ListBranchesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListBranchesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An enumeration token that allows the operation to batch the results.</p>

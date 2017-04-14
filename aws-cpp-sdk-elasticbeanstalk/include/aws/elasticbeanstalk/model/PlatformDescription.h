@@ -22,6 +22,7 @@
 #include <aws/elasticbeanstalk/model/PlatformProgrammingLanguage.h>
 #include <aws/elasticbeanstalk/model/PlatformFramework.h>
 #include <aws/elasticbeanstalk/model/CustomAmi.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ARN of the platform.</p>
      */
-    inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
+    inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = std::move(value); }
 
     /**
      * <p>The ARN of the platform.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The ARN of the platform.</p>
      */
-    inline PlatformDescription& WithPlatformArn(Aws::String&& value) { SetPlatformArn(value); return *this;}
+    inline PlatformDescription& WithPlatformArn(Aws::String&& value) { SetPlatformArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the platform.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The AWS account ID of the person who created the platform.</p>
      */
-    inline void SetPlatformOwner(Aws::String&& value) { m_platformOwnerHasBeenSet = true; m_platformOwner = value; }
+    inline void SetPlatformOwner(Aws::String&& value) { m_platformOwnerHasBeenSet = true; m_platformOwner = std::move(value); }
 
     /**
      * <p>The AWS account ID of the person who created the platform.</p>
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>The AWS account ID of the person who created the platform.</p>
      */
-    inline PlatformDescription& WithPlatformOwner(Aws::String&& value) { SetPlatformOwner(value); return *this;}
+    inline PlatformDescription& WithPlatformOwner(Aws::String&& value) { SetPlatformOwner(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID of the person who created the platform.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>The name of the platform.</p>
      */
-    inline void SetPlatformName(Aws::String&& value) { m_platformNameHasBeenSet = true; m_platformName = value; }
+    inline void SetPlatformName(Aws::String&& value) { m_platformNameHasBeenSet = true; m_platformName = std::move(value); }
 
     /**
      * <p>The name of the platform.</p>
@@ -150,7 +151,7 @@ namespace Model
     /**
      * <p>The name of the platform.</p>
      */
-    inline PlatformDescription& WithPlatformName(Aws::String&& value) { SetPlatformName(value); return *this;}
+    inline PlatformDescription& WithPlatformName(Aws::String&& value) { SetPlatformName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the platform.</p>
@@ -170,7 +171,7 @@ namespace Model
     /**
      * <p>The version of the platform.</p>
      */
-    inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
+    inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
      * <p>The version of the platform.</p>
@@ -185,7 +186,7 @@ namespace Model
     /**
      * <p>The version of the platform.</p>
      */
-    inline PlatformDescription& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(value); return *this;}
+    inline PlatformDescription& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the platform.</p>
@@ -205,7 +206,7 @@ namespace Model
     /**
      * <p>The name of the solution stack used by the platform.</p>
      */
-    inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
+    inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = std::move(value); }
 
     /**
      * <p>The name of the solution stack used by the platform.</p>
@@ -220,7 +221,7 @@ namespace Model
     /**
      * <p>The name of the solution stack used by the platform.</p>
      */
-    inline PlatformDescription& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(value); return *this;}
+    inline PlatformDescription& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the solution stack used by the platform.</p>
@@ -240,7 +241,7 @@ namespace Model
     /**
      * <p>The status of the platform.</p>
      */
-    inline void SetPlatformStatus(PlatformStatus&& value) { m_platformStatusHasBeenSet = true; m_platformStatus = value; }
+    inline void SetPlatformStatus(PlatformStatus&& value) { m_platformStatusHasBeenSet = true; m_platformStatus = std::move(value); }
 
     /**
      * <p>The status of the platform.</p>
@@ -250,7 +251,7 @@ namespace Model
     /**
      * <p>The status of the platform.</p>
      */
-    inline PlatformDescription& WithPlatformStatus(PlatformStatus&& value) { SetPlatformStatus(value); return *this;}
+    inline PlatformDescription& WithPlatformStatus(PlatformStatus&& value) { SetPlatformStatus(std::move(value)); return *this;}
 
     /**
      * <p>The date when the platform was created.</p>
@@ -265,7 +266,7 @@ namespace Model
     /**
      * <p>The date when the platform was created.</p>
      */
-    inline void SetDateCreated(Aws::Utils::DateTime&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
+    inline void SetDateCreated(Aws::Utils::DateTime&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::move(value); }
 
     /**
      * <p>The date when the platform was created.</p>
@@ -275,7 +276,7 @@ namespace Model
     /**
      * <p>The date when the platform was created.</p>
      */
-    inline PlatformDescription& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(value); return *this;}
+    inline PlatformDescription& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(std::move(value)); return *this;}
 
     /**
      * <p>The date when the platform was last updated.</p>
@@ -290,7 +291,7 @@ namespace Model
     /**
      * <p>The date when the platform was last updated.</p>
      */
-    inline void SetDateUpdated(Aws::Utils::DateTime&& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = value; }
+    inline void SetDateUpdated(Aws::Utils::DateTime&& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = std::move(value); }
 
     /**
      * <p>The date when the platform was last updated.</p>
@@ -300,7 +301,7 @@ namespace Model
     /**
      * <p>The date when the platform was last updated.</p>
      */
-    inline PlatformDescription& WithDateUpdated(Aws::Utils::DateTime&& value) { SetDateUpdated(value); return *this;}
+    inline PlatformDescription& WithDateUpdated(Aws::Utils::DateTime&& value) { SetDateUpdated(std::move(value)); return *this;}
 
     /**
      * <p>The category of the platform.</p>
@@ -315,7 +316,7 @@ namespace Model
     /**
      * <p>The category of the platform.</p>
      */
-    inline void SetPlatformCategory(Aws::String&& value) { m_platformCategoryHasBeenSet = true; m_platformCategory = value; }
+    inline void SetPlatformCategory(Aws::String&& value) { m_platformCategoryHasBeenSet = true; m_platformCategory = std::move(value); }
 
     /**
      * <p>The category of the platform.</p>
@@ -330,7 +331,7 @@ namespace Model
     /**
      * <p>The category of the platform.</p>
      */
-    inline PlatformDescription& WithPlatformCategory(Aws::String&& value) { SetPlatformCategory(value); return *this;}
+    inline PlatformDescription& WithPlatformCategory(Aws::String&& value) { SetPlatformCategory(std::move(value)); return *this;}
 
     /**
      * <p>The category of the platform.</p>
@@ -350,7 +351,7 @@ namespace Model
     /**
      * <p>The description of the platform.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the platform.</p>
@@ -365,7 +366,7 @@ namespace Model
     /**
      * <p>The description of the platform.</p>
      */
-    inline PlatformDescription& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline PlatformDescription& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the platform.</p>
@@ -385,7 +386,7 @@ namespace Model
     /**
      * <p>Information about the maintainer of the platform.</p>
      */
-    inline void SetMaintainer(Aws::String&& value) { m_maintainerHasBeenSet = true; m_maintainer = value; }
+    inline void SetMaintainer(Aws::String&& value) { m_maintainerHasBeenSet = true; m_maintainer = std::move(value); }
 
     /**
      * <p>Information about the maintainer of the platform.</p>
@@ -400,7 +401,7 @@ namespace Model
     /**
      * <p>Information about the maintainer of the platform.</p>
      */
-    inline PlatformDescription& WithMaintainer(Aws::String&& value) { SetMaintainer(value); return *this;}
+    inline PlatformDescription& WithMaintainer(Aws::String&& value) { SetMaintainer(std::move(value)); return *this;}
 
     /**
      * <p>Information about the maintainer of the platform.</p>
@@ -420,7 +421,7 @@ namespace Model
     /**
      * <p>The operating system used by the platform.</p>
      */
-    inline void SetOperatingSystemName(Aws::String&& value) { m_operatingSystemNameHasBeenSet = true; m_operatingSystemName = value; }
+    inline void SetOperatingSystemName(Aws::String&& value) { m_operatingSystemNameHasBeenSet = true; m_operatingSystemName = std::move(value); }
 
     /**
      * <p>The operating system used by the platform.</p>
@@ -435,7 +436,7 @@ namespace Model
     /**
      * <p>The operating system used by the platform.</p>
      */
-    inline PlatformDescription& WithOperatingSystemName(Aws::String&& value) { SetOperatingSystemName(value); return *this;}
+    inline PlatformDescription& WithOperatingSystemName(Aws::String&& value) { SetOperatingSystemName(std::move(value)); return *this;}
 
     /**
      * <p>The operating system used by the platform.</p>
@@ -455,7 +456,7 @@ namespace Model
     /**
      * <p>The version of the operating system used by the platform.</p>
      */
-    inline void SetOperatingSystemVersion(Aws::String&& value) { m_operatingSystemVersionHasBeenSet = true; m_operatingSystemVersion = value; }
+    inline void SetOperatingSystemVersion(Aws::String&& value) { m_operatingSystemVersionHasBeenSet = true; m_operatingSystemVersion = std::move(value); }
 
     /**
      * <p>The version of the operating system used by the platform.</p>
@@ -470,7 +471,7 @@ namespace Model
     /**
      * <p>The version of the operating system used by the platform.</p>
      */
-    inline PlatformDescription& WithOperatingSystemVersion(Aws::String&& value) { SetOperatingSystemVersion(value); return *this;}
+    inline PlatformDescription& WithOperatingSystemVersion(Aws::String&& value) { SetOperatingSystemVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the operating system used by the platform.</p>
@@ -490,7 +491,7 @@ namespace Model
     /**
      * <p>The programming languages supported by the platform.</p>
      */
-    inline void SetProgrammingLanguages(Aws::Vector<PlatformProgrammingLanguage>&& value) { m_programmingLanguagesHasBeenSet = true; m_programmingLanguages = value; }
+    inline void SetProgrammingLanguages(Aws::Vector<PlatformProgrammingLanguage>&& value) { m_programmingLanguagesHasBeenSet = true; m_programmingLanguages = std::move(value); }
 
     /**
      * <p>The programming languages supported by the platform.</p>
@@ -500,7 +501,7 @@ namespace Model
     /**
      * <p>The programming languages supported by the platform.</p>
      */
-    inline PlatformDescription& WithProgrammingLanguages(Aws::Vector<PlatformProgrammingLanguage>&& value) { SetProgrammingLanguages(value); return *this;}
+    inline PlatformDescription& WithProgrammingLanguages(Aws::Vector<PlatformProgrammingLanguage>&& value) { SetProgrammingLanguages(std::move(value)); return *this;}
 
     /**
      * <p>The programming languages supported by the platform.</p>
@@ -510,7 +511,7 @@ namespace Model
     /**
      * <p>The programming languages supported by the platform.</p>
      */
-    inline PlatformDescription& AddProgrammingLanguages(PlatformProgrammingLanguage&& value) { m_programmingLanguagesHasBeenSet = true; m_programmingLanguages.push_back(value); return *this; }
+    inline PlatformDescription& AddProgrammingLanguages(PlatformProgrammingLanguage&& value) { m_programmingLanguagesHasBeenSet = true; m_programmingLanguages.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The frameworks supported by the platform.</p>
@@ -525,7 +526,7 @@ namespace Model
     /**
      * <p>The frameworks supported by the platform.</p>
      */
-    inline void SetFrameworks(Aws::Vector<PlatformFramework>&& value) { m_frameworksHasBeenSet = true; m_frameworks = value; }
+    inline void SetFrameworks(Aws::Vector<PlatformFramework>&& value) { m_frameworksHasBeenSet = true; m_frameworks = std::move(value); }
 
     /**
      * <p>The frameworks supported by the platform.</p>
@@ -535,7 +536,7 @@ namespace Model
     /**
      * <p>The frameworks supported by the platform.</p>
      */
-    inline PlatformDescription& WithFrameworks(Aws::Vector<PlatformFramework>&& value) { SetFrameworks(value); return *this;}
+    inline PlatformDescription& WithFrameworks(Aws::Vector<PlatformFramework>&& value) { SetFrameworks(std::move(value)); return *this;}
 
     /**
      * <p>The frameworks supported by the platform.</p>
@@ -545,7 +546,7 @@ namespace Model
     /**
      * <p>The frameworks supported by the platform.</p>
      */
-    inline PlatformDescription& AddFrameworks(PlatformFramework&& value) { m_frameworksHasBeenSet = true; m_frameworks.push_back(value); return *this; }
+    inline PlatformDescription& AddFrameworks(PlatformFramework&& value) { m_frameworksHasBeenSet = true; m_frameworks.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The custom AMIs supported by the platform.</p>
@@ -560,7 +561,7 @@ namespace Model
     /**
      * <p>The custom AMIs supported by the platform.</p>
      */
-    inline void SetCustomAmiList(Aws::Vector<CustomAmi>&& value) { m_customAmiListHasBeenSet = true; m_customAmiList = value; }
+    inline void SetCustomAmiList(Aws::Vector<CustomAmi>&& value) { m_customAmiListHasBeenSet = true; m_customAmiList = std::move(value); }
 
     /**
      * <p>The custom AMIs supported by the platform.</p>
@@ -570,7 +571,7 @@ namespace Model
     /**
      * <p>The custom AMIs supported by the platform.</p>
      */
-    inline PlatformDescription& WithCustomAmiList(Aws::Vector<CustomAmi>&& value) { SetCustomAmiList(value); return *this;}
+    inline PlatformDescription& WithCustomAmiList(Aws::Vector<CustomAmi>&& value) { SetCustomAmiList(std::move(value)); return *this;}
 
     /**
      * <p>The custom AMIs supported by the platform.</p>
@@ -580,7 +581,7 @@ namespace Model
     /**
      * <p>The custom AMIs supported by the platform.</p>
      */
-    inline PlatformDescription& AddCustomAmiList(CustomAmi&& value) { m_customAmiListHasBeenSet = true; m_customAmiList.push_back(value); return *this; }
+    inline PlatformDescription& AddCustomAmiList(CustomAmi&& value) { m_customAmiListHasBeenSet = true; m_customAmiList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The tiers supported by the platform.</p>
@@ -595,7 +596,7 @@ namespace Model
     /**
      * <p>The tiers supported by the platform.</p>
      */
-    inline void SetSupportedTierList(Aws::Vector<Aws::String>&& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList = value; }
+    inline void SetSupportedTierList(Aws::Vector<Aws::String>&& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList = std::move(value); }
 
     /**
      * <p>The tiers supported by the platform.</p>
@@ -605,7 +606,7 @@ namespace Model
     /**
      * <p>The tiers supported by the platform.</p>
      */
-    inline PlatformDescription& WithSupportedTierList(Aws::Vector<Aws::String>&& value) { SetSupportedTierList(value); return *this;}
+    inline PlatformDescription& WithSupportedTierList(Aws::Vector<Aws::String>&& value) { SetSupportedTierList(std::move(value)); return *this;}
 
     /**
      * <p>The tiers supported by the platform.</p>
@@ -615,7 +616,7 @@ namespace Model
     /**
      * <p>The tiers supported by the platform.</p>
      */
-    inline PlatformDescription& AddSupportedTierList(Aws::String&& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList.push_back(value); return *this; }
+    inline PlatformDescription& AddSupportedTierList(Aws::String&& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The tiers supported by the platform.</p>
@@ -635,7 +636,7 @@ namespace Model
     /**
      * <p>The additions supported by the platform.</p>
      */
-    inline void SetSupportedAddonList(Aws::Vector<Aws::String>&& value) { m_supportedAddonListHasBeenSet = true; m_supportedAddonList = value; }
+    inline void SetSupportedAddonList(Aws::Vector<Aws::String>&& value) { m_supportedAddonListHasBeenSet = true; m_supportedAddonList = std::move(value); }
 
     /**
      * <p>The additions supported by the platform.</p>
@@ -645,7 +646,7 @@ namespace Model
     /**
      * <p>The additions supported by the platform.</p>
      */
-    inline PlatformDescription& WithSupportedAddonList(Aws::Vector<Aws::String>&& value) { SetSupportedAddonList(value); return *this;}
+    inline PlatformDescription& WithSupportedAddonList(Aws::Vector<Aws::String>&& value) { SetSupportedAddonList(std::move(value)); return *this;}
 
     /**
      * <p>The additions supported by the platform.</p>
@@ -655,7 +656,7 @@ namespace Model
     /**
      * <p>The additions supported by the platform.</p>
      */
-    inline PlatformDescription& AddSupportedAddonList(Aws::String&& value) { m_supportedAddonListHasBeenSet = true; m_supportedAddonList.push_back(value); return *this; }
+    inline PlatformDescription& AddSupportedAddonList(Aws::String&& value) { m_supportedAddonListHasBeenSet = true; m_supportedAddonList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The additions supported by the platform.</p>

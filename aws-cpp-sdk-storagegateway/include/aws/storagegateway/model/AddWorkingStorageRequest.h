@@ -17,6 +17,7 @@
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
@@ -57,7 +58,7 @@ namespace Model
     inline AddWorkingStorageRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     
-    inline AddWorkingStorageRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline AddWorkingStorageRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     
     inline AddWorkingStorageRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
@@ -81,7 +82,7 @@ namespace Model
      * storage. Each string have a minimum length of 1 and maximum length of 300. You
      * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
      */
-    inline void SetDiskIds(Aws::Vector<Aws::String>&& value) { m_diskIdsHasBeenSet = true; m_diskIds = value; }
+    inline void SetDiskIds(Aws::Vector<Aws::String>&& value) { m_diskIdsHasBeenSet = true; m_diskIds = std::move(value); }
 
     /**
      * <p>An array of strings that identify disks that are to be configured as working
@@ -95,7 +96,7 @@ namespace Model
      * storage. Each string have a minimum length of 1 and maximum length of 300. You
      * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
      */
-    inline AddWorkingStorageRequest& WithDiskIds(Aws::Vector<Aws::String>&& value) { SetDiskIds(value); return *this;}
+    inline AddWorkingStorageRequest& WithDiskIds(Aws::Vector<Aws::String>&& value) { SetDiskIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of strings that identify disks that are to be configured as working
@@ -109,7 +110,7 @@ namespace Model
      * storage. Each string have a minimum length of 1 and maximum length of 300. You
      * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
      */
-    inline AddWorkingStorageRequest& AddDiskIds(Aws::String&& value) { m_diskIdsHasBeenSet = true; m_diskIds.push_back(value); return *this; }
+    inline AddWorkingStorageRequest& AddDiskIds(Aws::String&& value) { m_diskIdsHasBeenSet = true; m_diskIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of strings that identify disks that are to be configured as working

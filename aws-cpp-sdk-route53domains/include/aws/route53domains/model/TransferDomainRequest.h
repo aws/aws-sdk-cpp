@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53domains/model/ContactDetail.h>
 #include <aws/route53domains/model/Nameserver.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
      * supported.</p> <p>Required: Yes</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
@@ -88,7 +89,7 @@ namespace Model
      * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
      * supported.</p> <p>Required: Yes</p>
      */
-    inline TransferDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline TransferDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
-    inline void SetIdnLangCode(Aws::String&& value) { m_idnLangCodeHasBeenSet = true; m_idnLangCode = value; }
+    inline void SetIdnLangCode(Aws::String&& value) { m_idnLangCodeHasBeenSet = true; m_idnLangCode = std::move(value); }
 
     /**
      * <p>Reserved for future use.</p>
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
-    inline TransferDomainRequest& WithIdnLangCode(Aws::String&& value) { SetIdnLangCode(value); return *this;}
+    inline TransferDomainRequest& WithIdnLangCode(Aws::String&& value) { SetIdnLangCode(std::move(value)); return *this;}
 
     /**
      * <p>Reserved for future use.</p>
@@ -173,7 +174,7 @@ namespace Model
      * <p>Contains details for the host and glue IP addresses.</p> <p>Type: Complex</p>
      * <p>Children: <code>GlueIps</code>, <code>Name</code></p> <p>Required: No</p>
      */
-    inline void SetNameservers(Aws::Vector<Nameserver>&& value) { m_nameserversHasBeenSet = true; m_nameservers = value; }
+    inline void SetNameservers(Aws::Vector<Nameserver>&& value) { m_nameserversHasBeenSet = true; m_nameservers = std::move(value); }
 
     /**
      * <p>Contains details for the host and glue IP addresses.</p> <p>Type: Complex</p>
@@ -185,7 +186,7 @@ namespace Model
      * <p>Contains details for the host and glue IP addresses.</p> <p>Type: Complex</p>
      * <p>Children: <code>GlueIps</code>, <code>Name</code></p> <p>Required: No</p>
      */
-    inline TransferDomainRequest& WithNameservers(Aws::Vector<Nameserver>&& value) { SetNameservers(value); return *this;}
+    inline TransferDomainRequest& WithNameservers(Aws::Vector<Nameserver>&& value) { SetNameservers(std::move(value)); return *this;}
 
     /**
      * <p>Contains details for the host and glue IP addresses.</p> <p>Type: Complex</p>
@@ -197,7 +198,7 @@ namespace Model
      * <p>Contains details for the host and glue IP addresses.</p> <p>Type: Complex</p>
      * <p>Children: <code>GlueIps</code>, <code>Name</code></p> <p>Required: No</p>
      */
-    inline TransferDomainRequest& AddNameservers(Nameserver&& value) { m_nameserversHasBeenSet = true; m_nameservers.push_back(value); return *this; }
+    inline TransferDomainRequest& AddNameservers(Nameserver&& value) { m_nameserversHasBeenSet = true; m_nameservers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The authorization code for the domain. You get this value from the current
@@ -215,7 +216,7 @@ namespace Model
      * <p>The authorization code for the domain. You get this value from the current
      * registrar.</p> <p>Type: String</p> <p>Required: Yes</p>
      */
-    inline void SetAuthCode(Aws::String&& value) { m_authCodeHasBeenSet = true; m_authCode = value; }
+    inline void SetAuthCode(Aws::String&& value) { m_authCodeHasBeenSet = true; m_authCode = std::move(value); }
 
     /**
      * <p>The authorization code for the domain. You get this value from the current
@@ -233,7 +234,7 @@ namespace Model
      * <p>The authorization code for the domain. You get this value from the current
      * registrar.</p> <p>Type: String</p> <p>Required: Yes</p>
      */
-    inline TransferDomainRequest& WithAuthCode(Aws::String&& value) { SetAuthCode(value); return *this;}
+    inline TransferDomainRequest& WithAuthCode(Aws::String&& value) { SetAuthCode(std::move(value)); return *this;}
 
     /**
      * <p>The authorization code for the domain. You get this value from the current
@@ -296,7 +297,7 @@ namespace Model
      * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
-    inline void SetAdminContact(ContactDetail&& value) { m_adminContactHasBeenSet = true; m_adminContact = value; }
+    inline void SetAdminContact(ContactDetail&& value) { m_adminContactHasBeenSet = true; m_adminContact = std::move(value); }
 
     /**
      * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
@@ -318,7 +319,7 @@ namespace Model
      * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
-    inline TransferDomainRequest& WithAdminContact(ContactDetail&& value) { SetAdminContact(value); return *this;}
+    inline TransferDomainRequest& WithAdminContact(ContactDetail&& value) { SetAdminContact(std::move(value)); return *this;}
 
     /**
      * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
@@ -351,7 +352,7 @@ namespace Model
      * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
-    inline void SetRegistrantContact(ContactDetail&& value) { m_registrantContactHasBeenSet = true; m_registrantContact = value; }
+    inline void SetRegistrantContact(ContactDetail&& value) { m_registrantContactHasBeenSet = true; m_registrantContact = std::move(value); }
 
     /**
      * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
@@ -373,7 +374,7 @@ namespace Model
      * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
-    inline TransferDomainRequest& WithRegistrantContact(ContactDetail&& value) { SetRegistrantContact(value); return *this;}
+    inline TransferDomainRequest& WithRegistrantContact(ContactDetail&& value) { SetRegistrantContact(std::move(value)); return *this;}
 
     /**
      * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
@@ -406,7 +407,7 @@ namespace Model
      * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
-    inline void SetTechContact(ContactDetail&& value) { m_techContactHasBeenSet = true; m_techContact = value; }
+    inline void SetTechContact(ContactDetail&& value) { m_techContactHasBeenSet = true; m_techContact = std::move(value); }
 
     /**
      * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
@@ -428,7 +429,7 @@ namespace Model
      * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
-    inline TransferDomainRequest& WithTechContact(ContactDetail&& value) { SetTechContact(value); return *this;}
+    inline TransferDomainRequest& WithTechContact(ContactDetail&& value) { SetTechContact(std::move(value)); return *this;}
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you

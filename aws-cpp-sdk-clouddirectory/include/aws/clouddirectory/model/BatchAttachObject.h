@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Parent object reference.</p>
      */
-    inline void SetParentReference(ObjectReference&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = value; }
+    inline void SetParentReference(ObjectReference&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = std::move(value); }
 
     /**
      * <p>Parent object reference.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Parent object reference.</p>
      */
-    inline BatchAttachObject& WithParentReference(ObjectReference&& value) { SetParentReference(value); return *this;}
+    inline BatchAttachObject& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
 
     /**
      * <p>Child object reference to be attached to the object.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>Child object reference to be attached to the object.</p>
      */
-    inline void SetChildReference(ObjectReference&& value) { m_childReferenceHasBeenSet = true; m_childReference = value; }
+    inline void SetChildReference(ObjectReference&& value) { m_childReferenceHasBeenSet = true; m_childReference = std::move(value); }
 
     /**
      * <p>Child object reference to be attached to the object.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>Child object reference to be attached to the object.</p>
      */
-    inline BatchAttachObject& WithChildReference(ObjectReference&& value) { SetChildReference(value); return *this;}
+    inline BatchAttachObject& WithChildReference(ObjectReference&& value) { SetChildReference(std::move(value)); return *this;}
 
     /**
      * <p>The name of the link.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The name of the link.</p>
      */
-    inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = value; }
+    inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = std::move(value); }
 
     /**
      * <p>The name of the link.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The name of the link.</p>
      */
-    inline BatchAttachObject& WithLinkName(Aws::String&& value) { SetLinkName(value); return *this;}
+    inline BatchAttachObject& WithLinkName(Aws::String&& value) { SetLinkName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the link.</p>

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/FlowLog.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Information about the flow logs.</p>
      */
-    inline void SetFlowLogs(Aws::Vector<FlowLog>&& value) { m_flowLogs = value; }
+    inline void SetFlowLogs(Aws::Vector<FlowLog>&& value) { m_flowLogs = std::move(value); }
 
     /**
      * <p>Information about the flow logs.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Information about the flow logs.</p>
      */
-    inline DescribeFlowLogsResponse& WithFlowLogs(Aws::Vector<FlowLog>&& value) { SetFlowLogs(value); return *this;}
+    inline DescribeFlowLogsResponse& WithFlowLogs(Aws::Vector<FlowLog>&& value) { SetFlowLogs(std::move(value)); return *this;}
 
     /**
      * <p>Information about the flow logs.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>Information about the flow logs.</p>
      */
-    inline DescribeFlowLogsResponse& AddFlowLogs(FlowLog&& value) { m_flowLogs.push_back(value); return *this; }
+    inline DescribeFlowLogsResponse& AddFlowLogs(FlowLog&& value) { m_flowLogs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -98,7 +99,7 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -116,7 +117,7 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline DescribeFlowLogsResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeFlowLogsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -131,13 +132,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeFlowLogsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeFlowLogsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeFlowLogsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<FlowLog> m_flowLogs;

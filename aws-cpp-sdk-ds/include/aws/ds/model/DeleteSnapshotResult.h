@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The identifier of the directory snapshot that was deleted.</p>
      */
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotId = value; }
+    inline void SetSnapshotId(Aws::String&& value) { m_snapshotId = std::move(value); }
 
     /**
      * <p>The identifier of the directory snapshot that was deleted.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The identifier of the directory snapshot that was deleted.</p>
      */
-    inline DeleteSnapshotResult& WithSnapshotId(Aws::String&& value) { SetSnapshotId(value); return *this;}
+    inline DeleteSnapshotResult& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the directory snapshot that was deleted.</p>

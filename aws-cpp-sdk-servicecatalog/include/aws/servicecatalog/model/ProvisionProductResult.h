@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/model/RecordDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * ProvisionedProduct object of the request, and a list of any errors that the
      * request encountered. </p>
      */
-    inline void SetRecordDetail(RecordDetail&& value) { m_recordDetail = value; }
+    inline void SetRecordDetail(RecordDetail&& value) { m_recordDetail = std::move(value); }
 
     /**
      * <p>The detailed result of the <a>ProvisionProduct</a> request, containing the
@@ -77,7 +78,7 @@ namespace Model
      * ProvisionedProduct object of the request, and a list of any errors that the
      * request encountered. </p>
      */
-    inline ProvisionProductResult& WithRecordDetail(RecordDetail&& value) { SetRecordDetail(value); return *this;}
+    inline ProvisionProductResult& WithRecordDetail(RecordDetail&& value) { SetRecordDetail(std::move(value)); return *this;}
 
   private:
     RecordDetail m_recordDetail;

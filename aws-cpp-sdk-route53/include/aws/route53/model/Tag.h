@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -85,7 +86,7 @@ namespace Model
      * checks includes a <b>Name</b> column that lets you see the name that you've
      * given to each health check.</p> </li> </ul>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The value of <code>Key</code> depends on the operation that you want to
@@ -127,7 +128,7 @@ namespace Model
      * checks includes a <b>Name</b> column that lets you see the name that you've
      * given to each health check.</p> </li> </ul>
      */
-    inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The value of <code>Key</code> depends on the operation that you want to
@@ -168,7 +169,7 @@ namespace Model
      * <li> <p> <b>Edit a tag</b>: <code>Value</code> is the new value that you want to
      * assign the tag.</p> </li> </ul>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of <code>Value</code> depends on the operation that you want to
@@ -195,7 +196,7 @@ namespace Model
      * <li> <p> <b>Edit a tag</b>: <code>Value</code> is the new value that you want to
      * assign the tag.</p> </li> </ul>
      */
-    inline Tag& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of <code>Value</code> depends on the operation that you want to

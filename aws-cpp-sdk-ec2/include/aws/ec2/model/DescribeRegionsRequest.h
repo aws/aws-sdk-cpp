@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The names of one or more regions.</p>
      */
-    inline void SetRegionNames(Aws::Vector<Aws::String>&& value) { m_regionNamesHasBeenSet = true; m_regionNames = value; }
+    inline void SetRegionNames(Aws::Vector<Aws::String>&& value) { m_regionNamesHasBeenSet = true; m_regionNames = std::move(value); }
 
     /**
      * <p>The names of one or more regions.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The names of one or more regions.</p>
      */
-    inline DescribeRegionsRequest& WithRegionNames(Aws::Vector<Aws::String>&& value) { SetRegionNames(value); return *this;}
+    inline DescribeRegionsRequest& WithRegionNames(Aws::Vector<Aws::String>&& value) { SetRegionNames(std::move(value)); return *this;}
 
     /**
      * <p>The names of one or more regions.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The names of one or more regions.</p>
      */
-    inline DescribeRegionsRequest& AddRegionNames(Aws::String&& value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(value); return *this; }
+    inline DescribeRegionsRequest& AddRegionNames(Aws::String&& value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of one or more regions.</p>
@@ -128,7 +129,7 @@ namespace Model
      * <li> <p> <code>region-name</code> - The name of the region (for example,
      * <code>us-east-1</code>).</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
@@ -144,7 +145,7 @@ namespace Model
      * <li> <p> <code>region-name</code> - The name of the region (for example,
      * <code>us-east-1</code>).</p> </li> </ul>
      */
-    inline DescribeRegionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeRegionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
@@ -160,7 +161,7 @@ namespace Model
      * <li> <p> <code>region-name</code> - The name of the region (for example,
      * <code>us-east-1</code>).</p> </li> </ul>
      */
-    inline DescribeRegionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeRegionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The automatically generated ID for a cluster.</p>
      */
-    inline void SetClusterId(Aws::String&& value) { m_clusterId = value; }
+    inline void SetClusterId(Aws::String&& value) { m_clusterId = std::move(value); }
 
     /**
      * <p>The automatically generated ID for a cluster.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The automatically generated ID for a cluster.</p>
      */
-    inline CreateClusterResult& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+    inline CreateClusterResult& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The automatically generated ID for a cluster.</p>

@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID
      * string requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
      */
-    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
+    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the policy that you want to update.</p> <p>The
@@ -75,7 +76,7 @@ namespace Model
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID
      * string requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
      */
-    inline UpdatePolicyRequest& WithPolicyId(Aws::String&& value) { SetPolicyId(value); return *this;}
+    inline UpdatePolicyRequest& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the policy that you want to update.</p> <p>The
@@ -106,7 +107,7 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>If provided, the new name for the policy.</p> <p>The <a
@@ -130,7 +131,7 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline UpdatePolicyRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdatePolicyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>If provided, the new name for the policy.</p> <p>The <a
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p>If provided, the new description for the policy.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>If provided, the new description for the policy.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>If provided, the new description for the policy.</p>
      */
-    inline UpdatePolicyRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline UpdatePolicyRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>If provided, the new description for the policy.</p>
@@ -200,7 +201,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
      * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
      */
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = value; }
+    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
      * <p>If provided, the new content for the policy. The text must be correctly
@@ -227,7 +228,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
      * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
      */
-    inline UpdatePolicyRequest& WithContent(Aws::String&& value) { SetContent(value); return *this;}
+    inline UpdatePolicyRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
      * <p>If provided, the new content for the policy. The text must be correctly

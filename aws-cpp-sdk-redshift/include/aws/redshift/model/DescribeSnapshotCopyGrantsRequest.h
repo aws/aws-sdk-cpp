@@ -17,6 +17,7 @@
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The name of the snapshot copy grant.</p>
      */
-    inline void SetSnapshotCopyGrantName(Aws::String&& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = value; }
+    inline void SetSnapshotCopyGrantName(Aws::String&& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = std::move(value); }
 
     /**
      * <p>The name of the snapshot copy grant.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The name of the snapshot copy grant.</p>
      */
-    inline DescribeSnapshotCopyGrantsRequest& WithSnapshotCopyGrantName(Aws::String&& value) { SetSnapshotCopyGrantName(value); return *this;}
+    inline DescribeSnapshotCopyGrantsRequest& WithSnapshotCopyGrantName(Aws::String&& value) { SetSnapshotCopyGrantName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the snapshot copy grant.</p>
@@ -141,7 +142,7 @@ namespace Model
      * can specify either the <b>SnapshotCopyGrantName</b> parameter or the
      * <b>Marker</b> parameter, but not both. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -177,7 +178,7 @@ namespace Model
      * can specify either the <b>SnapshotCopyGrantName</b> parameter or the
      * <b>Marker</b> parameter, but not both. </p>
      */
-    inline DescribeSnapshotCopyGrantsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeSnapshotCopyGrantsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -219,7 +220,7 @@ namespace Model
      * Amazon Redshift returns a response with all resources that have either or both
      * of these tag keys associated with them.</p>
      */
-    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
+    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
      * <p>A tag key or keys for which you want to return all matching resources that
@@ -239,7 +240,7 @@ namespace Model
      * Amazon Redshift returns a response with all resources that have either or both
      * of these tag keys associated with them.</p>
      */
-    inline DescribeSnapshotCopyGrantsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
+    inline DescribeSnapshotCopyGrantsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
      * <p>A tag key or keys for which you want to return all matching resources that
@@ -259,7 +260,7 @@ namespace Model
      * Amazon Redshift returns a response with all resources that have either or both
      * of these tag keys associated with them.</p>
      */
-    inline DescribeSnapshotCopyGrantsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+    inline DescribeSnapshotCopyGrantsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A tag key or keys for which you want to return all matching resources that
@@ -299,7 +300,7 @@ namespace Model
      * Amazon Redshift returns a response with all resources that have either or both
      * of these tag values associated with them.</p>
      */
-    inline void SetTagValues(Aws::Vector<Aws::String>&& value) { m_tagValuesHasBeenSet = true; m_tagValues = value; }
+    inline void SetTagValues(Aws::Vector<Aws::String>&& value) { m_tagValuesHasBeenSet = true; m_tagValues = std::move(value); }
 
     /**
      * <p>A tag value or values for which you want to return all matching resources
@@ -319,7 +320,7 @@ namespace Model
      * Amazon Redshift returns a response with all resources that have either or both
      * of these tag values associated with them.</p>
      */
-    inline DescribeSnapshotCopyGrantsRequest& WithTagValues(Aws::Vector<Aws::String>&& value) { SetTagValues(value); return *this;}
+    inline DescribeSnapshotCopyGrantsRequest& WithTagValues(Aws::Vector<Aws::String>&& value) { SetTagValues(std::move(value)); return *this;}
 
     /**
      * <p>A tag value or values for which you want to return all matching resources
@@ -339,7 +340,7 @@ namespace Model
      * Amazon Redshift returns a response with all resources that have either or both
      * of these tag values associated with them.</p>
      */
-    inline DescribeSnapshotCopyGrantsRequest& AddTagValues(Aws::String&& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
+    inline DescribeSnapshotCopyGrantsRequest& AddTagValues(Aws::String&& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A tag value or values for which you want to return all matching resources

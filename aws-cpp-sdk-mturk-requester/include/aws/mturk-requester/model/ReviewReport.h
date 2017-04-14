@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/model/ReviewResultDetail.h>
 #include <aws/mturk-requester/model/ReviewActionDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p> A list of ReviewResults objects for each action specified in the Review
      * Policy. </p>
      */
-    inline void SetReviewResults(Aws::Vector<ReviewResultDetail>&& value) { m_reviewResultsHasBeenSet = true; m_reviewResults = value; }
+    inline void SetReviewResults(Aws::Vector<ReviewResultDetail>&& value) { m_reviewResultsHasBeenSet = true; m_reviewResults = std::move(value); }
 
     /**
      * <p> A list of ReviewResults objects for each action specified in the Review
@@ -74,7 +75,7 @@ namespace Model
      * <p> A list of ReviewResults objects for each action specified in the Review
      * Policy. </p>
      */
-    inline ReviewReport& WithReviewResults(Aws::Vector<ReviewResultDetail>&& value) { SetReviewResults(value); return *this;}
+    inline ReviewReport& WithReviewResults(Aws::Vector<ReviewResultDetail>&& value) { SetReviewResults(std::move(value)); return *this;}
 
     /**
      * <p> A list of ReviewResults objects for each action specified in the Review
@@ -86,7 +87,7 @@ namespace Model
      * <p> A list of ReviewResults objects for each action specified in the Review
      * Policy. </p>
      */
-    inline ReviewReport& AddReviewResults(ReviewResultDetail&& value) { m_reviewResultsHasBeenSet = true; m_reviewResults.push_back(value); return *this; }
+    inline ReviewReport& AddReviewResults(ReviewResultDetail&& value) { m_reviewResultsHasBeenSet = true; m_reviewResults.push_back(std::move(value)); return *this; }
 
     /**
      * <p> A list of ReviewAction objects for each action specified in the Review
@@ -104,7 +105,7 @@ namespace Model
      * <p> A list of ReviewAction objects for each action specified in the Review
      * Policy. </p>
      */
-    inline void SetReviewActions(Aws::Vector<ReviewActionDetail>&& value) { m_reviewActionsHasBeenSet = true; m_reviewActions = value; }
+    inline void SetReviewActions(Aws::Vector<ReviewActionDetail>&& value) { m_reviewActionsHasBeenSet = true; m_reviewActions = std::move(value); }
 
     /**
      * <p> A list of ReviewAction objects for each action specified in the Review
@@ -116,7 +117,7 @@ namespace Model
      * <p> A list of ReviewAction objects for each action specified in the Review
      * Policy. </p>
      */
-    inline ReviewReport& WithReviewActions(Aws::Vector<ReviewActionDetail>&& value) { SetReviewActions(value); return *this;}
+    inline ReviewReport& WithReviewActions(Aws::Vector<ReviewActionDetail>&& value) { SetReviewActions(std::move(value)); return *this;}
 
     /**
      * <p> A list of ReviewAction objects for each action specified in the Review
@@ -128,7 +129,7 @@ namespace Model
      * <p> A list of ReviewAction objects for each action specified in the Review
      * Policy. </p>
      */
-    inline ReviewReport& AddReviewActions(ReviewActionDetail&& value) { m_reviewActionsHasBeenSet = true; m_reviewActions.push_back(value); return *this; }
+    inline ReviewReport& AddReviewActions(ReviewActionDetail&& value) { m_reviewActionsHasBeenSet = true; m_reviewActions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ReviewResultDetail> m_reviewResults;

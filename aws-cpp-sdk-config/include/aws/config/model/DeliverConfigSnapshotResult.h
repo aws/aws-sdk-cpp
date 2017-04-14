@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ID of the snapshot that is being created.</p>
      */
-    inline void SetConfigSnapshotId(Aws::String&& value) { m_configSnapshotId = value; }
+    inline void SetConfigSnapshotId(Aws::String&& value) { m_configSnapshotId = std::move(value); }
 
     /**
      * <p>The ID of the snapshot that is being created.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ID of the snapshot that is being created.</p>
      */
-    inline DeliverConfigSnapshotResult& WithConfigSnapshotId(Aws::String&& value) { SetConfigSnapshotId(value); return *this;}
+    inline DeliverConfigSnapshotResult& WithConfigSnapshotId(Aws::String&& value) { SetConfigSnapshotId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the snapshot that is being created.</p>

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/PatchOperationType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>The ID of the managed instance the high-level patch compliance information
      * was collected for.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the managed instance the high-level patch compliance information
@@ -82,7 +83,7 @@ namespace Model
      * <p>The ID of the managed instance the high-level patch compliance information
      * was collected for.</p>
      */
-    inline InstancePatchState& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline InstancePatchState& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the managed instance the high-level patch compliance information
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The name of the patch group the managed instance belongs to.</p>
      */
-    inline void SetPatchGroup(Aws::String&& value) { m_patchGroupHasBeenSet = true; m_patchGroup = value; }
+    inline void SetPatchGroup(Aws::String&& value) { m_patchGroupHasBeenSet = true; m_patchGroup = std::move(value); }
 
     /**
      * <p>The name of the patch group the managed instance belongs to.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The name of the patch group the managed instance belongs to.</p>
      */
-    inline InstancePatchState& WithPatchGroup(Aws::String&& value) { SetPatchGroup(value); return *this;}
+    inline InstancePatchState& WithPatchGroup(Aws::String&& value) { SetPatchGroup(std::move(value)); return *this;}
 
     /**
      * <p>The name of the patch group the managed instance belongs to.</p>
@@ -138,7 +139,7 @@ namespace Model
     /**
      * <p>The ID of the patch baseline used to patch the instance.</p>
      */
-    inline void SetBaselineId(Aws::String&& value) { m_baselineIdHasBeenSet = true; m_baselineId = value; }
+    inline void SetBaselineId(Aws::String&& value) { m_baselineIdHasBeenSet = true; m_baselineId = std::move(value); }
 
     /**
      * <p>The ID of the patch baseline used to patch the instance.</p>
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p>The ID of the patch baseline used to patch the instance.</p>
      */
-    inline InstancePatchState& WithBaselineId(Aws::String&& value) { SetBaselineId(value); return *this;}
+    inline InstancePatchState& WithBaselineId(Aws::String&& value) { SetBaselineId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the patch baseline used to patch the instance.</p>
@@ -176,7 +177,7 @@ namespace Model
      * <p>The ID of the patch baseline snapshot used during the patching operation when
      * this compliance data was collected.</p>
      */
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
+    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     /**
      * <p>The ID of the patch baseline snapshot used during the patching operation when
@@ -194,7 +195,7 @@ namespace Model
      * <p>The ID of the patch baseline snapshot used during the patching operation when
      * this compliance data was collected.</p>
      */
-    inline InstancePatchState& WithSnapshotId(Aws::String&& value) { SetSnapshotId(value); return *this;}
+    inline InstancePatchState& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the patch baseline snapshot used during the patching operation when
@@ -218,7 +219,7 @@ namespace Model
      * <p>Placeholder information, this field will always be empty in the current
      * release of the service.</p>
      */
-    inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = value; }
+    inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = std::move(value); }
 
     /**
      * <p>Placeholder information, this field will always be empty in the current
@@ -236,7 +237,7 @@ namespace Model
      * <p>Placeholder information, this field will always be empty in the current
      * release of the service.</p>
      */
-    inline InstancePatchState& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(value); return *this;}
+    inline InstancePatchState& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(std::move(value)); return *this;}
 
     /**
      * <p>Placeholder information, this field will always be empty in the current
@@ -347,7 +348,7 @@ namespace Model
     /**
      * <p>The time the most recent patching operation was started on the instance.</p>
      */
-    inline void SetOperationStartTime(Aws::Utils::DateTime&& value) { m_operationStartTimeHasBeenSet = true; m_operationStartTime = value; }
+    inline void SetOperationStartTime(Aws::Utils::DateTime&& value) { m_operationStartTimeHasBeenSet = true; m_operationStartTime = std::move(value); }
 
     /**
      * <p>The time the most recent patching operation was started on the instance.</p>
@@ -357,7 +358,7 @@ namespace Model
     /**
      * <p>The time the most recent patching operation was started on the instance.</p>
      */
-    inline InstancePatchState& WithOperationStartTime(Aws::Utils::DateTime&& value) { SetOperationStartTime(value); return *this;}
+    inline InstancePatchState& WithOperationStartTime(Aws::Utils::DateTime&& value) { SetOperationStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The time the most recent patching operation completed on the instance.</p>
@@ -372,7 +373,7 @@ namespace Model
     /**
      * <p>The time the most recent patching operation completed on the instance.</p>
      */
-    inline void SetOperationEndTime(Aws::Utils::DateTime&& value) { m_operationEndTimeHasBeenSet = true; m_operationEndTime = value; }
+    inline void SetOperationEndTime(Aws::Utils::DateTime&& value) { m_operationEndTimeHasBeenSet = true; m_operationEndTime = std::move(value); }
 
     /**
      * <p>The time the most recent patching operation completed on the instance.</p>
@@ -382,7 +383,7 @@ namespace Model
     /**
      * <p>The time the most recent patching operation completed on the instance.</p>
      */
-    inline InstancePatchState& WithOperationEndTime(Aws::Utils::DateTime&& value) { SetOperationEndTime(value); return *this;}
+    inline InstancePatchState& WithOperationEndTime(Aws::Utils::DateTime&& value) { SetOperationEndTime(std::move(value)); return *this;}
 
     /**
      * <p>The type of patching operation that was performed: SCAN (assess patch
@@ -400,7 +401,7 @@ namespace Model
      * <p>The type of patching operation that was performed: SCAN (assess patch
      * compliance state) or INSTALL (install missing patches).</p>
      */
-    inline void SetOperation(PatchOperationType&& value) { m_operationHasBeenSet = true; m_operation = value; }
+    inline void SetOperation(PatchOperationType&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
 
     /**
      * <p>The type of patching operation that was performed: SCAN (assess patch
@@ -412,7 +413,7 @@ namespace Model
      * <p>The type of patching operation that was performed: SCAN (assess patch
      * compliance state) or INSTALL (install missing patches).</p>
      */
-    inline InstancePatchState& WithOperation(PatchOperationType&& value) { SetOperation(value); return *this;}
+    inline InstancePatchState& WithOperation(PatchOperationType&& value) { SetOperation(std::move(value)); return *this;}
 
   private:
     Aws::String m_instanceId;

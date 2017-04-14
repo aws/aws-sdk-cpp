@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS container instance that
      * hosts the job attempt.</p>
      */
-    inline void SetContainerInstanceArn(Aws::String&& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
+    inline void SetContainerInstanceArn(Aws::String&& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS container instance that
@@ -78,7 +79,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS container instance that
      * hosts the job attempt.</p>
      */
-    inline AttemptContainerDetail& WithContainerInstanceArn(Aws::String&& value) { SetContainerInstanceArn(value); return *this;}
+    inline AttemptContainerDetail& WithContainerInstanceArn(Aws::String&& value) { SetContainerInstanceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS container instance that
@@ -102,7 +103,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
      * the job attempt.</p>
      */
-    inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
+    inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
@@ -120,7 +121,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
      * the job attempt.</p>
      */
-    inline AttemptContainerDetail& WithTaskArn(Aws::String&& value) { SetTaskArn(value); return *this;}
+    inline AttemptContainerDetail& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
@@ -162,7 +163,7 @@ namespace Model
      * <p>A short (255 max characters) human-readable string to provide additional
      * details about a running or stopped container.</p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
@@ -180,7 +181,7 @@ namespace Model
      * <p>A short (255 max characters) human-readable string to provide additional
      * details about a running or stopped container.</p>
      */
-    inline AttemptContainerDetail& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline AttemptContainerDetail& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional

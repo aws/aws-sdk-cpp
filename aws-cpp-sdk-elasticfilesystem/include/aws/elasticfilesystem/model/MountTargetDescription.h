@@ -16,6 +16,7 @@
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticfilesystem/model/LifeCycleState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>AWS account ID that owns the resource.</p>
      */
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
+    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
      * <p>AWS account ID that owns the resource.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>AWS account ID that owns the resource.</p>
      */
-    inline MountTargetDescription& WithOwnerId(Aws::String&& value) { SetOwnerId(value); return *this;}
+    inline MountTargetDescription& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
      * <p>AWS account ID that owns the resource.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>System-assigned mount target ID.</p>
      */
-    inline void SetMountTargetId(Aws::String&& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = value; }
+    inline void SetMountTargetId(Aws::String&& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = std::move(value); }
 
     /**
      * <p>System-assigned mount target ID.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>System-assigned mount target ID.</p>
      */
-    inline MountTargetDescription& WithMountTargetId(Aws::String&& value) { SetMountTargetId(value); return *this;}
+    inline MountTargetDescription& WithMountTargetId(Aws::String&& value) { SetMountTargetId(std::move(value)); return *this;}
 
     /**
      * <p>System-assigned mount target ID.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>ID of the file system for which the mount target is intended.</p>
      */
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
+    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
 
     /**
      * <p>ID of the file system for which the mount target is intended.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>ID of the file system for which the mount target is intended.</p>
      */
-    inline MountTargetDescription& WithFileSystemId(Aws::String&& value) { SetFileSystemId(value); return *this;}
+    inline MountTargetDescription& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
 
     /**
      * <p>ID of the file system for which the mount target is intended.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>ID of the mount target's subnet.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>ID of the mount target's subnet.</p>
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>ID of the mount target's subnet.</p>
      */
-    inline MountTargetDescription& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+    inline MountTargetDescription& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>ID of the mount target's subnet.</p>
@@ -197,7 +198,7 @@ namespace Model
     /**
      * <p>Lifecycle state of the mount target.</p>
      */
-    inline void SetLifeCycleState(LifeCycleState&& value) { m_lifeCycleStateHasBeenSet = true; m_lifeCycleState = value; }
+    inline void SetLifeCycleState(LifeCycleState&& value) { m_lifeCycleStateHasBeenSet = true; m_lifeCycleState = std::move(value); }
 
     /**
      * <p>Lifecycle state of the mount target.</p>
@@ -207,7 +208,7 @@ namespace Model
     /**
      * <p>Lifecycle state of the mount target.</p>
      */
-    inline MountTargetDescription& WithLifeCycleState(LifeCycleState&& value) { SetLifeCycleState(value); return *this;}
+    inline MountTargetDescription& WithLifeCycleState(LifeCycleState&& value) { SetLifeCycleState(std::move(value)); return *this;}
 
     /**
      * <p>Address at which the file system may be mounted via the mount target.</p>
@@ -222,7 +223,7 @@ namespace Model
     /**
      * <p>Address at which the file system may be mounted via the mount target.</p>
      */
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
+    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
      * <p>Address at which the file system may be mounted via the mount target.</p>
@@ -237,7 +238,7 @@ namespace Model
     /**
      * <p>Address at which the file system may be mounted via the mount target.</p>
      */
-    inline MountTargetDescription& WithIpAddress(Aws::String&& value) { SetIpAddress(value); return *this;}
+    inline MountTargetDescription& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>Address at which the file system may be mounted via the mount target.</p>
@@ -260,7 +261,7 @@ namespace Model
      * <p>ID of the network interface that Amazon EFS created when it created the mount
      * target.</p>
      */
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
 
     /**
      * <p>ID of the network interface that Amazon EFS created when it created the mount
@@ -278,7 +279,7 @@ namespace Model
      * <p>ID of the network interface that Amazon EFS created when it created the mount
      * target.</p>
      */
-    inline MountTargetDescription& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(value); return *this;}
+    inline MountTargetDescription& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
 
     /**
      * <p>ID of the network interface that Amazon EFS created when it created the mount

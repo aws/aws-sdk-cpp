@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
      * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
      * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
-    inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
+    inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = std::move(value); }
 
     /**
      * <p> The path prefix for filtering the results. For example, the prefix
@@ -113,7 +114,7 @@ namespace Model
      * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
      * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
-    inline ListGroupsRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(value); return *this;}
+    inline ListGroupsRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(std::move(value)); return *this;}
 
     /**
      * <p> The path prefix for filtering the results. For example, the prefix
@@ -150,7 +151,7 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
@@ -174,7 +175,7 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline ListGroupsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListGroupsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a

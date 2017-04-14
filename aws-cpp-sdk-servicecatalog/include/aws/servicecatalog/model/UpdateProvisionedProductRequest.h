@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/UpdateProvisioningParameter.h>
+#include <utility>
 #include <aws/core/utils/UUID.h>
 
 namespace Aws
@@ -57,7 +58,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
+    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -78,7 +79,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline UpdateProvisionedProductRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(value); return *this;}
+    inline UpdateProvisionedProductRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -106,7 +107,7 @@ namespace Model
      * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
      * not both.</p>
      */
-    inline void SetProvisionedProductName(Aws::String&& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = value; }
+    inline void SetProvisionedProductName(Aws::String&& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = std::move(value); }
 
     /**
      * <p>The updated name of the ProvisionedProduct object . You must specify either
@@ -127,7 +128,7 @@ namespace Model
      * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
      * not both.</p>
      */
-    inline UpdateProvisionedProductRequest& WithProvisionedProductName(Aws::String&& value) { SetProvisionedProductName(value); return *this;}
+    inline UpdateProvisionedProductRequest& WithProvisionedProductName(Aws::String&& value) { SetProvisionedProductName(std::move(value)); return *this;}
 
     /**
      * <p>The updated name of the ProvisionedProduct object . You must specify either
@@ -155,7 +156,7 @@ namespace Model
      * either <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>,
      * but not both.</p>
      */
-    inline void SetProvisionedProductId(Aws::String&& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = value; }
+    inline void SetProvisionedProductId(Aws::String&& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = std::move(value); }
 
     /**
      * <p>The identifier of the ProvisionedProduct object to update. You must specify
@@ -176,7 +177,7 @@ namespace Model
      * either <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>,
      * but not both.</p>
      */
-    inline UpdateProvisionedProductRequest& WithProvisionedProductId(Aws::String&& value) { SetProvisionedProductId(value); return *this;}
+    inline UpdateProvisionedProductRequest& WithProvisionedProductId(Aws::String&& value) { SetProvisionedProductId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the ProvisionedProduct object to update. You must specify
@@ -198,7 +199,7 @@ namespace Model
     /**
      * <p>The identifier of the ProvisionedProduct object.</p>
      */
-    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = value; }
+    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
 
     /**
      * <p>The identifier of the ProvisionedProduct object.</p>
@@ -213,7 +214,7 @@ namespace Model
     /**
      * <p>The identifier of the ProvisionedProduct object.</p>
      */
-    inline UpdateProvisionedProductRequest& WithProductId(Aws::String&& value) { SetProductId(value); return *this;}
+    inline UpdateProvisionedProductRequest& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the ProvisionedProduct object.</p>
@@ -233,7 +234,7 @@ namespace Model
     /**
      * <p>The provisioning artifact identifier for this product.</p>
      */
-    inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
+    inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
 
     /**
      * <p>The provisioning artifact identifier for this product.</p>
@@ -248,7 +249,7 @@ namespace Model
     /**
      * <p>The provisioning artifact identifier for this product.</p>
      */
-    inline UpdateProvisionedProductRequest& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(value); return *this;}
+    inline UpdateProvisionedProductRequest& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
 
     /**
      * <p>The provisioning artifact identifier for this product.</p>
@@ -274,7 +275,7 @@ namespace Model
      * This value is optional if the product has a default path, and is required if
      * there is more than one path for the specified product.</p>
      */
-    inline void SetPathId(Aws::String&& value) { m_pathIdHasBeenSet = true; m_pathId = value; }
+    inline void SetPathId(Aws::String&& value) { m_pathIdHasBeenSet = true; m_pathId = std::move(value); }
 
     /**
      * <p>The identifier of the path to use in the updated ProvisionedProduct object.
@@ -295,7 +296,7 @@ namespace Model
      * This value is optional if the product has a default path, and is required if
      * there is more than one path for the specified product.</p>
      */
-    inline UpdateProvisionedProductRequest& WithPathId(Aws::String&& value) { SetPathId(value); return *this;}
+    inline UpdateProvisionedProductRequest& WithPathId(Aws::String&& value) { SetPathId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the path to use in the updated ProvisionedProduct object.
@@ -320,7 +321,7 @@ namespace Model
      * <p>A list of <code>ProvisioningParameter</code> objects used to update the
      * ProvisionedProduct object.</p>
      */
-    inline void SetProvisioningParameters(Aws::Vector<UpdateProvisioningParameter>&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters = value; }
+    inline void SetProvisioningParameters(Aws::Vector<UpdateProvisioningParameter>&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters = std::move(value); }
 
     /**
      * <p>A list of <code>ProvisioningParameter</code> objects used to update the
@@ -332,7 +333,7 @@ namespace Model
      * <p>A list of <code>ProvisioningParameter</code> objects used to update the
      * ProvisionedProduct object.</p>
      */
-    inline UpdateProvisionedProductRequest& WithProvisioningParameters(Aws::Vector<UpdateProvisioningParameter>&& value) { SetProvisioningParameters(value); return *this;}
+    inline UpdateProvisionedProductRequest& WithProvisioningParameters(Aws::Vector<UpdateProvisioningParameter>&& value) { SetProvisioningParameters(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>ProvisioningParameter</code> objects used to update the
@@ -344,7 +345,7 @@ namespace Model
      * <p>A list of <code>ProvisioningParameter</code> objects used to update the
      * ProvisionedProduct object.</p>
      */
-    inline UpdateProvisionedProductRequest& AddProvisioningParameters(UpdateProvisioningParameter&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters.push_back(value); return *this; }
+    inline UpdateProvisionedProductRequest& AddProvisioningParameters(UpdateProvisioningParameter&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The idempotency token that uniquely identifies the provisioning update
@@ -362,7 +363,7 @@ namespace Model
      * <p>The idempotency token that uniquely identifies the provisioning update
      * request.</p>
      */
-    inline void SetUpdateToken(Aws::String&& value) { m_updateTokenHasBeenSet = true; m_updateToken = value; }
+    inline void SetUpdateToken(Aws::String&& value) { m_updateTokenHasBeenSet = true; m_updateToken = std::move(value); }
 
     /**
      * <p>The idempotency token that uniquely identifies the provisioning update
@@ -380,7 +381,7 @@ namespace Model
      * <p>The idempotency token that uniquely identifies the provisioning update
      * request.</p>
      */
-    inline UpdateProvisionedProductRequest& WithUpdateToken(Aws::String&& value) { SetUpdateToken(value); return *this;}
+    inline UpdateProvisionedProductRequest& WithUpdateToken(Aws::String&& value) { SetUpdateToken(std::move(value)); return *this;}
 
     /**
      * <p>The idempotency token that uniquely identifies the provisioning update

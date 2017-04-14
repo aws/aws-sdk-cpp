@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/swf/model/HistoryEvent.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The list of history events.</p>
      */
-    inline void SetEvents(Aws::Vector<HistoryEvent>&& value) { m_events = value; }
+    inline void SetEvents(Aws::Vector<HistoryEvent>&& value) { m_events = std::move(value); }
 
     /**
      * <p>The list of history events.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The list of history events.</p>
      */
-    inline GetWorkflowExecutionHistoryResult& WithEvents(Aws::Vector<HistoryEvent>&& value) { SetEvents(value); return *this;}
+    inline GetWorkflowExecutionHistoryResult& WithEvents(Aws::Vector<HistoryEvent>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
      * <p>The list of history events.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The list of history events.</p>
      */
-    inline GetWorkflowExecutionHistoryResult& AddEvents(HistoryEvent&& value) { m_events.push_back(value); return *this; }
+    inline GetWorkflowExecutionHistoryResult& AddEvents(HistoryEvent&& value) { m_events.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -109,7 +110,7 @@ namespace Model
      * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
      * determines how many results can be returned in a single call.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -136,7 +137,7 @@ namespace Model
      * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
      * determines how many results can be returned in a single call.</p>
      */
-    inline GetWorkflowExecutionHistoryResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline GetWorkflowExecutionHistoryResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are

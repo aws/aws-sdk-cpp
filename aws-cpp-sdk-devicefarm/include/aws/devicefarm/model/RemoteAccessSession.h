@@ -21,6 +21,7 @@
 #include <aws/devicefarm/model/Device.h>
 #include <aws/devicefarm/model/BillingMethod.h>
 #include <aws/devicefarm/model/DeviceMinutes.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the remote access session.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the remote access session.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the remote access session.</p>
      */
-    inline RemoteAccessSession& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline RemoteAccessSession& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the remote access session.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The name of the remote access session.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the remote access session.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The name of the remote access session.</p>
      */
-    inline RemoteAccessSession& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline RemoteAccessSession& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the remote access session.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The date and time the remote access session was created.</p>
      */
-    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = value; }
+    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
 
     /**
      * <p>The date and time the remote access session was created.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The date and time the remote access session was created.</p>
      */
-    inline RemoteAccessSession& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(value); return *this;}
+    inline RemoteAccessSession& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
 
     /**
      * <p>The status of the remote access session. Can be any of the following:</p>
@@ -179,7 +180,7 @@ namespace Model
      * <p>COMPLETED: A completed status.</p> </li> <li> <p>STOPPING: A stopping
      * status.</p> </li> </ul>
      */
-    inline void SetStatus(ExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the remote access session. Can be any of the following:</p>
@@ -203,7 +204,7 @@ namespace Model
      * <p>COMPLETED: A completed status.</p> </li> <li> <p>STOPPING: A stopping
      * status.</p> </li> </ul>
      */
-    inline RemoteAccessSession& WithStatus(ExecutionStatus&& value) { SetStatus(value); return *this;}
+    inline RemoteAccessSession& WithStatus(ExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The result of the remote access session. Can be any of the following:</p>
@@ -233,7 +234,7 @@ namespace Model
      * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
      * <p>STOPPED: A stopped condition.</p> </li> </ul>
      */
-    inline void SetResult(ExecutionResult&& value) { m_resultHasBeenSet = true; m_result = value; }
+    inline void SetResult(ExecutionResult&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
 
     /**
      * <p>The result of the remote access session. Can be any of the following:</p>
@@ -253,7 +254,7 @@ namespace Model
      * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
      * <p>STOPPED: A stopped condition.</p> </li> </ul>
      */
-    inline RemoteAccessSession& WithResult(ExecutionResult&& value) { SetResult(value); return *this;}
+    inline RemoteAccessSession& WithResult(ExecutionResult&& value) { SetResult(std::move(value)); return *this;}
 
     /**
      * <p>A message about the remote access session.</p>
@@ -268,7 +269,7 @@ namespace Model
     /**
      * <p>A message about the remote access session.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>A message about the remote access session.</p>
@@ -283,7 +284,7 @@ namespace Model
     /**
      * <p>A message about the remote access session.</p>
      */
-    inline RemoteAccessSession& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline RemoteAccessSession& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>A message about the remote access session.</p>
@@ -303,7 +304,7 @@ namespace Model
     /**
      * <p>The date and time the remote access session was started.</p>
      */
-    inline void SetStarted(Aws::Utils::DateTime&& value) { m_startedHasBeenSet = true; m_started = value; }
+    inline void SetStarted(Aws::Utils::DateTime&& value) { m_startedHasBeenSet = true; m_started = std::move(value); }
 
     /**
      * <p>The date and time the remote access session was started.</p>
@@ -313,7 +314,7 @@ namespace Model
     /**
      * <p>The date and time the remote access session was started.</p>
      */
-    inline RemoteAccessSession& WithStarted(Aws::Utils::DateTime&& value) { SetStarted(value); return *this;}
+    inline RemoteAccessSession& WithStarted(Aws::Utils::DateTime&& value) { SetStarted(std::move(value)); return *this;}
 
     /**
      * <p>The date and time the remote access session was stopped.</p>
@@ -328,7 +329,7 @@ namespace Model
     /**
      * <p>The date and time the remote access session was stopped.</p>
      */
-    inline void SetStopped(Aws::Utils::DateTime&& value) { m_stoppedHasBeenSet = true; m_stopped = value; }
+    inline void SetStopped(Aws::Utils::DateTime&& value) { m_stoppedHasBeenSet = true; m_stopped = std::move(value); }
 
     /**
      * <p>The date and time the remote access session was stopped.</p>
@@ -338,7 +339,7 @@ namespace Model
     /**
      * <p>The date and time the remote access session was stopped.</p>
      */
-    inline RemoteAccessSession& WithStopped(Aws::Utils::DateTime&& value) { SetStopped(value); return *this;}
+    inline RemoteAccessSession& WithStopped(Aws::Utils::DateTime&& value) { SetStopped(std::move(value)); return *this;}
 
     /**
      * <p>The device (phone or tablet) used in the remote access session.</p>
@@ -353,7 +354,7 @@ namespace Model
     /**
      * <p>The device (phone or tablet) used in the remote access session.</p>
      */
-    inline void SetDevice(Device&& value) { m_deviceHasBeenSet = true; m_device = value; }
+    inline void SetDevice(Device&& value) { m_deviceHasBeenSet = true; m_device = std::move(value); }
 
     /**
      * <p>The device (phone or tablet) used in the remote access session.</p>
@@ -363,7 +364,7 @@ namespace Model
     /**
      * <p>The device (phone or tablet) used in the remote access session.</p>
      */
-    inline RemoteAccessSession& WithDevice(Device&& value) { SetDevice(value); return *this;}
+    inline RemoteAccessSession& WithDevice(Device&& value) { SetDevice(std::move(value)); return *this;}
 
     /**
      * <p>The billing method of the remote access session. Possible values include
@@ -390,7 +391,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
      * Device Farm terminology</a>."</p>
      */
-    inline void SetBillingMethod(BillingMethod&& value) { m_billingMethodHasBeenSet = true; m_billingMethod = value; }
+    inline void SetBillingMethod(BillingMethod&& value) { m_billingMethodHasBeenSet = true; m_billingMethod = std::move(value); }
 
     /**
      * <p>The billing method of the remote access session. Possible values include
@@ -408,7 +409,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
      * Device Farm terminology</a>."</p>
      */
-    inline RemoteAccessSession& WithBillingMethod(BillingMethod&& value) { SetBillingMethod(value); return *this;}
+    inline RemoteAccessSession& WithBillingMethod(BillingMethod&& value) { SetBillingMethod(std::move(value)); return *this;}
 
     /**
      * <p>The number of minutes a device is used in a remote access sesssion (including
@@ -426,7 +427,7 @@ namespace Model
      * <p>The number of minutes a device is used in a remote access sesssion (including
      * setup and teardown minutes).</p>
      */
-    inline void SetDeviceMinutes(DeviceMinutes&& value) { m_deviceMinutesHasBeenSet = true; m_deviceMinutes = value; }
+    inline void SetDeviceMinutes(DeviceMinutes&& value) { m_deviceMinutesHasBeenSet = true; m_deviceMinutes = std::move(value); }
 
     /**
      * <p>The number of minutes a device is used in a remote access sesssion (including
@@ -438,7 +439,7 @@ namespace Model
      * <p>The number of minutes a device is used in a remote access sesssion (including
      * setup and teardown minutes).</p>
      */
-    inline RemoteAccessSession& WithDeviceMinutes(DeviceMinutes&& value) { SetDeviceMinutes(value); return *this;}
+    inline RemoteAccessSession& WithDeviceMinutes(DeviceMinutes&& value) { SetDeviceMinutes(std::move(value)); return *this;}
 
     /**
      * <p>The endpoint for the remote access sesssion.</p>
@@ -453,7 +454,7 @@ namespace Model
     /**
      * <p>The endpoint for the remote access sesssion.</p>
      */
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
+    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
      * <p>The endpoint for the remote access sesssion.</p>
@@ -468,7 +469,7 @@ namespace Model
     /**
      * <p>The endpoint for the remote access sesssion.</p>
      */
-    inline RemoteAccessSession& WithEndpoint(Aws::String&& value) { SetEndpoint(value); return *this;}
+    inline RemoteAccessSession& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
 
     /**
      * <p>The endpoint for the remote access sesssion.</p>

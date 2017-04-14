@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>A descriptive reason for the failure that may help in diagnostics.</p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p>A descriptive reason for the failure that may help in diagnostics.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>A descriptive reason for the failure that may help in diagnostics.</p>
      */
-    inline FailWorkflowExecutionDecisionAttributes& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline FailWorkflowExecutionDecisionAttributes& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p>A descriptive reason for the failure that may help in diagnostics.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p><i>Optional.</i> Details of the failure.</p>
      */
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = value; }
+    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
      * <p><i>Optional.</i> Details of the failure.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p><i>Optional.</i> Details of the failure.</p>
      */
-    inline FailWorkflowExecutionDecisionAttributes& WithDetails(Aws::String&& value) { SetDetails(value); return *this;}
+    inline FailWorkflowExecutionDecisionAttributes& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
      * <p><i>Optional.</i> Details of the failure.</p>

@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/MonitoringState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
      * is enabled.</p>
      */
-    inline void SetState(MonitoringState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(MonitoringState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
@@ -74,7 +75,7 @@ namespace Model
      * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
      * is enabled.</p>
      */
-    inline Monitoring& WithState(MonitoringState&& value) { SetState(value); return *this;}
+    inline Monitoring& WithState(MonitoringState&& value) { SetState(std::move(value)); return *this;}
 
   private:
     MonitoringState m_state;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/OrderableReplicationInstance.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The order-able replication instances available.</p>
      */
-    inline void SetOrderableReplicationInstances(Aws::Vector<OrderableReplicationInstance>&& value) { m_orderableReplicationInstances = value; }
+    inline void SetOrderableReplicationInstances(Aws::Vector<OrderableReplicationInstance>&& value) { m_orderableReplicationInstances = std::move(value); }
 
     /**
      * <p>The order-able replication instances available.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The order-able replication instances available.</p>
      */
-    inline DescribeOrderableReplicationInstancesResult& WithOrderableReplicationInstances(Aws::Vector<OrderableReplicationInstance>&& value) { SetOrderableReplicationInstances(value); return *this;}
+    inline DescribeOrderableReplicationInstancesResult& WithOrderableReplicationInstances(Aws::Vector<OrderableReplicationInstance>&& value) { SetOrderableReplicationInstances(std::move(value)); return *this;}
 
     /**
      * <p>The order-able replication instances available.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The order-able replication instances available.</p>
      */
-    inline DescribeOrderableReplicationInstancesResult& AddOrderableReplicationInstances(OrderableReplicationInstance&& value) { m_orderableReplicationInstances.push_back(value); return *this; }
+    inline DescribeOrderableReplicationInstancesResult& AddOrderableReplicationInstances(OrderableReplicationInstance&& value) { m_orderableReplicationInstances.push_back(std::move(value)); return *this; }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -100,7 +101,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -121,7 +122,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline DescribeOrderableReplicationInstancesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeOrderableReplicationInstancesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous request. If this

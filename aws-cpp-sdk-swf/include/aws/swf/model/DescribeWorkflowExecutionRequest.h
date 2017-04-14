@@ -17,6 +17,7 @@
 #include <aws/swf/SWFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/swf/model/WorkflowExecution.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The name of the domain containing the workflow execution.</p>
      */
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The name of the domain containing the workflow execution.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name of the domain containing the workflow execution.</p>
      */
-    inline DescribeWorkflowExecutionRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+    inline DescribeWorkflowExecutionRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain containing the workflow execution.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The workflow execution to describe.</p>
      */
-    inline void SetExecution(WorkflowExecution&& value) { m_executionHasBeenSet = true; m_execution = value; }
+    inline void SetExecution(WorkflowExecution&& value) { m_executionHasBeenSet = true; m_execution = std::move(value); }
 
     /**
      * <p>The workflow execution to describe.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The workflow execution to describe.</p>
      */
-    inline DescribeWorkflowExecutionRequest& WithExecution(WorkflowExecution&& value) { SetExecution(value); return *this;}
+    inline DescribeWorkflowExecutionRequest& WithExecution(WorkflowExecution&& value) { SetExecution(std::move(value)); return *this;}
 
   private:
     Aws::String m_domain;

@@ -16,6 +16,7 @@
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/kinesis/KinesisRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of the stream to describe.</p>
      */
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
 
     /**
      * <p>The name of the stream to describe.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the stream to describe.</p>
      */
-    inline DescribeStreamRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
+    inline DescribeStreamRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the stream to describe.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The shard ID of the shard to start with.</p>
      */
-    inline void SetExclusiveStartShardId(Aws::String&& value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId = value; }
+    inline void SetExclusiveStartShardId(Aws::String&& value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId = std::move(value); }
 
     /**
      * <p>The shard ID of the shard to start with.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The shard ID of the shard to start with.</p>
      */
-    inline DescribeStreamRequest& WithExclusiveStartShardId(Aws::String&& value) { SetExclusiveStartShardId(value); return *this;}
+    inline DescribeStreamRequest& WithExclusiveStartShardId(Aws::String&& value) { SetExclusiveStartShardId(std::move(value)); return *this;}
 
     /**
      * <p>The shard ID of the shard to start with.</p>

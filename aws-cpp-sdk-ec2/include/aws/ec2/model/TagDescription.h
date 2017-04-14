@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResourceType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The ID of the resource. For example, <code>ami-1a2b3c4d</code>.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The ID of the resource. For example, <code>ami-1a2b3c4d</code>.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The ID of the resource. For example, <code>ami-1a2b3c4d</code>.</p>
      */
-    inline TagDescription& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline TagDescription& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the resource. For example, <code>ami-1a2b3c4d</code>.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The resource type.</p>
      */
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The resource type.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The resource type.</p>
      */
-    inline TagDescription& WithResourceType(ResourceType&& value) { SetResourceType(value); return *this;}
+    inline TagDescription& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The tag key.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>The tag key.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The tag key.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>The tag key.</p>
      */
-    inline TagDescription& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline TagDescription& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The tag key.</p>
@@ -155,7 +156,7 @@ namespace Model
     /**
      * <p>The tag value.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The tag value.</p>
@@ -170,7 +171,7 @@ namespace Model
     /**
      * <p>The tag value.</p>
      */
-    inline TagDescription& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline TagDescription& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The tag value.</p>

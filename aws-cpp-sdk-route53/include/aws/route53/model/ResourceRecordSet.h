@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/model/AliasTarget.h>
 #include <aws/route53/model/ResourceRecord.h>
+#include <utility>
 
 namespace Aws
 {
@@ -137,7 +138,7 @@ namespace Model
      * must replace the entire label; for example, you can't specify
      * <code>prod*.example.com</code>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the domain you want to perform the action on.</p> <p>Enter a
@@ -224,7 +225,7 @@ namespace Model
      * must replace the entire label; for example, you can't specify
      * <code>prod*.example.com</code>.</p>
      */
-    inline ResourceRecordSet& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ResourceRecordSet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain you want to perform the action on.</p> <p>Enter a
@@ -364,7 +365,7 @@ namespace Model
      * which you're creating the alias. Specify any value except <code>NS</code> or
      * <code>SOA</code>.</p> </li> </ul>
      */
-    inline void SetType(RRType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(RRType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The DNS record type. For information about different record types and how
@@ -438,7 +439,7 @@ namespace Model
      * which you're creating the alias. Specify any value except <code>NS</code> or
      * <code>SOA</code>.</p> </li> </ul>
      */
-    inline ResourceRecordSet& WithType(RRType&& value) { SetType(value); return *this;}
+    inline ResourceRecordSet& WithType(RRType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p> <i>Weighted, Latency, Geo, and Failover resource record sets only:</i> An
@@ -468,7 +469,7 @@ namespace Model
      * name and type. Omit <code>SetIdentifier</code> for any other types of record
      * sets.</p>
      */
-    inline void SetSetIdentifier(Aws::String&& value) { m_setIdentifierHasBeenSet = true; m_setIdentifier = value; }
+    inline void SetSetIdentifier(Aws::String&& value) { m_setIdentifierHasBeenSet = true; m_setIdentifier = std::move(value); }
 
     /**
      * <p> <i>Weighted, Latency, Geo, and Failover resource record sets only:</i> An
@@ -498,7 +499,7 @@ namespace Model
      * name and type. Omit <code>SetIdentifier</code> for any other types of record
      * sets.</p>
      */
-    inline ResourceRecordSet& WithSetIdentifier(Aws::String&& value) { SetSetIdentifier(value); return *this;}
+    inline ResourceRecordSet& WithSetIdentifier(Aws::String&& value) { SetSetIdentifier(std::move(value)); return *this;}
 
     /**
      * <p> <i>Weighted, Latency, Geo, and Failover resource record sets only:</i> An
@@ -670,7 +671,7 @@ namespace Model
      * <code>Name</code> and <code>Type</code> elements as latency resource record
      * sets.</p> </li> </ul>
      */
-    inline void SetRegion(ResourceRecordSetRegion&& value) { m_regionHasBeenSet = true; m_region = value; }
+    inline void SetRegion(ResourceRecordSetRegion&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
      * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where
@@ -718,7 +719,7 @@ namespace Model
      * <code>Name</code> and <code>Type</code> elements as latency resource record
      * sets.</p> </li> </ul>
      */
-    inline ResourceRecordSet& WithRegion(ResourceRecordSetRegion&& value) { SetRegion(value); return *this;}
+    inline ResourceRecordSet& WithRegion(ResourceRecordSetRegion&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
      * <p> <i>Geo location resource record sets only:</i> A complex type that lets you
@@ -820,7 +821,7 @@ namespace Model
      * <code>Name</code> and <code>Type</code> elements as geolocation resource record
      * sets.</p>
      */
-    inline void SetGeoLocation(GeoLocation&& value) { m_geoLocationHasBeenSet = true; m_geoLocation = value; }
+    inline void SetGeoLocation(GeoLocation&& value) { m_geoLocationHasBeenSet = true; m_geoLocation = std::move(value); }
 
     /**
      * <p> <i>Geo location resource record sets only:</i> A complex type that lets you
@@ -888,7 +889,7 @@ namespace Model
      * <code>Name</code> and <code>Type</code> elements as geolocation resource record
      * sets.</p>
      */
-    inline ResourceRecordSet& WithGeoLocation(GeoLocation&& value) { SetGeoLocation(value); return *this;}
+    inline ResourceRecordSet& WithGeoLocation(GeoLocation&& value) { SetGeoLocation(std::move(value)); return *this;}
 
     /**
      * <p> <i>Failover resource record sets only:</i> To configure failover, you add
@@ -1002,7 +1003,7 @@ namespace Model
      * Failover in a Private Hosted Zone</a> </p> </li> </ul> <p>Valid values:
      * <code>PRIMARY</code> | <code>SECONDARY</code> </p>
      */
-    inline void SetFailover(ResourceRecordSetFailover&& value) { m_failoverHasBeenSet = true; m_failover = value; }
+    inline void SetFailover(ResourceRecordSetFailover&& value) { m_failoverHasBeenSet = true; m_failover = std::move(value); }
 
     /**
      * <p> <i>Failover resource record sets only:</i> To configure failover, you add
@@ -1078,7 +1079,7 @@ namespace Model
      * Failover in a Private Hosted Zone</a> </p> </li> </ul> <p>Valid values:
      * <code>PRIMARY</code> | <code>SECONDARY</code> </p>
      */
-    inline ResourceRecordSet& WithFailover(ResourceRecordSetFailover&& value) { SetFailover(value); return *this;}
+    inline ResourceRecordSet& WithFailover(ResourceRecordSetFailover&& value) { SetFailover(std::move(value)); return *this;}
 
     /**
      * <p>The resource record cache time to live (TTL), in seconds. Note the
@@ -1156,7 +1157,7 @@ namespace Model
      * creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
      * </note>
      */
-    inline void SetResourceRecords(Aws::Vector<ResourceRecord>&& value) { m_resourceRecordsHasBeenSet = true; m_resourceRecords = value; }
+    inline void SetResourceRecords(Aws::Vector<ResourceRecord>&& value) { m_resourceRecordsHasBeenSet = true; m_resourceRecords = std::move(value); }
 
     /**
      * <p>Information about the resource records to act upon.</p> <note> <p>If you're
@@ -1170,7 +1171,7 @@ namespace Model
      * creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
      * </note>
      */
-    inline ResourceRecordSet& WithResourceRecords(Aws::Vector<ResourceRecord>&& value) { SetResourceRecords(value); return *this;}
+    inline ResourceRecordSet& WithResourceRecords(Aws::Vector<ResourceRecord>&& value) { SetResourceRecords(std::move(value)); return *this;}
 
     /**
      * <p>Information about the resource records to act upon.</p> <note> <p>If you're
@@ -1184,7 +1185,7 @@ namespace Model
      * creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
      * </note>
      */
-    inline ResourceRecordSet& AddResourceRecords(ResourceRecord&& value) { m_resourceRecordsHasBeenSet = true; m_resourceRecords.push_back(value); return *this; }
+    inline ResourceRecordSet& AddResourceRecords(ResourceRecord&& value) { m_resourceRecordsHasBeenSet = true; m_resourceRecords.push_back(std::move(value)); return *this; }
 
     /**
      * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
@@ -1238,7 +1239,7 @@ namespace Model
      * Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.</p> </li> </ul>
      */
-    inline void SetAliasTarget(AliasTarget&& value) { m_aliasTargetHasBeenSet = true; m_aliasTarget = value; }
+    inline void SetAliasTarget(AliasTarget&& value) { m_aliasTargetHasBeenSet = true; m_aliasTarget = std::move(value); }
 
     /**
      * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
@@ -1274,7 +1275,7 @@ namespace Model
      * Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.</p> </li> </ul>
      */
-    inline ResourceRecordSet& WithAliasTarget(AliasTarget&& value) { SetAliasTarget(value); return *this;}
+    inline ResourceRecordSet& WithAliasTarget(AliasTarget&& value) { SetAliasTarget(std::move(value)); return *this;}
 
     /**
      * <p>If you want Amazon Route 53 to return this resource record set in response to
@@ -1457,7 +1458,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
      * Failover in a Private Hosted Zone</a> </p> </li> </ul>
      */
-    inline void SetHealthCheckId(Aws::String&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = value; }
+    inline void SetHealthCheckId(Aws::String&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = std::move(value); }
 
     /**
      * <p>If you want Amazon Route 53 to return this resource record set in response to
@@ -1640,7 +1641,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
      * Failover in a Private Hosted Zone</a> </p> </li> </ul>
      */
-    inline ResourceRecordSet& WithHealthCheckId(Aws::String&& value) { SetHealthCheckId(value); return *this;}
+    inline ResourceRecordSet& WithHealthCheckId(Aws::String&& value) { SetHealthCheckId(std::move(value)); return *this;}
 
     /**
      * <p>If you want Amazon Route 53 to return this resource record set in response to
@@ -1743,7 +1744,7 @@ namespace Model
      * continue to be charged for it even though it's no longer in use. </p>
      * </important>
      */
-    inline void SetTrafficPolicyInstanceId(Aws::String&& value) { m_trafficPolicyInstanceIdHasBeenSet = true; m_trafficPolicyInstanceId = value; }
+    inline void SetTrafficPolicyInstanceId(Aws::String&& value) { m_trafficPolicyInstanceIdHasBeenSet = true; m_trafficPolicyInstanceId = std::move(value); }
 
     /**
      * <p>When you create a traffic policy instance, Amazon Route 53 automatically
@@ -1785,7 +1786,7 @@ namespace Model
      * continue to be charged for it even though it's no longer in use. </p>
      * </important>
      */
-    inline ResourceRecordSet& WithTrafficPolicyInstanceId(Aws::String&& value) { SetTrafficPolicyInstanceId(value); return *this;}
+    inline ResourceRecordSet& WithTrafficPolicyInstanceId(Aws::String&& value) { SetTrafficPolicyInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>When you create a traffic policy instance, Amazon Route 53 automatically

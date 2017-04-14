@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The name of the target table. The table must already exist in the
      * database.</p>
      */
-    inline void SetDataTableName(Aws::String&& value) { m_dataTableNameHasBeenSet = true; m_dataTableName = value; }
+    inline void SetDataTableName(Aws::String&& value) { m_dataTableNameHasBeenSet = true; m_dataTableName = std::move(value); }
 
     /**
      * <p>The name of the target table. The table must already exist in the
@@ -78,7 +79,7 @@ namespace Model
      * <p>The name of the target table. The table must already exist in the
      * database.</p>
      */
-    inline CopyCommand& WithDataTableName(Aws::String&& value) { SetDataTableName(value); return *this;}
+    inline CopyCommand& WithDataTableName(Aws::String&& value) { SetDataTableName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the target table. The table must already exist in the
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>A comma-separated list of column names.</p>
      */
-    inline void SetDataTableColumns(Aws::String&& value) { m_dataTableColumnsHasBeenSet = true; m_dataTableColumns = value; }
+    inline void SetDataTableColumns(Aws::String&& value) { m_dataTableColumnsHasBeenSet = true; m_dataTableColumns = std::move(value); }
 
     /**
      * <p>A comma-separated list of column names.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>A comma-separated list of column names.</p>
      */
-    inline CopyCommand& WithDataTableColumns(Aws::String&& value) { SetDataTableColumns(value); return *this;}
+    inline CopyCommand& WithDataTableColumns(Aws::String&& value) { SetDataTableColumns(std::move(value)); return *this;}
 
     /**
      * <p>A comma-separated list of column names.</p>
@@ -179,7 +180,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
      * Redshift COPY command examples</a>.</p>
      */
-    inline void SetCopyOptions(Aws::String&& value) { m_copyOptionsHasBeenSet = true; m_copyOptions = value; }
+    inline void SetCopyOptions(Aws::String&& value) { m_copyOptionsHasBeenSet = true; m_copyOptions = std::move(value); }
 
     /**
      * <p>Optional parameters to use with the Amazon Redshift <code>COPY</code>
@@ -239,7 +240,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
      * Redshift COPY command examples</a>.</p>
      */
-    inline CopyCommand& WithCopyOptions(Aws::String&& value) { SetCopyOptions(value); return *this;}
+    inline CopyCommand& WithCopyOptions(Aws::String&& value) { SetCopyOptions(std::move(value)); return *this;}
 
     /**
      * <p>Optional parameters to use with the Amazon Redshift <code>COPY</code>

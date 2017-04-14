@@ -16,6 +16,7 @@
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/ecr/ECRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * namespace to group the repository into a category (such as
      * <code>project-a/nginx-web-app</code>).</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The name to use for the repository. The repository name may be specified on
@@ -81,7 +82,7 @@ namespace Model
      * namespace to group the repository into a category (such as
      * <code>project-a/nginx-web-app</code>).</p>
      */
-    inline CreateRepositoryRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline CreateRepositoryRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The name to use for the repository. The repository name may be specified on

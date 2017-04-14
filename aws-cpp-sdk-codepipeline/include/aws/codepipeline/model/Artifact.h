@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/ArtifactLocation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The artifact's name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The artifact's name.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The artifact's name.</p>
      */
-    inline Artifact& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Artifact& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The artifact's name.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>The artifact's revision ID. Depending on the type of object, this could be a
      * commit ID (GitHub) or a revision ID (Amazon S3).</p>
      */
-    inline void SetRevision(Aws::String&& value) { m_revisionHasBeenSet = true; m_revision = value; }
+    inline void SetRevision(Aws::String&& value) { m_revisionHasBeenSet = true; m_revision = std::move(value); }
 
     /**
      * <p>The artifact's revision ID. Depending on the type of object, this could be a
@@ -114,7 +115,7 @@ namespace Model
      * <p>The artifact's revision ID. Depending on the type of object, this could be a
      * commit ID (GitHub) or a revision ID (Amazon S3).</p>
      */
-    inline Artifact& WithRevision(Aws::String&& value) { SetRevision(value); return *this;}
+    inline Artifact& WithRevision(Aws::String&& value) { SetRevision(std::move(value)); return *this;}
 
     /**
      * <p>The artifact's revision ID. Depending on the type of object, this could be a
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>The location of an artifact.</p>
      */
-    inline void SetLocation(ArtifactLocation&& value) { m_locationHasBeenSet = true; m_location = value; }
+    inline void SetLocation(ArtifactLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
      * <p>The location of an artifact.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>The location of an artifact.</p>
      */
-    inline Artifact& WithLocation(ArtifactLocation&& value) { SetLocation(value); return *this;}
+    inline Artifact& WithLocation(ArtifactLocation&& value) { SetLocation(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

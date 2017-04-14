@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ID of the HIT to extend.</p>
      */
-    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
+    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = std::move(value); }
 
     /**
      * <p>The ID of the HIT to extend.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID of the HIT to extend.</p>
      */
-    inline CreateAdditionalAssignmentsForHITRequest& WithHITId(Aws::String&& value) { SetHITId(value); return *this;}
+    inline CreateAdditionalAssignmentsForHITRequest& WithHITId(Aws::String&& value) { SetHITId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the HIT to extend.</p>
@@ -113,7 +114,7 @@ namespace Model
      * using the same <code>UniqueRequestToken</code>, subsequent calls will return an
      * error with a message containing the request ID. </p>
      */
-    inline void SetUniqueRequestToken(Aws::String&& value) { m_uniqueRequestTokenHasBeenSet = true; m_uniqueRequestToken = value; }
+    inline void SetUniqueRequestToken(Aws::String&& value) { m_uniqueRequestTokenHasBeenSet = true; m_uniqueRequestToken = std::move(value); }
 
     /**
      * <p> A unique identifier for this request, which allows you to retry the call on
@@ -143,7 +144,7 @@ namespace Model
      * using the same <code>UniqueRequestToken</code>, subsequent calls will return an
      * error with a message containing the request ID. </p>
      */
-    inline CreateAdditionalAssignmentsForHITRequest& WithUniqueRequestToken(Aws::String&& value) { SetUniqueRequestToken(value); return *this;}
+    inline CreateAdditionalAssignmentsForHITRequest& WithUniqueRequestToken(Aws::String&& value) { SetUniqueRequestToken(std::move(value)); return *this;}
 
     /**
      * <p> A unique identifier for this request, which allows you to retry the call on

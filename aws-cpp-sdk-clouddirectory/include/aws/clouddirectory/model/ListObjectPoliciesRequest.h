@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
 #include <aws/clouddirectory/model/ConsistencyLevel.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a> where objects reside. For more
      * information, see <a>arns</a>.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>ARN associated with the <a>Directory</a> where objects reside. For more
@@ -71,7 +72,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a> where objects reside. For more
      * information, see <a>arns</a>.</p>
      */
-    inline ListObjectPoliciesRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline ListObjectPoliciesRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN associated with the <a>Directory</a> where objects reside. For more
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>Reference that identifies the object for which policies will be listed.</p>
      */
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
+    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
 
     /**
      * <p>Reference that identifies the object for which policies will be listed.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>Reference that identifies the object for which policies will be listed.</p>
      */
-    inline ListObjectPoliciesRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(value); return *this;}
+    inline ListObjectPoliciesRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline ListObjectPoliciesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListObjectPoliciesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>
@@ -173,7 +174,7 @@ namespace Model
      * <p>Represents the manner and timing in which the successful write or update of
      * an object is reflected in a subsequent read operation of that same object.</p>
      */
-    inline void SetConsistencyLevel(ConsistencyLevel&& value) { m_consistencyLevelHasBeenSet = true; m_consistencyLevel = value; }
+    inline void SetConsistencyLevel(ConsistencyLevel&& value) { m_consistencyLevelHasBeenSet = true; m_consistencyLevel = std::move(value); }
 
     /**
      * <p>Represents the manner and timing in which the successful write or update of
@@ -185,7 +186,7 @@ namespace Model
      * <p>Represents the manner and timing in which the successful write or update of
      * an object is reflected in a subsequent read operation of that same object.</p>
      */
-    inline ListObjectPoliciesRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(value); return *this;}
+    inline ListObjectPoliciesRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(std::move(value)); return *this;}
 
   private:
     Aws::String m_directoryArn;

@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/PlacementStrategyType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -82,7 +83,7 @@ namespace Model
      * on memory, a task is placed on the instance with the least amount of remaining
      * memory (but still enough to run the task).</p>
      */
-    inline void SetType(PlacementStrategyType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(PlacementStrategyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of placement strategy. The <code>random</code> placement strategy
@@ -106,7 +107,7 @@ namespace Model
      * on memory, a task is placed on the instance with the least amount of remaining
      * memory (but still enough to run the task).</p>
      */
-    inline PlacementStrategy& WithType(PlacementStrategyType&& value) { SetType(value); return *this;}
+    inline PlacementStrategy& WithType(PlacementStrategyType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The field to apply the placement strategy against. For the
@@ -139,7 +140,7 @@ namespace Model
      * placement strategy, valid values are <code>cpu</code> and <code>memory</code>.
      * For the <code>random</code> placement strategy, this field is not used.</p>
      */
-    inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = value; }
+    inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
 
     /**
      * <p>The field to apply the placement strategy against. For the
@@ -172,7 +173,7 @@ namespace Model
      * placement strategy, valid values are <code>cpu</code> and <code>memory</code>.
      * For the <code>random</code> placement strategy, this field is not used.</p>
      */
-    inline PlacementStrategy& WithField(Aws::String&& value) { SetField(value); return *this;}
+    inline PlacementStrategy& WithField(Aws::String&& value) { SetField(std::move(value)); return *this;}
 
     /**
      * <p>The field to apply the placement strategy against. For the

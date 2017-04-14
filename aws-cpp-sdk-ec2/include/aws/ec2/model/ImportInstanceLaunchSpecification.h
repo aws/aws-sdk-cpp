@@ -22,6 +22,7 @@
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/ec2/model/Placement.h>
 #include <aws/ec2/model/ShutdownBehavior.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The architecture of the instance.</p>
      */
-    inline void SetArchitecture(ArchitectureValues&& value) { m_architectureHasBeenSet = true; m_architecture = value; }
+    inline void SetArchitecture(ArchitectureValues&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
 
     /**
      * <p>The architecture of the instance.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The architecture of the instance.</p>
      */
-    inline ImportInstanceLaunchSpecification& WithArchitecture(ArchitectureValues&& value) { SetArchitecture(value); return *this;}
+    inline ImportInstanceLaunchSpecification& WithArchitecture(ArchitectureValues&& value) { SetArchitecture(std::move(value)); return *this;}
 
     /**
      * <p>One or more security group names.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>One or more security group names.</p>
      */
-    inline void SetGroupNames(Aws::Vector<Aws::String>&& value) { m_groupNamesHasBeenSet = true; m_groupNames = value; }
+    inline void SetGroupNames(Aws::Vector<Aws::String>&& value) { m_groupNamesHasBeenSet = true; m_groupNames = std::move(value); }
 
     /**
      * <p>One or more security group names.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>One or more security group names.</p>
      */
-    inline ImportInstanceLaunchSpecification& WithGroupNames(Aws::Vector<Aws::String>&& value) { SetGroupNames(value); return *this;}
+    inline ImportInstanceLaunchSpecification& WithGroupNames(Aws::Vector<Aws::String>&& value) { SetGroupNames(std::move(value)); return *this;}
 
     /**
      * <p>One or more security group names.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>One or more security group names.</p>
      */
-    inline ImportInstanceLaunchSpecification& AddGroupNames(Aws::String&& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
+    inline ImportInstanceLaunchSpecification& AddGroupNames(Aws::String&& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more security group names.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>One or more security group IDs.</p>
      */
-    inline void SetGroupIds(Aws::Vector<Aws::String>&& value) { m_groupIdsHasBeenSet = true; m_groupIds = value; }
+    inline void SetGroupIds(Aws::Vector<Aws::String>&& value) { m_groupIdsHasBeenSet = true; m_groupIds = std::move(value); }
 
     /**
      * <p>One or more security group IDs.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>One or more security group IDs.</p>
      */
-    inline ImportInstanceLaunchSpecification& WithGroupIds(Aws::Vector<Aws::String>&& value) { SetGroupIds(value); return *this;}
+    inline ImportInstanceLaunchSpecification& WithGroupIds(Aws::Vector<Aws::String>&& value) { SetGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more security group IDs.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>One or more security group IDs.</p>
      */
-    inline ImportInstanceLaunchSpecification& AddGroupIds(Aws::String&& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
+    inline ImportInstanceLaunchSpecification& AddGroupIds(Aws::String&& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more security group IDs.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>Reserved.</p>
      */
-    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
+    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
 
     /**
      * <p>Reserved.</p>
@@ -186,7 +187,7 @@ namespace Model
     /**
      * <p>Reserved.</p>
      */
-    inline ImportInstanceLaunchSpecification& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(value); return *this;}
+    inline ImportInstanceLaunchSpecification& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(std::move(value)); return *this;}
 
     /**
      * <p>Reserved.</p>
@@ -212,7 +213,7 @@ namespace Model
      * or command line tool, Base64-encoding is performed for you, and you can load the
      * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
-    inline void SetUserData(UserData&& value) { m_userDataHasBeenSet = true; m_userData = value; }
+    inline void SetUserData(UserData&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
      * <p>The user data to make available to the instance. If you are using an AWS SDK
@@ -226,7 +227,7 @@ namespace Model
      * or command line tool, Base64-encoding is performed for you, and you can load the
      * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
-    inline ImportInstanceLaunchSpecification& WithUserData(UserData&& value) { SetUserData(value); return *this;}
+    inline ImportInstanceLaunchSpecification& WithUserData(UserData&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
      * <p>The instance type. For more information about the instance types that you can
@@ -250,7 +251,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types">Instance
      * Types</a> in the VM Import/Export User Guide.</p>
      */
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type. For more information about the instance types that you can
@@ -266,7 +267,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types">Instance
      * Types</a> in the VM Import/Export User Guide.</p>
      */
-    inline ImportInstanceLaunchSpecification& WithInstanceType(InstanceType&& value) { SetInstanceType(value); return *this;}
+    inline ImportInstanceLaunchSpecification& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The placement information for the instance.</p>
@@ -281,7 +282,7 @@ namespace Model
     /**
      * <p>The placement information for the instance.</p>
      */
-    inline void SetPlacement(Placement&& value) { m_placementHasBeenSet = true; m_placement = value; }
+    inline void SetPlacement(Placement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
 
     /**
      * <p>The placement information for the instance.</p>
@@ -291,7 +292,7 @@ namespace Model
     /**
      * <p>The placement information for the instance.</p>
      */
-    inline ImportInstanceLaunchSpecification& WithPlacement(Placement&& value) { SetPlacement(value); return *this;}
+    inline ImportInstanceLaunchSpecification& WithPlacement(Placement&& value) { SetPlacement(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether monitoring is enabled.</p>
@@ -321,7 +322,7 @@ namespace Model
     /**
      * <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
@@ -336,7 +337,7 @@ namespace Model
     /**
      * <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
      */
-    inline ImportInstanceLaunchSpecification& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+    inline ImportInstanceLaunchSpecification& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
@@ -359,7 +360,7 @@ namespace Model
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
      * from the instance (using the operating system command for system shutdown).</p>
      */
-    inline void SetInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
+    inline void SetInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = std::move(value); }
 
     /**
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
@@ -371,7 +372,7 @@ namespace Model
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
      * from the instance (using the operating system command for system shutdown).</p>
      */
-    inline ImportInstanceLaunchSpecification& WithInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
+    inline ImportInstanceLaunchSpecification& WithInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] An available IP address from the IP address range of the
@@ -389,7 +390,7 @@ namespace Model
      * <p>[EC2-VPC] An available IP address from the IP address range of the
      * subnet.</p>
      */
-    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
+    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
 
     /**
      * <p>[EC2-VPC] An available IP address from the IP address range of the
@@ -407,7 +408,7 @@ namespace Model
      * <p>[EC2-VPC] An available IP address from the IP address range of the
      * subnet.</p>
      */
-    inline ImportInstanceLaunchSpecification& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(value); return *this;}
+    inline ImportInstanceLaunchSpecification& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] An available IP address from the IP address range of the

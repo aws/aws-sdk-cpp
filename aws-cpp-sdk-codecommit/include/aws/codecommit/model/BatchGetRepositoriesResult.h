@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codecommit/model/RepositoryMetadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>A list of repositories returned by the batch get repositories operation.</p>
      */
-    inline void SetRepositories(Aws::Vector<RepositoryMetadata>&& value) { m_repositories = value; }
+    inline void SetRepositories(Aws::Vector<RepositoryMetadata>&& value) { m_repositories = std::move(value); }
 
     /**
      * <p>A list of repositories returned by the batch get repositories operation.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>A list of repositories returned by the batch get repositories operation.</p>
      */
-    inline BatchGetRepositoriesResult& WithRepositories(Aws::Vector<RepositoryMetadata>&& value) { SetRepositories(value); return *this;}
+    inline BatchGetRepositoriesResult& WithRepositories(Aws::Vector<RepositoryMetadata>&& value) { SetRepositories(std::move(value)); return *this;}
 
     /**
      * <p>A list of repositories returned by the batch get repositories operation.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>A list of repositories returned by the batch get repositories operation.</p>
      */
-    inline BatchGetRepositoriesResult& AddRepositories(RepositoryMetadata&& value) { m_repositories.push_back(value); return *this; }
+    inline BatchGetRepositoriesResult& AddRepositories(RepositoryMetadata&& value) { m_repositories.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Returns a list of repository names for which information could not be
@@ -98,7 +99,7 @@ namespace Model
      * <p>Returns a list of repository names for which information could not be
      * found.</p>
      */
-    inline void SetRepositoriesNotFound(Aws::Vector<Aws::String>&& value) { m_repositoriesNotFound = value; }
+    inline void SetRepositoriesNotFound(Aws::Vector<Aws::String>&& value) { m_repositoriesNotFound = std::move(value); }
 
     /**
      * <p>Returns a list of repository names for which information could not be
@@ -110,7 +111,7 @@ namespace Model
      * <p>Returns a list of repository names for which information could not be
      * found.</p>
      */
-    inline BatchGetRepositoriesResult& WithRepositoriesNotFound(Aws::Vector<Aws::String>&& value) { SetRepositoriesNotFound(value); return *this;}
+    inline BatchGetRepositoriesResult& WithRepositoriesNotFound(Aws::Vector<Aws::String>&& value) { SetRepositoriesNotFound(std::move(value)); return *this;}
 
     /**
      * <p>Returns a list of repository names for which information could not be
@@ -122,7 +123,7 @@ namespace Model
      * <p>Returns a list of repository names for which information could not be
      * found.</p>
      */
-    inline BatchGetRepositoriesResult& AddRepositoriesNotFound(Aws::String&& value) { m_repositoriesNotFound.push_back(value); return *this; }
+    inline BatchGetRepositoriesResult& AddRepositoriesNotFound(Aws::String&& value) { m_repositoriesNotFound.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Returns a list of repository names for which information could not be

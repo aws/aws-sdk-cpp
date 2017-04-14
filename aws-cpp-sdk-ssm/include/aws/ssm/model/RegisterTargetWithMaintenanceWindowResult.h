@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the target definition in this Maintenance Window.</p>
      */
-    inline void SetWindowTargetId(Aws::String&& value) { m_windowTargetId = value; }
+    inline void SetWindowTargetId(Aws::String&& value) { m_windowTargetId = std::move(value); }
 
     /**
      * <p>The ID of the target definition in this Maintenance Window.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the target definition in this Maintenance Window.</p>
      */
-    inline RegisterTargetWithMaintenanceWindowResult& WithWindowTargetId(Aws::String&& value) { SetWindowTargetId(value); return *this;}
+    inline RegisterTargetWithMaintenanceWindowResult& WithWindowTargetId(Aws::String&& value) { SetWindowTargetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the target definition in this Maintenance Window.</p>

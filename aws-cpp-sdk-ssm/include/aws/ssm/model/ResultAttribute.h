@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>Name of the inventory item type. Valid value: “AWS:InstanceInformation”.
      * Default Value: “AWS:InstanceInformation”.</p>
      */
-    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
+    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
      * <p>Name of the inventory item type. Valid value: “AWS:InstanceInformation”.
@@ -77,7 +78,7 @@ namespace Model
      * <p>Name of the inventory item type. Valid value: “AWS:InstanceInformation”.
      * Default Value: “AWS:InstanceInformation”.</p>
      */
-    inline ResultAttribute& WithTypeName(Aws::String&& value) { SetTypeName(value); return *this;}
+    inline ResultAttribute& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the inventory item type. Valid value: “AWS:InstanceInformation”.

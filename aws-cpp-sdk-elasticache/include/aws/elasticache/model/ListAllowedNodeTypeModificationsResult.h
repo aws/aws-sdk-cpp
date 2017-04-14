@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/ResponseMetadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -34,6 +35,12 @@ namespace ElastiCache
 {
 namespace Model
 {
+  /**
+   * <p>Represents the allowed node types you can use to modify your cache cluster or
+   * replication group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AllowedNodeTypeModificationsMessage">AWS
+   * API Reference</a></p>
+   */
   class AWS_ELASTICACHE_API ListAllowedNodeTypeModificationsResult
   {
   public:
@@ -41,28 +48,76 @@ namespace Model
     ListAllowedNodeTypeModificationsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ListAllowedNodeTypeModificationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    
+    /**
+     * <p>A string list, each element of which specifies a cache node type which you
+     * can use to scale your cache cluster or replication group.</p> <p>When scaling up
+     * a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
+     * <code>ModifyReplicationGroup</code>, use a value from this list for the
+     * <code>CacheNodeType</code> parameter.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetScaleUpModifications() const{ return m_scaleUpModifications; }
 
-    
+    /**
+     * <p>A string list, each element of which specifies a cache node type which you
+     * can use to scale your cache cluster or replication group.</p> <p>When scaling up
+     * a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
+     * <code>ModifyReplicationGroup</code>, use a value from this list for the
+     * <code>CacheNodeType</code> parameter.</p>
+     */
     inline void SetScaleUpModifications(const Aws::Vector<Aws::String>& value) { m_scaleUpModifications = value; }
 
-    
-    inline void SetScaleUpModifications(Aws::Vector<Aws::String>&& value) { m_scaleUpModifications = value; }
+    /**
+     * <p>A string list, each element of which specifies a cache node type which you
+     * can use to scale your cache cluster or replication group.</p> <p>When scaling up
+     * a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
+     * <code>ModifyReplicationGroup</code>, use a value from this list for the
+     * <code>CacheNodeType</code> parameter.</p>
+     */
+    inline void SetScaleUpModifications(Aws::Vector<Aws::String>&& value) { m_scaleUpModifications = std::move(value); }
 
-    
+    /**
+     * <p>A string list, each element of which specifies a cache node type which you
+     * can use to scale your cache cluster or replication group.</p> <p>When scaling up
+     * a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
+     * <code>ModifyReplicationGroup</code>, use a value from this list for the
+     * <code>CacheNodeType</code> parameter.</p>
+     */
     inline ListAllowedNodeTypeModificationsResult& WithScaleUpModifications(const Aws::Vector<Aws::String>& value) { SetScaleUpModifications(value); return *this;}
 
-    
-    inline ListAllowedNodeTypeModificationsResult& WithScaleUpModifications(Aws::Vector<Aws::String>&& value) { SetScaleUpModifications(value); return *this;}
+    /**
+     * <p>A string list, each element of which specifies a cache node type which you
+     * can use to scale your cache cluster or replication group.</p> <p>When scaling up
+     * a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
+     * <code>ModifyReplicationGroup</code>, use a value from this list for the
+     * <code>CacheNodeType</code> parameter.</p>
+     */
+    inline ListAllowedNodeTypeModificationsResult& WithScaleUpModifications(Aws::Vector<Aws::String>&& value) { SetScaleUpModifications(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A string list, each element of which specifies a cache node type which you
+     * can use to scale your cache cluster or replication group.</p> <p>When scaling up
+     * a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
+     * <code>ModifyReplicationGroup</code>, use a value from this list for the
+     * <code>CacheNodeType</code> parameter.</p>
+     */
     inline ListAllowedNodeTypeModificationsResult& AddScaleUpModifications(const Aws::String& value) { m_scaleUpModifications.push_back(value); return *this; }
 
-    
-    inline ListAllowedNodeTypeModificationsResult& AddScaleUpModifications(Aws::String&& value) { m_scaleUpModifications.push_back(value); return *this; }
+    /**
+     * <p>A string list, each element of which specifies a cache node type which you
+     * can use to scale your cache cluster or replication group.</p> <p>When scaling up
+     * a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
+     * <code>ModifyReplicationGroup</code>, use a value from this list for the
+     * <code>CacheNodeType</code> parameter.</p>
+     */
+    inline ListAllowedNodeTypeModificationsResult& AddScaleUpModifications(Aws::String&& value) { m_scaleUpModifications.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>A string list, each element of which specifies a cache node type which you
+     * can use to scale your cache cluster or replication group.</p> <p>When scaling up
+     * a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
+     * <code>ModifyReplicationGroup</code>, use a value from this list for the
+     * <code>CacheNodeType</code> parameter.</p>
+     */
     inline ListAllowedNodeTypeModificationsResult& AddScaleUpModifications(const char* value) { m_scaleUpModifications.push_back(value); return *this; }
 
     
@@ -72,13 +127,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListAllowedNodeTypeModificationsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListAllowedNodeTypeModificationsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListAllowedNodeTypeModificationsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_scaleUpModifications;

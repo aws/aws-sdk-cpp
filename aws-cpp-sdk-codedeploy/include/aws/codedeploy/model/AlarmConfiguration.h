@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/Alarm.h>
+#include <utility>
 
 namespace Aws
 {
@@ -106,7 +107,7 @@ namespace Model
      * <p>A list of alarms configured for the deployment group. A maximum of 10 alarms
      * can be added to a deployment group.</p>
      */
-    inline void SetAlarms(Aws::Vector<Alarm>&& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
+    inline void SetAlarms(Aws::Vector<Alarm>&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
 
     /**
      * <p>A list of alarms configured for the deployment group. A maximum of 10 alarms
@@ -118,7 +119,7 @@ namespace Model
      * <p>A list of alarms configured for the deployment group. A maximum of 10 alarms
      * can be added to a deployment group.</p>
      */
-    inline AlarmConfiguration& WithAlarms(Aws::Vector<Alarm>&& value) { SetAlarms(value); return *this;}
+    inline AlarmConfiguration& WithAlarms(Aws::Vector<Alarm>&& value) { SetAlarms(std::move(value)); return *this;}
 
     /**
      * <p>A list of alarms configured for the deployment group. A maximum of 10 alarms
@@ -130,7 +131,7 @@ namespace Model
      * <p>A list of alarms configured for the deployment group. A maximum of 10 alarms
      * can be added to a deployment group.</p>
      */
-    inline AlarmConfiguration& AddAlarms(Alarm&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(value); return *this; }
+    inline AlarmConfiguration& AddAlarms(Alarm&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(std::move(value)); return *this; }
 
   private:
     bool m_enabled;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/KeyValuePair.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the container that receives the override.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the container that receives the override.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the container that receives the override.</p>
      */
-    inline ContainerOverride& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ContainerOverride& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the container that receives the override.</p>
@@ -97,7 +98,7 @@ namespace Model
      * <p>The command to send to the container that overrides the default command from
      * the Docker image or the task definition.</p>
      */
-    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = value; }
+    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
 
     /**
      * <p>The command to send to the container that overrides the default command from
@@ -109,7 +110,7 @@ namespace Model
      * <p>The command to send to the container that overrides the default command from
      * the Docker image or the task definition.</p>
      */
-    inline ContainerOverride& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(value); return *this;}
+    inline ContainerOverride& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
 
     /**
      * <p>The command to send to the container that overrides the default command from
@@ -121,7 +122,7 @@ namespace Model
      * <p>The command to send to the container that overrides the default command from
      * the Docker image or the task definition.</p>
      */
-    inline ContainerOverride& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
+    inline ContainerOverride& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The command to send to the container that overrides the default command from
@@ -151,7 +152,7 @@ namespace Model
      * override the existing environment variables from the Docker image or the task
      * definition.</p>
      */
-    inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = value; }
+    inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
     /**
      * <p>The environment variables to send to the container. You can add new
@@ -167,7 +168,7 @@ namespace Model
      * override the existing environment variables from the Docker image or the task
      * definition.</p>
      */
-    inline ContainerOverride& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(value); return *this;}
+    inline ContainerOverride& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
      * <p>The environment variables to send to the container. You can add new
@@ -183,7 +184,7 @@ namespace Model
      * override the existing environment variables from the Docker image or the task
      * definition.</p>
      */
-    inline ContainerOverride& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
+    inline ContainerOverride& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_name;

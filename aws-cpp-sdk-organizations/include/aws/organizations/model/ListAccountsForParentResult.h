@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/Account.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of the accounts in the specified root or OU.</p>
      */
-    inline void SetAccounts(Aws::Vector<Account>&& value) { m_accounts = value; }
+    inline void SetAccounts(Aws::Vector<Account>&& value) { m_accounts = std::move(value); }
 
     /**
      * <p>A list of the accounts in the specified root or OU.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of the accounts in the specified root or OU.</p>
      */
-    inline ListAccountsForParentResult& WithAccounts(Aws::Vector<Account>&& value) { SetAccounts(value); return *this;}
+    inline ListAccountsForParentResult& WithAccounts(Aws::Vector<Account>&& value) { SetAccounts(std::move(value)); return *this;}
 
     /**
      * <p>A list of the accounts in the specified root or OU.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of the accounts in the specified root or OU.</p>
      */
-    inline ListAccountsForParentResult& AddAccounts(Account&& value) { m_accounts.push_back(value); return *this; }
+    inline ListAccountsForParentResult& AddAccounts(Account&& value) { m_accounts.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -101,7 +102,7 @@ namespace Model
      * the output. You should repeat this until the <code>NextToken</code> response
      * element comes back as <code>null</code>.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -128,7 +129,7 @@ namespace Model
      * the output. You should repeat this until the <code>NextToken</code> response
      * element comes back as <code>null</code>.</p>
      */
-    inline ListAccountsForParentResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListAccountsForParentResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If present, this value indicates that there is more output available than is

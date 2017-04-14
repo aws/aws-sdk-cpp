@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/model/FunctionConfiguration.h>
 #include <aws/lambda/model/FunctionCodeLocation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,13 +54,13 @@ namespace Model
     inline void SetConfiguration(const FunctionConfiguration& value) { m_configuration = value; }
 
     
-    inline void SetConfiguration(FunctionConfiguration&& value) { m_configuration = value; }
+    inline void SetConfiguration(FunctionConfiguration&& value) { m_configuration = std::move(value); }
 
     
     inline GetFunctionResult& WithConfiguration(const FunctionConfiguration& value) { SetConfiguration(value); return *this;}
 
     
-    inline GetFunctionResult& WithConfiguration(FunctionConfiguration&& value) { SetConfiguration(value); return *this;}
+    inline GetFunctionResult& WithConfiguration(FunctionConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
     
     inline const FunctionCodeLocation& GetCode() const{ return m_code; }
@@ -68,13 +69,13 @@ namespace Model
     inline void SetCode(const FunctionCodeLocation& value) { m_code = value; }
 
     
-    inline void SetCode(FunctionCodeLocation&& value) { m_code = value; }
+    inline void SetCode(FunctionCodeLocation&& value) { m_code = std::move(value); }
 
     
     inline GetFunctionResult& WithCode(const FunctionCodeLocation& value) { SetCode(value); return *this;}
 
     
-    inline GetFunctionResult& WithCode(FunctionCodeLocation&& value) { SetCode(value); return *this;}
+    inline GetFunctionResult& WithCode(FunctionCodeLocation&& value) { SetCode(std::move(value)); return *this;}
 
   private:
     FunctionConfiguration m_configuration;

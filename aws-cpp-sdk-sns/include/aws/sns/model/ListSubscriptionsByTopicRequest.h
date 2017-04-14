@@ -16,6 +16,7 @@
 #include <aws/sns/SNS_EXPORTS.h>
 #include <aws/sns/SNSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The ARN of the topic for which you wish to find subscriptions.</p>
      */
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
 
     /**
      * <p>The ARN of the topic for which you wish to find subscriptions.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The ARN of the topic for which you wish to find subscriptions.</p>
      */
-    inline ListSubscriptionsByTopicRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
+    inline ListSubscriptionsByTopicRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the topic for which you wish to find subscriptions.</p>
@@ -91,7 +92,7 @@ namespace Model
      * <p>Token returned by the previous <code>ListSubscriptionsByTopic</code>
      * request.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Token returned by the previous <code>ListSubscriptionsByTopic</code>
@@ -109,7 +110,7 @@ namespace Model
      * <p>Token returned by the previous <code>ListSubscriptionsByTopic</code>
      * request.</p>
      */
-    inline ListSubscriptionsByTopicRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListSubscriptionsByTopicRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token returned by the previous <code>ListSubscriptionsByTopic</code>

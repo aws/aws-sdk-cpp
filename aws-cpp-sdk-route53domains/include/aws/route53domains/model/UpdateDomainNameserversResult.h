@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * the operation status, use GetOperationDetail.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p>
      */
-    inline void SetOperationId(Aws::String&& value) { m_operationId = value; }
+    inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
 
     /**
      * <p>Identifier for tracking the progress of the request. To use this ID to query
@@ -85,7 +86,7 @@ namespace Model
      * the operation status, use GetOperationDetail.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p>
      */
-    inline UpdateDomainNameserversResult& WithOperationId(Aws::String&& value) { SetOperationId(value); return *this;}
+    inline UpdateDomainNameserversResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
 
     /**
      * <p>Identifier for tracking the progress of the request. To use this ID to query

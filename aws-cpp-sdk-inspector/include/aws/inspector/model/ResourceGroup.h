@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The ARN of the resource group. </p>
      */
-    inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = value; }
+    inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = std::move(value); }
 
     /**
      * <p>The ARN of the resource group. </p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The ARN of the resource group. </p>
      */
-    inline ResourceGroup& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(value); return *this;}
+    inline ResourceGroup& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the resource group. </p>
@@ -101,7 +102,7 @@ namespace Model
      * of keys and an array of possible values in JSON format.</p> <p>For example, [{
      * "key1" : ["Value1","Value2"]},{"Key2": ["Value3"]}]</p>
      */
-    inline void SetResourceGroupTags(Aws::String&& value) { m_resourceGroupTagsHasBeenSet = true; m_resourceGroupTags = value; }
+    inline void SetResourceGroupTags(Aws::String&& value) { m_resourceGroupTagsHasBeenSet = true; m_resourceGroupTags = std::move(value); }
 
     /**
      * <p>The tags (key and value pairs) of the resource group.</p> <p>This data type
@@ -125,7 +126,7 @@ namespace Model
      * of keys and an array of possible values in JSON format.</p> <p>For example, [{
      * "key1" : ["Value1","Value2"]},{"Key2": ["Value3"]}]</p>
      */
-    inline ResourceGroup& WithResourceGroupTags(Aws::String&& value) { SetResourceGroupTags(value); return *this;}
+    inline ResourceGroup& WithResourceGroupTags(Aws::String&& value) { SetResourceGroupTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags (key and value pairs) of the resource group.</p> <p>This data type

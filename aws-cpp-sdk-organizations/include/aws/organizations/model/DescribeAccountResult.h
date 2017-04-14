@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/model/Account.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>A structure that contains information about the requested account.</p>
      */
-    inline void SetAccount(Account&& value) { m_account = value; }
+    inline void SetAccount(Account&& value) { m_account = std::move(value); }
 
     /**
      * <p>A structure that contains information about the requested account.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>A structure that contains information about the requested account.</p>
      */
-    inline DescribeAccountResult& WithAccount(Account&& value) { SetAccount(value); return *this;}
+    inline DescribeAccountResult& WithAccount(Account&& value) { SetAccount(std::move(value)); return *this;}
 
   private:
     Account m_account;

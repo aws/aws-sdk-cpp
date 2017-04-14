@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/CloudFrontRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * The streaming distribution's id.
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * The streaming distribution's id.
@@ -65,7 +66,7 @@ namespace Model
     /**
      * The streaming distribution's id.
      */
-    inline GetStreamingDistribution2016_01_28Request& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline GetStreamingDistribution2016_01_28Request& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * The streaming distribution's id.

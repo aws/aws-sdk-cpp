@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 #include <aws/core/utils/UUID.h>
 
 namespace Aws
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The name of the Maintenance Window.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the Maintenance Window.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name of the Maintenance Window.</p>
      */
-    inline CreateMaintenanceWindowRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateMaintenanceWindowRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Maintenance Window.</p>
@@ -87,7 +88,7 @@ namespace Model
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
      * expression.</p>
      */
-    inline void SetSchedule(Aws::String&& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
+    inline void SetSchedule(Aws::String&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
     /**
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
@@ -105,7 +106,7 @@ namespace Model
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
      * expression.</p>
      */
-    inline CreateMaintenanceWindowRequest& WithSchedule(Aws::String&& value) { SetSchedule(value); return *this;}
+    inline CreateMaintenanceWindowRequest& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
 
     /**
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>User-provided idempotency token.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>User-provided idempotency token.</p>
@@ -192,7 +193,7 @@ namespace Model
     /**
      * <p>User-provided idempotency token.</p>
      */
-    inline CreateMaintenanceWindowRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline CreateMaintenanceWindowRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>User-provided idempotency token.</p>

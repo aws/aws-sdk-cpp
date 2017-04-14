@@ -40,7 +40,8 @@ ModifyReplicationGroupRequest::ModifyReplicationGroupRequest() :
     m_snapshotRetentionLimit(0),
     m_snapshotRetentionLimitHasBeenSet(false),
     m_snapshotWindowHasBeenSet(false),
-    m_cacheNodeTypeHasBeenSet(false)
+    m_cacheNodeTypeHasBeenSet(false),
+    m_nodeGroupIdHasBeenSet(false)
 {
 }
 
@@ -143,6 +144,11 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
   if(m_cacheNodeTypeHasBeenSet)
   {
     ss << "CacheNodeType=" << StringUtils::URLEncode(m_cacheNodeType.c_str()) << "&";
+  }
+
+  if(m_nodeGroupIdHasBeenSet)
+  {
+    ss << "NodeGroupId=" << StringUtils::URLEncode(m_nodeGroupId.c_str()) << "&";
   }
 
   ss << "Version=2015-02-02";

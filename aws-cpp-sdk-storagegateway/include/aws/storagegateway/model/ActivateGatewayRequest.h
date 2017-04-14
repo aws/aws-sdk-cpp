@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
      * -- the arguments you pass to the <code>ActivateGateway</code> API call determine
      * the actual configuration of your gateway.</p>
      */
-    inline void SetActivationKey(Aws::String&& value) { m_activationKeyHasBeenSet = true; m_activationKey = value; }
+    inline void SetActivationKey(Aws::String&& value) { m_activationKeyHasBeenSet = true; m_activationKey = std::move(value); }
 
     /**
      * <p>Your gateway activation key. You can obtain the activation key by sending an
@@ -110,7 +111,7 @@ namespace Model
      * -- the arguments you pass to the <code>ActivateGateway</code> API call determine
      * the actual configuration of your gateway.</p>
      */
-    inline ActivateGatewayRequest& WithActivationKey(Aws::String&& value) { SetActivationKey(value); return *this;}
+    inline ActivateGatewayRequest& WithActivationKey(Aws::String&& value) { SetActivationKey(std::move(value)); return *this;}
 
     /**
      * <p>Your gateway activation key. You can obtain the activation key by sending an
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The name you configured for your gateway.</p>
      */
-    inline void SetGatewayName(Aws::String&& value) { m_gatewayNameHasBeenSet = true; m_gatewayName = value; }
+    inline void SetGatewayName(Aws::String&& value) { m_gatewayNameHasBeenSet = true; m_gatewayName = std::move(value); }
 
     /**
      * <p>The name you configured for your gateway.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>The name you configured for your gateway.</p>
      */
-    inline ActivateGatewayRequest& WithGatewayName(Aws::String&& value) { SetGatewayName(value); return *this;}
+    inline ActivateGatewayRequest& WithGatewayName(Aws::String&& value) { SetGatewayName(std::move(value)); return *this;}
 
     /**
      * <p>The name you configured for your gateway.</p>
@@ -177,7 +178,7 @@ namespace Model
      * time zone is used, for example, for scheduling snapshots and your gateway's
      * maintenance schedule.</p>
      */
-    inline void SetGatewayTimezone(Aws::String&& value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone = value; }
+    inline void SetGatewayTimezone(Aws::String&& value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone = std::move(value); }
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
@@ -198,7 +199,7 @@ namespace Model
      * time zone is used, for example, for scheduling snapshots and your gateway's
      * maintenance schedule.</p>
      */
-    inline ActivateGatewayRequest& WithGatewayTimezone(Aws::String&& value) { SetGatewayTimezone(value); return *this;}
+    inline ActivateGatewayRequest& WithGatewayTimezone(Aws::String&& value) { SetGatewayTimezone(std::move(value)); return *this;}
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
@@ -244,7 +245,7 @@ namespace Model
      * "eu-west-1", "eu-central-1", "eu-west-2", "ap-northeast-1", "ap-northeast-2",
      * "ap-southeast-1", "ap-southeast-2", "sa-east-1"</p>
      */
-    inline void SetGatewayRegion(Aws::String&& value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion = value; }
+    inline void SetGatewayRegion(Aws::String&& value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion = std::move(value); }
 
     /**
      * <p>A value that indicates the region where you want to store the snapshot
@@ -283,7 +284,7 @@ namespace Model
      * "eu-west-1", "eu-central-1", "eu-west-2", "ap-northeast-1", "ap-northeast-2",
      * "ap-southeast-1", "ap-southeast-2", "sa-east-1"</p>
      */
-    inline ActivateGatewayRequest& WithGatewayRegion(Aws::String&& value) { SetGatewayRegion(value); return *this;}
+    inline ActivateGatewayRequest& WithGatewayRegion(Aws::String&& value) { SetGatewayRegion(std::move(value)); return *this;}
 
     /**
      * <p>A value that indicates the region where you want to store the snapshot
@@ -320,7 +321,7 @@ namespace Model
      * activation. The default value is <code>STORED</code>. </p> <p> Valid Values:
      * "STORED", "CACHED", "VTL", "FILE_S3"</p>
      */
-    inline void SetGatewayType(Aws::String&& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = value; }
+    inline void SetGatewayType(Aws::String&& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = std::move(value); }
 
     /**
      * <p>A value that defines the type of gateway to activate. The type specified is
@@ -344,7 +345,7 @@ namespace Model
      * activation. The default value is <code>STORED</code>. </p> <p> Valid Values:
      * "STORED", "CACHED", "VTL", "FILE_S3"</p>
      */
-    inline ActivateGatewayRequest& WithGatewayType(Aws::String&& value) { SetGatewayType(value); return *this;}
+    inline ActivateGatewayRequest& WithGatewayType(Aws::String&& value) { SetGatewayType(std::move(value)); return *this;}
 
     /**
      * <p>A value that defines the type of gateway to activate. The type specified is
@@ -370,7 +371,7 @@ namespace Model
      * <p>The value that indicates the type of tape drive to use for tape gateway. This
      * field is optional.</p> <p> Valid Values: "IBM-ULT3580-TD5" </p>
      */
-    inline void SetTapeDriveType(Aws::String&& value) { m_tapeDriveTypeHasBeenSet = true; m_tapeDriveType = value; }
+    inline void SetTapeDriveType(Aws::String&& value) { m_tapeDriveTypeHasBeenSet = true; m_tapeDriveType = std::move(value); }
 
     /**
      * <p>The value that indicates the type of tape drive to use for tape gateway. This
@@ -388,7 +389,7 @@ namespace Model
      * <p>The value that indicates the type of tape drive to use for tape gateway. This
      * field is optional.</p> <p> Valid Values: "IBM-ULT3580-TD5" </p>
      */
-    inline ActivateGatewayRequest& WithTapeDriveType(Aws::String&& value) { SetTapeDriveType(value); return *this;}
+    inline ActivateGatewayRequest& WithTapeDriveType(Aws::String&& value) { SetTapeDriveType(std::move(value)); return *this;}
 
     /**
      * <p>The value that indicates the type of tape drive to use for tape gateway. This
@@ -412,7 +413,7 @@ namespace Model
      * <p>The value that indicates the type of medium changer to use for tape gateway.
      * This field is optional.</p> <p> Valid Values: "STK-L700", "AWS-Gateway-VTL"</p>
      */
-    inline void SetMediumChangerType(Aws::String&& value) { m_mediumChangerTypeHasBeenSet = true; m_mediumChangerType = value; }
+    inline void SetMediumChangerType(Aws::String&& value) { m_mediumChangerTypeHasBeenSet = true; m_mediumChangerType = std::move(value); }
 
     /**
      * <p>The value that indicates the type of medium changer to use for tape gateway.
@@ -430,7 +431,7 @@ namespace Model
      * <p>The value that indicates the type of medium changer to use for tape gateway.
      * This field is optional.</p> <p> Valid Values: "STK-L700", "AWS-Gateway-VTL"</p>
      */
-    inline ActivateGatewayRequest& WithMediumChangerType(Aws::String&& value) { SetMediumChangerType(value); return *this;}
+    inline ActivateGatewayRequest& WithMediumChangerType(Aws::String&& value) { SetMediumChangerType(std::move(value)); return *this;}
 
     /**
      * <p>The value that indicates the type of medium changer to use for tape gateway.

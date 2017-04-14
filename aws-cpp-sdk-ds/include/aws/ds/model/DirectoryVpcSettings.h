@@ -16,6 +16,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The identifier of the VPC in which to create the directory.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The identifier of the VPC in which to create the directory.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The identifier of the VPC in which to create the directory.</p>
      */
-    inline DirectoryVpcSettings& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline DirectoryVpcSettings& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the VPC in which to create the directory.</p>
@@ -99,7 +100,7 @@ namespace Model
      * must be in different Availability Zones. AWS Directory Service creates a
      * directory server and a DNS server in each of these subnets.</p>
      */
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
+    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
      * <p>The identifiers of the subnets for the directory servers. The two subnets
@@ -113,7 +114,7 @@ namespace Model
      * must be in different Availability Zones. AWS Directory Service creates a
      * directory server and a DNS server in each of these subnets.</p>
      */
-    inline DirectoryVpcSettings& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(value); return *this;}
+    inline DirectoryVpcSettings& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
      * <p>The identifiers of the subnets for the directory servers. The two subnets
@@ -127,7 +128,7 @@ namespace Model
      * must be in different Availability Zones. AWS Directory Service creates a
      * directory server and a DNS server in each of these subnets.</p>
      */
-    inline DirectoryVpcSettings& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    inline DirectoryVpcSettings& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The identifiers of the subnets for the directory servers. The two subnets

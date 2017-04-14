@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/waf/model/IPSetSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * value from the response in the <code>NextMarker</code> value in the next
      * request.</p>
      */
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
      * <p>If you have more <code>IPSet</code> objects than the number that you
@@ -99,7 +100,7 @@ namespace Model
      * value from the response in the <code>NextMarker</code> value in the next
      * request.</p>
      */
-    inline ListIPSetsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
+    inline ListIPSetsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>If you have more <code>IPSet</code> objects than the number that you
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>An array of <a>IPSetSummary</a> objects.</p>
      */
-    inline void SetIPSets(Aws::Vector<IPSetSummary>&& value) { m_iPSets = value; }
+    inline void SetIPSets(Aws::Vector<IPSetSummary>&& value) { m_iPSets = std::move(value); }
 
     /**
      * <p>An array of <a>IPSetSummary</a> objects.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>An array of <a>IPSetSummary</a> objects.</p>
      */
-    inline ListIPSetsResult& WithIPSets(Aws::Vector<IPSetSummary>&& value) { SetIPSets(value); return *this;}
+    inline ListIPSetsResult& WithIPSets(Aws::Vector<IPSetSummary>&& value) { SetIPSets(std::move(value)); return *this;}
 
     /**
      * <p>An array of <a>IPSetSummary</a> objects.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>An array of <a>IPSetSummary</a> objects.</p>
      */
-    inline ListIPSetsResult& AddIPSets(IPSetSummary&& value) { m_iPSets.push_back(value); return *this; }
+    inline ListIPSetsResult& AddIPSets(IPSetSummary&& value) { m_iPSets.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_nextMarker;

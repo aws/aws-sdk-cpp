@@ -19,6 +19,7 @@
 #include <aws/snowball/model/JobResource.h>
 #include <aws/snowball/model/ShippingOption.h>
 #include <aws/snowball/model/Notification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>The cluster ID of the cluster that you want to update, for example
      * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
 
     /**
      * <p>The cluster ID of the cluster that you want to update, for example
@@ -72,7 +73,7 @@ namespace Model
      * <p>The cluster ID of the cluster that you want to update, for example
      * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
-    inline UpdateClusterRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+    inline UpdateClusterRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The cluster ID of the cluster that you want to update, for example
@@ -102,7 +103,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
@@ -126,7 +127,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
-    inline UpdateClusterRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+    inline UpdateClusterRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
@@ -149,7 +150,7 @@ namespace Model
     /**
      * <p>The updated description of this cluster.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The updated description of this cluster.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>The updated description of this cluster.</p>
      */
-    inline UpdateClusterRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline UpdateClusterRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The updated description of this cluster.</p>
@@ -187,7 +188,7 @@ namespace Model
      * <p>The updated arrays of <a>JobResource</a> objects that can include updated
      * <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
      */
-    inline void SetResources(JobResource&& value) { m_resourcesHasBeenSet = true; m_resources = value; }
+    inline void SetResources(JobResource&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
      * <p>The updated arrays of <a>JobResource</a> objects that can include updated
@@ -199,7 +200,7 @@ namespace Model
      * <p>The updated arrays of <a>JobResource</a> objects that can include updated
      * <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
      */
-    inline UpdateClusterRequest& WithResources(JobResource&& value) { SetResources(value); return *this;}
+    inline UpdateClusterRequest& WithResources(JobResource&& value) { SetResources(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the updated <a>Address</a> object.</p>
@@ -214,7 +215,7 @@ namespace Model
     /**
      * <p>The ID of the updated <a>Address</a> object.</p>
      */
-    inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = value; }
+    inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = std::move(value); }
 
     /**
      * <p>The ID of the updated <a>Address</a> object.</p>
@@ -229,7 +230,7 @@ namespace Model
     /**
      * <p>The ID of the updated <a>Address</a> object.</p>
      */
-    inline UpdateClusterRequest& WithAddressId(Aws::String&& value) { SetAddressId(value); return *this;}
+    inline UpdateClusterRequest& WithAddressId(Aws::String&& value) { SetAddressId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the updated <a>Address</a> object.</p>
@@ -252,7 +253,7 @@ namespace Model
      * <p>The updated shipping option value of this cluster's <a>ShippingDetails</a>
      * object.</p>
      */
-    inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
+    inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = std::move(value); }
 
     /**
      * <p>The updated shipping option value of this cluster's <a>ShippingDetails</a>
@@ -264,7 +265,7 @@ namespace Model
      * <p>The updated shipping option value of this cluster's <a>ShippingDetails</a>
      * object.</p>
      */
-    inline UpdateClusterRequest& WithShippingOption(ShippingOption&& value) { SetShippingOption(value); return *this;}
+    inline UpdateClusterRequest& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
 
     /**
      * <p>The new or updated <a>Notification</a> object.</p>
@@ -279,7 +280,7 @@ namespace Model
     /**
      * <p>The new or updated <a>Notification</a> object.</p>
      */
-    inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = value; }
+    inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
 
     /**
      * <p>The new or updated <a>Notification</a> object.</p>
@@ -289,7 +290,7 @@ namespace Model
     /**
      * <p>The new or updated <a>Notification</a> object.</p>
      */
-    inline UpdateClusterRequest& WithNotification(Notification&& value) { SetNotification(value); return *this;}
+    inline UpdateClusterRequest& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
 
   private:
     Aws::String m_clusterId;

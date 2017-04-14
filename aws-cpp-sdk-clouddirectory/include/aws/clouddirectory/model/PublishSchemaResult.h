@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>ARN associated with the published schema. For more information, see
      * <a>arns</a>.</p>
      */
-    inline void SetPublishedSchemaArn(Aws::String&& value) { m_publishedSchemaArn = value; }
+    inline void SetPublishedSchemaArn(Aws::String&& value) { m_publishedSchemaArn = std::move(value); }
 
     /**
      * <p>ARN associated with the published schema. For more information, see
@@ -73,7 +74,7 @@ namespace Model
      * <p>ARN associated with the published schema. For more information, see
      * <a>arns</a>.</p>
      */
-    inline PublishSchemaResult& WithPublishedSchemaArn(Aws::String&& value) { SetPublishedSchemaArn(value); return *this;}
+    inline PublishSchemaResult& WithPublishedSchemaArn(Aws::String&& value) { SetPublishedSchemaArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN associated with the published schema. For more information, see

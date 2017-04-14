@@ -16,6 +16,7 @@
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/ElasticsearchClusterConfig.h>
 #include <aws/es/model/OptionStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p> Specifies the cluster configuration for the specified Elasticsearch
      * domain.</p>
      */
-    inline void SetOptions(ElasticsearchClusterConfig&& value) { m_optionsHasBeenSet = true; m_options = value; }
+    inline void SetOptions(ElasticsearchClusterConfig&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     /**
      * <p> Specifies the cluster configuration for the specified Elasticsearch
@@ -73,7 +74,7 @@ namespace Model
      * <p> Specifies the cluster configuration for the specified Elasticsearch
      * domain.</p>
      */
-    inline ElasticsearchClusterConfigStatus& WithOptions(ElasticsearchClusterConfig&& value) { SetOptions(value); return *this;}
+    inline ElasticsearchClusterConfigStatus& WithOptions(ElasticsearchClusterConfig&& value) { SetOptions(std::move(value)); return *this;}
 
     /**
      * <p> Specifies the status of the configuration for the specified Elasticsearch
@@ -91,7 +92,7 @@ namespace Model
      * <p> Specifies the status of the configuration for the specified Elasticsearch
      * domain.</p>
      */
-    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p> Specifies the status of the configuration for the specified Elasticsearch
@@ -103,7 +104,7 @@ namespace Model
      * <p> Specifies the status of the configuration for the specified Elasticsearch
      * domain.</p>
      */
-    inline ElasticsearchClusterConfigStatus& WithStatus(OptionStatus&& value) { SetStatus(value); return *this;}
+    inline ElasticsearchClusterConfigStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     ElasticsearchClusterConfig m_options;

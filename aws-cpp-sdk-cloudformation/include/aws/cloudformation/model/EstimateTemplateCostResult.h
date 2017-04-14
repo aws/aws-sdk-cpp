@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>An AWS Simple Monthly Calculator URL with a query string that describes the
      * resources required to run the template.</p>
      */
-    inline void SetUrl(Aws::String&& value) { m_url = value; }
+    inline void SetUrl(Aws::String&& value) { m_url = std::move(value); }
 
     /**
      * <p>An AWS Simple Monthly Calculator URL with a query string that describes the
@@ -80,7 +81,7 @@ namespace Model
      * <p>An AWS Simple Monthly Calculator URL with a query string that describes the
      * resources required to run the template.</p>
      */
-    inline EstimateTemplateCostResult& WithUrl(Aws::String&& value) { SetUrl(value); return *this;}
+    inline EstimateTemplateCostResult& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
      * <p>An AWS Simple Monthly Calculator URL with a query string that describes the
@@ -95,13 +96,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline EstimateTemplateCostResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline EstimateTemplateCostResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline EstimateTemplateCostResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_url;

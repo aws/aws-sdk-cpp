@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/model/QuotaPeriodType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -92,7 +93,7 @@ namespace Model
      * <p>The time period in which the limit applies. Valid values are "DAY", "WEEK" or
      * "MONTH".</p>
      */
-    inline void SetPeriod(QuotaPeriodType&& value) { m_periodHasBeenSet = true; m_period = value; }
+    inline void SetPeriod(QuotaPeriodType&& value) { m_periodHasBeenSet = true; m_period = std::move(value); }
 
     /**
      * <p>The time period in which the limit applies. Valid values are "DAY", "WEEK" or
@@ -104,7 +105,7 @@ namespace Model
      * <p>The time period in which the limit applies. Valid values are "DAY", "WEEK" or
      * "MONTH".</p>
      */
-    inline QuotaSettings& WithPeriod(QuotaPeriodType&& value) { SetPeriod(value); return *this;}
+    inline QuotaSettings& WithPeriod(QuotaPeriodType&& value) { SetPeriod(std::move(value)); return *this;}
 
   private:
     int m_limit;

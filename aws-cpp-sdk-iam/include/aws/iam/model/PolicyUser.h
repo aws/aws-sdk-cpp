@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The name (friendly name, not ARN) identifying the user.</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name (friendly name, not ARN) identifying the user.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The name (friendly name, not ARN) identifying the user.</p>
      */
-    inline PolicyUser& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline PolicyUser& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name (friendly name, not ARN) identifying the user.</p>
@@ -109,7 +110,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = value; }
+    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
      * <p>The stable and unique string identifying the user. For more information about
@@ -133,7 +134,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline PolicyUser& WithUserId(Aws::String&& value) { SetUserId(value); return *this;}
+    inline PolicyUser& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
      * <p>The stable and unique string identifying the user. For more information about

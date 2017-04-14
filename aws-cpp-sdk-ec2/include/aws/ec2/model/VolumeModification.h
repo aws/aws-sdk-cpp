@@ -19,6 +19,7 @@
 #include <aws/ec2/model/VolumeModificationState.h>
 #include <aws/ec2/model/VolumeType.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>ID of the volume being modified.</p>
      */
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     /**
      * <p>ID of the volume being modified.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>ID of the volume being modified.</p>
      */
-    inline VolumeModification& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
+    inline VolumeModification& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
      * <p>ID of the volume being modified.</p>
@@ -102,7 +103,7 @@ namespace Model
      * <p>Current state of modification. Modification state is null for unmodified
      * volumes. </p>
      */
-    inline void SetModificationState(VolumeModificationState&& value) { m_modificationStateHasBeenSet = true; m_modificationState = value; }
+    inline void SetModificationState(VolumeModificationState&& value) { m_modificationStateHasBeenSet = true; m_modificationState = std::move(value); }
 
     /**
      * <p>Current state of modification. Modification state is null for unmodified
@@ -114,7 +115,7 @@ namespace Model
      * <p>Current state of modification. Modification state is null for unmodified
      * volumes. </p>
      */
-    inline VolumeModification& WithModificationState(VolumeModificationState&& value) { SetModificationState(value); return *this;}
+    inline VolumeModification& WithModificationState(VolumeModificationState&& value) { SetModificationState(std::move(value)); return *this;}
 
     /**
      * <p>Generic status message on modification progress or failure.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>Generic status message on modification progress or failure.</p>
      */
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
 
     /**
      * <p>Generic status message on modification progress or failure.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>Generic status message on modification progress or failure.</p>
      */
-    inline VolumeModification& WithStatusMessage(Aws::String&& value) { SetStatusMessage(value); return *this;}
+    inline VolumeModification& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
      * <p>Generic status message on modification progress or failure.</p>
@@ -194,7 +195,7 @@ namespace Model
     /**
      * <p>Target EBS volume type of the volume being modified.</p>
      */
-    inline void SetTargetVolumeType(VolumeType&& value) { m_targetVolumeTypeHasBeenSet = true; m_targetVolumeType = value; }
+    inline void SetTargetVolumeType(VolumeType&& value) { m_targetVolumeTypeHasBeenSet = true; m_targetVolumeType = std::move(value); }
 
     /**
      * <p>Target EBS volume type of the volume being modified.</p>
@@ -204,7 +205,7 @@ namespace Model
     /**
      * <p>Target EBS volume type of the volume being modified.</p>
      */
-    inline VolumeModification& WithTargetVolumeType(VolumeType&& value) { SetTargetVolumeType(value); return *this;}
+    inline VolumeModification& WithTargetVolumeType(VolumeType&& value) { SetTargetVolumeType(std::move(value)); return *this;}
 
     /**
      * <p>Original size of the volume being modified.</p>
@@ -249,7 +250,7 @@ namespace Model
     /**
      * <p>Original EBS volume type of the volume being modified.</p>
      */
-    inline void SetOriginalVolumeType(VolumeType&& value) { m_originalVolumeTypeHasBeenSet = true; m_originalVolumeType = value; }
+    inline void SetOriginalVolumeType(VolumeType&& value) { m_originalVolumeTypeHasBeenSet = true; m_originalVolumeType = std::move(value); }
 
     /**
      * <p>Original EBS volume type of the volume being modified.</p>
@@ -259,7 +260,7 @@ namespace Model
     /**
      * <p>Original EBS volume type of the volume being modified.</p>
      */
-    inline VolumeModification& WithOriginalVolumeType(VolumeType&& value) { SetOriginalVolumeType(value); return *this;}
+    inline VolumeModification& WithOriginalVolumeType(VolumeType&& value) { SetOriginalVolumeType(std::move(value)); return *this;}
 
     /**
      * <p>Modification progress from 0 to 100%.</p>
@@ -289,7 +290,7 @@ namespace Model
     /**
      * <p>Modification start time </p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>Modification start time </p>
@@ -299,7 +300,7 @@ namespace Model
     /**
      * <p>Modification start time </p>
      */
-    inline VolumeModification& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline VolumeModification& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>Modification completion or failure time.</p>
@@ -314,7 +315,7 @@ namespace Model
     /**
      * <p>Modification completion or failure time.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>Modification completion or failure time.</p>
@@ -324,7 +325,7 @@ namespace Model
     /**
      * <p>Modification completion or failure time.</p>
      */
-    inline VolumeModification& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline VolumeModification& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
   private:
     Aws::String m_volumeId;

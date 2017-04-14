@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>A description of the status of the health check endpoint as reported by one
      * of the Amazon Route 53 health checkers.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>A description of the status of the health check endpoint as reported by one
@@ -80,7 +81,7 @@ namespace Model
      * <p>A description of the status of the health check endpoint as reported by one
      * of the Amazon Route 53 health checkers.</p>
      */
-    inline StatusReport& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline StatusReport& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>A description of the status of the health check endpoint as reported by one
@@ -113,7 +114,7 @@ namespace Model
      * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
      * 17:48:16.751 UTC.</p>
      */
-    inline void SetCheckedTime(Aws::Utils::DateTime&& value) { m_checkedTimeHasBeenSet = true; m_checkedTime = value; }
+    inline void SetCheckedTime(Aws::Utils::DateTime&& value) { m_checkedTimeHasBeenSet = true; m_checkedTime = std::move(value); }
 
     /**
      * <p>The time at which the health checker performed the health check in <a
@@ -131,7 +132,7 @@ namespace Model
      * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
      * 17:48:16.751 UTC.</p>
      */
-    inline StatusReport& WithCheckedTime(Aws::Utils::DateTime&& value) { SetCheckedTime(value); return *this;}
+    inline StatusReport& WithCheckedTime(Aws::Utils::DateTime&& value) { SetCheckedTime(std::move(value)); return *this;}
 
   private:
     Aws::String m_status;

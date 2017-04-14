@@ -16,6 +16,7 @@
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,44 +49,51 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The HTTP codes. The default value is 200. You can specify multiple values
-     * (for example, "200,202") or a range of values (for example, "200-299").</p>
+     * <p>The HTTP codes. You can specify values between 200 and 499. The default value
+     * is 200. You can specify multiple values (for example, "200,202") or a range of
+     * values (for example, "200-299").</p>
      */
     inline const Aws::String& GetHttpCode() const{ return m_httpCode; }
 
     /**
-     * <p>The HTTP codes. The default value is 200. You can specify multiple values
-     * (for example, "200,202") or a range of values (for example, "200-299").</p>
+     * <p>The HTTP codes. You can specify values between 200 and 499. The default value
+     * is 200. You can specify multiple values (for example, "200,202") or a range of
+     * values (for example, "200-299").</p>
      */
     inline void SetHttpCode(const Aws::String& value) { m_httpCodeHasBeenSet = true; m_httpCode = value; }
 
     /**
-     * <p>The HTTP codes. The default value is 200. You can specify multiple values
-     * (for example, "200,202") or a range of values (for example, "200-299").</p>
+     * <p>The HTTP codes. You can specify values between 200 and 499. The default value
+     * is 200. You can specify multiple values (for example, "200,202") or a range of
+     * values (for example, "200-299").</p>
      */
-    inline void SetHttpCode(Aws::String&& value) { m_httpCodeHasBeenSet = true; m_httpCode = value; }
+    inline void SetHttpCode(Aws::String&& value) { m_httpCodeHasBeenSet = true; m_httpCode = std::move(value); }
 
     /**
-     * <p>The HTTP codes. The default value is 200. You can specify multiple values
-     * (for example, "200,202") or a range of values (for example, "200-299").</p>
+     * <p>The HTTP codes. You can specify values between 200 and 499. The default value
+     * is 200. You can specify multiple values (for example, "200,202") or a range of
+     * values (for example, "200-299").</p>
      */
     inline void SetHttpCode(const char* value) { m_httpCodeHasBeenSet = true; m_httpCode.assign(value); }
 
     /**
-     * <p>The HTTP codes. The default value is 200. You can specify multiple values
-     * (for example, "200,202") or a range of values (for example, "200-299").</p>
+     * <p>The HTTP codes. You can specify values between 200 and 499. The default value
+     * is 200. You can specify multiple values (for example, "200,202") or a range of
+     * values (for example, "200-299").</p>
      */
     inline Matcher& WithHttpCode(const Aws::String& value) { SetHttpCode(value); return *this;}
 
     /**
-     * <p>The HTTP codes. The default value is 200. You can specify multiple values
-     * (for example, "200,202") or a range of values (for example, "200-299").</p>
+     * <p>The HTTP codes. You can specify values between 200 and 499. The default value
+     * is 200. You can specify multiple values (for example, "200,202") or a range of
+     * values (for example, "200-299").</p>
      */
-    inline Matcher& WithHttpCode(Aws::String&& value) { SetHttpCode(value); return *this;}
+    inline Matcher& WithHttpCode(Aws::String&& value) { SetHttpCode(std::move(value)); return *this;}
 
     /**
-     * <p>The HTTP codes. The default value is 200. You can specify multiple values
-     * (for example, "200,202") or a range of values (for example, "200-299").</p>
+     * <p>The HTTP codes. You can specify values between 200 and 499. The default value
+     * is 200. You can specify multiple values (for example, "200,202") or a range of
+     * values (for example, "200-299").</p>
      */
     inline Matcher& WithHttpCode(const char* value) { SetHttpCode(value); return *this;}
 

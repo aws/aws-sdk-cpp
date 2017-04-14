@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Tenancy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -81,7 +82,7 @@ namespace Model
      * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
      * <code>10.0.0.0/16</code>.</p>
      */
-    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
+    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
 
     /**
      * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
@@ -99,7 +100,7 @@ namespace Model
      * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
      * <code>10.0.0.0/16</code>.</p>
      */
-    inline CreateVpcRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(value); return *this;}
+    inline CreateVpcRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
@@ -144,7 +145,7 @@ namespace Model
      * <code>default</code> or <code>dedicated</code> values only.</p> <p>Default:
      * <code>default</code> </p>
      */
-    inline void SetInstanceTenancy(Tenancy&& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
+    inline void SetInstanceTenancy(Tenancy&& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = std::move(value); }
 
     /**
      * <p>The tenancy options for instances launched into the VPC. For
@@ -170,7 +171,7 @@ namespace Model
      * <code>default</code> or <code>dedicated</code> values only.</p> <p>Default:
      * <code>default</code> </p>
      */
-    inline CreateVpcRequest& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(value); return *this;}
+    inline CreateVpcRequest& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(std::move(value)); return *this;}
 
     /**
      * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the

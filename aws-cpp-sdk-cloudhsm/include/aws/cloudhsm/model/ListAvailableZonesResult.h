@@ -16,6 +16,7 @@
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
      */
-    inline void SetAZList(Aws::Vector<Aws::String>&& value) { m_aZList = value; }
+    inline void SetAZList(Aws::Vector<Aws::String>&& value) { m_aZList = std::move(value); }
 
     /**
      * <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
      */
-    inline ListAvailableZonesResult& WithAZList(Aws::Vector<Aws::String>&& value) { SetAZList(value); return *this;}
+    inline ListAvailableZonesResult& WithAZList(Aws::Vector<Aws::String>&& value) { SetAZList(std::move(value)); return *this;}
 
     /**
      * <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
      */
-    inline ListAvailableZonesResult& AddAZList(Aws::String&& value) { m_aZList.push_back(value); return *this; }
+    inline ListAvailableZonesResult& AddAZList(Aws::String&& value) { m_aZList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>

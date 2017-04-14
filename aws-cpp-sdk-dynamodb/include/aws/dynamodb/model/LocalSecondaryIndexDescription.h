@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/Projection.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Represents the name of the local secondary index.</p>
      */
-    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
+    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
 
     /**
      * <p>Represents the name of the local secondary index.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>Represents the name of the local secondary index.</p>
      */
-    inline LocalSecondaryIndexDescription& WithIndexName(Aws::String&& value) { SetIndexName(value); return *this;}
+    inline LocalSecondaryIndexDescription& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
 
     /**
      * <p>Represents the name of the local secondary index.</p>
@@ -122,7 +123,7 @@ namespace Model
      * DynamoDB stores items with the same partition key physically close together, in
      * sorted order by the sort key value.</p> </note>
      */
-    inline void SetKeySchema(Aws::Vector<KeySchemaElement>&& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
+    inline void SetKeySchema(Aws::Vector<KeySchemaElement>&& value) { m_keySchemaHasBeenSet = true; m_keySchema = std::move(value); }
 
     /**
      * <p>The complete key schema for the local secondary index, consisting of one or
@@ -150,7 +151,7 @@ namespace Model
      * DynamoDB stores items with the same partition key physically close together, in
      * sorted order by the sort key value.</p> </note>
      */
-    inline LocalSecondaryIndexDescription& WithKeySchema(Aws::Vector<KeySchemaElement>&& value) { SetKeySchema(value); return *this;}
+    inline LocalSecondaryIndexDescription& WithKeySchema(Aws::Vector<KeySchemaElement>&& value) { SetKeySchema(std::move(value)); return *this;}
 
     /**
      * <p>The complete key schema for the local secondary index, consisting of one or
@@ -178,7 +179,7 @@ namespace Model
      * DynamoDB stores items with the same partition key physically close together, in
      * sorted order by the sort key value.</p> </note>
      */
-    inline LocalSecondaryIndexDescription& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
+    inline LocalSecondaryIndexDescription& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Represents attributes that are copied (projected) from the table into the
@@ -199,7 +200,7 @@ namespace Model
      * global secondary index. These are in addition to the primary key attributes and
      * index key attributes, which are automatically projected. </p>
      */
-    inline void SetProjection(Projection&& value) { m_projectionHasBeenSet = true; m_projection = value; }
+    inline void SetProjection(Projection&& value) { m_projectionHasBeenSet = true; m_projection = std::move(value); }
 
     /**
      * <p>Represents attributes that are copied (projected) from the table into the
@@ -213,7 +214,7 @@ namespace Model
      * global secondary index. These are in addition to the primary key attributes and
      * index key attributes, which are automatically projected. </p>
      */
-    inline LocalSecondaryIndexDescription& WithProjection(Projection&& value) { SetProjection(value); return *this;}
+    inline LocalSecondaryIndexDescription& WithProjection(Projection&& value) { SetProjection(std::move(value)); return *this;}
 
     /**
      * <p>The total size of the specified index, in bytes. DynamoDB updates this value
@@ -270,7 +271,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
      */
-    inline void SetIndexArn(Aws::String&& value) { m_indexArnHasBeenSet = true; m_indexArn = value; }
+    inline void SetIndexArn(Aws::String&& value) { m_indexArnHasBeenSet = true; m_indexArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
@@ -285,7 +286,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
      */
-    inline LocalSecondaryIndexDescription& WithIndexArn(Aws::String&& value) { SetIndexArn(value); return *this;}
+    inline LocalSecondaryIndexDescription& WithIndexArn(Aws::String&& value) { SetIndexArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>

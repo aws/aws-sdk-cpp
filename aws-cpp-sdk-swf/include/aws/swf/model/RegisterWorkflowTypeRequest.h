@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/swf/model/TaskList.h>
 #include <aws/swf/model/ChildPolicy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The name of the domain in which to register the workflow type.</p>
      */
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The name of the domain in which to register the workflow type.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The name of the domain in which to register the workflow type.</p>
      */
-    inline RegisterWorkflowTypeRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+    inline RegisterWorkflowTypeRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain in which to register the workflow type.</p>
@@ -97,7 +98,7 @@ namespace Model
      * (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the literal string
      * quotarnquot.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the workflow type.</p> <p>The specified string must not start or
@@ -124,7 +125,7 @@ namespace Model
      * (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the literal string
      * quotarnquot.</p>
      */
-    inline RegisterWorkflowTypeRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline RegisterWorkflowTypeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the workflow type.</p> <p>The specified string must not start or
@@ -169,7 +170,7 @@ namespace Model
      * (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the literal string
      * quotarnquot.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The version of the workflow type.</p> <note>The workflow type consists of the
@@ -205,7 +206,7 @@ namespace Model
      * (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the literal string
      * quotarnquot.</p>
      */
-    inline RegisterWorkflowTypeRequest& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline RegisterWorkflowTypeRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the workflow type.</p> <note>The workflow type consists of the
@@ -232,7 +233,7 @@ namespace Model
     /**
      * <p>Textual description of the workflow type.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Textual description of the workflow type.</p>
@@ -247,7 +248,7 @@ namespace Model
     /**
      * <p>Textual description of the workflow type.</p>
      */
-    inline RegisterWorkflowTypeRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline RegisterWorkflowTypeRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Textual description of the workflow type.</p>
@@ -282,7 +283,7 @@ namespace Model
      * specified in seconds; an integer greater than or equal to 0. The value "NONE"
      * can be used to specify unlimited duration.</p>
      */
-    inline void SetDefaultTaskStartToCloseTimeout(Aws::String&& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = value; }
+    inline void SetDefaultTaskStartToCloseTimeout(Aws::String&& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = std::move(value); }
 
     /**
      * <p>If set, specifies the default maximum duration of decision tasks for this
@@ -312,7 +313,7 @@ namespace Model
      * specified in seconds; an integer greater than or equal to 0. The value "NONE"
      * can be used to specify unlimited duration.</p>
      */
-    inline RegisterWorkflowTypeRequest& WithDefaultTaskStartToCloseTimeout(Aws::String&& value) { SetDefaultTaskStartToCloseTimeout(value); return *this;}
+    inline RegisterWorkflowTypeRequest& WithDefaultTaskStartToCloseTimeout(Aws::String&& value) { SetDefaultTaskStartToCloseTimeout(std::move(value)); return *this;}
 
     /**
      * <p>If set, specifies the default maximum duration of decision tasks for this
@@ -361,7 +362,7 @@ namespace Model
      * on the time that a workflow execution can run. Exceeding this limit will always
      * cause the workflow execution to time out.</p>
      */
-    inline void SetDefaultExecutionStartToCloseTimeout(Aws::String&& value) { m_defaultExecutionStartToCloseTimeoutHasBeenSet = true; m_defaultExecutionStartToCloseTimeout = value; }
+    inline void SetDefaultExecutionStartToCloseTimeout(Aws::String&& value) { m_defaultExecutionStartToCloseTimeoutHasBeenSet = true; m_defaultExecutionStartToCloseTimeout = std::move(value); }
 
     /**
      * <p>If set, specifies the default maximum duration for executions of this
@@ -400,7 +401,7 @@ namespace Model
      * on the time that a workflow execution can run. Exceeding this limit will always
      * cause the workflow execution to time out.</p>
      */
-    inline RegisterWorkflowTypeRequest& WithDefaultExecutionStartToCloseTimeout(Aws::String&& value) { SetDefaultExecutionStartToCloseTimeout(value); return *this;}
+    inline RegisterWorkflowTypeRequest& WithDefaultExecutionStartToCloseTimeout(Aws::String&& value) { SetDefaultExecutionStartToCloseTimeout(std::move(value)); return *this;}
 
     /**
      * <p>If set, specifies the default maximum duration for executions of this
@@ -440,7 +441,7 @@ namespace Model
      * <a>StartWorkflowExecution</a> action or <code>StartChildWorkflowExecution</code>
      * decision.</p>
      */
-    inline void SetDefaultTaskList(TaskList&& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = value; }
+    inline void SetDefaultTaskList(TaskList&& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = std::move(value); }
 
     /**
      * <p>If set, specifies the default task list to use for scheduling decision tasks
@@ -458,7 +459,7 @@ namespace Model
      * <a>StartWorkflowExecution</a> action or <code>StartChildWorkflowExecution</code>
      * decision.</p>
      */
-    inline RegisterWorkflowTypeRequest& WithDefaultTaskList(TaskList&& value) { SetDefaultTaskList(value); return *this;}
+    inline RegisterWorkflowTypeRequest& WithDefaultTaskList(TaskList&& value) { SetDefaultTaskList(std::move(value)); return *this;}
 
     /**
      * <p>The default task priority to assign to the workflow type. If not assigned,
@@ -491,7 +492,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
      */
-    inline void SetDefaultTaskPriority(Aws::String&& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = value; }
+    inline void SetDefaultTaskPriority(Aws::String&& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = std::move(value); }
 
     /**
      * <p>The default task priority to assign to the workflow type. If not assigned,
@@ -524,7 +525,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
      */
-    inline RegisterWorkflowTypeRequest& WithDefaultTaskPriority(Aws::String&& value) { SetDefaultTaskPriority(value); return *this;}
+    inline RegisterWorkflowTypeRequest& WithDefaultTaskPriority(Aws::String&& value) { SetDefaultTaskPriority(std::move(value)); return *this;}
 
     /**
      * <p>The default task priority to assign to the workflow type. If not assigned,
@@ -586,7 +587,7 @@ namespace Model
      * with this event.</li> <li><b>ABANDON:</b> no action will be taken. The child
      * executions will continue to run.</li> </ul>
      */
-    inline void SetDefaultChildPolicy(ChildPolicy&& value) { m_defaultChildPolicyHasBeenSet = true; m_defaultChildPolicy = value; }
+    inline void SetDefaultChildPolicy(ChildPolicy&& value) { m_defaultChildPolicyHasBeenSet = true; m_defaultChildPolicy = std::move(value); }
 
     /**
      * <p>If set, specifies the default policy to use for the child workflow executions
@@ -620,7 +621,7 @@ namespace Model
      * with this event.</li> <li><b>ABANDON:</b> no action will be taken. The child
      * executions will continue to run.</li> </ul>
      */
-    inline RegisterWorkflowTypeRequest& WithDefaultChildPolicy(ChildPolicy&& value) { SetDefaultChildPolicy(value); return *this;}
+    inline RegisterWorkflowTypeRequest& WithDefaultChildPolicy(ChildPolicy&& value) { SetDefaultChildPolicy(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the default IAM role to use when a workflow execution of this type
@@ -647,7 +648,7 @@ namespace Model
      * the <code>StartChildWorkflowExecution</code> and
      * <code>ContinueAsNewWorkflowExecution</code> decision.</p>
      */
-    inline void SetDefaultLambdaRole(Aws::String&& value) { m_defaultLambdaRoleHasBeenSet = true; m_defaultLambdaRole = value; }
+    inline void SetDefaultLambdaRole(Aws::String&& value) { m_defaultLambdaRoleHasBeenSet = true; m_defaultLambdaRole = std::move(value); }
 
     /**
      * <p>The ARN of the default IAM role to use when a workflow execution of this type
@@ -674,7 +675,7 @@ namespace Model
      * the <code>StartChildWorkflowExecution</code> and
      * <code>ContinueAsNewWorkflowExecution</code> decision.</p>
      */
-    inline RegisterWorkflowTypeRequest& WithDefaultLambdaRole(Aws::String&& value) { SetDefaultLambdaRole(value); return *this;}
+    inline RegisterWorkflowTypeRequest& WithDefaultLambdaRole(Aws::String&& value) { SetDefaultLambdaRole(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the default IAM role to use when a workflow execution of this type

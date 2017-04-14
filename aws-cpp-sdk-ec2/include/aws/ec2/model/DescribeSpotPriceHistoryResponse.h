@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/SpotPrice.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The historical Spot prices.</p>
      */
-    inline void SetSpotPriceHistory(Aws::Vector<SpotPrice>&& value) { m_spotPriceHistory = value; }
+    inline void SetSpotPriceHistory(Aws::Vector<SpotPrice>&& value) { m_spotPriceHistory = std::move(value); }
 
     /**
      * <p>The historical Spot prices.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The historical Spot prices.</p>
      */
-    inline DescribeSpotPriceHistoryResponse& WithSpotPriceHistory(Aws::Vector<SpotPrice>&& value) { SetSpotPriceHistory(value); return *this;}
+    inline DescribeSpotPriceHistoryResponse& WithSpotPriceHistory(Aws::Vector<SpotPrice>&& value) { SetSpotPriceHistory(std::move(value)); return *this;}
 
     /**
      * <p>The historical Spot prices.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>The historical Spot prices.</p>
      */
-    inline DescribeSpotPriceHistoryResponse& AddSpotPriceHistory(SpotPrice&& value) { m_spotPriceHistory.push_back(value); return *this; }
+    inline DescribeSpotPriceHistoryResponse& AddSpotPriceHistory(SpotPrice&& value) { m_spotPriceHistory.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token required to retrieve the next set of results. This value is
@@ -99,7 +100,7 @@ namespace Model
      * <p>The token required to retrieve the next set of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token required to retrieve the next set of results. This value is
@@ -117,7 +118,7 @@ namespace Model
      * <p>The token required to retrieve the next set of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline DescribeSpotPriceHistoryResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeSpotPriceHistoryResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token required to retrieve the next set of results. This value is
@@ -132,13 +133,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeSpotPriceHistoryResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeSpotPriceHistoryResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeSpotPriceHistoryResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<SpotPrice> m_spotPriceHistory;

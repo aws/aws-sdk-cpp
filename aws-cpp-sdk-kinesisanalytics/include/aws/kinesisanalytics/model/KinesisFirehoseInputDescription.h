@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery
      * stream.</p>
      */
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
+    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
 
     /**
      * <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery
@@ -79,7 +80,7 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery
      * stream.</p>
      */
-    inline KinesisFirehoseInputDescription& WithResourceARN(Aws::String&& value) { SetResourceARN(value); return *this;}
+    inline KinesisFirehoseInputDescription& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery
@@ -103,7 +104,7 @@ namespace Model
      * <p>ARN of the IAM role that Amazon Kinesis Analytics assumes to access the
      * stream.</p>
      */
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics assumes to access the
@@ -121,7 +122,7 @@ namespace Model
      * <p>ARN of the IAM role that Amazon Kinesis Analytics assumes to access the
      * stream.</p>
      */
-    inline KinesisFirehoseInputDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+    inline KinesisFirehoseInputDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics assumes to access the

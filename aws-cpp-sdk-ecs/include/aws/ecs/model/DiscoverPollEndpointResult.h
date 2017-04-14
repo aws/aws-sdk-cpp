@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The endpoint for the Amazon ECS agent to poll.</p>
      */
-    inline void SetEndpoint(Aws::String&& value) { m_endpoint = value; }
+    inline void SetEndpoint(Aws::String&& value) { m_endpoint = std::move(value); }
 
     /**
      * <p>The endpoint for the Amazon ECS agent to poll.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The endpoint for the Amazon ECS agent to poll.</p>
      */
-    inline DiscoverPollEndpointResult& WithEndpoint(Aws::String&& value) { SetEndpoint(value); return *this;}
+    inline DiscoverPollEndpointResult& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
 
     /**
      * <p>The endpoint for the Amazon ECS agent to poll.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The telemetry endpoint for the Amazon ECS agent.</p>
      */
-    inline void SetTelemetryEndpoint(Aws::String&& value) { m_telemetryEndpoint = value; }
+    inline void SetTelemetryEndpoint(Aws::String&& value) { m_telemetryEndpoint = std::move(value); }
 
     /**
      * <p>The telemetry endpoint for the Amazon ECS agent.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The telemetry endpoint for the Amazon ECS agent.</p>
      */
-    inline DiscoverPollEndpointResult& WithTelemetryEndpoint(Aws::String&& value) { SetTelemetryEndpoint(value); return *this;}
+    inline DiscoverPollEndpointResult& WithTelemetryEndpoint(Aws::String&& value) { SetTelemetryEndpoint(std::move(value)); return *this;}
 
     /**
      * <p>The telemetry endpoint for the Amazon ECS agent.</p>

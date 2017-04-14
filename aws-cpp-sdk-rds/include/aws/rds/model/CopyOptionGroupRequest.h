@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -85,7 +86,7 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
      * </ul>
      */
-    inline void SetSourceOptionGroupIdentifier(Aws::String&& value) { m_sourceOptionGroupIdentifierHasBeenSet = true; m_sourceOptionGroupIdentifier = value; }
+    inline void SetSourceOptionGroupIdentifier(Aws::String&& value) { m_sourceOptionGroupIdentifierHasBeenSet = true; m_sourceOptionGroupIdentifier = std::move(value); }
 
     /**
      * <p>The identifier or ARN for the source option group. For information about
@@ -130,7 +131,7 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
      * </ul>
      */
-    inline CopyOptionGroupRequest& WithSourceOptionGroupIdentifier(Aws::String&& value) { SetSourceOptionGroupIdentifier(value); return *this;}
+    inline CopyOptionGroupRequest& WithSourceOptionGroupIdentifier(Aws::String&& value) { SetSourceOptionGroupIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier or ARN for the source option group. For information about
@@ -172,7 +173,7 @@ namespace Model
      * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
      */
-    inline void SetTargetOptionGroupIdentifier(Aws::String&& value) { m_targetOptionGroupIdentifierHasBeenSet = true; m_targetOptionGroupIdentifier = value; }
+    inline void SetTargetOptionGroupIdentifier(Aws::String&& value) { m_targetOptionGroupIdentifierHasBeenSet = true; m_targetOptionGroupIdentifier = std::move(value); }
 
     /**
      * <p>The identifier for the copied option group.</p> <p>Constraints:</p> <ul> <li>
@@ -199,7 +200,7 @@ namespace Model
      * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
      */
-    inline CopyOptionGroupRequest& WithTargetOptionGroupIdentifier(Aws::String&& value) { SetTargetOptionGroupIdentifier(value); return *this;}
+    inline CopyOptionGroupRequest& WithTargetOptionGroupIdentifier(Aws::String&& value) { SetTargetOptionGroupIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the copied option group.</p> <p>Constraints:</p> <ul> <li>
@@ -223,7 +224,7 @@ namespace Model
     /**
      * <p>The description for the copied option group.</p>
      */
-    inline void SetTargetOptionGroupDescription(Aws::String&& value) { m_targetOptionGroupDescriptionHasBeenSet = true; m_targetOptionGroupDescription = value; }
+    inline void SetTargetOptionGroupDescription(Aws::String&& value) { m_targetOptionGroupDescriptionHasBeenSet = true; m_targetOptionGroupDescription = std::move(value); }
 
     /**
      * <p>The description for the copied option group.</p>
@@ -238,7 +239,7 @@ namespace Model
     /**
      * <p>The description for the copied option group.</p>
      */
-    inline CopyOptionGroupRequest& WithTargetOptionGroupDescription(Aws::String&& value) { SetTargetOptionGroupDescription(value); return *this;}
+    inline CopyOptionGroupRequest& WithTargetOptionGroupDescription(Aws::String&& value) { SetTargetOptionGroupDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description for the copied option group.</p>
@@ -252,19 +253,19 @@ namespace Model
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     
     inline CopyOptionGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     
-    inline CopyOptionGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline CopyOptionGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     
     inline CopyOptionGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     
-    inline CopyOptionGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CopyOptionGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_sourceOptionGroupIdentifier;

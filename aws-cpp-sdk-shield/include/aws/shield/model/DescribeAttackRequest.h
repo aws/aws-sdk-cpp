@@ -16,6 +16,7 @@
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/shield/ShieldRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The unique identifier (ID) for the attack that to be described.</p>
      */
-    inline void SetAttackId(Aws::String&& value) { m_attackIdHasBeenSet = true; m_attackId = value; }
+    inline void SetAttackId(Aws::String&& value) { m_attackIdHasBeenSet = true; m_attackId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) for the attack that to be described.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The unique identifier (ID) for the attack that to be described.</p>
      */
-    inline DescribeAttackRequest& WithAttackId(Aws::String&& value) { SetAttackId(value); return *this;}
+    inline DescribeAttackRequest& WithAttackId(Aws::String&& value) { SetAttackId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) for the attack that to be described.</p>

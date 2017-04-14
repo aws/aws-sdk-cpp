@@ -17,6 +17,7 @@
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/lightsail/model/PortInfo.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>Information about the public port you are trying to close.</p>
      */
-    inline void SetPortInfo(PortInfo&& value) { m_portInfoHasBeenSet = true; m_portInfo = value; }
+    inline void SetPortInfo(PortInfo&& value) { m_portInfoHasBeenSet = true; m_portInfo = std::move(value); }
 
     /**
      * <p>Information about the public port you are trying to close.</p>
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Information about the public port you are trying to close.</p>
      */
-    inline CloseInstancePublicPortsRequest& WithPortInfo(PortInfo&& value) { SetPortInfo(value); return *this;}
+    inline CloseInstancePublicPortsRequest& WithPortInfo(PortInfo&& value) { SetPortInfo(std::move(value)); return *this;}
 
     /**
      * <p>The name of the instance on which you're attempting to close the public
@@ -77,7 +78,7 @@ namespace Model
      * <p>The name of the instance on which you're attempting to close the public
      * ports.</p>
      */
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
+    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
 
     /**
      * <p>The name of the instance on which you're attempting to close the public
@@ -95,7 +96,7 @@ namespace Model
      * <p>The name of the instance on which you're attempting to close the public
      * ports.</p>
      */
-    inline CloseInstancePublicPortsRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(value); return *this;}
+    inline CloseInstancePublicPortsRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the instance on which you're attempting to close the public

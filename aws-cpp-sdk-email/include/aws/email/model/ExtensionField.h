@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
      * only.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the header to add. Must be between 1 and 50 characters,
@@ -90,7 +91,7 @@ namespace Model
      * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
      * only.</p>
      */
-    inline ExtensionField& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ExtensionField& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the header to add. Must be between 1 and 50 characters,
@@ -115,7 +116,7 @@ namespace Model
      * <p>The value of the header to add. Must be less than 2048 characters, and must
      * not contain newline characters ("\r" or "\n").</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of the header to add. Must be less than 2048 characters, and must
@@ -133,7 +134,7 @@ namespace Model
      * <p>The value of the header to add. Must be less than 2048 characters, and must
      * not contain newline characters ("\r" or "\n").</p>
      */
-    inline ExtensionField& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline ExtensionField& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the header to add. Must be less than 2048 characters, and must

@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/ChangeAction.h>
 #include <aws/waf/model/XssMatchTuple.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove a
      * <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
      */
-    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = value; }
+    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an
@@ -80,7 +81,7 @@ namespace Model
      * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove a
      * <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
      */
-    inline XssMatchSetUpdate& WithAction(ChangeAction&& value) { SetAction(value); return *this;}
+    inline XssMatchSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the part of a web request that you want AWS WAF to inspect for
@@ -101,7 +102,7 @@ namespace Model
      * cross-site scripting attacks and, if you want AWS WAF to inspect a header, the
      * name of the header.</p>
      */
-    inline void SetXssMatchTuple(XssMatchTuple&& value) { m_xssMatchTupleHasBeenSet = true; m_xssMatchTuple = value; }
+    inline void SetXssMatchTuple(XssMatchTuple&& value) { m_xssMatchTupleHasBeenSet = true; m_xssMatchTuple = std::move(value); }
 
     /**
      * <p>Specifies the part of a web request that you want AWS WAF to inspect for
@@ -115,7 +116,7 @@ namespace Model
      * cross-site scripting attacks and, if you want AWS WAF to inspect a header, the
      * name of the header.</p>
      */
-    inline XssMatchSetUpdate& WithXssMatchTuple(XssMatchTuple&& value) { SetXssMatchTuple(value); return *this;}
+    inline XssMatchSetUpdate& WithXssMatchTuple(XssMatchTuple&& value) { SetXssMatchTuple(std::move(value)); return *this;}
 
   private:
     ChangeAction m_action;

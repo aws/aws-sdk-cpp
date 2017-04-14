@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The name of a an <a>SdkType</a> configuration property.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of a an <a>SdkType</a> configuration property.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of a an <a>SdkType</a> configuration property.</p>
      */
-    inline SdkConfigurationProperty& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline SdkConfigurationProperty& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a an <a>SdkType</a> configuration property.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The user-friendly name of an <a>SdkType</a> configuration property.</p>
      */
-    inline void SetFriendlyName(Aws::String&& value) { m_friendlyNameHasBeenSet = true; m_friendlyName = value; }
+    inline void SetFriendlyName(Aws::String&& value) { m_friendlyNameHasBeenSet = true; m_friendlyName = std::move(value); }
 
     /**
      * <p>The user-friendly name of an <a>SdkType</a> configuration property.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The user-friendly name of an <a>SdkType</a> configuration property.</p>
      */
-    inline SdkConfigurationProperty& WithFriendlyName(Aws::String&& value) { SetFriendlyName(value); return *this;}
+    inline SdkConfigurationProperty& WithFriendlyName(Aws::String&& value) { SetFriendlyName(std::move(value)); return *this;}
 
     /**
      * <p>The user-friendly name of an <a>SdkType</a> configuration property.</p>
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>The description of an <a>SdkType</a> configuration property.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of an <a>SdkType</a> configuration property.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The description of an <a>SdkType</a> configuration property.</p>
      */
-    inline SdkConfigurationProperty& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline SdkConfigurationProperty& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of an <a>SdkType</a> configuration property.</p>
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p>The default value of an <a>SdkType</a> configuration property.</p>
      */
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
 
     /**
      * <p>The default value of an <a>SdkType</a> configuration property.</p>
@@ -197,7 +198,7 @@ namespace Model
     /**
      * <p>The default value of an <a>SdkType</a> configuration property.</p>
      */
-    inline SdkConfigurationProperty& WithDefaultValue(Aws::String&& value) { SetDefaultValue(value); return *this;}
+    inline SdkConfigurationProperty& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
 
     /**
      * <p>The default value of an <a>SdkType</a> configuration property.</p>

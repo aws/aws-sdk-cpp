@@ -17,6 +17,7 @@
 #include <aws/batch/BatchRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
      * <p>A space-separated list of up to 100 job definition names or full Amazon
      * Resource Name (ARN) entries.</p>
      */
-    inline void SetJobDefinitions(Aws::Vector<Aws::String>&& value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions = value; }
+    inline void SetJobDefinitions(Aws::Vector<Aws::String>&& value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions = std::move(value); }
 
     /**
      * <p>A space-separated list of up to 100 job definition names or full Amazon
@@ -62,7 +63,7 @@ namespace Model
      * <p>A space-separated list of up to 100 job definition names or full Amazon
      * Resource Name (ARN) entries.</p>
      */
-    inline DescribeJobDefinitionsRequest& WithJobDefinitions(Aws::Vector<Aws::String>&& value) { SetJobDefinitions(value); return *this;}
+    inline DescribeJobDefinitionsRequest& WithJobDefinitions(Aws::Vector<Aws::String>&& value) { SetJobDefinitions(std::move(value)); return *this;}
 
     /**
      * <p>A space-separated list of up to 100 job definition names or full Amazon
@@ -74,7 +75,7 @@ namespace Model
      * <p>A space-separated list of up to 100 job definition names or full Amazon
      * Resource Name (ARN) entries.</p>
      */
-    inline DescribeJobDefinitionsRequest& AddJobDefinitions(Aws::String&& value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions.push_back(value); return *this; }
+    inline DescribeJobDefinitionsRequest& AddJobDefinitions(Aws::String&& value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A space-separated list of up to 100 job definition names or full Amazon
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>The name of the job definition to describe.</p>
      */
-    inline void SetJobDefinitionName(Aws::String&& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = value; }
+    inline void SetJobDefinitionName(Aws::String&& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = std::move(value); }
 
     /**
      * <p>The name of the job definition to describe.</p>
@@ -149,7 +150,7 @@ namespace Model
     /**
      * <p>The name of the job definition to describe.</p>
      */
-    inline DescribeJobDefinitionsRequest& WithJobDefinitionName(Aws::String&& value) { SetJobDefinitionName(value); return *this;}
+    inline DescribeJobDefinitionsRequest& WithJobDefinitionName(Aws::String&& value) { SetJobDefinitionName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the job definition to describe.</p>
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p>The status with which to filter job definitions.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status with which to filter job definitions.</p>
@@ -184,7 +185,7 @@ namespace Model
     /**
      * <p>The status with which to filter job definitions.</p>
      */
-    inline DescribeJobDefinitionsRequest& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline DescribeJobDefinitionsRequest& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status with which to filter job definitions.</p>
@@ -225,7 +226,7 @@ namespace Model
      * is only used to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -261,7 +262,7 @@ namespace Model
      * is only used to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
      */
-    inline DescribeJobDefinitionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeJobDefinitionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated

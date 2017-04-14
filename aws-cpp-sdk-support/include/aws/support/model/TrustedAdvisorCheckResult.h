@@ -19,6 +19,7 @@
 #include <aws/support/model/TrustedAdvisorCategorySpecificSummary.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/support/model/TrustedAdvisorResourceDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The unique identifier for the Trusted Advisor check.</p>
      */
-    inline void SetCheckId(Aws::String&& value) { m_checkIdHasBeenSet = true; m_checkId = value; }
+    inline void SetCheckId(Aws::String&& value) { m_checkIdHasBeenSet = true; m_checkId = std::move(value); }
 
     /**
      * <p>The unique identifier for the Trusted Advisor check.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The unique identifier for the Trusted Advisor check.</p>
      */
-    inline TrustedAdvisorCheckResult& WithCheckId(Aws::String&& value) { SetCheckId(value); return *this;}
+    inline TrustedAdvisorCheckResult& WithCheckId(Aws::String&& value) { SetCheckId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the Trusted Advisor check.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The time of the last refresh of the check.</p>
      */
-    inline void SetTimestamp(Aws::String&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(Aws::String&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
      * <p>The time of the last refresh of the check.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The time of the last refresh of the check.</p>
      */
-    inline TrustedAdvisorCheckResult& WithTimestamp(Aws::String&& value) { SetTimestamp(value); return *this;}
+    inline TrustedAdvisorCheckResult& WithTimestamp(Aws::String&& value) { SetTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The time of the last refresh of the check.</p>
@@ -134,7 +135,7 @@ namespace Model
      * <p>The alert status of the check: "ok" (green), "warning" (yellow), "error"
      * (red), or "not_available".</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The alert status of the check: "ok" (green), "warning" (yellow), "error"
@@ -152,7 +153,7 @@ namespace Model
      * <p>The alert status of the check: "ok" (green), "warning" (yellow), "error"
      * (red), or "not_available".</p>
      */
-    inline TrustedAdvisorCheckResult& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline TrustedAdvisorCheckResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The alert status of the check: "ok" (green), "warning" (yellow), "error"
@@ -167,13 +168,13 @@ namespace Model
     inline void SetResourcesSummary(const TrustedAdvisorResourcesSummary& value) { m_resourcesSummaryHasBeenSet = true; m_resourcesSummary = value; }
 
     
-    inline void SetResourcesSummary(TrustedAdvisorResourcesSummary&& value) { m_resourcesSummaryHasBeenSet = true; m_resourcesSummary = value; }
+    inline void SetResourcesSummary(TrustedAdvisorResourcesSummary&& value) { m_resourcesSummaryHasBeenSet = true; m_resourcesSummary = std::move(value); }
 
     
     inline TrustedAdvisorCheckResult& WithResourcesSummary(const TrustedAdvisorResourcesSummary& value) { SetResourcesSummary(value); return *this;}
 
     
-    inline TrustedAdvisorCheckResult& WithResourcesSummary(TrustedAdvisorResourcesSummary&& value) { SetResourcesSummary(value); return *this;}
+    inline TrustedAdvisorCheckResult& WithResourcesSummary(TrustedAdvisorResourcesSummary&& value) { SetResourcesSummary(std::move(value)); return *this;}
 
     /**
      * <p>Summary information that relates to the category of the check. Cost
@@ -191,7 +192,7 @@ namespace Model
      * <p>Summary information that relates to the category of the check. Cost
      * Optimizing is the only category that is currently supported.</p>
      */
-    inline void SetCategorySpecificSummary(TrustedAdvisorCategorySpecificSummary&& value) { m_categorySpecificSummaryHasBeenSet = true; m_categorySpecificSummary = value; }
+    inline void SetCategorySpecificSummary(TrustedAdvisorCategorySpecificSummary&& value) { m_categorySpecificSummaryHasBeenSet = true; m_categorySpecificSummary = std::move(value); }
 
     /**
      * <p>Summary information that relates to the category of the check. Cost
@@ -203,7 +204,7 @@ namespace Model
      * <p>Summary information that relates to the category of the check. Cost
      * Optimizing is the only category that is currently supported.</p>
      */
-    inline TrustedAdvisorCheckResult& WithCategorySpecificSummary(TrustedAdvisorCategorySpecificSummary&& value) { SetCategorySpecificSummary(value); return *this;}
+    inline TrustedAdvisorCheckResult& WithCategorySpecificSummary(TrustedAdvisorCategorySpecificSummary&& value) { SetCategorySpecificSummary(std::move(value)); return *this;}
 
     /**
      * <p>The details about each resource listed in the check result.</p>
@@ -218,7 +219,7 @@ namespace Model
     /**
      * <p>The details about each resource listed in the check result.</p>
      */
-    inline void SetFlaggedResources(Aws::Vector<TrustedAdvisorResourceDetail>&& value) { m_flaggedResourcesHasBeenSet = true; m_flaggedResources = value; }
+    inline void SetFlaggedResources(Aws::Vector<TrustedAdvisorResourceDetail>&& value) { m_flaggedResourcesHasBeenSet = true; m_flaggedResources = std::move(value); }
 
     /**
      * <p>The details about each resource listed in the check result.</p>
@@ -228,7 +229,7 @@ namespace Model
     /**
      * <p>The details about each resource listed in the check result.</p>
      */
-    inline TrustedAdvisorCheckResult& WithFlaggedResources(Aws::Vector<TrustedAdvisorResourceDetail>&& value) { SetFlaggedResources(value); return *this;}
+    inline TrustedAdvisorCheckResult& WithFlaggedResources(Aws::Vector<TrustedAdvisorResourceDetail>&& value) { SetFlaggedResources(std::move(value)); return *this;}
 
     /**
      * <p>The details about each resource listed in the check result.</p>
@@ -238,7 +239,7 @@ namespace Model
     /**
      * <p>The details about each resource listed in the check result.</p>
      */
-    inline TrustedAdvisorCheckResult& AddFlaggedResources(TrustedAdvisorResourceDetail&& value) { m_flaggedResourcesHasBeenSet = true; m_flaggedResources.push_back(value); return *this; }
+    inline TrustedAdvisorCheckResult& AddFlaggedResources(TrustedAdvisorResourceDetail&& value) { m_flaggedResourcesHasBeenSet = true; m_flaggedResources.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_checkId;

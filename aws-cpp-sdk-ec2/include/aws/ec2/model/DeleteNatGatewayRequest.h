@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The ID of the NAT gateway.</p>
      */
-    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
+    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = std::move(value); }
 
     /**
      * <p>The ID of the NAT gateway.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The ID of the NAT gateway.</p>
      */
-    inline DeleteNatGatewayRequest& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(value); return *this;}
+    inline DeleteNatGatewayRequest& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the NAT gateway.</p>

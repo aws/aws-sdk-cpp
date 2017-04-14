@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -93,7 +94,7 @@ namespace Model
      * <p>The organizational unit (OU) in the directory that the WorkSpace machine
      * accounts are placed in.</p>
      */
-    inline void SetDefaultOu(Aws::String&& value) { m_defaultOuHasBeenSet = true; m_defaultOu = value; }
+    inline void SetDefaultOu(Aws::String&& value) { m_defaultOuHasBeenSet = true; m_defaultOu = std::move(value); }
 
     /**
      * <p>The organizational unit (OU) in the directory that the WorkSpace machine
@@ -111,7 +112,7 @@ namespace Model
      * <p>The organizational unit (OU) in the directory that the WorkSpace machine
      * accounts are placed in.</p>
      */
-    inline DefaultWorkspaceCreationProperties& WithDefaultOu(Aws::String&& value) { SetDefaultOu(value); return *this;}
+    inline DefaultWorkspaceCreationProperties& WithDefaultOu(Aws::String&& value) { SetDefaultOu(std::move(value)); return *this;}
 
     /**
      * <p>The organizational unit (OU) in the directory that the WorkSpace machine
@@ -135,7 +136,7 @@ namespace Model
      * <p>The identifier of any custom security groups that are applied to the
      * WorkSpaces when they are created.</p>
      */
-    inline void SetCustomSecurityGroupId(Aws::String&& value) { m_customSecurityGroupIdHasBeenSet = true; m_customSecurityGroupId = value; }
+    inline void SetCustomSecurityGroupId(Aws::String&& value) { m_customSecurityGroupIdHasBeenSet = true; m_customSecurityGroupId = std::move(value); }
 
     /**
      * <p>The identifier of any custom security groups that are applied to the
@@ -153,7 +154,7 @@ namespace Model
      * <p>The identifier of any custom security groups that are applied to the
      * WorkSpaces when they are created.</p>
      */
-    inline DefaultWorkspaceCreationProperties& WithCustomSecurityGroupId(Aws::String&& value) { SetCustomSecurityGroupId(value); return *this;}
+    inline DefaultWorkspaceCreationProperties& WithCustomSecurityGroupId(Aws::String&& value) { SetCustomSecurityGroupId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of any custom security groups that are applied to the

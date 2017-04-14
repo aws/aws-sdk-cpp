@@ -16,6 +16,7 @@
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/events/model/PutTargetsResultEntry.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
      * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
      * <p>The failed target entries.</p> </xhtml>
      */
-    inline void SetFailedEntries(Aws::Vector<PutTargetsResultEntry>&& value) { m_failedEntries = value; }
+    inline void SetFailedEntries(Aws::Vector<PutTargetsResultEntry>&& value) { m_failedEntries = std::move(value); }
 
     /**
      * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
@@ -86,7 +87,7 @@ namespace Model
      * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
      * <p>The failed target entries.</p> </xhtml>
      */
-    inline PutTargetsResult& WithFailedEntries(Aws::Vector<PutTargetsResultEntry>&& value) { SetFailedEntries(value); return *this;}
+    inline PutTargetsResult& WithFailedEntries(Aws::Vector<PutTargetsResultEntry>&& value) { SetFailedEntries(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
@@ -98,7 +99,7 @@ namespace Model
      * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
      * <p>The failed target entries.</p> </xhtml>
      */
-    inline PutTargetsResult& AddFailedEntries(PutTargetsResultEntry&& value) { m_failedEntries.push_back(value); return *this; }
+    inline PutTargetsResult& AddFailedEntries(PutTargetsResultEntry&& value) { m_failedEntries.push_back(std::move(value)); return *this; }
 
   private:
     int m_failedEntryCount;

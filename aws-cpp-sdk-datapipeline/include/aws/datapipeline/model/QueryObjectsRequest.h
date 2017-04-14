@@ -17,6 +17,7 @@
 #include <aws/datapipeline/DataPipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datapipeline/model/Query.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
-    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
+    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::move(value); }
 
     /**
      * <p>The ID of the pipeline.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
-    inline QueryObjectsRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
+    inline QueryObjectsRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the pipeline.</p>
@@ -96,7 +97,7 @@ namespace Model
      * limited to top-level String fields in the object. These filters can be applied
      * to components, instances, and attempts.</p>
      */
-    inline void SetQuery(Query&& value) { m_queryHasBeenSet = true; m_query = value; }
+    inline void SetQuery(Query&& value) { m_queryHasBeenSet = true; m_query = std::move(value); }
 
     /**
      * <p>The query that defines the objects to be returned. The <code>Query</code>
@@ -112,7 +113,7 @@ namespace Model
      * limited to top-level String fields in the object. These filters can be applied
      * to components, instances, and attempts.</p>
      */
-    inline QueryObjectsRequest& WithQuery(Query&& value) { SetQuery(value); return *this;}
+    inline QueryObjectsRequest& WithQuery(Query&& value) { SetQuery(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether the query applies to components or instances. The possible
@@ -133,7 +134,7 @@ namespace Model
      * values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and
      * <code>ATTEMPT</code>.</p>
      */
-    inline void SetSphere(Aws::String&& value) { m_sphereHasBeenSet = true; m_sphere = value; }
+    inline void SetSphere(Aws::String&& value) { m_sphereHasBeenSet = true; m_sphere = std::move(value); }
 
     /**
      * <p>Indicates whether the query applies to components or instances. The possible
@@ -154,7 +155,7 @@ namespace Model
      * values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and
      * <code>ATTEMPT</code>.</p>
      */
-    inline QueryObjectsRequest& WithSphere(Aws::String&& value) { SetSphere(value); return *this;}
+    inline QueryObjectsRequest& WithSphere(Aws::String&& value) { SetSphere(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether the query applies to components or instances. The possible
@@ -185,7 +186,7 @@ namespace Model
      * <code>QueryObjects</code> with the marker value from the previous call to
      * retrieve the next set of results.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>The starting point for the results to be returned. For the first call, this
@@ -209,7 +210,7 @@ namespace Model
      * <code>QueryObjects</code> with the marker value from the previous call to
      * retrieve the next set of results.</p>
      */
-    inline QueryObjectsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline QueryObjectsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>The starting point for the results to be returned. For the first call, this

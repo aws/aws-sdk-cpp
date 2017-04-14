@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to retrieve all game sessions for.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet to retrieve all game sessions for.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to retrieve all game sessions for.</p>
      */
-    inline DescribeGameSessionsRequest& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline DescribeGameSessionsRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet to retrieve all game sessions for.</p>
@@ -74,37 +75,44 @@ namespace Model
     inline DescribeGameSessionsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>Unique identifier for the game session to retrieve. You can use either a
+     * <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p>
      */
     inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>Unique identifier for the game session to retrieve. You can use either a
+     * <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p>
      */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>Unique identifier for the game session to retrieve. You can use either a
+     * <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p>
      */
-    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
+    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>Unique identifier for the game session to retrieve. You can use either a
+     * <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p>
      */
     inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>Unique identifier for the game session to retrieve. You can use either a
+     * <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p>
      */
     inline DescribeGameSessionsRequest& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>Unique identifier for the game session to retrieve. You can use either a
+     * <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p>
      */
-    inline DescribeGameSessionsRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(value); return *this;}
+    inline DescribeGameSessionsRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>Unique identifier for the game session to retrieve. You can use either a
+     * <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p>
      */
     inline DescribeGameSessionsRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 
@@ -124,7 +132,7 @@ namespace Model
      * <p>Unique identifier for an alias associated with the fleet to retrieve all game
      * sessions for. </p>
      */
-    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
+    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
 
     /**
      * <p>Unique identifier for an alias associated with the fleet to retrieve all game
@@ -142,7 +150,7 @@ namespace Model
      * <p>Unique identifier for an alias associated with the fleet to retrieve all game
      * sessions for. </p>
      */
-    inline DescribeGameSessionsRequest& WithAliasId(Aws::String&& value) { SetAliasId(value); return *this;}
+    inline DescribeGameSessionsRequest& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for an alias associated with the fleet to retrieve all game
@@ -169,7 +177,7 @@ namespace Model
      * include <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>,
      * and <code>TERMINATING</code> (the last two are transitory). </p>
      */
-    inline void SetStatusFilter(Aws::String&& value) { m_statusFilterHasBeenSet = true; m_statusFilter = value; }
+    inline void SetStatusFilter(Aws::String&& value) { m_statusFilterHasBeenSet = true; m_statusFilter = std::move(value); }
 
     /**
      * <p>Game session status to filter results on. Possible game session statuses
@@ -190,7 +198,7 @@ namespace Model
      * include <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>,
      * and <code>TERMINATING</code> (the last two are transitory). </p>
      */
-    inline DescribeGameSessionsRequest& WithStatusFilter(Aws::String&& value) { SetStatusFilter(value); return *this;}
+    inline DescribeGameSessionsRequest& WithStatusFilter(Aws::String&& value) { SetStatusFilter(std::move(value)); return *this;}
 
     /**
      * <p>Game session status to filter results on. Possible game session statuses
@@ -236,7 +244,7 @@ namespace Model
      * the token that is returned with a previous call to this action. To specify the
      * start of the result set, do not specify a value.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
@@ -257,7 +265,7 @@ namespace Model
      * the token that is returned with a previous call to this action. To specify the
      * start of the result set, do not specify a value.</p>
      */
-    inline DescribeGameSessionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeGameSessionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use

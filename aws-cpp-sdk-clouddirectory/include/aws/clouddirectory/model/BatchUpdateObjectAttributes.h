@@ -17,6 +17,7 @@
 #include <aws/clouddirectory/model/ObjectReference.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/clouddirectory/model/ObjectAttributeUpdate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Reference that identifies the object.</p>
      */
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
+    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
 
     /**
      * <p>Reference that identifies the object.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Reference that identifies the object.</p>
      */
-    inline BatchUpdateObjectAttributes& WithObjectReference(ObjectReference&& value) { SetObjectReference(value); return *this;}
+    inline BatchUpdateObjectAttributes& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
     /**
      * <p>Attributes update structure.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>Attributes update structure.</p>
      */
-    inline void SetAttributeUpdates(Aws::Vector<ObjectAttributeUpdate>&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates = value; }
+    inline void SetAttributeUpdates(Aws::Vector<ObjectAttributeUpdate>&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates = std::move(value); }
 
     /**
      * <p>Attributes update structure.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>Attributes update structure.</p>
      */
-    inline BatchUpdateObjectAttributes& WithAttributeUpdates(Aws::Vector<ObjectAttributeUpdate>&& value) { SetAttributeUpdates(value); return *this;}
+    inline BatchUpdateObjectAttributes& WithAttributeUpdates(Aws::Vector<ObjectAttributeUpdate>&& value) { SetAttributeUpdates(std::move(value)); return *this;}
 
     /**
      * <p>Attributes update structure.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>Attributes update structure.</p>
      */
-    inline BatchUpdateObjectAttributes& AddAttributeUpdates(ObjectAttributeUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(value); return *this; }
+    inline BatchUpdateObjectAttributes& AddAttributeUpdates(ObjectAttributeUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(std::move(value)); return *this; }
 
   private:
     ObjectReference m_objectReference;

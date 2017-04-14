@@ -16,6 +16,7 @@
 #include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/budgets/model/NotificationType.h>
 #include <aws/budgets/model/ComparisonOperator.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,13 +53,13 @@ namespace Model
     inline void SetNotificationType(const NotificationType& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
 
     
-    inline void SetNotificationType(NotificationType&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
+    inline void SetNotificationType(NotificationType&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = std::move(value); }
 
     
     inline Notification& WithNotificationType(const NotificationType& value) { SetNotificationType(value); return *this;}
 
     
-    inline Notification& WithNotificationType(NotificationType&& value) { SetNotificationType(value); return *this;}
+    inline Notification& WithNotificationType(NotificationType&& value) { SetNotificationType(std::move(value)); return *this;}
 
     
     inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
@@ -67,13 +68,13 @@ namespace Model
     inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
 
     
-    inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
 
     
     inline Notification& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
 
     
-    inline Notification& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(value); return *this;}
+    inline Notification& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
 
     
     inline double GetThreshold() const{ return m_threshold; }

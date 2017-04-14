@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ds/model/Attribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The identifier of the computer.</p>
      */
-    inline void SetComputerId(Aws::String&& value) { m_computerIdHasBeenSet = true; m_computerId = value; }
+    inline void SetComputerId(Aws::String&& value) { m_computerIdHasBeenSet = true; m_computerId = std::move(value); }
 
     /**
      * <p>The identifier of the computer.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The identifier of the computer.</p>
      */
-    inline Computer& WithComputerId(Aws::String&& value) { SetComputerId(value); return *this;}
+    inline Computer& WithComputerId(Aws::String&& value) { SetComputerId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the computer.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The computer name.</p>
      */
-    inline void SetComputerName(Aws::String&& value) { m_computerNameHasBeenSet = true; m_computerName = value; }
+    inline void SetComputerName(Aws::String&& value) { m_computerNameHasBeenSet = true; m_computerName = std::move(value); }
 
     /**
      * <p>The computer name.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The computer name.</p>
      */
-    inline Computer& WithComputerName(Aws::String&& value) { SetComputerName(value); return *this;}
+    inline Computer& WithComputerName(Aws::String&& value) { SetComputerName(std::move(value)); return *this;}
 
     /**
      * <p>The computer name.</p>
@@ -132,7 +133,7 @@ namespace Model
      * <p>An array of <a>Attribute</a> objects containing the LDAP attributes that
      * belong to the computer account.</p>
      */
-    inline void SetComputerAttributes(Aws::Vector<Attribute>&& value) { m_computerAttributesHasBeenSet = true; m_computerAttributes = value; }
+    inline void SetComputerAttributes(Aws::Vector<Attribute>&& value) { m_computerAttributesHasBeenSet = true; m_computerAttributes = std::move(value); }
 
     /**
      * <p>An array of <a>Attribute</a> objects containing the LDAP attributes that
@@ -144,7 +145,7 @@ namespace Model
      * <p>An array of <a>Attribute</a> objects containing the LDAP attributes that
      * belong to the computer account.</p>
      */
-    inline Computer& WithComputerAttributes(Aws::Vector<Attribute>&& value) { SetComputerAttributes(value); return *this;}
+    inline Computer& WithComputerAttributes(Aws::Vector<Attribute>&& value) { SetComputerAttributes(std::move(value)); return *this;}
 
     /**
      * <p>An array of <a>Attribute</a> objects containing the LDAP attributes that
@@ -156,7 +157,7 @@ namespace Model
      * <p>An array of <a>Attribute</a> objects containing the LDAP attributes that
      * belong to the computer account.</p>
      */
-    inline Computer& AddComputerAttributes(Attribute&& value) { m_computerAttributesHasBeenSet = true; m_computerAttributes.push_back(value); return *this; }
+    inline Computer& AddComputerAttributes(Attribute&& value) { m_computerAttributesHasBeenSet = true; m_computerAttributes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_computerId;

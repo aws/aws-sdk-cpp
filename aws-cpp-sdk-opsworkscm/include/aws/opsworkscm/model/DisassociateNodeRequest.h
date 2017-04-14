@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworkscm/model/EngineAttribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The name of the server from which to disassociate the node. </p>
      */
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
+    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
 
     /**
      * <p>The name of the server from which to disassociate the node. </p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The name of the server from which to disassociate the node. </p>
      */
-    inline DisassociateNodeRequest& WithServerName(Aws::String&& value) { SetServerName(value); return *this;}
+    inline DisassociateNodeRequest& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the server from which to disassociate the node. </p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The name of the Chef client node. </p>
      */
-    inline void SetNodeName(Aws::String&& value) { m_nodeNameHasBeenSet = true; m_nodeName = value; }
+    inline void SetNodeName(Aws::String&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::move(value); }
 
     /**
      * <p>The name of the Chef client node. </p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The name of the Chef client node. </p>
      */
-    inline DisassociateNodeRequest& WithNodeName(Aws::String&& value) { SetNodeName(value); return *this;}
+    inline DisassociateNodeRequest& WithNodeName(Aws::String&& value) { SetNodeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Chef client node. </p>
@@ -132,7 +133,7 @@ namespace Model
      * associated. By default only one organization named <code>default</code> can
      * exist. </p> </li> </ul>
      */
-    inline void SetEngineAttributes(Aws::Vector<EngineAttribute>&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = value; }
+    inline void SetEngineAttributes(Aws::Vector<EngineAttribute>&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = std::move(value); }
 
     /**
      * <p>Engine attributes used for disassociating the node. </p> <p class="title">
@@ -150,7 +151,7 @@ namespace Model
      * associated. By default only one organization named <code>default</code> can
      * exist. </p> </li> </ul>
      */
-    inline DisassociateNodeRequest& WithEngineAttributes(Aws::Vector<EngineAttribute>&& value) { SetEngineAttributes(value); return *this;}
+    inline DisassociateNodeRequest& WithEngineAttributes(Aws::Vector<EngineAttribute>&& value) { SetEngineAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Engine attributes used for disassociating the node. </p> <p class="title">
@@ -168,7 +169,7 @@ namespace Model
      * associated. By default only one organization named <code>default</code> can
      * exist. </p> </li> </ul>
      */
-    inline DisassociateNodeRequest& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(value); return *this; }
+    inline DisassociateNodeRequest& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_serverName;

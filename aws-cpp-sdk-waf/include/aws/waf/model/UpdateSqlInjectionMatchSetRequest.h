@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/waf/model/SqlInjectionMatchSetUpdate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <code>SqlInjectionMatchSetId</code> is returned by
      * <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
      */
-    inline void SetSqlInjectionMatchSetId(Aws::String&& value) { m_sqlInjectionMatchSetIdHasBeenSet = true; m_sqlInjectionMatchSetId = value; }
+    inline void SetSqlInjectionMatchSetId(Aws::String&& value) { m_sqlInjectionMatchSetIdHasBeenSet = true; m_sqlInjectionMatchSetId = std::move(value); }
 
     /**
      * <p>The <code>SqlInjectionMatchSetId</code> of the
@@ -87,7 +88,7 @@ namespace Model
      * <code>SqlInjectionMatchSetId</code> is returned by
      * <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
      */
-    inline UpdateSqlInjectionMatchSetRequest& WithSqlInjectionMatchSetId(Aws::String&& value) { SetSqlInjectionMatchSetId(value); return *this;}
+    inline UpdateSqlInjectionMatchSetRequest& WithSqlInjectionMatchSetId(Aws::String&& value) { SetSqlInjectionMatchSetId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>SqlInjectionMatchSetId</code> of the
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
+    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline UpdateSqlInjectionMatchSetRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(value); return *this;}
+    inline UpdateSqlInjectionMatchSetRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -166,7 +167,7 @@ namespace Model
      * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
      * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
-    inline void SetUpdates(Aws::Vector<SqlInjectionMatchSetUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = value; }
+    inline void SetUpdates(Aws::Vector<SqlInjectionMatchSetUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = std::move(value); }
 
     /**
      * <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to
@@ -190,7 +191,7 @@ namespace Model
      * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
      * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
-    inline UpdateSqlInjectionMatchSetRequest& WithUpdates(Aws::Vector<SqlInjectionMatchSetUpdate>&& value) { SetUpdates(value); return *this;}
+    inline UpdateSqlInjectionMatchSetRequest& WithUpdates(Aws::Vector<SqlInjectionMatchSetUpdate>&& value) { SetUpdates(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to
@@ -214,7 +215,7 @@ namespace Model
      * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
      * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
-    inline UpdateSqlInjectionMatchSetRequest& AddUpdates(SqlInjectionMatchSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
+    inline UpdateSqlInjectionMatchSetRequest& AddUpdates(SqlInjectionMatchSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_sqlInjectionMatchSetId;

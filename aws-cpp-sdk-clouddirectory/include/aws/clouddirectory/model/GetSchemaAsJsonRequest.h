@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ARN of the schema to retrieve.</p>
      */
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
+    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
 
     /**
      * <p>The ARN of the schema to retrieve.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ARN of the schema to retrieve.</p>
      */
-    inline GetSchemaAsJsonRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(value); return *this;}
+    inline GetSchemaAsJsonRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the schema to retrieve.</p>

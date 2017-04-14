@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <zonbook> <simpara>The ID of the event.</simpara> </zonbook> <xhtml> <p>The ID
      * of the event.</p> </xhtml>
      */
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
+    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
 
     /**
      * <zonbook> <simpara>The ID of the event.</simpara> </zonbook> <xhtml> <p>The ID
@@ -77,7 +78,7 @@ namespace Model
      * <zonbook> <simpara>The ID of the event.</simpara> </zonbook> <xhtml> <p>The ID
      * of the event.</p> </xhtml>
      */
-    inline PutEventsResultEntry& WithEventId(Aws::String&& value) { SetEventId(value); return *this;}
+    inline PutEventsResultEntry& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The ID of the event.</simpara> </zonbook> <xhtml> <p>The ID
@@ -104,7 +105,7 @@ namespace Model
      * failed.</simpara> </zonbook> <xhtml> <p>The error code that indicates why the
      * event submission failed.</p> </xhtml>
      */
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
      * <zonbook> <simpara>The error code that indicates why the event submission
@@ -125,7 +126,7 @@ namespace Model
      * failed.</simpara> </zonbook> <xhtml> <p>The error code that indicates why the
      * event submission failed.</p> </xhtml>
      */
-    inline PutEventsResultEntry& WithErrorCode(Aws::String&& value) { SetErrorCode(value); return *this;}
+    inline PutEventsResultEntry& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The error code that indicates why the event submission
@@ -153,7 +154,7 @@ namespace Model
      * failed.</simpara> </zonbook> <xhtml> <p>The error message that explains why the
      * event submission failed.</p> </xhtml>
      */
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
      * <zonbook> <simpara>The error message that explains why the event submission
@@ -174,7 +175,7 @@ namespace Model
      * failed.</simpara> </zonbook> <xhtml> <p>The error message that explains why the
      * event submission failed.</p> </xhtml>
      */
-    inline PutEventsResultEntry& WithErrorMessage(Aws::String&& value) { SetErrorMessage(value); return *this;}
+    inline PutEventsResultEntry& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The error message that explains why the event submission

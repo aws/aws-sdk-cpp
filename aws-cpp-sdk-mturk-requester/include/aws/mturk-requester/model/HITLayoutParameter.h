@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p> The name of the parameter in the HITLayout. </p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p> The name of the parameter in the HITLayout. </p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p> The name of the parameter in the HITLayout. </p>
      */
-    inline HITLayoutParameter& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline HITLayoutParameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p> The name of the parameter in the HITLayout. </p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The value substituted for the parameter referenced in the HITLayout. </p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value substituted for the parameter referenced in the HITLayout. </p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The value substituted for the parameter referenced in the HITLayout. </p>
      */
-    inline HITLayoutParameter& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline HITLayoutParameter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value substituted for the parameter referenced in the HITLayout. </p>

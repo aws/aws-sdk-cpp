@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/DirectoryState.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the directory.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the directory.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the directory.</p>
      */
-    inline Directory& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Directory& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the directory.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>ARN associated with the directory. For more information, see <a>arns</a>.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>ARN associated with the directory. For more information, see <a>arns</a>.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>ARN associated with the directory. For more information, see <a>arns</a>.</p>
      */
-    inline Directory& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline Directory& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN associated with the directory. For more information, see <a>arns</a>.</p>
@@ -132,7 +133,7 @@ namespace Model
      * <p>The state of the directory. Can be either <code>Enabled</code>,
      * <code>Disabled</code>, or <code>Deleted</code>.</p>
      */
-    inline void SetState(DirectoryState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(DirectoryState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the directory. Can be either <code>Enabled</code>,
@@ -144,7 +145,7 @@ namespace Model
      * <p>The state of the directory. Can be either <code>Enabled</code>,
      * <code>Disabled</code>, or <code>Deleted</code>.</p>
      */
-    inline Directory& WithState(DirectoryState&& value) { SetState(value); return *this;}
+    inline Directory& WithState(DirectoryState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The date and time when the directory was created.</p>
@@ -159,7 +160,7 @@ namespace Model
     /**
      * <p>The date and time when the directory was created.</p>
      */
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
+    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
 
     /**
      * <p>The date and time when the directory was created.</p>
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p>The date and time when the directory was created.</p>
      */
-    inline Directory& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(value); return *this;}
+    inline Directory& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

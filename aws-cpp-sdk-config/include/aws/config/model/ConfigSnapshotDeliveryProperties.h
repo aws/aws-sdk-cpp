@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/MaximumExecutionFrequency.h>
+#include <utility>
 
 namespace Aws
 {
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The frequency with which AWS Config delivers configuration snapshots.</p>
      */
-    inline void SetDeliveryFrequency(MaximumExecutionFrequency&& value) { m_deliveryFrequencyHasBeenSet = true; m_deliveryFrequency = value; }
+    inline void SetDeliveryFrequency(MaximumExecutionFrequency&& value) { m_deliveryFrequencyHasBeenSet = true; m_deliveryFrequency = std::move(value); }
 
     /**
      * <p>The frequency with which AWS Config delivers configuration snapshots.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The frequency with which AWS Config delivers configuration snapshots.</p>
      */
-    inline ConfigSnapshotDeliveryProperties& WithDeliveryFrequency(MaximumExecutionFrequency&& value) { SetDeliveryFrequency(value); return *this;}
+    inline ConfigSnapshotDeliveryProperties& WithDeliveryFrequency(MaximumExecutionFrequency&& value) { SetDeliveryFrequency(std::move(value)); return *this;}
 
   private:
     MaximumExecutionFrequency m_deliveryFrequency;

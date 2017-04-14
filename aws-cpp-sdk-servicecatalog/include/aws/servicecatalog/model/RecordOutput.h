@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The output key.</p>
      */
-    inline void SetOutputKey(Aws::String&& value) { m_outputKeyHasBeenSet = true; m_outputKey = value; }
+    inline void SetOutputKey(Aws::String&& value) { m_outputKeyHasBeenSet = true; m_outputKey = std::move(value); }
 
     /**
      * <p>The output key.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The output key.</p>
      */
-    inline RecordOutput& WithOutputKey(Aws::String&& value) { SetOutputKey(value); return *this;}
+    inline RecordOutput& WithOutputKey(Aws::String&& value) { SetOutputKey(std::move(value)); return *this;}
 
     /**
      * <p>The output key.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The output value.</p>
      */
-    inline void SetOutputValue(Aws::String&& value) { m_outputValueHasBeenSet = true; m_outputValue = value; }
+    inline void SetOutputValue(Aws::String&& value) { m_outputValueHasBeenSet = true; m_outputValue = std::move(value); }
 
     /**
      * <p>The output value.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The output value.</p>
      */
-    inline RecordOutput& WithOutputValue(Aws::String&& value) { SetOutputValue(value); return *this;}
+    inline RecordOutput& WithOutputValue(Aws::String&& value) { SetOutputValue(std::move(value)); return *this;}
 
     /**
      * <p>The output value.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The text description of the output.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The text description of the output.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The text description of the output.</p>
      */
-    inline RecordOutput& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline RecordOutput& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The text description of the output.</p>

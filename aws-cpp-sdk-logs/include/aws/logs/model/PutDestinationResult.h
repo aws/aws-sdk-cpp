@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/model/Destination.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The destination.</p>
      */
-    inline void SetDestination(Destination&& value) { m_destination = value; }
+    inline void SetDestination(Destination&& value) { m_destination = std::move(value); }
 
     /**
      * <p>The destination.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The destination.</p>
      */
-    inline PutDestinationResult& WithDestination(Destination&& value) { SetDestination(value); return *this;}
+    inline PutDestinationResult& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
 
   private:
     Destination m_destination;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/route53domains/model/DomainAvailability.h>
+#include <utility>
 
 namespace Aws
 {
@@ -97,7 +98,7 @@ namespace Model
      * Route 53 can return this response for a variety of reasons, for example, the
      * registry is performing maintenance. Try again later.</li> </ul>
      */
-    inline void SetAvailability(DomainAvailability&& value) { m_availability = value; }
+    inline void SetAvailability(DomainAvailability&& value) { m_availability = std::move(value); }
 
     /**
      * <p>Whether the domain name is available for registering.</p> <note> <p>You can
@@ -133,7 +134,7 @@ namespace Model
      * Route 53 can return this response for a variety of reasons, for example, the
      * registry is performing maintenance. Try again later.</li> </ul>
      */
-    inline CheckDomainAvailabilityResult& WithAvailability(DomainAvailability&& value) { SetAvailability(value); return *this;}
+    inline CheckDomainAvailabilityResult& WithAvailability(DomainAvailability&& value) { SetAvailability(std::move(value)); return *this;}
 
   private:
     DomainAvailability m_availability;

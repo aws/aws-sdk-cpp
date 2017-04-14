@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
 #include <aws/elasticbeanstalk/model/SingleInstanceHealth.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Detailed health information about each instance.</p>
      */
-    inline void SetInstanceHealthList(Aws::Vector<SingleInstanceHealth>&& value) { m_instanceHealthList = value; }
+    inline void SetInstanceHealthList(Aws::Vector<SingleInstanceHealth>&& value) { m_instanceHealthList = std::move(value); }
 
     /**
      * <p>Detailed health information about each instance.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>Detailed health information about each instance.</p>
      */
-    inline DescribeInstancesHealthResult& WithInstanceHealthList(Aws::Vector<SingleInstanceHealth>&& value) { SetInstanceHealthList(value); return *this;}
+    inline DescribeInstancesHealthResult& WithInstanceHealthList(Aws::Vector<SingleInstanceHealth>&& value) { SetInstanceHealthList(std::move(value)); return *this;}
 
     /**
      * <p>Detailed health information about each instance.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>Detailed health information about each instance.</p>
      */
-    inline DescribeInstancesHealthResult& AddInstanceHealthList(SingleInstanceHealth&& value) { m_instanceHealthList.push_back(value); return *this; }
+    inline DescribeInstancesHealthResult& AddInstanceHealthList(SingleInstanceHealth&& value) { m_instanceHealthList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The date and time that the health information was retrieved.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The date and time that the health information was retrieved.</p>
      */
-    inline void SetRefreshedAt(Aws::Utils::DateTime&& value) { m_refreshedAt = value; }
+    inline void SetRefreshedAt(Aws::Utils::DateTime&& value) { m_refreshedAt = std::move(value); }
 
     /**
      * <p>The date and time that the health information was retrieved.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The date and time that the health information was retrieved.</p>
      */
-    inline DescribeInstancesHealthResult& WithRefreshedAt(Aws::Utils::DateTime&& value) { SetRefreshedAt(value); return *this;}
+    inline DescribeInstancesHealthResult& WithRefreshedAt(Aws::Utils::DateTime&& value) { SetRefreshedAt(std::move(value)); return *this;}
 
     /**
      * <p>Pagination token for the next page of results, if available.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>Pagination token for the next page of results, if available.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>Pagination token for the next page of results, if available.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>Pagination token for the next page of results, if available.</p>
      */
-    inline DescribeInstancesHealthResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeInstancesHealthResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Pagination token for the next page of results, if available.</p>
@@ -151,13 +152,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeInstancesHealthResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeInstancesHealthResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeInstancesHealthResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<SingleInstanceHealth> m_instanceHealthList;

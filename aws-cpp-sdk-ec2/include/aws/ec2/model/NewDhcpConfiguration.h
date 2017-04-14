@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
@@ -58,7 +59,7 @@ namespace Model
     inline NewDhcpConfiguration& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     
-    inline NewDhcpConfiguration& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline NewDhcpConfiguration& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     
     inline NewDhcpConfiguration& WithKey(const char* value) { SetKey(value); return *this;}
@@ -70,19 +71,19 @@ namespace Model
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
+    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     
     inline NewDhcpConfiguration& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     
-    inline NewDhcpConfiguration& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
+    inline NewDhcpConfiguration& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     
     inline NewDhcpConfiguration& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     
-    inline NewDhcpConfiguration& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    inline NewDhcpConfiguration& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     
     inline NewDhcpConfiguration& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }

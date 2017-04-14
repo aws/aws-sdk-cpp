@@ -17,6 +17,7 @@
 #include <aws/route53/Route53Request.h>
 #include <aws/route53/model/TagResourceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
      * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
      */
-    inline void SetResourceType(TagResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(TagResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
@@ -71,7 +72,7 @@ namespace Model
      * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
      * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
      */
-    inline ListTagsForResourceRequest& WithResourceType(TagResourceType&& value) { SetResourceType(value); return *this;}
+    inline ListTagsForResourceRequest& WithResourceType(TagResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the resource for which you want to retrieve tags.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The ID of the resource for which you want to retrieve tags.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The ID of the resource for which you want to retrieve tags.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The ID of the resource for which you want to retrieve tags.</p>
      */
-    inline ListTagsForResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline ListTagsForResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the resource for which you want to retrieve tags.</p>

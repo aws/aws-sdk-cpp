@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The principals associated with the thing.</p>
      */
-    inline void SetPrincipals(Aws::Vector<Aws::String>&& value) { m_principals = value; }
+    inline void SetPrincipals(Aws::Vector<Aws::String>&& value) { m_principals = std::move(value); }
 
     /**
      * <p>The principals associated with the thing.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The principals associated with the thing.</p>
      */
-    inline ListThingPrincipalsResult& WithPrincipals(Aws::Vector<Aws::String>&& value) { SetPrincipals(value); return *this;}
+    inline ListThingPrincipalsResult& WithPrincipals(Aws::Vector<Aws::String>&& value) { SetPrincipals(std::move(value)); return *this;}
 
     /**
      * <p>The principals associated with the thing.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The principals associated with the thing.</p>
      */
-    inline ListThingPrincipalsResult& AddPrincipals(Aws::String&& value) { m_principals.push_back(value); return *this; }
+    inline ListThingPrincipalsResult& AddPrincipals(Aws::String&& value) { m_principals.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The principals associated with the thing.</p>

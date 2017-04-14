@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/Attribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of attribute objects that meet the criteria of the request.</p>
      */
-    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributes = value; }
+    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributes = std::move(value); }
 
     /**
      * <p>A list of attribute objects that meet the criteria of the request.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of attribute objects that meet the criteria of the request.</p>
      */
-    inline ListAttributesResult& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(value); return *this;}
+    inline ListAttributesResult& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>A list of attribute objects that meet the criteria of the request.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of attribute objects that meet the criteria of the request.</p>
      */
-    inline ListAttributesResult& AddAttributes(Attribute&& value) { m_attributes.push_back(value); return *this; }
+    inline ListAttributesResult& AddAttributes(Attribute&& value) { m_attributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -101,7 +102,7 @@ namespace Model
      * can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -128,7 +129,7 @@ namespace Model
      * can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline ListAttributesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListAttributesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value to include in a future

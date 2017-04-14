@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudtrail/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Specifies the ARN of the resource.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>Specifies the ARN of the resource.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>Specifies the ARN of the resource.</p>
      */
-    inline ResourceTag& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline ResourceTag& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the ARN of the resource.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>A list of tags.</p>
      */
-    inline void SetTagsList(Aws::Vector<Tag>&& value) { m_tagsListHasBeenSet = true; m_tagsList = value; }
+    inline void SetTagsList(Aws::Vector<Tag>&& value) { m_tagsListHasBeenSet = true; m_tagsList = std::move(value); }
 
     /**
      * <p>A list of tags.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>A list of tags.</p>
      */
-    inline ResourceTag& WithTagsList(Aws::Vector<Tag>&& value) { SetTagsList(value); return *this;}
+    inline ResourceTag& WithTagsList(Aws::Vector<Tag>&& value) { SetTagsList(std::move(value)); return *this;}
 
     /**
      * <p>A list of tags.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>A list of tags.</p>
      */
-    inline ResourceTag& AddTagsList(Tag&& value) { m_tagsListHasBeenSet = true; m_tagsList.push_back(value); return *this; }
+    inline ResourceTag& AddTagsList(Tag&& value) { m_tagsListHasBeenSet = true; m_tagsList.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_resourceId;

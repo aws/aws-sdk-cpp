@@ -17,6 +17,7 @@
 #include <aws/workspaces/WorkSpacesRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/model/RebootRequest.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>An array of structures that specify the WorkSpaces to reboot.</p>
      */
-    inline void SetRebootWorkspaceRequests(Aws::Vector<RebootRequest>&& value) { m_rebootWorkspaceRequestsHasBeenSet = true; m_rebootWorkspaceRequests = value; }
+    inline void SetRebootWorkspaceRequests(Aws::Vector<RebootRequest>&& value) { m_rebootWorkspaceRequestsHasBeenSet = true; m_rebootWorkspaceRequests = std::move(value); }
 
     /**
      * <p>An array of structures that specify the WorkSpaces to reboot.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>An array of structures that specify the WorkSpaces to reboot.</p>
      */
-    inline RebootWorkspacesRequest& WithRebootWorkspaceRequests(Aws::Vector<RebootRequest>&& value) { SetRebootWorkspaceRequests(value); return *this;}
+    inline RebootWorkspacesRequest& WithRebootWorkspaceRequests(Aws::Vector<RebootRequest>&& value) { SetRebootWorkspaceRequests(std::move(value)); return *this;}
 
     /**
      * <p>An array of structures that specify the WorkSpaces to reboot.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>An array of structures that specify the WorkSpaces to reboot.</p>
      */
-    inline RebootWorkspacesRequest& AddRebootWorkspaceRequests(RebootRequest&& value) { m_rebootWorkspaceRequestsHasBeenSet = true; m_rebootWorkspaceRequests.push_back(value); return *this; }
+    inline RebootWorkspacesRequest& AddRebootWorkspaceRequests(RebootRequest&& value) { m_rebootWorkspaceRequestsHasBeenSet = true; m_rebootWorkspaceRequests.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<RebootRequest> m_rebootWorkspaceRequests;

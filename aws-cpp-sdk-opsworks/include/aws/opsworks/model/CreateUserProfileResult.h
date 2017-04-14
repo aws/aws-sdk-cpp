@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The user's IAM ARN.</p>
      */
-    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArn = value; }
+    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArn = std::move(value); }
 
     /**
      * <p>The user's IAM ARN.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The user's IAM ARN.</p>
      */
-    inline CreateUserProfileResult& WithIamUserArn(Aws::String&& value) { SetIamUserArn(value); return *this;}
+    inline CreateUserProfileResult& WithIamUserArn(Aws::String&& value) { SetIamUserArn(std::move(value)); return *this;}
 
     /**
      * <p>The user's IAM ARN.</p>

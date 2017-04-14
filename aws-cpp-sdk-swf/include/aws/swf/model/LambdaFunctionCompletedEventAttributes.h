@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The result of the function execution (if any).</p>
      */
-    inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = value; }
+    inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
 
     /**
      * <p>The result of the function execution (if any).</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The result of the function execution (if any).</p>
      */
-    inline LambdaFunctionCompletedEventAttributes& WithResult(Aws::String&& value) { SetResult(value); return *this;}
+    inline LambdaFunctionCompletedEventAttributes& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
 
     /**
      * <p>The result of the function execution (if any).</p>

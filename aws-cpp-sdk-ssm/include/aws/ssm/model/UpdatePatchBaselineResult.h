@@ -19,6 +19,7 @@
 #include <aws/ssm/model/PatchRuleGroup.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The ID of the deleted patch baseline.</p>
      */
-    inline void SetBaselineId(Aws::String&& value) { m_baselineId = value; }
+    inline void SetBaselineId(Aws::String&& value) { m_baselineId = std::move(value); }
 
     /**
      * <p>The ID of the deleted patch baseline.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The ID of the deleted patch baseline.</p>
      */
-    inline UpdatePatchBaselineResult& WithBaselineId(Aws::String&& value) { SetBaselineId(value); return *this;}
+    inline UpdatePatchBaselineResult& WithBaselineId(Aws::String&& value) { SetBaselineId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the deleted patch baseline.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The name of the patch baseline.</p>
      */
-    inline void SetName(Aws::String&& value) { m_name = value; }
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
      * <p>The name of the patch baseline.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The name of the patch baseline.</p>
      */
-    inline UpdatePatchBaselineResult& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdatePatchBaselineResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the patch baseline.</p>
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>A set of global filters used to exclude patches from the baseline.</p>
      */
-    inline void SetGlobalFilters(PatchFilterGroup&& value) { m_globalFilters = value; }
+    inline void SetGlobalFilters(PatchFilterGroup&& value) { m_globalFilters = std::move(value); }
 
     /**
      * <p>A set of global filters used to exclude patches from the baseline.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>A set of global filters used to exclude patches from the baseline.</p>
      */
-    inline UpdatePatchBaselineResult& WithGlobalFilters(PatchFilterGroup&& value) { SetGlobalFilters(value); return *this;}
+    inline UpdatePatchBaselineResult& WithGlobalFilters(PatchFilterGroup&& value) { SetGlobalFilters(std::move(value)); return *this;}
 
     /**
      * <p>A set of rules used to include patches in the baseline.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>A set of rules used to include patches in the baseline.</p>
      */
-    inline void SetApprovalRules(PatchRuleGroup&& value) { m_approvalRules = value; }
+    inline void SetApprovalRules(PatchRuleGroup&& value) { m_approvalRules = std::move(value); }
 
     /**
      * <p>A set of rules used to include patches in the baseline.</p>
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>A set of rules used to include patches in the baseline.</p>
      */
-    inline UpdatePatchBaselineResult& WithApprovalRules(PatchRuleGroup&& value) { SetApprovalRules(value); return *this;}
+    inline UpdatePatchBaselineResult& WithApprovalRules(PatchRuleGroup&& value) { SetApprovalRules(std::move(value)); return *this;}
 
     /**
      * <p>A list of explicitly approved patches for the baseline.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>A list of explicitly approved patches for the baseline.</p>
      */
-    inline void SetApprovedPatches(Aws::Vector<Aws::String>&& value) { m_approvedPatches = value; }
+    inline void SetApprovedPatches(Aws::Vector<Aws::String>&& value) { m_approvedPatches = std::move(value); }
 
     /**
      * <p>A list of explicitly approved patches for the baseline.</p>
@@ -186,7 +187,7 @@ namespace Model
     /**
      * <p>A list of explicitly approved patches for the baseline.</p>
      */
-    inline UpdatePatchBaselineResult& WithApprovedPatches(Aws::Vector<Aws::String>&& value) { SetApprovedPatches(value); return *this;}
+    inline UpdatePatchBaselineResult& WithApprovedPatches(Aws::Vector<Aws::String>&& value) { SetApprovedPatches(std::move(value)); return *this;}
 
     /**
      * <p>A list of explicitly approved patches for the baseline.</p>
@@ -196,7 +197,7 @@ namespace Model
     /**
      * <p>A list of explicitly approved patches for the baseline.</p>
      */
-    inline UpdatePatchBaselineResult& AddApprovedPatches(Aws::String&& value) { m_approvedPatches.push_back(value); return *this; }
+    inline UpdatePatchBaselineResult& AddApprovedPatches(Aws::String&& value) { m_approvedPatches.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of explicitly approved patches for the baseline.</p>
@@ -216,7 +217,7 @@ namespace Model
     /**
      * <p>A list of explicitly rejected patches for the baseline.</p>
      */
-    inline void SetRejectedPatches(Aws::Vector<Aws::String>&& value) { m_rejectedPatches = value; }
+    inline void SetRejectedPatches(Aws::Vector<Aws::String>&& value) { m_rejectedPatches = std::move(value); }
 
     /**
      * <p>A list of explicitly rejected patches for the baseline.</p>
@@ -226,7 +227,7 @@ namespace Model
     /**
      * <p>A list of explicitly rejected patches for the baseline.</p>
      */
-    inline UpdatePatchBaselineResult& WithRejectedPatches(Aws::Vector<Aws::String>&& value) { SetRejectedPatches(value); return *this;}
+    inline UpdatePatchBaselineResult& WithRejectedPatches(Aws::Vector<Aws::String>&& value) { SetRejectedPatches(std::move(value)); return *this;}
 
     /**
      * <p>A list of explicitly rejected patches for the baseline.</p>
@@ -236,7 +237,7 @@ namespace Model
     /**
      * <p>A list of explicitly rejected patches for the baseline.</p>
      */
-    inline UpdatePatchBaselineResult& AddRejectedPatches(Aws::String&& value) { m_rejectedPatches.push_back(value); return *this; }
+    inline UpdatePatchBaselineResult& AddRejectedPatches(Aws::String&& value) { m_rejectedPatches.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of explicitly rejected patches for the baseline.</p>
@@ -256,7 +257,7 @@ namespace Model
     /**
      * <p>The date when the patch baseline was created.</p>
      */
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = value; }
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
 
     /**
      * <p>The date when the patch baseline was created.</p>
@@ -266,7 +267,7 @@ namespace Model
     /**
      * <p>The date when the patch baseline was created.</p>
      */
-    inline UpdatePatchBaselineResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
+    inline UpdatePatchBaselineResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
     /**
      * <p>The date when the patch baseline was last modified.</p>
@@ -281,7 +282,7 @@ namespace Model
     /**
      * <p>The date when the patch baseline was last modified.</p>
      */
-    inline void SetModifiedDate(Aws::Utils::DateTime&& value) { m_modifiedDate = value; }
+    inline void SetModifiedDate(Aws::Utils::DateTime&& value) { m_modifiedDate = std::move(value); }
 
     /**
      * <p>The date when the patch baseline was last modified.</p>
@@ -291,7 +292,7 @@ namespace Model
     /**
      * <p>The date when the patch baseline was last modified.</p>
      */
-    inline UpdatePatchBaselineResult& WithModifiedDate(Aws::Utils::DateTime&& value) { SetModifiedDate(value); return *this;}
+    inline UpdatePatchBaselineResult& WithModifiedDate(Aws::Utils::DateTime&& value) { SetModifiedDate(std::move(value)); return *this;}
 
     /**
      * <p>A description of the Patch Baseline.</p>
@@ -306,7 +307,7 @@ namespace Model
     /**
      * <p>A description of the Patch Baseline.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
      * <p>A description of the Patch Baseline.</p>
@@ -321,7 +322,7 @@ namespace Model
     /**
      * <p>A description of the Patch Baseline.</p>
      */
-    inline UpdatePatchBaselineResult& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline UpdatePatchBaselineResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description of the Patch Baseline.</p>

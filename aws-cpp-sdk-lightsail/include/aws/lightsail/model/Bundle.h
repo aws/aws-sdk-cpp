@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The bundle ID (e.g., <code>micro_1_0</code>).</p>
      */
-    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
+    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
 
     /**
      * <p>The bundle ID (e.g., <code>micro_1_0</code>).</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>The bundle ID (e.g., <code>micro_1_0</code>).</p>
      */
-    inline Bundle& WithBundleId(Aws::String&& value) { SetBundleId(value); return *this;}
+    inline Bundle& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
 
     /**
      * <p>The bundle ID (e.g., <code>micro_1_0</code>).</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance type (e.g., <code>t2.micro</code>).</p>
      */
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The Amazon EC2 instance type (e.g., <code>t2.micro</code>).</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance type (e.g., <code>t2.micro</code>).</p>
      */
-    inline Bundle& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
+    inline Bundle& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon EC2 instance type (e.g., <code>t2.micro</code>).</p>
@@ -187,7 +188,7 @@ namespace Model
     /**
      * <p>A friendly name for the bundle (e.g., <code>Micro</code>).</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>A friendly name for the bundle (e.g., <code>Micro</code>).</p>
@@ -202,7 +203,7 @@ namespace Model
     /**
      * <p>A friendly name for the bundle (e.g., <code>Micro</code>).</p>
      */
-    inline Bundle& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Bundle& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A friendly name for the bundle (e.g., <code>Micro</code>).</p>

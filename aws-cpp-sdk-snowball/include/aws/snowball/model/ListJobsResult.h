@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/snowball/model/JobListEntry.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * a value that indicates whether the job is a job part, in the case of export
      * jobs. </p>
      */
-    inline void SetJobListEntries(Aws::Vector<JobListEntry>&& value) { m_jobListEntries = value; }
+    inline void SetJobListEntries(Aws::Vector<JobListEntry>&& value) { m_jobListEntries = std::move(value); }
 
     /**
      * <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and
@@ -74,7 +75,7 @@ namespace Model
      * a value that indicates whether the job is a job part, in the case of export
      * jobs. </p>
      */
-    inline ListJobsResult& WithJobListEntries(Aws::Vector<JobListEntry>&& value) { SetJobListEntries(value); return *this;}
+    inline ListJobsResult& WithJobListEntries(Aws::Vector<JobListEntry>&& value) { SetJobListEntries(std::move(value)); return *this;}
 
     /**
      * <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and
@@ -88,7 +89,7 @@ namespace Model
      * a value that indicates whether the job is a job part, in the case of export
      * jobs. </p>
      */
-    inline ListJobsResult& AddJobListEntries(JobListEntry&& value) { m_jobListEntries.push_back(value); return *this; }
+    inline ListJobsResult& AddJobListEntries(JobListEntry&& value) { m_jobListEntries.push_back(std::move(value)); return *this; }
 
     /**
      * <p>HTTP requests are stateless. If you use this automatically generated
@@ -112,7 +113,7 @@ namespace Model
      * returned <code>JobListEntry</code> objects will start from this point in the
      * array.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>HTTP requests are stateless. If you use this automatically generated
@@ -136,7 +137,7 @@ namespace Model
      * returned <code>JobListEntry</code> objects will start from this point in the
      * array.</p>
      */
-    inline ListJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>HTTP requests are stateless. If you use this automatically generated

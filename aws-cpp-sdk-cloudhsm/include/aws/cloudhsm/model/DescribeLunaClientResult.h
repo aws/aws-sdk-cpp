@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ARN of the client.</p>
      */
-    inline void SetClientArn(Aws::String&& value) { m_clientArn = value; }
+    inline void SetClientArn(Aws::String&& value) { m_clientArn = std::move(value); }
 
     /**
      * <p>The ARN of the client.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ARN of the client.</p>
      */
-    inline DescribeLunaClientResult& WithClientArn(Aws::String&& value) { SetClientArn(value); return *this;}
+    inline DescribeLunaClientResult& WithClientArn(Aws::String&& value) { SetClientArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the client.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The certificate installed on the HSMs used by this client.</p>
      */
-    inline void SetCertificate(Aws::String&& value) { m_certificate = value; }
+    inline void SetCertificate(Aws::String&& value) { m_certificate = std::move(value); }
 
     /**
      * <p>The certificate installed on the HSMs used by this client.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The certificate installed on the HSMs used by this client.</p>
      */
-    inline DescribeLunaClientResult& WithCertificate(Aws::String&& value) { SetCertificate(value); return *this;}
+    inline DescribeLunaClientResult& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
 
     /**
      * <p>The certificate installed on the HSMs used by this client.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The certificate fingerprint.</p>
      */
-    inline void SetCertificateFingerprint(Aws::String&& value) { m_certificateFingerprint = value; }
+    inline void SetCertificateFingerprint(Aws::String&& value) { m_certificateFingerprint = std::move(value); }
 
     /**
      * <p>The certificate fingerprint.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The certificate fingerprint.</p>
      */
-    inline DescribeLunaClientResult& WithCertificateFingerprint(Aws::String&& value) { SetCertificateFingerprint(value); return *this;}
+    inline DescribeLunaClientResult& WithCertificateFingerprint(Aws::String&& value) { SetCertificateFingerprint(std::move(value)); return *this;}
 
     /**
      * <p>The certificate fingerprint.</p>
@@ -157,7 +158,7 @@ namespace Model
     /**
      * <p>The date and time the client was last modified.</p>
      */
-    inline void SetLastModifiedTimestamp(Aws::String&& value) { m_lastModifiedTimestamp = value; }
+    inline void SetLastModifiedTimestamp(Aws::String&& value) { m_lastModifiedTimestamp = std::move(value); }
 
     /**
      * <p>The date and time the client was last modified.</p>
@@ -172,7 +173,7 @@ namespace Model
     /**
      * <p>The date and time the client was last modified.</p>
      */
-    inline DescribeLunaClientResult& WithLastModifiedTimestamp(Aws::String&& value) { SetLastModifiedTimestamp(value); return *this;}
+    inline DescribeLunaClientResult& WithLastModifiedTimestamp(Aws::String&& value) { SetLastModifiedTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The date and time the client was last modified.</p>
@@ -192,7 +193,7 @@ namespace Model
     /**
      * <p>The label of the client.</p>
      */
-    inline void SetLabel(Aws::String&& value) { m_label = value; }
+    inline void SetLabel(Aws::String&& value) { m_label = std::move(value); }
 
     /**
      * <p>The label of the client.</p>
@@ -207,7 +208,7 @@ namespace Model
     /**
      * <p>The label of the client.</p>
      */
-    inline DescribeLunaClientResult& WithLabel(Aws::String&& value) { SetLabel(value); return *this;}
+    inline DescribeLunaClientResult& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
 
     /**
      * <p>The label of the client.</p>

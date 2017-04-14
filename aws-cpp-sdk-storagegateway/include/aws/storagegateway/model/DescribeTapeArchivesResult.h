@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/model/TapeArchive.h>
+#include <utility>
 
 namespace Aws
 {
@@ -71,7 +72,7 @@ namespace Model
      * size of the tapes, status of the tapes, progress of the description and tape
      * barcode.</p>
      */
-    inline void SetTapeArchives(Aws::Vector<TapeArchive>&& value) { m_tapeArchives = value; }
+    inline void SetTapeArchives(Aws::Vector<TapeArchive>&& value) { m_tapeArchives = std::move(value); }
 
     /**
      * <p>An array of virtual tape objects in the virtual tape shelf (VTS). The
@@ -89,7 +90,7 @@ namespace Model
      * size of the tapes, status of the tapes, progress of the description and tape
      * barcode.</p>
      */
-    inline DescribeTapeArchivesResult& WithTapeArchives(Aws::Vector<TapeArchive>&& value) { SetTapeArchives(value); return *this;}
+    inline DescribeTapeArchivesResult& WithTapeArchives(Aws::Vector<TapeArchive>&& value) { SetTapeArchives(std::move(value)); return *this;}
 
     /**
      * <p>An array of virtual tape objects in the virtual tape shelf (VTS). The
@@ -107,7 +108,7 @@ namespace Model
      * size of the tapes, status of the tapes, progress of the description and tape
      * barcode.</p>
      */
-    inline DescribeTapeArchivesResult& AddTapeArchives(TapeArchive&& value) { m_tapeArchives.push_back(value); return *this; }
+    inline DescribeTapeArchivesResult& AddTapeArchives(TapeArchive&& value) { m_tapeArchives.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An opaque string that indicates the position at which the virtual tapes that
@@ -134,7 +135,7 @@ namespace Model
      * are no more virtual tapes to describe, this field does not appear in the
      * response.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>An opaque string that indicates the position at which the virtual tapes that
@@ -161,7 +162,7 @@ namespace Model
      * are no more virtual tapes to describe, this field does not appear in the
      * response.</p>
      */
-    inline DescribeTapeArchivesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeTapeArchivesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An opaque string that indicates the position at which the virtual tapes that

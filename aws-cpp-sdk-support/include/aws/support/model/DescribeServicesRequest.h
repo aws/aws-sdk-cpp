@@ -17,6 +17,7 @@
 #include <aws/support/SupportRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>A JSON-formatted list of service codes available for AWS services.</p>
      */
-    inline void SetServiceCodeList(Aws::Vector<Aws::String>&& value) { m_serviceCodeListHasBeenSet = true; m_serviceCodeList = value; }
+    inline void SetServiceCodeList(Aws::Vector<Aws::String>&& value) { m_serviceCodeListHasBeenSet = true; m_serviceCodeList = std::move(value); }
 
     /**
      * <p>A JSON-formatted list of service codes available for AWS services.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>A JSON-formatted list of service codes available for AWS services.</p>
      */
-    inline DescribeServicesRequest& WithServiceCodeList(Aws::Vector<Aws::String>&& value) { SetServiceCodeList(value); return *this;}
+    inline DescribeServicesRequest& WithServiceCodeList(Aws::Vector<Aws::String>&& value) { SetServiceCodeList(std::move(value)); return *this;}
 
     /**
      * <p>A JSON-formatted list of service codes available for AWS services.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>A JSON-formatted list of service codes available for AWS services.</p>
      */
-    inline DescribeServicesRequest& AddServiceCodeList(Aws::String&& value) { m_serviceCodeListHasBeenSet = true; m_serviceCodeList.push_back(value); return *this; }
+    inline DescribeServicesRequest& AddServiceCodeList(Aws::String&& value) { m_serviceCodeListHasBeenSet = true; m_serviceCodeList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A JSON-formatted list of service codes available for AWS services.</p>
@@ -98,7 +99,7 @@ namespace Model
      * Support currently supports English ("en") and Japanese ("ja"). Language
      * parameters must be passed explicitly for operations that take them.</p>
      */
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = value; }
+    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
 
     /**
      * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
@@ -119,7 +120,7 @@ namespace Model
      * Support currently supports English ("en") and Japanese ("ja"). Language
      * parameters must be passed explicitly for operations that take them.</p>
      */
-    inline DescribeServicesRequest& WithLanguage(Aws::String&& value) { SetLanguage(value); return *this;}
+    inline DescribeServicesRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
 
     /**
      * <p>The ISO 639-1 code for the language in which AWS provides support. AWS

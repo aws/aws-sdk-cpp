@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/SqlInjectionMatchSet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -82,7 +83,7 @@ namespace Model
      * </li> <li> <p> <a>FieldToMatch</a>: Contains <code>Data</code> and
      * <code>Type</code> </p> </li> </ul>
      */
-    inline void SetSqlInjectionMatchSet(SqlInjectionMatchSet&& value) { m_sqlInjectionMatchSet = value; }
+    inline void SetSqlInjectionMatchSet(SqlInjectionMatchSet&& value) { m_sqlInjectionMatchSet = std::move(value); }
 
     /**
      * <p>Information about the <a>SqlInjectionMatchSet</a> that you specified in the
@@ -108,7 +109,7 @@ namespace Model
      * </li> <li> <p> <a>FieldToMatch</a>: Contains <code>Data</code> and
      * <code>Type</code> </p> </li> </ul>
      */
-    inline GetSqlInjectionMatchSetResult& WithSqlInjectionMatchSet(SqlInjectionMatchSet&& value) { SetSqlInjectionMatchSet(value); return *this;}
+    inline GetSqlInjectionMatchSetResult& WithSqlInjectionMatchSet(SqlInjectionMatchSet&& value) { SetSqlInjectionMatchSet(std::move(value)); return *this;}
 
   private:
     SqlInjectionMatchSet m_sqlInjectionMatchSet;

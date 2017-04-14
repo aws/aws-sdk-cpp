@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ID of the Worker being paid the bonus.</p>
      */
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
+    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
 
     /**
      * <p>The ID of the Worker being paid the bonus.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID of the Worker being paid the bonus.</p>
      */
-    inline SendBonusRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(value); return *this;}
+    inline SendBonusRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Worker being paid the bonus.</p>
@@ -89,7 +90,7 @@ namespace Model
      * example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not
      * include currency symbols or currency codes. </p>
      */
-    inline void SetBonusAmount(Aws::String&& value) { m_bonusAmountHasBeenSet = true; m_bonusAmount = value; }
+    inline void SetBonusAmount(Aws::String&& value) { m_bonusAmountHasBeenSet = true; m_bonusAmount = std::move(value); }
 
     /**
      * <p> The Bonus amount is a US Dollar amount specified using a string (for
@@ -110,7 +111,7 @@ namespace Model
      * example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not
      * include currency symbols or currency codes. </p>
      */
-    inline SendBonusRequest& WithBonusAmount(Aws::String&& value) { SetBonusAmount(value); return *this;}
+    inline SendBonusRequest& WithBonusAmount(Aws::String&& value) { SetBonusAmount(std::move(value)); return *this;}
 
     /**
      * <p> The Bonus amount is a US Dollar amount specified using a string (for
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The ID of the assignment for which this bonus is paid.</p>
      */
-    inline void SetAssignmentId(Aws::String&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = value; }
+    inline void SetAssignmentId(Aws::String&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = std::move(value); }
 
     /**
      * <p>The ID of the assignment for which this bonus is paid.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The ID of the assignment for which this bonus is paid.</p>
      */
-    inline SendBonusRequest& WithAssignmentId(Aws::String&& value) { SetAssignmentId(value); return *this;}
+    inline SendBonusRequest& WithAssignmentId(Aws::String&& value) { SetAssignmentId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the assignment for which this bonus is paid.</p>
@@ -170,7 +171,7 @@ namespace Model
      * <p>A message that explains the reason for the bonus payment. The Worker
      * receiving the bonus can see this message.</p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p>A message that explains the reason for the bonus payment. The Worker
@@ -188,7 +189,7 @@ namespace Model
      * <p>A message that explains the reason for the bonus payment. The Worker
      * receiving the bonus can see this message.</p>
      */
-    inline SendBonusRequest& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline SendBonusRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p>A message that explains the reason for the bonus payment. The Worker
@@ -224,7 +225,7 @@ namespace Model
      * UniqueRequestToken, subsequent calls will return an error with a message
      * containing the request ID.</p>
      */
-    inline void SetUniqueRequestToken(Aws::String&& value) { m_uniqueRequestTokenHasBeenSet = true; m_uniqueRequestToken = value; }
+    inline void SetUniqueRequestToken(Aws::String&& value) { m_uniqueRequestTokenHasBeenSet = true; m_uniqueRequestToken = std::move(value); }
 
     /**
      * <p>A unique identifier for this request, which allows you to retry the call on
@@ -254,7 +255,7 @@ namespace Model
      * UniqueRequestToken, subsequent calls will return an error with a message
      * containing the request ID.</p>
      */
-    inline SendBonusRequest& WithUniqueRequestToken(Aws::String&& value) { SetUniqueRequestToken(value); return *this;}
+    inline SendBonusRequest& WithUniqueRequestToken(Aws::String&& value) { SetUniqueRequestToken(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for this request, which allows you to retry the call on

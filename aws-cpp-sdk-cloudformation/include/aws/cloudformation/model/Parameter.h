@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * for a particular parameter, AWS CloudFormation uses the default value that is
      * specified in your template.</p>
      */
-    inline void SetParameterKey(Aws::String&& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = value; }
+    inline void SetParameterKey(Aws::String&& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = std::move(value); }
 
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
@@ -86,7 +87,7 @@ namespace Model
      * for a particular parameter, AWS CloudFormation uses the default value that is
      * specified in your template.</p>
      */
-    inline Parameter& WithParameterKey(Aws::String&& value) { SetParameterKey(value); return *this;}
+    inline Parameter& WithParameterKey(Aws::String&& value) { SetParameterKey(std::move(value)); return *this;}
 
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The value associated with the parameter.</p>
      */
-    inline void SetParameterValue(Aws::String&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
+    inline void SetParameterValue(Aws::String&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = std::move(value); }
 
     /**
      * <p>The value associated with the parameter.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The value associated with the parameter.</p>
      */
-    inline Parameter& WithParameterValue(Aws::String&& value) { SetParameterValue(value); return *this;}
+    inline Parameter& WithParameterValue(Aws::String&& value) { SetParameterValue(std::move(value)); return *this;}
 
     /**
      * <p>The value associated with the parameter.</p>

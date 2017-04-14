@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/DocumentType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of the SSM document.</p>
      */
-    inline void SetName(Aws::String&& value) { m_name = value; }
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
      * <p>The name of the SSM document.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the SSM document.</p>
      */
-    inline GetDocumentResult& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline GetDocumentResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the SSM document.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The document version.</p>
      */
-    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersion = value; }
+    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersion = std::move(value); }
 
     /**
      * <p>The document version.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The document version.</p>
      */
-    inline GetDocumentResult& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(value); return *this;}
+    inline GetDocumentResult& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
      * <p>The document version.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The contents of the SSM document.</p>
      */
-    inline void SetContent(Aws::String&& value) { m_content = value; }
+    inline void SetContent(Aws::String&& value) { m_content = std::move(value); }
 
     /**
      * <p>The contents of the SSM document.</p>
@@ -138,7 +139,7 @@ namespace Model
     /**
      * <p>The contents of the SSM document.</p>
      */
-    inline GetDocumentResult& WithContent(Aws::String&& value) { SetContent(value); return *this;}
+    inline GetDocumentResult& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
      * <p>The contents of the SSM document.</p>
@@ -158,7 +159,7 @@ namespace Model
     /**
      * <p>The document type.</p>
      */
-    inline void SetDocumentType(DocumentType&& value) { m_documentType = value; }
+    inline void SetDocumentType(DocumentType&& value) { m_documentType = std::move(value); }
 
     /**
      * <p>The document type.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>The document type.</p>
      */
-    inline GetDocumentResult& WithDocumentType(DocumentType&& value) { SetDocumentType(value); return *this;}
+    inline GetDocumentResult& WithDocumentType(DocumentType&& value) { SetDocumentType(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

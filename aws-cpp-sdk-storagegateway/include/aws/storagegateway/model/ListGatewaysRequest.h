@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>An opaque string that indicates the position at which to begin the returned
      * list of gateways.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An opaque string that indicates the position at which to begin the returned
@@ -74,7 +75,7 @@ namespace Model
      * <p>An opaque string that indicates the position at which to begin the returned
      * list of gateways.</p>
      */
-    inline ListGatewaysRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListGatewaysRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An opaque string that indicates the position at which to begin the returned

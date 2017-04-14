@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of the destination.</p>
      */
-    inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
+    inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = std::move(value); }
 
     /**
      * <p>The name of the destination.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The name of the destination.</p>
      */
-    inline Destination& WithDestinationName(Aws::String&& value) { SetDestinationName(value); return *this;}
+    inline Destination& WithDestinationName(Aws::String&& value) { SetDestinationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the destination.</p>
@@ -95,7 +96,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the physical target where the log events
      * will be delivered (for example, a Kinesis stream).</p>
      */
-    inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
+    inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the physical target where the log events
@@ -113,7 +114,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the physical target where the log events
      * will be delivered (for example, a Kinesis stream).</p>
      */
-    inline Destination& WithTargetArn(Aws::String&& value) { SetTargetArn(value); return *this;}
+    inline Destination& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the physical target where the log events
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>A role for impersonation, used when delivering log events to the target.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>A role for impersonation, used when delivering log events to the target.</p>
@@ -149,7 +150,7 @@ namespace Model
     /**
      * <p>A role for impersonation, used when delivering log events to the target.</p>
      */
-    inline Destination& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline Destination& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>A role for impersonation, used when delivering log events to the target.</p>
@@ -172,7 +173,7 @@ namespace Model
      * <p>An IAM policy document that governs which AWS accounts can create
      * subscription filters against this destination.</p>
      */
-    inline void SetAccessPolicy(Aws::String&& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = value; }
+    inline void SetAccessPolicy(Aws::String&& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = std::move(value); }
 
     /**
      * <p>An IAM policy document that governs which AWS accounts can create
@@ -190,7 +191,7 @@ namespace Model
      * <p>An IAM policy document that governs which AWS accounts can create
      * subscription filters against this destination.</p>
      */
-    inline Destination& WithAccessPolicy(Aws::String&& value) { SetAccessPolicy(value); return *this;}
+    inline Destination& WithAccessPolicy(Aws::String&& value) { SetAccessPolicy(std::move(value)); return *this;}
 
     /**
      * <p>An IAM policy document that governs which AWS accounts can create
@@ -211,7 +212,7 @@ namespace Model
     /**
      * <p>The ARN of this destination.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The ARN of this destination.</p>
@@ -226,7 +227,7 @@ namespace Model
     /**
      * <p>The ARN of this destination.</p>
      */
-    inline Destination& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Destination& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of this destination.</p>

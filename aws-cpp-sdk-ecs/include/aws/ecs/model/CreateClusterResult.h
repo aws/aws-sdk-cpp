@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/Cluster.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The full description of your new cluster.</p>
      */
-    inline void SetCluster(Cluster&& value) { m_cluster = value; }
+    inline void SetCluster(Cluster&& value) { m_cluster = std::move(value); }
 
     /**
      * <p>The full description of your new cluster.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The full description of your new cluster.</p>
      */
-    inline CreateClusterResult& WithCluster(Cluster&& value) { SetCluster(value); return *this;}
+    inline CreateClusterResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
 
   private:
     Cluster m_cluster;

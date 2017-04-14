@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * AWS account.</p> </li> </ul> <note> <p>This value is stored as a lower-case
      * string.</p> </note>
      */
-    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
+    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
@@ -100,7 +101,7 @@ namespace Model
      * AWS account.</p> </li> </ul> <note> <p>This value is stored as a lower-case
      * string.</p> </note>
      */
-    inline CreateClusterParameterGroupRequest& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(value); return *this;}
+    inline CreateClusterParameterGroupRequest& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
@@ -149,7 +150,7 @@ namespace Model
      * provide you the valid values. For example, a valid family name is
      * "redshift-1.0". </p>
      */
-    inline void SetParameterGroupFamily(Aws::String&& value) { m_parameterGroupFamilyHasBeenSet = true; m_parameterGroupFamily = value; }
+    inline void SetParameterGroupFamily(Aws::String&& value) { m_parameterGroupFamilyHasBeenSet = true; m_parameterGroupFamily = std::move(value); }
 
     /**
      * <p>The Amazon Redshift engine version to which the cluster parameter group
@@ -188,7 +189,7 @@ namespace Model
      * provide you the valid values. For example, a valid family name is
      * "redshift-1.0". </p>
      */
-    inline CreateClusterParameterGroupRequest& WithParameterGroupFamily(Aws::String&& value) { SetParameterGroupFamily(value); return *this;}
+    inline CreateClusterParameterGroupRequest& WithParameterGroupFamily(Aws::String&& value) { SetParameterGroupFamily(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Redshift engine version to which the cluster parameter group
@@ -216,7 +217,7 @@ namespace Model
     /**
      * <p>A description of the parameter group.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description of the parameter group.</p>
@@ -231,7 +232,7 @@ namespace Model
     /**
      * <p>A description of the parameter group.</p>
      */
-    inline CreateClusterParameterGroupRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateClusterParameterGroupRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description of the parameter group.</p>
@@ -251,7 +252,7 @@ namespace Model
     /**
      * <p>A list of tag instances.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of tag instances.</p>
@@ -261,7 +262,7 @@ namespace Model
     /**
      * <p>A list of tag instances.</p>
      */
-    inline CreateClusterParameterGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline CreateClusterParameterGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of tag instances.</p>
@@ -271,7 +272,7 @@ namespace Model
     /**
      * <p>A list of tag instances.</p>
      */
-    inline CreateClusterParameterGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateClusterParameterGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_parameterGroupName;

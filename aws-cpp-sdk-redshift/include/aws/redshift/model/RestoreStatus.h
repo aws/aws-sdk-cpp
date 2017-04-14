@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The status of the restore action. Returns starting, restoring, completed, or
      * failed.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the restore action. Returns starting, restoring, completed, or
@@ -81,7 +82,7 @@ namespace Model
      * <p>The status of the restore action. Returns starting, restoring, completed, or
      * failed.</p>
      */
-    inline RestoreStatus& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline RestoreStatus& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the restore action. Returns starting, restoring, completed, or

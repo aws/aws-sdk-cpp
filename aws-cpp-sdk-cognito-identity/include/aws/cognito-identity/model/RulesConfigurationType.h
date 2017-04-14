@@ -16,6 +16,7 @@
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cognito-identity/model/MappingRule.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
      * <p>Rules are evaluated in order. The first one to match specifies the role.</p>
      */
-    inline void SetRules(Aws::Vector<MappingRule>&& value) { m_rulesHasBeenSet = true; m_rules = value; }
+    inline void SetRules(Aws::Vector<MappingRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
      * <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
@@ -72,7 +73,7 @@ namespace Model
      * <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
      * <p>Rules are evaluated in order. The first one to match specifies the role.</p>
      */
-    inline RulesConfigurationType& WithRules(Aws::Vector<MappingRule>&& value) { SetRules(value); return *this;}
+    inline RulesConfigurationType& WithRules(Aws::Vector<MappingRule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
      * <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
@@ -84,7 +85,7 @@ namespace Model
      * <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
      * <p>Rules are evaluated in order. The first one to match specifies the role.</p>
      */
-    inline RulesConfigurationType& AddRules(MappingRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
+    inline RulesConfigurationType& AddRules(MappingRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<MappingRule> m_rules;

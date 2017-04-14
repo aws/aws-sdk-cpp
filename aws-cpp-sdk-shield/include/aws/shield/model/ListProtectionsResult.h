@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/shield/model/Protection.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The array of enabled <a>Protection</a> objects.</p>
      */
-    inline void SetProtections(Aws::Vector<Protection>&& value) { m_protections = value; }
+    inline void SetProtections(Aws::Vector<Protection>&& value) { m_protections = std::move(value); }
 
     /**
      * <p>The array of enabled <a>Protection</a> objects.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The array of enabled <a>Protection</a> objects.</p>
      */
-    inline ListProtectionsResult& WithProtections(Aws::Vector<Protection>&& value) { SetProtections(value); return *this;}
+    inline ListProtectionsResult& WithProtections(Aws::Vector<Protection>&& value) { SetProtections(std::move(value)); return *this;}
 
     /**
      * <p>The array of enabled <a>Protection</a> objects.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The array of enabled <a>Protection</a> objects.</p>
      */
-    inline ListProtectionsResult& AddProtections(Protection&& value) { m_protections.push_back(value); return *this; }
+    inline ListProtectionsResult& AddProtections(Protection&& value) { m_protections.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
@@ -104,7 +105,7 @@ namespace Model
      * value of NextToken from the previous response to get information about another
      * batch of Protections.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
@@ -134,7 +135,7 @@ namespace Model
      * value of NextToken from the previous response to get information about another
      * batch of Protections.</p>
      */
-    inline ListProtectionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListProtectionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more

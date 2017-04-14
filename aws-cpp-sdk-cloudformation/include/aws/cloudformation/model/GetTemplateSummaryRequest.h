@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
      */
-    inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
+    inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
 
     /**
      * <p>Structure containing the template body with a minimum length of 1 byte and a
@@ -99,7 +100,7 @@ namespace Model
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
      */
-    inline GetTemplateSummaryRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(value); return *this;}
+    inline GetTemplateSummaryRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
 
     /**
      * <p>Structure containing the template body with a minimum length of 1 byte and a
@@ -142,7 +143,7 @@ namespace Model
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
      */
-    inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
+    inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::move(value); }
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
@@ -175,7 +176,7 @@ namespace Model
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
      */
-    inline GetTemplateSummaryRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(value); return *this;}
+    inline GetTemplateSummaryRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(std::move(value)); return *this;}
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
@@ -216,7 +217,7 @@ namespace Model
      * parameters: <code>StackName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
      */
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
+    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
      * <p>The name or the stack ID that is associated with the stack, which are not
@@ -246,7 +247,7 @@ namespace Model
      * parameters: <code>StackName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
      */
-    inline GetTemplateSummaryRequest& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
+    inline GetTemplateSummaryRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name or the stack ID that is associated with the stack, which are not

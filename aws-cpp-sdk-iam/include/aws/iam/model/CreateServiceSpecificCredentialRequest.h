@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: =,.@-</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the IAM user that is to be associated with the credentials. The
@@ -101,7 +102,7 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: =,.@-</p>
      */
-    inline CreateServiceSpecificCredentialRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline CreateServiceSpecificCredentialRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IAM user that is to be associated with the credentials. The
@@ -133,7 +134,7 @@ namespace Model
      * The service you specify here is the only service that can be accessed using
      * these credentials.</p>
      */
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
+    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
      * <p>The name of the AWS service that is to be associated with the credentials.
@@ -154,7 +155,7 @@ namespace Model
      * The service you specify here is the only service that can be accessed using
      * these credentials.</p>
      */
-    inline CreateServiceSpecificCredentialRequest& WithServiceName(Aws::String&& value) { SetServiceName(value); return *this;}
+    inline CreateServiceSpecificCredentialRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the AWS service that is to be associated with the credentials.

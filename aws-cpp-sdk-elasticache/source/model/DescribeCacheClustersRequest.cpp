@@ -25,7 +25,9 @@ DescribeCacheClustersRequest::DescribeCacheClustersRequest() :
     m_maxRecordsHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_showCacheNodeInfo(false),
-    m_showCacheNodeInfoHasBeenSet(false)
+    m_showCacheNodeInfoHasBeenSet(false),
+    m_showCacheClustersNotInReplicationGroups(false),
+    m_showCacheClustersNotInReplicationGroupsHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,11 @@ Aws::String DescribeCacheClustersRequest::SerializePayload() const
   if(m_showCacheNodeInfoHasBeenSet)
   {
     ss << "ShowCacheNodeInfo=" << std::boolalpha << m_showCacheNodeInfo << "&";
+  }
+
+  if(m_showCacheClustersNotInReplicationGroupsHasBeenSet)
+  {
+    ss << "ShowCacheClustersNotInReplicationGroups=" << std::boolalpha << m_showCacheClustersNotInReplicationGroups << "&";
   }
 
   ss << "Version=2015-02-02";

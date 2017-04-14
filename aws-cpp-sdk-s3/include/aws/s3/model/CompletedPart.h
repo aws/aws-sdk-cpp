@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * Entity tag returned when the part was uploaded.
      */
-    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = value; }
+    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
 
     /**
      * Entity tag returned when the part was uploaded.
@@ -67,7 +68,7 @@ namespace Model
     /**
      * Entity tag returned when the part was uploaded.
      */
-    inline CompletedPart& WithETag(Aws::String&& value) { SetETag(value); return *this;}
+    inline CompletedPart& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
      * Entity tag returned when the part was uploaded.

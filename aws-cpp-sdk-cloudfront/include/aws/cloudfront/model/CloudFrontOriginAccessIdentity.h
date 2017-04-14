@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudfront/model/CloudFrontOriginAccessIdentityConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
@@ -73,7 +74,7 @@ namespace Model
     /**
      * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
      */
-    inline CloudFrontOriginAccessIdentity& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline CloudFrontOriginAccessIdentity& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
@@ -99,7 +100,7 @@ namespace Model
      * when giving the origin access identity read permission to an object in Amazon
      * S3.
      */
-    inline void SetS3CanonicalUserId(Aws::String&& value) { m_s3CanonicalUserIdHasBeenSet = true; m_s3CanonicalUserId = value; }
+    inline void SetS3CanonicalUserId(Aws::String&& value) { m_s3CanonicalUserIdHasBeenSet = true; m_s3CanonicalUserId = std::move(value); }
 
     /**
      * The Amazon S3 canonical user ID for the origin access identity, which you use
@@ -120,7 +121,7 @@ namespace Model
      * when giving the origin access identity read permission to an object in Amazon
      * S3.
      */
-    inline CloudFrontOriginAccessIdentity& WithS3CanonicalUserId(Aws::String&& value) { SetS3CanonicalUserId(value); return *this;}
+    inline CloudFrontOriginAccessIdentity& WithS3CanonicalUserId(Aws::String&& value) { SetS3CanonicalUserId(std::move(value)); return *this;}
 
     /**
      * The Amazon S3 canonical user ID for the origin access identity, which you use
@@ -142,7 +143,7 @@ namespace Model
     /**
      * The current configuration information for the identity.
      */
-    inline void SetCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { m_cloudFrontOriginAccessIdentityConfigHasBeenSet = true; m_cloudFrontOriginAccessIdentityConfig = value; }
+    inline void SetCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { m_cloudFrontOriginAccessIdentityConfigHasBeenSet = true; m_cloudFrontOriginAccessIdentityConfig = std::move(value); }
 
     /**
      * The current configuration information for the identity.
@@ -152,7 +153,7 @@ namespace Model
     /**
      * The current configuration information for the identity.
      */
-    inline CloudFrontOriginAccessIdentity& WithCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { SetCloudFrontOriginAccessIdentityConfig(value); return *this;}
+    inline CloudFrontOriginAccessIdentity& WithCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { SetCloudFrontOriginAccessIdentityConfig(std::move(value)); return *this;}
 
   private:
     Aws::String m_id;

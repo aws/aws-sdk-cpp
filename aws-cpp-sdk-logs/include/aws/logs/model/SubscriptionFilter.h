@@ -16,6 +16,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/model/Distribution.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of the subscription filter.</p>
      */
-    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
+    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = std::move(value); }
 
     /**
      * <p>The name of the subscription filter.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The name of the subscription filter.</p>
      */
-    inline SubscriptionFilter& WithFilterName(Aws::String&& value) { SetFilterName(value); return *this;}
+    inline SubscriptionFilter& WithFilterName(Aws::String&& value) { SetFilterName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the subscription filter.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
      * <p>The name of the log group.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline SubscriptionFilter& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
+    inline SubscriptionFilter& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the log group.</p>
@@ -121,7 +122,7 @@ namespace Model
     inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
 
     
-    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
+    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = std::move(value); }
 
     
     inline void SetFilterPattern(const char* value) { m_filterPatternHasBeenSet = true; m_filterPattern.assign(value); }
@@ -130,7 +131,7 @@ namespace Model
     inline SubscriptionFilter& WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
 
     
-    inline SubscriptionFilter& WithFilterPattern(Aws::String&& value) { SetFilterPattern(value); return *this;}
+    inline SubscriptionFilter& WithFilterPattern(Aws::String&& value) { SetFilterPattern(std::move(value)); return *this;}
 
     
     inline SubscriptionFilter& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the destination.</p>
      */
-    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
+    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the destination.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the destination.</p>
      */
-    inline SubscriptionFilter& WithDestinationArn(Aws::String&& value) { SetDestinationArn(value); return *this;}
+    inline SubscriptionFilter& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the destination.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p/>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p/>
@@ -198,7 +199,7 @@ namespace Model
     /**
      * <p/>
      */
-    inline SubscriptionFilter& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline SubscriptionFilter& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p/>
@@ -221,7 +222,7 @@ namespace Model
      * <p>The method used to distribute log data to the destination, when the
      * destination is an Amazon Kinesis stream.</p>
      */
-    inline void SetDistribution(Distribution&& value) { m_distributionHasBeenSet = true; m_distribution = value; }
+    inline void SetDistribution(Distribution&& value) { m_distributionHasBeenSet = true; m_distribution = std::move(value); }
 
     /**
      * <p>The method used to distribute log data to the destination, when the
@@ -233,7 +234,7 @@ namespace Model
      * <p>The method used to distribute log data to the destination, when the
      * destination is an Amazon Kinesis stream.</p>
      */
-    inline SubscriptionFilter& WithDistribution(Distribution&& value) { SetDistribution(value); return *this;}
+    inline SubscriptionFilter& WithDistribution(Distribution&& value) { SetDistribution(std::move(value)); return *this;}
 
     /**
      * <p>The creation time of the subscription filter.</p>

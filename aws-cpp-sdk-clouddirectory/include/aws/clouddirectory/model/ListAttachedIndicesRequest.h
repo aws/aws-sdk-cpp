@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
 #include <aws/clouddirectory/model/ConsistencyLevel.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The ARN of the directory.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>The ARN of the directory.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ARN of the directory.</p>
      */
-    inline ListAttachedIndicesRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline ListAttachedIndicesRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the directory.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>A reference to the object to that has indices attached.</p>
      */
-    inline void SetTargetReference(ObjectReference&& value) { m_targetReferenceHasBeenSet = true; m_targetReference = value; }
+    inline void SetTargetReference(ObjectReference&& value) { m_targetReferenceHasBeenSet = true; m_targetReference = std::move(value); }
 
     /**
      * <p>A reference to the object to that has indices attached.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>A reference to the object to that has indices attached.</p>
      */
-    inline ListAttachedIndicesRequest& WithTargetReference(ObjectReference&& value) { SetTargetReference(value); return *this;}
+    inline ListAttachedIndicesRequest& WithTargetReference(ObjectReference&& value) { SetTargetReference(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline ListAttachedIndicesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListAttachedIndicesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>
@@ -160,7 +161,7 @@ namespace Model
     /**
      * <p>The consistency level to use for this operation.</p>
      */
-    inline void SetConsistencyLevel(ConsistencyLevel&& value) { m_consistencyLevelHasBeenSet = true; m_consistencyLevel = value; }
+    inline void SetConsistencyLevel(ConsistencyLevel&& value) { m_consistencyLevelHasBeenSet = true; m_consistencyLevel = std::move(value); }
 
     /**
      * <p>The consistency level to use for this operation.</p>
@@ -170,7 +171,7 @@ namespace Model
     /**
      * <p>The consistency level to use for this operation.</p>
      */
-    inline ListAttachedIndicesRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(value); return *this;}
+    inline ListAttachedIndicesRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(std::move(value)); return *this;}
 
   private:
     Aws::String m_directoryArn;

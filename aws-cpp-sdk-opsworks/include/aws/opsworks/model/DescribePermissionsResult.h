@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/Permission.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
      * ID and an IAM ARN, the array contains a single <code>Permission</code> object
      * with permissions for the specified stack and IAM ARN.</p> </li> </ul>
      */
-    inline void SetPermissions(Aws::Vector<Permission>&& value) { m_permissions = value; }
+    inline void SetPermissions(Aws::Vector<Permission>&& value) { m_permissions = std::move(value); }
 
     /**
      * <p>An array of <code>Permission</code> objects that describe the stack
@@ -104,7 +105,7 @@ namespace Model
      * ID and an IAM ARN, the array contains a single <code>Permission</code> object
      * with permissions for the specified stack and IAM ARN.</p> </li> </ul>
      */
-    inline DescribePermissionsResult& WithPermissions(Aws::Vector<Permission>&& value) { SetPermissions(value); return *this;}
+    inline DescribePermissionsResult& WithPermissions(Aws::Vector<Permission>&& value) { SetPermissions(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>Permission</code> objects that describe the stack
@@ -128,7 +129,7 @@ namespace Model
      * ID and an IAM ARN, the array contains a single <code>Permission</code> object
      * with permissions for the specified stack and IAM ARN.</p> </li> </ul>
      */
-    inline DescribePermissionsResult& AddPermissions(Permission&& value) { m_permissions.push_back(value); return *this; }
+    inline DescribePermissionsResult& AddPermissions(Permission&& value) { m_permissions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Permission> m_permissions;

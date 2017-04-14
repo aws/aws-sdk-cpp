@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResetImageAttributeName.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The ID of the AMI.</p>
      */
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
      * <p>The ID of the AMI.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The ID of the AMI.</p>
      */
-    inline ResetImageAttributeRequest& WithImageId(Aws::String&& value) { SetImageId(value); return *this;}
+    inline ResetImageAttributeRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the AMI.</p>
@@ -117,7 +118,7 @@ namespace Model
      * <p>The attribute to reset (currently you can only reset the launch permission
      * attribute).</p>
      */
-    inline void SetAttribute(ResetImageAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline void SetAttribute(ResetImageAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
      * <p>The attribute to reset (currently you can only reset the launch permission
@@ -129,7 +130,7 @@ namespace Model
      * <p>The attribute to reset (currently you can only reset the launch permission
      * attribute).</p>
      */
-    inline ResetImageAttributeRequest& WithAttribute(ResetImageAttributeName&& value) { SetAttribute(value); return *this;}
+    inline ResetImageAttributeRequest& WithAttribute(ResetImageAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

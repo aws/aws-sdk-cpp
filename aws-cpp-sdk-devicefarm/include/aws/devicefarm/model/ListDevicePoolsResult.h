@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/DevicePool.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Information about the device pools.</p>
      */
-    inline void SetDevicePools(Aws::Vector<DevicePool>&& value) { m_devicePools = value; }
+    inline void SetDevicePools(Aws::Vector<DevicePool>&& value) { m_devicePools = std::move(value); }
 
     /**
      * <p>Information about the device pools.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Information about the device pools.</p>
      */
-    inline ListDevicePoolsResult& WithDevicePools(Aws::Vector<DevicePool>&& value) { SetDevicePools(value); return *this;}
+    inline ListDevicePoolsResult& WithDevicePools(Aws::Vector<DevicePool>&& value) { SetDevicePools(std::move(value)); return *this;}
 
     /**
      * <p>Information about the device pools.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>Information about the device pools.</p>
      */
-    inline ListDevicePoolsResult& AddDevicePools(DevicePool&& value) { m_devicePools.push_back(value); return *this; }
+    inline ListDevicePoolsResult& AddDevicePools(DevicePool&& value) { m_devicePools.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -101,7 +102,7 @@ namespace Model
      * identifier that is also returned, which can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -122,7 +123,7 @@ namespace Model
      * identifier that is also returned, which can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
-    inline ListDevicePoolsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListDevicePoolsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an

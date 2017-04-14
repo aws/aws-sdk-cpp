@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector/model/FindingsFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
      * <p>The ARNs of the assessment runs that generate the findings that you want to
      * list.</p>
      */
-    inline void SetRunArns(Aws::Vector<Aws::String>&& value) { m_runArnsHasBeenSet = true; m_runArns = value; }
+    inline void SetRunArns(Aws::Vector<Aws::String>&& value) { m_runArnsHasBeenSet = true; m_runArns = std::move(value); }
 
     /**
      * <p>The ARNs of the assessment runs that generate the findings that you want to
@@ -65,7 +66,7 @@ namespace Model
      * <p>The ARNs of the assessment runs that generate the findings that you want to
      * list.</p>
      */
-    inline ListFindingsRequest& WithRunArns(Aws::Vector<Aws::String>&& value) { SetRunArns(value); return *this;}
+    inline ListFindingsRequest& WithRunArns(Aws::Vector<Aws::String>&& value) { SetRunArns(std::move(value)); return *this;}
 
     /**
      * <p>The ARNs of the assessment runs that generate the findings that you want to
@@ -77,7 +78,7 @@ namespace Model
      * <p>The ARNs of the assessment runs that generate the findings that you want to
      * list.</p>
      */
-    inline ListFindingsRequest& AddRunArns(Aws::String&& value) { m_runArnsHasBeenSet = true; m_runArns.push_back(value); return *this; }
+    inline ListFindingsRequest& AddRunArns(Aws::String&& value) { m_runArnsHasBeenSet = true; m_runArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ARNs of the assessment runs that generate the findings that you want to
@@ -107,7 +108,7 @@ namespace Model
      * attributes must match. When multiple values are specified for a filter
      * attribute, any of the values can match.</p>
      */
-    inline void SetFilter(FindingsFilter&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(FindingsFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>You can use this parameter to specify a subset of data to be included in the
@@ -123,7 +124,7 @@ namespace Model
      * attributes must match. When multiple values are specified for a filter
      * attribute, any of the values can match.</p>
      */
-    inline ListFindingsRequest& WithFilter(FindingsFilter&& value) { SetFilter(value); return *this;}
+    inline ListFindingsRequest& WithFilter(FindingsFilter&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
@@ -147,7 +148,7 @@ namespace Model
      * Subsequent calls to the action fill <b>nextToken</b> in the request with the
      * value of <b>NextToken</b> from previous response to continue listing data.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
@@ -171,7 +172,7 @@ namespace Model
      * Subsequent calls to the action fill <b>nextToken</b> in the request with the
      * value of <b>NextToken</b> from previous response to continue listing data.</p>
      */
-    inline ListFindingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListFindingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this

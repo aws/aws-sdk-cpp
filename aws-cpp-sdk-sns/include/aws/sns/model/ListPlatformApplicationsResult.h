@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sns/model/ResponseMetadata.h>
 #include <aws/sns/model/PlatformApplication.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>Platform applications returned when calling ListPlatformApplications
      * action.</p>
      */
-    inline void SetPlatformApplications(Aws::Vector<PlatformApplication>&& value) { m_platformApplications = value; }
+    inline void SetPlatformApplications(Aws::Vector<PlatformApplication>&& value) { m_platformApplications = std::move(value); }
 
     /**
      * <p>Platform applications returned when calling ListPlatformApplications
@@ -75,7 +76,7 @@ namespace Model
      * <p>Platform applications returned when calling ListPlatformApplications
      * action.</p>
      */
-    inline ListPlatformApplicationsResult& WithPlatformApplications(Aws::Vector<PlatformApplication>&& value) { SetPlatformApplications(value); return *this;}
+    inline ListPlatformApplicationsResult& WithPlatformApplications(Aws::Vector<PlatformApplication>&& value) { SetPlatformApplications(std::move(value)); return *this;}
 
     /**
      * <p>Platform applications returned when calling ListPlatformApplications
@@ -87,7 +88,7 @@ namespace Model
      * <p>Platform applications returned when calling ListPlatformApplications
      * action.</p>
      */
-    inline ListPlatformApplicationsResult& AddPlatformApplications(PlatformApplication&& value) { m_platformApplications.push_back(value); return *this; }
+    inline ListPlatformApplicationsResult& AddPlatformApplications(PlatformApplication&& value) { m_platformApplications.push_back(std::move(value)); return *this; }
 
     /**
      * <p>NextToken string is returned when calling ListPlatformApplications action if
@@ -105,7 +106,7 @@ namespace Model
      * <p>NextToken string is returned when calling ListPlatformApplications action if
      * additional records are available after the first page results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>NextToken string is returned when calling ListPlatformApplications action if
@@ -123,7 +124,7 @@ namespace Model
      * <p>NextToken string is returned when calling ListPlatformApplications action if
      * additional records are available after the first page results.</p>
      */
-    inline ListPlatformApplicationsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListPlatformApplicationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>NextToken string is returned when calling ListPlatformApplications action if
@@ -138,13 +139,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListPlatformApplicationsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListPlatformApplicationsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListPlatformApplicationsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<PlatformApplication> m_platformApplications;

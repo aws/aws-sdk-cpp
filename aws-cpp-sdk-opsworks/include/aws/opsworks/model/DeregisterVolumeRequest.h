@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -36,51 +37,51 @@ namespace Model
 
 
     /**
-     * <p>The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to
-     * the instance when you registered the volume with the stack, not the Amazon EC2
-     * volume ID.</p>
+     * <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks
+     * assigned to the instance when you registered the volume with the stack, not the
+     * Amazon EC2 volume ID.</p>
      */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
 
     /**
-     * <p>The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to
-     * the instance when you registered the volume with the stack, not the Amazon EC2
-     * volume ID.</p>
+     * <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks
+     * assigned to the instance when you registered the volume with the stack, not the
+     * Amazon EC2 volume ID.</p>
      */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /**
-     * <p>The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to
-     * the instance when you registered the volume with the stack, not the Amazon EC2
-     * volume ID.</p>
+     * <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks
+     * assigned to the instance when you registered the volume with the stack, not the
+     * Amazon EC2 volume ID.</p>
      */
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     /**
-     * <p>The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to
-     * the instance when you registered the volume with the stack, not the Amazon EC2
-     * volume ID.</p>
+     * <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks
+     * assigned to the instance when you registered the volume with the stack, not the
+     * Amazon EC2 volume ID.</p>
      */
     inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
 
     /**
-     * <p>The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to
-     * the instance when you registered the volume with the stack, not the Amazon EC2
-     * volume ID.</p>
+     * <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks
+     * assigned to the instance when you registered the volume with the stack, not the
+     * Amazon EC2 volume ID.</p>
      */
     inline DeregisterVolumeRequest& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
 
     /**
-     * <p>The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to
-     * the instance when you registered the volume with the stack, not the Amazon EC2
-     * volume ID.</p>
+     * <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks
+     * assigned to the instance when you registered the volume with the stack, not the
+     * Amazon EC2 volume ID.</p>
      */
-    inline DeregisterVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
+    inline DeregisterVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to
-     * the instance when you registered the volume with the stack, not the Amazon EC2
-     * volume ID.</p>
+     * <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks
+     * assigned to the instance when you registered the volume with the stack, not the
+     * Amazon EC2 volume ID.</p>
      */
     inline DeregisterVolumeRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 

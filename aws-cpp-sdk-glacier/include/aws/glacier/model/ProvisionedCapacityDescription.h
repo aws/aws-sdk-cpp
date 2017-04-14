@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The ID that identifies the provisioned capacity unit.</p>
      */
-    inline void SetCapacityId(Aws::String&& value) { m_capacityIdHasBeenSet = true; m_capacityId = value; }
+    inline void SetCapacityId(Aws::String&& value) { m_capacityIdHasBeenSet = true; m_capacityId = std::move(value); }
 
     /**
      * <p>The ID that identifies the provisioned capacity unit.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The ID that identifies the provisioned capacity unit.</p>
      */
-    inline ProvisionedCapacityDescription& WithCapacityId(Aws::String&& value) { SetCapacityId(value); return *this;}
+    inline ProvisionedCapacityDescription& WithCapacityId(Aws::String&& value) { SetCapacityId(std::move(value)); return *this;}
 
     /**
      * <p>The ID that identifies the provisioned capacity unit.</p>
@@ -94,7 +95,7 @@ namespace Model
      * <p>The date that the provisioned capacity unit was purchased, in Universal
      * Coordinated Time (UTC).</p>
      */
-    inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = value; }
+    inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
 
     /**
      * <p>The date that the provisioned capacity unit was purchased, in Universal
@@ -112,7 +113,7 @@ namespace Model
      * <p>The date that the provisioned capacity unit was purchased, in Universal
      * Coordinated Time (UTC).</p>
      */
-    inline ProvisionedCapacityDescription& WithStartDate(Aws::String&& value) { SetStartDate(value); return *this;}
+    inline ProvisionedCapacityDescription& WithStartDate(Aws::String&& value) { SetStartDate(std::move(value)); return *this;}
 
     /**
      * <p>The date that the provisioned capacity unit was purchased, in Universal
@@ -136,7 +137,7 @@ namespace Model
      * <p>The date that the provisioned capacity unit expires, in Universal Coordinated
      * Time (UTC).</p>
      */
-    inline void SetExpirationDate(Aws::String&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = value; }
+    inline void SetExpirationDate(Aws::String&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::move(value); }
 
     /**
      * <p>The date that the provisioned capacity unit expires, in Universal Coordinated
@@ -154,7 +155,7 @@ namespace Model
      * <p>The date that the provisioned capacity unit expires, in Universal Coordinated
      * Time (UTC).</p>
      */
-    inline ProvisionedCapacityDescription& WithExpirationDate(Aws::String&& value) { SetExpirationDate(value); return *this;}
+    inline ProvisionedCapacityDescription& WithExpirationDate(Aws::String&& value) { SetExpirationDate(std::move(value)); return *this;}
 
     /**
      * <p>The date that the provisioned capacity unit expires, in Universal Coordinated

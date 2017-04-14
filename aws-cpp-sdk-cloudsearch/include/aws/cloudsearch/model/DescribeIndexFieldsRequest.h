@@ -17,6 +17,7 @@
 #include <aws/cloudsearch/CloudSearchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the domain you want to describe.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The name of the domain you want to describe.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the domain you want to describe.</p>
      */
-    inline DescribeIndexFieldsRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DescribeIndexFieldsRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain you want to describe.</p>
@@ -97,7 +98,7 @@ namespace Model
      * <p>A list of the index fields you want to describe. If not specified,
      * information is returned for all configured index fields.</p>
      */
-    inline void SetFieldNames(Aws::Vector<Aws::String>&& value) { m_fieldNamesHasBeenSet = true; m_fieldNames = value; }
+    inline void SetFieldNames(Aws::Vector<Aws::String>&& value) { m_fieldNamesHasBeenSet = true; m_fieldNames = std::move(value); }
 
     /**
      * <p>A list of the index fields you want to describe. If not specified,
@@ -109,7 +110,7 @@ namespace Model
      * <p>A list of the index fields you want to describe. If not specified,
      * information is returned for all configured index fields.</p>
      */
-    inline DescribeIndexFieldsRequest& WithFieldNames(Aws::Vector<Aws::String>&& value) { SetFieldNames(value); return *this;}
+    inline DescribeIndexFieldsRequest& WithFieldNames(Aws::Vector<Aws::String>&& value) { SetFieldNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of the index fields you want to describe. If not specified,
@@ -121,7 +122,7 @@ namespace Model
      * <p>A list of the index fields you want to describe. If not specified,
      * information is returned for all configured index fields.</p>
      */
-    inline DescribeIndexFieldsRequest& AddFieldNames(Aws::String&& value) { m_fieldNamesHasBeenSet = true; m_fieldNames.push_back(value); return *this; }
+    inline DescribeIndexFieldsRequest& AddFieldNames(Aws::String&& value) { m_fieldNamesHasBeenSet = true; m_fieldNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of the index fields you want to describe. If not specified,

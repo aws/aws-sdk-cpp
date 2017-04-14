@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/TaskDefinition.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The full task definition description.</p>
      */
-    inline void SetTaskDefinition(TaskDefinition&& value) { m_taskDefinition = value; }
+    inline void SetTaskDefinition(TaskDefinition&& value) { m_taskDefinition = std::move(value); }
 
     /**
      * <p>The full task definition description.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The full task definition description.</p>
      */
-    inline DescribeTaskDefinitionResult& WithTaskDefinition(TaskDefinition&& value) { SetTaskDefinition(value); return *this;}
+    inline DescribeTaskDefinitionResult& WithTaskDefinition(TaskDefinition&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
   private:
     TaskDefinition m_taskDefinition;

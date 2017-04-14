@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * <b>OC</b>: Oceania</p> </li> <li> <p> <b>NA</b>: North America</p> </li> <li>
      * <p> <b>SA</b>: South America</p> </li> </ul>
      */
-    inline void SetContinentCode(Aws::String&& value) { m_continentCodeHasBeenSet = true; m_continentCode = value; }
+    inline void SetContinentCode(Aws::String&& value) { m_continentCodeHasBeenSet = true; m_continentCode = std::move(value); }
 
     /**
      * <p>Amazon Route 53 supports the following continent codes:</p> <ul> <li> <p>
@@ -95,7 +96,7 @@ namespace Model
      * <b>OC</b>: Oceania</p> </li> <li> <p> <b>NA</b>: North America</p> </li> <li>
      * <p> <b>SA</b>: South America</p> </li> </ul>
      */
-    inline GetGeoLocationRequest& WithContinentCode(Aws::String&& value) { SetContinentCode(value); return *this;}
+    inline GetGeoLocationRequest& WithContinentCode(Aws::String&& value) { SetContinentCode(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Route 53 supports the following continent codes:</p> <ul> <li> <p>
@@ -125,7 +126,7 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
      * alpha-2</a>.</p>
      */
-    inline void SetCountryCode(Aws::String&& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
+    inline void SetCountryCode(Aws::String&& value) { m_countryCodeHasBeenSet = true; m_countryCode = std::move(value); }
 
     /**
      * <p>Amazon Route 53 uses the two-letter country codes that are specified in <a
@@ -146,7 +147,7 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
      * alpha-2</a>.</p>
      */
-    inline GetGeoLocationRequest& WithCountryCode(Aws::String&& value) { SetCountryCode(value); return *this;}
+    inline GetGeoLocationRequest& WithCountryCode(Aws::String&& value) { SetCountryCode(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Route 53 uses the two-letter country codes that are specified in <a
@@ -180,7 +181,7 @@ namespace Model
      * for all countries. If you specify <code>SubdivisionCode</code>, you must also
      * specify <code>CountryCode</code>. </p>
      */
-    inline void SetSubdivisionCode(Aws::String&& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = value; }
+    inline void SetSubdivisionCode(Aws::String&& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = std::move(value); }
 
     /**
      * <p>Amazon Route 53 uses the one- to three-letter subdivision codes that are
@@ -207,7 +208,7 @@ namespace Model
      * for all countries. If you specify <code>SubdivisionCode</code>, you must also
      * specify <code>CountryCode</code>. </p>
      */
-    inline GetGeoLocationRequest& WithSubdivisionCode(Aws::String&& value) { SetSubdivisionCode(value); return *this;}
+    inline GetGeoLocationRequest& WithSubdivisionCode(Aws::String&& value) { SetSubdivisionCode(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Route 53 uses the one- to three-letter subdivision codes that are

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/kinesisanalytics/model/RecordFormatType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Specifies the format of the records on the output stream.</p>
      */
-    inline void SetRecordFormatType(RecordFormatType&& value) { m_recordFormatTypeHasBeenSet = true; m_recordFormatType = value; }
+    inline void SetRecordFormatType(RecordFormatType&& value) { m_recordFormatTypeHasBeenSet = true; m_recordFormatType = std::move(value); }
 
     /**
      * <p>Specifies the format of the records on the output stream.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Specifies the format of the records on the output stream.</p>
      */
-    inline DestinationSchema& WithRecordFormatType(RecordFormatType&& value) { SetRecordFormatType(value); return *this;}
+    inline DestinationSchema& WithRecordFormatType(RecordFormatType&& value) { SetRecordFormatType(std::move(value)); return *this;}
 
   private:
     RecordFormatType m_recordFormatType;

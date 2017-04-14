@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The URI of the vault that was created.</p>
      */
-    inline void SetLocation(Aws::String&& value) { m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
 
     /**
      * <p>The URI of the vault that was created.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The URI of the vault that was created.</p>
      */
-    inline CreateVaultResult& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline CreateVaultResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * <p>The URI of the vault that was created.</p>

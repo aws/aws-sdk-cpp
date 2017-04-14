@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/cognito-sync/model/BulkPublishStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
      * created by Amazon Cognito. GUID generation is unique within a region.
      */
-    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolId = value; }
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolId = std::move(value); }
 
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
@@ -80,7 +81,7 @@ namespace Model
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
      * created by Amazon Cognito. GUID generation is unique within a region.
      */
-    inline GetBulkPublishDetailsResult& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
+    inline GetBulkPublishDetailsResult& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(std::move(value)); return *this;}
 
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
@@ -101,7 +102,7 @@ namespace Model
     /**
      * The date/time at which the last bulk publish was initiated.
      */
-    inline void SetBulkPublishStartTime(Aws::Utils::DateTime&& value) { m_bulkPublishStartTime = value; }
+    inline void SetBulkPublishStartTime(Aws::Utils::DateTime&& value) { m_bulkPublishStartTime = std::move(value); }
 
     /**
      * The date/time at which the last bulk publish was initiated.
@@ -111,7 +112,7 @@ namespace Model
     /**
      * The date/time at which the last bulk publish was initiated.
      */
-    inline GetBulkPublishDetailsResult& WithBulkPublishStartTime(Aws::Utils::DateTime&& value) { SetBulkPublishStartTime(value); return *this;}
+    inline GetBulkPublishDetailsResult& WithBulkPublishStartTime(Aws::Utils::DateTime&& value) { SetBulkPublishStartTime(std::move(value)); return *this;}
 
     /**
      * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation
@@ -129,7 +130,7 @@ namespace Model
      * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation
      * completed.
      */
-    inline void SetBulkPublishCompleteTime(Aws::Utils::DateTime&& value) { m_bulkPublishCompleteTime = value; }
+    inline void SetBulkPublishCompleteTime(Aws::Utils::DateTime&& value) { m_bulkPublishCompleteTime = std::move(value); }
 
     /**
      * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation
@@ -141,7 +142,7 @@ namespace Model
      * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation
      * completed.
      */
-    inline GetBulkPublishDetailsResult& WithBulkPublishCompleteTime(Aws::Utils::DateTime&& value) { SetBulkPublishCompleteTime(value); return *this;}
+    inline GetBulkPublishDetailsResult& WithBulkPublishCompleteTime(Aws::Utils::DateTime&& value) { SetBulkPublishCompleteTime(std::move(value)); return *this;}
 
     /**
      * Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No
@@ -171,7 +172,7 @@ namespace Model
      * portion of the data has failed to publish, check FailureMessage for the
      * cause.</p>
      */
-    inline void SetBulkPublishStatus(BulkPublishStatus&& value) { m_bulkPublishStatus = value; }
+    inline void SetBulkPublishStatus(BulkPublishStatus&& value) { m_bulkPublishStatus = std::move(value); }
 
     /**
      * Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No
@@ -191,7 +192,7 @@ namespace Model
      * portion of the data has failed to publish, check FailureMessage for the
      * cause.</p>
      */
-    inline GetBulkPublishDetailsResult& WithBulkPublishStatus(BulkPublishStatus&& value) { SetBulkPublishStatus(value); return *this;}
+    inline GetBulkPublishDetailsResult& WithBulkPublishStatus(BulkPublishStatus&& value) { SetBulkPublishStatus(std::move(value)); return *this;}
 
     /**
      * If BulkPublishStatus is FAILED this field will contain the error message that
@@ -209,7 +210,7 @@ namespace Model
      * If BulkPublishStatus is FAILED this field will contain the error message that
      * caused the bulk publish to fail.
      */
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessage = value; }
+    inline void SetFailureMessage(Aws::String&& value) { m_failureMessage = std::move(value); }
 
     /**
      * If BulkPublishStatus is FAILED this field will contain the error message that
@@ -227,7 +228,7 @@ namespace Model
      * If BulkPublishStatus is FAILED this field will contain the error message that
      * caused the bulk publish to fail.
      */
-    inline GetBulkPublishDetailsResult& WithFailureMessage(Aws::String&& value) { SetFailureMessage(value); return *this;}
+    inline GetBulkPublishDetailsResult& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
 
     /**
      * If BulkPublishStatus is FAILED this field will contain the error message that

@@ -19,6 +19,7 @@
 #include <aws/batch/model/CEType.h>
 #include <aws/batch/model/CEState.h>
 #include <aws/batch/model/ComputeResource.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The name for your compute environment. Up to 128 letters (uppercase and
      * lowercase), numbers, and underscores are allowed.</p>
      */
-    inline void SetComputeEnvironmentName(Aws::String&& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = value; }
+    inline void SetComputeEnvironmentName(Aws::String&& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = std::move(value); }
 
     /**
      * <p>The name for your compute environment. Up to 128 letters (uppercase and
@@ -70,7 +71,7 @@ namespace Model
      * <p>The name for your compute environment. Up to 128 letters (uppercase and
      * lowercase), numbers, and underscores are allowed.</p>
      */
-    inline CreateComputeEnvironmentRequest& WithComputeEnvironmentName(Aws::String&& value) { SetComputeEnvironmentName(value); return *this;}
+    inline CreateComputeEnvironmentRequest& WithComputeEnvironmentName(Aws::String&& value) { SetComputeEnvironmentName(std::move(value)); return *this;}
 
     /**
      * <p>The name for your compute environment. Up to 128 letters (uppercase and
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The type of the compute environment. </p>
      */
-    inline void SetType(CEType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(CEType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of the compute environment. </p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The type of the compute environment. </p>
      */
-    inline CreateComputeEnvironmentRequest& WithType(CEType&& value) { SetType(value); return *this;}
+    inline CreateComputeEnvironmentRequest& WithType(CEType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The state of the compute environment. If the state is <code>ENABLED</code>,
@@ -122,7 +123,7 @@ namespace Model
      * then the compute environment accepts jobs from a queue and can scale out
      * automatically based on queues.</p>
      */
-    inline void SetState(CEState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(CEState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the compute environment. If the state is <code>ENABLED</code>,
@@ -136,7 +137,7 @@ namespace Model
      * then the compute environment accepts jobs from a queue and can scale out
      * automatically based on queues.</p>
      */
-    inline CreateComputeEnvironmentRequest& WithState(CEState&& value) { SetState(value); return *this;}
+    inline CreateComputeEnvironmentRequest& WithState(CEState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>Details of the compute resources managed by the compute environment. This
@@ -154,7 +155,7 @@ namespace Model
      * <p>Details of the compute resources managed by the compute environment. This
      * parameter is required for managed compute environments.</p>
      */
-    inline void SetComputeResources(ComputeResource&& value) { m_computeResourcesHasBeenSet = true; m_computeResources = value; }
+    inline void SetComputeResources(ComputeResource&& value) { m_computeResourcesHasBeenSet = true; m_computeResources = std::move(value); }
 
     /**
      * <p>Details of the compute resources managed by the compute environment. This
@@ -166,7 +167,7 @@ namespace Model
      * <p>Details of the compute resources managed by the compute environment. This
      * parameter is required for managed compute environments.</p>
      */
-    inline CreateComputeEnvironmentRequest& WithComputeResources(ComputeResource&& value) { SetComputeResources(value); return *this;}
+    inline CreateComputeEnvironmentRequest& WithComputeResources(ComputeResource&& value) { SetComputeResources(std::move(value)); return *this;}
 
     /**
      * <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to
@@ -184,7 +185,7 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to
      * make calls to other AWS services on your behalf. </p>
      */
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
      * <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to
@@ -202,7 +203,7 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to
      * make calls to other AWS services on your behalf. </p>
      */
-    inline CreateComputeEnvironmentRequest& WithServiceRole(Aws::String&& value) { SetServiceRole(value); return *this;}
+    inline CreateComputeEnvironmentRequest& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
      * <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to

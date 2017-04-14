@@ -16,6 +16,7 @@
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/support/SupportRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
-    inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
+    inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = std::move(value); }
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
@@ -78,7 +79,7 @@ namespace Model
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
-    inline DescribeCommunicationsRequest& WithCaseId(Aws::String&& value) { SetCaseId(value); return *this;}
+    inline DescribeCommunicationsRequest& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
@@ -103,7 +104,7 @@ namespace Model
      * <p>The end date for a filtered date search on support case communications. Case
      * communications are available for 12 months after creation.</p>
      */
-    inline void SetBeforeTime(Aws::String&& value) { m_beforeTimeHasBeenSet = true; m_beforeTime = value; }
+    inline void SetBeforeTime(Aws::String&& value) { m_beforeTimeHasBeenSet = true; m_beforeTime = std::move(value); }
 
     /**
      * <p>The end date for a filtered date search on support case communications. Case
@@ -121,7 +122,7 @@ namespace Model
      * <p>The end date for a filtered date search on support case communications. Case
      * communications are available for 12 months after creation.</p>
      */
-    inline DescribeCommunicationsRequest& WithBeforeTime(Aws::String&& value) { SetBeforeTime(value); return *this;}
+    inline DescribeCommunicationsRequest& WithBeforeTime(Aws::String&& value) { SetBeforeTime(std::move(value)); return *this;}
 
     /**
      * <p>The end date for a filtered date search on support case communications. Case
@@ -145,7 +146,7 @@ namespace Model
      * <p>The start date for a filtered date search on support case communications.
      * Case communications are available for 12 months after creation.</p>
      */
-    inline void SetAfterTime(Aws::String&& value) { m_afterTimeHasBeenSet = true; m_afterTime = value; }
+    inline void SetAfterTime(Aws::String&& value) { m_afterTimeHasBeenSet = true; m_afterTime = std::move(value); }
 
     /**
      * <p>The start date for a filtered date search on support case communications.
@@ -163,7 +164,7 @@ namespace Model
      * <p>The start date for a filtered date search on support case communications.
      * Case communications are available for 12 months after creation.</p>
      */
-    inline DescribeCommunicationsRequest& WithAfterTime(Aws::String&& value) { SetAfterTime(value); return *this;}
+    inline DescribeCommunicationsRequest& WithAfterTime(Aws::String&& value) { SetAfterTime(std::move(value)); return *this;}
 
     /**
      * <p>The start date for a filtered date search on support case communications.
@@ -184,7 +185,7 @@ namespace Model
     /**
      * <p>A resumption point for pagination.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>A resumption point for pagination.</p>
@@ -199,7 +200,7 @@ namespace Model
     /**
      * <p>A resumption point for pagination.</p>
      */
-    inline DescribeCommunicationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeCommunicationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A resumption point for pagination.</p>

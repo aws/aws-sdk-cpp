@@ -16,6 +16,7 @@
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the dimension.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the dimension.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the dimension.</p>
      */
-    inline Dimension& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Dimension& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the dimension.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The value representing the dimension measurement.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value representing the dimension measurement.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The value representing the dimension measurement.</p>
      */
-    inline Dimension& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Dimension& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value representing the dimension measurement.</p>

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cognito-idp/model/DeviceType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The devices in the list of devices response.</p>
      */
-    inline void SetDevices(Aws::Vector<DeviceType>&& value) { m_devices = value; }
+    inline void SetDevices(Aws::Vector<DeviceType>&& value) { m_devices = std::move(value); }
 
     /**
      * <p>The devices in the list of devices response.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The devices in the list of devices response.</p>
      */
-    inline AdminListDevicesResult& WithDevices(Aws::Vector<DeviceType>&& value) { SetDevices(value); return *this;}
+    inline AdminListDevicesResult& WithDevices(Aws::Vector<DeviceType>&& value) { SetDevices(std::move(value)); return *this;}
 
     /**
      * <p>The devices in the list of devices response.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The devices in the list of devices response.</p>
      */
-    inline AdminListDevicesResult& AddDevices(DeviceType&& value) { m_devices.push_back(value); return *this; }
+    inline AdminListDevicesResult& AddDevices(DeviceType&& value) { m_devices.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The pagination token.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetPaginationToken(Aws::String&& value) { m_paginationToken = value; }
+    inline void SetPaginationToken(Aws::String&& value) { m_paginationToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline AdminListDevicesResult& WithPaginationToken(Aws::String&& value) { SetPaginationToken(value); return *this;}
+    inline AdminListDevicesResult& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>

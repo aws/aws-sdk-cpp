@@ -16,6 +16,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/model/TimeToLiveStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p> The Time to Live status for the table.</p>
      */
-    inline void SetTimeToLiveStatus(TimeToLiveStatus&& value) { m_timeToLiveStatusHasBeenSet = true; m_timeToLiveStatus = value; }
+    inline void SetTimeToLiveStatus(TimeToLiveStatus&& value) { m_timeToLiveStatusHasBeenSet = true; m_timeToLiveStatus = std::move(value); }
 
     /**
      * <p> The Time to Live status for the table.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p> The Time to Live status for the table.</p>
      */
-    inline TimeToLiveDescription& WithTimeToLiveStatus(TimeToLiveStatus&& value) { SetTimeToLiveStatus(value); return *this;}
+    inline TimeToLiveDescription& WithTimeToLiveStatus(TimeToLiveStatus&& value) { SetTimeToLiveStatus(std::move(value)); return *this;}
 
     /**
      * <p> The name of the Time to Live attribute for items in the table.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p> The name of the Time to Live attribute for items in the table.</p>
      */
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
      * <p> The name of the Time to Live attribute for items in the table.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p> The name of the Time to Live attribute for items in the table.</p>
      */
-    inline TimeToLiveDescription& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
+    inline TimeToLiveDescription& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
      * <p> The name of the Time to Live attribute for items in the table.</p>

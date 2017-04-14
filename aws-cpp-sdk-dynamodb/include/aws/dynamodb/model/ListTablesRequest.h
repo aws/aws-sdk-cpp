@@ -16,6 +16,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/DynamoDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * was returned for <code>LastEvaluatedTableName</code> in a previous operation, so
      * that you can obtain the next page of results.</p>
      */
-    inline void SetExclusiveStartTableName(Aws::String&& value) { m_exclusiveStartTableNameHasBeenSet = true; m_exclusiveStartTableName = value; }
+    inline void SetExclusiveStartTableName(Aws::String&& value) { m_exclusiveStartTableNameHasBeenSet = true; m_exclusiveStartTableName = std::move(value); }
 
     /**
      * <p>The first table name that this operation will evaluate. Use the value that
@@ -79,7 +80,7 @@ namespace Model
      * was returned for <code>LastEvaluatedTableName</code> in a previous operation, so
      * that you can obtain the next page of results.</p>
      */
-    inline ListTablesRequest& WithExclusiveStartTableName(Aws::String&& value) { SetExclusiveStartTableName(value); return *this;}
+    inline ListTablesRequest& WithExclusiveStartTableName(Aws::String&& value) { SetExclusiveStartTableName(std::move(value)); return *this;}
 
     /**
      * <p>The first table name that this operation will evaluate. Use the value that

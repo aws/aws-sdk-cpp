@@ -17,6 +17,7 @@
 #include <aws/waf/model/HTTPRequest.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>A complex type that contains detailed information about the request.</p>
      */
-    inline void SetRequest(HTTPRequest&& value) { m_requestHasBeenSet = true; m_request = value; }
+    inline void SetRequest(HTTPRequest&& value) { m_requestHasBeenSet = true; m_request = std::move(value); }
 
     /**
      * <p>A complex type that contains detailed information about the request.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>A complex type that contains detailed information about the request.</p>
      */
-    inline SampledHTTPRequest& WithRequest(HTTPRequest&& value) { SetRequest(value); return *this;}
+    inline SampledHTTPRequest& WithRequest(HTTPRequest&& value) { SetRequest(std::move(value)); return *this;}
 
     /**
      * <p>A value that indicates how one result in the response relates proportionally
@@ -115,7 +116,7 @@ namespace Model
      * <p>The time at which AWS WAF received the request from your AWS resource, in
      * Unix time format (in seconds).</p>
      */
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
      * <p>The time at which AWS WAF received the request from your AWS resource, in
@@ -127,7 +128,7 @@ namespace Model
      * <p>The time at which AWS WAF received the request from your AWS resource, in
      * Unix time format (in seconds).</p>
      */
-    inline SampledHTTPRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
+    inline SampledHTTPRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The action for the <code>Rule</code> that the request matched:
@@ -145,7 +146,7 @@ namespace Model
      * <p>The action for the <code>Rule</code> that the request matched:
      * <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
      */
-    inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = value; }
+    inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>The action for the <code>Rule</code> that the request matched:
@@ -163,7 +164,7 @@ namespace Model
      * <p>The action for the <code>Rule</code> that the request matched:
      * <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
      */
-    inline SampledHTTPRequest& WithAction(Aws::String&& value) { SetAction(value); return *this;}
+    inline SampledHTTPRequest& WithAction(Aws::String&& value) { SetAction(std::move(value)); return *this;}
 
     /**
      * <p>The action for the <code>Rule</code> that the request matched:

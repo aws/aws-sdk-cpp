@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * of the root that the OU is in) followed by a second "-" dash and from 8 to 32
      * additional lower-case letters or digits.</p> </li> </ul>
      */
-    inline void SetParentId(Aws::String&& value) { m_parentIdHasBeenSet = true; m_parentId = value; }
+    inline void SetParentId(Aws::String&& value) { m_parentIdHasBeenSet = true; m_parentId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the parent root or OU in which you want to
@@ -105,7 +106,7 @@ namespace Model
      * of the root that the OU is in) followed by a second "-" dash and from 8 to 32
      * additional lower-case letters or digits.</p> </li> </ul>
      */
-    inline CreateOrganizationalUnitRequest& WithParentId(Aws::String&& value) { SetParentId(value); return *this;}
+    inline CreateOrganizationalUnitRequest& WithParentId(Aws::String&& value) { SetParentId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the parent root or OU in which you want to
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The friendly name to assign to the new OU.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The friendly name to assign to the new OU.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The friendly name to assign to the new OU.</p>
      */
-    inline CreateOrganizationalUnitRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateOrganizationalUnitRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The friendly name to assign to the new OU.</p>

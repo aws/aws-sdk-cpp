@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ID of the Worker to unblock.</p>
      */
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
+    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
 
     /**
      * <p>The ID of the Worker to unblock.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID of the Worker to unblock.</p>
      */
-    inline DeleteWorkerBlockRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(value); return *this;}
+    inline DeleteWorkerBlockRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Worker to unblock.</p>
@@ -86,7 +87,7 @@ namespace Model
      * <p>A message that explains the reason for unblocking the Worker. The Worker does
      * not see this message.</p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p>A message that explains the reason for unblocking the Worker. The Worker does
@@ -104,7 +105,7 @@ namespace Model
      * <p>A message that explains the reason for unblocking the Worker. The Worker does
      * not see this message.</p>
      */
-    inline DeleteWorkerBlockRequest& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline DeleteWorkerBlockRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p>A message that explains the reason for unblocking the Worker. The Worker does

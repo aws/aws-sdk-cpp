@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The name of the cluster that hosts the service to delete. If you do not
      * specify a cluster, the default cluster is assumed.</p>
      */
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
 
     /**
      * <p>The name of the cluster that hosts the service to delete. If you do not
@@ -69,7 +70,7 @@ namespace Model
      * <p>The name of the cluster that hosts the service to delete. If you do not
      * specify a cluster, the default cluster is assumed.</p>
      */
-    inline DeleteServiceRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
+    inline DeleteServiceRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cluster that hosts the service to delete. If you do not
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The name of the service to delete.</p>
      */
-    inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = value; }
+    inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
 
     /**
      * <p>The name of the service to delete.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The name of the service to delete.</p>
      */
-    inline DeleteServiceRequest& WithService(Aws::String&& value) { SetService(value); return *this;}
+    inline DeleteServiceRequest& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
 
     /**
      * <p>The name of the service to delete.</p>

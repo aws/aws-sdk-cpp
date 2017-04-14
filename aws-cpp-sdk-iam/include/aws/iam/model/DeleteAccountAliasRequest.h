@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * characters consisting of lowercase letters, digits, and dashes. You cannot start
      * or finish with a dash, nor can you have two dashes in a row.</p>
      */
-    inline void SetAccountAlias(Aws::String&& value) { m_accountAliasHasBeenSet = true; m_accountAlias = value; }
+    inline void SetAccountAlias(Aws::String&& value) { m_accountAliasHasBeenSet = true; m_accountAlias = std::move(value); }
 
     /**
      * <p>The name of the account alias to delete.</p> <p>This parameter allows (per
@@ -83,7 +84,7 @@ namespace Model
      * characters consisting of lowercase letters, digits, and dashes. You cannot start
      * or finish with a dash, nor can you have two dashes in a row.</p>
      */
-    inline DeleteAccountAliasRequest& WithAccountAlias(Aws::String&& value) { SetAccountAlias(value); return *this;}
+    inline DeleteAccountAliasRequest& WithAccountAlias(Aws::String&& value) { SetAccountAlias(std::move(value)); return *this;}
 
     /**
      * <p>The name of the account alias to delete.</p> <p>This parameter allows (per

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,7 +73,7 @@ namespace Model
      * parallel can declare different output artifacts, which are in turn consumed by
      * different following actions.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the artifact to be worked on, for example, "My App".</p> <p>The
@@ -102,7 +103,7 @@ namespace Model
      * parallel can declare different output artifacts, which are in turn consumed by
      * different following actions.</p>
      */
-    inline InputArtifact& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline InputArtifact& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the artifact to be worked on, for example, "My App".</p> <p>The

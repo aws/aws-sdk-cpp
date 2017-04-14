@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/BatchListObjectAttributes.h>
 #include <aws/clouddirectory/model/BatchListObjectChildren.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Lists all attributes associated with an object.</p>
      */
-    inline void SetListObjectAttributes(BatchListObjectAttributes&& value) { m_listObjectAttributesHasBeenSet = true; m_listObjectAttributes = value; }
+    inline void SetListObjectAttributes(BatchListObjectAttributes&& value) { m_listObjectAttributesHasBeenSet = true; m_listObjectAttributes = std::move(value); }
 
     /**
      * <p>Lists all attributes associated with an object.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Lists all attributes associated with an object.</p>
      */
-    inline BatchReadOperation& WithListObjectAttributes(BatchListObjectAttributes&& value) { SetListObjectAttributes(value); return *this;}
+    inline BatchReadOperation& WithListObjectAttributes(BatchListObjectAttributes&& value) { SetListObjectAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Returns a paginated list of child objects that are associated with a given
@@ -86,7 +87,7 @@ namespace Model
      * <p>Returns a paginated list of child objects that are associated with a given
      * object.</p>
      */
-    inline void SetListObjectChildren(BatchListObjectChildren&& value) { m_listObjectChildrenHasBeenSet = true; m_listObjectChildren = value; }
+    inline void SetListObjectChildren(BatchListObjectChildren&& value) { m_listObjectChildrenHasBeenSet = true; m_listObjectChildren = std::move(value); }
 
     /**
      * <p>Returns a paginated list of child objects that are associated with a given
@@ -98,7 +99,7 @@ namespace Model
      * <p>Returns a paginated list of child objects that are associated with a given
      * object.</p>
      */
-    inline BatchReadOperation& WithListObjectChildren(BatchListObjectChildren&& value) { SetListObjectChildren(value); return *this;}
+    inline BatchReadOperation& WithListObjectChildren(BatchListObjectChildren&& value) { SetListObjectChildren(std::move(value)); return *this;}
 
   private:
     BatchListObjectAttributes m_listObjectAttributes;

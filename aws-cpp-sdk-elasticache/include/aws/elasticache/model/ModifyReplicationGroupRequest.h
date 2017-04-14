@@ -17,6 +17,7 @@
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The identifier of the replication group to modify.</p>
      */
-    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
+    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::move(value); }
 
     /**
      * <p>The identifier of the replication group to modify.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The identifier of the replication group to modify.</p>
      */
-    inline ModifyReplicationGroupRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(value); return *this;}
+    inline ModifyReplicationGroupRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the replication group to modify.</p>
@@ -93,7 +94,7 @@ namespace Model
      * <p>A description for the replication group. Maximum length is 255
      * characters.</p>
      */
-    inline void SetReplicationGroupDescription(Aws::String&& value) { m_replicationGroupDescriptionHasBeenSet = true; m_replicationGroupDescription = value; }
+    inline void SetReplicationGroupDescription(Aws::String&& value) { m_replicationGroupDescriptionHasBeenSet = true; m_replicationGroupDescription = std::move(value); }
 
     /**
      * <p>A description for the replication group. Maximum length is 255
@@ -111,7 +112,7 @@ namespace Model
      * <p>A description for the replication group. Maximum length is 255
      * characters.</p>
      */
-    inline ModifyReplicationGroupRequest& WithReplicationGroupDescription(Aws::String&& value) { SetReplicationGroupDescription(value); return *this;}
+    inline ModifyReplicationGroupRequest& WithReplicationGroupDescription(Aws::String&& value) { SetReplicationGroupDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description for the replication group. Maximum length is 255
@@ -141,7 +142,7 @@ namespace Model
      * the primary role. The nodes of all other clusters in the replication group are
      * read replicas.</p>
      */
-    inline void SetPrimaryClusterId(Aws::String&& value) { m_primaryClusterIdHasBeenSet = true; m_primaryClusterId = value; }
+    inline void SetPrimaryClusterId(Aws::String&& value) { m_primaryClusterIdHasBeenSet = true; m_primaryClusterId = std::move(value); }
 
     /**
      * <p>For replication groups with a single primary, if this parameter is specified,
@@ -165,7 +166,7 @@ namespace Model
      * the primary role. The nodes of all other clusters in the replication group are
      * read replicas.</p>
      */
-    inline ModifyReplicationGroupRequest& WithPrimaryClusterId(Aws::String&& value) { SetPrimaryClusterId(value); return *this;}
+    inline ModifyReplicationGroupRequest& WithPrimaryClusterId(Aws::String&& value) { SetPrimaryClusterId(std::move(value)); return *this;}
 
     /**
      * <p>For replication groups with a single primary, if this parameter is specified,
@@ -194,7 +195,7 @@ namespace Model
      * replication group. This parameter cannot be set for Redis (cluster mode enabled)
      * replication groups.</p>
      */
-    inline void SetSnapshottingClusterId(Aws::String&& value) { m_snapshottingClusterIdHasBeenSet = true; m_snapshottingClusterId = value; }
+    inline void SetSnapshottingClusterId(Aws::String&& value) { m_snapshottingClusterIdHasBeenSet = true; m_snapshottingClusterId = std::move(value); }
 
     /**
      * <p>The cache cluster ID that is used as the daily snapshot source for the
@@ -215,7 +216,7 @@ namespace Model
      * replication group. This parameter cannot be set for Redis (cluster mode enabled)
      * replication groups.</p>
      */
-    inline ModifyReplicationGroupRequest& WithSnapshottingClusterId(Aws::String&& value) { SetSnapshottingClusterId(value); return *this;}
+    inline ModifyReplicationGroupRequest& WithSnapshottingClusterId(Aws::String&& value) { SetSnapshottingClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The cache cluster ID that is used as the daily snapshot source for the
@@ -285,7 +286,7 @@ namespace Model
      * (Amazon VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
      * characters. Must not be <code>Default</code>.</p>
      */
-    inline void SetCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = value; }
+    inline void SetCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = std::move(value); }
 
     /**
      * <p>A list of cache security group names to authorize for the clusters in this
@@ -305,7 +306,7 @@ namespace Model
      * (Amazon VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
      * characters. Must not be <code>Default</code>.</p>
      */
-    inline ModifyReplicationGroupRequest& WithCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { SetCacheSecurityGroupNames(value); return *this;}
+    inline ModifyReplicationGroupRequest& WithCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { SetCacheSecurityGroupNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of cache security group names to authorize for the clusters in this
@@ -325,7 +326,7 @@ namespace Model
      * (Amazon VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
      * characters. Must not be <code>Default</code>.</p>
      */
-    inline ModifyReplicationGroupRequest& AddCacheSecurityGroupNames(Aws::String&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
+    inline ModifyReplicationGroupRequest& AddCacheSecurityGroupNames(Aws::String&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of cache security group names to authorize for the clusters in this
@@ -359,7 +360,7 @@ namespace Model
      * containing cache clusters running in an Amazon Virtual Private Cloud (Amazon
      * VPC).</p>
      */
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
+    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p>Specifies the VPC Security Groups associated with the cache clusters in the
@@ -375,7 +376,7 @@ namespace Model
      * containing cache clusters running in an Amazon Virtual Private Cloud (Amazon
      * VPC).</p>
      */
-    inline ModifyReplicationGroupRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(value); return *this;}
+    inline ModifyReplicationGroupRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the VPC Security Groups associated with the cache clusters in the
@@ -391,7 +392,7 @@ namespace Model
      * containing cache clusters running in an Amazon Virtual Private Cloud (Amazon
      * VPC).</p>
      */
-    inline ModifyReplicationGroupRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    inline ModifyReplicationGroupRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specifies the VPC Security Groups associated with the cache clusters in the
@@ -435,7 +436,7 @@ namespace Model
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
      * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
+    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
@@ -471,7 +472,7 @@ namespace Model
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
      * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
-    inline ModifyReplicationGroupRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(value); return *this;}
+    inline ModifyReplicationGroupRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
@@ -504,7 +505,7 @@ namespace Model
      * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
      * replication group owner. </p> </note>
      */
-    inline void SetNotificationTopicArn(Aws::String&& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = value; }
+    inline void SetNotificationTopicArn(Aws::String&& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
@@ -525,7 +526,7 @@ namespace Model
      * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
      * replication group owner. </p> </note>
      */
-    inline ModifyReplicationGroupRequest& WithNotificationTopicArn(Aws::String&& value) { SetNotificationTopicArn(value); return *this;}
+    inline ModifyReplicationGroupRequest& WithNotificationTopicArn(Aws::String&& value) { SetNotificationTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
@@ -556,7 +557,7 @@ namespace Model
      * parameters when the <code>ApplyImmediately</code> parameter is specified as
      * <code>true</code> for this request.</p>
      */
-    inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
+    inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the cache parameter group to apply to all of the clusters in this
@@ -580,7 +581,7 @@ namespace Model
      * parameters when the <code>ApplyImmediately</code> parameter is specified as
      * <code>true</code> for this request.</p>
      */
-    inline ModifyReplicationGroupRequest& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(value); return *this;}
+    inline ModifyReplicationGroupRequest& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cache parameter group to apply to all of the clusters in this
@@ -609,7 +610,7 @@ namespace Model
      * Notifications are sent only if the status is <code>active</code>.</p> <p>Valid
      * values: <code>active</code> | <code>inactive</code> </p>
      */
-    inline void SetNotificationTopicStatus(Aws::String&& value) { m_notificationTopicStatusHasBeenSet = true; m_notificationTopicStatus = value; }
+    inline void SetNotificationTopicStatus(Aws::String&& value) { m_notificationTopicStatusHasBeenSet = true; m_notificationTopicStatus = std::move(value); }
 
     /**
      * <p>The status of the Amazon SNS notification topic for the replication group.
@@ -630,7 +631,7 @@ namespace Model
      * Notifications are sent only if the status is <code>active</code>.</p> <p>Valid
      * values: <code>active</code> | <code>inactive</code> </p>
      */
-    inline ModifyReplicationGroupRequest& WithNotificationTopicStatus(Aws::String&& value) { SetNotificationTopicStatus(value); return *this;}
+    inline ModifyReplicationGroupRequest& WithNotificationTopicStatus(Aws::String&& value) { SetNotificationTopicStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the Amazon SNS notification topic for the replication group.
@@ -706,7 +707,7 @@ namespace Model
      * existing replication group and create it anew with the earlier engine version.
      * </p>
      */
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>The upgraded version of the cache engine to be run on the cache clusters in
@@ -742,7 +743,7 @@ namespace Model
      * existing replication group and create it anew with the earlier engine version.
      * </p>
      */
-    inline ModifyReplicationGroupRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
+    inline ModifyReplicationGroupRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The upgraded version of the cache engine to be run on the cache clusters in
@@ -823,7 +824,7 @@ namespace Model
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
      * an appropriate time range.</p>
      */
-    inline void SetSnapshotWindow(Aws::String&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = value; }
+    inline void SetSnapshotWindow(Aws::String&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = std::move(value); }
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
@@ -850,7 +851,7 @@ namespace Model
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
      * an appropriate time range.</p>
      */
-    inline ModifyReplicationGroupRequest& WithSnapshotWindow(Aws::String&& value) { SetSnapshotWindow(value); return *this;}
+    inline ModifyReplicationGroupRequest& WithSnapshotWindow(Aws::String&& value) { SetSnapshotWindow(std::move(value)); return *this;}
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
@@ -874,7 +875,7 @@ namespace Model
     /**
      * <p>A valid cache node type that you want to scale this replication group to.</p>
      */
-    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
+    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::move(value); }
 
     /**
      * <p>A valid cache node type that you want to scale this replication group to.</p>
@@ -889,12 +890,47 @@ namespace Model
     /**
      * <p>A valid cache node type that you want to scale this replication group to.</p>
      */
-    inline ModifyReplicationGroupRequest& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(value); return *this;}
+    inline ModifyReplicationGroupRequest& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(std::move(value)); return *this;}
 
     /**
      * <p>A valid cache node type that you want to scale this replication group to.</p>
      */
     inline ModifyReplicationGroupRequest& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
+
+    /**
+     * <p>The name of the Node Group (called shard in the console).</p>
+     */
+    inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
+
+    /**
+     * <p>The name of the Node Group (called shard in the console).</p>
+     */
+    inline void SetNodeGroupId(const Aws::String& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
+
+    /**
+     * <p>The name of the Node Group (called shard in the console).</p>
+     */
+    inline void SetNodeGroupId(Aws::String&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = std::move(value); }
+
+    /**
+     * <p>The name of the Node Group (called shard in the console).</p>
+     */
+    inline void SetNodeGroupId(const char* value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId.assign(value); }
+
+    /**
+     * <p>The name of the Node Group (called shard in the console).</p>
+     */
+    inline ModifyReplicationGroupRequest& WithNodeGroupId(const Aws::String& value) { SetNodeGroupId(value); return *this;}
+
+    /**
+     * <p>The name of the Node Group (called shard in the console).</p>
+     */
+    inline ModifyReplicationGroupRequest& WithNodeGroupId(Aws::String&& value) { SetNodeGroupId(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the Node Group (called shard in the console).</p>
+     */
+    inline ModifyReplicationGroupRequest& WithNodeGroupId(const char* value) { SetNodeGroupId(value); return *this;}
 
   private:
     Aws::String m_replicationGroupId;
@@ -931,6 +967,8 @@ namespace Model
     bool m_snapshotWindowHasBeenSet;
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet;
+    Aws::String m_nodeGroupId;
+    bool m_nodeGroupIdHasBeenSet;
   };
 
 } // namespace Model

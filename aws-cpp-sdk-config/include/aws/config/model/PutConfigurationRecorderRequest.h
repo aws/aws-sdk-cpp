@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/config/model/ConfigurationRecorder.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The configuration recorder object that records each configuration change made
      * to the resources.</p>
      */
-    inline void SetConfigurationRecorder(ConfigurationRecorder&& value) { m_configurationRecorderHasBeenSet = true; m_configurationRecorder = value; }
+    inline void SetConfigurationRecorder(ConfigurationRecorder&& value) { m_configurationRecorderHasBeenSet = true; m_configurationRecorder = std::move(value); }
 
     /**
      * <p>The configuration recorder object that records each configuration change made
@@ -67,7 +68,7 @@ namespace Model
      * <p>The configuration recorder object that records each configuration change made
      * to the resources.</p>
      */
-    inline PutConfigurationRecorderRequest& WithConfigurationRecorder(ConfigurationRecorder&& value) { SetConfigurationRecorder(value); return *this;}
+    inline PutConfigurationRecorderRequest& WithConfigurationRecorder(ConfigurationRecorder&& value) { SetConfigurationRecorder(std::move(value)); return *this;}
 
   private:
     ConfigurationRecorder m_configurationRecorder;

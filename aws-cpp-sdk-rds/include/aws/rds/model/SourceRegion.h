@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The source region name.</p>
      */
-    inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
+    inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
 
     /**
      * <p>The source region name.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The source region name.</p>
      */
-    inline SourceRegion& WithRegionName(Aws::String&& value) { SetRegionName(value); return *this;}
+    inline SourceRegion& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
 
     /**
      * <p>The source region name.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The source region endpoint.</p>
      */
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
+    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
      * <p>The source region endpoint.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The source region endpoint.</p>
      */
-    inline SourceRegion& WithEndpoint(Aws::String&& value) { SetEndpoint(value); return *this;}
+    inline SourceRegion& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
 
     /**
      * <p>The source region endpoint.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The status of the source region.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the source region.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>The status of the source region.</p>
      */
-    inline SourceRegion& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline SourceRegion& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the source region.</p>

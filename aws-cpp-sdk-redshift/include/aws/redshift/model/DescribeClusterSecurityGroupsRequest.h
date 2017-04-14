@@ -17,6 +17,7 @@
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example:
      * <code>securitygroup1</code> </p>
      */
-    inline void SetClusterSecurityGroupName(Aws::String&& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
+    inline void SetClusterSecurityGroupName(Aws::String&& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = std::move(value); }
 
     /**
      * <p>The name of a cluster security group for which you are requesting details.
@@ -87,7 +88,7 @@ namespace Model
      * <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example:
      * <code>securitygroup1</code> </p>
      */
-    inline DescribeClusterSecurityGroupsRequest& WithClusterSecurityGroupName(Aws::String&& value) { SetClusterSecurityGroupName(value); return *this;}
+    inline DescribeClusterSecurityGroupsRequest& WithClusterSecurityGroupName(Aws::String&& value) { SetClusterSecurityGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a cluster security group for which you are requesting details.
@@ -161,7 +162,7 @@ namespace Model
      * can specify either the <b>ClusterSecurityGroupName</b> parameter or the
      * <b>Marker</b> parameter, but not both. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -197,7 +198,7 @@ namespace Model
      * can specify either the <b>ClusterSecurityGroupName</b> parameter or the
      * <b>Marker</b> parameter, but not both. </p>
      */
-    inline DescribeClusterSecurityGroupsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeClusterSecurityGroupsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -239,7 +240,7 @@ namespace Model
      * tag keys in the request, Amazon Redshift returns a response with the security
      * groups that have either or both of these tag keys associated with them.</p>
      */
-    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
+    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
      * <p>A tag key or keys for which you want to return all matching cluster security
@@ -259,7 +260,7 @@ namespace Model
      * tag keys in the request, Amazon Redshift returns a response with the security
      * groups that have either or both of these tag keys associated with them.</p>
      */
-    inline DescribeClusterSecurityGroupsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
+    inline DescribeClusterSecurityGroupsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
      * <p>A tag key or keys for which you want to return all matching cluster security
@@ -279,7 +280,7 @@ namespace Model
      * tag keys in the request, Amazon Redshift returns a response with the security
      * groups that have either or both of these tag keys associated with them.</p>
      */
-    inline DescribeClusterSecurityGroupsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+    inline DescribeClusterSecurityGroupsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A tag key or keys for which you want to return all matching cluster security
@@ -319,7 +320,7 @@ namespace Model
      * tag values in the request, Amazon Redshift returns a response with the security
      * groups that have either or both of these tag values associated with them.</p>
      */
-    inline void SetTagValues(Aws::Vector<Aws::String>&& value) { m_tagValuesHasBeenSet = true; m_tagValues = value; }
+    inline void SetTagValues(Aws::Vector<Aws::String>&& value) { m_tagValuesHasBeenSet = true; m_tagValues = std::move(value); }
 
     /**
      * <p>A tag value or values for which you want to return all matching cluster
@@ -339,7 +340,7 @@ namespace Model
      * tag values in the request, Amazon Redshift returns a response with the security
      * groups that have either or both of these tag values associated with them.</p>
      */
-    inline DescribeClusterSecurityGroupsRequest& WithTagValues(Aws::Vector<Aws::String>&& value) { SetTagValues(value); return *this;}
+    inline DescribeClusterSecurityGroupsRequest& WithTagValues(Aws::Vector<Aws::String>&& value) { SetTagValues(std::move(value)); return *this;}
 
     /**
      * <p>A tag value or values for which you want to return all matching cluster
@@ -359,7 +360,7 @@ namespace Model
      * tag values in the request, Amazon Redshift returns a response with the security
      * groups that have either or both of these tag values associated with them.</p>
      */
-    inline DescribeClusterSecurityGroupsRequest& AddTagValues(Aws::String&& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
+    inline DescribeClusterSecurityGroupsRequest& AddTagValues(Aws::String&& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A tag value or values for which you want to return all matching cluster

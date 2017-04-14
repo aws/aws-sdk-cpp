@@ -16,6 +16,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The identifier of the directory for which to create the alias.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>The identifier of the directory for which to create the alias.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The identifier of the directory for which to create the alias.</p>
      */
-    inline CreateAliasRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline CreateAliasRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the directory for which to create the alias.</p>
@@ -93,7 +94,7 @@ namespace Model
      * AWS. This operation throws an <code>EntityAlreadyExistsException</code> error if
      * the alias already exists.</p>
      */
-    inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = value; }
+    inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
 
     /**
      * <p>The requested alias.</p> <p>The alias must be unique amongst all aliases in
@@ -114,7 +115,7 @@ namespace Model
      * AWS. This operation throws an <code>EntityAlreadyExistsException</code> error if
      * the alias already exists.</p>
      */
-    inline CreateAliasRequest& WithAlias(Aws::String&& value) { SetAlias(value); return *this;}
+    inline CreateAliasRequest& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
 
     /**
      * <p>The requested alias.</p> <p>The alias must be unique amongst all aliases in

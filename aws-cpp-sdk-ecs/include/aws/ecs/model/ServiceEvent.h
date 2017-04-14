@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The ID string of the event.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The ID string of the event.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The ID string of the event.</p>
      */
-    inline ServiceEvent& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline ServiceEvent& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID string of the event.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The Unix timestamp for when the event was triggered.</p>
      */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
      * <p>The Unix timestamp for when the event was triggered.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The Unix timestamp for when the event was triggered.</p>
      */
-    inline ServiceEvent& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
+    inline ServiceEvent& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
      * <p>The event message.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>The event message.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The event message.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The event message.</p>
      */
-    inline ServiceEvent& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline ServiceEvent& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The event message.</p>

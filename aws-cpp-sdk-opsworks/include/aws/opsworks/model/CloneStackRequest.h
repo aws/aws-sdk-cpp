@@ -23,6 +23,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/RootDeviceType.h>
 #include <aws/opsworks/model/StackAttributesKeys.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The source stack ID.</p>
      */
-    inline void SetSourceStackId(Aws::String&& value) { m_sourceStackIdHasBeenSet = true; m_sourceStackId = value; }
+    inline void SetSourceStackId(Aws::String&& value) { m_sourceStackIdHasBeenSet = true; m_sourceStackId = std::move(value); }
 
     /**
      * <p>The source stack ID.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The source stack ID.</p>
      */
-    inline CloneStackRequest& WithSourceStackId(Aws::String&& value) { SetSourceStackId(value); return *this;}
+    inline CloneStackRequest& WithSourceStackId(Aws::String&& value) { SetSourceStackId(std::move(value)); return *this;}
 
     /**
      * <p>The source stack ID.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The cloned stack name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The cloned stack name.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The cloned stack name.</p>
      */
-    inline CloneStackRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CloneStackRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The cloned stack name.</p>
@@ -134,7 +135,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = value; }
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
      * <p>The cloned stack AWS region, such as "ap-northeast-2". For more information
@@ -158,7 +159,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
-    inline CloneStackRequest& WithRegion(Aws::String&& value) { SetRegion(value); return *this;}
+    inline CloneStackRequest& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
      * <p>The cloned stack AWS region, such as "ap-northeast-2". For more information
@@ -176,14 +177,15 @@ namespace Model
      * Classic, the default value is the default VPC for the specified region.</p>
      * </li> </ul> <p>If the VPC ID corresponds to a default VPC and you have specified
      * either the <code>DefaultAvailabilityZone</code> or the
-     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the value of
-     * the other parameter. If you specify neither parameter, AWS OpsWorks sets these
-     * parameters to the first valid Availability Zone for the specified region and the
-     * corresponding default VPC subnet ID, respectively. </p> <p>If you specify a
-     * nondefault VPC ID, note the following:</p> <ul> <li> <p>It must belong to a VPC
-     * in your account that is in the specified region.</p> </li> <li> <p>You must
-     * specify a value for <code>DefaultSubnetId</code>.</p> </li> </ul> <p>For more
-     * information on how to use AWS OpsWorks with a VPC, see <a
+     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the
+     * value of the other parameter. If you specify neither parameter, AWS OpsWorks
+     * Stacks sets these parameters to the first valid Availability Zone for the
+     * specified region and the corresponding default VPC subnet ID, respectively. </p>
+     * <p>If you specify a nondefault VPC ID, note the following:</p> <ul> <li> <p>It
+     * must belong to a VPC in your account that is in the specified region.</p> </li>
+     * <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
+     * </ul> <p>For more information on how to use AWS OpsWorks Stacks with a VPC, see
+     * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
      * a Stack in a VPC</a>. For more information on default VPC and EC2 Classic, see
      * <a
@@ -200,14 +202,15 @@ namespace Model
      * Classic, the default value is the default VPC for the specified region.</p>
      * </li> </ul> <p>If the VPC ID corresponds to a default VPC and you have specified
      * either the <code>DefaultAvailabilityZone</code> or the
-     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the value of
-     * the other parameter. If you specify neither parameter, AWS OpsWorks sets these
-     * parameters to the first valid Availability Zone for the specified region and the
-     * corresponding default VPC subnet ID, respectively. </p> <p>If you specify a
-     * nondefault VPC ID, note the following:</p> <ul> <li> <p>It must belong to a VPC
-     * in your account that is in the specified region.</p> </li> <li> <p>You must
-     * specify a value for <code>DefaultSubnetId</code>.</p> </li> </ul> <p>For more
-     * information on how to use AWS OpsWorks with a VPC, see <a
+     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the
+     * value of the other parameter. If you specify neither parameter, AWS OpsWorks
+     * Stacks sets these parameters to the first valid Availability Zone for the
+     * specified region and the corresponding default VPC subnet ID, respectively. </p>
+     * <p>If you specify a nondefault VPC ID, note the following:</p> <ul> <li> <p>It
+     * must belong to a VPC in your account that is in the specified region.</p> </li>
+     * <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
+     * </ul> <p>For more information on how to use AWS OpsWorks Stacks with a VPC, see
+     * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
      * a Stack in a VPC</a>. For more information on default VPC and EC2 Classic, see
      * <a
@@ -224,21 +227,22 @@ namespace Model
      * Classic, the default value is the default VPC for the specified region.</p>
      * </li> </ul> <p>If the VPC ID corresponds to a default VPC and you have specified
      * either the <code>DefaultAvailabilityZone</code> or the
-     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the value of
-     * the other parameter. If you specify neither parameter, AWS OpsWorks sets these
-     * parameters to the first valid Availability Zone for the specified region and the
-     * corresponding default VPC subnet ID, respectively. </p> <p>If you specify a
-     * nondefault VPC ID, note the following:</p> <ul> <li> <p>It must belong to a VPC
-     * in your account that is in the specified region.</p> </li> <li> <p>You must
-     * specify a value for <code>DefaultSubnetId</code>.</p> </li> </ul> <p>For more
-     * information on how to use AWS OpsWorks with a VPC, see <a
+     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the
+     * value of the other parameter. If you specify neither parameter, AWS OpsWorks
+     * Stacks sets these parameters to the first valid Availability Zone for the
+     * specified region and the corresponding default VPC subnet ID, respectively. </p>
+     * <p>If you specify a nondefault VPC ID, note the following:</p> <ul> <li> <p>It
+     * must belong to a VPC in your account that is in the specified region.</p> </li>
+     * <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
+     * </ul> <p>For more information on how to use AWS OpsWorks Stacks with a VPC, see
+     * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
      * a Stack in a VPC</a>. For more information on default VPC and EC2 Classic, see
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>. </p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC that the cloned stack is to be launched into. It must be in
@@ -248,14 +252,15 @@ namespace Model
      * Classic, the default value is the default VPC for the specified region.</p>
      * </li> </ul> <p>If the VPC ID corresponds to a default VPC and you have specified
      * either the <code>DefaultAvailabilityZone</code> or the
-     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the value of
-     * the other parameter. If you specify neither parameter, AWS OpsWorks sets these
-     * parameters to the first valid Availability Zone for the specified region and the
-     * corresponding default VPC subnet ID, respectively. </p> <p>If you specify a
-     * nondefault VPC ID, note the following:</p> <ul> <li> <p>It must belong to a VPC
-     * in your account that is in the specified region.</p> </li> <li> <p>You must
-     * specify a value for <code>DefaultSubnetId</code>.</p> </li> </ul> <p>For more
-     * information on how to use AWS OpsWorks with a VPC, see <a
+     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the
+     * value of the other parameter. If you specify neither parameter, AWS OpsWorks
+     * Stacks sets these parameters to the first valid Availability Zone for the
+     * specified region and the corresponding default VPC subnet ID, respectively. </p>
+     * <p>If you specify a nondefault VPC ID, note the following:</p> <ul> <li> <p>It
+     * must belong to a VPC in your account that is in the specified region.</p> </li>
+     * <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
+     * </ul> <p>For more information on how to use AWS OpsWorks Stacks with a VPC, see
+     * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
      * a Stack in a VPC</a>. For more information on default VPC and EC2 Classic, see
      * <a
@@ -272,14 +277,15 @@ namespace Model
      * Classic, the default value is the default VPC for the specified region.</p>
      * </li> </ul> <p>If the VPC ID corresponds to a default VPC and you have specified
      * either the <code>DefaultAvailabilityZone</code> or the
-     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the value of
-     * the other parameter. If you specify neither parameter, AWS OpsWorks sets these
-     * parameters to the first valid Availability Zone for the specified region and the
-     * corresponding default VPC subnet ID, respectively. </p> <p>If you specify a
-     * nondefault VPC ID, note the following:</p> <ul> <li> <p>It must belong to a VPC
-     * in your account that is in the specified region.</p> </li> <li> <p>You must
-     * specify a value for <code>DefaultSubnetId</code>.</p> </li> </ul> <p>For more
-     * information on how to use AWS OpsWorks with a VPC, see <a
+     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the
+     * value of the other parameter. If you specify neither parameter, AWS OpsWorks
+     * Stacks sets these parameters to the first valid Availability Zone for the
+     * specified region and the corresponding default VPC subnet ID, respectively. </p>
+     * <p>If you specify a nondefault VPC ID, note the following:</p> <ul> <li> <p>It
+     * must belong to a VPC in your account that is in the specified region.</p> </li>
+     * <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
+     * </ul> <p>For more information on how to use AWS OpsWorks Stacks with a VPC, see
+     * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
      * a Stack in a VPC</a>. For more information on default VPC and EC2 Classic, see
      * <a
@@ -296,21 +302,22 @@ namespace Model
      * Classic, the default value is the default VPC for the specified region.</p>
      * </li> </ul> <p>If the VPC ID corresponds to a default VPC and you have specified
      * either the <code>DefaultAvailabilityZone</code> or the
-     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the value of
-     * the other parameter. If you specify neither parameter, AWS OpsWorks sets these
-     * parameters to the first valid Availability Zone for the specified region and the
-     * corresponding default VPC subnet ID, respectively. </p> <p>If you specify a
-     * nondefault VPC ID, note the following:</p> <ul> <li> <p>It must belong to a VPC
-     * in your account that is in the specified region.</p> </li> <li> <p>You must
-     * specify a value for <code>DefaultSubnetId</code>.</p> </li> </ul> <p>For more
-     * information on how to use AWS OpsWorks with a VPC, see <a
+     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the
+     * value of the other parameter. If you specify neither parameter, AWS OpsWorks
+     * Stacks sets these parameters to the first valid Availability Zone for the
+     * specified region and the corresponding default VPC subnet ID, respectively. </p>
+     * <p>If you specify a nondefault VPC ID, note the following:</p> <ul> <li> <p>It
+     * must belong to a VPC in your account that is in the specified region.</p> </li>
+     * <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
+     * </ul> <p>For more information on how to use AWS OpsWorks Stacks with a VPC, see
+     * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
      * a Stack in a VPC</a>. For more information on default VPC and EC2 Classic, see
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>. </p>
      */
-    inline CloneStackRequest& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline CloneStackRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC that the cloned stack is to be launched into. It must be in
@@ -320,14 +327,15 @@ namespace Model
      * Classic, the default value is the default VPC for the specified region.</p>
      * </li> </ul> <p>If the VPC ID corresponds to a default VPC and you have specified
      * either the <code>DefaultAvailabilityZone</code> or the
-     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the value of
-     * the other parameter. If you specify neither parameter, AWS OpsWorks sets these
-     * parameters to the first valid Availability Zone for the specified region and the
-     * corresponding default VPC subnet ID, respectively. </p> <p>If you specify a
-     * nondefault VPC ID, note the following:</p> <ul> <li> <p>It must belong to a VPC
-     * in your account that is in the specified region.</p> </li> <li> <p>You must
-     * specify a value for <code>DefaultSubnetId</code>.</p> </li> </ul> <p>For more
-     * information on how to use AWS OpsWorks with a VPC, see <a
+     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the
+     * value of the other parameter. If you specify neither parameter, AWS OpsWorks
+     * Stacks sets these parameters to the first valid Availability Zone for the
+     * specified region and the corresponding default VPC subnet ID, respectively. </p>
+     * <p>If you specify a nondefault VPC ID, note the following:</p> <ul> <li> <p>It
+     * must belong to a VPC in your account that is in the specified region.</p> </li>
+     * <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
+     * </ul> <p>For more information on how to use AWS OpsWorks Stacks with a VPC, see
+     * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
      * a Stack in a VPC</a>. For more information on default VPC and EC2 Classic, see
      * <a
@@ -352,7 +360,7 @@ namespace Model
      * <p>A list of stack attributes and values as key/value pairs to be added to the
      * cloned stack.</p>
      */
-    inline void SetAttributes(Aws::Map<StackAttributesKeys, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Map<StackAttributesKeys, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>A list of stack attributes and values as key/value pairs to be added to the
@@ -364,50 +372,50 @@ namespace Model
      * <p>A list of stack attributes and values as key/value pairs to be added to the
      * cloned stack.</p>
      */
-    inline CloneStackRequest& WithAttributes(Aws::Map<StackAttributesKeys, Aws::String>&& value) { SetAttributes(value); return *this;}
+    inline CloneStackRequest& WithAttributes(Aws::Map<StackAttributesKeys, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>A list of stack attributes and values as key/value pairs to be added to the
      * cloned stack.</p>
      */
-    inline CloneStackRequest& AddAttributes(const StackAttributesKeys& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CloneStackRequest& AddAttributes(const StackAttributesKeys& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>A list of stack attributes and values as key/value pairs to be added to the
      * cloned stack.</p>
      */
-    inline CloneStackRequest& AddAttributes(StackAttributesKeys&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CloneStackRequest& AddAttributes(StackAttributesKeys&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A list of stack attributes and values as key/value pairs to be added to the
      * cloned stack.</p>
      */
-    inline CloneStackRequest& AddAttributes(const StackAttributesKeys& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CloneStackRequest& AddAttributes(const StackAttributesKeys& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A list of stack attributes and values as key/value pairs to be added to the
      * cloned stack.</p>
      */
-    inline CloneStackRequest& AddAttributes(StackAttributesKeys&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CloneStackRequest& AddAttributes(StackAttributesKeys&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A list of stack attributes and values as key/value pairs to be added to the
      * cloned stack.</p>
      */
-    inline CloneStackRequest& AddAttributes(StackAttributesKeys&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CloneStackRequest& AddAttributes(StackAttributesKeys&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A list of stack attributes and values as key/value pairs to be added to the
      * cloned stack.</p>
      */
-    inline CloneStackRequest& AddAttributes(const StackAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline CloneStackRequest& AddAttributes(const StackAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS
-     * OpsWorks to work with AWS resources on your behalf. You must set this parameter
-     * to the Amazon Resource Name (ARN) for an existing IAM role. If you create a
-     * stack by using the AWS OpsWorks console, it creates the role for you. You can
-     * obtain an existing stack's IAM ARN programmatically by calling
+     * OpsWorks Stacks to work with AWS resources on your behalf. You must set this
+     * parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you
+     * create a stack by using the AWS OpsWorks Stacks console, it creates the role for
+     * you. You can obtain an existing stack's IAM ARN programmatically by calling
      * <a>DescribePermissions</a>. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p> <note> <p>You must set this parameter to a valid service
@@ -419,10 +427,10 @@ namespace Model
 
     /**
      * <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS
-     * OpsWorks to work with AWS resources on your behalf. You must set this parameter
-     * to the Amazon Resource Name (ARN) for an existing IAM role. If you create a
-     * stack by using the AWS OpsWorks console, it creates the role for you. You can
-     * obtain an existing stack's IAM ARN programmatically by calling
+     * OpsWorks Stacks to work with AWS resources on your behalf. You must set this
+     * parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you
+     * create a stack by using the AWS OpsWorks Stacks console, it creates the role for
+     * you. You can obtain an existing stack's IAM ARN programmatically by calling
      * <a>DescribePermissions</a>. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p> <note> <p>You must set this parameter to a valid service
@@ -434,10 +442,10 @@ namespace Model
 
     /**
      * <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS
-     * OpsWorks to work with AWS resources on your behalf. You must set this parameter
-     * to the Amazon Resource Name (ARN) for an existing IAM role. If you create a
-     * stack by using the AWS OpsWorks console, it creates the role for you. You can
-     * obtain an existing stack's IAM ARN programmatically by calling
+     * OpsWorks Stacks to work with AWS resources on your behalf. You must set this
+     * parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you
+     * create a stack by using the AWS OpsWorks Stacks console, it creates the role for
+     * you. You can obtain an existing stack's IAM ARN programmatically by calling
      * <a>DescribePermissions</a>. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p> <note> <p>You must set this parameter to a valid service
@@ -445,14 +453,14 @@ namespace Model
      * source stack's service role ARN, if you prefer, but you must do so
      * explicitly.</p> </note>
      */
-    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
+    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
      * <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS
-     * OpsWorks to work with AWS resources on your behalf. You must set this parameter
-     * to the Amazon Resource Name (ARN) for an existing IAM role. If you create a
-     * stack by using the AWS OpsWorks console, it creates the role for you. You can
-     * obtain an existing stack's IAM ARN programmatically by calling
+     * OpsWorks Stacks to work with AWS resources on your behalf. You must set this
+     * parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you
+     * create a stack by using the AWS OpsWorks Stacks console, it creates the role for
+     * you. You can obtain an existing stack's IAM ARN programmatically by calling
      * <a>DescribePermissions</a>. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p> <note> <p>You must set this parameter to a valid service
@@ -464,10 +472,10 @@ namespace Model
 
     /**
      * <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS
-     * OpsWorks to work with AWS resources on your behalf. You must set this parameter
-     * to the Amazon Resource Name (ARN) for an existing IAM role. If you create a
-     * stack by using the AWS OpsWorks console, it creates the role for you. You can
-     * obtain an existing stack's IAM ARN programmatically by calling
+     * OpsWorks Stacks to work with AWS resources on your behalf. You must set this
+     * parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you
+     * create a stack by using the AWS OpsWorks Stacks console, it creates the role for
+     * you. You can obtain an existing stack's IAM ARN programmatically by calling
      * <a>DescribePermissions</a>. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p> <note> <p>You must set this parameter to a valid service
@@ -479,10 +487,10 @@ namespace Model
 
     /**
      * <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS
-     * OpsWorks to work with AWS resources on your behalf. You must set this parameter
-     * to the Amazon Resource Name (ARN) for an existing IAM role. If you create a
-     * stack by using the AWS OpsWorks console, it creates the role for you. You can
-     * obtain an existing stack's IAM ARN programmatically by calling
+     * OpsWorks Stacks to work with AWS resources on your behalf. You must set this
+     * parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you
+     * create a stack by using the AWS OpsWorks Stacks console, it creates the role for
+     * you. You can obtain an existing stack's IAM ARN programmatically by calling
      * <a>DescribePermissions</a>. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p> <note> <p>You must set this parameter to a valid service
@@ -490,14 +498,14 @@ namespace Model
      * source stack's service role ARN, if you prefer, but you must do so
      * explicitly.</p> </note>
      */
-    inline CloneStackRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(value); return *this;}
+    inline CloneStackRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS
-     * OpsWorks to work with AWS resources on your behalf. You must set this parameter
-     * to the Amazon Resource Name (ARN) for an existing IAM role. If you create a
-     * stack by using the AWS OpsWorks console, it creates the role for you. You can
-     * obtain an existing stack's IAM ARN programmatically by calling
+     * OpsWorks Stacks to work with AWS resources on your behalf. You must set this
+     * parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you
+     * create a stack by using the AWS OpsWorks Stacks console, it creates the role for
+     * you. You can obtain an existing stack's IAM ARN programmatically by calling
      * <a>DescribePermissions</a>. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p> <note> <p>You must set this parameter to a valid service
@@ -532,7 +540,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
-    inline void SetDefaultInstanceProfileArn(Aws::String&& value) { m_defaultInstanceProfileArnHasBeenSet = true; m_defaultInstanceProfileArn = value; }
+    inline void SetDefaultInstanceProfileArn(Aws::String&& value) { m_defaultInstanceProfileArnHasBeenSet = true; m_defaultInstanceProfileArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile
@@ -559,7 +567,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
-    inline CloneStackRequest& WithDefaultInstanceProfileArn(Aws::String&& value) { SetDefaultInstanceProfileArn(value); return *this;}
+    inline CloneStackRequest& WithDefaultInstanceProfileArn(Aws::String&& value) { SetDefaultInstanceProfileArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile
@@ -573,24 +581,25 @@ namespace Model
     /**
      * <p>The stack's operating system, which must be set to one of the following.</p>
      * <ul> <li> <p>A supported Linux operating system: An Amazon Linux version, such
-     * as <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
-     * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
-     * 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
-     * <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft
-     * Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows
-     * Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows
-     * Server 2012 R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
-     * <code>Custom</code>. You specify the custom AMI you want to use when you create
-     * instances. For more information on how to use custom AMIs with OpsWorks, see <a
+     * as <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+     * </li> <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04
+     * LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+     * </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat
+     * Enterprise Linux 7</code> </p> </li> <li> <p> <code>Microsoft Windows Server
+     * 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
+     * custom AMI you want to use when you create instances. For more information on
+     * how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information on the supported operating systems, see
      * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Operating Systems</a>.</p> <note> <p>You can specify a different Linux
-     * operating system for the cloned stack, but you cannot change from Linux to
+     * OpsWorks Stacks Operating Systems</a>.</p> <note> <p>You can specify a different
+     * Linux operating system for the cloned stack, but you cannot change from Linux to
      * Windows or Windows to Linux.</p> </note>
      */
     inline const Aws::String& GetDefaultOs() const{ return m_defaultOs; }
@@ -598,24 +607,25 @@ namespace Model
     /**
      * <p>The stack's operating system, which must be set to one of the following.</p>
      * <ul> <li> <p>A supported Linux operating system: An Amazon Linux version, such
-     * as <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
-     * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
-     * 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
-     * <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft
-     * Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows
-     * Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows
-     * Server 2012 R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
-     * <code>Custom</code>. You specify the custom AMI you want to use when you create
-     * instances. For more information on how to use custom AMIs with OpsWorks, see <a
+     * as <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+     * </li> <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04
+     * LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+     * </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat
+     * Enterprise Linux 7</code> </p> </li> <li> <p> <code>Microsoft Windows Server
+     * 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
+     * custom AMI you want to use when you create instances. For more information on
+     * how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information on the supported operating systems, see
      * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Operating Systems</a>.</p> <note> <p>You can specify a different Linux
-     * operating system for the cloned stack, but you cannot change from Linux to
+     * OpsWorks Stacks Operating Systems</a>.</p> <note> <p>You can specify a different
+     * Linux operating system for the cloned stack, but you cannot change from Linux to
      * Windows or Windows to Linux.</p> </note>
      */
     inline void SetDefaultOs(const Aws::String& value) { m_defaultOsHasBeenSet = true; m_defaultOs = value; }
@@ -623,49 +633,51 @@ namespace Model
     /**
      * <p>The stack's operating system, which must be set to one of the following.</p>
      * <ul> <li> <p>A supported Linux operating system: An Amazon Linux version, such
-     * as <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
-     * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
-     * 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
-     * <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft
-     * Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows
-     * Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows
-     * Server 2012 R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
-     * <code>Custom</code>. You specify the custom AMI you want to use when you create
-     * instances. For more information on how to use custom AMIs with OpsWorks, see <a
+     * as <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+     * </li> <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04
+     * LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+     * </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat
+     * Enterprise Linux 7</code> </p> </li> <li> <p> <code>Microsoft Windows Server
+     * 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
+     * custom AMI you want to use when you create instances. For more information on
+     * how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information on the supported operating systems, see
      * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Operating Systems</a>.</p> <note> <p>You can specify a different Linux
-     * operating system for the cloned stack, but you cannot change from Linux to
+     * OpsWorks Stacks Operating Systems</a>.</p> <note> <p>You can specify a different
+     * Linux operating system for the cloned stack, but you cannot change from Linux to
      * Windows or Windows to Linux.</p> </note>
      */
-    inline void SetDefaultOs(Aws::String&& value) { m_defaultOsHasBeenSet = true; m_defaultOs = value; }
+    inline void SetDefaultOs(Aws::String&& value) { m_defaultOsHasBeenSet = true; m_defaultOs = std::move(value); }
 
     /**
      * <p>The stack's operating system, which must be set to one of the following.</p>
      * <ul> <li> <p>A supported Linux operating system: An Amazon Linux version, such
-     * as <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
-     * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
-     * 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
-     * <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft
-     * Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows
-     * Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows
-     * Server 2012 R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
-     * <code>Custom</code>. You specify the custom AMI you want to use when you create
-     * instances. For more information on how to use custom AMIs with OpsWorks, see <a
+     * as <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+     * </li> <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04
+     * LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+     * </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat
+     * Enterprise Linux 7</code> </p> </li> <li> <p> <code>Microsoft Windows Server
+     * 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
+     * custom AMI you want to use when you create instances. For more information on
+     * how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information on the supported operating systems, see
      * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Operating Systems</a>.</p> <note> <p>You can specify a different Linux
-     * operating system for the cloned stack, but you cannot change from Linux to
+     * OpsWorks Stacks Operating Systems</a>.</p> <note> <p>You can specify a different
+     * Linux operating system for the cloned stack, but you cannot change from Linux to
      * Windows or Windows to Linux.</p> </note>
      */
     inline void SetDefaultOs(const char* value) { m_defaultOsHasBeenSet = true; m_defaultOs.assign(value); }
@@ -673,24 +685,25 @@ namespace Model
     /**
      * <p>The stack's operating system, which must be set to one of the following.</p>
      * <ul> <li> <p>A supported Linux operating system: An Amazon Linux version, such
-     * as <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
-     * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
-     * 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
-     * <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft
-     * Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows
-     * Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows
-     * Server 2012 R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
-     * <code>Custom</code>. You specify the custom AMI you want to use when you create
-     * instances. For more information on how to use custom AMIs with OpsWorks, see <a
+     * as <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+     * </li> <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04
+     * LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+     * </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat
+     * Enterprise Linux 7</code> </p> </li> <li> <p> <code>Microsoft Windows Server
+     * 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
+     * custom AMI you want to use when you create instances. For more information on
+     * how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information on the supported operating systems, see
      * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Operating Systems</a>.</p> <note> <p>You can specify a different Linux
-     * operating system for the cloned stack, but you cannot change from Linux to
+     * OpsWorks Stacks Operating Systems</a>.</p> <note> <p>You can specify a different
+     * Linux operating system for the cloned stack, but you cannot change from Linux to
      * Windows or Windows to Linux.</p> </note>
      */
     inline CloneStackRequest& WithDefaultOs(const Aws::String& value) { SetDefaultOs(value); return *this;}
@@ -698,49 +711,51 @@ namespace Model
     /**
      * <p>The stack's operating system, which must be set to one of the following.</p>
      * <ul> <li> <p>A supported Linux operating system: An Amazon Linux version, such
-     * as <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
-     * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
-     * 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
-     * <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft
-     * Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows
-     * Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows
-     * Server 2012 R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
-     * <code>Custom</code>. You specify the custom AMI you want to use when you create
-     * instances. For more information on how to use custom AMIs with OpsWorks, see <a
+     * as <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+     * </li> <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04
+     * LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+     * </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat
+     * Enterprise Linux 7</code> </p> </li> <li> <p> <code>Microsoft Windows Server
+     * 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
+     * custom AMI you want to use when you create instances. For more information on
+     * how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information on the supported operating systems, see
      * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Operating Systems</a>.</p> <note> <p>You can specify a different Linux
-     * operating system for the cloned stack, but you cannot change from Linux to
+     * OpsWorks Stacks Operating Systems</a>.</p> <note> <p>You can specify a different
+     * Linux operating system for the cloned stack, but you cannot change from Linux to
      * Windows or Windows to Linux.</p> </note>
      */
-    inline CloneStackRequest& WithDefaultOs(Aws::String&& value) { SetDefaultOs(value); return *this;}
+    inline CloneStackRequest& WithDefaultOs(Aws::String&& value) { SetDefaultOs(std::move(value)); return *this;}
 
     /**
      * <p>The stack's operating system, which must be set to one of the following.</p>
      * <ul> <li> <p>A supported Linux operating system: An Amazon Linux version, such
-     * as <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
-     * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
-     * 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
-     * <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft
-     * Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows
-     * Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows
-     * Server 2012 R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
-     * <code>Custom</code>. You specify the custom AMI you want to use when you create
-     * instances. For more information on how to use custom AMIs with OpsWorks, see <a
+     * as <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+     * </li> <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04
+     * LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+     * </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat
+     * Enterprise Linux 7</code> </p> </li> <li> <p> <code>Microsoft Windows Server
+     * 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
+     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
+     * custom AMI you want to use when you create instances. For more information on
+     * how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information on the supported operating systems, see
      * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Operating Systems</a>.</p> <note> <p>You can specify a different Linux
-     * operating system for the cloned stack, but you cannot change from Linux to
+     * OpsWorks Stacks Operating Systems</a>.</p> <note> <p>You can specify a different
+     * Linux operating system for the cloned stack, but you cannot change from Linux to
      * Windows or Windows to Linux.</p> </note>
      */
     inline CloneStackRequest& WithDefaultOs(const char* value) { SetDefaultOs(value); return *this;}
@@ -797,7 +812,7 @@ namespace Model
      * <code>GetHostNameSuggestion</code>, which returns a host name based on the
      * current theme.</p>
      */
-    inline void SetHostnameTheme(Aws::String&& value) { m_hostnameThemeHasBeenSet = true; m_hostnameTheme = value; }
+    inline void SetHostnameTheme(Aws::String&& value) { m_hostnameThemeHasBeenSet = true; m_hostnameTheme = std::move(value); }
 
     /**
      * <p>The stack's host name theme, with spaces are replaced by underscores. The
@@ -851,7 +866,7 @@ namespace Model
      * <code>GetHostNameSuggestion</code>, which returns a host name based on the
      * current theme.</p>
      */
-    inline CloneStackRequest& WithHostnameTheme(Aws::String&& value) { SetHostnameTheme(value); return *this;}
+    inline CloneStackRequest& WithHostnameTheme(Aws::String&& value) { SetHostnameTheme(std::move(value)); return *this;}
 
     /**
      * <p>The stack's host name theme, with spaces are replaced by underscores. The
@@ -899,7 +914,7 @@ namespace Model
      * subnet must be in the same zone. For more information, see the
      * <code>VpcId</code> parameter description. </p>
      */
-    inline void SetDefaultAvailabilityZone(Aws::String&& value) { m_defaultAvailabilityZoneHasBeenSet = true; m_defaultAvailabilityZone = value; }
+    inline void SetDefaultAvailabilityZone(Aws::String&& value) { m_defaultAvailabilityZoneHasBeenSet = true; m_defaultAvailabilityZone = std::move(value); }
 
     /**
      * <p>The cloned stack's default Availability Zone, which must be in the specified
@@ -929,7 +944,7 @@ namespace Model
      * subnet must be in the same zone. For more information, see the
      * <code>VpcId</code> parameter description. </p>
      */
-    inline CloneStackRequest& WithDefaultAvailabilityZone(Aws::String&& value) { SetDefaultAvailabilityZone(value); return *this;}
+    inline CloneStackRequest& WithDefaultAvailabilityZone(Aws::String&& value) { SetDefaultAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The cloned stack's default Availability Zone, which must be in the specified
@@ -969,7 +984,7 @@ namespace Model
      * be in that zone. For information on default values and when this parameter is
      * required, see the <code>VpcId</code> parameter description. </p>
      */
-    inline void SetDefaultSubnetId(Aws::String&& value) { m_defaultSubnetIdHasBeenSet = true; m_defaultSubnetId = value; }
+    inline void SetDefaultSubnetId(Aws::String&& value) { m_defaultSubnetIdHasBeenSet = true; m_defaultSubnetId = std::move(value); }
 
     /**
      * <p>The stack's default VPC subnet ID. This parameter is required if you specify
@@ -999,7 +1014,7 @@ namespace Model
      * be in that zone. For information on default values and when this parameter is
      * required, see the <code>VpcId</code> parameter description. </p>
      */
-    inline CloneStackRequest& WithDefaultSubnetId(Aws::String&& value) { SetDefaultSubnetId(value); return *this;}
+    inline CloneStackRequest& WithDefaultSubnetId(Aws::String&& value) { SetDefaultSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The stack's default VPC subnet ID. This parameter is required if you specify
@@ -1039,7 +1054,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a> </p>
      */
-    inline void SetCustomJson(Aws::String&& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
+    inline void SetCustomJson(Aws::String&& value) { m_customJsonHasBeenSet = true; m_customJson = std::move(value); }
 
     /**
      * <p>A string that contains user-defined, custom JSON. It is used to override the
@@ -1069,7 +1084,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a> </p>
      */
-    inline CloneStackRequest& WithCustomJson(Aws::String&& value) { SetCustomJson(value); return *this;}
+    inline CloneStackRequest& WithCustomJson(Aws::String&& value) { SetCustomJson(std::move(value)); return *this;}
 
     /**
      * <p>A string that contains user-defined, custom JSON. It is used to override the
@@ -1103,7 +1118,7 @@ namespace Model
      * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
      * currently 12.</p>
      */
-    inline void SetConfigurationManager(StackConfigurationManager&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = value; }
+    inline void SetConfigurationManager(StackConfigurationManager&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = std::move(value); }
 
     /**
      * <p>The configuration manager. When you clone a stack we recommend that you use
@@ -1119,7 +1134,7 @@ namespace Model
      * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
      * currently 12.</p>
      */
-    inline CloneStackRequest& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(value); return *this;}
+    inline CloneStackRequest& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(std::move(value)); return *this;}
 
     /**
      * <p>A <code>ChefConfiguration</code> object that specifies whether to enable
@@ -1146,7 +1161,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      * a New Stack</a>.</p>
      */
-    inline void SetChefConfiguration(ChefConfiguration&& value) { m_chefConfigurationHasBeenSet = true; m_chefConfiguration = value; }
+    inline void SetChefConfiguration(ChefConfiguration&& value) { m_chefConfigurationHasBeenSet = true; m_chefConfiguration = std::move(value); }
 
     /**
      * <p>A <code>ChefConfiguration</code> object that specifies whether to enable
@@ -1164,7 +1179,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      * a New Stack</a>.</p>
      */
-    inline CloneStackRequest& WithChefConfiguration(ChefConfiguration&& value) { SetChefConfiguration(value); return *this;}
+    inline CloneStackRequest& WithChefConfiguration(ChefConfiguration&& value) { SetChefConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>Whether to use custom cookbooks.</p>
@@ -1182,63 +1197,63 @@ namespace Model
     inline CloneStackRequest& WithUseCustomCookbooks(bool value) { SetUseCustomCookbooks(value); return *this;}
 
     /**
-     * <p>Whether to associate the AWS OpsWorks built-in security groups with the
-     * stack's layers.</p> <p>AWS OpsWorks provides a standard set of built-in security
-     * groups, one for each layer, which are associated with layers by default. With
-     * <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom
-     * security groups. <code>UseOpsworksSecurityGroups</code> has the following
-     * settings: </p> <ul> <li> <p>True - AWS OpsWorks automatically associates the
-     * appropriate built-in security group with each layer (default setting). You can
-     * associate additional security groups with a layer after you create it but you
-     * cannot delete the built-in security group.</p> </li> <li> <p>False - AWS
-     * OpsWorks does not associate built-in security groups with layers. You must
-     * create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and
-     * associate a security group with each layer that you create. However, you can
-     * still manually associate a built-in security group with a layer on creation;
-     * custom security groups are required only for those layers that need custom
-     * settings.</p> </li> </ul> <p>For more information, see <a
+     * <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with
+     * the stack's layers.</p> <p>AWS OpsWorks Stacks provides a standard set of
+     * built-in security groups, one for each layer, which are associated with layers
+     * by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide
+     * your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
+     * following settings: </p> <ul> <li> <p>True - AWS OpsWorks Stacks automatically
+     * associates the appropriate built-in security group with each layer (default
+     * setting). You can associate additional security groups with a layer after you
+     * create it but you cannot delete the built-in security group.</p> </li> <li>
+     * <p>False - AWS OpsWorks Stacks does not associate built-in security groups with
+     * layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
+     * security groups and associate a security group with each layer that you create.
+     * However, you can still manually associate a built-in security group with a layer
+     * on creation; custom security groups are required only for those layers that need
+     * custom settings.</p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      * a New Stack</a>.</p>
      */
     inline bool GetUseOpsworksSecurityGroups() const{ return m_useOpsworksSecurityGroups; }
 
     /**
-     * <p>Whether to associate the AWS OpsWorks built-in security groups with the
-     * stack's layers.</p> <p>AWS OpsWorks provides a standard set of built-in security
-     * groups, one for each layer, which are associated with layers by default. With
-     * <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom
-     * security groups. <code>UseOpsworksSecurityGroups</code> has the following
-     * settings: </p> <ul> <li> <p>True - AWS OpsWorks automatically associates the
-     * appropriate built-in security group with each layer (default setting). You can
-     * associate additional security groups with a layer after you create it but you
-     * cannot delete the built-in security group.</p> </li> <li> <p>False - AWS
-     * OpsWorks does not associate built-in security groups with layers. You must
-     * create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and
-     * associate a security group with each layer that you create. However, you can
-     * still manually associate a built-in security group with a layer on creation;
-     * custom security groups are required only for those layers that need custom
-     * settings.</p> </li> </ul> <p>For more information, see <a
+     * <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with
+     * the stack's layers.</p> <p>AWS OpsWorks Stacks provides a standard set of
+     * built-in security groups, one for each layer, which are associated with layers
+     * by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide
+     * your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
+     * following settings: </p> <ul> <li> <p>True - AWS OpsWorks Stacks automatically
+     * associates the appropriate built-in security group with each layer (default
+     * setting). You can associate additional security groups with a layer after you
+     * create it but you cannot delete the built-in security group.</p> </li> <li>
+     * <p>False - AWS OpsWorks Stacks does not associate built-in security groups with
+     * layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
+     * security groups and associate a security group with each layer that you create.
+     * However, you can still manually associate a built-in security group with a layer
+     * on creation; custom security groups are required only for those layers that need
+     * custom settings.</p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      * a New Stack</a>.</p>
      */
     inline void SetUseOpsworksSecurityGroups(bool value) { m_useOpsworksSecurityGroupsHasBeenSet = true; m_useOpsworksSecurityGroups = value; }
 
     /**
-     * <p>Whether to associate the AWS OpsWorks built-in security groups with the
-     * stack's layers.</p> <p>AWS OpsWorks provides a standard set of built-in security
-     * groups, one for each layer, which are associated with layers by default. With
-     * <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom
-     * security groups. <code>UseOpsworksSecurityGroups</code> has the following
-     * settings: </p> <ul> <li> <p>True - AWS OpsWorks automatically associates the
-     * appropriate built-in security group with each layer (default setting). You can
-     * associate additional security groups with a layer after you create it but you
-     * cannot delete the built-in security group.</p> </li> <li> <p>False - AWS
-     * OpsWorks does not associate built-in security groups with layers. You must
-     * create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and
-     * associate a security group with each layer that you create. However, you can
-     * still manually associate a built-in security group with a layer on creation;
-     * custom security groups are required only for those layers that need custom
-     * settings.</p> </li> </ul> <p>For more information, see <a
+     * <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with
+     * the stack's layers.</p> <p>AWS OpsWorks Stacks provides a standard set of
+     * built-in security groups, one for each layer, which are associated with layers
+     * by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide
+     * your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
+     * following settings: </p> <ul> <li> <p>True - AWS OpsWorks Stacks automatically
+     * associates the appropriate built-in security group with each layer (default
+     * setting). You can associate additional security groups with a layer after you
+     * create it but you cannot delete the built-in security group.</p> </li> <li>
+     * <p>False - AWS OpsWorks Stacks does not associate built-in security groups with
+     * layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2)
+     * security groups and associate a security group with each layer that you create.
+     * However, you can still manually associate a built-in security group with a layer
+     * on creation; custom security groups are required only for those layers that need
+     * custom settings.</p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      * a New Stack</a>.</p>
      */
@@ -1251,13 +1266,13 @@ namespace Model
     inline void SetCustomCookbooksSource(const Source& value) { m_customCookbooksSourceHasBeenSet = true; m_customCookbooksSource = value; }
 
     
-    inline void SetCustomCookbooksSource(Source&& value) { m_customCookbooksSourceHasBeenSet = true; m_customCookbooksSource = value; }
+    inline void SetCustomCookbooksSource(Source&& value) { m_customCookbooksSourceHasBeenSet = true; m_customCookbooksSource = std::move(value); }
 
     
     inline CloneStackRequest& WithCustomCookbooksSource(const Source& value) { SetCustomCookbooksSource(value); return *this;}
 
     
-    inline CloneStackRequest& WithCustomCookbooksSource(Source&& value) { SetCustomCookbooksSource(value); return *this;}
+    inline CloneStackRequest& WithCustomCookbooksSource(Source&& value) { SetCustomCookbooksSource(std::move(value)); return *this;}
 
     /**
      * <p>A default Amazon EC2 key pair name. The default value is none. If you specify
@@ -1302,7 +1317,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
      * create an instance</a>. </p>
      */
-    inline void SetDefaultSshKeyName(Aws::String&& value) { m_defaultSshKeyNameHasBeenSet = true; m_defaultSshKeyName = value; }
+    inline void SetDefaultSshKeyName(Aws::String&& value) { m_defaultSshKeyNameHasBeenSet = true; m_defaultSshKeyName = std::move(value); }
 
     /**
      * <p>A default Amazon EC2 key pair name. The default value is none. If you specify
@@ -1347,7 +1362,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
      * create an instance</a>. </p>
      */
-    inline CloneStackRequest& WithDefaultSshKeyName(Aws::String&& value) { SetDefaultSshKeyName(value); return *this;}
+    inline CloneStackRequest& WithDefaultSshKeyName(Aws::String&& value) { SetDefaultSshKeyName(std::move(value)); return *this;}
 
     /**
      * <p>A default Amazon EC2 key pair name. The default value is none. If you specify
@@ -1392,7 +1407,7 @@ namespace Model
     /**
      * <p>A list of source stack app IDs to be included in the cloned stack.</p>
      */
-    inline void SetCloneAppIds(Aws::Vector<Aws::String>&& value) { m_cloneAppIdsHasBeenSet = true; m_cloneAppIds = value; }
+    inline void SetCloneAppIds(Aws::Vector<Aws::String>&& value) { m_cloneAppIdsHasBeenSet = true; m_cloneAppIds = std::move(value); }
 
     /**
      * <p>A list of source stack app IDs to be included in the cloned stack.</p>
@@ -1402,7 +1417,7 @@ namespace Model
     /**
      * <p>A list of source stack app IDs to be included in the cloned stack.</p>
      */
-    inline CloneStackRequest& WithCloneAppIds(Aws::Vector<Aws::String>&& value) { SetCloneAppIds(value); return *this;}
+    inline CloneStackRequest& WithCloneAppIds(Aws::Vector<Aws::String>&& value) { SetCloneAppIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of source stack app IDs to be included in the cloned stack.</p>
@@ -1412,7 +1427,7 @@ namespace Model
     /**
      * <p>A list of source stack app IDs to be included in the cloned stack.</p>
      */
-    inline CloneStackRequest& AddCloneAppIds(Aws::String&& value) { m_cloneAppIdsHasBeenSet = true; m_cloneAppIds.push_back(value); return *this; }
+    inline CloneStackRequest& AddCloneAppIds(Aws::String&& value) { m_cloneAppIdsHasBeenSet = true; m_cloneAppIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of source stack app IDs to be included in the cloned stack.</p>
@@ -1444,7 +1459,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.</p>
      */
-    inline void SetDefaultRootDeviceType(RootDeviceType&& value) { m_defaultRootDeviceTypeHasBeenSet = true; m_defaultRootDeviceType = value; }
+    inline void SetDefaultRootDeviceType(RootDeviceType&& value) { m_defaultRootDeviceTypeHasBeenSet = true; m_defaultRootDeviceType = std::move(value); }
 
     /**
      * <p>The default root device type. This value is used by default for all instances
@@ -1462,117 +1477,131 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.</p>
      */
-    inline CloneStackRequest& WithDefaultRootDeviceType(RootDeviceType&& value) { SetDefaultRootDeviceType(value); return *this;}
+    inline CloneStackRequest& WithDefaultRootDeviceType(RootDeviceType&& value) { SetDefaultRootDeviceType(std::move(value)); return *this;}
 
     /**
-     * <p>The default AWS OpsWorks agent version. You have the following options:</p>
-     * <ul> <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS
-     * OpsWorks automatically installs new agent versions on the stack's instances as
-     * soon as they are available.</p> </li> <li> <p>Fixed version - Set this parameter
-     * to your preferred agent version. To update the agent version, you must edit the
-     * stack configuration and specify a new version. AWS OpsWorks then automatically
-     * installs that version on the stack's instances.</p> </li> </ul> <p>The default
-     * setting is <code>LATEST</code>. To specify an agent version, you must use the
-     * complete version number, not the abbreviated number shown on the console. For a
-     * list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
-     * <note> <p>You can also specify an agent version when you create or update an
-     * instance, which overrides the stack's default setting.</p> </note>
+     * <p>The default AWS OpsWorks Stacks agent version. You have the following
+     * options:</p> <ul> <li> <p>Auto-update - Set this parameter to
+     * <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent
+     * versions on the stack's instances as soon as they are available.</p> </li> <li>
+     * <p>Fixed version - Set this parameter to your preferred agent version. To update
+     * the agent version, you must edit the stack configuration and specify a new
+     * version. AWS OpsWorks Stacks then automatically installs that version on the
+     * stack's instances.</p> </li> </ul> <p>The default setting is
+     * <code>LATEST</code>. To specify an agent version, you must use the complete
+     * version number, not the abbreviated number shown on the console. For a list of
+     * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
+     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * when you create or update an instance, which overrides the stack's default
+     * setting.</p> </note>
      */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
 
     /**
-     * <p>The default AWS OpsWorks agent version. You have the following options:</p>
-     * <ul> <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS
-     * OpsWorks automatically installs new agent versions on the stack's instances as
-     * soon as they are available.</p> </li> <li> <p>Fixed version - Set this parameter
-     * to your preferred agent version. To update the agent version, you must edit the
-     * stack configuration and specify a new version. AWS OpsWorks then automatically
-     * installs that version on the stack's instances.</p> </li> </ul> <p>The default
-     * setting is <code>LATEST</code>. To specify an agent version, you must use the
-     * complete version number, not the abbreviated number shown on the console. For a
-     * list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
-     * <note> <p>You can also specify an agent version when you create or update an
-     * instance, which overrides the stack's default setting.</p> </note>
+     * <p>The default AWS OpsWorks Stacks agent version. You have the following
+     * options:</p> <ul> <li> <p>Auto-update - Set this parameter to
+     * <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent
+     * versions on the stack's instances as soon as they are available.</p> </li> <li>
+     * <p>Fixed version - Set this parameter to your preferred agent version. To update
+     * the agent version, you must edit the stack configuration and specify a new
+     * version. AWS OpsWorks Stacks then automatically installs that version on the
+     * stack's instances.</p> </li> </ul> <p>The default setting is
+     * <code>LATEST</code>. To specify an agent version, you must use the complete
+     * version number, not the abbreviated number shown on the console. For a list of
+     * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
+     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * when you create or update an instance, which overrides the stack's default
+     * setting.</p> </note>
      */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
     /**
-     * <p>The default AWS OpsWorks agent version. You have the following options:</p>
-     * <ul> <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS
-     * OpsWorks automatically installs new agent versions on the stack's instances as
-     * soon as they are available.</p> </li> <li> <p>Fixed version - Set this parameter
-     * to your preferred agent version. To update the agent version, you must edit the
-     * stack configuration and specify a new version. AWS OpsWorks then automatically
-     * installs that version on the stack's instances.</p> </li> </ul> <p>The default
-     * setting is <code>LATEST</code>. To specify an agent version, you must use the
-     * complete version number, not the abbreviated number shown on the console. For a
-     * list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
-     * <note> <p>You can also specify an agent version when you create or update an
-     * instance, which overrides the stack's default setting.</p> </note>
+     * <p>The default AWS OpsWorks Stacks agent version. You have the following
+     * options:</p> <ul> <li> <p>Auto-update - Set this parameter to
+     * <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent
+     * versions on the stack's instances as soon as they are available.</p> </li> <li>
+     * <p>Fixed version - Set this parameter to your preferred agent version. To update
+     * the agent version, you must edit the stack configuration and specify a new
+     * version. AWS OpsWorks Stacks then automatically installs that version on the
+     * stack's instances.</p> </li> </ul> <p>The default setting is
+     * <code>LATEST</code>. To specify an agent version, you must use the complete
+     * version number, not the abbreviated number shown on the console. For a list of
+     * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
+     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * when you create or update an instance, which overrides the stack's default
+     * setting.</p> </note>
      */
-    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
+    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
 
     /**
-     * <p>The default AWS OpsWorks agent version. You have the following options:</p>
-     * <ul> <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS
-     * OpsWorks automatically installs new agent versions on the stack's instances as
-     * soon as they are available.</p> </li> <li> <p>Fixed version - Set this parameter
-     * to your preferred agent version. To update the agent version, you must edit the
-     * stack configuration and specify a new version. AWS OpsWorks then automatically
-     * installs that version on the stack's instances.</p> </li> </ul> <p>The default
-     * setting is <code>LATEST</code>. To specify an agent version, you must use the
-     * complete version number, not the abbreviated number shown on the console. For a
-     * list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
-     * <note> <p>You can also specify an agent version when you create or update an
-     * instance, which overrides the stack's default setting.</p> </note>
+     * <p>The default AWS OpsWorks Stacks agent version. You have the following
+     * options:</p> <ul> <li> <p>Auto-update - Set this parameter to
+     * <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent
+     * versions on the stack's instances as soon as they are available.</p> </li> <li>
+     * <p>Fixed version - Set this parameter to your preferred agent version. To update
+     * the agent version, you must edit the stack configuration and specify a new
+     * version. AWS OpsWorks Stacks then automatically installs that version on the
+     * stack's instances.</p> </li> </ul> <p>The default setting is
+     * <code>LATEST</code>. To specify an agent version, you must use the complete
+     * version number, not the abbreviated number shown on the console. For a list of
+     * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
+     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * when you create or update an instance, which overrides the stack's default
+     * setting.</p> </note>
      */
     inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
 
     /**
-     * <p>The default AWS OpsWorks agent version. You have the following options:</p>
-     * <ul> <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS
-     * OpsWorks automatically installs new agent versions on the stack's instances as
-     * soon as they are available.</p> </li> <li> <p>Fixed version - Set this parameter
-     * to your preferred agent version. To update the agent version, you must edit the
-     * stack configuration and specify a new version. AWS OpsWorks then automatically
-     * installs that version on the stack's instances.</p> </li> </ul> <p>The default
-     * setting is <code>LATEST</code>. To specify an agent version, you must use the
-     * complete version number, not the abbreviated number shown on the console. For a
-     * list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
-     * <note> <p>You can also specify an agent version when you create or update an
-     * instance, which overrides the stack's default setting.</p> </note>
+     * <p>The default AWS OpsWorks Stacks agent version. You have the following
+     * options:</p> <ul> <li> <p>Auto-update - Set this parameter to
+     * <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent
+     * versions on the stack's instances as soon as they are available.</p> </li> <li>
+     * <p>Fixed version - Set this parameter to your preferred agent version. To update
+     * the agent version, you must edit the stack configuration and specify a new
+     * version. AWS OpsWorks Stacks then automatically installs that version on the
+     * stack's instances.</p> </li> </ul> <p>The default setting is
+     * <code>LATEST</code>. To specify an agent version, you must use the complete
+     * version number, not the abbreviated number shown on the console. For a list of
+     * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
+     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * when you create or update an instance, which overrides the stack's default
+     * setting.</p> </note>
      */
     inline CloneStackRequest& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
 
     /**
-     * <p>The default AWS OpsWorks agent version. You have the following options:</p>
-     * <ul> <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS
-     * OpsWorks automatically installs new agent versions on the stack's instances as
-     * soon as they are available.</p> </li> <li> <p>Fixed version - Set this parameter
-     * to your preferred agent version. To update the agent version, you must edit the
-     * stack configuration and specify a new version. AWS OpsWorks then automatically
-     * installs that version on the stack's instances.</p> </li> </ul> <p>The default
-     * setting is <code>LATEST</code>. To specify an agent version, you must use the
-     * complete version number, not the abbreviated number shown on the console. For a
-     * list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
-     * <note> <p>You can also specify an agent version when you create or update an
-     * instance, which overrides the stack's default setting.</p> </note>
+     * <p>The default AWS OpsWorks Stacks agent version. You have the following
+     * options:</p> <ul> <li> <p>Auto-update - Set this parameter to
+     * <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent
+     * versions on the stack's instances as soon as they are available.</p> </li> <li>
+     * <p>Fixed version - Set this parameter to your preferred agent version. To update
+     * the agent version, you must edit the stack configuration and specify a new
+     * version. AWS OpsWorks Stacks then automatically installs that version on the
+     * stack's instances.</p> </li> </ul> <p>The default setting is
+     * <code>LATEST</code>. To specify an agent version, you must use the complete
+     * version number, not the abbreviated number shown on the console. For a list of
+     * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
+     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * when you create or update an instance, which overrides the stack's default
+     * setting.</p> </note>
      */
-    inline CloneStackRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(value); return *this;}
+    inline CloneStackRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The default AWS OpsWorks agent version. You have the following options:</p>
-     * <ul> <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS
-     * OpsWorks automatically installs new agent versions on the stack's instances as
-     * soon as they are available.</p> </li> <li> <p>Fixed version - Set this parameter
-     * to your preferred agent version. To update the agent version, you must edit the
-     * stack configuration and specify a new version. AWS OpsWorks then automatically
-     * installs that version on the stack's instances.</p> </li> </ul> <p>The default
-     * setting is <code>LATEST</code>. To specify an agent version, you must use the
-     * complete version number, not the abbreviated number shown on the console. For a
-     * list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
-     * <note> <p>You can also specify an agent version when you create or update an
-     * instance, which overrides the stack's default setting.</p> </note>
+     * <p>The default AWS OpsWorks Stacks agent version. You have the following
+     * options:</p> <ul> <li> <p>Auto-update - Set this parameter to
+     * <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent
+     * versions on the stack's instances as soon as they are available.</p> </li> <li>
+     * <p>Fixed version - Set this parameter to your preferred agent version. To update
+     * the agent version, you must edit the stack configuration and specify a new
+     * version. AWS OpsWorks Stacks then automatically installs that version on the
+     * stack's instances.</p> </li> </ul> <p>The default setting is
+     * <code>LATEST</code>. To specify an agent version, you must use the complete
+     * version number, not the abbreviated number shown on the console. For a list of
+     * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
+     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * when you create or update an instance, which overrides the stack's default
+     * setting.</p> </note>
      */
     inline CloneStackRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 

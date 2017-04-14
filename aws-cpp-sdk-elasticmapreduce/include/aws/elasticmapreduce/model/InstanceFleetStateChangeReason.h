@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/InstanceFleetStateChangeReasonCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A code corresponding to the reason the state change occurred.</p>
      */
-    inline void SetCode(InstanceFleetStateChangeReasonCode&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(InstanceFleetStateChangeReasonCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>A code corresponding to the reason the state change occurred.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A code corresponding to the reason the state change occurred.</p>
      */
-    inline InstanceFleetStateChangeReason& WithCode(InstanceFleetStateChangeReasonCode&& value) { SetCode(value); return *this;}
+    inline InstanceFleetStateChangeReason& WithCode(InstanceFleetStateChangeReasonCode&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>An explanatory message.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>An explanatory message.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>An explanatory message.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>An explanatory message.</p>
      */
-    inline InstanceFleetStateChangeReason& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline InstanceFleetStateChangeReason& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>An explanatory message.</p>

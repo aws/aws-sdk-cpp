@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/model/RecordDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * pointer to the ProvisionedProduct object that the request is modifying, and a
      * list of any errors that the request encountered.</p>
      */
-    inline void SetRecordDetail(RecordDetail&& value) { m_recordDetail = value; }
+    inline void SetRecordDetail(RecordDetail&& value) { m_recordDetail = std::move(value); }
 
     /**
      * <p>The detailed result of the <a>UpdateProvisionedProduct</a> request,
@@ -77,7 +78,7 @@ namespace Model
      * pointer to the ProvisionedProduct object that the request is modifying, and a
      * list of any errors that the request encountered.</p>
      */
-    inline UpdateProvisionedProductResult& WithRecordDetail(RecordDetail&& value) { SetRecordDetail(value); return *this;}
+    inline UpdateProvisionedProductResult& WithRecordDetail(RecordDetail&& value) { SetRecordDetail(std::move(value)); return *this;}
 
   private:
     RecordDetail m_recordDetail;

@@ -17,6 +17,7 @@
 #include <aws/elasticbeanstalk/model/PlatformSummary.h>
 #include <aws/elasticbeanstalk/model/Builder.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>Detailed information about the new version of the custom platform.</p>
      */
-    inline void SetPlatformSummary(PlatformSummary&& value) { m_platformSummary = value; }
+    inline void SetPlatformSummary(PlatformSummary&& value) { m_platformSummary = std::move(value); }
 
     /**
      * <p>Detailed information about the new version of the custom platform.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Detailed information about the new version of the custom platform.</p>
      */
-    inline CreatePlatformVersionResult& WithPlatformSummary(PlatformSummary&& value) { SetPlatformSummary(value); return *this;}
+    inline CreatePlatformVersionResult& WithPlatformSummary(PlatformSummary&& value) { SetPlatformSummary(std::move(value)); return *this;}
 
     /**
      * <p>The builder used to create the custom platform.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The builder used to create the custom platform.</p>
      */
-    inline void SetBuilder(Builder&& value) { m_builder = value; }
+    inline void SetBuilder(Builder&& value) { m_builder = std::move(value); }
 
     /**
      * <p>The builder used to create the custom platform.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The builder used to create the custom platform.</p>
      */
-    inline CreatePlatformVersionResult& WithBuilder(Builder&& value) { SetBuilder(value); return *this;}
+    inline CreatePlatformVersionResult& WithBuilder(Builder&& value) { SetBuilder(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -98,13 +99,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CreatePlatformVersionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CreatePlatformVersionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CreatePlatformVersionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     PlatformSummary m_platformSummary;

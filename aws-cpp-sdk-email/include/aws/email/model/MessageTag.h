@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
      * <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the tag. The name must:</p> <ul> <li> <p>Contain only ASCII
@@ -91,7 +92,7 @@ namespace Model
      * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
      * <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
-    inline MessageTag& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline MessageTag& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the tag. The name must:</p> <ul> <li> <p>Contain only ASCII
@@ -119,7 +120,7 @@ namespace Model
      * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
      * <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of the tag. The value must:</p> <ul> <li> <p>Contain only ASCII
@@ -140,7 +141,7 @@ namespace Model
      * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
      * <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
-    inline MessageTag& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline MessageTag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the tag. The value must:</p> <ul> <li> <p>Contain only ASCII

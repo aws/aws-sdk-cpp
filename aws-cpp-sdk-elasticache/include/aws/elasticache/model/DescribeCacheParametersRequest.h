@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The name of a specific cache parameter group to return details for.</p>
      */
-    inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
+    inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of a specific cache parameter group to return details for.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The name of a specific cache parameter group to return details for.</p>
      */
-    inline DescribeCacheParametersRequest& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(value); return *this;}
+    inline DescribeCacheParametersRequest& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a specific cache parameter group to return details for.</p>
@@ -92,7 +93,7 @@ namespace Model
      * <p>The parameter types to return.</p> <p>Valid values: <code>user</code> |
      * <code>system</code> | <code>engine-default</code> </p>
      */
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
      * <p>The parameter types to return.</p> <p>Valid values: <code>user</code> |
@@ -110,7 +111,7 @@ namespace Model
      * <p>The parameter types to return.</p> <p>Valid values: <code>user</code> |
      * <code>system</code> | <code>engine-default</code> </p>
      */
-    inline DescribeCacheParametersRequest& WithSource(Aws::String&& value) { SetSource(value); return *this;}
+    inline DescribeCacheParametersRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
      * <p>The parameter types to return.</p> <p>Valid values: <code>user</code> |
@@ -164,7 +165,7 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
@@ -188,7 +189,7 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.</p>
      */
-    inline DescribeCacheParametersRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeCacheParametersRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for

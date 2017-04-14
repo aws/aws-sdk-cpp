@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/model/IamInstanceProfileSpecification.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The IAM instance profile.</p>
      */
-    inline void SetIamInstanceProfile(IamInstanceProfileSpecification&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
+    inline void SetIamInstanceProfile(IamInstanceProfileSpecification&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
 
     /**
      * <p>The IAM instance profile.</p>
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The IAM instance profile.</p>
      */
-    inline ReplaceIamInstanceProfileAssociationRequest& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(value); return *this;}
+    inline ReplaceIamInstanceProfileAssociationRequest& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the existing IAM instance profile association.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The ID of the existing IAM instance profile association.</p>
      */
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
 
     /**
      * <p>The ID of the existing IAM instance profile association.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The ID of the existing IAM instance profile association.</p>
      */
-    inline ReplaceIamInstanceProfileAssociationRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(value); return *this;}
+    inline ReplaceIamInstanceProfileAssociationRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the existing IAM instance profile association.</p>

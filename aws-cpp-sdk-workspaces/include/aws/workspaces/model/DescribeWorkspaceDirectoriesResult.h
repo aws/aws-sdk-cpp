@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces/model/WorkspaceDirectory.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>An array of structures that contain information about the directories.</p>
      */
-    inline void SetDirectories(Aws::Vector<WorkspaceDirectory>&& value) { m_directories = value; }
+    inline void SetDirectories(Aws::Vector<WorkspaceDirectory>&& value) { m_directories = std::move(value); }
 
     /**
      * <p>An array of structures that contain information about the directories.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>An array of structures that contain information about the directories.</p>
      */
-    inline DescribeWorkspaceDirectoriesResult& WithDirectories(Aws::Vector<WorkspaceDirectory>&& value) { SetDirectories(value); return *this;}
+    inline DescribeWorkspaceDirectoriesResult& WithDirectories(Aws::Vector<WorkspaceDirectory>&& value) { SetDirectories(std::move(value)); return *this;}
 
     /**
      * <p>An array of structures that contain information about the directories.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>An array of structures that contain information about the directories.</p>
      */
-    inline DescribeWorkspaceDirectoriesResult& AddDirectories(WorkspaceDirectory&& value) { m_directories.push_back(value); return *this; }
+    inline DescribeWorkspaceDirectoriesResult& AddDirectories(WorkspaceDirectory&& value) { m_directories.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If not null, more results are available. Pass this value for the
@@ -104,7 +105,7 @@ namespace Model
      * retrieve the next set of items. This token is valid for one day and must be used
      * within that time frame.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If not null, more results are available. Pass this value for the
@@ -128,7 +129,7 @@ namespace Model
      * retrieve the next set of items. This token is valid for one day and must be used
      * within that time frame.</p>
      */
-    inline DescribeWorkspaceDirectoriesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeWorkspaceDirectoriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If not null, more results are available. Pass this value for the

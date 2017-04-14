@@ -17,6 +17,7 @@
 #include <aws/elasticfilesystem/EFSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>ID of the file system for which to create the mount target.</p>
      */
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
+    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
 
     /**
      * <p>ID of the file system for which to create the mount target.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>ID of the file system for which to create the mount target.</p>
      */
-    inline CreateMountTargetRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(value); return *this;}
+    inline CreateMountTargetRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
 
     /**
      * <p>ID of the file system for which to create the mount target.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>ID of the subnet to add the mount target in.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>ID of the subnet to add the mount target in.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>ID of the subnet to add the mount target in.</p>
      */
-    inline CreateMountTargetRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+    inline CreateMountTargetRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>ID of the subnet to add the mount target in.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>Valid IPv4 address within the address range of the specified subnet.</p>
      */
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
+    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
      * <p>Valid IPv4 address within the address range of the specified subnet.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>Valid IPv4 address within the address range of the specified subnet.</p>
      */
-    inline CreateMountTargetRequest& WithIpAddress(Aws::String&& value) { SetIpAddress(value); return *this;}
+    inline CreateMountTargetRequest& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>Valid IPv4 address within the address range of the specified subnet.</p>
@@ -158,7 +159,7 @@ namespace Model
      * <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>.
      * These must be for the same VPC as subnet specified.</p>
      */
-    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
+    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
      * <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>.
@@ -170,7 +171,7 @@ namespace Model
      * <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>.
      * These must be for the same VPC as subnet specified.</p>
      */
-    inline CreateMountTargetRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(value); return *this;}
+    inline CreateMountTargetRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>.
@@ -182,7 +183,7 @@ namespace Model
      * <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>.
      * These must be for the same VPC as subnet specified.</p>
      */
-    inline CreateMountTargetRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+    inline CreateMountTargetRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>.

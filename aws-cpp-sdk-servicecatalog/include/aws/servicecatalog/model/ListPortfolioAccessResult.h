@@ -16,6 +16,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>List of account IDs associated with access to the portfolio.</p>
      */
-    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIds = value; }
+    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIds = std::move(value); }
 
     /**
      * <p>List of account IDs associated with access to the portfolio.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>List of account IDs associated with access to the portfolio.</p>
      */
-    inline ListPortfolioAccessResult& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(value); return *this;}
+    inline ListPortfolioAccessResult& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
 
     /**
      * <p>List of account IDs associated with access to the portfolio.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>List of account IDs associated with access to the portfolio.</p>
      */
-    inline ListPortfolioAccessResult& AddAccountIds(Aws::String&& value) { m_accountIds.push_back(value); return *this; }
+    inline ListPortfolioAccessResult& AddAccountIds(Aws::String&& value) { m_accountIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>List of account IDs associated with access to the portfolio.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>The page token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -114,7 +115,7 @@ namespace Model
      * <p>The page token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline ListPortfolioAccessResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline ListPortfolioAccessResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>The page token to use to retrieve the next page of results for this

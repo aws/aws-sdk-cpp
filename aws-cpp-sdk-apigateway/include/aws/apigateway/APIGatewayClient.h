@@ -28,6 +28,7 @@
 #include <aws/apigateway/model/CreateDocumentationVersionResult.h>
 #include <aws/apigateway/model/CreateDomainNameResult.h>
 #include <aws/apigateway/model/CreateModelResult.h>
+#include <aws/apigateway/model/CreateRequestValidatorResult.h>
 #include <aws/apigateway/model/CreateResourceResult.h>
 #include <aws/apigateway/model/CreateRestApiResult.h>
 #include <aws/apigateway/model/CreateStageResult.h>
@@ -59,6 +60,8 @@
 #include <aws/apigateway/model/GetModelResult.h>
 #include <aws/apigateway/model/GetModelTemplateResult.h>
 #include <aws/apigateway/model/GetModelsResult.h>
+#include <aws/apigateway/model/GetRequestValidatorResult.h>
+#include <aws/apigateway/model/GetRequestValidatorsResult.h>
 #include <aws/apigateway/model/GetResourceResult.h>
 #include <aws/apigateway/model/GetResourcesResult.h>
 #include <aws/apigateway/model/GetRestApiResult.h>
@@ -97,6 +100,7 @@
 #include <aws/apigateway/model/UpdateMethodResult.h>
 #include <aws/apigateway/model/UpdateMethodResponseResult.h>
 #include <aws/apigateway/model/UpdateModelResult.h>
+#include <aws/apigateway/model/UpdateRequestValidatorResult.h>
 #include <aws/apigateway/model/UpdateResourceResult.h>
 #include <aws/apigateway/model/UpdateRestApiResult.h>
 #include <aws/apigateway/model/UpdateStageResult.h>
@@ -156,6 +160,7 @@ namespace Model
         class CreateDocumentationVersionRequest;
         class CreateDomainNameRequest;
         class CreateModelRequest;
+        class CreateRequestValidatorRequest;
         class CreateResourceRequest;
         class CreateRestApiRequest;
         class CreateStageRequest;
@@ -174,6 +179,7 @@ namespace Model
         class DeleteMethodRequest;
         class DeleteMethodResponseRequest;
         class DeleteModelRequest;
+        class DeleteRequestValidatorRequest;
         class DeleteResourceRequest;
         class DeleteRestApiRequest;
         class DeleteStageRequest;
@@ -207,6 +213,8 @@ namespace Model
         class GetModelRequest;
         class GetModelTemplateRequest;
         class GetModelsRequest;
+        class GetRequestValidatorRequest;
+        class GetRequestValidatorsRequest;
         class GetResourceRequest;
         class GetResourcesRequest;
         class GetRestApiRequest;
@@ -245,6 +253,7 @@ namespace Model
         class UpdateMethodRequest;
         class UpdateMethodResponseRequest;
         class UpdateModelRequest;
+        class UpdateRequestValidatorRequest;
         class UpdateResourceRequest;
         class UpdateRestApiRequest;
         class UpdateStageRequest;
@@ -259,6 +268,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateDocumentationVersionResult, Aws::Client::AWSError<APIGatewayErrors>> CreateDocumentationVersionOutcome;
         typedef Aws::Utils::Outcome<CreateDomainNameResult, Aws::Client::AWSError<APIGatewayErrors>> CreateDomainNameOutcome;
         typedef Aws::Utils::Outcome<CreateModelResult, Aws::Client::AWSError<APIGatewayErrors>> CreateModelOutcome;
+        typedef Aws::Utils::Outcome<CreateRequestValidatorResult, Aws::Client::AWSError<APIGatewayErrors>> CreateRequestValidatorOutcome;
         typedef Aws::Utils::Outcome<CreateResourceResult, Aws::Client::AWSError<APIGatewayErrors>> CreateResourceOutcome;
         typedef Aws::Utils::Outcome<CreateRestApiResult, Aws::Client::AWSError<APIGatewayErrors>> CreateRestApiOutcome;
         typedef Aws::Utils::Outcome<CreateStageResult, Aws::Client::AWSError<APIGatewayErrors>> CreateStageOutcome;
@@ -277,6 +287,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteMethodOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteMethodResponseOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteModelOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteRequestValidatorOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteResourceOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteRestApiOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteStageOutcome;
@@ -310,6 +321,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetModelResult, Aws::Client::AWSError<APIGatewayErrors>> GetModelOutcome;
         typedef Aws::Utils::Outcome<GetModelTemplateResult, Aws::Client::AWSError<APIGatewayErrors>> GetModelTemplateOutcome;
         typedef Aws::Utils::Outcome<GetModelsResult, Aws::Client::AWSError<APIGatewayErrors>> GetModelsOutcome;
+        typedef Aws::Utils::Outcome<GetRequestValidatorResult, Aws::Client::AWSError<APIGatewayErrors>> GetRequestValidatorOutcome;
+        typedef Aws::Utils::Outcome<GetRequestValidatorsResult, Aws::Client::AWSError<APIGatewayErrors>> GetRequestValidatorsOutcome;
         typedef Aws::Utils::Outcome<GetResourceResult, Aws::Client::AWSError<APIGatewayErrors>> GetResourceOutcome;
         typedef Aws::Utils::Outcome<GetResourcesResult, Aws::Client::AWSError<APIGatewayErrors>> GetResourcesOutcome;
         typedef Aws::Utils::Outcome<GetRestApiResult, Aws::Client::AWSError<APIGatewayErrors>> GetRestApiOutcome;
@@ -348,6 +361,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateMethodResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateMethodOutcome;
         typedef Aws::Utils::Outcome<UpdateMethodResponseResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateMethodResponseOutcome;
         typedef Aws::Utils::Outcome<UpdateModelResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateModelOutcome;
+        typedef Aws::Utils::Outcome<UpdateRequestValidatorResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateRequestValidatorOutcome;
         typedef Aws::Utils::Outcome<UpdateResourceResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateRestApiResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateRestApiOutcome;
         typedef Aws::Utils::Outcome<UpdateStageResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateStageOutcome;
@@ -362,6 +376,7 @@ namespace Model
         typedef std::future<CreateDocumentationVersionOutcome> CreateDocumentationVersionOutcomeCallable;
         typedef std::future<CreateDomainNameOutcome> CreateDomainNameOutcomeCallable;
         typedef std::future<CreateModelOutcome> CreateModelOutcomeCallable;
+        typedef std::future<CreateRequestValidatorOutcome> CreateRequestValidatorOutcomeCallable;
         typedef std::future<CreateResourceOutcome> CreateResourceOutcomeCallable;
         typedef std::future<CreateRestApiOutcome> CreateRestApiOutcomeCallable;
         typedef std::future<CreateStageOutcome> CreateStageOutcomeCallable;
@@ -380,6 +395,7 @@ namespace Model
         typedef std::future<DeleteMethodOutcome> DeleteMethodOutcomeCallable;
         typedef std::future<DeleteMethodResponseOutcome> DeleteMethodResponseOutcomeCallable;
         typedef std::future<DeleteModelOutcome> DeleteModelOutcomeCallable;
+        typedef std::future<DeleteRequestValidatorOutcome> DeleteRequestValidatorOutcomeCallable;
         typedef std::future<DeleteResourceOutcome> DeleteResourceOutcomeCallable;
         typedef std::future<DeleteRestApiOutcome> DeleteRestApiOutcomeCallable;
         typedef std::future<DeleteStageOutcome> DeleteStageOutcomeCallable;
@@ -413,6 +429,8 @@ namespace Model
         typedef std::future<GetModelOutcome> GetModelOutcomeCallable;
         typedef std::future<GetModelTemplateOutcome> GetModelTemplateOutcomeCallable;
         typedef std::future<GetModelsOutcome> GetModelsOutcomeCallable;
+        typedef std::future<GetRequestValidatorOutcome> GetRequestValidatorOutcomeCallable;
+        typedef std::future<GetRequestValidatorsOutcome> GetRequestValidatorsOutcomeCallable;
         typedef std::future<GetResourceOutcome> GetResourceOutcomeCallable;
         typedef std::future<GetResourcesOutcome> GetResourcesOutcomeCallable;
         typedef std::future<GetRestApiOutcome> GetRestApiOutcomeCallable;
@@ -451,6 +469,7 @@ namespace Model
         typedef std::future<UpdateMethodOutcome> UpdateMethodOutcomeCallable;
         typedef std::future<UpdateMethodResponseOutcome> UpdateMethodResponseOutcomeCallable;
         typedef std::future<UpdateModelOutcome> UpdateModelOutcomeCallable;
+        typedef std::future<UpdateRequestValidatorOutcome> UpdateRequestValidatorOutcomeCallable;
         typedef std::future<UpdateResourceOutcome> UpdateResourceOutcomeCallable;
         typedef std::future<UpdateRestApiOutcome> UpdateRestApiOutcomeCallable;
         typedef std::future<UpdateStageOutcome> UpdateStageOutcomeCallable;
@@ -468,6 +487,7 @@ namespace Model
     typedef std::function<void(const APIGatewayClient*, const Model::CreateDocumentationVersionRequest&, const Model::CreateDocumentationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDocumentationVersionResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::CreateDomainNameRequest&, const Model::CreateDomainNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainNameResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::CreateModelRequest&, const Model::CreateModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::CreateRequestValidatorRequest&, const Model::CreateRequestValidatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRequestValidatorResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::CreateResourceRequest&, const Model::CreateResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResourceResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::CreateRestApiRequest&, const Model::CreateRestApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRestApiResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::CreateStageRequest&, const Model::CreateStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStageResponseReceivedHandler;
@@ -486,6 +506,7 @@ namespace Model
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteMethodRequest&, const Model::DeleteMethodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMethodResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteMethodResponseRequest&, const Model::DeleteMethodResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMethodResponseResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteModelRequest&, const Model::DeleteModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::DeleteRequestValidatorRequest&, const Model::DeleteRequestValidatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRequestValidatorResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteResourceRequest&, const Model::DeleteResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourceResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteRestApiRequest&, const Model::DeleteRestApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRestApiResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteStageRequest&, const Model::DeleteStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStageResponseReceivedHandler;
@@ -519,6 +540,8 @@ namespace Model
     typedef std::function<void(const APIGatewayClient*, const Model::GetModelRequest&, const Model::GetModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetModelTemplateRequest&, const Model::GetModelTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelTemplateResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetModelsRequest&, const Model::GetModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelsResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::GetRequestValidatorRequest&, const Model::GetRequestValidatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRequestValidatorResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::GetRequestValidatorsRequest&, const Model::GetRequestValidatorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRequestValidatorsResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetResourceRequest&, const Model::GetResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetResourcesRequest&, const Model::GetResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcesResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetRestApiRequest&, const Model::GetRestApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRestApiResponseReceivedHandler;
@@ -557,6 +580,7 @@ namespace Model
     typedef std::function<void(const APIGatewayClient*, const Model::UpdateMethodRequest&, const Model::UpdateMethodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMethodResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::UpdateMethodResponseRequest&, const Model::UpdateMethodResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMethodResponseResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::UpdateModelRequest&, const Model::UpdateModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateModelResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::UpdateRequestValidatorRequest&, const Model::UpdateRequestValidatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRequestValidatorResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::UpdateResourceRequest&, const Model::UpdateResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::UpdateRestApiRequest&, const Model::UpdateRestApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRestApiResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::UpdateStageRequest&, const Model::UpdateStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStageResponseReceivedHandler;
@@ -804,6 +828,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateModelAsync(const Model::CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a <a>ReqeustValidator</a> of a given <a>RestApi</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRequestValidator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRequestValidatorOutcome CreateRequestValidator(const Model::CreateRequestValidatorRequest& request) const;
+
+        /**
+         * <p>Creates a <a>ReqeustValidator</a> of a given <a>RestApi</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRequestValidator">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateRequestValidatorOutcomeCallable CreateRequestValidatorCallable(const Model::CreateRequestValidatorRequest& request) const;
+
+        /**
+         * <p>Creates a <a>ReqeustValidator</a> of a given <a>RestApi</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRequestValidator">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateRequestValidatorAsync(const Model::CreateRequestValidatorRequest& request, const CreateRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a <a>Resource</a> resource.</p><p><h3>See Also:</h3>   <a
@@ -1266,6 +1318,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteModelAsync(const Model::DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a <a>RequestValidator</a> of a given <a>RestApi</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRequestValidator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRequestValidatorOutcome DeleteRequestValidator(const Model::DeleteRequestValidatorRequest& request) const;
+
+        /**
+         * <p>Deletes a <a>RequestValidator</a> of a given <a>RestApi</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRequestValidator">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteRequestValidatorOutcomeCallable DeleteRequestValidatorCallable(const Model::DeleteRequestValidatorRequest& request) const;
+
+        /**
+         * <p>Deletes a <a>RequestValidator</a> of a given <a>RestApi</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRequestValidator">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteRequestValidatorAsync(const Model::DeleteRequestValidatorRequest& request, const DeleteRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a <a>Resource</a> resource.</p><p><h3>See Also:</h3>   <a
@@ -2127,6 +2207,62 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetModelsAsync(const Model::GetModelsRequest& request, const GetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRequestValidatorOutcome GetRequestValidator(const Model::GetRequestValidatorRequest& request) const;
+
+        /**
+         * <p>Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidator">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetRequestValidatorOutcomeCallable GetRequestValidatorCallable(const Model::GetRequestValidatorRequest& request) const;
+
+        /**
+         * <p>Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidator">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetRequestValidatorAsync(const Model::GetRequestValidatorRequest& request, const GetRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the <a>RequestValidators</a> collection of a given
+         * <a>RestApi</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidators">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRequestValidatorsOutcome GetRequestValidators(const Model::GetRequestValidatorsRequest& request) const;
+
+        /**
+         * <p>Gets the <a>RequestValidators</a> collection of a given
+         * <a>RestApi</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidators">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetRequestValidatorsOutcomeCallable GetRequestValidatorsCallable(const Model::GetRequestValidatorsRequest& request) const;
+
+        /**
+         * <p>Gets the <a>RequestValidators</a> collection of a given
+         * <a>RestApi</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidators">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetRequestValidatorsAsync(const Model::GetRequestValidatorsRequest& request, const GetRequestValidatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists information about a resource.</p><p><h3>See Also:</h3>   <a
@@ -3136,6 +3272,34 @@ namespace Model
         virtual void UpdateModelAsync(const Model::UpdateModelRequest& request, const UpdateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRequestValidator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRequestValidatorOutcome UpdateRequestValidator(const Model::UpdateRequestValidatorRequest& request) const;
+
+        /**
+         * <p>Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRequestValidator">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateRequestValidatorOutcomeCallable UpdateRequestValidatorCallable(const Model::UpdateRequestValidatorRequest& request) const;
+
+        /**
+         * <p>Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRequestValidator">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateRequestValidatorAsync(const Model::UpdateRequestValidatorRequest& request, const UpdateRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Changes information about a <a>Resource</a> resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateResource">AWS
@@ -3282,6 +3446,7 @@ namespace Model
         void CreateDocumentationVersionAsyncHelper(const Model::CreateDocumentationVersionRequest& request, const CreateDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDomainNameAsyncHelper(const Model::CreateDomainNameRequest& request, const CreateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateModelAsyncHelper(const Model::CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateRequestValidatorAsyncHelper(const Model::CreateRequestValidatorRequest& request, const CreateRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateResourceAsyncHelper(const Model::CreateResourceRequest& request, const CreateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRestApiAsyncHelper(const Model::CreateRestApiRequest& request, const CreateRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStageAsyncHelper(const Model::CreateStageRequest& request, const CreateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3300,6 +3465,7 @@ namespace Model
         void DeleteMethodAsyncHelper(const Model::DeleteMethodRequest& request, const DeleteMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMethodResponseAsyncHelper(const Model::DeleteMethodResponseRequest& request, const DeleteMethodResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteModelAsyncHelper(const Model::DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteRequestValidatorAsyncHelper(const Model::DeleteRequestValidatorRequest& request, const DeleteRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteResourceAsyncHelper(const Model::DeleteResourceRequest& request, const DeleteResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRestApiAsyncHelper(const Model::DeleteRestApiRequest& request, const DeleteRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStageAsyncHelper(const Model::DeleteStageRequest& request, const DeleteStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3333,6 +3499,8 @@ namespace Model
         void GetModelAsyncHelper(const Model::GetModelRequest& request, const GetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetModelTemplateAsyncHelper(const Model::GetModelTemplateRequest& request, const GetModelTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetModelsAsyncHelper(const Model::GetModelsRequest& request, const GetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetRequestValidatorAsyncHelper(const Model::GetRequestValidatorRequest& request, const GetRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetRequestValidatorsAsyncHelper(const Model::GetRequestValidatorsRequest& request, const GetRequestValidatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourceAsyncHelper(const Model::GetResourceRequest& request, const GetResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourcesAsyncHelper(const Model::GetResourcesRequest& request, const GetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRestApiAsyncHelper(const Model::GetRestApiRequest& request, const GetRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3371,6 +3539,7 @@ namespace Model
         void UpdateMethodAsyncHelper(const Model::UpdateMethodRequest& request, const UpdateMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMethodResponseAsyncHelper(const Model::UpdateMethodResponseRequest& request, const UpdateMethodResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateModelAsyncHelper(const Model::UpdateModelRequest& request, const UpdateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateRequestValidatorAsyncHelper(const Model::UpdateRequestValidatorRequest& request, const UpdateRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResourceAsyncHelper(const Model::UpdateResourceRequest& request, const UpdateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRestApiAsyncHelper(const Model::UpdateRestApiRequest& request, const UpdateRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateStageAsyncHelper(const Model::UpdateStageRequest& request, const UpdateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

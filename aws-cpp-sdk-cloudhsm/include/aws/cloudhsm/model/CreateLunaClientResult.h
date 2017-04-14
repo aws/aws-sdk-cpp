@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ARN of the client.</p>
      */
-    inline void SetClientArn(Aws::String&& value) { m_clientArn = value; }
+    inline void SetClientArn(Aws::String&& value) { m_clientArn = std::move(value); }
 
     /**
      * <p>The ARN of the client.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ARN of the client.</p>
      */
-    inline CreateLunaClientResult& WithClientArn(Aws::String&& value) { SetClientArn(value); return *this;}
+    inline CreateLunaClientResult& WithClientArn(Aws::String&& value) { SetClientArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the client.</p>

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/TemplateStage.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>AWS CloudFormation
      * returns the same template that was used when the stack was created.</p>
      */
-    inline void SetTemplateBody(Aws::String&& value) { m_templateBody = value; }
+    inline void SetTemplateBody(Aws::String&& value) { m_templateBody = std::move(value); }
 
     /**
      * <p>Structure containing the template body. (For more information, go to <a
@@ -93,7 +94,7 @@ namespace Model
      * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>AWS CloudFormation
      * returns the same template that was used when the stack was created.</p>
      */
-    inline GetTemplateResult& WithTemplateBody(Aws::String&& value) { SetTemplateBody(value); return *this;}
+    inline GetTemplateResult& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
 
     /**
      * <p>Structure containing the template body. (For more information, go to <a
@@ -128,7 +129,7 @@ namespace Model
      * AWS CloudFormation finishes creating the change set, the <code>Processed</code>
      * template becomes available.</p>
      */
-    inline void SetStagesAvailable(Aws::Vector<TemplateStage>&& value) { m_stagesAvailable = value; }
+    inline void SetStagesAvailable(Aws::Vector<TemplateStage>&& value) { m_stagesAvailable = std::move(value); }
 
     /**
      * <p>The stage of the template that you can retrieve. For stacks, the
@@ -146,7 +147,7 @@ namespace Model
      * AWS CloudFormation finishes creating the change set, the <code>Processed</code>
      * template becomes available.</p>
      */
-    inline GetTemplateResult& WithStagesAvailable(Aws::Vector<TemplateStage>&& value) { SetStagesAvailable(value); return *this;}
+    inline GetTemplateResult& WithStagesAvailable(Aws::Vector<TemplateStage>&& value) { SetStagesAvailable(std::move(value)); return *this;}
 
     /**
      * <p>The stage of the template that you can retrieve. For stacks, the
@@ -164,7 +165,7 @@ namespace Model
      * AWS CloudFormation finishes creating the change set, the <code>Processed</code>
      * template becomes available.</p>
      */
-    inline GetTemplateResult& AddStagesAvailable(TemplateStage&& value) { m_stagesAvailable.push_back(value); return *this; }
+    inline GetTemplateResult& AddStagesAvailable(TemplateStage&& value) { m_stagesAvailable.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -173,13 +174,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline GetTemplateResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline GetTemplateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline GetTemplateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_templateBody;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The user with whom the MFA device is associated.</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The user with whom the MFA device is associated.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The user with whom the MFA device is associated.</p>
      */
-    inline MFADevice& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline MFADevice& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The user with whom the MFA device is associated.</p>
@@ -99,7 +100,7 @@ namespace Model
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
      * devices, the serial number is the device ARN.</p>
      */
-    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
+    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
@@ -117,7 +118,7 @@ namespace Model
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
      * devices, the serial number is the device ARN.</p>
      */
-    inline MFADevice& WithSerialNumber(Aws::String&& value) { SetSerialNumber(value); return *this;}
+    inline MFADevice& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
@@ -138,7 +139,7 @@ namespace Model
     /**
      * <p>The date when the MFA device was enabled for the user.</p>
      */
-    inline void SetEnableDate(Aws::Utils::DateTime&& value) { m_enableDateHasBeenSet = true; m_enableDate = value; }
+    inline void SetEnableDate(Aws::Utils::DateTime&& value) { m_enableDateHasBeenSet = true; m_enableDate = std::move(value); }
 
     /**
      * <p>The date when the MFA device was enabled for the user.</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>The date when the MFA device was enabled for the user.</p>
      */
-    inline MFADevice& WithEnableDate(Aws::Utils::DateTime&& value) { SetEnableDate(value); return *this;}
+    inline MFADevice& WithEnableDate(Aws::Utils::DateTime&& value) { SetEnableDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_userName;

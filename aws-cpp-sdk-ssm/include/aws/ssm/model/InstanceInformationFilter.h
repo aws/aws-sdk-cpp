@@ -17,6 +17,7 @@
 #include <aws/ssm/model/InstanceInformationFilterKey.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the filter. </p>
      */
-    inline void SetKey(InstanceInformationFilterKey&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(InstanceInformationFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The name of the filter. </p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The name of the filter. </p>
      */
-    inline InstanceInformationFilter& WithKey(InstanceInformationFilterKey&& value) { SetKey(value); return *this;}
+    inline InstanceInformationFilter& WithKey(InstanceInformationFilterKey&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The filter values.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The filter values.</p>
      */
-    inline void SetValueSet(Aws::Vector<Aws::String>&& value) { m_valueSetHasBeenSet = true; m_valueSet = value; }
+    inline void SetValueSet(Aws::Vector<Aws::String>&& value) { m_valueSetHasBeenSet = true; m_valueSet = std::move(value); }
 
     /**
      * <p>The filter values.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The filter values.</p>
      */
-    inline InstanceInformationFilter& WithValueSet(Aws::Vector<Aws::String>&& value) { SetValueSet(value); return *this;}
+    inline InstanceInformationFilter& WithValueSet(Aws::Vector<Aws::String>&& value) { SetValueSet(std::move(value)); return *this;}
 
     /**
      * <p>The filter values.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The filter values.</p>
      */
-    inline InstanceInformationFilter& AddValueSet(Aws::String&& value) { m_valueSetHasBeenSet = true; m_valueSet.push_back(value); return *this; }
+    inline InstanceInformationFilter& AddValueSet(Aws::String&& value) { m_valueSetHasBeenSet = true; m_valueSet.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The filter values.</p>

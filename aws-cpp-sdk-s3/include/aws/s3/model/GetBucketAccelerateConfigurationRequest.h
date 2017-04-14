@@ -16,6 +16,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     /**
      * Name of the bucket for which the accelerate configuration is retrieved.
      */
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * Name of the bucket for which the accelerate configuration is retrieved.
@@ -61,7 +62,7 @@ namespace Model
     /**
      * Name of the bucket for which the accelerate configuration is retrieved.
      */
-    inline GetBucketAccelerateConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline GetBucketAccelerateConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * Name of the bucket for which the accelerate configuration is retrieved.

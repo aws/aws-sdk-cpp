@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the patch baseline that should be used for the patch group.</p>
      */
-    inline void SetBaselineId(Aws::String&& value) { m_baselineId = value; }
+    inline void SetBaselineId(Aws::String&& value) { m_baselineId = std::move(value); }
 
     /**
      * <p>The ID of the patch baseline that should be used for the patch group.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the patch baseline that should be used for the patch group.</p>
      */
-    inline GetPatchBaselineForPatchGroupResult& WithBaselineId(Aws::String&& value) { SetBaselineId(value); return *this;}
+    inline GetPatchBaselineForPatchGroupResult& WithBaselineId(Aws::String&& value) { SetBaselineId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the patch baseline that should be used for the patch group.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The name of the patch group.</p>
      */
-    inline void SetPatchGroup(Aws::String&& value) { m_patchGroup = value; }
+    inline void SetPatchGroup(Aws::String&& value) { m_patchGroup = std::move(value); }
 
     /**
      * <p>The name of the patch group.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The name of the patch group.</p>
      */
-    inline GetPatchBaselineForPatchGroupResult& WithPatchGroup(Aws::String&& value) { SetPatchGroup(value); return *this;}
+    inline GetPatchBaselineForPatchGroupResult& WithPatchGroup(Aws::String&& value) { SetPatchGroup(std::move(value)); return *this;}
 
     /**
      * <p>The name of the patch group.</p>

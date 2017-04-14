@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -33,8 +34,8 @@ namespace Model
 
   /**
    * <p>Describes a load-based auto scaling upscaling or downscaling threshold
-   * configuration, which specifies when AWS OpsWorks starts or stops load-based
-   * instances.</p><p><h3>See Also:</h3>   <a
+   * configuration, which specifies when AWS OpsWorks Stacks starts or stops
+   * load-based instances.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AutoScalingThresholds">AWS
    * API Reference</a></p>
    */
@@ -84,37 +85,37 @@ namespace Model
 
     /**
      * <p>The amount of time (in minutes) after a scaling event occurs that AWS
-     * OpsWorks should ignore metrics and suppress additional scaling events. For
-     * example, AWS OpsWorks adds new instances following an upscaling event but the
-     * instances won't start reducing the load until they have been booted and
+     * OpsWorks Stacks should ignore metrics and suppress additional scaling events.
+     * For example, AWS OpsWorks Stacks adds new instances following an upscaling event
+     * but the instances won't start reducing the load until they have been booted and
      * configured. There is no point in raising additional scaling events during that
      * operation, which typically takes several minutes. <code>IgnoreMetricsTime</code>
-     * allows you to direct AWS OpsWorks to suppress scaling events long enough to get
-     * the new instances online.</p>
+     * allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough
+     * to get the new instances online.</p>
      */
     inline int GetIgnoreMetricsTime() const{ return m_ignoreMetricsTime; }
 
     /**
      * <p>The amount of time (in minutes) after a scaling event occurs that AWS
-     * OpsWorks should ignore metrics and suppress additional scaling events. For
-     * example, AWS OpsWorks adds new instances following an upscaling event but the
-     * instances won't start reducing the load until they have been booted and
+     * OpsWorks Stacks should ignore metrics and suppress additional scaling events.
+     * For example, AWS OpsWorks Stacks adds new instances following an upscaling event
+     * but the instances won't start reducing the load until they have been booted and
      * configured. There is no point in raising additional scaling events during that
      * operation, which typically takes several minutes. <code>IgnoreMetricsTime</code>
-     * allows you to direct AWS OpsWorks to suppress scaling events long enough to get
-     * the new instances online.</p>
+     * allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough
+     * to get the new instances online.</p>
      */
     inline void SetIgnoreMetricsTime(int value) { m_ignoreMetricsTimeHasBeenSet = true; m_ignoreMetricsTime = value; }
 
     /**
      * <p>The amount of time (in minutes) after a scaling event occurs that AWS
-     * OpsWorks should ignore metrics and suppress additional scaling events. For
-     * example, AWS OpsWorks adds new instances following an upscaling event but the
-     * instances won't start reducing the load until they have been booted and
+     * OpsWorks Stacks should ignore metrics and suppress additional scaling events.
+     * For example, AWS OpsWorks Stacks adds new instances following an upscaling event
+     * but the instances won't start reducing the load until they have been booted and
      * configured. There is no point in raising additional scaling events during that
      * operation, which typically takes several minutes. <code>IgnoreMetricsTime</code>
-     * allows you to direct AWS OpsWorks to suppress scaling events long enough to get
-     * the new instances online.</p>
+     * allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough
+     * to get the new instances online.</p>
      */
     inline AutoScalingThresholds& WithIgnoreMetricsTime(int value) { SetIgnoreMetricsTime(value); return *this;}
 
@@ -183,10 +184,10 @@ namespace Model
      * parameter takes a list of up to five alarm names, which are case sensitive and
      * must be in the same region as the stack.</p> <note> <p>To use custom alarms, you
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
-     * You can either have AWS OpsWorks update the role for you when you first use this
-     * feature or you can edit the role manually. For more information, see <a
+     * You can either have AWS OpsWorks Stacks update the role for you when you first
+     * use this feature or you can edit the role manually. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks to Act on Your Behalf</a>.</p> </note>
+     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetAlarms() const{ return m_alarms; }
 
@@ -195,10 +196,10 @@ namespace Model
      * parameter takes a list of up to five alarm names, which are case sensitive and
      * must be in the same region as the stack.</p> <note> <p>To use custom alarms, you
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
-     * You can either have AWS OpsWorks update the role for you when you first use this
-     * feature or you can edit the role manually. For more information, see <a
+     * You can either have AWS OpsWorks Stacks update the role for you when you first
+     * use this feature or you can edit the role manually. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks to Act on Your Behalf</a>.</p> </note>
+     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
      */
     inline void SetAlarms(const Aws::Vector<Aws::String>& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
 
@@ -207,22 +208,22 @@ namespace Model
      * parameter takes a list of up to five alarm names, which are case sensitive and
      * must be in the same region as the stack.</p> <note> <p>To use custom alarms, you
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
-     * You can either have AWS OpsWorks update the role for you when you first use this
-     * feature or you can edit the role manually. For more information, see <a
+     * You can either have AWS OpsWorks Stacks update the role for you when you first
+     * use this feature or you can edit the role manually. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks to Act on Your Behalf</a>.</p> </note>
+     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
      */
-    inline void SetAlarms(Aws::Vector<Aws::String>&& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
+    inline void SetAlarms(Aws::Vector<Aws::String>&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
 
     /**
      * <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
      * parameter takes a list of up to five alarm names, which are case sensitive and
      * must be in the same region as the stack.</p> <note> <p>To use custom alarms, you
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
-     * You can either have AWS OpsWorks update the role for you when you first use this
-     * feature or you can edit the role manually. For more information, see <a
+     * You can either have AWS OpsWorks Stacks update the role for you when you first
+     * use this feature or you can edit the role manually. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks to Act on Your Behalf</a>.</p> </note>
+     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
      */
     inline AutoScalingThresholds& WithAlarms(const Aws::Vector<Aws::String>& value) { SetAlarms(value); return *this;}
 
@@ -231,22 +232,22 @@ namespace Model
      * parameter takes a list of up to five alarm names, which are case sensitive and
      * must be in the same region as the stack.</p> <note> <p>To use custom alarms, you
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
-     * You can either have AWS OpsWorks update the role for you when you first use this
-     * feature or you can edit the role manually. For more information, see <a
+     * You can either have AWS OpsWorks Stacks update the role for you when you first
+     * use this feature or you can edit the role manually. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks to Act on Your Behalf</a>.</p> </note>
+     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
      */
-    inline AutoScalingThresholds& WithAlarms(Aws::Vector<Aws::String>&& value) { SetAlarms(value); return *this;}
+    inline AutoScalingThresholds& WithAlarms(Aws::Vector<Aws::String>&& value) { SetAlarms(std::move(value)); return *this;}
 
     /**
      * <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
      * parameter takes a list of up to five alarm names, which are case sensitive and
      * must be in the same region as the stack.</p> <note> <p>To use custom alarms, you
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
-     * You can either have AWS OpsWorks update the role for you when you first use this
-     * feature or you can edit the role manually. For more information, see <a
+     * You can either have AWS OpsWorks Stacks update the role for you when you first
+     * use this feature or you can edit the role manually. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks to Act on Your Behalf</a>.</p> </note>
+     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
      */
     inline AutoScalingThresholds& AddAlarms(const Aws::String& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(value); return *this; }
 
@@ -255,22 +256,22 @@ namespace Model
      * parameter takes a list of up to five alarm names, which are case sensitive and
      * must be in the same region as the stack.</p> <note> <p>To use custom alarms, you
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
-     * You can either have AWS OpsWorks update the role for you when you first use this
-     * feature or you can edit the role manually. For more information, see <a
+     * You can either have AWS OpsWorks Stacks update the role for you when you first
+     * use this feature or you can edit the role manually. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks to Act on Your Behalf</a>.</p> </note>
+     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
      */
-    inline AutoScalingThresholds& AddAlarms(Aws::String&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(value); return *this; }
+    inline AutoScalingThresholds& AddAlarms(Aws::String&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
      * parameter takes a list of up to five alarm names, which are case sensitive and
      * must be in the same region as the stack.</p> <note> <p>To use custom alarms, you
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
-     * You can either have AWS OpsWorks update the role for you when you first use this
-     * feature or you can edit the role manually. For more information, see <a
+     * You can either have AWS OpsWorks Stacks update the role for you when you first
+     * use this feature or you can edit the role manually. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks to Act on Your Behalf</a>.</p> </note>
+     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
      */
     inline AutoScalingThresholds& AddAlarms(const char* value) { m_alarmsHasBeenSet = true; m_alarms.push_back(value); return *this; }
 

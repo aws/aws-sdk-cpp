@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -107,7 +108,7 @@ namespace Model
      * <p>The instance type size that the Dedicated Host supports (for example,
      * <code>m3.medium</code>).</p>
      */
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type size that the Dedicated Host supports (for example,
@@ -125,7 +126,7 @@ namespace Model
      * <p>The instance type size that the Dedicated Host supports (for example,
      * <code>m3.medium</code>).</p>
      */
-    inline HostProperties& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
+    inline HostProperties& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The instance type size that the Dedicated Host supports (for example,

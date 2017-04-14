@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The topic.</p>
      */
-    inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = value; }
+    inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = std::move(value); }
 
     /**
      * <p>The topic.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The topic.</p>
      */
-    inline ListTopicRulesRequest& WithTopic(Aws::String&& value) { SetTopic(value); return *this;}
+    inline ListTopicRulesRequest& WithTopic(Aws::String&& value) { SetTopic(std::move(value)); return *this;}
 
     /**
      * <p>The topic.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>A token used to retrieve the next value.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>A token used to retrieve the next value.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>A token used to retrieve the next value.</p>
      */
-    inline ListTopicRulesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListTopicRulesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A token used to retrieve the next value.</p>

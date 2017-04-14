@@ -17,6 +17,7 @@
 #include <aws/elasticloadbalancing/ElasticLoadBalancingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
 
     /**
      * <p>The name of the load balancer.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline DeleteLoadBalancerListenersRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
+    inline DeleteLoadBalancerListenersRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the load balancer.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The client port numbers of the listeners.</p>
      */
-    inline void SetLoadBalancerPorts(Aws::Vector<int>&& value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts = value; }
+    inline void SetLoadBalancerPorts(Aws::Vector<int>&& value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts = std::move(value); }
 
     /**
      * <p>The client port numbers of the listeners.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The client port numbers of the listeners.</p>
      */
-    inline DeleteLoadBalancerListenersRequest& WithLoadBalancerPorts(Aws::Vector<int>&& value) { SetLoadBalancerPorts(value); return *this;}
+    inline DeleteLoadBalancerListenersRequest& WithLoadBalancerPorts(Aws::Vector<int>&& value) { SetLoadBalancerPorts(std::move(value)); return *this;}
 
     /**
      * <p>The client port numbers of the listeners.</p>

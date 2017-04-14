@@ -16,6 +16,7 @@
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/acm/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The key-value pairs that define the applied tags.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
      * <p>The key-value pairs that define the applied tags.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The key-value pairs that define the applied tags.</p>
      */
-    inline ListTagsForCertificateResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline ListTagsForCertificateResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The key-value pairs that define the applied tags.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The key-value pairs that define the applied tags.</p>
      */
-    inline ListTagsForCertificateResult& AddTags(Tag&& value) { m_tags.push_back(value); return *this; }
+    inline ListTagsForCertificateResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Tag> m_tags;

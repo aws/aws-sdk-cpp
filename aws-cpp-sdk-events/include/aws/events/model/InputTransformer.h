@@ -16,6 +16,7 @@
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
      * where each value is a JSON path.</p> </xhtml>
      */
-    inline void SetInputPathsMap(Aws::Map<Aws::String, Aws::String>&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap = value; }
+    inline void SetInputPathsMap(Aws::Map<Aws::String, Aws::String>&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap = std::move(value); }
 
     /**
      * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
@@ -84,7 +85,7 @@ namespace Model
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
      * where each value is a JSON path.</p> </xhtml>
      */
-    inline InputTransformer& WithInputPathsMap(Aws::Map<Aws::String, Aws::String>&& value) { SetInputPathsMap(value); return *this;}
+    inline InputTransformer& WithInputPathsMap(Aws::Map<Aws::String, Aws::String>&& value) { SetInputPathsMap(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
@@ -92,7 +93,7 @@ namespace Model
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
      * where each value is a JSON path.</p> </xhtml>
      */
-    inline InputTransformer& AddInputPathsMap(const Aws::String& key, const Aws::String& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap[key] = value; return *this; }
+    inline InputTransformer& AddInputPathsMap(const Aws::String& key, const Aws::String& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, value); return *this; }
 
     /**
      * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
@@ -100,7 +101,7 @@ namespace Model
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
      * where each value is a JSON path.</p> </xhtml>
      */
-    inline InputTransformer& AddInputPathsMap(Aws::String&& key, const Aws::String& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap[key] = value; return *this; }
+    inline InputTransformer& AddInputPathsMap(Aws::String&& key, const Aws::String& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(std::move(key), value); return *this; }
 
     /**
      * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
@@ -108,7 +109,7 @@ namespace Model
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
      * where each value is a JSON path.</p> </xhtml>
      */
-    inline InputTransformer& AddInputPathsMap(const Aws::String& key, Aws::String&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap[key] = value; return *this; }
+    inline InputTransformer& AddInputPathsMap(const Aws::String& key, Aws::String&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, std::move(value)); return *this; }
 
     /**
      * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
@@ -116,7 +117,7 @@ namespace Model
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
      * where each value is a JSON path.</p> </xhtml>
      */
-    inline InputTransformer& AddInputPathsMap(Aws::String&& key, Aws::String&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap[key] = value; return *this; }
+    inline InputTransformer& AddInputPathsMap(Aws::String&& key, Aws::String&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
@@ -124,7 +125,7 @@ namespace Model
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
      * where each value is a JSON path.</p> </xhtml>
      */
-    inline InputTransformer& AddInputPathsMap(const char* key, Aws::String&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap[key] = value; return *this; }
+    inline InputTransformer& AddInputPathsMap(const char* key, Aws::String&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, std::move(value)); return *this; }
 
     /**
      * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
@@ -132,7 +133,7 @@ namespace Model
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
      * where each value is a JSON path.</p> </xhtml>
      */
-    inline InputTransformer& AddInputPathsMap(Aws::String&& key, const char* value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap[key] = value; return *this; }
+    inline InputTransformer& AddInputPathsMap(Aws::String&& key, const char* value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(std::move(key), value); return *this; }
 
     /**
      * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
@@ -140,7 +141,7 @@ namespace Model
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
      * where each value is a JSON path.</p> </xhtml>
      */
-    inline InputTransformer& AddInputPathsMap(const char* key, const char* value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap[key] = value; return *this; }
+    inline InputTransformer& AddInputPathsMap(const char* key, const char* value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, value); return *this; }
 
     /**
      * <zonbook> <simpara>Input template where you can use the values of the keys from
@@ -167,7 +168,7 @@ namespace Model
      * from <code>InputPathsMap</code> to customize the data sent to the target.</p>
      * </xhtml>
      */
-    inline void SetInputTemplate(Aws::String&& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = value; }
+    inline void SetInputTemplate(Aws::String&& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = std::move(value); }
 
     /**
      * <zonbook> <simpara>Input template where you can use the values of the keys from
@@ -194,7 +195,7 @@ namespace Model
      * from <code>InputPathsMap</code> to customize the data sent to the target.</p>
      * </xhtml>
      */
-    inline InputTransformer& WithInputTemplate(Aws::String&& value) { SetInputTemplate(value); return *this;}
+    inline InputTransformer& WithInputTemplate(Aws::String&& value) { SetInputTemplate(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>Input template where you can use the values of the keys from

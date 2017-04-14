@@ -17,6 +17,7 @@
 #include <aws/cloudhsm/CloudHSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudhsm/model/SubscriptionType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
      */
-    inline CreateHsmRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+    inline CreateHsmRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The SSH public key to install on the HSM.</p>
      */
-    inline void SetSshKey(Aws::String&& value) { m_sshKeyHasBeenSet = true; m_sshKey = value; }
+    inline void SetSshKey(Aws::String&& value) { m_sshKeyHasBeenSet = true; m_sshKey = std::move(value); }
 
     /**
      * <p>The SSH public key to install on the HSM.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The SSH public key to install on the HSM.</p>
      */
-    inline CreateHsmRequest& WithSshKey(Aws::String&& value) { SetSshKey(value); return *this;}
+    inline CreateHsmRequest& WithSshKey(Aws::String&& value) { SetSshKey(std::move(value)); return *this;}
 
     /**
      * <p>The SSH public key to install on the HSM.</p>
@@ -129,7 +130,7 @@ namespace Model
      * specified, an IP address will be randomly chosen from the CIDR range of the
      * subnet.</p>
      */
-    inline void SetEniIp(Aws::String&& value) { m_eniIpHasBeenSet = true; m_eniIp = value; }
+    inline void SetEniIp(Aws::String&& value) { m_eniIpHasBeenSet = true; m_eniIp = std::move(value); }
 
     /**
      * <p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not
@@ -150,7 +151,7 @@ namespace Model
      * specified, an IP address will be randomly chosen from the CIDR range of the
      * subnet.</p>
      */
-    inline CreateHsmRequest& WithEniIp(Aws::String&& value) { SetEniIp(value); return *this;}
+    inline CreateHsmRequest& WithEniIp(Aws::String&& value) { SetEniIp(std::move(value)); return *this;}
 
     /**
      * <p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not
@@ -175,7 +176,7 @@ namespace Model
      * <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI
      * on your behalf.</p>
      */
-    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
+    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
     /**
      * <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI
@@ -193,7 +194,7 @@ namespace Model
      * <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI
      * on your behalf.</p>
      */
-    inline CreateHsmRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(value); return *this;}
+    inline CreateHsmRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI
@@ -214,7 +215,7 @@ namespace Model
     /**
      * <p>The external ID from <b>IamRoleArn</b>, if present.</p>
      */
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
+    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
 
     /**
      * <p>The external ID from <b>IamRoleArn</b>, if present.</p>
@@ -229,7 +230,7 @@ namespace Model
     /**
      * <p>The external ID from <b>IamRoleArn</b>, if present.</p>
      */
-    inline CreateHsmRequest& WithExternalId(Aws::String&& value) { SetExternalId(value); return *this;}
+    inline CreateHsmRequest& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
     /**
      * <p>The external ID from <b>IamRoleArn</b>, if present.</p>
@@ -243,13 +244,13 @@ namespace Model
     inline void SetSubscriptionType(const SubscriptionType& value) { m_subscriptionTypeHasBeenSet = true; m_subscriptionType = value; }
 
     
-    inline void SetSubscriptionType(SubscriptionType&& value) { m_subscriptionTypeHasBeenSet = true; m_subscriptionType = value; }
+    inline void SetSubscriptionType(SubscriptionType&& value) { m_subscriptionTypeHasBeenSet = true; m_subscriptionType = std::move(value); }
 
     
     inline CreateHsmRequest& WithSubscriptionType(const SubscriptionType& value) { SetSubscriptionType(value); return *this;}
 
     
-    inline CreateHsmRequest& WithSubscriptionType(SubscriptionType&& value) { SetSubscriptionType(value); return *this;}
+    inline CreateHsmRequest& WithSubscriptionType(SubscriptionType&& value) { SetSubscriptionType(std::move(value)); return *this;}
 
     /**
      * <p>A user-defined token to ensure idempotence. Subsequent calls to this
@@ -267,7 +268,7 @@ namespace Model
      * <p>A user-defined token to ensure idempotence. Subsequent calls to this
      * operation with the same token will be ignored.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>A user-defined token to ensure idempotence. Subsequent calls to this
@@ -285,7 +286,7 @@ namespace Model
      * <p>A user-defined token to ensure idempotence. Subsequent calls to this
      * operation with the same token will be ignored.</p>
      */
-    inline CreateHsmRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline CreateHsmRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>A user-defined token to ensure idempotence. Subsequent calls to this
@@ -309,7 +310,7 @@ namespace Model
      * <p>The IP address for the syslog monitoring server. The AWS CloudHSM service
      * only supports one syslog monitoring server.</p>
      */
-    inline void SetSyslogIp(Aws::String&& value) { m_syslogIpHasBeenSet = true; m_syslogIp = value; }
+    inline void SetSyslogIp(Aws::String&& value) { m_syslogIpHasBeenSet = true; m_syslogIp = std::move(value); }
 
     /**
      * <p>The IP address for the syslog monitoring server. The AWS CloudHSM service
@@ -327,7 +328,7 @@ namespace Model
      * <p>The IP address for the syslog monitoring server. The AWS CloudHSM service
      * only supports one syslog monitoring server.</p>
      */
-    inline CreateHsmRequest& WithSyslogIp(Aws::String&& value) { SetSyslogIp(value); return *this;}
+    inline CreateHsmRequest& WithSyslogIp(Aws::String&& value) { SetSyslogIp(std::move(value)); return *this;}
 
     /**
      * <p>The IP address for the syslog monitoring server. The AWS CloudHSM service

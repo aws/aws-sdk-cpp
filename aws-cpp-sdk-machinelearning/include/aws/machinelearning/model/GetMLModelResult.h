@@ -20,6 +20,7 @@
 #include <aws/machinelearning/model/RealtimeEndpointInfo.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/machinelearning/model/MLModelType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * timestamp="20160328T151251-0700">,<?oxy_insert_end> which is same as the
      * <code>MLModelId</code> in the request.</p>
      */
-    inline void SetMLModelId(Aws::String&& value) { m_mLModelId = value; }
+    inline void SetMLModelId(Aws::String&& value) { m_mLModelId = std::move(value); }
 
     /**
      * <p>The MLModel ID<?oxy_insert_start author="annbech"
@@ -90,7 +91,7 @@ namespace Model
      * timestamp="20160328T151251-0700">,<?oxy_insert_end> which is same as the
      * <code>MLModelId</code> in the request.</p>
      */
-    inline GetMLModelResult& WithMLModelId(Aws::String&& value) { SetMLModelId(value); return *this;}
+    inline GetMLModelResult& WithMLModelId(Aws::String&& value) { SetMLModelId(std::move(value)); return *this;}
 
     /**
      * <p>The MLModel ID<?oxy_insert_start author="annbech"
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The ID of the training <code>DataSource</code>.</p>
      */
-    inline void SetTrainingDataSourceId(Aws::String&& value) { m_trainingDataSourceId = value; }
+    inline void SetTrainingDataSourceId(Aws::String&& value) { m_trainingDataSourceId = std::move(value); }
 
     /**
      * <p>The ID of the training <code>DataSource</code>.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The ID of the training <code>DataSource</code>.</p>
      */
-    inline GetMLModelResult& WithTrainingDataSourceId(Aws::String&& value) { SetTrainingDataSourceId(value); return *this;}
+    inline GetMLModelResult& WithTrainingDataSourceId(Aws::String&& value) { SetTrainingDataSourceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the training <code>DataSource</code>.</p>
@@ -153,7 +154,7 @@ namespace Model
      * account type can be either an AWS root account or an AWS Identity and Access
      * Management (IAM) user account.</p>
      */
-    inline void SetCreatedByIamUser(Aws::String&& value) { m_createdByIamUser = value; }
+    inline void SetCreatedByIamUser(Aws::String&& value) { m_createdByIamUser = std::move(value); }
 
     /**
      * <p>The AWS user account from which the <code>MLModel</code> was created. The
@@ -174,7 +175,7 @@ namespace Model
      * account type can be either an AWS root account or an AWS Identity and Access
      * Management (IAM) user account.</p>
      */
-    inline GetMLModelResult& WithCreatedByIamUser(Aws::String&& value) { SetCreatedByIamUser(value); return *this;}
+    inline GetMLModelResult& WithCreatedByIamUser(Aws::String&& value) { SetCreatedByIamUser(std::move(value)); return *this;}
 
     /**
      * <p>The AWS user account from which the <code>MLModel</code> was created. The
@@ -199,7 +200,7 @@ namespace Model
      * <p>The time that the <code>MLModel</code> was created. The time is expressed in
      * epoch time.</p>
      */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = value; }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
 
     /**
      * <p>The time that the <code>MLModel</code> was created. The time is expressed in
@@ -211,7 +212,7 @@ namespace Model
      * <p>The time that the <code>MLModel</code> was created. The time is expressed in
      * epoch time.</p>
      */
-    inline GetMLModelResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
+    inline GetMLModelResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
      * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
@@ -229,7 +230,7 @@ namespace Model
      * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
      * expressed in epoch time.</p>
      */
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = value; }
+    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = std::move(value); }
 
     /**
      * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
@@ -241,7 +242,7 @@ namespace Model
      * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
      * expressed in epoch time.</p>
      */
-    inline GetMLModelResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(value); return *this;}
+    inline GetMLModelResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
@@ -256,7 +257,7 @@ namespace Model
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_name = value; }
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
@@ -271,7 +272,7 @@ namespace Model
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
      */
-    inline GetMLModelResult& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline GetMLModelResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
@@ -312,7 +313,7 @@ namespace Model
      * request completed successfully.</li> <li> <code>DELETED</code> - The
      * <code>MLModel</code> is marked as deleted. It isn't usable.</li> </ul>
      */
-    inline void SetStatus(EntityStatus&& value) { m_status = value; }
+    inline void SetStatus(EntityStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The current status of the <code>MLModel</code>. This element can have one of
@@ -336,7 +337,7 @@ namespace Model
      * request completed successfully.</li> <li> <code>DELETED</code> - The
      * <code>MLModel</code> is marked as deleted. It isn't usable.</li> </ul>
      */
-    inline GetMLModelResult& WithStatus(EntityStatus&& value) { SetStatus(value); return *this;}
+    inline GetMLModelResult& WithStatus(EntityStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     
     inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
@@ -360,7 +361,7 @@ namespace Model
     /**
      * <p>The current endpoint of the <code>MLModel</code></p>
      */
-    inline void SetEndpointInfo(RealtimeEndpointInfo&& value) { m_endpointInfo = value; }
+    inline void SetEndpointInfo(RealtimeEndpointInfo&& value) { m_endpointInfo = std::move(value); }
 
     /**
      * <p>The current endpoint of the <code>MLModel</code></p>
@@ -370,7 +371,7 @@ namespace Model
     /**
      * <p>The current endpoint of the <code>MLModel</code></p>
      */
-    inline GetMLModelResult& WithEndpointInfo(RealtimeEndpointInfo&& value) { SetEndpointInfo(value); return *this;}
+    inline GetMLModelResult& WithEndpointInfo(RealtimeEndpointInfo&& value) { SetEndpointInfo(std::move(value)); return *this;}
 
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
@@ -472,7 +473,7 @@ namespace Model
      * The default is to not use L2 normalization. This parameter can't be used when
      * <code>L1</code> is specified. Use this parameter sparingly.</p> </li> </ul>
      */
-    inline void SetTrainingParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_trainingParameters = value; }
+    inline void SetTrainingParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_trainingParameters = std::move(value); }
 
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
@@ -540,7 +541,7 @@ namespace Model
      * The default is to not use L2 normalization. This parameter can't be used when
      * <code>L1</code> is specified. Use this parameter sparingly.</p> </li> </ul>
      */
-    inline GetMLModelResult& WithTrainingParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetTrainingParameters(value); return *this;}
+    inline GetMLModelResult& WithTrainingParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetTrainingParameters(std::move(value)); return *this;}
 
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
@@ -574,7 +575,7 @@ namespace Model
      * The default is to not use L2 normalization. This parameter can't be used when
      * <code>L1</code> is specified. Use this parameter sparingly.</p> </li> </ul>
      */
-    inline GetMLModelResult& AddTrainingParameters(const Aws::String& key, const Aws::String& value) { m_trainingParameters[key] = value; return *this; }
+    inline GetMLModelResult& AddTrainingParameters(const Aws::String& key, const Aws::String& value) { m_trainingParameters.emplace(key, value); return *this; }
 
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
@@ -608,7 +609,7 @@ namespace Model
      * The default is to not use L2 normalization. This parameter can't be used when
      * <code>L1</code> is specified. Use this parameter sparingly.</p> </li> </ul>
      */
-    inline GetMLModelResult& AddTrainingParameters(Aws::String&& key, const Aws::String& value) { m_trainingParameters[key] = value; return *this; }
+    inline GetMLModelResult& AddTrainingParameters(Aws::String&& key, const Aws::String& value) { m_trainingParameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
@@ -642,7 +643,7 @@ namespace Model
      * The default is to not use L2 normalization. This parameter can't be used when
      * <code>L1</code> is specified. Use this parameter sparingly.</p> </li> </ul>
      */
-    inline GetMLModelResult& AddTrainingParameters(const Aws::String& key, Aws::String&& value) { m_trainingParameters[key] = value; return *this; }
+    inline GetMLModelResult& AddTrainingParameters(const Aws::String& key, Aws::String&& value) { m_trainingParameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
@@ -676,7 +677,7 @@ namespace Model
      * The default is to not use L2 normalization. This parameter can't be used when
      * <code>L1</code> is specified. Use this parameter sparingly.</p> </li> </ul>
      */
-    inline GetMLModelResult& AddTrainingParameters(Aws::String&& key, Aws::String&& value) { m_trainingParameters[key] = value; return *this; }
+    inline GetMLModelResult& AddTrainingParameters(Aws::String&& key, Aws::String&& value) { m_trainingParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
@@ -710,7 +711,7 @@ namespace Model
      * The default is to not use L2 normalization. This parameter can't be used when
      * <code>L1</code> is specified. Use this parameter sparingly.</p> </li> </ul>
      */
-    inline GetMLModelResult& AddTrainingParameters(const char* key, Aws::String&& value) { m_trainingParameters[key] = value; return *this; }
+    inline GetMLModelResult& AddTrainingParameters(const char* key, Aws::String&& value) { m_trainingParameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
@@ -744,7 +745,7 @@ namespace Model
      * The default is to not use L2 normalization. This parameter can't be used when
      * <code>L1</code> is specified. Use this parameter sparingly.</p> </li> </ul>
      */
-    inline GetMLModelResult& AddTrainingParameters(Aws::String&& key, const char* value) { m_trainingParameters[key] = value; return *this; }
+    inline GetMLModelResult& AddTrainingParameters(Aws::String&& key, const char* value) { m_trainingParameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
@@ -778,7 +779,7 @@ namespace Model
      * The default is to not use L2 normalization. This parameter can't be used when
      * <code>L1</code> is specified. Use this parameter sparingly.</p> </li> </ul>
      */
-    inline GetMLModelResult& AddTrainingParameters(const char* key, const char* value) { m_trainingParameters[key] = value; return *this; }
+    inline GetMLModelResult& AddTrainingParameters(const char* key, const char* value) { m_trainingParameters.emplace(key, value); return *this; }
 
     /**
      * <p>The location of the data file or directory in Amazon Simple Storage Service
@@ -796,7 +797,7 @@ namespace Model
      * <p>The location of the data file or directory in Amazon Simple Storage Service
      * (Amazon S3).</p>
      */
-    inline void SetInputDataLocationS3(Aws::String&& value) { m_inputDataLocationS3 = value; }
+    inline void SetInputDataLocationS3(Aws::String&& value) { m_inputDataLocationS3 = std::move(value); }
 
     /**
      * <p>The location of the data file or directory in Amazon Simple Storage Service
@@ -814,7 +815,7 @@ namespace Model
      * <p>The location of the data file or directory in Amazon Simple Storage Service
      * (Amazon S3).</p>
      */
-    inline GetMLModelResult& WithInputDataLocationS3(Aws::String&& value) { SetInputDataLocationS3(value); return *this;}
+    inline GetMLModelResult& WithInputDataLocationS3(Aws::String&& value) { SetInputDataLocationS3(std::move(value)); return *this;}
 
     /**
      * <p>The location of the data file or directory in Amazon Simple Storage Service
@@ -850,7 +851,7 @@ namespace Model
      * <li>MULTICLASS -- Produces one of several possible results. For example, "Is
      * this a HIGH, LOW or MEDIUM risk trade?"</li> </ul>
      */
-    inline void SetMLModelType(MLModelType&& value) { m_mLModelType = value; }
+    inline void SetMLModelType(MLModelType&& value) { m_mLModelType = std::move(value); }
 
     /**
      * <p>Identifies the <code>MLModel</code> category. The following are the available
@@ -870,7 +871,7 @@ namespace Model
      * <li>MULTICLASS -- Produces one of several possible results. For example, "Is
      * this a HIGH, LOW or MEDIUM risk trade?"</li> </ul>
      */
-    inline GetMLModelResult& WithMLModelType(MLModelType&& value) { SetMLModelType(value); return *this;}
+    inline GetMLModelResult& WithMLModelType(MLModelType&& value) { SetMLModelType(std::move(value)); return *this;}
 
     /**
      * <p>The scoring threshold is used in binary classification
@@ -921,7 +922,7 @@ namespace Model
      * <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time
      * is expressed in epoch time.</p>
      */
-    inline void SetScoreThresholdLastUpdatedAt(Aws::Utils::DateTime&& value) { m_scoreThresholdLastUpdatedAt = value; }
+    inline void SetScoreThresholdLastUpdatedAt(Aws::Utils::DateTime&& value) { m_scoreThresholdLastUpdatedAt = std::move(value); }
 
     /**
      * <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time
@@ -933,7 +934,7 @@ namespace Model
      * <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time
      * is expressed in epoch time.</p>
      */
-    inline GetMLModelResult& WithScoreThresholdLastUpdatedAt(Aws::Utils::DateTime&& value) { SetScoreThresholdLastUpdatedAt(value); return *this;}
+    inline GetMLModelResult& WithScoreThresholdLastUpdatedAt(Aws::Utils::DateTime&& value) { SetScoreThresholdLastUpdatedAt(std::move(value)); return *this;}
 
     /**
      * <p>A link to the file that contains logs of the <code>CreateMLModel</code>
@@ -951,7 +952,7 @@ namespace Model
      * <p>A link to the file that contains logs of the <code>CreateMLModel</code>
      * operation.</p>
      */
-    inline void SetLogUri(Aws::String&& value) { m_logUri = value; }
+    inline void SetLogUri(Aws::String&& value) { m_logUri = std::move(value); }
 
     /**
      * <p>A link to the file that contains logs of the <code>CreateMLModel</code>
@@ -969,7 +970,7 @@ namespace Model
      * <p>A link to the file that contains logs of the <code>CreateMLModel</code>
      * operation.</p>
      */
-    inline GetMLModelResult& WithLogUri(Aws::String&& value) { SetLogUri(value); return *this;}
+    inline GetMLModelResult& WithLogUri(Aws::String&& value) { SetLogUri(std::move(value)); return *this;}
 
     /**
      * <p>A link to the file that contains logs of the <code>CreateMLModel</code>
@@ -993,7 +994,7 @@ namespace Model
      * <p>A description of the most recent details about accessing the
      * <code>MLModel</code>.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
 
     /**
      * <p>A description of the most recent details about accessing the
@@ -1011,7 +1012,7 @@ namespace Model
      * <p>A description of the most recent details about accessing the
      * <code>MLModel</code>.</p>
      */
-    inline GetMLModelResult& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline GetMLModelResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>A description of the most recent details about accessing the
@@ -1065,7 +1066,7 @@ namespace Model
      * only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or
      * <code>FAILED</code> state.</p>
      */
-    inline void SetFinishedAt(Aws::Utils::DateTime&& value) { m_finishedAt = value; }
+    inline void SetFinishedAt(Aws::Utils::DateTime&& value) { m_finishedAt = std::move(value); }
 
     /**
      * <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code>
@@ -1081,7 +1082,7 @@ namespace Model
      * only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or
      * <code>FAILED</code> state.</p>
      */
-    inline GetMLModelResult& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(value); return *this;}
+    inline GetMLModelResult& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(std::move(value)); return *this;}
 
     /**
      * <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code>
@@ -1102,7 +1103,7 @@ namespace Model
      * as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the
      * <code>MLModel</code> is in the <code>PENDING</code> state.</p>
      */
-    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAt = value; }
+    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAt = std::move(value); }
 
     /**
      * <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code>
@@ -1116,7 +1117,7 @@ namespace Model
      * as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the
      * <code>MLModel</code> is in the <code>PENDING</code> state.</p>
      */
-    inline GetMLModelResult& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(value); return *this;}
+    inline GetMLModelResult& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
 
     /**
      * <p>The recipe to use when training the <code>MLModel</code>. The
@@ -1143,7 +1144,7 @@ namespace Model
      * training.</p> <note><title>Note</title> <p>This parameter is provided as part of
      * the verbose format.</p></note>
      */
-    inline void SetRecipe(Aws::String&& value) { m_recipe = value; }
+    inline void SetRecipe(Aws::String&& value) { m_recipe = std::move(value); }
 
     /**
      * <p>The recipe to use when training the <code>MLModel</code>. The
@@ -1170,7 +1171,7 @@ namespace Model
      * training.</p> <note><title>Note</title> <p>This parameter is provided as part of
      * the verbose format.</p></note>
      */
-    inline GetMLModelResult& WithRecipe(Aws::String&& value) { SetRecipe(value); return *this;}
+    inline GetMLModelResult& WithRecipe(Aws::String&& value) { SetRecipe(std::move(value)); return *this;}
 
     /**
      * <p>The recipe to use when training the <code>MLModel</code>. The
@@ -1200,7 +1201,7 @@ namespace Model
      * <code>DataSource</code>.</p> <note><title>Note</title> <p>This parameter is
      * provided as part of the verbose format.</p></note>
      */
-    inline void SetSchema(Aws::String&& value) { m_schema = value; }
+    inline void SetSchema(Aws::String&& value) { m_schema = std::move(value); }
 
     /**
      * <p>The schema used by all of the data files referenced by the
@@ -1221,7 +1222,7 @@ namespace Model
      * <code>DataSource</code>.</p> <note><title>Note</title> <p>This parameter is
      * provided as part of the verbose format.</p></note>
      */
-    inline GetMLModelResult& WithSchema(Aws::String&& value) { SetSchema(value); return *this;}
+    inline GetMLModelResult& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
 
     /**
      * <p>The schema used by all of the data files referenced by the

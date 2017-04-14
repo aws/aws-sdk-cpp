@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/HostedZoneConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The ID that Amazon Route 53 assigned to the hosted zone when you created
      * it.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The ID that Amazon Route 53 assigned to the hosted zone when you created
@@ -80,7 +81,7 @@ namespace Model
      * <p>The ID that Amazon Route 53 assigned to the hosted zone when you created
      * it.</p>
      */
-    inline HostedZone& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline HostedZone& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID that Amazon Route 53 assigned to the hosted zone when you created
@@ -113,7 +114,7 @@ namespace Model
      * <code>-</code> (hyphen) and how to specify internationalized domain names, see
      * <a>CreateHostedZone</a>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the domain. For public hosted zones, this is the name that you
@@ -140,7 +141,7 @@ namespace Model
      * <code>-</code> (hyphen) and how to specify internationalized domain names, see
      * <a>CreateHostedZone</a>.</p>
      */
-    inline HostedZone& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline HostedZone& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain. For public hosted zones, this is the name that you
@@ -167,7 +168,7 @@ namespace Model
      * <p>The value that you specified for <code>CallerReference</code> when you
      * created the hosted zone.</p>
      */
-    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
+    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
 
     /**
      * <p>The value that you specified for <code>CallerReference</code> when you
@@ -185,7 +186,7 @@ namespace Model
      * <p>The value that you specified for <code>CallerReference</code> when you
      * created the hosted zone.</p>
      */
-    inline HostedZone& WithCallerReference(Aws::String&& value) { SetCallerReference(value); return *this;}
+    inline HostedZone& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
 
     /**
      * <p>The value that you specified for <code>CallerReference</code> when you
@@ -218,7 +219,7 @@ namespace Model
      * request, the <code>Config</code> and <code>Comment</code> elements don't appear
      * in the response.</p>
      */
-    inline void SetConfig(HostedZoneConfig&& value) { m_configHasBeenSet = true; m_config = value; }
+    inline void SetConfig(HostedZoneConfig&& value) { m_configHasBeenSet = true; m_config = std::move(value); }
 
     /**
      * <p>A complex type that includes the <code>Comment</code> and
@@ -236,7 +237,7 @@ namespace Model
      * request, the <code>Config</code> and <code>Comment</code> elements don't appear
      * in the response.</p>
      */
-    inline HostedZone& WithConfig(HostedZoneConfig&& value) { SetConfig(value); return *this;}
+    inline HostedZone& WithConfig(HostedZoneConfig&& value) { SetConfig(std::move(value)); return *this;}
 
     /**
      * <p>The number of resource record sets in the hosted zone.</p>

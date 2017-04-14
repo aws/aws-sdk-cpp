@@ -16,6 +16,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
      * <p>The name of the log group.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline DescribeMetricFiltersRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
+    inline DescribeMetricFiltersRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the log group.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The prefix to match.</p>
      */
-    inline void SetFilterNamePrefix(Aws::String&& value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix = value; }
+    inline void SetFilterNamePrefix(Aws::String&& value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix = std::move(value); }
 
     /**
      * <p>The prefix to match.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The prefix to match.</p>
      */
-    inline DescribeMetricFiltersRequest& WithFilterNamePrefix(Aws::String&& value) { SetFilterNamePrefix(value); return *this;}
+    inline DescribeMetricFiltersRequest& WithFilterNamePrefix(Aws::String&& value) { SetFilterNamePrefix(std::move(value)); return *this;}
 
     /**
      * <p>The prefix to match.</p>
@@ -121,7 +122,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -139,7 +140,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline DescribeMetricFiltersRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeMetricFiltersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>The name of the CloudWatch metric.</p>
      */
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
      * <p>The name of the CloudWatch metric.</p>
@@ -193,7 +194,7 @@ namespace Model
     /**
      * <p>The name of the CloudWatch metric.</p>
      */
-    inline DescribeMetricFiltersRequest& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
+    inline DescribeMetricFiltersRequest& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the CloudWatch metric.</p>
@@ -213,7 +214,7 @@ namespace Model
     /**
      * <p>The namespace of the CloudWatch metric.</p>
      */
-    inline void SetMetricNamespace(Aws::String&& value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace = value; }
+    inline void SetMetricNamespace(Aws::String&& value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace = std::move(value); }
 
     /**
      * <p>The namespace of the CloudWatch metric.</p>
@@ -228,7 +229,7 @@ namespace Model
     /**
      * <p>The namespace of the CloudWatch metric.</p>
      */
-    inline DescribeMetricFiltersRequest& WithMetricNamespace(Aws::String&& value) { SetMetricNamespace(value); return *this;}
+    inline DescribeMetricFiltersRequest& WithMetricNamespace(Aws::String&& value) { SetMetricNamespace(std::move(value)); return *this;}
 
     /**
      * <p>The namespace of the CloudWatch metric.</p>

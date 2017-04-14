@@ -16,6 +16,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/model/AccessLevelFilterKey.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * federated role of the specified user.</p> <p> <code>User</code> allows results
      * limited to the specified user. </p>
      */
-    inline void SetKey(AccessLevelFilterKey&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(AccessLevelFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>Specifies the access level.</p> <p> <code>Account</code> allows results at
@@ -82,7 +83,7 @@ namespace Model
      * federated role of the specified user.</p> <p> <code>User</code> allows results
      * limited to the specified user. </p>
      */
-    inline AccessLevelFilter& WithKey(AccessLevelFilterKey&& value) { SetKey(value); return *this;}
+    inline AccessLevelFilter& WithKey(AccessLevelFilterKey&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the user to which the access level applies. A value of
@@ -100,7 +101,7 @@ namespace Model
      * <p>Specifies the user to which the access level applies. A value of
      * <code>Self</code> is currently supported.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>Specifies the user to which the access level applies. A value of
@@ -118,7 +119,7 @@ namespace Model
      * <p>Specifies the user to which the access level applies. A value of
      * <code>Self</code> is currently supported.</p>
      */
-    inline AccessLevelFilter& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline AccessLevelFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the user to which the access level applies. A value of

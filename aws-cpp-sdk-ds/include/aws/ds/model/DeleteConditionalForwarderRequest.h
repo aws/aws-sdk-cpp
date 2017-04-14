@@ -16,6 +16,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The directory ID for which you are deleting the conditional forwarder.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>The directory ID for which you are deleting the conditional forwarder.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The directory ID for which you are deleting the conditional forwarder.</p>
      */
-    inline DeleteConditionalForwarderRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline DeleteConditionalForwarderRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>The directory ID for which you are deleting the conditional forwarder.</p>
@@ -89,7 +90,7 @@ namespace Model
      * <p>The fully qualified domain name (FQDN) of the remote domain with which you
      * are deleting the conditional forwarder.</p>
      */
-    inline void SetRemoteDomainName(Aws::String&& value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName = value; }
+    inline void SetRemoteDomainName(Aws::String&& value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName = std::move(value); }
 
     /**
      * <p>The fully qualified domain name (FQDN) of the remote domain with which you
@@ -107,7 +108,7 @@ namespace Model
      * <p>The fully qualified domain name (FQDN) of the remote domain with which you
      * are deleting the conditional forwarder.</p>
      */
-    inline DeleteConditionalForwarderRequest& WithRemoteDomainName(Aws::String&& value) { SetRemoteDomainName(value); return *this;}
+    inline DeleteConditionalForwarderRequest& WithRemoteDomainName(Aws::String&& value) { SetRemoteDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The fully qualified domain name (FQDN) of the remote domain with which you

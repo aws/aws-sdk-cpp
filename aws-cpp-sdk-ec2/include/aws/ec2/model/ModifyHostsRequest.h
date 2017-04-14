@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/AutoPlacement.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
      */
-    inline void SetHostIds(Aws::Vector<Aws::String>&& value) { m_hostIdsHasBeenSet = true; m_hostIds = value; }
+    inline void SetHostIds(Aws::Vector<Aws::String>&& value) { m_hostIdsHasBeenSet = true; m_hostIds = std::move(value); }
 
     /**
      * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
      */
-    inline ModifyHostsRequest& WithHostIds(Aws::Vector<Aws::String>&& value) { SetHostIds(value); return *this;}
+    inline ModifyHostsRequest& WithHostIds(Aws::Vector<Aws::String>&& value) { SetHostIds(std::move(value)); return *this;}
 
     /**
      * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
      */
-    inline ModifyHostsRequest& AddHostIds(Aws::String&& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
+    inline ModifyHostsRequest& AddHostIds(Aws::String&& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>Specify whether to enable or disable auto-placement.</p>
      */
-    inline void SetAutoPlacement(AutoPlacement&& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = value; }
+    inline void SetAutoPlacement(AutoPlacement&& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = std::move(value); }
 
     /**
      * <p>Specify whether to enable or disable auto-placement.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>Specify whether to enable or disable auto-placement.</p>
      */
-    inline ModifyHostsRequest& WithAutoPlacement(AutoPlacement&& value) { SetAutoPlacement(value); return *this;}
+    inline ModifyHostsRequest& WithAutoPlacement(AutoPlacement&& value) { SetAutoPlacement(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_hostIds;

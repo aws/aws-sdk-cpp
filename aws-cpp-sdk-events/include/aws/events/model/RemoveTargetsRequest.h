@@ -17,6 +17,7 @@
 #include <aws/events/CloudWatchEventsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
      * name of the rule.</p> </xhtml>
      */
-    inline void SetRule(Aws::String&& value) { m_ruleHasBeenSet = true; m_rule = value; }
+    inline void SetRule(Aws::String&& value) { m_ruleHasBeenSet = true; m_rule = std::move(value); }
 
     /**
      * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
@@ -70,7 +71,7 @@ namespace Model
      * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
      * name of the rule.</p> </xhtml>
      */
-    inline RemoveTargetsRequest& WithRule(Aws::String&& value) { SetRule(value); return *this;}
+    inline RemoveTargetsRequest& WithRule(Aws::String&& value) { SetRule(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
@@ -97,7 +98,7 @@ namespace Model
      * </zonbook> <xhtml> <p>The IDs of the targets to remove from the rule.</p>
      * </xhtml>
      */
-    inline void SetIds(Aws::Vector<Aws::String>&& value) { m_idsHasBeenSet = true; m_ids = value; }
+    inline void SetIds(Aws::Vector<Aws::String>&& value) { m_idsHasBeenSet = true; m_ids = std::move(value); }
 
     /**
      * <zonbook> <simpara>The IDs of the targets to remove from the rule.</simpara>
@@ -111,7 +112,7 @@ namespace Model
      * </zonbook> <xhtml> <p>The IDs of the targets to remove from the rule.</p>
      * </xhtml>
      */
-    inline RemoveTargetsRequest& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(value); return *this;}
+    inline RemoveTargetsRequest& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The IDs of the targets to remove from the rule.</simpara>
@@ -125,7 +126,7 @@ namespace Model
      * </zonbook> <xhtml> <p>The IDs of the targets to remove from the rule.</p>
      * </xhtml>
      */
-    inline RemoveTargetsRequest& AddIds(Aws::String&& value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
+    inline RemoveTargetsRequest& AddIds(Aws::String&& value) { m_idsHasBeenSet = true; m_ids.push_back(std::move(value)); return *this; }
 
     /**
      * <zonbook> <simpara>The IDs of the targets to remove from the rule.</simpara>

@@ -21,6 +21,7 @@
 #include <aws/swf/model/CloseStatusFilter.h>
 #include <aws/swf/model/WorkflowTypeFilter.h>
 #include <aws/swf/model/TagFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of the domain that contains the workflow executions to list.</p>
      */
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The name of the domain that contains the workflow executions to list.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the domain that contains the workflow executions to list.</p>
      */
-    inline ListClosedWorkflowExecutionsRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+    inline ListClosedWorkflowExecutionsRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain that contains the workflow executions to list.</p>
@@ -103,7 +104,7 @@ namespace Model
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
      * these in a request but not both.</note>
      */
-    inline void SetStartTimeFilter(ExecutionTimeFilter&& value) { m_startTimeFilterHasBeenSet = true; m_startTimeFilter = value; }
+    inline void SetStartTimeFilter(ExecutionTimeFilter&& value) { m_startTimeFilterHasBeenSet = true; m_startTimeFilter = std::move(value); }
 
     /**
      * <p>If specified, the workflow executions are included in the returned results
@@ -123,7 +124,7 @@ namespace Model
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
      * these in a request but not both.</note>
      */
-    inline ListClosedWorkflowExecutionsRequest& WithStartTimeFilter(ExecutionTimeFilter&& value) { SetStartTimeFilter(value); return *this;}
+    inline ListClosedWorkflowExecutionsRequest& WithStartTimeFilter(ExecutionTimeFilter&& value) { SetStartTimeFilter(std::move(value)); return *this;}
 
     /**
      * <p>If specified, the workflow executions are included in the returned results
@@ -153,7 +154,7 @@ namespace Model
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
      * these in a request but not both.</note>
      */
-    inline void SetCloseTimeFilter(ExecutionTimeFilter&& value) { m_closeTimeFilterHasBeenSet = true; m_closeTimeFilter = value; }
+    inline void SetCloseTimeFilter(ExecutionTimeFilter&& value) { m_closeTimeFilterHasBeenSet = true; m_closeTimeFilter = std::move(value); }
 
     /**
      * <p>If specified, the workflow executions are included in the returned results
@@ -173,7 +174,7 @@ namespace Model
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
      * these in a request but not both.</note>
      */
-    inline ListClosedWorkflowExecutionsRequest& WithCloseTimeFilter(ExecutionTimeFilter&& value) { SetCloseTimeFilter(value); return *this;}
+    inline ListClosedWorkflowExecutionsRequest& WithCloseTimeFilter(ExecutionTimeFilter&& value) { SetCloseTimeFilter(std::move(value)); return *this;}
 
     /**
      * <p>If specified, only workflow executions matching the workflow ID specified in
@@ -200,7 +201,7 @@ namespace Model
      * are mutually exclusive. You can specify at most one of these in a
      * request.</note>
      */
-    inline void SetExecutionFilter(WorkflowExecutionFilter&& value) { m_executionFilterHasBeenSet = true; m_executionFilter = value; }
+    inline void SetExecutionFilter(WorkflowExecutionFilter&& value) { m_executionFilterHasBeenSet = true; m_executionFilter = std::move(value); }
 
     /**
      * <p>If specified, only workflow executions matching the workflow ID specified in
@@ -218,7 +219,7 @@ namespace Model
      * are mutually exclusive. You can specify at most one of these in a
      * request.</note>
      */
-    inline ListClosedWorkflowExecutionsRequest& WithExecutionFilter(WorkflowExecutionFilter&& value) { SetExecutionFilter(value); return *this;}
+    inline ListClosedWorkflowExecutionsRequest& WithExecutionFilter(WorkflowExecutionFilter&& value) { SetExecutionFilter(std::move(value)); return *this;}
 
     /**
      * <p>If specified, only workflow executions that match this <i>close status</i>
@@ -248,7 +249,7 @@ namespace Model
      * are mutually exclusive. You can specify at most one of these in a
      * request.</note>
      */
-    inline void SetCloseStatusFilter(CloseStatusFilter&& value) { m_closeStatusFilterHasBeenSet = true; m_closeStatusFilter = value; }
+    inline void SetCloseStatusFilter(CloseStatusFilter&& value) { m_closeStatusFilterHasBeenSet = true; m_closeStatusFilter = std::move(value); }
 
     /**
      * <p>If specified, only workflow executions that match this <i>close status</i>
@@ -268,7 +269,7 @@ namespace Model
      * are mutually exclusive. You can specify at most one of these in a
      * request.</note>
      */
-    inline ListClosedWorkflowExecutionsRequest& WithCloseStatusFilter(CloseStatusFilter&& value) { SetCloseStatusFilter(value); return *this;}
+    inline ListClosedWorkflowExecutionsRequest& WithCloseStatusFilter(CloseStatusFilter&& value) { SetCloseStatusFilter(std::move(value)); return *this;}
 
     /**
      * <p>If specified, only executions of the type specified in the filter are
@@ -295,7 +296,7 @@ namespace Model
      * are mutually exclusive. You can specify at most one of these in a
      * request.</note>
      */
-    inline void SetTypeFilter(WorkflowTypeFilter&& value) { m_typeFilterHasBeenSet = true; m_typeFilter = value; }
+    inline void SetTypeFilter(WorkflowTypeFilter&& value) { m_typeFilterHasBeenSet = true; m_typeFilter = std::move(value); }
 
     /**
      * <p>If specified, only executions of the type specified in the filter are
@@ -313,7 +314,7 @@ namespace Model
      * are mutually exclusive. You can specify at most one of these in a
      * request.</note>
      */
-    inline ListClosedWorkflowExecutionsRequest& WithTypeFilter(WorkflowTypeFilter&& value) { SetTypeFilter(value); return *this;}
+    inline ListClosedWorkflowExecutionsRequest& WithTypeFilter(WorkflowTypeFilter&& value) { SetTypeFilter(std::move(value)); return *this;}
 
     /**
      * <p>If specified, only executions that have the matching tag are listed.</p>
@@ -337,7 +338,7 @@ namespace Model
      * <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You
      * can specify at most one of these in a request.</note>
      */
-    inline void SetTagFilter(TagFilter&& value) { m_tagFilterHasBeenSet = true; m_tagFilter = value; }
+    inline void SetTagFilter(TagFilter&& value) { m_tagFilterHasBeenSet = true; m_tagFilter = std::move(value); }
 
     /**
      * <p>If specified, only executions that have the matching tag are listed.</p>
@@ -353,7 +354,7 @@ namespace Model
      * <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You
      * can specify at most one of these in a request.</note>
      */
-    inline ListClosedWorkflowExecutionsRequest& WithTagFilter(TagFilter&& value) { SetTagFilter(value); return *this;}
+    inline ListClosedWorkflowExecutionsRequest& WithTagFilter(TagFilter&& value) { SetTagFilter(std::move(value)); return *this;}
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -380,7 +381,7 @@ namespace Model
      * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
      * determines how many results can be returned in a single call.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -407,7 +408,7 @@ namespace Model
      * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
      * determines how many results can be returned in a single call.</p>
      */
-    inline ListClosedWorkflowExecutionsRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline ListClosedWorkflowExecutionsRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are

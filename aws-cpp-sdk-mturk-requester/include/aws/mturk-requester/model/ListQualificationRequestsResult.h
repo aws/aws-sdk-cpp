@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/model/QualificationRequest.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
@@ -78,7 +79,7 @@ namespace Model
     inline ListQualificationRequestsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     
-    inline ListQualificationRequestsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListQualificationRequestsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     
     inline ListQualificationRequestsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
@@ -99,7 +100,7 @@ namespace Model
      * <p>The Qualification request. The response includes one QualificationRequest
      * element for each Qualification request returned by the query.</p>
      */
-    inline void SetQualificationRequests(Aws::Vector<QualificationRequest>&& value) { m_qualificationRequests = value; }
+    inline void SetQualificationRequests(Aws::Vector<QualificationRequest>&& value) { m_qualificationRequests = std::move(value); }
 
     /**
      * <p>The Qualification request. The response includes one QualificationRequest
@@ -111,7 +112,7 @@ namespace Model
      * <p>The Qualification request. The response includes one QualificationRequest
      * element for each Qualification request returned by the query.</p>
      */
-    inline ListQualificationRequestsResult& WithQualificationRequests(Aws::Vector<QualificationRequest>&& value) { SetQualificationRequests(value); return *this;}
+    inline ListQualificationRequestsResult& WithQualificationRequests(Aws::Vector<QualificationRequest>&& value) { SetQualificationRequests(std::move(value)); return *this;}
 
     /**
      * <p>The Qualification request. The response includes one QualificationRequest
@@ -123,7 +124,7 @@ namespace Model
      * <p>The Qualification request. The response includes one QualificationRequest
      * element for each Qualification request returned by the query.</p>
      */
-    inline ListQualificationRequestsResult& AddQualificationRequests(QualificationRequest&& value) { m_qualificationRequests.push_back(value); return *this; }
+    inline ListQualificationRequestsResult& AddQualificationRequests(QualificationRequest&& value) { m_qualificationRequests.push_back(std::move(value)); return *this; }
 
   private:
     int m_numResults;

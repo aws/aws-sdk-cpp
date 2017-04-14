@@ -17,6 +17,7 @@
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/DomainEntry.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The name of the domain entry to delete.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The name of the domain entry to delete.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name of the domain entry to delete.</p>
      */
-    inline DeleteDomainEntryRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DeleteDomainEntryRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain entry to delete.</p>
@@ -87,7 +88,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about your domain
      * entries.</p>
      */
-    inline void SetDomainEntry(DomainEntry&& value) { m_domainEntryHasBeenSet = true; m_domainEntry = value; }
+    inline void SetDomainEntry(DomainEntry&& value) { m_domainEntryHasBeenSet = true; m_domainEntry = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about your domain
@@ -99,7 +100,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about your domain
      * entries.</p>
      */
-    inline DeleteDomainEntryRequest& WithDomainEntry(DomainEntry&& value) { SetDomainEntry(value); return *this;}
+    inline DeleteDomainEntryRequest& WithDomainEntry(DomainEntry&& value) { SetDomainEntry(std::move(value)); return *this;}
 
   private:
     Aws::String m_domainName;

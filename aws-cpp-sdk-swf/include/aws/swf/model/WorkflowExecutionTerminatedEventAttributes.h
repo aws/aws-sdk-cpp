@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/swf/model/ChildPolicy.h>
 #include <aws/swf/model/WorkflowExecutionTerminatedCause.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The reason provided for the termination (if any).</p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p>The reason provided for the termination (if any).</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The reason provided for the termination (if any).</p>
      */
-    inline WorkflowExecutionTerminatedEventAttributes& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline WorkflowExecutionTerminatedEventAttributes& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p>The reason provided for the termination (if any).</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The details provided for the termination (if any).</p>
      */
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = value; }
+    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
      * <p>The details provided for the termination (if any).</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The details provided for the termination (if any).</p>
      */
-    inline WorkflowExecutionTerminatedEventAttributes& WithDetails(Aws::String&& value) { SetDetails(value); return *this;}
+    inline WorkflowExecutionTerminatedEventAttributes& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
      * <p>The details provided for the termination (if any).</p>
@@ -150,7 +151,7 @@ namespace Model
      * receives an execution history with this event.</li> <li><b>ABANDON:</b> no
      * action will be taken. The child executions will continue to run.</li> </ul>
      */
-    inline void SetChildPolicy(ChildPolicy&& value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
+    inline void SetChildPolicy(ChildPolicy&& value) { m_childPolicyHasBeenSet = true; m_childPolicy = std::move(value); }
 
     /**
      * <p>The policy used for the child workflow executions of this workflow
@@ -174,7 +175,7 @@ namespace Model
      * receives an execution history with this event.</li> <li><b>ABANDON:</b> no
      * action will be taken. The child executions will continue to run.</li> </ul>
      */
-    inline WorkflowExecutionTerminatedEventAttributes& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(value); return *this;}
+    inline WorkflowExecutionTerminatedEventAttributes& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
 
     /**
      * <p>If set, indicates that the workflow execution was automatically terminated,
@@ -195,7 +196,7 @@ namespace Model
      * and specifies the cause. This happens if the parent workflow execution times out
      * or is terminated and the child policy is set to terminate child executions.</p>
      */
-    inline void SetCause(WorkflowExecutionTerminatedCause&& value) { m_causeHasBeenSet = true; m_cause = value; }
+    inline void SetCause(WorkflowExecutionTerminatedCause&& value) { m_causeHasBeenSet = true; m_cause = std::move(value); }
 
     /**
      * <p>If set, indicates that the workflow execution was automatically terminated,
@@ -209,7 +210,7 @@ namespace Model
      * and specifies the cause. This happens if the parent workflow execution times out
      * or is terminated and the child policy is set to terminate child executions.</p>
      */
-    inline WorkflowExecutionTerminatedEventAttributes& WithCause(WorkflowExecutionTerminatedCause&& value) { SetCause(value); return *this;}
+    inline WorkflowExecutionTerminatedEventAttributes& WithCause(WorkflowExecutionTerminatedCause&& value) { SetCause(std::move(value)); return *this;}
 
   private:
     Aws::String m_reason;

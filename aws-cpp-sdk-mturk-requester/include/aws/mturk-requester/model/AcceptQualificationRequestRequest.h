@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The ID of the Qualification request, as returned by the
      * <code>GetQualificationRequests</code> operation.</p>
      */
-    inline void SetQualificationRequestId(Aws::String&& value) { m_qualificationRequestIdHasBeenSet = true; m_qualificationRequestId = value; }
+    inline void SetQualificationRequestId(Aws::String&& value) { m_qualificationRequestIdHasBeenSet = true; m_qualificationRequestId = std::move(value); }
 
     /**
      * <p>The ID of the Qualification request, as returned by the
@@ -69,7 +70,7 @@ namespace Model
      * <p>The ID of the Qualification request, as returned by the
      * <code>GetQualificationRequests</code> operation.</p>
      */
-    inline AcceptQualificationRequestRequest& WithQualificationRequestId(Aws::String&& value) { SetQualificationRequestId(value); return *this;}
+    inline AcceptQualificationRequestRequest& WithQualificationRequestId(Aws::String&& value) { SetQualificationRequestId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Qualification request, as returned by the

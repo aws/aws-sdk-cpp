@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/waf/model/TimeWindow.h>
 #include <aws/waf/model/SampledHTTPRequest.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>A complex type that contains detailed information about each of the requests
      * in the sample.</p>
      */
-    inline void SetSampledRequests(Aws::Vector<SampledHTTPRequest>&& value) { m_sampledRequests = value; }
+    inline void SetSampledRequests(Aws::Vector<SampledHTTPRequest>&& value) { m_sampledRequests = std::move(value); }
 
     /**
      * <p>A complex type that contains detailed information about each of the requests
@@ -69,7 +70,7 @@ namespace Model
      * <p>A complex type that contains detailed information about each of the requests
      * in the sample.</p>
      */
-    inline GetSampledRequestsResult& WithSampledRequests(Aws::Vector<SampledHTTPRequest>&& value) { SetSampledRequests(value); return *this;}
+    inline GetSampledRequestsResult& WithSampledRequests(Aws::Vector<SampledHTTPRequest>&& value) { SetSampledRequests(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that contains detailed information about each of the requests
@@ -81,7 +82,7 @@ namespace Model
      * <p>A complex type that contains detailed information about each of the requests
      * in the sample.</p>
      */
-    inline GetSampledRequestsResult& AddSampledRequests(SampledHTTPRequest&& value) { m_sampledRequests.push_back(value); return *this; }
+    inline GetSampledRequestsResult& AddSampledRequests(SampledHTTPRequest&& value) { m_sampledRequests.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The total number of requests from which <code>GetSampledRequests</code> got a
@@ -132,7 +133,7 @@ namespace Model
      * request, <code>GetSampledRequests</code> returns the time range for the first
      * 5,000 requests.</p>
      */
-    inline void SetTimeWindow(TimeWindow&& value) { m_timeWindow = value; }
+    inline void SetTimeWindow(TimeWindow&& value) { m_timeWindow = std::move(value); }
 
     /**
      * <p>Usually, <code>TimeWindow</code> is the time range that you specified in the
@@ -150,7 +151,7 @@ namespace Model
      * request, <code>GetSampledRequests</code> returns the time range for the first
      * 5,000 requests.</p>
      */
-    inline GetSampledRequestsResult& WithTimeWindow(TimeWindow&& value) { SetTimeWindow(value); return *this;}
+    inline GetSampledRequestsResult& WithTimeWindow(TimeWindow&& value) { SetTimeWindow(std::move(value)); return *this;}
 
   private:
     Aws::Vector<SampledHTTPRequest> m_sampledRequests;

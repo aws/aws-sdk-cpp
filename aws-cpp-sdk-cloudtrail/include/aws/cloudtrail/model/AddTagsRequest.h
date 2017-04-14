@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudtrail/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * format of a trail ARN is:</p> <p>
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>Specifies the ARN of the trail to which one or more tags will be added. The
@@ -80,7 +81,7 @@ namespace Model
      * format of a trail ARN is:</p> <p>
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
      */
-    inline AddTagsRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline AddTagsRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the ARN of the trail to which one or more tags will be added. The
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
      */
-    inline void SetTagsList(Aws::Vector<Tag>&& value) { m_tagsListHasBeenSet = true; m_tagsList = value; }
+    inline void SetTagsList(Aws::Vector<Tag>&& value) { m_tagsListHasBeenSet = true; m_tagsList = std::move(value); }
 
     /**
      * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
      */
-    inline AddTagsRequest& WithTagsList(Aws::Vector<Tag>&& value) { SetTagsList(value); return *this;}
+    inline AddTagsRequest& WithTagsList(Aws::Vector<Tag>&& value) { SetTagsList(std::move(value)); return *this;}
 
     /**
      * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
      */
-    inline AddTagsRequest& AddTagsList(Tag&& value) { m_tagsListHasBeenSet = true; m_tagsList.push_back(value); return *this; }
+    inline AddTagsRequest& AddTagsList(Tag&& value) { m_tagsListHasBeenSet = true; m_tagsList.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_resourceId;

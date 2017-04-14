@@ -16,6 +16,7 @@
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/SnowballRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The ID for the job that you want to get the <code>UnlockCode</code> value
      * for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
      * <p>The ID for the job that you want to get the <code>UnlockCode</code> value
@@ -69,7 +70,7 @@ namespace Model
      * <p>The ID for the job that you want to get the <code>UnlockCode</code> value
      * for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
-    inline GetJobUnlockCodeRequest& WithJobId(Aws::String&& value) { SetJobId(value); return *this;}
+    inline GetJobUnlockCodeRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
      * <p>The ID for the job that you want to get the <code>UnlockCode</code> value

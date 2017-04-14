@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * an Amazon ECS cluster. </simpara> </zonbook> <xhtml> <p>The ARN of the task
      * definition to use if the event target is an Amazon ECS cluster. </p> </xhtml>
      */
-    inline void SetTaskDefinitionArn(Aws::String&& value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn = value; }
+    inline void SetTaskDefinitionArn(Aws::String&& value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn = std::move(value); }
 
     /**
      * <zonbook> <simpara>The ARN of the task definition to use if the event target is
@@ -83,7 +84,7 @@ namespace Model
      * an Amazon ECS cluster. </simpara> </zonbook> <xhtml> <p>The ARN of the task
      * definition to use if the event target is an Amazon ECS cluster. </p> </xhtml>
      */
-    inline EcsParameters& WithTaskDefinitionArn(Aws::String&& value) { SetTaskDefinitionArn(value); return *this;}
+    inline EcsParameters& WithTaskDefinitionArn(Aws::String&& value) { SetTaskDefinitionArn(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The ARN of the task definition to use if the event target is

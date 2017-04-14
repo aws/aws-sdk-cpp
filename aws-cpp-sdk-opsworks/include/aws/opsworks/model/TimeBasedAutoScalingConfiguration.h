@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opsworks/model/WeeklyAutoScalingSchedule.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The instance ID.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
-    inline TimeBasedAutoScalingConfiguration& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline TimeBasedAutoScalingConfiguration& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The instance ID.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>A <code>WeeklyAutoScalingSchedule</code> object with the instance
      * schedule.</p>
      */
-    inline void SetAutoScalingSchedule(WeeklyAutoScalingSchedule&& value) { m_autoScalingScheduleHasBeenSet = true; m_autoScalingSchedule = value; }
+    inline void SetAutoScalingSchedule(WeeklyAutoScalingSchedule&& value) { m_autoScalingScheduleHasBeenSet = true; m_autoScalingSchedule = std::move(value); }
 
     /**
      * <p>A <code>WeeklyAutoScalingSchedule</code> object with the instance
@@ -108,7 +109,7 @@ namespace Model
      * <p>A <code>WeeklyAutoScalingSchedule</code> object with the instance
      * schedule.</p>
      */
-    inline TimeBasedAutoScalingConfiguration& WithAutoScalingSchedule(WeeklyAutoScalingSchedule&& value) { SetAutoScalingSchedule(value); return *this;}
+    inline TimeBasedAutoScalingConfiguration& WithAutoScalingSchedule(WeeklyAutoScalingSchedule&& value) { SetAutoScalingSchedule(std::move(value)); return *this;}
 
   private:
     Aws::String m_instanceId;

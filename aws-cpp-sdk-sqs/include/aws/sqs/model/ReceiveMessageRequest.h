@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sqs/model/QueueAttributeName.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>The URL of the Amazon SQS queue from which messages are received.</p>
      * <p>Queue URLs are case-sensitive.</p>
      */
-    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
+    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::move(value); }
 
     /**
      * <p>The URL of the Amazon SQS queue from which messages are received.</p>
@@ -76,7 +77,7 @@ namespace Model
      * <p>The URL of the Amazon SQS queue from which messages are received.</p>
      * <p>Queue URLs are case-sensitive.</p>
      */
-    inline ReceiveMessageRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
+    inline ReceiveMessageRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL of the Amazon SQS queue from which messages are received.</p>
@@ -199,7 +200,7 @@ namespace Model
      * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>VisibilityTimeout</code>
      * </p> </li> </ul>
      */
-    inline void SetAttributeNames(Aws::Vector<QueueAttributeName>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
+    inline void SetAttributeNames(Aws::Vector<QueueAttributeName>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::move(value); }
 
     /**
      * <p>A list of attributes that need to be returned along with each message. These
@@ -277,7 +278,7 @@ namespace Model
      * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>VisibilityTimeout</code>
      * </p> </li> </ul>
      */
-    inline ReceiveMessageRequest& WithAttributeNames(Aws::Vector<QueueAttributeName>&& value) { SetAttributeNames(value); return *this;}
+    inline ReceiveMessageRequest& WithAttributeNames(Aws::Vector<QueueAttributeName>&& value) { SetAttributeNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of attributes that need to be returned along with each message. These
@@ -355,7 +356,7 @@ namespace Model
      * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>VisibilityTimeout</code>
      * </p> </li> </ul>
      */
-    inline ReceiveMessageRequest& AddAttributeNames(QueueAttributeName&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
+    inline ReceiveMessageRequest& AddAttributeNames(QueueAttributeName&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The name of the message attribute, where <i>N</i> is the index.</p> <ul> <li>
@@ -409,7 +410,7 @@ namespace Model
      * all message attributes starting with a prefix, for example
      * <code>bar.*</code>.</p>
      */
-    inline void SetMessageAttributeNames(Aws::Vector<Aws::String>&& value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames = value; }
+    inline void SetMessageAttributeNames(Aws::Vector<Aws::String>&& value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames = std::move(value); }
 
     /**
      * <p>The name of the message attribute, where <i>N</i> is the index.</p> <ul> <li>
@@ -445,7 +446,7 @@ namespace Model
      * all message attributes starting with a prefix, for example
      * <code>bar.*</code>.</p>
      */
-    inline ReceiveMessageRequest& WithMessageAttributeNames(Aws::Vector<Aws::String>&& value) { SetMessageAttributeNames(value); return *this;}
+    inline ReceiveMessageRequest& WithMessageAttributeNames(Aws::Vector<Aws::String>&& value) { SetMessageAttributeNames(std::move(value)); return *this;}
 
     /**
      * <p>The name of the message attribute, where <i>N</i> is the index.</p> <ul> <li>
@@ -481,7 +482,7 @@ namespace Model
      * all message attributes starting with a prefix, for example
      * <code>bar.*</code>.</p>
      */
-    inline ReceiveMessageRequest& AddMessageAttributeNames(Aws::String&& value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames.push_back(value); return *this; }
+    inline ReceiveMessageRequest& AddMessageAttributeNames(Aws::String&& value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The name of the message attribute, where <i>N</i> is the index.</p> <ul> <li>
@@ -715,7 +716,7 @@ namespace Model
      * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
      * Service Developer Guide</i>.</p>
      */
-    inline void SetReceiveRequestAttemptId(Aws::String&& value) { m_receiveRequestAttemptIdHasBeenSet = true; m_receiveRequestAttemptId = value; }
+    inline void SetReceiveRequestAttemptId(Aws::String&& value) { m_receiveRequestAttemptIdHasBeenSet = true; m_receiveRequestAttemptId = std::move(value); }
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
@@ -868,7 +869,7 @@ namespace Model
      * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
      * Service Developer Guide</i>.</p>
      */
-    inline ReceiveMessageRequest& WithReceiveRequestAttemptId(Aws::String&& value) { SetReceiveRequestAttemptId(value); return *this;}
+    inline ReceiveMessageRequest& WithReceiveRequestAttemptId(Aws::String&& value) { SetReceiveRequestAttemptId(std::move(value)); return *this;}
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The

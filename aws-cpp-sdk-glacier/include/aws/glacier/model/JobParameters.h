@@ -16,6 +16,7 @@
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glacier/model/InventoryRetrievalJobInput.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * initiating an inventory job and do not specify a Format field, JSON is the
      * default format. Valid values are "CSV" and "JSON".</p>
      */
-    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = value; }
+    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
      * <p>When initiating a job to retrieve a vault inventory, you can optionally add
@@ -90,7 +91,7 @@ namespace Model
      * initiating an inventory job and do not specify a Format field, JSON is the
      * default format. Valid values are "CSV" and "JSON".</p>
      */
-    inline JobParameters& WithFormat(Aws::String&& value) { SetFormat(value); return *this;}
+    inline JobParameters& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
 
     /**
      * <p>When initiating a job to retrieve a vault inventory, you can optionally add
@@ -119,7 +120,7 @@ namespace Model
      * inventory of a vault. Valid values are "archive-retrieval" and
      * "inventory-retrieval".</p>
      */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The job type. You can initiate a job to retrieve an archive or get an
@@ -140,7 +141,7 @@ namespace Model
      * inventory of a vault. Valid values are "archive-retrieval" and
      * "inventory-retrieval".</p>
      */
-    inline JobParameters& WithType(Aws::String&& value) { SetType(value); return *this;}
+    inline JobParameters& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The job type. You can initiate a job to retrieve an archive or get an
@@ -168,7 +169,7 @@ namespace Model
      * if <code>Type</code> is set to archive-retrieval. An error occurs if you specify
      * this request parameter for an inventory retrieval job request. </p>
      */
-    inline void SetArchiveId(Aws::String&& value) { m_archiveIdHasBeenSet = true; m_archiveId = value; }
+    inline void SetArchiveId(Aws::String&& value) { m_archiveIdHasBeenSet = true; m_archiveId = std::move(value); }
 
     /**
      * <p>The ID of the archive that you want to retrieve. This field is required only
@@ -189,7 +190,7 @@ namespace Model
      * if <code>Type</code> is set to archive-retrieval. An error occurs if you specify
      * this request parameter for an inventory retrieval job request. </p>
      */
-    inline JobParameters& WithArchiveId(Aws::String&& value) { SetArchiveId(value); return *this;}
+    inline JobParameters& WithArchiveId(Aws::String&& value) { SetArchiveId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the archive that you want to retrieve. This field is required only
@@ -217,7 +218,7 @@ namespace Model
      * equal to 1,024 bytes. The allowable characters are 7-bit ASCII without control
      * codes-specifically, ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The optional description for the job. The description must be less than or
@@ -238,7 +239,7 @@ namespace Model
      * equal to 1,024 bytes. The allowable characters are 7-bit ASCII without control
      * codes-specifically, ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.</p>
      */
-    inline JobParameters& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline JobParameters& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The optional description for the job. The description must be less than or
@@ -269,7 +270,7 @@ namespace Model
      * topic publishes the notification to its subscribers. The SNS topic must
      * exist.</p>
      */
-    inline void SetSNSTopic(Aws::String&& value) { m_sNSTopicHasBeenSet = true; m_sNSTopic = value; }
+    inline void SetSNSTopic(Aws::String&& value) { m_sNSTopicHasBeenSet = true; m_sNSTopic = std::move(value); }
 
     /**
      * <p>The Amazon SNS topic ARN to which Amazon Glacier sends a notification when
@@ -293,7 +294,7 @@ namespace Model
      * topic publishes the notification to its subscribers. The SNS topic must
      * exist.</p>
      */
-    inline JobParameters& WithSNSTopic(Aws::String&& value) { SetSNSTopic(value); return *this;}
+    inline JobParameters& WithSNSTopic(Aws::String&& value) { SetSNSTopic(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon SNS topic ARN to which Amazon Glacier sends a notification when
@@ -337,7 +338,7 @@ namespace Model
      * is not megabyte aligned, this operation returns a 400 response. </p> <p>An error
      * occurs if you specify this field for an inventory retrieval job request.</p>
      */
-    inline void SetRetrievalByteRange(Aws::String&& value) { m_retrievalByteRangeHasBeenSet = true; m_retrievalByteRange = value; }
+    inline void SetRetrievalByteRange(Aws::String&& value) { m_retrievalByteRangeHasBeenSet = true; m_retrievalByteRange = std::move(value); }
 
     /**
      * <p>The byte range to retrieve for an archive retrieval. in the form
@@ -373,7 +374,7 @@ namespace Model
      * is not megabyte aligned, this operation returns a 400 response. </p> <p>An error
      * occurs if you specify this field for an inventory retrieval job request.</p>
      */
-    inline JobParameters& WithRetrievalByteRange(Aws::String&& value) { SetRetrievalByteRange(value); return *this;}
+    inline JobParameters& WithRetrievalByteRange(Aws::String&& value) { SetRetrievalByteRange(std::move(value)); return *this;}
 
     /**
      * <p>The byte range to retrieve for an archive retrieval. in the form
@@ -406,7 +407,7 @@ namespace Model
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
-    inline void SetTier(Aws::String&& value) { m_tierHasBeenSet = true; m_tier = value; }
+    inline void SetTier(Aws::String&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
     /**
      * <p>The retrieval option to use for the archive retrieval. Valid values are
@@ -427,7 +428,7 @@ namespace Model
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
-    inline JobParameters& WithTier(Aws::String&& value) { SetTier(value); return *this;}
+    inline JobParameters& WithTier(Aws::String&& value) { SetTier(std::move(value)); return *this;}
 
     /**
      * <p>The retrieval option to use for the archive retrieval. Valid values are
@@ -449,7 +450,7 @@ namespace Model
     /**
      * <p>Input parameters used for range inventory retrieval.</p>
      */
-    inline void SetInventoryRetrievalParameters(InventoryRetrievalJobInput&& value) { m_inventoryRetrievalParametersHasBeenSet = true; m_inventoryRetrievalParameters = value; }
+    inline void SetInventoryRetrievalParameters(InventoryRetrievalJobInput&& value) { m_inventoryRetrievalParametersHasBeenSet = true; m_inventoryRetrievalParameters = std::move(value); }
 
     /**
      * <p>Input parameters used for range inventory retrieval.</p>
@@ -459,7 +460,7 @@ namespace Model
     /**
      * <p>Input parameters used for range inventory retrieval.</p>
      */
-    inline JobParameters& WithInventoryRetrievalParameters(InventoryRetrievalJobInput&& value) { SetInventoryRetrievalParameters(value); return *this;}
+    inline JobParameters& WithInventoryRetrievalParameters(InventoryRetrievalJobInput&& value) { SetInventoryRetrievalParameters(std::move(value)); return *this;}
 
   private:
     Aws::String m_format;

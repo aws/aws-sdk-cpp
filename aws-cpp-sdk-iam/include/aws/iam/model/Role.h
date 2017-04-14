@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide. </p>
      */
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p> The path to the role. For more information about paths, see <a
@@ -90,7 +91,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide. </p>
      */
-    inline Role& WithPath(Aws::String&& value) { SetPath(value); return *this;}
+    inline Role& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p> The path to the role. For more information about paths, see <a
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The friendly name that identifies the role.</p>
      */
-    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
+    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
 
     /**
      * <p>The friendly name that identifies the role.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The friendly name that identifies the role.</p>
      */
-    inline Role& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
+    inline Role& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
     /**
      * <p>The friendly name that identifies the role.</p>
@@ -156,7 +157,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide. </p>
      */
-    inline void SetRoleId(Aws::String&& value) { m_roleIdHasBeenSet = true; m_roleId = value; }
+    inline void SetRoleId(Aws::String&& value) { m_roleIdHasBeenSet = true; m_roleId = std::move(value); }
 
     /**
      * <p> The stable and unique string identifying the role. For more information
@@ -180,7 +181,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide. </p>
      */
-    inline Role& WithRoleId(Aws::String&& value) { SetRoleId(value); return *this;}
+    inline Role& WithRoleId(Aws::String&& value) { SetRoleId(std::move(value)); return *this;}
 
     /**
      * <p> The stable and unique string identifying the role. For more information
@@ -212,7 +213,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide. </p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p> The Amazon Resource Name (ARN) specifying the role. For more information
@@ -236,7 +237,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide. </p>
      */
-    inline Role& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Role& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p> The Amazon Resource Name (ARN) specifying the role. For more information
@@ -262,7 +263,7 @@ namespace Model
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the role was created.</p>
      */
-    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = value; }
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -274,7 +275,7 @@ namespace Model
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the role was created.</p>
      */
-    inline Role& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(value); return *this;}
+    inline Role& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
     /**
      * <p>The policy that grants an entity permission to assume the role.</p>
@@ -289,7 +290,7 @@ namespace Model
     /**
      * <p>The policy that grants an entity permission to assume the role.</p>
      */
-    inline void SetAssumeRolePolicyDocument(Aws::String&& value) { m_assumeRolePolicyDocumentHasBeenSet = true; m_assumeRolePolicyDocument = value; }
+    inline void SetAssumeRolePolicyDocument(Aws::String&& value) { m_assumeRolePolicyDocumentHasBeenSet = true; m_assumeRolePolicyDocument = std::move(value); }
 
     /**
      * <p>The policy that grants an entity permission to assume the role.</p>
@@ -304,7 +305,7 @@ namespace Model
     /**
      * <p>The policy that grants an entity permission to assume the role.</p>
      */
-    inline Role& WithAssumeRolePolicyDocument(Aws::String&& value) { SetAssumeRolePolicyDocument(value); return *this;}
+    inline Role& WithAssumeRolePolicyDocument(Aws::String&& value) { SetAssumeRolePolicyDocument(std::move(value)); return *this;}
 
     /**
      * <p>The policy that grants an entity permission to assume the role.</p>

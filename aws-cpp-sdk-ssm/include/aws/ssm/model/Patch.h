@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The ID of the patch (this is different than the Microsoft Knowledge Base
      * ID).</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The ID of the patch (this is different than the Microsoft Knowledge Base
@@ -78,7 +79,7 @@ namespace Model
      * <p>The ID of the patch (this is different than the Microsoft Knowledge Base
      * ID).</p>
      */
-    inline Patch& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline Patch& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the patch (this is different than the Microsoft Knowledge Base
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The date the patch was released.</p>
      */
-    inline void SetReleaseDate(Aws::Utils::DateTime&& value) { m_releaseDateHasBeenSet = true; m_releaseDate = value; }
+    inline void SetReleaseDate(Aws::Utils::DateTime&& value) { m_releaseDateHasBeenSet = true; m_releaseDate = std::move(value); }
 
     /**
      * <p>The date the patch was released.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The date the patch was released.</p>
      */
-    inline Patch& WithReleaseDate(Aws::Utils::DateTime&& value) { SetReleaseDate(value); return *this;}
+    inline Patch& WithReleaseDate(Aws::Utils::DateTime&& value) { SetReleaseDate(std::move(value)); return *this;}
 
     /**
      * <p>The title of the patch.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The title of the patch.</p>
      */
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = value; }
+    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
      * <p>The title of the patch.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>The title of the patch.</p>
      */
-    inline Patch& WithTitle(Aws::String&& value) { SetTitle(value); return *this;}
+    inline Patch& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
      * <p>The title of the patch.</p>
@@ -159,7 +160,7 @@ namespace Model
     /**
      * <p>The description of the patch.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the patch.</p>
@@ -174,7 +175,7 @@ namespace Model
     /**
      * <p>The description of the patch.</p>
      */
-    inline Patch& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline Patch& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the patch.</p>
@@ -194,7 +195,7 @@ namespace Model
     /**
      * <p>The URL where more information can be obtained about the patch.</p>
      */
-    inline void SetContentUrl(Aws::String&& value) { m_contentUrlHasBeenSet = true; m_contentUrl = value; }
+    inline void SetContentUrl(Aws::String&& value) { m_contentUrlHasBeenSet = true; m_contentUrl = std::move(value); }
 
     /**
      * <p>The URL where more information can be obtained about the patch.</p>
@@ -209,7 +210,7 @@ namespace Model
     /**
      * <p>The URL where more information can be obtained about the patch.</p>
      */
-    inline Patch& WithContentUrl(Aws::String&& value) { SetContentUrl(value); return *this;}
+    inline Patch& WithContentUrl(Aws::String&& value) { SetContentUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL where more information can be obtained about the patch.</p>
@@ -229,7 +230,7 @@ namespace Model
     /**
      * <p>The name of the vendor providing the patch.</p>
      */
-    inline void SetVendor(Aws::String&& value) { m_vendorHasBeenSet = true; m_vendor = value; }
+    inline void SetVendor(Aws::String&& value) { m_vendorHasBeenSet = true; m_vendor = std::move(value); }
 
     /**
      * <p>The name of the vendor providing the patch.</p>
@@ -244,7 +245,7 @@ namespace Model
     /**
      * <p>The name of the vendor providing the patch.</p>
      */
-    inline Patch& WithVendor(Aws::String&& value) { SetVendor(value); return *this;}
+    inline Patch& WithVendor(Aws::String&& value) { SetVendor(std::move(value)); return *this;}
 
     /**
      * <p>The name of the vendor providing the patch.</p>
@@ -264,7 +265,7 @@ namespace Model
     /**
      * <p>The product family the patch is applicable for (for example, Windows).</p>
      */
-    inline void SetProductFamily(Aws::String&& value) { m_productFamilyHasBeenSet = true; m_productFamily = value; }
+    inline void SetProductFamily(Aws::String&& value) { m_productFamilyHasBeenSet = true; m_productFamily = std::move(value); }
 
     /**
      * <p>The product family the patch is applicable for (for example, Windows).</p>
@@ -279,7 +280,7 @@ namespace Model
     /**
      * <p>The product family the patch is applicable for (for example, Windows).</p>
      */
-    inline Patch& WithProductFamily(Aws::String&& value) { SetProductFamily(value); return *this;}
+    inline Patch& WithProductFamily(Aws::String&& value) { SetProductFamily(std::move(value)); return *this;}
 
     /**
      * <p>The product family the patch is applicable for (for example, Windows).</p>
@@ -302,7 +303,7 @@ namespace Model
      * <p>The specific product the patch is applicable for (for example,
      * WindowsServer2016).</p>
      */
-    inline void SetProduct(Aws::String&& value) { m_productHasBeenSet = true; m_product = value; }
+    inline void SetProduct(Aws::String&& value) { m_productHasBeenSet = true; m_product = std::move(value); }
 
     /**
      * <p>The specific product the patch is applicable for (for example,
@@ -320,7 +321,7 @@ namespace Model
      * <p>The specific product the patch is applicable for (for example,
      * WindowsServer2016).</p>
      */
-    inline Patch& WithProduct(Aws::String&& value) { SetProduct(value); return *this;}
+    inline Patch& WithProduct(Aws::String&& value) { SetProduct(std::move(value)); return *this;}
 
     /**
      * <p>The specific product the patch is applicable for (for example,
@@ -344,7 +345,7 @@ namespace Model
      * <p>The classification of the patch (for example, SecurityUpdates, Updates,
      * CriticalUpdates).</p>
      */
-    inline void SetClassification(Aws::String&& value) { m_classificationHasBeenSet = true; m_classification = value; }
+    inline void SetClassification(Aws::String&& value) { m_classificationHasBeenSet = true; m_classification = std::move(value); }
 
     /**
      * <p>The classification of the patch (for example, SecurityUpdates, Updates,
@@ -362,7 +363,7 @@ namespace Model
      * <p>The classification of the patch (for example, SecurityUpdates, Updates,
      * CriticalUpdates).</p>
      */
-    inline Patch& WithClassification(Aws::String&& value) { SetClassification(value); return *this;}
+    inline Patch& WithClassification(Aws::String&& value) { SetClassification(std::move(value)); return *this;}
 
     /**
      * <p>The classification of the patch (for example, SecurityUpdates, Updates,
@@ -383,7 +384,7 @@ namespace Model
     /**
      * <p>The severity of the patch (for example Critical, Important, Moderate).</p>
      */
-    inline void SetMsrcSeverity(Aws::String&& value) { m_msrcSeverityHasBeenSet = true; m_msrcSeverity = value; }
+    inline void SetMsrcSeverity(Aws::String&& value) { m_msrcSeverityHasBeenSet = true; m_msrcSeverity = std::move(value); }
 
     /**
      * <p>The severity of the patch (for example Critical, Important, Moderate).</p>
@@ -398,7 +399,7 @@ namespace Model
     /**
      * <p>The severity of the patch (for example Critical, Important, Moderate).</p>
      */
-    inline Patch& WithMsrcSeverity(Aws::String&& value) { SetMsrcSeverity(value); return *this;}
+    inline Patch& WithMsrcSeverity(Aws::String&& value) { SetMsrcSeverity(std::move(value)); return *this;}
 
     /**
      * <p>The severity of the patch (for example Critical, Important, Moderate).</p>
@@ -418,7 +419,7 @@ namespace Model
     /**
      * <p>The Microsoft Knowledge Base ID of the patch.</p>
      */
-    inline void SetKbNumber(Aws::String&& value) { m_kbNumberHasBeenSet = true; m_kbNumber = value; }
+    inline void SetKbNumber(Aws::String&& value) { m_kbNumberHasBeenSet = true; m_kbNumber = std::move(value); }
 
     /**
      * <p>The Microsoft Knowledge Base ID of the patch.</p>
@@ -433,7 +434,7 @@ namespace Model
     /**
      * <p>The Microsoft Knowledge Base ID of the patch.</p>
      */
-    inline Patch& WithKbNumber(Aws::String&& value) { SetKbNumber(value); return *this;}
+    inline Patch& WithKbNumber(Aws::String&& value) { SetKbNumber(std::move(value)); return *this;}
 
     /**
      * <p>The Microsoft Knowledge Base ID of the patch.</p>
@@ -453,7 +454,7 @@ namespace Model
     /**
      * <p>The ID of the MSRC bulletin the patch is related to.</p>
      */
-    inline void SetMsrcNumber(Aws::String&& value) { m_msrcNumberHasBeenSet = true; m_msrcNumber = value; }
+    inline void SetMsrcNumber(Aws::String&& value) { m_msrcNumberHasBeenSet = true; m_msrcNumber = std::move(value); }
 
     /**
      * <p>The ID of the MSRC bulletin the patch is related to.</p>
@@ -468,7 +469,7 @@ namespace Model
     /**
      * <p>The ID of the MSRC bulletin the patch is related to.</p>
      */
-    inline Patch& WithMsrcNumber(Aws::String&& value) { SetMsrcNumber(value); return *this;}
+    inline Patch& WithMsrcNumber(Aws::String&& value) { SetMsrcNumber(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the MSRC bulletin the patch is related to.</p>
@@ -488,7 +489,7 @@ namespace Model
     /**
      * <p>The language of the patch if it’s language-specific.</p>
      */
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = value; }
+    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
 
     /**
      * <p>The language of the patch if it’s language-specific.</p>
@@ -503,7 +504,7 @@ namespace Model
     /**
      * <p>The language of the patch if it’s language-specific.</p>
      */
-    inline Patch& WithLanguage(Aws::String&& value) { SetLanguage(value); return *this;}
+    inline Patch& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
 
     /**
      * <p>The language of the patch if it’s language-specific.</p>

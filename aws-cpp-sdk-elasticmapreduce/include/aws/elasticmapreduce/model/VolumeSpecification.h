@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The volume type. Volume types supported are gp2, io1, standard.</p>
      */
-    inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
+    inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
      * <p>The volume type. Volume types supported are gp2, io1, standard.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The volume type. Volume types supported are gp2, io1, standard.</p>
      */
-    inline VolumeSpecification& WithVolumeType(Aws::String&& value) { SetVolumeType(value); return *this;}
+    inline VolumeSpecification& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
 
     /**
      * <p>The volume type. Volume types supported are gp2, io1, standard.</p>

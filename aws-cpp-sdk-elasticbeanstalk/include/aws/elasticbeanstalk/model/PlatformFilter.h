@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * <p>Valid Values: <code>PlatformName</code> | <code>PlatformVersion</code> |
      * <code>PlatformStatus</code> | <code>PlatformOwner</code> </p>
      */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The custom platform attribute to which the filter values are applied.</p>
@@ -89,7 +90,7 @@ namespace Model
      * <p>Valid Values: <code>PlatformName</code> | <code>PlatformVersion</code> |
      * <code>PlatformStatus</code> | <code>PlatformOwner</code> </p>
      */
-    inline PlatformFilter& WithType(Aws::String&& value) { SetType(value); return *this;}
+    inline PlatformFilter& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The custom platform attribute to which the filter values are applied.</p>
@@ -126,7 +127,7 @@ namespace Model
      * <code>&gt;=</code> (greater than or equal to) | <code>contains</code> |
      * <code>begins_with</code> | <code>ends_with</code> </p>
      */
-    inline void SetOperator(Aws::String&& value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline void SetOperator(Aws::String&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
 
     /**
      * <p>The operator to apply to the <code>Type</code> with each of the
@@ -156,7 +157,7 @@ namespace Model
      * <code>&gt;=</code> (greater than or equal to) | <code>contains</code> |
      * <code>begins_with</code> | <code>ends_with</code> </p>
      */
-    inline PlatformFilter& WithOperator(Aws::String&& value) { SetOperator(value); return *this;}
+    inline PlatformFilter& WithOperator(Aws::String&& value) { SetOperator(std::move(value)); return *this;}
 
     /**
      * <p>The operator to apply to the <code>Type</code> with each of the
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>The list of values applied to the custom platform attribute.</p>
      */
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
+    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <p>The list of values applied to the custom platform attribute.</p>
@@ -191,7 +192,7 @@ namespace Model
     /**
      * <p>The list of values applied to the custom platform attribute.</p>
      */
-    inline PlatformFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
+    inline PlatformFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <p>The list of values applied to the custom platform attribute.</p>
@@ -201,7 +202,7 @@ namespace Model
     /**
      * <p>The list of values applied to the custom platform attribute.</p>
      */
-    inline PlatformFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    inline PlatformFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of values applied to the custom platform attribute.</p>

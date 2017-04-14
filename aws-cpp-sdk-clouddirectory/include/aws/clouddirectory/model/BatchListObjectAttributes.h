@@ -17,6 +17,7 @@
 #include <aws/clouddirectory/model/ObjectReference.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/SchemaFacet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Reference of the object whose attributes need to be listed.</p>
      */
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
+    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
 
     /**
      * <p>Reference of the object whose attributes need to be listed.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Reference of the object whose attributes need to be listed.</p>
      */
-    inline BatchListObjectAttributes& WithObjectReference(ObjectReference&& value) { SetObjectReference(value); return *this;}
+    inline BatchListObjectAttributes& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline BatchListObjectAttributes& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline BatchListObjectAttributes& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>
@@ -140,7 +141,7 @@ namespace Model
      * <p>Used to filter the list of object attributes associated with a certain
      * facet.</p>
      */
-    inline void SetFacetFilter(SchemaFacet&& value) { m_facetFilterHasBeenSet = true; m_facetFilter = value; }
+    inline void SetFacetFilter(SchemaFacet&& value) { m_facetFilterHasBeenSet = true; m_facetFilter = std::move(value); }
 
     /**
      * <p>Used to filter the list of object attributes associated with a certain
@@ -152,7 +153,7 @@ namespace Model
      * <p>Used to filter the list of object attributes associated with a certain
      * facet.</p>
      */
-    inline BatchListObjectAttributes& WithFacetFilter(SchemaFacet&& value) { SetFacetFilter(value); return *this;}
+    inline BatchListObjectAttributes& WithFacetFilter(SchemaFacet&& value) { SetFacetFilter(std::move(value)); return *this;}
 
   private:
     ObjectReference m_objectReference;

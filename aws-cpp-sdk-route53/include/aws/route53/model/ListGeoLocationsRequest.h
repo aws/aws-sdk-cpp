@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -84,7 +85,7 @@ namespace Model
      * continents. Don't include <code>StartContinentCode</code> when you're listing
      * countries or countries with their subdivisions.</p>
      */
-    inline void SetStartContinentCode(Aws::String&& value) { m_startContinentCodeHasBeenSet = true; m_startContinentCode = value; }
+    inline void SetStartContinentCode(Aws::String&& value) { m_startContinentCodeHasBeenSet = true; m_startContinentCode = std::move(value); }
 
     /**
      * <p>The code for the continent with which you want to start listing locations
@@ -120,7 +121,7 @@ namespace Model
      * continents. Don't include <code>StartContinentCode</code> when you're listing
      * countries or countries with their subdivisions.</p>
      */
-    inline ListGeoLocationsRequest& WithStartContinentCode(Aws::String&& value) { SetStartContinentCode(value); return *this;}
+    inline ListGeoLocationsRequest& WithStartContinentCode(Aws::String&& value) { SetStartContinentCode(std::move(value)); return *this;}
 
     /**
      * <p>The code for the continent with which you want to start listing locations
@@ -171,7 +172,7 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
      * alpha-2</a>.</p>
      */
-    inline void SetStartCountryCode(Aws::String&& value) { m_startCountryCodeHasBeenSet = true; m_startCountryCode = value; }
+    inline void SetStartCountryCode(Aws::String&& value) { m_startCountryCodeHasBeenSet = true; m_startCountryCode = std::move(value); }
 
     /**
      * <p>The code for the country with which you want to start listing locations that
@@ -210,7 +211,7 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
      * alpha-2</a>.</p>
      */
-    inline ListGeoLocationsRequest& WithStartCountryCode(Aws::String&& value) { SetStartCountryCode(value); return *this;}
+    inline ListGeoLocationsRequest& WithStartCountryCode(Aws::String&& value) { SetStartCountryCode(std::move(value)); return *this;}
 
     /**
      * <p>The code for the country with which you want to start listing locations that
@@ -259,7 +260,7 @@ namespace Model
      * results.</p> <p>To list subdivisions of a country, you must include both
      * <code>StartCountryCode</code> and <code>StartSubdivisionCode</code>.</p>
      */
-    inline void SetStartSubdivisionCode(Aws::String&& value) { m_startSubdivisionCodeHasBeenSet = true; m_startSubdivisionCode = value; }
+    inline void SetStartSubdivisionCode(Aws::String&& value) { m_startSubdivisionCodeHasBeenSet = true; m_startSubdivisionCode = std::move(value); }
 
     /**
      * <p>The code for the subdivision (for example, state or province) with which you
@@ -295,7 +296,7 @@ namespace Model
      * results.</p> <p>To list subdivisions of a country, you must include both
      * <code>StartCountryCode</code> and <code>StartSubdivisionCode</code>.</p>
      */
-    inline ListGeoLocationsRequest& WithStartSubdivisionCode(Aws::String&& value) { SetStartSubdivisionCode(value); return *this;}
+    inline ListGeoLocationsRequest& WithStartSubdivisionCode(Aws::String&& value) { SetStartSubdivisionCode(std::move(value)); return *this;}
 
     /**
      * <p>The code for the subdivision (for example, state or province) with which you
@@ -331,7 +332,7 @@ namespace Model
      * be listed, then the value of the <code>IsTruncated</code> element in the
      * response is <code>true</code>.</p>
      */
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
     /**
      * <p>(Optional) The maximum number of geolocations to be included in the response
@@ -355,7 +356,7 @@ namespace Model
      * be listed, then the value of the <code>IsTruncated</code> element in the
      * response is <code>true</code>.</p>
      */
-    inline ListGeoLocationsRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
+    inline ListGeoLocationsRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) The maximum number of geolocations to be included in the response

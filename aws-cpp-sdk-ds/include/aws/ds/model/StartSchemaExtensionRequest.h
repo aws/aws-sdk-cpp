@@ -16,6 +16,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The identifier of the directory for which the schema extension will be
      * applied to.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>The identifier of the directory for which the schema extension will be
@@ -69,7 +70,7 @@ namespace Model
      * <p>The identifier of the directory for which the schema extension will be
      * applied to.</p>
      */
-    inline StartSchemaExtensionRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline StartSchemaExtensionRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the directory for which the schema extension will be
@@ -117,7 +118,7 @@ namespace Model
      * example request below for more details. The file size can be no larger than
      * 1MB.</p>
      */
-    inline void SetLdifContent(Aws::String&& value) { m_ldifContentHasBeenSet = true; m_ldifContent = value; }
+    inline void SetLdifContent(Aws::String&& value) { m_ldifContentHasBeenSet = true; m_ldifContent = std::move(value); }
 
     /**
      * <p>The LDIF file represented as a string. To construct the LdifContent string,
@@ -141,7 +142,7 @@ namespace Model
      * example request below for more details. The file size can be no larger than
      * 1MB.</p>
      */
-    inline StartSchemaExtensionRequest& WithLdifContent(Aws::String&& value) { SetLdifContent(value); return *this;}
+    inline StartSchemaExtensionRequest& WithLdifContent(Aws::String&& value) { SetLdifContent(std::move(value)); return *this;}
 
     /**
      * <p>The LDIF file represented as a string. To construct the LdifContent string,
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>A description of the schema extension.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description of the schema extension.</p>
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p>A description of the schema extension.</p>
      */
-    inline StartSchemaExtensionRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline StartSchemaExtensionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description of the schema extension.</p>

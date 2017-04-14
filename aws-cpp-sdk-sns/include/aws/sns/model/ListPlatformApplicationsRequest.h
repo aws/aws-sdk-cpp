@@ -16,6 +16,7 @@
 #include <aws/sns/SNS_EXPORTS.h>
 #include <aws/sns/SNSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>NextToken string is used when calling ListPlatformApplications action to
      * retrieve additional records that are available after the first page results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>NextToken string is used when calling ListPlatformApplications action to
@@ -74,7 +75,7 @@ namespace Model
      * <p>NextToken string is used when calling ListPlatformApplications action to
      * retrieve additional records that are available after the first page results.</p>
      */
-    inline ListPlatformApplicationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListPlatformApplicationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>NextToken string is used when calling ListPlatformApplications action to

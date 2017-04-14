@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The ID of the IAM instance profile association.</p>
      */
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
 
     /**
      * <p>The ID of the IAM instance profile association.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ID of the IAM instance profile association.</p>
      */
-    inline DisassociateIamInstanceProfileRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(value); return *this;}
+    inline DisassociateIamInstanceProfileRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the IAM instance profile association.</p>

@@ -17,6 +17,7 @@
 #include <aws/workspaces/WorkSpacesRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/model/RebuildRequest.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>An array of structures that specify the WorkSpaces to rebuild.</p>
      */
-    inline void SetRebuildWorkspaceRequests(Aws::Vector<RebuildRequest>&& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests = value; }
+    inline void SetRebuildWorkspaceRequests(Aws::Vector<RebuildRequest>&& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests = std::move(value); }
 
     /**
      * <p>An array of structures that specify the WorkSpaces to rebuild.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>An array of structures that specify the WorkSpaces to rebuild.</p>
      */
-    inline RebuildWorkspacesRequest& WithRebuildWorkspaceRequests(Aws::Vector<RebuildRequest>&& value) { SetRebuildWorkspaceRequests(value); return *this;}
+    inline RebuildWorkspacesRequest& WithRebuildWorkspaceRequests(Aws::Vector<RebuildRequest>&& value) { SetRebuildWorkspaceRequests(std::move(value)); return *this;}
 
     /**
      * <p>An array of structures that specify the WorkSpaces to rebuild.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>An array of structures that specify the WorkSpaces to rebuild.</p>
      */
-    inline RebuildWorkspacesRequest& AddRebuildWorkspaceRequests(RebuildRequest&& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests.push_back(value); return *this; }
+    inline RebuildWorkspacesRequest& AddRebuildWorkspaceRequests(RebuildRequest&& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<RebuildRequest> m_rebuildWorkspaceRequests;

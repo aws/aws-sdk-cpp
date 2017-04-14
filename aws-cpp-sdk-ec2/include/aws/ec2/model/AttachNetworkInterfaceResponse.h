@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ID of the network interface attachment.</p>
      */
-    inline void SetAttachmentId(Aws::String&& value) { m_attachmentId = value; }
+    inline void SetAttachmentId(Aws::String&& value) { m_attachmentId = std::move(value); }
 
     /**
      * <p>The ID of the network interface attachment.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ID of the network interface attachment.</p>
      */
-    inline AttachNetworkInterfaceResponse& WithAttachmentId(Aws::String&& value) { SetAttachmentId(value); return *this;}
+    inline AttachNetworkInterfaceResponse& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the network interface attachment.</p>
@@ -87,13 +88,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline AttachNetworkInterfaceResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline AttachNetworkInterfaceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline AttachNetworkInterfaceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_attachmentId;

@@ -16,6 +16,7 @@
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * or <code>InstanceIds</code>.</simpara> </zonbook> <xhtml> <p>Can be either
      * <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p> </xhtml>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <zonbook> <simpara>Can be either <code>tag:</code> <emphasis>tag-key</emphasis>
@@ -88,7 +89,7 @@ namespace Model
      * or <code>InstanceIds</code>.</simpara> </zonbook> <xhtml> <p>Can be either
      * <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p> </xhtml>
      */
-    inline RunCommandTarget& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline RunCommandTarget& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>Can be either <code>tag:</code> <emphasis>tag-key</emphasis>
@@ -128,7 +129,7 @@ namespace Model
      * If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list
      * of Amazon EC2 instance IDs.</p> </xhtml>
      */
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
+    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <zonbook> <simpara>If <code>Key</code> is <code>tag:</code>
@@ -150,7 +151,7 @@ namespace Model
      * If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list
      * of Amazon EC2 instance IDs.</p> </xhtml>
      */
-    inline RunCommandTarget& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
+    inline RunCommandTarget& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>If <code>Key</code> is <code>tag:</code>
@@ -172,7 +173,7 @@ namespace Model
      * If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list
      * of Amazon EC2 instance IDs.</p> </xhtml>
      */
-    inline RunCommandTarget& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    inline RunCommandTarget& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
      * <zonbook> <simpara>If <code>Key</code> is <code>tag:</code>

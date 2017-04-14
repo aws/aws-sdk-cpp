@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/InventoryItemAttribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
      * <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and
      * <code>AWS:WindowsUpdate</code>.</p>
      */
-    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
+    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
@@ -104,7 +105,7 @@ namespace Model
      * <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and
      * <code>AWS:WindowsUpdate</code>.</p>
      */
-    inline InventoryItemSchema& WithTypeName(Aws::String&& value) { SetTypeName(value); return *this;}
+    inline InventoryItemSchema& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The schema version for the inventory item.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The schema version for the inventory item.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>The schema version for the inventory item.</p>
      */
-    inline InventoryItemSchema& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline InventoryItemSchema& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The schema version for the inventory item.</p>
@@ -167,7 +168,7 @@ namespace Model
      * <p>The schema attributes for inventory. This contains data type and attribute
      * name.</p>
      */
-    inline void SetAttributes(Aws::Vector<InventoryItemAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Vector<InventoryItemAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>The schema attributes for inventory. This contains data type and attribute
@@ -179,7 +180,7 @@ namespace Model
      * <p>The schema attributes for inventory. This contains data type and attribute
      * name.</p>
      */
-    inline InventoryItemSchema& WithAttributes(Aws::Vector<InventoryItemAttribute>&& value) { SetAttributes(value); return *this;}
+    inline InventoryItemSchema& WithAttributes(Aws::Vector<InventoryItemAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The schema attributes for inventory. This contains data type and attribute
@@ -191,7 +192,7 @@ namespace Model
      * <p>The schema attributes for inventory. This contains data type and attribute
      * name.</p>
      */
-    inline InventoryItemSchema& AddAttributes(InventoryItemAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+    inline InventoryItemSchema& AddAttributes(InventoryItemAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_typeName;

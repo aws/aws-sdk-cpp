@@ -16,6 +16,7 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/states/SFNRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from.</p>
      */
-    inline void SetActivityArn(Aws::String&& value) { m_activityArnHasBeenSet = true; m_activityArn = value; }
+    inline void SetActivityArn(Aws::String&& value) { m_activityArnHasBeenSet = true; m_activityArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from.</p>
      */
-    inline GetActivityTaskRequest& WithActivityArn(Aws::String&& value) { SetActivityArn(value); return *this;}
+    inline GetActivityTaskRequest& WithActivityArn(Aws::String&& value) { SetActivityArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from.</p>
@@ -89,7 +90,7 @@ namespace Model
      * task is assigned to. This name will be used when it is logged in the execution
      * history.</p>
      */
-    inline void SetWorkerName(Aws::String&& value) { m_workerNameHasBeenSet = true; m_workerName = value; }
+    inline void SetWorkerName(Aws::String&& value) { m_workerNameHasBeenSet = true; m_workerName = std::move(value); }
 
     /**
      * <p>An arbitrary name may be provided in order to identify the worker that the
@@ -110,7 +111,7 @@ namespace Model
      * task is assigned to. This name will be used when it is logged in the execution
      * history.</p>
      */
-    inline GetActivityTaskRequest& WithWorkerName(Aws::String&& value) { SetWorkerName(value); return *this;}
+    inline GetActivityTaskRequest& WithWorkerName(Aws::String&& value) { SetWorkerName(std::move(value)); return *this;}
 
     /**
      * <p>An arbitrary name may be provided in order to identify the worker that the

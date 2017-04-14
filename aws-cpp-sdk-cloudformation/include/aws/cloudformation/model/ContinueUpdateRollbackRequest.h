@@ -17,6 +17,7 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * use this operation on the parent stack (the stack that contains the
      * <code>AWS::CloudFormation::Stack</code> resource).</p> </note>
      */
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
+    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
      * <p>The name or the unique ID of the stack that you want to continue rolling
@@ -94,7 +95,7 @@ namespace Model
      * use this operation on the parent stack (the stack that contains the
      * <code>AWS::CloudFormation::Stack</code> resource).</p> </note>
      */
-    inline ContinueUpdateRollbackRequest& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
+    inline ContinueUpdateRollbackRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name or the unique ID of the stack that you want to continue rolling
@@ -145,7 +146,7 @@ namespace Model
      * CloudFormation uses a temporary session that is generated from your user
      * credentials.</p>
      */
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
@@ -187,7 +188,7 @@ namespace Model
      * CloudFormation uses a temporary session that is generated from your user
      * credentials.</p>
      */
-    inline ContinueUpdateRollbackRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+    inline ContinueUpdateRollbackRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
@@ -291,7 +292,7 @@ namespace Model
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
      * <code>DELETE_FAILED</code>. </p>
      */
-    inline void SetResourcesToSkip(Aws::Vector<Aws::String>&& value) { m_resourcesToSkipHasBeenSet = true; m_resourcesToSkip = value; }
+    inline void SetResourcesToSkip(Aws::Vector<Aws::String>&& value) { m_resourcesToSkipHasBeenSet = true; m_resourcesToSkip = std::move(value); }
 
     /**
      * <p>A list of the logical IDs of the resources that AWS CloudFormation skips
@@ -351,7 +352,7 @@ namespace Model
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
      * <code>DELETE_FAILED</code>. </p>
      */
-    inline ContinueUpdateRollbackRequest& WithResourcesToSkip(Aws::Vector<Aws::String>&& value) { SetResourcesToSkip(value); return *this;}
+    inline ContinueUpdateRollbackRequest& WithResourcesToSkip(Aws::Vector<Aws::String>&& value) { SetResourcesToSkip(std::move(value)); return *this;}
 
     /**
      * <p>A list of the logical IDs of the resources that AWS CloudFormation skips
@@ -411,7 +412,7 @@ namespace Model
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
      * <code>DELETE_FAILED</code>. </p>
      */
-    inline ContinueUpdateRollbackRequest& AddResourcesToSkip(Aws::String&& value) { m_resourcesToSkipHasBeenSet = true; m_resourcesToSkip.push_back(value); return *this; }
+    inline ContinueUpdateRollbackRequest& AddResourcesToSkip(Aws::String&& value) { m_resourcesToSkipHasBeenSet = true; m_resourcesToSkip.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of the logical IDs of the resources that AWS CloudFormation skips

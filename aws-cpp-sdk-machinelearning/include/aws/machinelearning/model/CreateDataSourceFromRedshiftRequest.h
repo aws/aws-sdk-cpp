@@ -17,6 +17,7 @@
 #include <aws/machinelearning/MachineLearningRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/machinelearning/model/RedshiftDataSpec.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
      */
-    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
+    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
 
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
      */
-    inline CreateDataSourceFromRedshiftRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(value); return *this;}
+    inline CreateDataSourceFromRedshiftRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>A user-supplied name or description of the <code>DataSource</code>. </p>
      */
-    inline void SetDataSourceName(Aws::String&& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = value; }
+    inline void SetDataSourceName(Aws::String&& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = std::move(value); }
 
     /**
      * <p>A user-supplied name or description of the <code>DataSource</code>. </p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>A user-supplied name or description of the <code>DataSource</code>. </p>
      */
-    inline CreateDataSourceFromRedshiftRequest& WithDataSourceName(Aws::String&& value) { SetDataSourceName(value); return *this;}
+    inline CreateDataSourceFromRedshiftRequest& WithDataSourceName(Aws::String&& value) { SetDataSourceName(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied name or description of the <code>DataSource</code>. </p>
@@ -170,7 +171,7 @@ namespace Model
      * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
      * </ul>
      */
-    inline void SetDataSpec(RedshiftDataSpec&& value) { m_dataSpecHasBeenSet = true; m_dataSpec = value; }
+    inline void SetDataSpec(RedshiftDataSpec&& value) { m_dataSpecHasBeenSet = true; m_dataSpec = std::move(value); }
 
     /**
      * <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
@@ -214,7 +215,7 @@ namespace Model
      * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
      * </ul>
      */
-    inline CreateDataSourceFromRedshiftRequest& WithDataSpec(RedshiftDataSpec&& value) { SetDataSpec(value); return *this;}
+    inline CreateDataSourceFromRedshiftRequest& WithDataSpec(RedshiftDataSpec&& value) { SetDataSpec(std::move(value)); return *this;}
 
     /**
      * <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role
@@ -244,7 +245,7 @@ namespace Model
      * Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
      * </ul> </p>
      */
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role
@@ -274,7 +275,7 @@ namespace Model
      * Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
      * </ul> </p>
      */
-    inline CreateDataSourceFromRedshiftRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+    inline CreateDataSourceFromRedshiftRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role

@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/AvailableCapacity.h>
 #include <aws/ec2/model/HostInstance.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ID of the Dedicated Host.</p>
      */
-    inline void SetHostId(Aws::String&& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
+    inline void SetHostId(Aws::String&& value) { m_hostIdHasBeenSet = true; m_hostId = std::move(value); }
 
     /**
      * <p>The ID of the Dedicated Host.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The ID of the Dedicated Host.</p>
      */
-    inline Host& WithHostId(Aws::String&& value) { SetHostId(value); return *this;}
+    inline Host& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Dedicated Host.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>Whether auto-placement is on or off.</p>
      */
-    inline void SetAutoPlacement(AutoPlacement&& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = value; }
+    inline void SetAutoPlacement(AutoPlacement&& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = std::move(value); }
 
     /**
      * <p>Whether auto-placement is on or off.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>Whether auto-placement is on or off.</p>
      */
-    inline Host& WithAutoPlacement(AutoPlacement&& value) { SetAutoPlacement(value); return *this;}
+    inline Host& WithAutoPlacement(AutoPlacement&& value) { SetAutoPlacement(std::move(value)); return *this;}
 
     /**
      * <p>The reservation ID of the Dedicated Host. This returns a <code>null</code>
@@ -128,7 +129,7 @@ namespace Model
      * <p>The reservation ID of the Dedicated Host. This returns a <code>null</code>
      * response if the Dedicated Host doesn't have an associated reservation.</p>
      */
-    inline void SetHostReservationId(Aws::String&& value) { m_hostReservationIdHasBeenSet = true; m_hostReservationId = value; }
+    inline void SetHostReservationId(Aws::String&& value) { m_hostReservationIdHasBeenSet = true; m_hostReservationId = std::move(value); }
 
     /**
      * <p>The reservation ID of the Dedicated Host. This returns a <code>null</code>
@@ -146,7 +147,7 @@ namespace Model
      * <p>The reservation ID of the Dedicated Host. This returns a <code>null</code>
      * response if the Dedicated Host doesn't have an associated reservation.</p>
      */
-    inline Host& WithHostReservationId(Aws::String&& value) { SetHostReservationId(value); return *this;}
+    inline Host& WithHostReservationId(Aws::String&& value) { SetHostReservationId(std::move(value)); return *this;}
 
     /**
      * <p>The reservation ID of the Dedicated Host. This returns a <code>null</code>
@@ -179,7 +180,7 @@ namespace Model
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
@@ -206,7 +207,7 @@ namespace Model
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
-    inline Host& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline Host& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
@@ -230,7 +231,7 @@ namespace Model
     /**
      * <p>The hardware specifications of the Dedicated Host.</p>
      */
-    inline void SetHostProperties(HostProperties&& value) { m_hostPropertiesHasBeenSet = true; m_hostProperties = value; }
+    inline void SetHostProperties(HostProperties&& value) { m_hostPropertiesHasBeenSet = true; m_hostProperties = std::move(value); }
 
     /**
      * <p>The hardware specifications of the Dedicated Host.</p>
@@ -240,7 +241,7 @@ namespace Model
     /**
      * <p>The hardware specifications of the Dedicated Host.</p>
      */
-    inline Host& WithHostProperties(HostProperties&& value) { SetHostProperties(value); return *this;}
+    inline Host& WithHostProperties(HostProperties&& value) { SetHostProperties(std::move(value)); return *this;}
 
     /**
      * <p>The Dedicated Host's state.</p>
@@ -255,7 +256,7 @@ namespace Model
     /**
      * <p>The Dedicated Host's state.</p>
      */
-    inline void SetState(AllocationState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(AllocationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The Dedicated Host's state.</p>
@@ -265,7 +266,7 @@ namespace Model
     /**
      * <p>The Dedicated Host's state.</p>
      */
-    inline Host& WithState(AllocationState&& value) { SetState(value); return *this;}
+    inline Host& WithState(AllocationState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone of the Dedicated Host.</p>
@@ -280,7 +281,7 @@ namespace Model
     /**
      * <p>The Availability Zone of the Dedicated Host.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone of the Dedicated Host.</p>
@@ -295,7 +296,7 @@ namespace Model
     /**
      * <p>The Availability Zone of the Dedicated Host.</p>
      */
-    inline Host& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline Host& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone of the Dedicated Host.</p>
@@ -318,7 +319,7 @@ namespace Model
      * <p>The IDs and instance type that are currently running on the Dedicated
      * Host.</p>
      */
-    inline void SetInstances(Aws::Vector<HostInstance>&& value) { m_instancesHasBeenSet = true; m_instances = value; }
+    inline void SetInstances(Aws::Vector<HostInstance>&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
 
     /**
      * <p>The IDs and instance type that are currently running on the Dedicated
@@ -330,7 +331,7 @@ namespace Model
      * <p>The IDs and instance type that are currently running on the Dedicated
      * Host.</p>
      */
-    inline Host& WithInstances(Aws::Vector<HostInstance>&& value) { SetInstances(value); return *this;}
+    inline Host& WithInstances(Aws::Vector<HostInstance>&& value) { SetInstances(std::move(value)); return *this;}
 
     /**
      * <p>The IDs and instance type that are currently running on the Dedicated
@@ -342,7 +343,7 @@ namespace Model
      * <p>The IDs and instance type that are currently running on the Dedicated
      * Host.</p>
      */
-    inline Host& AddInstances(HostInstance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
+    inline Host& AddInstances(HostInstance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The number of new instances that can be launched onto the Dedicated Host.</p>
@@ -357,7 +358,7 @@ namespace Model
     /**
      * <p>The number of new instances that can be launched onto the Dedicated Host.</p>
      */
-    inline void SetAvailableCapacity(AvailableCapacity&& value) { m_availableCapacityHasBeenSet = true; m_availableCapacity = value; }
+    inline void SetAvailableCapacity(AvailableCapacity&& value) { m_availableCapacityHasBeenSet = true; m_availableCapacity = std::move(value); }
 
     /**
      * <p>The number of new instances that can be launched onto the Dedicated Host.</p>
@@ -367,7 +368,7 @@ namespace Model
     /**
      * <p>The number of new instances that can be launched onto the Dedicated Host.</p>
      */
-    inline Host& WithAvailableCapacity(AvailableCapacity&& value) { SetAvailableCapacity(value); return *this;}
+    inline Host& WithAvailableCapacity(AvailableCapacity&& value) { SetAvailableCapacity(std::move(value)); return *this;}
 
   private:
     Aws::String m_hostId;

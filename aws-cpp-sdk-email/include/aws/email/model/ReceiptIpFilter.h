@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/email/model/ReceiptFilterPolicy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * <p>Indicates whether to block or allow incoming mail from the specified IP
      * addresses.</p>
      */
-    inline void SetPolicy(ReceiptFilterPolicy&& value) { m_policyHasBeenSet = true; m_policy = value; }
+    inline void SetPolicy(ReceiptFilterPolicy&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
      * <p>Indicates whether to block or allow incoming mail from the specified IP
@@ -79,7 +80,7 @@ namespace Model
      * <p>Indicates whether to block or allow incoming mail from the specified IP
      * addresses.</p>
      */
-    inline ReceiptIpFilter& WithPolicy(ReceiptFilterPolicy&& value) { SetPolicy(value); return *this;}
+    inline ReceiptIpFilter& WithPolicy(ReceiptFilterPolicy&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
      * <p>A single IP address or a range of IP addresses that you want to block or
@@ -106,7 +107,7 @@ namespace Model
      * 10.0.0.1/24. For more information about CIDR notation, see <a
      * href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
      */
-    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = value; }
+    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
 
     /**
      * <p>A single IP address or a range of IP addresses that you want to block or
@@ -133,7 +134,7 @@ namespace Model
      * 10.0.0.1/24. For more information about CIDR notation, see <a
      * href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
      */
-    inline ReceiptIpFilter& WithCidr(Aws::String&& value) { SetCidr(value); return *this;}
+    inline ReceiptIpFilter& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
 
     /**
      * <p>A single IP address or a range of IP addresses that you want to block or

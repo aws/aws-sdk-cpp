@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kms/model/GrantListEntry.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of grants.</p>
      */
-    inline void SetGrants(Aws::Vector<GrantListEntry>&& value) { m_grants = value; }
+    inline void SetGrants(Aws::Vector<GrantListEntry>&& value) { m_grants = std::move(value); }
 
     /**
      * <p>A list of grants.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of grants.</p>
      */
-    inline ListRetirableGrantsResult& WithGrants(Aws::Vector<GrantListEntry>&& value) { SetGrants(value); return *this;}
+    inline ListRetirableGrantsResult& WithGrants(Aws::Vector<GrantListEntry>&& value) { SetGrants(std::move(value)); return *this;}
 
     /**
      * <p>A list of grants.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of grants.</p>
      */
-    inline ListRetirableGrantsResult& AddGrants(GrantListEntry&& value) { m_grants.push_back(value); return *this; }
+    inline ListRetirableGrantsResult& AddGrants(GrantListEntry&& value) { m_grants.push_back(std::move(value)); return *this; }
 
     /**
      * <p>When <code>Truncated</code> is true, this element is present and contains the
@@ -92,7 +93,7 @@ namespace Model
      * <p>When <code>Truncated</code> is true, this element is present and contains the
      * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
      */
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
      * <p>When <code>Truncated</code> is true, this element is present and contains the
@@ -110,7 +111,7 @@ namespace Model
      * <p>When <code>Truncated</code> is true, this element is present and contains the
      * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
      */
-    inline ListRetirableGrantsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
+    inline ListRetirableGrantsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>When <code>Truncated</code> is true, this element is present and contains the

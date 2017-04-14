@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * becomes part of the gateway Amazon Resource Name (ARN), which you use as input
      * for other operations.</p>
      */
-    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
+    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
 
     /**
      * <p>The unique identifier assigned to your gateway during activation. This ID
@@ -83,7 +84,7 @@ namespace Model
      * becomes part of the gateway Amazon Resource Name (ARN), which you use as input
      * for other operations.</p>
      */
-    inline GatewayInfo& WithGatewayId(Aws::String&& value) { SetGatewayId(value); return *this;}
+    inline GatewayInfo& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier assigned to your gateway during activation. This ID
@@ -108,7 +109,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
      * operation to return a list of gateways for your account and region.</p>
      */
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
@@ -126,7 +127,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
      * operation to return a list of gateways for your account and region.</p>
      */
-    inline GatewayInfo& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline GatewayInfo& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The type of the gateway.</p>
      */
-    inline void SetGatewayType(Aws::String&& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = value; }
+    inline void SetGatewayType(Aws::String&& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = std::move(value); }
 
     /**
      * <p>The type of the gateway.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>The type of the gateway.</p>
      */
-    inline GatewayInfo& WithGatewayType(Aws::String&& value) { SetGatewayType(value); return *this;}
+    inline GatewayInfo& WithGatewayType(Aws::String&& value) { SetGatewayType(std::move(value)); return *this;}
 
     /**
      * <p>The type of the gateway.</p>
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
      */
-    inline void SetGatewayOperationalState(Aws::String&& value) { m_gatewayOperationalStateHasBeenSet = true; m_gatewayOperationalState = value; }
+    inline void SetGatewayOperationalState(Aws::String&& value) { m_gatewayOperationalStateHasBeenSet = true; m_gatewayOperationalState = std::move(value); }
 
     /**
      * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
@@ -197,7 +198,7 @@ namespace Model
     /**
      * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
      */
-    inline GatewayInfo& WithGatewayOperationalState(Aws::String&& value) { SetGatewayOperationalState(value); return *this;}
+    inline GatewayInfo& WithGatewayOperationalState(Aws::String&& value) { SetGatewayOperationalState(std::move(value)); return *this;}
 
     /**
      * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
@@ -217,7 +218,7 @@ namespace Model
     /**
      * <p>The name of the gateway.</p>
      */
-    inline void SetGatewayName(Aws::String&& value) { m_gatewayNameHasBeenSet = true; m_gatewayName = value; }
+    inline void SetGatewayName(Aws::String&& value) { m_gatewayNameHasBeenSet = true; m_gatewayName = std::move(value); }
 
     /**
      * <p>The name of the gateway.</p>
@@ -232,7 +233,7 @@ namespace Model
     /**
      * <p>The name of the gateway.</p>
      */
-    inline GatewayInfo& WithGatewayName(Aws::String&& value) { SetGatewayName(value); return *this;}
+    inline GatewayInfo& WithGatewayName(Aws::String&& value) { SetGatewayName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the gateway.</p>

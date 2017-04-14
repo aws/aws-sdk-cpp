@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The transfer message.</p>
      */
-    inline void SetTransferMessage(Aws::String&& value) { m_transferMessageHasBeenSet = true; m_transferMessage = value; }
+    inline void SetTransferMessage(Aws::String&& value) { m_transferMessageHasBeenSet = true; m_transferMessage = std::move(value); }
 
     /**
      * <p>The transfer message.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The transfer message.</p>
      */
-    inline TransferData& WithTransferMessage(Aws::String&& value) { SetTransferMessage(value); return *this;}
+    inline TransferData& WithTransferMessage(Aws::String&& value) { SetTransferMessage(std::move(value)); return *this;}
 
     /**
      * <p>The transfer message.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The reason why the transfer was rejected.</p>
      */
-    inline void SetRejectReason(Aws::String&& value) { m_rejectReasonHasBeenSet = true; m_rejectReason = value; }
+    inline void SetRejectReason(Aws::String&& value) { m_rejectReasonHasBeenSet = true; m_rejectReason = std::move(value); }
 
     /**
      * <p>The reason why the transfer was rejected.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The reason why the transfer was rejected.</p>
      */
-    inline TransferData& WithRejectReason(Aws::String&& value) { SetRejectReason(value); return *this;}
+    inline TransferData& WithRejectReason(Aws::String&& value) { SetRejectReason(std::move(value)); return *this;}
 
     /**
      * <p>The reason why the transfer was rejected.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The date the transfer took place.</p>
      */
-    inline void SetTransferDate(Aws::Utils::DateTime&& value) { m_transferDateHasBeenSet = true; m_transferDate = value; }
+    inline void SetTransferDate(Aws::Utils::DateTime&& value) { m_transferDateHasBeenSet = true; m_transferDate = std::move(value); }
 
     /**
      * <p>The date the transfer took place.</p>
@@ -138,7 +139,7 @@ namespace Model
     /**
      * <p>The date the transfer took place.</p>
      */
-    inline TransferData& WithTransferDate(Aws::Utils::DateTime&& value) { SetTransferDate(value); return *this;}
+    inline TransferData& WithTransferDate(Aws::Utils::DateTime&& value) { SetTransferDate(std::move(value)); return *this;}
 
     /**
      * <p>The date the transfer was accepted.</p>
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p>The date the transfer was accepted.</p>
      */
-    inline void SetAcceptDate(Aws::Utils::DateTime&& value) { m_acceptDateHasBeenSet = true; m_acceptDate = value; }
+    inline void SetAcceptDate(Aws::Utils::DateTime&& value) { m_acceptDateHasBeenSet = true; m_acceptDate = std::move(value); }
 
     /**
      * <p>The date the transfer was accepted.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>The date the transfer was accepted.</p>
      */
-    inline TransferData& WithAcceptDate(Aws::Utils::DateTime&& value) { SetAcceptDate(value); return *this;}
+    inline TransferData& WithAcceptDate(Aws::Utils::DateTime&& value) { SetAcceptDate(std::move(value)); return *this;}
 
     /**
      * <p>The date the transfer was rejected.</p>
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>The date the transfer was rejected.</p>
      */
-    inline void SetRejectDate(Aws::Utils::DateTime&& value) { m_rejectDateHasBeenSet = true; m_rejectDate = value; }
+    inline void SetRejectDate(Aws::Utils::DateTime&& value) { m_rejectDateHasBeenSet = true; m_rejectDate = std::move(value); }
 
     /**
      * <p>The date the transfer was rejected.</p>
@@ -188,7 +189,7 @@ namespace Model
     /**
      * <p>The date the transfer was rejected.</p>
      */
-    inline TransferData& WithRejectDate(Aws::Utils::DateTime&& value) { SetRejectDate(value); return *this;}
+    inline TransferData& WithRejectDate(Aws::Utils::DateTime&& value) { SetRejectDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_transferMessage;

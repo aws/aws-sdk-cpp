@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
      */
-    inline void SetComputeEnvironment(Aws::String&& value) { m_computeEnvironmentHasBeenSet = true; m_computeEnvironment = value; }
+    inline void SetComputeEnvironment(Aws::String&& value) { m_computeEnvironmentHasBeenSet = true; m_computeEnvironment = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
      */
-    inline ComputeEnvironmentOrder& WithComputeEnvironment(Aws::String&& value) { SetComputeEnvironment(value); return *this;}
+    inline ComputeEnvironmentOrder& WithComputeEnvironment(Aws::String&& value) { SetComputeEnvironment(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the compute environment.</p>

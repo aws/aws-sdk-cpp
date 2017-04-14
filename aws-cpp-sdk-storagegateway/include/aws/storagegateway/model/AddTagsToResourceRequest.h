@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/storagegateway/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
      */
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
+    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
      */
-    inline AddTagsToResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(value); return *this;}
+    inline AddTagsToResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
@@ -97,7 +98,7 @@ namespace Model
      * value are letters, spaces, and numbers representable in UTF-8 format, and the
      * following special characters: + - = . _ : / @.</p> </note>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The key-value pair that represents the tag you want to add to the resource.
@@ -113,7 +114,7 @@ namespace Model
      * value are letters, spaces, and numbers representable in UTF-8 format, and the
      * following special characters: + - = . _ : / @.</p> </note>
      */
-    inline AddTagsToResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline AddTagsToResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The key-value pair that represents the tag you want to add to the resource.
@@ -129,7 +130,7 @@ namespace Model
      * value are letters, spaces, and numbers representable in UTF-8 format, and the
      * following special characters: + - = . _ : / @.</p> </note>
      */
-    inline AddTagsToResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline AddTagsToResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_resourceARN;

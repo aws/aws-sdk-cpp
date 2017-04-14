@@ -21,6 +21,7 @@
 #include <aws/lightsail/model/InstanceHardware.h>
 #include <aws/lightsail/model/InstanceNetworking.h>
 #include <aws/lightsail/model/InstanceState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * <p>The name the user gave the instance (e.g.,
      * <code>Amazon_Linux-1GB-Virginia-1</code>).</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name the user gave the instance (e.g.,
@@ -84,7 +85,7 @@ namespace Model
      * <p>The name the user gave the instance (e.g.,
      * <code>Amazon_Linux-1GB-Virginia-1</code>).</p>
      */
-    inline Instance& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Instance& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name the user gave the instance (e.g.,
@@ -108,7 +109,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
      * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
@@ -126,7 +127,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
      * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
-    inline Instance& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Instance& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
@@ -153,7 +154,7 @@ namespace Model
      * questions about an instance or another resource in Lightsail. This code enables
      * our support team to look up your Lightsail information more easily.</p>
      */
-    inline void SetSupportCode(Aws::String&& value) { m_supportCodeHasBeenSet = true; m_supportCode = value; }
+    inline void SetSupportCode(Aws::String&& value) { m_supportCodeHasBeenSet = true; m_supportCode = std::move(value); }
 
     /**
      * <p>The support code. Include this code in your email to support when you have
@@ -174,7 +175,7 @@ namespace Model
      * questions about an instance or another resource in Lightsail. This code enables
      * our support team to look up your Lightsail information more easily.</p>
      */
-    inline Instance& WithSupportCode(Aws::String&& value) { SetSupportCode(value); return *this;}
+    inline Instance& WithSupportCode(Aws::String&& value) { SetSupportCode(std::move(value)); return *this;}
 
     /**
      * <p>The support code. Include this code in your email to support when you have
@@ -199,7 +200,7 @@ namespace Model
      * <p>The timestamp when the instance was created (e.g.,
      * <code>1479734909.17</code>).</p>
      */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
      * <p>The timestamp when the instance was created (e.g.,
@@ -211,7 +212,7 @@ namespace Model
      * <p>The timestamp when the instance was created (e.g.,
      * <code>1479734909.17</code>).</p>
      */
-    inline Instance& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
+    inline Instance& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
      * <p>The region name and availability zone where the instance is located.</p>
@@ -226,7 +227,7 @@ namespace Model
     /**
      * <p>The region name and availability zone where the instance is located.</p>
      */
-    inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = value; }
+    inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
      * <p>The region name and availability zone where the instance is located.</p>
@@ -236,7 +237,7 @@ namespace Model
     /**
      * <p>The region name and availability zone where the instance is located.</p>
      */
-    inline Instance& WithLocation(ResourceLocation&& value) { SetLocation(value); return *this;}
+    inline Instance& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * <p>The type of resource (usually <code>Instance</code>).</p>
@@ -251,7 +252,7 @@ namespace Model
     /**
      * <p>The type of resource (usually <code>Instance</code>).</p>
      */
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of resource (usually <code>Instance</code>).</p>
@@ -261,7 +262,7 @@ namespace Model
     /**
      * <p>The type of resource (usually <code>Instance</code>).</p>
      */
-    inline Instance& WithResourceType(ResourceType&& value) { SetResourceType(value); return *this;}
+    inline Instance& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
@@ -276,7 +277,7 @@ namespace Model
     /**
      * <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
      */
-    inline void SetBlueprintId(Aws::String&& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = value; }
+    inline void SetBlueprintId(Aws::String&& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = std::move(value); }
 
     /**
      * <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
@@ -291,7 +292,7 @@ namespace Model
     /**
      * <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
      */
-    inline Instance& WithBlueprintId(Aws::String&& value) { SetBlueprintId(value); return *this;}
+    inline Instance& WithBlueprintId(Aws::String&& value) { SetBlueprintId(std::move(value)); return *this;}
 
     /**
      * <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
@@ -311,7 +312,7 @@ namespace Model
     /**
      * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
      */
-    inline void SetBlueprintName(Aws::String&& value) { m_blueprintNameHasBeenSet = true; m_blueprintName = value; }
+    inline void SetBlueprintName(Aws::String&& value) { m_blueprintNameHasBeenSet = true; m_blueprintName = std::move(value); }
 
     /**
      * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
@@ -326,7 +327,7 @@ namespace Model
     /**
      * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
      */
-    inline Instance& WithBlueprintName(Aws::String&& value) { SetBlueprintName(value); return *this;}
+    inline Instance& WithBlueprintName(Aws::String&& value) { SetBlueprintName(std::move(value)); return *this;}
 
     /**
      * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
@@ -346,7 +347,7 @@ namespace Model
     /**
      * <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
      */
-    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
+    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
 
     /**
      * <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
@@ -361,7 +362,7 @@ namespace Model
     /**
      * <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
      */
-    inline Instance& WithBundleId(Aws::String&& value) { SetBundleId(value); return *this;}
+    inline Instance& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
 
     /**
      * <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
@@ -399,7 +400,7 @@ namespace Model
     /**
      * <p>The private IP address of the instance.</p>
      */
-    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
+    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
 
     /**
      * <p>The private IP address of the instance.</p>
@@ -414,7 +415,7 @@ namespace Model
     /**
      * <p>The private IP address of the instance.</p>
      */
-    inline Instance& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(value); return *this;}
+    inline Instance& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>The private IP address of the instance.</p>
@@ -434,7 +435,7 @@ namespace Model
     /**
      * <p>The public IP address of the instance.</p>
      */
-    inline void SetPublicIpAddress(Aws::String&& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = value; }
+    inline void SetPublicIpAddress(Aws::String&& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = std::move(value); }
 
     /**
      * <p>The public IP address of the instance.</p>
@@ -449,7 +450,7 @@ namespace Model
     /**
      * <p>The public IP address of the instance.</p>
      */
-    inline Instance& WithPublicIpAddress(Aws::String&& value) { SetPublicIpAddress(value); return *this;}
+    inline Instance& WithPublicIpAddress(Aws::String&& value) { SetPublicIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>The public IP address of the instance.</p>
@@ -469,7 +470,7 @@ namespace Model
     /**
      * <p>The IPv6 address of the instance.</p>
      */
-    inline void SetIpv6Address(Aws::String&& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = value; }
+    inline void SetIpv6Address(Aws::String&& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = std::move(value); }
 
     /**
      * <p>The IPv6 address of the instance.</p>
@@ -484,7 +485,7 @@ namespace Model
     /**
      * <p>The IPv6 address of the instance.</p>
      */
-    inline Instance& WithIpv6Address(Aws::String&& value) { SetIpv6Address(value); return *this;}
+    inline Instance& WithIpv6Address(Aws::String&& value) { SetIpv6Address(std::move(value)); return *this;}
 
     /**
      * <p>The IPv6 address of the instance.</p>
@@ -504,7 +505,7 @@ namespace Model
     /**
      * <p>The size of the vCPU and the amount of RAM for the instance.</p>
      */
-    inline void SetHardware(InstanceHardware&& value) { m_hardwareHasBeenSet = true; m_hardware = value; }
+    inline void SetHardware(InstanceHardware&& value) { m_hardwareHasBeenSet = true; m_hardware = std::move(value); }
 
     /**
      * <p>The size of the vCPU and the amount of RAM for the instance.</p>
@@ -514,7 +515,7 @@ namespace Model
     /**
      * <p>The size of the vCPU and the amount of RAM for the instance.</p>
      */
-    inline Instance& WithHardware(InstanceHardware&& value) { SetHardware(value); return *this;}
+    inline Instance& WithHardware(InstanceHardware&& value) { SetHardware(std::move(value)); return *this;}
 
     /**
      * <p>Information about the public ports and monthly data transfer rates for the
@@ -532,7 +533,7 @@ namespace Model
      * <p>Information about the public ports and monthly data transfer rates for the
      * instance.</p>
      */
-    inline void SetNetworking(InstanceNetworking&& value) { m_networkingHasBeenSet = true; m_networking = value; }
+    inline void SetNetworking(InstanceNetworking&& value) { m_networkingHasBeenSet = true; m_networking = std::move(value); }
 
     /**
      * <p>Information about the public ports and monthly data transfer rates for the
@@ -544,7 +545,7 @@ namespace Model
      * <p>Information about the public ports and monthly data transfer rates for the
      * instance.</p>
      */
-    inline Instance& WithNetworking(InstanceNetworking&& value) { SetNetworking(value); return *this;}
+    inline Instance& WithNetworking(InstanceNetworking&& value) { SetNetworking(std::move(value)); return *this;}
 
     /**
      * <p>The status code and the state (e.g., <code>running</code>) for the
@@ -562,7 +563,7 @@ namespace Model
      * <p>The status code and the state (e.g., <code>running</code>) for the
      * instance.</p>
      */
-    inline void SetState(InstanceState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(InstanceState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The status code and the state (e.g., <code>running</code>) for the
@@ -574,7 +575,7 @@ namespace Model
      * <p>The status code and the state (e.g., <code>running</code>) for the
      * instance.</p>
      */
-    inline Instance& WithState(InstanceState&& value) { SetState(value); return *this;}
+    inline Instance& WithState(InstanceState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The user name for connecting to the instance (e.g.,
@@ -592,7 +593,7 @@ namespace Model
      * <p>The user name for connecting to the instance (e.g.,
      * <code>ec2-user</code>).</p>
      */
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
+    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
      * <p>The user name for connecting to the instance (e.g.,
@@ -610,7 +611,7 @@ namespace Model
      * <p>The user name for connecting to the instance (e.g.,
      * <code>ec2-user</code>).</p>
      */
-    inline Instance& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
+    inline Instance& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
      * <p>The user name for connecting to the instance (e.g.,
@@ -634,7 +635,7 @@ namespace Model
      * <p>The name of the SSH key being used to connect to the instance (e.g.,
      * <code>LightsailDefaultKeyPair</code>).</p>
      */
-    inline void SetSshKeyName(Aws::String&& value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName = value; }
+    inline void SetSshKeyName(Aws::String&& value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName = std::move(value); }
 
     /**
      * <p>The name of the SSH key being used to connect to the instance (e.g.,
@@ -652,7 +653,7 @@ namespace Model
      * <p>The name of the SSH key being used to connect to the instance (e.g.,
      * <code>LightsailDefaultKeyPair</code>).</p>
      */
-    inline Instance& WithSshKeyName(Aws::String&& value) { SetSshKeyName(value); return *this;}
+    inline Instance& WithSshKeyName(Aws::String&& value) { SetSshKeyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the SSH key being used to connect to the instance (e.g.,

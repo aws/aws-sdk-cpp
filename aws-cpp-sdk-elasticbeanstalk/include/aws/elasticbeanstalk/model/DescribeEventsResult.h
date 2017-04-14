@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
 #include <aws/elasticbeanstalk/model/EventDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p> A list of <a>EventDescription</a>. </p>
      */
-    inline void SetEvents(Aws::Vector<EventDescription>&& value) { m_events = value; }
+    inline void SetEvents(Aws::Vector<EventDescription>&& value) { m_events = std::move(value); }
 
     /**
      * <p> A list of <a>EventDescription</a>. </p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p> A list of <a>EventDescription</a>. </p>
      */
-    inline DescribeEventsResult& WithEvents(Aws::Vector<EventDescription>&& value) { SetEvents(value); return *this;}
+    inline DescribeEventsResult& WithEvents(Aws::Vector<EventDescription>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
      * <p> A list of <a>EventDescription</a>. </p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p> A list of <a>EventDescription</a>. </p>
      */
-    inline DescribeEventsResult& AddEvents(EventDescription&& value) { m_events.push_back(value); return *this; }
+    inline DescribeEventsResult& AddEvents(EventDescription&& value) { m_events.push_back(std::move(value)); return *this; }
 
     /**
      * <p> If returned, this indicates that there are more results to obtain. Use this
@@ -102,7 +103,7 @@ namespace Model
      * token in the next <a>DescribeEvents</a> call to get the next batch of events.
      * </p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p> If returned, this indicates that there are more results to obtain. Use this
@@ -123,7 +124,7 @@ namespace Model
      * token in the next <a>DescribeEvents</a> call to get the next batch of events.
      * </p>
      */
-    inline DescribeEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p> If returned, this indicates that there are more results to obtain. Use this
@@ -139,13 +140,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeEventsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeEventsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeEventsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<EventDescription> m_events;

@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -81,7 +82,7 @@ namespace Model
      * <p>The association ID representing the current association between the route
      * table and subnet.</p>
      */
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
 
     /**
      * <p>The association ID representing the current association between the route
@@ -99,7 +100,7 @@ namespace Model
      * <p>The association ID representing the current association between the route
      * table and subnet.</p>
      */
-    inline DisassociateRouteTableRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(value); return *this;}
+    inline DisassociateRouteTableRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
      * <p>The association ID representing the current association between the route

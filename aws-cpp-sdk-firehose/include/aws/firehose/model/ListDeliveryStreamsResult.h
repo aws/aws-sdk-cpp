@@ -16,6 +16,7 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The names of the delivery streams.</p>
      */
-    inline void SetDeliveryStreamNames(Aws::Vector<Aws::String>&& value) { m_deliveryStreamNames = value; }
+    inline void SetDeliveryStreamNames(Aws::Vector<Aws::String>&& value) { m_deliveryStreamNames = std::move(value); }
 
     /**
      * <p>The names of the delivery streams.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The names of the delivery streams.</p>
      */
-    inline ListDeliveryStreamsResult& WithDeliveryStreamNames(Aws::Vector<Aws::String>&& value) { SetDeliveryStreamNames(value); return *this;}
+    inline ListDeliveryStreamsResult& WithDeliveryStreamNames(Aws::Vector<Aws::String>&& value) { SetDeliveryStreamNames(std::move(value)); return *this;}
 
     /**
      * <p>The names of the delivery streams.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The names of the delivery streams.</p>
      */
-    inline ListDeliveryStreamsResult& AddDeliveryStreamNames(Aws::String&& value) { m_deliveryStreamNames.push_back(value); return *this; }
+    inline ListDeliveryStreamsResult& AddDeliveryStreamNames(Aws::String&& value) { m_deliveryStreamNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of the delivery streams.</p>

@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ID of the HIT to be deleted.</p>
      */
-    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
+    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = std::move(value); }
 
     /**
      * <p>The ID of the HIT to be deleted.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID of the HIT to be deleted.</p>
      */
-    inline DeleteHITRequest& WithHITId(Aws::String&& value) { SetHITId(value); return *this;}
+    inline DeleteHITRequest& WithHITId(Aws::String&& value) { SetHITId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the HIT to be deleted.</p>

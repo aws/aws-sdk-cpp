@@ -19,6 +19,7 @@
 #include <aws/ec2/model/ArchitectureValues.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The full path to your AMI manifest in Amazon S3 storage.</p>
      */
-    inline void SetImageLocation(Aws::String&& value) { m_imageLocationHasBeenSet = true; m_imageLocation = value; }
+    inline void SetImageLocation(Aws::String&& value) { m_imageLocationHasBeenSet = true; m_imageLocation = std::move(value); }
 
     /**
      * <p>The full path to your AMI manifest in Amazon S3 storage.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The full path to your AMI manifest in Amazon S3 storage.</p>
      */
-    inline RegisterImageRequest& WithImageLocation(Aws::String&& value) { SetImageLocation(value); return *this;}
+    inline RegisterImageRequest& WithImageLocation(Aws::String&& value) { SetImageLocation(std::move(value)); return *this;}
 
     /**
      * <p>The full path to your AMI manifest in Amazon S3 storage.</p>
@@ -121,7 +122,7 @@ namespace Model
      * parentheses (()), square brackets ([]), spaces ( ), periods (.), slashes (/),
      * dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>A name for your AMI.</p> <p>Constraints: 3-128 alphanumeric characters,
@@ -142,7 +143,7 @@ namespace Model
      * parentheses (()), square brackets ([]), spaces ( ), periods (.), slashes (/),
      * dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
      */
-    inline RegisterImageRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline RegisterImageRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A name for your AMI.</p> <p>Constraints: 3-128 alphanumeric characters,
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>A description for your AMI.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description for your AMI.</p>
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p>A description for your AMI.</p>
      */
-    inline RegisterImageRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline RegisterImageRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description for your AMI.</p>
@@ -205,7 +206,7 @@ namespace Model
      * <code>i386</code>. For instance store-backed AMIs, the architecture specified in
      * the manifest file.</p>
      */
-    inline void SetArchitecture(ArchitectureValues&& value) { m_architectureHasBeenSet = true; m_architecture = value; }
+    inline void SetArchitecture(ArchitectureValues&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
 
     /**
      * <p>The architecture of the AMI.</p> <p>Default: For Amazon EBS-backed AMIs,
@@ -219,7 +220,7 @@ namespace Model
      * <code>i386</code>. For instance store-backed AMIs, the architecture specified in
      * the manifest file.</p>
      */
-    inline RegisterImageRequest& WithArchitecture(ArchitectureValues&& value) { SetArchitecture(value); return *this;}
+    inline RegisterImageRequest& WithArchitecture(ArchitectureValues&& value) { SetArchitecture(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the kernel.</p>
@@ -234,7 +235,7 @@ namespace Model
     /**
      * <p>The ID of the kernel.</p>
      */
-    inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
+    inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::move(value); }
 
     /**
      * <p>The ID of the kernel.</p>
@@ -249,7 +250,7 @@ namespace Model
     /**
      * <p>The ID of the kernel.</p>
      */
-    inline RegisterImageRequest& WithKernelId(Aws::String&& value) { SetKernelId(value); return *this;}
+    inline RegisterImageRequest& WithKernelId(Aws::String&& value) { SetKernelId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the kernel.</p>
@@ -269,7 +270,7 @@ namespace Model
     /**
      * <p>The ID of the RAM disk.</p>
      */
-    inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
+    inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::move(value); }
 
     /**
      * <p>The ID of the RAM disk.</p>
@@ -284,7 +285,7 @@ namespace Model
     /**
      * <p>The ID of the RAM disk.</p>
      */
-    inline RegisterImageRequest& WithRamdiskId(Aws::String&& value) { SetRamdiskId(value); return *this;}
+    inline RegisterImageRequest& WithRamdiskId(Aws::String&& value) { SetRamdiskId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the RAM disk.</p>
@@ -310,7 +311,7 @@ namespace Model
      * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
      * an AMI.</p>
      */
-    inline void SetBillingProducts(Aws::Vector<Aws::String>&& value) { m_billingProductsHasBeenSet = true; m_billingProducts = value; }
+    inline void SetBillingProducts(Aws::Vector<Aws::String>&& value) { m_billingProductsHasBeenSet = true; m_billingProducts = std::move(value); }
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
@@ -324,7 +325,7 @@ namespace Model
      * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
      * an AMI.</p>
      */
-    inline RegisterImageRequest& WithBillingProducts(Aws::Vector<Aws::String>&& value) { SetBillingProducts(value); return *this;}
+    inline RegisterImageRequest& WithBillingProducts(Aws::Vector<Aws::String>&& value) { SetBillingProducts(std::move(value)); return *this;}
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
@@ -338,7 +339,7 @@ namespace Model
      * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
      * an AMI.</p>
      */
-    inline RegisterImageRequest& AddBillingProducts(Aws::String&& value) { m_billingProductsHasBeenSet = true; m_billingProducts.push_back(value); return *this; }
+    inline RegisterImageRequest& AddBillingProducts(Aws::String&& value) { m_billingProductsHasBeenSet = true; m_billingProducts.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
@@ -363,7 +364,7 @@ namespace Model
      * <p>The name of the root device (for example, <code>/dev/sda1</code>, or
      * <code>/dev/xvda</code>).</p>
      */
-    inline void SetRootDeviceName(Aws::String&& value) { m_rootDeviceNameHasBeenSet = true; m_rootDeviceName = value; }
+    inline void SetRootDeviceName(Aws::String&& value) { m_rootDeviceNameHasBeenSet = true; m_rootDeviceName = std::move(value); }
 
     /**
      * <p>The name of the root device (for example, <code>/dev/sda1</code>, or
@@ -381,7 +382,7 @@ namespace Model
      * <p>The name of the root device (for example, <code>/dev/sda1</code>, or
      * <code>/dev/xvda</code>).</p>
      */
-    inline RegisterImageRequest& WithRootDeviceName(Aws::String&& value) { SetRootDeviceName(value); return *this;}
+    inline RegisterImageRequest& WithRootDeviceName(Aws::String&& value) { SetRootDeviceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the root device (for example, <code>/dev/sda1</code>, or
@@ -402,7 +403,7 @@ namespace Model
     /**
      * <p>One or more block device mapping entries.</p>
      */
-    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
+    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
      * <p>One or more block device mapping entries.</p>
@@ -412,7 +413,7 @@ namespace Model
     /**
      * <p>One or more block device mapping entries.</p>
      */
-    inline RegisterImageRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(value); return *this;}
+    inline RegisterImageRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
      * <p>One or more block device mapping entries.</p>
@@ -422,7 +423,7 @@ namespace Model
     /**
      * <p>One or more block device mapping entries.</p>
      */
-    inline RegisterImageRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
+    inline RegisterImageRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
@@ -437,7 +438,7 @@ namespace Model
     /**
      * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
      */
-    inline void SetVirtualizationType(Aws::String&& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = value; }
+    inline void SetVirtualizationType(Aws::String&& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = std::move(value); }
 
     /**
      * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
@@ -452,7 +453,7 @@ namespace Model
     /**
      * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
      */
-    inline RegisterImageRequest& WithVirtualizationType(Aws::String&& value) { SetVirtualizationType(value); return *this;}
+    inline RegisterImageRequest& WithVirtualizationType(Aws::String&& value) { SetVirtualizationType(std::move(value)); return *this;}
 
     /**
      * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
@@ -484,7 +485,7 @@ namespace Model
      * time.</p> <p>This option is supported only for HVM AMIs. Specifying this option
      * with a PV AMI can make instances launched from the AMI unreachable.</p>
      */
-    inline void SetSriovNetSupport(Aws::String&& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = value; }
+    inline void SetSriovNetSupport(Aws::String&& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = std::move(value); }
 
     /**
      * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
@@ -511,7 +512,7 @@ namespace Model
      * time.</p> <p>This option is supported only for HVM AMIs. Specifying this option
      * with a PV AMI can make instances launched from the AMI unreachable.</p>
      */
-    inline RegisterImageRequest& WithSriovNetSupport(Aws::String&& value) { SetSriovNetSupport(value); return *this;}
+    inline RegisterImageRequest& WithSriovNetSupport(Aws::String&& value) { SetSriovNetSupport(std::move(value)); return *this;}
 
     /**
      * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599

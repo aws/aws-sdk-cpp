@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticloadbalancingv2/model/Cipher.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The protocols.</p>
      */
-    inline void SetSslProtocols(Aws::Vector<Aws::String>&& value) { m_sslProtocolsHasBeenSet = true; m_sslProtocols = value; }
+    inline void SetSslProtocols(Aws::Vector<Aws::String>&& value) { m_sslProtocolsHasBeenSet = true; m_sslProtocols = std::move(value); }
 
     /**
      * <p>The protocols.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The protocols.</p>
      */
-    inline SslPolicy& WithSslProtocols(Aws::Vector<Aws::String>&& value) { SetSslProtocols(value); return *this;}
+    inline SslPolicy& WithSslProtocols(Aws::Vector<Aws::String>&& value) { SetSslProtocols(std::move(value)); return *this;}
 
     /**
      * <p>The protocols.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The protocols.</p>
      */
-    inline SslPolicy& AddSslProtocols(Aws::String&& value) { m_sslProtocolsHasBeenSet = true; m_sslProtocols.push_back(value); return *this; }
+    inline SslPolicy& AddSslProtocols(Aws::String&& value) { m_sslProtocolsHasBeenSet = true; m_sslProtocols.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The protocols.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The ciphers.</p>
      */
-    inline void SetCiphers(Aws::Vector<Cipher>&& value) { m_ciphersHasBeenSet = true; m_ciphers = value; }
+    inline void SetCiphers(Aws::Vector<Cipher>&& value) { m_ciphersHasBeenSet = true; m_ciphers = std::move(value); }
 
     /**
      * <p>The ciphers.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The ciphers.</p>
      */
-    inline SslPolicy& WithCiphers(Aws::Vector<Cipher>&& value) { SetCiphers(value); return *this;}
+    inline SslPolicy& WithCiphers(Aws::Vector<Cipher>&& value) { SetCiphers(std::move(value)); return *this;}
 
     /**
      * <p>The ciphers.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The ciphers.</p>
      */
-    inline SslPolicy& AddCiphers(Cipher&& value) { m_ciphersHasBeenSet = true; m_ciphers.push_back(value); return *this; }
+    inline SslPolicy& AddCiphers(Cipher&& value) { m_ciphersHasBeenSet = true; m_ciphers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The name of the policy.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The name of the policy.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the policy.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>The name of the policy.</p>
      */
-    inline SslPolicy& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline SslPolicy& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the policy.</p>

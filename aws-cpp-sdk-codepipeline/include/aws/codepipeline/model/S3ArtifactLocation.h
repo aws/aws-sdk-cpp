@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of the Amazon S3 bucket.</p>
      */
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
+    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
 
     /**
      * <p>The name of the Amazon S3 bucket.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The name of the Amazon S3 bucket.</p>
      */
-    inline S3ArtifactLocation& WithBucketName(Aws::String&& value) { SetBucketName(value); return *this;}
+    inline S3ArtifactLocation& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon S3 bucket.</p>
@@ -95,7 +96,7 @@ namespace Model
      * <p>The key of the object in the Amazon S3 bucket, which uniquely identifies the
      * object in the bucket.</p>
      */
-    inline void SetObjectKey(Aws::String&& value) { m_objectKeyHasBeenSet = true; m_objectKey = value; }
+    inline void SetObjectKey(Aws::String&& value) { m_objectKeyHasBeenSet = true; m_objectKey = std::move(value); }
 
     /**
      * <p>The key of the object in the Amazon S3 bucket, which uniquely identifies the
@@ -113,7 +114,7 @@ namespace Model
      * <p>The key of the object in the Amazon S3 bucket, which uniquely identifies the
      * object in the bucket.</p>
      */
-    inline S3ArtifactLocation& WithObjectKey(Aws::String&& value) { SetObjectKey(value); return *this;}
+    inline S3ArtifactLocation& WithObjectKey(Aws::String&& value) { SetObjectKey(std::move(value)); return *this;}
 
     /**
      * <p>The key of the object in the Amazon S3 bucket, which uniquely identifies the

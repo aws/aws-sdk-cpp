@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/monitoring/model/ResponseMetadata.h>
 #include <aws/monitoring/model/AlarmHistoryItem.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The alarm histories, in JSON format.</p>
      */
-    inline void SetAlarmHistoryItems(Aws::Vector<AlarmHistoryItem>&& value) { m_alarmHistoryItems = value; }
+    inline void SetAlarmHistoryItems(Aws::Vector<AlarmHistoryItem>&& value) { m_alarmHistoryItems = std::move(value); }
 
     /**
      * <p>The alarm histories, in JSON format.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The alarm histories, in JSON format.</p>
      */
-    inline DescribeAlarmHistoryResult& WithAlarmHistoryItems(Aws::Vector<AlarmHistoryItem>&& value) { SetAlarmHistoryItems(value); return *this;}
+    inline DescribeAlarmHistoryResult& WithAlarmHistoryItems(Aws::Vector<AlarmHistoryItem>&& value) { SetAlarmHistoryItems(std::move(value)); return *this;}
 
     /**
      * <p>The alarm histories, in JSON format.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The alarm histories, in JSON format.</p>
      */
-    inline DescribeAlarmHistoryResult& AddAlarmHistoryItems(AlarmHistoryItem&& value) { m_alarmHistoryItems.push_back(value); return *this; }
+    inline DescribeAlarmHistoryResult& AddAlarmHistoryItems(AlarmHistoryItem&& value) { m_alarmHistoryItems.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token that marks the start of the next batch of returned results.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The token that marks the start of the next batch of returned results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token that marks the start of the next batch of returned results.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The token that marks the start of the next batch of returned results.</p>
      */
-    inline DescribeAlarmHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeAlarmHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token that marks the start of the next batch of returned results.</p>
@@ -119,13 +120,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeAlarmHistoryResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeAlarmHistoryResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeAlarmHistoryResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<AlarmHistoryItem> m_alarmHistoryItems;

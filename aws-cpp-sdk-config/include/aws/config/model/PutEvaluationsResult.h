@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/config/model/Evaluation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Requests that failed because of a client or server error.</p>
      */
-    inline void SetFailedEvaluations(Aws::Vector<Evaluation>&& value) { m_failedEvaluations = value; }
+    inline void SetFailedEvaluations(Aws::Vector<Evaluation>&& value) { m_failedEvaluations = std::move(value); }
 
     /**
      * <p>Requests that failed because of a client or server error.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Requests that failed because of a client or server error.</p>
      */
-    inline PutEvaluationsResult& WithFailedEvaluations(Aws::Vector<Evaluation>&& value) { SetFailedEvaluations(value); return *this;}
+    inline PutEvaluationsResult& WithFailedEvaluations(Aws::Vector<Evaluation>&& value) { SetFailedEvaluations(std::move(value)); return *this;}
 
     /**
      * <p>Requests that failed because of a client or server error.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>Requests that failed because of a client or server error.</p>
      */
-    inline PutEvaluationsResult& AddFailedEvaluations(Evaluation&& value) { m_failedEvaluations.push_back(value); return *this; }
+    inline PutEvaluationsResult& AddFailedEvaluations(Evaluation&& value) { m_failedEvaluations.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Evaluation> m_failedEvaluations;

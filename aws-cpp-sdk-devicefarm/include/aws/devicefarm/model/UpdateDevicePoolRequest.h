@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devicefarm/model/Rule.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>The Amazon Resourc Name (ARN) of the Device Farm device pool you wish to
      * update.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resourc Name (ARN) of the Device Farm device pool you wish to
@@ -75,7 +76,7 @@ namespace Model
      * <p>The Amazon Resourc Name (ARN) of the Device Farm device pool you wish to
      * update.</p>
      */
-    inline UpdateDevicePoolRequest& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline UpdateDevicePoolRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resourc Name (ARN) of the Device Farm device pool you wish to
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>A string representing the name of the device pool you wish to update.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>A string representing the name of the device pool you wish to update.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>A string representing the name of the device pool you wish to update.</p>
      */
-    inline UpdateDevicePoolRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateDevicePoolRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A string representing the name of the device pool you wish to update.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>A description of the device pool you wish to update.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description of the device pool you wish to update.</p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>A description of the device pool you wish to update.</p>
      */
-    inline UpdateDevicePoolRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline UpdateDevicePoolRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description of the device pool you wish to update.</p>
@@ -172,7 +173,7 @@ namespace Model
      * is optional; however, if you choose to update rules for your request, the update
      * will replace the existing rules.</p>
      */
-    inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = value; }
+    inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
      * <p>Represents the rules you wish to modify for the device pool. Updating rules
@@ -186,7 +187,7 @@ namespace Model
      * is optional; however, if you choose to update rules for your request, the update
      * will replace the existing rules.</p>
      */
-    inline UpdateDevicePoolRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(value); return *this;}
+    inline UpdateDevicePoolRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
      * <p>Represents the rules you wish to modify for the device pool. Updating rules
@@ -200,7 +201,7 @@ namespace Model
      * is optional; however, if you choose to update rules for your request, the update
      * will replace the existing rules.</p>
      */
-    inline UpdateDevicePoolRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
+    inline UpdateDevicePoolRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_arn;

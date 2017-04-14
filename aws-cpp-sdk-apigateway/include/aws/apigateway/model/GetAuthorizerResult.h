@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/apigateway/model/AuthorizerType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The identifier for the authorizer resource.</p>
      */
-    inline void SetId(Aws::String&& value) { m_id = value; }
+    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
      * <p>The identifier for the authorizer resource.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The identifier for the authorizer resource.</p>
      */
-    inline GetAuthorizerResult& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline GetAuthorizerResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the authorizer resource.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>[Required] The name of the authorizer.</p>
      */
-    inline void SetName(Aws::String&& value) { m_name = value; }
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
      * <p>[Required] The name of the authorizer.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>[Required] The name of the authorizer.</p>
      */
-    inline GetAuthorizerResult& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline GetAuthorizerResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>[Required] The name of the authorizer.</p>
@@ -139,7 +140,7 @@ namespace Model
      * <code>TOKEN</code> for a Lambda function or <code>COGNITO_USER_POOLS</code> for
      * an Amazon Cognito user pool.</p>
      */
-    inline void SetType(AuthorizerType&& value) { m_type = value; }
+    inline void SetType(AuthorizerType&& value) { m_type = std::move(value); }
 
     /**
      * <p>[Required] The type of the authorizer. Currently, the valid type is
@@ -153,7 +154,7 @@ namespace Model
      * <code>TOKEN</code> for a Lambda function or <code>COGNITO_USER_POOLS</code> for
      * an Amazon Cognito user pool.</p>
      */
-    inline GetAuthorizerResult& WithType(AuthorizerType&& value) { SetType(value); return *this;}
+    inline GetAuthorizerResult& WithType(AuthorizerType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>A list of the provider ARNs of the authorizer. For an <code>TOKEN</code>
@@ -183,7 +184,7 @@ namespace Model
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * </p>
      */
-    inline void SetProviderARNs(Aws::Vector<Aws::String>&& value) { m_providerARNs = value; }
+    inline void SetProviderARNs(Aws::Vector<Aws::String>&& value) { m_providerARNs = std::move(value); }
 
     /**
      * <p>A list of the provider ARNs of the authorizer. For an <code>TOKEN</code>
@@ -203,7 +204,7 @@ namespace Model
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * </p>
      */
-    inline GetAuthorizerResult& WithProviderARNs(Aws::Vector<Aws::String>&& value) { SetProviderARNs(value); return *this;}
+    inline GetAuthorizerResult& WithProviderARNs(Aws::Vector<Aws::String>&& value) { SetProviderARNs(std::move(value)); return *this;}
 
     /**
      * <p>A list of the provider ARNs of the authorizer. For an <code>TOKEN</code>
@@ -223,7 +224,7 @@ namespace Model
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * </p>
      */
-    inline GetAuthorizerResult& AddProviderARNs(Aws::String&& value) { m_providerARNs.push_back(value); return *this; }
+    inline GetAuthorizerResult& AddProviderARNs(Aws::String&& value) { m_providerARNs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of the provider ARNs of the authorizer. For an <code>TOKEN</code>
@@ -251,7 +252,7 @@ namespace Model
      * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
      * functional impact.</p>
      */
-    inline void SetAuthType(Aws::String&& value) { m_authType = value; }
+    inline void SetAuthType(Aws::String&& value) { m_authType = std::move(value); }
 
     /**
      * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
@@ -269,7 +270,7 @@ namespace Model
      * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
      * functional impact.</p>
      */
-    inline GetAuthorizerResult& WithAuthType(Aws::String&& value) { SetAuthType(value); return *this;}
+    inline GetAuthorizerResult& WithAuthType(Aws::String&& value) { SetAuthType(std::move(value)); return *this;}
 
     /**
      * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
@@ -320,7 +321,7 @@ namespace Model
      * Lambda functions, this is usually of the form
      * /2015-03-31/functions/[FunctionARN]/invocations.</p>
      */
-    inline void SetAuthorizerUri(Aws::String&& value) { m_authorizerUri = value; }
+    inline void SetAuthorizerUri(Aws::String&& value) { m_authorizerUri = std::move(value); }
 
     /**
      * <p>[Required] Specifies the authorizer's Uniform Resource Identifier (URI). For
@@ -365,7 +366,7 @@ namespace Model
      * Lambda functions, this is usually of the form
      * /2015-03-31/functions/[FunctionARN]/invocations.</p>
      */
-    inline GetAuthorizerResult& WithAuthorizerUri(Aws::String&& value) { SetAuthorizerUri(value); return *this;}
+    inline GetAuthorizerResult& WithAuthorizerUri(Aws::String&& value) { SetAuthorizerUri(std::move(value)); return *this;}
 
     /**
      * <p>[Required] Specifies the authorizer's Uniform Resource Identifier (URI). For
@@ -404,7 +405,7 @@ namespace Model
      * role's Amazon Resource Name (ARN). To use resource-based permissions on the
      * Lambda function, specify null.</p>
      */
-    inline void SetAuthorizerCredentials(Aws::String&& value) { m_authorizerCredentials = value; }
+    inline void SetAuthorizerCredentials(Aws::String&& value) { m_authorizerCredentials = std::move(value); }
 
     /**
      * <p>Specifies the credentials required for the authorizer, if any. Two options
@@ -428,7 +429,7 @@ namespace Model
      * role's Amazon Resource Name (ARN). To use resource-based permissions on the
      * Lambda function, specify null.</p>
      */
-    inline GetAuthorizerResult& WithAuthorizerCredentials(Aws::String&& value) { SetAuthorizerCredentials(value); return *this;}
+    inline GetAuthorizerResult& WithAuthorizerCredentials(Aws::String&& value) { SetAuthorizerCredentials(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the credentials required for the authorizer, if any. Two options
@@ -469,7 +470,7 @@ namespace Model
      * token. For <code>COGNITO_USER_POOLS</code> authorizers, this property is
      * used.</p>
      */
-    inline void SetIdentitySource(Aws::String&& value) { m_identitySource = value; }
+    inline void SetIdentitySource(Aws::String&& value) { m_identitySource = std::move(value); }
 
     /**
      * <p>[Required] The source of the identity in an incoming request. For a
@@ -502,7 +503,7 @@ namespace Model
      * token. For <code>COGNITO_USER_POOLS</code> authorizers, this property is
      * used.</p>
      */
-    inline GetAuthorizerResult& WithIdentitySource(Aws::String&& value) { SetIdentitySource(value); return *this;}
+    inline GetAuthorizerResult& WithIdentitySource(Aws::String&& value) { SetIdentitySource(std::move(value)); return *this;}
 
     /**
      * <p>[Required] The source of the identity in an incoming request. For a
@@ -540,7 +541,7 @@ namespace Model
      * matches. If the token doesn't match, the client receives a 401 Unauthorized
      * response.</p>
      */
-    inline void SetIdentityValidationExpression(Aws::String&& value) { m_identityValidationExpression = value; }
+    inline void SetIdentityValidationExpression(Aws::String&& value) { m_identityValidationExpression = std::move(value); }
 
     /**
      * <p>A validation expression for the incoming identity. For <code>TOKEN</code>
@@ -567,7 +568,7 @@ namespace Model
      * matches. If the token doesn't match, the client receives a 401 Unauthorized
      * response.</p>
      */
-    inline GetAuthorizerResult& WithIdentityValidationExpression(Aws::String&& value) { SetIdentityValidationExpression(value); return *this;}
+    inline GetAuthorizerResult& WithIdentityValidationExpression(Aws::String&& value) { SetIdentityValidationExpression(std::move(value)); return *this;}
 
     /**
      * <p>A validation expression for the incoming identity. For <code>TOKEN</code>

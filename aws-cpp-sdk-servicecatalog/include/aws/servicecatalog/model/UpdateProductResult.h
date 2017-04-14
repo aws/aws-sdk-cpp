@@ -17,6 +17,7 @@
 #include <aws/servicecatalog/model/ProductViewDetail.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The resulting detailed product view information.</p>
      */
-    inline void SetProductViewDetail(ProductViewDetail&& value) { m_productViewDetail = value; }
+    inline void SetProductViewDetail(ProductViewDetail&& value) { m_productViewDetail = std::move(value); }
 
     /**
      * <p>The resulting detailed product view information.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The resulting detailed product view information.</p>
      */
-    inline UpdateProductResult& WithProductViewDetail(ProductViewDetail&& value) { SetProductViewDetail(value); return *this;}
+    inline UpdateProductResult& WithProductViewDetail(ProductViewDetail&& value) { SetProductViewDetail(std::move(value)); return *this;}
 
     /**
      * <p>Tags associated with the product.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>Tags associated with the product.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
      * <p>Tags associated with the product.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>Tags associated with the product.</p>
      */
-    inline UpdateProductResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline UpdateProductResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Tags associated with the product.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>Tags associated with the product.</p>
      */
-    inline UpdateProductResult& AddTags(Tag&& value) { m_tags.push_back(value); return *this; }
+    inline UpdateProductResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
   private:
     ProductViewDetail m_productViewDetail;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/Parent.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of parents for the specified child account or OU.</p>
      */
-    inline void SetParents(Aws::Vector<Parent>&& value) { m_parents = value; }
+    inline void SetParents(Aws::Vector<Parent>&& value) { m_parents = std::move(value); }
 
     /**
      * <p>A list of parents for the specified child account or OU.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of parents for the specified child account or OU.</p>
      */
-    inline ListParentsResult& WithParents(Aws::Vector<Parent>&& value) { SetParents(value); return *this;}
+    inline ListParentsResult& WithParents(Aws::Vector<Parent>&& value) { SetParents(std::move(value)); return *this;}
 
     /**
      * <p>A list of parents for the specified child account or OU.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of parents for the specified child account or OU.</p>
      */
-    inline ListParentsResult& AddParents(Parent&& value) { m_parents.push_back(value); return *this; }
+    inline ListParentsResult& AddParents(Parent&& value) { m_parents.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -101,7 +102,7 @@ namespace Model
      * the output. You should repeat this until the <code>NextToken</code> response
      * element comes back as <code>null</code>.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -128,7 +129,7 @@ namespace Model
      * the output. You should repeat this until the <code>NextToken</code> response
      * element comes back as <code>null</code>.</p>
      */
-    inline ListParentsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListParentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If present, this value indicates that there is more output available than is

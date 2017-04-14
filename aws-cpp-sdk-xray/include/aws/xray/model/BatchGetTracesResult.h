@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/xray/model/Trace.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>Full traces for the specified requests.</p>
      */
-    inline void SetTraces(Aws::Vector<Trace>&& value) { m_traces = value; }
+    inline void SetTraces(Aws::Vector<Trace>&& value) { m_traces = std::move(value); }
 
     /**
      * <p>Full traces for the specified requests.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Full traces for the specified requests.</p>
      */
-    inline BatchGetTracesResult& WithTraces(Aws::Vector<Trace>&& value) { SetTraces(value); return *this;}
+    inline BatchGetTracesResult& WithTraces(Aws::Vector<Trace>&& value) { SetTraces(std::move(value)); return *this;}
 
     /**
      * <p>Full traces for the specified requests.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Full traces for the specified requests.</p>
      */
-    inline BatchGetTracesResult& AddTraces(Trace&& value) { m_traces.push_back(value); return *this; }
+    inline BatchGetTracesResult& AddTraces(Trace&& value) { m_traces.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Trace IDs of requests that haven't been processed.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>Trace IDs of requests that haven't been processed.</p>
      */
-    inline void SetUnprocessedTraceIds(Aws::Vector<Aws::String>&& value) { m_unprocessedTraceIds = value; }
+    inline void SetUnprocessedTraceIds(Aws::Vector<Aws::String>&& value) { m_unprocessedTraceIds = std::move(value); }
 
     /**
      * <p>Trace IDs of requests that haven't been processed.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>Trace IDs of requests that haven't been processed.</p>
      */
-    inline BatchGetTracesResult& WithUnprocessedTraceIds(Aws::Vector<Aws::String>&& value) { SetUnprocessedTraceIds(value); return *this;}
+    inline BatchGetTracesResult& WithUnprocessedTraceIds(Aws::Vector<Aws::String>&& value) { SetUnprocessedTraceIds(std::move(value)); return *this;}
 
     /**
      * <p>Trace IDs of requests that haven't been processed.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>Trace IDs of requests that haven't been processed.</p>
      */
-    inline BatchGetTracesResult& AddUnprocessedTraceIds(Aws::String&& value) { m_unprocessedTraceIds.push_back(value); return *this; }
+    inline BatchGetTracesResult& AddUnprocessedTraceIds(Aws::String&& value) { m_unprocessedTraceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Trace IDs of requests that haven't been processed.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>Pagination token. Not used.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>Pagination token. Not used.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>Pagination token. Not used.</p>
      */
-    inline BatchGetTracesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline BatchGetTracesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Pagination token. Not used.</p>

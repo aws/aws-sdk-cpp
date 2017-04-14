@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>The ID of the CA certificate. This operation will list all registered device
      * certificate that were signed by this CA certificate. </p>
      */
-    inline void SetCaCertificateId(Aws::String&& value) { m_caCertificateIdHasBeenSet = true; m_caCertificateId = value; }
+    inline void SetCaCertificateId(Aws::String&& value) { m_caCertificateIdHasBeenSet = true; m_caCertificateId = std::move(value); }
 
     /**
      * <p>The ID of the CA certificate. This operation will list all registered device
@@ -77,7 +78,7 @@ namespace Model
      * <p>The ID of the CA certificate. This operation will list all registered device
      * certificate that were signed by this CA certificate. </p>
      */
-    inline ListCertificatesByCARequest& WithCaCertificateId(Aws::String&& value) { SetCaCertificateId(value); return *this;}
+    inline ListCertificatesByCARequest& WithCaCertificateId(Aws::String&& value) { SetCaCertificateId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the CA certificate. This operation will list all registered device
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The marker for the next set of results.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>The marker for the next set of results.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The marker for the next set of results.</p>
      */
-    inline ListCertificatesByCARequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListCertificatesByCARequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>The marker for the next set of results.</p>

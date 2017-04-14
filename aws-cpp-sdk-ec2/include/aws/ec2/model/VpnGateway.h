@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VpcAttachment.h>
 #include <aws/ec2/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The ID of the virtual private gateway.</p>
      */
-    inline void SetVpnGatewayId(Aws::String&& value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId = value; }
+    inline void SetVpnGatewayId(Aws::String&& value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId = std::move(value); }
 
     /**
      * <p>The ID of the virtual private gateway.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The ID of the virtual private gateway.</p>
      */
-    inline VpnGateway& WithVpnGatewayId(Aws::String&& value) { SetVpnGatewayId(value); return *this;}
+    inline VpnGateway& WithVpnGatewayId(Aws::String&& value) { SetVpnGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the virtual private gateway.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The current state of the virtual private gateway.</p>
      */
-    inline void SetState(VpnState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(VpnState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The current state of the virtual private gateway.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The current state of the virtual private gateway.</p>
      */
-    inline VpnGateway& WithState(VpnState&& value) { SetState(value); return *this;}
+    inline VpnGateway& WithState(VpnState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The type of VPN connection the virtual private gateway supports.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The type of VPN connection the virtual private gateway supports.</p>
      */
-    inline void SetType(GatewayType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(GatewayType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of VPN connection the virtual private gateway supports.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>The type of VPN connection the virtual private gateway supports.</p>
      */
-    inline VpnGateway& WithType(GatewayType&& value) { SetType(value); return *this;}
+    inline VpnGateway& WithType(GatewayType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone where the virtual private gateway was created, if
@@ -152,7 +153,7 @@ namespace Model
      * <p>The Availability Zone where the virtual private gateway was created, if
      * applicable. This field may be empty or not returned.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone where the virtual private gateway was created, if
@@ -170,7 +171,7 @@ namespace Model
      * <p>The Availability Zone where the virtual private gateway was created, if
      * applicable. This field may be empty or not returned.</p>
      */
-    inline VpnGateway& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline VpnGateway& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone where the virtual private gateway was created, if
@@ -191,7 +192,7 @@ namespace Model
     /**
      * <p>Any VPCs attached to the virtual private gateway.</p>
      */
-    inline void SetVpcAttachments(Aws::Vector<VpcAttachment>&& value) { m_vpcAttachmentsHasBeenSet = true; m_vpcAttachments = value; }
+    inline void SetVpcAttachments(Aws::Vector<VpcAttachment>&& value) { m_vpcAttachmentsHasBeenSet = true; m_vpcAttachments = std::move(value); }
 
     /**
      * <p>Any VPCs attached to the virtual private gateway.</p>
@@ -201,7 +202,7 @@ namespace Model
     /**
      * <p>Any VPCs attached to the virtual private gateway.</p>
      */
-    inline VpnGateway& WithVpcAttachments(Aws::Vector<VpcAttachment>&& value) { SetVpcAttachments(value); return *this;}
+    inline VpnGateway& WithVpcAttachments(Aws::Vector<VpcAttachment>&& value) { SetVpcAttachments(std::move(value)); return *this;}
 
     /**
      * <p>Any VPCs attached to the virtual private gateway.</p>
@@ -211,7 +212,7 @@ namespace Model
     /**
      * <p>Any VPCs attached to the virtual private gateway.</p>
      */
-    inline VpnGateway& AddVpcAttachments(VpcAttachment&& value) { m_vpcAttachmentsHasBeenSet = true; m_vpcAttachments.push_back(value); return *this; }
+    inline VpnGateway& AddVpcAttachments(VpcAttachment&& value) { m_vpcAttachmentsHasBeenSet = true; m_vpcAttachments.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Any tags assigned to the virtual private gateway.</p>
@@ -226,7 +227,7 @@ namespace Model
     /**
      * <p>Any tags assigned to the virtual private gateway.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>Any tags assigned to the virtual private gateway.</p>
@@ -236,7 +237,7 @@ namespace Model
     /**
      * <p>Any tags assigned to the virtual private gateway.</p>
      */
-    inline VpnGateway& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline VpnGateway& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Any tags assigned to the virtual private gateway.</p>
@@ -246,7 +247,7 @@ namespace Model
     /**
      * <p>Any tags assigned to the virtual private gateway.</p>
      */
-    inline VpnGateway& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline VpnGateway& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_vpnGatewayId;

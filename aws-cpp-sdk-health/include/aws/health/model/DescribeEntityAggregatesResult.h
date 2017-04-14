@@ -16,6 +16,7 @@
 #include <aws/health/Health_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/health/model/EntityAggregate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The number of entities that are affected by each of the specified events.</p>
      */
-    inline void SetEntityAggregates(Aws::Vector<EntityAggregate>&& value) { m_entityAggregates = value; }
+    inline void SetEntityAggregates(Aws::Vector<EntityAggregate>&& value) { m_entityAggregates = std::move(value); }
 
     /**
      * <p>The number of entities that are affected by each of the specified events.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The number of entities that are affected by each of the specified events.</p>
      */
-    inline DescribeEntityAggregatesResult& WithEntityAggregates(Aws::Vector<EntityAggregate>&& value) { SetEntityAggregates(value); return *this;}
+    inline DescribeEntityAggregatesResult& WithEntityAggregates(Aws::Vector<EntityAggregate>&& value) { SetEntityAggregates(std::move(value)); return *this;}
 
     /**
      * <p>The number of entities that are affected by each of the specified events.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The number of entities that are affected by each of the specified events.</p>
      */
-    inline DescribeEntityAggregatesResult& AddEntityAggregates(EntityAggregate&& value) { m_entityAggregates.push_back(value); return *this; }
+    inline DescribeEntityAggregatesResult& AddEntityAggregates(EntityAggregate&& value) { m_entityAggregates.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<EntityAggregate> m_entityAggregates;

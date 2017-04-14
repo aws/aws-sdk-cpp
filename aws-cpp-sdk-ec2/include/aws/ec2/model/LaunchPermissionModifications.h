@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/LaunchPermission.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The AWS account ID to add to the list of launch permissions for the AMI.</p>
      */
-    inline void SetAdd(Aws::Vector<LaunchPermission>&& value) { m_addHasBeenSet = true; m_add = value; }
+    inline void SetAdd(Aws::Vector<LaunchPermission>&& value) { m_addHasBeenSet = true; m_add = std::move(value); }
 
     /**
      * <p>The AWS account ID to add to the list of launch permissions for the AMI.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The AWS account ID to add to the list of launch permissions for the AMI.</p>
      */
-    inline LaunchPermissionModifications& WithAdd(Aws::Vector<LaunchPermission>&& value) { SetAdd(value); return *this;}
+    inline LaunchPermissionModifications& WithAdd(Aws::Vector<LaunchPermission>&& value) { SetAdd(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID to add to the list of launch permissions for the AMI.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The AWS account ID to add to the list of launch permissions for the AMI.</p>
      */
-    inline LaunchPermissionModifications& AddAdd(LaunchPermission&& value) { m_addHasBeenSet = true; m_add.push_back(value); return *this; }
+    inline LaunchPermissionModifications& AddAdd(LaunchPermission&& value) { m_addHasBeenSet = true; m_add.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The AWS account ID to remove from the list of launch permissions for the
@@ -98,7 +99,7 @@ namespace Model
      * <p>The AWS account ID to remove from the list of launch permissions for the
      * AMI.</p>
      */
-    inline void SetRemove(Aws::Vector<LaunchPermission>&& value) { m_removeHasBeenSet = true; m_remove = value; }
+    inline void SetRemove(Aws::Vector<LaunchPermission>&& value) { m_removeHasBeenSet = true; m_remove = std::move(value); }
 
     /**
      * <p>The AWS account ID to remove from the list of launch permissions for the
@@ -110,7 +111,7 @@ namespace Model
      * <p>The AWS account ID to remove from the list of launch permissions for the
      * AMI.</p>
      */
-    inline LaunchPermissionModifications& WithRemove(Aws::Vector<LaunchPermission>&& value) { SetRemove(value); return *this;}
+    inline LaunchPermissionModifications& WithRemove(Aws::Vector<LaunchPermission>&& value) { SetRemove(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID to remove from the list of launch permissions for the
@@ -122,7 +123,7 @@ namespace Model
      * <p>The AWS account ID to remove from the list of launch permissions for the
      * AMI.</p>
      */
-    inline LaunchPermissionModifications& AddRemove(LaunchPermission&& value) { m_removeHasBeenSet = true; m_remove.push_back(value); return *this; }
+    inline LaunchPermissionModifications& AddRemove(LaunchPermission&& value) { m_removeHasBeenSet = true; m_remove.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<LaunchPermission> m_add;

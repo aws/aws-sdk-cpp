@@ -16,6 +16,7 @@
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesisanalytics/model/ApplicationStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Name of the application.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>Name of the application.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>Name of the application.</p>
      */
-    inline ApplicationSummary& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline ApplicationSummary& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the application.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>ARN of the application.</p>
      */
-    inline void SetApplicationARN(Aws::String&& value) { m_applicationARNHasBeenSet = true; m_applicationARN = value; }
+    inline void SetApplicationARN(Aws::String&& value) { m_applicationARNHasBeenSet = true; m_applicationARN = std::move(value); }
 
     /**
      * <p>ARN of the application.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>ARN of the application.</p>
      */
-    inline ApplicationSummary& WithApplicationARN(Aws::String&& value) { SetApplicationARN(value); return *this;}
+    inline ApplicationSummary& WithApplicationARN(Aws::String&& value) { SetApplicationARN(std::move(value)); return *this;}
 
     /**
      * <p>ARN of the application.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>Status of the application.</p>
      */
-    inline void SetApplicationStatus(ApplicationStatus&& value) { m_applicationStatusHasBeenSet = true; m_applicationStatus = value; }
+    inline void SetApplicationStatus(ApplicationStatus&& value) { m_applicationStatusHasBeenSet = true; m_applicationStatus = std::move(value); }
 
     /**
      * <p>Status of the application.</p>
@@ -138,7 +139,7 @@ namespace Model
     /**
      * <p>Status of the application.</p>
      */
-    inline ApplicationSummary& WithApplicationStatus(ApplicationStatus&& value) { SetApplicationStatus(value); return *this;}
+    inline ApplicationSummary& WithApplicationStatus(ApplicationStatus&& value) { SetApplicationStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_applicationName;

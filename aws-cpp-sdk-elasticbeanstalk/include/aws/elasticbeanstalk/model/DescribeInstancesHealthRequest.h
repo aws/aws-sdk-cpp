@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticbeanstalk/model/InstancesHealthAttribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>Specify the AWS Elastic Beanstalk environment by name.</p>
      */
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
+    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
 
     /**
      * <p>Specify the AWS Elastic Beanstalk environment by name.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>Specify the AWS Elastic Beanstalk environment by name.</p>
      */
-    inline DescribeInstancesHealthRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
+    inline DescribeInstancesHealthRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
 
     /**
      * <p>Specify the AWS Elastic Beanstalk environment by name.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
      */
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
+    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
 
     /**
      * <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
      */
-    inline DescribeInstancesHealthRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(value); return *this;}
+    inline DescribeInstancesHealthRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
 
     /**
      * <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
@@ -132,7 +133,7 @@ namespace Model
      * attributes, set to <code>All</code>. If no attribute names are specified,
      * returns a list of instances.</p>
      */
-    inline void SetAttributeNames(Aws::Vector<InstancesHealthAttribute>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
+    inline void SetAttributeNames(Aws::Vector<InstancesHealthAttribute>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::move(value); }
 
     /**
      * <p>Specifies the response elements you wish to receive. To retrieve all
@@ -146,7 +147,7 @@ namespace Model
      * attributes, set to <code>All</code>. If no attribute names are specified,
      * returns a list of instances.</p>
      */
-    inline DescribeInstancesHealthRequest& WithAttributeNames(Aws::Vector<InstancesHealthAttribute>&& value) { SetAttributeNames(value); return *this;}
+    inline DescribeInstancesHealthRequest& WithAttributeNames(Aws::Vector<InstancesHealthAttribute>&& value) { SetAttributeNames(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the response elements you wish to receive. To retrieve all
@@ -160,7 +161,7 @@ namespace Model
      * attributes, set to <code>All</code>. If no attribute names are specified,
      * returns a list of instances.</p>
      */
-    inline DescribeInstancesHealthRequest& AddAttributeNames(InstancesHealthAttribute&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
+    inline DescribeInstancesHealthRequest& AddAttributeNames(InstancesHealthAttribute&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specify the pagination token returned by a previous call.</p>
@@ -175,7 +176,7 @@ namespace Model
     /**
      * <p>Specify the pagination token returned by a previous call.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Specify the pagination token returned by a previous call.</p>
@@ -190,7 +191,7 @@ namespace Model
     /**
      * <p>Specify the pagination token returned by a previous call.</p>
      */
-    inline DescribeInstancesHealthRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeInstancesHealthRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Specify the pagination token returned by a previous call.</p>

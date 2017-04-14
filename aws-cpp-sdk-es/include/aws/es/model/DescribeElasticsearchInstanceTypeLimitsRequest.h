@@ -17,6 +17,7 @@
 #include <aws/es/ElasticsearchServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/es/model/ESPartitionInstanceType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * This should be present only if we are querying for Elasticsearch <code>
      * <a>Limits</a> </code> for existing domain. </p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p> DomainName represents the name of the Domain that we are trying to modify.
@@ -85,7 +86,7 @@ namespace Model
      * This should be present only if we are querying for Elasticsearch <code>
      * <a>Limits</a> </code> for existing domain. </p>
      */
-    inline DescribeElasticsearchInstanceTypeLimitsRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DescribeElasticsearchInstanceTypeLimitsRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p> DomainName represents the name of the Domain that we are trying to modify.
@@ -110,7 +111,7 @@ namespace Model
      * <p> The instance type for an Elasticsearch cluster for which Elasticsearch
      * <code> <a>Limits</a> </code> are needed. </p>
      */
-    inline void SetInstanceType(ESPartitionInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(ESPartitionInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p> The instance type for an Elasticsearch cluster for which Elasticsearch
@@ -122,7 +123,7 @@ namespace Model
      * <p> The instance type for an Elasticsearch cluster for which Elasticsearch
      * <code> <a>Limits</a> </code> are needed. </p>
      */
-    inline DescribeElasticsearchInstanceTypeLimitsRequest& WithInstanceType(ESPartitionInstanceType&& value) { SetInstanceType(value); return *this;}
+    inline DescribeElasticsearchInstanceTypeLimitsRequest& WithInstanceType(ESPartitionInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p> Version of Elasticsearch for which <code> <a>Limits</a> </code> are needed.
@@ -140,7 +141,7 @@ namespace Model
      * <p> Version of Elasticsearch for which <code> <a>Limits</a> </code> are needed.
      * </p>
      */
-    inline void SetElasticsearchVersion(Aws::String&& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = value; }
+    inline void SetElasticsearchVersion(Aws::String&& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = std::move(value); }
 
     /**
      * <p> Version of Elasticsearch for which <code> <a>Limits</a> </code> are needed.
@@ -158,7 +159,7 @@ namespace Model
      * <p> Version of Elasticsearch for which <code> <a>Limits</a> </code> are needed.
      * </p>
      */
-    inline DescribeElasticsearchInstanceTypeLimitsRequest& WithElasticsearchVersion(Aws::String&& value) { SetElasticsearchVersion(value); return *this;}
+    inline DescribeElasticsearchInstanceTypeLimitsRequest& WithElasticsearchVersion(Aws::String&& value) { SetElasticsearchVersion(std::move(value)); return *this;}
 
     /**
      * <p> Version of Elasticsearch for which <code> <a>Limits</a> </code> are needed.

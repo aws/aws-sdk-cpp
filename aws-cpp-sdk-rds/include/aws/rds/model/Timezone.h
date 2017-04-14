@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The name of the time zone.</p>
      */
-    inline void SetTimezoneName(Aws::String&& value) { m_timezoneNameHasBeenSet = true; m_timezoneName = value; }
+    inline void SetTimezoneName(Aws::String&& value) { m_timezoneNameHasBeenSet = true; m_timezoneName = std::move(value); }
 
     /**
      * <p>The name of the time zone.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The name of the time zone.</p>
      */
-    inline Timezone& WithTimezoneName(Aws::String&& value) { SetTimezoneName(value); return *this;}
+    inline Timezone& WithTimezoneName(Aws::String&& value) { SetTimezoneName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the time zone.</p>

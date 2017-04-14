@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/PathToObjectIdentifiers.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>Returns the path to the <code>ObjectIdentifiers</code> associated with the
      * directory.</p>
      */
-    inline void SetPathToObjectIdentifiersList(Aws::Vector<PathToObjectIdentifiers>&& value) { m_pathToObjectIdentifiersList = value; }
+    inline void SetPathToObjectIdentifiersList(Aws::Vector<PathToObjectIdentifiers>&& value) { m_pathToObjectIdentifiersList = std::move(value); }
 
     /**
      * <p>Returns the path to the <code>ObjectIdentifiers</code> associated with the
@@ -69,7 +70,7 @@ namespace Model
      * <p>Returns the path to the <code>ObjectIdentifiers</code> associated with the
      * directory.</p>
      */
-    inline ListObjectParentPathsResult& WithPathToObjectIdentifiersList(Aws::Vector<PathToObjectIdentifiers>&& value) { SetPathToObjectIdentifiersList(value); return *this;}
+    inline ListObjectParentPathsResult& WithPathToObjectIdentifiersList(Aws::Vector<PathToObjectIdentifiers>&& value) { SetPathToObjectIdentifiersList(std::move(value)); return *this;}
 
     /**
      * <p>Returns the path to the <code>ObjectIdentifiers</code> associated with the
@@ -81,7 +82,7 @@ namespace Model
      * <p>Returns the path to the <code>ObjectIdentifiers</code> associated with the
      * directory.</p>
      */
-    inline ListObjectParentPathsResult& AddPathToObjectIdentifiersList(PathToObjectIdentifiers&& value) { m_pathToObjectIdentifiersList.push_back(value); return *this; }
+    inline ListObjectParentPathsResult& AddPathToObjectIdentifiersList(PathToObjectIdentifiers&& value) { m_pathToObjectIdentifiersList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The pagination token.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline ListObjectParentPathsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListObjectParentPathsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>

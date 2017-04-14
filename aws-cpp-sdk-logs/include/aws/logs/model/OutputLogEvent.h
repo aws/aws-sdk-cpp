@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The data contained in the log event.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The data contained in the log event.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The data contained in the log event.</p>
      */
-    inline OutputLogEvent& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline OutputLogEvent& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The data contained in the log event.</p>

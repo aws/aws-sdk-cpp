@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/health/model/EventTypeCategory.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A list of event type codes.</p>
      */
-    inline void SetEventTypeCodes(Aws::Vector<Aws::String>&& value) { m_eventTypeCodesHasBeenSet = true; m_eventTypeCodes = value; }
+    inline void SetEventTypeCodes(Aws::Vector<Aws::String>&& value) { m_eventTypeCodesHasBeenSet = true; m_eventTypeCodes = std::move(value); }
 
     /**
      * <p>A list of event type codes.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A list of event type codes.</p>
      */
-    inline EventTypeFilter& WithEventTypeCodes(Aws::Vector<Aws::String>&& value) { SetEventTypeCodes(value); return *this;}
+    inline EventTypeFilter& WithEventTypeCodes(Aws::Vector<Aws::String>&& value) { SetEventTypeCodes(std::move(value)); return *this;}
 
     /**
      * <p>A list of event type codes.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>A list of event type codes.</p>
      */
-    inline EventTypeFilter& AddEventTypeCodes(Aws::String&& value) { m_eventTypeCodesHasBeenSet = true; m_eventTypeCodes.push_back(value); return *this; }
+    inline EventTypeFilter& AddEventTypeCodes(Aws::String&& value) { m_eventTypeCodesHasBeenSet = true; m_eventTypeCodes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of event type codes.</p>
@@ -102,7 +103,7 @@ namespace Model
      * <p>The AWS services associated with the event. For example, <code>EC2</code>,
      * <code>RDS</code>.</p>
      */
-    inline void SetServices(Aws::Vector<Aws::String>&& value) { m_servicesHasBeenSet = true; m_services = value; }
+    inline void SetServices(Aws::Vector<Aws::String>&& value) { m_servicesHasBeenSet = true; m_services = std::move(value); }
 
     /**
      * <p>The AWS services associated with the event. For example, <code>EC2</code>,
@@ -114,7 +115,7 @@ namespace Model
      * <p>The AWS services associated with the event. For example, <code>EC2</code>,
      * <code>RDS</code>.</p>
      */
-    inline EventTypeFilter& WithServices(Aws::Vector<Aws::String>&& value) { SetServices(value); return *this;}
+    inline EventTypeFilter& WithServices(Aws::Vector<Aws::String>&& value) { SetServices(std::move(value)); return *this;}
 
     /**
      * <p>The AWS services associated with the event. For example, <code>EC2</code>,
@@ -126,7 +127,7 @@ namespace Model
      * <p>The AWS services associated with the event. For example, <code>EC2</code>,
      * <code>RDS</code>.</p>
      */
-    inline EventTypeFilter& AddServices(Aws::String&& value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
+    inline EventTypeFilter& AddServices(Aws::String&& value) { m_servicesHasBeenSet = true; m_services.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The AWS services associated with the event. For example, <code>EC2</code>,
@@ -150,7 +151,7 @@ namespace Model
      * <p>A list of event type category codes (<code>issue</code>,
      * <code>scheduledChange</code>, or <code>accountNotification</code>).</p>
      */
-    inline void SetEventTypeCategories(Aws::Vector<EventTypeCategory>&& value) { m_eventTypeCategoriesHasBeenSet = true; m_eventTypeCategories = value; }
+    inline void SetEventTypeCategories(Aws::Vector<EventTypeCategory>&& value) { m_eventTypeCategoriesHasBeenSet = true; m_eventTypeCategories = std::move(value); }
 
     /**
      * <p>A list of event type category codes (<code>issue</code>,
@@ -162,7 +163,7 @@ namespace Model
      * <p>A list of event type category codes (<code>issue</code>,
      * <code>scheduledChange</code>, or <code>accountNotification</code>).</p>
      */
-    inline EventTypeFilter& WithEventTypeCategories(Aws::Vector<EventTypeCategory>&& value) { SetEventTypeCategories(value); return *this;}
+    inline EventTypeFilter& WithEventTypeCategories(Aws::Vector<EventTypeCategory>&& value) { SetEventTypeCategories(std::move(value)); return *this;}
 
     /**
      * <p>A list of event type category codes (<code>issue</code>,
@@ -174,7 +175,7 @@ namespace Model
      * <p>A list of event type category codes (<code>issue</code>,
      * <code>scheduledChange</code>, or <code>accountNotification</code>).</p>
      */
-    inline EventTypeFilter& AddEventTypeCategories(EventTypeCategory&& value) { m_eventTypeCategoriesHasBeenSet = true; m_eventTypeCategories.push_back(value); return *this; }
+    inline EventTypeFilter& AddEventTypeCategories(EventTypeCategory&& value) { m_eventTypeCategoriesHasBeenSet = true; m_eventTypeCategories.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Aws::String> m_eventTypeCodes;

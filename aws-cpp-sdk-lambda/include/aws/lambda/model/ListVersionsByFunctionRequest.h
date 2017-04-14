@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -76,7 +77,7 @@ namespace Model
      * to the ARN. If you specify only the function name, it is limited to 64 character
      * in length. </p>
      */
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
      * <p>Function name whose versions to list. You can specify a function name (for
@@ -112,7 +113,7 @@ namespace Model
      * to the ARN. If you specify only the function name, it is limited to 64 character
      * in length. </p>
      */
-    inline ListVersionsByFunctionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
+    inline ListVersionsByFunctionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>Function name whose versions to list. You can specify a function name (for
@@ -145,7 +146,7 @@ namespace Model
      * <code>ListVersionsByFunction</code> operation. If present, indicates where to
      * continue the listing. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p> Optional string. An opaque pagination token returned from a previous
@@ -166,7 +167,7 @@ namespace Model
      * <code>ListVersionsByFunction</code> operation. If present, indicates where to
      * continue the listing. </p>
      */
-    inline ListVersionsByFunctionRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListVersionsByFunctionRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> Optional string. An opaque pagination token returned from a previous

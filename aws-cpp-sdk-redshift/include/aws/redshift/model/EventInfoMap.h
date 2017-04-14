@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The identifier of an Amazon Redshift event.</p>
      */
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
+    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
 
     /**
      * <p>The identifier of an Amazon Redshift event.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The identifier of an Amazon Redshift event.</p>
      */
-    inline EventInfoMap& WithEventId(Aws::String&& value) { SetEventId(value); return *this;}
+    inline EventInfoMap& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of an Amazon Redshift event.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The category of an Amazon Redshift event.</p>
      */
-    inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
+    inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::move(value); }
 
     /**
      * <p>The category of an Amazon Redshift event.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The category of an Amazon Redshift event.</p>
      */
-    inline EventInfoMap& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(value); return *this;}
+    inline EventInfoMap& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(std::move(value)); return *this;}
 
     /**
      * <p>The category of an Amazon Redshift event.</p>
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>The category of an Amazon Redshift event.</p>
      */
-    inline EventInfoMap& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
+    inline EventInfoMap& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The category of an Amazon Redshift event.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>The description of an Amazon Redshift event.</p>
      */
-    inline void SetEventDescription(Aws::String&& value) { m_eventDescriptionHasBeenSet = true; m_eventDescription = value; }
+    inline void SetEventDescription(Aws::String&& value) { m_eventDescriptionHasBeenSet = true; m_eventDescription = std::move(value); }
 
     /**
      * <p>The description of an Amazon Redshift event.</p>
@@ -150,7 +151,7 @@ namespace Model
     /**
      * <p>The description of an Amazon Redshift event.</p>
      */
-    inline EventInfoMap& WithEventDescription(Aws::String&& value) { SetEventDescription(value); return *this;}
+    inline EventInfoMap& WithEventDescription(Aws::String&& value) { SetEventDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of an Amazon Redshift event.</p>
@@ -170,7 +171,7 @@ namespace Model
     /**
      * <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
      */
-    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = value; }
+    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
 
     /**
      * <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
@@ -185,7 +186,7 @@ namespace Model
     /**
      * <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
      */
-    inline EventInfoMap& WithSeverity(Aws::String&& value) { SetSeverity(value); return *this;}
+    inline EventInfoMap& WithSeverity(Aws::String&& value) { SetSeverity(std::move(value)); return *this;}
 
     /**
      * <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>

@@ -16,6 +16,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/Type.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * Screen name of the grantee.
      */
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
      * Screen name of the grantee.
@@ -68,7 +69,7 @@ namespace Model
     /**
      * Screen name of the grantee.
      */
-    inline Grantee& WithDisplayName(Aws::String&& value) { SetDisplayName(value); return *this;}
+    inline Grantee& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
      * Screen name of the grantee.
@@ -88,7 +89,7 @@ namespace Model
     /**
      * Email address of the grantee.
      */
-    inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
+    inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
 
     /**
      * Email address of the grantee.
@@ -103,7 +104,7 @@ namespace Model
     /**
      * Email address of the grantee.
      */
-    inline Grantee& WithEmailAddress(Aws::String&& value) { SetEmailAddress(value); return *this;}
+    inline Grantee& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
 
     /**
      * Email address of the grantee.
@@ -123,7 +124,7 @@ namespace Model
     /**
      * The canonical user ID of the grantee.
      */
-    inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = value; }
+    inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = std::move(value); }
 
     /**
      * The canonical user ID of the grantee.
@@ -138,7 +139,7 @@ namespace Model
     /**
      * The canonical user ID of the grantee.
      */
-    inline Grantee& WithID(Aws::String&& value) { SetID(value); return *this;}
+    inline Grantee& WithID(Aws::String&& value) { SetID(std::move(value)); return *this;}
 
     /**
      * The canonical user ID of the grantee.
@@ -158,7 +159,7 @@ namespace Model
     /**
      * Type of grantee
      */
-    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * Type of grantee
@@ -168,7 +169,7 @@ namespace Model
     /**
      * Type of grantee
      */
-    inline Grantee& WithType(Type&& value) { SetType(value); return *this;}
+    inline Grantee& WithType(Type&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * URI of the grantee group.
@@ -183,7 +184,7 @@ namespace Model
     /**
      * URI of the grantee group.
      */
-    inline void SetURI(Aws::String&& value) { m_uRIHasBeenSet = true; m_uRI = value; }
+    inline void SetURI(Aws::String&& value) { m_uRIHasBeenSet = true; m_uRI = std::move(value); }
 
     /**
      * URI of the grantee group.
@@ -198,7 +199,7 @@ namespace Model
     /**
      * URI of the grantee group.
      */
-    inline Grantee& WithURI(Aws::String&& value) { SetURI(value); return *this;}
+    inline Grantee& WithURI(Aws::String&& value) { SetURI(std::move(value)); return *this;}
 
     /**
      * URI of the grantee group.

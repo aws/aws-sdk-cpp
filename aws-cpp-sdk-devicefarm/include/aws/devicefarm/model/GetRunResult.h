@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/Run.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The run you wish to get results from.</p>
      */
-    inline void SetRun(Run&& value) { m_run = value; }
+    inline void SetRun(Run&& value) { m_run = std::move(value); }
 
     /**
      * <p>The run you wish to get results from.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The run you wish to get results from.</p>
      */
-    inline GetRunResult& WithRun(Run&& value) { SetRun(value); return *this;}
+    inline GetRunResult& WithRun(Run&& value) { SetRun(std::move(value)); return *this;}
 
   private:
     Run m_run;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/model/Assignment.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
@@ -57,7 +58,7 @@ namespace Model
     inline ListAssignmentsForHITResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     
-    inline ListAssignmentsForHITResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListAssignmentsForHITResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     
     inline ListAssignmentsForHITResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p> The collection of Assignment data structures returned by this call.</p>
      */
-    inline void SetAssignments(Aws::Vector<Assignment>&& value) { m_assignments = value; }
+    inline void SetAssignments(Aws::Vector<Assignment>&& value) { m_assignments = std::move(value); }
 
     /**
      * <p> The collection of Assignment data structures returned by this call.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p> The collection of Assignment data structures returned by this call.</p>
      */
-    inline ListAssignmentsForHITResult& WithAssignments(Aws::Vector<Assignment>&& value) { SetAssignments(value); return *this;}
+    inline ListAssignmentsForHITResult& WithAssignments(Aws::Vector<Assignment>&& value) { SetAssignments(std::move(value)); return *this;}
 
     /**
      * <p> The collection of Assignment data structures returned by this call.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p> The collection of Assignment data structures returned by this call.</p>
      */
-    inline ListAssignmentsForHITResult& AddAssignments(Assignment&& value) { m_assignments.push_back(value); return *this; }
+    inline ListAssignmentsForHITResult& AddAssignments(Assignment&& value) { m_assignments.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_nextToken;

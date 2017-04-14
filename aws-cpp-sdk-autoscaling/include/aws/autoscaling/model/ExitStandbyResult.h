@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/ResponseMetadata.h>
 #include <aws/autoscaling/model/Activity.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The activities related to moving instances out of <code>Standby</code>
      * mode.</p>
      */
-    inline void SetActivities(Aws::Vector<Activity>&& value) { m_activities = value; }
+    inline void SetActivities(Aws::Vector<Activity>&& value) { m_activities = std::move(value); }
 
     /**
      * <p>The activities related to moving instances out of <code>Standby</code>
@@ -74,7 +75,7 @@ namespace Model
      * <p>The activities related to moving instances out of <code>Standby</code>
      * mode.</p>
      */
-    inline ExitStandbyResult& WithActivities(Aws::Vector<Activity>&& value) { SetActivities(value); return *this;}
+    inline ExitStandbyResult& WithActivities(Aws::Vector<Activity>&& value) { SetActivities(std::move(value)); return *this;}
 
     /**
      * <p>The activities related to moving instances out of <code>Standby</code>
@@ -86,7 +87,7 @@ namespace Model
      * <p>The activities related to moving instances out of <code>Standby</code>
      * mode.</p>
      */
-    inline ExitStandbyResult& AddActivities(Activity&& value) { m_activities.push_back(value); return *this; }
+    inline ExitStandbyResult& AddActivities(Activity&& value) { m_activities.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -95,13 +96,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ExitStandbyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ExitStandbyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ExitStandbyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Activity> m_activities;

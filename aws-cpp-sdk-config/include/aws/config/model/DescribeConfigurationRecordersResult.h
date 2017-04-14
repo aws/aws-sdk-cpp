@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/config/model/ConfigurationRecorder.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>A list that contains the descriptions of the specified configuration
      * recorders.</p>
      */
-    inline void SetConfigurationRecorders(Aws::Vector<ConfigurationRecorder>&& value) { m_configurationRecorders = value; }
+    inline void SetConfigurationRecorders(Aws::Vector<ConfigurationRecorder>&& value) { m_configurationRecorders = std::move(value); }
 
     /**
      * <p>A list that contains the descriptions of the specified configuration
@@ -74,7 +75,7 @@ namespace Model
      * <p>A list that contains the descriptions of the specified configuration
      * recorders.</p>
      */
-    inline DescribeConfigurationRecordersResult& WithConfigurationRecorders(Aws::Vector<ConfigurationRecorder>&& value) { SetConfigurationRecorders(value); return *this;}
+    inline DescribeConfigurationRecordersResult& WithConfigurationRecorders(Aws::Vector<ConfigurationRecorder>&& value) { SetConfigurationRecorders(std::move(value)); return *this;}
 
     /**
      * <p>A list that contains the descriptions of the specified configuration
@@ -86,7 +87,7 @@ namespace Model
      * <p>A list that contains the descriptions of the specified configuration
      * recorders.</p>
      */
-    inline DescribeConfigurationRecordersResult& AddConfigurationRecorders(ConfigurationRecorder&& value) { m_configurationRecorders.push_back(value); return *this; }
+    inline DescribeConfigurationRecordersResult& AddConfigurationRecorders(ConfigurationRecorder&& value) { m_configurationRecorders.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ConfigurationRecorder> m_configurationRecorders;

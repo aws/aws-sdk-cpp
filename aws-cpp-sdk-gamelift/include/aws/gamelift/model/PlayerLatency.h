@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>Unique identifier for a player associated with the latency data.</p>
      */
-    inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
+    inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = std::move(value); }
 
     /**
      * <p>Unique identifier for a player associated with the latency data.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>Unique identifier for a player associated with the latency data.</p>
      */
-    inline PlayerLatency& WithPlayerId(Aws::String&& value) { SetPlayerId(value); return *this;}
+    inline PlayerLatency& WithPlayerId(Aws::String&& value) { SetPlayerId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a player associated with the latency data.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>Name of the region that is associated with the latency value.</p>
      */
-    inline void SetRegionIdentifier(Aws::String&& value) { m_regionIdentifierHasBeenSet = true; m_regionIdentifier = value; }
+    inline void SetRegionIdentifier(Aws::String&& value) { m_regionIdentifierHasBeenSet = true; m_regionIdentifier = std::move(value); }
 
     /**
      * <p>Name of the region that is associated with the latency value.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>Name of the region that is associated with the latency value.</p>
      */
-    inline PlayerLatency& WithRegionIdentifier(Aws::String&& value) { SetRegionIdentifier(value); return *this;}
+    inline PlayerLatency& WithRegionIdentifier(Aws::String&& value) { SetRegionIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>Name of the region that is associated with the latency value.</p>

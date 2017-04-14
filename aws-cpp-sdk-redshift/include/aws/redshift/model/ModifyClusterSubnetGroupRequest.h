@@ -17,6 +17,7 @@
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The name of the subnet group to be modified.</p>
      */
-    inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
+    inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = std::move(value); }
 
     /**
      * <p>The name of the subnet group to be modified.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The name of the subnet group to be modified.</p>
      */
-    inline ModifyClusterSubnetGroupRequest& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(value); return *this;}
+    inline ModifyClusterSubnetGroupRequest& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the subnet group to be modified.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>A text description of the subnet group to be modified.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A text description of the subnet group to be modified.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>A text description of the subnet group to be modified.</p>
      */
-    inline ModifyClusterSubnetGroupRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline ModifyClusterSubnetGroupRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A text description of the subnet group to be modified.</p>
@@ -127,7 +128,7 @@ namespace Model
      * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
      * single request.</p>
      */
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
+    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
      * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
@@ -139,7 +140,7 @@ namespace Model
      * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
      * single request.</p>
      */
-    inline ModifyClusterSubnetGroupRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(value); return *this;}
+    inline ModifyClusterSubnetGroupRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
@@ -151,7 +152,7 @@ namespace Model
      * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
      * single request.</p>
      */
-    inline ModifyClusterSubnetGroupRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    inline ModifyClusterSubnetGroupRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a

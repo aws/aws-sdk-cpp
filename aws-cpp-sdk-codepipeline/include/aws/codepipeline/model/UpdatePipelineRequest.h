@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/CodePipelineRequest.h>
 #include <aws/codepipeline/model/PipelineDeclaration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of the pipeline to be updated.</p>
      */
-    inline void SetPipeline(PipelineDeclaration&& value) { m_pipelineHasBeenSet = true; m_pipeline = value; }
+    inline void SetPipeline(PipelineDeclaration&& value) { m_pipelineHasBeenSet = true; m_pipeline = std::move(value); }
 
     /**
      * <p>The name of the pipeline to be updated.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The name of the pipeline to be updated.</p>
      */
-    inline UpdatePipelineRequest& WithPipeline(PipelineDeclaration&& value) { SetPipeline(value); return *this;}
+    inline UpdatePipelineRequest& WithPipeline(PipelineDeclaration&& value) { SetPipeline(std::move(value)); return *this;}
 
   private:
     PipelineDeclaration m_pipeline;

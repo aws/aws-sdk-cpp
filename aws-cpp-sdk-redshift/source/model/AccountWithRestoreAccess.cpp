@@ -30,12 +30,14 @@ namespace Model
 {
 
 AccountWithRestoreAccess::AccountWithRestoreAccess() : 
-    m_accountIdHasBeenSet(false)
+    m_accountIdHasBeenSet(false),
+    m_accountAliasHasBeenSet(false)
 {
 }
 
 AccountWithRestoreAccess::AccountWithRestoreAccess(const XmlNode& xmlNode) : 
-    m_accountIdHasBeenSet(false)
+    m_accountIdHasBeenSet(false),
+    m_accountAliasHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -52,6 +54,12 @@ AccountWithRestoreAccess& AccountWithRestoreAccess::operator =(const XmlNode& xm
       m_accountId = StringUtils::Trim(accountIdNode.GetText().c_str());
       m_accountIdHasBeenSet = true;
     }
+    XmlNode accountAliasNode = resultNode.FirstChild("AccountAlias");
+    if(!accountAliasNode.IsNull())
+    {
+      m_accountAlias = StringUtils::Trim(accountAliasNode.GetText().c_str());
+      m_accountAliasHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -64,6 +72,11 @@ void AccountWithRestoreAccess::OutputToStream(Aws::OStream& oStream, const char*
       oStream << location << index << locationValue << ".AccountId=" << StringUtils::URLEncode(m_accountId.c_str()) << "&";
   }
 
+  if(m_accountAliasHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AccountAlias=" << StringUtils::URLEncode(m_accountAlias.c_str()) << "&";
+  }
+
 }
 
 void AccountWithRestoreAccess::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -71,6 +84,10 @@ void AccountWithRestoreAccess::OutputToStream(Aws::OStream& oStream, const char*
   if(m_accountIdHasBeenSet)
   {
       oStream << location << ".AccountId=" << StringUtils::URLEncode(m_accountId.c_str()) << "&";
+  }
+  if(m_accountAliasHasBeenSet)
+  {
+      oStream << location << ".AccountAlias=" << StringUtils::URLEncode(m_accountAlias.c_str()) << "&";
   }
 }
 

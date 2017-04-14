@@ -16,6 +16,7 @@
 #include <aws/sns/SNS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sns/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>Unique identifier assigned to the published message.</p> <p>Length
      * Constraint: Maximum 100 characters</p>
      */
-    inline void SetMessageId(Aws::String&& value) { m_messageId = value; }
+    inline void SetMessageId(Aws::String&& value) { m_messageId = std::move(value); }
 
     /**
      * <p>Unique identifier assigned to the published message.</p> <p>Length
@@ -79,7 +80,7 @@ namespace Model
      * <p>Unique identifier assigned to the published message.</p> <p>Length
      * Constraint: Maximum 100 characters</p>
      */
-    inline PublishResult& WithMessageId(Aws::String&& value) { SetMessageId(value); return *this;}
+    inline PublishResult& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier assigned to the published message.</p> <p>Length
@@ -94,13 +95,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline PublishResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline PublishResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline PublishResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_messageId;

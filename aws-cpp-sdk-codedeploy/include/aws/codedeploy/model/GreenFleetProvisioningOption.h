@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/GreenFleetProvisioningAction.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * specified Auto Scaling group to define and create instances in a new Auto
      * Scaling group.</p> </li> </ul>
      */
-    inline void SetAction(GreenFleetProvisioningAction&& value) { m_actionHasBeenSet = true; m_action = value; }
+    inline void SetAction(GreenFleetProvisioningAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>The method used to add instances to a replacement environment.</p> <ul> <li>
@@ -87,7 +88,7 @@ namespace Model
      * specified Auto Scaling group to define and create instances in a new Auto
      * Scaling group.</p> </li> </ul>
      */
-    inline GreenFleetProvisioningOption& WithAction(GreenFleetProvisioningAction&& value) { SetAction(value); return *this;}
+    inline GreenFleetProvisioningOption& WithAction(GreenFleetProvisioningAction&& value) { SetAction(std::move(value)); return *this;}
 
   private:
     GreenFleetProvisioningAction m_action;

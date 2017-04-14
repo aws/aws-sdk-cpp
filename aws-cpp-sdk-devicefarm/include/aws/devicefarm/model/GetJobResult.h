@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/Job.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>An object containing information about the requested job.</p>
      */
-    inline void SetJob(Job&& value) { m_job = value; }
+    inline void SetJob(Job&& value) { m_job = std::move(value); }
 
     /**
      * <p>An object containing information about the requested job.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>An object containing information about the requested job.</p>
      */
-    inline GetJobResult& WithJob(Job&& value) { SetJob(value); return *this;}
+    inline GetJobResult& WithJob(Job&& value) { SetJob(std::move(value)); return *this;}
 
   private:
     Job m_job;

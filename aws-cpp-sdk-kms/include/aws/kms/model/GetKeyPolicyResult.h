@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>A policy document in JSON format.</p>
      */
-    inline void SetPolicy(Aws::String&& value) { m_policy = value; }
+    inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
 
     /**
      * <p>A policy document in JSON format.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>A policy document in JSON format.</p>
      */
-    inline GetKeyPolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
+    inline GetKeyPolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
      * <p>A policy document in JSON format.</p>

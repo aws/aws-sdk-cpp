@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/Tier.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * Glacier retrieval tier at which the restore will be processed.
      */
-    inline void SetTier(Tier&& value) { m_tierHasBeenSet = true; m_tier = value; }
+    inline void SetTier(Tier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
     /**
      * Glacier retrieval tier at which the restore will be processed.
@@ -62,7 +63,7 @@ namespace Model
     /**
      * Glacier retrieval tier at which the restore will be processed.
      */
-    inline GlacierJobParameters& WithTier(Tier&& value) { SetTier(value); return *this;}
+    inline GlacierJobParameters& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
 
   private:
     Tier m_tier;

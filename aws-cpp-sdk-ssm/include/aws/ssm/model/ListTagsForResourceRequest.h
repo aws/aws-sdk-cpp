@@ -17,6 +17,7 @@
 #include <aws/ssm/SSMRequest.h>
 #include <aws/ssm/model/ResourceTypeForTagging.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>Returns a list of tags for a specific resource type.</p>
      */
-    inline void SetResourceType(ResourceTypeForTagging&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(ResourceTypeForTagging&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>Returns a list of tags for a specific resource type.</p>
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Returns a list of tags for a specific resource type.</p>
      */
-    inline ListTagsForResourceRequest& WithResourceType(ResourceTypeForTagging&& value) { SetResourceType(value); return *this;}
+    inline ListTagsForResourceRequest& WithResourceType(ResourceTypeForTagging&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The resource ID for which you want to see a list of tags.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The resource ID for which you want to see a list of tags.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The resource ID for which you want to see a list of tags.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The resource ID for which you want to see a list of tags.</p>
      */
-    inline ListTagsForResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline ListTagsForResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The resource ID for which you want to see a list of tags.</p>

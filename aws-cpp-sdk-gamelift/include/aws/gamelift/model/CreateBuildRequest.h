@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/S3Location.h>
 #include <aws/gamelift/model/OperatingSystem.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>Descriptive label that is associated with a build. Build names do not need to
      * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Descriptive label that is associated with a build. Build names do not need to
@@ -74,7 +75,7 @@ namespace Model
      * <p>Descriptive label that is associated with a build. Build names do not need to
      * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
-    inline CreateBuildRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateBuildRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with a build. Build names do not need to
@@ -98,7 +99,7 @@ namespace Model
      * <p>Version that is associated with this build. Version strings do not need to be
      * unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>Version that is associated with this build. Version strings do not need to be
@@ -116,7 +117,7 @@ namespace Model
      * <p>Version that is associated with this build. Version strings do not need to be
      * unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
-    inline CreateBuildRequest& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline CreateBuildRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>Version that is associated with this build. Version strings do not need to be
@@ -155,7 +156,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">Create
      * a Build with Files in Amazon S3</a>).</p>
      */
-    inline void SetStorageLocation(S3Location&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = value; }
+    inline void SetStorageLocation(S3Location&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = std::move(value); }
 
     /**
      * <p>Amazon S3 location of the game build files to be uploaded. The S3 bucket must
@@ -177,7 +178,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">Create
      * a Build with Files in Amazon S3</a>).</p>
      */
-    inline CreateBuildRequest& WithStorageLocation(S3Location&& value) { SetStorageLocation(value); return *this;}
+    inline CreateBuildRequest& WithStorageLocation(S3Location&& value) { SetStorageLocation(std::move(value)); return *this;}
 
     /**
      * <p>Operating system that the game server binaries are built to run on. This
@@ -201,7 +202,7 @@ namespace Model
      * your game build contains multiple executables, they all must run on the same
      * operating system.</p>
      */
-    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
+    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
 
     /**
      * <p>Operating system that the game server binaries are built to run on. This
@@ -217,7 +218,7 @@ namespace Model
      * your game build contains multiple executables, they all must run on the same
      * operating system.</p>
      */
-    inline CreateBuildRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(value); return *this;}
+    inline CreateBuildRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

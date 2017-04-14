@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/config/model/Compliance.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The type of the AWS resource that was evaluated.</p>
      */
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of the AWS resource that was evaluated.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The type of the AWS resource that was evaluated.</p>
      */
-    inline ComplianceByResource& WithResourceType(Aws::String&& value) { SetResourceType(value); return *this;}
+    inline ComplianceByResource& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The type of the AWS resource that was evaluated.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The ID of the AWS resource that was evaluated.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The ID of the AWS resource that was evaluated.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The ID of the AWS resource that was evaluated.</p>
      */
-    inline ComplianceByResource& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline ComplianceByResource& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the AWS resource that was evaluated.</p>
@@ -133,7 +134,7 @@ namespace Model
      * <p>Indicates whether the AWS resource complies with all of the AWS Config rules
      * that evaluated it.</p>
      */
-    inline void SetCompliance(Compliance&& value) { m_complianceHasBeenSet = true; m_compliance = value; }
+    inline void SetCompliance(Compliance&& value) { m_complianceHasBeenSet = true; m_compliance = std::move(value); }
 
     /**
      * <p>Indicates whether the AWS resource complies with all of the AWS Config rules
@@ -145,7 +146,7 @@ namespace Model
      * <p>Indicates whether the AWS resource complies with all of the AWS Config rules
      * that evaluated it.</p>
      */
-    inline ComplianceByResource& WithCompliance(Compliance&& value) { SetCompliance(value); return *this;}
+    inline ComplianceByResource& WithCompliance(Compliance&& value) { SetCompliance(std::move(value)); return *this;}
 
   private:
     Aws::String m_resourceType;

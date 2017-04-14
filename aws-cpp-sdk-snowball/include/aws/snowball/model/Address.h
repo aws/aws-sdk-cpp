@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The unique ID for an address.</p>
      */
-    inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = value; }
+    inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = std::move(value); }
 
     /**
      * <p>The unique ID for an address.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The unique ID for an address.</p>
      */
-    inline Address& WithAddressId(Aws::String&& value) { SetAddressId(value); return *this;}
+    inline Address& WithAddressId(Aws::String&& value) { SetAddressId(std::move(value)); return *this;}
 
     /**
      * <p>The unique ID for an address.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The name of a person to receive a Snowball at an address.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of a person to receive a Snowball at an address.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The name of a person to receive a Snowball at an address.</p>
      */
-    inline Address& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Address& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a person to receive a Snowball at an address.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The name of the company to receive a Snowball at an address.</p>
      */
-    inline void SetCompany(Aws::String&& value) { m_companyHasBeenSet = true; m_company = value; }
+    inline void SetCompany(Aws::String&& value) { m_companyHasBeenSet = true; m_company = std::move(value); }
 
     /**
      * <p>The name of the company to receive a Snowball at an address.</p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>The name of the company to receive a Snowball at an address.</p>
      */
-    inline Address& WithCompany(Aws::String&& value) { SetCompany(value); return *this;}
+    inline Address& WithCompany(Aws::String&& value) { SetCompany(std::move(value)); return *this;}
 
     /**
      * <p>The name of the company to receive a Snowball at an address.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>The first line in a street address that a Snowball is to be delivered to.</p>
      */
-    inline void SetStreet1(Aws::String&& value) { m_street1HasBeenSet = true; m_street1 = value; }
+    inline void SetStreet1(Aws::String&& value) { m_street1HasBeenSet = true; m_street1 = std::move(value); }
 
     /**
      * <p>The first line in a street address that a Snowball is to be delivered to.</p>
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>The first line in a street address that a Snowball is to be delivered to.</p>
      */
-    inline Address& WithStreet1(Aws::String&& value) { SetStreet1(value); return *this;}
+    inline Address& WithStreet1(Aws::String&& value) { SetStreet1(std::move(value)); return *this;}
 
     /**
      * <p>The first line in a street address that a Snowball is to be delivered to.</p>
@@ -204,7 +205,7 @@ namespace Model
      * <p>The second line in a street address that a Snowball is to be delivered
      * to.</p>
      */
-    inline void SetStreet2(Aws::String&& value) { m_street2HasBeenSet = true; m_street2 = value; }
+    inline void SetStreet2(Aws::String&& value) { m_street2HasBeenSet = true; m_street2 = std::move(value); }
 
     /**
      * <p>The second line in a street address that a Snowball is to be delivered
@@ -222,7 +223,7 @@ namespace Model
      * <p>The second line in a street address that a Snowball is to be delivered
      * to.</p>
      */
-    inline Address& WithStreet2(Aws::String&& value) { SetStreet2(value); return *this;}
+    inline Address& WithStreet2(Aws::String&& value) { SetStreet2(std::move(value)); return *this;}
 
     /**
      * <p>The second line in a street address that a Snowball is to be delivered
@@ -243,7 +244,7 @@ namespace Model
     /**
      * <p>The third line in a street address that a Snowball is to be delivered to.</p>
      */
-    inline void SetStreet3(Aws::String&& value) { m_street3HasBeenSet = true; m_street3 = value; }
+    inline void SetStreet3(Aws::String&& value) { m_street3HasBeenSet = true; m_street3 = std::move(value); }
 
     /**
      * <p>The third line in a street address that a Snowball is to be delivered to.</p>
@@ -258,7 +259,7 @@ namespace Model
     /**
      * <p>The third line in a street address that a Snowball is to be delivered to.</p>
      */
-    inline Address& WithStreet3(Aws::String&& value) { SetStreet3(value); return *this;}
+    inline Address& WithStreet3(Aws::String&& value) { SetStreet3(std::move(value)); return *this;}
 
     /**
      * <p>The third line in a street address that a Snowball is to be delivered to.</p>
@@ -278,7 +279,7 @@ namespace Model
     /**
      * <p>The city in an address that a Snowball is to be delivered to.</p>
      */
-    inline void SetCity(Aws::String&& value) { m_cityHasBeenSet = true; m_city = value; }
+    inline void SetCity(Aws::String&& value) { m_cityHasBeenSet = true; m_city = std::move(value); }
 
     /**
      * <p>The city in an address that a Snowball is to be delivered to.</p>
@@ -293,7 +294,7 @@ namespace Model
     /**
      * <p>The city in an address that a Snowball is to be delivered to.</p>
      */
-    inline Address& WithCity(Aws::String&& value) { SetCity(value); return *this;}
+    inline Address& WithCity(Aws::String&& value) { SetCity(std::move(value)); return *this;}
 
     /**
      * <p>The city in an address that a Snowball is to be delivered to.</p>
@@ -316,7 +317,7 @@ namespace Model
      * <p>The state or province in an address that a Snowball is to be delivered
      * to.</p>
      */
-    inline void SetStateOrProvince(Aws::String&& value) { m_stateOrProvinceHasBeenSet = true; m_stateOrProvince = value; }
+    inline void SetStateOrProvince(Aws::String&& value) { m_stateOrProvinceHasBeenSet = true; m_stateOrProvince = std::move(value); }
 
     /**
      * <p>The state or province in an address that a Snowball is to be delivered
@@ -334,7 +335,7 @@ namespace Model
      * <p>The state or province in an address that a Snowball is to be delivered
      * to.</p>
      */
-    inline Address& WithStateOrProvince(Aws::String&& value) { SetStateOrProvince(value); return *this;}
+    inline Address& WithStateOrProvince(Aws::String&& value) { SetStateOrProvince(std::move(value)); return *this;}
 
     /**
      * <p>The state or province in an address that a Snowball is to be delivered
@@ -355,7 +356,7 @@ namespace Model
     /**
      * <p>The prefecture or district that the appliance will be shipped to.</p>
      */
-    inline void SetPrefectureOrDistrict(Aws::String&& value) { m_prefectureOrDistrictHasBeenSet = true; m_prefectureOrDistrict = value; }
+    inline void SetPrefectureOrDistrict(Aws::String&& value) { m_prefectureOrDistrictHasBeenSet = true; m_prefectureOrDistrict = std::move(value); }
 
     /**
      * <p>The prefecture or district that the appliance will be shipped to.</p>
@@ -370,7 +371,7 @@ namespace Model
     /**
      * <p>The prefecture or district that the appliance will be shipped to.</p>
      */
-    inline Address& WithPrefectureOrDistrict(Aws::String&& value) { SetPrefectureOrDistrict(value); return *this;}
+    inline Address& WithPrefectureOrDistrict(Aws::String&& value) { SetPrefectureOrDistrict(std::move(value)); return *this;}
 
     /**
      * <p>The prefecture or district that the appliance will be shipped to.</p>
@@ -393,7 +394,7 @@ namespace Model
      * <p>The landmark identifying the address that the appliance will be shipped
      * to.</p>
      */
-    inline void SetLandmark(Aws::String&& value) { m_landmarkHasBeenSet = true; m_landmark = value; }
+    inline void SetLandmark(Aws::String&& value) { m_landmarkHasBeenSet = true; m_landmark = std::move(value); }
 
     /**
      * <p>The landmark identifying the address that the appliance will be shipped
@@ -411,7 +412,7 @@ namespace Model
      * <p>The landmark identifying the address that the appliance will be shipped
      * to.</p>
      */
-    inline Address& WithLandmark(Aws::String&& value) { SetLandmark(value); return *this;}
+    inline Address& WithLandmark(Aws::String&& value) { SetLandmark(std::move(value)); return *this;}
 
     /**
      * <p>The landmark identifying the address that the appliance will be shipped
@@ -432,7 +433,7 @@ namespace Model
     /**
      * <p>The country in an address that a Snowball is to be delivered to.</p>
      */
-    inline void SetCountry(Aws::String&& value) { m_countryHasBeenSet = true; m_country = value; }
+    inline void SetCountry(Aws::String&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
 
     /**
      * <p>The country in an address that a Snowball is to be delivered to.</p>
@@ -447,7 +448,7 @@ namespace Model
     /**
      * <p>The country in an address that a Snowball is to be delivered to.</p>
      */
-    inline Address& WithCountry(Aws::String&& value) { SetCountry(value); return *this;}
+    inline Address& WithCountry(Aws::String&& value) { SetCountry(std::move(value)); return *this;}
 
     /**
      * <p>The country in an address that a Snowball is to be delivered to.</p>
@@ -467,7 +468,7 @@ namespace Model
     /**
      * <p>The postal code in an address that a Snowball is to be delivered to.</p>
      */
-    inline void SetPostalCode(Aws::String&& value) { m_postalCodeHasBeenSet = true; m_postalCode = value; }
+    inline void SetPostalCode(Aws::String&& value) { m_postalCodeHasBeenSet = true; m_postalCode = std::move(value); }
 
     /**
      * <p>The postal code in an address that a Snowball is to be delivered to.</p>
@@ -482,7 +483,7 @@ namespace Model
     /**
      * <p>The postal code in an address that a Snowball is to be delivered to.</p>
      */
-    inline Address& WithPostalCode(Aws::String&& value) { SetPostalCode(value); return *this;}
+    inline Address& WithPostalCode(Aws::String&& value) { SetPostalCode(std::move(value)); return *this;}
 
     /**
      * <p>The postal code in an address that a Snowball is to be delivered to.</p>
@@ -505,7 +506,7 @@ namespace Model
      * <p>The phone number associated with an address that a Snowball is to be
      * delivered to.</p>
      */
-    inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
+    inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::move(value); }
 
     /**
      * <p>The phone number associated with an address that a Snowball is to be
@@ -523,7 +524,7 @@ namespace Model
      * <p>The phone number associated with an address that a Snowball is to be
      * delivered to.</p>
      */
-    inline Address& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(value); return *this;}
+    inline Address& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(std::move(value)); return *this;}
 
     /**
      * <p>The phone number associated with an address that a Snowball is to be

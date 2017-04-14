@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/elasticbeanstalk/model/MaxCountRule.h>
 #include <aws/elasticbeanstalk/model/MaxAgeRule.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * <p>Specify a max count rule to restrict the number of application versions that
      * are retained for an application.</p>
      */
-    inline void SetMaxCountRule(MaxCountRule&& value) { m_maxCountRuleHasBeenSet = true; m_maxCountRule = value; }
+    inline void SetMaxCountRule(MaxCountRule&& value) { m_maxCountRuleHasBeenSet = true; m_maxCountRule = std::move(value); }
 
     /**
      * <p>Specify a max count rule to restrict the number of application versions that
@@ -80,7 +81,7 @@ namespace Model
      * <p>Specify a max count rule to restrict the number of application versions that
      * are retained for an application.</p>
      */
-    inline ApplicationVersionLifecycleConfig& WithMaxCountRule(MaxCountRule&& value) { SetMaxCountRule(value); return *this;}
+    inline ApplicationVersionLifecycleConfig& WithMaxCountRule(MaxCountRule&& value) { SetMaxCountRule(std::move(value)); return *this;}
 
     /**
      * <p>Specify a max age rule to restrict the length of time that application
@@ -98,7 +99,7 @@ namespace Model
      * <p>Specify a max age rule to restrict the length of time that application
      * versions are retained for an application.</p>
      */
-    inline void SetMaxAgeRule(MaxAgeRule&& value) { m_maxAgeRuleHasBeenSet = true; m_maxAgeRule = value; }
+    inline void SetMaxAgeRule(MaxAgeRule&& value) { m_maxAgeRuleHasBeenSet = true; m_maxAgeRule = std::move(value); }
 
     /**
      * <p>Specify a max age rule to restrict the length of time that application
@@ -110,7 +111,7 @@ namespace Model
      * <p>Specify a max age rule to restrict the length of time that application
      * versions are retained for an application.</p>
      */
-    inline ApplicationVersionLifecycleConfig& WithMaxAgeRule(MaxAgeRule&& value) { SetMaxAgeRule(value); return *this;}
+    inline ApplicationVersionLifecycleConfig& WithMaxAgeRule(MaxAgeRule&& value) { SetMaxAgeRule(std::move(value)); return *this;}
 
   private:
     MaxCountRule m_maxCountRule;

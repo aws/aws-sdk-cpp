@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/PrivateIpAddressSpecification.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The ID of the subnet to associate with the network interface.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>The ID of the subnet to associate with the network interface.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The ID of the subnet to associate with the network interface.</p>
      */
-    inline CreateNetworkInterfaceRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+    inline CreateNetworkInterfaceRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the subnet to associate with the network interface.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>A description for the network interface.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description for the network interface.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>A description for the network interface.</p>
      */
-    inline CreateNetworkInterfaceRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateNetworkInterfaceRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description for the network interface.</p>
@@ -139,7 +140,7 @@ namespace Model
      * specified in <code>privateIpAddresses</code> as primary (only one IP address can
      * be designated as primary).</p>
      */
-    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
+    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
 
     /**
      * <p>The primary private IPv4 address of the network interface. If you don't
@@ -166,7 +167,7 @@ namespace Model
      * specified in <code>privateIpAddresses</code> as primary (only one IP address can
      * be designated as primary).</p>
      */
-    inline CreateNetworkInterfaceRequest& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(value); return *this;}
+    inline CreateNetworkInterfaceRequest& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>The primary private IPv4 address of the network interface. If you don't
@@ -190,7 +191,7 @@ namespace Model
     /**
      * <p>The IDs of one or more security groups.</p>
      */
-    inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = value; }
+    inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
      * <p>The IDs of one or more security groups.</p>
@@ -200,7 +201,7 @@ namespace Model
     /**
      * <p>The IDs of one or more security groups.</p>
      */
-    inline CreateNetworkInterfaceRequest& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(value); return *this;}
+    inline CreateNetworkInterfaceRequest& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of one or more security groups.</p>
@@ -210,7 +211,7 @@ namespace Model
     /**
      * <p>The IDs of one or more security groups.</p>
      */
-    inline CreateNetworkInterfaceRequest& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
+    inline CreateNetworkInterfaceRequest& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of one or more security groups.</p>
@@ -230,7 +231,7 @@ namespace Model
     /**
      * <p>One or more private IPv4 addresses.</p>
      */
-    inline void SetPrivateIpAddresses(Aws::Vector<PrivateIpAddressSpecification>&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
+    inline void SetPrivateIpAddresses(Aws::Vector<PrivateIpAddressSpecification>&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = std::move(value); }
 
     /**
      * <p>One or more private IPv4 addresses.</p>
@@ -240,7 +241,7 @@ namespace Model
     /**
      * <p>One or more private IPv4 addresses.</p>
      */
-    inline CreateNetworkInterfaceRequest& WithPrivateIpAddresses(Aws::Vector<PrivateIpAddressSpecification>&& value) { SetPrivateIpAddresses(value); return *this;}
+    inline CreateNetworkInterfaceRequest& WithPrivateIpAddresses(Aws::Vector<PrivateIpAddressSpecification>&& value) { SetPrivateIpAddresses(std::move(value)); return *this;}
 
     /**
      * <p>One or more private IPv4 addresses.</p>
@@ -250,7 +251,7 @@ namespace Model
     /**
      * <p>One or more private IPv4 addresses.</p>
      */
-    inline CreateNetworkInterfaceRequest& AddPrivateIpAddresses(PrivateIpAddressSpecification&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
+    inline CreateNetworkInterfaceRequest& AddPrivateIpAddresses(PrivateIpAddressSpecification&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The number of secondary private IPv4 addresses to assign to a network
@@ -313,7 +314,7 @@ namespace Model
      * subnet. You can't use this option if you're specifying a number of IPv6
      * addresses.</p>
      */
-    inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+    inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
 
     /**
      * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
@@ -327,7 +328,7 @@ namespace Model
      * subnet. You can't use this option if you're specifying a number of IPv6
      * addresses.</p>
      */
-    inline CreateNetworkInterfaceRequest& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(value); return *this;}
+    inline CreateNetworkInterfaceRequest& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
 
     /**
      * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
@@ -341,7 +342,7 @@ namespace Model
      * subnet. You can't use this option if you're specifying a number of IPv6
      * addresses.</p>
      */
-    inline CreateNetworkInterfaceRequest& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+    inline CreateNetworkInterfaceRequest& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The number of IPv6 addresses to assign to a network interface. Amazon EC2

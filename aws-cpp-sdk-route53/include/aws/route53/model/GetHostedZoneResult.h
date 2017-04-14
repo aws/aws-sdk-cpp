@@ -18,6 +18,7 @@
 #include <aws/route53/model/DelegationSet.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/model/VPC.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>A complex type that contains general information about the hosted zone.</p>
      */
-    inline void SetHostedZone(HostedZone&& value) { m_hostedZone = value; }
+    inline void SetHostedZone(HostedZone&& value) { m_hostedZone = std::move(value); }
 
     /**
      * <p>A complex type that contains general information about the hosted zone.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>A complex type that contains general information about the hosted zone.</p>
      */
-    inline GetHostedZoneResult& WithHostedZone(HostedZone&& value) { SetHostedZone(value); return *this;}
+    inline GetHostedZoneResult& WithHostedZone(HostedZone&& value) { SetHostedZone(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that describes the name servers for this hosted zone.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>A complex type that describes the name servers for this hosted zone.</p>
      */
-    inline void SetDelegationSet(DelegationSet&& value) { m_delegationSet = value; }
+    inline void SetDelegationSet(DelegationSet&& value) { m_delegationSet = std::move(value); }
 
     /**
      * <p>A complex type that describes the name servers for this hosted zone.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>A complex type that describes the name servers for this hosted zone.</p>
      */
-    inline GetHostedZoneResult& WithDelegationSet(DelegationSet&& value) { SetDelegationSet(value); return *this;}
+    inline GetHostedZoneResult& WithDelegationSet(DelegationSet&& value) { SetDelegationSet(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that contains information about VPCs associated with the
@@ -114,7 +115,7 @@ namespace Model
      * <p>A complex type that contains information about VPCs associated with the
      * specified hosted zone.</p>
      */
-    inline void SetVPCs(Aws::Vector<VPC>&& value) { m_vPCs = value; }
+    inline void SetVPCs(Aws::Vector<VPC>&& value) { m_vPCs = std::move(value); }
 
     /**
      * <p>A complex type that contains information about VPCs associated with the
@@ -126,7 +127,7 @@ namespace Model
      * <p>A complex type that contains information about VPCs associated with the
      * specified hosted zone.</p>
      */
-    inline GetHostedZoneResult& WithVPCs(Aws::Vector<VPC>&& value) { SetVPCs(value); return *this;}
+    inline GetHostedZoneResult& WithVPCs(Aws::Vector<VPC>&& value) { SetVPCs(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that contains information about VPCs associated with the
@@ -138,7 +139,7 @@ namespace Model
      * <p>A complex type that contains information about VPCs associated with the
      * specified hosted zone.</p>
      */
-    inline GetHostedZoneResult& AddVPCs(VPC&& value) { m_vPCs.push_back(value); return *this; }
+    inline GetHostedZoneResult& AddVPCs(VPC&& value) { m_vPCs.push_back(std::move(value)); return *this; }
 
   private:
     HostedZone m_hostedZone;

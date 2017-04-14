@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/ChangeSetSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and
      * status of each change set for the specified stack.</p>
      */
-    inline void SetSummaries(Aws::Vector<ChangeSetSummary>&& value) { m_summaries = value; }
+    inline void SetSummaries(Aws::Vector<ChangeSetSummary>&& value) { m_summaries = std::move(value); }
 
     /**
      * <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and
@@ -76,7 +77,7 @@ namespace Model
      * <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and
      * status of each change set for the specified stack.</p>
      */
-    inline ListChangeSetsResult& WithSummaries(Aws::Vector<ChangeSetSummary>&& value) { SetSummaries(value); return *this;}
+    inline ListChangeSetsResult& WithSummaries(Aws::Vector<ChangeSetSummary>&& value) { SetSummaries(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and
@@ -88,7 +89,7 @@ namespace Model
      * <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and
      * status of each change set for the specified stack.</p>
      */
-    inline ListChangeSetsResult& AddSummaries(ChangeSetSummary&& value) { m_summaries.push_back(value); return *this; }
+    inline ListChangeSetsResult& AddSummaries(ChangeSetSummary&& value) { m_summaries.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of change
@@ -106,7 +107,7 @@ namespace Model
      * <p>If the output exceeds 1 MB, a string that identifies the next page of change
      * sets. If there is no additional page, this value is null.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of change
@@ -124,7 +125,7 @@ namespace Model
      * <p>If the output exceeds 1 MB, a string that identifies the next page of change
      * sets. If there is no additional page, this value is null.</p>
      */
-    inline ListChangeSetsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListChangeSetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of change
@@ -139,13 +140,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListChangeSetsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListChangeSetsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListChangeSetsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<ChangeSetSummary> m_summaries;

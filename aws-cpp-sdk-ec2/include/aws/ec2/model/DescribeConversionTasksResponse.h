@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/ConversionTask.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Information about the conversion tasks.</p>
      */
-    inline void SetConversionTasks(Aws::Vector<ConversionTask>&& value) { m_conversionTasks = value; }
+    inline void SetConversionTasks(Aws::Vector<ConversionTask>&& value) { m_conversionTasks = std::move(value); }
 
     /**
      * <p>Information about the conversion tasks.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Information about the conversion tasks.</p>
      */
-    inline DescribeConversionTasksResponse& WithConversionTasks(Aws::Vector<ConversionTask>&& value) { SetConversionTasks(value); return *this;}
+    inline DescribeConversionTasksResponse& WithConversionTasks(Aws::Vector<ConversionTask>&& value) { SetConversionTasks(std::move(value)); return *this;}
 
     /**
      * <p>Information about the conversion tasks.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>Information about the conversion tasks.</p>
      */
-    inline DescribeConversionTasksResponse& AddConversionTasks(ConversionTask&& value) { m_conversionTasks.push_back(value); return *this; }
+    inline DescribeConversionTasksResponse& AddConversionTasks(ConversionTask&& value) { m_conversionTasks.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -89,13 +90,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeConversionTasksResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeConversionTasksResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeConversionTasksResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<ConversionTask> m_conversionTasks;

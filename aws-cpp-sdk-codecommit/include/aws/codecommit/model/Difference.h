@@ -16,6 +16,7 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/model/BlobMetadata.h>
 #include <aws/codecommit/model/ChangeTypeEnum.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>Information about a <code>beforeBlob</code> data type object, including the
      * ID, the file mode permission code, and the path.</p>
      */
-    inline void SetBeforeBlob(BlobMetadata&& value) { m_beforeBlobHasBeenSet = true; m_beforeBlob = value; }
+    inline void SetBeforeBlob(BlobMetadata&& value) { m_beforeBlobHasBeenSet = true; m_beforeBlob = std::move(value); }
 
     /**
      * <p>Information about a <code>beforeBlob</code> data type object, including the
@@ -73,7 +74,7 @@ namespace Model
      * <p>Information about a <code>beforeBlob</code> data type object, including the
      * ID, the file mode permission code, and the path.</p>
      */
-    inline Difference& WithBeforeBlob(BlobMetadata&& value) { SetBeforeBlob(value); return *this;}
+    inline Difference& WithBeforeBlob(BlobMetadata&& value) { SetBeforeBlob(std::move(value)); return *this;}
 
     /**
      * <p>Information about an <code>afterBlob</code> data type object, including the
@@ -91,7 +92,7 @@ namespace Model
      * <p>Information about an <code>afterBlob</code> data type object, including the
      * ID, the file mode permission code, and the path.</p>
      */
-    inline void SetAfterBlob(BlobMetadata&& value) { m_afterBlobHasBeenSet = true; m_afterBlob = value; }
+    inline void SetAfterBlob(BlobMetadata&& value) { m_afterBlobHasBeenSet = true; m_afterBlob = std::move(value); }
 
     /**
      * <p>Information about an <code>afterBlob</code> data type object, including the
@@ -103,7 +104,7 @@ namespace Model
      * <p>Information about an <code>afterBlob</code> data type object, including the
      * ID, the file mode permission code, and the path.</p>
      */
-    inline Difference& WithAfterBlob(BlobMetadata&& value) { SetAfterBlob(value); return *this;}
+    inline Difference& WithAfterBlob(BlobMetadata&& value) { SetAfterBlob(std::move(value)); return *this;}
 
     /**
      * <p>Whether the change type of the difference is an addition (A), deletion (D),
@@ -121,7 +122,7 @@ namespace Model
      * <p>Whether the change type of the difference is an addition (A), deletion (D),
      * or modification (M).</p>
      */
-    inline void SetChangeType(ChangeTypeEnum&& value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
+    inline void SetChangeType(ChangeTypeEnum&& value) { m_changeTypeHasBeenSet = true; m_changeType = std::move(value); }
 
     /**
      * <p>Whether the change type of the difference is an addition (A), deletion (D),
@@ -133,7 +134,7 @@ namespace Model
      * <p>Whether the change type of the difference is an addition (A), deletion (D),
      * or modification (M).</p>
      */
-    inline Difference& WithChangeType(ChangeTypeEnum&& value) { SetChangeType(value); return *this;}
+    inline Difference& WithChangeType(ChangeTypeEnum&& value) { SetChangeType(std::move(value)); return *this;}
 
   private:
     BlobMetadata m_beforeBlob;

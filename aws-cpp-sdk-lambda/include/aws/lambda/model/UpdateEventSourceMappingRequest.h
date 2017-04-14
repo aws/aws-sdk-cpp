@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The event source mapping identifier.</p>
      */
-    inline void SetUUID(Aws::String&& value) { m_uUIDHasBeenSet = true; m_uUID = value; }
+    inline void SetUUID(Aws::String&& value) { m_uUIDHasBeenSet = true; m_uUID = std::move(value); }
 
     /**
      * <p>The event source mapping identifier.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The event source mapping identifier.</p>
      */
-    inline UpdateEventSourceMappingRequest& WithUUID(Aws::String&& value) { SetUUID(value); return *this;}
+    inline UpdateEventSourceMappingRequest& WithUUID(Aws::String&& value) { SetUUID(std::move(value)); return *this;}
 
     /**
      * <p>The event source mapping identifier.</p>
@@ -117,7 +118,7 @@ namespace Model
      * constraint applies only to the ARN. If you specify only the function name, it is
      * limited to 64 character in length.</p>
      */
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
      * <p>The Lambda function to which you want the stream records sent.</p> <p> You
@@ -165,7 +166,7 @@ namespace Model
      * constraint applies only to the ARN. If you specify only the function name, it is
      * limited to 64 character in length.</p>
      */
-    inline UpdateEventSourceMappingRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
+    inline UpdateEventSourceMappingRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>The Lambda function to which you want the stream records sent.</p> <p> You

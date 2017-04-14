@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VpnConnectionOptionsSpecification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The type of VPN connection (<code>ipsec.1</code>).</p>
      */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of VPN connection (<code>ipsec.1</code>).</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The type of VPN connection (<code>ipsec.1</code>).</p>
      */
-    inline CreateVpnConnectionRequest& WithType(Aws::String&& value) { SetType(value); return *this;}
+    inline CreateVpnConnectionRequest& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The type of VPN connection (<code>ipsec.1</code>).</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The ID of the customer gateway.</p>
      */
-    inline void SetCustomerGatewayId(Aws::String&& value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId = value; }
+    inline void SetCustomerGatewayId(Aws::String&& value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId = std::move(value); }
 
     /**
      * <p>The ID of the customer gateway.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The ID of the customer gateway.</p>
      */
-    inline CreateVpnConnectionRequest& WithCustomerGatewayId(Aws::String&& value) { SetCustomerGatewayId(value); return *this;}
+    inline CreateVpnConnectionRequest& WithCustomerGatewayId(Aws::String&& value) { SetCustomerGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the customer gateway.</p>
@@ -149,7 +150,7 @@ namespace Model
     /**
      * <p>The ID of the virtual private gateway.</p>
      */
-    inline void SetVpnGatewayId(Aws::String&& value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId = value; }
+    inline void SetVpnGatewayId(Aws::String&& value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId = std::move(value); }
 
     /**
      * <p>The ID of the virtual private gateway.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>The ID of the virtual private gateway.</p>
      */
-    inline CreateVpnConnectionRequest& WithVpnGatewayId(Aws::String&& value) { SetVpnGatewayId(value); return *this;}
+    inline CreateVpnConnectionRequest& WithVpnGatewayId(Aws::String&& value) { SetVpnGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the virtual private gateway.</p>
@@ -190,7 +191,7 @@ namespace Model
      * creating a VPN connection for a device that does not support BGP, you must
      * specify <code>true</code>.</p> <p>Default: <code>false</code> </p>
      */
-    inline void SetOptions(VpnConnectionOptionsSpecification&& value) { m_optionsHasBeenSet = true; m_options = value; }
+    inline void SetOptions(VpnConnectionOptionsSpecification&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     /**
      * <p>Indicates whether the VPN connection requires static routes. If you are
@@ -204,7 +205,7 @@ namespace Model
      * creating a VPN connection for a device that does not support BGP, you must
      * specify <code>true</code>.</p> <p>Default: <code>false</code> </p>
      */
-    inline CreateVpnConnectionRequest& WithOptions(VpnConnectionOptionsSpecification&& value) { SetOptions(value); return *this;}
+    inline CreateVpnConnectionRequest& WithOptions(VpnConnectionOptionsSpecification&& value) { SetOptions(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

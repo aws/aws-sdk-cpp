@@ -21,6 +21,7 @@
 #include <aws/ec2/model/NetworkInterfaceAttachment.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/GroupIdentifier.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceId = value; }
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceId = std::move(value); }
 
     /**
      * <p>The ID of the network interface.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
-    inline DescribeNetworkInterfaceAttributeResponse& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(value); return *this;}
+    inline DescribeNetworkInterfaceAttributeResponse& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the network interface.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The description of the network interface.</p>
      */
-    inline void SetDescription(AttributeValue&& value) { m_description = value; }
+    inline void SetDescription(AttributeValue&& value) { m_description = std::move(value); }
 
     /**
      * <p>The description of the network interface.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The description of the network interface.</p>
      */
-    inline DescribeNetworkInterfaceAttributeResponse& WithDescription(AttributeValue&& value) { SetDescription(value); return *this;}
+    inline DescribeNetworkInterfaceAttributeResponse& WithDescription(AttributeValue&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether source/destination checking is enabled.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>Indicates whether source/destination checking is enabled.</p>
      */
-    inline void SetSourceDestCheck(AttributeBooleanValue&& value) { m_sourceDestCheck = value; }
+    inline void SetSourceDestCheck(AttributeBooleanValue&& value) { m_sourceDestCheck = std::move(value); }
 
     /**
      * <p>Indicates whether source/destination checking is enabled.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>Indicates whether source/destination checking is enabled.</p>
      */
-    inline DescribeNetworkInterfaceAttributeResponse& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(value); return *this;}
+    inline DescribeNetworkInterfaceAttributeResponse& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
 
     /**
      * <p>The security groups associated with the network interface.</p>
@@ -149,7 +150,7 @@ namespace Model
     /**
      * <p>The security groups associated with the network interface.</p>
      */
-    inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groups = value; }
+    inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groups = std::move(value); }
 
     /**
      * <p>The security groups associated with the network interface.</p>
@@ -159,7 +160,7 @@ namespace Model
     /**
      * <p>The security groups associated with the network interface.</p>
      */
-    inline DescribeNetworkInterfaceAttributeResponse& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(value); return *this;}
+    inline DescribeNetworkInterfaceAttributeResponse& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
      * <p>The security groups associated with the network interface.</p>
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p>The security groups associated with the network interface.</p>
      */
-    inline DescribeNetworkInterfaceAttributeResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(value); return *this; }
+    inline DescribeNetworkInterfaceAttributeResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The attachment (if any) of the network interface.</p>
@@ -184,7 +185,7 @@ namespace Model
     /**
      * <p>The attachment (if any) of the network interface.</p>
      */
-    inline void SetAttachment(NetworkInterfaceAttachment&& value) { m_attachment = value; }
+    inline void SetAttachment(NetworkInterfaceAttachment&& value) { m_attachment = std::move(value); }
 
     /**
      * <p>The attachment (if any) of the network interface.</p>
@@ -194,7 +195,7 @@ namespace Model
     /**
      * <p>The attachment (if any) of the network interface.</p>
      */
-    inline DescribeNetworkInterfaceAttributeResponse& WithAttachment(NetworkInterfaceAttachment&& value) { SetAttachment(value); return *this;}
+    inline DescribeNetworkInterfaceAttributeResponse& WithAttachment(NetworkInterfaceAttachment&& value) { SetAttachment(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -203,13 +204,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeNetworkInterfaceAttributeResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeNetworkInterfaceAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeNetworkInterfaceAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_networkInterfaceId;

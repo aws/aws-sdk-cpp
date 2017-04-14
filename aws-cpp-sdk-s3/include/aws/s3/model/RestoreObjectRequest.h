@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/RestoreRequest.h>
 #include <aws/s3/model/RequestPayer.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
@@ -59,7 +60,7 @@ namespace Model
     inline RestoreObjectRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     
-    inline RestoreObjectRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline RestoreObjectRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     
     inline RestoreObjectRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
@@ -71,7 +72,7 @@ namespace Model
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
@@ -80,7 +81,7 @@ namespace Model
     inline RestoreObjectRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     
-    inline RestoreObjectRequest& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline RestoreObjectRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     
     inline RestoreObjectRequest& WithKey(const char* value) { SetKey(value); return *this;}
@@ -92,7 +93,7 @@ namespace Model
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
@@ -101,7 +102,7 @@ namespace Model
     inline RestoreObjectRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     
-    inline RestoreObjectRequest& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
+    inline RestoreObjectRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     
     inline RestoreObjectRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
@@ -113,13 +114,13 @@ namespace Model
     inline void SetRestoreRequest(const RestoreRequest& value) { m_restoreRequestHasBeenSet = true; m_restoreRequest = value; }
 
     
-    inline void SetRestoreRequest(RestoreRequest&& value) { m_restoreRequestHasBeenSet = true; m_restoreRequest = value; }
+    inline void SetRestoreRequest(RestoreRequest&& value) { m_restoreRequestHasBeenSet = true; m_restoreRequest = std::move(value); }
 
     
     inline RestoreObjectRequest& WithRestoreRequest(const RestoreRequest& value) { SetRestoreRequest(value); return *this;}
 
     
-    inline RestoreObjectRequest& WithRestoreRequest(RestoreRequest&& value) { SetRestoreRequest(value); return *this;}
+    inline RestoreObjectRequest& WithRestoreRequest(RestoreRequest&& value) { SetRestoreRequest(std::move(value)); return *this;}
 
     
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
@@ -128,13 +129,13 @@ namespace Model
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
-    inline void SetRequestPayer(RequestPayer&& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
+    inline void SetRequestPayer(RequestPayer&& value) { m_requestPayerHasBeenSet = true; m_requestPayer = std::move(value); }
 
     
     inline RestoreObjectRequest& WithRequestPayer(const RequestPayer& value) { SetRequestPayer(value); return *this;}
 
     
-    inline RestoreObjectRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(value); return *this;}
+    inline RestoreObjectRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
 
   private:
     Aws::String m_bucket;

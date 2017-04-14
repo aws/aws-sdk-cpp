@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/ReservedInstancesModification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The Reserved Instance modification information.</p>
      */
-    inline void SetReservedInstancesModifications(Aws::Vector<ReservedInstancesModification>&& value) { m_reservedInstancesModifications = value; }
+    inline void SetReservedInstancesModifications(Aws::Vector<ReservedInstancesModification>&& value) { m_reservedInstancesModifications = std::move(value); }
 
     /**
      * <p>The Reserved Instance modification information.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The Reserved Instance modification information.</p>
      */
-    inline DescribeReservedInstancesModificationsResponse& WithReservedInstancesModifications(Aws::Vector<ReservedInstancesModification>&& value) { SetReservedInstancesModifications(value); return *this;}
+    inline DescribeReservedInstancesModificationsResponse& WithReservedInstancesModifications(Aws::Vector<ReservedInstancesModification>&& value) { SetReservedInstancesModifications(std::move(value)); return *this;}
 
     /**
      * <p>The Reserved Instance modification information.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>The Reserved Instance modification information.</p>
      */
-    inline DescribeReservedInstancesModificationsResponse& AddReservedInstancesModifications(ReservedInstancesModification&& value) { m_reservedInstancesModifications.push_back(value); return *this; }
+    inline DescribeReservedInstancesModificationsResponse& AddReservedInstancesModifications(ReservedInstancesModification&& value) { m_reservedInstancesModifications.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -99,7 +100,7 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -117,7 +118,7 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline DescribeReservedInstancesModificationsResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeReservedInstancesModificationsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -132,13 +133,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeReservedInstancesModificationsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeReservedInstancesModificationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeReservedInstancesModificationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<ReservedInstancesModification> m_reservedInstancesModifications;

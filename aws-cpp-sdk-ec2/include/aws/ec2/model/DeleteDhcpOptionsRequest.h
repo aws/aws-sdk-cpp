@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the DHCP options set.</p>
      */
-    inline void SetDhcpOptionsId(Aws::String&& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = value; }
+    inline void SetDhcpOptionsId(Aws::String&& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = std::move(value); }
 
     /**
      * <p>The ID of the DHCP options set.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The ID of the DHCP options set.</p>
      */
-    inline DeleteDhcpOptionsRequest& WithDhcpOptionsId(Aws::String&& value) { SetDhcpOptionsId(value); return *this;}
+    inline DeleteDhcpOptionsRequest& WithDhcpOptionsId(Aws::String&& value) { SetDhcpOptionsId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the DHCP options set.</p>

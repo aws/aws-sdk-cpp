@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The unique Amazon Resource Name of the disabled gateway.</p>
      */
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = value; }
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
 
     /**
      * <p>The unique Amazon Resource Name of the disabled gateway.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The unique Amazon Resource Name of the disabled gateway.</p>
      */
-    inline DisableGatewayResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline DisableGatewayResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     /**
      * <p>The unique Amazon Resource Name of the disabled gateway.</p>

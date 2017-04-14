@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/AccountAttributeName.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>One or more account attribute names.</p>
      */
-    inline void SetAttributeNames(Aws::Vector<AccountAttributeName>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
+    inline void SetAttributeNames(Aws::Vector<AccountAttributeName>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::move(value); }
 
     /**
      * <p>One or more account attribute names.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>One or more account attribute names.</p>
      */
-    inline DescribeAccountAttributesRequest& WithAttributeNames(Aws::Vector<AccountAttributeName>&& value) { SetAttributeNames(value); return *this;}
+    inline DescribeAccountAttributesRequest& WithAttributeNames(Aws::Vector<AccountAttributeName>&& value) { SetAttributeNames(std::move(value)); return *this;}
 
     /**
      * <p>One or more account attribute names.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>One or more account attribute names.</p>
      */
-    inline DescribeAccountAttributesRequest& AddAttributeNames(AccountAttributeName&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
+    inline DescribeAccountAttributesRequest& AddAttributeNames(AccountAttributeName&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

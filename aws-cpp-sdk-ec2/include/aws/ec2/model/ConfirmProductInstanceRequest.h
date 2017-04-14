@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The product code. This must be a product code that you own.</p>
      */
-    inline void SetProductCode(Aws::String&& value) { m_productCodeHasBeenSet = true; m_productCode = value; }
+    inline void SetProductCode(Aws::String&& value) { m_productCodeHasBeenSet = true; m_productCode = std::move(value); }
 
     /**
      * <p>The product code. This must be a product code that you own.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The product code. This must be a product code that you own.</p>
      */
-    inline ConfirmProductInstanceRequest& WithProductCode(Aws::String&& value) { SetProductCode(value); return *this;}
+    inline ConfirmProductInstanceRequest& WithProductCode(Aws::String&& value) { SetProductCode(std::move(value)); return *this;}
 
     /**
      * <p>The product code. This must be a product code that you own.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline ConfirmProductInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline ConfirmProductInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>

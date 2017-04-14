@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/organizations/model/OrganizationFeatureSet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
      * features</a> in the <i>AWS Organizations User Guide</i>.</p> </li> </ul>
      */
-    inline void SetFeatureSet(OrganizationFeatureSet&& value) { m_featureSetHasBeenSet = true; m_featureSet = value; }
+    inline void SetFeatureSet(OrganizationFeatureSet&& value) { m_featureSetHasBeenSet = true; m_featureSet = std::move(value); }
 
     /**
      * <p>Specifies the feature set supported by the new organization. Each feature set
@@ -108,7 +109,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
      * features</a> in the <i>AWS Organizations User Guide</i>.</p> </li> </ul>
      */
-    inline CreateOrganizationRequest& WithFeatureSet(OrganizationFeatureSet&& value) { SetFeatureSet(value); return *this;}
+    inline CreateOrganizationRequest& WithFeatureSet(OrganizationFeatureSet&& value) { SetFeatureSet(std::move(value)); return *this;}
 
   private:
     OrganizationFeatureSet m_featureSet;

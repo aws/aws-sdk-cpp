@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The problem detail's ARN.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The problem detail's ARN.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The problem detail's ARN.</p>
      */
-    inline ProblemDetail& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline ProblemDetail& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The problem detail's ARN.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The problem detail's name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The problem detail's name.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The problem detail's name.</p>
      */
-    inline ProblemDetail& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ProblemDetail& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The problem detail's name.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/SpotProvisioningSpecification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The launch specification for Spot instances in the fleet, which determines
      * the defined duration and provisioning timeout behavior.</p>
      */
-    inline void SetSpotSpecification(SpotProvisioningSpecification&& value) { m_spotSpecificationHasBeenSet = true; m_spotSpecification = value; }
+    inline void SetSpotSpecification(SpotProvisioningSpecification&& value) { m_spotSpecificationHasBeenSet = true; m_spotSpecification = std::move(value); }
 
     /**
      * <p>The launch specification for Spot instances in the fleet, which determines
@@ -74,7 +75,7 @@ namespace Model
      * <p>The launch specification for Spot instances in the fleet, which determines
      * the defined duration and provisioning timeout behavior.</p>
      */
-    inline InstanceFleetProvisioningSpecifications& WithSpotSpecification(SpotProvisioningSpecification&& value) { SetSpotSpecification(value); return *this;}
+    inline InstanceFleetProvisioningSpecifications& WithSpotSpecification(SpotProvisioningSpecification&& value) { SetSpotSpecification(std::move(value)); return *this;}
 
   private:
     SpotProvisioningSpecification m_spotSpecification;

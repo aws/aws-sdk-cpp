@@ -18,6 +18,7 @@
 #include <aws/lightsail/model/RegionName.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/AvailabilityZone.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
      */
-    inline void SetContinentCode(Aws::String&& value) { m_continentCodeHasBeenSet = true; m_continentCode = value; }
+    inline void SetContinentCode(Aws::String&& value) { m_continentCodeHasBeenSet = true; m_continentCode = std::move(value); }
 
     /**
      * <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
      */
-    inline Region& WithContinentCode(Aws::String&& value) { SetContinentCode(value); return *this;}
+    inline Region& WithContinentCode(Aws::String&& value) { SetContinentCode(std::move(value)); return *this;}
 
     /**
      * <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
@@ -97,7 +98,7 @@ namespace Model
      * <p>The description of the AWS Region (e.g., <code>This region is recommended to
      * serve users in the eastern United States and eastern Canada</code>).</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the AWS Region (e.g., <code>This region is recommended to
@@ -115,7 +116,7 @@ namespace Model
      * <p>The description of the AWS Region (e.g., <code>This region is recommended to
      * serve users in the eastern United States and eastern Canada</code>).</p>
      */
-    inline Region& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline Region& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the AWS Region (e.g., <code>This region is recommended to
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The display name (e.g., <code>Virginia</code>).</p>
      */
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
      * <p>The display name (e.g., <code>Virginia</code>).</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>The display name (e.g., <code>Virginia</code>).</p>
      */
-    inline Region& WithDisplayName(Aws::String&& value) { SetDisplayName(value); return *this;}
+    inline Region& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
      * <p>The display name (e.g., <code>Virginia</code>).</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>The region name (e.g., <code>us-east-1</code>).</p>
      */
-    inline void SetName(RegionName&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(RegionName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The region name (e.g., <code>us-east-1</code>).</p>
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>The region name (e.g., <code>us-east-1</code>).</p>
      */
-    inline Region& WithName(RegionName&& value) { SetName(value); return *this;}
+    inline Region& WithName(RegionName&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zones.</p>
@@ -196,7 +197,7 @@ namespace Model
     /**
      * <p>The Availability Zones.</p>
      */
-    inline void SetAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
+    inline void SetAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
      * <p>The Availability Zones.</p>
@@ -206,7 +207,7 @@ namespace Model
     /**
      * <p>The Availability Zones.</p>
      */
-    inline Region& WithAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { SetAvailabilityZones(value); return *this;}
+    inline Region& WithAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zones.</p>
@@ -216,7 +217,7 @@ namespace Model
     /**
      * <p>The Availability Zones.</p>
      */
-    inline Region& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+    inline Region& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_continentCode;

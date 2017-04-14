@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/InstanceResizePolicy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
      * <p>Custom policy for requesting termination protection or termination of
      * specific instances when shrinking an instance group.</p>
      */
-    inline void SetInstanceResizePolicy(InstanceResizePolicy&& value) { m_instanceResizePolicyHasBeenSet = true; m_instanceResizePolicy = value; }
+    inline void SetInstanceResizePolicy(InstanceResizePolicy&& value) { m_instanceResizePolicyHasBeenSet = true; m_instanceResizePolicy = std::move(value); }
 
     /**
      * <p>Custom policy for requesting termination protection or termination of
@@ -91,7 +92,7 @@ namespace Model
      * <p>Custom policy for requesting termination protection or termination of
      * specific instances when shrinking an instance group.</p>
      */
-    inline ShrinkPolicy& WithInstanceResizePolicy(InstanceResizePolicy&& value) { SetInstanceResizePolicy(value); return *this;}
+    inline ShrinkPolicy& WithInstanceResizePolicy(InstanceResizePolicy&& value) { SetInstanceResizePolicy(std::move(value)); return *this;}
 
   private:
     int m_decommissionTimeout;

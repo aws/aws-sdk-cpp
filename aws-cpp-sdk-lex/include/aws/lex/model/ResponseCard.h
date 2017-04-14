@@ -18,6 +18,7 @@
 #include <aws/lex/model/ContentType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lex/model/GenericAttachment.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The version of the response card format.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The version of the response card format.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The version of the response card format.</p>
      */
-    inline ResponseCard& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline ResponseCard& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the response card format.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The content type of the response.</p>
      */
-    inline void SetContentType(ContentType&& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
+    inline void SetContentType(ContentType&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
 
     /**
      * <p>The content type of the response.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The content type of the response.</p>
      */
-    inline ResponseCard& WithContentType(ContentType&& value) { SetContentType(value); return *this;}
+    inline ResponseCard& WithContentType(ContentType&& value) { SetContentType(std::move(value)); return *this;}
 
     /**
      * <p>An array of attachment objects representing options.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>An array of attachment objects representing options.</p>
      */
-    inline void SetGenericAttachments(Aws::Vector<GenericAttachment>&& value) { m_genericAttachmentsHasBeenSet = true; m_genericAttachments = value; }
+    inline void SetGenericAttachments(Aws::Vector<GenericAttachment>&& value) { m_genericAttachmentsHasBeenSet = true; m_genericAttachments = std::move(value); }
 
     /**
      * <p>An array of attachment objects representing options.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>An array of attachment objects representing options.</p>
      */
-    inline ResponseCard& WithGenericAttachments(Aws::Vector<GenericAttachment>&& value) { SetGenericAttachments(value); return *this;}
+    inline ResponseCard& WithGenericAttachments(Aws::Vector<GenericAttachment>&& value) { SetGenericAttachments(std::move(value)); return *this;}
 
     /**
      * <p>An array of attachment objects representing options.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>An array of attachment objects representing options.</p>
      */
-    inline ResponseCard& AddGenericAttachments(GenericAttachment&& value) { m_genericAttachmentsHasBeenSet = true; m_genericAttachments.push_back(value); return *this; }
+    inline ResponseCard& AddGenericAttachments(GenericAttachment&& value) { m_genericAttachmentsHasBeenSet = true; m_genericAttachments.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_version;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p><b>Required.</b> The name of the marker.</p>
      */
-    inline void SetMarkerName(Aws::String&& value) { m_markerNameHasBeenSet = true; m_markerName = value; }
+    inline void SetMarkerName(Aws::String&& value) { m_markerNameHasBeenSet = true; m_markerName = std::move(value); }
 
     /**
      * <p><b>Required.</b> The name of the marker.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p><b>Required.</b> The name of the marker.</p>
      */
-    inline RecordMarkerDecisionAttributes& WithMarkerName(Aws::String&& value) { SetMarkerName(value); return *this;}
+    inline RecordMarkerDecisionAttributes& WithMarkerName(Aws::String&& value) { SetMarkerName(std::move(value)); return *this;}
 
     /**
      * <p><b>Required.</b> The name of the marker.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p><i>Optional.</i> details of the marker.</p>
      */
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = value; }
+    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
      * <p><i>Optional.</i> details of the marker.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p><i>Optional.</i> details of the marker.</p>
      */
-    inline RecordMarkerDecisionAttributes& WithDetails(Aws::String&& value) { SetDetails(value); return *this;}
+    inline RecordMarkerDecisionAttributes& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
      * <p><i>Optional.</i> details of the marker.</p>

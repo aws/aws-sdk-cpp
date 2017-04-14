@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The Amazon Redshift cluster that the table is being restored to.</p>
      */
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     /**
      * <p>The Amazon Redshift cluster that the table is being restored to.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The Amazon Redshift cluster that the table is being restored to.</p>
      */
-    inline DescribeTableRestoreStatusRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
+    inline DescribeTableRestoreStatusRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Redshift cluster that the table is being restored to.</p>
@@ -97,7 +98,7 @@ namespace Model
      * <code>DescribeTableRestoreStatus</code> returns the status of all in-progress
      * table restore requests.</p>
      */
-    inline void SetTableRestoreRequestId(Aws::String&& value) { m_tableRestoreRequestIdHasBeenSet = true; m_tableRestoreRequestId = value; }
+    inline void SetTableRestoreRequestId(Aws::String&& value) { m_tableRestoreRequestIdHasBeenSet = true; m_tableRestoreRequestId = std::move(value); }
 
     /**
      * <p>The identifier of the table restore request to return status for. If you
@@ -121,7 +122,7 @@ namespace Model
      * <code>DescribeTableRestoreStatus</code> returns the status of all in-progress
      * table restore requests.</p>
      */
-    inline DescribeTableRestoreStatusRequest& WithTableRestoreRequestId(Aws::String&& value) { SetTableRestoreRequestId(value); return *this;}
+    inline DescribeTableRestoreStatusRequest& WithTableRestoreRequestId(Aws::String&& value) { SetTableRestoreRequestId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the table restore request to return status for. If you
@@ -177,7 +178,7 @@ namespace Model
      * the response includes only records beyond the marker, up to the value specified
      * by the <code>MaxRecords</code> parameter.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional pagination token provided by a previous
@@ -201,7 +202,7 @@ namespace Model
      * the response includes only records beyond the marker, up to the value specified
      * by the <code>MaxRecords</code> parameter.</p>
      */
-    inline DescribeTableRestoreStatusRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeTableRestoreStatusRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional pagination token provided by a previous

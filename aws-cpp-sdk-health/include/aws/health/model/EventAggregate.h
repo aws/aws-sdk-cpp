@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/health/Health_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The issue type for the associated count.</p>
      */
-    inline void SetAggregateValue(Aws::String&& value) { m_aggregateValueHasBeenSet = true; m_aggregateValue = value; }
+    inline void SetAggregateValue(Aws::String&& value) { m_aggregateValueHasBeenSet = true; m_aggregateValue = std::move(value); }
 
     /**
      * <p>The issue type for the associated count.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The issue type for the associated count.</p>
      */
-    inline EventAggregate& WithAggregateValue(Aws::String&& value) { SetAggregateValue(value); return *this;}
+    inline EventAggregate& WithAggregateValue(Aws::String&& value) { SetAggregateValue(std::move(value)); return *this;}
 
     /**
      * <p>The issue type for the associated count.</p>

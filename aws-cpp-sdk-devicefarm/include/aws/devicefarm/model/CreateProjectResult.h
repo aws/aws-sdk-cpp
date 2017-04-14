@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/Project.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The newly created project.</p>
      */
-    inline void SetProject(Project&& value) { m_project = value; }
+    inline void SetProject(Project&& value) { m_project = std::move(value); }
 
     /**
      * <p>The newly created project.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The newly created project.</p>
      */
-    inline CreateProjectResult& WithProject(Project&& value) { SetProject(value); return *this;}
+    inline CreateProjectResult& WithProject(Project&& value) { SetProject(std::move(value)); return *this;}
 
   private:
     Project m_project;

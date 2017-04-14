@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/ResponseMetadata.h>
 #include <aws/redshift/model/ClusterParameterGroup.h>
+#include <utility>
 
 namespace Aws
 {
@@ -76,7 +77,7 @@ namespace Model
      * <code>Marker</code> field is empty, all response records have been retrieved for
      * the request. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -106,7 +107,7 @@ namespace Model
      * <code>Marker</code> field is empty, all response records have been retrieved for
      * the request. </p>
      */
-    inline DescribeClusterParameterGroupsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeClusterParameterGroupsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -134,7 +135,7 @@ namespace Model
      * <p>A list of <a>ClusterParameterGroup</a> instances. Each instance describes one
      * cluster parameter group. </p>
      */
-    inline void SetParameterGroups(Aws::Vector<ClusterParameterGroup>&& value) { m_parameterGroups = value; }
+    inline void SetParameterGroups(Aws::Vector<ClusterParameterGroup>&& value) { m_parameterGroups = std::move(value); }
 
     /**
      * <p>A list of <a>ClusterParameterGroup</a> instances. Each instance describes one
@@ -146,7 +147,7 @@ namespace Model
      * <p>A list of <a>ClusterParameterGroup</a> instances. Each instance describes one
      * cluster parameter group. </p>
      */
-    inline DescribeClusterParameterGroupsResult& WithParameterGroups(Aws::Vector<ClusterParameterGroup>&& value) { SetParameterGroups(value); return *this;}
+    inline DescribeClusterParameterGroupsResult& WithParameterGroups(Aws::Vector<ClusterParameterGroup>&& value) { SetParameterGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of <a>ClusterParameterGroup</a> instances. Each instance describes one
@@ -158,7 +159,7 @@ namespace Model
      * <p>A list of <a>ClusterParameterGroup</a> instances. Each instance describes one
      * cluster parameter group. </p>
      */
-    inline DescribeClusterParameterGroupsResult& AddParameterGroups(ClusterParameterGroup&& value) { m_parameterGroups.push_back(value); return *this; }
+    inline DescribeClusterParameterGroupsResult& AddParameterGroups(ClusterParameterGroup&& value) { m_parameterGroups.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -167,13 +168,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeClusterParameterGroupsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeClusterParameterGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeClusterParameterGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_marker;

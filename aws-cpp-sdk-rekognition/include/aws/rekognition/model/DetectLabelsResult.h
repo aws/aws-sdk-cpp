@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/model/OrientationCorrection.h>
 #include <aws/rekognition/model/Label.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>An array of labels for the real-world objects detected. </p>
      */
-    inline void SetLabels(Aws::Vector<Label>&& value) { m_labels = value; }
+    inline void SetLabels(Aws::Vector<Label>&& value) { m_labels = std::move(value); }
 
     /**
      * <p>An array of labels for the real-world objects detected. </p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>An array of labels for the real-world objects detected. </p>
      */
-    inline DetectLabelsResult& WithLabels(Aws::Vector<Label>&& value) { SetLabels(value); return *this;}
+    inline DetectLabelsResult& WithLabels(Aws::Vector<Label>&& value) { SetLabels(std::move(value)); return *this;}
 
     /**
      * <p>An array of labels for the real-world objects detected. </p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>An array of labels for the real-world objects detected. </p>
      */
-    inline DetectLabelsResult& AddLabels(Label&& value) { m_labels.push_back(value); return *this; }
+    inline DetectLabelsResult& AddLabels(Label&& value) { m_labels.push_back(std::move(value)); return *this; }
 
     /**
      * <p> Amazon Rekognition returns the orientation of the input image that was
@@ -110,7 +111,7 @@ namespace Model
      * orientation correction and the value of OrientationCorrection will be nil.</p>
      * </note>
      */
-    inline void SetOrientationCorrection(OrientationCorrection&& value) { m_orientationCorrection = value; }
+    inline void SetOrientationCorrection(OrientationCorrection&& value) { m_orientationCorrection = std::move(value); }
 
     /**
      * <p> Amazon Rekognition returns the orientation of the input image that was
@@ -134,7 +135,7 @@ namespace Model
      * orientation correction and the value of OrientationCorrection will be nil.</p>
      * </note>
      */
-    inline DetectLabelsResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(value); return *this;}
+    inline DetectLabelsResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Label> m_labels;

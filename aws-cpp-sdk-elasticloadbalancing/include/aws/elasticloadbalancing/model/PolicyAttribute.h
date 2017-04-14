@@ -16,6 +16,7 @@
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the attribute.</p>
      */
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
      * <p>The name of the attribute.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the attribute.</p>
      */
-    inline PolicyAttribute& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
+    inline PolicyAttribute& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the attribute.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The value of the attribute.</p>
      */
-    inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
+    inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::move(value); }
 
     /**
      * <p>The value of the attribute.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The value of the attribute.</p>
      */
-    inline PolicyAttribute& WithAttributeValue(Aws::String&& value) { SetAttributeValue(value); return *this;}
+    inline PolicyAttribute& WithAttributeValue(Aws::String&& value) { SetAttributeValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the attribute.</p>

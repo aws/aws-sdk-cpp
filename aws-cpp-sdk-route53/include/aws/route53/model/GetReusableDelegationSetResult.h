@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/DelegationSet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>A complex type that contains information about the reusable delegation
      * set.</p>
      */
-    inline void SetDelegationSet(DelegationSet&& value) { m_delegationSet = value; }
+    inline void SetDelegationSet(DelegationSet&& value) { m_delegationSet = std::move(value); }
 
     /**
      * <p>A complex type that contains information about the reusable delegation
@@ -73,7 +74,7 @@ namespace Model
      * <p>A complex type that contains information about the reusable delegation
      * set.</p>
      */
-    inline GetReusableDelegationSetResult& WithDelegationSet(DelegationSet&& value) { SetDelegationSet(value); return *this;}
+    inline GetReusableDelegationSetResult& WithDelegationSet(DelegationSet&& value) { SetDelegationSet(std::move(value)); return *this;}
 
   private:
     DelegationSet m_delegationSet;

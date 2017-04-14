@@ -16,6 +16,7 @@
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 #include <aws/datapipeline/DataPipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
-    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
+    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::move(value); }
 
     /**
      * <p>The ID of the pipeline.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
-    inline EvaluateExpressionRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
+    inline EvaluateExpressionRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the pipeline.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The ID of the object.</p>
      */
-    inline void SetObjectId(Aws::String&& value) { m_objectIdHasBeenSet = true; m_objectId = value; }
+    inline void SetObjectId(Aws::String&& value) { m_objectIdHasBeenSet = true; m_objectId = std::move(value); }
 
     /**
      * <p>The ID of the object.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The ID of the object.</p>
      */
-    inline EvaluateExpressionRequest& WithObjectId(Aws::String&& value) { SetObjectId(value); return *this;}
+    inline EvaluateExpressionRequest& WithObjectId(Aws::String&& value) { SetObjectId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the object.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The expression to evaluate.</p>
      */
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = value; }
+    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
 
     /**
      * <p>The expression to evaluate.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The expression to evaluate.</p>
      */
-    inline EvaluateExpressionRequest& WithExpression(Aws::String&& value) { SetExpression(value); return *this;}
+    inline EvaluateExpressionRequest& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
 
     /**
      * <p>The expression to evaluate.</p>

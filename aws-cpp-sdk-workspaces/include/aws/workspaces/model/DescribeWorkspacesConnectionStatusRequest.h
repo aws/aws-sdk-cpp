@@ -17,6 +17,7 @@
 #include <aws/workspaces/WorkSpacesRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>An array of strings that contain the identifiers of the WorkSpaces.</p>
      */
-    inline void SetWorkspaceIds(Aws::Vector<Aws::String>&& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds = value; }
+    inline void SetWorkspaceIds(Aws::Vector<Aws::String>&& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds = std::move(value); }
 
     /**
      * <p>An array of strings that contain the identifiers of the WorkSpaces.</p>
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>An array of strings that contain the identifiers of the WorkSpaces.</p>
      */
-    inline DescribeWorkspacesConnectionStatusRequest& WithWorkspaceIds(Aws::Vector<Aws::String>&& value) { SetWorkspaceIds(value); return *this;}
+    inline DescribeWorkspacesConnectionStatusRequest& WithWorkspaceIds(Aws::Vector<Aws::String>&& value) { SetWorkspaceIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of strings that contain the identifiers of the WorkSpaces.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>An array of strings that contain the identifiers of the WorkSpaces.</p>
      */
-    inline DescribeWorkspacesConnectionStatusRequest& AddWorkspaceIds(Aws::String&& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(value); return *this; }
+    inline DescribeWorkspacesConnectionStatusRequest& AddWorkspaceIds(Aws::String&& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of strings that contain the identifiers of the WorkSpaces.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The next token of the request.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The next token of the request.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The next token of the request.</p>
      */
-    inline DescribeWorkspacesConnectionStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeWorkspacesConnectionStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The next token of the request.</p>

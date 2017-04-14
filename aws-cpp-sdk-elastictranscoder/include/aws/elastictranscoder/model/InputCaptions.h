@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elastictranscoder/model/CaptionSource.h>
+#include <utility>
 
 namespace Aws
 {
@@ -97,7 +98,7 @@ namespace Model
      * you specify in <code>CaptionSources</code>.</p> </li> </ul> <p>
      * <code>MergePolicy</code> cannot be null.</p>
      */
-    inline void SetMergePolicy(Aws::String&& value) { m_mergePolicyHasBeenSet = true; m_mergePolicy = value; }
+    inline void SetMergePolicy(Aws::String&& value) { m_mergePolicyHasBeenSet = true; m_mergePolicy = std::move(value); }
 
     /**
      * <p>A policy that determines how Elastic Transcoder handles the existence of
@@ -151,7 +152,7 @@ namespace Model
      * you specify in <code>CaptionSources</code>.</p> </li> </ul> <p>
      * <code>MergePolicy</code> cannot be null.</p>
      */
-    inline InputCaptions& WithMergePolicy(Aws::String&& value) { SetMergePolicy(value); return *this;}
+    inline InputCaptions& WithMergePolicy(Aws::String&& value) { SetMergePolicy(std::move(value)); return *this;}
 
     /**
      * <p>A policy that determines how Elastic Transcoder handles the existence of
@@ -190,7 +191,7 @@ namespace Model
      * process. To omit all sidecar captions, leave <code>CaptionSources</code>
      * blank.</p>
      */
-    inline void SetCaptionSources(Aws::Vector<CaptionSource>&& value) { m_captionSourcesHasBeenSet = true; m_captionSources = value; }
+    inline void SetCaptionSources(Aws::Vector<CaptionSource>&& value) { m_captionSourcesHasBeenSet = true; m_captionSources = std::move(value); }
 
     /**
      * <p>Source files for the input sidecar captions used during the transcoding
@@ -204,7 +205,7 @@ namespace Model
      * process. To omit all sidecar captions, leave <code>CaptionSources</code>
      * blank.</p>
      */
-    inline InputCaptions& WithCaptionSources(Aws::Vector<CaptionSource>&& value) { SetCaptionSources(value); return *this;}
+    inline InputCaptions& WithCaptionSources(Aws::Vector<CaptionSource>&& value) { SetCaptionSources(std::move(value)); return *this;}
 
     /**
      * <p>Source files for the input sidecar captions used during the transcoding
@@ -218,7 +219,7 @@ namespace Model
      * process. To omit all sidecar captions, leave <code>CaptionSources</code>
      * blank.</p>
      */
-    inline InputCaptions& AddCaptionSources(CaptionSource&& value) { m_captionSourcesHasBeenSet = true; m_captionSources.push_back(value); return *this; }
+    inline InputCaptions& AddCaptionSources(CaptionSource&& value) { m_captionSourcesHasBeenSet = true; m_captionSources.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_mergePolicy;

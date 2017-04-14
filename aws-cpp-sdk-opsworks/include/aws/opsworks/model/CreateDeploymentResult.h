@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>The deployment ID, which can be used with other requests to identify the
      * deployment.</p>
      */
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentId = value; }
+    inline void SetDeploymentId(Aws::String&& value) { m_deploymentId = std::move(value); }
 
     /**
      * <p>The deployment ID, which can be used with other requests to identify the
@@ -79,7 +80,7 @@ namespace Model
      * <p>The deployment ID, which can be used with other requests to identify the
      * deployment.</p>
      */
-    inline CreateDeploymentResult& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
+    inline CreateDeploymentResult& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
      * <p>The deployment ID, which can be used with other requests to identify the

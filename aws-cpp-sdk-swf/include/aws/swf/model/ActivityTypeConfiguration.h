@@ -16,6 +16,7 @@
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/swf/model/TaskList.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * <p>The duration is specified in seconds; an integer greater than or equal to 0.
      * The value "NONE" can be used to specify unlimited duration.</p>
      */
-    inline void SetDefaultTaskStartToCloseTimeout(Aws::String&& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = value; }
+    inline void SetDefaultTaskStartToCloseTimeout(Aws::String&& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = std::move(value); }
 
     /**
      * <p><i>Optional.</i> The default maximum duration for tasks of an activity type
@@ -97,7 +98,7 @@ namespace Model
      * <p>The duration is specified in seconds; an integer greater than or equal to 0.
      * The value "NONE" can be used to specify unlimited duration.</p>
      */
-    inline ActivityTypeConfiguration& WithDefaultTaskStartToCloseTimeout(Aws::String&& value) { SetDefaultTaskStartToCloseTimeout(value); return *this;}
+    inline ActivityTypeConfiguration& WithDefaultTaskStartToCloseTimeout(Aws::String&& value) { SetDefaultTaskStartToCloseTimeout(std::move(value)); return *this;}
 
     /**
      * <p><i>Optional.</i> The default maximum duration for tasks of an activity type
@@ -154,7 +155,7 @@ namespace Model
      * than or equal to 0. The value "NONE" can be used to specify unlimited
      * duration.</p>
      */
-    inline void SetDefaultTaskHeartbeatTimeout(Aws::String&& value) { m_defaultTaskHeartbeatTimeoutHasBeenSet = true; m_defaultTaskHeartbeatTimeout = value; }
+    inline void SetDefaultTaskHeartbeatTimeout(Aws::String&& value) { m_defaultTaskHeartbeatTimeoutHasBeenSet = true; m_defaultTaskHeartbeatTimeout = std::move(value); }
 
     /**
      * <p><i>Optional.</i> The default maximum time, in seconds, before which a worker
@@ -202,7 +203,7 @@ namespace Model
      * than or equal to 0. The value "NONE" can be used to specify unlimited
      * duration.</p>
      */
-    inline ActivityTypeConfiguration& WithDefaultTaskHeartbeatTimeout(Aws::String&& value) { SetDefaultTaskHeartbeatTimeout(value); return *this;}
+    inline ActivityTypeConfiguration& WithDefaultTaskHeartbeatTimeout(Aws::String&& value) { SetDefaultTaskHeartbeatTimeout(std::move(value)); return *this;}
 
     /**
      * <p><i>Optional.</i> The default maximum time, in seconds, before which a worker
@@ -245,7 +246,7 @@ namespace Model
      * override the default registered task list when scheduling a task through the
      * <code>ScheduleActivityTask</code> decision.</p>
      */
-    inline void SetDefaultTaskList(TaskList&& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = value; }
+    inline void SetDefaultTaskList(TaskList&& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = std::move(value); }
 
     /**
      * <p><i>Optional.</i> The default task list specified for this activity type at
@@ -263,7 +264,7 @@ namespace Model
      * override the default registered task list when scheduling a task through the
      * <code>ScheduleActivityTask</code> decision.</p>
      */
-    inline ActivityTypeConfiguration& WithDefaultTaskList(TaskList&& value) { SetDefaultTaskList(value); return *this;}
+    inline ActivityTypeConfiguration& WithDefaultTaskList(TaskList&& value) { SetDefaultTaskList(std::move(value)); return *this;}
 
     /**
      * <p><i>Optional.</i> The default task priority for tasks of this activity type,
@@ -302,7 +303,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
      */
-    inline void SetDefaultTaskPriority(Aws::String&& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = value; }
+    inline void SetDefaultTaskPriority(Aws::String&& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = std::move(value); }
 
     /**
      * <p><i>Optional.</i> The default task priority for tasks of this activity type,
@@ -341,7 +342,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
      */
-    inline ActivityTypeConfiguration& WithDefaultTaskPriority(Aws::String&& value) { SetDefaultTaskPriority(value); return *this;}
+    inline ActivityTypeConfiguration& WithDefaultTaskPriority(Aws::String&& value) { SetDefaultTaskPriority(std::move(value)); return *this;}
 
     /**
      * <p><i>Optional.</i> The default task priority for tasks of this activity type,
@@ -384,7 +385,7 @@ namespace Model
      * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
      * specify unlimited duration.</p>
      */
-    inline void SetDefaultTaskScheduleToStartTimeout(Aws::String&& value) { m_defaultTaskScheduleToStartTimeoutHasBeenSet = true; m_defaultTaskScheduleToStartTimeout = value; }
+    inline void SetDefaultTaskScheduleToStartTimeout(Aws::String&& value) { m_defaultTaskScheduleToStartTimeoutHasBeenSet = true; m_defaultTaskScheduleToStartTimeout = std::move(value); }
 
     /**
      * <p><i>Optional.</i> The default maximum duration, specified when registering the
@@ -414,7 +415,7 @@ namespace Model
      * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
      * specify unlimited duration.</p>
      */
-    inline ActivityTypeConfiguration& WithDefaultTaskScheduleToStartTimeout(Aws::String&& value) { SetDefaultTaskScheduleToStartTimeout(value); return *this;}
+    inline ActivityTypeConfiguration& WithDefaultTaskScheduleToStartTimeout(Aws::String&& value) { SetDefaultTaskScheduleToStartTimeout(std::move(value)); return *this;}
 
     /**
      * <p><i>Optional.</i> The default maximum duration, specified when registering the
@@ -451,7 +452,7 @@ namespace Model
      * decision.</p> <p>The duration is specified in seconds; an integer greater than
      * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
      */
-    inline void SetDefaultTaskScheduleToCloseTimeout(Aws::String&& value) { m_defaultTaskScheduleToCloseTimeoutHasBeenSet = true; m_defaultTaskScheduleToCloseTimeout = value; }
+    inline void SetDefaultTaskScheduleToCloseTimeout(Aws::String&& value) { m_defaultTaskScheduleToCloseTimeoutHasBeenSet = true; m_defaultTaskScheduleToCloseTimeout = std::move(value); }
 
     /**
      * <p><i>Optional.</i> The default maximum duration, specified when registering the
@@ -478,7 +479,7 @@ namespace Model
      * decision.</p> <p>The duration is specified in seconds; an integer greater than
      * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
      */
-    inline ActivityTypeConfiguration& WithDefaultTaskScheduleToCloseTimeout(Aws::String&& value) { SetDefaultTaskScheduleToCloseTimeout(value); return *this;}
+    inline ActivityTypeConfiguration& WithDefaultTaskScheduleToCloseTimeout(Aws::String&& value) { SetDefaultTaskScheduleToCloseTimeout(std::move(value)); return *this;}
 
     /**
      * <p><i>Optional.</i> The default maximum duration, specified when registering the

@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/Rule.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The <a>Rule</a> returned in the <code>CreateRule</code> response.</p>
      */
-    inline void SetRule(Rule&& value) { m_rule = value; }
+    inline void SetRule(Rule&& value) { m_rule = std::move(value); }
 
     /**
      * <p>The <a>Rule</a> returned in the <code>CreateRule</code> response.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The <a>Rule</a> returned in the <code>CreateRule</code> response.</p>
      */
-    inline CreateRuleResult& WithRule(Rule&& value) { SetRule(value); return *this;}
+    inline CreateRuleResult& WithRule(Rule&& value) { SetRule(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -84,7 +85,7 @@ namespace Model
      * <code>CreateRule</code> request. You can also use this value to query the status
      * of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
      */
-    inline void SetChangeToken(Aws::String&& value) { m_changeToken = value; }
+    inline void SetChangeToken(Aws::String&& value) { m_changeToken = std::move(value); }
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -105,7 +106,7 @@ namespace Model
      * <code>CreateRule</code> request. You can also use this value to query the status
      * of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
      */
-    inline CreateRuleResult& WithChangeToken(Aws::String&& value) { SetChangeToken(value); return *this;}
+    inline CreateRuleResult& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the

@@ -17,6 +17,7 @@
 #include <aws/health/HealthRequest.h>
 #include <aws/health/model/EntityFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>Values to narrow the results returned. At least one event ARN is required.
      * </p>
      */
-    inline void SetFilter(EntityFilter&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(EntityFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>Values to narrow the results returned. At least one event ARN is required.
@@ -64,7 +65,7 @@ namespace Model
      * <p>Values to narrow the results returned. At least one event ARN is required.
      * </p>
      */
-    inline DescribeAffectedEntitiesRequest& WithFilter(EntityFilter&& value) { SetFilter(value); return *this;}
+    inline DescribeAffectedEntitiesRequest& WithFilter(EntityFilter&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>The locale (language) to return information in. English (en) is the default
@@ -82,7 +83,7 @@ namespace Model
      * <p>The locale (language) to return information in. English (en) is the default
      * and the only supported value at this time.</p>
      */
-    inline void SetLocale(Aws::String&& value) { m_localeHasBeenSet = true; m_locale = value; }
+    inline void SetLocale(Aws::String&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
 
     /**
      * <p>The locale (language) to return information in. English (en) is the default
@@ -100,7 +101,7 @@ namespace Model
      * <p>The locale (language) to return information in. English (en) is the default
      * and the only supported value at this time.</p>
      */
-    inline DescribeAffectedEntitiesRequest& WithLocale(Aws::String&& value) { SetLocale(value); return *this;}
+    inline DescribeAffectedEntitiesRequest& WithLocale(Aws::String&& value) { SetLocale(std::move(value)); return *this;}
 
     /**
      * <p>The locale (language) to return information in. English (en) is the default
@@ -133,7 +134,7 @@ namespace Model
      * include the returned token. When all results have been returned, the response
      * does not contain a pagination token value.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>If the results of a search are large, only a portion of the results are
@@ -160,7 +161,7 @@ namespace Model
      * include the returned token. When all results have been returned, the response
      * does not contain a pagination token value.</p>
      */
-    inline DescribeAffectedEntitiesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeAffectedEntitiesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the results of a search are large, only a portion of the results are

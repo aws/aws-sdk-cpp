@@ -16,6 +16,7 @@
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The list of tags.</p>
      */
-    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagList = value; }
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagList = std::move(value); }
 
     /**
      * <p>The list of tags.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The list of tags.</p>
      */
-    inline DescribeTagsResult& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(value); return *this;}
+    inline DescribeTagsResult& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
 
     /**
      * <p>The list of tags.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The list of tags.</p>
      */
-    inline DescribeTagsResult& AddTagList(Tag&& value) { m_tagList.push_back(value); return *this; }
+    inline DescribeTagsResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Tag> m_tagList;

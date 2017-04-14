@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/model/InstanceAccessDetails.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about a get instance
      * access request.</p>
      */
-    inline void SetAccessDetails(InstanceAccessDetails&& value) { m_accessDetails = value; }
+    inline void SetAccessDetails(InstanceAccessDetails&& value) { m_accessDetails = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about a get instance
@@ -67,7 +68,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about a get instance
      * access request.</p>
      */
-    inline GetInstanceAccessDetailsResult& WithAccessDetails(InstanceAccessDetails&& value) { SetAccessDetails(value); return *this;}
+    inline GetInstanceAccessDetailsResult& WithAccessDetails(InstanceAccessDetails&& value) { SetAccessDetails(std::move(value)); return *this;}
 
   private:
     InstanceAccessDetails m_accessDetails;

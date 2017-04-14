@@ -17,6 +17,7 @@
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The ARN of the directory where the object and index exist.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>The ARN of the directory where the object and index exist.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The ARN of the directory where the object and index exist.</p>
      */
-    inline AttachToIndexRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline AttachToIndexRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the directory where the object and index exist.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>A reference to the index that you are attaching the object to.</p>
      */
-    inline void SetIndexReference(ObjectReference&& value) { m_indexReferenceHasBeenSet = true; m_indexReference = value; }
+    inline void SetIndexReference(ObjectReference&& value) { m_indexReferenceHasBeenSet = true; m_indexReference = std::move(value); }
 
     /**
      * <p>A reference to the index that you are attaching the object to.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>A reference to the index that you are attaching the object to.</p>
      */
-    inline AttachToIndexRequest& WithIndexReference(ObjectReference&& value) { SetIndexReference(value); return *this;}
+    inline AttachToIndexRequest& WithIndexReference(ObjectReference&& value) { SetIndexReference(std::move(value)); return *this;}
 
     /**
      * <p>A reference to the object that you are attaching to the index.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>A reference to the object that you are attaching to the index.</p>
      */
-    inline void SetTargetReference(ObjectReference&& value) { m_targetReferenceHasBeenSet = true; m_targetReference = value; }
+    inline void SetTargetReference(ObjectReference&& value) { m_targetReferenceHasBeenSet = true; m_targetReference = std::move(value); }
 
     /**
      * <p>A reference to the object that you are attaching to the index.</p>
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>A reference to the object that you are attaching to the index.</p>
      */
-    inline AttachToIndexRequest& WithTargetReference(ObjectReference&& value) { SetTargetReference(value); return *this;}
+    inline AttachToIndexRequest& WithTargetReference(ObjectReference&& value) { SetTargetReference(std::move(value)); return *this;}
 
   private:
     Aws::String m_directoryArn;

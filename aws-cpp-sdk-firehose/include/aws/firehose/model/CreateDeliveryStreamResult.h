@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ARN of the delivery stream.</p>
      */
-    inline void SetDeliveryStreamARN(Aws::String&& value) { m_deliveryStreamARN = value; }
+    inline void SetDeliveryStreamARN(Aws::String&& value) { m_deliveryStreamARN = std::move(value); }
 
     /**
      * <p>The ARN of the delivery stream.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ARN of the delivery stream.</p>
      */
-    inline CreateDeliveryStreamResult& WithDeliveryStreamARN(Aws::String&& value) { SetDeliveryStreamARN(value); return *this;}
+    inline CreateDeliveryStreamResult& WithDeliveryStreamARN(Aws::String&& value) { SetDeliveryStreamARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the delivery stream.</p>

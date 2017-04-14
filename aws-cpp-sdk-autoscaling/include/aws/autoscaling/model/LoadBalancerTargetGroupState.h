@@ -16,6 +16,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
-    inline void SetLoadBalancerTargetGroupARN(Aws::String&& value) { m_loadBalancerTargetGroupARNHasBeenSet = true; m_loadBalancerTargetGroupARN = value; }
+    inline void SetLoadBalancerTargetGroupARN(Aws::String&& value) { m_loadBalancerTargetGroupARNHasBeenSet = true; m_loadBalancerTargetGroupARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
-    inline LoadBalancerTargetGroupState& WithLoadBalancerTargetGroupARN(Aws::String&& value) { SetLoadBalancerTargetGroupARN(value); return *this;}
+    inline LoadBalancerTargetGroupState& WithLoadBalancerTargetGroupARN(Aws::String&& value) { SetLoadBalancerTargetGroupARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -127,7 +128,7 @@ namespace Model
      * </li> <li> <p> <code>Removed</code> - All Auto Scaling instances are
      * deregistered from the target group.</p> </li> </ul>
      */
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the target group.</p> <ul> <li> <p> <code>Adding</code> - The
@@ -169,7 +170,7 @@ namespace Model
      * </li> <li> <p> <code>Removed</code> - All Auto Scaling instances are
      * deregistered from the target group.</p> </li> </ul>
      */
-    inline LoadBalancerTargetGroupState& WithState(Aws::String&& value) { SetState(value); return *this;}
+    inline LoadBalancerTargetGroupState& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The state of the target group.</p> <ul> <li> <p> <code>Adding</code> - The

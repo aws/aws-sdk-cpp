@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The segment's ID.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The segment's ID.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The segment's ID.</p>
      */
-    inline UnprocessedTraceSegment& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline UnprocessedTraceSegment& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The segment's ID.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The error that caused processing to fail.</p>
      */
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
      * <p>The error that caused processing to fail.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The error that caused processing to fail.</p>
      */
-    inline UnprocessedTraceSegment& WithErrorCode(Aws::String&& value) { SetErrorCode(value); return *this;}
+    inline UnprocessedTraceSegment& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
      * <p>The error that caused processing to fail.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The error message.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The error message.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The error message.</p>
      */
-    inline UnprocessedTraceSegment& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline UnprocessedTraceSegment& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The error message.</p>

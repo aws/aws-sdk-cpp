@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/ThingAttribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The things.</p>
      */
-    inline void SetThings(Aws::Vector<ThingAttribute>&& value) { m_things = value; }
+    inline void SetThings(Aws::Vector<ThingAttribute>&& value) { m_things = std::move(value); }
 
     /**
      * <p>The things.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The things.</p>
      */
-    inline ListThingsResult& WithThings(Aws::Vector<ThingAttribute>&& value) { SetThings(value); return *this;}
+    inline ListThingsResult& WithThings(Aws::Vector<ThingAttribute>&& value) { SetThings(std::move(value)); return *this;}
 
     /**
      * <p>The things.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The things.</p>
      */
-    inline ListThingsResult& AddThings(ThingAttribute&& value) { m_things.push_back(value); return *this; }
+    inline ListThingsResult& AddThings(ThingAttribute&& value) { m_things.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token for the next set of results, or <b>null</b> if there are no
@@ -97,7 +98,7 @@ namespace Model
      * <p>The token for the next set of results, or <b>null</b> if there are no
      * additional results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of results, or <b>null</b> if there are no
@@ -115,7 +116,7 @@ namespace Model
      * <p>The token for the next set of results, or <b>null</b> if there are no
      * additional results.</p>
      */
-    inline ListThingsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListThingsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of results, or <b>null</b> if there are no

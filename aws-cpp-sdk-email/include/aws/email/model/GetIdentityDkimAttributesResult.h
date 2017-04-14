@@ -18,6 +18,7 @@
 #include <aws/email/model/ResponseMetadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/email/model/IdentityDkimAttributes.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The DKIM attributes for an email address or a domain.</p>
      */
-    inline void SetDkimAttributes(Aws::Map<Aws::String, IdentityDkimAttributes>&& value) { m_dkimAttributes = value; }
+    inline void SetDkimAttributes(Aws::Map<Aws::String, IdentityDkimAttributes>&& value) { m_dkimAttributes = std::move(value); }
 
     /**
      * <p>The DKIM attributes for an email address or a domain.</p>
@@ -73,37 +74,37 @@ namespace Model
     /**
      * <p>The DKIM attributes for an email address or a domain.</p>
      */
-    inline GetIdentityDkimAttributesResult& WithDkimAttributes(Aws::Map<Aws::String, IdentityDkimAttributes>&& value) { SetDkimAttributes(value); return *this;}
+    inline GetIdentityDkimAttributesResult& WithDkimAttributes(Aws::Map<Aws::String, IdentityDkimAttributes>&& value) { SetDkimAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The DKIM attributes for an email address or a domain.</p>
      */
-    inline GetIdentityDkimAttributesResult& AddDkimAttributes(const Aws::String& key, const IdentityDkimAttributes& value) { m_dkimAttributes[key] = value; return *this; }
+    inline GetIdentityDkimAttributesResult& AddDkimAttributes(const Aws::String& key, const IdentityDkimAttributes& value) { m_dkimAttributes.emplace(key, value); return *this; }
 
     /**
      * <p>The DKIM attributes for an email address or a domain.</p>
      */
-    inline GetIdentityDkimAttributesResult& AddDkimAttributes(Aws::String&& key, const IdentityDkimAttributes& value) { m_dkimAttributes[key] = value; return *this; }
+    inline GetIdentityDkimAttributesResult& AddDkimAttributes(Aws::String&& key, const IdentityDkimAttributes& value) { m_dkimAttributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The DKIM attributes for an email address or a domain.</p>
      */
-    inline GetIdentityDkimAttributesResult& AddDkimAttributes(const Aws::String& key, IdentityDkimAttributes&& value) { m_dkimAttributes[key] = value; return *this; }
+    inline GetIdentityDkimAttributesResult& AddDkimAttributes(const Aws::String& key, IdentityDkimAttributes&& value) { m_dkimAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The DKIM attributes for an email address or a domain.</p>
      */
-    inline GetIdentityDkimAttributesResult& AddDkimAttributes(Aws::String&& key, IdentityDkimAttributes&& value) { m_dkimAttributes[key] = value; return *this; }
+    inline GetIdentityDkimAttributesResult& AddDkimAttributes(Aws::String&& key, IdentityDkimAttributes&& value) { m_dkimAttributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The DKIM attributes for an email address or a domain.</p>
      */
-    inline GetIdentityDkimAttributesResult& AddDkimAttributes(const char* key, IdentityDkimAttributes&& value) { m_dkimAttributes[key] = value; return *this; }
+    inline GetIdentityDkimAttributesResult& AddDkimAttributes(const char* key, IdentityDkimAttributes&& value) { m_dkimAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The DKIM attributes for an email address or a domain.</p>
      */
-    inline GetIdentityDkimAttributesResult& AddDkimAttributes(const char* key, const IdentityDkimAttributes& value) { m_dkimAttributes[key] = value; return *this; }
+    inline GetIdentityDkimAttributesResult& AddDkimAttributes(const char* key, const IdentityDkimAttributes& value) { m_dkimAttributes.emplace(key, value); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -112,13 +113,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline GetIdentityDkimAttributesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline GetIdentityDkimAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline GetIdentityDkimAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Map<Aws::String, IdentityDkimAttributes> m_dkimAttributes;

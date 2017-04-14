@@ -23,6 +23,7 @@
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/Output.h>
 #include <aws/cloudformation/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>Unique identifier of the stack.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
      * <p>Unique identifier of the stack.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>Unique identifier of the stack.</p>
      */
-    inline Stack& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline Stack& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier of the stack.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The name associated with the stack.</p>
      */
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
+    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
      * <p>The name associated with the stack.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The name associated with the stack.</p>
      */
-    inline Stack& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
+    inline Stack& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name associated with the stack.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The unique ID of the change set.</p>
      */
-    inline void SetChangeSetId(Aws::String&& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = value; }
+    inline void SetChangeSetId(Aws::String&& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = std::move(value); }
 
     /**
      * <p>The unique ID of the change set.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>The unique ID of the change set.</p>
      */
-    inline Stack& WithChangeSetId(Aws::String&& value) { SetChangeSetId(value); return *this;}
+    inline Stack& WithChangeSetId(Aws::String&& value) { SetChangeSetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique ID of the change set.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>A user-defined description associated with the stack.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A user-defined description associated with the stack.</p>
@@ -186,7 +187,7 @@ namespace Model
     /**
      * <p>A user-defined description associated with the stack.</p>
      */
-    inline Stack& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline Stack& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A user-defined description associated with the stack.</p>
@@ -206,7 +207,7 @@ namespace Model
     /**
      * <p>A list of <code>Parameter</code> structures.</p>
      */
-    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>A list of <code>Parameter</code> structures.</p>
@@ -216,7 +217,7 @@ namespace Model
     /**
      * <p>A list of <code>Parameter</code> structures.</p>
      */
-    inline Stack& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
+    inline Stack& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>Parameter</code> structures.</p>
@@ -226,7 +227,7 @@ namespace Model
     /**
      * <p>A list of <code>Parameter</code> structures.</p>
      */
-    inline Stack& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
+    inline Stack& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The time at which the stack was created.</p>
@@ -241,7 +242,7 @@ namespace Model
     /**
      * <p>The time at which the stack was created.</p>
      */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
      * <p>The time at which the stack was created.</p>
@@ -251,7 +252,7 @@ namespace Model
     /**
      * <p>The time at which the stack was created.</p>
      */
-    inline Stack& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
+    inline Stack& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
     /**
      * <p>The time the stack was last updated. This field will only be returned if the
@@ -269,7 +270,7 @@ namespace Model
      * <p>The time the stack was last updated. This field will only be returned if the
      * stack has been updated at least once.</p>
      */
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
+    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
 
     /**
      * <p>The time the stack was last updated. This field will only be returned if the
@@ -281,7 +282,7 @@ namespace Model
      * <p>The time the stack was last updated. This field will only be returned if the
      * stack has been updated at least once.</p>
      */
-    inline Stack& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(value); return *this;}
+    inline Stack& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
     /**
      * <p>Current status of the stack.</p>
@@ -296,7 +297,7 @@ namespace Model
     /**
      * <p>Current status of the stack.</p>
      */
-    inline void SetStackStatus(StackStatus&& value) { m_stackStatusHasBeenSet = true; m_stackStatus = value; }
+    inline void SetStackStatus(StackStatus&& value) { m_stackStatusHasBeenSet = true; m_stackStatus = std::move(value); }
 
     /**
      * <p>Current status of the stack.</p>
@@ -306,7 +307,7 @@ namespace Model
     /**
      * <p>Current status of the stack.</p>
      */
-    inline Stack& WithStackStatus(StackStatus&& value) { SetStackStatus(value); return *this;}
+    inline Stack& WithStackStatus(StackStatus&& value) { SetStackStatus(std::move(value)); return *this;}
 
     /**
      * <p>Success/failure message associated with the stack status.</p>
@@ -321,7 +322,7 @@ namespace Model
     /**
      * <p>Success/failure message associated with the stack status.</p>
      */
-    inline void SetStackStatusReason(Aws::String&& value) { m_stackStatusReasonHasBeenSet = true; m_stackStatusReason = value; }
+    inline void SetStackStatusReason(Aws::String&& value) { m_stackStatusReasonHasBeenSet = true; m_stackStatusReason = std::move(value); }
 
     /**
      * <p>Success/failure message associated with the stack status.</p>
@@ -336,7 +337,7 @@ namespace Model
     /**
      * <p>Success/failure message associated with the stack status.</p>
      */
-    inline Stack& WithStackStatusReason(Aws::String&& value) { SetStackStatusReason(value); return *this;}
+    inline Stack& WithStackStatusReason(Aws::String&& value) { SetStackStatusReason(std::move(value)); return *this;}
 
     /**
      * <p>Success/failure message associated with the stack status.</p>
@@ -377,7 +378,7 @@ namespace Model
     /**
      * <p>SNS topic ARNs to which stack related events are published.</p>
      */
-    inline void SetNotificationARNs(Aws::Vector<Aws::String>&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = value; }
+    inline void SetNotificationARNs(Aws::Vector<Aws::String>&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = std::move(value); }
 
     /**
      * <p>SNS topic ARNs to which stack related events are published.</p>
@@ -387,7 +388,7 @@ namespace Model
     /**
      * <p>SNS topic ARNs to which stack related events are published.</p>
      */
-    inline Stack& WithNotificationARNs(Aws::Vector<Aws::String>&& value) { SetNotificationARNs(value); return *this;}
+    inline Stack& WithNotificationARNs(Aws::Vector<Aws::String>&& value) { SetNotificationARNs(std::move(value)); return *this;}
 
     /**
      * <p>SNS topic ARNs to which stack related events are published.</p>
@@ -397,7 +398,7 @@ namespace Model
     /**
      * <p>SNS topic ARNs to which stack related events are published.</p>
      */
-    inline Stack& AddNotificationARNs(Aws::String&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
+    inline Stack& AddNotificationARNs(Aws::String&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>SNS topic ARNs to which stack related events are published.</p>
@@ -432,7 +433,7 @@ namespace Model
     /**
      * <p>The capabilities allowed in the stack.</p>
      */
-    inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
+    inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
     /**
      * <p>The capabilities allowed in the stack.</p>
@@ -442,7 +443,7 @@ namespace Model
     /**
      * <p>The capabilities allowed in the stack.</p>
      */
-    inline Stack& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(value); return *this;}
+    inline Stack& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
 
     /**
      * <p>The capabilities allowed in the stack.</p>
@@ -452,7 +453,7 @@ namespace Model
     /**
      * <p>The capabilities allowed in the stack.</p>
      */
-    inline Stack& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
+    inline Stack& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of output structures.</p>
@@ -467,7 +468,7 @@ namespace Model
     /**
      * <p>A list of output structures.</p>
      */
-    inline void SetOutputs(Aws::Vector<Output>&& value) { m_outputsHasBeenSet = true; m_outputs = value; }
+    inline void SetOutputs(Aws::Vector<Output>&& value) { m_outputsHasBeenSet = true; m_outputs = std::move(value); }
 
     /**
      * <p>A list of output structures.</p>
@@ -477,7 +478,7 @@ namespace Model
     /**
      * <p>A list of output structures.</p>
      */
-    inline Stack& WithOutputs(Aws::Vector<Output>&& value) { SetOutputs(value); return *this;}
+    inline Stack& WithOutputs(Aws::Vector<Output>&& value) { SetOutputs(std::move(value)); return *this;}
 
     /**
      * <p>A list of output structures.</p>
@@ -487,7 +488,7 @@ namespace Model
     /**
      * <p>A list of output structures.</p>
      */
-    inline Stack& AddOutputs(Output&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(value); return *this; }
+    inline Stack& AddOutputs(Output&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
@@ -508,7 +509,7 @@ namespace Model
      * role that is associated with the stack. During a stack operation, AWS
      * CloudFormation uses this role's credentials to make calls on your behalf.</p>
      */
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
@@ -529,7 +530,7 @@ namespace Model
      * role that is associated with the stack. During a stack operation, AWS
      * CloudFormation uses this role's credentials to make calls on your behalf.</p>
      */
-    inline Stack& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+    inline Stack& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
@@ -551,7 +552,7 @@ namespace Model
     /**
      * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
@@ -561,7 +562,7 @@ namespace Model
     /**
      * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
-    inline Stack& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline Stack& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
@@ -571,7 +572,7 @@ namespace Model
     /**
      * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
-    inline Stack& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline Stack& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_stackId;

@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The name of the recorder object that records each configuration change made
      * to the resources.</p>
      */
-    inline void SetConfigurationRecorderName(Aws::String&& value) { m_configurationRecorderNameHasBeenSet = true; m_configurationRecorderName = value; }
+    inline void SetConfigurationRecorderName(Aws::String&& value) { m_configurationRecorderNameHasBeenSet = true; m_configurationRecorderName = std::move(value); }
 
     /**
      * <p>The name of the recorder object that records each configuration change made
@@ -73,7 +74,7 @@ namespace Model
      * <p>The name of the recorder object that records each configuration change made
      * to the resources.</p>
      */
-    inline StopConfigurationRecorderRequest& WithConfigurationRecorderName(Aws::String&& value) { SetConfigurationRecorderName(value); return *this;}
+    inline StopConfigurationRecorderRequest& WithConfigurationRecorderName(Aws::String&& value) { SetConfigurationRecorderName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the recorder object that records each configuration change made

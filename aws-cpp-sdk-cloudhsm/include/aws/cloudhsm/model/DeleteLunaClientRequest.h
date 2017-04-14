@@ -16,6 +16,7 @@
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/cloudhsm/CloudHSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ARN of the client to delete.</p>
      */
-    inline void SetClientArn(Aws::String&& value) { m_clientArnHasBeenSet = true; m_clientArn = value; }
+    inline void SetClientArn(Aws::String&& value) { m_clientArnHasBeenSet = true; m_clientArn = std::move(value); }
 
     /**
      * <p>The ARN of the client to delete.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ARN of the client to delete.</p>
      */
-    inline DeleteLunaClientRequest& WithClientArn(Aws::String&& value) { SetClientArn(value); return *this;}
+    inline DeleteLunaClientRequest& WithClientArn(Aws::String&& value) { SetClientArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the client to delete.</p>

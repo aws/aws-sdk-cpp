@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The policy name.</p>
      */
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
      * <p>The policy name.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The policy name.</p>
      */
-    inline CreatePolicyVersionRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
+    inline CreatePolicyVersionRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
      * <p>The policy name.</p>
@@ -94,7 +95,7 @@ namespace Model
      * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
      * length of 2048, excluding whitespaces</p>
      */
-    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
+    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
 
     /**
      * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
@@ -112,7 +113,7 @@ namespace Model
      * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
      * length of 2048, excluding whitespaces</p>
      */
-    inline CreatePolicyVersionRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
+    inline CreatePolicyVersionRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
 
     /**
      * <p>The JSON document that describes the policy. Minimum length of 1. Maximum

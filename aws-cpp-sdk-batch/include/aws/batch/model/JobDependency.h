@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The job ID of the AWS Batch job associated with this dependency.</p>
      */
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
      * <p>The job ID of the AWS Batch job associated with this dependency.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The job ID of the AWS Batch job associated with this dependency.</p>
      */
-    inline JobDependency& WithJobId(Aws::String&& value) { SetJobId(value); return *this;}
+    inline JobDependency& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
      * <p>The job ID of the AWS Batch job associated with this dependency.</p>

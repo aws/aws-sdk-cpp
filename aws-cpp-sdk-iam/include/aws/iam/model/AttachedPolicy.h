@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The friendly name of the attached policy.</p>
      */
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
      * <p>The friendly name of the attached policy.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The friendly name of the attached policy.</p>
      */
-    inline AttachedPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
+    inline AttachedPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
      * <p>The friendly name of the attached policy.</p>
@@ -96,7 +97,7 @@ namespace Model
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     
-    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
+    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
     
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
@@ -105,7 +106,7 @@ namespace Model
     inline AttachedPolicy& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
     
-    inline AttachedPolicy& WithPolicyArn(Aws::String&& value) { SetPolicyArn(value); return *this;}
+    inline AttachedPolicy& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
     
     inline AttachedPolicy& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}

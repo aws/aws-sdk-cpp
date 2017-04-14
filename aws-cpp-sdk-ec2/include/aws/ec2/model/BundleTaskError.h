@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The error code.</p>
      */
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>The error code.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The error code.</p>
      */
-    inline BundleTaskError& WithCode(Aws::String&& value) { SetCode(value); return *this;}
+    inline BundleTaskError& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>The error code.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The error message.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The error message.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The error message.</p>
      */
-    inline BundleTaskError& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline BundleTaskError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The error message.</p>

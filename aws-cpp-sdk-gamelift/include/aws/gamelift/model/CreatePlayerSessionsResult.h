@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gamelift/model/PlayerSession.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Collection of player session objects created for the added players.</p>
      */
-    inline void SetPlayerSessions(Aws::Vector<PlayerSession>&& value) { m_playerSessions = value; }
+    inline void SetPlayerSessions(Aws::Vector<PlayerSession>&& value) { m_playerSessions = std::move(value); }
 
     /**
      * <p>Collection of player session objects created for the added players.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Collection of player session objects created for the added players.</p>
      */
-    inline CreatePlayerSessionsResult& WithPlayerSessions(Aws::Vector<PlayerSession>&& value) { SetPlayerSessions(value); return *this;}
+    inline CreatePlayerSessionsResult& WithPlayerSessions(Aws::Vector<PlayerSession>&& value) { SetPlayerSessions(std::move(value)); return *this;}
 
     /**
      * <p>Collection of player session objects created for the added players.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>Collection of player session objects created for the added players.</p>
      */
-    inline CreatePlayerSessionsResult& AddPlayerSessions(PlayerSession&& value) { m_playerSessions.push_back(value); return *this; }
+    inline CreatePlayerSessionsResult& AddPlayerSessions(PlayerSession&& value) { m_playerSessions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<PlayerSession> m_playerSessions;

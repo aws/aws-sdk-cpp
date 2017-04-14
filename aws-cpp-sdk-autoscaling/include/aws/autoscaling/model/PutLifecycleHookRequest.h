@@ -16,6 +16,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of the lifecycle hook.</p>
      */
-    inline void SetLifecycleHookName(Aws::String&& value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName = value; }
+    inline void SetLifecycleHookName(Aws::String&& value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName = std::move(value); }
 
     /**
      * <p>The name of the lifecycle hook.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the lifecycle hook.</p>
      */
-    inline PutLifecycleHookRequest& WithLifecycleHookName(Aws::String&& value) { SetLifecycleHookName(value); return *this;}
+    inline PutLifecycleHookRequest& WithLifecycleHookName(Aws::String&& value) { SetLifecycleHookName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the lifecycle hook.</p>
@@ -91,7 +92,7 @@ namespace Model
      * <p>The name of the Auto Scaling group to which you want to assign the lifecycle
      * hook.</p>
      */
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
 
     /**
      * <p>The name of the Auto Scaling group to which you want to assign the lifecycle
@@ -109,7 +110,7 @@ namespace Model
      * <p>The name of the Auto Scaling group to which you want to assign the lifecycle
      * hook.</p>
      */
-    inline PutLifecycleHookRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
+    inline PutLifecycleHookRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Auto Scaling group to which you want to assign the lifecycle
@@ -139,7 +140,7 @@ namespace Model
      * parameter is required for new lifecycle hooks, but optional when updating
      * existing hooks.</p>
      */
-    inline void SetLifecycleTransition(Aws::String&& value) { m_lifecycleTransitionHasBeenSet = true; m_lifecycleTransition = value; }
+    inline void SetLifecycleTransition(Aws::String&& value) { m_lifecycleTransitionHasBeenSet = true; m_lifecycleTransition = std::move(value); }
 
     /**
      * <p>The instance state to which you want to attach the lifecycle hook. For a list
@@ -163,7 +164,7 @@ namespace Model
      * parameter is required for new lifecycle hooks, but optional when updating
      * existing hooks.</p>
      */
-    inline PutLifecycleHookRequest& WithLifecycleTransition(Aws::String&& value) { SetLifecycleTransition(value); return *this;}
+    inline PutLifecycleHookRequest& WithLifecycleTransition(Aws::String&& value) { SetLifecycleTransition(std::move(value)); return *this;}
 
     /**
      * <p>The instance state to which you want to attach the lifecycle hook. For a list
@@ -192,7 +193,7 @@ namespace Model
      * specified notification target.</p> <p>This parameter is required for new
      * lifecycle hooks, but optional when updating existing hooks.</p>
      */
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
@@ -213,7 +214,7 @@ namespace Model
      * specified notification target.</p> <p>This parameter is required for new
      * lifecycle hooks, but optional when updating existing hooks.</p>
      */
-    inline PutLifecycleHookRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+    inline PutLifecycleHookRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
@@ -259,7 +260,7 @@ namespace Model
      * contains the following additional key/value pair: <code>"Event":
      * "autoscaling:TEST_NOTIFICATION"</code>.</p>
      */
-    inline void SetNotificationTargetARN(Aws::String&& value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN = value; }
+    inline void SetNotificationTargetARN(Aws::String&& value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN = std::move(value); }
 
     /**
      * <p>The ARN of the notification target that Auto Scaling will use to notify you
@@ -298,7 +299,7 @@ namespace Model
      * contains the following additional key/value pair: <code>"Event":
      * "autoscaling:TEST_NOTIFICATION"</code>.</p>
      */
-    inline PutLifecycleHookRequest& WithNotificationTargetARN(Aws::String&& value) { SetNotificationTargetARN(value); return *this;}
+    inline PutLifecycleHookRequest& WithNotificationTargetARN(Aws::String&& value) { SetNotificationTargetARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the notification target that Auto Scaling will use to notify you
@@ -329,7 +330,7 @@ namespace Model
      * <p>Contains additional information that you want to include any time Auto
      * Scaling sends a message to the notification target.</p>
      */
-    inline void SetNotificationMetadata(Aws::String&& value) { m_notificationMetadataHasBeenSet = true; m_notificationMetadata = value; }
+    inline void SetNotificationMetadata(Aws::String&& value) { m_notificationMetadataHasBeenSet = true; m_notificationMetadata = std::move(value); }
 
     /**
      * <p>Contains additional information that you want to include any time Auto
@@ -347,7 +348,7 @@ namespace Model
      * <p>Contains additional information that you want to include any time Auto
      * Scaling sends a message to the notification target.</p>
      */
-    inline PutLifecycleHookRequest& WithNotificationMetadata(Aws::String&& value) { SetNotificationMetadata(value); return *this;}
+    inline PutLifecycleHookRequest& WithNotificationMetadata(Aws::String&& value) { SetNotificationMetadata(std::move(value)); return *this;}
 
     /**
      * <p>Contains additional information that you want to include any time Auto
@@ -401,7 +402,7 @@ namespace Model
      * <code>CONTINUE</code> or <code>ABANDON</code>. The default value is
      * <code>ABANDON</code>.</p>
      */
-    inline void SetDefaultResult(Aws::String&& value) { m_defaultResultHasBeenSet = true; m_defaultResult = value; }
+    inline void SetDefaultResult(Aws::String&& value) { m_defaultResultHasBeenSet = true; m_defaultResult = std::move(value); }
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
@@ -425,7 +426,7 @@ namespace Model
      * <code>CONTINUE</code> or <code>ABANDON</code>. The default value is
      * <code>ABANDON</code>.</p>
      */
-    inline PutLifecycleHookRequest& WithDefaultResult(Aws::String&& value) { SetDefaultResult(value); return *this;}
+    inline PutLifecycleHookRequest& WithDefaultResult(Aws::String&& value) { SetDefaultResult(std::move(value)); return *this;}
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook

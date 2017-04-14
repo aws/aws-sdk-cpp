@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/model/ActionOnFailure.h>
 #include <aws/elasticmapreduce/model/HadoopJarStepConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The name of the step.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the step.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The name of the step.</p>
      */
-    inline StepConfig& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline StepConfig& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the step.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The action to take if the step fails.</p>
      */
-    inline void SetActionOnFailure(ActionOnFailure&& value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = value; }
+    inline void SetActionOnFailure(ActionOnFailure&& value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = std::move(value); }
 
     /**
      * <p>The action to take if the step fails.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The action to take if the step fails.</p>
      */
-    inline StepConfig& WithActionOnFailure(ActionOnFailure&& value) { SetActionOnFailure(value); return *this;}
+    inline StepConfig& WithActionOnFailure(ActionOnFailure&& value) { SetActionOnFailure(std::move(value)); return *this;}
 
     /**
      * <p>The JAR file used for the step.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The JAR file used for the step.</p>
      */
-    inline void SetHadoopJarStep(HadoopJarStepConfig&& value) { m_hadoopJarStepHasBeenSet = true; m_hadoopJarStep = value; }
+    inline void SetHadoopJarStep(HadoopJarStepConfig&& value) { m_hadoopJarStepHasBeenSet = true; m_hadoopJarStep = std::move(value); }
 
     /**
      * <p>The JAR file used for the step.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The JAR file used for the step.</p>
      */
-    inline StepConfig& WithHadoopJarStep(HadoopJarStepConfig&& value) { SetHadoopJarStep(value); return *this;}
+    inline StepConfig& WithHadoopJarStep(HadoopJarStepConfig&& value) { SetHadoopJarStep(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

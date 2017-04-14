@@ -16,6 +16,7 @@
 #include <aws/sts/STS_EXPORTS.h>
 #include <aws/sts/STSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * with no spaces. You can also include underscores or any of the following
      * characters: =,.@-</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the federated user. The name is used as an identifier for the
@@ -101,7 +102,7 @@ namespace Model
      * with no spaces. You can also include underscores or any of the following
      * characters: =,.@-</p>
      */
-    inline GetFederationTokenRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline GetFederationTokenRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the federated user. The name is used as an identifier for the
@@ -196,7 +197,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.</p>
      */
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
+    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
      * <p>An IAM policy in JSON format that is passed with the
@@ -280,7 +281,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.</p>
      */
-    inline GetFederationTokenRequest& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
+    inline GetFederationTokenRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
      * <p>An IAM policy in JSON format that is passed with the

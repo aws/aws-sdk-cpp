@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * of characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: =/:,.@-</p>
      */
-    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
+    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
@@ -89,7 +90,7 @@ namespace Model
      * of characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: =/:,.@-</p>
      */
-    inline DeleteVirtualMFADeviceRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(value); return *this;}
+    inline DeleteVirtualMFADeviceRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA

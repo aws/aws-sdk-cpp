@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>TBD</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>TBD</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>TBD</p>
      */
-    inline GameProperty& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline GameProperty& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>TBD</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>TBD</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>TBD</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>TBD</p>
      */
-    inline GameProperty& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline GameProperty& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>TBD</p>

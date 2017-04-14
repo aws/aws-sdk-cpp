@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
      * only.</p>
      */
-    inline void SetHeaderName(Aws::String&& value) { m_headerNameHasBeenSet = true; m_headerName = value; }
+    inline void SetHeaderName(Aws::String&& value) { m_headerNameHasBeenSet = true; m_headerName = std::move(value); }
 
     /**
      * <p>The name of the header to add. Must be between 1 and 50 characters,
@@ -90,7 +91,7 @@ namespace Model
      * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
      * only.</p>
      */
-    inline AddHeaderAction& WithHeaderName(Aws::String&& value) { SetHeaderName(value); return *this;}
+    inline AddHeaderAction& WithHeaderName(Aws::String&& value) { SetHeaderName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the header to add. Must be between 1 and 50 characters,
@@ -115,7 +116,7 @@ namespace Model
      * <p>Must be less than 2048 characters, and must not contain newline characters
      * ("\r" or "\n").</p>
      */
-    inline void SetHeaderValue(Aws::String&& value) { m_headerValueHasBeenSet = true; m_headerValue = value; }
+    inline void SetHeaderValue(Aws::String&& value) { m_headerValueHasBeenSet = true; m_headerValue = std::move(value); }
 
     /**
      * <p>Must be less than 2048 characters, and must not contain newline characters
@@ -133,7 +134,7 @@ namespace Model
      * <p>Must be less than 2048 characters, and must not contain newline characters
      * ("\r" or "\n").</p>
      */
-    inline AddHeaderAction& WithHeaderValue(Aws::String&& value) { SetHeaderValue(value); return *this;}
+    inline AddHeaderAction& WithHeaderValue(Aws::String&& value) { SetHeaderValue(std::move(value)); return *this;}
 
     /**
      * <p>Must be less than 2048 characters, and must not contain newline characters

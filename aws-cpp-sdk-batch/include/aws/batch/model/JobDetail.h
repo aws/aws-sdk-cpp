@@ -22,6 +22,7 @@
 #include <aws/batch/model/ContainerDetail.h>
 #include <aws/batch/model/AttemptDetail.h>
 #include <aws/batch/model/JobDependency.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the job.</p>
      */
-    inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
+    inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
 
     /**
      * <p>The name of the job.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The name of the job.</p>
      */
-    inline JobDetail& WithJobName(Aws::String&& value) { SetJobName(value); return *this;}
+    inline JobDetail& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the job.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The ID for the job.</p>
      */
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
      * <p>The ID for the job.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The ID for the job.</p>
      */
-    inline JobDetail& WithJobId(Aws::String&& value) { SetJobId(value); return *this;}
+    inline JobDetail& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
      * <p>The ID for the job.</p>
@@ -136,7 +137,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the job queue with which the job is
      * associated.</p>
      */
-    inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = value; }
+    inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the job queue with which the job is
@@ -154,7 +155,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the job queue with which the job is
      * associated.</p>
      */
-    inline JobDetail& WithJobQueue(Aws::String&& value) { SetJobQueue(value); return *this;}
+    inline JobDetail& WithJobQueue(Aws::String&& value) { SetJobQueue(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the job queue with which the job is
@@ -175,7 +176,7 @@ namespace Model
     /**
      * <p>The current status for the job.</p>
      */
-    inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The current status for the job.</p>
@@ -185,7 +186,7 @@ namespace Model
     /**
      * <p>The current status for the job.</p>
      */
-    inline JobDetail& WithStatus(JobStatus&& value) { SetStatus(value); return *this;}
+    inline JobDetail& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>A list of job attempts associated with this job.</p>
@@ -200,7 +201,7 @@ namespace Model
     /**
      * <p>A list of job attempts associated with this job.</p>
      */
-    inline void SetAttempts(Aws::Vector<AttemptDetail>&& value) { m_attemptsHasBeenSet = true; m_attempts = value; }
+    inline void SetAttempts(Aws::Vector<AttemptDetail>&& value) { m_attemptsHasBeenSet = true; m_attempts = std::move(value); }
 
     /**
      * <p>A list of job attempts associated with this job.</p>
@@ -210,7 +211,7 @@ namespace Model
     /**
      * <p>A list of job attempts associated with this job.</p>
      */
-    inline JobDetail& WithAttempts(Aws::Vector<AttemptDetail>&& value) { SetAttempts(value); return *this;}
+    inline JobDetail& WithAttempts(Aws::Vector<AttemptDetail>&& value) { SetAttempts(std::move(value)); return *this;}
 
     /**
      * <p>A list of job attempts associated with this job.</p>
@@ -220,7 +221,7 @@ namespace Model
     /**
      * <p>A list of job attempts associated with this job.</p>
      */
-    inline JobDetail& AddAttempts(AttemptDetail&& value) { m_attemptsHasBeenSet = true; m_attempts.push_back(value); return *this; }
+    inline JobDetail& AddAttempts(AttemptDetail&& value) { m_attemptsHasBeenSet = true; m_attempts.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A short, human-readable string to provide additional details about the
@@ -238,7 +239,7 @@ namespace Model
      * <p>A short, human-readable string to provide additional details about the
      * current status of the job. </p>
      */
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
 
     /**
      * <p>A short, human-readable string to provide additional details about the
@@ -256,7 +257,7 @@ namespace Model
      * <p>A short, human-readable string to provide additional details about the
      * current status of the job. </p>
      */
-    inline JobDetail& WithStatusReason(Aws::String&& value) { SetStatusReason(value); return *this;}
+    inline JobDetail& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
      * <p>A short, human-readable string to provide additional details about the
@@ -295,7 +296,7 @@ namespace Model
     /**
      * <p>The retry strategy to use for this job if an attempt fails.</p>
      */
-    inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
+    inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = std::move(value); }
 
     /**
      * <p>The retry strategy to use for this job if an attempt fails.</p>
@@ -305,7 +306,7 @@ namespace Model
     /**
      * <p>The retry strategy to use for this job if an attempt fails.</p>
      */
-    inline JobDetail& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(value); return *this;}
+    inline JobDetail& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
 
     /**
      * <p>The Unix timestamp for when the job was started (when the task transitioned
@@ -356,7 +357,7 @@ namespace Model
     /**
      * <p>A list of job names or IDs on which this job depends.</p>
      */
-    inline void SetDependsOn(Aws::Vector<JobDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
+    inline void SetDependsOn(Aws::Vector<JobDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
 
     /**
      * <p>A list of job names or IDs on which this job depends.</p>
@@ -366,7 +367,7 @@ namespace Model
     /**
      * <p>A list of job names or IDs on which this job depends.</p>
      */
-    inline JobDetail& WithDependsOn(Aws::Vector<JobDependency>&& value) { SetDependsOn(value); return *this;}
+    inline JobDetail& WithDependsOn(Aws::Vector<JobDependency>&& value) { SetDependsOn(std::move(value)); return *this;}
 
     /**
      * <p>A list of job names or IDs on which this job depends.</p>
@@ -376,7 +377,7 @@ namespace Model
     /**
      * <p>A list of job names or IDs on which this job depends.</p>
      */
-    inline JobDetail& AddDependsOn(JobDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
+    inline JobDetail& AddDependsOn(JobDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The job definition that is used by this job.</p>
@@ -391,7 +392,7 @@ namespace Model
     /**
      * <p>The job definition that is used by this job.</p>
      */
-    inline void SetJobDefinition(Aws::String&& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = value; }
+    inline void SetJobDefinition(Aws::String&& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = std::move(value); }
 
     /**
      * <p>The job definition that is used by this job.</p>
@@ -406,7 +407,7 @@ namespace Model
     /**
      * <p>The job definition that is used by this job.</p>
      */
-    inline JobDetail& WithJobDefinition(Aws::String&& value) { SetJobDefinition(value); return *this;}
+    inline JobDetail& WithJobDefinition(Aws::String&& value) { SetJobDefinition(std::move(value)); return *this;}
 
     /**
      * <p>The job definition that is used by this job.</p>
@@ -432,7 +433,7 @@ namespace Model
      * placeholders or override any corresponding parameter defaults from the job
      * definition. </p>
      */
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
@@ -446,56 +447,56 @@ namespace Model
      * placeholders or override any corresponding parameter defaults from the job
      * definition. </p>
      */
-    inline JobDetail& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(value); return *this;}
+    inline JobDetail& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
      * definition. </p>
      */
-    inline JobDetail& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline JobDetail& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
      * definition. </p>
      */
-    inline JobDetail& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline JobDetail& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
      * definition. </p>
      */
-    inline JobDetail& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline JobDetail& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
      * definition. </p>
      */
-    inline JobDetail& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline JobDetail& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
      * definition. </p>
      */
-    inline JobDetail& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline JobDetail& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
      * definition. </p>
      */
-    inline JobDetail& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline JobDetail& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
      * definition. </p>
      */
-    inline JobDetail& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline JobDetail& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>An object representing the details of the container that is associated with
@@ -513,7 +514,7 @@ namespace Model
      * <p>An object representing the details of the container that is associated with
      * the job.</p>
      */
-    inline void SetContainer(ContainerDetail&& value) { m_containerHasBeenSet = true; m_container = value; }
+    inline void SetContainer(ContainerDetail&& value) { m_containerHasBeenSet = true; m_container = std::move(value); }
 
     /**
      * <p>An object representing the details of the container that is associated with
@@ -525,7 +526,7 @@ namespace Model
      * <p>An object representing the details of the container that is associated with
      * the job.</p>
      */
-    inline JobDetail& WithContainer(ContainerDetail&& value) { SetContainer(value); return *this;}
+    inline JobDetail& WithContainer(ContainerDetail&& value) { SetContainer(std::move(value)); return *this;}
 
   private:
     Aws::String m_jobName;

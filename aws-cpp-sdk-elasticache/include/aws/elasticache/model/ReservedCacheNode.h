@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/RecurringCharge.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The unique identifier for the reservation.</p>
      */
-    inline void SetReservedCacheNodeId(Aws::String&& value) { m_reservedCacheNodeIdHasBeenSet = true; m_reservedCacheNodeId = value; }
+    inline void SetReservedCacheNodeId(Aws::String&& value) { m_reservedCacheNodeIdHasBeenSet = true; m_reservedCacheNodeId = std::move(value); }
 
     /**
      * <p>The unique identifier for the reservation.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The unique identifier for the reservation.</p>
      */
-    inline ReservedCacheNode& WithReservedCacheNodeId(Aws::String&& value) { SetReservedCacheNodeId(value); return *this;}
+    inline ReservedCacheNode& WithReservedCacheNodeId(Aws::String&& value) { SetReservedCacheNodeId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the reservation.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The offering identifier.</p>
      */
-    inline void SetReservedCacheNodesOfferingId(Aws::String&& value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId = value; }
+    inline void SetReservedCacheNodesOfferingId(Aws::String&& value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId = std::move(value); }
 
     /**
      * <p>The offering identifier.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The offering identifier.</p>
      */
-    inline ReservedCacheNode& WithReservedCacheNodesOfferingId(Aws::String&& value) { SetReservedCacheNodesOfferingId(value); return *this;}
+    inline ReservedCacheNode& WithReservedCacheNodesOfferingId(Aws::String&& value) { SetReservedCacheNodesOfferingId(std::move(value)); return *this;}
 
     /**
      * <p>The offering identifier.</p>
@@ -220,7 +221,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
      * Node Type-Specific Parameters for Redis</a>.</p>
      */
-    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
+    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::move(value); }
 
     /**
      * <p>The cache node type for the reserved cache nodes.</p> <p>Valid node types are
@@ -322,7 +323,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
      * Node Type-Specific Parameters for Redis</a>.</p>
      */
-    inline ReservedCacheNode& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(value); return *this;}
+    inline ReservedCacheNode& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(std::move(value)); return *this;}
 
     /**
      * <p>The cache node type for the reserved cache nodes.</p> <p>Valid node types are
@@ -371,7 +372,7 @@ namespace Model
     /**
      * <p>The time the reservation started.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The time the reservation started.</p>
@@ -381,7 +382,7 @@ namespace Model
     /**
      * <p>The time the reservation started.</p>
      */
-    inline ReservedCacheNode& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline ReservedCacheNode& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The duration of the reservation in seconds.</p>
@@ -456,7 +457,7 @@ namespace Model
     /**
      * <p>The description of the reserved cache node.</p>
      */
-    inline void SetProductDescription(Aws::String&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
+    inline void SetProductDescription(Aws::String&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = std::move(value); }
 
     /**
      * <p>The description of the reserved cache node.</p>
@@ -471,7 +472,7 @@ namespace Model
     /**
      * <p>The description of the reserved cache node.</p>
      */
-    inline ReservedCacheNode& WithProductDescription(Aws::String&& value) { SetProductDescription(value); return *this;}
+    inline ReservedCacheNode& WithProductDescription(Aws::String&& value) { SetProductDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the reserved cache node.</p>
@@ -491,7 +492,7 @@ namespace Model
     /**
      * <p>The offering type of this reserved cache node.</p>
      */
-    inline void SetOfferingType(Aws::String&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
+    inline void SetOfferingType(Aws::String&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::move(value); }
 
     /**
      * <p>The offering type of this reserved cache node.</p>
@@ -506,7 +507,7 @@ namespace Model
     /**
      * <p>The offering type of this reserved cache node.</p>
      */
-    inline ReservedCacheNode& WithOfferingType(Aws::String&& value) { SetOfferingType(value); return *this;}
+    inline ReservedCacheNode& WithOfferingType(Aws::String&& value) { SetOfferingType(std::move(value)); return *this;}
 
     /**
      * <p>The offering type of this reserved cache node.</p>
@@ -526,7 +527,7 @@ namespace Model
     /**
      * <p>The state of the reserved cache node.</p>
      */
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the reserved cache node.</p>
@@ -541,7 +542,7 @@ namespace Model
     /**
      * <p>The state of the reserved cache node.</p>
      */
-    inline ReservedCacheNode& WithState(Aws::String&& value) { SetState(value); return *this;}
+    inline ReservedCacheNode& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The state of the reserved cache node.</p>
@@ -561,7 +562,7 @@ namespace Model
     /**
      * <p>The recurring price charged to run this reserved cache node.</p>
      */
-    inline void SetRecurringCharges(Aws::Vector<RecurringCharge>&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
+    inline void SetRecurringCharges(Aws::Vector<RecurringCharge>&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = std::move(value); }
 
     /**
      * <p>The recurring price charged to run this reserved cache node.</p>
@@ -571,7 +572,7 @@ namespace Model
     /**
      * <p>The recurring price charged to run this reserved cache node.</p>
      */
-    inline ReservedCacheNode& WithRecurringCharges(Aws::Vector<RecurringCharge>&& value) { SetRecurringCharges(value); return *this;}
+    inline ReservedCacheNode& WithRecurringCharges(Aws::Vector<RecurringCharge>&& value) { SetRecurringCharges(std::move(value)); return *this;}
 
     /**
      * <p>The recurring price charged to run this reserved cache node.</p>
@@ -581,7 +582,7 @@ namespace Model
     /**
      * <p>The recurring price charged to run this reserved cache node.</p>
      */
-    inline ReservedCacheNode& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
+    inline ReservedCacheNode& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_reservedCacheNodeId;

@@ -17,6 +17,7 @@
 #include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>A list of one or more verified identities - email addresses, domains, or
      * both.</p>
      */
-    inline void SetIdentities(Aws::Vector<Aws::String>&& value) { m_identitiesHasBeenSet = true; m_identities = value; }
+    inline void SetIdentities(Aws::Vector<Aws::String>&& value) { m_identitiesHasBeenSet = true; m_identities = std::move(value); }
 
     /**
      * <p>A list of one or more verified identities - email addresses, domains, or
@@ -75,7 +76,7 @@ namespace Model
      * <p>A list of one or more verified identities - email addresses, domains, or
      * both.</p>
      */
-    inline GetIdentityDkimAttributesRequest& WithIdentities(Aws::Vector<Aws::String>&& value) { SetIdentities(value); return *this;}
+    inline GetIdentityDkimAttributesRequest& WithIdentities(Aws::Vector<Aws::String>&& value) { SetIdentities(std::move(value)); return *this;}
 
     /**
      * <p>A list of one or more verified identities - email addresses, domains, or
@@ -87,7 +88,7 @@ namespace Model
      * <p>A list of one or more verified identities - email addresses, domains, or
      * both.</p>
      */
-    inline GetIdentityDkimAttributesRequest& AddIdentities(Aws::String&& value) { m_identitiesHasBeenSet = true; m_identities.push_back(value); return *this; }
+    inline GetIdentityDkimAttributesRequest& AddIdentities(Aws::String&& value) { m_identitiesHasBeenSet = true; m_identities.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of one or more verified identities - email addresses, domains, or

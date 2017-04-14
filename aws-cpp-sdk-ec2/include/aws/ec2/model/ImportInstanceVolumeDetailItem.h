@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/DiskImageDescription.h>
 #include <aws/ec2/model/DiskImageVolumeDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The Availability Zone where the resulting instance will reside.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone where the resulting instance will reside.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The Availability Zone where the resulting instance will reside.</p>
      */
-    inline ImportInstanceVolumeDetailItem& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline ImportInstanceVolumeDetailItem& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone where the resulting instance will reside.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The image.</p>
      */
-    inline void SetImage(DiskImageDescription&& value) { m_imageHasBeenSet = true; m_image = value; }
+    inline void SetImage(DiskImageDescription&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
      * <p>The image.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The image.</p>
      */
-    inline ImportInstanceVolumeDetailItem& WithImage(DiskImageDescription&& value) { SetImage(value); return *this;}
+    inline ImportInstanceVolumeDetailItem& WithImage(DiskImageDescription&& value) { SetImage(std::move(value)); return *this;}
 
     /**
      * <p>The volume.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The volume.</p>
      */
-    inline void SetVolume(DiskImageVolumeDescription&& value) { m_volumeHasBeenSet = true; m_volume = value; }
+    inline void SetVolume(DiskImageVolumeDescription&& value) { m_volumeHasBeenSet = true; m_volume = std::move(value); }
 
     /**
      * <p>The volume.</p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>The volume.</p>
      */
-    inline ImportInstanceVolumeDetailItem& WithVolume(DiskImageVolumeDescription&& value) { SetVolume(value); return *this;}
+    inline ImportInstanceVolumeDetailItem& WithVolume(DiskImageVolumeDescription&& value) { SetVolume(std::move(value)); return *this;}
 
     /**
      * <p>The status of the import of this particular disk image.</p>
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>The status of the import of this particular disk image.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the import of this particular disk image.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>The status of the import of this particular disk image.</p>
      */
-    inline ImportInstanceVolumeDetailItem& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline ImportInstanceVolumeDetailItem& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the import of this particular disk image.</p>
@@ -196,7 +197,7 @@ namespace Model
     /**
      * <p>The status information or errors related to the disk image.</p>
      */
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
 
     /**
      * <p>The status information or errors related to the disk image.</p>
@@ -211,7 +212,7 @@ namespace Model
     /**
      * <p>The status information or errors related to the disk image.</p>
      */
-    inline ImportInstanceVolumeDetailItem& WithStatusMessage(Aws::String&& value) { SetStatusMessage(value); return *this;}
+    inline ImportInstanceVolumeDetailItem& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
      * <p>The status information or errors related to the disk image.</p>
@@ -231,7 +232,7 @@ namespace Model
     /**
      * <p>A description of the task.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description of the task.</p>
@@ -246,7 +247,7 @@ namespace Model
     /**
      * <p>A description of the task.</p>
      */
-    inline ImportInstanceVolumeDetailItem& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline ImportInstanceVolumeDetailItem& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description of the task.</p>

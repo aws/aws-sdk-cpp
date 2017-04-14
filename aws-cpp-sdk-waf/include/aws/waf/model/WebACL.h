@@ -18,6 +18,7 @@
 #include <aws/waf/model/WafAction.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/waf/model/ActivatedRule.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
      * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
      * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
      */
-    inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
+    inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
 
     /**
      * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
@@ -107,7 +108,7 @@ namespace Model
      * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
      * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
      */
-    inline WebACL& WithWebACLId(Aws::String&& value) { SetWebACLId(value); return *this;}
+    inline WebACL& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
@@ -134,7 +135,7 @@ namespace Model
      * <p>A friendly name or description of the <code>WebACL</code>. You can't change
      * the name of a <code>WebACL</code> after you create it.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>A friendly name or description of the <code>WebACL</code>. You can't change
@@ -152,7 +153,7 @@ namespace Model
      * <p>A friendly name or description of the <code>WebACL</code>. You can't change
      * the name of a <code>WebACL</code> after you create it.</p>
      */
-    inline WebACL& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline WebACL& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A friendly name or description of the <code>WebACL</code>. You can't change
@@ -182,7 +183,7 @@ namespace Model
      * can't contain whitespace. You can't change <code>MetricName</code> after you
      * create the <code>WebACL</code>.</p>
      */
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
      * <p>A friendly name or description for the metrics for this <code>WebACL</code>.
@@ -206,7 +207,7 @@ namespace Model
      * can't contain whitespace. You can't change <code>MetricName</code> after you
      * create the <code>WebACL</code>.</p>
      */
-    inline WebACL& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
+    inline WebACL& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
      * <p>A friendly name or description for the metrics for this <code>WebACL</code>.
@@ -235,7 +236,7 @@ namespace Model
      * <code>WebACL</code> match. The action is specified by the <a>WafAction</a>
      * object.</p>
      */
-    inline void SetDefaultAction(WafAction&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = value; }
+    inline void SetDefaultAction(WafAction&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::move(value); }
 
     /**
      * <p>The action to perform if none of the <code>Rules</code> contained in the
@@ -249,7 +250,7 @@ namespace Model
      * <code>WebACL</code> match. The action is specified by the <a>WafAction</a>
      * object.</p>
      */
-    inline WebACL& WithDefaultAction(WafAction&& value) { SetDefaultAction(value); return *this;}
+    inline WebACL& WithDefaultAction(WafAction&& value) { SetDefaultAction(std::move(value)); return *this;}
 
     /**
      * <p>An array that contains the action for each <code>Rule</code> in a
@@ -270,7 +271,7 @@ namespace Model
      * <code>WebACL</code>, the priority of the <code>Rule</code>, and the ID of the
      * <code>Rule</code>.</p>
      */
-    inline void SetRules(Aws::Vector<ActivatedRule>&& value) { m_rulesHasBeenSet = true; m_rules = value; }
+    inline void SetRules(Aws::Vector<ActivatedRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
      * <p>An array that contains the action for each <code>Rule</code> in a
@@ -284,7 +285,7 @@ namespace Model
      * <code>WebACL</code>, the priority of the <code>Rule</code>, and the ID of the
      * <code>Rule</code>.</p>
      */
-    inline WebACL& WithRules(Aws::Vector<ActivatedRule>&& value) { SetRules(value); return *this;}
+    inline WebACL& WithRules(Aws::Vector<ActivatedRule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
      * <p>An array that contains the action for each <code>Rule</code> in a
@@ -298,7 +299,7 @@ namespace Model
      * <code>WebACL</code>, the priority of the <code>Rule</code>, and the ID of the
      * <code>Rule</code>.</p>
      */
-    inline WebACL& AddRules(ActivatedRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
+    inline WebACL& AddRules(ActivatedRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_webACLId;

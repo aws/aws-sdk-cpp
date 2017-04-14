@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InstanceHealthStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The instance type.</p>
      */
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The instance type.</p>
      */
-    inline ActiveInstance& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
+    inline ActiveInstance& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The instance type.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline ActiveInstance& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline ActiveInstance& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The ID of the Spot instance request.</p>
      */
-    inline void SetSpotInstanceRequestId(Aws::String&& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = value; }
+    inline void SetSpotInstanceRequestId(Aws::String&& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = std::move(value); }
 
     /**
      * <p>The ID of the Spot instance request.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>The ID of the Spot instance request.</p>
      */
-    inline ActiveInstance& WithSpotInstanceRequestId(Aws::String&& value) { SetSpotInstanceRequestId(value); return *this;}
+    inline ActiveInstance& WithSpotInstanceRequestId(Aws::String&& value) { SetSpotInstanceRequestId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Spot instance request.</p>
@@ -174,7 +175,7 @@ namespace Model
      * status of the instance is <code>unhealthy</code>. Otherwise, the health status
      * is <code>healthy</code>.</p>
      */
-    inline void SetInstanceHealth(InstanceHealthStatus&& value) { m_instanceHealthHasBeenSet = true; m_instanceHealth = value; }
+    inline void SetInstanceHealth(InstanceHealthStatus&& value) { m_instanceHealthHasBeenSet = true; m_instanceHealth = std::move(value); }
 
     /**
      * <p>The health status of the instance. If the status of either the instance
@@ -190,7 +191,7 @@ namespace Model
      * status of the instance is <code>unhealthy</code>. Otherwise, the health status
      * is <code>healthy</code>.</p>
      */
-    inline ActiveInstance& WithInstanceHealth(InstanceHealthStatus&& value) { SetInstanceHealth(value); return *this;}
+    inline ActiveInstance& WithInstanceHealth(InstanceHealthStatus&& value) { SetInstanceHealth(std::move(value)); return *this;}
 
   private:
     Aws::String m_instanceType;

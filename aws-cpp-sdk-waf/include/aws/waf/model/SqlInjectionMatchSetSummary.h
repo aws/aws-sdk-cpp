@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -84,7 +85,7 @@ namespace Model
      * is returned by <a>CreateSqlInjectionMatchSet</a> and by
      * <a>ListSqlInjectionMatchSets</a>.</p>
      */
-    inline void SetSqlInjectionMatchSetId(Aws::String&& value) { m_sqlInjectionMatchSetIdHasBeenSet = true; m_sqlInjectionMatchSetId = value; }
+    inline void SetSqlInjectionMatchSetId(Aws::String&& value) { m_sqlInjectionMatchSetIdHasBeenSet = true; m_sqlInjectionMatchSetId = std::move(value); }
 
     /**
      * <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use
@@ -126,7 +127,7 @@ namespace Model
      * is returned by <a>CreateSqlInjectionMatchSet</a> and by
      * <a>ListSqlInjectionMatchSets</a>.</p>
      */
-    inline SqlInjectionMatchSetSummary& WithSqlInjectionMatchSetId(Aws::String&& value) { SetSqlInjectionMatchSetId(value); return *this;}
+    inline SqlInjectionMatchSetSummary& WithSqlInjectionMatchSetId(Aws::String&& value) { SetSqlInjectionMatchSetId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use
@@ -158,7 +159,7 @@ namespace Model
      * <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by
      * <code>Id</code>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by
@@ -176,7 +177,7 @@ namespace Model
      * <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by
      * <code>Id</code>.</p>
      */
-    inline SqlInjectionMatchSetSummary& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline SqlInjectionMatchSetSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by

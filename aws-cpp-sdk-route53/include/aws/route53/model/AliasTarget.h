@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -185,7 +186,7 @@ namespace Model
      * record set can't reference a resource record set in a different hosted
      * zone.)</p> </dd> </dl>
      */
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
+    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
 
     /**
      * <p> <i>Alias resource records sets only</i>: The value used depends on where you
@@ -317,7 +318,7 @@ namespace Model
      * record set can't reference a resource record set in a different hosted
      * zone.)</p> </dd> </dl>
      */
-    inline AliasTarget& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
+    inline AliasTarget& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
 
     /**
      * <p> <i>Alias resource records sets only</i>: The value used depends on where you
@@ -538,7 +539,7 @@ namespace Model
      * the value of the <code>Name</code> element for a resource record set in the
      * current hosted zone.</p> </dd> </dl>
      */
-    inline void SetDNSName(Aws::String&& value) { m_dNSNameHasBeenSet = true; m_dNSName = value; }
+    inline void SetDNSName(Aws::String&& value) { m_dNSNameHasBeenSet = true; m_dNSName = std::move(value); }
 
     /**
      * <p> <i>Alias resource record sets only:</i> The value that you specify depends
@@ -715,7 +716,7 @@ namespace Model
      * the value of the <code>Name</code> element for a resource record set in the
      * current hosted zone.</p> </dd> </dl>
      */
-    inline AliasTarget& WithDNSName(Aws::String&& value) { SetDNSName(value); return *this;}
+    inline AliasTarget& WithDNSName(Aws::String&& value) { SetDNSName(std::move(value)); return *this;}
 
     /**
      * <p> <i>Alias resource record sets only:</i> The value that you specify depends

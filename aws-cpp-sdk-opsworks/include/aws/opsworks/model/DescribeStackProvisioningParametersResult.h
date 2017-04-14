@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,37 +48,37 @@ namespace Model
     DescribeStackProvisioningParametersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The AWS OpsWorks agent installer's URL.</p>
+     * <p>The AWS OpsWorks Stacks agent installer's URL.</p>
      */
     inline const Aws::String& GetAgentInstallerUrl() const{ return m_agentInstallerUrl; }
 
     /**
-     * <p>The AWS OpsWorks agent installer's URL.</p>
+     * <p>The AWS OpsWorks Stacks agent installer's URL.</p>
      */
     inline void SetAgentInstallerUrl(const Aws::String& value) { m_agentInstallerUrl = value; }
 
     /**
-     * <p>The AWS OpsWorks agent installer's URL.</p>
+     * <p>The AWS OpsWorks Stacks agent installer's URL.</p>
      */
-    inline void SetAgentInstallerUrl(Aws::String&& value) { m_agentInstallerUrl = value; }
+    inline void SetAgentInstallerUrl(Aws::String&& value) { m_agentInstallerUrl = std::move(value); }
 
     /**
-     * <p>The AWS OpsWorks agent installer's URL.</p>
+     * <p>The AWS OpsWorks Stacks agent installer's URL.</p>
      */
     inline void SetAgentInstallerUrl(const char* value) { m_agentInstallerUrl.assign(value); }
 
     /**
-     * <p>The AWS OpsWorks agent installer's URL.</p>
+     * <p>The AWS OpsWorks Stacks agent installer's URL.</p>
      */
     inline DescribeStackProvisioningParametersResult& WithAgentInstallerUrl(const Aws::String& value) { SetAgentInstallerUrl(value); return *this;}
 
     /**
-     * <p>The AWS OpsWorks agent installer's URL.</p>
+     * <p>The AWS OpsWorks Stacks agent installer's URL.</p>
      */
-    inline DescribeStackProvisioningParametersResult& WithAgentInstallerUrl(Aws::String&& value) { SetAgentInstallerUrl(value); return *this;}
+    inline DescribeStackProvisioningParametersResult& WithAgentInstallerUrl(Aws::String&& value) { SetAgentInstallerUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS OpsWorks agent installer's URL.</p>
+     * <p>The AWS OpsWorks Stacks agent installer's URL.</p>
      */
     inline DescribeStackProvisioningParametersResult& WithAgentInstallerUrl(const char* value) { SetAgentInstallerUrl(value); return *this;}
 
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>An embedded object that contains the provisioning parameters.</p>
      */
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parameters = value; }
+    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parameters = std::move(value); }
 
     /**
      * <p>An embedded object that contains the provisioning parameters.</p>
@@ -104,42 +105,42 @@ namespace Model
     /**
      * <p>An embedded object that contains the provisioning parameters.</p>
      */
-    inline DescribeStackProvisioningParametersResult& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(value); return *this;}
+    inline DescribeStackProvisioningParametersResult& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>An embedded object that contains the provisioning parameters.</p>
      */
-    inline DescribeStackProvisioningParametersResult& AddParameters(const Aws::String& key, const Aws::String& value) { m_parameters[key] = value; return *this; }
+    inline DescribeStackProvisioningParametersResult& AddParameters(const Aws::String& key, const Aws::String& value) { m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>An embedded object that contains the provisioning parameters.</p>
      */
-    inline DescribeStackProvisioningParametersResult& AddParameters(Aws::String&& key, const Aws::String& value) { m_parameters[key] = value; return *this; }
+    inline DescribeStackProvisioningParametersResult& AddParameters(Aws::String&& key, const Aws::String& value) { m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>An embedded object that contains the provisioning parameters.</p>
      */
-    inline DescribeStackProvisioningParametersResult& AddParameters(const Aws::String& key, Aws::String&& value) { m_parameters[key] = value; return *this; }
+    inline DescribeStackProvisioningParametersResult& AddParameters(const Aws::String& key, Aws::String&& value) { m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>An embedded object that contains the provisioning parameters.</p>
      */
-    inline DescribeStackProvisioningParametersResult& AddParameters(Aws::String&& key, Aws::String&& value) { m_parameters[key] = value; return *this; }
+    inline DescribeStackProvisioningParametersResult& AddParameters(Aws::String&& key, Aws::String&& value) { m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>An embedded object that contains the provisioning parameters.</p>
      */
-    inline DescribeStackProvisioningParametersResult& AddParameters(const char* key, Aws::String&& value) { m_parameters[key] = value; return *this; }
+    inline DescribeStackProvisioningParametersResult& AddParameters(const char* key, Aws::String&& value) { m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>An embedded object that contains the provisioning parameters.</p>
      */
-    inline DescribeStackProvisioningParametersResult& AddParameters(Aws::String&& key, const char* value) { m_parameters[key] = value; return *this; }
+    inline DescribeStackProvisioningParametersResult& AddParameters(Aws::String&& key, const char* value) { m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>An embedded object that contains the provisioning parameters.</p>
      */
-    inline DescribeStackProvisioningParametersResult& AddParameters(const char* key, const char* value) { m_parameters[key] = value; return *this; }
+    inline DescribeStackProvisioningParametersResult& AddParameters(const char* key, const char* value) { m_parameters.emplace(key, value); return *this; }
 
   private:
     Aws::String m_agentInstallerUrl;

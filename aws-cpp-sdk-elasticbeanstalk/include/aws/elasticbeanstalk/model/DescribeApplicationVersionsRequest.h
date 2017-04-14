@@ -17,6 +17,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>Specify an application name to show only application versions for that
      * application.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>Specify an application name to show only application versions for that
@@ -75,7 +76,7 @@ namespace Model
      * <p>Specify an application name to show only application versions for that
      * application.</p>
      */
-    inline DescribeApplicationVersionsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline DescribeApplicationVersionsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>Specify an application name to show only application versions for that
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>Specify a version label to show a specific application version.</p>
      */
-    inline void SetVersionLabels(Aws::Vector<Aws::String>&& value) { m_versionLabelsHasBeenSet = true; m_versionLabels = value; }
+    inline void SetVersionLabels(Aws::Vector<Aws::String>&& value) { m_versionLabelsHasBeenSet = true; m_versionLabels = std::move(value); }
 
     /**
      * <p>Specify a version label to show a specific application version.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>Specify a version label to show a specific application version.</p>
      */
-    inline DescribeApplicationVersionsRequest& WithVersionLabels(Aws::Vector<Aws::String>&& value) { SetVersionLabels(value); return *this;}
+    inline DescribeApplicationVersionsRequest& WithVersionLabels(Aws::Vector<Aws::String>&& value) { SetVersionLabels(std::move(value)); return *this;}
 
     /**
      * <p>Specify a version label to show a specific application version.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>Specify a version label to show a specific application version.</p>
      */
-    inline DescribeApplicationVersionsRequest& AddVersionLabels(Aws::String&& value) { m_versionLabelsHasBeenSet = true; m_versionLabels.push_back(value); return *this; }
+    inline DescribeApplicationVersionsRequest& AddVersionLabels(Aws::String&& value) { m_versionLabelsHasBeenSet = true; m_versionLabels.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specify a version label to show a specific application version.</p>
@@ -154,7 +155,7 @@ namespace Model
     /**
      * <p>Specify a next token to retrieve the next page in a paginated request.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Specify a next token to retrieve the next page in a paginated request.</p>
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p>Specify a next token to retrieve the next page in a paginated request.</p>
      */
-    inline DescribeApplicationVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeApplicationVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Specify a next token to retrieve the next page in a paginated request.</p>

@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
-    inline void SetParameterName(Aws::String&& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
+    inline void SetParameterName(Aws::String&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::move(value); }
 
     /**
      * <p>The name of the parameter.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
-    inline ParameterNameValue& WithParameterName(Aws::String&& value) { SetParameterName(value); return *this;}
+    inline ParameterNameValue& WithParameterName(Aws::String&& value) { SetParameterName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the parameter.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The value of the parameter.</p>
      */
-    inline void SetParameterValue(Aws::String&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
+    inline void SetParameterValue(Aws::String&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = std::move(value); }
 
     /**
      * <p>The value of the parameter.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The value of the parameter.</p>
      */
-    inline ParameterNameValue& WithParameterValue(Aws::String&& value) { SetParameterValue(value); return *this;}
+    inline ParameterNameValue& WithParameterValue(Aws::String&& value) { SetParameterValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the parameter.</p>

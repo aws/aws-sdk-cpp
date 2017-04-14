@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The result produced by the workflow execution upon successful completion.</p>
      */
-    inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = value; }
+    inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
 
     /**
      * <p>The result produced by the workflow execution upon successful completion.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The result produced by the workflow execution upon successful completion.</p>
      */
-    inline WorkflowExecutionCompletedEventAttributes& WithResult(Aws::String&& value) { SetResult(value); return *this;}
+    inline WorkflowExecutionCompletedEventAttributes& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
 
     /**
      * <p>The result produced by the workflow execution upon successful completion.</p>

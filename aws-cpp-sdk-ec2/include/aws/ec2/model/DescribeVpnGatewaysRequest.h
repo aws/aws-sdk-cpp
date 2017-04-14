@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -83,7 +84,7 @@ namespace Model
      * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
      * virtual private gateways.</p>
      */
-    inline void SetVpnGatewayIds(Aws::Vector<Aws::String>&& value) { m_vpnGatewayIdsHasBeenSet = true; m_vpnGatewayIds = value; }
+    inline void SetVpnGatewayIds(Aws::Vector<Aws::String>&& value) { m_vpnGatewayIdsHasBeenSet = true; m_vpnGatewayIds = std::move(value); }
 
     /**
      * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
@@ -95,7 +96,7 @@ namespace Model
      * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
      * virtual private gateways.</p>
      */
-    inline DescribeVpnGatewaysRequest& WithVpnGatewayIds(Aws::Vector<Aws::String>&& value) { SetVpnGatewayIds(value); return *this;}
+    inline DescribeVpnGatewaysRequest& WithVpnGatewayIds(Aws::Vector<Aws::String>&& value) { SetVpnGatewayIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
@@ -107,7 +108,7 @@ namespace Model
      * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
      * virtual private gateways.</p>
      */
-    inline DescribeVpnGatewaysRequest& AddVpnGatewayIds(Aws::String&& value) { m_vpnGatewayIdsHasBeenSet = true; m_vpnGatewayIds.push_back(value); return *this; }
+    inline DescribeVpnGatewaysRequest& AddVpnGatewayIds(Aws::String&& value) { m_vpnGatewayIdsHasBeenSet = true; m_vpnGatewayIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
@@ -203,7 +204,7 @@ namespace Model
      * <li> <p> <code>vpn-gateway-id</code> - The ID of the virtual private
      * gateway.</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
@@ -263,7 +264,7 @@ namespace Model
      * <li> <p> <code>vpn-gateway-id</code> - The ID of the virtual private
      * gateway.</p> </li> </ul>
      */
-    inline DescribeVpnGatewaysRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeVpnGatewaysRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
@@ -323,7 +324,7 @@ namespace Model
      * <li> <p> <code>vpn-gateway-id</code> - The ID of the virtual private
      * gateway.</p> </li> </ul>
      */
-    inline DescribeVpnGatewaysRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeVpnGatewaysRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

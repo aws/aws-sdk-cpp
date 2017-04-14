@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/Command.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The request as it was received by Systems Manager. Also provides the command
      * ID which can be used future references to this request.</p>
      */
-    inline void SetCommand(Command&& value) { m_command = value; }
+    inline void SetCommand(Command&& value) { m_command = std::move(value); }
 
     /**
      * <p>The request as it was received by Systems Manager. Also provides the command
@@ -67,7 +68,7 @@ namespace Model
      * <p>The request as it was received by Systems Manager. Also provides the command
      * ID which can be used future references to this request.</p>
      */
-    inline SendCommandResult& WithCommand(Command&& value) { SetCommand(value); return *this;}
+    inline SendCommandResult& WithCommand(Command&& value) { SetCommand(std::move(value)); return *this;}
 
   private:
     Command m_command;

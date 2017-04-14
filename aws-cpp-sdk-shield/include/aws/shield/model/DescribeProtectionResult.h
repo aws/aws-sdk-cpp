@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/shield/model/Protection.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The <a>Protection</a> object that is described.</p>
      */
-    inline void SetProtection(Protection&& value) { m_protection = value; }
+    inline void SetProtection(Protection&& value) { m_protection = std::move(value); }
 
     /**
      * <p>The <a>Protection</a> object that is described.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The <a>Protection</a> object that is described.</p>
      */
-    inline DescribeProtectionResult& WithProtection(Protection&& value) { SetProtection(value); return *this;}
+    inline DescribeProtectionResult& WithProtection(Protection&& value) { SetProtection(std::move(value)); return *this;}
 
   private:
     Protection m_protection;

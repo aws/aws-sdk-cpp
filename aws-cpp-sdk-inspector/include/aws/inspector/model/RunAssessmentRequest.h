@@ -16,6 +16,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/InspectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ARN of the assessment that you want to run.</p>
      */
-    inline void SetAssessmentArn(Aws::String&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = value; }
+    inline void SetAssessmentArn(Aws::String&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = std::move(value); }
 
     /**
      * <p>The ARN of the assessment that you want to run.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ARN of the assessment that you want to run.</p>
      */
-    inline RunAssessmentRequest& WithAssessmentArn(Aws::String&& value) { SetAssessmentArn(value); return *this;}
+    inline RunAssessmentRequest& WithAssessmentArn(Aws::String&& value) { SetAssessmentArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the assessment that you want to run.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>A name specifying the run of the assessment.</p>
      */
-    inline void SetRunName(Aws::String&& value) { m_runNameHasBeenSet = true; m_runName = value; }
+    inline void SetRunName(Aws::String&& value) { m_runNameHasBeenSet = true; m_runName = std::move(value); }
 
     /**
      * <p>A name specifying the run of the assessment.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>A name specifying the run of the assessment.</p>
      */
-    inline RunAssessmentRequest& WithRunName(Aws::String&& value) { SetRunName(value); return *this;}
+    inline RunAssessmentRequest& WithRunName(Aws::String&& value) { SetRunName(std::move(value)); return *this;}
 
     /**
      * <p>A name specifying the run of the assessment.</p>

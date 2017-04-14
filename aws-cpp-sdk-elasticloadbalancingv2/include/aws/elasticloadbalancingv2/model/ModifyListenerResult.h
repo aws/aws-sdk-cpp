@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/ResponseMetadata.h>
 #include <aws/elasticloadbalancingv2/model/Listener.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>Information about the modified listeners.</p>
      */
-    inline void SetListeners(Aws::Vector<Listener>&& value) { m_listeners = value; }
+    inline void SetListeners(Aws::Vector<Listener>&& value) { m_listeners = std::move(value); }
 
     /**
      * <p>Information about the modified listeners.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Information about the modified listeners.</p>
      */
-    inline ModifyListenerResult& WithListeners(Aws::Vector<Listener>&& value) { SetListeners(value); return *this;}
+    inline ModifyListenerResult& WithListeners(Aws::Vector<Listener>&& value) { SetListeners(std::move(value)); return *this;}
 
     /**
      * <p>Information about the modified listeners.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Information about the modified listeners.</p>
      */
-    inline ModifyListenerResult& AddListeners(Listener&& value) { m_listeners.push_back(value); return *this; }
+    inline ModifyListenerResult& AddListeners(Listener&& value) { m_listeners.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -83,13 +84,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ModifyListenerResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ModifyListenerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ModifyListenerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Listener> m_listeners;

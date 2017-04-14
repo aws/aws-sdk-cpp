@@ -17,6 +17,7 @@
 #include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>A list of one or more identities.</p>
      */
-    inline void SetIdentities(Aws::Vector<Aws::String>&& value) { m_identitiesHasBeenSet = true; m_identities = value; }
+    inline void SetIdentities(Aws::Vector<Aws::String>&& value) { m_identitiesHasBeenSet = true; m_identities = std::move(value); }
 
     /**
      * <p>A list of one or more identities.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>A list of one or more identities.</p>
      */
-    inline GetIdentityMailFromDomainAttributesRequest& WithIdentities(Aws::Vector<Aws::String>&& value) { SetIdentities(value); return *this;}
+    inline GetIdentityMailFromDomainAttributesRequest& WithIdentities(Aws::Vector<Aws::String>&& value) { SetIdentities(std::move(value)); return *this;}
 
     /**
      * <p>A list of one or more identities.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>A list of one or more identities.</p>
      */
-    inline GetIdentityMailFromDomainAttributesRequest& AddIdentities(Aws::String&& value) { m_identitiesHasBeenSet = true; m_identities.push_back(value); return *this; }
+    inline GetIdentityMailFromDomainAttributesRequest& AddIdentities(Aws::String&& value) { m_identitiesHasBeenSet = true; m_identities.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of one or more identities.</p>

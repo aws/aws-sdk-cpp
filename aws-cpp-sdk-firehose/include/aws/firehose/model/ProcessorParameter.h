@@ -16,6 +16,7 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/firehose/model/ProcessorParameterName.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
-    inline void SetParameterName(ProcessorParameterName&& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
+    inline void SetParameterName(ProcessorParameterName&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::move(value); }
 
     /**
      * <p>The name of the parameter.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
-    inline ProcessorParameter& WithParameterName(ProcessorParameterName&& value) { SetParameterName(value); return *this;}
+    inline ProcessorParameter& WithParameterName(ProcessorParameterName&& value) { SetParameterName(std::move(value)); return *this;}
 
     /**
      * <p>The parameter value.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The parameter value.</p>
      */
-    inline void SetParameterValue(Aws::String&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
+    inline void SetParameterValue(Aws::String&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = std::move(value); }
 
     /**
      * <p>The parameter value.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The parameter value.</p>
      */
-    inline ProcessorParameter& WithParameterValue(Aws::String&& value) { SetParameterValue(value); return *this;}
+    inline ProcessorParameter& WithParameterValue(Aws::String&& value) { SetParameterValue(std::move(value)); return *this;}
 
     /**
      * <p>The parameter value.</p>

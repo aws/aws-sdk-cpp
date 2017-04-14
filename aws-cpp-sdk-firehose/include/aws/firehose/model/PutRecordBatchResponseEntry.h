@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The ID of the record.</p>
      */
-    inline void SetRecordId(Aws::String&& value) { m_recordIdHasBeenSet = true; m_recordId = value; }
+    inline void SetRecordId(Aws::String&& value) { m_recordIdHasBeenSet = true; m_recordId = std::move(value); }
 
     /**
      * <p>The ID of the record.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The ID of the record.</p>
      */
-    inline PutRecordBatchResponseEntry& WithRecordId(Aws::String&& value) { SetRecordId(value); return *this;}
+    inline PutRecordBatchResponseEntry& WithRecordId(Aws::String&& value) { SetRecordId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the record.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The error code for an individual record result.</p>
      */
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
      * <p>The error code for an individual record result.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The error code for an individual record result.</p>
      */
-    inline PutRecordBatchResponseEntry& WithErrorCode(Aws::String&& value) { SetErrorCode(value); return *this;}
+    inline PutRecordBatchResponseEntry& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
      * <p>The error code for an individual record result.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The error message for an individual record result.</p>
      */
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
      * <p>The error message for an individual record result.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>The error message for an individual record result.</p>
      */
-    inline PutRecordBatchResponseEntry& WithErrorMessage(Aws::String&& value) { SetErrorMessage(value); return *this;}
+    inline PutRecordBatchResponseEntry& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
      * <p>The error message for an individual record result.</p>

@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>The AWS account ID of the instance owner. This is only present if the product
      * code is attached to the instance.</p>
      */
-    inline void SetOwnerId(Aws::String&& value) { m_ownerId = value; }
+    inline void SetOwnerId(Aws::String&& value) { m_ownerId = std::move(value); }
 
     /**
      * <p>The AWS account ID of the instance owner. This is only present if the product
@@ -79,7 +80,7 @@ namespace Model
      * <p>The AWS account ID of the instance owner. This is only present if the product
      * code is attached to the instance.</p>
      */
-    inline ConfirmProductInstanceResponse& WithOwnerId(Aws::String&& value) { SetOwnerId(value); return *this;}
+    inline ConfirmProductInstanceResponse& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID of the instance owner. This is only present if the product
@@ -115,13 +116,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ConfirmProductInstanceResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ConfirmProductInstanceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ConfirmProductInstanceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_ownerId;

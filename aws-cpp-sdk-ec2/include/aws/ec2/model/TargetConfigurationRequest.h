@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The Convertible Reserved Instance offering ID.</p>
      */
-    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
+    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::move(value); }
 
     /**
      * <p>The Convertible Reserved Instance offering ID.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The Convertible Reserved Instance offering ID.</p>
      */
-    inline TargetConfigurationRequest& WithOfferingId(Aws::String&& value) { SetOfferingId(value); return *this;}
+    inline TargetConfigurationRequest& WithOfferingId(Aws::String&& value) { SetOfferingId(std::move(value)); return *this;}
 
     /**
      * <p>The Convertible Reserved Instance offering ID.</p>

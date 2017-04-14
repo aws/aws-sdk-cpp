@@ -17,6 +17,7 @@
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/PolicyType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
      * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
      */
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = value; }
+    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
      * <p>The policy content to add to the new policy. For example, if you create a <a
@@ -100,7 +101,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
      * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
      */
-    inline CreatePolicyRequest& WithContent(Aws::String&& value) { SetContent(value); return *this;}
+    inline CreatePolicyRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
      * <p>The policy content to add to the new policy. For example, if you create a <a
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>An optional description to assign to the policy.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>An optional description to assign to the policy.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>An optional description to assign to the policy.</p>
      */
-    inline CreatePolicyRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreatePolicyRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>An optional description to assign to the policy.</p>
@@ -170,7 +171,7 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The friendly name to assign to the policy.</p> <p>The <a
@@ -194,7 +195,7 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline CreatePolicyRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreatePolicyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The friendly name to assign to the policy.</p> <p>The <a
@@ -223,7 +224,7 @@ namespace Model
      * type of policy that you can create is a service control policy (SCP).</p>
      * </note>
      */
-    inline void SetType(PolicyType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(PolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of policy to create.</p> <note> <p>In the current release, the only
@@ -237,7 +238,7 @@ namespace Model
      * type of policy that you can create is a service control policy (SCP).</p>
      * </note>
      */
-    inline CreatePolicyRequest& WithType(PolicyType&& value) { SetType(value); return *this;}
+    inline CreatePolicyRequest& WithType(PolicyType&& value) { SetType(std::move(value)); return *this;}
 
   private:
     Aws::String m_content;

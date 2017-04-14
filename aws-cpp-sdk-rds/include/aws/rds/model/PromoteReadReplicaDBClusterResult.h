@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/DBCluster.h>
 #include <aws/rds/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,13 +48,13 @@ namespace Model
     inline void SetDBCluster(const DBCluster& value) { m_dBCluster = value; }
 
     
-    inline void SetDBCluster(DBCluster&& value) { m_dBCluster = value; }
+    inline void SetDBCluster(DBCluster&& value) { m_dBCluster = std::move(value); }
 
     
     inline PromoteReadReplicaDBClusterResult& WithDBCluster(const DBCluster& value) { SetDBCluster(value); return *this;}
 
     
-    inline PromoteReadReplicaDBClusterResult& WithDBCluster(DBCluster&& value) { SetDBCluster(value); return *this;}
+    inline PromoteReadReplicaDBClusterResult& WithDBCluster(DBCluster&& value) { SetDBCluster(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -62,13 +63,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline PromoteReadReplicaDBClusterResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline PromoteReadReplicaDBClusterResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline PromoteReadReplicaDBClusterResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     DBCluster m_dBCluster;

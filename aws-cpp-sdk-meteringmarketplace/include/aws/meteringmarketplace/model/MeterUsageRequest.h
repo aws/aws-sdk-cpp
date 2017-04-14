@@ -17,6 +17,7 @@
 #include <aws/meteringmarketplace/MarketplaceMeteringRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * product code should be the same as the one used during the publishing of a new
      * product.</p>
      */
-    inline void SetProductCode(Aws::String&& value) { m_productCodeHasBeenSet = true; m_productCode = value; }
+    inline void SetProductCode(Aws::String&& value) { m_productCodeHasBeenSet = true; m_productCode = std::move(value); }
 
     /**
      * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
@@ -76,7 +77,7 @@ namespace Model
      * product code should be the same as the one used during the publishing of a new
      * product.</p>
      */
-    inline MeterUsageRequest& WithProductCode(Aws::String&& value) { SetProductCode(value); return *this;}
+    inline MeterUsageRequest& WithProductCode(Aws::String&& value) { SetProductCode(std::move(value)); return *this;}
 
     /**
      * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
@@ -101,7 +102,7 @@ namespace Model
      * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
      * of the timestamp will be ignored.</p>
      */
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
      * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
@@ -113,7 +114,7 @@ namespace Model
      * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
      * of the timestamp will be ignored.</p>
      */
-    inline MeterUsageRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
+    inline MeterUsageRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>It will be one of the fcp dimension name provided during the publishing of
@@ -131,7 +132,7 @@ namespace Model
      * <p>It will be one of the fcp dimension name provided during the publishing of
      * the product.</p>
      */
-    inline void SetUsageDimension(Aws::String&& value) { m_usageDimensionHasBeenSet = true; m_usageDimension = value; }
+    inline void SetUsageDimension(Aws::String&& value) { m_usageDimensionHasBeenSet = true; m_usageDimension = std::move(value); }
 
     /**
      * <p>It will be one of the fcp dimension name provided during the publishing of
@@ -149,7 +150,7 @@ namespace Model
      * <p>It will be one of the fcp dimension name provided during the publishing of
      * the product.</p>
      */
-    inline MeterUsageRequest& WithUsageDimension(Aws::String&& value) { SetUsageDimension(value); return *this;}
+    inline MeterUsageRequest& WithUsageDimension(Aws::String&& value) { SetUsageDimension(std::move(value)); return *this;}
 
     /**
      * <p>It will be one of the fcp dimension name provided during the publishing of

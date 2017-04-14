@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * <code>ContinentCode</code> with either <code>CountryCode</code> or
      * <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
      */
-    inline void SetContinentCode(Aws::String&& value) { m_continentCodeHasBeenSet = true; m_continentCode = value; }
+    inline void SetContinentCode(Aws::String&& value) { m_continentCodeHasBeenSet = true; m_continentCode = std::move(value); }
 
     /**
      * <p>The two-letter code for the continent.</p> <p>Valid values: <code>AF</code> |
@@ -97,7 +98,7 @@ namespace Model
      * <code>ContinentCode</code> with either <code>CountryCode</code> or
      * <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
      */
-    inline GeoLocation& WithContinentCode(Aws::String&& value) { SetContinentCode(value); return *this;}
+    inline GeoLocation& WithContinentCode(Aws::String&& value) { SetContinentCode(std::move(value)); return *this;}
 
     /**
      * <p>The two-letter code for the continent.</p> <p>Valid values: <code>AF</code> |
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The two-letter code for the country.</p>
      */
-    inline void SetCountryCode(Aws::String&& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
+    inline void SetCountryCode(Aws::String&& value) { m_countryCodeHasBeenSet = true; m_countryCode = std::move(value); }
 
     /**
      * <p>The two-letter code for the country.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The two-letter code for the country.</p>
      */
-    inline GeoLocation& WithCountryCode(Aws::String&& value) { SetCountryCode(value); return *this;}
+    inline GeoLocation& WithCountryCode(Aws::String&& value) { SetCountryCode(std::move(value)); return *this;}
 
     /**
      * <p>The two-letter code for the country.</p>
@@ -159,7 +160,7 @@ namespace Model
      * <p>The code for the subdivision, for example, a state in the United States or a
      * province in Canada.</p>
      */
-    inline void SetSubdivisionCode(Aws::String&& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = value; }
+    inline void SetSubdivisionCode(Aws::String&& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = std::move(value); }
 
     /**
      * <p>The code for the subdivision, for example, a state in the United States or a
@@ -177,7 +178,7 @@ namespace Model
      * <p>The code for the subdivision, for example, a state in the United States or a
      * province in Canada.</p>
      */
-    inline GeoLocation& WithSubdivisionCode(Aws::String&& value) { SetSubdivisionCode(value); return *this;}
+    inline GeoLocation& WithSubdivisionCode(Aws::String&& value) { SetSubdivisionCode(std::move(value)); return *this;}
 
     /**
      * <p>The code for the subdivision, for example, a state in the United States or a

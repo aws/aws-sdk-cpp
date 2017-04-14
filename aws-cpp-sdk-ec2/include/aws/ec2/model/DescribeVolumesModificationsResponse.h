@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/VolumeModification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>A list of returned <a>VolumeModification</a> objects.</p>
      */
-    inline void SetVolumesModifications(Aws::Vector<VolumeModification>&& value) { m_volumesModifications = value; }
+    inline void SetVolumesModifications(Aws::Vector<VolumeModification>&& value) { m_volumesModifications = std::move(value); }
 
     /**
      * <p>A list of returned <a>VolumeModification</a> objects.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>A list of returned <a>VolumeModification</a> objects.</p>
      */
-    inline DescribeVolumesModificationsResponse& WithVolumesModifications(Aws::Vector<VolumeModification>&& value) { SetVolumesModifications(value); return *this;}
+    inline DescribeVolumesModificationsResponse& WithVolumesModifications(Aws::Vector<VolumeModification>&& value) { SetVolumesModifications(std::move(value)); return *this;}
 
     /**
      * <p>A list of returned <a>VolumeModification</a> objects.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>A list of returned <a>VolumeModification</a> objects.</p>
      */
-    inline DescribeVolumesModificationsResponse& AddVolumesModifications(VolumeModification&& value) { m_volumesModifications.push_back(value); return *this; }
+    inline DescribeVolumesModificationsResponse& AddVolumesModifications(VolumeModification&& value) { m_volumesModifications.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Token for pagination, null if there are no more results </p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>Token for pagination, null if there are no more results </p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>Token for pagination, null if there are no more results </p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>Token for pagination, null if there are no more results </p>
      */
-    inline DescribeVolumesModificationsResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeVolumesModificationsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token for pagination, null if there are no more results </p>
@@ -119,13 +120,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeVolumesModificationsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeVolumesModificationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeVolumesModificationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<VolumeModification> m_volumesModifications;

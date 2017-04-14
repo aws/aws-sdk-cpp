@@ -17,6 +17,7 @@
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/InstanceAccessProtocol.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The name of the instance to access.</p>
      */
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
+    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
 
     /**
      * <p>The name of the instance to access.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name of the instance to access.</p>
      */
-    inline GetInstanceAccessDetailsRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(value); return *this;}
+    inline GetInstanceAccessDetailsRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the instance to access.</p>
@@ -87,7 +88,7 @@ namespace Model
      * <p>The protocol to use to connect to your instance. Defaults to
      * <code>ssh</code>.</p>
      */
-    inline void SetProtocol(InstanceAccessProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline void SetProtocol(InstanceAccessProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol to use to connect to your instance. Defaults to
@@ -99,7 +100,7 @@ namespace Model
      * <p>The protocol to use to connect to your instance. Defaults to
      * <code>ssh</code>.</p>
      */
-    inline GetInstanceAccessDetailsRequest& WithProtocol(InstanceAccessProtocol&& value) { SetProtocol(value); return *this;}
+    inline GetInstanceAccessDetailsRequest& WithProtocol(InstanceAccessProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
   private:
     Aws::String m_instanceName;

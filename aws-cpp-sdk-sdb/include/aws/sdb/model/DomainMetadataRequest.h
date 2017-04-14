@@ -16,6 +16,7 @@
 #include <aws/sdb/SimpleDB_EXPORTS.h>
 #include <aws/sdb/SimpleDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * The name of the domain for which to display the metadata of.
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * The name of the domain for which to display the metadata of.
@@ -65,7 +66,7 @@ namespace Model
     /**
      * The name of the domain for which to display the metadata of.
      */
-    inline DomainMetadataRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DomainMetadataRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * The name of the domain for which to display the metadata of.

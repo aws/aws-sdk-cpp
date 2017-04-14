@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>The reserved cache node identifier filter value. Use this parameter to show
      * only the reservation that matches the specified reservation ID.</p>
      */
-    inline void SetReservedCacheNodeId(Aws::String&& value) { m_reservedCacheNodeIdHasBeenSet = true; m_reservedCacheNodeId = value; }
+    inline void SetReservedCacheNodeId(Aws::String&& value) { m_reservedCacheNodeIdHasBeenSet = true; m_reservedCacheNodeId = std::move(value); }
 
     /**
      * <p>The reserved cache node identifier filter value. Use this parameter to show
@@ -75,7 +76,7 @@ namespace Model
      * <p>The reserved cache node identifier filter value. Use this parameter to show
      * only the reservation that matches the specified reservation ID.</p>
      */
-    inline DescribeReservedCacheNodesRequest& WithReservedCacheNodeId(Aws::String&& value) { SetReservedCacheNodeId(value); return *this;}
+    inline DescribeReservedCacheNodesRequest& WithReservedCacheNodeId(Aws::String&& value) { SetReservedCacheNodeId(std::move(value)); return *this;}
 
     /**
      * <p>The reserved cache node identifier filter value. Use this parameter to show
@@ -99,7 +100,7 @@ namespace Model
      * <p>The offering identifier filter value. Use this parameter to show only
      * purchased reservations matching the specified offering identifier.</p>
      */
-    inline void SetReservedCacheNodesOfferingId(Aws::String&& value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId = value; }
+    inline void SetReservedCacheNodesOfferingId(Aws::String&& value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId = std::move(value); }
 
     /**
      * <p>The offering identifier filter value. Use this parameter to show only
@@ -117,7 +118,7 @@ namespace Model
      * <p>The offering identifier filter value. Use this parameter to show only
      * purchased reservations matching the specified offering identifier.</p>
      */
-    inline DescribeReservedCacheNodesRequest& WithReservedCacheNodesOfferingId(Aws::String&& value) { SetReservedCacheNodesOfferingId(value); return *this;}
+    inline DescribeReservedCacheNodesRequest& WithReservedCacheNodesOfferingId(Aws::String&& value) { SetReservedCacheNodesOfferingId(std::move(value)); return *this;}
 
     /**
      * <p>The offering identifier filter value. Use this parameter to show only
@@ -228,7 +229,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
      * Node Type-Specific Parameters for Redis</a>.</p>
      */
-    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
+    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::move(value); }
 
     /**
      * <p>The cache node type filter value. Use this parameter to show only those
@@ -333,7 +334,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
      * Node Type-Specific Parameters for Redis</a>.</p>
      */
-    inline DescribeReservedCacheNodesRequest& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(value); return *this;}
+    inline DescribeReservedCacheNodesRequest& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(std::move(value)); return *this;}
 
     /**
      * <p>The cache node type filter value. Use this parameter to show only those
@@ -389,7 +390,7 @@ namespace Model
      * to show only reservations for this duration.</p> <p>Valid Values: <code>1 | 3 |
      * 31536000 | 94608000</code> </p>
      */
-    inline void SetDuration(Aws::String&& value) { m_durationHasBeenSet = true; m_duration = value; }
+    inline void SetDuration(Aws::String&& value) { m_durationHasBeenSet = true; m_duration = std::move(value); }
 
     /**
      * <p>The duration filter value, specified in years or seconds. Use this parameter
@@ -410,7 +411,7 @@ namespace Model
      * to show only reservations for this duration.</p> <p>Valid Values: <code>1 | 3 |
      * 31536000 | 94608000</code> </p>
      */
-    inline DescribeReservedCacheNodesRequest& WithDuration(Aws::String&& value) { SetDuration(value); return *this;}
+    inline DescribeReservedCacheNodesRequest& WithDuration(Aws::String&& value) { SetDuration(std::move(value)); return *this;}
 
     /**
      * <p>The duration filter value, specified in years or seconds. Use this parameter
@@ -435,7 +436,7 @@ namespace Model
      * <p>The product description filter value. Use this parameter to show only those
      * reservations matching the specified product description.</p>
      */
-    inline void SetProductDescription(Aws::String&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
+    inline void SetProductDescription(Aws::String&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = std::move(value); }
 
     /**
      * <p>The product description filter value. Use this parameter to show only those
@@ -453,7 +454,7 @@ namespace Model
      * <p>The product description filter value. Use this parameter to show only those
      * reservations matching the specified product description.</p>
      */
-    inline DescribeReservedCacheNodesRequest& WithProductDescription(Aws::String&& value) { SetProductDescription(value); return *this;}
+    inline DescribeReservedCacheNodesRequest& WithProductDescription(Aws::String&& value) { SetProductDescription(std::move(value)); return *this;}
 
     /**
      * <p>The product description filter value. Use this parameter to show only those
@@ -480,7 +481,7 @@ namespace Model
      * offerings matching the specified offering type.</p> <p>Valid values:
      * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code> </p>
      */
-    inline void SetOfferingType(Aws::String&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
+    inline void SetOfferingType(Aws::String&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::move(value); }
 
     /**
      * <p>The offering type filter value. Use this parameter to show only the available
@@ -501,7 +502,7 @@ namespace Model
      * offerings matching the specified offering type.</p> <p>Valid values:
      * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code> </p>
      */
-    inline DescribeReservedCacheNodesRequest& WithOfferingType(Aws::String&& value) { SetOfferingType(value); return *this;}
+    inline DescribeReservedCacheNodesRequest& WithOfferingType(Aws::String&& value) { SetOfferingType(std::move(value)); return *this;}
 
     /**
      * <p>The offering type filter value. Use this parameter to show only the available
@@ -556,7 +557,7 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
@@ -580,7 +581,7 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.</p>
      */
-    inline DescribeReservedCacheNodesRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeReservedCacheNodesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for

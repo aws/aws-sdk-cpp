@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/EbsBlockDeviceConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>An array of Amazon EBS volume specifications attached to a cluster
      * instance.</p>
      */
-    inline void SetEbsBlockDeviceConfigs(Aws::Vector<EbsBlockDeviceConfig>&& value) { m_ebsBlockDeviceConfigsHasBeenSet = true; m_ebsBlockDeviceConfigs = value; }
+    inline void SetEbsBlockDeviceConfigs(Aws::Vector<EbsBlockDeviceConfig>&& value) { m_ebsBlockDeviceConfigsHasBeenSet = true; m_ebsBlockDeviceConfigs = std::move(value); }
 
     /**
      * <p>An array of Amazon EBS volume specifications attached to a cluster
@@ -73,7 +74,7 @@ namespace Model
      * <p>An array of Amazon EBS volume specifications attached to a cluster
      * instance.</p>
      */
-    inline EbsConfiguration& WithEbsBlockDeviceConfigs(Aws::Vector<EbsBlockDeviceConfig>&& value) { SetEbsBlockDeviceConfigs(value); return *this;}
+    inline EbsConfiguration& WithEbsBlockDeviceConfigs(Aws::Vector<EbsBlockDeviceConfig>&& value) { SetEbsBlockDeviceConfigs(std::move(value)); return *this;}
 
     /**
      * <p>An array of Amazon EBS volume specifications attached to a cluster
@@ -85,7 +86,7 @@ namespace Model
      * <p>An array of Amazon EBS volume specifications attached to a cluster
      * instance.</p>
      */
-    inline EbsConfiguration& AddEbsBlockDeviceConfigs(EbsBlockDeviceConfig&& value) { m_ebsBlockDeviceConfigsHasBeenSet = true; m_ebsBlockDeviceConfigs.push_back(value); return *this; }
+    inline EbsConfiguration& AddEbsBlockDeviceConfigs(EbsBlockDeviceConfig&& value) { m_ebsBlockDeviceConfigsHasBeenSet = true; m_ebsBlockDeviceConfigs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>

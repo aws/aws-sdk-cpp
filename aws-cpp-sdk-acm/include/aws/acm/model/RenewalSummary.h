@@ -17,6 +17,7 @@
 #include <aws/acm/model/RenewalStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/acm/model/DomainValidation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> of the certificate.</p>
      */
-    inline void SetRenewalStatus(RenewalStatus&& value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = value; }
+    inline void SetRenewalStatus(RenewalStatus&& value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = std::move(value); }
 
     /**
      * <p>The status of ACM's <a
@@ -81,7 +82,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> of the certificate.</p>
      */
-    inline RenewalSummary& WithRenewalStatus(RenewalStatus&& value) { SetRenewalStatus(value); return *this;}
+    inline RenewalSummary& WithRenewalStatus(RenewalStatus&& value) { SetRenewalStatus(std::move(value)); return *this;}
 
     /**
      * <p>Contains information about the validation of each domain name in the
@@ -111,7 +112,7 @@ namespace Model
      * result of the <a>RequestCertificate</a> request. This field exists only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
-    inline void SetDomainValidationOptions(Aws::Vector<DomainValidation>&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
+    inline void SetDomainValidationOptions(Aws::Vector<DomainValidation>&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = std::move(value); }
 
     /**
      * <p>Contains information about the validation of each domain name in the
@@ -131,7 +132,7 @@ namespace Model
      * result of the <a>RequestCertificate</a> request. This field exists only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
-    inline RenewalSummary& WithDomainValidationOptions(Aws::Vector<DomainValidation>&& value) { SetDomainValidationOptions(value); return *this;}
+    inline RenewalSummary& WithDomainValidationOptions(Aws::Vector<DomainValidation>&& value) { SetDomainValidationOptions(std::move(value)); return *this;}
 
     /**
      * <p>Contains information about the validation of each domain name in the
@@ -151,7 +152,7 @@ namespace Model
      * result of the <a>RequestCertificate</a> request. This field exists only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
-    inline RenewalSummary& AddDomainValidationOptions(DomainValidation&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(value); return *this; }
+    inline RenewalSummary& AddDomainValidationOptions(DomainValidation&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(std::move(value)); return *this; }
 
   private:
     RenewalStatus m_renewalStatus;

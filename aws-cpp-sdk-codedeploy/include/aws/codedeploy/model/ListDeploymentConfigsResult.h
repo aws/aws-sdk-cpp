@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>A list of deployment configurations, including built-in configurations such
      * as CodeDeployDefault.OneAtATime.</p>
      */
-    inline void SetDeploymentConfigsList(Aws::Vector<Aws::String>&& value) { m_deploymentConfigsList = value; }
+    inline void SetDeploymentConfigsList(Aws::Vector<Aws::String>&& value) { m_deploymentConfigsList = std::move(value); }
 
     /**
      * <p>A list of deployment configurations, including built-in configurations such
@@ -74,7 +75,7 @@ namespace Model
      * <p>A list of deployment configurations, including built-in configurations such
      * as CodeDeployDefault.OneAtATime.</p>
      */
-    inline ListDeploymentConfigsResult& WithDeploymentConfigsList(Aws::Vector<Aws::String>&& value) { SetDeploymentConfigsList(value); return *this;}
+    inline ListDeploymentConfigsResult& WithDeploymentConfigsList(Aws::Vector<Aws::String>&& value) { SetDeploymentConfigsList(std::move(value)); return *this;}
 
     /**
      * <p>A list of deployment configurations, including built-in configurations such
@@ -86,7 +87,7 @@ namespace Model
      * <p>A list of deployment configurations, including built-in configurations such
      * as CodeDeployDefault.OneAtATime.</p>
      */
-    inline ListDeploymentConfigsResult& AddDeploymentConfigsList(Aws::String&& value) { m_deploymentConfigsList.push_back(value); return *this; }
+    inline ListDeploymentConfigsResult& AddDeploymentConfigsList(Aws::String&& value) { m_deploymentConfigsList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of deployment configurations, including built-in configurations such
@@ -113,7 +114,7 @@ namespace Model
      * It can be used in a subsequent list deployment configurations call to return the
      * next set of deployment configurations in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
@@ -134,7 +135,7 @@ namespace Model
      * It can be used in a subsequent list deployment configurations call to return the
      * next set of deployment configurations in the list.</p>
      */
-    inline ListDeploymentConfigsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListDeploymentConfigsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.

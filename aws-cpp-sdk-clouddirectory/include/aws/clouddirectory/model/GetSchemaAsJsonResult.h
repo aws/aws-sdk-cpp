@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of the retrieved schema.</p>
      */
-    inline void SetName(Aws::String&& value) { m_name = value; }
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
      * <p>The name of the retrieved schema.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the retrieved schema.</p>
      */
-    inline GetSchemaAsJsonResult& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline GetSchemaAsJsonResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the retrieved schema.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The JSON representation of the schema document.</p>
      */
-    inline void SetDocument(Aws::String&& value) { m_document = value; }
+    inline void SetDocument(Aws::String&& value) { m_document = std::move(value); }
 
     /**
      * <p>The JSON representation of the schema document.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The JSON representation of the schema document.</p>
      */
-    inline GetSchemaAsJsonResult& WithDocument(Aws::String&& value) { SetDocument(value); return *this;}
+    inline GetSchemaAsJsonResult& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
 
     /**
      * <p>The JSON representation of the schema document.</p>

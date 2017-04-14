@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticache/model/PendingAutomaticFailoverStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * <code>--apply-immediately</code> was specified), or during the next maintenance
      * window.</p>
      */
-    inline void SetPrimaryClusterId(Aws::String&& value) { m_primaryClusterIdHasBeenSet = true; m_primaryClusterId = value; }
+    inline void SetPrimaryClusterId(Aws::String&& value) { m_primaryClusterIdHasBeenSet = true; m_primaryClusterId = std::move(value); }
 
     /**
      * <p>The primary cluster ID that is applied immediately (if
@@ -88,7 +89,7 @@ namespace Model
      * <code>--apply-immediately</code> was specified), or during the next maintenance
      * window.</p>
      */
-    inline ReplicationGroupPendingModifiedValues& WithPrimaryClusterId(Aws::String&& value) { SetPrimaryClusterId(value); return *this;}
+    inline ReplicationGroupPendingModifiedValues& WithPrimaryClusterId(Aws::String&& value) { SetPrimaryClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The primary cluster ID that is applied immediately (if
@@ -122,7 +123,7 @@ namespace Model
      * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
      * node types.</p> </li> </ul> </note>
      */
-    inline void SetAutomaticFailoverStatus(PendingAutomaticFailoverStatus&& value) { m_automaticFailoverStatusHasBeenSet = true; m_automaticFailoverStatus = value; }
+    inline void SetAutomaticFailoverStatus(PendingAutomaticFailoverStatus&& value) { m_automaticFailoverStatusHasBeenSet = true; m_automaticFailoverStatus = std::move(value); }
 
     /**
      * <p>Indicates the status of Multi-AZ for this Redis replication group.</p> <note>
@@ -140,7 +141,7 @@ namespace Model
      * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
      * node types.</p> </li> </ul> </note>
      */
-    inline ReplicationGroupPendingModifiedValues& WithAutomaticFailoverStatus(PendingAutomaticFailoverStatus&& value) { SetAutomaticFailoverStatus(value); return *this;}
+    inline ReplicationGroupPendingModifiedValues& WithAutomaticFailoverStatus(PendingAutomaticFailoverStatus&& value) { SetAutomaticFailoverStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_primaryClusterId;

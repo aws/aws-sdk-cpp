@@ -17,6 +17,7 @@
 #include <aws/cloudsearch/CloudSearchRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The names of the domains you want to include in the response.</p>
      */
-    inline void SetDomainNames(Aws::Vector<Aws::String>&& value) { m_domainNamesHasBeenSet = true; m_domainNames = value; }
+    inline void SetDomainNames(Aws::Vector<Aws::String>&& value) { m_domainNamesHasBeenSet = true; m_domainNames = std::move(value); }
 
     /**
      * <p>The names of the domains you want to include in the response.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The names of the domains you want to include in the response.</p>
      */
-    inline DescribeDomainsRequest& WithDomainNames(Aws::Vector<Aws::String>&& value) { SetDomainNames(value); return *this;}
+    inline DescribeDomainsRequest& WithDomainNames(Aws::Vector<Aws::String>&& value) { SetDomainNames(std::move(value)); return *this;}
 
     /**
      * <p>The names of the domains you want to include in the response.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The names of the domains you want to include in the response.</p>
      */
-    inline DescribeDomainsRequest& AddDomainNames(Aws::String&& value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(value); return *this; }
+    inline DescribeDomainsRequest& AddDomainNames(Aws::String&& value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of the domains you want to include in the response.</p>

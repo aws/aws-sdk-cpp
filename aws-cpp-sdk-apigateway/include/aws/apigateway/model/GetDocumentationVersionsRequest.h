@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>[Required] The identifier of an API of the to-be-retrieved documentation
      * versions.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>[Required] The identifier of an API of the to-be-retrieved documentation
@@ -76,7 +77,7 @@ namespace Model
      * <p>[Required] The identifier of an API of the to-be-retrieved documentation
      * versions.</p>
      */
-    inline GetDocumentationVersionsRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline GetDocumentationVersionsRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>[Required] The identifier of an API of the to-be-retrieved documentation
@@ -85,59 +86,52 @@ namespace Model
     inline GetDocumentationVersionsRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>The position of the returned <code>DocumentationVersion</code> in the
-     * <a>DocumentationVersions</a> collection.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline const Aws::String& GetPosition() const{ return m_position; }
 
     /**
-     * <p>The position of the returned <code>DocumentationVersion</code> in the
-     * <a>DocumentationVersions</a> collection.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
-     * <p>The position of the returned <code>DocumentationVersion</code> in the
-     * <a>DocumentationVersions</a> collection.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = value; }
+    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
-     * <p>The position of the returned <code>DocumentationVersion</code> in the
-     * <a>DocumentationVersions</a> collection.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
 
     /**
-     * <p>The position of the returned <code>DocumentationVersion</code> in the
-     * <a>DocumentationVersions</a> collection.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetDocumentationVersionsRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The position of the returned <code>DocumentationVersion</code> in the
-     * <a>DocumentationVersions</a> collection.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
-    inline GetDocumentationVersionsRequest& WithPosition(Aws::String&& value) { SetPosition(value); return *this;}
+    inline GetDocumentationVersionsRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
-     * <p>The position of the returned <code>DocumentationVersion</code> in the
-     * <a>DocumentationVersions</a> collection.</p>
+     * <p>The current pagination position in the paged result set.</p>
      */
     inline GetDocumentationVersionsRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The page size of the returned documentation versions.</p>
+     * <p>The maximum number of returned results per page.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The page size of the returned documentation versions.</p>
+     * <p>The maximum number of returned results per page.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The page size of the returned documentation versions.</p>
+     * <p>The maximum number of returned results per page.</p>
      */
     inline GetDocumentationVersionsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

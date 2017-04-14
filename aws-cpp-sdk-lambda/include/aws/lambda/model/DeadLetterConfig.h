@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you
      * specify as your Dead Letter Queue (DLQ).</p>
      */
-    inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
+    inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you
@@ -78,7 +79,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you
      * specify as your Dead Letter Queue (DLQ).</p>
      */
-    inline DeadLetterConfig& WithTargetArn(Aws::String&& value) { SetTargetArn(value); return *this;}
+    inline DeadLetterConfig& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you

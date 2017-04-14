@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/budgets/model/Notification.h>
 #include <aws/budgets/model/Subscriber.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,7 +48,7 @@ namespace Model
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
@@ -56,7 +57,7 @@ namespace Model
     inline DeleteSubscriberRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     
-    inline DeleteSubscriberRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline DeleteSubscriberRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     
     inline DeleteSubscriberRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
@@ -68,7 +69,7 @@ namespace Model
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
 
     
-    inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
+    inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
 
     
     inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
@@ -77,7 +78,7 @@ namespace Model
     inline DeleteSubscriberRequest& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
 
     
-    inline DeleteSubscriberRequest& WithBudgetName(Aws::String&& value) { SetBudgetName(value); return *this;}
+    inline DeleteSubscriberRequest& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
 
     
     inline DeleteSubscriberRequest& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
@@ -89,13 +90,13 @@ namespace Model
     inline void SetNotification(const Notification& value) { m_notificationHasBeenSet = true; m_notification = value; }
 
     
-    inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = value; }
+    inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
 
     
     inline DeleteSubscriberRequest& WithNotification(const Notification& value) { SetNotification(value); return *this;}
 
     
-    inline DeleteSubscriberRequest& WithNotification(Notification&& value) { SetNotification(value); return *this;}
+    inline DeleteSubscriberRequest& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
 
     
     inline const Subscriber& GetSubscriber() const{ return m_subscriber; }
@@ -104,13 +105,13 @@ namespace Model
     inline void SetSubscriber(const Subscriber& value) { m_subscriberHasBeenSet = true; m_subscriber = value; }
 
     
-    inline void SetSubscriber(Subscriber&& value) { m_subscriberHasBeenSet = true; m_subscriber = value; }
+    inline void SetSubscriber(Subscriber&& value) { m_subscriberHasBeenSet = true; m_subscriber = std::move(value); }
 
     
     inline DeleteSubscriberRequest& WithSubscriber(const Subscriber& value) { SetSubscriber(value); return *this;}
 
     
-    inline DeleteSubscriberRequest& WithSubscriber(Subscriber&& value) { SetSubscriber(value); return *this;}
+    inline DeleteSubscriberRequest& WithSubscriber(Subscriber&& value) { SetSubscriber(std::move(value)); return *this;}
 
   private:
     Aws::String m_accountId;

@@ -16,6 +16,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/PortState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>Information about the port states resulting from your request.</p>
      */
-    inline void SetPortStates(Aws::Vector<PortState>&& value) { m_portStates = value; }
+    inline void SetPortStates(Aws::Vector<PortState>&& value) { m_portStates = std::move(value); }
 
     /**
      * <p>Information about the port states resulting from your request.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Information about the port states resulting from your request.</p>
      */
-    inline GetInstancePortStatesResult& WithPortStates(Aws::Vector<PortState>&& value) { SetPortStates(value); return *this;}
+    inline GetInstancePortStatesResult& WithPortStates(Aws::Vector<PortState>&& value) { SetPortStates(std::move(value)); return *this;}
 
     /**
      * <p>Information about the port states resulting from your request.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>Information about the port states resulting from your request.</p>
      */
-    inline GetInstancePortStatesResult& AddPortStates(PortState&& value) { m_portStates.push_back(value); return *this; }
+    inline GetInstancePortStatesResult& AddPortStates(PortState&& value) { m_portStates.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<PortState> m_portStates;

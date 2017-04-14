@@ -16,6 +16,7 @@
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/kinesis/KinesisRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of the stream for the shard split.</p>
      */
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
 
     /**
      * <p>The name of the stream for the shard split.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the stream for the shard split.</p>
      */
-    inline SplitShardRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
+    inline SplitShardRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the stream for the shard split.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The shard ID of the shard to split.</p>
      */
-    inline void SetShardToSplit(Aws::String&& value) { m_shardToSplitHasBeenSet = true; m_shardToSplit = value; }
+    inline void SetShardToSplit(Aws::String&& value) { m_shardToSplitHasBeenSet = true; m_shardToSplit = std::move(value); }
 
     /**
      * <p>The shard ID of the shard to split.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The shard ID of the shard to split.</p>
      */
-    inline SplitShardRequest& WithShardToSplit(Aws::String&& value) { SetShardToSplit(value); return *this;}
+    inline SplitShardRequest& WithShardToSplit(Aws::String&& value) { SetShardToSplit(std::move(value)); return *this;}
 
     /**
      * <p>The shard ID of the shard to split.</p>
@@ -140,7 +141,7 @@ namespace Model
      * hash key range are distributed to one of the child shards. All the lower hash
      * key values in the range are distributed to the other child shard.</p>
      */
-    inline void SetNewStartingHashKey(Aws::String&& value) { m_newStartingHashKeyHasBeenSet = true; m_newStartingHashKey = value; }
+    inline void SetNewStartingHashKey(Aws::String&& value) { m_newStartingHashKeyHasBeenSet = true; m_newStartingHashKey = std::move(value); }
 
     /**
      * <p>A hash key value for the starting hash key of one of the child shards created
@@ -173,7 +174,7 @@ namespace Model
      * hash key range are distributed to one of the child shards. All the lower hash
      * key values in the range are distributed to the other child shard.</p>
      */
-    inline SplitShardRequest& WithNewStartingHashKey(Aws::String&& value) { SetNewStartingHashKey(value); return *this;}
+    inline SplitShardRequest& WithNewStartingHashKey(Aws::String&& value) { SetNewStartingHashKey(std::move(value)); return *this;}
 
     /**
      * <p>A hash key value for the starting hash key of one of the child shards created

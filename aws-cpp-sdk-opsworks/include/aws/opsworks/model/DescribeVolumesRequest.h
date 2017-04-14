@@ -17,6 +17,7 @@
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code>
      * returns descriptions of the volumes associated with the specified instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code>
@@ -70,7 +71,7 @@ namespace Model
      * <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code>
      * returns descriptions of the volumes associated with the specified instance.</p>
      */
-    inline DescribeVolumesRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline DescribeVolumesRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code>
@@ -94,7 +95,7 @@ namespace Model
      * <p>A stack ID. The action describes the stack's registered Amazon EBS
      * volumes.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
      * <p>A stack ID. The action describes the stack's registered Amazon EBS
@@ -112,7 +113,7 @@ namespace Model
      * <p>A stack ID. The action describes the stack's registered Amazon EBS
      * volumes.</p>
      */
-    inline DescribeVolumesRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline DescribeVolumesRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>A stack ID. The action describes the stack's registered Amazon EBS
@@ -139,7 +140,7 @@ namespace Model
      * returns descriptions of the volumes associated with the specified RAID
      * array.</p>
      */
-    inline void SetRaidArrayId(Aws::String&& value) { m_raidArrayIdHasBeenSet = true; m_raidArrayId = value; }
+    inline void SetRaidArrayId(Aws::String&& value) { m_raidArrayIdHasBeenSet = true; m_raidArrayId = std::move(value); }
 
     /**
      * <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code>
@@ -160,7 +161,7 @@ namespace Model
      * returns descriptions of the volumes associated with the specified RAID
      * array.</p>
      */
-    inline DescribeVolumesRequest& WithRaidArrayId(Aws::String&& value) { SetRaidArrayId(value); return *this;}
+    inline DescribeVolumesRequest& WithRaidArrayId(Aws::String&& value) { SetRaidArrayId(std::move(value)); return *this;}
 
     /**
      * <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code>
@@ -188,7 +189,7 @@ namespace Model
      * <code>DescribeVolumes</code> returns descriptions of the specified volumes.
      * Otherwise, it returns a description of every volume.</p>
      */
-    inline void SetVolumeIds(Aws::Vector<Aws::String>&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = value; }
+    inline void SetVolumeIds(Aws::Vector<Aws::String>&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = std::move(value); }
 
     /**
      * <p>Am array of volume IDs. If you use this parameter,
@@ -202,7 +203,7 @@ namespace Model
      * <code>DescribeVolumes</code> returns descriptions of the specified volumes.
      * Otherwise, it returns a description of every volume.</p>
      */
-    inline DescribeVolumesRequest& WithVolumeIds(Aws::Vector<Aws::String>&& value) { SetVolumeIds(value); return *this;}
+    inline DescribeVolumesRequest& WithVolumeIds(Aws::Vector<Aws::String>&& value) { SetVolumeIds(std::move(value)); return *this;}
 
     /**
      * <p>Am array of volume IDs. If you use this parameter,
@@ -216,7 +217,7 @@ namespace Model
      * <code>DescribeVolumes</code> returns descriptions of the specified volumes.
      * Otherwise, it returns a description of every volume.</p>
      */
-    inline DescribeVolumesRequest& AddVolumeIds(Aws::String&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
+    inline DescribeVolumesRequest& AddVolumeIds(Aws::String&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Am array of volume IDs. If you use this parameter,

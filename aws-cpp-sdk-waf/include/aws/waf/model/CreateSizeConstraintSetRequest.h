@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/WAFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>A friendly name or description of the <a>SizeConstraintSet</a>. You can't
      * change <code>Name</code> after you create a <code>SizeConstraintSet</code>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>A friendly name or description of the <a>SizeConstraintSet</a>. You can't
@@ -69,7 +70,7 @@ namespace Model
      * <p>A friendly name or description of the <a>SizeConstraintSet</a>. You can't
      * change <code>Name</code> after you create a <code>SizeConstraintSet</code>.</p>
      */
-    inline CreateSizeConstraintSetRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateSizeConstraintSetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A friendly name or description of the <a>SizeConstraintSet</a>. You can't
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
+    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline CreateSizeConstraintSetRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(value); return *this;}
+    inline CreateSizeConstraintSetRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>

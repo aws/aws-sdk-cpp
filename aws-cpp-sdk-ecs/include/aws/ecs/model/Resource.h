@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>The name of the resource, such as <code>cpu</code>, <code>memory</code>,
      * <code>ports</code>, or a user-defined resource.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the resource, such as <code>cpu</code>, <code>memory</code>,
@@ -79,7 +80,7 @@ namespace Model
      * <p>The name of the resource, such as <code>cpu</code>, <code>memory</code>,
      * <code>ports</code>, or a user-defined resource.</p>
      */
-    inline Resource& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Resource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the resource, such as <code>cpu</code>, <code>memory</code>,
@@ -103,7 +104,7 @@ namespace Model
      * <p>The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>,
      * <code>LONG</code>, or <code>STRINGSET</code>.</p>
      */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>,
@@ -121,7 +122,7 @@ namespace Model
      * <p>The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>,
      * <code>LONG</code>, or <code>STRINGSET</code>.</p>
      */
-    inline Resource& WithType(Aws::String&& value) { SetType(value); return *this;}
+    inline Resource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>,
@@ -199,7 +200,7 @@ namespace Model
      * <p>When the <code>stringSetValue</code> type is set, the value of the resource
      * must be a string type.</p>
      */
-    inline void SetStringSetValue(Aws::Vector<Aws::String>&& value) { m_stringSetValueHasBeenSet = true; m_stringSetValue = value; }
+    inline void SetStringSetValue(Aws::Vector<Aws::String>&& value) { m_stringSetValueHasBeenSet = true; m_stringSetValue = std::move(value); }
 
     /**
      * <p>When the <code>stringSetValue</code> type is set, the value of the resource
@@ -211,7 +212,7 @@ namespace Model
      * <p>When the <code>stringSetValue</code> type is set, the value of the resource
      * must be a string type.</p>
      */
-    inline Resource& WithStringSetValue(Aws::Vector<Aws::String>&& value) { SetStringSetValue(value); return *this;}
+    inline Resource& WithStringSetValue(Aws::Vector<Aws::String>&& value) { SetStringSetValue(std::move(value)); return *this;}
 
     /**
      * <p>When the <code>stringSetValue</code> type is set, the value of the resource
@@ -223,7 +224,7 @@ namespace Model
      * <p>When the <code>stringSetValue</code> type is set, the value of the resource
      * must be a string type.</p>
      */
-    inline Resource& AddStringSetValue(Aws::String&& value) { m_stringSetValueHasBeenSet = true; m_stringSetValue.push_back(value); return *this; }
+    inline Resource& AddStringSetValue(Aws::String&& value) { m_stringSetValueHasBeenSet = true; m_stringSetValue.push_back(std::move(value)); return *this; }
 
     /**
      * <p>When the <code>stringSetValue</code> type is set, the value of the resource

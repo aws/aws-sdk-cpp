@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/organizations/model/PolicyTypeSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
      * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) for the root.</p> <p>The <a
@@ -89,7 +90,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
      * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
      */
-    inline Root& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline Root& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) for the root.</p> <p>The <a
@@ -123,7 +124,7 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the root.</p> <p>For more information about
@@ -150,7 +151,7 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
-    inline Root& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Root& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the root.</p> <p>For more information about
@@ -183,7 +184,7 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The friendly name of the root.</p> <p>The <a
@@ -207,7 +208,7 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline Root& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Root& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The friendly name of the root.</p> <p>The <a
@@ -233,7 +234,7 @@ namespace Model
      * <p>The types of policies that are currently enabled for the root and therefore
      * can be attached to the root or to its OUs or accounts.</p>
      */
-    inline void SetPolicyTypes(Aws::Vector<PolicyTypeSummary>&& value) { m_policyTypesHasBeenSet = true; m_policyTypes = value; }
+    inline void SetPolicyTypes(Aws::Vector<PolicyTypeSummary>&& value) { m_policyTypesHasBeenSet = true; m_policyTypes = std::move(value); }
 
     /**
      * <p>The types of policies that are currently enabled for the root and therefore
@@ -245,7 +246,7 @@ namespace Model
      * <p>The types of policies that are currently enabled for the root and therefore
      * can be attached to the root or to its OUs or accounts.</p>
      */
-    inline Root& WithPolicyTypes(Aws::Vector<PolicyTypeSummary>&& value) { SetPolicyTypes(value); return *this;}
+    inline Root& WithPolicyTypes(Aws::Vector<PolicyTypeSummary>&& value) { SetPolicyTypes(std::move(value)); return *this;}
 
     /**
      * <p>The types of policies that are currently enabled for the root and therefore
@@ -257,7 +258,7 @@ namespace Model
      * <p>The types of policies that are currently enabled for the root and therefore
      * can be attached to the root or to its OUs or accounts.</p>
      */
-    inline Root& AddPolicyTypes(PolicyTypeSummary&& value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(value); return *this; }
+    inline Root& AddPolicyTypes(PolicyTypeSummary&& value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_id;

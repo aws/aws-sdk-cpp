@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/elasticbeanstalk/model/StatusCodes.h>
 #include <aws/elasticbeanstalk/model/Latency.h>
+#include <utility>
 
 namespace Aws
 {
@@ -103,7 +104,7 @@ namespace Model
      * <p>Represents the percentage of requests over the last 10 seconds that resulted
      * in each type of status code response.</p>
      */
-    inline void SetStatusCodes(StatusCodes&& value) { m_statusCodesHasBeenSet = true; m_statusCodes = value; }
+    inline void SetStatusCodes(StatusCodes&& value) { m_statusCodesHasBeenSet = true; m_statusCodes = std::move(value); }
 
     /**
      * <p>Represents the percentage of requests over the last 10 seconds that resulted
@@ -115,7 +116,7 @@ namespace Model
      * <p>Represents the percentage of requests over the last 10 seconds that resulted
      * in each type of status code response.</p>
      */
-    inline ApplicationMetrics& WithStatusCodes(StatusCodes&& value) { SetStatusCodes(value); return *this;}
+    inline ApplicationMetrics& WithStatusCodes(StatusCodes&& value) { SetStatusCodes(std::move(value)); return *this;}
 
     /**
      * <p>Represents the average latency for the slowest X percent of requests over the
@@ -133,7 +134,7 @@ namespace Model
      * <p>Represents the average latency for the slowest X percent of requests over the
      * last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
      */
-    inline void SetLatency(Latency&& value) { m_latencyHasBeenSet = true; m_latency = value; }
+    inline void SetLatency(Latency&& value) { m_latencyHasBeenSet = true; m_latency = std::move(value); }
 
     /**
      * <p>Represents the average latency for the slowest X percent of requests over the
@@ -145,7 +146,7 @@ namespace Model
      * <p>Represents the average latency for the slowest X percent of requests over the
      * last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
      */
-    inline ApplicationMetrics& WithLatency(Latency&& value) { SetLatency(value); return *this;}
+    inline ApplicationMetrics& WithLatency(Latency&& value) { SetLatency(std::move(value)); return *this;}
 
   private:
     int m_duration;

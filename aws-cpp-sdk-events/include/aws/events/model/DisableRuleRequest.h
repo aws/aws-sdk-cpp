@@ -16,6 +16,7 @@
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/events/CloudWatchEventsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
      * name of the rule.</p> </xhtml>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
@@ -69,7 +70,7 @@ namespace Model
      * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
      * name of the rule.</p> </xhtml>
      */
-    inline DisableRuleRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline DisableRuleRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The

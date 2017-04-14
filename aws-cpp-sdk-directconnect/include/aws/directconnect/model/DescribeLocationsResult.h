@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/model/Location.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * <p>A list of colocation hubs where network providers have equipment. Most
      * regions have multiple locations available.</p>
      */
-    inline void SetLocations(Aws::Vector<Location>&& value) { m_locations = value; }
+    inline void SetLocations(Aws::Vector<Location>&& value) { m_locations = std::move(value); }
 
     /**
      * <p>A list of colocation hubs where network providers have equipment. Most
@@ -77,7 +78,7 @@ namespace Model
      * <p>A list of colocation hubs where network providers have equipment. Most
      * regions have multiple locations available.</p>
      */
-    inline DescribeLocationsResult& WithLocations(Aws::Vector<Location>&& value) { SetLocations(value); return *this;}
+    inline DescribeLocationsResult& WithLocations(Aws::Vector<Location>&& value) { SetLocations(std::move(value)); return *this;}
 
     /**
      * <p>A list of colocation hubs where network providers have equipment. Most
@@ -89,7 +90,7 @@ namespace Model
      * <p>A list of colocation hubs where network providers have equipment. Most
      * regions have multiple locations available.</p>
      */
-    inline DescribeLocationsResult& AddLocations(Location&& value) { m_locations.push_back(value); return *this; }
+    inline DescribeLocationsResult& AddLocations(Location&& value) { m_locations.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Location> m_locations;

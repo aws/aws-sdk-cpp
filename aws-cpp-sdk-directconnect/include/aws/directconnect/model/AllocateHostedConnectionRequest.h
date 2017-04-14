@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * provisioned.</p> <p>Example: dxcon-456abc78 or dxlag-abc123</p> <p>Default:
      * None</p>
      */
-    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
+    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
     /**
      * <p>The ID of the interconnect or LAG on which the connection will be
@@ -79,7 +80,7 @@ namespace Model
      * provisioned.</p> <p>Example: dxcon-456abc78 or dxlag-abc123</p> <p>Default:
      * None</p>
      */
-    inline AllocateHostedConnectionRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(value); return *this;}
+    inline AllocateHostedConnectionRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the interconnect or LAG on which the connection will be
@@ -104,7 +105,7 @@ namespace Model
      * <p>The numeric account ID of the customer for whom the connection will be
      * provisioned.</p> <p>Example: 123443215678</p> <p>Default: None</p>
      */
-    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
+    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
      * <p>The numeric account ID of the customer for whom the connection will be
@@ -122,7 +123,7 @@ namespace Model
      * <p>The numeric account ID of the customer for whom the connection will be
      * provisioned.</p> <p>Example: 123443215678</p> <p>Default: None</p>
      */
-    inline AllocateHostedConnectionRequest& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(value); return *this;}
+    inline AllocateHostedConnectionRequest& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
      * <p>The numeric account ID of the customer for whom the connection will be
@@ -149,7 +150,7 @@ namespace Model
      * <p>Default: None</p> <p>Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or
      * 500Mbps</p>
      */
-    inline void SetBandwidth(Aws::String&& value) { m_bandwidthHasBeenSet = true; m_bandwidth = value; }
+    inline void SetBandwidth(Aws::String&& value) { m_bandwidthHasBeenSet = true; m_bandwidth = std::move(value); }
 
     /**
      * <p>The bandwidth of the connection.</p> <p>Example: <code>500Mbps</code> </p>
@@ -170,7 +171,7 @@ namespace Model
      * <p>Default: None</p> <p>Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or
      * 500Mbps</p>
      */
-    inline AllocateHostedConnectionRequest& WithBandwidth(Aws::String&& value) { SetBandwidth(value); return *this;}
+    inline AllocateHostedConnectionRequest& WithBandwidth(Aws::String&& value) { SetBandwidth(std::move(value)); return *this;}
 
     /**
      * <p>The bandwidth of the connection.</p> <p>Example: <code>500Mbps</code> </p>
@@ -195,7 +196,7 @@ namespace Model
      * <p>The name of the provisioned connection.</p> <p>Example: "<code>500M
      * Connection to AWS</code>"</p> <p>Default: None</p>
      */
-    inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
+    inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::move(value); }
 
     /**
      * <p>The name of the provisioned connection.</p> <p>Example: "<code>500M
@@ -213,7 +214,7 @@ namespace Model
      * <p>The name of the provisioned connection.</p> <p>Example: "<code>500M
      * Connection to AWS</code>"</p> <p>Default: None</p>
      */
-    inline AllocateHostedConnectionRequest& WithConnectionName(Aws::String&& value) { SetConnectionName(value); return *this;}
+    inline AllocateHostedConnectionRequest& WithConnectionName(Aws::String&& value) { SetConnectionName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the provisioned connection.</p> <p>Example: "<code>500M

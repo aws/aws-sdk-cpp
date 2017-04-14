@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/model/CreateAccountStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>A structure that contains the current status of an account creation
      * request.</p>
      */
-    inline void SetCreateAccountStatus(CreateAccountStatus&& value) { m_createAccountStatus = value; }
+    inline void SetCreateAccountStatus(CreateAccountStatus&& value) { m_createAccountStatus = std::move(value); }
 
     /**
      * <p>A structure that contains the current status of an account creation
@@ -67,7 +68,7 @@ namespace Model
      * <p>A structure that contains the current status of an account creation
      * request.</p>
      */
-    inline DescribeCreateAccountStatusResult& WithCreateAccountStatus(CreateAccountStatus&& value) { SetCreateAccountStatus(value); return *this;}
+    inline DescribeCreateAccountStatusResult& WithCreateAccountStatus(CreateAccountStatus&& value) { SetCreateAccountStatus(std::move(value)); return *this;}
 
   private:
     CreateAccountStatus m_createAccountStatus;

@@ -16,6 +16,7 @@
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The list of high-availability partition groups.</p>
      */
-    inline void SetHapgList(Aws::Vector<Aws::String>&& value) { m_hapgList = value; }
+    inline void SetHapgList(Aws::Vector<Aws::String>&& value) { m_hapgList = std::move(value); }
 
     /**
      * <p>The list of high-availability partition groups.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The list of high-availability partition groups.</p>
      */
-    inline ListHapgsResult& WithHapgList(Aws::Vector<Aws::String>&& value) { SetHapgList(value); return *this;}
+    inline ListHapgsResult& WithHapgList(Aws::Vector<Aws::String>&& value) { SetHapgList(std::move(value)); return *this;}
 
     /**
      * <p>The list of high-availability partition groups.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The list of high-availability partition groups.</p>
      */
-    inline ListHapgsResult& AddHapgList(Aws::String&& value) { m_hapgList.push_back(value); return *this; }
+    inline ListHapgsResult& AddHapgList(Aws::String&& value) { m_hapgList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of high-availability partition groups.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>If not null, more results are available. Pass this value to <a>ListHapgs</a>
      * to retrieve the next set of items.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If not null, more results are available. Pass this value to <a>ListHapgs</a>
@@ -114,7 +115,7 @@ namespace Model
      * <p>If not null, more results are available. Pass this value to <a>ListHapgs</a>
      * to retrieve the next set of items.</p>
      */
-    inline ListHapgsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListHapgsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If not null, more results are available. Pass this value to <a>ListHapgs</a>

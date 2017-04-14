@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/ItemSelection.h>
 #include <aws/cloudfront/model/CookieNames.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * none or whitelist. If you choose All, CloudFront forwards all cookies regardless
      * of how many your application uses.
      */
-    inline void SetForward(ItemSelection&& value) { m_forwardHasBeenSet = true; m_forward = value; }
+    inline void SetForward(ItemSelection&& value) { m_forwardHasBeenSet = true; m_forward = std::move(value); }
 
     /**
      * Use this element to specify whether you want CloudFront to forward cookies to
@@ -84,7 +85,7 @@ namespace Model
      * none or whitelist. If you choose All, CloudFront forwards all cookies regardless
      * of how many your application uses.
      */
-    inline CookiePreference& WithForward(ItemSelection&& value) { SetForward(value); return *this;}
+    inline CookiePreference& WithForward(ItemSelection&& value) { SetForward(std::move(value)); return *this;}
 
     /**
      * A complex type that specifies the whitelisted cookies, if any, that you want
@@ -105,7 +106,7 @@ namespace Model
      * CloudFront to forward to your origin that is associated with this cache
      * behavior.
      */
-    inline void SetWhitelistedNames(CookieNames&& value) { m_whitelistedNamesHasBeenSet = true; m_whitelistedNames = value; }
+    inline void SetWhitelistedNames(CookieNames&& value) { m_whitelistedNamesHasBeenSet = true; m_whitelistedNames = std::move(value); }
 
     /**
      * A complex type that specifies the whitelisted cookies, if any, that you want
@@ -119,7 +120,7 @@ namespace Model
      * CloudFront to forward to your origin that is associated with this cache
      * behavior.
      */
-    inline CookiePreference& WithWhitelistedNames(CookieNames&& value) { SetWhitelistedNames(value); return *this;}
+    inline CookiePreference& WithWhitelistedNames(CookieNames&& value) { SetWhitelistedNames(std::move(value)); return *this;}
 
   private:
     ItemSelection m_forward;

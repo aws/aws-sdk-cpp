@@ -17,6 +17,7 @@
 #include <aws/glacier/GlacierRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glacier/model/DataRetrievalPolicy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * the credentials used to sign the request. If you specify your account ID, do not
      * include any hyphens ('-') in the ID.</p>
      */
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
@@ -95,7 +96,7 @@ namespace Model
      * the credentials used to sign the request. If you specify your account ID, do not
      * include any hyphens ('-') in the ID.</p>
      */
-    inline SetDataRetrievalPolicyRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline SetDataRetrievalPolicyRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>The data retrieval policy in JSON format.</p>
      */
-    inline void SetPolicy(DataRetrievalPolicy&& value) { m_policyHasBeenSet = true; m_policy = value; }
+    inline void SetPolicy(DataRetrievalPolicy&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
      * <p>The data retrieval policy in JSON format.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The data retrieval policy in JSON format.</p>
      */
-    inline SetDataRetrievalPolicyRequest& WithPolicy(DataRetrievalPolicy&& value) { SetPolicy(value); return *this;}
+    inline SetDataRetrievalPolicyRequest& WithPolicy(DataRetrievalPolicy&& value) { SetPolicy(std::move(value)); return *this;}
 
   private:
     Aws::String m_accountId;

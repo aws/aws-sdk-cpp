@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>An unique identifier for the job flow.</p>
      */
-    inline void SetJobFlowId(Aws::String&& value) { m_jobFlowId = value; }
+    inline void SetJobFlowId(Aws::String&& value) { m_jobFlowId = std::move(value); }
 
     /**
      * <p>An unique identifier for the job flow.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>An unique identifier for the job flow.</p>
      */
-    inline RunJobFlowResult& WithJobFlowId(Aws::String&& value) { SetJobFlowId(value); return *this;}
+    inline RunJobFlowResult& WithJobFlowId(Aws::String&& value) { SetJobFlowId(std::move(value)); return *this;}
 
     /**
      * <p>An unique identifier for the job flow.</p>

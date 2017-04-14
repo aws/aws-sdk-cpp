@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The identifier of the directory that was created.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryId = std::move(value); }
 
     /**
      * <p>The identifier of the directory that was created.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The identifier of the directory that was created.</p>
      */
-    inline CreateMicrosoftADResult& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline CreateMicrosoftADResult& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the directory that was created.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/AutomationExecution.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Detailed information about the current state of an automation execution.</p>
      */
-    inline void SetAutomationExecution(AutomationExecution&& value) { m_automationExecution = value; }
+    inline void SetAutomationExecution(AutomationExecution&& value) { m_automationExecution = std::move(value); }
 
     /**
      * <p>Detailed information about the current state of an automation execution.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Detailed information about the current state of an automation execution.</p>
      */
-    inline GetAutomationExecutionResult& WithAutomationExecution(AutomationExecution&& value) { SetAutomationExecution(value); return *this;}
+    inline GetAutomationExecutionResult& WithAutomationExecution(AutomationExecution&& value) { SetAutomationExecution(std::move(value)); return *this;}
 
   private:
     AutomationExecution m_automationExecution;

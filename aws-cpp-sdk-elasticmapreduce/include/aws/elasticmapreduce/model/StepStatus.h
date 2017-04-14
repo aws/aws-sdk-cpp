@@ -18,6 +18,7 @@
 #include <aws/elasticmapreduce/model/StepStateChangeReason.h>
 #include <aws/elasticmapreduce/model/FailureDetails.h>
 #include <aws/elasticmapreduce/model/StepTimeline.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The execution state of the cluster step.</p>
      */
-    inline void SetState(StepState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(StepState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The execution state of the cluster step.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The execution state of the cluster step.</p>
      */
-    inline StepStatus& WithState(StepState&& value) { SetState(value); return *this;}
+    inline StepStatus& WithState(StepState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The reason for the step execution status change.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The reason for the step execution status change.</p>
      */
-    inline void SetStateChangeReason(StepStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
+    inline void SetStateChangeReason(StepStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = std::move(value); }
 
     /**
      * <p>The reason for the step execution status change.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The reason for the step execution status change.</p>
      */
-    inline StepStatus& WithStateChangeReason(StepStateChangeReason&& value) { SetStateChangeReason(value); return *this;}
+    inline StepStatus& WithStateChangeReason(StepStateChangeReason&& value) { SetStateChangeReason(std::move(value)); return *this;}
 
     /**
      * <p>The details for the step failure including reason, message, and log file path
@@ -113,7 +114,7 @@ namespace Model
      * <p>The details for the step failure including reason, message, and log file path
      * where the root cause was identified.</p>
      */
-    inline void SetFailureDetails(FailureDetails&& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = value; }
+    inline void SetFailureDetails(FailureDetails&& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = std::move(value); }
 
     /**
      * <p>The details for the step failure including reason, message, and log file path
@@ -125,7 +126,7 @@ namespace Model
      * <p>The details for the step failure including reason, message, and log file path
      * where the root cause was identified.</p>
      */
-    inline StepStatus& WithFailureDetails(FailureDetails&& value) { SetFailureDetails(value); return *this;}
+    inline StepStatus& WithFailureDetails(FailureDetails&& value) { SetFailureDetails(std::move(value)); return *this;}
 
     /**
      * <p>The timeline of the cluster step status over time.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The timeline of the cluster step status over time.</p>
      */
-    inline void SetTimeline(StepTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = value; }
+    inline void SetTimeline(StepTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = std::move(value); }
 
     /**
      * <p>The timeline of the cluster step status over time.</p>
@@ -150,7 +151,7 @@ namespace Model
     /**
      * <p>The timeline of the cluster step status over time.</p>
      */
-    inline StepStatus& WithTimeline(StepTimeline&& value) { SetTimeline(value); return *this;}
+    inline StepStatus& WithTimeline(StepTimeline&& value) { SetTimeline(std::move(value)); return *this;}
 
   private:
     StepState m_state;

@@ -18,6 +18,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/model/StatusType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the service-specific credential were created.</p>
      */
-    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = value; }
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -77,7 +78,7 @@ namespace Model
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the service-specific credential were created.</p>
      */
-    inline ServiceSpecificCredential& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(value); return *this;}
+    inline ServiceSpecificCredential& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
     /**
      * <p>The name of the service associated with the service-specific credential.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The name of the service associated with the service-specific credential.</p>
      */
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
+    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
      * <p>The name of the service associated with the service-specific credential.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The name of the service associated with the service-specific credential.</p>
      */
-    inline ServiceSpecificCredential& WithServiceName(Aws::String&& value) { SetServiceName(value); return *this;}
+    inline ServiceSpecificCredential& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the service associated with the service-specific credential.</p>
@@ -136,7 +137,7 @@ namespace Model
      * AWS account, as in <code>jane-at-123456789012</code>, for example. This value
      * cannot be configured by the user.</p>
      */
-    inline void SetServiceUserName(Aws::String&& value) { m_serviceUserNameHasBeenSet = true; m_serviceUserName = value; }
+    inline void SetServiceUserName(Aws::String&& value) { m_serviceUserNameHasBeenSet = true; m_serviceUserName = std::move(value); }
 
     /**
      * <p>The generated user name for the service-specific credential. This value is
@@ -160,7 +161,7 @@ namespace Model
      * AWS account, as in <code>jane-at-123456789012</code>, for example. This value
      * cannot be configured by the user.</p>
      */
-    inline ServiceSpecificCredential& WithServiceUserName(Aws::String&& value) { SetServiceUserName(value); return *this;}
+    inline ServiceSpecificCredential& WithServiceUserName(Aws::String&& value) { SetServiceUserName(std::move(value)); return *this;}
 
     /**
      * <p>The generated user name for the service-specific credential. This value is
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>The generated password for the service-specific credential.</p>
      */
-    inline void SetServicePassword(Aws::String&& value) { m_servicePasswordHasBeenSet = true; m_servicePassword = value; }
+    inline void SetServicePassword(Aws::String&& value) { m_servicePasswordHasBeenSet = true; m_servicePassword = std::move(value); }
 
     /**
      * <p>The generated password for the service-specific credential.</p>
@@ -198,7 +199,7 @@ namespace Model
     /**
      * <p>The generated password for the service-specific credential.</p>
      */
-    inline ServiceSpecificCredential& WithServicePassword(Aws::String&& value) { SetServicePassword(value); return *this;}
+    inline ServiceSpecificCredential& WithServicePassword(Aws::String&& value) { SetServicePassword(std::move(value)); return *this;}
 
     /**
      * <p>The generated password for the service-specific credential.</p>
@@ -218,7 +219,7 @@ namespace Model
     /**
      * <p>The unique identifier for the service-specific credential.</p>
      */
-    inline void SetServiceSpecificCredentialId(Aws::String&& value) { m_serviceSpecificCredentialIdHasBeenSet = true; m_serviceSpecificCredentialId = value; }
+    inline void SetServiceSpecificCredentialId(Aws::String&& value) { m_serviceSpecificCredentialIdHasBeenSet = true; m_serviceSpecificCredentialId = std::move(value); }
 
     /**
      * <p>The unique identifier for the service-specific credential.</p>
@@ -233,7 +234,7 @@ namespace Model
     /**
      * <p>The unique identifier for the service-specific credential.</p>
      */
-    inline ServiceSpecificCredential& WithServiceSpecificCredentialId(Aws::String&& value) { SetServiceSpecificCredentialId(value); return *this;}
+    inline ServiceSpecificCredential& WithServiceSpecificCredentialId(Aws::String&& value) { SetServiceSpecificCredentialId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the service-specific credential.</p>
@@ -253,7 +254,7 @@ namespace Model
     /**
      * <p>The name of the IAM user associated with the service-specific credential.</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the IAM user associated with the service-specific credential.</p>
@@ -268,7 +269,7 @@ namespace Model
     /**
      * <p>The name of the IAM user associated with the service-specific credential.</p>
      */
-    inline ServiceSpecificCredential& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline ServiceSpecificCredential& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IAM user associated with the service-specific credential.</p>
@@ -291,7 +292,7 @@ namespace Model
      * <p>The status of the service-specific credential. <code>Active</code> means the
      * key is valid for API calls, while <code>Inactive</code> means it is not.</p>
      */
-    inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the service-specific credential. <code>Active</code> means the
@@ -303,7 +304,7 @@ namespace Model
      * <p>The status of the service-specific credential. <code>Active</code> means the
      * key is valid for API calls, while <code>Inactive</code> means it is not.</p>
      */
-    inline ServiceSpecificCredential& WithStatus(StatusType&& value) { SetStatus(value); return *this;}
+    inline ServiceSpecificCredential& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     Aws::Utils::DateTime m_createDate;

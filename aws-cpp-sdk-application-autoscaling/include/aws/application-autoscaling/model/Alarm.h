@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of the alarm.</p>
      */
-    inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
+    inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::move(value); }
 
     /**
      * <p>The name of the alarm.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The name of the alarm.</p>
      */
-    inline Alarm& WithAlarmName(Aws::String&& value) { SetAlarmName(value); return *this;}
+    inline Alarm& WithAlarmName(Aws::String&& value) { SetAlarmName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the alarm.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the alarm.</p>
      */
-    inline void SetAlarmARN(Aws::String&& value) { m_alarmARNHasBeenSet = true; m_alarmARN = value; }
+    inline void SetAlarmARN(Aws::String&& value) { m_alarmARNHasBeenSet = true; m_alarmARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the alarm.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the alarm.</p>
      */
-    inline Alarm& WithAlarmARN(Aws::String&& value) { SetAlarmARN(value); return *this;}
+    inline Alarm& WithAlarmARN(Aws::String&& value) { SetAlarmARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the alarm.</p>

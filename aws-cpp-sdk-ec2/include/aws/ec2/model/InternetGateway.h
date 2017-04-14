@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/InternetGatewayAttachment.h>
 #include <aws/ec2/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The ID of the Internet gateway.</p>
      */
-    inline void SetInternetGatewayId(Aws::String&& value) { m_internetGatewayIdHasBeenSet = true; m_internetGatewayId = value; }
+    inline void SetInternetGatewayId(Aws::String&& value) { m_internetGatewayIdHasBeenSet = true; m_internetGatewayId = std::move(value); }
 
     /**
      * <p>The ID of the Internet gateway.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the Internet gateway.</p>
      */
-    inline InternetGateway& WithInternetGatewayId(Aws::String&& value) { SetInternetGatewayId(value); return *this;}
+    inline InternetGateway& WithInternetGatewayId(Aws::String&& value) { SetInternetGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Internet gateway.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>Any VPCs attached to the Internet gateway.</p>
      */
-    inline void SetAttachments(Aws::Vector<InternetGatewayAttachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
+    inline void SetAttachments(Aws::Vector<InternetGatewayAttachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
 
     /**
      * <p>Any VPCs attached to the Internet gateway.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>Any VPCs attached to the Internet gateway.</p>
      */
-    inline InternetGateway& WithAttachments(Aws::Vector<InternetGatewayAttachment>&& value) { SetAttachments(value); return *this;}
+    inline InternetGateway& WithAttachments(Aws::Vector<InternetGatewayAttachment>&& value) { SetAttachments(std::move(value)); return *this;}
 
     /**
      * <p>Any VPCs attached to the Internet gateway.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>Any VPCs attached to the Internet gateway.</p>
      */
-    inline InternetGateway& AddAttachments(InternetGatewayAttachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
+    inline InternetGateway& AddAttachments(InternetGatewayAttachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Any tags assigned to the Internet gateway.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>Any tags assigned to the Internet gateway.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>Any tags assigned to the Internet gateway.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>Any tags assigned to the Internet gateway.</p>
      */
-    inline InternetGateway& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline InternetGateway& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Any tags assigned to the Internet gateway.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>Any tags assigned to the Internet gateway.</p>
      */
-    inline InternetGateway& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline InternetGateway& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_internetGatewayId;

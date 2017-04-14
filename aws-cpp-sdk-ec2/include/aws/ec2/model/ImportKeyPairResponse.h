@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The key pair name you provided.</p>
      */
-    inline void SetKeyName(Aws::String&& value) { m_keyName = value; }
+    inline void SetKeyName(Aws::String&& value) { m_keyName = std::move(value); }
 
     /**
      * <p>The key pair name you provided.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The key pair name you provided.</p>
      */
-    inline ImportKeyPairResponse& WithKeyName(Aws::String&& value) { SetKeyName(value); return *this;}
+    inline ImportKeyPairResponse& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
 
     /**
      * <p>The key pair name you provided.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
      */
-    inline void SetKeyFingerprint(Aws::String&& value) { m_keyFingerprint = value; }
+    inline void SetKeyFingerprint(Aws::String&& value) { m_keyFingerprint = std::move(value); }
 
     /**
      * <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
      */
-    inline ImportKeyPairResponse& WithKeyFingerprint(Aws::String&& value) { SetKeyFingerprint(value); return *this;}
+    inline ImportKeyPairResponse& WithKeyFingerprint(Aws::String&& value) { SetKeyFingerprint(std::move(value)); return *this;}
 
     /**
      * <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
@@ -122,13 +123,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ImportKeyPairResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ImportKeyPairResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ImportKeyPairResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_keyName;

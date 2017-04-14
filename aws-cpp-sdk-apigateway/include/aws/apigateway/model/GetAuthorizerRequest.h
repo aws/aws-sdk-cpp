@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Authorizer</a> resource.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Authorizer</a> resource.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Authorizer</a> resource.</p>
      */
-    inline GetAuthorizerRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline GetAuthorizerRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Authorizer</a> resource.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The identifier of the <a>Authorizer</a> resource.</p>
      */
-    inline void SetAuthorizerId(Aws::String&& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = value; }
+    inline void SetAuthorizerId(Aws::String&& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = std::move(value); }
 
     /**
      * <p>The identifier of the <a>Authorizer</a> resource.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The identifier of the <a>Authorizer</a> resource.</p>
      */
-    inline GetAuthorizerRequest& WithAuthorizerId(Aws::String&& value) { SetAuthorizerId(value); return *this;}
+    inline GetAuthorizerRequest& WithAuthorizerId(Aws::String&& value) { SetAuthorizerId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the <a>Authorizer</a> resource.</p>

@@ -17,6 +17,7 @@
 #include <aws/codebuild/CodeBuildRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codebuild/model/SortOrderType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The name of the build project.</p>
      */
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
+    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
 
     /**
      * <p>The name of the build project.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name of the build project.</p>
      */
-    inline ListBuildsForProjectRequest& WithProjectName(Aws::String&& value) { SetProjectName(value); return *this;}
+    inline ListBuildsForProjectRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the build project.</p>
@@ -93,7 +94,7 @@ namespace Model
      * </li> <li> <p> <code>DESCENDING</code>: List the build IDs in descending order
      * by build ID.</p> </li> </ul>
      */
-    inline void SetSortOrder(SortOrderType&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline void SetSortOrder(SortOrderType&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
      * <p>The order to list build IDs. Valid values include:</p> <ul> <li> <p>
@@ -109,7 +110,7 @@ namespace Model
      * </li> <li> <p> <code>DESCENDING</code>: List the build IDs in descending order
      * by build ID.</p> </li> </ul>
      */
-    inline ListBuildsForProjectRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(value); return *this;}
+    inline ListBuildsForProjectRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(std::move(value)); return *this;}
 
     /**
      * <p>During a previous call, if there are more than 100 items in the list, only
@@ -139,7 +140,7 @@ namespace Model
      * keep calling this operation with each subsequent next token that is returned,
      * until no more next tokens are returned.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>During a previous call, if there are more than 100 items in the list, only
@@ -169,7 +170,7 @@ namespace Model
      * keep calling this operation with each subsequent next token that is returned,
      * until no more next tokens are returned.</p>
      */
-    inline ListBuildsForProjectRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListBuildsForProjectRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>During a previous call, if there are more than 100 items in the list, only

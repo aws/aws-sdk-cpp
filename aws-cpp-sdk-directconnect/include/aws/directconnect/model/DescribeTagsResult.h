@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/model/ResourceTag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Information about the tags.</p>
      */
-    inline void SetResourceTags(Aws::Vector<ResourceTag>&& value) { m_resourceTags = value; }
+    inline void SetResourceTags(Aws::Vector<ResourceTag>&& value) { m_resourceTags = std::move(value); }
 
     /**
      * <p>Information about the tags.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Information about the tags.</p>
      */
-    inline DescribeTagsResult& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(value); return *this;}
+    inline DescribeTagsResult& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
 
     /**
      * <p>Information about the tags.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>Information about the tags.</p>
      */
-    inline DescribeTagsResult& AddResourceTags(ResourceTag&& value) { m_resourceTags.push_back(value); return *this; }
+    inline DescribeTagsResult& AddResourceTags(ResourceTag&& value) { m_resourceTags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ResourceTag> m_resourceTags;

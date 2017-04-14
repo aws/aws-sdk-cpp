@@ -16,6 +16,7 @@
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/cloudhsm/CloudHSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ARN of the HSM to modify.</p>
      */
-    inline void SetHsmArn(Aws::String&& value) { m_hsmArnHasBeenSet = true; m_hsmArn = value; }
+    inline void SetHsmArn(Aws::String&& value) { m_hsmArnHasBeenSet = true; m_hsmArn = std::move(value); }
 
     /**
      * <p>The ARN of the HSM to modify.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ARN of the HSM to modify.</p>
      */
-    inline ModifyHsmRequest& WithHsmArn(Aws::String&& value) { SetHsmArn(value); return *this;}
+    inline ModifyHsmRequest& WithHsmArn(Aws::String&& value) { SetHsmArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the HSM to modify.</p>
@@ -90,7 +91,7 @@ namespace Model
      * <p>The new identifier of the subnet that the HSM is in. The new subnet must be
      * in the same Availability Zone as the current subnet.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>The new identifier of the subnet that the HSM is in. The new subnet must be
@@ -108,7 +109,7 @@ namespace Model
      * <p>The new identifier of the subnet that the HSM is in. The new subnet must be
      * in the same Availability Zone as the current subnet.</p>
      */
-    inline ModifyHsmRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+    inline ModifyHsmRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The new identifier of the subnet that the HSM is in. The new subnet must be
@@ -138,7 +139,7 @@ namespace Model
      * specified, an IP address will be randomly chosen from the CIDR range of the new
      * subnet.</p>
      */
-    inline void SetEniIp(Aws::String&& value) { m_eniIpHasBeenSet = true; m_eniIp = value; }
+    inline void SetEniIp(Aws::String&& value) { m_eniIpHasBeenSet = true; m_eniIp = std::move(value); }
 
     /**
      * <p>The new IP address for the elastic network interface (ENI) attached to the
@@ -162,7 +163,7 @@ namespace Model
      * specified, an IP address will be randomly chosen from the CIDR range of the new
      * subnet.</p>
      */
-    inline ModifyHsmRequest& WithEniIp(Aws::String&& value) { SetEniIp(value); return *this;}
+    inline ModifyHsmRequest& WithEniIp(Aws::String&& value) { SetEniIp(std::move(value)); return *this;}
 
     /**
      * <p>The new IP address for the elastic network interface (ENI) attached to the
@@ -185,7 +186,7 @@ namespace Model
     /**
      * <p>The new IAM role ARN.</p>
      */
-    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
+    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
     /**
      * <p>The new IAM role ARN.</p>
@@ -200,7 +201,7 @@ namespace Model
     /**
      * <p>The new IAM role ARN.</p>
      */
-    inline ModifyHsmRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(value); return *this;}
+    inline ModifyHsmRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The new IAM role ARN.</p>
@@ -220,7 +221,7 @@ namespace Model
     /**
      * <p>The new external ID.</p>
      */
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
+    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
 
     /**
      * <p>The new external ID.</p>
@@ -235,7 +236,7 @@ namespace Model
     /**
      * <p>The new external ID.</p>
      */
-    inline ModifyHsmRequest& WithExternalId(Aws::String&& value) { SetExternalId(value); return *this;}
+    inline ModifyHsmRequest& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
     /**
      * <p>The new external ID.</p>
@@ -258,7 +259,7 @@ namespace Model
      * <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service
      * only supports one syslog monitoring server.</p>
      */
-    inline void SetSyslogIp(Aws::String&& value) { m_syslogIpHasBeenSet = true; m_syslogIp = value; }
+    inline void SetSyslogIp(Aws::String&& value) { m_syslogIpHasBeenSet = true; m_syslogIp = std::move(value); }
 
     /**
      * <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service
@@ -276,7 +277,7 @@ namespace Model
      * <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service
      * only supports one syslog monitoring server.</p>
      */
-    inline ModifyHsmRequest& WithSyslogIp(Aws::String&& value) { SetSyslogIp(value); return *this;}
+    inline ModifyHsmRequest& WithSyslogIp(Aws::String&& value) { SetSyslogIp(std::move(value)); return *this;}
 
     /**
      * <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service

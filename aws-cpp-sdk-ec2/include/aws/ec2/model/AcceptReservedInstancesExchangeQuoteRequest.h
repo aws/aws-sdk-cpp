@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/TargetConfigurationRequest.h>
+#include <utility>
 
 namespace Aws
 {
@@ -83,7 +84,7 @@ namespace Model
      * <p>The IDs of the Convertible Reserved Instances to exchange for other
      * Convertible Reserved Instances of the same or higher value.</p>
      */
-    inline void SetReservedInstanceIds(Aws::Vector<Aws::String>&& value) { m_reservedInstanceIdsHasBeenSet = true; m_reservedInstanceIds = value; }
+    inline void SetReservedInstanceIds(Aws::Vector<Aws::String>&& value) { m_reservedInstanceIdsHasBeenSet = true; m_reservedInstanceIds = std::move(value); }
 
     /**
      * <p>The IDs of the Convertible Reserved Instances to exchange for other
@@ -95,7 +96,7 @@ namespace Model
      * <p>The IDs of the Convertible Reserved Instances to exchange for other
      * Convertible Reserved Instances of the same or higher value.</p>
      */
-    inline AcceptReservedInstancesExchangeQuoteRequest& WithReservedInstanceIds(Aws::Vector<Aws::String>&& value) { SetReservedInstanceIds(value); return *this;}
+    inline AcceptReservedInstancesExchangeQuoteRequest& WithReservedInstanceIds(Aws::Vector<Aws::String>&& value) { SetReservedInstanceIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the Convertible Reserved Instances to exchange for other
@@ -107,7 +108,7 @@ namespace Model
      * <p>The IDs of the Convertible Reserved Instances to exchange for other
      * Convertible Reserved Instances of the same or higher value.</p>
      */
-    inline AcceptReservedInstancesExchangeQuoteRequest& AddReservedInstanceIds(Aws::String&& value) { m_reservedInstanceIdsHasBeenSet = true; m_reservedInstanceIds.push_back(value); return *this; }
+    inline AcceptReservedInstancesExchangeQuoteRequest& AddReservedInstanceIds(Aws::String&& value) { m_reservedInstanceIdsHasBeenSet = true; m_reservedInstanceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the Convertible Reserved Instances to exchange for other
@@ -131,7 +132,7 @@ namespace Model
      * <p>The configurations of the Convertible Reserved Instance offerings that you
      * are purchasing in this exchange.</p>
      */
-    inline void SetTargetConfigurations(Aws::Vector<TargetConfigurationRequest>&& value) { m_targetConfigurationsHasBeenSet = true; m_targetConfigurations = value; }
+    inline void SetTargetConfigurations(Aws::Vector<TargetConfigurationRequest>&& value) { m_targetConfigurationsHasBeenSet = true; m_targetConfigurations = std::move(value); }
 
     /**
      * <p>The configurations of the Convertible Reserved Instance offerings that you
@@ -143,7 +144,7 @@ namespace Model
      * <p>The configurations of the Convertible Reserved Instance offerings that you
      * are purchasing in this exchange.</p>
      */
-    inline AcceptReservedInstancesExchangeQuoteRequest& WithTargetConfigurations(Aws::Vector<TargetConfigurationRequest>&& value) { SetTargetConfigurations(value); return *this;}
+    inline AcceptReservedInstancesExchangeQuoteRequest& WithTargetConfigurations(Aws::Vector<TargetConfigurationRequest>&& value) { SetTargetConfigurations(std::move(value)); return *this;}
 
     /**
      * <p>The configurations of the Convertible Reserved Instance offerings that you
@@ -155,7 +156,7 @@ namespace Model
      * <p>The configurations of the Convertible Reserved Instance offerings that you
      * are purchasing in this exchange.</p>
      */
-    inline AcceptReservedInstancesExchangeQuoteRequest& AddTargetConfigurations(TargetConfigurationRequest&& value) { m_targetConfigurationsHasBeenSet = true; m_targetConfigurations.push_back(value); return *this; }
+    inline AcceptReservedInstancesExchangeQuoteRequest& AddTargetConfigurations(TargetConfigurationRequest&& value) { m_targetConfigurationsHasBeenSet = true; m_targetConfigurations.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

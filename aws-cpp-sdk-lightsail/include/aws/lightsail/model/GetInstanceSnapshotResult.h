@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/model/InstanceSnapshot.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * get instance snapshot request.</p>
      */
-    inline void SetInstanceSnapshot(InstanceSnapshot&& value) { m_instanceSnapshot = value; }
+    inline void SetInstanceSnapshot(InstanceSnapshot&& value) { m_instanceSnapshot = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -67,7 +68,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * get instance snapshot request.</p>
      */
-    inline GetInstanceSnapshotResult& WithInstanceSnapshot(InstanceSnapshot&& value) { SetInstanceSnapshot(value); return *this;}
+    inline GetInstanceSnapshotResult& WithInstanceSnapshot(InstanceSnapshot&& value) { SetInstanceSnapshot(std::move(value)); return *this;}
 
   private:
     InstanceSnapshot m_instanceSnapshot;

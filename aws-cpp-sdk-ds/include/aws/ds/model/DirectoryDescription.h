@@ -24,6 +24,7 @@
 #include <aws/ds/model/DirectoryConnectSettingsDescription.h>
 #include <aws/ds/model/RadiusSettings.h>
 #include <aws/ds/model/RadiusStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The directory identifier.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>The directory identifier.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>The directory identifier.</p>
      */
-    inline DirectoryDescription& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline DirectoryDescription& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>The directory identifier.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The fully-qualified name of the directory.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The fully-qualified name of the directory.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The fully-qualified name of the directory.</p>
      */
-    inline DirectoryDescription& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline DirectoryDescription& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The fully-qualified name of the directory.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The short name of the directory.</p>
      */
-    inline void SetShortName(Aws::String&& value) { m_shortNameHasBeenSet = true; m_shortName = value; }
+    inline void SetShortName(Aws::String&& value) { m_shortNameHasBeenSet = true; m_shortName = std::move(value); }
 
     /**
      * <p>The short name of the directory.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>The short name of the directory.</p>
      */
-    inline DirectoryDescription& WithShortName(Aws::String&& value) { SetShortName(value); return *this;}
+    inline DirectoryDescription& WithShortName(Aws::String&& value) { SetShortName(std::move(value)); return *this;}
 
     /**
      * <p>The short name of the directory.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>The directory size.</p>
      */
-    inline void SetSize(DirectorySize&& value) { m_sizeHasBeenSet = true; m_size = value; }
+    inline void SetSize(DirectorySize&& value) { m_sizeHasBeenSet = true; m_size = std::move(value); }
 
     /**
      * <p>The directory size.</p>
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>The directory size.</p>
      */
-    inline DirectoryDescription& WithSize(DirectorySize&& value) { SetSize(value); return *this;}
+    inline DirectoryDescription& WithSize(DirectorySize&& value) { SetSize(std::move(value)); return *this;}
 
     /**
      * <p>The alias for the directory. If no alias has been created for the directory,
@@ -199,7 +200,7 @@ namespace Model
      * <p>The alias for the directory. If no alias has been created for the directory,
      * the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
      */
-    inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = value; }
+    inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
 
     /**
      * <p>The alias for the directory. If no alias has been created for the directory,
@@ -217,7 +218,7 @@ namespace Model
      * <p>The alias for the directory. If no alias has been created for the directory,
      * the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
      */
-    inline DirectoryDescription& WithAlias(Aws::String&& value) { SetAlias(value); return *this;}
+    inline DirectoryDescription& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
 
     /**
      * <p>The alias for the directory. If no alias has been created for the directory,
@@ -247,7 +248,7 @@ namespace Model
      * the directory, <code>&lt;alias&gt;</code> is the directory identifier, such as
      * <code>d-XXXXXXXXXX</code>.</p>
      */
-    inline void SetAccessUrl(Aws::String&& value) { m_accessUrlHasBeenSet = true; m_accessUrl = value; }
+    inline void SetAccessUrl(Aws::String&& value) { m_accessUrlHasBeenSet = true; m_accessUrl = std::move(value); }
 
     /**
      * <p>The access URL for the directory, such as
@@ -271,7 +272,7 @@ namespace Model
      * the directory, <code>&lt;alias&gt;</code> is the directory identifier, such as
      * <code>d-XXXXXXXXXX</code>.</p>
      */
-    inline DirectoryDescription& WithAccessUrl(Aws::String&& value) { SetAccessUrl(value); return *this;}
+    inline DirectoryDescription& WithAccessUrl(Aws::String&& value) { SetAccessUrl(std::move(value)); return *this;}
 
     /**
      * <p>The access URL for the directory, such as
@@ -294,7 +295,7 @@ namespace Model
     /**
      * <p>The textual description for the directory.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The textual description for the directory.</p>
@@ -309,7 +310,7 @@ namespace Model
     /**
      * <p>The textual description for the directory.</p>
      */
-    inline DirectoryDescription& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline DirectoryDescription& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The textual description for the directory.</p>
@@ -341,7 +342,7 @@ namespace Model
      * of the DNS servers or domain controllers in the on-premises directory to which
      * the AD Connector is connected.</p>
      */
-    inline void SetDnsIpAddrs(Aws::Vector<Aws::String>&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs = value; }
+    inline void SetDnsIpAddrs(Aws::Vector<Aws::String>&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs = std::move(value); }
 
     /**
      * <p>The IP addresses of the DNS servers for the directory. For a Simple AD or
@@ -359,7 +360,7 @@ namespace Model
      * of the DNS servers or domain controllers in the on-premises directory to which
      * the AD Connector is connected.</p>
      */
-    inline DirectoryDescription& WithDnsIpAddrs(Aws::Vector<Aws::String>&& value) { SetDnsIpAddrs(value); return *this;}
+    inline DirectoryDescription& WithDnsIpAddrs(Aws::Vector<Aws::String>&& value) { SetDnsIpAddrs(std::move(value)); return *this;}
 
     /**
      * <p>The IP addresses of the DNS servers for the directory. For a Simple AD or
@@ -377,7 +378,7 @@ namespace Model
      * of the DNS servers or domain controllers in the on-premises directory to which
      * the AD Connector is connected.</p>
      */
-    inline DirectoryDescription& AddDnsIpAddrs(Aws::String&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs.push_back(value); return *this; }
+    inline DirectoryDescription& AddDnsIpAddrs(Aws::String&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IP addresses of the DNS servers for the directory. For a Simple AD or
@@ -401,7 +402,7 @@ namespace Model
     /**
      * <p>The current stage of the directory.</p>
      */
-    inline void SetStage(DirectoryStage&& value) { m_stageHasBeenSet = true; m_stage = value; }
+    inline void SetStage(DirectoryStage&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
 
     /**
      * <p>The current stage of the directory.</p>
@@ -411,7 +412,7 @@ namespace Model
     /**
      * <p>The current stage of the directory.</p>
      */
-    inline DirectoryDescription& WithStage(DirectoryStage&& value) { SetStage(value); return *this;}
+    inline DirectoryDescription& WithStage(DirectoryStage&& value) { SetStage(std::move(value)); return *this;}
 
     /**
      * <p>Specifies when the directory was created.</p>
@@ -426,7 +427,7 @@ namespace Model
     /**
      * <p>Specifies when the directory was created.</p>
      */
-    inline void SetLaunchTime(Aws::Utils::DateTime&& value) { m_launchTimeHasBeenSet = true; m_launchTime = value; }
+    inline void SetLaunchTime(Aws::Utils::DateTime&& value) { m_launchTimeHasBeenSet = true; m_launchTime = std::move(value); }
 
     /**
      * <p>Specifies when the directory was created.</p>
@@ -436,7 +437,7 @@ namespace Model
     /**
      * <p>Specifies when the directory was created.</p>
      */
-    inline DirectoryDescription& WithLaunchTime(Aws::Utils::DateTime&& value) { SetLaunchTime(value); return *this;}
+    inline DirectoryDescription& WithLaunchTime(Aws::Utils::DateTime&& value) { SetLaunchTime(std::move(value)); return *this;}
 
     /**
      * <p>The date and time that the stage was last updated.</p>
@@ -451,7 +452,7 @@ namespace Model
     /**
      * <p>The date and time that the stage was last updated.</p>
      */
-    inline void SetStageLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_stageLastUpdatedDateTimeHasBeenSet = true; m_stageLastUpdatedDateTime = value; }
+    inline void SetStageLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_stageLastUpdatedDateTimeHasBeenSet = true; m_stageLastUpdatedDateTime = std::move(value); }
 
     /**
      * <p>The date and time that the stage was last updated.</p>
@@ -461,7 +462,7 @@ namespace Model
     /**
      * <p>The date and time that the stage was last updated.</p>
      */
-    inline DirectoryDescription& WithStageLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetStageLastUpdatedDateTime(value); return *this;}
+    inline DirectoryDescription& WithStageLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetStageLastUpdatedDateTime(std::move(value)); return *this;}
 
     /**
      * <p>The directory size.</p>
@@ -476,7 +477,7 @@ namespace Model
     /**
      * <p>The directory size.</p>
      */
-    inline void SetType(DirectoryType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(DirectoryType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The directory size.</p>
@@ -486,7 +487,7 @@ namespace Model
     /**
      * <p>The directory size.</p>
      */
-    inline DirectoryDescription& WithType(DirectoryType&& value) { SetType(value); return *this;}
+    inline DirectoryDescription& WithType(DirectoryType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>A <a>DirectoryVpcSettingsDescription</a> object that contains additional
@@ -507,7 +508,7 @@ namespace Model
      * information about a directory. This member is only present if the directory is a
      * Simple AD or Managed AD directory.</p>
      */
-    inline void SetVpcSettings(DirectoryVpcSettingsDescription&& value) { m_vpcSettingsHasBeenSet = true; m_vpcSettings = value; }
+    inline void SetVpcSettings(DirectoryVpcSettingsDescription&& value) { m_vpcSettingsHasBeenSet = true; m_vpcSettings = std::move(value); }
 
     /**
      * <p>A <a>DirectoryVpcSettingsDescription</a> object that contains additional
@@ -521,7 +522,7 @@ namespace Model
      * information about a directory. This member is only present if the directory is a
      * Simple AD or Managed AD directory.</p>
      */
-    inline DirectoryDescription& WithVpcSettings(DirectoryVpcSettingsDescription&& value) { SetVpcSettings(value); return *this;}
+    inline DirectoryDescription& WithVpcSettings(DirectoryVpcSettingsDescription&& value) { SetVpcSettings(std::move(value)); return *this;}
 
     /**
      * <p>A <a>DirectoryConnectSettingsDescription</a> object that contains additional
@@ -542,7 +543,7 @@ namespace Model
      * information about an AD Connector directory. This member is only present if the
      * directory is an AD Connector directory.</p>
      */
-    inline void SetConnectSettings(DirectoryConnectSettingsDescription&& value) { m_connectSettingsHasBeenSet = true; m_connectSettings = value; }
+    inline void SetConnectSettings(DirectoryConnectSettingsDescription&& value) { m_connectSettingsHasBeenSet = true; m_connectSettings = std::move(value); }
 
     /**
      * <p>A <a>DirectoryConnectSettingsDescription</a> object that contains additional
@@ -556,7 +557,7 @@ namespace Model
      * information about an AD Connector directory. This member is only present if the
      * directory is an AD Connector directory.</p>
      */
-    inline DirectoryDescription& WithConnectSettings(DirectoryConnectSettingsDescription&& value) { SetConnectSettings(value); return *this;}
+    inline DirectoryDescription& WithConnectSettings(DirectoryConnectSettingsDescription&& value) { SetConnectSettings(std::move(value)); return *this;}
 
     /**
      * <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
@@ -574,7 +575,7 @@ namespace Model
      * <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
      * server configured for this directory.</p>
      */
-    inline void SetRadiusSettings(RadiusSettings&& value) { m_radiusSettingsHasBeenSet = true; m_radiusSettings = value; }
+    inline void SetRadiusSettings(RadiusSettings&& value) { m_radiusSettingsHasBeenSet = true; m_radiusSettings = std::move(value); }
 
     /**
      * <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
@@ -586,7 +587,7 @@ namespace Model
      * <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
      * server configured for this directory.</p>
      */
-    inline DirectoryDescription& WithRadiusSettings(RadiusSettings&& value) { SetRadiusSettings(value); return *this;}
+    inline DirectoryDescription& WithRadiusSettings(RadiusSettings&& value) { SetRadiusSettings(std::move(value)); return *this;}
 
     /**
      * <p>The status of the RADIUS MFA server connection.</p>
@@ -601,7 +602,7 @@ namespace Model
     /**
      * <p>The status of the RADIUS MFA server connection.</p>
      */
-    inline void SetRadiusStatus(RadiusStatus&& value) { m_radiusStatusHasBeenSet = true; m_radiusStatus = value; }
+    inline void SetRadiusStatus(RadiusStatus&& value) { m_radiusStatusHasBeenSet = true; m_radiusStatus = std::move(value); }
 
     /**
      * <p>The status of the RADIUS MFA server connection.</p>
@@ -611,7 +612,7 @@ namespace Model
     /**
      * <p>The status of the RADIUS MFA server connection.</p>
      */
-    inline DirectoryDescription& WithRadiusStatus(RadiusStatus&& value) { SetRadiusStatus(value); return *this;}
+    inline DirectoryDescription& WithRadiusStatus(RadiusStatus&& value) { SetRadiusStatus(std::move(value)); return *this;}
 
     /**
      * <p>Additional information about the directory stage.</p>
@@ -626,7 +627,7 @@ namespace Model
     /**
      * <p>Additional information about the directory stage.</p>
      */
-    inline void SetStageReason(Aws::String&& value) { m_stageReasonHasBeenSet = true; m_stageReason = value; }
+    inline void SetStageReason(Aws::String&& value) { m_stageReasonHasBeenSet = true; m_stageReason = std::move(value); }
 
     /**
      * <p>Additional information about the directory stage.</p>
@@ -641,7 +642,7 @@ namespace Model
     /**
      * <p>Additional information about the directory stage.</p>
      */
-    inline DirectoryDescription& WithStageReason(Aws::String&& value) { SetStageReason(value); return *this;}
+    inline DirectoryDescription& WithStageReason(Aws::String&& value) { SetStageReason(std::move(value)); return *this;}
 
     /**
      * <p>Additional information about the directory stage.</p>

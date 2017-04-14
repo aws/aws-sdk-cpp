@@ -17,6 +17,7 @@
 #include <aws/ecr/model/ImageIdentifier.h>
 #include <aws/ecr/model/ImageFailureCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The image ID associated with the failure.</p>
      */
-    inline void SetImageId(ImageIdentifier&& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+    inline void SetImageId(ImageIdentifier&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
      * <p>The image ID associated with the failure.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The image ID associated with the failure.</p>
      */
-    inline ImageFailure& WithImageId(ImageIdentifier&& value) { SetImageId(value); return *this;}
+    inline ImageFailure& WithImageId(ImageIdentifier&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
      * <p>The code associated with the failure.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The code associated with the failure.</p>
      */
-    inline void SetFailureCode(ImageFailureCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
+    inline void SetFailureCode(ImageFailureCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
 
     /**
      * <p>The code associated with the failure.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The code associated with the failure.</p>
      */
-    inline ImageFailure& WithFailureCode(ImageFailureCode&& value) { SetFailureCode(value); return *this;}
+    inline ImageFailure& WithFailureCode(ImageFailureCode&& value) { SetFailureCode(std::move(value)); return *this;}
 
     /**
      * <p>The reason for the failure.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The reason for the failure.</p>
      */
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
+    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
     /**
      * <p>The reason for the failure.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The reason for the failure.</p>
      */
-    inline ImageFailure& WithFailureReason(Aws::String&& value) { SetFailureReason(value); return *this;}
+    inline ImageFailure& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
      * <p>The reason for the failure.</p>

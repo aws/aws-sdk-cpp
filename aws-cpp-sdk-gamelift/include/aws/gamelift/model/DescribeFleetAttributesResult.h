@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/FleetAttributes.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>Collection of objects containing attribute metadata for each requested fleet
      * ID.</p>
      */
-    inline void SetFleetAttributes(Aws::Vector<FleetAttributes>&& value) { m_fleetAttributes = value; }
+    inline void SetFleetAttributes(Aws::Vector<FleetAttributes>&& value) { m_fleetAttributes = std::move(value); }
 
     /**
      * <p>Collection of objects containing attribute metadata for each requested fleet
@@ -75,7 +76,7 @@ namespace Model
      * <p>Collection of objects containing attribute metadata for each requested fleet
      * ID.</p>
      */
-    inline DescribeFleetAttributesResult& WithFleetAttributes(Aws::Vector<FleetAttributes>&& value) { SetFleetAttributes(value); return *this;}
+    inline DescribeFleetAttributesResult& WithFleetAttributes(Aws::Vector<FleetAttributes>&& value) { SetFleetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Collection of objects containing attribute metadata for each requested fleet
@@ -87,7 +88,7 @@ namespace Model
      * <p>Collection of objects containing attribute metadata for each requested fleet
      * ID.</p>
      */
-    inline DescribeFleetAttributesResult& AddFleetAttributes(FleetAttributes&& value) { m_fleetAttributes.push_back(value); return *this; }
+    inline DescribeFleetAttributesResult& AddFleetAttributes(FleetAttributes&& value) { m_fleetAttributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -108,7 +109,7 @@ namespace Model
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -129,7 +130,7 @@ namespace Model
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
-    inline DescribeFleetAttributesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeFleetAttributesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to

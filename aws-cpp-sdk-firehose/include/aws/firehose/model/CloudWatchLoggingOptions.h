@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * <p>The CloudWatch group name for logging. This value is required if CloudWatch
      * logging is enabled.</p>
      */
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
      * <p>The CloudWatch group name for logging. This value is required if CloudWatch
@@ -93,7 +94,7 @@ namespace Model
      * <p>The CloudWatch group name for logging. This value is required if CloudWatch
      * logging is enabled.</p>
      */
-    inline CloudWatchLoggingOptions& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
+    inline CloudWatchLoggingOptions& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The CloudWatch group name for logging. This value is required if CloudWatch
@@ -117,7 +118,7 @@ namespace Model
      * <p>The CloudWatch log stream name for logging. This value is required if
      * CloudWatch logging is enabled.</p>
      */
-    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
+    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::move(value); }
 
     /**
      * <p>The CloudWatch log stream name for logging. This value is required if
@@ -135,7 +136,7 @@ namespace Model
      * <p>The CloudWatch log stream name for logging. This value is required if
      * CloudWatch logging is enabled.</p>
      */
-    inline CloudWatchLoggingOptions& WithLogStreamName(Aws::String&& value) { SetLogStreamName(value); return *this;}
+    inline CloudWatchLoggingOptions& WithLogStreamName(Aws::String&& value) { SetLogStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The CloudWatch log stream name for logging. This value is required if

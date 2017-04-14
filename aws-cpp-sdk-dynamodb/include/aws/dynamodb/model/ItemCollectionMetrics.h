@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/AttributeValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * <p>The partition key value of the item collection. This value is the same as the
      * partition key value of the item.</p>
      */
-    inline void SetItemCollectionKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey = value; }
+    inline void SetItemCollectionKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey = std::move(value); }
 
     /**
      * <p>The partition key value of the item collection. This value is the same as the
@@ -77,43 +78,43 @@ namespace Model
      * <p>The partition key value of the item collection. This value is the same as the
      * partition key value of the item.</p>
      */
-    inline ItemCollectionMetrics& WithItemCollectionKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetItemCollectionKey(value); return *this;}
+    inline ItemCollectionMetrics& WithItemCollectionKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetItemCollectionKey(std::move(value)); return *this;}
 
     /**
      * <p>The partition key value of the item collection. This value is the same as the
      * partition key value of the item.</p>
      */
-    inline ItemCollectionMetrics& AddItemCollectionKey(const Aws::String& key, const AttributeValue& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey[key] = value; return *this; }
+    inline ItemCollectionMetrics& AddItemCollectionKey(const Aws::String& key, const AttributeValue& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey.emplace(key, value); return *this; }
 
     /**
      * <p>The partition key value of the item collection. This value is the same as the
      * partition key value of the item.</p>
      */
-    inline ItemCollectionMetrics& AddItemCollectionKey(Aws::String&& key, const AttributeValue& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey[key] = value; return *this; }
+    inline ItemCollectionMetrics& AddItemCollectionKey(Aws::String&& key, const AttributeValue& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The partition key value of the item collection. This value is the same as the
      * partition key value of the item.</p>
      */
-    inline ItemCollectionMetrics& AddItemCollectionKey(const Aws::String& key, AttributeValue&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey[key] = value; return *this; }
+    inline ItemCollectionMetrics& AddItemCollectionKey(const Aws::String& key, AttributeValue&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The partition key value of the item collection. This value is the same as the
      * partition key value of the item.</p>
      */
-    inline ItemCollectionMetrics& AddItemCollectionKey(Aws::String&& key, AttributeValue&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey[key] = value; return *this; }
+    inline ItemCollectionMetrics& AddItemCollectionKey(Aws::String&& key, AttributeValue&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The partition key value of the item collection. This value is the same as the
      * partition key value of the item.</p>
      */
-    inline ItemCollectionMetrics& AddItemCollectionKey(const char* key, AttributeValue&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey[key] = value; return *this; }
+    inline ItemCollectionMetrics& AddItemCollectionKey(const char* key, AttributeValue&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The partition key value of the item collection. This value is the same as the
      * partition key value of the item.</p>
      */
-    inline ItemCollectionMetrics& AddItemCollectionKey(const char* key, const AttributeValue& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey[key] = value; return *this; }
+    inline ItemCollectionMetrics& AddItemCollectionKey(const char* key, const AttributeValue& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey.emplace(key, value); return *this; }
 
     /**
      * <p>An estimate of item collection size, in gigabytes. This value is a
@@ -146,7 +147,7 @@ namespace Model
      * size limit.</p> <p>The estimate is subject to change over time; therefore, do
      * not rely on the precision or accuracy of the estimate.</p>
      */
-    inline void SetSizeEstimateRangeGB(Aws::Vector<double>&& value) { m_sizeEstimateRangeGBHasBeenSet = true; m_sizeEstimateRangeGB = value; }
+    inline void SetSizeEstimateRangeGB(Aws::Vector<double>&& value) { m_sizeEstimateRangeGBHasBeenSet = true; m_sizeEstimateRangeGB = std::move(value); }
 
     /**
      * <p>An estimate of item collection size, in gigabytes. This value is a
@@ -168,7 +169,7 @@ namespace Model
      * size limit.</p> <p>The estimate is subject to change over time; therefore, do
      * not rely on the precision or accuracy of the estimate.</p>
      */
-    inline ItemCollectionMetrics& WithSizeEstimateRangeGB(Aws::Vector<double>&& value) { SetSizeEstimateRangeGB(value); return *this;}
+    inline ItemCollectionMetrics& WithSizeEstimateRangeGB(Aws::Vector<double>&& value) { SetSizeEstimateRangeGB(std::move(value)); return *this;}
 
     /**
      * <p>An estimate of item collection size, in gigabytes. This value is a
