@@ -9,9 +9,6 @@ file( GLOB TEXT_TO_SPEECH_HEADERS "include/aws/text-to-speech/*.h" )
 
 set(PLATFORM_LIBS "")
 
-# unset HAVE_PULSE to solve the warning "pulse not found" when pulse is installed after initial compile
-# this is because check_include_files tries to find HAVE_PULSE in CACHE after initial compile
-unset(HAVE_PULSE CACHE)
 check_include_files("pulse/simple.h" HAVE_PULSE)
 
 if(PLATFORM_WINDOWS)
