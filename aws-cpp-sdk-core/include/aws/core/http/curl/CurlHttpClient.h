@@ -50,6 +50,7 @@ private:
     bool m_isUsingProxy;
     Aws::String m_proxyUserName;
     Aws::String m_proxyPassword;
+    Aws::String m_proxyScheme;
     Aws::String m_proxyHost;
     unsigned m_proxyPort;
     bool m_verifySSL;
