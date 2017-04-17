@@ -33,8 +33,7 @@ Aws::String ReplaceTopicRuleRequest::SerializePayload() const
 
   if(m_topicRulePayloadHasBeenSet)
   {
-   payload.WithObject("topicRulePayload", m_topicRulePayload.Jsonize());
-
+   payload = m_topicRulePayload.Jsonize();
   }
 
   return payload.WriteReadable();
