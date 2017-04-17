@@ -205,6 +205,6 @@ function(get_sdks_depending_on SDK_NAME DEPENDING_SDKS_VAR)
         endif()
     endforeach()
 
-    SET(${DEPENDING_SDKS_VAR} "${TEMP_SDK_LIST}" PARENT_SCOPE)
+    set(${DEPENDING_SDKS_VAR} "${TEMP_SDK_LIST}" PARENT_SCOPE)
 endfunction()
 
