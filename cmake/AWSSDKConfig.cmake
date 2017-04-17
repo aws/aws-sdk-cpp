@@ -65,7 +65,9 @@ endif()
 # currently AWSSDK_ROOT_DIR is either empty or user specified
 if (AWSSDK_ROOT_DIR)
     find_file(AWSSDK_CORE_HEADER_FILE Aws.h
-            "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core")
+            "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
+            "${AWSSDK_DEFAULT_ROOT_DIR}/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
+            )
 else()
     find_file(AWSSDK_CORE_HEADER_FILE Aws.h
         "/usr/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
