@@ -18,13 +18,13 @@ add_project(AWSSDK "User friendly cmake creator")
 
 # create a new version file for AWSSDK, then find_package will return latest PACKAGE_VERSION
 write_basic_package_version_file(
-    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake"
     VERSION ${PROJECT_VERSION}
     COMPATIBILITY AnyNewerVersion
 )
 
 file(WRITE
-    "${CMAKE_CURRENT_BINARY_DIR}/platformDeps.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}/platformDeps.cmake"
 "#
 # Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # 
@@ -43,10 +43,10 @@ file(WRITE
     "SET(AWSSDK_CLIENT_LIBS ${CLIENT_LIBS_ABSTRACT_NAME})\n"
     "SET(AWSSDK_CRYPTO_LIBS ${CRYPTO_LIBS_ABSTRACT_NAME})\n"
     "SET(AWSSDK_ADDITIONAL_LIBS ${AWS_SDK_ADDITIONAL_LIBRARIES_ABSTRACT_NAME})\n"
-    "SET(AWSSDK_LIB_INSTALLDIR ${LIBRARY_DIRECTORY})\n"
-    "SET(AWSSDK_BIN_INSTALLDIR ${BINARY_DIRECTORY})\n"
-    "SET(AWSSDK_INCLUDE_INSTALLDIR ${INCLUDE_DIRECTORY})\n"
-    "SET(AWSSDK_ARCHIVE_INSTALLDIR ${ARCHIVE_DIRECTORY})\n"
+    "SET(AWSSDK_INSTALL_LIBDIR ${LIBRARY_DIRECTORY})\n"
+    "SET(AWSSDK_INSTALL_BINDIR ${BINARY_DIRECTORY})\n"
+    "SET(AWSSDK_INSTALL_INCLUDEDIR ${INCLUDE_DIRECTORY})\n"
+    "SET(AWSSDK_INSTALL_ARCHIVEDIR ${ARCHIVE_DIRECTORY})\n"
     )
 
 if (NOT SIMPLE_INSTALL)
@@ -57,13 +57,18 @@ endif()
 
 # copy version file to destination
 install(
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake"
     DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
+
+# platform external dependencies
+install(
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}/platformDeps.cmake"
+    DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}/")
 
 # copy config file to destination, this file is vital for cmake to find correct package.
 # useful macros and variables will be included in this cmake file for user to use
 install(
-    FILES "${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}Config.cmake"
+    FILES "${CMAKE_SOURCE_DIR}/cmake/${PROJECT_NAME}Config.cmake"
     DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
 
 # to make compile time settings consistent with user usage time settings, we copy common settings to 
@@ -72,9 +77,4 @@ install(
 # internal dependencies
 install(
     FILES "${CMAKE_SOURCE_DIR}/cmake/sdksCommon.cmake"
-    DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}/")
-
-# platform external dependencies
-install(
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/platformDeps.cmake"
     DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}/")

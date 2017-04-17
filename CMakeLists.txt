@@ -169,5 +169,5 @@ endif()
 
 add_sdks()
 
-# for user friendly sdk manager
-add_subdirectory(AWSSDK)
+# for user friendly cmake usage
+include(setup_cmake_find_module)

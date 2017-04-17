@@ -204,7 +204,10 @@ macro(apply_pre_project_platform_settings)
     set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/platform/android.toolchain.cmake)
 
     # android-specific required overrrides
-    set(CUSTOM_MEMORY_MANAGEMENT "1")
+    if (NOT DEFINED CUSTOM_MEMORY_MANAGEMENT)
+        set(CUSTOM_MEMORY_MANAGEMENT "1")
+    endif()
+
     set(ANDROID_STL_FORCE_FEATURES "OFF")
 
     # android-specific parameter defaults

@@ -25,7 +25,7 @@ macro(apply_post_project_platform_settings)
         set(SDK_INSTALL_BINARY_PREFIX "${SDK_INSTALL_BINARY_PREFIX}/ia32")
     endif()
 
-    set(PLATFORM_DEP_LIBS pthread ${UUID_LIBRARIES})
-    set(PLATFORM_DEP_LIBS_ABSTRACT_NAME pthread uuid)
+    set(PLATFORM_DEP_LIBS pthread)
+    set(PLATFORM_DEP_LIBS_ABSTRACT_NAME pthread)
 
 endmacro()

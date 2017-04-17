@@ -40,16 +40,16 @@ include(${CMAKE_CURRENT_LIST_DIR}/AWSSDKConfigVersion.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/sdksCommon.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/platformDeps.cmake)
 
-if (NOT AWSSDK_LIB_INSTALLDIR)
-    set(AWSSDK_LIB_INSTALLDIR "lib")
+if (NOT AWSSDK_INSTALL_LIBDIR)
+    set(AWSSDK_INSTALL_LIBDIR "lib")
 endif()
 
-if (NOT AWSSDK_BIN_INSTALLDIR)
-    set(AWSSDK_BIN_INSTALLDIR "bin")
+if (NOT AWSSDK_INSTALL_BINDIR)
+    set(AWSSDK_INSTALL_BINDIR "bin")
 endif()
 
-if (NOT AWSSDK_INCLUDE_INSTALLDIR)
-    set(AWSSDK_INCLUDE_INSTALLDIR "include")
+if (NOT AWSSDK_INSTALL_INCLUDEDIR)
+    set(AWSSDK_INSTALL_INCLUDEDIR "include")
 endif()
 
 # Compute the default installation root relative to this file.
@@ -65,22 +65,22 @@ endif()
 # currently AWSSDK_ROOT_DIR is either empty or user specified
 if (AWSSDK_ROOT_DIR)
     find_file(AWSSDK_CORE_HEADER_FILE Aws.h
-            "${AWSSDK_ROOT_DIR}/${AWSSDK_INCLUDE_INSTALLDIR}/aws/core")
+            "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core")
 else()
     find_file(AWSSDK_CORE_HEADER_FILE Aws.h
-        "/usr/${AWSSDK_INCLUDE_INSTALLDIR}/aws/core"
-        "/usr/local/${AWSSDK_INCLUDE_INSTALLDIR}/aws/core"
-        "C:/Progra~1/AWSSDK/${AWSSDK_INCLUDE_INSTALLDIR}/aws/core"
-        "C:/Program Files/AWSSDK/${AWSSDK_INCLUDE_INSTALLDIR}/aws/core"
-        "C:/Program Files/aws-cpp-sdk-all/${AWSSDK_INCLUDE_INSTALLDIR}/aws/core"
-        "C:/Program Files (x86)/aws-cpp-sdk-all/${AWSSDK_INCLUDE_INSTALLDIR}/aws/core"
-        "C:/AWSSDK/${AWSSDK_INCLUDE_INSTALLDIR}/aws/core"
-        "${AWSSDK_DEFAULT_ROOT_DIR}/${AWSSDK_INCLUDE_INSTALLDIR}/aws/core"
+        "/usr/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
+        "/usr/local/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
+        "C:/Progra~1/AWSSDK/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
+        "C:/Program Files/AWSSDK/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
+        "C:/Program Files/aws-cpp-sdk-all/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
+        "C:/Program Files (x86)/aws-cpp-sdk-all/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
+        "C:/AWSSDK/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
+        "${AWSSDK_DEFAULT_ROOT_DIR}/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
     )
 endif()
 
 if (NOT AWSSDK_CORE_HEADER_FILE)
-    Message(FATAL_ERROR "AWSSDK is missing, install it first")
+    Message(FATAL_ERROR "AWS SDK for C++ is missing, please install it first")
 endif()
 
 # based on core header file path, inspects the actual AWSSDK_ROOT_DIR
@@ -90,31 +90,30 @@ get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
 get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
 
 if (NOT AWSSDK_ROOT_DIR)
-    Message(FATAL_ERROR "AWSSDK core header file is
-            ${AWSSDK_CORE_HEADER_FILE}, but after retrieving, AWSSDK_ROOT_DIR
-            becomes empty")
+    Message(FATAL_ERROR "Found header file of AWS SDK for C++: ${AWSSDK_CORE_HEADER_FILE}, but after retrieving, AWSSDK_ROOT_DIR becomes empty")
 endif()
 
 
 find_library(AWSSDK_CORE_LIB_FILE aws-cpp-sdk-core
-        "${AWSSDK_ROOT_DIR}/${AWSSDK_LIB_INSTALLDIR}/${AWSSDK_PLATFORM_PREFIX}"
-        "${AWSSDK_ROOT_DIR}/${AWSSDK_LIB_INSTALLDIR}/${AWSSDK_PLATFORM_PREFIX}/Debug"
-        "${AWSSDK_ROOT_DIR}/${AWSSDK_LIB_INSTALLDIR}/${AWSSDK_PLATFORM_PREFIX}/DebugOpt"
-        "${AWSSDK_ROOT_DIR}/${AWSSDK_LIB_INSTALLDIR}/${AWSSDK_PLATFORM_PREFIX}/Release"
-        "${AWSSDK_ROOT_DIR}/${AWSSDK_LIB_INSTALLDIR}/${AWSSDK_PLATFORM_PREFIX}/RelWithDebInfo"
-        "${AWSSDK_ROOT_DIR}/${AWSSDK_LIB_INSTALLDIR}/${AWSSDK_PLATFORM_PREFIX}/MinSizeRel"
+        "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/${AWSSDK_PLATFORM_PREFIX}"
+        "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/${AWSSDK_PLATFORM_PREFIX}/Debug"
+        "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/${AWSSDK_PLATFORM_PREFIX}/DebugOpt"
+        "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/${AWSSDK_PLATFORM_PREFIX}/Release"
+        "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/${AWSSDK_PLATFORM_PREFIX}/RelWithDebInfo"
+        "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/${AWSSDK_PLATFORM_PREFIX}/MinSizeRel"
         NO_DEFAULT_PATH)
 
 
 if (NOT AWSSDK_CORE_LIB_FILE)
-    Message(FATAL_ERROR "AWSSDK header of core exists, but libray is missing")
+    Message(FATAL_ERROR "AWS SDK for C++ headers found, but we were unable to locate the binaries. Have you deleted or moved it?
+            Please make sure header files and binaries are located in INSTALL_ROOT_DIR/INCLUDE_DIR/ and INSTALL_ROOT_DIR/LIB_DIR/[PLATFORM_PREFIX]/[Debug|Config|OtherConfigs]")
 endif()
 
 # based on AWSSDK_CORE_LIB_FILE path, inspects the actual AWSSDK_PLATFROM_PREFIX
 get_filename_component(TEMP_PATH "${AWSSDK_CORE_LIB_FILE}" PATH)
 get_filename_component(TEMP_NAME "${TEMP_PATH}" NAME)
 
-while (NOT TEMP_NAME STREQUAL ${AWSSDK_LIB_INSTALLDIR})
+while (NOT TEMP_NAME STREQUAL ${AWSSDK_INSTALL_LIBDIR})
     set(TEMP_PLATFORM_PREFIX "${TEMP_NAME}/${TEMP_PLATFORM_PREFIX}")
     get_filename_component(TEMP_PATH "${TEMP_PATH}" PATH) 
     get_filename_component(TEMP_NAME "${TEMP_PATH}" NAME)
@@ -123,10 +122,10 @@ endwhile()
 set(AWSSDK_PLATFORM_PREFIX "${TEMP_PLATFORM_PREFIX}")
 
 SET(AWSSDK_FOUND "1")
-set(AWSSDK_INCLUDE_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_INCLUDE_INSTALLDIR}")
-set(AWSSDK_CMAKE_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_LIB_INSTALLDIR}/cmake")
-set(AWSSDK_LIB_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_LIB_INSTALLDIR}/${AWSSDK_PLATFORM_PREFIX}")
-set(AWSSDK_BIN_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_BIN_INSTALLDIR}/${AWSSDK_PLATFORM_PREFIX}")
+set(AWSSDK_INCLUDE_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_INCLUDEDIR}")
+set(AWSSDK_CMAKE_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/cmake")
+set(AWSSDK_LIB_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/${AWSSDK_PLATFORM_PREFIX}")
+set(AWSSDK_BIN_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_BINDIR}/${AWSSDK_PLATFORM_PREFIX}")
 
 
 if (AWSSDK_PLATFORM_DEPS_LIBS)
@@ -145,7 +144,7 @@ if (AWSSDK_ADDITIONAL_LIBS)
 	set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${AWSSDK_ADDITIONAL_LIBS}")
 endif()
 
-Message(STATUS "Find AWSSDK, Version: ${PACKAGE_VERSION}, install Root:${AWSSDK_ROOT_DIR}, Platform prefix:${AWSSDK_PLATFORM_PREFIX}, Platform Dependent Libraries: ${AWSSDK_PLATFORM_DEPS}")
+Message(STATUS "Found AWS SDK for C++, Version: ${PACKAGE_VERSION}, Install Root:${AWSSDK_ROOT_DIR}, Platform Prefix:${AWSSDK_PLATFORM_PREFIX}, Platform Dependent Libraries: ${AWSSDK_PLATFORM_DEPS}")
 
 
 # copy libs of services in SERVICE_LIST and all there dependent libs to DEST_DIR
