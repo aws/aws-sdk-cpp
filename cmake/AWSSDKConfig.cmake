@@ -80,7 +80,7 @@ else()
 endif()
 
 if (NOT AWSSDK_CORE_HEADER_FILE)
-    Message(FATAL_ERROR "AWS SDK for C++ is missing, please install it first")
+    message(FATAL_ERROR "AWS SDK for C++ is missing, please install it first")
 endif()
 
 # based on core header file path, inspects the actual AWSSDK_ROOT_DIR
@@ -90,7 +90,7 @@ get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
 get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
 
 if (NOT AWSSDK_ROOT_DIR)
-    Message(FATAL_ERROR "Found header file of AWS SDK for C++: ${AWSSDK_CORE_HEADER_FILE}, but after retrieving, AWSSDK_ROOT_DIR becomes empty")
+    message(FATAL_ERROR "Found header file of AWS SDK for C++: ${AWSSDK_CORE_HEADER_FILE}, but after retrieving, AWSSDK_ROOT_DIR becomes empty")
 endif()
 
 
@@ -105,7 +105,7 @@ find_library(AWSSDK_CORE_LIB_FILE aws-cpp-sdk-core
 
 
 if (NOT AWSSDK_CORE_LIB_FILE)
-    Message(FATAL_ERROR "AWS SDK for C++ headers found, but we were unable to locate the binaries. Have you deleted or moved it?
+    message(FATAL_ERROR "AWS SDK for C++ headers found, but we were unable to locate the binaries. Have you deleted or moved it?
             Please make sure header files and binaries are located in INSTALL_ROOT_DIR/INCLUDE_DIR/ and INSTALL_ROOT_DIR/LIB_DIR/[PLATFORM_PREFIX]/[Debug|Config|OtherConfigs]")
 endif()
 
@@ -121,7 +121,7 @@ endwhile()
 
 set(AWSSDK_PLATFORM_PREFIX "${TEMP_PLATFORM_PREFIX}")
 
-SET(AWSSDK_FOUND "1")
+set(AWSSDK_FOUND "1")
 set(AWSSDK_INCLUDE_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_INCLUDEDIR}")
 set(AWSSDK_CMAKE_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/cmake")
 set(AWSSDK_LIB_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/${AWSSDK_PLATFORM_PREFIX}")
@@ -144,7 +144,7 @@ if (AWSSDK_ADDITIONAL_LIBS)
 	set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${AWSSDK_ADDITIONAL_LIBS}")
 endif()
 
-Message(STATUS "Found AWS SDK for C++, Version: ${PACKAGE_VERSION}, Install Root:${AWSSDK_ROOT_DIR}, Platform Prefix:${AWSSDK_PLATFORM_PREFIX}, Platform Dependent Libraries: ${AWSSDK_PLATFORM_DEPS}")
+message(STATUS "Found AWS SDK for C++, Version: ${PACKAGE_VERSION}, Install Root:${AWSSDK_ROOT_DIR}, Platform Prefix:${AWSSDK_PLATFORM_PREFIX}, Platform Dependent Libraries: ${AWSSDK_PLATFORM_DEPS}")
 
 
 # copy libs of services in SERVICE_LIST and all there dependent libs to DEST_DIR
@@ -156,7 +156,7 @@ macro(AWSSDK_CPY_DYN_LIBS SERVICE_LIST CONFIG DEST_DIR)
         list(APPEND ALL_SERVICES ${SVC})
         get_dependencies_for_sdk(${SVC} DEPENDENCY_LIST)
         if (DEPENDENCY_LIST)
-            STRING(REPLACE "," ";" LIST_RESULT ${DEPENDENCY_LIST})
+            string(REPLACE "," ";" LIST_RESULT ${DEPENDENCY_LIST})
             list(APPEND ALL_SERVICES ${LIST_RESULT})
         endif()
         unset(DEPENDENCY_LIST CACHE)
@@ -166,7 +166,7 @@ macro(AWSSDK_CPY_DYN_LIBS SERVICE_LIST CONFIG DEST_DIR)
     foreach(SVC IN LISTS ALL_SERVICES)
         find_library(LIB_PATH "aws-cpp-sdk-${SVC}" "${AWSSDK_LIB_DIR}/${CONFIG}" NO_DEFAULT_PATH)
         if (NOT LIB_PATH)
-            Message(FATAL_ERROR "Couldn't find library aws-cpp-sdk-${SVC}")
+            message(FATAL_ERROR "Couldn't find library aws-cpp-sdk-${SVC}")
         endif()
         execute_process(COMMAND cp ${LIB_PATH} ${DEST_DIR})
         unset(LIB_PATH CACHE)
@@ -181,7 +181,7 @@ macro(AWSSDK_DETERMINE_LIBS_TO_LINK SERVICE_LIST OUTPUT_VAR)
         list(APPEND ALL_SERVICES ${SVC})
         get_dependencies_for_sdk(${SVC} DEPENDENCY_LIST)
         if (DEPENDENCY_LIST)
-            STRING(REPLACE "," ";" LIST_RESULT ${DEPENDENCY_LIST})
+            string(REPLACE "," ";" LIST_RESULT ${DEPENDENCY_LIST})
             list(APPEND ALL_SERVICES ${LIST_RESULT})
         endif()
         unset(DEPENDENCY_LIST CACHE)
@@ -197,7 +197,7 @@ endmacro(AWSSDK_DETERMINE_LIBS_TO_LINK)
 macro(AWSSDK_LIB_DEPS HIGH_LEVEL_LIB_NAME OUTPUT_VAR)
     get_dependencies_for_sdk(${HIGH_LEVEL_LIB_NAME} DEPENDENCY_LIST)
     if (DEPENDENCY_LIST)
-        STRING(REPLACE "," ";" ${OUTPUT_VAR} ${DEPENDENCY_LIST})
+        string(REPLACE "," ";" ${OUTPUT_VAR} ${DEPENDENCY_LIST})
         list(APPEND ALL_SERVICES ${LIST_RESULT})
     endif()
     list(APPEND ${OUTPUT_VAR} "core")

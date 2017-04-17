@@ -57,15 +57,15 @@ set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The d
 
 # backwards compatibility with old command line params
 if("${STATIC_LINKING}" STREQUAL "1")
-    SET(BUILD_SHARED_LIBS OFF)
+    set(BUILD_SHARED_LIBS OFF)
 endif()
 
 if(MINIMIZE_SIZE)
     message(STATUS "MINIMIZE_SIZE enabled")
-    SET(ENABLE_UNITY_BUILD ON) # MINIMIZE_SIZE always implies UNITY_BUILD
+    set(ENABLE_UNITY_BUILD ON) # MINIMIZE_SIZE always implies UNITY_BUILD
 endif()
 
-SET(PYTHON_CMD "python")
+set(PYTHON_CMD "python")
 
 # CMAKE_MODULE_PATH is a CMAKE variable. It contains a list of paths 
 # which could be used to search CMAKE modules by "include()" or "find_package()", but the default value is empty.
@@ -77,9 +77,9 @@ include(resolve_platform)
 include(CMakePackageConfigHelpers)
 
 # use response files to prevent command-line-too-big errors for large libraries like iam
-SET(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS 1)
-SET(CMAKE_CXX_USE_RESPONSE_FILE_FOR_INCLUDES 1)
-SET(CMAKE_CXX_RESPONSE_FILE_LINK_FLAG "@")
+set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS 1)
+set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_INCLUDES 1)
+set(CMAKE_CXX_RESPONSE_FILE_LINK_FLAG "@")
 
 if(COMMAND apply_pre_project_platform_settings)
     apply_pre_project_platform_settings()
@@ -150,21 +150,21 @@ endif()
 
 # setup user specified installation directory if any, regardless previous platform default settings
 if (CMAKE_INSTALL_BINDIR)
-    SET(BINARY_DIRECTORY "${CMAKE_INSTALL_BINDIR}")
+    set(BINARY_DIRECTORY "${CMAKE_INSTALL_BINDIR}")
 endif()
 
 if (CMAKE_INSTALL_LIBDIR)
-    SET(LIBRARY_DIRECTORY "${CMAKE_INSTALL_LIBDIR}")
+    set(LIBRARY_DIRECTORY "${CMAKE_INSTALL_LIBDIR}")
 endif()
 
 if (CMAKE_INSTALL_INCLUDEDIR)
-    SET(INCLUDE_DIRECTORY "${CMAKE_INSTALL_INCLUDEDIR}")
+    set(INCLUDE_DIRECTORY "${CMAKE_INSTALL_INCLUDEDIR}")
 endif()
 
 if(BUILD_SHARED_LIBS)
-    SET(ARCHIVE_DIRECTORY "${BINARY_DIRECTORY}")
+    set(ARCHIVE_DIRECTORY "${BINARY_DIRECTORY}")
 else()
-    SET(ARCHIVE_DIRECTORY "${LIBRARY_DIRECTORY}")
+    set(ARCHIVE_DIRECTORY "${LIBRARY_DIRECTORY}")
 endif()
 
 add_sdks()
