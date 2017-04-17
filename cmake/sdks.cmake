@@ -17,8 +17,6 @@ endif()
 
 if(BUILD_ONLY)
     set(SDK_BUILD_LIST ${BUILD_ONLY})
-    # core is a must
-    list(APPEND SDK_BUILD_LIST "core")
     foreach(TARGET IN LISTS BUILD_ONLY)
         message(STATUS "Considering ${TARGET}")
         get_dependencies_for_sdk(${TARGET} DEPENDENCY_LIST)
@@ -149,7 +147,6 @@ if(BUILD_ONLY)
     set(TEMP_SDK_DEPENDENCY_BUILD_LIST ${SDK_DEPENDENCY_BUILD_LIST})
     foreach (SDK IN LISTS TEMP_SDK_DEPENDENCY_BUILD_LIST)
         list(FIND SDK_BUILD_LIST ${SDK} DEPENDENCY_INDEX)
-
         if(DEPENDENCY_INDEX LESS 0)
             find_package("aws-cpp-sdk-${SDK}" QUIET)
             if (NOT ${SDK}_FOUND)
@@ -175,7 +172,12 @@ macro(add_sdks)
 
     foreach(SDK IN LISTS SDK_BUILD_LIST)
         set(SDK_DIR "aws-cpp-sdk-${SDK}")
-        add_subdirectory("${SDK_DIR}")
+        # when building with BUILD_ONLY, we will try to find dependencies first by calling find_package
+        # well find_package will set up target if library exists, so here to avoid duplicate target we
+        # test the existence of target first
+        if (NOT TARGET ${SDK_DIR})
+            add_subdirectory("${SDK_DIR}")
+        endif()
         LIST(APPEND EXPORTS "${SDK_DIR}")
     endforeach()    
 
