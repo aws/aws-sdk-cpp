@@ -12,6 +12,9 @@
   if($varNameHasBeenSet)
   {
 #end
+#if($memberName == $shape.payload)
+  ${spaces}payload = ${memberVarName}.Jsonize();
+#else
 #if($member.shape.enum)
   ${spaces}payload.WithString("${memberName}", ${member.shape.name}Mapper::GetNameFor${member.shape.name}($memberVarName));
 #elseif($member.shape.list || $member.shape.map)
@@ -29,6 +32,7 @@
 #else
   ${spaces}payload.With${CppViewHelper.computeJsonCppType($member.shape)}("${memberName}", ${memberVarName}${CppViewHelper.computeJsonizeString($member.shape)});
 
+#end
 #end
 #if(!$member.required && $useRequiredField)
   }
