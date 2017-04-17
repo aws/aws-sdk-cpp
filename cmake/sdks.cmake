@@ -17,7 +17,8 @@ endif()
 
 if(BUILD_ONLY)
     set(SDK_BUILD_LIST ${BUILD_ONLY})
-
+    # core is a must
+    list(APPEND BUILD_LIST "core")
     foreach(TARGET IN LISTS BUILD_ONLY)
         message(STATUS "Considering ${TARGET}")
         get_dependencies_for_sdk(${TARGET} DEPENDENCY_LIST)
