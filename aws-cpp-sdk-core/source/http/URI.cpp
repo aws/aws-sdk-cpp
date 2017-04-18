@@ -142,7 +142,7 @@ void InsertValueOrderedParameter(QueryStringParameterCollection& queryParams, co
     {
         if (entry->second > value)
         {
-            auto newElement = queryParams.emplace_hint(entry, key, value);            
+            queryParams.emplace_hint(entry, key, value);            
             return;
         }
     }
