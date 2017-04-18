@@ -75,8 +75,8 @@ TEST(URITest, TestAddQueryStringParameters)
     uri.AddQueryStringParameter("test needs escaping", "value needs escaping");
     //per https://tools.ietf.org/html/rfc3986#section-3.4 there is nothing preventing servers from allowing
     //multiple values for the same key. Verify that behavior here.
-    uri.AddQueryStringParameter("test2", "value2");
     uri.AddQueryStringParameter("test2", "value3");
+    uri.AddQueryStringParameter("test2", "value2");
 
     //parameter collection shouldn't  be encoded when accessed
     QueryStringParameterCollection queryStringParams = uri.GetQueryStringParameters();
@@ -94,10 +94,11 @@ TEST(URITest, TestAddQueryStringParameters)
     EXPECT_STREQ("value3", nextEntry->second.c_str());
 
     //it should be encoded in the actual query string.
-    EXPECT_STREQ("?test1=value1&test%20needs%20escaping=value%20needs%20escaping&test2=value2&test2=value3", uri.GetQueryString().c_str());
+    //request has not been canonicalized. There should be no reordering of the query string.
+    EXPECT_STREQ("?test1=value1&test%20needs%20escaping=value%20needs%20escaping&test2=value3&test2=value2", uri.GetQueryString().c_str());
 
     //let's go ahead and make sure the url is constructed properly.
-    EXPECT_STREQ("http://www.test.com/path/to/resource?test1=value1&test%20needs%20escaping=value%20needs%20escaping&test2=value2&test2=value3",
+    EXPECT_STREQ("http://www.test.com/path/to/resource?test1=value1&test%20needs%20escaping=value%20needs%20escaping&test2=value3&test2=value2",
         uri.GetURIString().c_str());
 }
 
@@ -110,14 +111,14 @@ TEST(URITest, TestCanonicalizeQueryStringParameters)
 
     uri.AddQueryStringParameter("b", "c");
     uri.AddQueryStringParameter("a", "b");
-    uri.AddQueryStringParameter("c", "a");
     uri.AddQueryStringParameter("c", "b");
+    uri.AddQueryStringParameter("c", "a");
     uri.AddQueryStringParameter("d", "d");
 
     uri.CanonicalizeQueryString();
 
     //it should be sorted and canonical
-    EXPECT_EQ("?a=b&b=c&c=a&c=b&d=d", uri.GetQueryString());
+    EXPECT_STREQ("?a=b&b=c&c=a&c=b&d=d", uri.GetQueryString().c_str());
     
     URI nonStandardUri("www.test.com/path/to/resource?nonStandard");
     nonStandardUri.CanonicalizeQueryString();
