@@ -25,7 +25,7 @@ if(HAVE_PULSE)
 
 	message(STATUS "Pulse audio header files have been detected, included pulse audio as a possible sound driver implementation.")
     add_definitions("-DPULSE")
-    set(PLATFORM_LIBS ${PLATFORM_LIBS} pulse-simple)
+    set(PLATFORM_LIBS ${PLATFORM_LIBS} pulse pulse-simple)
 elseif(PLATFORM_LINUX)
     message(WARNING "We've detected that you are building on linux, but the header files for pulseaudio are not available.\
                     If you are providing your own audio implementation or you will not be using the text-to-speech library, this is fine.\
