@@ -52,6 +52,12 @@ if (NOT AWSSDK_INSTALL_INCLUDEDIR)
     set(AWSSDK_INSTALL_INCLUDEDIR "include")
 endif()
 
+# on Windows or Win64 dlls are treated as runtime target and installed in bindir
+if (CMAKE_HOST_WIN32)
+    set(AWSSDK_INSTALL_LIBDIR "${AWSSDK_INSTALL_BINDIR}")
+endif()
+
+
 # Compute the default installation root relative to this file.
 # from prefix/lib/cmake/AWSSDK/xx.cmake to prefix
 get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
@@ -103,12 +109,6 @@ find_library(AWSSDK_CORE_LIB_FILE aws-cpp-sdk-core
         "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/${AWSSDK_PLATFORM_PREFIX}/Release"
         "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/${AWSSDK_PLATFORM_PREFIX}/RelWithDebInfo"
         "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/${AWSSDK_PLATFORM_PREFIX}/MinSizeRel"
-        "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_BINDIR}/${AWSSDK_PLATFORM_PREFIX}"
-        "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_BINDIR}/${AWSSDK_PLATFORM_PREFIX}/Debug"
-        "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_BINDIR}/${AWSSDK_PLATFORM_PREFIX}/DebugOpt"
-        "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_BINDIR}/${AWSSDK_PLATFORM_PREFIX}/Release"
-        "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_BINDIR}/${AWSSDK_PLATFORM_PREFIX}/RelWithDebInfo"
-        "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_BINDIR}/${AWSSDK_PLATFORM_PREFIX}/MinSizeRel"
         NO_DEFAULT_PATH)
 
 
@@ -120,13 +120,6 @@ endif()
 # based on AWSSDK_CORE_LIB_FILE path, inspects the actual AWSSDK_PLATFROM_PREFIX
 get_filename_component(TEMP_PATH "${AWSSDK_CORE_LIB_FILE}" PATH)
 get_filename_component(TEMP_NAME "${TEMP_PATH}" NAME)
-
-# on Windows or Win64 dlls are treated as runtime target and installed in bindir
-if (CMAKE_HOST_WIN32)
-    set(LIB_SEARCH_PREFIX "${AWSSDK_INSTALL_BINDIR}")
-else()
-    set(LIB_SEARCH_PREFIX "${AWSSDK_INSTALL_LIBDIR}")
-endif()
 
 while (NOT TEMP_NAME STREQUAL ${LIB_SEARCH_PREFIX})
     set(TEMP_PLATFORM_PREFIX "${TEMP_NAME}/${TEMP_PLATFORM_PREFIX}")
