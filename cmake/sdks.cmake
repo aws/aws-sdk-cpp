@@ -129,9 +129,6 @@ foreach(custom_client ${ADD_CUSTOM_CLIENTS})
     endif()
 endforeach(custom_client)
 
-LIST(REMOVE_DUPLICATES SDK_BUILD_LIST)
-LIST(REMOVE_DUPLICATES SDK_DEPENDENCY_BUILD_LIST) 
-
 # when building a fixed target set, missing SDKs are an error
 # when building "everything", we forgive missing SDKs; should this become an option instead?
 if(BUILD_ONLY)    
@@ -148,15 +145,12 @@ if(BUILD_ONLY)
     foreach (SDK IN LISTS TEMP_SDK_DEPENDENCY_BUILD_LIST)
         list(FIND SDK_BUILD_LIST ${SDK} DEPENDENCY_INDEX)
         if(DEPENDENCY_INDEX LESS 0)
-            find_package("aws-cpp-sdk-${SDK}" QUIET)
-            if (NOT ${SDK}_FOUND)
-                set(SDK_DIR "aws-cpp-sdk-${SDK}")
-                if (NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
-                    message(FATAL_ERROR "${SDK} is required for build, but ${SDK_DIR} directory is missing!")
-                endif ()               
-            else ()
-                list(REMOVE_ITEM SDK_DEPENDENCY_BUILD_LIST ${SDK})
-            endif ()
+            # test dependencies should also be built from source instead of locating by calling find_package
+            # which may cause version conflicts as well as double targeting built targets
+            set(SDK_DIR "aws-cpp-sdk-${SDK}")
+            if (NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
+                message(FATAL_ERROR "${SDK} is required for build, but ${SDK_DIR} directory is missing!")
+            endif ()               
         else ()
             list(REMOVE_ITEM SDK_DEPENDENCY_BUILD_LIST ${SDK})
         endif ()
@@ -167,17 +161,16 @@ if(BUILD_ONLY)
     endforeach()
 endif()
 
+LIST(REMOVE_DUPLICATES SDK_BUILD_LIST)
+LIST(REMOVE_DUPLICATES SDK_DEPENDENCY_BUILD_LIST) 
+
 macro(add_sdks)
     LIST(APPEND EXPORTS "")
 
     foreach(SDK IN LISTS SDK_BUILD_LIST)
         set(SDK_DIR "aws-cpp-sdk-${SDK}")
-        # when building with BUILD_ONLY, we will try to find dependencies first by calling find_package
-        # well find_package will set up target if library exists, so here to avoid duplicate target we
-        # test the existence of target first
-        if (NOT TARGET ${SDK_DIR})
-            add_subdirectory("${SDK_DIR}")
-        endif()
+
+        add_subdirectory("${SDK_DIR}")
         LIST(APPEND EXPORTS "${SDK_DIR}")
     endforeach()    
 
