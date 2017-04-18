@@ -48,6 +48,15 @@ GetFunctionResult& GetFunctionResult::operator =(const AmazonWebServiceResult<Js
 
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonValue> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+  }
+
 
 
   return *this;

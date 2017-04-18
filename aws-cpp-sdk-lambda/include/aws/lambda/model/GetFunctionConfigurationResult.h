@@ -51,37 +51,51 @@ namespace Model
     GetFunctionConfigurationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The name of the function.</p>
+     * <p>The name of the function. Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 characters in
+     * length.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The name of the function.</p>
+     * <p>The name of the function. Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 characters in
+     * length.</p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionName = value; }
 
     /**
-     * <p>The name of the function.</p>
+     * <p>The name of the function. Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 characters in
+     * length.</p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionName = std::move(value); }
 
     /**
-     * <p>The name of the function.</p>
+     * <p>The name of the function. Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 characters in
+     * length.</p>
      */
     inline void SetFunctionName(const char* value) { m_functionName.assign(value); }
 
     /**
-     * <p>The name of the function.</p>
+     * <p>The name of the function. Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 characters in
+     * length.</p>
      */
     inline GetFunctionConfigurationResult& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The name of the function.</p>
+     * <p>The name of the function. Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 characters in
+     * length.</p>
      */
     inline GetFunctionConfigurationResult& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the function.</p>
+     * <p>The name of the function. Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 characters in
+     * length.</p>
      */
     inline GetFunctionConfigurationResult& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
@@ -121,37 +135,27 @@ namespace Model
     inline GetFunctionConfigurationResult& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p>
+     * <p>The runtime environment for the Lambda function.</p>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p>
+     * <p>The runtime environment for the Lambda function.</p>
      */
     inline void SetRuntime(const Runtime& value) { m_runtime = value; }
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p>
+     * <p>The runtime environment for the Lambda function.</p>
      */
     inline void SetRuntime(Runtime&& value) { m_runtime = std::move(value); }
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p>
+     * <p>The runtime environment for the Lambda function.</p>
      */
     inline GetFunctionConfigurationResult& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p>
+     * <p>The runtime environment for the Lambda function.</p>
      */
     inline GetFunctionConfigurationResult& WithRuntime(Runtime&& value) { SetRuntime(std::move(value)); return *this;}
 

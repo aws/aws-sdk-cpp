@@ -44,19 +44,19 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Maximum size, in megabytes, of a code package you can upload per region. The
+     * <p>Maximum size, in bytes, of a code package you can upload per region. The
      * default size is 75 GB. </p>
      */
     inline long long GetTotalCodeSize() const{ return m_totalCodeSize; }
 
     /**
-     * <p>Maximum size, in megabytes, of a code package you can upload per region. The
+     * <p>Maximum size, in bytes, of a code package you can upload per region. The
      * default size is 75 GB. </p>
      */
     inline void SetTotalCodeSize(long long value) { m_totalCodeSizeHasBeenSet = true; m_totalCodeSize = value; }
 
     /**
-     * <p>Maximum size, in megabytes, of a code package you can upload per region. The
+     * <p>Maximum size, in bytes, of a code package you can upload per region. The
      * default size is 75 GB. </p>
      */
     inline AccountLimit& WithTotalCodeSize(long long value) { SetTotalCodeSize(value); return *this;}

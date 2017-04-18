@@ -348,47 +348,62 @@ namespace Model
     inline UpdateFunctionConfigurationRequest& WithEnvironment(Environment&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p> <note> <p>You can no longer downgrade to the
-     * v0.10.42 runtime version. This version will no longer be supported as of early
-     * 2017.</p> </note>
+     * <p>The runtime environment for the Lambda function.</p> <p>To use the Python
+     * runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set
+     * the value to "python2.7". To use the Node.js runtime v6.10, set the value to
+     * "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
+     * use the Python runtime v3.6, set the value to "python3.6". To use the Python
+     * runtime v2.7, set the value to "python2.7".</p> <note> <p>You can no longer
+     * downgrade to the v0.10.42 runtime version. This version will no longer be
+     * supported as of early 2017.</p> </note>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p> <note> <p>You can no longer downgrade to the
-     * v0.10.42 runtime version. This version will no longer be supported as of early
-     * 2017.</p> </note>
+     * <p>The runtime environment for the Lambda function.</p> <p>To use the Python
+     * runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set
+     * the value to "python2.7". To use the Node.js runtime v6.10, set the value to
+     * "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
+     * use the Python runtime v3.6, set the value to "python3.6". To use the Python
+     * runtime v2.7, set the value to "python2.7".</p> <note> <p>You can no longer
+     * downgrade to the v0.10.42 runtime version. This version will no longer be
+     * supported as of early 2017.</p> </note>
      */
     inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p> <note> <p>You can no longer downgrade to the
-     * v0.10.42 runtime version. This version will no longer be supported as of early
-     * 2017.</p> </note>
+     * <p>The runtime environment for the Lambda function.</p> <p>To use the Python
+     * runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set
+     * the value to "python2.7". To use the Node.js runtime v6.10, set the value to
+     * "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
+     * use the Python runtime v3.6, set the value to "python3.6". To use the Python
+     * runtime v2.7, set the value to "python2.7".</p> <note> <p>You can no longer
+     * downgrade to the v0.10.42 runtime version. This version will no longer be
+     * supported as of early 2017.</p> </note>
      */
     inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p> <note> <p>You can no longer downgrade to the
-     * v0.10.42 runtime version. This version will no longer be supported as of early
-     * 2017.</p> </note>
+     * <p>The runtime environment for the Lambda function.</p> <p>To use the Python
+     * runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set
+     * the value to "python2.7". To use the Node.js runtime v6.10, set the value to
+     * "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
+     * use the Python runtime v3.6, set the value to "python3.6". To use the Python
+     * runtime v2.7, set the value to "python2.7".</p> <note> <p>You can no longer
+     * downgrade to the v0.10.42 runtime version. This version will no longer be
+     * supported as of early 2017.</p> </note>
      */
     inline UpdateFunctionConfigurationRequest& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p> <note> <p>You can no longer downgrade to the
-     * v0.10.42 runtime version. This version will no longer be supported as of early
-     * 2017.</p> </note>
+     * <p>The runtime environment for the Lambda function.</p> <p>To use the Python
+     * runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set
+     * the value to "python2.7". To use the Node.js runtime v6.10, set the value to
+     * "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
+     * use the Python runtime v3.6, set the value to "python3.6". To use the Python
+     * runtime v2.7, set the value to "python2.7".</p> <note> <p>You can no longer
+     * downgrade to the v0.10.42 runtime version. This version will no longer be
+     * supported as of early 2017.</p> </note>
      */
     inline UpdateFunctionConfigurationRequest& WithRuntime(Runtime&& value) { SetRuntime(std::move(value)); return *this;}
 
