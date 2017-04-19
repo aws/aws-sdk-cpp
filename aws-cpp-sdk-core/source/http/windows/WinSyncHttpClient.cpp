@@ -109,7 +109,8 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
         {            
             payloadStream->read(streamBuffer, HTTP_REQUEST_WRITE_BUFFER_LENGTH);
             std::streamsize bytesRead = payloadStream->gcount();
-            success = !payloadStream->bad();
+            //use fail as it detects either bad bit or fail bit
+            success = !payloadStream->fail();
             
             uint64_t bytesWritten = 0;
             if (bytesRead > 0)
@@ -131,8 +132,9 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
                 sentHandler(&request, (long long)bytesWritten);
             }
 
-            if(!payloadStream->good())
-            {                
+            //only eof should result in leaving success true and setting done to true
+            if(payloadStream->eof())
+            {
                 done = true;
             }           
 
@@ -140,7 +142,9 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
         }        
 
         payloadStream->clear();
-        payloadStream->seekg(startingPos, payloadStream->beg);
+        //is stream seekable? if not, don't try to seek
+        if(startingPos >= 0)
+            payloadStream->seekg(startingPos, payloadStream->beg);
     }
 
     if(success)
@@ -208,17 +212,16 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
 
     if (request.GetMethod() != HttpMethod::HTTP_HEAD)
     {
-        char body[1024];
+        char body[HTTP_REQUEST_WRITE_BUFFER_LENGTH];
         uint64_t bodySize = sizeof(body);
         int64_t numBytesResponseReceived = 0;
         read = 0;    
         
         bool success = ContinueRequest(request);
 
-        while (DoReadData(hHttpRequest, body, bodySize, read) && read > 0 && success)
+        while (success && DoReadData(hHttpRequest, body, bodySize, read) && read > 0)
         {
-            response->GetResponseBody().write(body, read);
-            if (read > 0)
+            if(response->GetResponseBody().write(body, read).fail()) //check fail and badbit after write
             {
                 numBytesResponseReceived += read;
                 if (readLimiter != nullptr)
@@ -231,6 +234,8 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
                     receivedHandler(&request, response.get(), (long long)read);
                 }
             }
+            else
+                success = false;
 
             success = success && ContinueRequest(request) && IsRequestProcessingEnabled();
         }
@@ -254,9 +259,10 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
     }
 
     //go ahead and flush the response body.
-    response->GetResponseBody().flush();
-
-    return response;
+    if(response->GetResponseBody().flush().fail())   //make sure flush succeeds.
+        return nullptr;  //don't want an apparent success on disk write failure. 
+    else
+        return response;
 }
 
 std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& request, 
