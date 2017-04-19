@@ -20,7 +20,7 @@ if(NOT EXISTS "${CMAKE_CURRENT_BINARY_DIR}/install_manifest.txt")
 endif()
 
 file(READ "${CMAKE_CURRENT_BINARY_DIR}/install_manifest.txt" files)
-string(REGEX REPLACE "[ \r\n\t]" ";" files "${files}")
+string(REGEX REPLACE "[\r\n]" ";" files "${files}")
 
 foreach(file ${files})
     message(STATUS "Uninstalling ${file}")
