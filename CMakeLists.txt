@@ -171,3 +171,6 @@ add_sdks()
 
 # for user friendly cmake usage
 include(setup_cmake_find_module)
+
+# for generating make unstaill target
+ADD_CUSTOM_TARGET(uninstall "${CMAKE_COMMAND}" -P "${CMAKE_SOURCE_DIR}/cmake/make_uninstall.cmake") 

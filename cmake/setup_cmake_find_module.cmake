@@ -65,16 +65,20 @@ install(
     FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}/platformDeps.cmake"
     DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}/")
 
-# copy config file to destination, this file is vital for cmake to find correct package.
+# copy all cmake files to destination, these files include useful macros, functions and variables for users.
 # useful macros and variables will be included in this cmake file for user to use
-install(
-    FILES "${CMAKE_SOURCE_DIR}/cmake/${PROJECT_NAME}Config.cmake"
-    DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
+install(DIRECTORY "${CMAKE_SOURCE_DIR}/cmake/" DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
+
+# following two files are vital for cmake to find correct package, but since we copied all files from above
+# we left the code here to give you bettern understanding
+#install(
+#    FILES "${CMAKE_SOURCE_DIR}/cmake/${PROJECT_NAME}Config.cmake"
+#    DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
 
 # to make compile time settings consistent with user usage time settings, we copy common settings to 
 # destination. These settings will be included by ${PROJECT_NAME}-config.cmake
 
 # internal dependencies
-install(
-    FILES "${CMAKE_SOURCE_DIR}/cmake/sdksCommon.cmake"
-    DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}/")
+#install(
+#    FILES "${CMAKE_SOURCE_DIR}/cmake/sdksCommon.cmake"
+#    DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}/")

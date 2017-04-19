@@ -6,6 +6,7 @@ libdir=${exec_prefix}/lib
 Name: @PROJECT_NAME@
 Description: @PROJECT_DESCRIPTION@
 Version: @PROJECT_VERSION@
-Cflags: -I${includedir}
-Libs: -L${libdir} -l@PROJECT_NAME@
-Requires: @PROJECT_LIBS@
+Cflags: -I${includedir} -std=c++11 @CMAKE_C_FLAGS@ @CMAKE_CXX_FLAGS@
+Libs: -L${libdir} -l@PROJECT_NAME@ 
+Libs.private: @ALL_DEP_LIBS_LINK_FLAGS@
+Requires: @PROJECT_LIBS_STRING@
