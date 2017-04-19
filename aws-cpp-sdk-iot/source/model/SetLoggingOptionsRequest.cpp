@@ -32,8 +32,7 @@ Aws::String SetLoggingOptionsRequest::SerializePayload() const
 
   if(m_loggingOptionsPayloadHasBeenSet)
   {
-   payload.WithObject("loggingOptionsPayload", m_loggingOptionsPayload.Jsonize());
-
+   payload = m_loggingOptionsPayload.Jsonize();
   }
 
   return payload.WriteReadable();
