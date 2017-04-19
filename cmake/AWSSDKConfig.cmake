@@ -53,7 +53,7 @@ if (NOT AWSSDK_INSTALL_INCLUDEDIR)
 endif()
 
 # on Windows or Win64 dlls are treated as runtime target and installed in bindir
-if (CMAKE_HOST_WIN32)
+if (WIN32)
     set(AWSSDK_INSTALL_LIBDIR "${AWSSDK_INSTALL_BINDIR}")
 endif()
 
@@ -98,7 +98,7 @@ get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
 get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
 
 if (NOT AWSSDK_ROOT_DIR)
-    message(FATAL_ERROR "Found header file of AWS SDK for C++: ${AWSSDK_CORE_HEADER_FILE}, but after retrieving, AWSSDK_ROOT_DIR becomes empty")
+    message(FATAL_ERROR "AWSSDK_ROOT_DIR is not set or can't be calculated from the path of core header file")
 endif()
 
 
