@@ -43,6 +43,7 @@
 #include <aws/iam/model/CreatePolicyVersionRequest.h>
 #include <aws/iam/model/CreateRoleRequest.h>
 #include <aws/iam/model/CreateSAMLProviderRequest.h>
+#include <aws/iam/model/CreateServiceLinkedRoleRequest.h>
 #include <aws/iam/model/CreateServiceSpecificCredentialRequest.h>
 #include <aws/iam/model/CreateUserRequest.h>
 #include <aws/iam/model/CreateVirtualMFADeviceRequest.h>
@@ -135,6 +136,7 @@
 #include <aws/iam/model/UpdateGroupRequest.h>
 #include <aws/iam/model/UpdateLoginProfileRequest.h>
 #include <aws/iam/model/UpdateOpenIDConnectProviderThumbprintRequest.h>
+#include <aws/iam/model/UpdateRoleDescriptionRequest.h>
 #include <aws/iam/model/UpdateSAMLProviderRequest.h>
 #include <aws/iam/model/UpdateSSHPublicKeyRequest.h>
 #include <aws/iam/model/UpdateServerCertificateRequest.h>
@@ -779,6 +781,39 @@ void IAMClient::CreateSAMLProviderAsync(const CreateSAMLProviderRequest& request
 void IAMClient::CreateSAMLProviderAsyncHelper(const CreateSAMLProviderRequest& request, const CreateSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateSAMLProvider(request), context);
+}
+
+CreateServiceLinkedRoleOutcome IAMClient::CreateServiceLinkedRole(const CreateServiceLinkedRoleRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateServiceLinkedRoleOutcome(CreateServiceLinkedRoleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateServiceLinkedRoleOutcome(outcome.GetError());
+  }
+}
+
+CreateServiceLinkedRoleOutcomeCallable IAMClient::CreateServiceLinkedRoleCallable(const CreateServiceLinkedRoleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateServiceLinkedRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateServiceLinkedRole(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::CreateServiceLinkedRoleAsync(const CreateServiceLinkedRoleRequest& request, const CreateServiceLinkedRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateServiceLinkedRoleAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::CreateServiceLinkedRoleAsyncHelper(const CreateServiceLinkedRoleRequest& request, const CreateServiceLinkedRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateServiceLinkedRole(request), context);
 }
 
 CreateServiceSpecificCredentialOutcome IAMClient::CreateServiceSpecificCredential(const CreateServiceSpecificCredentialRequest& request) const
@@ -3815,6 +3850,39 @@ void IAMClient::UpdateOpenIDConnectProviderThumbprintAsync(const UpdateOpenIDCon
 void IAMClient::UpdateOpenIDConnectProviderThumbprintAsyncHelper(const UpdateOpenIDConnectProviderThumbprintRequest& request, const UpdateOpenIDConnectProviderThumbprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateOpenIDConnectProviderThumbprint(request), context);
+}
+
+UpdateRoleDescriptionOutcome IAMClient::UpdateRoleDescription(const UpdateRoleDescriptionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateRoleDescriptionOutcome(UpdateRoleDescriptionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateRoleDescriptionOutcome(outcome.GetError());
+  }
+}
+
+UpdateRoleDescriptionOutcomeCallable IAMClient::UpdateRoleDescriptionCallable(const UpdateRoleDescriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRoleDescriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRoleDescription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::UpdateRoleDescriptionAsync(const UpdateRoleDescriptionRequest& request, const UpdateRoleDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRoleDescriptionAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::UpdateRoleDescriptionAsyncHelper(const UpdateRoleDescriptionRequest& request, const UpdateRoleDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRoleDescription(request), context);
 }
 
 UpdateSAMLProviderOutcome IAMClient::UpdateSAMLProvider(const UpdateSAMLProviderRequest& request) const

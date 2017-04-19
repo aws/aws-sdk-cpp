@@ -27,6 +27,7 @@ SynthesizeSpeechRequest::SynthesizeSpeechRequest() :
     m_outputFormat(OutputFormat::NOT_SET),
     m_outputFormatHasBeenSet(false),
     m_sampleRateHasBeenSet(false),
+    m_speechMarkTypesHasBeenSet(false),
     m_textHasBeenSet(false),
     m_textType(TextType::NOT_SET),
     m_textTypeHasBeenSet(false),
@@ -58,6 +59,17 @@ Aws::String SynthesizeSpeechRequest::SerializePayload() const
   if(m_sampleRateHasBeenSet)
   {
    payload.WithString("SampleRate", m_sampleRate);
+
+  }
+
+  if(m_speechMarkTypesHasBeenSet)
+  {
+   Array<JsonValue> speechMarkTypesJsonList(m_speechMarkTypes.size());
+   for(unsigned speechMarkTypesIndex = 0; speechMarkTypesIndex < speechMarkTypesJsonList.GetLength(); ++speechMarkTypesIndex)
+   {
+     speechMarkTypesJsonList[speechMarkTypesIndex].AsString(SpeechMarkTypeMapper::GetNameForSpeechMarkType(m_speechMarkTypes[speechMarkTypesIndex]));
+   }
+   payload.WithArray("SpeechMarkTypes", std::move(speechMarkTypesJsonList));
 
   }
 
@@ -99,6 +111,14 @@ void  SynthesizeSpeechRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
   if(m_sampleRateHasBeenSet)
   {
     uri.AddQueryStringParameter("SampleRate", m_sampleRate);
+  }
+
+  if(m_speechMarkTypesHasBeenSet)
+  {
+    for(auto& item : m_speechMarkTypes)
+    {
+      uri.AddQueryStringParameter("SpeechMarkTypes", SpeechMarkTypeMapper::GetNameForSpeechMarkType(item));
+    }
   }
 
   if(m_textHasBeenSet)

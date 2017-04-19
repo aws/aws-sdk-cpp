@@ -35,7 +35,8 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_runtime(Runtime::NOT_SET),
     m_runtimeHasBeenSet(false),
     m_deadLetterConfigHasBeenSet(false),
-    m_kMSKeyArnHasBeenSet(false)
+    m_kMSKeyArnHasBeenSet(false),
+    m_tracingConfigHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,12 @@ Aws::String UpdateFunctionConfigurationRequest::SerializePayload() const
   if(m_kMSKeyArnHasBeenSet)
   {
    payload.WithString("KMSKeyArn", m_kMSKeyArn);
+
+  }
+
+  if(m_tracingConfigHasBeenSet)
+  {
+   payload.WithObject("TracingConfig", m_tracingConfig.Jsonize());
 
   }
 

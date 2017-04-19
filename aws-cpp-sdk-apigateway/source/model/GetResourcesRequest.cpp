@@ -28,7 +28,8 @@ GetResourcesRequest::GetResourcesRequest() :
     m_restApiIdHasBeenSet(false),
     m_positionHasBeenSet(false),
     m_limit(0),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_embedHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,16 @@ void GetResourcesRequest::AddQueryStringParameters(URI& uri) const
       ss << m_limit;
       uri.AddQueryStringParameter("limit", ss.str());
       ss.str("");
+    }
+
+    if(m_embedHasBeenSet)
+    {
+      for(const auto& item : m_embed)
+      {
+        ss << item;
+        uri.AddQueryStringParameter("embed", ss.str());
+        ss.str("");
+      }
     }
 
 }

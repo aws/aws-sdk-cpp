@@ -102,74 +102,74 @@ namespace Model
 
     /**
      * <p>The name of the AWS service with which this access key was most recently
-     * used. This field is null when:</p> <ul> <li> <p>The user does not have an access
-     * key.</p> </li> <li> <p>An access key exists but has never been used, at least
-     * not since IAM started tracking this information on April 22nd, 2015.</p> </li>
-     * <li> <p>There is no sign-in data associated with the user</p> </li> </ul>
+     * used. This field displays "N/A" when:</p> <ul> <li> <p>The user does not have an
+     * access key.</p> </li> <li> <p>An access key exists but has never been used, at
+     * least not since IAM started tracking this information on April 22nd, 2015.</p>
+     * </li> <li> <p>There is no sign-in data associated with the user</p> </li> </ul>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
      * <p>The name of the AWS service with which this access key was most recently
-     * used. This field is null when:</p> <ul> <li> <p>The user does not have an access
-     * key.</p> </li> <li> <p>An access key exists but has never been used, at least
-     * not since IAM started tracking this information on April 22nd, 2015.</p> </li>
-     * <li> <p>There is no sign-in data associated with the user</p> </li> </ul>
+     * used. This field displays "N/A" when:</p> <ul> <li> <p>The user does not have an
+     * access key.</p> </li> <li> <p>An access key exists but has never been used, at
+     * least not since IAM started tracking this information on April 22nd, 2015.</p>
+     * </li> <li> <p>There is no sign-in data associated with the user</p> </li> </ul>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
      * <p>The name of the AWS service with which this access key was most recently
-     * used. This field is null when:</p> <ul> <li> <p>The user does not have an access
-     * key.</p> </li> <li> <p>An access key exists but has never been used, at least
-     * not since IAM started tracking this information on April 22nd, 2015.</p> </li>
-     * <li> <p>There is no sign-in data associated with the user</p> </li> </ul>
+     * used. This field displays "N/A" when:</p> <ul> <li> <p>The user does not have an
+     * access key.</p> </li> <li> <p>An access key exists but has never been used, at
+     * least not since IAM started tracking this information on April 22nd, 2015.</p>
+     * </li> <li> <p>There is no sign-in data associated with the user</p> </li> </ul>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
      * <p>The name of the AWS service with which this access key was most recently
-     * used. This field is null when:</p> <ul> <li> <p>The user does not have an access
-     * key.</p> </li> <li> <p>An access key exists but has never been used, at least
-     * not since IAM started tracking this information on April 22nd, 2015.</p> </li>
-     * <li> <p>There is no sign-in data associated with the user</p> </li> </ul>
+     * used. This field displays "N/A" when:</p> <ul> <li> <p>The user does not have an
+     * access key.</p> </li> <li> <p>An access key exists but has never been used, at
+     * least not since IAM started tracking this information on April 22nd, 2015.</p>
+     * </li> <li> <p>There is no sign-in data associated with the user</p> </li> </ul>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
      * <p>The name of the AWS service with which this access key was most recently
-     * used. This field is null when:</p> <ul> <li> <p>The user does not have an access
-     * key.</p> </li> <li> <p>An access key exists but has never been used, at least
-     * not since IAM started tracking this information on April 22nd, 2015.</p> </li>
-     * <li> <p>There is no sign-in data associated with the user</p> </li> </ul>
+     * used. This field displays "N/A" when:</p> <ul> <li> <p>The user does not have an
+     * access key.</p> </li> <li> <p>An access key exists but has never been used, at
+     * least not since IAM started tracking this information on April 22nd, 2015.</p>
+     * </li> <li> <p>There is no sign-in data associated with the user</p> </li> </ul>
      */
     inline AccessKeyLastUsed& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
      * <p>The name of the AWS service with which this access key was most recently
-     * used. This field is null when:</p> <ul> <li> <p>The user does not have an access
-     * key.</p> </li> <li> <p>An access key exists but has never been used, at least
-     * not since IAM started tracking this information on April 22nd, 2015.</p> </li>
-     * <li> <p>There is no sign-in data associated with the user</p> </li> </ul>
+     * used. This field displays "N/A" when:</p> <ul> <li> <p>The user does not have an
+     * access key.</p> </li> <li> <p>An access key exists but has never been used, at
+     * least not since IAM started tracking this information on April 22nd, 2015.</p>
+     * </li> <li> <p>There is no sign-in data associated with the user</p> </li> </ul>
      */
     inline AccessKeyLastUsed& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the AWS service with which this access key was most recently
-     * used. This field is null when:</p> <ul> <li> <p>The user does not have an access
-     * key.</p> </li> <li> <p>An access key exists but has never been used, at least
-     * not since IAM started tracking this information on April 22nd, 2015.</p> </li>
-     * <li> <p>There is no sign-in data associated with the user</p> </li> </ul>
+     * used. This field displays "N/A" when:</p> <ul> <li> <p>The user does not have an
+     * access key.</p> </li> <li> <p>An access key exists but has never been used, at
+     * least not since IAM started tracking this information on April 22nd, 2015.</p>
+     * </li> <li> <p>There is no sign-in data associated with the user</p> </li> </ul>
      */
     inline AccessKeyLastUsed& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
     /**
      * <p>The AWS region where this access key was most recently used. This field is
-     * null when:</p> <ul> <li> <p>The user does not have an access key.</p> </li> <li>
-     * <p>An access key exists but has never been used, at least not since IAM started
-     * tracking this information on April 22nd, 2015.</p> </li> <li> <p>There is no
-     * sign-in data associated with the user</p> </li> </ul> <p>For more information
-     * about AWS regions, see <a
+     * displays "N/A" when:</p> <ul> <li> <p>The user does not have an access key.</p>
+     * </li> <li> <p>An access key exists but has never been used, at least not since
+     * IAM started tracking this information on April 22nd, 2015.</p> </li> <li>
+     * <p>There is no sign-in data associated with the user</p> </li> </ul> <p>For more
+     * information about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a> in the Amazon Web Services General Reference.</p>
      */
@@ -177,11 +177,11 @@ namespace Model
 
     /**
      * <p>The AWS region where this access key was most recently used. This field is
-     * null when:</p> <ul> <li> <p>The user does not have an access key.</p> </li> <li>
-     * <p>An access key exists but has never been used, at least not since IAM started
-     * tracking this information on April 22nd, 2015.</p> </li> <li> <p>There is no
-     * sign-in data associated with the user</p> </li> </ul> <p>For more information
-     * about AWS regions, see <a
+     * displays "N/A" when:</p> <ul> <li> <p>The user does not have an access key.</p>
+     * </li> <li> <p>An access key exists but has never been used, at least not since
+     * IAM started tracking this information on April 22nd, 2015.</p> </li> <li>
+     * <p>There is no sign-in data associated with the user</p> </li> </ul> <p>For more
+     * information about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a> in the Amazon Web Services General Reference.</p>
      */
@@ -189,11 +189,11 @@ namespace Model
 
     /**
      * <p>The AWS region where this access key was most recently used. This field is
-     * null when:</p> <ul> <li> <p>The user does not have an access key.</p> </li> <li>
-     * <p>An access key exists but has never been used, at least not since IAM started
-     * tracking this information on April 22nd, 2015.</p> </li> <li> <p>There is no
-     * sign-in data associated with the user</p> </li> </ul> <p>For more information
-     * about AWS regions, see <a
+     * displays "N/A" when:</p> <ul> <li> <p>The user does not have an access key.</p>
+     * </li> <li> <p>An access key exists but has never been used, at least not since
+     * IAM started tracking this information on April 22nd, 2015.</p> </li> <li>
+     * <p>There is no sign-in data associated with the user</p> </li> </ul> <p>For more
+     * information about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a> in the Amazon Web Services General Reference.</p>
      */
@@ -201,11 +201,11 @@ namespace Model
 
     /**
      * <p>The AWS region where this access key was most recently used. This field is
-     * null when:</p> <ul> <li> <p>The user does not have an access key.</p> </li> <li>
-     * <p>An access key exists but has never been used, at least not since IAM started
-     * tracking this information on April 22nd, 2015.</p> </li> <li> <p>There is no
-     * sign-in data associated with the user</p> </li> </ul> <p>For more information
-     * about AWS regions, see <a
+     * displays "N/A" when:</p> <ul> <li> <p>The user does not have an access key.</p>
+     * </li> <li> <p>An access key exists but has never been used, at least not since
+     * IAM started tracking this information on April 22nd, 2015.</p> </li> <li>
+     * <p>There is no sign-in data associated with the user</p> </li> </ul> <p>For more
+     * information about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a> in the Amazon Web Services General Reference.</p>
      */
@@ -213,11 +213,11 @@ namespace Model
 
     /**
      * <p>The AWS region where this access key was most recently used. This field is
-     * null when:</p> <ul> <li> <p>The user does not have an access key.</p> </li> <li>
-     * <p>An access key exists but has never been used, at least not since IAM started
-     * tracking this information on April 22nd, 2015.</p> </li> <li> <p>There is no
-     * sign-in data associated with the user</p> </li> </ul> <p>For more information
-     * about AWS regions, see <a
+     * displays "N/A" when:</p> <ul> <li> <p>The user does not have an access key.</p>
+     * </li> <li> <p>An access key exists but has never been used, at least not since
+     * IAM started tracking this information on April 22nd, 2015.</p> </li> <li>
+     * <p>There is no sign-in data associated with the user</p> </li> </ul> <p>For more
+     * information about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a> in the Amazon Web Services General Reference.</p>
      */
@@ -225,11 +225,11 @@ namespace Model
 
     /**
      * <p>The AWS region where this access key was most recently used. This field is
-     * null when:</p> <ul> <li> <p>The user does not have an access key.</p> </li> <li>
-     * <p>An access key exists but has never been used, at least not since IAM started
-     * tracking this information on April 22nd, 2015.</p> </li> <li> <p>There is no
-     * sign-in data associated with the user</p> </li> </ul> <p>For more information
-     * about AWS regions, see <a
+     * displays "N/A" when:</p> <ul> <li> <p>The user does not have an access key.</p>
+     * </li> <li> <p>An access key exists but has never been used, at least not since
+     * IAM started tracking this information on April 22nd, 2015.</p> </li> <li>
+     * <p>There is no sign-in data associated with the user</p> </li> </ul> <p>For more
+     * information about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a> in the Amazon Web Services General Reference.</p>
      */
@@ -237,11 +237,11 @@ namespace Model
 
     /**
      * <p>The AWS region where this access key was most recently used. This field is
-     * null when:</p> <ul> <li> <p>The user does not have an access key.</p> </li> <li>
-     * <p>An access key exists but has never been used, at least not since IAM started
-     * tracking this information on April 22nd, 2015.</p> </li> <li> <p>There is no
-     * sign-in data associated with the user</p> </li> </ul> <p>For more information
-     * about AWS regions, see <a
+     * displays "N/A" when:</p> <ul> <li> <p>The user does not have an access key.</p>
+     * </li> <li> <p>An access key exists but has never been used, at least not since
+     * IAM started tracking this information on April 22nd, 2015.</p> </li> <li>
+     * <p>There is no sign-in data associated with the user</p> </li> </ul> <p>For more
+     * information about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a> in the Amazon Web Services General Reference.</p>
      */

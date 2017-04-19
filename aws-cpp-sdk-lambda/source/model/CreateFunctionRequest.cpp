@@ -39,6 +39,7 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_deadLetterConfigHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_kMSKeyArnHasBeenSet(false),
+    m_tracingConfigHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -121,6 +122,12 @@ Aws::String CreateFunctionRequest::SerializePayload() const
   if(m_kMSKeyArnHasBeenSet)
   {
    payload.WithString("KMSKeyArn", m_kMSKeyArn);
+
+  }
+
+  if(m_tracingConfigHasBeenSet)
+  {
+   payload.WithObject("TracingConfig", m_tracingConfig.Jsonize());
 
   }
 

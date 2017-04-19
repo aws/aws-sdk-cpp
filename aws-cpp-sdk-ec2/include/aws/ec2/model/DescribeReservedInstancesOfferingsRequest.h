@@ -438,40 +438,50 @@ namespace Model
     /**
      * <p>The tenancy of the instances covered by the reservation. A Reserved Instance
      * with a tenancy of <code>dedicated</code> is applied to instances that run in a
-     * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>Default:
-     * <code>default</code> </p>
+     * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>
+     * <b>Important:</b> The <code>host</code> value cannot be used with this
+     * parameter. Use the <code>default</code> or <code>dedicated</code> values
+     * only.</p> <p>Default: <code>default</code> </p>
      */
     inline const Tenancy& GetInstanceTenancy() const{ return m_instanceTenancy; }
 
     /**
      * <p>The tenancy of the instances covered by the reservation. A Reserved Instance
      * with a tenancy of <code>dedicated</code> is applied to instances that run in a
-     * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>Default:
-     * <code>default</code> </p>
+     * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>
+     * <b>Important:</b> The <code>host</code> value cannot be used with this
+     * parameter. Use the <code>default</code> or <code>dedicated</code> values
+     * only.</p> <p>Default: <code>default</code> </p>
      */
     inline void SetInstanceTenancy(const Tenancy& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
 
     /**
      * <p>The tenancy of the instances covered by the reservation. A Reserved Instance
      * with a tenancy of <code>dedicated</code> is applied to instances that run in a
-     * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>Default:
-     * <code>default</code> </p>
+     * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>
+     * <b>Important:</b> The <code>host</code> value cannot be used with this
+     * parameter. Use the <code>default</code> or <code>dedicated</code> values
+     * only.</p> <p>Default: <code>default</code> </p>
      */
     inline void SetInstanceTenancy(Tenancy&& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = std::move(value); }
 
     /**
      * <p>The tenancy of the instances covered by the reservation. A Reserved Instance
      * with a tenancy of <code>dedicated</code> is applied to instances that run in a
-     * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>Default:
-     * <code>default</code> </p>
+     * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>
+     * <b>Important:</b> The <code>host</code> value cannot be used with this
+     * parameter. Use the <code>default</code> or <code>dedicated</code> values
+     * only.</p> <p>Default: <code>default</code> </p>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithInstanceTenancy(const Tenancy& value) { SetInstanceTenancy(value); return *this;}
 
     /**
      * <p>The tenancy of the instances covered by the reservation. A Reserved Instance
      * with a tenancy of <code>dedicated</code> is applied to instances that run in a
-     * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>Default:
-     * <code>default</code> </p>
+     * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>
+     * <b>Important:</b> The <code>host</code> value cannot be used with this
+     * parameter. Use the <code>default</code> or <code>dedicated</code> values
+     * only.</p> <p>Default: <code>default</code> </p>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(std::move(value)); return *this;}
 

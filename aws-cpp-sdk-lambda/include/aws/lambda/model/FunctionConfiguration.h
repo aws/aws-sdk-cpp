@@ -19,6 +19,7 @@
 #include <aws/lambda/model/VpcConfigResponse.h>
 #include <aws/lambda/model/DeadLetterConfig.h>
 #include <aws/lambda/model/EnvironmentResponse.h>
+#include <aws/lambda/model/TracingConfigResponse.h>
 #include <utility>
 
 namespace Aws
@@ -462,31 +463,31 @@ namespace Model
     inline FunctionConfiguration& WithVpcConfig(VpcConfigResponse&& value) { SetVpcConfig(std::move(value)); return *this;}
 
     /**
-     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
 
     /**
-     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
 
     /**
-     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = std::move(value); }
 
     /**
-     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline FunctionConfiguration& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
 
     /**
-     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline FunctionConfiguration& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
@@ -570,6 +571,31 @@ namespace Model
      */
     inline FunctionConfiguration& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
 
+    /**
+     * <p>The parent object that contains your function's tracing settings.</p>
+     */
+    inline const TracingConfigResponse& GetTracingConfig() const{ return m_tracingConfig; }
+
+    /**
+     * <p>The parent object that contains your function's tracing settings.</p>
+     */
+    inline void SetTracingConfig(const TracingConfigResponse& value) { m_tracingConfigHasBeenSet = true; m_tracingConfig = value; }
+
+    /**
+     * <p>The parent object that contains your function's tracing settings.</p>
+     */
+    inline void SetTracingConfig(TracingConfigResponse&& value) { m_tracingConfigHasBeenSet = true; m_tracingConfig = std::move(value); }
+
+    /**
+     * <p>The parent object that contains your function's tracing settings.</p>
+     */
+    inline FunctionConfiguration& WithTracingConfig(const TracingConfigResponse& value) { SetTracingConfig(value); return *this;}
+
+    /**
+     * <p>The parent object that contains your function's tracing settings.</p>
+     */
+    inline FunctionConfiguration& WithTracingConfig(TracingConfigResponse&& value) { SetTracingConfig(std::move(value)); return *this;}
+
   private:
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
@@ -603,6 +629,8 @@ namespace Model
     bool m_environmentHasBeenSet;
     Aws::String m_kMSKeyArn;
     bool m_kMSKeyArnHasBeenSet;
+    TracingConfigResponse m_tracingConfig;
+    bool m_tracingConfigHasBeenSet;
   };
 
 } // namespace Model

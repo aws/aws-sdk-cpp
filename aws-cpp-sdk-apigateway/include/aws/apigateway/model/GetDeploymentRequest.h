@@ -16,10 +16,15 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace APIGateway
 {
 namespace Model
@@ -36,6 +41,8 @@ namespace Model
   public:
     GetDeploymentRequest();
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -122,11 +129,125 @@ namespace Model
      */
     inline GetDeploymentRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
+    /**
+     * <p>A query parameter to retrieve the specified embedded resources of the
+     * returned <a>Deployment</a> resource in the response. In a REST API call, this
+     * <code>embed</code> parameter value is a list of comma-separated strings, as in
+     * <code>GET
+     * /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
+     * SDK and other platform-dependent libraries might use a different format for the
+     * list. Currently, this request supports only retrieval of the embedded API
+     * summary this way. Hence, the parameter value must be a single-valued list
+     * containing only the <code>"apisummary"</code> string. For example, <code>GET
+     * /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEmbed() const{ return m_embed; }
+
+    /**
+     * <p>A query parameter to retrieve the specified embedded resources of the
+     * returned <a>Deployment</a> resource in the response. In a REST API call, this
+     * <code>embed</code> parameter value is a list of comma-separated strings, as in
+     * <code>GET
+     * /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
+     * SDK and other platform-dependent libraries might use a different format for the
+     * list. Currently, this request supports only retrieval of the embedded API
+     * summary this way. Hence, the parameter value must be a single-valued list
+     * containing only the <code>"apisummary"</code> string. For example, <code>GET
+     * /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
+     */
+    inline void SetEmbed(const Aws::Vector<Aws::String>& value) { m_embedHasBeenSet = true; m_embed = value; }
+
+    /**
+     * <p>A query parameter to retrieve the specified embedded resources of the
+     * returned <a>Deployment</a> resource in the response. In a REST API call, this
+     * <code>embed</code> parameter value is a list of comma-separated strings, as in
+     * <code>GET
+     * /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
+     * SDK and other platform-dependent libraries might use a different format for the
+     * list. Currently, this request supports only retrieval of the embedded API
+     * summary this way. Hence, the parameter value must be a single-valued list
+     * containing only the <code>"apisummary"</code> string. For example, <code>GET
+     * /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
+     */
+    inline void SetEmbed(Aws::Vector<Aws::String>&& value) { m_embedHasBeenSet = true; m_embed = std::move(value); }
+
+    /**
+     * <p>A query parameter to retrieve the specified embedded resources of the
+     * returned <a>Deployment</a> resource in the response. In a REST API call, this
+     * <code>embed</code> parameter value is a list of comma-separated strings, as in
+     * <code>GET
+     * /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
+     * SDK and other platform-dependent libraries might use a different format for the
+     * list. Currently, this request supports only retrieval of the embedded API
+     * summary this way. Hence, the parameter value must be a single-valued list
+     * containing only the <code>"apisummary"</code> string. For example, <code>GET
+     * /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
+     */
+    inline GetDeploymentRequest& WithEmbed(const Aws::Vector<Aws::String>& value) { SetEmbed(value); return *this;}
+
+    /**
+     * <p>A query parameter to retrieve the specified embedded resources of the
+     * returned <a>Deployment</a> resource in the response. In a REST API call, this
+     * <code>embed</code> parameter value is a list of comma-separated strings, as in
+     * <code>GET
+     * /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
+     * SDK and other platform-dependent libraries might use a different format for the
+     * list. Currently, this request supports only retrieval of the embedded API
+     * summary this way. Hence, the parameter value must be a single-valued list
+     * containing only the <code>"apisummary"</code> string. For example, <code>GET
+     * /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
+     */
+    inline GetDeploymentRequest& WithEmbed(Aws::Vector<Aws::String>&& value) { SetEmbed(std::move(value)); return *this;}
+
+    /**
+     * <p>A query parameter to retrieve the specified embedded resources of the
+     * returned <a>Deployment</a> resource in the response. In a REST API call, this
+     * <code>embed</code> parameter value is a list of comma-separated strings, as in
+     * <code>GET
+     * /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
+     * SDK and other platform-dependent libraries might use a different format for the
+     * list. Currently, this request supports only retrieval of the embedded API
+     * summary this way. Hence, the parameter value must be a single-valued list
+     * containing only the <code>"apisummary"</code> string. For example, <code>GET
+     * /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
+     */
+    inline GetDeploymentRequest& AddEmbed(const Aws::String& value) { m_embedHasBeenSet = true; m_embed.push_back(value); return *this; }
+
+    /**
+     * <p>A query parameter to retrieve the specified embedded resources of the
+     * returned <a>Deployment</a> resource in the response. In a REST API call, this
+     * <code>embed</code> parameter value is a list of comma-separated strings, as in
+     * <code>GET
+     * /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
+     * SDK and other platform-dependent libraries might use a different format for the
+     * list. Currently, this request supports only retrieval of the embedded API
+     * summary this way. Hence, the parameter value must be a single-valued list
+     * containing only the <code>"apisummary"</code> string. For example, <code>GET
+     * /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
+     */
+    inline GetDeploymentRequest& AddEmbed(Aws::String&& value) { m_embedHasBeenSet = true; m_embed.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A query parameter to retrieve the specified embedded resources of the
+     * returned <a>Deployment</a> resource in the response. In a REST API call, this
+     * <code>embed</code> parameter value is a list of comma-separated strings, as in
+     * <code>GET
+     * /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
+     * SDK and other platform-dependent libraries might use a different format for the
+     * list. Currently, this request supports only retrieval of the embedded API
+     * summary this way. Hence, the parameter value must be a single-valued list
+     * containing only the <code>"apisummary"</code> string. For example, <code>GET
+     * /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
+     */
+    inline GetDeploymentRequest& AddEmbed(const char* value) { m_embedHasBeenSet = true; m_embed.push_back(value); return *this; }
+
   private:
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+    Aws::Vector<Aws::String> m_embed;
+    bool m_embedHasBeenSet;
   };
 
 } // namespace Model

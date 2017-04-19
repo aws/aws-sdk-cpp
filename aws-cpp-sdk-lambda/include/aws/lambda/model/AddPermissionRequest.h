@@ -296,79 +296,72 @@ namespace Model
     inline AddPermissionRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>This is optional; however, when granting a source permission to invoke your
-     * function, you should specify this field with the Amazon Resource Name (ARN) as
-     * its value. This ensures that only events generated from the specified source can
-     * invoke the function.</p> <important> <p>If you add a permission for the source
-     * without providing the source ARN, any AWS account that creates a mapping to your
-     * function ARN can send events to invoke your Lambda function from that
-     * source.</p> </important>
+     * <p>This is optional; however, when granting permission to invoke your function,
+     * you should specify this field with the Amazon Resource Name (ARN) as its value.
+     * This ensures that only events generated from the specified source can invoke the
+     * function.</p> <important> <p>If you add a permission without providing the
+     * source ARN, any AWS account that creates a mapping to your function ARN can send
+     * events to invoke your Lambda function.</p> </important>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
 
     /**
-     * <p>This is optional; however, when granting a source permission to invoke your
-     * function, you should specify this field with the Amazon Resource Name (ARN) as
-     * its value. This ensures that only events generated from the specified source can
-     * invoke the function.</p> <important> <p>If you add a permission for the source
-     * without providing the source ARN, any AWS account that creates a mapping to your
-     * function ARN can send events to invoke your Lambda function from that
-     * source.</p> </important>
+     * <p>This is optional; however, when granting permission to invoke your function,
+     * you should specify this field with the Amazon Resource Name (ARN) as its value.
+     * This ensures that only events generated from the specified source can invoke the
+     * function.</p> <important> <p>If you add a permission without providing the
+     * source ARN, any AWS account that creates a mapping to your function ARN can send
+     * events to invoke your Lambda function.</p> </important>
      */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
     /**
-     * <p>This is optional; however, when granting a source permission to invoke your
-     * function, you should specify this field with the Amazon Resource Name (ARN) as
-     * its value. This ensures that only events generated from the specified source can
-     * invoke the function.</p> <important> <p>If you add a permission for the source
-     * without providing the source ARN, any AWS account that creates a mapping to your
-     * function ARN can send events to invoke your Lambda function from that
-     * source.</p> </important>
+     * <p>This is optional; however, when granting permission to invoke your function,
+     * you should specify this field with the Amazon Resource Name (ARN) as its value.
+     * This ensures that only events generated from the specified source can invoke the
+     * function.</p> <important> <p>If you add a permission without providing the
+     * source ARN, any AWS account that creates a mapping to your function ARN can send
+     * events to invoke your Lambda function.</p> </important>
      */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
     /**
-     * <p>This is optional; however, when granting a source permission to invoke your
-     * function, you should specify this field with the Amazon Resource Name (ARN) as
-     * its value. This ensures that only events generated from the specified source can
-     * invoke the function.</p> <important> <p>If you add a permission for the source
-     * without providing the source ARN, any AWS account that creates a mapping to your
-     * function ARN can send events to invoke your Lambda function from that
-     * source.</p> </important>
+     * <p>This is optional; however, when granting permission to invoke your function,
+     * you should specify this field with the Amazon Resource Name (ARN) as its value.
+     * This ensures that only events generated from the specified source can invoke the
+     * function.</p> <important> <p>If you add a permission without providing the
+     * source ARN, any AWS account that creates a mapping to your function ARN can send
+     * events to invoke your Lambda function.</p> </important>
      */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
 
     /**
-     * <p>This is optional; however, when granting a source permission to invoke your
-     * function, you should specify this field with the Amazon Resource Name (ARN) as
-     * its value. This ensures that only events generated from the specified source can
-     * invoke the function.</p> <important> <p>If you add a permission for the source
-     * without providing the source ARN, any AWS account that creates a mapping to your
-     * function ARN can send events to invoke your Lambda function from that
-     * source.</p> </important>
+     * <p>This is optional; however, when granting permission to invoke your function,
+     * you should specify this field with the Amazon Resource Name (ARN) as its value.
+     * This ensures that only events generated from the specified source can invoke the
+     * function.</p> <important> <p>If you add a permission without providing the
+     * source ARN, any AWS account that creates a mapping to your function ARN can send
+     * events to invoke your Lambda function.</p> </important>
      */
     inline AddPermissionRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
 
     /**
-     * <p>This is optional; however, when granting a source permission to invoke your
-     * function, you should specify this field with the Amazon Resource Name (ARN) as
-     * its value. This ensures that only events generated from the specified source can
-     * invoke the function.</p> <important> <p>If you add a permission for the source
-     * without providing the source ARN, any AWS account that creates a mapping to your
-     * function ARN can send events to invoke your Lambda function from that
-     * source.</p> </important>
+     * <p>This is optional; however, when granting permission to invoke your function,
+     * you should specify this field with the Amazon Resource Name (ARN) as its value.
+     * This ensures that only events generated from the specified source can invoke the
+     * function.</p> <important> <p>If you add a permission without providing the
+     * source ARN, any AWS account that creates a mapping to your function ARN can send
+     * events to invoke your Lambda function.</p> </important>
      */
     inline AddPermissionRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>This is optional; however, when granting a source permission to invoke your
-     * function, you should specify this field with the Amazon Resource Name (ARN) as
-     * its value. This ensures that only events generated from the specified source can
-     * invoke the function.</p> <important> <p>If you add a permission for the source
-     * without providing the source ARN, any AWS account that creates a mapping to your
-     * function ARN can send events to invoke your Lambda function from that
-     * source.</p> </important>
+     * <p>This is optional; however, when granting permission to invoke your function,
+     * you should specify this field with the Amazon Resource Name (ARN) as its value.
+     * This ensures that only events generated from the specified source can invoke the
+     * function.</p> <important> <p>If you add a permission without providing the
+     * source ARN, any AWS account that creates a mapping to your function ARN can send
+     * events to invoke your Lambda function.</p> </important>
      */
     inline AddPermissionRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
