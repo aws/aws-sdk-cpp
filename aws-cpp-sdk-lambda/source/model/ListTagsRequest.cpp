@@ -12,35 +12,25 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#pragma once
-#include <aws/lambda/Lambda_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/model/ListTagsRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
-  enum class Runtime
-  {
-    NOT_SET,
-    nodejs,
-    nodejs4_3,
-    nodejs6_10,
-    java8,
-    python2_7,
-    python3_6,
-    dotnetcore1_0,
-    nodejs4_3_edge
-  };
+#include <utility>
 
-namespace RuntimeMapper
-{
-AWS_LAMBDA_API Runtime GetRuntimeForName(const Aws::String& name);
+using namespace Aws::Lambda::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
 
-AWS_LAMBDA_API Aws::String GetNameForRuntime(Runtime value);
-} // namespace RuntimeMapper
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+ListTagsRequest::ListTagsRequest() : 
+    m_resourceHasBeenSet(false)
+{
+}
+
+Aws::String ListTagsRequest::SerializePayload() const
+{
+  return "";
+}
+
+
+
+

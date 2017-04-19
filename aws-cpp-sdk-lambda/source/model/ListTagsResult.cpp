@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/lambda/model/GetFunctionResult.h>
+#include <aws/lambda/model/ListTagsResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/UnreferencedParam.h>
@@ -24,30 +24,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetFunctionResult::GetFunctionResult()
+ListTagsResult::ListTagsResult()
 {
 }
 
-GetFunctionResult::GetFunctionResult(const AmazonWebServiceResult<JsonValue>& result)
+ListTagsResult::ListTagsResult(const AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetFunctionResult& GetFunctionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListTagsResult& ListTagsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("Configuration"))
-  {
-    m_configuration = jsonValue.GetObject("Configuration");
-
-  }
-
-  if(jsonValue.ValueExists("Code"))
-  {
-    m_code = jsonValue.GetObject("Code");
-
-  }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonValue> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();

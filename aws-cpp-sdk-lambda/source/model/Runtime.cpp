@@ -34,6 +34,7 @@ namespace Aws
         static const int nodejs6_10_HASH = HashingUtils::HashString("nodejs6.10");
         static const int java8_HASH = HashingUtils::HashString("java8");
         static const int python2_7_HASH = HashingUtils::HashString("python2.7");
+        static const int python3_6_HASH = HashingUtils::HashString("python3.6");
         static const int dotnetcore1_0_HASH = HashingUtils::HashString("dotnetcore1.0");
         static const int nodejs4_3_edge_HASH = HashingUtils::HashString("nodejs4.3-edge");
 
@@ -60,6 +61,10 @@ namespace Aws
           else if (hashCode == python2_7_HASH)
           {
             return Runtime::python2_7;
+          }
+          else if (hashCode == python3_6_HASH)
+          {
+            return Runtime::python3_6;
           }
           else if (hashCode == dotnetcore1_0_HASH)
           {
@@ -93,6 +98,8 @@ namespace Aws
             return "java8";
           case Runtime::python2_7:
             return "python2.7";
+          case Runtime::python3_6:
+            return "python3.6";
           case Runtime::dotnetcore1_0:
             return "dotnetcore1.0";
           case Runtime::nodejs4_3_edge:

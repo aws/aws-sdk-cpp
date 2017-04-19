@@ -44,8 +44,8 @@ namespace Model
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
      * also allows you to specify a partial ARN (for example,
      * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 character
-     * in length. </p>
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * characters in length. </p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
@@ -56,8 +56,8 @@ namespace Model
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
      * also allows you to specify a partial ARN (for example,
      * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 character
-     * in length. </p>
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * characters in length. </p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
@@ -68,8 +68,8 @@ namespace Model
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
      * also allows you to specify a partial ARN (for example,
      * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 character
-     * in length. </p>
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * characters in length. </p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
@@ -80,8 +80,8 @@ namespace Model
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
      * also allows you to specify a partial ARN (for example,
      * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 character
-     * in length. </p>
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * characters in length. </p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
@@ -92,8 +92,8 @@ namespace Model
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
      * also allows you to specify a partial ARN (for example,
      * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 character
-     * in length. </p>
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * characters in length. </p>
      */
     inline PublishVersionRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
@@ -104,8 +104,8 @@ namespace Model
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
      * also allows you to specify a partial ARN (for example,
      * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 character
-     * in length. </p>
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * characters in length. </p>
      */
     inline PublishVersionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
@@ -116,8 +116,8 @@ namespace Model
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
      * also allows you to specify a partial ARN (for example,
      * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 character
-     * in length. </p>
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * characters in length. </p>
      */
     inline PublishVersionRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
