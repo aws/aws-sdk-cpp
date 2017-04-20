@@ -25,6 +25,7 @@ namespace Model
   enum class OutputFormat
   {
     NOT_SET,
+    json,
     mp3,
     ogg_vorbis,
     pcm

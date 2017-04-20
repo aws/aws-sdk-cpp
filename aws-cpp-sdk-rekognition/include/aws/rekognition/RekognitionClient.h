@@ -26,6 +26,7 @@
 #include <aws/rekognition/model/DeleteFacesResult.h>
 #include <aws/rekognition/model/DetectFacesResult.h>
 #include <aws/rekognition/model/DetectLabelsResult.h>
+#include <aws/rekognition/model/DetectModerationLabelsResult.h>
 #include <aws/rekognition/model/IndexFacesResult.h>
 #include <aws/rekognition/model/ListCollectionsResult.h>
 #include <aws/rekognition/model/ListFacesResult.h>
@@ -82,6 +83,7 @@ namespace Model
         class DeleteFacesRequest;
         class DetectFacesRequest;
         class DetectLabelsRequest;
+        class DetectModerationLabelsRequest;
         class IndexFacesRequest;
         class ListCollectionsRequest;
         class ListFacesRequest;
@@ -94,6 +96,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteFacesResult, Aws::Client::AWSError<RekognitionErrors>> DeleteFacesOutcome;
         typedef Aws::Utils::Outcome<DetectFacesResult, Aws::Client::AWSError<RekognitionErrors>> DetectFacesOutcome;
         typedef Aws::Utils::Outcome<DetectLabelsResult, Aws::Client::AWSError<RekognitionErrors>> DetectLabelsOutcome;
+        typedef Aws::Utils::Outcome<DetectModerationLabelsResult, Aws::Client::AWSError<RekognitionErrors>> DetectModerationLabelsOutcome;
         typedef Aws::Utils::Outcome<IndexFacesResult, Aws::Client::AWSError<RekognitionErrors>> IndexFacesOutcome;
         typedef Aws::Utils::Outcome<ListCollectionsResult, Aws::Client::AWSError<RekognitionErrors>> ListCollectionsOutcome;
         typedef Aws::Utils::Outcome<ListFacesResult, Aws::Client::AWSError<RekognitionErrors>> ListFacesOutcome;
@@ -106,6 +109,7 @@ namespace Model
         typedef std::future<DeleteFacesOutcome> DeleteFacesOutcomeCallable;
         typedef std::future<DetectFacesOutcome> DetectFacesOutcomeCallable;
         typedef std::future<DetectLabelsOutcome> DetectLabelsOutcomeCallable;
+        typedef std::future<DetectModerationLabelsOutcome> DetectModerationLabelsOutcomeCallable;
         typedef std::future<IndexFacesOutcome> IndexFacesOutcomeCallable;
         typedef std::future<ListCollectionsOutcome> ListCollectionsOutcomeCallable;
         typedef std::future<ListFacesOutcome> ListFacesOutcomeCallable;
@@ -121,6 +125,7 @@ namespace Model
     typedef std::function<void(const RekognitionClient*, const Model::DeleteFacesRequest&, const Model::DeleteFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DetectFacesRequest&, const Model::DetectFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DetectLabelsRequest&, const Model::DetectLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectLabelsResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::DetectModerationLabelsRequest&, const Model::DetectModerationLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectModerationLabelsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::IndexFacesRequest&, const Model::IndexFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > IndexFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListCollectionsRequest&, const Model::ListCollectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCollectionsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListFacesRequest&, const Model::ListFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFacesResponseReceivedHandler;
@@ -514,6 +519,49 @@ namespace Model
         virtual void DetectLabelsAsync(const Model::DetectLabelsRequest& request, const DetectLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Detects explicit or suggestive adult content in a specified .jpeg or .png
+         * image. Use <code>DetectModerationLabels</code> to moderate images depending on
+         * your requirements. For example, you might want to filter images that contain
+         * nudity, but not images containing suggestive content.</p> <p>To filter images,
+         * use the labels returned by <code>DetectModerationLabels</code> to determine
+         * which types of content are appropriate. For information about moderation labels,
+         * see <a>howitworks-moderateimage</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetectModerationLabelsOutcome DetectModerationLabels(const Model::DetectModerationLabelsRequest& request) const;
+
+        /**
+         * <p>Detects explicit or suggestive adult content in a specified .jpeg or .png
+         * image. Use <code>DetectModerationLabels</code> to moderate images depending on
+         * your requirements. For example, you might want to filter images that contain
+         * nudity, but not images containing suggestive content.</p> <p>To filter images,
+         * use the labels returned by <code>DetectModerationLabels</code> to determine
+         * which types of content are appropriate. For information about moderation labels,
+         * see <a>howitworks-moderateimage</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DetectModerationLabelsOutcomeCallable DetectModerationLabelsCallable(const Model::DetectModerationLabelsRequest& request) const;
+
+        /**
+         * <p>Detects explicit or suggestive adult content in a specified .jpeg or .png
+         * image. Use <code>DetectModerationLabels</code> to moderate images depending on
+         * your requirements. For example, you might want to filter images that contain
+         * nudity, but not images containing suggestive content.</p> <p>To filter images,
+         * use the labels returned by <code>DetectModerationLabels</code> to determine
+         * which types of content are appropriate. For information about moderation labels,
+         * see <a>howitworks-moderateimage</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DetectModerationLabelsAsync(const Model::DetectModerationLabelsRequest& request, const DetectModerationLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Detects faces in the input image and adds them to the specified collection.
          * </p> <p> Amazon Rekognition does not save the actual faces detected. Instead,
          * the underlying detection algorithm first detects the faces in the input image,
@@ -832,6 +880,7 @@ namespace Model
         void DeleteFacesAsyncHelper(const Model::DeleteFacesRequest& request, const DeleteFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectFacesAsyncHelper(const Model::DetectFacesRequest& request, const DetectFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectLabelsAsyncHelper(const Model::DetectLabelsRequest& request, const DetectLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DetectModerationLabelsAsyncHelper(const Model::DetectModerationLabelsRequest& request, const DetectModerationLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void IndexFacesAsyncHelper(const Model::IndexFacesRequest& request, const IndexFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCollectionsAsyncHelper(const Model::ListCollectionsRequest& request, const ListCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFacesAsyncHelper(const Model::ListFacesRequest& request, const ListFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

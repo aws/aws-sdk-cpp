@@ -133,8 +133,8 @@ namespace Model
      * <p>The name of the role to create.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-. Role names are not
-     * distinguished by case. For example, you cannot create roles named both
+     * can also include any of the following characters: _+=,.@-</p> <p>Role names are
+     * not distinguished by case. For example, you cannot create roles named both
      * "PRODROLE" and "prodrole".</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
@@ -143,8 +143,8 @@ namespace Model
      * <p>The name of the role to create.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-. Role names are not
-     * distinguished by case. For example, you cannot create roles named both
+     * can also include any of the following characters: _+=,.@-</p> <p>Role names are
+     * not distinguished by case. For example, you cannot create roles named both
      * "PRODROLE" and "prodrole".</p>
      */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
@@ -153,8 +153,8 @@ namespace Model
      * <p>The name of the role to create.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-. Role names are not
-     * distinguished by case. For example, you cannot create roles named both
+     * can also include any of the following characters: _+=,.@-</p> <p>Role names are
+     * not distinguished by case. For example, you cannot create roles named both
      * "PRODROLE" and "prodrole".</p>
      */
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
@@ -163,8 +163,8 @@ namespace Model
      * <p>The name of the role to create.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-. Role names are not
-     * distinguished by case. For example, you cannot create roles named both
+     * can also include any of the following characters: _+=,.@-</p> <p>Role names are
+     * not distinguished by case. For example, you cannot create roles named both
      * "PRODROLE" and "prodrole".</p>
      */
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
@@ -173,8 +173,8 @@ namespace Model
      * <p>The name of the role to create.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-. Role names are not
-     * distinguished by case. For example, you cannot create roles named both
+     * can also include any of the following characters: _+=,.@-</p> <p>Role names are
+     * not distinguished by case. For example, you cannot create roles named both
      * "PRODROLE" and "prodrole".</p>
      */
     inline CreateRoleRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
@@ -183,8 +183,8 @@ namespace Model
      * <p>The name of the role to create.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-. Role names are not
-     * distinguished by case. For example, you cannot create roles named both
+     * can also include any of the following characters: _+=,.@-</p> <p>Role names are
+     * not distinguished by case. For example, you cannot create roles named both
      * "PRODROLE" and "prodrole".</p>
      */
     inline CreateRoleRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
@@ -193,8 +193,8 @@ namespace Model
      * <p>The name of the role to create.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-. Role names are not
-     * distinguished by case. For example, you cannot create roles named both
+     * can also include any of the following characters: _+=,.@-</p> <p>Role names are
+     * not distinguished by case. For example, you cannot create roles named both
      * "PRODROLE" and "prodrole".</p>
      */
     inline CreateRoleRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
@@ -283,6 +283,41 @@ namespace Model
      */
     inline CreateRoleRequest& WithAssumeRolePolicyDocument(const char* value) { SetAssumeRolePolicyDocument(value); return *this;}
 
+    /**
+     * <p>A customer-provided description of the role.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A customer-provided description of the role.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A customer-provided description of the role.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A customer-provided description of the role.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A customer-provided description of the role.</p>
+     */
+    inline CreateRoleRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A customer-provided description of the role.</p>
+     */
+    inline CreateRoleRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A customer-provided description of the role.</p>
+     */
+    inline CreateRoleRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
   private:
     Aws::String m_path;
     bool m_pathHasBeenSet;
@@ -290,6 +325,8 @@ namespace Model
     bool m_roleNameHasBeenSet;
     Aws::String m_assumeRolePolicyDocument;
     bool m_assumeRolePolicyDocumentHasBeenSet;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
   };
 
 } // namespace Model

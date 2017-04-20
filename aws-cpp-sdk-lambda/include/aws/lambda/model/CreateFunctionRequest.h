@@ -21,6 +21,8 @@
 #include <aws/lambda/model/VpcConfig.h>
 #include <aws/lambda/model/DeadLetterConfig.h>
 #include <aws/lambda/model/Environment.h>
+#include <aws/lambda/model/TracingConfig.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -46,7 +48,9 @@ namespace Model
      * <p>The name you want to assign to the function you are uploading. The function
      * names appear in the console and are returned in the <a>ListFunctions</a> API.
      * Function names are used to specify functions to other AWS Lambda API operations,
-     * such as <a>Invoke</a>. </p>
+     * such as <a>Invoke</a>. Note that the length constraint applies only to the ARN.
+     * If you specify only the function name, it is limited to 64 characters in length.
+     * </p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
@@ -54,7 +58,9 @@ namespace Model
      * <p>The name you want to assign to the function you are uploading. The function
      * names appear in the console and are returned in the <a>ListFunctions</a> API.
      * Function names are used to specify functions to other AWS Lambda API operations,
-     * such as <a>Invoke</a>. </p>
+     * such as <a>Invoke</a>. Note that the length constraint applies only to the ARN.
+     * If you specify only the function name, it is limited to 64 characters in length.
+     * </p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
@@ -62,7 +68,9 @@ namespace Model
      * <p>The name you want to assign to the function you are uploading. The function
      * names appear in the console and are returned in the <a>ListFunctions</a> API.
      * Function names are used to specify functions to other AWS Lambda API operations,
-     * such as <a>Invoke</a>. </p>
+     * such as <a>Invoke</a>. Note that the length constraint applies only to the ARN.
+     * If you specify only the function name, it is limited to 64 characters in length.
+     * </p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
@@ -70,7 +78,9 @@ namespace Model
      * <p>The name you want to assign to the function you are uploading. The function
      * names appear in the console and are returned in the <a>ListFunctions</a> API.
      * Function names are used to specify functions to other AWS Lambda API operations,
-     * such as <a>Invoke</a>. </p>
+     * such as <a>Invoke</a>. Note that the length constraint applies only to the ARN.
+     * If you specify only the function name, it is limited to 64 characters in length.
+     * </p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
@@ -78,7 +88,9 @@ namespace Model
      * <p>The name you want to assign to the function you are uploading. The function
      * names appear in the console and are returned in the <a>ListFunctions</a> API.
      * Function names are used to specify functions to other AWS Lambda API operations,
-     * such as <a>Invoke</a>. </p>
+     * such as <a>Invoke</a>. Note that the length constraint applies only to the ARN.
+     * If you specify only the function name, it is limited to 64 characters in length.
+     * </p>
      */
     inline CreateFunctionRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
@@ -86,7 +98,9 @@ namespace Model
      * <p>The name you want to assign to the function you are uploading. The function
      * names appear in the console and are returned in the <a>ListFunctions</a> API.
      * Function names are used to specify functions to other AWS Lambda API operations,
-     * such as <a>Invoke</a>. </p>
+     * such as <a>Invoke</a>. Note that the length constraint applies only to the ARN.
+     * If you specify only the function name, it is limited to 64 characters in length.
+     * </p>
      */
     inline CreateFunctionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
@@ -94,57 +108,69 @@ namespace Model
      * <p>The name you want to assign to the function you are uploading. The function
      * names appear in the console and are returned in the <a>ListFunctions</a> API.
      * Function names are used to specify functions to other AWS Lambda API operations,
-     * such as <a>Invoke</a>. </p>
+     * such as <a>Invoke</a>. Note that the length constraint applies only to the ARN.
+     * If you specify only the function name, it is limited to 64 characters in length.
+     * </p>
      */
     inline CreateFunctionRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
     /**
      * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
-     * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
-     * runtime (v0.10.42), set the value to "nodejs".</p> <note> <p>You can no longer
-     * create functions using the v0.10.42 runtime version as of November, 2016.
-     * Existing functions will be supported until early 2017, but we recommend you
-     * migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>
+     * use the Python runtime v3.6, set the value to "python3.6". To use the Python
+     * runtime v2.7, set the value to "python2.7". To use the Node.js runtime v6.10,
+     * set the value to "nodejs6.10". To use the Node.js runtime v4.3, set the value to
+     * "nodejs4.3".</p> <note> <p>You can no longer create functions using the v0.10.42
+     * runtime version as of November, 2016. Existing functions will be supported until
+     * early 2017, but we recommend you migrate them to either nodejs6.10 or nodejs4.3
+     * runtime version as soon as possible.</p> </note>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
 
     /**
      * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
-     * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
-     * runtime (v0.10.42), set the value to "nodejs".</p> <note> <p>You can no longer
-     * create functions using the v0.10.42 runtime version as of November, 2016.
-     * Existing functions will be supported until early 2017, but we recommend you
-     * migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>
+     * use the Python runtime v3.6, set the value to "python3.6". To use the Python
+     * runtime v2.7, set the value to "python2.7". To use the Node.js runtime v6.10,
+     * set the value to "nodejs6.10". To use the Node.js runtime v4.3, set the value to
+     * "nodejs4.3".</p> <note> <p>You can no longer create functions using the v0.10.42
+     * runtime version as of November, 2016. Existing functions will be supported until
+     * early 2017, but we recommend you migrate them to either nodejs6.10 or nodejs4.3
+     * runtime version as soon as possible.</p> </note>
      */
     inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
      * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
-     * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
-     * runtime (v0.10.42), set the value to "nodejs".</p> <note> <p>You can no longer
-     * create functions using the v0.10.42 runtime version as of November, 2016.
-     * Existing functions will be supported until early 2017, but we recommend you
-     * migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>
+     * use the Python runtime v3.6, set the value to "python3.6". To use the Python
+     * runtime v2.7, set the value to "python2.7". To use the Node.js runtime v6.10,
+     * set the value to "nodejs6.10". To use the Node.js runtime v4.3, set the value to
+     * "nodejs4.3".</p> <note> <p>You can no longer create functions using the v0.10.42
+     * runtime version as of November, 2016. Existing functions will be supported until
+     * early 2017, but we recommend you migrate them to either nodejs6.10 or nodejs4.3
+     * runtime version as soon as possible.</p> </note>
      */
     inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
 
     /**
      * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
-     * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
-     * runtime (v0.10.42), set the value to "nodejs".</p> <note> <p>You can no longer
-     * create functions using the v0.10.42 runtime version as of November, 2016.
-     * Existing functions will be supported until early 2017, but we recommend you
-     * migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>
+     * use the Python runtime v3.6, set the value to "python3.6". To use the Python
+     * runtime v2.7, set the value to "python2.7". To use the Node.js runtime v6.10,
+     * set the value to "nodejs6.10". To use the Node.js runtime v4.3, set the value to
+     * "nodejs4.3".</p> <note> <p>You can no longer create functions using the v0.10.42
+     * runtime version as of November, 2016. Existing functions will be supported until
+     * early 2017, but we recommend you migrate them to either nodejs6.10 or nodejs4.3
+     * runtime version as soon as possible.</p> </note>
      */
     inline CreateFunctionRequest& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
     /**
      * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
-     * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
-     * runtime (v0.10.42), set the value to "nodejs".</p> <note> <p>You can no longer
-     * create functions using the v0.10.42 runtime version as of November, 2016.
-     * Existing functions will be supported until early 2017, but we recommend you
-     * migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>
+     * use the Python runtime v3.6, set the value to "python3.6". To use the Python
+     * runtime v2.7, set the value to "python2.7". To use the Node.js runtime v6.10,
+     * set the value to "nodejs6.10". To use the Node.js runtime v4.3, set the value to
+     * "nodejs4.3".</p> <note> <p>You can no longer create functions using the v0.10.42
+     * runtime version as of November, 2016. Existing functions will be supported until
+     * early 2017, but we recommend you migrate them to either nodejs6.10 or nodejs4.3
+     * runtime version as soon as possible.</p> </note>
      */
     inline CreateFunctionRequest& WithRuntime(Runtime&& value) { SetRuntime(std::move(value)); return *this;}
 
@@ -458,31 +484,31 @@ namespace Model
     inline CreateFunctionRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
     /**
-     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
      * Amazon SQS queue or Amazon SNS topic. </p>
      */
     inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
 
     /**
-     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
      * Amazon SQS queue or Amazon SNS topic. </p>
      */
     inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
 
     /**
-     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
      * Amazon SQS queue or Amazon SNS topic. </p>
      */
     inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = std::move(value); }
 
     /**
-     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
      * Amazon SQS queue or Amazon SNS topic. </p>
      */
     inline CreateFunctionRequest& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
 
     /**
-     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
      * Amazon SQS queue or Amazon SNS topic. </p>
      */
     inline CreateFunctionRequest& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
@@ -551,6 +577,91 @@ namespace Model
      */
     inline CreateFunctionRequest& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
 
+    /**
+     * <p>The parent object that contains your function's tracing settings.</p>
+     */
+    inline const TracingConfig& GetTracingConfig() const{ return m_tracingConfig; }
+
+    /**
+     * <p>The parent object that contains your function's tracing settings.</p>
+     */
+    inline void SetTracingConfig(const TracingConfig& value) { m_tracingConfigHasBeenSet = true; m_tracingConfig = value; }
+
+    /**
+     * <p>The parent object that contains your function's tracing settings.</p>
+     */
+    inline void SetTracingConfig(TracingConfig&& value) { m_tracingConfigHasBeenSet = true; m_tracingConfig = std::move(value); }
+
+    /**
+     * <p>The parent object that contains your function's tracing settings.</p>
+     */
+    inline CreateFunctionRequest& WithTracingConfig(const TracingConfig& value) { SetTracingConfig(value); return *this;}
+
+    /**
+     * <p>The parent object that contains your function's tracing settings.</p>
+     */
+    inline CreateFunctionRequest& WithTracingConfig(TracingConfig&& value) { SetTracingConfig(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     */
+    inline CreateFunctionRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     */
+    inline CreateFunctionRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     */
+    inline CreateFunctionRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     */
+    inline CreateFunctionRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     */
+    inline CreateFunctionRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     */
+    inline CreateFunctionRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     */
+    inline CreateFunctionRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     */
+    inline CreateFunctionRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     */
+    inline CreateFunctionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
@@ -578,6 +689,10 @@ namespace Model
     bool m_environmentHasBeenSet;
     Aws::String m_kMSKeyArn;
     bool m_kMSKeyArnHasBeenSet;
+    TracingConfig m_tracingConfig;
+    bool m_tracingConfigHasBeenSet;
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

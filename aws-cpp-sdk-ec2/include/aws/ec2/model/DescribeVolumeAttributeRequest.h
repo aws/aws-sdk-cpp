@@ -103,27 +103,27 @@ namespace Model
     inline DescribeVolumeAttributeRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
     /**
-     * <p>The instance attribute.</p>
+     * <p>The attribute of the volume. This parameter is required.</p>
      */
     inline const VolumeAttributeName& GetAttribute() const{ return m_attribute; }
 
     /**
-     * <p>The instance attribute.</p>
+     * <p>The attribute of the volume. This parameter is required.</p>
      */
     inline void SetAttribute(const VolumeAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>The instance attribute.</p>
+     * <p>The attribute of the volume. This parameter is required.</p>
      */
     inline void SetAttribute(VolumeAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
-     * <p>The instance attribute.</p>
+     * <p>The attribute of the volume. This parameter is required.</p>
      */
     inline DescribeVolumeAttributeRequest& WithAttribute(const VolumeAttributeName& value) { SetAttribute(value); return *this;}
 
     /**
-     * <p>The instance attribute.</p>
+     * <p>The attribute of the volume. This parameter is required.</p>
      */
     inline DescribeVolumeAttributeRequest& WithAttribute(VolumeAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 

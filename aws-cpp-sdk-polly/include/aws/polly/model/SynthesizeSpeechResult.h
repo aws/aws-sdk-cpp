@@ -64,7 +64,9 @@ namespace Model
      * <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you
      * request <code>pcm</code> as the <code>OutputFormat</code>, the
      * <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel
-     * (mono), little-endian format. </p> </li> </ul> <p> </p>
+     * (mono), little-endian format. </p> </li> <li> <p>If you request
+     * <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
+     * returned is audio/json.</p> </li> </ul> <p> </p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
 
@@ -77,7 +79,9 @@ namespace Model
      * <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you
      * request <code>pcm</code> as the <code>OutputFormat</code>, the
      * <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel
-     * (mono), little-endian format. </p> </li> </ul> <p> </p>
+     * (mono), little-endian format. </p> </li> <li> <p>If you request
+     * <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
+     * returned is audio/json.</p> </li> </ul> <p> </p>
      */
     inline void SetContentType(const Aws::String& value) { m_contentType = value; }
 
@@ -90,7 +94,9 @@ namespace Model
      * <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you
      * request <code>pcm</code> as the <code>OutputFormat</code>, the
      * <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel
-     * (mono), little-endian format. </p> </li> </ul> <p> </p>
+     * (mono), little-endian format. </p> </li> <li> <p>If you request
+     * <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
+     * returned is audio/json.</p> </li> </ul> <p> </p>
      */
     inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
 
@@ -103,7 +109,9 @@ namespace Model
      * <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you
      * request <code>pcm</code> as the <code>OutputFormat</code>, the
      * <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel
-     * (mono), little-endian format. </p> </li> </ul> <p> </p>
+     * (mono), little-endian format. </p> </li> <li> <p>If you request
+     * <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
+     * returned is audio/json.</p> </li> </ul> <p> </p>
      */
     inline void SetContentType(const char* value) { m_contentType.assign(value); }
 
@@ -116,7 +124,9 @@ namespace Model
      * <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you
      * request <code>pcm</code> as the <code>OutputFormat</code>, the
      * <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel
-     * (mono), little-endian format. </p> </li> </ul> <p> </p>
+     * (mono), little-endian format. </p> </li> <li> <p>If you request
+     * <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
+     * returned is audio/json.</p> </li> </ul> <p> </p>
      */
     inline SynthesizeSpeechResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
 
@@ -129,7 +139,9 @@ namespace Model
      * <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you
      * request <code>pcm</code> as the <code>OutputFormat</code>, the
      * <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel
-     * (mono), little-endian format. </p> </li> </ul> <p> </p>
+     * (mono), little-endian format. </p> </li> <li> <p>If you request
+     * <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
+     * returned is audio/json.</p> </li> </ul> <p> </p>
      */
     inline SynthesizeSpeechResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
@@ -142,7 +154,9 @@ namespace Model
      * <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you
      * request <code>pcm</code> as the <code>OutputFormat</code>, the
      * <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel
-     * (mono), little-endian format. </p> </li> </ul> <p> </p>
+     * (mono), little-endian format. </p> </li> <li> <p>If you request
+     * <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
+     * returned is audio/json.</p> </li> </ul> <p> </p>
      */
     inline SynthesizeSpeechResult& WithContentType(const char* value) { SetContentType(value); return *this;}
 

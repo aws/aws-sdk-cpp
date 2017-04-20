@@ -32,6 +32,7 @@
 #include <aws/rekognition/model/DeleteFacesRequest.h>
 #include <aws/rekognition/model/DetectFacesRequest.h>
 #include <aws/rekognition/model/DetectLabelsRequest.h>
+#include <aws/rekognition/model/DetectModerationLabelsRequest.h>
 #include <aws/rekognition/model/IndexFacesRequest.h>
 #include <aws/rekognition/model/ListCollectionsRequest.h>
 #include <aws/rekognition/model/ListFacesRequest.h>
@@ -304,6 +305,40 @@ void RekognitionClient::DetectLabelsAsync(const DetectLabelsRequest& request, co
 void RekognitionClient::DetectLabelsAsyncHelper(const DetectLabelsRequest& request, const DetectLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DetectLabels(request), context);
+}
+
+DetectModerationLabelsOutcome RekognitionClient::DetectModerationLabels(const DetectModerationLabelsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DetectModerationLabelsOutcome(DetectModerationLabelsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DetectModerationLabelsOutcome(outcome.GetError());
+  }
+}
+
+DetectModerationLabelsOutcomeCallable RekognitionClient::DetectModerationLabelsCallable(const DetectModerationLabelsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DetectModerationLabelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetectModerationLabels(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::DetectModerationLabelsAsync(const DetectModerationLabelsRequest& request, const DetectModerationLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DetectModerationLabelsAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::DetectModerationLabelsAsyncHelper(const DetectModerationLabelsRequest& request, const DetectModerationLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DetectModerationLabels(request), context);
 }
 
 IndexFacesOutcome RekognitionClient::IndexFaces(const IndexFacesRequest& request) const

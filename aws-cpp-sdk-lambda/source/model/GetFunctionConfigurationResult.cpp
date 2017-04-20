@@ -140,6 +140,12 @@ GetFunctionConfigurationResult& GetFunctionConfigurationResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("TracingConfig"))
+  {
+    m_tracingConfig = jsonValue.GetObject("TracingConfig");
+
+  }
+
 
 
   return *this;

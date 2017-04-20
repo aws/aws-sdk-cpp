@@ -43,7 +43,7 @@ namespace Model
      * devices, the serial number is the same as the ARN.</p> <p>This parameter allows
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      * of characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =/:,.@-</p>
+     * spaces. You can also include any of the following characters: =,.@:/-</p>
      */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
 
@@ -52,7 +52,7 @@ namespace Model
      * devices, the serial number is the same as the ARN.</p> <p>This parameter allows
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      * of characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =/:,.@-</p>
+     * spaces. You can also include any of the following characters: =,.@:/-</p>
      */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
@@ -61,7 +61,7 @@ namespace Model
      * devices, the serial number is the same as the ARN.</p> <p>This parameter allows
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      * of characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =/:,.@-</p>
+     * spaces. You can also include any of the following characters: =,.@:/-</p>
      */
     inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
 
@@ -70,7 +70,7 @@ namespace Model
      * devices, the serial number is the same as the ARN.</p> <p>This parameter allows
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      * of characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =/:,.@-</p>
+     * spaces. You can also include any of the following characters: =,.@:/-</p>
      */
     inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
 
@@ -79,7 +79,7 @@ namespace Model
      * devices, the serial number is the same as the ARN.</p> <p>This parameter allows
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      * of characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =/:,.@-</p>
+     * spaces. You can also include any of the following characters: =,.@:/-</p>
      */
     inline DeleteVirtualMFADeviceRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
 
@@ -88,7 +88,7 @@ namespace Model
      * devices, the serial number is the same as the ARN.</p> <p>This parameter allows
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      * of characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =/:,.@-</p>
+     * spaces. You can also include any of the following characters: =,.@:/-</p>
      */
     inline DeleteVirtualMFADeviceRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
 
@@ -97,7 +97,7 @@ namespace Model
      * devices, the serial number is the same as the ARN.</p> <p>This parameter allows
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      * of characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =/:,.@-</p>
+     * spaces. You can also include any of the following characters: =,.@:/-</p>
      */
     inline DeleteVirtualMFADeviceRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 

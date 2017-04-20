@@ -35,7 +35,8 @@ Role::Role() :
     m_roleIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_createDateHasBeenSet(false),
-    m_assumeRolePolicyDocumentHasBeenSet(false)
+    m_assumeRolePolicyDocumentHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -45,7 +46,8 @@ Role::Role(const XmlNode& xmlNode) :
     m_roleIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_createDateHasBeenSet(false),
-    m_assumeRolePolicyDocumentHasBeenSet(false)
+    m_assumeRolePolicyDocumentHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -92,6 +94,12 @@ Role& Role::operator =(const XmlNode& xmlNode)
       m_assumeRolePolicyDocument = StringUtils::Trim(assumeRolePolicyDocumentNode.GetText().c_str());
       m_assumeRolePolicyDocumentHasBeenSet = true;
     }
+    XmlNode descriptionNode = resultNode.FirstChild("Description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_descriptionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -129,6 +137,11 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       oStream << location << index << locationValue << ".AssumeRolePolicyDocument=" << StringUtils::URLEncode(m_assumeRolePolicyDocument.c_str()) << "&";
   }
 
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
 }
 
 void Role::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -156,6 +169,10 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_assumeRolePolicyDocumentHasBeenSet)
   {
       oStream << location << ".AssumeRolePolicyDocument=" << StringUtils::URLEncode(m_assumeRolePolicyDocument.c_str()) << "&";
+  }
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 }
 

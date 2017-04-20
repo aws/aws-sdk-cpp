@@ -19,6 +19,7 @@
 #include <aws/lambda/model/VpcConfigResponse.h>
 #include <aws/lambda/model/DeadLetterConfig.h>
 #include <aws/lambda/model/EnvironmentResponse.h>
+#include <aws/lambda/model/TracingConfigResponse.h>
 #include <utility>
 
 namespace Aws
@@ -50,37 +51,51 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The name of the function.</p>
+     * <p>The name of the function. Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 characters in
+     * length.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The name of the function.</p>
+     * <p>The name of the function. Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 characters in
+     * length.</p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The name of the function.</p>
+     * <p>The name of the function. Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 characters in
+     * length.</p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>The name of the function.</p>
+     * <p>The name of the function. Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 characters in
+     * length.</p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The name of the function.</p>
+     * <p>The name of the function. Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 characters in
+     * length.</p>
      */
     inline FunctionConfiguration& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The name of the function.</p>
+     * <p>The name of the function. Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 characters in
+     * length.</p>
      */
     inline FunctionConfiguration& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the function.</p>
+     * <p>The name of the function. Note that the length constraint applies only to the
+     * ARN. If you specify only the function name, it is limited to 64 characters in
+     * length.</p>
      */
     inline FunctionConfiguration& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
@@ -120,37 +135,27 @@ namespace Model
     inline FunctionConfiguration& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p>
+     * <p>The runtime environment for the Lambda function.</p>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p>
+     * <p>The runtime environment for the Lambda function.</p>
      */
     inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p>
+     * <p>The runtime environment for the Lambda function.</p>
      */
     inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p>
+     * <p>The runtime environment for the Lambda function.</p>
      */
     inline FunctionConfiguration& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p>
+     * <p>The runtime environment for the Lambda function.</p>
      */
     inline FunctionConfiguration& WithRuntime(Runtime&& value) { SetRuntime(std::move(value)); return *this;}
 
@@ -458,31 +463,31 @@ namespace Model
     inline FunctionConfiguration& WithVpcConfig(VpcConfigResponse&& value) { SetVpcConfig(std::move(value)); return *this;}
 
     /**
-     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
 
     /**
-     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
 
     /**
-     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = std::move(value); }
 
     /**
-     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline FunctionConfiguration& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
 
     /**
-     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline FunctionConfiguration& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
@@ -566,6 +571,31 @@ namespace Model
      */
     inline FunctionConfiguration& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
 
+    /**
+     * <p>The parent object that contains your function's tracing settings.</p>
+     */
+    inline const TracingConfigResponse& GetTracingConfig() const{ return m_tracingConfig; }
+
+    /**
+     * <p>The parent object that contains your function's tracing settings.</p>
+     */
+    inline void SetTracingConfig(const TracingConfigResponse& value) { m_tracingConfigHasBeenSet = true; m_tracingConfig = value; }
+
+    /**
+     * <p>The parent object that contains your function's tracing settings.</p>
+     */
+    inline void SetTracingConfig(TracingConfigResponse&& value) { m_tracingConfigHasBeenSet = true; m_tracingConfig = std::move(value); }
+
+    /**
+     * <p>The parent object that contains your function's tracing settings.</p>
+     */
+    inline FunctionConfiguration& WithTracingConfig(const TracingConfigResponse& value) { SetTracingConfig(value); return *this;}
+
+    /**
+     * <p>The parent object that contains your function's tracing settings.</p>
+     */
+    inline FunctionConfiguration& WithTracingConfig(TracingConfigResponse&& value) { SetTracingConfig(std::move(value)); return *this;}
+
   private:
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
@@ -599,6 +629,8 @@ namespace Model
     bool m_environmentHasBeenSet;
     Aws::String m_kMSKeyArn;
     bool m_kMSKeyArnHasBeenSet;
+    TracingConfigResponse m_tracingConfig;
+    bool m_tracingConfigHasBeenSet;
   };
 
 } // namespace Model

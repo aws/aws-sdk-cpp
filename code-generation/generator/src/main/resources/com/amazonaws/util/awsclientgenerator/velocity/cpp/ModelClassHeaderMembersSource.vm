@@ -33,6 +33,13 @@
   ${spaces}  headers.insert(Aws::Http::HeaderValuePair(ss.str(), item.second));
   ${spaces}  ss.str("");
   ${spaces}}
+#elseif($member.shape.list)
+  ${spaces}for(const auto& item : $memberVarName)
+  ${spaces}{
+  ${spaces}  ss << item;
+  ${spaces}  headers.insert(Aws::Http::HeaderValuePair("${locationName}", ss.str()));
+  ${spaces}  ss.str("");
+  ${spaces}}
 #else
   ${spaces}ss << m_${lowerCaseVarName};
   ${spaces}headers.insert(Aws::Http::HeaderValuePair("${locationName}", ss.str()));

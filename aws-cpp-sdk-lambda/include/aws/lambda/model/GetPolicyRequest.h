@@ -53,7 +53,7 @@ namespace Model
      * you to specify only the function name with the account ID qualifier (for
      * example, <code>account-id:Thumbnail</code>). Note that the length constraint
      * applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 character in length. </p>
+     * 64 characters in length. </p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
@@ -67,7 +67,7 @@ namespace Model
      * you to specify only the function name with the account ID qualifier (for
      * example, <code>account-id:Thumbnail</code>). Note that the length constraint
      * applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 character in length. </p>
+     * 64 characters in length. </p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
@@ -81,7 +81,7 @@ namespace Model
      * you to specify only the function name with the account ID qualifier (for
      * example, <code>account-id:Thumbnail</code>). Note that the length constraint
      * applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 character in length. </p>
+     * 64 characters in length. </p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
@@ -95,7 +95,7 @@ namespace Model
      * you to specify only the function name with the account ID qualifier (for
      * example, <code>account-id:Thumbnail</code>). Note that the length constraint
      * applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 character in length. </p>
+     * 64 characters in length. </p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
@@ -109,7 +109,7 @@ namespace Model
      * you to specify only the function name with the account ID qualifier (for
      * example, <code>account-id:Thumbnail</code>). Note that the length constraint
      * applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 character in length. </p>
+     * 64 characters in length. </p>
      */
     inline GetPolicyRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
@@ -123,7 +123,7 @@ namespace Model
      * you to specify only the function name with the account ID qualifier (for
      * example, <code>account-id:Thumbnail</code>). Note that the length constraint
      * applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 character in length. </p>
+     * 64 characters in length. </p>
      */
     inline GetPolicyRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
@@ -137,7 +137,7 @@ namespace Model
      * you to specify only the function name with the account ID qualifier (for
      * example, <code>account-id:Thumbnail</code>). Note that the length constraint
      * applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 character in length. </p>
+     * 64 characters in length. </p>
      */
     inline GetPolicyRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 

@@ -106,7 +106,7 @@ namespace Model
      * devices, the serial number is the device ARN.</p> <p>This parameter allows (per
      * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =/:,.@-</p>
+     * spaces. You can also include any of the following characters: =,.@:/-</p>
      */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
 
@@ -115,7 +115,7 @@ namespace Model
      * devices, the serial number is the device ARN.</p> <p>This parameter allows (per
      * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =/:,.@-</p>
+     * spaces. You can also include any of the following characters: =,.@:/-</p>
      */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
@@ -124,7 +124,7 @@ namespace Model
      * devices, the serial number is the device ARN.</p> <p>This parameter allows (per
      * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =/:,.@-</p>
+     * spaces. You can also include any of the following characters: =,.@:/-</p>
      */
     inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
 
@@ -133,7 +133,7 @@ namespace Model
      * devices, the serial number is the device ARN.</p> <p>This parameter allows (per
      * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =/:,.@-</p>
+     * spaces. You can also include any of the following characters: =,.@:/-</p>
      */
     inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
 
@@ -142,7 +142,7 @@ namespace Model
      * devices, the serial number is the device ARN.</p> <p>This parameter allows (per
      * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =/:,.@-</p>
+     * spaces. You can also include any of the following characters: =,.@:/-</p>
      */
     inline EnableMFADeviceRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
 
@@ -151,7 +151,7 @@ namespace Model
      * devices, the serial number is the device ARN.</p> <p>This parameter allows (per
      * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =/:,.@-</p>
+     * spaces. You can also include any of the following characters: =,.@:/-</p>
      */
     inline EnableMFADeviceRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
 
@@ -160,91 +160,189 @@ namespace Model
      * devices, the serial number is the device ARN.</p> <p>This parameter allows (per
      * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =/:,.@-</p>
+     * spaces. You can also include any of the following characters: =,.@:/-</p>
      */
     inline EnableMFADeviceRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 
     /**
-     * <p>An authentication code emitted by the device.</p> <p>The format for this
-     * parameter is a string of 6 digits.</p>
+     * <p>An authentication code emitted by the device. </p> <p>The format for this
+     * parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * immediately after generating the authentication codes. If you generate the codes
+     * and then wait too long to submit the request, the MFA device successfully
+     * associates with the user but the MFA device becomes out of sync. This happens
+     * because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * the device</a>.</p> </important>
      */
     inline const Aws::String& GetAuthenticationCode1() const{ return m_authenticationCode1; }
 
     /**
-     * <p>An authentication code emitted by the device.</p> <p>The format for this
-     * parameter is a string of 6 digits.</p>
+     * <p>An authentication code emitted by the device. </p> <p>The format for this
+     * parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * immediately after generating the authentication codes. If you generate the codes
+     * and then wait too long to submit the request, the MFA device successfully
+     * associates with the user but the MFA device becomes out of sync. This happens
+     * because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * the device</a>.</p> </important>
      */
     inline void SetAuthenticationCode1(const Aws::String& value) { m_authenticationCode1HasBeenSet = true; m_authenticationCode1 = value; }
 
     /**
-     * <p>An authentication code emitted by the device.</p> <p>The format for this
-     * parameter is a string of 6 digits.</p>
+     * <p>An authentication code emitted by the device. </p> <p>The format for this
+     * parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * immediately after generating the authentication codes. If you generate the codes
+     * and then wait too long to submit the request, the MFA device successfully
+     * associates with the user but the MFA device becomes out of sync. This happens
+     * because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * the device</a>.</p> </important>
      */
     inline void SetAuthenticationCode1(Aws::String&& value) { m_authenticationCode1HasBeenSet = true; m_authenticationCode1 = std::move(value); }
 
     /**
-     * <p>An authentication code emitted by the device.</p> <p>The format for this
-     * parameter is a string of 6 digits.</p>
+     * <p>An authentication code emitted by the device. </p> <p>The format for this
+     * parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * immediately after generating the authentication codes. If you generate the codes
+     * and then wait too long to submit the request, the MFA device successfully
+     * associates with the user but the MFA device becomes out of sync. This happens
+     * because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * the device</a>.</p> </important>
      */
     inline void SetAuthenticationCode1(const char* value) { m_authenticationCode1HasBeenSet = true; m_authenticationCode1.assign(value); }
 
     /**
-     * <p>An authentication code emitted by the device.</p> <p>The format for this
-     * parameter is a string of 6 digits.</p>
+     * <p>An authentication code emitted by the device. </p> <p>The format for this
+     * parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * immediately after generating the authentication codes. If you generate the codes
+     * and then wait too long to submit the request, the MFA device successfully
+     * associates with the user but the MFA device becomes out of sync. This happens
+     * because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * the device</a>.</p> </important>
      */
     inline EnableMFADeviceRequest& WithAuthenticationCode1(const Aws::String& value) { SetAuthenticationCode1(value); return *this;}
 
     /**
-     * <p>An authentication code emitted by the device.</p> <p>The format for this
-     * parameter is a string of 6 digits.</p>
+     * <p>An authentication code emitted by the device. </p> <p>The format for this
+     * parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * immediately after generating the authentication codes. If you generate the codes
+     * and then wait too long to submit the request, the MFA device successfully
+     * associates with the user but the MFA device becomes out of sync. This happens
+     * because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * the device</a>.</p> </important>
      */
     inline EnableMFADeviceRequest& WithAuthenticationCode1(Aws::String&& value) { SetAuthenticationCode1(std::move(value)); return *this;}
 
     /**
-     * <p>An authentication code emitted by the device.</p> <p>The format for this
-     * parameter is a string of 6 digits.</p>
+     * <p>An authentication code emitted by the device. </p> <p>The format for this
+     * parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * immediately after generating the authentication codes. If you generate the codes
+     * and then wait too long to submit the request, the MFA device successfully
+     * associates with the user but the MFA device becomes out of sync. This happens
+     * because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * the device</a>.</p> </important>
      */
     inline EnableMFADeviceRequest& WithAuthenticationCode1(const char* value) { SetAuthenticationCode1(value); return *this;}
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
-     * this parameter is a string of 6 digits.</p>
+     * this parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * immediately after generating the authentication codes. If you generate the codes
+     * and then wait too long to submit the request, the MFA device successfully
+     * associates with the user but the MFA device becomes out of sync. This happens
+     * because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * the device</a>.</p> </important>
      */
     inline const Aws::String& GetAuthenticationCode2() const{ return m_authenticationCode2; }
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
-     * this parameter is a string of 6 digits.</p>
+     * this parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * immediately after generating the authentication codes. If you generate the codes
+     * and then wait too long to submit the request, the MFA device successfully
+     * associates with the user but the MFA device becomes out of sync. This happens
+     * because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * the device</a>.</p> </important>
      */
     inline void SetAuthenticationCode2(const Aws::String& value) { m_authenticationCode2HasBeenSet = true; m_authenticationCode2 = value; }
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
-     * this parameter is a string of 6 digits.</p>
+     * this parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * immediately after generating the authentication codes. If you generate the codes
+     * and then wait too long to submit the request, the MFA device successfully
+     * associates with the user but the MFA device becomes out of sync. This happens
+     * because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * the device</a>.</p> </important>
      */
     inline void SetAuthenticationCode2(Aws::String&& value) { m_authenticationCode2HasBeenSet = true; m_authenticationCode2 = std::move(value); }
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
-     * this parameter is a string of 6 digits.</p>
+     * this parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * immediately after generating the authentication codes. If you generate the codes
+     * and then wait too long to submit the request, the MFA device successfully
+     * associates with the user but the MFA device becomes out of sync. This happens
+     * because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * the device</a>.</p> </important>
      */
     inline void SetAuthenticationCode2(const char* value) { m_authenticationCode2HasBeenSet = true; m_authenticationCode2.assign(value); }
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
-     * this parameter is a string of 6 digits.</p>
+     * this parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * immediately after generating the authentication codes. If you generate the codes
+     * and then wait too long to submit the request, the MFA device successfully
+     * associates with the user but the MFA device becomes out of sync. This happens
+     * because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * the device</a>.</p> </important>
      */
     inline EnableMFADeviceRequest& WithAuthenticationCode2(const Aws::String& value) { SetAuthenticationCode2(value); return *this;}
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
-     * this parameter is a string of 6 digits.</p>
+     * this parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * immediately after generating the authentication codes. If you generate the codes
+     * and then wait too long to submit the request, the MFA device successfully
+     * associates with the user but the MFA device becomes out of sync. This happens
+     * because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * the device</a>.</p> </important>
      */
     inline EnableMFADeviceRequest& WithAuthenticationCode2(Aws::String&& value) { SetAuthenticationCode2(std::move(value)); return *this;}
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
-     * this parameter is a string of 6 digits.</p>
+     * this parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * immediately after generating the authentication codes. If you generate the codes
+     * and then wait too long to submit the request, the MFA device successfully
+     * associates with the user but the MFA device becomes out of sync. This happens
+     * because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * the device</a>.</p> </important>
      */
     inline EnableMFADeviceRequest& WithAuthenticationCode2(const char* value) { SetAuthenticationCode2(value); return *this;}
 

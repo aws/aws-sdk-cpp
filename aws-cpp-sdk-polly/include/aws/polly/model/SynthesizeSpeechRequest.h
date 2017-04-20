@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/polly/model/TextType.h>
 #include <aws/polly/model/VoiceId.h>
+#include <aws/polly/model/SpeechMarkType.h>
 #include <utility>
 
 namespace Aws
@@ -115,27 +116,32 @@ namespace Model
     inline SynthesizeSpeechRequest& AddLexiconNames(const char* value) { m_lexiconNamesHasBeenSet = true; m_lexiconNames.push_back(value); return *this; }
 
     /**
-     * <p> The audio format in which the resulting stream will be encoded. </p>
+     * <p> The format in which the returned output will be encoded. For audio stream,
+     * this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
      */
     inline const OutputFormat& GetOutputFormat() const{ return m_outputFormat; }
 
     /**
-     * <p> The audio format in which the resulting stream will be encoded. </p>
+     * <p> The format in which the returned output will be encoded. For audio stream,
+     * this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
      */
     inline void SetOutputFormat(const OutputFormat& value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
 
     /**
-     * <p> The audio format in which the resulting stream will be encoded. </p>
+     * <p> The format in which the returned output will be encoded. For audio stream,
+     * this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
      */
     inline void SetOutputFormat(OutputFormat&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = std::move(value); }
 
     /**
-     * <p> The audio format in which the resulting stream will be encoded. </p>
+     * <p> The format in which the returned output will be encoded. For audio stream,
+     * this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
      */
     inline SynthesizeSpeechRequest& WithOutputFormat(const OutputFormat& value) { SetOutputFormat(value); return *this;}
 
     /**
-     * <p> The audio format in which the resulting stream will be encoded. </p>
+     * <p> The format in which the returned output will be encoded. For audio stream,
+     * this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
      */
     inline SynthesizeSpeechRequest& WithOutputFormat(OutputFormat&& value) { SetOutputFormat(std::move(value)); return *this;}
 
@@ -194,6 +200,41 @@ namespace Model
      * "8000" and "16000" The default value is "16000". </p>
      */
     inline SynthesizeSpeechRequest& WithSampleRate(const char* value) { SetSampleRate(value); return *this;}
+
+    /**
+     * <p>The type of speech marks returned for the input text.</p>
+     */
+    inline const Aws::Vector<SpeechMarkType>& GetSpeechMarkTypes() const{ return m_speechMarkTypes; }
+
+    /**
+     * <p>The type of speech marks returned for the input text.</p>
+     */
+    inline void SetSpeechMarkTypes(const Aws::Vector<SpeechMarkType>& value) { m_speechMarkTypesHasBeenSet = true; m_speechMarkTypes = value; }
+
+    /**
+     * <p>The type of speech marks returned for the input text.</p>
+     */
+    inline void SetSpeechMarkTypes(Aws::Vector<SpeechMarkType>&& value) { m_speechMarkTypesHasBeenSet = true; m_speechMarkTypes = std::move(value); }
+
+    /**
+     * <p>The type of speech marks returned for the input text.</p>
+     */
+    inline SynthesizeSpeechRequest& WithSpeechMarkTypes(const Aws::Vector<SpeechMarkType>& value) { SetSpeechMarkTypes(value); return *this;}
+
+    /**
+     * <p>The type of speech marks returned for the input text.</p>
+     */
+    inline SynthesizeSpeechRequest& WithSpeechMarkTypes(Aws::Vector<SpeechMarkType>&& value) { SetSpeechMarkTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of speech marks returned for the input text.</p>
+     */
+    inline SynthesizeSpeechRequest& AddSpeechMarkTypes(const SpeechMarkType& value) { m_speechMarkTypesHasBeenSet = true; m_speechMarkTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The type of speech marks returned for the input text.</p>
+     */
+    inline SynthesizeSpeechRequest& AddSpeechMarkTypes(SpeechMarkType&& value) { m_speechMarkTypesHasBeenSet = true; m_speechMarkTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p> Input text to synthesize. If you specify <code>ssml</code> as the
@@ -319,6 +360,8 @@ namespace Model
     bool m_outputFormatHasBeenSet;
     Aws::String m_sampleRate;
     bool m_sampleRateHasBeenSet;
+    Aws::Vector<SpeechMarkType> m_speechMarkTypes;
+    bool m_speechMarkTypesHasBeenSet;
     Aws::String m_text;
     bool m_textHasBeenSet;
     TextType m_textType;

@@ -34,8 +34,7 @@ Aws::String InitiateJobRequest::SerializePayload() const
 
   if(m_jobParametersHasBeenSet)
   {
-   payload.WithObject("jobParameters", m_jobParameters.Jsonize());
-
+   payload = m_jobParameters.Jsonize();
   }
 
   return payload.WriteReadable();

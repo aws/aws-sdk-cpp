@@ -140,6 +140,12 @@ UpdateFunctionCodeResult& UpdateFunctionCodeResult::operator =(const AmazonWebSe
 
   }
 
+  if(jsonValue.ValueExists("TracingConfig"))
+  {
+    m_tracingConfig = jsonValue.GetObject("TracingConfig");
+
+  }
+
 
 
   return *this;

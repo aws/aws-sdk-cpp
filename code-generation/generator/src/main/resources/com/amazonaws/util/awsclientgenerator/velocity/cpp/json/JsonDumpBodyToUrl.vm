@@ -15,7 +15,11 @@
 #elseif($member.shape.list)
     for(auto& item : ${memberVarName})
     {
+#if($member.shape.listMember.shape.enum)
+      uri.AddQueryStringParameter("${memberName}", ${member.shape.listMember.shape.name}Mapper::GetNameFor${member.shape.listMember.shape.name}(item));
+#else
       uri.AddQueryStringParameter("${memberName}", StringUtils::to_string(item));
+#end
     }
 #elseif($member.shape.blob)
     uri.AddQueryStringParameter("${memberName}", HashingUtils::Base64Encode($memberVarName)));
