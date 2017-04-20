@@ -19,7 +19,6 @@
 #include <aws/core/utils/Outcome.h>
 #include <openssl/md5.h>
 #include <openssl/sha.h>
-#include <openssl/hmac.h>
 #include <openssl/err.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <thread>
@@ -198,20 +197,30 @@ namespace Aws
                 return HashResult(std::move(hash));
             }
 
+            Sha256HMACOpenSSLImpl::Sha256HMACOpenSSLImpl() : HMAC(), m_ctx(nullptr)
+            {
+                m_ctx = &_m_ctx;
+            }
+
+            Sha256HMACOpenSSLImpl::~Sha256HMACOpenSSLImpl()
+            {
+                m_ctx = nullptr;
+            }
+
             HashResult Sha256HMACOpenSSLImpl::Calculate(const ByteBuffer& toSign, const ByteBuffer& secret)
             {
                 unsigned int length = SHA256_DIGEST_LENGTH;
                 ByteBuffer digest(length);
                 memset(digest.GetUnderlyingData(), 0, length);
 
-                HMAC_CTX ctx;
-                HMAC_CTX_init(&ctx);
+                HMAC_CTX_init(m_ctx);
 
-                HMAC_Init_ex(&ctx, secret.GetUnderlyingData(), static_cast<int>(secret.GetLength()), EVP_sha256(),
+                HMAC_Init_ex(m_ctx, secret.GetUnderlyingData(), static_cast<int>(secret.GetLength()), EVP_sha256(),
                              NULL);
-                HMAC_Update(&ctx, toSign.GetUnderlyingData(), toSign.GetLength());
-                HMAC_Final(&ctx, digest.GetUnderlyingData(), &length);
-                HMAC_CTX_cleanup(&ctx);
+                HMAC_Update(m_ctx, toSign.GetUnderlyingData(), toSign.GetLength());
+                HMAC_Final(m_ctx, digest.GetUnderlyingData(), &length);
+
+                HMAC_CTX_cleanup(m_ctx);
 
                 return HashResult(std::move(digest));
             }
