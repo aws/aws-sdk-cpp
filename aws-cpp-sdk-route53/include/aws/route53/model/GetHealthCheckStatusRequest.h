@@ -26,8 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information about the request to get health
-   * check status for a health check.</p><p><h3>See Also:</h3>   <a
+   * <p>A request to get the status for a health check.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatusRequest">AWS
    * API Reference</a></p>
    */
@@ -39,7 +38,7 @@ namespace Model
 
 
     /**
-     * <p>The ID for the health check for which you want the current status. When you
+     * <p>The ID for the health check that you want the current status for. When you
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the
      * response, in the <code>HealthCheckId</code> element.</p> <note> <p>If you want
      * to check the status of a calculated health check, you must use the Amazon Route
@@ -50,7 +49,7 @@ namespace Model
     inline const Aws::String& GetHealthCheckId() const{ return m_healthCheckId; }
 
     /**
-     * <p>The ID for the health check for which you want the current status. When you
+     * <p>The ID for the health check that you want the current status for. When you
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the
      * response, in the <code>HealthCheckId</code> element.</p> <note> <p>If you want
      * to check the status of a calculated health check, you must use the Amazon Route
@@ -61,7 +60,7 @@ namespace Model
     inline void SetHealthCheckId(const Aws::String& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = value; }
 
     /**
-     * <p>The ID for the health check for which you want the current status. When you
+     * <p>The ID for the health check that you want the current status for. When you
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the
      * response, in the <code>HealthCheckId</code> element.</p> <note> <p>If you want
      * to check the status of a calculated health check, you must use the Amazon Route
@@ -72,7 +71,7 @@ namespace Model
     inline void SetHealthCheckId(Aws::String&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = std::move(value); }
 
     /**
-     * <p>The ID for the health check for which you want the current status. When you
+     * <p>The ID for the health check that you want the current status for. When you
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the
      * response, in the <code>HealthCheckId</code> element.</p> <note> <p>If you want
      * to check the status of a calculated health check, you must use the Amazon Route
@@ -83,7 +82,7 @@ namespace Model
     inline void SetHealthCheckId(const char* value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId.assign(value); }
 
     /**
-     * <p>The ID for the health check for which you want the current status. When you
+     * <p>The ID for the health check that you want the current status for. When you
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the
      * response, in the <code>HealthCheckId</code> element.</p> <note> <p>If you want
      * to check the status of a calculated health check, you must use the Amazon Route
@@ -94,7 +93,7 @@ namespace Model
     inline GetHealthCheckStatusRequest& WithHealthCheckId(const Aws::String& value) { SetHealthCheckId(value); return *this;}
 
     /**
-     * <p>The ID for the health check for which you want the current status. When you
+     * <p>The ID for the health check that you want the current status for. When you
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the
      * response, in the <code>HealthCheckId</code> element.</p> <note> <p>If you want
      * to check the status of a calculated health check, you must use the Amazon Route
@@ -105,7 +104,7 @@ namespace Model
     inline GetHealthCheckStatusRequest& WithHealthCheckId(Aws::String&& value) { SetHealthCheckId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the health check for which you want the current status. When you
+     * <p>The ID for the health check that you want the current status for. When you
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the
      * response, in the <code>HealthCheckId</code> element.</p> <note> <p>If you want
      * to check the status of a calculated health check, you must use the Amazon Route

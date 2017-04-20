@@ -90,47 +90,47 @@ namespace Model
     inline StatusReport& WithStatus(const char* value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The time at which the health checker performed the health check in <a
+     * <p>The date and time that the health checker performed the health check in <a
      * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
      * Coordinated Universal Time (UTC). For example, the value
-     * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
-     * 17:48:16.751 UTC.</p>
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     * UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetCheckedTime() const{ return m_checkedTime; }
 
     /**
-     * <p>The time at which the health checker performed the health check in <a
+     * <p>The date and time that the health checker performed the health check in <a
      * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
      * Coordinated Universal Time (UTC). For example, the value
-     * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
-     * 17:48:16.751 UTC.</p>
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     * UTC.</p>
      */
     inline void SetCheckedTime(const Aws::Utils::DateTime& value) { m_checkedTimeHasBeenSet = true; m_checkedTime = value; }
 
     /**
-     * <p>The time at which the health checker performed the health check in <a
+     * <p>The date and time that the health checker performed the health check in <a
      * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
      * Coordinated Universal Time (UTC). For example, the value
-     * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
-     * 17:48:16.751 UTC.</p>
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     * UTC.</p>
      */
     inline void SetCheckedTime(Aws::Utils::DateTime&& value) { m_checkedTimeHasBeenSet = true; m_checkedTime = std::move(value); }
 
     /**
-     * <p>The time at which the health checker performed the health check in <a
+     * <p>The date and time that the health checker performed the health check in <a
      * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
      * Coordinated Universal Time (UTC). For example, the value
-     * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
-     * 17:48:16.751 UTC.</p>
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     * UTC.</p>
      */
     inline StatusReport& WithCheckedTime(const Aws::Utils::DateTime& value) { SetCheckedTime(value); return *this;}
 
     /**
-     * <p>The time at which the health checker performed the health check in <a
+     * <p>The date and time that the health checker performed the health check in <a
      * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
      * Coordinated Universal Time (UTC). For example, the value
-     * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
-     * 17:48:16.751 UTC.</p>
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     * UTC.</p>
      */
     inline StatusReport& WithCheckedTime(Aws::Utils::DateTime&& value) { SetCheckedTime(std::move(value)); return *this;}
 

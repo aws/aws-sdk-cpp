@@ -90,9 +90,8 @@ namespace Model
      * <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element,
      * there are more VPCs that can be associated with the specified hosted zone. To
      * get the next page of results, submit another request, and include the value of
-     * the <code>NextToken</code> element in from the response in the
-     * <code>NextToken</code> parameter in another
-     * <code>ListVPCAssociationAuthorizations</code> request.</p>
+     * <code>NextToken</code> from the response in the <code>nexttoken</code> parameter
+     * in another <code>ListVPCAssociationAuthorizations</code> request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -100,9 +99,8 @@ namespace Model
      * <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element,
      * there are more VPCs that can be associated with the specified hosted zone. To
      * get the next page of results, submit another request, and include the value of
-     * the <code>NextToken</code> element in from the response in the
-     * <code>NextToken</code> parameter in another
-     * <code>ListVPCAssociationAuthorizations</code> request.</p>
+     * <code>NextToken</code> from the response in the <code>nexttoken</code> parameter
+     * in another <code>ListVPCAssociationAuthorizations</code> request.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -110,9 +108,8 @@ namespace Model
      * <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element,
      * there are more VPCs that can be associated with the specified hosted zone. To
      * get the next page of results, submit another request, and include the value of
-     * the <code>NextToken</code> element in from the response in the
-     * <code>NextToken</code> parameter in another
-     * <code>ListVPCAssociationAuthorizations</code> request.</p>
+     * <code>NextToken</code> from the response in the <code>nexttoken</code> parameter
+     * in another <code>ListVPCAssociationAuthorizations</code> request.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -120,9 +117,8 @@ namespace Model
      * <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element,
      * there are more VPCs that can be associated with the specified hosted zone. To
      * get the next page of results, submit another request, and include the value of
-     * the <code>NextToken</code> element in from the response in the
-     * <code>NextToken</code> parameter in another
-     * <code>ListVPCAssociationAuthorizations</code> request.</p>
+     * <code>NextToken</code> from the response in the <code>nexttoken</code> parameter
+     * in another <code>ListVPCAssociationAuthorizations</code> request.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -130,9 +126,8 @@ namespace Model
      * <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element,
      * there are more VPCs that can be associated with the specified hosted zone. To
      * get the next page of results, submit another request, and include the value of
-     * the <code>NextToken</code> element in from the response in the
-     * <code>NextToken</code> parameter in another
-     * <code>ListVPCAssociationAuthorizations</code> request.</p>
+     * <code>NextToken</code> from the response in the <code>nexttoken</code> parameter
+     * in another <code>ListVPCAssociationAuthorizations</code> request.</p>
      */
     inline ListVPCAssociationAuthorizationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -140,9 +135,8 @@ namespace Model
      * <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element,
      * there are more VPCs that can be associated with the specified hosted zone. To
      * get the next page of results, submit another request, and include the value of
-     * the <code>NextToken</code> element in from the response in the
-     * <code>NextToken</code> parameter in another
-     * <code>ListVPCAssociationAuthorizations</code> request.</p>
+     * <code>NextToken</code> from the response in the <code>nexttoken</code> parameter
+     * in another <code>ListVPCAssociationAuthorizations</code> request.</p>
      */
     inline ListVPCAssociationAuthorizationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -150,51 +144,57 @@ namespace Model
      * <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element,
      * there are more VPCs that can be associated with the specified hosted zone. To
      * get the next page of results, submit another request, and include the value of
-     * the <code>NextToken</code> element in from the response in the
-     * <code>NextToken</code> parameter in another
-     * <code>ListVPCAssociationAuthorizations</code> request.</p>
+     * <code>NextToken</code> from the response in the <code>nexttoken</code> parameter
+     * in another <code>ListVPCAssociationAuthorizations</code> request.</p>
      */
     inline ListVPCAssociationAuthorizationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
      * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
-     * you want Amazon Route 53 to return.</p>
+     * you want Amazon Route 53 to return. If you don't specify a value for
+     * <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs per page.</p>
      */
     inline const Aws::String& GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
-     * you want Amazon Route 53 to return.</p>
+     * you want Amazon Route 53 to return. If you don't specify a value for
+     * <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs per page.</p>
      */
     inline void SetMaxResults(const Aws::String& value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
-     * you want Amazon Route 53 to return.</p>
+     * you want Amazon Route 53 to return. If you don't specify a value for
+     * <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs per page.</p>
      */
     inline void SetMaxResults(Aws::String&& value) { m_maxResultsHasBeenSet = true; m_maxResults = std::move(value); }
 
     /**
      * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
-     * you want Amazon Route 53 to return.</p>
+     * you want Amazon Route 53 to return. If you don't specify a value for
+     * <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs per page.</p>
      */
     inline void SetMaxResults(const char* value) { m_maxResultsHasBeenSet = true; m_maxResults.assign(value); }
 
     /**
      * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
-     * you want Amazon Route 53 to return.</p>
+     * you want Amazon Route 53 to return. If you don't specify a value for
+     * <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs per page.</p>
      */
     inline ListVPCAssociationAuthorizationsRequest& WithMaxResults(const Aws::String& value) { SetMaxResults(value); return *this;}
 
     /**
      * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
-     * you want Amazon Route 53 to return.</p>
+     * you want Amazon Route 53 to return. If you don't specify a value for
+     * <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs per page.</p>
      */
     inline ListVPCAssociationAuthorizationsRequest& WithMaxResults(Aws::String&& value) { SetMaxResults(std::move(value)); return *this;}
 
     /**
      * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
-     * you want Amazon Route 53 to return.</p>
+     * you want Amazon Route 53 to return. If you don't specify a value for
+     * <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs per page.</p>
      */
     inline ListVPCAssociationAuthorizationsRequest& WithMaxResults(const char* value) { SetMaxResults(value); return *this;}
 

@@ -30,15 +30,8 @@ namespace Model
 {
 
   /**
-   * <p>To get a list of geographic locations that Amazon Route 53 supports for
-   * geolocation, send a <code>GET</code> request to the <code>/<i>Amazon Route 53
-   * API version</i>/geolocations</code> resource. The response to this request
-   * includes a <code>GeoLocationDetails</code> element for each location that Amazon
-   * Route 53 supports.</p> <p>Countries are listed first, and continents are listed
-   * last. If Amazon Route 53 supports subdivisions for a country (for example,
-   * states or provinces), the subdivisions for that country are listed in
-   * alphabetical order immediately after the corresponding country. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A request to get a list of geographic locations that Amazon Route 53 supports
+   * for geolocation resource record sets. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocationsRequest">AWS
    * API Reference</a></p>
    */

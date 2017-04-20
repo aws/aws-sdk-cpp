@@ -43,71 +43,61 @@ namespace Model
 
     /**
      * <p>The beginning date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p> <p>Type: Double</p>
-     * <p>Default: None</p> <p>Required: Yes</p>
+     * billing records. Specify the date in Unix time format.</p>
      */
     inline const Aws::Utils::DateTime& GetStart() const{ return m_start; }
 
     /**
      * <p>The beginning date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p> <p>Type: Double</p>
-     * <p>Default: None</p> <p>Required: Yes</p>
+     * billing records. Specify the date in Unix time format.</p>
      */
     inline void SetStart(const Aws::Utils::DateTime& value) { m_startHasBeenSet = true; m_start = value; }
 
     /**
      * <p>The beginning date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p> <p>Type: Double</p>
-     * <p>Default: None</p> <p>Required: Yes</p>
+     * billing records. Specify the date in Unix time format.</p>
      */
     inline void SetStart(Aws::Utils::DateTime&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
 
     /**
      * <p>The beginning date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p> <p>Type: Double</p>
-     * <p>Default: None</p> <p>Required: Yes</p>
+     * billing records. Specify the date in Unix time format.</p>
      */
     inline ViewBillingRequest& WithStart(const Aws::Utils::DateTime& value) { SetStart(value); return *this;}
 
     /**
      * <p>The beginning date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p> <p>Type: Double</p>
-     * <p>Default: None</p> <p>Required: Yes</p>
+     * billing records. Specify the date in Unix time format.</p>
      */
     inline ViewBillingRequest& WithStart(Aws::Utils::DateTime&& value) { SetStart(std::move(value)); return *this;}
 
     /**
      * <p>The end date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p> <p>Type: Double</p>
-     * <p>Default: None</p> <p>Required: Yes</p>
+     * billing records. Specify the date in Unix time format.</p>
      */
     inline const Aws::Utils::DateTime& GetEnd() const{ return m_end; }
 
     /**
      * <p>The end date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p> <p>Type: Double</p>
-     * <p>Default: None</p> <p>Required: Yes</p>
+     * billing records. Specify the date in Unix time format.</p>
      */
     inline void SetEnd(const Aws::Utils::DateTime& value) { m_endHasBeenSet = true; m_end = value; }
 
     /**
      * <p>The end date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p> <p>Type: Double</p>
-     * <p>Default: None</p> <p>Required: Yes</p>
+     * billing records. Specify the date in Unix time format.</p>
      */
     inline void SetEnd(Aws::Utils::DateTime&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
 
     /**
      * <p>The end date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p> <p>Type: Double</p>
-     * <p>Default: None</p> <p>Required: Yes</p>
+     * billing records. Specify the date in Unix time format.</p>
      */
     inline ViewBillingRequest& WithEnd(const Aws::Utils::DateTime& value) { SetEnd(value); return *this;}
 
     /**
      * <p>The end date and time for the time period for which you want a list of
-     * billing records. Specify the date in Unix time format.</p> <p>Type: Double</p>
-     * <p>Default: None</p> <p>Required: Yes</p>
+     * billing records. Specify the date in Unix time format.</p>
      */
     inline ViewBillingRequest& WithEnd(Aws::Utils::DateTime&& value) { SetEnd(std::move(value)); return *this;}
 
@@ -118,10 +108,9 @@ namespace Model
      * <code>MaxItems</code>, you can use <code>Marker</code> to return additional
      * billing records. Get the value of <code>NextPageMarker</code> from the previous
      * response, and submit another request that includes the value of
-     * <code>NextPageMarker</code> in the <code>Marker</code> element. </p> <p>Type:
-     * String</p> <p>Default: None</p> <p>Constraints: The marker must match the value
-     * of <code>NextPageMarker</code> that was returned in the previous response.</p>
-     * <p>Required: No</p>
+     * <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
+     * <p>Constraints: The marker must match the value of <code>NextPageMarker</code>
+     * that was returned in the previous response.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
@@ -132,10 +121,9 @@ namespace Model
      * <code>MaxItems</code>, you can use <code>Marker</code> to return additional
      * billing records. Get the value of <code>NextPageMarker</code> from the previous
      * response, and submit another request that includes the value of
-     * <code>NextPageMarker</code> in the <code>Marker</code> element. </p> <p>Type:
-     * String</p> <p>Default: None</p> <p>Constraints: The marker must match the value
-     * of <code>NextPageMarker</code> that was returned in the previous response.</p>
-     * <p>Required: No</p>
+     * <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
+     * <p>Constraints: The marker must match the value of <code>NextPageMarker</code>
+     * that was returned in the previous response.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
@@ -146,10 +134,9 @@ namespace Model
      * <code>MaxItems</code>, you can use <code>Marker</code> to return additional
      * billing records. Get the value of <code>NextPageMarker</code> from the previous
      * response, and submit another request that includes the value of
-     * <code>NextPageMarker</code> in the <code>Marker</code> element. </p> <p>Type:
-     * String</p> <p>Default: None</p> <p>Constraints: The marker must match the value
-     * of <code>NextPageMarker</code> that was returned in the previous response.</p>
-     * <p>Required: No</p>
+     * <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
+     * <p>Constraints: The marker must match the value of <code>NextPageMarker</code>
+     * that was returned in the previous response.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
@@ -160,10 +147,9 @@ namespace Model
      * <code>MaxItems</code>, you can use <code>Marker</code> to return additional
      * billing records. Get the value of <code>NextPageMarker</code> from the previous
      * response, and submit another request that includes the value of
-     * <code>NextPageMarker</code> in the <code>Marker</code> element. </p> <p>Type:
-     * String</p> <p>Default: None</p> <p>Constraints: The marker must match the value
-     * of <code>NextPageMarker</code> that was returned in the previous response.</p>
-     * <p>Required: No</p>
+     * <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
+     * <p>Constraints: The marker must match the value of <code>NextPageMarker</code>
+     * that was returned in the previous response.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
@@ -174,10 +160,9 @@ namespace Model
      * <code>MaxItems</code>, you can use <code>Marker</code> to return additional
      * billing records. Get the value of <code>NextPageMarker</code> from the previous
      * response, and submit another request that includes the value of
-     * <code>NextPageMarker</code> in the <code>Marker</code> element. </p> <p>Type:
-     * String</p> <p>Default: None</p> <p>Constraints: The marker must match the value
-     * of <code>NextPageMarker</code> that was returned in the previous response.</p>
-     * <p>Required: No</p>
+     * <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
+     * <p>Constraints: The marker must match the value of <code>NextPageMarker</code>
+     * that was returned in the previous response.</p>
      */
     inline ViewBillingRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
@@ -188,10 +173,9 @@ namespace Model
      * <code>MaxItems</code>, you can use <code>Marker</code> to return additional
      * billing records. Get the value of <code>NextPageMarker</code> from the previous
      * response, and submit another request that includes the value of
-     * <code>NextPageMarker</code> in the <code>Marker</code> element. </p> <p>Type:
-     * String</p> <p>Default: None</p> <p>Constraints: The marker must match the value
-     * of <code>NextPageMarker</code> that was returned in the previous response.</p>
-     * <p>Required: No</p>
+     * <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
+     * <p>Constraints: The marker must match the value of <code>NextPageMarker</code>
+     * that was returned in the previous response.</p>
      */
     inline ViewBillingRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
@@ -202,31 +186,24 @@ namespace Model
      * <code>MaxItems</code>, you can use <code>Marker</code> to return additional
      * billing records. Get the value of <code>NextPageMarker</code> from the previous
      * response, and submit another request that includes the value of
-     * <code>NextPageMarker</code> in the <code>Marker</code> element. </p> <p>Type:
-     * String</p> <p>Default: None</p> <p>Constraints: The marker must match the value
-     * of <code>NextPageMarker</code> that was returned in the previous response.</p>
-     * <p>Required: No</p>
+     * <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
+     * <p>Constraints: The marker must match the value of <code>NextPageMarker</code>
+     * that was returned in the previous response.</p>
      */
     inline ViewBillingRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p>The number of billing records to be returned.</p> <p>Type: Integer</p>
-     * <p>Default: 20</p> <p>Constraints: A value between 1 and 100.</p> <p>Required:
-     * No</p>
+     * <p>The number of billing records to be returned.</p> <p>Default: 20</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>The number of billing records to be returned.</p> <p>Type: Integer</p>
-     * <p>Default: 20</p> <p>Constraints: A value between 1 and 100.</p> <p>Required:
-     * No</p>
+     * <p>The number of billing records to be returned.</p> <p>Default: 20</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>The number of billing records to be returned.</p> <p>Type: Integer</p>
-     * <p>Default: 20</p> <p>Constraints: A value between 1 and 100.</p> <p>Required:
-     * No</p>
+     * <p>The number of billing records to be returned.</p> <p>Default: 20</p>
      */
     inline ViewBillingRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 

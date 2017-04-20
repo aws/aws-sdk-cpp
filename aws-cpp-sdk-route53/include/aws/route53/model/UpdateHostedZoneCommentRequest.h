@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains the hosted zone request
-   * information.</p><p><h3>See Also:</h3>   <a
+   * <p>A request to update the comment for a hosted zone.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneCommentRequest">AWS
    * API Reference</a></p>
    */
@@ -39,37 +39,37 @@ namespace Model
 
 
     /**
-     * <p>The ID for the hosted zone for which you want to update the comment.</p>
+     * <p>The ID for the hosted zone that you want to update the comment for.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID for the hosted zone for which you want to update the comment.</p>
+     * <p>The ID for the hosted zone that you want to update the comment for.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID for the hosted zone for which you want to update the comment.</p>
+     * <p>The ID for the hosted zone that you want to update the comment for.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID for the hosted zone for which you want to update the comment.</p>
+     * <p>The ID for the hosted zone that you want to update the comment for.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID for the hosted zone for which you want to update the comment.</p>
+     * <p>The ID for the hosted zone that you want to update the comment for.</p>
      */
     inline UpdateHostedZoneCommentRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID for the hosted zone for which you want to update the comment.</p>
+     * <p>The ID for the hosted zone that you want to update the comment for.</p>
      */
     inline UpdateHostedZoneCommentRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the hosted zone for which you want to update the comment.</p>
+     * <p>The ID for the hosted zone that you want to update the comment for.</p>
      */
     inline UpdateHostedZoneCommentRequest& WithId(const char* value) { SetId(value); return *this;}
 

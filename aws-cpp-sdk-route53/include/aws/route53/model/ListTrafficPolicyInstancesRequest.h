@@ -46,322 +46,339 @@ namespace Model
 
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, you have more traffic policy instances. To get the next
-     * group of <code>MaxItems</code> traffic policy instances, submit another
-     * <code>ListTrafficPolicyInstances</code> request. For the value of
-     * <code>HostedZoneIdMarker</code>, specify the value of
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>HostedZoneId</code>, specify the value of
      * <code>HostedZoneIdMarker</code> from the previous response, which is the hosted
-     * zone ID of the first traffic policy instance in the next group of
-     * <code>MaxItems</code> traffic policy instances.</p> <p>If the value of
-     * <code>IsTruncated</code> in the previous response was <code>false</code>, there
-     * are no more traffic policy instances to get.</p>
+     * zone ID of the first traffic policy instance in the next group of traffic policy
+     * instances.</p> <p>If the value of <code>IsTruncated</code> in the previous
+     * response was <code>false</code>, there are no more traffic policy instances to
+     * get.</p>
      */
     inline const Aws::String& GetHostedZoneIdMarker() const{ return m_hostedZoneIdMarker; }
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, you have more traffic policy instances. To get the next
-     * group of <code>MaxItems</code> traffic policy instances, submit another
-     * <code>ListTrafficPolicyInstances</code> request. For the value of
-     * <code>HostedZoneIdMarker</code>, specify the value of
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>HostedZoneId</code>, specify the value of
      * <code>HostedZoneIdMarker</code> from the previous response, which is the hosted
-     * zone ID of the first traffic policy instance in the next group of
-     * <code>MaxItems</code> traffic policy instances.</p> <p>If the value of
-     * <code>IsTruncated</code> in the previous response was <code>false</code>, there
-     * are no more traffic policy instances to get.</p>
+     * zone ID of the first traffic policy instance in the next group of traffic policy
+     * instances.</p> <p>If the value of <code>IsTruncated</code> in the previous
+     * response was <code>false</code>, there are no more traffic policy instances to
+     * get.</p>
      */
     inline void SetHostedZoneIdMarker(const Aws::String& value) { m_hostedZoneIdMarkerHasBeenSet = true; m_hostedZoneIdMarker = value; }
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, you have more traffic policy instances. To get the next
-     * group of <code>MaxItems</code> traffic policy instances, submit another
-     * <code>ListTrafficPolicyInstances</code> request. For the value of
-     * <code>HostedZoneIdMarker</code>, specify the value of
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>HostedZoneId</code>, specify the value of
      * <code>HostedZoneIdMarker</code> from the previous response, which is the hosted
-     * zone ID of the first traffic policy instance in the next group of
-     * <code>MaxItems</code> traffic policy instances.</p> <p>If the value of
-     * <code>IsTruncated</code> in the previous response was <code>false</code>, there
-     * are no more traffic policy instances to get.</p>
+     * zone ID of the first traffic policy instance in the next group of traffic policy
+     * instances.</p> <p>If the value of <code>IsTruncated</code> in the previous
+     * response was <code>false</code>, there are no more traffic policy instances to
+     * get.</p>
      */
     inline void SetHostedZoneIdMarker(Aws::String&& value) { m_hostedZoneIdMarkerHasBeenSet = true; m_hostedZoneIdMarker = std::move(value); }
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, you have more traffic policy instances. To get the next
-     * group of <code>MaxItems</code> traffic policy instances, submit another
-     * <code>ListTrafficPolicyInstances</code> request. For the value of
-     * <code>HostedZoneIdMarker</code>, specify the value of
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>HostedZoneId</code>, specify the value of
      * <code>HostedZoneIdMarker</code> from the previous response, which is the hosted
-     * zone ID of the first traffic policy instance in the next group of
-     * <code>MaxItems</code> traffic policy instances.</p> <p>If the value of
-     * <code>IsTruncated</code> in the previous response was <code>false</code>, there
-     * are no more traffic policy instances to get.</p>
+     * zone ID of the first traffic policy instance in the next group of traffic policy
+     * instances.</p> <p>If the value of <code>IsTruncated</code> in the previous
+     * response was <code>false</code>, there are no more traffic policy instances to
+     * get.</p>
      */
     inline void SetHostedZoneIdMarker(const char* value) { m_hostedZoneIdMarkerHasBeenSet = true; m_hostedZoneIdMarker.assign(value); }
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, you have more traffic policy instances. To get the next
-     * group of <code>MaxItems</code> traffic policy instances, submit another
-     * <code>ListTrafficPolicyInstances</code> request. For the value of
-     * <code>HostedZoneIdMarker</code>, specify the value of
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>HostedZoneId</code>, specify the value of
      * <code>HostedZoneIdMarker</code> from the previous response, which is the hosted
-     * zone ID of the first traffic policy instance in the next group of
-     * <code>MaxItems</code> traffic policy instances.</p> <p>If the value of
-     * <code>IsTruncated</code> in the previous response was <code>false</code>, there
-     * are no more traffic policy instances to get.</p>
+     * zone ID of the first traffic policy instance in the next group of traffic policy
+     * instances.</p> <p>If the value of <code>IsTruncated</code> in the previous
+     * response was <code>false</code>, there are no more traffic policy instances to
+     * get.</p>
      */
     inline ListTrafficPolicyInstancesRequest& WithHostedZoneIdMarker(const Aws::String& value) { SetHostedZoneIdMarker(value); return *this;}
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, you have more traffic policy instances. To get the next
-     * group of <code>MaxItems</code> traffic policy instances, submit another
-     * <code>ListTrafficPolicyInstances</code> request. For the value of
-     * <code>HostedZoneIdMarker</code>, specify the value of
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>HostedZoneId</code>, specify the value of
      * <code>HostedZoneIdMarker</code> from the previous response, which is the hosted
-     * zone ID of the first traffic policy instance in the next group of
-     * <code>MaxItems</code> traffic policy instances.</p> <p>If the value of
-     * <code>IsTruncated</code> in the previous response was <code>false</code>, there
-     * are no more traffic policy instances to get.</p>
+     * zone ID of the first traffic policy instance in the next group of traffic policy
+     * instances.</p> <p>If the value of <code>IsTruncated</code> in the previous
+     * response was <code>false</code>, there are no more traffic policy instances to
+     * get.</p>
      */
     inline ListTrafficPolicyInstancesRequest& WithHostedZoneIdMarker(Aws::String&& value) { SetHostedZoneIdMarker(std::move(value)); return *this;}
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, you have more traffic policy instances. To get the next
-     * group of <code>MaxItems</code> traffic policy instances, submit another
-     * <code>ListTrafficPolicyInstances</code> request. For the value of
-     * <code>HostedZoneIdMarker</code>, specify the value of
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>HostedZoneId</code>, specify the value of
      * <code>HostedZoneIdMarker</code> from the previous response, which is the hosted
-     * zone ID of the first traffic policy instance in the next group of
-     * <code>MaxItems</code> traffic policy instances.</p> <p>If the value of
-     * <code>IsTruncated</code> in the previous response was <code>false</code>, there
-     * are no more traffic policy instances to get.</p>
+     * zone ID of the first traffic policy instance in the next group of traffic policy
+     * instances.</p> <p>If the value of <code>IsTruncated</code> in the previous
+     * response was <code>false</code>, there are no more traffic policy instances to
+     * get.</p>
      */
     inline ListTrafficPolicyInstancesRequest& WithHostedZoneIdMarker(const char* value) { SetHostedZoneIdMarker(value); return *this;}
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name
-     * of the first traffic policy instance in the next group of <code>MaxItems</code>
-     * traffic policy instances.</p> <p>If the value of <code>IsTruncated</code> in the
-     * previous response was <code>false</code>, there are no more traffic policy
-     * instances to get.</p>
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>trafficpolicyinstancename</code>, specify the
+     * value of <code>TrafficPolicyInstanceNameMarker</code> from the previous
+     * response, which is the name of the first traffic policy instance in the next
+     * group of traffic policy instances.</p> <p>If the value of
+     * <code>IsTruncated</code> in the previous response was <code>false</code>, there
+     * are no more traffic policy instances to get.</p>
      */
     inline const Aws::String& GetTrafficPolicyInstanceNameMarker() const{ return m_trafficPolicyInstanceNameMarker; }
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name
-     * of the first traffic policy instance in the next group of <code>MaxItems</code>
-     * traffic policy instances.</p> <p>If the value of <code>IsTruncated</code> in the
-     * previous response was <code>false</code>, there are no more traffic policy
-     * instances to get.</p>
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>trafficpolicyinstancename</code>, specify the
+     * value of <code>TrafficPolicyInstanceNameMarker</code> from the previous
+     * response, which is the name of the first traffic policy instance in the next
+     * group of traffic policy instances.</p> <p>If the value of
+     * <code>IsTruncated</code> in the previous response was <code>false</code>, there
+     * are no more traffic policy instances to get.</p>
      */
     inline void SetTrafficPolicyInstanceNameMarker(const Aws::String& value) { m_trafficPolicyInstanceNameMarkerHasBeenSet = true; m_trafficPolicyInstanceNameMarker = value; }
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name
-     * of the first traffic policy instance in the next group of <code>MaxItems</code>
-     * traffic policy instances.</p> <p>If the value of <code>IsTruncated</code> in the
-     * previous response was <code>false</code>, there are no more traffic policy
-     * instances to get.</p>
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>trafficpolicyinstancename</code>, specify the
+     * value of <code>TrafficPolicyInstanceNameMarker</code> from the previous
+     * response, which is the name of the first traffic policy instance in the next
+     * group of traffic policy instances.</p> <p>If the value of
+     * <code>IsTruncated</code> in the previous response was <code>false</code>, there
+     * are no more traffic policy instances to get.</p>
      */
     inline void SetTrafficPolicyInstanceNameMarker(Aws::String&& value) { m_trafficPolicyInstanceNameMarkerHasBeenSet = true; m_trafficPolicyInstanceNameMarker = std::move(value); }
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name
-     * of the first traffic policy instance in the next group of <code>MaxItems</code>
-     * traffic policy instances.</p> <p>If the value of <code>IsTruncated</code> in the
-     * previous response was <code>false</code>, there are no more traffic policy
-     * instances to get.</p>
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>trafficpolicyinstancename</code>, specify the
+     * value of <code>TrafficPolicyInstanceNameMarker</code> from the previous
+     * response, which is the name of the first traffic policy instance in the next
+     * group of traffic policy instances.</p> <p>If the value of
+     * <code>IsTruncated</code> in the previous response was <code>false</code>, there
+     * are no more traffic policy instances to get.</p>
      */
     inline void SetTrafficPolicyInstanceNameMarker(const char* value) { m_trafficPolicyInstanceNameMarkerHasBeenSet = true; m_trafficPolicyInstanceNameMarker.assign(value); }
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name
-     * of the first traffic policy instance in the next group of <code>MaxItems</code>
-     * traffic policy instances.</p> <p>If the value of <code>IsTruncated</code> in the
-     * previous response was <code>false</code>, there are no more traffic policy
-     * instances to get.</p>
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>trafficpolicyinstancename</code>, specify the
+     * value of <code>TrafficPolicyInstanceNameMarker</code> from the previous
+     * response, which is the name of the first traffic policy instance in the next
+     * group of traffic policy instances.</p> <p>If the value of
+     * <code>IsTruncated</code> in the previous response was <code>false</code>, there
+     * are no more traffic policy instances to get.</p>
      */
     inline ListTrafficPolicyInstancesRequest& WithTrafficPolicyInstanceNameMarker(const Aws::String& value) { SetTrafficPolicyInstanceNameMarker(value); return *this;}
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name
-     * of the first traffic policy instance in the next group of <code>MaxItems</code>
-     * traffic policy instances.</p> <p>If the value of <code>IsTruncated</code> in the
-     * previous response was <code>false</code>, there are no more traffic policy
-     * instances to get.</p>
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>trafficpolicyinstancename</code>, specify the
+     * value of <code>TrafficPolicyInstanceNameMarker</code> from the previous
+     * response, which is the name of the first traffic policy instance in the next
+     * group of traffic policy instances.</p> <p>If the value of
+     * <code>IsTruncated</code> in the previous response was <code>false</code>, there
+     * are no more traffic policy instances to get.</p>
      */
     inline ListTrafficPolicyInstancesRequest& WithTrafficPolicyInstanceNameMarker(Aws::String&& value) { SetTrafficPolicyInstanceNameMarker(std::move(value)); return *this;}
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name
-     * of the first traffic policy instance in the next group of <code>MaxItems</code>
-     * traffic policy instances.</p> <p>If the value of <code>IsTruncated</code> in the
-     * previous response was <code>false</code>, there are no more traffic policy
-     * instances to get.</p>
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>trafficpolicyinstancename</code>, specify the
+     * value of <code>TrafficPolicyInstanceNameMarker</code> from the previous
+     * response, which is the name of the first traffic policy instance in the next
+     * group of traffic policy instances.</p> <p>If the value of
+     * <code>IsTruncated</code> in the previous response was <code>false</code>, there
+     * are no more traffic policy instances to get.</p>
      */
     inline ListTrafficPolicyInstancesRequest& WithTrafficPolicyInstanceNameMarker(const char* value) { SetTrafficPolicyInstanceNameMarker(value); return *this;}
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS
-     * type of the first traffic policy instance in the next group of
-     * <code>MaxItems</code> traffic policy instances.</p> <p>If the value of
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>trafficpolicyinstancetype</code>, specify the
+     * value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous
+     * response, which is the type of the first traffic policy instance in the next
+     * group of traffic policy instances.</p> <p>If the value of
      * <code>IsTruncated</code> in the previous response was <code>false</code>, there
      * are no more traffic policy instances to get.</p>
      */
     inline const RRType& GetTrafficPolicyInstanceTypeMarker() const{ return m_trafficPolicyInstanceTypeMarker; }
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS
-     * type of the first traffic policy instance in the next group of
-     * <code>MaxItems</code> traffic policy instances.</p> <p>If the value of
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>trafficpolicyinstancetype</code>, specify the
+     * value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous
+     * response, which is the type of the first traffic policy instance in the next
+     * group of traffic policy instances.</p> <p>If the value of
      * <code>IsTruncated</code> in the previous response was <code>false</code>, there
      * are no more traffic policy instances to get.</p>
      */
     inline void SetTrafficPolicyInstanceTypeMarker(const RRType& value) { m_trafficPolicyInstanceTypeMarkerHasBeenSet = true; m_trafficPolicyInstanceTypeMarker = value; }
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS
-     * type of the first traffic policy instance in the next group of
-     * <code>MaxItems</code> traffic policy instances.</p> <p>If the value of
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>trafficpolicyinstancetype</code>, specify the
+     * value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous
+     * response, which is the type of the first traffic policy instance in the next
+     * group of traffic policy instances.</p> <p>If the value of
      * <code>IsTruncated</code> in the previous response was <code>false</code>, there
      * are no more traffic policy instances to get.</p>
      */
     inline void SetTrafficPolicyInstanceTypeMarker(RRType&& value) { m_trafficPolicyInstanceTypeMarkerHasBeenSet = true; m_trafficPolicyInstanceTypeMarker = std::move(value); }
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS
-     * type of the first traffic policy instance in the next group of
-     * <code>MaxItems</code> traffic policy instances.</p> <p>If the value of
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>trafficpolicyinstancetype</code>, specify the
+     * value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous
+     * response, which is the type of the first traffic policy instance in the next
+     * group of traffic policy instances.</p> <p>If the value of
      * <code>IsTruncated</code> in the previous response was <code>false</code>, there
      * are no more traffic policy instances to get.</p>
      */
     inline ListTrafficPolicyInstancesRequest& WithTrafficPolicyInstanceTypeMarker(const RRType& value) { SetTrafficPolicyInstanceTypeMarker(value); return *this;}
 
     /**
-     * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
-     * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response
-     * was <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS
-     * type of the first traffic policy instance in the next group of
-     * <code>MaxItems</code> traffic policy instances.</p> <p>If the value of
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>trafficpolicyinstancetype</code>, specify the
+     * value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous
+     * response, which is the type of the first traffic policy instance in the next
+     * group of traffic policy instances.</p> <p>If the value of
      * <code>IsTruncated</code> in the previous response was <code>false</code>, there
      * are no more traffic policy instances to get.</p>
      */
     inline ListTrafficPolicyInstancesRequest& WithTrafficPolicyInstanceTypeMarker(RRType&& value) { SetTrafficPolicyInstanceTypeMarker(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum number of traffic policy instances to be included in the response
-     * body for this request. If you have more than <code>MaxItems</code> traffic
-     * policy instances, the value of the <code>IsTruncated</code> element in the
-     * response is <code>true</code>, and the values of
-     * <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>,
-     * and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic
-     * policy instance in the next group of <code>MaxItems</code> traffic policy
+     * <p>The maximum number of traffic policy instances that you want Amazon Route 53
+     * to return in response to a <code>ListTrafficPolicyInstances</code> request. If
+     * you have more than <code>MaxItems</code> traffic policy instances, the value of
+     * the <code>IsTruncated</code> element in the response is <code>true</code>, and
+     * the values of <code>HostedZoneIdMarker</code>,
+     * <code>TrafficPolicyInstanceNameMarker</code>, and
+     * <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy
+     * instance in the next group of <code>MaxItems</code> traffic policy
      * instances.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>The maximum number of traffic policy instances to be included in the response
-     * body for this request. If you have more than <code>MaxItems</code> traffic
-     * policy instances, the value of the <code>IsTruncated</code> element in the
-     * response is <code>true</code>, and the values of
-     * <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>,
-     * and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic
-     * policy instance in the next group of <code>MaxItems</code> traffic policy
+     * <p>The maximum number of traffic policy instances that you want Amazon Route 53
+     * to return in response to a <code>ListTrafficPolicyInstances</code> request. If
+     * you have more than <code>MaxItems</code> traffic policy instances, the value of
+     * the <code>IsTruncated</code> element in the response is <code>true</code>, and
+     * the values of <code>HostedZoneIdMarker</code>,
+     * <code>TrafficPolicyInstanceNameMarker</code>, and
+     * <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy
+     * instance in the next group of <code>MaxItems</code> traffic policy
      * instances.</p>
      */
     inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>The maximum number of traffic policy instances to be included in the response
-     * body for this request. If you have more than <code>MaxItems</code> traffic
-     * policy instances, the value of the <code>IsTruncated</code> element in the
-     * response is <code>true</code>, and the values of
-     * <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>,
-     * and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic
-     * policy instance in the next group of <code>MaxItems</code> traffic policy
+     * <p>The maximum number of traffic policy instances that you want Amazon Route 53
+     * to return in response to a <code>ListTrafficPolicyInstances</code> request. If
+     * you have more than <code>MaxItems</code> traffic policy instances, the value of
+     * the <code>IsTruncated</code> element in the response is <code>true</code>, and
+     * the values of <code>HostedZoneIdMarker</code>,
+     * <code>TrafficPolicyInstanceNameMarker</code>, and
+     * <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy
+     * instance in the next group of <code>MaxItems</code> traffic policy
      * instances.</p>
      */
     inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
     /**
-     * <p>The maximum number of traffic policy instances to be included in the response
-     * body for this request. If you have more than <code>MaxItems</code> traffic
-     * policy instances, the value of the <code>IsTruncated</code> element in the
-     * response is <code>true</code>, and the values of
-     * <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>,
-     * and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic
-     * policy instance in the next group of <code>MaxItems</code> traffic policy
+     * <p>The maximum number of traffic policy instances that you want Amazon Route 53
+     * to return in response to a <code>ListTrafficPolicyInstances</code> request. If
+     * you have more than <code>MaxItems</code> traffic policy instances, the value of
+     * the <code>IsTruncated</code> element in the response is <code>true</code>, and
+     * the values of <code>HostedZoneIdMarker</code>,
+     * <code>TrafficPolicyInstanceNameMarker</code>, and
+     * <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy
+     * instance in the next group of <code>MaxItems</code> traffic policy
      * instances.</p>
      */
     inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
 
     /**
-     * <p>The maximum number of traffic policy instances to be included in the response
-     * body for this request. If you have more than <code>MaxItems</code> traffic
-     * policy instances, the value of the <code>IsTruncated</code> element in the
-     * response is <code>true</code>, and the values of
-     * <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>,
-     * and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic
-     * policy instance in the next group of <code>MaxItems</code> traffic policy
+     * <p>The maximum number of traffic policy instances that you want Amazon Route 53
+     * to return in response to a <code>ListTrafficPolicyInstances</code> request. If
+     * you have more than <code>MaxItems</code> traffic policy instances, the value of
+     * the <code>IsTruncated</code> element in the response is <code>true</code>, and
+     * the values of <code>HostedZoneIdMarker</code>,
+     * <code>TrafficPolicyInstanceNameMarker</code>, and
+     * <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy
+     * instance in the next group of <code>MaxItems</code> traffic policy
      * instances.</p>
      */
     inline ListTrafficPolicyInstancesRequest& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
 
     /**
-     * <p>The maximum number of traffic policy instances to be included in the response
-     * body for this request. If you have more than <code>MaxItems</code> traffic
-     * policy instances, the value of the <code>IsTruncated</code> element in the
-     * response is <code>true</code>, and the values of
-     * <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>,
-     * and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic
-     * policy instance in the next group of <code>MaxItems</code> traffic policy
+     * <p>The maximum number of traffic policy instances that you want Amazon Route 53
+     * to return in response to a <code>ListTrafficPolicyInstances</code> request. If
+     * you have more than <code>MaxItems</code> traffic policy instances, the value of
+     * the <code>IsTruncated</code> element in the response is <code>true</code>, and
+     * the values of <code>HostedZoneIdMarker</code>,
+     * <code>TrafficPolicyInstanceNameMarker</code>, and
+     * <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy
+     * instance in the next group of <code>MaxItems</code> traffic policy
      * instances.</p>
      */
     inline ListTrafficPolicyInstancesRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum number of traffic policy instances to be included in the response
-     * body for this request. If you have more than <code>MaxItems</code> traffic
-     * policy instances, the value of the <code>IsTruncated</code> element in the
-     * response is <code>true</code>, and the values of
-     * <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>,
-     * and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic
-     * policy instance in the next group of <code>MaxItems</code> traffic policy
+     * <p>The maximum number of traffic policy instances that you want Amazon Route 53
+     * to return in response to a <code>ListTrafficPolicyInstances</code> request. If
+     * you have more than <code>MaxItems</code> traffic policy instances, the value of
+     * the <code>IsTruncated</code> element in the response is <code>true</code>, and
+     * the values of <code>HostedZoneIdMarker</code>,
+     * <code>TrafficPolicyInstanceNameMarker</code>, and
+     * <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy
+     * instance in the next group of <code>MaxItems</code> traffic policy
      * instances.</p>
      */
     inline ListTrafficPolicyInstancesRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}

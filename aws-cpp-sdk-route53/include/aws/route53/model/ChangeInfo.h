@@ -114,42 +114,47 @@ namespace Model
     inline ChangeInfo& WithStatus(ChangeStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The date and time the change request was submitted, in Coordinated Universal
-     * Time (UTC) format: <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see
-     * the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
-     * 8601</a>.</p>
+     * <p>The date and time that the change request was submitted in <a
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
+     * Coordinated Universal Time (UTC). For example, the value
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     * UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetSubmittedAt() const{ return m_submittedAt; }
 
     /**
-     * <p>The date and time the change request was submitted, in Coordinated Universal
-     * Time (UTC) format: <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see
-     * the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
-     * 8601</a>.</p>
+     * <p>The date and time that the change request was submitted in <a
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
+     * Coordinated Universal Time (UTC). For example, the value
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     * UTC.</p>
      */
     inline void SetSubmittedAt(const Aws::Utils::DateTime& value) { m_submittedAtHasBeenSet = true; m_submittedAt = value; }
 
     /**
-     * <p>The date and time the change request was submitted, in Coordinated Universal
-     * Time (UTC) format: <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see
-     * the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
-     * 8601</a>.</p>
+     * <p>The date and time that the change request was submitted in <a
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
+     * Coordinated Universal Time (UTC). For example, the value
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     * UTC.</p>
      */
     inline void SetSubmittedAt(Aws::Utils::DateTime&& value) { m_submittedAtHasBeenSet = true; m_submittedAt = std::move(value); }
 
     /**
-     * <p>The date and time the change request was submitted, in Coordinated Universal
-     * Time (UTC) format: <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see
-     * the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
-     * 8601</a>.</p>
+     * <p>The date and time that the change request was submitted in <a
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
+     * Coordinated Universal Time (UTC). For example, the value
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     * UTC.</p>
      */
     inline ChangeInfo& WithSubmittedAt(const Aws::Utils::DateTime& value) { SetSubmittedAt(value); return *this;}
 
     /**
-     * <p>The date and time the change request was submitted, in Coordinated Universal
-     * Time (UTC) format: <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see
-     * the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
-     * 8601</a>.</p>
+     * <p>The date and time that the change request was submitted in <a
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
+     * Coordinated Universal Time (UTC). For example, the value
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     * UTC.</p>
      */
     inline ChangeInfo& WithSubmittedAt(Aws::Utils::DateTime&& value) { SetSubmittedAt(std::move(value)); return *this;}
 

@@ -24,9 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>To retrieve a count of all your hosted zones, send a <code>GET</code> request
-   * to the <code>/2013-04-01/hostedzonecount</code> resource.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A request to retrieve a count of all the hosted zones that are associated
+   * with the current AWS account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCountRequest">AWS
    * API Reference</a></p>
    */

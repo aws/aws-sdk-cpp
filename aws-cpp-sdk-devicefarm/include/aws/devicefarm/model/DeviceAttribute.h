@@ -29,7 +29,8 @@ namespace Model
     PLATFORM,
     FORM_FACTOR,
     MANUFACTURER,
-    REMOTE_ACCESS_ENABLED
+    REMOTE_ACCESS_ENABLED,
+    APPIUM_VERSION
   };
 
 namespace DeviceAttributeMapper

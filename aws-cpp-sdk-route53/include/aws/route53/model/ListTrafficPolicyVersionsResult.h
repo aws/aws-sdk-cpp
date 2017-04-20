@@ -92,35 +92,32 @@ namespace Model
 
     /**
      * <p>A flag that indicates whether there are more traffic policies to be listed.
-     * If the response was truncated, you can get the next group of
-     * <code>maxitems</code> traffic policies by calling
-     * <code>ListTrafficPolicyVersions</code> again and specifying the value of the
-     * <code>NextMarker</code> element in the <code>marker</code> parameter.</p>
+     * If the response was truncated, you can get the next group of traffic policies by
+     * submitting another <code>ListTrafficPolicyVersions</code> request and specifying
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
      * <p>A flag that indicates whether there are more traffic policies to be listed.
-     * If the response was truncated, you can get the next group of
-     * <code>maxitems</code> traffic policies by calling
-     * <code>ListTrafficPolicyVersions</code> again and specifying the value of the
-     * <code>NextMarker</code> element in the <code>marker</code> parameter.</p>
+     * If the response was truncated, you can get the next group of traffic policies by
+     * submitting another <code>ListTrafficPolicyVersions</code> request and specifying
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
      * <p>A flag that indicates whether there are more traffic policies to be listed.
-     * If the response was truncated, you can get the next group of
-     * <code>maxitems</code> traffic policies by calling
-     * <code>ListTrafficPolicyVersions</code> again and specifying the value of the
-     * <code>NextMarker</code> element in the <code>marker</code> parameter.</p>
+     * If the response was truncated, you can get the next group of traffic policies by
+     * submitting another <code>ListTrafficPolicyVersions</code> request and specifying
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline ListTrafficPolicyVersionsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy in
-     * the next group of <code>MaxItems</code> traffic policies. Call
+     * <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy that
+     * Amazon Route 53 will return if you submit another request. Call
      * <code>ListTrafficPolicyVersions</code> again and specify the value of
      * <code>TrafficPolicyVersionMarker</code> in the
      * <code>TrafficPolicyVersionMarker</code> request parameter.</p> <p>This element
@@ -130,8 +127,8 @@ namespace Model
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy in
-     * the next group of <code>MaxItems</code> traffic policies. Call
+     * <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy that
+     * Amazon Route 53 will return if you submit another request. Call
      * <code>ListTrafficPolicyVersions</code> again and specify the value of
      * <code>TrafficPolicyVersionMarker</code> in the
      * <code>TrafficPolicyVersionMarker</code> request parameter.</p> <p>This element
@@ -141,8 +138,8 @@ namespace Model
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy in
-     * the next group of <code>MaxItems</code> traffic policies. Call
+     * <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy that
+     * Amazon Route 53 will return if you submit another request. Call
      * <code>ListTrafficPolicyVersions</code> again and specify the value of
      * <code>TrafficPolicyVersionMarker</code> in the
      * <code>TrafficPolicyVersionMarker</code> request parameter.</p> <p>This element
@@ -152,8 +149,8 @@ namespace Model
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy in
-     * the next group of <code>MaxItems</code> traffic policies. Call
+     * <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy that
+     * Amazon Route 53 will return if you submit another request. Call
      * <code>ListTrafficPolicyVersions</code> again and specify the value of
      * <code>TrafficPolicyVersionMarker</code> in the
      * <code>TrafficPolicyVersionMarker</code> request parameter.</p> <p>This element
@@ -163,8 +160,8 @@ namespace Model
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy in
-     * the next group of <code>MaxItems</code> traffic policies. Call
+     * <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy that
+     * Amazon Route 53 will return if you submit another request. Call
      * <code>ListTrafficPolicyVersions</code> again and specify the value of
      * <code>TrafficPolicyVersionMarker</code> in the
      * <code>TrafficPolicyVersionMarker</code> request parameter.</p> <p>This element
@@ -174,8 +171,8 @@ namespace Model
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy in
-     * the next group of <code>MaxItems</code> traffic policies. Call
+     * <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy that
+     * Amazon Route 53 will return if you submit another request. Call
      * <code>ListTrafficPolicyVersions</code> again and specify the value of
      * <code>TrafficPolicyVersionMarker</code> in the
      * <code>TrafficPolicyVersionMarker</code> request parameter.</p> <p>This element
@@ -185,8 +182,8 @@ namespace Model
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy in
-     * the next group of <code>MaxItems</code> traffic policies. Call
+     * <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy that
+     * Amazon Route 53 will return if you submit another request. Call
      * <code>ListTrafficPolicyVersions</code> again and specify the value of
      * <code>TrafficPolicyVersionMarker</code> in the
      * <code>TrafficPolicyVersionMarker</code> request parameter.</p> <p>This element
@@ -196,49 +193,49 @@ namespace Model
 
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
-     * call to <code>ListTrafficPolicyVersions</code> that produced the current
+     * <code>ListTrafficPolicyVersions</code> request that produced the current
      * response.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
-     * call to <code>ListTrafficPolicyVersions</code> that produced the current
+     * <code>ListTrafficPolicyVersions</code> request that produced the current
      * response.</p>
      */
     inline void SetMaxItems(const Aws::String& value) { m_maxItems = value; }
 
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
-     * call to <code>ListTrafficPolicyVersions</code> that produced the current
+     * <code>ListTrafficPolicyVersions</code> request that produced the current
      * response.</p>
      */
     inline void SetMaxItems(Aws::String&& value) { m_maxItems = std::move(value); }
 
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
-     * call to <code>ListTrafficPolicyVersions</code> that produced the current
+     * <code>ListTrafficPolicyVersions</code> request that produced the current
      * response.</p>
      */
     inline void SetMaxItems(const char* value) { m_maxItems.assign(value); }
 
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
-     * call to <code>ListTrafficPolicyVersions</code> that produced the current
+     * <code>ListTrafficPolicyVersions</code> request that produced the current
      * response.</p>
      */
     inline ListTrafficPolicyVersionsResult& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
 
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
-     * call to <code>ListTrafficPolicyVersions</code> that produced the current
+     * <code>ListTrafficPolicyVersions</code> request that produced the current
      * response.</p>
      */
     inline ListTrafficPolicyVersionsResult& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
-     * call to <code>ListTrafficPolicyVersions</code> that produced the current
+     * <code>ListTrafficPolicyVersions</code> request that produced the current
      * response.</p>
      */
     inline ListTrafficPolicyVersionsResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}

@@ -284,21 +284,21 @@ namespace Model
 
     /**
      * <p>The port on the endpoint on which you want Amazon Route 53 to perform health
-     * checks. Specify a value for Port only when you specify a value for
+     * checks. Specify a value for <code>Port</code> only when you specify a value for
      * <code>IPAddress</code>.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port on the endpoint on which you want Amazon Route 53 to perform health
-     * checks. Specify a value for Port only when you specify a value for
+     * checks. Specify a value for <code>Port</code> only when you specify a value for
      * <code>IPAddress</code>.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port on the endpoint on which you want Amazon Route 53 to perform health
-     * checks. Specify a value for Port only when you specify a value for
+     * checks. Specify a value for <code>Port</code> only when you specify a value for
      * <code>IPAddress</code>.</p>
      */
     inline HealthCheckConfig& WithPort(int value) { SetPort(value); return *this;}
@@ -334,9 +334,11 @@ namespace Model
      * <b>CALCULATED</b>: For health checks that monitor the status of other health
      * checks, Amazon Route 53 adds up the number of health checks that Amazon Route 53
      * health checkers consider to be healthy and compares that number with the value
-     * of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information about
-     * how Amazon Route 53 determines whether an endpoint is healthy, see the
-     * introduction to this topic.</p>
+     * of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>.</p>
      */
     inline const HealthCheckType& GetType() const{ return m_type; }
 
@@ -371,9 +373,11 @@ namespace Model
      * <b>CALCULATED</b>: For health checks that monitor the status of other health
      * checks, Amazon Route 53 adds up the number of health checks that Amazon Route 53
      * health checkers consider to be healthy and compares that number with the value
-     * of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information about
-     * how Amazon Route 53 determines whether an endpoint is healthy, see the
-     * introduction to this topic.</p>
+     * of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>.</p>
      */
     inline void SetType(const HealthCheckType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -408,9 +412,11 @@ namespace Model
      * <b>CALCULATED</b>: For health checks that monitor the status of other health
      * checks, Amazon Route 53 adds up the number of health checks that Amazon Route 53
      * health checkers consider to be healthy and compares that number with the value
-     * of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information about
-     * how Amazon Route 53 determines whether an endpoint is healthy, see the
-     * introduction to this topic.</p>
+     * of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>.</p>
      */
     inline void SetType(HealthCheckType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -445,9 +451,11 @@ namespace Model
      * <b>CALCULATED</b>: For health checks that monitor the status of other health
      * checks, Amazon Route 53 adds up the number of health checks that Amazon Route 53
      * health checkers consider to be healthy and compares that number with the value
-     * of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information about
-     * how Amazon Route 53 determines whether an endpoint is healthy, see the
-     * introduction to this topic.</p>
+     * of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>.</p>
      */
     inline HealthCheckConfig& WithType(const HealthCheckType& value) { SetType(value); return *this;}
 
@@ -482,9 +490,11 @@ namespace Model
      * <b>CALCULATED</b>: For health checks that monitor the status of other health
      * checks, Amazon Route 53 adds up the number of health checks that Amazon Route 53
      * health checkers consider to be healthy and compares that number with the value
-     * of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information about
-     * how Amazon Route 53 determines whether an endpoint is healthy, see the
-     * introduction to this topic.</p>
+     * of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>.</p>
      */
     inline HealthCheckConfig& WithType(HealthCheckType&& value) { SetType(std::move(value)); return *this;}
 
@@ -1408,10 +1418,10 @@ namespace Model
      * check:</p> <ul> <li> <p> <code>Healthy</code>: Amazon Route 53 considers the
      * health check to be healthy.</p> </li> <li> <p> <code>Unhealthy</code>: Amazon
      * Route 53 considers the health check to be unhealthy.</p> </li> <li> <p>
-     * <code>LastKnownStatus</code>: Amazon Route 53uses the status of the health check
-     * from the last time CloudWatch had sufficient data to determine the alarm state.
-     * For new health checks that have no last known status, the default status for the
-     * health check is healthy.</p> </li> </ul>
+     * <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health
+     * check from the last time that CloudWatch had sufficient data to determine the
+     * alarm state. For new health checks that have no last known status, the default
+     * status for the health check is healthy.</p> </li> </ul>
      */
     inline const InsufficientDataHealthStatus& GetInsufficientDataHealthStatus() const{ return m_insufficientDataHealthStatus; }
 
@@ -1421,10 +1431,10 @@ namespace Model
      * check:</p> <ul> <li> <p> <code>Healthy</code>: Amazon Route 53 considers the
      * health check to be healthy.</p> </li> <li> <p> <code>Unhealthy</code>: Amazon
      * Route 53 considers the health check to be unhealthy.</p> </li> <li> <p>
-     * <code>LastKnownStatus</code>: Amazon Route 53uses the status of the health check
-     * from the last time CloudWatch had sufficient data to determine the alarm state.
-     * For new health checks that have no last known status, the default status for the
-     * health check is healthy.</p> </li> </ul>
+     * <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health
+     * check from the last time that CloudWatch had sufficient data to determine the
+     * alarm state. For new health checks that have no last known status, the default
+     * status for the health check is healthy.</p> </li> </ul>
      */
     inline void SetInsufficientDataHealthStatus(const InsufficientDataHealthStatus& value) { m_insufficientDataHealthStatusHasBeenSet = true; m_insufficientDataHealthStatus = value; }
 
@@ -1434,10 +1444,10 @@ namespace Model
      * check:</p> <ul> <li> <p> <code>Healthy</code>: Amazon Route 53 considers the
      * health check to be healthy.</p> </li> <li> <p> <code>Unhealthy</code>: Amazon
      * Route 53 considers the health check to be unhealthy.</p> </li> <li> <p>
-     * <code>LastKnownStatus</code>: Amazon Route 53uses the status of the health check
-     * from the last time CloudWatch had sufficient data to determine the alarm state.
-     * For new health checks that have no last known status, the default status for the
-     * health check is healthy.</p> </li> </ul>
+     * <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health
+     * check from the last time that CloudWatch had sufficient data to determine the
+     * alarm state. For new health checks that have no last known status, the default
+     * status for the health check is healthy.</p> </li> </ul>
      */
     inline void SetInsufficientDataHealthStatus(InsufficientDataHealthStatus&& value) { m_insufficientDataHealthStatusHasBeenSet = true; m_insufficientDataHealthStatus = std::move(value); }
 
@@ -1447,10 +1457,10 @@ namespace Model
      * check:</p> <ul> <li> <p> <code>Healthy</code>: Amazon Route 53 considers the
      * health check to be healthy.</p> </li> <li> <p> <code>Unhealthy</code>: Amazon
      * Route 53 considers the health check to be unhealthy.</p> </li> <li> <p>
-     * <code>LastKnownStatus</code>: Amazon Route 53uses the status of the health check
-     * from the last time CloudWatch had sufficient data to determine the alarm state.
-     * For new health checks that have no last known status, the default status for the
-     * health check is healthy.</p> </li> </ul>
+     * <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health
+     * check from the last time that CloudWatch had sufficient data to determine the
+     * alarm state. For new health checks that have no last known status, the default
+     * status for the health check is healthy.</p> </li> </ul>
      */
     inline HealthCheckConfig& WithInsufficientDataHealthStatus(const InsufficientDataHealthStatus& value) { SetInsufficientDataHealthStatus(value); return *this;}
 
@@ -1460,10 +1470,10 @@ namespace Model
      * check:</p> <ul> <li> <p> <code>Healthy</code>: Amazon Route 53 considers the
      * health check to be healthy.</p> </li> <li> <p> <code>Unhealthy</code>: Amazon
      * Route 53 considers the health check to be unhealthy.</p> </li> <li> <p>
-     * <code>LastKnownStatus</code>: Amazon Route 53uses the status of the health check
-     * from the last time CloudWatch had sufficient data to determine the alarm state.
-     * For new health checks that have no last known status, the default status for the
-     * health check is healthy.</p> </li> </ul>
+     * <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health
+     * check from the last time that CloudWatch had sufficient data to determine the
+     * alarm state. For new health checks that have no last known status, the default
+     * status for the health check is healthy.</p> </li> </ul>
      */
     inline HealthCheckConfig& WithInsufficientDataHealthStatus(InsufficientDataHealthStatus&& value) { SetInsufficientDataHealthStatus(std::move(value)); return *this;}
 

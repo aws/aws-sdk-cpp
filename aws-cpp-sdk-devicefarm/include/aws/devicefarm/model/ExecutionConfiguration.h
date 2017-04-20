@@ -58,9 +58,49 @@ namespace Model
      */
     inline ExecutionConfiguration& WithJobTimeoutMinutes(int value) { SetJobTimeoutMinutes(value); return *this;}
 
+    /**
+     * <p>True if account cleanup is enabled at the beginning of the test; otherwise,
+     * false.</p>
+     */
+    inline bool GetAccountsCleanup() const{ return m_accountsCleanup; }
+
+    /**
+     * <p>True if account cleanup is enabled at the beginning of the test; otherwise,
+     * false.</p>
+     */
+    inline void SetAccountsCleanup(bool value) { m_accountsCleanupHasBeenSet = true; m_accountsCleanup = value; }
+
+    /**
+     * <p>True if account cleanup is enabled at the beginning of the test; otherwise,
+     * false.</p>
+     */
+    inline ExecutionConfiguration& WithAccountsCleanup(bool value) { SetAccountsCleanup(value); return *this;}
+
+    /**
+     * <p>True if app package cleanup is enabled at the beginning of the test;
+     * otherwise, false.</p>
+     */
+    inline bool GetAppPackagesCleanup() const{ return m_appPackagesCleanup; }
+
+    /**
+     * <p>True if app package cleanup is enabled at the beginning of the test;
+     * otherwise, false.</p>
+     */
+    inline void SetAppPackagesCleanup(bool value) { m_appPackagesCleanupHasBeenSet = true; m_appPackagesCleanup = value; }
+
+    /**
+     * <p>True if app package cleanup is enabled at the beginning of the test;
+     * otherwise, false.</p>
+     */
+    inline ExecutionConfiguration& WithAppPackagesCleanup(bool value) { SetAppPackagesCleanup(value); return *this;}
+
   private:
     int m_jobTimeoutMinutes;
     bool m_jobTimeoutMinutesHasBeenSet;
+    bool m_accountsCleanup;
+    bool m_accountsCleanupHasBeenSet;
+    bool m_appPackagesCleanup;
+    bool m_appPackagesCleanupHasBeenSet;
   };
 
 } // namespace Model

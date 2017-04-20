@@ -51,7 +51,9 @@ namespace Model
      * <code>"\"abc\""</code>.</p> <p>Allowed values include:</p> <ul> <li> <p>ARN: The
      * ARN.</p> </li> <li> <p>FORM_FACTOR: The form factor (for example, phone or
      * tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li> <li>
-     * <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
+     * <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> <li>
+     * <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.</p>
+     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> </ul>
      */
     inline const DeviceAttribute& GetAttribute() const{ return m_attribute; }
 
@@ -60,7 +62,9 @@ namespace Model
      * <code>"\"abc\""</code>.</p> <p>Allowed values include:</p> <ul> <li> <p>ARN: The
      * ARN.</p> </li> <li> <p>FORM_FACTOR: The form factor (for example, phone or
      * tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li> <li>
-     * <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
+     * <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> <li>
+     * <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.</p>
+     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> </ul>
      */
     inline void SetAttribute(const DeviceAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
@@ -69,7 +73,9 @@ namespace Model
      * <code>"\"abc\""</code>.</p> <p>Allowed values include:</p> <ul> <li> <p>ARN: The
      * ARN.</p> </li> <li> <p>FORM_FACTOR: The form factor (for example, phone or
      * tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li> <li>
-     * <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
+     * <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> <li>
+     * <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.</p>
+     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> </ul>
      */
     inline void SetAttribute(DeviceAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
@@ -78,7 +84,9 @@ namespace Model
      * <code>"\"abc\""</code>.</p> <p>Allowed values include:</p> <ul> <li> <p>ARN: The
      * ARN.</p> </li> <li> <p>FORM_FACTOR: The form factor (for example, phone or
      * tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li> <li>
-     * <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
+     * <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> <li>
+     * <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.</p>
+     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> </ul>
      */
     inline Rule& WithAttribute(const DeviceAttribute& value) { SetAttribute(value); return *this;}
 
@@ -87,7 +95,9 @@ namespace Model
      * <code>"\"abc\""</code>.</p> <p>Allowed values include:</p> <ul> <li> <p>ARN: The
      * ARN.</p> </li> <li> <p>FORM_FACTOR: The form factor (for example, phone or
      * tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li> <li>
-     * <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
+     * <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> <li>
+     * <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.</p>
+     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> </ul>
      */
     inline Rule& WithAttribute(DeviceAttribute&& value) { SetAttribute(std::move(value)); return *this;}
 
@@ -95,7 +105,8 @@ namespace Model
      * <p>The rule's operator.</p> <ul> <li> <p>EQUALS: The equals operator.</p> </li>
      * <li> <p>GREATER_THAN: The greater-than operator.</p> </li> <li> <p>IN: The in
      * operator.</p> </li> <li> <p>LESS_THAN: The less-than operator.</p> </li> <li>
-     * <p>NOT_IN: The not-in operator.</p> </li> </ul>
+     * <p>NOT_IN: The not-in operator.</p> </li> <li> <p>CONTAINS: The contains
+     * operator.</p> </li> </ul>
      */
     inline const RuleOperator& GetOperator() const{ return m_operator; }
 
@@ -103,7 +114,8 @@ namespace Model
      * <p>The rule's operator.</p> <ul> <li> <p>EQUALS: The equals operator.</p> </li>
      * <li> <p>GREATER_THAN: The greater-than operator.</p> </li> <li> <p>IN: The in
      * operator.</p> </li> <li> <p>LESS_THAN: The less-than operator.</p> </li> <li>
-     * <p>NOT_IN: The not-in operator.</p> </li> </ul>
+     * <p>NOT_IN: The not-in operator.</p> </li> <li> <p>CONTAINS: The contains
+     * operator.</p> </li> </ul>
      */
     inline void SetOperator(const RuleOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
 
@@ -111,7 +123,8 @@ namespace Model
      * <p>The rule's operator.</p> <ul> <li> <p>EQUALS: The equals operator.</p> </li>
      * <li> <p>GREATER_THAN: The greater-than operator.</p> </li> <li> <p>IN: The in
      * operator.</p> </li> <li> <p>LESS_THAN: The less-than operator.</p> </li> <li>
-     * <p>NOT_IN: The not-in operator.</p> </li> </ul>
+     * <p>NOT_IN: The not-in operator.</p> </li> <li> <p>CONTAINS: The contains
+     * operator.</p> </li> </ul>
      */
     inline void SetOperator(RuleOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
 
@@ -119,7 +132,8 @@ namespace Model
      * <p>The rule's operator.</p> <ul> <li> <p>EQUALS: The equals operator.</p> </li>
      * <li> <p>GREATER_THAN: The greater-than operator.</p> </li> <li> <p>IN: The in
      * operator.</p> </li> <li> <p>LESS_THAN: The less-than operator.</p> </li> <li>
-     * <p>NOT_IN: The not-in operator.</p> </li> </ul>
+     * <p>NOT_IN: The not-in operator.</p> </li> <li> <p>CONTAINS: The contains
+     * operator.</p> </li> </ul>
      */
     inline Rule& WithOperator(const RuleOperator& value) { SetOperator(value); return *this;}
 
@@ -127,7 +141,8 @@ namespace Model
      * <p>The rule's operator.</p> <ul> <li> <p>EQUALS: The equals operator.</p> </li>
      * <li> <p>GREATER_THAN: The greater-than operator.</p> </li> <li> <p>IN: The in
      * operator.</p> </li> <li> <p>LESS_THAN: The less-than operator.</p> </li> <li>
-     * <p>NOT_IN: The not-in operator.</p> </li> </ul>
+     * <p>NOT_IN: The not-in operator.</p> </li> <li> <p>CONTAINS: The contains
+     * operator.</p> </li> </ul>
      */
     inline Rule& WithOperator(RuleOperator&& value) { SetOperator(std::move(value)); return *this;}
 

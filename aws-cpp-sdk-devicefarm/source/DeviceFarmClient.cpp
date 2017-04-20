@@ -56,6 +56,7 @@
 #include <aws/devicefarm/model/ListDevicesRequest.h>
 #include <aws/devicefarm/model/ListJobsRequest.h>
 #include <aws/devicefarm/model/ListNetworkProfilesRequest.h>
+#include <aws/devicefarm/model/ListOfferingPromotionsRequest.h>
 #include <aws/devicefarm/model/ListOfferingTransactionsRequest.h>
 #include <aws/devicefarm/model/ListOfferingsRequest.h>
 #include <aws/devicefarm/model/ListProjectsRequest.h>
@@ -1157,6 +1158,40 @@ void DeviceFarmClient::ListNetworkProfilesAsync(const ListNetworkProfilesRequest
 void DeviceFarmClient::ListNetworkProfilesAsyncHelper(const ListNetworkProfilesRequest& request, const ListNetworkProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListNetworkProfiles(request), context);
+}
+
+ListOfferingPromotionsOutcome DeviceFarmClient::ListOfferingPromotions(const ListOfferingPromotionsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListOfferingPromotionsOutcome(ListOfferingPromotionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListOfferingPromotionsOutcome(outcome.GetError());
+  }
+}
+
+ListOfferingPromotionsOutcomeCallable DeviceFarmClient::ListOfferingPromotionsCallable(const ListOfferingPromotionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListOfferingPromotionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOfferingPromotions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DeviceFarmClient::ListOfferingPromotionsAsync(const ListOfferingPromotionsRequest& request, const ListOfferingPromotionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListOfferingPromotionsAsyncHelper( request, handler, context ); } );
+}
+
+void DeviceFarmClient::ListOfferingPromotionsAsyncHelper(const ListOfferingPromotionsRequest& request, const ListOfferingPromotionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListOfferingPromotions(request), context);
 }
 
 ListOfferingTransactionsOutcome DeviceFarmClient::ListOfferingTransactions(const ListOfferingTransactionsRequest& request) const

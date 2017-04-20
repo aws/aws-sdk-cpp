@@ -327,50 +327,45 @@ namespace Model
     inline CreateGrantRequest& AddOperations(GrantOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The conditions under which the operations permitted by the grant are
-     * allowed.</p> <p>You can use this value to allow the operations permitted by the
-     * grant only when a specified encryption context is present. For more information,
-     * see <a
+     * <p>A structure that you can use to allow certain operations in the grant only
+     * when the desired encryption context is present. For more information about
+     * encryption context, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline const GrantConstraints& GetConstraints() const{ return m_constraints; }
 
     /**
-     * <p>The conditions under which the operations permitted by the grant are
-     * allowed.</p> <p>You can use this value to allow the operations permitted by the
-     * grant only when a specified encryption context is present. For more information,
-     * see <a
+     * <p>A structure that you can use to allow certain operations in the grant only
+     * when the desired encryption context is present. For more information about
+     * encryption context, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetConstraints(const GrantConstraints& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
 
     /**
-     * <p>The conditions under which the operations permitted by the grant are
-     * allowed.</p> <p>You can use this value to allow the operations permitted by the
-     * grant only when a specified encryption context is present. For more information,
-     * see <a
+     * <p>A structure that you can use to allow certain operations in the grant only
+     * when the desired encryption context is present. For more information about
+     * encryption context, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetConstraints(GrantConstraints&& value) { m_constraintsHasBeenSet = true; m_constraints = std::move(value); }
 
     /**
-     * <p>The conditions under which the operations permitted by the grant are
-     * allowed.</p> <p>You can use this value to allow the operations permitted by the
-     * grant only when a specified encryption context is present. For more information,
-     * see <a
+     * <p>A structure that you can use to allow certain operations in the grant only
+     * when the desired encryption context is present. For more information about
+     * encryption context, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& WithConstraints(const GrantConstraints& value) { SetConstraints(value); return *this;}
 
     /**
-     * <p>The conditions under which the operations permitted by the grant are
-     * allowed.</p> <p>You can use this value to allow the operations permitted by the
-     * grant only when a specified encryption context is present. For more information,
-     * see <a
+     * <p>A structure that you can use to allow certain operations in the grant only
+     * when the desired encryption context is present. For more information about
+     * encryption context, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */

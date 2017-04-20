@@ -26,14 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>This action gets information about a specified health check.</p> <p>Send a
-   * <code>GET</code> request to the <code>/<i>Amazon Route 53 API
-   * version</i>/gethealthcheckrequest</code> resource.</p> <p>For information about
-   * getting information about a health check using the Amazon Route 53 console, see
-   * <a
-   * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
-   * Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * <p>A request to get information about a specified health check. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckRequest">AWS
    * API Reference</a></p>
    */

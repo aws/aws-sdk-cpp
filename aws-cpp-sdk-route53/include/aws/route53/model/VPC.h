@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information about an Amazon VPC that is
-   * associated with a private hosted zone.</p><p><h3>See Also:</h3>   <a
+   * <p>(Private hosted zones only) A complex type that contains information about an
+   * Amazon VPC.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/VPC">AWS API
    * Reference</a></p>
    */
@@ -48,32 +48,32 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * <p>The region in which you created the VPC that you want to associate with the
-     * specified Amazon Route 53 hosted zone.</p>
+     * <p>(Private hosted zones only) The region in which you created an Amazon
+     * VPC.</p>
      */
     inline const VPCRegion& GetVPCRegion() const{ return m_vPCRegion; }
 
     /**
-     * <p>The region in which you created the VPC that you want to associate with the
-     * specified Amazon Route 53 hosted zone.</p>
+     * <p>(Private hosted zones only) The region in which you created an Amazon
+     * VPC.</p>
      */
     inline void SetVPCRegion(const VPCRegion& value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = value; }
 
     /**
-     * <p>The region in which you created the VPC that you want to associate with the
-     * specified Amazon Route 53 hosted zone.</p>
+     * <p>(Private hosted zones only) The region in which you created an Amazon
+     * VPC.</p>
      */
     inline void SetVPCRegion(VPCRegion&& value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = std::move(value); }
 
     /**
-     * <p>The region in which you created the VPC that you want to associate with the
-     * specified Amazon Route 53 hosted zone.</p>
+     * <p>(Private hosted zones only) The region in which you created an Amazon
+     * VPC.</p>
      */
     inline VPC& WithVPCRegion(const VPCRegion& value) { SetVPCRegion(value); return *this;}
 
     /**
-     * <p>The region in which you created the VPC that you want to associate with the
-     * specified Amazon Route 53 hosted zone.</p>
+     * <p>(Private hosted zones only) The region in which you created an Amazon
+     * VPC.</p>
      */
     inline VPC& WithVPCRegion(VPCRegion&& value) { SetVPCRegion(std::move(value)); return *this;}
 

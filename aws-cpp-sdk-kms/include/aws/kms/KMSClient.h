@@ -877,13 +877,13 @@ namespace Model
          * copy of the data key.</p> </li> <li> <p>Use the plaintext data key to decrypt
          * data locally, then erase the plaintext data key from memory.</p> </li> </ol>
          * <p>To return only an encrypted copy of the data key, use
-         * <a>GenerateDataKeyWithoutPlaintext</a>. To return an arbitrary unpredictable
-         * byte string, use <a>GenerateRandom</a>.</p> <p>If you use the optional
-         * <code>EncryptionContext</code> field, you must store at least enough information
-         * to be able to reconstruct the full encryption context when you later send the
-         * ciphertext to the <a>Decrypt</a> operation. It is a good practice to choose an
-         * encryption context that you can reconstruct on the fly to better secure the
-         * ciphertext. For more information, see <a
+         * <a>GenerateDataKeyWithoutPlaintext</a>. To return a random byte string that is
+         * cryptographically secure, use <a>GenerateRandom</a>.</p> <p>If you use the
+         * optional <code>EncryptionContext</code> field, you must store at least enough
+         * information to be able to reconstruct the full encryption context when you later
+         * send the ciphertext to the <a>Decrypt</a> operation. It is a good practice to
+         * choose an encryption context that you can reconstruct on the fly to better
+         * secure the ciphertext. For more information, see <a
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
          * Context</a> in the <i>AWS Key Management Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -915,13 +915,13 @@ namespace Model
          * copy of the data key.</p> </li> <li> <p>Use the plaintext data key to decrypt
          * data locally, then erase the plaintext data key from memory.</p> </li> </ol>
          * <p>To return only an encrypted copy of the data key, use
-         * <a>GenerateDataKeyWithoutPlaintext</a>. To return an arbitrary unpredictable
-         * byte string, use <a>GenerateRandom</a>.</p> <p>If you use the optional
-         * <code>EncryptionContext</code> field, you must store at least enough information
-         * to be able to reconstruct the full encryption context when you later send the
-         * ciphertext to the <a>Decrypt</a> operation. It is a good practice to choose an
-         * encryption context that you can reconstruct on the fly to better secure the
-         * ciphertext. For more information, see <a
+         * <a>GenerateDataKeyWithoutPlaintext</a>. To return a random byte string that is
+         * cryptographically secure, use <a>GenerateRandom</a>.</p> <p>If you use the
+         * optional <code>EncryptionContext</code> field, you must store at least enough
+         * information to be able to reconstruct the full encryption context when you later
+         * send the ciphertext to the <a>Decrypt</a> operation. It is a good practice to
+         * choose an encryption context that you can reconstruct on the fly to better
+         * secure the ciphertext. For more information, see <a
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
          * Context</a> in the <i>AWS Key Management Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -955,13 +955,13 @@ namespace Model
          * copy of the data key.</p> </li> <li> <p>Use the plaintext data key to decrypt
          * data locally, then erase the plaintext data key from memory.</p> </li> </ol>
          * <p>To return only an encrypted copy of the data key, use
-         * <a>GenerateDataKeyWithoutPlaintext</a>. To return an arbitrary unpredictable
-         * byte string, use <a>GenerateRandom</a>.</p> <p>If you use the optional
-         * <code>EncryptionContext</code> field, you must store at least enough information
-         * to be able to reconstruct the full encryption context when you later send the
-         * ciphertext to the <a>Decrypt</a> operation. It is a good practice to choose an
-         * encryption context that you can reconstruct on the fly to better secure the
-         * ciphertext. For more information, see <a
+         * <a>GenerateDataKeyWithoutPlaintext</a>. To return a random byte string that is
+         * cryptographically secure, use <a>GenerateRandom</a>.</p> <p>If you use the
+         * optional <code>EncryptionContext</code> field, you must store at least enough
+         * information to be able to reconstruct the full encryption context when you later
+         * send the ciphertext to the <a>Decrypt</a> operation. It is a good practice to
+         * choose an encryption context that you can reconstruct on the fly to better
+         * secure the ciphertext. For more information, see <a
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
          * Context</a> in the <i>AWS Key Management Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1040,14 +1040,22 @@ namespace Model
         virtual void GenerateDataKeyWithoutPlaintextAsync(const Model::GenerateDataKeyWithoutPlaintextRequest& request, const GenerateDataKeyWithoutPlaintextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Generates an unpredictable byte string.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a random byte string that is cryptographically secure.</p> <p>For
+         * more information about entropy and random number generation, see the <a
+         * href="https://d0.awsstatic.com/whitepapers/KMS-Cryptographic-Details.pdf">AWS
+         * Key Management Service Cryptographic Details</a> whitepaper.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">AWS
          * API Reference</a></p>
          */
         virtual Model::GenerateRandomOutcome GenerateRandom(const Model::GenerateRandomRequest& request) const;
 
         /**
-         * <p>Generates an unpredictable byte string.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a random byte string that is cryptographically secure.</p> <p>For
+         * more information about entropy and random number generation, see the <a
+         * href="https://d0.awsstatic.com/whitepapers/KMS-Cryptographic-Details.pdf">AWS
+         * Key Management Service Cryptographic Details</a> whitepaper.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">AWS
          * API Reference</a></p>
          *
@@ -1056,7 +1064,11 @@ namespace Model
         virtual Model::GenerateRandomOutcomeCallable GenerateRandomCallable(const Model::GenerateRandomRequest& request) const;
 
         /**
-         * <p>Generates an unpredictable byte string.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a random byte string that is cryptographically secure.</p> <p>For
+         * more information about entropy and random number generation, see the <a
+         * href="https://d0.awsstatic.com/whitepapers/KMS-Cryptographic-Details.pdf">AWS
+         * Key Management Service Cryptographic Details</a> whitepaper.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">AWS
          * API Reference</a></p>
          *

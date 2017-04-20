@@ -29,7 +29,8 @@ namespace Model
     LESS_THAN,
     GREATER_THAN,
     IN,
-    NOT_IN
+    NOT_IN,
+    CONTAINS
   };
 
 namespace RuleOperatorMapper

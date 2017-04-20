@@ -46,8 +46,7 @@ namespace Model
      * you specified for <code>MaxItems</code>, you can use <code>Marker</code> to
      * return additional operations. Get the value of <code>NextPageMarker</code> from
      * the previous response, and submit another request that includes the value of
-     * <code>NextPageMarker</code> in the <code>Marker</code> element.</p> <p>Type:
-     * String</p> <p>Default: None</p> <p>Required: No</p>
+     * <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
@@ -57,8 +56,7 @@ namespace Model
      * you specified for <code>MaxItems</code>, you can use <code>Marker</code> to
      * return additional operations. Get the value of <code>NextPageMarker</code> from
      * the previous response, and submit another request that includes the value of
-     * <code>NextPageMarker</code> in the <code>Marker</code> element.</p> <p>Type:
-     * String</p> <p>Default: None</p> <p>Required: No</p>
+     * <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
@@ -68,8 +66,7 @@ namespace Model
      * you specified for <code>MaxItems</code>, you can use <code>Marker</code> to
      * return additional operations. Get the value of <code>NextPageMarker</code> from
      * the previous response, and submit another request that includes the value of
-     * <code>NextPageMarker</code> in the <code>Marker</code> element.</p> <p>Type:
-     * String</p> <p>Default: None</p> <p>Required: No</p>
+     * <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
@@ -79,8 +76,7 @@ namespace Model
      * you specified for <code>MaxItems</code>, you can use <code>Marker</code> to
      * return additional operations. Get the value of <code>NextPageMarker</code> from
      * the previous response, and submit another request that includes the value of
-     * <code>NextPageMarker</code> in the <code>Marker</code> element.</p> <p>Type:
-     * String</p> <p>Default: None</p> <p>Required: No</p>
+     * <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
@@ -90,8 +86,7 @@ namespace Model
      * you specified for <code>MaxItems</code>, you can use <code>Marker</code> to
      * return additional operations. Get the value of <code>NextPageMarker</code> from
      * the previous response, and submit another request that includes the value of
-     * <code>NextPageMarker</code> in the <code>Marker</code> element.</p> <p>Type:
-     * String</p> <p>Default: None</p> <p>Required: No</p>
+     * <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
      */
     inline ListOperationsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
@@ -101,8 +96,7 @@ namespace Model
      * you specified for <code>MaxItems</code>, you can use <code>Marker</code> to
      * return additional operations. Get the value of <code>NextPageMarker</code> from
      * the previous response, and submit another request that includes the value of
-     * <code>NextPageMarker</code> in the <code>Marker</code> element.</p> <p>Type:
-     * String</p> <p>Default: None</p> <p>Required: No</p>
+     * <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
      */
     inline ListOperationsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
@@ -112,26 +106,22 @@ namespace Model
      * you specified for <code>MaxItems</code>, you can use <code>Marker</code> to
      * return additional operations. Get the value of <code>NextPageMarker</code> from
      * the previous response, and submit another request that includes the value of
-     * <code>NextPageMarker</code> in the <code>Marker</code> element.</p> <p>Type:
-     * String</p> <p>Default: None</p> <p>Required: No</p>
+     * <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
      */
     inline ListOperationsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p>Number of domains to be returned.</p> <p>Type: Integer</p> <p>Default: 20</p>
-     * <p>Constraints: A value between 1 and 100.</p> <p>Required: No</p>
+     * <p>Number of domains to be returned.</p> <p>Default: 20</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>Number of domains to be returned.</p> <p>Type: Integer</p> <p>Default: 20</p>
-     * <p>Constraints: A value between 1 and 100.</p> <p>Required: No</p>
+     * <p>Number of domains to be returned.</p> <p>Default: 20</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>Number of domains to be returned.</p> <p>Type: Integer</p> <p>Default: 20</p>
-     * <p>Constraints: A value between 1 and 100.</p> <p>Required: No</p>
+     * <p>Number of domains to be returned.</p> <p>Default: 20</p>
      */
     inline ListOperationsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 

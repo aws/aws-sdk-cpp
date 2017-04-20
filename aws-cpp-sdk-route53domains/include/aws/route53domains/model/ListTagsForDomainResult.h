@@ -49,64 +49,36 @@ namespace Model
 
     /**
      * <p>A list of the tags that are associated with the specified domain.</p>
-     * <p>Type: A complex type containing a list of tags</p> <p>Each tag includes the
-     * following elements.</p> <ul> <li><p>Key</p> <p>The key (name) of a tag.</p>
-     * <p>Type: String</p> </li> <li><p>Value</p> <p>The value of a tag.</p> <p>Type:
-     * String</p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
 
     /**
      * <p>A list of the tags that are associated with the specified domain.</p>
-     * <p>Type: A complex type containing a list of tags</p> <p>Each tag includes the
-     * following elements.</p> <ul> <li><p>Key</p> <p>The key (name) of a tag.</p>
-     * <p>Type: String</p> </li> <li><p>Value</p> <p>The value of a tag.</p> <p>Type:
-     * String</p> </li> </ul>
      */
     inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagList = value; }
 
     /**
      * <p>A list of the tags that are associated with the specified domain.</p>
-     * <p>Type: A complex type containing a list of tags</p> <p>Each tag includes the
-     * following elements.</p> <ul> <li><p>Key</p> <p>The key (name) of a tag.</p>
-     * <p>Type: String</p> </li> <li><p>Value</p> <p>The value of a tag.</p> <p>Type:
-     * String</p> </li> </ul>
      */
     inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagList = std::move(value); }
 
     /**
      * <p>A list of the tags that are associated with the specified domain.</p>
-     * <p>Type: A complex type containing a list of tags</p> <p>Each tag includes the
-     * following elements.</p> <ul> <li><p>Key</p> <p>The key (name) of a tag.</p>
-     * <p>Type: String</p> </li> <li><p>Value</p> <p>The value of a tag.</p> <p>Type:
-     * String</p> </li> </ul>
      */
     inline ListTagsForDomainResult& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
 
     /**
      * <p>A list of the tags that are associated with the specified domain.</p>
-     * <p>Type: A complex type containing a list of tags</p> <p>Each tag includes the
-     * following elements.</p> <ul> <li><p>Key</p> <p>The key (name) of a tag.</p>
-     * <p>Type: String</p> </li> <li><p>Value</p> <p>The value of a tag.</p> <p>Type:
-     * String</p> </li> </ul>
      */
     inline ListTagsForDomainResult& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
 
     /**
      * <p>A list of the tags that are associated with the specified domain.</p>
-     * <p>Type: A complex type containing a list of tags</p> <p>Each tag includes the
-     * following elements.</p> <ul> <li><p>Key</p> <p>The key (name) of a tag.</p>
-     * <p>Type: String</p> </li> <li><p>Value</p> <p>The value of a tag.</p> <p>Type:
-     * String</p> </li> </ul>
      */
     inline ListTagsForDomainResult& AddTagList(const Tag& value) { m_tagList.push_back(value); return *this; }
 
     /**
      * <p>A list of the tags that are associated with the specified domain.</p>
-     * <p>Type: A complex type containing a list of tags</p> <p>Each tag includes the
-     * following elements.</p> <ul> <li><p>Key</p> <p>The key (name) of a tag.</p>
-     * <p>Type: String</p> </li> <li><p>Value</p> <p>The value of a tag.</p> <p>Type:
-     * String</p> </li> </ul>
      */
     inline ListTagsForDomainResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
 

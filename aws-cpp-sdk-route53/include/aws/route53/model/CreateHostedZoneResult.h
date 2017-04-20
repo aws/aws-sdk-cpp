@@ -76,27 +76,32 @@ namespace Model
     inline CreateHostedZoneResult& WithHostedZone(HostedZone&& value) { SetHostedZone(std::move(value)); return *this;}
 
     /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
+     * <p>A complex type that contains information about the
+     * <code>CreateHostedZone</code> request.</p>
      */
     inline const ChangeInfo& GetChangeInfo() const{ return m_changeInfo; }
 
     /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
+     * <p>A complex type that contains information about the
+     * <code>CreateHostedZone</code> request.</p>
      */
     inline void SetChangeInfo(const ChangeInfo& value) { m_changeInfo = value; }
 
     /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
+     * <p>A complex type that contains information about the
+     * <code>CreateHostedZone</code> request.</p>
      */
     inline void SetChangeInfo(ChangeInfo&& value) { m_changeInfo = std::move(value); }
 
     /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
+     * <p>A complex type that contains information about the
+     * <code>CreateHostedZone</code> request.</p>
      */
     inline CreateHostedZoneResult& WithChangeInfo(const ChangeInfo& value) { SetChangeInfo(value); return *this;}
 
     /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
+     * <p>A complex type that contains information about the
+     * <code>CreateHostedZone</code> request.</p>
      */
     inline CreateHostedZoneResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(std::move(value)); return *this;}
 

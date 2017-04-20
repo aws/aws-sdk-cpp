@@ -47,37 +47,37 @@ namespace Model
     RetrieveDomainAuthCodeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The authorization code for the domain.</p> <p>Type: String</p>
+     * <p>The authorization code for the domain.</p>
      */
     inline const Aws::String& GetAuthCode() const{ return m_authCode; }
 
     /**
-     * <p>The authorization code for the domain.</p> <p>Type: String</p>
+     * <p>The authorization code for the domain.</p>
      */
     inline void SetAuthCode(const Aws::String& value) { m_authCode = value; }
 
     /**
-     * <p>The authorization code for the domain.</p> <p>Type: String</p>
+     * <p>The authorization code for the domain.</p>
      */
     inline void SetAuthCode(Aws::String&& value) { m_authCode = std::move(value); }
 
     /**
-     * <p>The authorization code for the domain.</p> <p>Type: String</p>
+     * <p>The authorization code for the domain.</p>
      */
     inline void SetAuthCode(const char* value) { m_authCode.assign(value); }
 
     /**
-     * <p>The authorization code for the domain.</p> <p>Type: String</p>
+     * <p>The authorization code for the domain.</p>
      */
     inline RetrieveDomainAuthCodeResult& WithAuthCode(const Aws::String& value) { SetAuthCode(value); return *this;}
 
     /**
-     * <p>The authorization code for the domain.</p> <p>Type: String</p>
+     * <p>The authorization code for the domain.</p>
      */
     inline RetrieveDomainAuthCodeResult& WithAuthCode(Aws::String&& value) { SetAuthCode(std::move(value)); return *this;}
 
     /**
-     * <p>The authorization code for the domain.</p> <p>Type: String</p>
+     * <p>The authorization code for the domain.</p>
      */
     inline RetrieveDomainAuthCodeResult& WithAuthCode(const char* value) { SetAuthCode(value); return *this;}
 

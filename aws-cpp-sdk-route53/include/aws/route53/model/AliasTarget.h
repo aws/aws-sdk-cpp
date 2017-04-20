@@ -778,36 +778,18 @@ namespace Model
     inline AliasTarget& WithDNSName(const char* value) { SetDNSName(value); return *this;}
 
     /**
-     * <p> <i>Applies only to alias, weighted alias, latency alias, and failover alias
-     * record sets:</i> If you set the value of <code>EvaluateTargetHealth</code> to
-     * <code>true</code> for the resource record set or sets in an alias, weighted
-     * alias, latency alias, or failover alias resource record set, and if you specify
-     * a value for <code> <a>HealthCheck$Id</a> </code> for every resource record set
-     * that is referenced by these alias resource record sets, the alias resource
-     * record sets inherit the health of the referenced resource record sets.</p> <p>In
-     * this configuration, when Amazon Route 53 receives a DNS query for an alias
-     * resource record set:</p> <ul> <li> <p>Amazon Route 53 looks at the resource
-     * record sets that are referenced by the alias resource record sets to determine
-     * which health checks they're using.</p> </li> <li> <p>Amazon Route 53 checks the
-     * current status of each health check. (Amazon Route 53 periodically checks the
-     * health of the endpoint that is specified in a health check; it doesn't perform
-     * the health check when the DNS query arrives.)</p> </li> <li> <p>Based on the
-     * status of the health checks, Amazon Route 53 determines which resource record
-     * sets are healthy. Unhealthy resource record sets are immediately removed from
-     * consideration. In addition, if all of the resource record sets that are
-     * referenced by an alias resource record set are unhealthy, that alias resource
-     * record set also is immediately removed from consideration.</p> </li> <li>
-     * <p>Based on the configuration of the alias resource record sets (weighted alias
-     * or latency alias, for example) and the configuration of the resource record sets
-     * that they reference, Amazon Route 53 chooses a resource record set from the
-     * healthy resource record sets, and responds to the query.</p> </li> </ul> <p>Note
-     * the following:</p> <ul> <li> <p>You can't set <code>EvaluateTargetHealth</code>
-     * to <code>true</code> when the alias target is a CloudFront distribution.</p>
-     * </li> <li> <p>If the AWS resource that you specify in <code>AliasTarget</code>
-     * is a resource record set or a group of resource record sets (for example, a
-     * group of weighted resource record sets), but it is not another alias resource
-     * record set, we recommend that you associate a health check with all of the
-     * resource record sets in the alias target.For more information, see <a
+     * <p> <i>Applies only to alias, failover alias, geolocation alias, latency alias,
+     * and weighted alias resource record sets:</i> When
+     * <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record
+     * set inherits the health of the referenced AWS resource, such as an ELB load
+     * balancer, or the referenced resource record set.</p> <p>Note the following:</p>
+     * <ul> <li> <p>You can't set <code>EvaluateTargetHealth</code> to
+     * <code>true</code> when the alias target is a CloudFront distribution.</p> </li>
+     * <li> <p>If the AWS resource that you specify in <code>AliasTarget</code> is a
+     * resource record set or a group of resource record sets (for example, a group of
+     * weighted resource record sets), but it is not another alias resource record set,
+     * we recommend that you associate a health check with all of the resource record
+     * sets in the alias target. For more information, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What
      * Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.</p> </li> <li> <p>If you specify an Elastic Beanstalk environment in
@@ -820,19 +802,18 @@ namespace Model
      * itself is unhealthy, Amazon Route 53 routes queries to other available resources
      * that are healthy, if any.</p> <p>If the environment contains a single EC2
      * instance, there are no special requirements.</p> </li> <li> <p>If you specify an
-     * ELB load balancer in <code> <a>AliasTarget</a> </code>, Elastic Load Balancing
-     * routes queries only to the healthy EC2 instances that are registered with the
-     * load balancer. If no EC2 instances are healthy or if the load balancer itself is
-     * unhealthy, and if <code>EvaluateTargetHealth</code> is true for the
-     * corresponding alias resource record set, Amazon Route 53 routes queries to other
-     * resources. When you create a load balancer, you configure settings for Elastic
-     * Load Balancing health checks; they're not Amazon Route 53 health checks, but
-     * they perform a similar function. Do not create Amazon Route 53 health checks for
-     * the EC2 instances that you register with an ELB load balancer.</p> <p>For more
-     * information, see <a
+     * ELB load balancer in <code> <a>AliasTarget</a> </code>, ELB routes queries only
+     * to the healthy EC2 instances that are registered with the load balancer. If no
+     * EC2 instances are healthy or if the load balancer itself is unhealthy, and if
+     * <code>EvaluateTargetHealth</code> is true for the corresponding alias resource
+     * record set, Amazon Route 53 routes queries to other resources. When you create a
+     * load balancer, you configure settings for ELB health checks; they're not Amazon
+     * Route 53 health checks, but they perform a similar function. Do not create
+     * Amazon Route 53 health checks for the EC2 instances that you register with an
+     * ELB load balancer.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html">How
      * Health Checks Work in More Complex Amazon Route 53 Configurations</a> in the
-     * <i>Amazon Route 53 Developers Guide</i>.</p> </li> <li> <p>We recommend that you
+     * <i>Amazon Route 53 Developer Guide</i>.</p> </li> <li> <p>We recommend that you
      * set <code>EvaluateTargetHealth</code> to true only when you have enough idle
      * capacity to handle the failure of one or more endpoints.</p> </li> </ul> <p>For
      * more information and examples, see <a
@@ -843,36 +824,18 @@ namespace Model
     inline bool GetEvaluateTargetHealth() const{ return m_evaluateTargetHealth; }
 
     /**
-     * <p> <i>Applies only to alias, weighted alias, latency alias, and failover alias
-     * record sets:</i> If you set the value of <code>EvaluateTargetHealth</code> to
-     * <code>true</code> for the resource record set or sets in an alias, weighted
-     * alias, latency alias, or failover alias resource record set, and if you specify
-     * a value for <code> <a>HealthCheck$Id</a> </code> for every resource record set
-     * that is referenced by these alias resource record sets, the alias resource
-     * record sets inherit the health of the referenced resource record sets.</p> <p>In
-     * this configuration, when Amazon Route 53 receives a DNS query for an alias
-     * resource record set:</p> <ul> <li> <p>Amazon Route 53 looks at the resource
-     * record sets that are referenced by the alias resource record sets to determine
-     * which health checks they're using.</p> </li> <li> <p>Amazon Route 53 checks the
-     * current status of each health check. (Amazon Route 53 periodically checks the
-     * health of the endpoint that is specified in a health check; it doesn't perform
-     * the health check when the DNS query arrives.)</p> </li> <li> <p>Based on the
-     * status of the health checks, Amazon Route 53 determines which resource record
-     * sets are healthy. Unhealthy resource record sets are immediately removed from
-     * consideration. In addition, if all of the resource record sets that are
-     * referenced by an alias resource record set are unhealthy, that alias resource
-     * record set also is immediately removed from consideration.</p> </li> <li>
-     * <p>Based on the configuration of the alias resource record sets (weighted alias
-     * or latency alias, for example) and the configuration of the resource record sets
-     * that they reference, Amazon Route 53 chooses a resource record set from the
-     * healthy resource record sets, and responds to the query.</p> </li> </ul> <p>Note
-     * the following:</p> <ul> <li> <p>You can't set <code>EvaluateTargetHealth</code>
-     * to <code>true</code> when the alias target is a CloudFront distribution.</p>
-     * </li> <li> <p>If the AWS resource that you specify in <code>AliasTarget</code>
-     * is a resource record set or a group of resource record sets (for example, a
-     * group of weighted resource record sets), but it is not another alias resource
-     * record set, we recommend that you associate a health check with all of the
-     * resource record sets in the alias target.For more information, see <a
+     * <p> <i>Applies only to alias, failover alias, geolocation alias, latency alias,
+     * and weighted alias resource record sets:</i> When
+     * <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record
+     * set inherits the health of the referenced AWS resource, such as an ELB load
+     * balancer, or the referenced resource record set.</p> <p>Note the following:</p>
+     * <ul> <li> <p>You can't set <code>EvaluateTargetHealth</code> to
+     * <code>true</code> when the alias target is a CloudFront distribution.</p> </li>
+     * <li> <p>If the AWS resource that you specify in <code>AliasTarget</code> is a
+     * resource record set or a group of resource record sets (for example, a group of
+     * weighted resource record sets), but it is not another alias resource record set,
+     * we recommend that you associate a health check with all of the resource record
+     * sets in the alias target. For more information, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What
      * Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.</p> </li> <li> <p>If you specify an Elastic Beanstalk environment in
@@ -885,19 +848,18 @@ namespace Model
      * itself is unhealthy, Amazon Route 53 routes queries to other available resources
      * that are healthy, if any.</p> <p>If the environment contains a single EC2
      * instance, there are no special requirements.</p> </li> <li> <p>If you specify an
-     * ELB load balancer in <code> <a>AliasTarget</a> </code>, Elastic Load Balancing
-     * routes queries only to the healthy EC2 instances that are registered with the
-     * load balancer. If no EC2 instances are healthy or if the load balancer itself is
-     * unhealthy, and if <code>EvaluateTargetHealth</code> is true for the
-     * corresponding alias resource record set, Amazon Route 53 routes queries to other
-     * resources. When you create a load balancer, you configure settings for Elastic
-     * Load Balancing health checks; they're not Amazon Route 53 health checks, but
-     * they perform a similar function. Do not create Amazon Route 53 health checks for
-     * the EC2 instances that you register with an ELB load balancer.</p> <p>For more
-     * information, see <a
+     * ELB load balancer in <code> <a>AliasTarget</a> </code>, ELB routes queries only
+     * to the healthy EC2 instances that are registered with the load balancer. If no
+     * EC2 instances are healthy or if the load balancer itself is unhealthy, and if
+     * <code>EvaluateTargetHealth</code> is true for the corresponding alias resource
+     * record set, Amazon Route 53 routes queries to other resources. When you create a
+     * load balancer, you configure settings for ELB health checks; they're not Amazon
+     * Route 53 health checks, but they perform a similar function. Do not create
+     * Amazon Route 53 health checks for the EC2 instances that you register with an
+     * ELB load balancer.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html">How
      * Health Checks Work in More Complex Amazon Route 53 Configurations</a> in the
-     * <i>Amazon Route 53 Developers Guide</i>.</p> </li> <li> <p>We recommend that you
+     * <i>Amazon Route 53 Developer Guide</i>.</p> </li> <li> <p>We recommend that you
      * set <code>EvaluateTargetHealth</code> to true only when you have enough idle
      * capacity to handle the failure of one or more endpoints.</p> </li> </ul> <p>For
      * more information and examples, see <a
@@ -908,36 +870,18 @@ namespace Model
     inline void SetEvaluateTargetHealth(bool value) { m_evaluateTargetHealthHasBeenSet = true; m_evaluateTargetHealth = value; }
 
     /**
-     * <p> <i>Applies only to alias, weighted alias, latency alias, and failover alias
-     * record sets:</i> If you set the value of <code>EvaluateTargetHealth</code> to
-     * <code>true</code> for the resource record set or sets in an alias, weighted
-     * alias, latency alias, or failover alias resource record set, and if you specify
-     * a value for <code> <a>HealthCheck$Id</a> </code> for every resource record set
-     * that is referenced by these alias resource record sets, the alias resource
-     * record sets inherit the health of the referenced resource record sets.</p> <p>In
-     * this configuration, when Amazon Route 53 receives a DNS query for an alias
-     * resource record set:</p> <ul> <li> <p>Amazon Route 53 looks at the resource
-     * record sets that are referenced by the alias resource record sets to determine
-     * which health checks they're using.</p> </li> <li> <p>Amazon Route 53 checks the
-     * current status of each health check. (Amazon Route 53 periodically checks the
-     * health of the endpoint that is specified in a health check; it doesn't perform
-     * the health check when the DNS query arrives.)</p> </li> <li> <p>Based on the
-     * status of the health checks, Amazon Route 53 determines which resource record
-     * sets are healthy. Unhealthy resource record sets are immediately removed from
-     * consideration. In addition, if all of the resource record sets that are
-     * referenced by an alias resource record set are unhealthy, that alias resource
-     * record set also is immediately removed from consideration.</p> </li> <li>
-     * <p>Based on the configuration of the alias resource record sets (weighted alias
-     * or latency alias, for example) and the configuration of the resource record sets
-     * that they reference, Amazon Route 53 chooses a resource record set from the
-     * healthy resource record sets, and responds to the query.</p> </li> </ul> <p>Note
-     * the following:</p> <ul> <li> <p>You can't set <code>EvaluateTargetHealth</code>
-     * to <code>true</code> when the alias target is a CloudFront distribution.</p>
-     * </li> <li> <p>If the AWS resource that you specify in <code>AliasTarget</code>
-     * is a resource record set or a group of resource record sets (for example, a
-     * group of weighted resource record sets), but it is not another alias resource
-     * record set, we recommend that you associate a health check with all of the
-     * resource record sets in the alias target.For more information, see <a
+     * <p> <i>Applies only to alias, failover alias, geolocation alias, latency alias,
+     * and weighted alias resource record sets:</i> When
+     * <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record
+     * set inherits the health of the referenced AWS resource, such as an ELB load
+     * balancer, or the referenced resource record set.</p> <p>Note the following:</p>
+     * <ul> <li> <p>You can't set <code>EvaluateTargetHealth</code> to
+     * <code>true</code> when the alias target is a CloudFront distribution.</p> </li>
+     * <li> <p>If the AWS resource that you specify in <code>AliasTarget</code> is a
+     * resource record set or a group of resource record sets (for example, a group of
+     * weighted resource record sets), but it is not another alias resource record set,
+     * we recommend that you associate a health check with all of the resource record
+     * sets in the alias target. For more information, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What
      * Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.</p> </li> <li> <p>If you specify an Elastic Beanstalk environment in
@@ -950,19 +894,18 @@ namespace Model
      * itself is unhealthy, Amazon Route 53 routes queries to other available resources
      * that are healthy, if any.</p> <p>If the environment contains a single EC2
      * instance, there are no special requirements.</p> </li> <li> <p>If you specify an
-     * ELB load balancer in <code> <a>AliasTarget</a> </code>, Elastic Load Balancing
-     * routes queries only to the healthy EC2 instances that are registered with the
-     * load balancer. If no EC2 instances are healthy or if the load balancer itself is
-     * unhealthy, and if <code>EvaluateTargetHealth</code> is true for the
-     * corresponding alias resource record set, Amazon Route 53 routes queries to other
-     * resources. When you create a load balancer, you configure settings for Elastic
-     * Load Balancing health checks; they're not Amazon Route 53 health checks, but
-     * they perform a similar function. Do not create Amazon Route 53 health checks for
-     * the EC2 instances that you register with an ELB load balancer.</p> <p>For more
-     * information, see <a
+     * ELB load balancer in <code> <a>AliasTarget</a> </code>, ELB routes queries only
+     * to the healthy EC2 instances that are registered with the load balancer. If no
+     * EC2 instances are healthy or if the load balancer itself is unhealthy, and if
+     * <code>EvaluateTargetHealth</code> is true for the corresponding alias resource
+     * record set, Amazon Route 53 routes queries to other resources. When you create a
+     * load balancer, you configure settings for ELB health checks; they're not Amazon
+     * Route 53 health checks, but they perform a similar function. Do not create
+     * Amazon Route 53 health checks for the EC2 instances that you register with an
+     * ELB load balancer.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html">How
      * Health Checks Work in More Complex Amazon Route 53 Configurations</a> in the
-     * <i>Amazon Route 53 Developers Guide</i>.</p> </li> <li> <p>We recommend that you
+     * <i>Amazon Route 53 Developer Guide</i>.</p> </li> <li> <p>We recommend that you
      * set <code>EvaluateTargetHealth</code> to true only when you have enough idle
      * capacity to handle the failure of one or more endpoints.</p> </li> </ul> <p>For
      * more information and examples, see <a

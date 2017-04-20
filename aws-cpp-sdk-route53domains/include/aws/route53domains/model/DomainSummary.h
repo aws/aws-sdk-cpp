@@ -32,6 +32,11 @@ namespace Route53Domains
 namespace Model
 {
 
+  /**
+   * <p>Summary information about one domain.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DomainSummary">AWS
+   * API Reference</a></p>
+   */
   class AWS_ROUTE53DOMAINS_API DomainSummary
   {
   public:
@@ -41,106 +46,95 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p>
+     * <p>The name of the domain that the summary information applies to.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p>
+     * <p>The name of the domain that the summary information applies to.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p>
+     * <p>The name of the domain that the summary information applies to.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p>
+     * <p>The name of the domain that the summary information applies to.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p>
+     * <p>The name of the domain that the summary information applies to.</p>
      */
     inline DomainSummary& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p>
+     * <p>The name of the domain that the summary information applies to.</p>
      */
     inline DomainSummary& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p>
+     * <p>The name of the domain that the summary information applies to.</p>
      */
     inline DomainSummary& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
     /**
      * <p>Indicates whether the domain is automatically renewed upon expiration.</p>
-     * <p>Type: Boolean</p> <p>Valid values: <code>True</code> | <code>False</code></p>
      */
     inline bool GetAutoRenew() const{ return m_autoRenew; }
 
     /**
      * <p>Indicates whether the domain is automatically renewed upon expiration.</p>
-     * <p>Type: Boolean</p> <p>Valid values: <code>True</code> | <code>False</code></p>
      */
     inline void SetAutoRenew(bool value) { m_autoRenewHasBeenSet = true; m_autoRenew = value; }
 
     /**
      * <p>Indicates whether the domain is automatically renewed upon expiration.</p>
-     * <p>Type: Boolean</p> <p>Valid values: <code>True</code> | <code>False</code></p>
      */
     inline DomainSummary& WithAutoRenew(bool value) { SetAutoRenew(value); return *this;}
 
     /**
      * <p>Indicates whether a domain is locked from unauthorized transfer to another
-     * party.</p> <p>Type: Boolean</p> <p>Valid values: <code>True</code> |
-     * <code>False</code></p>
+     * party.</p>
      */
     inline bool GetTransferLock() const{ return m_transferLock; }
 
     /**
      * <p>Indicates whether a domain is locked from unauthorized transfer to another
-     * party.</p> <p>Type: Boolean</p> <p>Valid values: <code>True</code> |
-     * <code>False</code></p>
+     * party.</p>
      */
     inline void SetTransferLock(bool value) { m_transferLockHasBeenSet = true; m_transferLock = value; }
 
     /**
      * <p>Indicates whether a domain is locked from unauthorized transfer to another
-     * party.</p> <p>Type: Boolean</p> <p>Valid values: <code>True</code> |
-     * <code>False</code></p>
+     * party.</p>
      */
     inline DomainSummary& WithTransferLock(bool value) { SetTransferLock(value); return *this;}
 
     /**
      * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
-     * <p>Type: Long</p>
      */
     inline const Aws::Utils::DateTime& GetExpiry() const{ return m_expiry; }
 
     /**
      * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
-     * <p>Type: Long</p>
      */
     inline void SetExpiry(const Aws::Utils::DateTime& value) { m_expiryHasBeenSet = true; m_expiry = value; }
 
     /**
      * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
-     * <p>Type: Long</p>
      */
     inline void SetExpiry(Aws::Utils::DateTime&& value) { m_expiryHasBeenSet = true; m_expiry = std::move(value); }
 
     /**
      * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
-     * <p>Type: Long</p>
      */
     inline DomainSummary& WithExpiry(const Aws::Utils::DateTime& value) { SetExpiry(value); return *this;}
 
     /**
      * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
-     * <p>Type: Long</p>
      */
     inline DomainSummary& WithExpiry(Aws::Utils::DateTime&& value) { SetExpiry(std::move(value)); return *this;}
 

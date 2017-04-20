@@ -32,8 +32,8 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>A complex type that contains the response to a <code>hostedzonecount</code>
-   * request.</p><p><h3>See Also:</h3>   <a
+   * <p>A complex type that contains the response to a
+   * <code>GetHostedZoneCount</code> request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCountResponse">AWS
    * API Reference</a></p>
    */
@@ -45,20 +45,20 @@ namespace Model
     GetHostedZoneCountResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The total number of public and private hosted zones associated with the
-     * current AWS account.</p>
+     * <p>The total number of public and private hosted zones that are associated with
+     * the current AWS account.</p>
      */
     inline long long GetHostedZoneCount() const{ return m_hostedZoneCount; }
 
     /**
-     * <p>The total number of public and private hosted zones associated with the
-     * current AWS account.</p>
+     * <p>The total number of public and private hosted zones that are associated with
+     * the current AWS account.</p>
      */
     inline void SetHostedZoneCount(long long value) { m_hostedZoneCount = value; }
 
     /**
-     * <p>The total number of public and private hosted zones associated with the
-     * current AWS account.</p>
+     * <p>The total number of public and private hosted zones that are associated with
+     * the current AWS account.</p>
      */
     inline GetHostedZoneCountResult& WithHostedZoneCount(long long value) { SetHostedZoneCount(value); return *this;}
 

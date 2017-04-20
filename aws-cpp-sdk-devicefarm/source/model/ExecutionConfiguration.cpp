@@ -29,13 +29,21 @@ namespace Model
 
 ExecutionConfiguration::ExecutionConfiguration() : 
     m_jobTimeoutMinutes(0),
-    m_jobTimeoutMinutesHasBeenSet(false)
+    m_jobTimeoutMinutesHasBeenSet(false),
+    m_accountsCleanup(false),
+    m_accountsCleanupHasBeenSet(false),
+    m_appPackagesCleanup(false),
+    m_appPackagesCleanupHasBeenSet(false)
 {
 }
 
 ExecutionConfiguration::ExecutionConfiguration(const JsonValue& jsonValue) : 
     m_jobTimeoutMinutes(0),
-    m_jobTimeoutMinutesHasBeenSet(false)
+    m_jobTimeoutMinutesHasBeenSet(false),
+    m_accountsCleanup(false),
+    m_accountsCleanupHasBeenSet(false),
+    m_appPackagesCleanup(false),
+    m_appPackagesCleanupHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +57,20 @@ ExecutionConfiguration& ExecutionConfiguration::operator =(const JsonValue& json
     m_jobTimeoutMinutesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("accountsCleanup"))
+  {
+    m_accountsCleanup = jsonValue.GetBool("accountsCleanup");
+
+    m_accountsCleanupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("appPackagesCleanup"))
+  {
+    m_appPackagesCleanup = jsonValue.GetBool("appPackagesCleanup");
+
+    m_appPackagesCleanupHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -59,6 +81,18 @@ JsonValue ExecutionConfiguration::Jsonize() const
   if(m_jobTimeoutMinutesHasBeenSet)
   {
    payload.WithInteger("jobTimeoutMinutes", m_jobTimeoutMinutes);
+
+  }
+
+  if(m_accountsCleanupHasBeenSet)
+  {
+   payload.WithBool("accountsCleanup", m_accountsCleanup);
+
+  }
+
+  if(m_appPackagesCleanupHasBeenSet)
+  {
+   payload.WithBool("appPackagesCleanup", m_appPackagesCleanup);
 
   }
 

@@ -94,56 +94,49 @@ namespace Model
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
-     * traffic policy instance in the next group of <code>MaxItems</code> traffic
-     * policy instances.</p>
+     * traffic policy instance in the next group of traffic policy instances.</p>
      */
     inline const Aws::String& GetHostedZoneIdMarker() const{ return m_hostedZoneIdMarker; }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
-     * traffic policy instance in the next group of <code>MaxItems</code> traffic
-     * policy instances.</p>
+     * traffic policy instance in the next group of traffic policy instances.</p>
      */
     inline void SetHostedZoneIdMarker(const Aws::String& value) { m_hostedZoneIdMarker = value; }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
-     * traffic policy instance in the next group of <code>MaxItems</code> traffic
-     * policy instances.</p>
+     * traffic policy instance in the next group of traffic policy instances.</p>
      */
     inline void SetHostedZoneIdMarker(Aws::String&& value) { m_hostedZoneIdMarker = std::move(value); }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
-     * traffic policy instance in the next group of <code>MaxItems</code> traffic
-     * policy instances.</p>
+     * traffic policy instance in the next group of traffic policy instances.</p>
      */
     inline void SetHostedZoneIdMarker(const char* value) { m_hostedZoneIdMarker.assign(value); }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
-     * traffic policy instance in the next group of <code>MaxItems</code> traffic
-     * policy instances.</p>
+     * traffic policy instance in the next group of traffic policy instances.</p>
      */
     inline ListTrafficPolicyInstancesByPolicyResult& WithHostedZoneIdMarker(const Aws::String& value) { SetHostedZoneIdMarker(value); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
-     * traffic policy instance in the next group of <code>MaxItems</code> traffic
-     * policy instances.</p>
+     * traffic policy instance in the next group of traffic policy instances.</p>
      */
     inline ListTrafficPolicyInstancesByPolicyResult& WithHostedZoneIdMarker(Aws::String&& value) { SetHostedZoneIdMarker(std::move(value)); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
-     * traffic policy instance in the next group of <code>MaxItems</code> traffic
-     * policy instances.</p>
+     * traffic policy instance in the next group of traffic policy instances.</p>
      */
     inline ListTrafficPolicyInstancesByPolicyResult& WithHostedZoneIdMarker(const char* value) { SetHostedZoneIdMarker(value); return *this;}
 
@@ -245,10 +238,9 @@ namespace Model
 
     /**
      * <p>A flag that indicates whether there are more traffic policy instances to be
-     * listed. If the response was truncated, you can get the next group of
-     * <code>MaxItems</code> traffic policy instances by calling
-     * <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the values
-     * of the <code>HostedZoneIdMarker</code>,
+     * listed. If the response was truncated, you can get the next group of traffic
+     * policy instances by calling <code>ListTrafficPolicyInstancesByPolicy</code>
+     * again and specifying the values of the <code>HostedZoneIdMarker</code>,
      * <code>TrafficPolicyInstanceNameMarker</code>, and
      * <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding
      * request parameters.</p>
@@ -257,10 +249,9 @@ namespace Model
 
     /**
      * <p>A flag that indicates whether there are more traffic policy instances to be
-     * listed. If the response was truncated, you can get the next group of
-     * <code>MaxItems</code> traffic policy instances by calling
-     * <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the values
-     * of the <code>HostedZoneIdMarker</code>,
+     * listed. If the response was truncated, you can get the next group of traffic
+     * policy instances by calling <code>ListTrafficPolicyInstancesByPolicy</code>
+     * again and specifying the values of the <code>HostedZoneIdMarker</code>,
      * <code>TrafficPolicyInstanceNameMarker</code>, and
      * <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding
      * request parameters.</p>
@@ -269,10 +260,9 @@ namespace Model
 
     /**
      * <p>A flag that indicates whether there are more traffic policy instances to be
-     * listed. If the response was truncated, you can get the next group of
-     * <code>MaxItems</code> traffic policy instances by calling
-     * <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the values
-     * of the <code>HostedZoneIdMarker</code>,
+     * listed. If the response was truncated, you can get the next group of traffic
+     * policy instances by calling <code>ListTrafficPolicyInstancesByPolicy</code>
+     * again and specifying the values of the <code>HostedZoneIdMarker</code>,
      * <code>TrafficPolicyInstanceNameMarker</code>, and
      * <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding
      * request parameters.</p>

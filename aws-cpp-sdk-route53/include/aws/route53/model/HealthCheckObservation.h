@@ -50,31 +50,31 @@ namespace Model
 
     /**
      * <p>The region of the Amazon Route 53 health checker that provided the status in
-     * StatusReport.</p>
+     * <code>StatusReport</code>.</p>
      */
     inline const HealthCheckRegion& GetRegion() const{ return m_region; }
 
     /**
      * <p>The region of the Amazon Route 53 health checker that provided the status in
-     * StatusReport.</p>
+     * <code>StatusReport</code>.</p>
      */
     inline void SetRegion(const HealthCheckRegion& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
      * <p>The region of the Amazon Route 53 health checker that provided the status in
-     * StatusReport.</p>
+     * <code>StatusReport</code>.</p>
      */
     inline void SetRegion(HealthCheckRegion&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
      * <p>The region of the Amazon Route 53 health checker that provided the status in
-     * StatusReport.</p>
+     * <code>StatusReport</code>.</p>
      */
     inline HealthCheckObservation& WithRegion(const HealthCheckRegion& value) { SetRegion(value); return *this;}
 
     /**
      * <p>The region of the Amazon Route 53 health checker that provided the status in
-     * StatusReport.</p>
+     * <code>StatusReport</code>.</p>
      */
     inline HealthCheckObservation& WithRegion(HealthCheckRegion&& value) { SetRegion(std::move(value)); return *this;}
 

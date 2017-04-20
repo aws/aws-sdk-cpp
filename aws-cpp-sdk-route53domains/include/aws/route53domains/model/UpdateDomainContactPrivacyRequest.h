@@ -41,139 +41,109 @@ namespace Model
 
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to update the privacy setting for.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to update the privacy setting for.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to update the privacy setting for.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to update the privacy setting for.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to update the privacy setting for.</p>
      */
     inline UpdateDomainContactPrivacyRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to update the privacy setting for.</p>
      */
     inline UpdateDomainContactPrivacyRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to update the privacy setting for.</p>
      */
     inline UpdateDomainContactPrivacyRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
-     * specify true, WHOIS ("who is") queries will return contact information for our
-     * registrar partner, Gandi, instead of the contact information that you enter.</p>
-     * <p>Type: Boolean</p> <p>Default: None</p> <p>Valid values: <code>true</code> |
-     * <code>false</code></p> <p>Required: No</p>
+     * specify <code>true</code>, WHOIS ("who is") queries will return contact
+     * information for our registrar partner, Gandi, instead of the contact information
+     * that you enter.</p>
      */
     inline bool GetAdminPrivacy() const{ return m_adminPrivacy; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
-     * specify true, WHOIS ("who is") queries will return contact information for our
-     * registrar partner, Gandi, instead of the contact information that you enter.</p>
-     * <p>Type: Boolean</p> <p>Default: None</p> <p>Valid values: <code>true</code> |
-     * <code>false</code></p> <p>Required: No</p>
+     * specify <code>true</code>, WHOIS ("who is") queries will return contact
+     * information for our registrar partner, Gandi, instead of the contact information
+     * that you enter.</p>
      */
     inline void SetAdminPrivacy(bool value) { m_adminPrivacyHasBeenSet = true; m_adminPrivacy = value; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
-     * specify true, WHOIS ("who is") queries will return contact information for our
-     * registrar partner, Gandi, instead of the contact information that you enter.</p>
-     * <p>Type: Boolean</p> <p>Default: None</p> <p>Valid values: <code>true</code> |
-     * <code>false</code></p> <p>Required: No</p>
+     * specify <code>true</code>, WHOIS ("who is") queries will return contact
+     * information for our registrar partner, Gandi, instead of the contact information
+     * that you enter.</p>
      */
     inline UpdateDomainContactPrivacyRequest& WithAdminPrivacy(bool value) { SetAdminPrivacy(value); return *this;}
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
-     * specify true, WHOIS ("who is") queries will return contact information for our
-     * registrar partner, Gandi, instead of the contact information that you enter.</p>
-     * <p>Type: Boolean</p> <p>Default: None</p> <p>Valid values: <code>true</code> |
-     * <code>false</code></p> <p>Required: No</p>
+     * specify <code>true</code>, WHOIS ("who is") queries will return contact
+     * information for our registrar partner, Gandi, instead of the contact information
+     * that you enter.</p>
      */
     inline bool GetRegistrantPrivacy() const{ return m_registrantPrivacy; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
-     * specify true, WHOIS ("who is") queries will return contact information for our
-     * registrar partner, Gandi, instead of the contact information that you enter.</p>
-     * <p>Type: Boolean</p> <p>Default: None</p> <p>Valid values: <code>true</code> |
-     * <code>false</code></p> <p>Required: No</p>
+     * specify <code>true</code>, WHOIS ("who is") queries will return contact
+     * information for our registrar partner, Gandi, instead of the contact information
+     * that you enter.</p>
      */
     inline void SetRegistrantPrivacy(bool value) { m_registrantPrivacyHasBeenSet = true; m_registrantPrivacy = value; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
-     * specify true, WHOIS ("who is") queries will return contact information for our
-     * registrar partner, Gandi, instead of the contact information that you enter.</p>
-     * <p>Type: Boolean</p> <p>Default: None</p> <p>Valid values: <code>true</code> |
-     * <code>false</code></p> <p>Required: No</p>
+     * specify <code>true</code>, WHOIS ("who is") queries will return contact
+     * information for our registrar partner, Gandi, instead of the contact information
+     * that you enter.</p>
      */
     inline UpdateDomainContactPrivacyRequest& WithRegistrantPrivacy(bool value) { SetRegistrantPrivacy(value); return *this;}
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
-     * specify true, WHOIS ("who is") queries will return contact information for our
-     * registrar partner, Gandi, instead of the contact information that you enter.</p>
-     * <p>Type: Boolean</p> <p>Default: None</p> <p>Valid values: <code>true</code> |
-     * <code>false</code></p> <p>Required: No</p>
+     * specify <code>true</code>, WHOIS ("who is") queries will return contact
+     * information for our registrar partner, Gandi, instead of the contact information
+     * that you enter.</p>
      */
     inline bool GetTechPrivacy() const{ return m_techPrivacy; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
-     * specify true, WHOIS ("who is") queries will return contact information for our
-     * registrar partner, Gandi, instead of the contact information that you enter.</p>
-     * <p>Type: Boolean</p> <p>Default: None</p> <p>Valid values: <code>true</code> |
-     * <code>false</code></p> <p>Required: No</p>
+     * specify <code>true</code>, WHOIS ("who is") queries will return contact
+     * information for our registrar partner, Gandi, instead of the contact information
+     * that you enter.</p>
      */
     inline void SetTechPrivacy(bool value) { m_techPrivacyHasBeenSet = true; m_techPrivacy = value; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
-     * specify true, WHOIS ("who is") queries will return contact information for our
-     * registrar partner, Gandi, instead of the contact information that you enter.</p>
-     * <p>Type: Boolean</p> <p>Default: None</p> <p>Valid values: <code>true</code> |
-     * <code>false</code></p> <p>Required: No</p>
+     * specify <code>true</code>, WHOIS ("who is") queries will return contact
+     * information for our registrar partner, Gandi, instead of the contact information
+     * that you enter.</p>
      */
     inline UpdateDomainContactPrivacyRequest& WithTechPrivacy(bool value) { SetTechPrivacy(value); return *this;}
 

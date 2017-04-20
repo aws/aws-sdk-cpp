@@ -118,23 +118,23 @@ namespace Model
     inline ResendContactReachabilityEmailResult& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
 
     /**
-     * <p>True if the email address for the registrant contact has already been
-     * verified, and false otherwise. If the email address has already been verified,
-     * we don't send another confirmation email.</p>
+     * <p> <code>True</code> if the email address for the registrant contact has
+     * already been verified, and <code>false</code> otherwise. If the email address
+     * has already been verified, we don't send another confirmation email.</p>
      */
     inline bool GetIsAlreadyVerified() const{ return m_isAlreadyVerified; }
 
     /**
-     * <p>True if the email address for the registrant contact has already been
-     * verified, and false otherwise. If the email address has already been verified,
-     * we don't send another confirmation email.</p>
+     * <p> <code>True</code> if the email address for the registrant contact has
+     * already been verified, and <code>false</code> otherwise. If the email address
+     * has already been verified, we don't send another confirmation email.</p>
      */
     inline void SetIsAlreadyVerified(bool value) { m_isAlreadyVerified = value; }
 
     /**
-     * <p>True if the email address for the registrant contact has already been
-     * verified, and false otherwise. If the email address has already been verified,
-     * we don't send another confirmation email.</p>
+     * <p> <code>True</code> if the email address for the registrant contact has
+     * already been verified, and <code>false</code> otherwise. If the email address
+     * has already been verified, we don't send another confirmation email.</p>
      */
     inline ResendContactReachabilityEmailResult& WithIsAlreadyVerified(bool value) { SetIsAlreadyVerified(value); return *this;}
 

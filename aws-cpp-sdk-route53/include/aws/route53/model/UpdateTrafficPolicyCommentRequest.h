@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information about the traffic policy for which
-   * you want to update the comment.</p><p><h3>See Also:</h3>   <a
+   * <p>A complex type that contains information about the traffic policy that you
+   * want to update the comment for.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyCommentRequest">AWS
    * API Reference</a></p>
    */
@@ -39,62 +39,62 @@ namespace Model
 
 
     /**
-     * <p>The value of <code>Id</code> for the traffic policy for which you want to
-     * update the comment.</p>
+     * <p>The value of <code>Id</code> for the traffic policy that you want to update
+     * the comment for.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The value of <code>Id</code> for the traffic policy for which you want to
-     * update the comment.</p>
+     * <p>The value of <code>Id</code> for the traffic policy that you want to update
+     * the comment for.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The value of <code>Id</code> for the traffic policy for which you want to
-     * update the comment.</p>
+     * <p>The value of <code>Id</code> for the traffic policy that you want to update
+     * the comment for.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The value of <code>Id</code> for the traffic policy for which you want to
-     * update the comment.</p>
+     * <p>The value of <code>Id</code> for the traffic policy that you want to update
+     * the comment for.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The value of <code>Id</code> for the traffic policy for which you want to
-     * update the comment.</p>
+     * <p>The value of <code>Id</code> for the traffic policy that you want to update
+     * the comment for.</p>
      */
     inline UpdateTrafficPolicyCommentRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The value of <code>Id</code> for the traffic policy for which you want to
-     * update the comment.</p>
+     * <p>The value of <code>Id</code> for the traffic policy that you want to update
+     * the comment for.</p>
      */
     inline UpdateTrafficPolicyCommentRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The value of <code>Id</code> for the traffic policy for which you want to
-     * update the comment.</p>
+     * <p>The value of <code>Id</code> for the traffic policy that you want to update
+     * the comment for.</p>
      */
     inline UpdateTrafficPolicyCommentRequest& WithId(const char* value) { SetId(value); return *this;}
 
     /**
-     * <p>The value of <code>Version</code> for the traffic policy for which you want
-     * to update the comment.</p>
+     * <p>The value of <code>Version</code> for the traffic policy that you want to
+     * update the comment for.</p>
      */
     inline int GetVersion() const{ return m_version; }
 
     /**
-     * <p>The value of <code>Version</code> for the traffic policy for which you want
-     * to update the comment.</p>
+     * <p>The value of <code>Version</code> for the traffic policy that you want to
+     * update the comment for.</p>
      */
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The value of <code>Version</code> for the traffic policy for which you want
-     * to update the comment.</p>
+     * <p>The value of <code>Version</code> for the traffic policy that you want to
+     * update the comment for.</p>
      */
     inline UpdateTrafficPolicyCommentRequest& WithVersion(int value) { SetVersion(value); return *this;}
 

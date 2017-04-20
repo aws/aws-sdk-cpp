@@ -25,7 +25,8 @@ GetDevicePoolCompatibilityRequest::GetDevicePoolCompatibilityRequest() :
     m_devicePoolArnHasBeenSet(false),
     m_appArnHasBeenSet(false),
     m_testType(TestType::NOT_SET),
-    m_testTypeHasBeenSet(false)
+    m_testTypeHasBeenSet(false),
+    m_testHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,12 @@ Aws::String GetDevicePoolCompatibilityRequest::SerializePayload() const
   if(m_testTypeHasBeenSet)
   {
    payload.WithString("testType", TestTypeMapper::GetNameForTestType(m_testType));
+  }
+
+  if(m_testHasBeenSet)
+  {
+   payload.WithObject("test", m_test.Jsonize());
+
   }
 
   return payload.WriteReadable();

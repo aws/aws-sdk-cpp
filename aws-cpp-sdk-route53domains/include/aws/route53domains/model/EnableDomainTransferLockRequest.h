@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The EnableDomainTransferLock request includes the following
-   * element.</p><p><h3>See Also:</h3>   <a
+   * <p>A request to set the transfer lock for the specified domain.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainTransferLockRequest">AWS
    * API Reference</a></p>
    */
@@ -41,58 +41,37 @@ namespace Model
 
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to set the transfer lock for.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to set the transfer lock for.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to set the transfer lock for.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to set the transfer lock for.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to set the transfer lock for.</p>
      */
     inline EnableDomainTransferLockRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to set the transfer lock for.</p>
      */
     inline EnableDomainTransferLockRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to set the transfer lock for.</p>
      */
     inline EnableDomainTransferLockRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

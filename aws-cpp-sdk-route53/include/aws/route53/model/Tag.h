@@ -50,13 +50,13 @@ namespace Model
      * <p>The value of <code>Key</code> depends on the operation that you want to
      * perform:</p> <ul> <li> <p> <b>Add a tag to a health check or hosted zone</b>:
      * <code>Key</code> is the name that you want to give the new tag.</p> </li> <li>
-     * <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag whose
-     * <code>Value</code> element you want to remove.</p> </li> <li> <p> <b> Delete a
-     * key</b>: <code>Key</code> is the name of the tag you want to remove.</p> </li>
-     * <li> <p> <b>Give a name to a health check</b>: Edit the default
-     * <code>Name</code> tag. In the Amazon Route 53 console, the list of your health
-     * checks includes a <b>Name</b> column that lets you see the name that you've
-     * given to each health check.</p> </li> </ul>
+     * <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to
+     * change the <code>Value</code> for.</p> </li> <li> <p> <b> Delete a key</b>:
+     * <code>Key</code> is the name of the tag you want to remove.</p> </li> <li> <p>
+     * <b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In
+     * the Amazon Route 53 console, the list of your health checks includes a
+     * <b>Name</b> column that lets you see the name that you've given to each health
+     * check.</p> </li> </ul>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -64,13 +64,13 @@ namespace Model
      * <p>The value of <code>Key</code> depends on the operation that you want to
      * perform:</p> <ul> <li> <p> <b>Add a tag to a health check or hosted zone</b>:
      * <code>Key</code> is the name that you want to give the new tag.</p> </li> <li>
-     * <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag whose
-     * <code>Value</code> element you want to remove.</p> </li> <li> <p> <b> Delete a
-     * key</b>: <code>Key</code> is the name of the tag you want to remove.</p> </li>
-     * <li> <p> <b>Give a name to a health check</b>: Edit the default
-     * <code>Name</code> tag. In the Amazon Route 53 console, the list of your health
-     * checks includes a <b>Name</b> column that lets you see the name that you've
-     * given to each health check.</p> </li> </ul>
+     * <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to
+     * change the <code>Value</code> for.</p> </li> <li> <p> <b> Delete a key</b>:
+     * <code>Key</code> is the name of the tag you want to remove.</p> </li> <li> <p>
+     * <b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In
+     * the Amazon Route 53 console, the list of your health checks includes a
+     * <b>Name</b> column that lets you see the name that you've given to each health
+     * check.</p> </li> </ul>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
@@ -78,13 +78,13 @@ namespace Model
      * <p>The value of <code>Key</code> depends on the operation that you want to
      * perform:</p> <ul> <li> <p> <b>Add a tag to a health check or hosted zone</b>:
      * <code>Key</code> is the name that you want to give the new tag.</p> </li> <li>
-     * <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag whose
-     * <code>Value</code> element you want to remove.</p> </li> <li> <p> <b> Delete a
-     * key</b>: <code>Key</code> is the name of the tag you want to remove.</p> </li>
-     * <li> <p> <b>Give a name to a health check</b>: Edit the default
-     * <code>Name</code> tag. In the Amazon Route 53 console, the list of your health
-     * checks includes a <b>Name</b> column that lets you see the name that you've
-     * given to each health check.</p> </li> </ul>
+     * <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to
+     * change the <code>Value</code> for.</p> </li> <li> <p> <b> Delete a key</b>:
+     * <code>Key</code> is the name of the tag you want to remove.</p> </li> <li> <p>
+     * <b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In
+     * the Amazon Route 53 console, the list of your health checks includes a
+     * <b>Name</b> column that lets you see the name that you've given to each health
+     * check.</p> </li> </ul>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
@@ -92,13 +92,13 @@ namespace Model
      * <p>The value of <code>Key</code> depends on the operation that you want to
      * perform:</p> <ul> <li> <p> <b>Add a tag to a health check or hosted zone</b>:
      * <code>Key</code> is the name that you want to give the new tag.</p> </li> <li>
-     * <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag whose
-     * <code>Value</code> element you want to remove.</p> </li> <li> <p> <b> Delete a
-     * key</b>: <code>Key</code> is the name of the tag you want to remove.</p> </li>
-     * <li> <p> <b>Give a name to a health check</b>: Edit the default
-     * <code>Name</code> tag. In the Amazon Route 53 console, the list of your health
-     * checks includes a <b>Name</b> column that lets you see the name that you've
-     * given to each health check.</p> </li> </ul>
+     * <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to
+     * change the <code>Value</code> for.</p> </li> <li> <p> <b> Delete a key</b>:
+     * <code>Key</code> is the name of the tag you want to remove.</p> </li> <li> <p>
+     * <b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In
+     * the Amazon Route 53 console, the list of your health checks includes a
+     * <b>Name</b> column that lets you see the name that you've given to each health
+     * check.</p> </li> </ul>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
@@ -106,13 +106,13 @@ namespace Model
      * <p>The value of <code>Key</code> depends on the operation that you want to
      * perform:</p> <ul> <li> <p> <b>Add a tag to a health check or hosted zone</b>:
      * <code>Key</code> is the name that you want to give the new tag.</p> </li> <li>
-     * <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag whose
-     * <code>Value</code> element you want to remove.</p> </li> <li> <p> <b> Delete a
-     * key</b>: <code>Key</code> is the name of the tag you want to remove.</p> </li>
-     * <li> <p> <b>Give a name to a health check</b>: Edit the default
-     * <code>Name</code> tag. In the Amazon Route 53 console, the list of your health
-     * checks includes a <b>Name</b> column that lets you see the name that you've
-     * given to each health check.</p> </li> </ul>
+     * <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to
+     * change the <code>Value</code> for.</p> </li> <li> <p> <b> Delete a key</b>:
+     * <code>Key</code> is the name of the tag you want to remove.</p> </li> <li> <p>
+     * <b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In
+     * the Amazon Route 53 console, the list of your health checks includes a
+     * <b>Name</b> column that lets you see the name that you've given to each health
+     * check.</p> </li> </ul>
      */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
@@ -120,13 +120,13 @@ namespace Model
      * <p>The value of <code>Key</code> depends on the operation that you want to
      * perform:</p> <ul> <li> <p> <b>Add a tag to a health check or hosted zone</b>:
      * <code>Key</code> is the name that you want to give the new tag.</p> </li> <li>
-     * <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag whose
-     * <code>Value</code> element you want to remove.</p> </li> <li> <p> <b> Delete a
-     * key</b>: <code>Key</code> is the name of the tag you want to remove.</p> </li>
-     * <li> <p> <b>Give a name to a health check</b>: Edit the default
-     * <code>Name</code> tag. In the Amazon Route 53 console, the list of your health
-     * checks includes a <b>Name</b> column that lets you see the name that you've
-     * given to each health check.</p> </li> </ul>
+     * <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to
+     * change the <code>Value</code> for.</p> </li> <li> <p> <b> Delete a key</b>:
+     * <code>Key</code> is the name of the tag you want to remove.</p> </li> <li> <p>
+     * <b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In
+     * the Amazon Route 53 console, the list of your health checks includes a
+     * <b>Name</b> column that lets you see the name that you've given to each health
+     * check.</p> </li> </ul>
      */
     inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
@@ -134,13 +134,13 @@ namespace Model
      * <p>The value of <code>Key</code> depends on the operation that you want to
      * perform:</p> <ul> <li> <p> <b>Add a tag to a health check or hosted zone</b>:
      * <code>Key</code> is the name that you want to give the new tag.</p> </li> <li>
-     * <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag whose
-     * <code>Value</code> element you want to remove.</p> </li> <li> <p> <b> Delete a
-     * key</b>: <code>Key</code> is the name of the tag you want to remove.</p> </li>
-     * <li> <p> <b>Give a name to a health check</b>: Edit the default
-     * <code>Name</code> tag. In the Amazon Route 53 console, the list of your health
-     * checks includes a <b>Name</b> column that lets you see the name that you've
-     * given to each health check.</p> </li> </ul>
+     * <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to
+     * change the <code>Value</code> for.</p> </li> <li> <p> <b> Delete a key</b>:
+     * <code>Key</code> is the name of the tag you want to remove.</p> </li> <li> <p>
+     * <b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In
+     * the Amazon Route 53 console, the list of your health checks includes a
+     * <b>Name</b> column that lets you see the name that you've given to each health
+     * check.</p> </li> </ul>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 

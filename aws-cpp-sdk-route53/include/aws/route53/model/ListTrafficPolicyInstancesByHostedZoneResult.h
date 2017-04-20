@@ -94,56 +94,49 @@ namespace Model
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic
-     * policy instance in the next group of <code>MaxItems</code> traffic policy
-     * instances.</p>
+     * policy instance in the next group of traffic policy instances.</p>
      */
     inline const Aws::String& GetTrafficPolicyInstanceNameMarker() const{ return m_trafficPolicyInstanceNameMarker; }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic
-     * policy instance in the next group of <code>MaxItems</code> traffic policy
-     * instances.</p>
+     * policy instance in the next group of traffic policy instances.</p>
      */
     inline void SetTrafficPolicyInstanceNameMarker(const Aws::String& value) { m_trafficPolicyInstanceNameMarker = value; }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic
-     * policy instance in the next group of <code>MaxItems</code> traffic policy
-     * instances.</p>
+     * policy instance in the next group of traffic policy instances.</p>
      */
     inline void SetTrafficPolicyInstanceNameMarker(Aws::String&& value) { m_trafficPolicyInstanceNameMarker = std::move(value); }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic
-     * policy instance in the next group of <code>MaxItems</code> traffic policy
-     * instances.</p>
+     * policy instance in the next group of traffic policy instances.</p>
      */
     inline void SetTrafficPolicyInstanceNameMarker(const char* value) { m_trafficPolicyInstanceNameMarker.assign(value); }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic
-     * policy instance in the next group of <code>MaxItems</code> traffic policy
-     * instances.</p>
+     * policy instance in the next group of traffic policy instances.</p>
      */
     inline ListTrafficPolicyInstancesByHostedZoneResult& WithTrafficPolicyInstanceNameMarker(const Aws::String& value) { SetTrafficPolicyInstanceNameMarker(value); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic
-     * policy instance in the next group of <code>MaxItems</code> traffic policy
-     * instances.</p>
+     * policy instance in the next group of traffic policy instances.</p>
      */
     inline ListTrafficPolicyInstancesByHostedZoneResult& WithTrafficPolicyInstanceNameMarker(Aws::String&& value) { SetTrafficPolicyInstanceNameMarker(std::move(value)); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic
-     * policy instance in the next group of <code>MaxItems</code> traffic policy
-     * instances.</p>
+     * policy instance in the next group of traffic policy instances.</p>
      */
     inline ListTrafficPolicyInstancesByHostedZoneResult& WithTrafficPolicyInstanceNameMarker(const char* value) { SetTrafficPolicyInstanceNameMarker(value); return *this;}
 
@@ -151,7 +144,7 @@ namespace Model
      * <p>If <code>IsTruncated</code> is true,
      * <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource
      * record sets that are associated with the first traffic policy instance in the
-     * next group of <code>MaxItems</code> traffic policy instances.</p>
+     * next group of traffic policy instances.</p>
      */
     inline const RRType& GetTrafficPolicyInstanceTypeMarker() const{ return m_trafficPolicyInstanceTypeMarker; }
 
@@ -159,7 +152,7 @@ namespace Model
      * <p>If <code>IsTruncated</code> is true,
      * <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource
      * record sets that are associated with the first traffic policy instance in the
-     * next group of <code>MaxItems</code> traffic policy instances.</p>
+     * next group of traffic policy instances.</p>
      */
     inline void SetTrafficPolicyInstanceTypeMarker(const RRType& value) { m_trafficPolicyInstanceTypeMarker = value; }
 
@@ -167,7 +160,7 @@ namespace Model
      * <p>If <code>IsTruncated</code> is true,
      * <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource
      * record sets that are associated with the first traffic policy instance in the
-     * next group of <code>MaxItems</code> traffic policy instances.</p>
+     * next group of traffic policy instances.</p>
      */
     inline void SetTrafficPolicyInstanceTypeMarker(RRType&& value) { m_trafficPolicyInstanceTypeMarker = std::move(value); }
 
@@ -175,7 +168,7 @@ namespace Model
      * <p>If <code>IsTruncated</code> is true,
      * <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource
      * record sets that are associated with the first traffic policy instance in the
-     * next group of <code>MaxItems</code> traffic policy instances.</p>
+     * next group of traffic policy instances.</p>
      */
     inline ListTrafficPolicyInstancesByHostedZoneResult& WithTrafficPolicyInstanceTypeMarker(const RRType& value) { SetTrafficPolicyInstanceTypeMarker(value); return *this;}
 
@@ -183,92 +176,92 @@ namespace Model
      * <p>If <code>IsTruncated</code> is true,
      * <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource
      * record sets that are associated with the first traffic policy instance in the
-     * next group of <code>MaxItems</code> traffic policy instances.</p>
+     * next group of traffic policy instances.</p>
      */
     inline ListTrafficPolicyInstancesByHostedZoneResult& WithTrafficPolicyInstanceTypeMarker(RRType&& value) { SetTrafficPolicyInstanceTypeMarker(std::move(value)); return *this;}
 
     /**
      * <p>A flag that indicates whether there are more traffic policy instances to be
-     * listed. If the response was truncated, you can get the next group of
-     * <code>MaxItems</code> traffic policy instances by calling
-     * <code>ListTrafficPolicyInstancesByHostedZone</code> again and specifying the
-     * values of the <code>HostedZoneIdMarker</code>,
+     * listed. If the response was truncated, you can get the next group of traffic
+     * policy instances by submitting another
+     * <code>ListTrafficPolicyInstancesByHostedZone</code> request and specifying the
+     * values of <code>HostedZoneIdMarker</code>,
      * <code>TrafficPolicyInstanceNameMarker</code>, and
-     * <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding
-     * request parameters.</p>
+     * <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request
+     * parameters.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
      * <p>A flag that indicates whether there are more traffic policy instances to be
-     * listed. If the response was truncated, you can get the next group of
-     * <code>MaxItems</code> traffic policy instances by calling
-     * <code>ListTrafficPolicyInstancesByHostedZone</code> again and specifying the
-     * values of the <code>HostedZoneIdMarker</code>,
+     * listed. If the response was truncated, you can get the next group of traffic
+     * policy instances by submitting another
+     * <code>ListTrafficPolicyInstancesByHostedZone</code> request and specifying the
+     * values of <code>HostedZoneIdMarker</code>,
      * <code>TrafficPolicyInstanceNameMarker</code>, and
-     * <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding
-     * request parameters.</p>
+     * <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request
+     * parameters.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
      * <p>A flag that indicates whether there are more traffic policy instances to be
-     * listed. If the response was truncated, you can get the next group of
-     * <code>MaxItems</code> traffic policy instances by calling
-     * <code>ListTrafficPolicyInstancesByHostedZone</code> again and specifying the
-     * values of the <code>HostedZoneIdMarker</code>,
+     * listed. If the response was truncated, you can get the next group of traffic
+     * policy instances by submitting another
+     * <code>ListTrafficPolicyInstancesByHostedZone</code> request and specifying the
+     * values of <code>HostedZoneIdMarker</code>,
      * <code>TrafficPolicyInstanceNameMarker</code>, and
-     * <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding
-     * request parameters.</p>
+     * <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request
+     * parameters.</p>
      */
     inline ListTrafficPolicyInstancesByHostedZoneResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-     * call to <code>ListTrafficPolicyInstancesByHostedZone</code> that produced the
-     * current response. </p>
+     * <code>ListTrafficPolicyInstancesByHostedZone</code> request that produced the
+     * current response.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-     * call to <code>ListTrafficPolicyInstancesByHostedZone</code> that produced the
-     * current response. </p>
+     * <code>ListTrafficPolicyInstancesByHostedZone</code> request that produced the
+     * current response.</p>
      */
     inline void SetMaxItems(const Aws::String& value) { m_maxItems = value; }
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-     * call to <code>ListTrafficPolicyInstancesByHostedZone</code> that produced the
-     * current response. </p>
+     * <code>ListTrafficPolicyInstancesByHostedZone</code> request that produced the
+     * current response.</p>
      */
     inline void SetMaxItems(Aws::String&& value) { m_maxItems = std::move(value); }
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-     * call to <code>ListTrafficPolicyInstancesByHostedZone</code> that produced the
-     * current response. </p>
+     * <code>ListTrafficPolicyInstancesByHostedZone</code> request that produced the
+     * current response.</p>
      */
     inline void SetMaxItems(const char* value) { m_maxItems.assign(value); }
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-     * call to <code>ListTrafficPolicyInstancesByHostedZone</code> that produced the
-     * current response. </p>
+     * <code>ListTrafficPolicyInstancesByHostedZone</code> request that produced the
+     * current response.</p>
      */
     inline ListTrafficPolicyInstancesByHostedZoneResult& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-     * call to <code>ListTrafficPolicyInstancesByHostedZone</code> that produced the
-     * current response. </p>
+     * <code>ListTrafficPolicyInstancesByHostedZone</code> request that produced the
+     * current response.</p>
      */
     inline ListTrafficPolicyInstancesByHostedZoneResult& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-     * call to <code>ListTrafficPolicyInstancesByHostedZone</code> that produced the
-     * current response. </p>
+     * <code>ListTrafficPolicyInstancesByHostedZone</code> request that produced the
+     * current response.</p>
      */
     inline ListTrafficPolicyInstancesByHostedZoneResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 

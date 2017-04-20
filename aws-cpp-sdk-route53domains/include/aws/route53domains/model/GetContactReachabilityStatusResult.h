@@ -77,57 +77,52 @@ namespace Model
     inline GetContactReachabilityStatusResult& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>Whether the registrant contact has responded. <code>PENDING</code> indicates
-     * that we sent the confirmation email and haven't received a response yet,
-     * <code>DONE</code> indicates that we sent the email and got confirmation from the
-     * registrant contact, and <code>EXPIRED</code> indicates that the time limit
-     * expired before the registrant contact responded. </p> <p>Type: String</p>
-     * <p>Valid values: <code>PENDING</code>, <code>DONE</code>,
-     * <code>EXPIRED</code></p>
+     * <p>Whether the registrant contact has responded. Values include the
+     * following:</p> <dl> <dt>PENDING</dt> <dd> <p>We sent the confirmation email and
+     * haven't received a response yet.</p> </dd> <dt>DONE</dt> <dd> <p>We sent the
+     * email and got confirmation from the registrant contact.</p> </dd>
+     * <dt>EXPIRED</dt> <dd> <p>The time limit expired before the registrant contact
+     * responded.</p> </dd> </dl>
      */
     inline const ReachabilityStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Whether the registrant contact has responded. <code>PENDING</code> indicates
-     * that we sent the confirmation email and haven't received a response yet,
-     * <code>DONE</code> indicates that we sent the email and got confirmation from the
-     * registrant contact, and <code>EXPIRED</code> indicates that the time limit
-     * expired before the registrant contact responded. </p> <p>Type: String</p>
-     * <p>Valid values: <code>PENDING</code>, <code>DONE</code>,
-     * <code>EXPIRED</code></p>
+     * <p>Whether the registrant contact has responded. Values include the
+     * following:</p> <dl> <dt>PENDING</dt> <dd> <p>We sent the confirmation email and
+     * haven't received a response yet.</p> </dd> <dt>DONE</dt> <dd> <p>We sent the
+     * email and got confirmation from the registrant contact.</p> </dd>
+     * <dt>EXPIRED</dt> <dd> <p>The time limit expired before the registrant contact
+     * responded.</p> </dd> </dl>
      */
     inline void SetStatus(const ReachabilityStatus& value) { m_status = value; }
 
     /**
-     * <p>Whether the registrant contact has responded. <code>PENDING</code> indicates
-     * that we sent the confirmation email and haven't received a response yet,
-     * <code>DONE</code> indicates that we sent the email and got confirmation from the
-     * registrant contact, and <code>EXPIRED</code> indicates that the time limit
-     * expired before the registrant contact responded. </p> <p>Type: String</p>
-     * <p>Valid values: <code>PENDING</code>, <code>DONE</code>,
-     * <code>EXPIRED</code></p>
+     * <p>Whether the registrant contact has responded. Values include the
+     * following:</p> <dl> <dt>PENDING</dt> <dd> <p>We sent the confirmation email and
+     * haven't received a response yet.</p> </dd> <dt>DONE</dt> <dd> <p>We sent the
+     * email and got confirmation from the registrant contact.</p> </dd>
+     * <dt>EXPIRED</dt> <dd> <p>The time limit expired before the registrant contact
+     * responded.</p> </dd> </dl>
      */
     inline void SetStatus(ReachabilityStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>Whether the registrant contact has responded. <code>PENDING</code> indicates
-     * that we sent the confirmation email and haven't received a response yet,
-     * <code>DONE</code> indicates that we sent the email and got confirmation from the
-     * registrant contact, and <code>EXPIRED</code> indicates that the time limit
-     * expired before the registrant contact responded. </p> <p>Type: String</p>
-     * <p>Valid values: <code>PENDING</code>, <code>DONE</code>,
-     * <code>EXPIRED</code></p>
+     * <p>Whether the registrant contact has responded. Values include the
+     * following:</p> <dl> <dt>PENDING</dt> <dd> <p>We sent the confirmation email and
+     * haven't received a response yet.</p> </dd> <dt>DONE</dt> <dd> <p>We sent the
+     * email and got confirmation from the registrant contact.</p> </dd>
+     * <dt>EXPIRED</dt> <dd> <p>The time limit expired before the registrant contact
+     * responded.</p> </dd> </dl>
      */
     inline GetContactReachabilityStatusResult& WithStatus(const ReachabilityStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Whether the registrant contact has responded. <code>PENDING</code> indicates
-     * that we sent the confirmation email and haven't received a response yet,
-     * <code>DONE</code> indicates that we sent the email and got confirmation from the
-     * registrant contact, and <code>EXPIRED</code> indicates that the time limit
-     * expired before the registrant contact responded. </p> <p>Type: String</p>
-     * <p>Valid values: <code>PENDING</code>, <code>DONE</code>,
-     * <code>EXPIRED</code></p>
+     * <p>Whether the registrant contact has responded. Values include the
+     * following:</p> <dl> <dt>PENDING</dt> <dd> <p>We sent the confirmation email and
+     * haven't received a response yet.</p> </dd> <dt>DONE</dt> <dd> <p>We sent the
+     * email and got confirmation from the registrant contact.</p> </dd>
+     * <dt>EXPIRED</dt> <dd> <p>The time limit expired before the registrant contact
+     * responded.</p> </dd> </dl>
      */
     inline GetContactReachabilityStatusResult& WithStatus(ReachabilityStatus&& value) { SetStatus(std::move(value)); return *this;}
 

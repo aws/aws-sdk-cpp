@@ -36,43 +36,122 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>A domain name that you want to use as the basis for a list of possible domain
+     * names. The domain name must contain a top-level domain (TLD), such as .com, that
+     * Amazon Route 53 supports. For a list of TLDs, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i>.</p>
+     */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
-    
+    /**
+     * <p>A domain name that you want to use as the basis for a list of possible domain
+     * names. The domain name must contain a top-level domain (TLD), such as .com, that
+     * Amazon Route 53 supports. For a list of TLDs, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i>.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
-    
+    /**
+     * <p>A domain name that you want to use as the basis for a list of possible domain
+     * names. The domain name must contain a top-level domain (TLD), such as .com, that
+     * Amazon Route 53 supports. For a list of TLDs, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i>.</p>
+     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
-    
+    /**
+     * <p>A domain name that you want to use as the basis for a list of possible domain
+     * names. The domain name must contain a top-level domain (TLD), such as .com, that
+     * Amazon Route 53 supports. For a list of TLDs, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i>.</p>
+     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
-    
+    /**
+     * <p>A domain name that you want to use as the basis for a list of possible domain
+     * names. The domain name must contain a top-level domain (TLD), such as .com, that
+     * Amazon Route 53 supports. For a list of TLDs, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i>.</p>
+     */
     inline GetDomainSuggestionsRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
-    
+    /**
+     * <p>A domain name that you want to use as the basis for a list of possible domain
+     * names. The domain name must contain a top-level domain (TLD), such as .com, that
+     * Amazon Route 53 supports. For a list of TLDs, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i>.</p>
+     */
     inline GetDomainSuggestionsRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A domain name that you want to use as the basis for a list of possible domain
+     * names. The domain name must contain a top-level domain (TLD), such as .com, that
+     * Amazon Route 53 supports. For a list of TLDs, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i>.</p>
+     */
     inline GetDomainSuggestionsRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
-    
+    /**
+     * <p>The number of suggested domain names that you want Amazon Route 53 to
+     * return.</p>
+     */
     inline int GetSuggestionCount() const{ return m_suggestionCount; }
 
-    
+    /**
+     * <p>The number of suggested domain names that you want Amazon Route 53 to
+     * return.</p>
+     */
     inline void SetSuggestionCount(int value) { m_suggestionCountHasBeenSet = true; m_suggestionCount = value; }
 
-    
+    /**
+     * <p>The number of suggested domain names that you want Amazon Route 53 to
+     * return.</p>
+     */
     inline GetDomainSuggestionsRequest& WithSuggestionCount(int value) { SetSuggestionCount(value); return *this;}
 
-    
+    /**
+     * <p>If <code>OnlyAvailable</code> is <code>true</code>, Amazon Route 53 returns
+     * only domain names that are available. If <code>OnlyAvailable</code> is
+     * <code>false</code>, Amazon Route 53 returns domain names without checking
+     * whether they're available to be registered. To determine whether the domain is
+     * available, you can call <code>checkDomainAvailability</code> for each
+     * suggestion.</p>
+     */
     inline bool GetOnlyAvailable() const{ return m_onlyAvailable; }
 
-    
+    /**
+     * <p>If <code>OnlyAvailable</code> is <code>true</code>, Amazon Route 53 returns
+     * only domain names that are available. If <code>OnlyAvailable</code> is
+     * <code>false</code>, Amazon Route 53 returns domain names without checking
+     * whether they're available to be registered. To determine whether the domain is
+     * available, you can call <code>checkDomainAvailability</code> for each
+     * suggestion.</p>
+     */
     inline void SetOnlyAvailable(bool value) { m_onlyAvailableHasBeenSet = true; m_onlyAvailable = value; }
 
-    
+    /**
+     * <p>If <code>OnlyAvailable</code> is <code>true</code>, Amazon Route 53 returns
+     * only domain names that are available. If <code>OnlyAvailable</code> is
+     * <code>false</code>, Amazon Route 53 returns domain names without checking
+     * whether they're available to be registered. To determine whether the domain is
+     * available, you can call <code>checkDomainAvailability</code> for each
+     * suggestion.</p>
+     */
     inline GetDomainSuggestionsRequest& WithOnlyAvailable(bool value) { SetOnlyAvailable(value); return *this;}
 
   private:

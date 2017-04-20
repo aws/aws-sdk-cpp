@@ -30,6 +30,7 @@ namespace Model
 OfferingTransaction::OfferingTransaction() : 
     m_offeringStatusHasBeenSet(false),
     m_transactionIdHasBeenSet(false),
+    m_offeringPromotionIdHasBeenSet(false),
     m_createdOnHasBeenSet(false),
     m_costHasBeenSet(false)
 {
@@ -38,6 +39,7 @@ OfferingTransaction::OfferingTransaction() :
 OfferingTransaction::OfferingTransaction(const JsonValue& jsonValue) : 
     m_offeringStatusHasBeenSet(false),
     m_transactionIdHasBeenSet(false),
+    m_offeringPromotionIdHasBeenSet(false),
     m_createdOnHasBeenSet(false),
     m_costHasBeenSet(false)
 {
@@ -58,6 +60,13 @@ OfferingTransaction& OfferingTransaction::operator =(const JsonValue& jsonValue)
     m_transactionId = jsonValue.GetString("transactionId");
 
     m_transactionIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("offeringPromotionId"))
+  {
+    m_offeringPromotionId = jsonValue.GetString("offeringPromotionId");
+
+    m_offeringPromotionIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdOn"))
@@ -90,6 +99,12 @@ JsonValue OfferingTransaction::Jsonize() const
   if(m_transactionIdHasBeenSet)
   {
    payload.WithString("transactionId", m_transactionId);
+
+  }
+
+  if(m_offeringPromotionIdHasBeenSet)
+  {
+   payload.WithString("offeringPromotionId", m_offeringPromotionId);
 
   }
 

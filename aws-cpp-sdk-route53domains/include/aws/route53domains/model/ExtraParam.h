@@ -47,142 +47,68 @@ namespace Model
 
     /**
      * <p>Name of the additional parameter required by the top-level domain.</p>
-     * <p>Type: String</p> <p>Default: None</p> <p>Valid values:
-     * <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> |
-     * <code>BIRTH_DEPARTMENT</code> | <code>BIRTH_DATE_IN_YYYY_MM_DD</code> |
-     * <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
-     * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
-     * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
-     * <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
-     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
-     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code>
-     * | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code></p> <p>Parent:
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
     inline const ExtraParamName& GetName() const{ return m_name; }
 
     /**
      * <p>Name of the additional parameter required by the top-level domain.</p>
-     * <p>Type: String</p> <p>Default: None</p> <p>Valid values:
-     * <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> |
-     * <code>BIRTH_DEPARTMENT</code> | <code>BIRTH_DATE_IN_YYYY_MM_DD</code> |
-     * <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
-     * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
-     * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
-     * <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
-     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
-     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code>
-     * | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code></p> <p>Parent:
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
     inline void SetName(const ExtraParamName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>Name of the additional parameter required by the top-level domain.</p>
-     * <p>Type: String</p> <p>Default: None</p> <p>Valid values:
-     * <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> |
-     * <code>BIRTH_DEPARTMENT</code> | <code>BIRTH_DATE_IN_YYYY_MM_DD</code> |
-     * <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
-     * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
-     * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
-     * <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
-     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
-     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code>
-     * | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code></p> <p>Parent:
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
     inline void SetName(ExtraParamName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Name of the additional parameter required by the top-level domain.</p>
-     * <p>Type: String</p> <p>Default: None</p> <p>Valid values:
-     * <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> |
-     * <code>BIRTH_DEPARTMENT</code> | <code>BIRTH_DATE_IN_YYYY_MM_DD</code> |
-     * <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
-     * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
-     * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
-     * <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
-     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
-     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code>
-     * | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code></p> <p>Parent:
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
     inline ExtraParam& WithName(const ExtraParamName& value) { SetName(value); return *this;}
 
     /**
      * <p>Name of the additional parameter required by the top-level domain.</p>
-     * <p>Type: String</p> <p>Default: None</p> <p>Valid values:
-     * <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> |
-     * <code>BIRTH_DEPARTMENT</code> | <code>BIRTH_DATE_IN_YYYY_MM_DD</code> |
-     * <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
-     * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
-     * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
-     * <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
-     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
-     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code>
-     * | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code></p> <p>Parent:
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
     inline ExtraParam& WithName(ExtraParamName&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Values corresponding to the additional parameter names required by some
-     * top-level domains.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints:
-     * Maximum 2048 characters.</p> <p>Parent: <code>ExtraParams</code></p>
-     * <p>Required: Yes</p>
+     * top-level domains.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
      * <p>Values corresponding to the additional parameter names required by some
-     * top-level domains.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints:
-     * Maximum 2048 characters.</p> <p>Parent: <code>ExtraParams</code></p>
-     * <p>Required: Yes</p>
+     * top-level domains.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>Values corresponding to the additional parameter names required by some
-     * top-level domains.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints:
-     * Maximum 2048 characters.</p> <p>Parent: <code>ExtraParams</code></p>
-     * <p>Required: Yes</p>
+     * top-level domains.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>Values corresponding to the additional parameter names required by some
-     * top-level domains.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints:
-     * Maximum 2048 characters.</p> <p>Parent: <code>ExtraParams</code></p>
-     * <p>Required: Yes</p>
+     * top-level domains.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
      * <p>Values corresponding to the additional parameter names required by some
-     * top-level domains.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints:
-     * Maximum 2048 characters.</p> <p>Parent: <code>ExtraParams</code></p>
-     * <p>Required: Yes</p>
+     * top-level domains.</p>
      */
     inline ExtraParam& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
      * <p>Values corresponding to the additional parameter names required by some
-     * top-level domains.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints:
-     * Maximum 2048 characters.</p> <p>Parent: <code>ExtraParams</code></p>
-     * <p>Required: Yes</p>
+     * top-level domains.</p>
      */
     inline ExtraParam& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>Values corresponding to the additional parameter names required by some
-     * top-level domains.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints:
-     * Maximum 2048 characters.</p> <p>Parent: <code>ExtraParams</code></p>
-     * <p>Required: Yes</p>
+     * top-level domains.</p>
      */
     inline ExtraParam& WithValue(const char* value) { SetValue(value); return *this;}
 

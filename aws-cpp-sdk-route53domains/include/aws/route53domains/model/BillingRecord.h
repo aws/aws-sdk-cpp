@@ -33,6 +33,11 @@ namespace Route53Domains
 namespace Model
 {
 
+  /**
+   * <p>Information for one billing record.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/BillingRecord">AWS
+   * API Reference</a></p>
+   */
   class AWS_ROUTE53DOMAINS_API BillingRecord
   {
   public:
@@ -42,167 +47,175 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p>
+     * <p>The name of the domain that the billing record applies to. If the domain name
+     * contains characters other than a-z, 0-9, and - (hyphen), such as an
+     * internationalized domain name, then this value is in Punycode. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p>
+     * <p>The name of the domain that the billing record applies to. If the domain name
+     * contains characters other than a-z, 0-9, and - (hyphen), such as an
+     * internationalized domain name, then this value is in Punycode. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p>
+     * <p>The name of the domain that the billing record applies to. If the domain name
+     * contains characters other than a-z, 0-9, and - (hyphen), such as an
+     * internationalized domain name, then this value is in Punycode. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p>
+     * <p>The name of the domain that the billing record applies to. If the domain name
+     * contains characters other than a-z, 0-9, and - (hyphen), such as an
+     * internationalized domain name, then this value is in Punycode. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p>
+     * <p>The name of the domain that the billing record applies to. If the domain name
+     * contains characters other than a-z, 0-9, and - (hyphen), such as an
+     * internationalized domain name, then this value is in Punycode. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.</p>
      */
     inline BillingRecord& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p>
+     * <p>The name of the domain that the billing record applies to. If the domain name
+     * contains characters other than a-z, 0-9, and - (hyphen), such as an
+     * internationalized domain name, then this value is in Punycode. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.</p>
      */
     inline BillingRecord& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p>
+     * <p>The name of the domain that the billing record applies to. If the domain name
+     * contains characters other than a-z, 0-9, and - (hyphen), such as an
+     * internationalized domain name, then this value is in Punycode. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.</p>
      */
     inline BillingRecord& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The operation that you were charged for.</p> <p>Type: String</p> <p>Valid
-     * values: <ul> <li><code>REGISTER_DOMAIN</code></li>
-     * <li><code>TRANSFER_IN_DOMAIN</code></li> <li><code>RENEW_DOMAIN</code></li>
-     * <li><code>CHANGE_DOMAIN_OWNER</code></li> </ul> </p>
+     * <p>The operation that you were charged for.</p>
      */
     inline const OperationType& GetOperation() const{ return m_operation; }
 
     /**
-     * <p>The operation that you were charged for.</p> <p>Type: String</p> <p>Valid
-     * values: <ul> <li><code>REGISTER_DOMAIN</code></li>
-     * <li><code>TRANSFER_IN_DOMAIN</code></li> <li><code>RENEW_DOMAIN</code></li>
-     * <li><code>CHANGE_DOMAIN_OWNER</code></li> </ul> </p>
+     * <p>The operation that you were charged for.</p>
      */
     inline void SetOperation(const OperationType& value) { m_operationHasBeenSet = true; m_operation = value; }
 
     /**
-     * <p>The operation that you were charged for.</p> <p>Type: String</p> <p>Valid
-     * values: <ul> <li><code>REGISTER_DOMAIN</code></li>
-     * <li><code>TRANSFER_IN_DOMAIN</code></li> <li><code>RENEW_DOMAIN</code></li>
-     * <li><code>CHANGE_DOMAIN_OWNER</code></li> </ul> </p>
+     * <p>The operation that you were charged for.</p>
      */
     inline void SetOperation(OperationType&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
 
     /**
-     * <p>The operation that you were charged for.</p> <p>Type: String</p> <p>Valid
-     * values: <ul> <li><code>REGISTER_DOMAIN</code></li>
-     * <li><code>TRANSFER_IN_DOMAIN</code></li> <li><code>RENEW_DOMAIN</code></li>
-     * <li><code>CHANGE_DOMAIN_OWNER</code></li> </ul> </p>
+     * <p>The operation that you were charged for.</p>
      */
     inline BillingRecord& WithOperation(const OperationType& value) { SetOperation(value); return *this;}
 
     /**
-     * <p>The operation that you were charged for.</p> <p>Type: String</p> <p>Valid
-     * values: <ul> <li><code>REGISTER_DOMAIN</code></li>
-     * <li><code>TRANSFER_IN_DOMAIN</code></li> <li><code>RENEW_DOMAIN</code></li>
-     * <li><code>CHANGE_DOMAIN_OWNER</code></li> </ul> </p>
+     * <p>The operation that you were charged for.</p>
      */
     inline BillingRecord& WithOperation(OperationType&& value) { SetOperation(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the invoice that is associated with the billing record.</p>
-     * <p>Type: String</p>
      */
     inline const Aws::String& GetInvoiceId() const{ return m_invoiceId; }
 
     /**
      * <p>The ID of the invoice that is associated with the billing record.</p>
-     * <p>Type: String</p>
      */
     inline void SetInvoiceId(const Aws::String& value) { m_invoiceIdHasBeenSet = true; m_invoiceId = value; }
 
     /**
      * <p>The ID of the invoice that is associated with the billing record.</p>
-     * <p>Type: String</p>
      */
     inline void SetInvoiceId(Aws::String&& value) { m_invoiceIdHasBeenSet = true; m_invoiceId = std::move(value); }
 
     /**
      * <p>The ID of the invoice that is associated with the billing record.</p>
-     * <p>Type: String</p>
      */
     inline void SetInvoiceId(const char* value) { m_invoiceIdHasBeenSet = true; m_invoiceId.assign(value); }
 
     /**
      * <p>The ID of the invoice that is associated with the billing record.</p>
-     * <p>Type: String</p>
      */
     inline BillingRecord& WithInvoiceId(const Aws::String& value) { SetInvoiceId(value); return *this;}
 
     /**
      * <p>The ID of the invoice that is associated with the billing record.</p>
-     * <p>Type: String</p>
      */
     inline BillingRecord& WithInvoiceId(Aws::String&& value) { SetInvoiceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the invoice that is associated with the billing record.</p>
-     * <p>Type: String</p>
      */
     inline BillingRecord& WithInvoiceId(const char* value) { SetInvoiceId(value); return *this;}
 
     /**
-     * <p>The date that the operation was billed, in Unix format.</p> <p>Type:
-     * Double</p>
+     * <p>The date that the operation was billed, in Unix format.</p>
      */
     inline const Aws::Utils::DateTime& GetBillDate() const{ return m_billDate; }
 
     /**
-     * <p>The date that the operation was billed, in Unix format.</p> <p>Type:
-     * Double</p>
+     * <p>The date that the operation was billed, in Unix format.</p>
      */
     inline void SetBillDate(const Aws::Utils::DateTime& value) { m_billDateHasBeenSet = true; m_billDate = value; }
 
     /**
-     * <p>The date that the operation was billed, in Unix format.</p> <p>Type:
-     * Double</p>
+     * <p>The date that the operation was billed, in Unix format.</p>
      */
     inline void SetBillDate(Aws::Utils::DateTime&& value) { m_billDateHasBeenSet = true; m_billDate = std::move(value); }
 
     /**
-     * <p>The date that the operation was billed, in Unix format.</p> <p>Type:
-     * Double</p>
+     * <p>The date that the operation was billed, in Unix format.</p>
      */
     inline BillingRecord& WithBillDate(const Aws::Utils::DateTime& value) { SetBillDate(value); return *this;}
 
     /**
-     * <p>The date that the operation was billed, in Unix format.</p> <p>Type:
-     * Double</p>
+     * <p>The date that the operation was billed, in Unix format.</p>
      */
     inline BillingRecord& WithBillDate(Aws::Utils::DateTime&& value) { SetBillDate(std::move(value)); return *this;}
 
     /**
      * <p>The price that you were charged for the operation, in US dollars.</p>
-     * <p>Type: Double</p> <p>Example value: 12.0</p>
+     * <p>Example value: 12.0</p>
      */
     inline double GetPrice() const{ return m_price; }
 
     /**
      * <p>The price that you were charged for the operation, in US dollars.</p>
-     * <p>Type: Double</p> <p>Example value: 12.0</p>
+     * <p>Example value: 12.0</p>
      */
     inline void SetPrice(double value) { m_priceHasBeenSet = true; m_price = value; }
 
     /**
      * <p>The price that you were charged for the operation, in US dollars.</p>
-     * <p>Type: Double</p> <p>Example value: 12.0</p>
+     * <p>Example value: 12.0</p>
      */
     inline BillingRecord& WithPrice(double value) { SetPrice(value); return *this;}
 

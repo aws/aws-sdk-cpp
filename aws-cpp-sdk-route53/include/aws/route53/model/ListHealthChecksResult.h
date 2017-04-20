@@ -92,133 +92,130 @@ namespace Model
 
     /**
      * <p>For the second and subsequent calls to <code>ListHealthChecks</code>,
-     * <code>Marker</code> is the value that you specified for the marker parameter in
-     * the previous request.</p>
+     * <code>Marker</code> is the value that you specified for the <code>marker</code>
+     * parameter in the previous request.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p>For the second and subsequent calls to <code>ListHealthChecks</code>,
-     * <code>Marker</code> is the value that you specified for the marker parameter in
-     * the previous request.</p>
+     * <code>Marker</code> is the value that you specified for the <code>marker</code>
+     * parameter in the previous request.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
      * <p>For the second and subsequent calls to <code>ListHealthChecks</code>,
-     * <code>Marker</code> is the value that you specified for the marker parameter in
-     * the previous request.</p>
+     * <code>Marker</code> is the value that you specified for the <code>marker</code>
+     * parameter in the previous request.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>For the second and subsequent calls to <code>ListHealthChecks</code>,
-     * <code>Marker</code> is the value that you specified for the marker parameter in
-     * the previous request.</p>
+     * <code>Marker</code> is the value that you specified for the <code>marker</code>
+     * parameter in the previous request.</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
      * <p>For the second and subsequent calls to <code>ListHealthChecks</code>,
-     * <code>Marker</code> is the value that you specified for the marker parameter in
-     * the previous request.</p>
+     * <code>Marker</code> is the value that you specified for the <code>marker</code>
+     * parameter in the previous request.</p>
      */
     inline ListHealthChecksResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p>For the second and subsequent calls to <code>ListHealthChecks</code>,
-     * <code>Marker</code> is the value that you specified for the marker parameter in
-     * the previous request.</p>
+     * <code>Marker</code> is the value that you specified for the <code>marker</code>
+     * parameter in the previous request.</p>
      */
     inline ListHealthChecksResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>For the second and subsequent calls to <code>ListHealthChecks</code>,
-     * <code>Marker</code> is the value that you specified for the marker parameter in
-     * the previous request.</p>
+     * <code>Marker</code> is the value that you specified for the <code>marker</code>
+     * parameter in the previous request.</p>
      */
     inline ListHealthChecksResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
      * <p>A flag that indicates whether there are more health checks to be listed. If
-     * the response was truncated, you can get the next group of <code>maxitems</code>
-     * health checks by calling <code>ListHealthChecks</code> again and specifying the
-     * value of the <code>NextMarker</code> element in the marker parameter.</p>
-     * <p>Valid Values: <code>true</code> | <code>false</code> </p>
+     * the response was truncated, you can get the next group of health checks by
+     * submitting another <code>ListHealthChecks</code> request and specifying the
+     * value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
      * <p>A flag that indicates whether there are more health checks to be listed. If
-     * the response was truncated, you can get the next group of <code>maxitems</code>
-     * health checks by calling <code>ListHealthChecks</code> again and specifying the
-     * value of the <code>NextMarker</code> element in the marker parameter.</p>
-     * <p>Valid Values: <code>true</code> | <code>false</code> </p>
+     * the response was truncated, you can get the next group of health checks by
+     * submitting another <code>ListHealthChecks</code> request and specifying the
+     * value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
      * <p>A flag that indicates whether there are more health checks to be listed. If
-     * the response was truncated, you can get the next group of <code>maxitems</code>
-     * health checks by calling <code>ListHealthChecks</code> again and specifying the
-     * value of the <code>NextMarker</code> element in the marker parameter.</p>
-     * <p>Valid Values: <code>true</code> | <code>false</code> </p>
+     * the response was truncated, you can get the next group of health checks by
+     * submitting another <code>ListHealthChecks</code> request and specifying the
+     * value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline ListHealthChecksResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>NextMarker</code> identifies the first health check in the next group of
-     * <code>maxitems</code> health checks. Call <code>ListHealthChecks</code> again
-     * and specify the value of <code>NextMarker</code> in the marker parameter.</p>
+     * <code>NextMarker</code> identifies the first health check that Amazon Route 53
+     * returns if you submit another <code>ListHealthChecks</code> request and specify
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>NextMarker</code> identifies the first health check in the next group of
-     * <code>maxitems</code> health checks. Call <code>ListHealthChecks</code> again
-     * and specify the value of <code>NextMarker</code> in the marker parameter.</p>
+     * <code>NextMarker</code> identifies the first health check that Amazon Route 53
+     * returns if you submit another <code>ListHealthChecks</code> request and specify
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>NextMarker</code> identifies the first health check in the next group of
-     * <code>maxitems</code> health checks. Call <code>ListHealthChecks</code> again
-     * and specify the value of <code>NextMarker</code> in the marker parameter.</p>
+     * <code>NextMarker</code> identifies the first health check that Amazon Route 53
+     * returns if you submit another <code>ListHealthChecks</code> request and specify
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>NextMarker</code> identifies the first health check in the next group of
-     * <code>maxitems</code> health checks. Call <code>ListHealthChecks</code> again
-     * and specify the value of <code>NextMarker</code> in the marker parameter.</p>
+     * <code>NextMarker</code> identifies the first health check that Amazon Route 53
+     * returns if you submit another <code>ListHealthChecks</code> request and specify
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>NextMarker</code> identifies the first health check in the next group of
-     * <code>maxitems</code> health checks. Call <code>ListHealthChecks</code> again
-     * and specify the value of <code>NextMarker</code> in the marker parameter.</p>
+     * <code>NextMarker</code> identifies the first health check that Amazon Route 53
+     * returns if you submit another <code>ListHealthChecks</code> request and specify
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline ListHealthChecksResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>NextMarker</code> identifies the first health check in the next group of
-     * <code>maxitems</code> health checks. Call <code>ListHealthChecks</code> again
-     * and specify the value of <code>NextMarker</code> in the marker parameter.</p>
+     * <code>NextMarker</code> identifies the first health check that Amazon Route 53
+     * returns if you submit another <code>ListHealthChecks</code> request and specify
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline ListHealthChecksResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>NextMarker</code> identifies the first health check in the next group of
-     * <code>maxitems</code> health checks. Call <code>ListHealthChecks</code> again
-     * and specify the value of <code>NextMarker</code> in the marker parameter.</p>
+     * <code>NextMarker</code> identifies the first health check that Amazon Route 53
+     * returns if you submit another <code>ListHealthChecks</code> request and specify
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline ListHealthChecksResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 

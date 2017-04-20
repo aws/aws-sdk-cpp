@@ -26,8 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>The RetrieveDomainAuthCode request includes the following
-   * element.</p><p><h3>See Also:</h3>   <a
+   * <p>A request for the authorization code for the specified domain. To transfer a
+   * domain to another registrar, you provide this value to the new
+   * registrar.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCodeRequest">AWS
    * API Reference</a></p>
    */
@@ -41,58 +42,37 @@ namespace Model
 
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to get an authorization code for.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to get an authorization code for.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to get an authorization code for.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to get an authorization code for.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to get an authorization code for.</p>
      */
     inline RetrieveDomainAuthCodeRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to get an authorization code for.</p>
      */
     inline RetrieveDomainAuthCodeRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to get an authorization code for.</p>
      */
     inline RetrieveDomainAuthCodeRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

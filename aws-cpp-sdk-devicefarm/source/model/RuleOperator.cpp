@@ -34,6 +34,7 @@ namespace Aws
         static const int GREATER_THAN_HASH = HashingUtils::HashString("GREATER_THAN");
         static const int IN_HASH = HashingUtils::HashString("IN");
         static const int NOT_IN_HASH = HashingUtils::HashString("NOT_IN");
+        static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
 
 
         RuleOperator GetRuleOperatorForName(const Aws::String& name)
@@ -59,6 +60,10 @@ namespace Aws
           {
             return RuleOperator::NOT_IN;
           }
+          else if (hashCode == CONTAINS_HASH)
+          {
+            return RuleOperator::CONTAINS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "IN";
           case RuleOperator::NOT_IN:
             return "NOT_IN";
+          case RuleOperator::CONTAINS:
+            return "CONTAINS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

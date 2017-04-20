@@ -84,7 +84,9 @@ namespace Model
      * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul> <li>
      * <p>ARN: The ARN.</p> </li> <li> <p>FORM_FACTOR: The form factor (for example,
      * phone or tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li>
-     * <li> <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
+     * <li> <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> <li>
+     * <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.</p>
+     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> </ul>
      */
     inline const DeviceAttribute& GetType() const{ return m_type; }
 
@@ -92,7 +94,9 @@ namespace Model
      * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul> <li>
      * <p>ARN: The ARN.</p> </li> <li> <p>FORM_FACTOR: The form factor (for example,
      * phone or tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li>
-     * <li> <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
+     * <li> <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> <li>
+     * <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.</p>
+     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> </ul>
      */
     inline void SetType(const DeviceAttribute& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -100,7 +104,9 @@ namespace Model
      * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul> <li>
      * <p>ARN: The ARN.</p> </li> <li> <p>FORM_FACTOR: The form factor (for example,
      * phone or tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li>
-     * <li> <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
+     * <li> <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> <li>
+     * <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.</p>
+     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> </ul>
      */
     inline void SetType(DeviceAttribute&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -108,7 +114,9 @@ namespace Model
      * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul> <li>
      * <p>ARN: The ARN.</p> </li> <li> <p>FORM_FACTOR: The form factor (for example,
      * phone or tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li>
-     * <li> <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
+     * <li> <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> <li>
+     * <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.</p>
+     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> </ul>
      */
     inline IncompatibilityMessage& WithType(const DeviceAttribute& value) { SetType(value); return *this;}
 
@@ -116,7 +124,9 @@ namespace Model
      * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul> <li>
      * <p>ARN: The ARN.</p> </li> <li> <p>FORM_FACTOR: The form factor (for example,
      * phone or tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li>
-     * <li> <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
+     * <li> <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> <li>
+     * <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.</p>
+     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> </ul>
      */
     inline IncompatibilityMessage& WithType(DeviceAttribute&& value) { SetType(std::move(value)); return *this;}
 

@@ -265,7 +265,7 @@ namespace Model
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, a complex type
-     * that contains information about the dimensions for the metric.For information,
+     * that contains information about the dimensions for the metric. For information,
      * see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
@@ -275,7 +275,7 @@ namespace Model
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, a complex type
-     * that contains information about the dimensions for the metric.For information,
+     * that contains information about the dimensions for the metric. For information,
      * see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
@@ -285,7 +285,7 @@ namespace Model
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, a complex type
-     * that contains information about the dimensions for the metric.For information,
+     * that contains information about the dimensions for the metric. For information,
      * see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
@@ -295,7 +295,7 @@ namespace Model
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, a complex type
-     * that contains information about the dimensions for the metric.For information,
+     * that contains information about the dimensions for the metric. For information,
      * see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
@@ -305,7 +305,7 @@ namespace Model
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, a complex type
-     * that contains information about the dimensions for the metric.For information,
+     * that contains information about the dimensions for the metric. For information,
      * see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
@@ -315,7 +315,7 @@ namespace Model
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, a complex type
-     * that contains information about the dimensions for the metric.For information,
+     * that contains information about the dimensions for the metric. For information,
      * see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
@@ -325,7 +325,7 @@ namespace Model
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, a complex type
-     * that contains information about the dimensions for the metric.For information,
+     * that contains information about the dimensions for the metric. For information,
      * see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon

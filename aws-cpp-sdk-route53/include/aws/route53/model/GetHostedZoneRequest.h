@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The input for a GetHostedZone request.</p><p><h3>See Also:</h3>   <a
+   * <p>A request to get information about a specified hosted zone. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneRequest">AWS
    * API Reference</a></p>
    */
@@ -38,44 +39,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the hosted zone for which you want to get a list of the name
-     * servers in the delegation set.</p>
+     * <p>The ID of the hosted zone that you want to get information about.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID of the hosted zone for which you want to get a list of the name
-     * servers in the delegation set.</p>
+     * <p>The ID of the hosted zone that you want to get information about.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the hosted zone for which you want to get a list of the name
-     * servers in the delegation set.</p>
+     * <p>The ID of the hosted zone that you want to get information about.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID of the hosted zone for which you want to get a list of the name
-     * servers in the delegation set.</p>
+     * <p>The ID of the hosted zone that you want to get information about.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID of the hosted zone for which you want to get a list of the name
-     * servers in the delegation set.</p>
+     * <p>The ID of the hosted zone that you want to get information about.</p>
      */
     inline GetHostedZoneRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the hosted zone for which you want to get a list of the name
-     * servers in the delegation set.</p>
+     * <p>The ID of the hosted zone that you want to get information about.</p>
      */
     inline GetHostedZoneRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the hosted zone for which you want to get a list of the name
-     * servers in the delegation set.</p>
+     * <p>The ID of the hosted zone that you want to get information about.</p>
      */
     inline GetHostedZoneRequest& WithId(const char* value) { SetId(value); return *this;}
 

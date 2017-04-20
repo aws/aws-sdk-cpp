@@ -49,112 +49,87 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Identifier returned to track the requested action.</p> <p>Type: String</p>
+     * <p>Identifier returned to track the requested action.</p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
 
     /**
-     * <p>Identifier returned to track the requested action.</p> <p>Type: String</p>
+     * <p>Identifier returned to track the requested action.</p>
      */
     inline void SetOperationId(const Aws::String& value) { m_operationIdHasBeenSet = true; m_operationId = value; }
 
     /**
-     * <p>Identifier returned to track the requested action.</p> <p>Type: String</p>
+     * <p>Identifier returned to track the requested action.</p>
      */
     inline void SetOperationId(Aws::String&& value) { m_operationIdHasBeenSet = true; m_operationId = std::move(value); }
 
     /**
-     * <p>Identifier returned to track the requested action.</p> <p>Type: String</p>
+     * <p>Identifier returned to track the requested action.</p>
      */
     inline void SetOperationId(const char* value) { m_operationIdHasBeenSet = true; m_operationId.assign(value); }
 
     /**
-     * <p>Identifier returned to track the requested action.</p> <p>Type: String</p>
+     * <p>Identifier returned to track the requested action.</p>
      */
     inline OperationSummary& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
 
     /**
-     * <p>Identifier returned to track the requested action.</p> <p>Type: String</p>
+     * <p>Identifier returned to track the requested action.</p>
      */
     inline OperationSummary& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifier returned to track the requested action.</p> <p>Type: String</p>
+     * <p>Identifier returned to track the requested action.</p>
      */
     inline OperationSummary& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 
     /**
-     * <p>The current status of the requested operation in the system.</p> <p>Type:
-     * String</p>
+     * <p>The current status of the requested operation in the system.</p>
      */
     inline const OperationStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current status of the requested operation in the system.</p> <p>Type:
-     * String</p>
+     * <p>The current status of the requested operation in the system.</p>
      */
     inline void SetStatus(const OperationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current status of the requested operation in the system.</p> <p>Type:
-     * String</p>
+     * <p>The current status of the requested operation in the system.</p>
      */
     inline void SetStatus(OperationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The current status of the requested operation in the system.</p> <p>Type:
-     * String</p>
+     * <p>The current status of the requested operation in the system.</p>
      */
     inline OperationSummary& WithStatus(const OperationStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current status of the requested operation in the system.</p> <p>Type:
-     * String</p>
+     * <p>The current status of the requested operation in the system.</p>
      */
     inline OperationSummary& WithStatus(OperationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>Type of the action requested.</p> <p>Type: String</p> <p>Valid values:
-     * <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> |
-     * <code>TRANSFER_IN_DOMAIN</code> | <code>UPDATE_DOMAIN_CONTACT</code> |
-     * <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
-     * <code>DOMAIN_LOCK</code></p>
+     * <p>Type of the action requested.</p>
      */
     inline const OperationType& GetType() const{ return m_type; }
 
     /**
-     * <p>Type of the action requested.</p> <p>Type: String</p> <p>Valid values:
-     * <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> |
-     * <code>TRANSFER_IN_DOMAIN</code> | <code>UPDATE_DOMAIN_CONTACT</code> |
-     * <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
-     * <code>DOMAIN_LOCK</code></p>
+     * <p>Type of the action requested.</p>
      */
     inline void SetType(const OperationType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Type of the action requested.</p> <p>Type: String</p> <p>Valid values:
-     * <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> |
-     * <code>TRANSFER_IN_DOMAIN</code> | <code>UPDATE_DOMAIN_CONTACT</code> |
-     * <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
-     * <code>DOMAIN_LOCK</code></p>
+     * <p>Type of the action requested.</p>
      */
     inline void SetType(OperationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Type of the action requested.</p> <p>Type: String</p> <p>Valid values:
-     * <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> |
-     * <code>TRANSFER_IN_DOMAIN</code> | <code>UPDATE_DOMAIN_CONTACT</code> |
-     * <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
-     * <code>DOMAIN_LOCK</code></p>
+     * <p>Type of the action requested.</p>
      */
     inline OperationSummary& WithType(const OperationType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Type of the action requested.</p> <p>Type: String</p> <p>Valid values:
-     * <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> |
-     * <code>TRANSFER_IN_DOMAIN</code> | <code>UPDATE_DOMAIN_CONTACT</code> |
-     * <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
-     * <code>DOMAIN_LOCK</code></p>
+     * <p>Type of the action requested.</p>
      */
     inline OperationSummary& WithType(OperationType&& value) { SetType(std::move(value)); return *this;}
 

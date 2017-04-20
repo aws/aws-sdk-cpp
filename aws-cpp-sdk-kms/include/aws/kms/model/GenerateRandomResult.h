@@ -41,27 +41,27 @@ namespace Model
     GenerateRandomResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The unpredictable byte string.</p>
+     * <p>The random byte string.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetPlaintext() const{ return m_plaintext; }
 
     /**
-     * <p>The unpredictable byte string.</p>
+     * <p>The random byte string.</p>
      */
     inline void SetPlaintext(const Aws::Utils::ByteBuffer& value) { m_plaintext = value; }
 
     /**
-     * <p>The unpredictable byte string.</p>
+     * <p>The random byte string.</p>
      */
     inline void SetPlaintext(Aws::Utils::ByteBuffer&& value) { m_plaintext = std::move(value); }
 
     /**
-     * <p>The unpredictable byte string.</p>
+     * <p>The random byte string.</p>
      */
     inline GenerateRandomResult& WithPlaintext(const Aws::Utils::ByteBuffer& value) { SetPlaintext(value); return *this;}
 
     /**
-     * <p>The unpredictable byte string.</p>
+     * <p>The random byte string.</p>
      */
     inline GenerateRandomResult& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(std::move(value)); return *this;}
 

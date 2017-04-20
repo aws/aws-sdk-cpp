@@ -42,223 +42,112 @@ namespace Model
 
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to update contact information for.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to update contact information for.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to update contact information for.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to update contact information for.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to update contact information for.</p>
      */
     inline UpdateDomainContactRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to update contact information for.</p>
      */
     inline UpdateDomainContactRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to update contact information for.</p>
      */
     inline UpdateDomainContactRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
-     * <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     * <code>ContactType</code>, <code>OrganizationName</code>,
-     * <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>,
-     * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
+     * <p>Provides detailed contact information.</p>
      */
     inline const ContactDetail& GetAdminContact() const{ return m_adminContact; }
 
     /**
-     * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
-     * <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     * <code>ContactType</code>, <code>OrganizationName</code>,
-     * <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>,
-     * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
+     * <p>Provides detailed contact information.</p>
      */
     inline void SetAdminContact(const ContactDetail& value) { m_adminContactHasBeenSet = true; m_adminContact = value; }
 
     /**
-     * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
-     * <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     * <code>ContactType</code>, <code>OrganizationName</code>,
-     * <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>,
-     * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
+     * <p>Provides detailed contact information.</p>
      */
     inline void SetAdminContact(ContactDetail&& value) { m_adminContactHasBeenSet = true; m_adminContact = std::move(value); }
 
     /**
-     * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
-     * <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     * <code>ContactType</code>, <code>OrganizationName</code>,
-     * <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>,
-     * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
+     * <p>Provides detailed contact information.</p>
      */
     inline UpdateDomainContactRequest& WithAdminContact(const ContactDetail& value) { SetAdminContact(value); return *this;}
 
     /**
-     * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
-     * <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     * <code>ContactType</code>, <code>OrganizationName</code>,
-     * <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>,
-     * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
+     * <p>Provides detailed contact information.</p>
      */
     inline UpdateDomainContactRequest& WithAdminContact(ContactDetail&& value) { SetAdminContact(std::move(value)); return *this;}
 
     /**
-     * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
-     * <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     * <code>ContactType</code>, <code>OrganizationName</code>,
-     * <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>,
-     * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
+     * <p>Provides detailed contact information.</p>
      */
     inline const ContactDetail& GetRegistrantContact() const{ return m_registrantContact; }
 
     /**
-     * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
-     * <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     * <code>ContactType</code>, <code>OrganizationName</code>,
-     * <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>,
-     * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
+     * <p>Provides detailed contact information.</p>
      */
     inline void SetRegistrantContact(const ContactDetail& value) { m_registrantContactHasBeenSet = true; m_registrantContact = value; }
 
     /**
-     * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
-     * <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     * <code>ContactType</code>, <code>OrganizationName</code>,
-     * <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>,
-     * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
+     * <p>Provides detailed contact information.</p>
      */
     inline void SetRegistrantContact(ContactDetail&& value) { m_registrantContactHasBeenSet = true; m_registrantContact = std::move(value); }
 
     /**
-     * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
-     * <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     * <code>ContactType</code>, <code>OrganizationName</code>,
-     * <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>,
-     * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
+     * <p>Provides detailed contact information.</p>
      */
     inline UpdateDomainContactRequest& WithRegistrantContact(const ContactDetail& value) { SetRegistrantContact(value); return *this;}
 
     /**
-     * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
-     * <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     * <code>ContactType</code>, <code>OrganizationName</code>,
-     * <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>,
-     * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
+     * <p>Provides detailed contact information.</p>
      */
     inline UpdateDomainContactRequest& WithRegistrantContact(ContactDetail&& value) { SetRegistrantContact(std::move(value)); return *this;}
 
     /**
-     * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
-     * <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     * <code>ContactType</code>, <code>OrganizationName</code>,
-     * <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>,
-     * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
+     * <p>Provides detailed contact information.</p>
      */
     inline const ContactDetail& GetTechContact() const{ return m_techContact; }
 
     /**
-     * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
-     * <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     * <code>ContactType</code>, <code>OrganizationName</code>,
-     * <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>,
-     * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
+     * <p>Provides detailed contact information.</p>
      */
     inline void SetTechContact(const ContactDetail& value) { m_techContactHasBeenSet = true; m_techContact = value; }
 
     /**
-     * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
-     * <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     * <code>ContactType</code>, <code>OrganizationName</code>,
-     * <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>,
-     * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
+     * <p>Provides detailed contact information.</p>
      */
     inline void SetTechContact(ContactDetail&& value) { m_techContactHasBeenSet = true; m_techContact = std::move(value); }
 
     /**
-     * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
-     * <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     * <code>ContactType</code>, <code>OrganizationName</code>,
-     * <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>,
-     * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
+     * <p>Provides detailed contact information.</p>
      */
     inline UpdateDomainContactRequest& WithTechContact(const ContactDetail& value) { SetTechContact(value); return *this;}
 
     /**
-     * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
-     * <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     * <code>ContactType</code>, <code>OrganizationName</code>,
-     * <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>,
-     * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     * <code>ExtraParams</code></p> <p>Required: Yes</p>
+     * <p>Provides detailed contact information.</p>
      */
     inline UpdateDomainContactRequest& WithTechContact(ContactDetail&& value) { SetTechContact(std::move(value)); return *this;}
 

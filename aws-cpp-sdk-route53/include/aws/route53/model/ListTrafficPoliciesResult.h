@@ -92,34 +92,28 @@ namespace Model
 
     /**
      * <p>A flag that indicates whether there are more traffic policies to be listed.
-     * If the response was truncated, you can get the next group of
-     * <code>MaxItems</code> traffic policies by calling
-     * <code>ListTrafficPolicies</code> again and specifying the value of the
-     * <code>TrafficPolicyIdMarker</code> element in the
-     * <code>TrafficPolicyIdMarker</code> request parameter.</p> <p>Valid Values:
-     * <code>true</code> | <code>false</code> </p>
+     * If the response was truncated, you can get the next group of traffic policies by
+     * submitting another <code>ListTrafficPolicies</code> request and specifying the
+     * value of <code>TrafficPolicyIdMarker</code> in the
+     * <code>TrafficPolicyIdMarker</code> request parameter.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
      * <p>A flag that indicates whether there are more traffic policies to be listed.
-     * If the response was truncated, you can get the next group of
-     * <code>MaxItems</code> traffic policies by calling
-     * <code>ListTrafficPolicies</code> again and specifying the value of the
-     * <code>TrafficPolicyIdMarker</code> element in the
-     * <code>TrafficPolicyIdMarker</code> request parameter.</p> <p>Valid Values:
-     * <code>true</code> | <code>false</code> </p>
+     * If the response was truncated, you can get the next group of traffic policies by
+     * submitting another <code>ListTrafficPolicies</code> request and specifying the
+     * value of <code>TrafficPolicyIdMarker</code> in the
+     * <code>TrafficPolicyIdMarker</code> request parameter.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
      * <p>A flag that indicates whether there are more traffic policies to be listed.
-     * If the response was truncated, you can get the next group of
-     * <code>MaxItems</code> traffic policies by calling
-     * <code>ListTrafficPolicies</code> again and specifying the value of the
-     * <code>TrafficPolicyIdMarker</code> element in the
-     * <code>TrafficPolicyIdMarker</code> request parameter.</p> <p>Valid Values:
-     * <code>true</code> | <code>false</code> </p>
+     * If the response was truncated, you can get the next group of traffic policies by
+     * submitting another <code>ListTrafficPolicies</code> request and specifying the
+     * value of <code>TrafficPolicyIdMarker</code> in the
+     * <code>TrafficPolicyIdMarker</code> request parameter.</p>
      */
     inline ListTrafficPoliciesResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
@@ -174,43 +168,43 @@ namespace Model
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-     * call to <code>ListTrafficPolicies</code> that produced the current response.</p>
+     * <code>ListTrafficPolicies</code> request that produced the current response.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-     * call to <code>ListTrafficPolicies</code> that produced the current response.</p>
+     * <code>ListTrafficPolicies</code> request that produced the current response.</p>
      */
     inline void SetMaxItems(const Aws::String& value) { m_maxItems = value; }
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-     * call to <code>ListTrafficPolicies</code> that produced the current response.</p>
+     * <code>ListTrafficPolicies</code> request that produced the current response.</p>
      */
     inline void SetMaxItems(Aws::String&& value) { m_maxItems = std::move(value); }
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-     * call to <code>ListTrafficPolicies</code> that produced the current response.</p>
+     * <code>ListTrafficPolicies</code> request that produced the current response.</p>
      */
     inline void SetMaxItems(const char* value) { m_maxItems.assign(value); }
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-     * call to <code>ListTrafficPolicies</code> that produced the current response.</p>
+     * <code>ListTrafficPolicies</code> request that produced the current response.</p>
      */
     inline ListTrafficPoliciesResult& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-     * call to <code>ListTrafficPolicies</code> that produced the current response.</p>
+     * <code>ListTrafficPolicies</code> request that produced the current response.</p>
      */
     inline ListTrafficPoliciesResult& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-     * call to <code>ListTrafficPolicies</code> that produced the current response.</p>
+     * <code>ListTrafficPolicies</code> request that produced the current response.</p>
      */
     inline ListTrafficPoliciesResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 

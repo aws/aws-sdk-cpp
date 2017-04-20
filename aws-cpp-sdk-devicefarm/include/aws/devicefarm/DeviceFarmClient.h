@@ -50,6 +50,7 @@
 #include <aws/devicefarm/model/ListDevicesResult.h>
 #include <aws/devicefarm/model/ListJobsResult.h>
 #include <aws/devicefarm/model/ListNetworkProfilesResult.h>
+#include <aws/devicefarm/model/ListOfferingPromotionsResult.h>
 #include <aws/devicefarm/model/ListOfferingTransactionsResult.h>
 #include <aws/devicefarm/model/ListOfferingsResult.h>
 #include <aws/devicefarm/model/ListProjectsResult.h>
@@ -143,6 +144,7 @@ namespace Model
         class ListDevicesRequest;
         class ListJobsRequest;
         class ListNetworkProfilesRequest;
+        class ListOfferingPromotionsRequest;
         class ListOfferingTransactionsRequest;
         class ListOfferingsRequest;
         class ListProjectsRequest;
@@ -192,6 +194,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDevicesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListDevicesOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListJobsOutcome;
         typedef Aws::Utils::Outcome<ListNetworkProfilesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListNetworkProfilesOutcome;
+        typedef Aws::Utils::Outcome<ListOfferingPromotionsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListOfferingPromotionsOutcome;
         typedef Aws::Utils::Outcome<ListOfferingTransactionsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListOfferingTransactionsOutcome;
         typedef Aws::Utils::Outcome<ListOfferingsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListOfferingsOutcome;
         typedef Aws::Utils::Outcome<ListProjectsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListProjectsOutcome;
@@ -241,6 +244,7 @@ namespace Model
         typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
         typedef std::future<ListNetworkProfilesOutcome> ListNetworkProfilesOutcomeCallable;
+        typedef std::future<ListOfferingPromotionsOutcome> ListOfferingPromotionsOutcomeCallable;
         typedef std::future<ListOfferingTransactionsOutcome> ListOfferingTransactionsOutcomeCallable;
         typedef std::future<ListOfferingsOutcome> ListOfferingsOutcomeCallable;
         typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
@@ -293,6 +297,7 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::ListDevicesRequest&, const Model::ListDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevicesResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListNetworkProfilesRequest&, const Model::ListNetworkProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNetworkProfilesResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::ListOfferingPromotionsRequest&, const Model::ListOfferingPromotionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOfferingPromotionsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListOfferingTransactionsRequest&, const Model::ListOfferingTransactionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOfferingTransactionsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListOfferingsRequest&, const Model::ListOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOfferingsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
@@ -1145,6 +1150,49 @@ namespace Model
         virtual void ListNetworkProfilesAsync(const Model::ListNetworkProfilesRequest& request, const ListNetworkProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of offering promotions. Each offering promotion record
+         * contains the ID and description of the promotion. The API returns a
+         * <code>NotEligible</code> error if the caller is not permitted to invoke the
+         * operation. Contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListOfferingPromotionsOutcome ListOfferingPromotions(const Model::ListOfferingPromotionsRequest& request) const;
+
+        /**
+         * <p>Returns a list of offering promotions. Each offering promotion record
+         * contains the ID and description of the promotion. The API returns a
+         * <code>NotEligible</code> error if the caller is not permitted to invoke the
+         * operation. Contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListOfferingPromotionsOutcomeCallable ListOfferingPromotionsCallable(const Model::ListOfferingPromotionsRequest& request) const;
+
+        /**
+         * <p>Returns a list of offering promotions. Each offering promotion record
+         * contains the ID and description of the promotion. The API returns a
+         * <code>NotEligible</code> error if the caller is not permitted to invoke the
+         * operation. Contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListOfferingPromotionsAsync(const Model::ListOfferingPromotionsRequest& request, const ListOfferingPromotionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of all historical purchases, renewals, and system renewal
          * transactions for an AWS account. The list is paginated and ordered by a
          * descending timestamp (most recent transactions are first). The API returns a
@@ -1746,6 +1794,7 @@ namespace Model
         void ListDevicesAsyncHelper(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListNetworkProfilesAsyncHelper(const Model::ListNetworkProfilesRequest& request, const ListNetworkProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListOfferingPromotionsAsyncHelper(const Model::ListOfferingPromotionsRequest& request, const ListOfferingPromotionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOfferingTransactionsAsyncHelper(const Model::ListOfferingTransactionsRequest& request, const ListOfferingTransactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOfferingsAsyncHelper(const Model::ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProjectsAsyncHelper(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

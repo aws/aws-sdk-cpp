@@ -341,27 +341,32 @@ namespace Model
     inline GrantListEntry& AddOperations(GrantOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The conditions under which the grant's operations are allowed.</p>
+     * <p>A list of key-value pairs that must be present in the encryption context of
+     * certain subsequent operations that the grant allows.</p>
      */
     inline const GrantConstraints& GetConstraints() const{ return m_constraints; }
 
     /**
-     * <p>The conditions under which the grant's operations are allowed.</p>
+     * <p>A list of key-value pairs that must be present in the encryption context of
+     * certain subsequent operations that the grant allows.</p>
      */
     inline void SetConstraints(const GrantConstraints& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
 
     /**
-     * <p>The conditions under which the grant's operations are allowed.</p>
+     * <p>A list of key-value pairs that must be present in the encryption context of
+     * certain subsequent operations that the grant allows.</p>
      */
     inline void SetConstraints(GrantConstraints&& value) { m_constraintsHasBeenSet = true; m_constraints = std::move(value); }
 
     /**
-     * <p>The conditions under which the grant's operations are allowed.</p>
+     * <p>A list of key-value pairs that must be present in the encryption context of
+     * certain subsequent operations that the grant allows.</p>
      */
     inline GrantListEntry& WithConstraints(const GrantConstraints& value) { SetConstraints(value); return *this;}
 
     /**
-     * <p>The conditions under which the grant's operations are allowed.</p>
+     * <p>A list of key-value pairs that must be present in the encryption context of
+     * certain subsequent operations that the grant allows.</p>
      */
     inline GrantListEntry& WithConstraints(GrantConstraints&& value) { SetConstraints(std::move(value)); return *this;}
 

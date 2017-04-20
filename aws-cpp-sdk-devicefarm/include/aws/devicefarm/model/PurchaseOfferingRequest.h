@@ -89,11 +89,48 @@ namespace Model
      */
     inline PurchaseOfferingRequest& WithQuantity(int value) { SetQuantity(value); return *this;}
 
+    /**
+     * <p>The ID of the offering promotion to be applied to the purchase.</p>
+     */
+    inline const Aws::String& GetOfferingPromotionId() const{ return m_offeringPromotionId; }
+
+    /**
+     * <p>The ID of the offering promotion to be applied to the purchase.</p>
+     */
+    inline void SetOfferingPromotionId(const Aws::String& value) { m_offeringPromotionIdHasBeenSet = true; m_offeringPromotionId = value; }
+
+    /**
+     * <p>The ID of the offering promotion to be applied to the purchase.</p>
+     */
+    inline void SetOfferingPromotionId(Aws::String&& value) { m_offeringPromotionIdHasBeenSet = true; m_offeringPromotionId = std::move(value); }
+
+    /**
+     * <p>The ID of the offering promotion to be applied to the purchase.</p>
+     */
+    inline void SetOfferingPromotionId(const char* value) { m_offeringPromotionIdHasBeenSet = true; m_offeringPromotionId.assign(value); }
+
+    /**
+     * <p>The ID of the offering promotion to be applied to the purchase.</p>
+     */
+    inline PurchaseOfferingRequest& WithOfferingPromotionId(const Aws::String& value) { SetOfferingPromotionId(value); return *this;}
+
+    /**
+     * <p>The ID of the offering promotion to be applied to the purchase.</p>
+     */
+    inline PurchaseOfferingRequest& WithOfferingPromotionId(Aws::String&& value) { SetOfferingPromotionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the offering promotion to be applied to the purchase.</p>
+     */
+    inline PurchaseOfferingRequest& WithOfferingPromotionId(const char* value) { SetOfferingPromotionId(value); return *this;}
+
   private:
     Aws::String m_offeringId;
     bool m_offeringIdHasBeenSet;
     int m_quantity;
     bool m_quantityHasBeenSet;
+    Aws::String m_offeringPromotionId;
+    bool m_offeringPromotionIdHasBeenSet;
   };
 
 } // namespace Model

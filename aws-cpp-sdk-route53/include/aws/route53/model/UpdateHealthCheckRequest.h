@@ -30,8 +30,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains the health check request
-   * information.</p><p><h3>See Also:</h3>   <a
+   * <p>A complex type that contains information about a request to update a health
+   * check.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHealthCheckRequest">AWS
    * API Reference</a></p>
    */
@@ -93,54 +93,54 @@ namespace Model
 
     /**
      * <p>A sequential counter that Amazon Route 53 sets to <code>1</code> when you
-     * create a health check and increments by <code>1</code> each time you update
-     * settings for the health check.</p> <p>We recommend that you use
-     * <code>GetHealthCheck</code> or <code>ListHealthChecks</code> to get the current
-     * value of <code>HealthCheckVersion</code> for the health check that you want to
-     * update, and that you include that value in your <code>UpdateHealthCheck</code>
-     * request. This prevents Amazon Route 53 from overwriting an intervening
-     * update:</p> <ul> <li> <p>f the value in the <code>UpdateHealthCheck</code>
-     * request matches the value of <code>HealthCheckVersion</code> in the health
-     * check, Amazon Route 53 updates the health check with the new settings.</p> </li>
-     * <li> <p>If the value of <code>HealthCheckVersion</code> in the health check is
-     * greater, the health check was changed after you got the version number. Amazon
-     * Route 53 does not update the health check, and it returns a
+     * create a health check and increments by 1 each time you update settings for the
+     * health check.</p> <p>We recommend that you use <code>GetHealthCheck</code> or
+     * <code>ListHealthChecks</code> to get the current value of
+     * <code>HealthCheckVersion</code> for the health check that you want to update,
+     * and that you include that value in your <code>UpdateHealthCheck</code> request.
+     * This prevents Amazon Route 53 from overwriting an intervening update:</p> <ul>
+     * <li> <p>If the value in the <code>UpdateHealthCheck</code> request matches the
+     * value of <code>HealthCheckVersion</code> in the health check, Amazon Route 53
+     * updates the health check with the new settings.</p> </li> <li> <p>If the value
+     * of <code>HealthCheckVersion</code> in the health check is greater, the health
+     * check was changed after you got the version number. Amazon Route 53 does not
+     * update the health check, and it returns a
      * <code>HealthCheckVersionMismatch</code> error.</p> </li> </ul>
      */
     inline long long GetHealthCheckVersion() const{ return m_healthCheckVersion; }
 
     /**
      * <p>A sequential counter that Amazon Route 53 sets to <code>1</code> when you
-     * create a health check and increments by <code>1</code> each time you update
-     * settings for the health check.</p> <p>We recommend that you use
-     * <code>GetHealthCheck</code> or <code>ListHealthChecks</code> to get the current
-     * value of <code>HealthCheckVersion</code> for the health check that you want to
-     * update, and that you include that value in your <code>UpdateHealthCheck</code>
-     * request. This prevents Amazon Route 53 from overwriting an intervening
-     * update:</p> <ul> <li> <p>f the value in the <code>UpdateHealthCheck</code>
-     * request matches the value of <code>HealthCheckVersion</code> in the health
-     * check, Amazon Route 53 updates the health check with the new settings.</p> </li>
-     * <li> <p>If the value of <code>HealthCheckVersion</code> in the health check is
-     * greater, the health check was changed after you got the version number. Amazon
-     * Route 53 does not update the health check, and it returns a
+     * create a health check and increments by 1 each time you update settings for the
+     * health check.</p> <p>We recommend that you use <code>GetHealthCheck</code> or
+     * <code>ListHealthChecks</code> to get the current value of
+     * <code>HealthCheckVersion</code> for the health check that you want to update,
+     * and that you include that value in your <code>UpdateHealthCheck</code> request.
+     * This prevents Amazon Route 53 from overwriting an intervening update:</p> <ul>
+     * <li> <p>If the value in the <code>UpdateHealthCheck</code> request matches the
+     * value of <code>HealthCheckVersion</code> in the health check, Amazon Route 53
+     * updates the health check with the new settings.</p> </li> <li> <p>If the value
+     * of <code>HealthCheckVersion</code> in the health check is greater, the health
+     * check was changed after you got the version number. Amazon Route 53 does not
+     * update the health check, and it returns a
      * <code>HealthCheckVersionMismatch</code> error.</p> </li> </ul>
      */
     inline void SetHealthCheckVersion(long long value) { m_healthCheckVersionHasBeenSet = true; m_healthCheckVersion = value; }
 
     /**
      * <p>A sequential counter that Amazon Route 53 sets to <code>1</code> when you
-     * create a health check and increments by <code>1</code> each time you update
-     * settings for the health check.</p> <p>We recommend that you use
-     * <code>GetHealthCheck</code> or <code>ListHealthChecks</code> to get the current
-     * value of <code>HealthCheckVersion</code> for the health check that you want to
-     * update, and that you include that value in your <code>UpdateHealthCheck</code>
-     * request. This prevents Amazon Route 53 from overwriting an intervening
-     * update:</p> <ul> <li> <p>f the value in the <code>UpdateHealthCheck</code>
-     * request matches the value of <code>HealthCheckVersion</code> in the health
-     * check, Amazon Route 53 updates the health check with the new settings.</p> </li>
-     * <li> <p>If the value of <code>HealthCheckVersion</code> in the health check is
-     * greater, the health check was changed after you got the version number. Amazon
-     * Route 53 does not update the health check, and it returns a
+     * create a health check and increments by 1 each time you update settings for the
+     * health check.</p> <p>We recommend that you use <code>GetHealthCheck</code> or
+     * <code>ListHealthChecks</code> to get the current value of
+     * <code>HealthCheckVersion</code> for the health check that you want to update,
+     * and that you include that value in your <code>UpdateHealthCheck</code> request.
+     * This prevents Amazon Route 53 from overwriting an intervening update:</p> <ul>
+     * <li> <p>If the value in the <code>UpdateHealthCheck</code> request matches the
+     * value of <code>HealthCheckVersion</code> in the health check, Amazon Route 53
+     * updates the health check with the new settings.</p> </li> <li> <p>If the value
+     * of <code>HealthCheckVersion</code> in the health check is greater, the health
+     * check was changed after you got the version number. Amazon Route 53 does not
+     * update the health check, and it returns a
      * <code>HealthCheckVersionMismatch</code> error.</p> </li> </ul>
      */
     inline UpdateHealthCheckRequest& WithHealthCheckVersion(long long value) { SetHealthCheckVersion(value); return *this;}
@@ -163,10 +163,14 @@ namespace Model
      * an EC2 instance, we recommend that you create an Elastic IP address, associate
      * it with your EC2 instance, and specify the Elastic IP address for
      * <code>IPAddress</code>. This ensures that the IP address of your instance never
-     * changes. For more information, see <a
+     * changes. For more information, see the applicable documentation:</p> <ul> <li>
+     * <p>Linux: <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <note> <p>If a health check already has a value for
+     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>
+     * </p> </li> <li> <p>Windows: <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Elastic
+     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Windows Instances</i>
+     * </p> </li> </ul> <note> <p>If a health check already has a value for
      * <code>IPAddress</code>, you can change the value. However, you can't update an
      * existing health check to add or remove the value of <code>IPAddress</code>. </p>
      * </note> <p>For more information, see
@@ -201,10 +205,14 @@ namespace Model
      * an EC2 instance, we recommend that you create an Elastic IP address, associate
      * it with your EC2 instance, and specify the Elastic IP address for
      * <code>IPAddress</code>. This ensures that the IP address of your instance never
-     * changes. For more information, see <a
+     * changes. For more information, see the applicable documentation:</p> <ul> <li>
+     * <p>Linux: <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <note> <p>If a health check already has a value for
+     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>
+     * </p> </li> <li> <p>Windows: <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Elastic
+     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Windows Instances</i>
+     * </p> </li> </ul> <note> <p>If a health check already has a value for
      * <code>IPAddress</code>, you can change the value. However, you can't update an
      * existing health check to add or remove the value of <code>IPAddress</code>. </p>
      * </note> <p>For more information, see
@@ -239,10 +247,14 @@ namespace Model
      * an EC2 instance, we recommend that you create an Elastic IP address, associate
      * it with your EC2 instance, and specify the Elastic IP address for
      * <code>IPAddress</code>. This ensures that the IP address of your instance never
-     * changes. For more information, see <a
+     * changes. For more information, see the applicable documentation:</p> <ul> <li>
+     * <p>Linux: <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <note> <p>If a health check already has a value for
+     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>
+     * </p> </li> <li> <p>Windows: <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Elastic
+     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Windows Instances</i>
+     * </p> </li> </ul> <note> <p>If a health check already has a value for
      * <code>IPAddress</code>, you can change the value. However, you can't update an
      * existing health check to add or remove the value of <code>IPAddress</code>. </p>
      * </note> <p>For more information, see
@@ -277,10 +289,14 @@ namespace Model
      * an EC2 instance, we recommend that you create an Elastic IP address, associate
      * it with your EC2 instance, and specify the Elastic IP address for
      * <code>IPAddress</code>. This ensures that the IP address of your instance never
-     * changes. For more information, see <a
+     * changes. For more information, see the applicable documentation:</p> <ul> <li>
+     * <p>Linux: <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <note> <p>If a health check already has a value for
+     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>
+     * </p> </li> <li> <p>Windows: <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Elastic
+     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Windows Instances</i>
+     * </p> </li> </ul> <note> <p>If a health check already has a value for
      * <code>IPAddress</code>, you can change the value. However, you can't update an
      * existing health check to add or remove the value of <code>IPAddress</code>. </p>
      * </note> <p>For more information, see
@@ -315,10 +331,14 @@ namespace Model
      * an EC2 instance, we recommend that you create an Elastic IP address, associate
      * it with your EC2 instance, and specify the Elastic IP address for
      * <code>IPAddress</code>. This ensures that the IP address of your instance never
-     * changes. For more information, see <a
+     * changes. For more information, see the applicable documentation:</p> <ul> <li>
+     * <p>Linux: <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <note> <p>If a health check already has a value for
+     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>
+     * </p> </li> <li> <p>Windows: <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Elastic
+     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Windows Instances</i>
+     * </p> </li> </ul> <note> <p>If a health check already has a value for
      * <code>IPAddress</code>, you can change the value. However, you can't update an
      * existing health check to add or remove the value of <code>IPAddress</code>. </p>
      * </note> <p>For more information, see
@@ -353,10 +373,14 @@ namespace Model
      * an EC2 instance, we recommend that you create an Elastic IP address, associate
      * it with your EC2 instance, and specify the Elastic IP address for
      * <code>IPAddress</code>. This ensures that the IP address of your instance never
-     * changes. For more information, see <a
+     * changes. For more information, see the applicable documentation:</p> <ul> <li>
+     * <p>Linux: <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <note> <p>If a health check already has a value for
+     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>
+     * </p> </li> <li> <p>Windows: <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Elastic
+     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Windows Instances</i>
+     * </p> </li> </ul> <note> <p>If a health check already has a value for
      * <code>IPAddress</code>, you can change the value. However, you can't update an
      * existing health check to add or remove the value of <code>IPAddress</code>. </p>
      * </note> <p>For more information, see
@@ -391,10 +415,14 @@ namespace Model
      * an EC2 instance, we recommend that you create an Elastic IP address, associate
      * it with your EC2 instance, and specify the Elastic IP address for
      * <code>IPAddress</code>. This ensures that the IP address of your instance never
-     * changes. For more information, see <a
+     * changes. For more information, see the applicable documentation:</p> <ul> <li>
+     * <p>Linux: <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <note> <p>If a health check already has a value for
+     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>
+     * </p> </li> <li> <p>Windows: <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Elastic
+     * IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Windows Instances</i>
+     * </p> </li> </ul> <note> <p>If a health check already has a value for
      * <code>IPAddress</code>, you can change the value. However, you can't update an
      * existing health check to add or remove the value of <code>IPAddress</code>. </p>
      * </note> <p>For more information, see
@@ -510,13 +538,14 @@ namespace Model
      * endpoint in the <code>Host</code> header.</p> </li> <li> <p>If you specify a
      * value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or
      * <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Amazon Route 53 passes the
-     * value of <code>FullyQualifiedDomainName</code> to the endpoint in the Host
-     * header.</p> </li> <li> <p>If you specify another value for <code>Port</code> and
-     * any value except <code>TCP</code> for <code>Type</code>, Amazon Route 53 passes
-     * <i> <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint
-     * in the Host header.</p> </li> </ul> <p>If you don't specify a value for
-     * <code>FullyQualifiedDomainName</code>, Amazon Route 53 substitutes the value of
-     * <code>IPAddress</code> in the <code>Host</code> header in each of the above
+     * value of <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>Host</code> header.</p> </li> <li> <p>If you specify another value for
+     * <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>,
+     * Amazon Route 53 passes <i>
+     * <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint in
+     * the <code>Host</code> header.</p> </li> </ul> <p>If you don't specify a value
+     * for <code>FullyQualifiedDomainName</code>, Amazon Route 53 substitutes the value
+     * of <code>IPAddress</code> in the <code>Host</code> header in each of the above
      * cases.</p> <p> <b>If you don't specify a value for</b>
      * <code>IPAddress</code>:</p> <p>If you don't specify a value for
      * <code>IPAddress</code>, Amazon Route 53 sends a DNS request to the domain that
@@ -566,13 +595,14 @@ namespace Model
      * endpoint in the <code>Host</code> header.</p> </li> <li> <p>If you specify a
      * value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or
      * <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Amazon Route 53 passes the
-     * value of <code>FullyQualifiedDomainName</code> to the endpoint in the Host
-     * header.</p> </li> <li> <p>If you specify another value for <code>Port</code> and
-     * any value except <code>TCP</code> for <code>Type</code>, Amazon Route 53 passes
-     * <i> <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint
-     * in the Host header.</p> </li> </ul> <p>If you don't specify a value for
-     * <code>FullyQualifiedDomainName</code>, Amazon Route 53 substitutes the value of
-     * <code>IPAddress</code> in the <code>Host</code> header in each of the above
+     * value of <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>Host</code> header.</p> </li> <li> <p>If you specify another value for
+     * <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>,
+     * Amazon Route 53 passes <i>
+     * <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint in
+     * the <code>Host</code> header.</p> </li> </ul> <p>If you don't specify a value
+     * for <code>FullyQualifiedDomainName</code>, Amazon Route 53 substitutes the value
+     * of <code>IPAddress</code> in the <code>Host</code> header in each of the above
      * cases.</p> <p> <b>If you don't specify a value for</b>
      * <code>IPAddress</code>:</p> <p>If you don't specify a value for
      * <code>IPAddress</code>, Amazon Route 53 sends a DNS request to the domain that
@@ -622,13 +652,14 @@ namespace Model
      * endpoint in the <code>Host</code> header.</p> </li> <li> <p>If you specify a
      * value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or
      * <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Amazon Route 53 passes the
-     * value of <code>FullyQualifiedDomainName</code> to the endpoint in the Host
-     * header.</p> </li> <li> <p>If you specify another value for <code>Port</code> and
-     * any value except <code>TCP</code> for <code>Type</code>, Amazon Route 53 passes
-     * <i> <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint
-     * in the Host header.</p> </li> </ul> <p>If you don't specify a value for
-     * <code>FullyQualifiedDomainName</code>, Amazon Route 53 substitutes the value of
-     * <code>IPAddress</code> in the <code>Host</code> header in each of the above
+     * value of <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>Host</code> header.</p> </li> <li> <p>If you specify another value for
+     * <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>,
+     * Amazon Route 53 passes <i>
+     * <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint in
+     * the <code>Host</code> header.</p> </li> </ul> <p>If you don't specify a value
+     * for <code>FullyQualifiedDomainName</code>, Amazon Route 53 substitutes the value
+     * of <code>IPAddress</code> in the <code>Host</code> header in each of the above
      * cases.</p> <p> <b>If you don't specify a value for</b>
      * <code>IPAddress</code>:</p> <p>If you don't specify a value for
      * <code>IPAddress</code>, Amazon Route 53 sends a DNS request to the domain that
@@ -678,13 +709,14 @@ namespace Model
      * endpoint in the <code>Host</code> header.</p> </li> <li> <p>If you specify a
      * value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or
      * <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Amazon Route 53 passes the
-     * value of <code>FullyQualifiedDomainName</code> to the endpoint in the Host
-     * header.</p> </li> <li> <p>If you specify another value for <code>Port</code> and
-     * any value except <code>TCP</code> for <code>Type</code>, Amazon Route 53 passes
-     * <i> <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint
-     * in the Host header.</p> </li> </ul> <p>If you don't specify a value for
-     * <code>FullyQualifiedDomainName</code>, Amazon Route 53 substitutes the value of
-     * <code>IPAddress</code> in the <code>Host</code> header in each of the above
+     * value of <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>Host</code> header.</p> </li> <li> <p>If you specify another value for
+     * <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>,
+     * Amazon Route 53 passes <i>
+     * <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint in
+     * the <code>Host</code> header.</p> </li> </ul> <p>If you don't specify a value
+     * for <code>FullyQualifiedDomainName</code>, Amazon Route 53 substitutes the value
+     * of <code>IPAddress</code> in the <code>Host</code> header in each of the above
      * cases.</p> <p> <b>If you don't specify a value for</b>
      * <code>IPAddress</code>:</p> <p>If you don't specify a value for
      * <code>IPAddress</code>, Amazon Route 53 sends a DNS request to the domain that
@@ -734,13 +766,14 @@ namespace Model
      * endpoint in the <code>Host</code> header.</p> </li> <li> <p>If you specify a
      * value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or
      * <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Amazon Route 53 passes the
-     * value of <code>FullyQualifiedDomainName</code> to the endpoint in the Host
-     * header.</p> </li> <li> <p>If you specify another value for <code>Port</code> and
-     * any value except <code>TCP</code> for <code>Type</code>, Amazon Route 53 passes
-     * <i> <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint
-     * in the Host header.</p> </li> </ul> <p>If you don't specify a value for
-     * <code>FullyQualifiedDomainName</code>, Amazon Route 53 substitutes the value of
-     * <code>IPAddress</code> in the <code>Host</code> header in each of the above
+     * value of <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>Host</code> header.</p> </li> <li> <p>If you specify another value for
+     * <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>,
+     * Amazon Route 53 passes <i>
+     * <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint in
+     * the <code>Host</code> header.</p> </li> </ul> <p>If you don't specify a value
+     * for <code>FullyQualifiedDomainName</code>, Amazon Route 53 substitutes the value
+     * of <code>IPAddress</code> in the <code>Host</code> header in each of the above
      * cases.</p> <p> <b>If you don't specify a value for</b>
      * <code>IPAddress</code>:</p> <p>If you don't specify a value for
      * <code>IPAddress</code>, Amazon Route 53 sends a DNS request to the domain that
@@ -790,13 +823,14 @@ namespace Model
      * endpoint in the <code>Host</code> header.</p> </li> <li> <p>If you specify a
      * value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or
      * <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Amazon Route 53 passes the
-     * value of <code>FullyQualifiedDomainName</code> to the endpoint in the Host
-     * header.</p> </li> <li> <p>If you specify another value for <code>Port</code> and
-     * any value except <code>TCP</code> for <code>Type</code>, Amazon Route 53 passes
-     * <i> <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint
-     * in the Host header.</p> </li> </ul> <p>If you don't specify a value for
-     * <code>FullyQualifiedDomainName</code>, Amazon Route 53 substitutes the value of
-     * <code>IPAddress</code> in the <code>Host</code> header in each of the above
+     * value of <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>Host</code> header.</p> </li> <li> <p>If you specify another value for
+     * <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>,
+     * Amazon Route 53 passes <i>
+     * <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint in
+     * the <code>Host</code> header.</p> </li> </ul> <p>If you don't specify a value
+     * for <code>FullyQualifiedDomainName</code>, Amazon Route 53 substitutes the value
+     * of <code>IPAddress</code> in the <code>Host</code> header in each of the above
      * cases.</p> <p> <b>If you don't specify a value for</b>
      * <code>IPAddress</code>:</p> <p>If you don't specify a value for
      * <code>IPAddress</code>, Amazon Route 53 sends a DNS request to the domain that
@@ -846,13 +880,14 @@ namespace Model
      * endpoint in the <code>Host</code> header.</p> </li> <li> <p>If you specify a
      * value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or
      * <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Amazon Route 53 passes the
-     * value of <code>FullyQualifiedDomainName</code> to the endpoint in the Host
-     * header.</p> </li> <li> <p>If you specify another value for <code>Port</code> and
-     * any value except <code>TCP</code> for <code>Type</code>, Amazon Route 53 passes
-     * <i> <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint
-     * in the Host header.</p> </li> </ul> <p>If you don't specify a value for
-     * <code>FullyQualifiedDomainName</code>, Amazon Route 53 substitutes the value of
-     * <code>IPAddress</code> in the <code>Host</code> header in each of the above
+     * value of <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>Host</code> header.</p> </li> <li> <p>If you specify another value for
+     * <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>,
+     * Amazon Route 53 passes <i>
+     * <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint in
+     * the <code>Host</code> header.</p> </li> </ul> <p>If you don't specify a value
+     * for <code>FullyQualifiedDomainName</code>, Amazon Route 53 substitutes the value
+     * of <code>IPAddress</code> in the <code>Host</code> header in each of the above
      * cases.</p> <p> <b>If you don't specify a value for</b>
      * <code>IPAddress</code>:</p> <p>If you don't specify a value for
      * <code>IPAddress</code>, Amazon Route 53 sends a DNS request to the domain that
@@ -1172,44 +1207,51 @@ namespace Model
     inline UpdateHealthCheckRequest& WithEnableSNI(bool value) { SetEnableSNI(value); return *this;}
 
     /**
-     * <p>A complex type that contains one Region element for each region from which
-     * you want Amazon Route 53 health checkers to check the specified endpoint.</p>
+     * <p>A complex type that contains one <code>Region</code> element for each region
+     * that you want Amazon Route 53 health checkers to check the specified endpoint
+     * from.</p>
      */
     inline const Aws::Vector<HealthCheckRegion>& GetRegions() const{ return m_regions; }
 
     /**
-     * <p>A complex type that contains one Region element for each region from which
-     * you want Amazon Route 53 health checkers to check the specified endpoint.</p>
+     * <p>A complex type that contains one <code>Region</code> element for each region
+     * that you want Amazon Route 53 health checkers to check the specified endpoint
+     * from.</p>
      */
     inline void SetRegions(const Aws::Vector<HealthCheckRegion>& value) { m_regionsHasBeenSet = true; m_regions = value; }
 
     /**
-     * <p>A complex type that contains one Region element for each region from which
-     * you want Amazon Route 53 health checkers to check the specified endpoint.</p>
+     * <p>A complex type that contains one <code>Region</code> element for each region
+     * that you want Amazon Route 53 health checkers to check the specified endpoint
+     * from.</p>
      */
     inline void SetRegions(Aws::Vector<HealthCheckRegion>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
 
     /**
-     * <p>A complex type that contains one Region element for each region from which
-     * you want Amazon Route 53 health checkers to check the specified endpoint.</p>
+     * <p>A complex type that contains one <code>Region</code> element for each region
+     * that you want Amazon Route 53 health checkers to check the specified endpoint
+     * from.</p>
      */
     inline UpdateHealthCheckRequest& WithRegions(const Aws::Vector<HealthCheckRegion>& value) { SetRegions(value); return *this;}
 
     /**
-     * <p>A complex type that contains one Region element for each region from which
-     * you want Amazon Route 53 health checkers to check the specified endpoint.</p>
+     * <p>A complex type that contains one <code>Region</code> element for each region
+     * that you want Amazon Route 53 health checkers to check the specified endpoint
+     * from.</p>
      */
     inline UpdateHealthCheckRequest& WithRegions(Aws::Vector<HealthCheckRegion>&& value) { SetRegions(std::move(value)); return *this;}
 
     /**
-     * <p>A complex type that contains one Region element for each region from which
-     * you want Amazon Route 53 health checkers to check the specified endpoint.</p>
+     * <p>A complex type that contains one <code>Region</code> element for each region
+     * that you want Amazon Route 53 health checkers to check the specified endpoint
+     * from.</p>
      */
     inline UpdateHealthCheckRequest& AddRegions(const HealthCheckRegion& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
     /**
-     * <p>A complex type that contains one Region element for each region from which
-     * you want Amazon Route 53 health checkers to check the specified endpoint.</p>
+     * <p>A complex type that contains one <code>Region</code> element for each region
+     * that you want Amazon Route 53 health checkers to check the specified endpoint
+     * from.</p>
      */
     inline UpdateHealthCheckRequest& AddRegions(HealthCheckRegion&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
 

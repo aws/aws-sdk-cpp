@@ -66,7 +66,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
      * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>You
      * can use the asterisk (*) wildcard to replace the leftmost label in a domain
-     * name. For example, <code>*.example.com</code>. Note the following:</p> <ul> <li>
+     * name, for example, <code>*.example.com</code>. Note the following:</p> <ul> <li>
      * <p>The * must replace the entire label. For example, you can't specify
      * <code>*prod.example.com</code> or <code>prod*.example.com</code>.</p> </li> <li>
      * <p>The * can't replace any of the middle labels, for example,
@@ -95,7 +95,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
      * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>You
      * can use the asterisk (*) wildcard to replace the leftmost label in a domain
-     * name. For example, <code>*.example.com</code>. Note the following:</p> <ul> <li>
+     * name, for example, <code>*.example.com</code>. Note the following:</p> <ul> <li>
      * <p>The * must replace the entire label. For example, you can't specify
      * <code>*prod.example.com</code> or <code>prod*.example.com</code>.</p> </li> <li>
      * <p>The * can't replace any of the middle labels, for example,
@@ -124,7 +124,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
      * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>You
      * can use the asterisk (*) wildcard to replace the leftmost label in a domain
-     * name. For example, <code>*.example.com</code>. Note the following:</p> <ul> <li>
+     * name, for example, <code>*.example.com</code>. Note the following:</p> <ul> <li>
      * <p>The * must replace the entire label. For example, you can't specify
      * <code>*prod.example.com</code> or <code>prod*.example.com</code>.</p> </li> <li>
      * <p>The * can't replace any of the middle labels, for example,
@@ -153,7 +153,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
      * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>You
      * can use the asterisk (*) wildcard to replace the leftmost label in a domain
-     * name. For example, <code>*.example.com</code>. Note the following:</p> <ul> <li>
+     * name, for example, <code>*.example.com</code>. Note the following:</p> <ul> <li>
      * <p>The * must replace the entire label. For example, you can't specify
      * <code>*prod.example.com</code> or <code>prod*.example.com</code>.</p> </li> <li>
      * <p>The * can't replace any of the middle labels, for example,
@@ -182,7 +182,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
      * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>You
      * can use the asterisk (*) wildcard to replace the leftmost label in a domain
-     * name. For example, <code>*.example.com</code>. Note the following:</p> <ul> <li>
+     * name, for example, <code>*.example.com</code>. Note the following:</p> <ul> <li>
      * <p>The * must replace the entire label. For example, you can't specify
      * <code>*prod.example.com</code> or <code>prod*.example.com</code>.</p> </li> <li>
      * <p>The * can't replace any of the middle labels, for example,
@@ -211,7 +211,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
      * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>You
      * can use the asterisk (*) wildcard to replace the leftmost label in a domain
-     * name. For example, <code>*.example.com</code>. Note the following:</p> <ul> <li>
+     * name, for example, <code>*.example.com</code>. Note the following:</p> <ul> <li>
      * <p>The * must replace the entire label. For example, you can't specify
      * <code>*prod.example.com</code> or <code>prod*.example.com</code>.</p> </li> <li>
      * <p>The * can't replace any of the middle labels, for example,
@@ -240,7 +240,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
      * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>You
      * can use the asterisk (*) wildcard to replace the leftmost label in a domain
-     * name. For example, <code>*.example.com</code>. Note the following:</p> <ul> <li>
+     * name, for example, <code>*.example.com</code>. Note the following:</p> <ul> <li>
      * <p>The * must replace the entire label. For example, you can't specify
      * <code>*prod.example.com</code> or <code>prod*.example.com</code>.</p> </li> <li>
      * <p>The * can't replace any of the middle labels, for example,
@@ -603,7 +603,7 @@ namespace Model
 
     /**
      * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where
-     * the resource that is specified in this resource record set resides. The resource
+     * you created the resource that this resource record set refers to. The resource
      * typically is an AWS resource, such as an EC2 instance or an ELB load balancer,
      * and is referred to by an IP address or a DNS domain name, depending on the
      * record type.</p> <note> <p>Creating latency and latency alias resource record
@@ -617,17 +617,16 @@ namespace Model
      * record set.</p> </li> <li> <p>You can only create one latency resource record
      * set for each Amazon EC2 Region.</p> </li> <li> <p>You aren't required to create
      * latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
-     * choose the region with the best latency from among the regions for which you
-     * create latency resource record sets.</p> </li> <li> <p>You can't create
-     * non-latency resource record sets that have the same values for the
-     * <code>Name</code> and <code>Type</code> elements as latency resource record
-     * sets.</p> </li> </ul>
+     * choose the region with the best latency from among the regions that you create
+     * latency resource record sets for.</p> </li> <li> <p>You can't create non-latency
+     * resource record sets that have the same values for the <code>Name</code> and
+     * <code>Type</code> elements as latency resource record sets.</p> </li> </ul>
      */
     inline const ResourceRecordSetRegion& GetRegion() const{ return m_region; }
 
     /**
      * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where
-     * the resource that is specified in this resource record set resides. The resource
+     * you created the resource that this resource record set refers to. The resource
      * typically is an AWS resource, such as an EC2 instance or an ELB load balancer,
      * and is referred to by an IP address or a DNS domain name, depending on the
      * record type.</p> <note> <p>Creating latency and latency alias resource record
@@ -641,17 +640,16 @@ namespace Model
      * record set.</p> </li> <li> <p>You can only create one latency resource record
      * set for each Amazon EC2 Region.</p> </li> <li> <p>You aren't required to create
      * latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
-     * choose the region with the best latency from among the regions for which you
-     * create latency resource record sets.</p> </li> <li> <p>You can't create
-     * non-latency resource record sets that have the same values for the
-     * <code>Name</code> and <code>Type</code> elements as latency resource record
-     * sets.</p> </li> </ul>
+     * choose the region with the best latency from among the regions that you create
+     * latency resource record sets for.</p> </li> <li> <p>You can't create non-latency
+     * resource record sets that have the same values for the <code>Name</code> and
+     * <code>Type</code> elements as latency resource record sets.</p> </li> </ul>
      */
     inline void SetRegion(const ResourceRecordSetRegion& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
      * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where
-     * the resource that is specified in this resource record set resides. The resource
+     * you created the resource that this resource record set refers to. The resource
      * typically is an AWS resource, such as an EC2 instance or an ELB load balancer,
      * and is referred to by an IP address or a DNS domain name, depending on the
      * record type.</p> <note> <p>Creating latency and latency alias resource record
@@ -665,17 +663,16 @@ namespace Model
      * record set.</p> </li> <li> <p>You can only create one latency resource record
      * set for each Amazon EC2 Region.</p> </li> <li> <p>You aren't required to create
      * latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
-     * choose the region with the best latency from among the regions for which you
-     * create latency resource record sets.</p> </li> <li> <p>You can't create
-     * non-latency resource record sets that have the same values for the
-     * <code>Name</code> and <code>Type</code> elements as latency resource record
-     * sets.</p> </li> </ul>
+     * choose the region with the best latency from among the regions that you create
+     * latency resource record sets for.</p> </li> <li> <p>You can't create non-latency
+     * resource record sets that have the same values for the <code>Name</code> and
+     * <code>Type</code> elements as latency resource record sets.</p> </li> </ul>
      */
     inline void SetRegion(ResourceRecordSetRegion&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
      * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where
-     * the resource that is specified in this resource record set resides. The resource
+     * you created the resource that this resource record set refers to. The resource
      * typically is an AWS resource, such as an EC2 instance or an ELB load balancer,
      * and is referred to by an IP address or a DNS domain name, depending on the
      * record type.</p> <note> <p>Creating latency and latency alias resource record
@@ -689,17 +686,16 @@ namespace Model
      * record set.</p> </li> <li> <p>You can only create one latency resource record
      * set for each Amazon EC2 Region.</p> </li> <li> <p>You aren't required to create
      * latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
-     * choose the region with the best latency from among the regions for which you
-     * create latency resource record sets.</p> </li> <li> <p>You can't create
-     * non-latency resource record sets that have the same values for the
-     * <code>Name</code> and <code>Type</code> elements as latency resource record
-     * sets.</p> </li> </ul>
+     * choose the region with the best latency from among the regions that you create
+     * latency resource record sets for.</p> </li> <li> <p>You can't create non-latency
+     * resource record sets that have the same values for the <code>Name</code> and
+     * <code>Type</code> elements as latency resource record sets.</p> </li> </ul>
      */
     inline ResourceRecordSet& WithRegion(const ResourceRecordSetRegion& value) { SetRegion(value); return *this;}
 
     /**
      * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where
-     * the resource that is specified in this resource record set resides. The resource
+     * you created the resource that this resource record set refers to. The resource
      * typically is an AWS resource, such as an EC2 instance or an ELB load balancer,
      * and is referred to by an IP address or a DNS domain name, depending on the
      * record type.</p> <note> <p>Creating latency and latency alias resource record
@@ -713,11 +709,10 @@ namespace Model
      * record set.</p> </li> <li> <p>You can only create one latency resource record
      * set for each Amazon EC2 Region.</p> </li> <li> <p>You aren't required to create
      * latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
-     * choose the region with the best latency from among the regions for which you
-     * create latency resource record sets.</p> </li> <li> <p>You can't create
-     * non-latency resource record sets that have the same values for the
-     * <code>Name</code> and <code>Type</code> elements as latency resource record
-     * sets.</p> </li> </ul>
+     * choose the region with the best latency from among the regions that you create
+     * latency resource record sets for.</p> </li> <li> <p>You can't create non-latency
+     * resource record sets that have the same values for the <code>Name</code> and
+     * <code>Type</code> elements as latency resource record sets.</p> </li> </ul>
      */
     inline ResourceRecordSet& WithRegion(ResourceRecordSetRegion&& value) { SetRegion(std::move(value)); return *this;}
 
@@ -924,8 +919,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
      * Route 53 Health Checks and DNS Failover</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
-     * Failover in a Private Hosted Zone</a> </p> </li> </ul> <p>Valid values:
-     * <code>PRIMARY</code> | <code>SECONDARY</code> </p>
+     * Failover in a Private Hosted Zone</a> </p> </li> </ul>
      */
     inline const ResourceRecordSetFailover& GetFailover() const{ return m_failover; }
 
@@ -962,8 +956,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
      * Route 53 Health Checks and DNS Failover</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
-     * Failover in a Private Hosted Zone</a> </p> </li> </ul> <p>Valid values:
-     * <code>PRIMARY</code> | <code>SECONDARY</code> </p>
+     * Failover in a Private Hosted Zone</a> </p> </li> </ul>
      */
     inline void SetFailover(const ResourceRecordSetFailover& value) { m_failoverHasBeenSet = true; m_failover = value; }
 
@@ -1000,8 +993,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
      * Route 53 Health Checks and DNS Failover</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
-     * Failover in a Private Hosted Zone</a> </p> </li> </ul> <p>Valid values:
-     * <code>PRIMARY</code> | <code>SECONDARY</code> </p>
+     * Failover in a Private Hosted Zone</a> </p> </li> </ul>
      */
     inline void SetFailover(ResourceRecordSetFailover&& value) { m_failoverHasBeenSet = true; m_failover = std::move(value); }
 
@@ -1038,8 +1030,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
      * Route 53 Health Checks and DNS Failover</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
-     * Failover in a Private Hosted Zone</a> </p> </li> </ul> <p>Valid values:
-     * <code>PRIMARY</code> | <code>SECONDARY</code> </p>
+     * Failover in a Private Hosted Zone</a> </p> </li> </ul>
      */
     inline ResourceRecordSet& WithFailover(const ResourceRecordSetFailover& value) { SetFailover(value); return *this;}
 
@@ -1076,8 +1067,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
      * Route 53 Health Checks and DNS Failover</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
-     * Failover in a Private Hosted Zone</a> </p> </li> </ul> <p>Valid values:
-     * <code>PRIMARY</code> | <code>SECONDARY</code> </p>
+     * Failover in a Private Hosted Zone</a> </p> </li> </ul>
      */
     inline ResourceRecordSet& WithFailover(ResourceRecordSetFailover&& value) { SetFailover(std::move(value)); return *this;}
 
@@ -1089,14 +1079,14 @@ namespace Model
      * set with a health check (if you're adding a <code>HealthCheckId</code> element),
      * we recommend that you specify a <code>TTL</code> of 60 seconds or less so
      * clients respond quickly to changes in health status.</p> </li> <li> <p>All of
-     * the resource record sets in a group of weighted, latency, geolocation, or
-     * failover resource record sets must have the same value for <code>TTL</code>.</p>
-     * </li> <li> <p>If a group of weighted resource record sets includes one or more
-     * weighted alias resource record sets for which the alias target is an ELB load
-     * balancer, we recommend that you specify a <code>TTL</code> of 60 seconds for all
-     * of the non-alias weighted resource record sets that have the same name and type.
-     * Values other than 60 seconds (the TTL for load balancers) will change the effect
-     * of the values that you specify for <code>Weight</code>.</p> </li> </ul>
+     * the resource record sets in a group of weighted resource record sets must have
+     * the same value for <code>TTL</code>.</p> </li> <li> <p>If a group of weighted
+     * resource record sets includes one or more weighted alias resource record sets
+     * for which the alias target is an ELB load balancer, we recommend that you
+     * specify a <code>TTL</code> of 60 seconds for all of the non-alias weighted
+     * resource record sets that have the same name and type. Values other than 60
+     * seconds (the TTL for load balancers) will change the effect of the values that
+     * you specify for <code>Weight</code>.</p> </li> </ul>
      */
     inline long long GetTTL() const{ return m_tTL; }
 
@@ -1108,14 +1098,14 @@ namespace Model
      * set with a health check (if you're adding a <code>HealthCheckId</code> element),
      * we recommend that you specify a <code>TTL</code> of 60 seconds or less so
      * clients respond quickly to changes in health status.</p> </li> <li> <p>All of
-     * the resource record sets in a group of weighted, latency, geolocation, or
-     * failover resource record sets must have the same value for <code>TTL</code>.</p>
-     * </li> <li> <p>If a group of weighted resource record sets includes one or more
-     * weighted alias resource record sets for which the alias target is an ELB load
-     * balancer, we recommend that you specify a <code>TTL</code> of 60 seconds for all
-     * of the non-alias weighted resource record sets that have the same name and type.
-     * Values other than 60 seconds (the TTL for load balancers) will change the effect
-     * of the values that you specify for <code>Weight</code>.</p> </li> </ul>
+     * the resource record sets in a group of weighted resource record sets must have
+     * the same value for <code>TTL</code>.</p> </li> <li> <p>If a group of weighted
+     * resource record sets includes one or more weighted alias resource record sets
+     * for which the alias target is an ELB load balancer, we recommend that you
+     * specify a <code>TTL</code> of 60 seconds for all of the non-alias weighted
+     * resource record sets that have the same name and type. Values other than 60
+     * seconds (the TTL for load balancers) will change the effect of the values that
+     * you specify for <code>Weight</code>.</p> </li> </ul>
      */
     inline void SetTTL(long long value) { m_tTLHasBeenSet = true; m_tTL = value; }
 
@@ -1127,14 +1117,14 @@ namespace Model
      * set with a health check (if you're adding a <code>HealthCheckId</code> element),
      * we recommend that you specify a <code>TTL</code> of 60 seconds or less so
      * clients respond quickly to changes in health status.</p> </li> <li> <p>All of
-     * the resource record sets in a group of weighted, latency, geolocation, or
-     * failover resource record sets must have the same value for <code>TTL</code>.</p>
-     * </li> <li> <p>If a group of weighted resource record sets includes one or more
-     * weighted alias resource record sets for which the alias target is an ELB load
-     * balancer, we recommend that you specify a <code>TTL</code> of 60 seconds for all
-     * of the non-alias weighted resource record sets that have the same name and type.
-     * Values other than 60 seconds (the TTL for load balancers) will change the effect
-     * of the values that you specify for <code>Weight</code>.</p> </li> </ul>
+     * the resource record sets in a group of weighted resource record sets must have
+     * the same value for <code>TTL</code>.</p> </li> <li> <p>If a group of weighted
+     * resource record sets includes one or more weighted alias resource record sets
+     * for which the alias target is an ELB load balancer, we recommend that you
+     * specify a <code>TTL</code> of 60 seconds for all of the non-alias weighted
+     * resource record sets that have the same name and type. Values other than 60
+     * seconds (the TTL for load balancers) will change the effect of the values that
+     * you specify for <code>Weight</code>.</p> </li> </ul>
      */
     inline ResourceRecordSet& WithTTL(long long value) { SetTTL(value); return *this;}
 

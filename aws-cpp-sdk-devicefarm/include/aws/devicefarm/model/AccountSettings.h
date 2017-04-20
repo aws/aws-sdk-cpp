@@ -16,6 +16,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/devicefarm/model/TrialMinutes.h>
 #include <aws/devicefarm/model/DevicePlatform.h>
 #include <utility>
 
@@ -185,6 +186,95 @@ namespace Model
     inline AccountSettings& WithMaxJobTimeoutMinutes(int value) { SetMaxJobTimeoutMinutes(value); return *this;}
 
     /**
+     * <p>Information about an AWS account's usage of free trial device minutes.</p>
+     */
+    inline const TrialMinutes& GetTrialMinutes() const{ return m_trialMinutes; }
+
+    /**
+     * <p>Information about an AWS account's usage of free trial device minutes.</p>
+     */
+    inline void SetTrialMinutes(const TrialMinutes& value) { m_trialMinutesHasBeenSet = true; m_trialMinutes = value; }
+
+    /**
+     * <p>Information about an AWS account's usage of free trial device minutes.</p>
+     */
+    inline void SetTrialMinutes(TrialMinutes&& value) { m_trialMinutesHasBeenSet = true; m_trialMinutes = std::move(value); }
+
+    /**
+     * <p>Information about an AWS account's usage of free trial device minutes.</p>
+     */
+    inline AccountSettings& WithTrialMinutes(const TrialMinutes& value) { SetTrialMinutes(value); return *this;}
+
+    /**
+     * <p>Information about an AWS account's usage of free trial device minutes.</p>
+     */
+    inline AccountSettings& WithTrialMinutes(TrialMinutes&& value) { SetTrialMinutes(std::move(value)); return *this;}
+
+    /**
+     * <p>The maximum number of device slots that the AWS account can purchase. Each
+     * maximum is expressed as an <code>offering-id:number</code> pair, where the
+     * <code>offering-id</code> represents one of the IDs returned by the
+     * <code>ListOfferings</code> command.</p>
+     */
+    inline const Aws::Map<Aws::String, int>& GetMaxSlots() const{ return m_maxSlots; }
+
+    /**
+     * <p>The maximum number of device slots that the AWS account can purchase. Each
+     * maximum is expressed as an <code>offering-id:number</code> pair, where the
+     * <code>offering-id</code> represents one of the IDs returned by the
+     * <code>ListOfferings</code> command.</p>
+     */
+    inline void SetMaxSlots(const Aws::Map<Aws::String, int>& value) { m_maxSlotsHasBeenSet = true; m_maxSlots = value; }
+
+    /**
+     * <p>The maximum number of device slots that the AWS account can purchase. Each
+     * maximum is expressed as an <code>offering-id:number</code> pair, where the
+     * <code>offering-id</code> represents one of the IDs returned by the
+     * <code>ListOfferings</code> command.</p>
+     */
+    inline void SetMaxSlots(Aws::Map<Aws::String, int>&& value) { m_maxSlotsHasBeenSet = true; m_maxSlots = std::move(value); }
+
+    /**
+     * <p>The maximum number of device slots that the AWS account can purchase. Each
+     * maximum is expressed as an <code>offering-id:number</code> pair, where the
+     * <code>offering-id</code> represents one of the IDs returned by the
+     * <code>ListOfferings</code> command.</p>
+     */
+    inline AccountSettings& WithMaxSlots(const Aws::Map<Aws::String, int>& value) { SetMaxSlots(value); return *this;}
+
+    /**
+     * <p>The maximum number of device slots that the AWS account can purchase. Each
+     * maximum is expressed as an <code>offering-id:number</code> pair, where the
+     * <code>offering-id</code> represents one of the IDs returned by the
+     * <code>ListOfferings</code> command.</p>
+     */
+    inline AccountSettings& WithMaxSlots(Aws::Map<Aws::String, int>&& value) { SetMaxSlots(std::move(value)); return *this;}
+
+    /**
+     * <p>The maximum number of device slots that the AWS account can purchase. Each
+     * maximum is expressed as an <code>offering-id:number</code> pair, where the
+     * <code>offering-id</code> represents one of the IDs returned by the
+     * <code>ListOfferings</code> command.</p>
+     */
+    inline AccountSettings& AddMaxSlots(const Aws::String& key, int value) { m_maxSlotsHasBeenSet = true; m_maxSlots.emplace(key, value); return *this; }
+
+    /**
+     * <p>The maximum number of device slots that the AWS account can purchase. Each
+     * maximum is expressed as an <code>offering-id:number</code> pair, where the
+     * <code>offering-id</code> represents one of the IDs returned by the
+     * <code>ListOfferings</code> command.</p>
+     */
+    inline AccountSettings& AddMaxSlots(Aws::String&& key, int value) { m_maxSlotsHasBeenSet = true; m_maxSlots.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The maximum number of device slots that the AWS account can purchase. Each
+     * maximum is expressed as an <code>offering-id:number</code> pair, where the
+     * <code>offering-id</code> represents one of the IDs returned by the
+     * <code>ListOfferings</code> command.</p>
+     */
+    inline AccountSettings& AddMaxSlots(const char* key, int value) { m_maxSlotsHasBeenSet = true; m_maxSlots.emplace(key, value); return *this; }
+
+    /**
      * <p>The default number of minutes (at the account level) a test run will execute
      * before it times out. Default value is 60 minutes.</p>
      */
@@ -211,6 +301,10 @@ namespace Model
     bool m_unmeteredRemoteAccessDevicesHasBeenSet;
     int m_maxJobTimeoutMinutes;
     bool m_maxJobTimeoutMinutesHasBeenSet;
+    TrialMinutes m_trialMinutes;
+    bool m_trialMinutesHasBeenSet;
+    Aws::Map<Aws::String, int> m_maxSlots;
+    bool m_maxSlotsHasBeenSet;
     int m_defaultJobTimeoutMinutes;
     bool m_defaultJobTimeoutMinutesHasBeenSet;
   };

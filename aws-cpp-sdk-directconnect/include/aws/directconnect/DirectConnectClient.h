@@ -412,16 +412,12 @@ namespace Model
          * bandwidth for the LAG. You can reassociate a connection that's currently
          * associated with a different LAG; however, if removing the connection will cause
          * the original LAG to fall below its setting for minimum number of operational
-         * connections, the request fails.</p> <p>Virtual interfaces that are directly
-         * associated with the connection are not automatically migrated. You can delete
-         * them or associate them with the target LAG using
-         * <a>AssociateVirtualInterface</a>. If the connection was originally associated
-         * with a different LAG, the virtual interfaces remain associated with the original
-         * LAG.</p> <p>For interconnects, hosted connections are not automatically
-         * migrated. You can delete them, or the owner of the physical connection can
-         * associate them with the target LAG using <a>AssociateHostedConnection</a>. After
-         * all hosted connections have been migrated, the interconnect can be migrated into
-         * the LAG. If the interconnect is already associated with a LAG, the hosted
+         * connections, the request fails.</p> <p>Any virtual interfaces that are directly
+         * associated with the connection are automatically re-associated with the LAG. If
+         * the connection was originally associated with a different LAG, the virtual
+         * interfaces remain associated with the original LAG.</p> <p>For interconnects,
+         * any hosted connections are automatically re-associated with the LAG. If the
+         * interconnect was originally associated with a different LAG, the hosted
          * connections remain associated with the original LAG.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionWithLag">AWS
@@ -437,16 +433,12 @@ namespace Model
          * bandwidth for the LAG. You can reassociate a connection that's currently
          * associated with a different LAG; however, if removing the connection will cause
          * the original LAG to fall below its setting for minimum number of operational
-         * connections, the request fails.</p> <p>Virtual interfaces that are directly
-         * associated with the connection are not automatically migrated. You can delete
-         * them or associate them with the target LAG using
-         * <a>AssociateVirtualInterface</a>. If the connection was originally associated
-         * with a different LAG, the virtual interfaces remain associated with the original
-         * LAG.</p> <p>For interconnects, hosted connections are not automatically
-         * migrated. You can delete them, or the owner of the physical connection can
-         * associate them with the target LAG using <a>AssociateHostedConnection</a>. After
-         * all hosted connections have been migrated, the interconnect can be migrated into
-         * the LAG. If the interconnect is already associated with a LAG, the hosted
+         * connections, the request fails.</p> <p>Any virtual interfaces that are directly
+         * associated with the connection are automatically re-associated with the LAG. If
+         * the connection was originally associated with a different LAG, the virtual
+         * interfaces remain associated with the original LAG.</p> <p>For interconnects,
+         * any hosted connections are automatically re-associated with the LAG. If the
+         * interconnect was originally associated with a different LAG, the hosted
          * connections remain associated with the original LAG.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionWithLag">AWS
@@ -464,16 +456,12 @@ namespace Model
          * bandwidth for the LAG. You can reassociate a connection that's currently
          * associated with a different LAG; however, if removing the connection will cause
          * the original LAG to fall below its setting for minimum number of operational
-         * connections, the request fails.</p> <p>Virtual interfaces that are directly
-         * associated with the connection are not automatically migrated. You can delete
-         * them or associate them with the target LAG using
-         * <a>AssociateVirtualInterface</a>. If the connection was originally associated
-         * with a different LAG, the virtual interfaces remain associated with the original
-         * LAG.</p> <p>For interconnects, hosted connections are not automatically
-         * migrated. You can delete them, or the owner of the physical connection can
-         * associate them with the target LAG using <a>AssociateHostedConnection</a>. After
-         * all hosted connections have been migrated, the interconnect can be migrated into
-         * the LAG. If the interconnect is already associated with a LAG, the hosted
+         * connections, the request fails.</p> <p>Any virtual interfaces that are directly
+         * associated with the connection are automatically re-associated with the LAG. If
+         * the connection was originally associated with a different LAG, the virtual
+         * interfaces remain associated with the original LAG.</p> <p>For interconnects,
+         * any hosted connections are automatically re-associated with the LAG. If the
+         * interconnect was originally associated with a different LAG, the hosted
          * connections remain associated with the original LAG.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionWithLag">AWS

@@ -348,12 +348,7 @@ namespace Model
          * <p>Associates an Amazon VPC with a private hosted zone. </p> <important> <p>To
          * perform the association, the VPC and the private hosted zone must already exist.
          * You can't convert a public hosted zone into a private hosted zone.</p>
-         * </important> <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/associatevpc</code> resource.
-         * The request body must include a document with an
-         * <code>AssociateVPCWithHostedZoneRequest</code> element. The response contains a
-         * <code>ChangeInfo</code> data type that you can use to track the progress of the
-         * request. </p> <note> <p>If you want to associate a VPC that was created by using
+         * </important> <note> <p>If you want to associate a VPC that was created by using
          * one AWS account with a private hosted zone that was created by using a different
          * account, the AWS account that created the private hosted zone must first submit
          * a <code>CreateVPCAssociationAuthorization</code> request. Then the account that
@@ -368,12 +363,7 @@ namespace Model
          * <p>Associates an Amazon VPC with a private hosted zone. </p> <important> <p>To
          * perform the association, the VPC and the private hosted zone must already exist.
          * You can't convert a public hosted zone into a private hosted zone.</p>
-         * </important> <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/associatevpc</code> resource.
-         * The request body must include a document with an
-         * <code>AssociateVPCWithHostedZoneRequest</code> element. The response contains a
-         * <code>ChangeInfo</code> data type that you can use to track the progress of the
-         * request. </p> <note> <p>If you want to associate a VPC that was created by using
+         * </important> <note> <p>If you want to associate a VPC that was created by using
          * one AWS account with a private hosted zone that was created by using a different
          * account, the AWS account that created the private hosted zone must first submit
          * a <code>CreateVPCAssociationAuthorization</code> request. Then the account that
@@ -390,12 +380,7 @@ namespace Model
          * <p>Associates an Amazon VPC with a private hosted zone. </p> <important> <p>To
          * perform the association, the VPC and the private hosted zone must already exist.
          * You can't convert a public hosted zone into a private hosted zone.</p>
-         * </important> <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/associatevpc</code> resource.
-         * The request body must include a document with an
-         * <code>AssociateVPCWithHostedZoneRequest</code> element. The response contains a
-         * <code>ChangeInfo</code> data type that you can use to track the progress of the
-         * request. </p> <note> <p>If you want to associate a VPC that was created by using
+         * </important> <note> <p>If you want to associate a VPC that was created by using
          * one AWS account with a private hosted zone that was created by using a different
          * account, the AWS account that created the private hosted zone must first submit
          * a <code>CreateVPCAssociationAuthorization</code> request. Then the account that
@@ -409,11 +394,12 @@ namespace Model
         virtual void AssociateVPCWithHostedZoneAsync(const Model::AssociateVPCWithHostedZoneRequest& request, const AssociateVPCWithHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create, change, update, or delete authoritative DNS information on all Amazon
-         * Route 53 servers. Send a <code>POST</code> request to: </p> <p>
-         * <code>/2013-04-01/hostedzone/<i>Amazon Route 53 hosted Zone ID</i>/rrset</code>
-         * resource. </p> <p> <b>Change Batches and Transactional Changes</b> </p> <p>The
-         * request body must include a document with a
+         * <p>Creates, changes, or deletes a resource record set, which contains
+         * authoritative DNS information for a specified domain name or subdomain name. For
+         * example, you can use <code>ChangeResourceRecordSets</code> to create a resource
+         * record set that routes traffic for test.example.com to a web server that has an
+         * IP address of 192.0.2.44.</p> <p> <b>Change Batches and Transactional
+         * Changes</b> </p> <p>The request body must include a document with a
          * <code>ChangeResourceRecordSetsRequest</code> element. The request body contains
          * a list of change items, known as a change batch. Change batches are considered
          * transactional changes. When using the Amazon Route 53 API to change resource
@@ -475,11 +461,12 @@ namespace Model
         virtual Model::ChangeResourceRecordSetsOutcome ChangeResourceRecordSets(const Model::ChangeResourceRecordSetsRequest& request) const;
 
         /**
-         * <p>Create, change, update, or delete authoritative DNS information on all Amazon
-         * Route 53 servers. Send a <code>POST</code> request to: </p> <p>
-         * <code>/2013-04-01/hostedzone/<i>Amazon Route 53 hosted Zone ID</i>/rrset</code>
-         * resource. </p> <p> <b>Change Batches and Transactional Changes</b> </p> <p>The
-         * request body must include a document with a
+         * <p>Creates, changes, or deletes a resource record set, which contains
+         * authoritative DNS information for a specified domain name or subdomain name. For
+         * example, you can use <code>ChangeResourceRecordSets</code> to create a resource
+         * record set that routes traffic for test.example.com to a web server that has an
+         * IP address of 192.0.2.44.</p> <p> <b>Change Batches and Transactional
+         * Changes</b> </p> <p>The request body must include a document with a
          * <code>ChangeResourceRecordSetsRequest</code> element. The request body contains
          * a list of change items, known as a change batch. Change batches are considered
          * transactional changes. When using the Amazon Route 53 API to change resource
@@ -543,11 +530,12 @@ namespace Model
         virtual Model::ChangeResourceRecordSetsOutcomeCallable ChangeResourceRecordSetsCallable(const Model::ChangeResourceRecordSetsRequest& request) const;
 
         /**
-         * <p>Create, change, update, or delete authoritative DNS information on all Amazon
-         * Route 53 servers. Send a <code>POST</code> request to: </p> <p>
-         * <code>/2013-04-01/hostedzone/<i>Amazon Route 53 hosted Zone ID</i>/rrset</code>
-         * resource. </p> <p> <b>Change Batches and Transactional Changes</b> </p> <p>The
-         * request body must include a document with a
+         * <p>Creates, changes, or deletes a resource record set, which contains
+         * authoritative DNS information for a specified domain name or subdomain name. For
+         * example, you can use <code>ChangeResourceRecordSets</code> to create a resource
+         * record set that routes traffic for test.example.com to a web server that has an
+         * IP address of 192.0.2.44.</p> <p> <b>Change Batches and Transactional
+         * Changes</b> </p> <p>The request body must include a document with a
          * <code>ChangeResourceRecordSetsRequest</code> element. The request body contains
          * a list of change items, known as a change batch. Change batches are considered
          * transactional changes. When using the Amazon Route 53 API to change resource
@@ -648,31 +636,27 @@ namespace Model
         virtual void ChangeTagsForResourceAsync(const Model::ChangeTagsForResourceRequest& request, const ChangeTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new health check.</p> <p>To create a new health check, send a
-         * <code>POST</code> request to the <code>/2013-04-01/healthcheck</code> resource.
-         * The request body must include a document with a
-         * <code>CreateHealthCheckRequest</code> element. The response returns the
-         * <code>CreateHealthCheckResponse</code> element, containing the health check ID
-         * specified when adding health check to a resource record set. For information
-         * about adding health checks to resource record sets, see
-         * <a>ResourceRecordSet$HealthCheckId</a> in <a>ChangeResourceRecordSets</a>. </p>
-         * <p>If you're registering EC2 instances with an Elastic Load Balancing (ELB) load
+         * <p>Creates a new health check.</p> <p>For information about adding health checks
+         * to resource record sets, see <a>ResourceRecordSet$HealthCheckId</a> in
+         * <a>ChangeResourceRecordSets</a>. </p> <p> <b>ELB Load Balancers</b> </p> <p>If
+         * you're registering EC2 instances with an Elastic Load Balancing (ELB) load
          * balancer, do not create Amazon Route 53 health checks for the EC2 instances.
          * When you register an EC2 instance with a load balancer, you configure settings
          * for an ELB health check, which performs a similar function to an Amazon Route 53
-         * health check.</p> <p>You can associate health checks with failover resource
-         * record sets in a private hosted zone. Note the following:</p> <ul> <li>
-         * <p>Amazon Route 53 health checkers are outside the VPC. To check the health of
-         * an endpoint within a VPC by IP address, you must assign a public IP address to
-         * the instance in the VPC.</p> </li> <li> <p>You can configure a health checker to
-         * check the health of an external resource that the instance relies on, such as a
-         * database server.</p> </li> <li> <p>You can create a CloudWatch metric, associate
-         * an alarm with the metric, and then create a health check that is based on the
-         * state of the alarm. For example, you might create a CloudWatch metric that
-         * checks the status of the Amazon EC2 <code>StatusCheckFailed</code> metric, add
-         * an alarm to the metric, and then create a health check that is based on the
-         * state of the alarm. For information about creating CloudWatch metrics and alarms
-         * by using the CloudWatch console, see the <a
+         * health check.</p> <p> <b>Private Hosted Zones</b> </p> <p>You can associate
+         * health checks with failover resource record sets in a private hosted zone. Note
+         * the following:</p> <ul> <li> <p>Amazon Route 53 health checkers are outside the
+         * VPC. To check the health of an endpoint within a VPC by IP address, you must
+         * assign a public IP address to the instance in the VPC.</p> </li> <li> <p>You can
+         * configure a health checker to check the health of an external resource that the
+         * instance relies on, such as a database server.</p> </li> <li> <p>You can create
+         * a CloudWatch metric, associate an alarm with the metric, and then create a
+         * health check that is based on the state of the alarm. For example, you might
+         * create a CloudWatch metric that checks the status of the Amazon EC2
+         * <code>StatusCheckFailed</code> metric, add an alarm to the metric, and then
+         * create a health check that is based on the state of the alarm. For information
+         * about creating CloudWatch metrics and alarms by using the CloudWatch console,
+         * see the <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
          * CloudWatch User Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">AWS
@@ -681,31 +665,27 @@ namespace Model
         virtual Model::CreateHealthCheckOutcome CreateHealthCheck(const Model::CreateHealthCheckRequest& request) const;
 
         /**
-         * <p>Creates a new health check.</p> <p>To create a new health check, send a
-         * <code>POST</code> request to the <code>/2013-04-01/healthcheck</code> resource.
-         * The request body must include a document with a
-         * <code>CreateHealthCheckRequest</code> element. The response returns the
-         * <code>CreateHealthCheckResponse</code> element, containing the health check ID
-         * specified when adding health check to a resource record set. For information
-         * about adding health checks to resource record sets, see
-         * <a>ResourceRecordSet$HealthCheckId</a> in <a>ChangeResourceRecordSets</a>. </p>
-         * <p>If you're registering EC2 instances with an Elastic Load Balancing (ELB) load
+         * <p>Creates a new health check.</p> <p>For information about adding health checks
+         * to resource record sets, see <a>ResourceRecordSet$HealthCheckId</a> in
+         * <a>ChangeResourceRecordSets</a>. </p> <p> <b>ELB Load Balancers</b> </p> <p>If
+         * you're registering EC2 instances with an Elastic Load Balancing (ELB) load
          * balancer, do not create Amazon Route 53 health checks for the EC2 instances.
          * When you register an EC2 instance with a load balancer, you configure settings
          * for an ELB health check, which performs a similar function to an Amazon Route 53
-         * health check.</p> <p>You can associate health checks with failover resource
-         * record sets in a private hosted zone. Note the following:</p> <ul> <li>
-         * <p>Amazon Route 53 health checkers are outside the VPC. To check the health of
-         * an endpoint within a VPC by IP address, you must assign a public IP address to
-         * the instance in the VPC.</p> </li> <li> <p>You can configure a health checker to
-         * check the health of an external resource that the instance relies on, such as a
-         * database server.</p> </li> <li> <p>You can create a CloudWatch metric, associate
-         * an alarm with the metric, and then create a health check that is based on the
-         * state of the alarm. For example, you might create a CloudWatch metric that
-         * checks the status of the Amazon EC2 <code>StatusCheckFailed</code> metric, add
-         * an alarm to the metric, and then create a health check that is based on the
-         * state of the alarm. For information about creating CloudWatch metrics and alarms
-         * by using the CloudWatch console, see the <a
+         * health check.</p> <p> <b>Private Hosted Zones</b> </p> <p>You can associate
+         * health checks with failover resource record sets in a private hosted zone. Note
+         * the following:</p> <ul> <li> <p>Amazon Route 53 health checkers are outside the
+         * VPC. To check the health of an endpoint within a VPC by IP address, you must
+         * assign a public IP address to the instance in the VPC.</p> </li> <li> <p>You can
+         * configure a health checker to check the health of an external resource that the
+         * instance relies on, such as a database server.</p> </li> <li> <p>You can create
+         * a CloudWatch metric, associate an alarm with the metric, and then create a
+         * health check that is based on the state of the alarm. For example, you might
+         * create a CloudWatch metric that checks the status of the Amazon EC2
+         * <code>StatusCheckFailed</code> metric, add an alarm to the metric, and then
+         * create a health check that is based on the state of the alarm. For information
+         * about creating CloudWatch metrics and alarms by using the CloudWatch console,
+         * see the <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
          * CloudWatch User Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">AWS
@@ -716,31 +696,27 @@ namespace Model
         virtual Model::CreateHealthCheckOutcomeCallable CreateHealthCheckCallable(const Model::CreateHealthCheckRequest& request) const;
 
         /**
-         * <p>Creates a new health check.</p> <p>To create a new health check, send a
-         * <code>POST</code> request to the <code>/2013-04-01/healthcheck</code> resource.
-         * The request body must include a document with a
-         * <code>CreateHealthCheckRequest</code> element. The response returns the
-         * <code>CreateHealthCheckResponse</code> element, containing the health check ID
-         * specified when adding health check to a resource record set. For information
-         * about adding health checks to resource record sets, see
-         * <a>ResourceRecordSet$HealthCheckId</a> in <a>ChangeResourceRecordSets</a>. </p>
-         * <p>If you're registering EC2 instances with an Elastic Load Balancing (ELB) load
+         * <p>Creates a new health check.</p> <p>For information about adding health checks
+         * to resource record sets, see <a>ResourceRecordSet$HealthCheckId</a> in
+         * <a>ChangeResourceRecordSets</a>. </p> <p> <b>ELB Load Balancers</b> </p> <p>If
+         * you're registering EC2 instances with an Elastic Load Balancing (ELB) load
          * balancer, do not create Amazon Route 53 health checks for the EC2 instances.
          * When you register an EC2 instance with a load balancer, you configure settings
          * for an ELB health check, which performs a similar function to an Amazon Route 53
-         * health check.</p> <p>You can associate health checks with failover resource
-         * record sets in a private hosted zone. Note the following:</p> <ul> <li>
-         * <p>Amazon Route 53 health checkers are outside the VPC. To check the health of
-         * an endpoint within a VPC by IP address, you must assign a public IP address to
-         * the instance in the VPC.</p> </li> <li> <p>You can configure a health checker to
-         * check the health of an external resource that the instance relies on, such as a
-         * database server.</p> </li> <li> <p>You can create a CloudWatch metric, associate
-         * an alarm with the metric, and then create a health check that is based on the
-         * state of the alarm. For example, you might create a CloudWatch metric that
-         * checks the status of the Amazon EC2 <code>StatusCheckFailed</code> metric, add
-         * an alarm to the metric, and then create a health check that is based on the
-         * state of the alarm. For information about creating CloudWatch metrics and alarms
-         * by using the CloudWatch console, see the <a
+         * health check.</p> <p> <b>Private Hosted Zones</b> </p> <p>You can associate
+         * health checks with failover resource record sets in a private hosted zone. Note
+         * the following:</p> <ul> <li> <p>Amazon Route 53 health checkers are outside the
+         * VPC. To check the health of an endpoint within a VPC by IP address, you must
+         * assign a public IP address to the instance in the VPC.</p> </li> <li> <p>You can
+         * configure a health checker to check the health of an external resource that the
+         * instance relies on, such as a database server.</p> </li> <li> <p>You can create
+         * a CloudWatch metric, associate an alarm with the metric, and then create a
+         * health check that is based on the state of the alarm. For example, you might
+         * create a CloudWatch metric that checks the status of the Amazon EC2
+         * <code>StatusCheckFailed</code> metric, add an alarm to the metric, and then
+         * create a health check that is based on the state of the alarm. For information
+         * about creating CloudWatch metrics and alarms by using the CloudWatch console,
+         * see the <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
          * CloudWatch User Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">AWS
@@ -751,16 +727,12 @@ namespace Model
         virtual void CreateHealthCheckAsync(const Model::CreateHealthCheckRequest& request, const CreateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new public hosted zone, used to specify how the Domain Name System
-         * (DNS) routes traffic on the Internet for a domain, such as example.com, and its
-         * subdomains. </p> <important> <p>Public hosted zones can't be converted to a
-         * private hosted zone or vice versa. Instead, create a new hosted zone with the
-         * same name and create new resource record sets.</p> </important> <p>Send a
-         * <code>POST</code> request to the <code>/2013-04-01/hostedzone</code> resource.
-         * The request body must include a document with a
-         * <code>CreateHostedZoneRequest</code> element. The response returns the
-         * <code>CreateHostedZoneResponse</code> element containing metadata about the
-         * hosted zone.</p> <p>Fore more information about charges for hosted zones, see <a
+         * <p>Creates a new public hosted zone, which you use to specify how the Domain
+         * Name System (DNS) routes traffic on the Internet for a domain, such as
+         * example.com, and its subdomains. </p> <important> <p>You can't convert a public
+         * hosted zones to a private hosted zone or vice versa. Instead, you must create a
+         * new hosted zone with the same name and create new resource record sets.</p>
+         * </important> <p>For more information about charges for hosted zones, see <a
          * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
          * <p>Note the following:</p> <ul> <li> <p>You can't create a hosted zone for a
          * top-level domain (TLD).</p> </li> <li> <p>Amazon Route 53 automatically creates
@@ -768,35 +740,31 @@ namespace Model
          * about SOA and NS records, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
          * and SOA Records that Amazon Route 53 Creates for a Hosted Zone</a> in the
-         * <i>Amazon Route 53 Developer Guide</i>.</p> </li> <li> <p>If your domain is
-         * registered with a registrar other than Amazon Route 53, you must update the name
-         * servers with your registrar to make Amazon Route 53 your DNS service. For more
-         * information, see <a
+         * <i>Amazon Route 53 Developer Guide</i>.</p> <p>If you want to use the same name
+         * servers for multiple hosted zones, you can optionally associate a reusable
+         * delegation set with the hosted zone. See the <code>DelegationSetId</code>
+         * element.</p> </li> <li> <p>If your domain is registered with a registrar other
+         * than Amazon Route 53, you must update the name servers with your registrar to
+         * make Amazon Route 53 your DNS service. For more information, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/creating-migrating.html">Configuring
-         * Amazon Route 53 as your DNS Service</a> in the <i>Amazon Route 53 Developer's
-         * Guide</i>.</p> </li> </ul> <p>After creating a zone, its initial status is
-         * <code>PENDING</code>. This means that it is not yet available on all DNS
-         * servers. The status of the zone changes to <code>INSYNC</code> when the NS and
-         * SOA records are available on all Amazon Route 53 DNS servers. </p> <p>When
-         * trying to create a hosted zone using a reusable delegation set, specify an
-         * optional DelegationSetId, and Amazon Route 53 would assign those 4 NS records
-         * for the zone, instead of allotting a new one.</p><p><h3>See Also:</h3>   <a
+         * Amazon Route 53 as your DNS Service</a> in the <i>Amazon Route 53 Developer
+         * Guide</i>. </p> </li> </ul> <p>When you submit a <code>CreateHostedZone</code>
+         * request, the initial status of the hosted zone is <code>PENDING</code>. This
+         * means that the NS and SOA records are not yet available on all Amazon Route 53
+         * DNS servers. When the NS and SOA records are available, the status of the zone
+         * changes to <code>INSYNC</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateHostedZoneOutcome CreateHostedZone(const Model::CreateHostedZoneRequest& request) const;
 
         /**
-         * <p>Creates a new public hosted zone, used to specify how the Domain Name System
-         * (DNS) routes traffic on the Internet for a domain, such as example.com, and its
-         * subdomains. </p> <important> <p>Public hosted zones can't be converted to a
-         * private hosted zone or vice versa. Instead, create a new hosted zone with the
-         * same name and create new resource record sets.</p> </important> <p>Send a
-         * <code>POST</code> request to the <code>/2013-04-01/hostedzone</code> resource.
-         * The request body must include a document with a
-         * <code>CreateHostedZoneRequest</code> element. The response returns the
-         * <code>CreateHostedZoneResponse</code> element containing metadata about the
-         * hosted zone.</p> <p>Fore more information about charges for hosted zones, see <a
+         * <p>Creates a new public hosted zone, which you use to specify how the Domain
+         * Name System (DNS) routes traffic on the Internet for a domain, such as
+         * example.com, and its subdomains. </p> <important> <p>You can't convert a public
+         * hosted zones to a private hosted zone or vice versa. Instead, you must create a
+         * new hosted zone with the same name and create new resource record sets.</p>
+         * </important> <p>For more information about charges for hosted zones, see <a
          * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
          * <p>Note the following:</p> <ul> <li> <p>You can't create a hosted zone for a
          * top-level domain (TLD).</p> </li> <li> <p>Amazon Route 53 automatically creates
@@ -804,19 +772,19 @@ namespace Model
          * about SOA and NS records, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
          * and SOA Records that Amazon Route 53 Creates for a Hosted Zone</a> in the
-         * <i>Amazon Route 53 Developer Guide</i>.</p> </li> <li> <p>If your domain is
-         * registered with a registrar other than Amazon Route 53, you must update the name
-         * servers with your registrar to make Amazon Route 53 your DNS service. For more
-         * information, see <a
+         * <i>Amazon Route 53 Developer Guide</i>.</p> <p>If you want to use the same name
+         * servers for multiple hosted zones, you can optionally associate a reusable
+         * delegation set with the hosted zone. See the <code>DelegationSetId</code>
+         * element.</p> </li> <li> <p>If your domain is registered with a registrar other
+         * than Amazon Route 53, you must update the name servers with your registrar to
+         * make Amazon Route 53 your DNS service. For more information, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/creating-migrating.html">Configuring
-         * Amazon Route 53 as your DNS Service</a> in the <i>Amazon Route 53 Developer's
-         * Guide</i>.</p> </li> </ul> <p>After creating a zone, its initial status is
-         * <code>PENDING</code>. This means that it is not yet available on all DNS
-         * servers. The status of the zone changes to <code>INSYNC</code> when the NS and
-         * SOA records are available on all Amazon Route 53 DNS servers. </p> <p>When
-         * trying to create a hosted zone using a reusable delegation set, specify an
-         * optional DelegationSetId, and Amazon Route 53 would assign those 4 NS records
-         * for the zone, instead of allotting a new one.</p><p><h3>See Also:</h3>   <a
+         * Amazon Route 53 as your DNS Service</a> in the <i>Amazon Route 53 Developer
+         * Guide</i>. </p> </li> </ul> <p>When you submit a <code>CreateHostedZone</code>
+         * request, the initial status of the hosted zone is <code>PENDING</code>. This
+         * means that the NS and SOA records are not yet available on all Amazon Route 53
+         * DNS servers. When the NS and SOA records are available, the status of the zone
+         * changes to <code>INSYNC</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone">AWS
          * API Reference</a></p>
          *
@@ -825,16 +793,12 @@ namespace Model
         virtual Model::CreateHostedZoneOutcomeCallable CreateHostedZoneCallable(const Model::CreateHostedZoneRequest& request) const;
 
         /**
-         * <p>Creates a new public hosted zone, used to specify how the Domain Name System
-         * (DNS) routes traffic on the Internet for a domain, such as example.com, and its
-         * subdomains. </p> <important> <p>Public hosted zones can't be converted to a
-         * private hosted zone or vice versa. Instead, create a new hosted zone with the
-         * same name and create new resource record sets.</p> </important> <p>Send a
-         * <code>POST</code> request to the <code>/2013-04-01/hostedzone</code> resource.
-         * The request body must include a document with a
-         * <code>CreateHostedZoneRequest</code> element. The response returns the
-         * <code>CreateHostedZoneResponse</code> element containing metadata about the
-         * hosted zone.</p> <p>Fore more information about charges for hosted zones, see <a
+         * <p>Creates a new public hosted zone, which you use to specify how the Domain
+         * Name System (DNS) routes traffic on the Internet for a domain, such as
+         * example.com, and its subdomains. </p> <important> <p>You can't convert a public
+         * hosted zones to a private hosted zone or vice versa. Instead, you must create a
+         * new hosted zone with the same name and create new resource record sets.</p>
+         * </important> <p>For more information about charges for hosted zones, see <a
          * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
          * <p>Note the following:</p> <ul> <li> <p>You can't create a hosted zone for a
          * top-level domain (TLD).</p> </li> <li> <p>Amazon Route 53 automatically creates
@@ -842,19 +806,19 @@ namespace Model
          * about SOA and NS records, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
          * and SOA Records that Amazon Route 53 Creates for a Hosted Zone</a> in the
-         * <i>Amazon Route 53 Developer Guide</i>.</p> </li> <li> <p>If your domain is
-         * registered with a registrar other than Amazon Route 53, you must update the name
-         * servers with your registrar to make Amazon Route 53 your DNS service. For more
-         * information, see <a
+         * <i>Amazon Route 53 Developer Guide</i>.</p> <p>If you want to use the same name
+         * servers for multiple hosted zones, you can optionally associate a reusable
+         * delegation set with the hosted zone. See the <code>DelegationSetId</code>
+         * element.</p> </li> <li> <p>If your domain is registered with a registrar other
+         * than Amazon Route 53, you must update the name servers with your registrar to
+         * make Amazon Route 53 your DNS service. For more information, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/creating-migrating.html">Configuring
-         * Amazon Route 53 as your DNS Service</a> in the <i>Amazon Route 53 Developer's
-         * Guide</i>.</p> </li> </ul> <p>After creating a zone, its initial status is
-         * <code>PENDING</code>. This means that it is not yet available on all DNS
-         * servers. The status of the zone changes to <code>INSYNC</code> when the NS and
-         * SOA records are available on all Amazon Route 53 DNS servers. </p> <p>When
-         * trying to create a hosted zone using a reusable delegation set, specify an
-         * optional DelegationSetId, and Amazon Route 53 would assign those 4 NS records
-         * for the zone, instead of allotting a new one.</p><p><h3>See Also:</h3>   <a
+         * Amazon Route 53 as your DNS Service</a> in the <i>Amazon Route 53 Developer
+         * Guide</i>. </p> </li> </ul> <p>When you submit a <code>CreateHostedZone</code>
+         * request, the initial status of the hosted zone is <code>PENDING</code>. This
+         * means that the NS and SOA records are not yet available on all Amazon Route 53
+         * DNS servers. When the NS and SOA records are available, the status of the zone
+         * changes to <code>INSYNC</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone">AWS
          * API Reference</a></p>
          *
@@ -866,13 +830,9 @@ namespace Model
          * <p>Creates a delegation set (a group of four name servers) that can be reused by
          * multiple hosted zones. If a hosted zoned ID is specified,
          * <code>CreateReusableDelegationSet</code> marks the delegation set associated
-         * with that zone as reusable</p> <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/delegationset</code> resource. The request body must include a
-         * document with a <code>CreateReusableDelegationSetRequest</code> element.</p>
-         * <note> <p>A reusable delegation set can't be associated with a private hosted
-         * zone/</p> </note> <p>For more information, including a procedure on how to
-         * create and configure a reusable delegation set (also known as white label name
-         * servers), see <a
+         * with that zone as reusable</p> <note> <p>A reusable delegation set can't be
+         * associated with a private hosted zone.</p> </note> <p>For information on how to
+         * use a reusable delegation set to configure white label name servers, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
          * White Label Name Servers</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet">AWS
@@ -884,13 +844,9 @@ namespace Model
          * <p>Creates a delegation set (a group of four name servers) that can be reused by
          * multiple hosted zones. If a hosted zoned ID is specified,
          * <code>CreateReusableDelegationSet</code> marks the delegation set associated
-         * with that zone as reusable</p> <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/delegationset</code> resource. The request body must include a
-         * document with a <code>CreateReusableDelegationSetRequest</code> element.</p>
-         * <note> <p>A reusable delegation set can't be associated with a private hosted
-         * zone/</p> </note> <p>For more information, including a procedure on how to
-         * create and configure a reusable delegation set (also known as white label name
-         * servers), see <a
+         * with that zone as reusable</p> <note> <p>A reusable delegation set can't be
+         * associated with a private hosted zone.</p> </note> <p>For information on how to
+         * use a reusable delegation set to configure white label name servers, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
          * White Label Name Servers</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet">AWS
@@ -904,13 +860,9 @@ namespace Model
          * <p>Creates a delegation set (a group of four name servers) that can be reused by
          * multiple hosted zones. If a hosted zoned ID is specified,
          * <code>CreateReusableDelegationSet</code> marks the delegation set associated
-         * with that zone as reusable</p> <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/delegationset</code> resource. The request body must include a
-         * document with a <code>CreateReusableDelegationSetRequest</code> element.</p>
-         * <note> <p>A reusable delegation set can't be associated with a private hosted
-         * zone/</p> </note> <p>For more information, including a procedure on how to
-         * create and configure a reusable delegation set (also known as white label name
-         * servers), see <a
+         * with that zone as reusable</p> <note> <p>A reusable delegation set can't be
+         * associated with a private hosted zone.</p> </note> <p>For information on how to
+         * use a reusable delegation set to configure white label name servers, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
          * White Label Name Servers</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet">AWS
@@ -923,11 +875,7 @@ namespace Model
         /**
          * <p>Creates a traffic policy, which you use to create multiple DNS resource
          * record sets for one domain name (such as example.com) or one subdomain name
-         * (such as www.example.com).</p> <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/trafficpolicy</code> resource. The request body must include a
-         * document with a <code>CreateTrafficPolicyRequest</code> element. The response
-         * includes the <code>CreateTrafficPolicyResponse</code> element, which contains
-         * information about the new traffic policy.</p><p><h3>See Also:</h3>   <a
+         * (such as www.example.com).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy">AWS
          * API Reference</a></p>
          */
@@ -936,11 +884,7 @@ namespace Model
         /**
          * <p>Creates a traffic policy, which you use to create multiple DNS resource
          * record sets for one domain name (such as example.com) or one subdomain name
-         * (such as www.example.com).</p> <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/trafficpolicy</code> resource. The request body must include a
-         * document with a <code>CreateTrafficPolicyRequest</code> element. The response
-         * includes the <code>CreateTrafficPolicyResponse</code> element, which contains
-         * information about the new traffic policy.</p><p><h3>See Also:</h3>   <a
+         * (such as www.example.com).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy">AWS
          * API Reference</a></p>
          *
@@ -951,11 +895,7 @@ namespace Model
         /**
          * <p>Creates a traffic policy, which you use to create multiple DNS resource
          * record sets for one domain name (such as example.com) or one subdomain name
-         * (such as www.example.com).</p> <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/trafficpolicy</code> resource. The request body must include a
-         * document with a <code>CreateTrafficPolicyRequest</code> element. The response
-         * includes the <code>CreateTrafficPolicyResponse</code> element, which contains
-         * information about the new traffic policy.</p><p><h3>See Also:</h3>   <a
+         * (such as www.example.com).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy">AWS
          * API Reference</a></p>
          *
@@ -970,12 +910,7 @@ namespace Model
          * with a specified domain name (such as example.com) or subdomain name (such as
          * www.example.com). Amazon Route 53 responds to DNS queries for the domain or
          * subdomain name by using the resource record sets that
-         * <code>CreateTrafficPolicyInstance</code> created.</p> <p>Send a
-         * <code>POST</code> request to the <code>/2013-04-01/trafficpolicyinstance</code>
-         * resource. The request body must include a document with a
-         * <code>CreateTrafficPolicyRequest</code> element. The response returns the
-         * <code>CreateTrafficPolicyInstanceResponse</code> element, which contains
-         * information about the traffic policy instance.</p><p><h3>See Also:</h3>   <a
+         * <code>CreateTrafficPolicyInstance</code> created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance">AWS
          * API Reference</a></p>
          */
@@ -988,12 +923,7 @@ namespace Model
          * with a specified domain name (such as example.com) or subdomain name (such as
          * www.example.com). Amazon Route 53 responds to DNS queries for the domain or
          * subdomain name by using the resource record sets that
-         * <code>CreateTrafficPolicyInstance</code> created.</p> <p>Send a
-         * <code>POST</code> request to the <code>/2013-04-01/trafficpolicyinstance</code>
-         * resource. The request body must include a document with a
-         * <code>CreateTrafficPolicyRequest</code> element. The response returns the
-         * <code>CreateTrafficPolicyInstanceResponse</code> element, which contains
-         * information about the traffic policy instance.</p><p><h3>See Also:</h3>   <a
+         * <code>CreateTrafficPolicyInstance</code> created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance">AWS
          * API Reference</a></p>
          *
@@ -1008,12 +938,7 @@ namespace Model
          * with a specified domain name (such as example.com) or subdomain name (such as
          * www.example.com). Amazon Route 53 responds to DNS queries for the domain or
          * subdomain name by using the resource record sets that
-         * <code>CreateTrafficPolicyInstance</code> created.</p> <p>Send a
-         * <code>POST</code> request to the <code>/2013-04-01/trafficpolicyinstance</code>
-         * resource. The request body must include a document with a
-         * <code>CreateTrafficPolicyRequest</code> element. The response returns the
-         * <code>CreateTrafficPolicyInstanceResponse</code> element, which contains
-         * information about the traffic policy instance.</p><p><h3>See Also:</h3>   <a
+         * <code>CreateTrafficPolicyInstance</code> created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance">AWS
          * API Reference</a></p>
          *
@@ -1029,11 +954,6 @@ namespace Model
          * name (such as example.com) or one subdomain name (such as www.example.com). You
          * can create a maximum of 1000 versions of a traffic policy. If you reach the
          * limit and need to create another version, you'll need to start a new traffic
-         * policy.</p> <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/trafficpolicy/</code> resource. The request body includes a
-         * document with a <code>CreateTrafficPolicyVersionRequest</code> element. The
-         * response returns the <code>CreateTrafficPolicyVersionResponse</code> element,
-         * which contains information about the new version of the traffic
          * policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion">AWS
          * API Reference</a></p>
@@ -1048,11 +968,6 @@ namespace Model
          * name (such as example.com) or one subdomain name (such as www.example.com). You
          * can create a maximum of 1000 versions of a traffic policy. If you reach the
          * limit and need to create another version, you'll need to start a new traffic
-         * policy.</p> <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/trafficpolicy/</code> resource. The request body includes a
-         * document with a <code>CreateTrafficPolicyVersionRequest</code> element. The
-         * response returns the <code>CreateTrafficPolicyVersionResponse</code> element,
-         * which contains information about the new version of the traffic
          * policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion">AWS
          * API Reference</a></p>
@@ -1069,11 +984,6 @@ namespace Model
          * name (such as example.com) or one subdomain name (such as www.example.com). You
          * can create a maximum of 1000 versions of a traffic policy. If you reach the
          * limit and need to create another version, you'll need to start a new traffic
-         * policy.</p> <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/trafficpolicy/</code> resource. The request body includes a
-         * document with a <code>CreateTrafficPolicyVersionRequest</code> element. The
-         * response returns the <code>CreateTrafficPolicyVersionResponse</code> element,
-         * which contains information about the new version of the traffic
          * policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion">AWS
          * API Reference</a></p>
@@ -1092,12 +1002,7 @@ namespace Model
          * <code>AssociateVPCWithHostedZone</code> request.</p> <note> <p>If you want to
          * associate multiple VPCs that you created by using one account with a hosted zone
          * that you created by using a different account, you must submit one authorization
-         * request for each VPC.</p> </note> <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/hostedzone/<i>hosted zone
-         * ID</i>/authorizevpcassociation</code> resource. The request body must include a
-         * document with a <code>CreateVPCAssociationAuthorizationRequest</code> element.
-         * The response contains information about the authorization.</p><p><h3>See
-         * Also:</h3>   <a
+         * request for each VPC.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization">AWS
          * API Reference</a></p>
          */
@@ -1113,12 +1018,7 @@ namespace Model
          * <code>AssociateVPCWithHostedZone</code> request.</p> <note> <p>If you want to
          * associate multiple VPCs that you created by using one account with a hosted zone
          * that you created by using a different account, you must submit one authorization
-         * request for each VPC.</p> </note> <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/hostedzone/<i>hosted zone
-         * ID</i>/authorizevpcassociation</code> resource. The request body must include a
-         * document with a <code>CreateVPCAssociationAuthorizationRequest</code> element.
-         * The response contains information about the authorization.</p><p><h3>See
-         * Also:</h3>   <a
+         * request for each VPC.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization">AWS
          * API Reference</a></p>
          *
@@ -1136,12 +1036,7 @@ namespace Model
          * <code>AssociateVPCWithHostedZone</code> request.</p> <note> <p>If you want to
          * associate multiple VPCs that you created by using one account with a hosted zone
          * that you created by using a different account, you must submit one authorization
-         * request for each VPC.</p> </note> <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/hostedzone/<i>hosted zone
-         * ID</i>/authorizevpcassociation</code> resource. The request body must include a
-         * document with a <code>CreateVPCAssociationAuthorizationRequest</code> element.
-         * The response contains information about the authorization.</p><p><h3>See
-         * Also:</h3>   <a
+         * request for each VPC.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization">AWS
          * API Reference</a></p>
          *
@@ -1150,34 +1045,30 @@ namespace Model
         virtual void CreateVPCAssociationAuthorizationAsync(const Model::CreateVPCAssociationAuthorizationRequest& request, const CreateVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a health check. Send a <code>DELETE</code> request to the
-         * <code>/2013-04-01/healthcheck/<i>health check ID</i> </code> resource.</p>
-         * <important> <p>Amazon Route 53 does not prevent you from deleting a health check
-         * even if the health check is associated with one or more resource record sets. If
-         * you delete a health check and you don't update the associated resource record
-         * sets, the future status of the health check can't be predicted and may change.
-         * This will affect the routing of DNS queries for your DNS failover configuration.
-         * For more information, see <a
+         * <p>Deletes a health check.</p> <important> <p>Amazon Route 53 does not prevent
+         * you from deleting a health check even if the health check is associated with one
+         * or more resource record sets. If you delete a health check and you don't update
+         * the associated resource record sets, the future status of the health check can't
+         * be predicted and may change. This will affect the routing of DNS queries for
+         * your DNS failover configuration. For more information, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
-         * and Deleting Health Checks</a> in the Amazon Route 53 Developer Guide.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer
+         * Guide</i>.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheck">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteHealthCheckOutcome DeleteHealthCheck(const Model::DeleteHealthCheckRequest& request) const;
 
         /**
-         * <p>Deletes a health check. Send a <code>DELETE</code> request to the
-         * <code>/2013-04-01/healthcheck/<i>health check ID</i> </code> resource.</p>
-         * <important> <p>Amazon Route 53 does not prevent you from deleting a health check
-         * even if the health check is associated with one or more resource record sets. If
-         * you delete a health check and you don't update the associated resource record
-         * sets, the future status of the health check can't be predicted and may change.
-         * This will affect the routing of DNS queries for your DNS failover configuration.
-         * For more information, see <a
+         * <p>Deletes a health check.</p> <important> <p>Amazon Route 53 does not prevent
+         * you from deleting a health check even if the health check is associated with one
+         * or more resource record sets. If you delete a health check and you don't update
+         * the associated resource record sets, the future status of the health check can't
+         * be predicted and may change. This will affect the routing of DNS queries for
+         * your DNS failover configuration. For more information, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
-         * and Deleting Health Checks</a> in the Amazon Route 53 Developer Guide.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer
+         * Guide</i>.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheck">AWS
          * API Reference</a></p>
          *
@@ -1186,17 +1077,15 @@ namespace Model
         virtual Model::DeleteHealthCheckOutcomeCallable DeleteHealthCheckCallable(const Model::DeleteHealthCheckRequest& request) const;
 
         /**
-         * <p>Deletes a health check. Send a <code>DELETE</code> request to the
-         * <code>/2013-04-01/healthcheck/<i>health check ID</i> </code> resource.</p>
-         * <important> <p>Amazon Route 53 does not prevent you from deleting a health check
-         * even if the health check is associated with one or more resource record sets. If
-         * you delete a health check and you don't update the associated resource record
-         * sets, the future status of the health check can't be predicted and may change.
-         * This will affect the routing of DNS queries for your DNS failover configuration.
-         * For more information, see <a
+         * <p>Deletes a health check.</p> <important> <p>Amazon Route 53 does not prevent
+         * you from deleting a health check even if the health check is associated with one
+         * or more resource record sets. If you delete a health check and you don't update
+         * the associated resource record sets, the future status of the health check can't
+         * be predicted and may change. This will affect the routing of DNS queries for
+         * your DNS failover configuration. For more information, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
-         * and Deleting Health Checks</a> in the Amazon Route 53 Developer Guide.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer
+         * Guide</i>.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheck">AWS
          * API Reference</a></p>
          *
@@ -1205,32 +1094,58 @@ namespace Model
         virtual void DeleteHealthCheckAsync(const Model::DeleteHealthCheckRequest& request, const DeleteHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a hosted zone. Send a <code>DELETE</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/hostedzone/<i>hosted zone ID</i>
-         * </code> resource.</p> <important> <p>Delete a hosted zone only if there are no
-         * resource record sets other than the default SOA record and NS resource record
-         * sets. If the hosted zone contains other resource record sets, delete them before
-         * deleting the hosted zone. If you try to delete a hosted zone that contains other
-         * resource record sets, Amazon Route 53 denies your request with a
+         * <p>Deletes a hosted zone.</p> <important> <p>If the name servers for the hosted
+         * zone are associated with a domain and if you want to make the domain unavailable
+         * on the Internet, we recommend that you delete the name servers from the domain
+         * to prevent future DNS queries from possibly being misrouted. If the domain is
+         * registered with Amazon Route 53, see <code>UpdateDomainNameservers</code>. If
+         * the domain is registered with another registrar, use the method provided by the
+         * registrar to delete name servers for the domain.</p> <p>Some domain registries
+         * don't allow you to remove all of the name servers for a domain. If the registry
+         * for your domain requires one or more name servers, we recommend that you delete
+         * the hosted zone only if you transfer DNS service to another service provider,
+         * and you replace the name servers for the domain with name servers from the new
+         * provider.</p> </important> <p>You can delete a hosted zone only if it contains
+         * only the default SOA record and NS resource record sets. If the hosted zone
+         * contains other resource record sets, you must delete them before you can delete
+         * the hosted zone. If you try to delete a hosted zone that contains other resource
+         * record sets, the request fails, and Amazon Route 53 returns a
          * <code>HostedZoneNotEmpty</code> error. For information about deleting records
-         * from your hosted zone, see <a>ChangeResourceRecordSets</a>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * from your hosted zone, see <a>ChangeResourceRecordSets</a>.</p> <p>To verify
+         * that the hosted zone has been deleted, do one of the following:</p> <ul> <li>
+         * <p>Use the <code>GetHostedZone</code> action to request information about the
+         * hosted zone.</p> </li> <li> <p>Use the <code>ListHostedZones</code> action to
+         * get a list of the hosted zones associated with the current AWS account.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteHostedZoneOutcome DeleteHostedZone(const Model::DeleteHostedZoneRequest& request) const;
 
         /**
-         * <p>Deletes a hosted zone. Send a <code>DELETE</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/hostedzone/<i>hosted zone ID</i>
-         * </code> resource.</p> <important> <p>Delete a hosted zone only if there are no
-         * resource record sets other than the default SOA record and NS resource record
-         * sets. If the hosted zone contains other resource record sets, delete them before
-         * deleting the hosted zone. If you try to delete a hosted zone that contains other
-         * resource record sets, Amazon Route 53 denies your request with a
+         * <p>Deletes a hosted zone.</p> <important> <p>If the name servers for the hosted
+         * zone are associated with a domain and if you want to make the domain unavailable
+         * on the Internet, we recommend that you delete the name servers from the domain
+         * to prevent future DNS queries from possibly being misrouted. If the domain is
+         * registered with Amazon Route 53, see <code>UpdateDomainNameservers</code>. If
+         * the domain is registered with another registrar, use the method provided by the
+         * registrar to delete name servers for the domain.</p> <p>Some domain registries
+         * don't allow you to remove all of the name servers for a domain. If the registry
+         * for your domain requires one or more name servers, we recommend that you delete
+         * the hosted zone only if you transfer DNS service to another service provider,
+         * and you replace the name servers for the domain with name servers from the new
+         * provider.</p> </important> <p>You can delete a hosted zone only if it contains
+         * only the default SOA record and NS resource record sets. If the hosted zone
+         * contains other resource record sets, you must delete them before you can delete
+         * the hosted zone. If you try to delete a hosted zone that contains other resource
+         * record sets, the request fails, and Amazon Route 53 returns a
          * <code>HostedZoneNotEmpty</code> error. For information about deleting records
-         * from your hosted zone, see <a>ChangeResourceRecordSets</a>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * from your hosted zone, see <a>ChangeResourceRecordSets</a>.</p> <p>To verify
+         * that the hosted zone has been deleted, do one of the following:</p> <ul> <li>
+         * <p>Use the <code>GetHostedZone</code> action to request information about the
+         * hosted zone.</p> </li> <li> <p>Use the <code>ListHostedZones</code> action to
+         * get a list of the hosted zones associated with the current AWS account.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone">AWS
          * API Reference</a></p>
          *
@@ -1239,16 +1154,29 @@ namespace Model
         virtual Model::DeleteHostedZoneOutcomeCallable DeleteHostedZoneCallable(const Model::DeleteHostedZoneRequest& request) const;
 
         /**
-         * <p>Deletes a hosted zone. Send a <code>DELETE</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/hostedzone/<i>hosted zone ID</i>
-         * </code> resource.</p> <important> <p>Delete a hosted zone only if there are no
-         * resource record sets other than the default SOA record and NS resource record
-         * sets. If the hosted zone contains other resource record sets, delete them before
-         * deleting the hosted zone. If you try to delete a hosted zone that contains other
-         * resource record sets, Amazon Route 53 denies your request with a
+         * <p>Deletes a hosted zone.</p> <important> <p>If the name servers for the hosted
+         * zone are associated with a domain and if you want to make the domain unavailable
+         * on the Internet, we recommend that you delete the name servers from the domain
+         * to prevent future DNS queries from possibly being misrouted. If the domain is
+         * registered with Amazon Route 53, see <code>UpdateDomainNameservers</code>. If
+         * the domain is registered with another registrar, use the method provided by the
+         * registrar to delete name servers for the domain.</p> <p>Some domain registries
+         * don't allow you to remove all of the name servers for a domain. If the registry
+         * for your domain requires one or more name servers, we recommend that you delete
+         * the hosted zone only if you transfer DNS service to another service provider,
+         * and you replace the name servers for the domain with name servers from the new
+         * provider.</p> </important> <p>You can delete a hosted zone only if it contains
+         * only the default SOA record and NS resource record sets. If the hosted zone
+         * contains other resource record sets, you must delete them before you can delete
+         * the hosted zone. If you try to delete a hosted zone that contains other resource
+         * record sets, the request fails, and Amazon Route 53 returns a
          * <code>HostedZoneNotEmpty</code> error. For information about deleting records
-         * from your hosted zone, see <a>ChangeResourceRecordSets</a>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * from your hosted zone, see <a>ChangeResourceRecordSets</a>.</p> <p>To verify
+         * that the hosted zone has been deleted, do one of the following:</p> <ul> <li>
+         * <p>Use the <code>GetHostedZone</code> action to request information about the
+         * hosted zone.</p> </li> <li> <p>Use the <code>ListHostedZones</code> action to
+         * get a list of the hosted zones associated with the current AWS account.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone">AWS
          * API Reference</a></p>
          *
@@ -1257,26 +1185,24 @@ namespace Model
         virtual void DeleteHostedZoneAsync(const Model::DeleteHostedZoneRequest& request, const DeleteHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a reusable delegation set. Send a <code>DELETE</code> request to the
-         * <code>/2013-04-01/delegationset/<i>delegation set ID</i> </code> resource.</p>
-         * <important> <p> You can delete a reusable delegation set only if there are no
-         * associated hosted zones.</p> </important> <p>To verify that the reusable
-         * delegation set is not associated with any hosted zones, run the
-         * <a>GetReusableDelegationSet</a> action and specify the ID of the reusable
-         * delegation set that you want to delete.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a reusable delegation set.</p> <important> <p>You can delete a
+         * reusable delegation set only if it isn't associated with any hosted zones.</p>
+         * </important> <p>To verify that the reusable delegation set is not associated
+         * with any hosted zones, submit a <a>GetReusableDelegationSet</a> request and
+         * specify the ID of the reusable delegation set that you want to
+         * delete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteReusableDelegationSetOutcome DeleteReusableDelegationSet(const Model::DeleteReusableDelegationSetRequest& request) const;
 
         /**
-         * <p>Deletes a reusable delegation set. Send a <code>DELETE</code> request to the
-         * <code>/2013-04-01/delegationset/<i>delegation set ID</i> </code> resource.</p>
-         * <important> <p> You can delete a reusable delegation set only if there are no
-         * associated hosted zones.</p> </important> <p>To verify that the reusable
-         * delegation set is not associated with any hosted zones, run the
-         * <a>GetReusableDelegationSet</a> action and specify the ID of the reusable
-         * delegation set that you want to delete.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a reusable delegation set.</p> <important> <p>You can delete a
+         * reusable delegation set only if it isn't associated with any hosted zones.</p>
+         * </important> <p>To verify that the reusable delegation set is not associated
+         * with any hosted zones, submit a <a>GetReusableDelegationSet</a> request and
+         * specify the ID of the reusable delegation set that you want to
+         * delete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet">AWS
          * API Reference</a></p>
          *
@@ -1285,13 +1211,12 @@ namespace Model
         virtual Model::DeleteReusableDelegationSetOutcomeCallable DeleteReusableDelegationSetCallable(const Model::DeleteReusableDelegationSetRequest& request) const;
 
         /**
-         * <p>Deletes a reusable delegation set. Send a <code>DELETE</code> request to the
-         * <code>/2013-04-01/delegationset/<i>delegation set ID</i> </code> resource.</p>
-         * <important> <p> You can delete a reusable delegation set only if there are no
-         * associated hosted zones.</p> </important> <p>To verify that the reusable
-         * delegation set is not associated with any hosted zones, run the
-         * <a>GetReusableDelegationSet</a> action and specify the ID of the reusable
-         * delegation set that you want to delete.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a reusable delegation set.</p> <important> <p>You can delete a
+         * reusable delegation set only if it isn't associated with any hosted zones.</p>
+         * </important> <p>To verify that the reusable delegation set is not associated
+         * with any hosted zones, submit a <a>GetReusableDelegationSet</a> request and
+         * specify the ID of the reusable delegation set that you want to
+         * delete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet">AWS
          * API Reference</a></p>
          *
@@ -1300,18 +1225,14 @@ namespace Model
         virtual void DeleteReusableDelegationSetAsync(const Model::DeleteReusableDelegationSetRequest& request, const DeleteReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a traffic policy.</p> <p>Send a <code>DELETE</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code>
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a traffic policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteTrafficPolicyOutcome DeleteTrafficPolicy(const Model::DeleteTrafficPolicyRequest& request) const;
 
         /**
-         * <p>Deletes a traffic policy.</p> <p>Send a <code>DELETE</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code>
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a traffic policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy">AWS
          * API Reference</a></p>
          *
@@ -1320,9 +1241,7 @@ namespace Model
         virtual Model::DeleteTrafficPolicyOutcomeCallable DeleteTrafficPolicyCallable(const Model::DeleteTrafficPolicyRequest& request) const;
 
         /**
-         * <p>Deletes a traffic policy.</p> <p>Send a <code>DELETE</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code>
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a traffic policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy">AWS
          * API Reference</a></p>
          *
@@ -1332,11 +1251,9 @@ namespace Model
 
         /**
          * <p>Deletes a traffic policy instance and all of the resource record sets that
-         * Amazon Route 53 created when you created the instance.</p> <p>Send a
-         * <code>DELETE</code> request to the <code>/<i>Amazon Route 53 API
-         * version</i>/trafficpolicy/<i>traffic policy instance ID</i> </code>
-         * resource.</p> <note> <p>In the Amazon Route 53 console, traffic policy instances
-         * are known as policy records.</p> </note><p><h3>See Also:</h3>   <a
+         * Amazon Route 53 created when you created the instance.</p> <note> <p>In the
+         * Amazon Route 53 console, traffic policy instances are known as policy
+         * records.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance">AWS
          * API Reference</a></p>
          */
@@ -1344,11 +1261,9 @@ namespace Model
 
         /**
          * <p>Deletes a traffic policy instance and all of the resource record sets that
-         * Amazon Route 53 created when you created the instance.</p> <p>Send a
-         * <code>DELETE</code> request to the <code>/<i>Amazon Route 53 API
-         * version</i>/trafficpolicy/<i>traffic policy instance ID</i> </code>
-         * resource.</p> <note> <p>In the Amazon Route 53 console, traffic policy instances
-         * are known as policy records.</p> </note><p><h3>See Also:</h3>   <a
+         * Amazon Route 53 created when you created the instance.</p> <note> <p>In the
+         * Amazon Route 53 console, traffic policy instances are known as policy
+         * records.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance">AWS
          * API Reference</a></p>
          *
@@ -1358,11 +1273,9 @@ namespace Model
 
         /**
          * <p>Deletes a traffic policy instance and all of the resource record sets that
-         * Amazon Route 53 created when you created the instance.</p> <p>Send a
-         * <code>DELETE</code> request to the <code>/<i>Amazon Route 53 API
-         * version</i>/trafficpolicy/<i>traffic policy instance ID</i> </code>
-         * resource.</p> <note> <p>In the Amazon Route 53 console, traffic policy instances
-         * are known as policy records.</p> </note><p><h3>See Also:</h3>   <a
+         * Amazon Route 53 created when you created the instance.</p> <note> <p>In the
+         * Amazon Route 53 console, traffic policy instances are known as policy
+         * records.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance">AWS
          * API Reference</a></p>
          *
@@ -1380,11 +1293,8 @@ namespace Model
          * VPC is already associated with the hosted zone,
          * <code>DeleteVPCAssociationAuthorization</code> won't disassociate the VPC from
          * the hosted zone. If you want to delete an existing association, use
-         * <code>DisassociateVPCFromHostedZone</code>.</p> </important> <p>Send a
-         * <code>DELETE</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
-         * ID</i>/deauthorizevpcassociation</code> resource. The request body must include
-         * a document with a <code>DeleteVPCAssociationAuthorizationRequest</code>
-         * element.</p><p><h3>See Also:</h3>   <a
+         * <code>DisassociateVPCFromHostedZone</code>.</p> </important><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization">AWS
          * API Reference</a></p>
          */
@@ -1400,11 +1310,8 @@ namespace Model
          * VPC is already associated with the hosted zone,
          * <code>DeleteVPCAssociationAuthorization</code> won't disassociate the VPC from
          * the hosted zone. If you want to delete an existing association, use
-         * <code>DisassociateVPCFromHostedZone</code>.</p> </important> <p>Send a
-         * <code>DELETE</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
-         * ID</i>/deauthorizevpcassociation</code> resource. The request body must include
-         * a document with a <code>DeleteVPCAssociationAuthorizationRequest</code>
-         * element.</p><p><h3>See Also:</h3>   <a
+         * <code>DisassociateVPCFromHostedZone</code>.</p> </important><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization">AWS
          * API Reference</a></p>
          *
@@ -1422,11 +1329,8 @@ namespace Model
          * VPC is already associated with the hosted zone,
          * <code>DeleteVPCAssociationAuthorization</code> won't disassociate the VPC from
          * the hosted zone. If you want to delete an existing association, use
-         * <code>DisassociateVPCFromHostedZone</code>.</p> </important> <p>Send a
-         * <code>DELETE</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
-         * ID</i>/deauthorizevpcassociation</code> resource. The request body must include
-         * a document with a <code>DeleteVPCAssociationAuthorizationRequest</code>
-         * element.</p><p><h3>See Also:</h3>   <a
+         * <code>DisassociateVPCFromHostedZone</code>.</p> </important><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization">AWS
          * API Reference</a></p>
          *
@@ -1437,14 +1341,10 @@ namespace Model
         /**
          * <p>Disassociates a VPC from a Amazon Route 53 private hosted zone. </p> <note>
          * <p>You can't disassociate the last VPC from a private hosted zone.</p> </note>
-         * <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/disassociatevpc</code>
-         * resource. The request body must include a document with a
-         * <code>DisassociateVPCFromHostedZoneRequest</code> element. The response includes
-         * a <code>DisassociateVPCFromHostedZoneResponse</code> element.</p> <important>
-         * <p>You can't disassociate a VPC from a private hosted zone when only one VPC is
-         * associated with the hosted zone. You also can't convert a private hosted zone
-         * into a public hosted zone.</p> </important><p><h3>See Also:</h3>   <a
+         * <important> <p>You can't disassociate a VPC from a private hosted zone when only
+         * one VPC is associated with the hosted zone. You also can't convert a private
+         * hosted zone into a public hosted zone.</p> </important><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">AWS
          * API Reference</a></p>
          */
@@ -1453,14 +1353,10 @@ namespace Model
         /**
          * <p>Disassociates a VPC from a Amazon Route 53 private hosted zone. </p> <note>
          * <p>You can't disassociate the last VPC from a private hosted zone.</p> </note>
-         * <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/disassociatevpc</code>
-         * resource. The request body must include a document with a
-         * <code>DisassociateVPCFromHostedZoneRequest</code> element. The response includes
-         * a <code>DisassociateVPCFromHostedZoneResponse</code> element.</p> <important>
-         * <p>You can't disassociate a VPC from a private hosted zone when only one VPC is
-         * associated with the hosted zone. You also can't convert a private hosted zone
-         * into a public hosted zone.</p> </important><p><h3>See Also:</h3>   <a
+         * <important> <p>You can't disassociate a VPC from a private hosted zone when only
+         * one VPC is associated with the hosted zone. You also can't convert a private
+         * hosted zone into a public hosted zone.</p> </important><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">AWS
          * API Reference</a></p>
          *
@@ -1471,14 +1367,10 @@ namespace Model
         /**
          * <p>Disassociates a VPC from a Amazon Route 53 private hosted zone. </p> <note>
          * <p>You can't disassociate the last VPC from a private hosted zone.</p> </note>
-         * <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/disassociatevpc</code>
-         * resource. The request body must include a document with a
-         * <code>DisassociateVPCFromHostedZoneRequest</code> element. The response includes
-         * a <code>DisassociateVPCFromHostedZoneResponse</code> element.</p> <important>
-         * <p>You can't disassociate a VPC from a private hosted zone when only one VPC is
-         * associated with the hosted zone. You also can't convert a private hosted zone
-         * into a public hosted zone.</p> </important><p><h3>See Also:</h3>   <a
+         * <important> <p>You can't disassociate a VPC from a private hosted zone when only
+         * one VPC is associated with the hosted zone. You also can't convert a private
+         * hosted zone into a public hosted zone.</p> </important><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">AWS
          * API Reference</a></p>
          *
@@ -1489,9 +1381,9 @@ namespace Model
         /**
          * <p>Returns the current status of a change batch request. The status is one of
          * the following values:</p> <ul> <li> <p> <code>PENDING</code> indicates that the
-         * changes in this request have not replicated to all Amazon Route 53 DNS servers.
+         * changes in this request have not propagated to all Amazon Route 53 DNS servers.
          * This is the initial status of all change batch requests.</p> </li> <li> <p>
-         * <code>INSYNC</code> indicates that the changes have replicated to all Amazon
+         * <code>INSYNC</code> indicates that the changes have propagated to all Amazon
          * Route 53 DNS servers. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetChange">AWS
          * API Reference</a></p>
@@ -1501,9 +1393,9 @@ namespace Model
         /**
          * <p>Returns the current status of a change batch request. The status is one of
          * the following values:</p> <ul> <li> <p> <code>PENDING</code> indicates that the
-         * changes in this request have not replicated to all Amazon Route 53 DNS servers.
+         * changes in this request have not propagated to all Amazon Route 53 DNS servers.
          * This is the initial status of all change batch requests.</p> </li> <li> <p>
-         * <code>INSYNC</code> indicates that the changes have replicated to all Amazon
+         * <code>INSYNC</code> indicates that the changes have propagated to all Amazon
          * Route 53 DNS servers. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetChange">AWS
          * API Reference</a></p>
@@ -1515,9 +1407,9 @@ namespace Model
         /**
          * <p>Returns the current status of a change batch request. The status is one of
          * the following values:</p> <ul> <li> <p> <code>PENDING</code> indicates that the
-         * changes in this request have not replicated to all Amazon Route 53 DNS servers.
+         * changes in this request have not propagated to all Amazon Route 53 DNS servers.
          * This is the initial status of all change batch requests.</p> </li> <li> <p>
-         * <code>INSYNC</code> indicates that the changes have replicated to all Amazon
+         * <code>INSYNC</code> indicates that the changes have propagated to all Amazon
          * Route 53 DNS servers. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetChange">AWS
          * API Reference</a></p>
@@ -1567,9 +1459,17 @@ namespace Model
         virtual void GetCheckerIpRangesAsync(const Model::GetCheckerIpRangesRequest& request, const GetCheckerIpRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a single geo location. Send a <code>GET</code> request to the
-         * <code>/2013-04-01/geolocation</code> resource with one of these options:
-         * continentcode | countrycode | countrycode and subdivisioncode.</p><p><h3>See
+         * <p>Gets information about whether a specified geographic location is supported
+         * for Amazon Route 53 geolocation resource record sets.</p> <p>Use the following
+         * syntax to determine whether a continent is supported for geolocation:</p> <p>
+         * <code>GET /2013-04-01/geolocation?ContinentCode=<i>two-letter abbreviation for a
+         * continent</i> </code> </p> <p>Use the following syntax to determine whether a
+         * country is supported for geolocation:</p> <p> <code>GET
+         * /2013-04-01/geolocation?CountryCode=<i>two-character country code</i> </code>
+         * </p> <p>Use the following syntax to determine whether a subdivision of a country
+         * is supported for geolocation:</p> <p> <code>GET
+         * /2013-04-01/geolocation?CountryCode=<i>two-character country
+         * code</i>&amp;SubdivisionCode=<i>subdivision code</i> </code> </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation">AWS
          * API Reference</a></p>
@@ -1577,9 +1477,17 @@ namespace Model
         virtual Model::GetGeoLocationOutcome GetGeoLocation(const Model::GetGeoLocationRequest& request) const;
 
         /**
-         * <p>Retrieves a single geo location. Send a <code>GET</code> request to the
-         * <code>/2013-04-01/geolocation</code> resource with one of these options:
-         * continentcode | countrycode | countrycode and subdivisioncode.</p><p><h3>See
+         * <p>Gets information about whether a specified geographic location is supported
+         * for Amazon Route 53 geolocation resource record sets.</p> <p>Use the following
+         * syntax to determine whether a continent is supported for geolocation:</p> <p>
+         * <code>GET /2013-04-01/geolocation?ContinentCode=<i>two-letter abbreviation for a
+         * continent</i> </code> </p> <p>Use the following syntax to determine whether a
+         * country is supported for geolocation:</p> <p> <code>GET
+         * /2013-04-01/geolocation?CountryCode=<i>two-character country code</i> </code>
+         * </p> <p>Use the following syntax to determine whether a subdivision of a country
+         * is supported for geolocation:</p> <p> <code>GET
+         * /2013-04-01/geolocation?CountryCode=<i>two-character country
+         * code</i>&amp;SubdivisionCode=<i>subdivision code</i> </code> </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation">AWS
          * API Reference</a></p>
@@ -1589,9 +1497,17 @@ namespace Model
         virtual Model::GetGeoLocationOutcomeCallable GetGeoLocationCallable(const Model::GetGeoLocationRequest& request) const;
 
         /**
-         * <p>Retrieves a single geo location. Send a <code>GET</code> request to the
-         * <code>/2013-04-01/geolocation</code> resource with one of these options:
-         * continentcode | countrycode | countrycode and subdivisioncode.</p><p><h3>See
+         * <p>Gets information about whether a specified geographic location is supported
+         * for Amazon Route 53 geolocation resource record sets.</p> <p>Use the following
+         * syntax to determine whether a continent is supported for geolocation:</p> <p>
+         * <code>GET /2013-04-01/geolocation?ContinentCode=<i>two-letter abbreviation for a
+         * continent</i> </code> </p> <p>Use the following syntax to determine whether a
+         * country is supported for geolocation:</p> <p> <code>GET
+         * /2013-04-01/geolocation?CountryCode=<i>two-character country code</i> </code>
+         * </p> <p>Use the following syntax to determine whether a subdivision of a country
+         * is supported for geolocation:</p> <p> <code>GET
+         * /2013-04-01/geolocation?CountryCode=<i>two-character country
+         * code</i>&amp;SubdivisionCode=<i>subdivision code</i> </code> </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation">AWS
          * API Reference</a></p>
@@ -1601,26 +1517,16 @@ namespace Model
         virtual void GetGeoLocationAsync(const Model::GetGeoLocationRequest& request, const GetGeoLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a specified health check. Send a <code>GET</code>
-         * request to the <code>/2013-04-01/healthcheck/<i>health check ID</i> </code>
-         * resource. For more information about using the console to perform this
-         * operation, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
-         * Route 53 Health Checks and DNS Failover</a> in the Amazon Route 53 Developer
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a specified health check.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheck">AWS
          * API Reference</a></p>
          */
         virtual Model::GetHealthCheckOutcome GetHealthCheck(const Model::GetHealthCheckRequest& request) const;
 
         /**
-         * <p>Gets information about a specified health check. Send a <code>GET</code>
-         * request to the <code>/2013-04-01/healthcheck/<i>health check ID</i> </code>
-         * resource. For more information about using the console to perform this
-         * operation, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
-         * Route 53 Health Checks and DNS Failover</a> in the Amazon Route 53 Developer
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a specified health check.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheck">AWS
          * API Reference</a></p>
          *
@@ -1629,13 +1535,8 @@ namespace Model
         virtual Model::GetHealthCheckOutcomeCallable GetHealthCheckCallable(const Model::GetHealthCheckRequest& request) const;
 
         /**
-         * <p>Gets information about a specified health check. Send a <code>GET</code>
-         * request to the <code>/2013-04-01/healthcheck/<i>health check ID</i> </code>
-         * resource. For more information about using the console to perform this
-         * operation, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
-         * Route 53 Health Checks and DNS Failover</a> in the Amazon Route 53 Developer
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a specified health check.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheck">AWS
          * API Reference</a></p>
          *
@@ -1644,18 +1545,16 @@ namespace Model
         virtual void GetHealthCheckAsync(const Model::GetHealthCheckRequest& request, const GetHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>To retrieve a count of all your health checks, send a <code>GET</code>
-         * request to the <code>/2013-04-01/healthcheckcount</code> resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the number of health checks that are associated with the current
+         * AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount">AWS
          * API Reference</a></p>
          */
         virtual Model::GetHealthCheckCountOutcome GetHealthCheckCount(const Model::GetHealthCheckCountRequest& request) const;
 
         /**
-         * <p>To retrieve a count of all your health checks, send a <code>GET</code>
-         * request to the <code>/2013-04-01/healthcheckcount</code> resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the number of health checks that are associated with the current
+         * AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount">AWS
          * API Reference</a></p>
          *
@@ -1664,9 +1563,8 @@ namespace Model
         virtual Model::GetHealthCheckCountOutcomeCallable GetHealthCheckCountCallable(const Model::GetHealthCheckCountRequest& request) const;
 
         /**
-         * <p>To retrieve a count of all your health checks, send a <code>GET</code>
-         * request to the <code>/2013-04-01/healthcheckcount</code> resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the number of health checks that are associated with the current
+         * AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount">AWS
          * API Reference</a></p>
          *
@@ -1675,22 +1573,16 @@ namespace Model
         virtual void GetHealthCheckCountAsync(const Model::GetHealthCheckCountRequest& request, const GetHealthCheckCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>If you want to learn why a health check is currently failing or why it failed
-         * most recently (if at all), you can get the failure reason for the most recent
-         * failure. Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API
-         * version</i>/healthcheck/<i>health check ID</i>/lastfailurereason</code>
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the reason that a specified health check failed most
+         * recently.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReason">AWS
          * API Reference</a></p>
          */
         virtual Model::GetHealthCheckLastFailureReasonOutcome GetHealthCheckLastFailureReason(const Model::GetHealthCheckLastFailureReasonRequest& request) const;
 
         /**
-         * <p>If you want to learn why a health check is currently failing or why it failed
-         * most recently (if at all), you can get the failure reason for the most recent
-         * failure. Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API
-         * version</i>/healthcheck/<i>health check ID</i>/lastfailurereason</code>
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the reason that a specified health check failed most
+         * recently.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReason">AWS
          * API Reference</a></p>
          *
@@ -1699,11 +1591,8 @@ namespace Model
         virtual Model::GetHealthCheckLastFailureReasonOutcomeCallable GetHealthCheckLastFailureReasonCallable(const Model::GetHealthCheckLastFailureReasonRequest& request) const;
 
         /**
-         * <p>If you want to learn why a health check is currently failing or why it failed
-         * most recently (if at all), you can get the failure reason for the most recent
-         * failure. Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API
-         * version</i>/healthcheck/<i>health check ID</i>/lastfailurereason</code>
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the reason that a specified health check failed most
+         * recently.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReason">AWS
          * API Reference</a></p>
          *
@@ -1712,20 +1601,14 @@ namespace Model
         virtual void GetHealthCheckLastFailureReasonAsync(const Model::GetHealthCheckLastFailureReasonRequest& request, const GetHealthCheckLastFailureReasonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets status of a specified health check. Send a <code>GET</code> request to
-         * the <code>/2013-04-01/healthcheck/<i>health check ID</i>/status</code> resource.
-         * You can use this call to get a health check's current status. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets status of a specified health check. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatus">AWS
          * API Reference</a></p>
          */
         virtual Model::GetHealthCheckStatusOutcome GetHealthCheckStatus(const Model::GetHealthCheckStatusRequest& request) const;
 
         /**
-         * <p>Gets status of a specified health check. Send a <code>GET</code> request to
-         * the <code>/2013-04-01/healthcheck/<i>health check ID</i>/status</code> resource.
-         * You can use this call to get a health check's current status. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets status of a specified health check. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatus">AWS
          * API Reference</a></p>
          *
@@ -1734,10 +1617,7 @@ namespace Model
         virtual Model::GetHealthCheckStatusOutcomeCallable GetHealthCheckStatusCallable(const Model::GetHealthCheckStatusRequest& request) const;
 
         /**
-         * <p>Gets status of a specified health check. Send a <code>GET</code> request to
-         * the <code>/2013-04-01/healthcheck/<i>health check ID</i>/status</code> resource.
-         * You can use this call to get a health check's current status. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets status of a specified health check. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatus">AWS
          * API Reference</a></p>
          *
@@ -1746,20 +1626,16 @@ namespace Model
         virtual void GetHealthCheckStatusAsync(const Model::GetHealthCheckStatusRequest& request, const GetHealthCheckStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the delegation set for a hosted zone, including the four name
-         * servers assigned to the hosted zone. Send a <code>GET</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/hostedzone/<i>hosted zone ID</i>
-         * </code> resource. </p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a specified hosted zone including the four name
+         * servers assigned to the hosted zone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone">AWS
          * API Reference</a></p>
          */
         virtual Model::GetHostedZoneOutcome GetHostedZone(const Model::GetHostedZoneRequest& request) const;
 
         /**
-         * <p>Retrieves the delegation set for a hosted zone, including the four name
-         * servers assigned to the hosted zone. Send a <code>GET</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/hostedzone/<i>hosted zone ID</i>
-         * </code> resource. </p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a specified hosted zone including the four name
+         * servers assigned to the hosted zone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone">AWS
          * API Reference</a></p>
          *
@@ -1768,10 +1644,8 @@ namespace Model
         virtual Model::GetHostedZoneOutcomeCallable GetHostedZoneCallable(const Model::GetHostedZoneRequest& request) const;
 
         /**
-         * <p>Retrieves the delegation set for a hosted zone, including the four name
-         * servers assigned to the hosted zone. Send a <code>GET</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/hostedzone/<i>hosted zone ID</i>
-         * </code> resource. </p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a specified hosted zone including the four name
+         * servers assigned to the hosted zone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone">AWS
          * API Reference</a></p>
          *
@@ -1780,18 +1654,16 @@ namespace Model
         virtual void GetHostedZoneAsync(const Model::GetHostedZoneRequest& request, const GetHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a count of all your hosted zones. Send a <code>GET</code> request
-         * to the <code>/2013-04-01/hostedzonecount</code> resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the number of hosted zones that are associated with the current AWS
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount">AWS
          * API Reference</a></p>
          */
         virtual Model::GetHostedZoneCountOutcome GetHostedZoneCount(const Model::GetHostedZoneCountRequest& request) const;
 
         /**
-         * <p>Retrieves a count of all your hosted zones. Send a <code>GET</code> request
-         * to the <code>/2013-04-01/hostedzonecount</code> resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the number of hosted zones that are associated with the current AWS
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount">AWS
          * API Reference</a></p>
          *
@@ -1800,9 +1672,8 @@ namespace Model
         virtual Model::GetHostedZoneCountOutcomeCallable GetHostedZoneCountCallable(const Model::GetHostedZoneCountRequest& request) const;
 
         /**
-         * <p>Retrieves a count of all your hosted zones. Send a <code>GET</code> request
-         * to the <code>/2013-04-01/hostedzonecount</code> resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the number of hosted zones that are associated with the current AWS
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount">AWS
          * API Reference</a></p>
          *
@@ -1811,18 +1682,18 @@ namespace Model
         virtual void GetHostedZoneCountAsync(const Model::GetHostedZoneCountRequest& request, const GetHostedZoneCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the reusable delegation set. Send a <code>GET</code> request to the
-         * <code>/2013-04-01/delegationset/<i>delegation set ID</i> </code>
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a specified reusable delegation set, including
+         * the four name servers that are assigned to the delegation set.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSet">AWS
          * API Reference</a></p>
          */
         virtual Model::GetReusableDelegationSetOutcome GetReusableDelegationSet(const Model::GetReusableDelegationSetRequest& request) const;
 
         /**
-         * <p>Retrieves the reusable delegation set. Send a <code>GET</code> request to the
-         * <code>/2013-04-01/delegationset/<i>delegation set ID</i> </code>
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a specified reusable delegation set, including
+         * the four name servers that are assigned to the delegation set.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSet">AWS
          * API Reference</a></p>
          *
@@ -1831,9 +1702,9 @@ namespace Model
         virtual Model::GetReusableDelegationSetOutcomeCallable GetReusableDelegationSetCallable(const Model::GetReusableDelegationSetRequest& request) const;
 
         /**
-         * <p>Retrieves the reusable delegation set. Send a <code>GET</code> request to the
-         * <code>/2013-04-01/delegationset/<i>delegation set ID</i> </code>
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a specified reusable delegation set, including
+         * the four name servers that are assigned to the delegation set.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSet">AWS
          * API Reference</a></p>
          *
@@ -1842,18 +1713,16 @@ namespace Model
         virtual void GetReusableDelegationSetAsync(const Model::GetReusableDelegationSetRequest& request, const GetReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a specific traffic policy version.</p> <p>Send a
-         * <code>GET</code> request to the <code>/<i>Amazon Route 53 API
-         * version</i>/trafficpolicy</code> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a specific traffic policy version.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::GetTrafficPolicyOutcome GetTrafficPolicy(const Model::GetTrafficPolicyRequest& request) const;
 
         /**
-         * <p>Gets information about a specific traffic policy version.</p> <p>Send a
-         * <code>GET</code> request to the <code>/<i>Amazon Route 53 API
-         * version</i>/trafficpolicy</code> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a specific traffic policy version.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy">AWS
          * API Reference</a></p>
          *
@@ -1862,9 +1731,8 @@ namespace Model
         virtual Model::GetTrafficPolicyOutcomeCallable GetTrafficPolicyCallable(const Model::GetTrafficPolicyRequest& request) const;
 
         /**
-         * <p>Gets information about a specific traffic policy version.</p> <p>Send a
-         * <code>GET</code> request to the <code>/<i>Amazon Route 53 API
-         * version</i>/trafficpolicy</code> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a specific traffic policy version.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy">AWS
          * API Reference</a></p>
          *
@@ -1873,10 +1741,8 @@ namespace Model
         virtual void GetTrafficPolicyAsync(const Model::GetTrafficPolicyRequest& request, const GetTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a specified traffic policy instance.</p> <p>Send a
-         * <code>GET</code> request to the <code>/<i>Amazon Route 53 API
-         * version</i>/trafficpolicyinstance</code> resource.</p> <note> <p>After you
-         * submit a <code>CreateTrafficPolicyInstance</code> or an
+         * <p>Gets information about a specified traffic policy instance.</p> <note>
+         * <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
@@ -1889,10 +1755,8 @@ namespace Model
         virtual Model::GetTrafficPolicyInstanceOutcome GetTrafficPolicyInstance(const Model::GetTrafficPolicyInstanceRequest& request) const;
 
         /**
-         * <p>Gets information about a specified traffic policy instance.</p> <p>Send a
-         * <code>GET</code> request to the <code>/<i>Amazon Route 53 API
-         * version</i>/trafficpolicyinstance</code> resource.</p> <note> <p>After you
-         * submit a <code>CreateTrafficPolicyInstance</code> or an
+         * <p>Gets information about a specified traffic policy instance.</p> <note>
+         * <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
@@ -1907,10 +1771,8 @@ namespace Model
         virtual Model::GetTrafficPolicyInstanceOutcomeCallable GetTrafficPolicyInstanceCallable(const Model::GetTrafficPolicyInstanceRequest& request) const;
 
         /**
-         * <p>Gets information about a specified traffic policy instance.</p> <p>Send a
-         * <code>GET</code> request to the <code>/<i>Amazon Route 53 API
-         * version</i>/trafficpolicyinstance</code> resource.</p> <note> <p>After you
-         * submit a <code>CreateTrafficPolicyInstance</code> or an
+         * <p>Gets information about a specified traffic policy instance.</p> <note>
+         * <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
@@ -1926,10 +1788,7 @@ namespace Model
 
         /**
          * <p>Gets the number of traffic policy instances that are associated with the
-         * current AWS account.</p> <p>To get the number of traffic policy instances, send
-         * a <code>GET</code> request to the
-         * <code>/2013-04-01/trafficpolicyinstancecount</code> resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * current AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount">AWS
          * API Reference</a></p>
          */
@@ -1937,10 +1796,7 @@ namespace Model
 
         /**
          * <p>Gets the number of traffic policy instances that are associated with the
-         * current AWS account.</p> <p>To get the number of traffic policy instances, send
-         * a <code>GET</code> request to the
-         * <code>/2013-04-01/trafficpolicyinstancecount</code> resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * current AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount">AWS
          * API Reference</a></p>
          *
@@ -1950,10 +1806,7 @@ namespace Model
 
         /**
          * <p>Gets the number of traffic policy instances that are associated with the
-         * current AWS account.</p> <p>To get the number of traffic policy instances, send
-         * a <code>GET</code> request to the
-         * <code>/2013-04-01/trafficpolicyinstancecount</code> resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * current AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount">AWS
          * API Reference</a></p>
          *
@@ -1962,28 +1815,22 @@ namespace Model
         virtual void GetTrafficPolicyInstanceCountAsync(const Model::GetTrafficPolicyInstanceCountRequest& request, const GetTrafficPolicyInstanceCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a list of supported geo locations. Send a <code>GET</code> request
-         * to the <code>/2013-04-01/geolocations</code> resource. The response to this
-         * request includes a <code>GeoLocationDetailsList</code> element for each location
-         * that Amazon Route 53 supports.</p> <p>Countries are listed first, and continents
-         * are listed last. If Amazon Route 53 supports subdivisions for a country (for
-         * example, states or provinces), the subdivisions for that country are listed in
-         * alphabetical order immediately after the corresponding country. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a list of supported geo locations.</p> <p>Countries are listed
+         * first, and continents are listed last. If Amazon Route 53 supports subdivisions
+         * for a country (for example, states or provinces), the subdivisions for that
+         * country are listed in alphabetical order immediately after the corresponding
+         * country.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListGeoLocationsOutcome ListGeoLocations(const Model::ListGeoLocationsRequest& request) const;
 
         /**
-         * <p>Retrieves a list of supported geo locations. Send a <code>GET</code> request
-         * to the <code>/2013-04-01/geolocations</code> resource. The response to this
-         * request includes a <code>GeoLocationDetailsList</code> element for each location
-         * that Amazon Route 53 supports.</p> <p>Countries are listed first, and continents
-         * are listed last. If Amazon Route 53 supports subdivisions for a country (for
-         * example, states or provinces), the subdivisions for that country are listed in
-         * alphabetical order immediately after the corresponding country. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a list of supported geo locations.</p> <p>Countries are listed
+         * first, and continents are listed last. If Amazon Route 53 supports subdivisions
+         * for a country (for example, states or provinces), the subdivisions for that
+         * country are listed in alphabetical order immediately after the corresponding
+         * country.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations">AWS
          * API Reference</a></p>
          *
@@ -1992,14 +1839,11 @@ namespace Model
         virtual Model::ListGeoLocationsOutcomeCallable ListGeoLocationsCallable(const Model::ListGeoLocationsRequest& request) const;
 
         /**
-         * <p>Retrieves a list of supported geo locations. Send a <code>GET</code> request
-         * to the <code>/2013-04-01/geolocations</code> resource. The response to this
-         * request includes a <code>GeoLocationDetailsList</code> element for each location
-         * that Amazon Route 53 supports.</p> <p>Countries are listed first, and continents
-         * are listed last. If Amazon Route 53 supports subdivisions for a country (for
-         * example, states or provinces), the subdivisions for that country are listed in
-         * alphabetical order immediately after the corresponding country. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a list of supported geo locations.</p> <p>Countries are listed
+         * first, and continents are listed last. If Amazon Route 53 supports subdivisions
+         * for a country (for example, states or provinces), the subdivisions for that
+         * country are listed in alphabetical order immediately after the corresponding
+         * country.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations">AWS
          * API Reference</a></p>
          *
@@ -2008,34 +1852,16 @@ namespace Model
         virtual void ListGeoLocationsAsync(const Model::ListGeoLocationsRequest& request, const ListGeoLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieve a list of your health checks. Send a <code>GET</code> request to the
-         * <code>/2013-04-01/healthcheck</code> resource. The response to this request
-         * includes a <code>HealthChecks</code> element with zero or more
-         * <code>HealthCheck</code> child elements. By default, the list of health checks
-         * is displayed on a single page. You can control the length of the page that is
-         * displayed by using the <code>MaxItems</code> parameter. You can use the
-         * <code>Marker</code> parameter to control the health check that the list begins
-         * with.</p> <p>For information about listing health checks using the Amazon Route
-         * 53 console, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
-         * Route 53 Health Checks and DNS Failover</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieve a list of the health checks that are associated with the current AWS
+         * account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks">AWS
          * API Reference</a></p>
          */
         virtual Model::ListHealthChecksOutcome ListHealthChecks(const Model::ListHealthChecksRequest& request) const;
 
         /**
-         * <p>Retrieve a list of your health checks. Send a <code>GET</code> request to the
-         * <code>/2013-04-01/healthcheck</code> resource. The response to this request
-         * includes a <code>HealthChecks</code> element with zero or more
-         * <code>HealthCheck</code> child elements. By default, the list of health checks
-         * is displayed on a single page. You can control the length of the page that is
-         * displayed by using the <code>MaxItems</code> parameter. You can use the
-         * <code>Marker</code> parameter to control the health check that the list begins
-         * with.</p> <p>For information about listing health checks using the Amazon Route
-         * 53 console, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
-         * Route 53 Health Checks and DNS Failover</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieve a list of the health checks that are associated with the current AWS
+         * account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks">AWS
          * API Reference</a></p>
          *
@@ -2044,17 +1870,8 @@ namespace Model
         virtual Model::ListHealthChecksOutcomeCallable ListHealthChecksCallable(const Model::ListHealthChecksRequest& request) const;
 
         /**
-         * <p>Retrieve a list of your health checks. Send a <code>GET</code> request to the
-         * <code>/2013-04-01/healthcheck</code> resource. The response to this request
-         * includes a <code>HealthChecks</code> element with zero or more
-         * <code>HealthCheck</code> child elements. By default, the list of health checks
-         * is displayed on a single page. You can control the length of the page that is
-         * displayed by using the <code>MaxItems</code> parameter. You can use the
-         * <code>Marker</code> parameter to control the health check that the list begins
-         * with.</p> <p>For information about listing health checks using the Amazon Route
-         * 53 console, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
-         * Route 53 Health Checks and DNS Failover</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieve a list of the health checks that are associated with the current AWS
+         * account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks">AWS
          * API Reference</a></p>
          *
@@ -2063,54 +1880,24 @@ namespace Model
         virtual void ListHealthChecksAsync(const Model::ListHealthChecksRequest& request, const ListHealthChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>To retrieve a list of your public and private hosted zones, send a
-         * <code>GET</code> request to the <code>/2013-04-01/hostedzone</code> resource.
-         * The response to this request includes a <code>HostedZones</code> child element
-         * for each hosted zone created by the current AWS account.</p> <p>Amazon Route 53
-         * returns a maximum of 100 items in each response. If you have a lot of hosted
-         * zones, you can use the <code>maxitems</code> parameter to list them in groups of
-         * up to 100. The response includes four values that help navigate from one group
-         * of <code>maxitems</code> hosted zones to the next:</p> <ul> <li> <p>
-         * <code>MaxItems</code> is the value specified for the <code>maxitems</code>
-         * parameter in the request that produced the current response.</p> </li> <li>
-         * <p>If the value of <code>IsTruncated</code> in the response is true, there are
-         * more hosted zones associated with the current AWS account. </p> </li> <li> <p>
-         * <code>NextMarker</code> is the hosted zone ID of the next hosted zone that is
-         * associated with the current AWS account. If you want to list more hosted zones,
-         * make another call to <code>ListHostedZones</code>, and specify the value of the
-         * <code>NextMarker</code> element in the marker parameter. </p> <p>If
-         * <code>IsTruncated</code> is false, the <code>NextMarker</code> element is
-         * omitted from the response.</p> </li> <li> <p>If you're making the second or
-         * subsequent call to <code>ListHostedZones</code>, the <code>Marker</code> element
-         * matches the value that you specified in the <code>marker</code> parameter in the
-         * previous request.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of the public and private hosted zones that are associated
+         * with the current AWS account. The response includes a <code>HostedZones</code>
+         * child element for each hosted zone.</p> <p>Amazon Route 53 returns a maximum of
+         * 100 items in each response. If you have a lot of hosted zones, you can use the
+         * <code>maxitems</code> parameter to list them in groups of up to
+         * 100.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones">AWS
          * API Reference</a></p>
          */
         virtual Model::ListHostedZonesOutcome ListHostedZones(const Model::ListHostedZonesRequest& request) const;
 
         /**
-         * <p>To retrieve a list of your public and private hosted zones, send a
-         * <code>GET</code> request to the <code>/2013-04-01/hostedzone</code> resource.
-         * The response to this request includes a <code>HostedZones</code> child element
-         * for each hosted zone created by the current AWS account.</p> <p>Amazon Route 53
-         * returns a maximum of 100 items in each response. If you have a lot of hosted
-         * zones, you can use the <code>maxitems</code> parameter to list them in groups of
-         * up to 100. The response includes four values that help navigate from one group
-         * of <code>maxitems</code> hosted zones to the next:</p> <ul> <li> <p>
-         * <code>MaxItems</code> is the value specified for the <code>maxitems</code>
-         * parameter in the request that produced the current response.</p> </li> <li>
-         * <p>If the value of <code>IsTruncated</code> in the response is true, there are
-         * more hosted zones associated with the current AWS account. </p> </li> <li> <p>
-         * <code>NextMarker</code> is the hosted zone ID of the next hosted zone that is
-         * associated with the current AWS account. If you want to list more hosted zones,
-         * make another call to <code>ListHostedZones</code>, and specify the value of the
-         * <code>NextMarker</code> element in the marker parameter. </p> <p>If
-         * <code>IsTruncated</code> is false, the <code>NextMarker</code> element is
-         * omitted from the response.</p> </li> <li> <p>If you're making the second or
-         * subsequent call to <code>ListHostedZones</code>, the <code>Marker</code> element
-         * matches the value that you specified in the <code>marker</code> parameter in the
-         * previous request.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of the public and private hosted zones that are associated
+         * with the current AWS account. The response includes a <code>HostedZones</code>
+         * child element for each hosted zone.</p> <p>Amazon Route 53 returns a maximum of
+         * 100 items in each response. If you have a lot of hosted zones, you can use the
+         * <code>maxitems</code> parameter to list them in groups of up to
+         * 100.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones">AWS
          * API Reference</a></p>
          *
@@ -2119,27 +1906,12 @@ namespace Model
         virtual Model::ListHostedZonesOutcomeCallable ListHostedZonesCallable(const Model::ListHostedZonesRequest& request) const;
 
         /**
-         * <p>To retrieve a list of your public and private hosted zones, send a
-         * <code>GET</code> request to the <code>/2013-04-01/hostedzone</code> resource.
-         * The response to this request includes a <code>HostedZones</code> child element
-         * for each hosted zone created by the current AWS account.</p> <p>Amazon Route 53
-         * returns a maximum of 100 items in each response. If you have a lot of hosted
-         * zones, you can use the <code>maxitems</code> parameter to list them in groups of
-         * up to 100. The response includes four values that help navigate from one group
-         * of <code>maxitems</code> hosted zones to the next:</p> <ul> <li> <p>
-         * <code>MaxItems</code> is the value specified for the <code>maxitems</code>
-         * parameter in the request that produced the current response.</p> </li> <li>
-         * <p>If the value of <code>IsTruncated</code> in the response is true, there are
-         * more hosted zones associated with the current AWS account. </p> </li> <li> <p>
-         * <code>NextMarker</code> is the hosted zone ID of the next hosted zone that is
-         * associated with the current AWS account. If you want to list more hosted zones,
-         * make another call to <code>ListHostedZones</code>, and specify the value of the
-         * <code>NextMarker</code> element in the marker parameter. </p> <p>If
-         * <code>IsTruncated</code> is false, the <code>NextMarker</code> element is
-         * omitted from the response.</p> </li> <li> <p>If you're making the second or
-         * subsequent call to <code>ListHostedZones</code>, the <code>Marker</code> element
-         * matches the value that you specified in the <code>marker</code> parameter in the
-         * previous request.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of the public and private hosted zones that are associated
+         * with the current AWS account. The response includes a <code>HostedZones</code>
+         * child element for each hosted zone.</p> <p>Amazon Route 53 returns a maximum of
+         * 100 items in each response. If you have a lot of hosted zones, you can use the
+         * <code>maxitems</code> parameter to list them in groups of up to
+         * 100.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones">AWS
          * API Reference</a></p>
          *
@@ -2148,27 +1920,25 @@ namespace Model
         virtual void ListHostedZonesAsync(const Model::ListHostedZonesRequest& request, const ListHostedZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a list of your hosted zones in lexicographic order. Send a
-         * <code>GET</code> request to the <code>/2013-04-01/hostedzonesbyname</code>
-         * resource. The response includes a <code>HostedZones</code> child element for
-         * each hosted zone created by the current AWS account. </p> <p>
-         * <code>ListHostedZonesByName</code> sorts hosted zones by name with the labels
-         * reversed. For example:</p> <ul> <li> <p> <code>com.example.www.</code> </p>
-         * </li> </ul> <p>Note the trailing dot, which can change the sort order in some
-         * circumstances.</p> <p>If the domain name includes escape characters or Punycode,
-         * <code>ListHostedZonesByName</code> alphabetizes the domain name using the
-         * escaped or Punycoded value, which is the format that Amazon Route 53 saves in
-         * its database. For example, to create a hosted zone for example.com, specify
-         * ex\344mple.com for the domain name. <code>ListHostedZonesByName</code>
-         * alphabetizes it as:</p> <ul> <li> <p> <code>com.ex\344mple.</code> </p> </li>
-         * </ul> <p>The labels are reversed and alphabetized using the escaped value. For
-         * more information about valid domain name formats, including internationalized
-         * domain names, see <a
+         * <p>Retrieves a list of your hosted zones in lexicographic order. The response
+         * includes a <code>HostedZones</code> child element for each hosted zone created
+         * by the current AWS account. </p> <p> <code>ListHostedZonesByName</code> sorts
+         * hosted zones by name with the labels reversed. For example:</p> <p>
+         * <code>com.example.www.</code> </p> <p>Note the trailing dot, which can change
+         * the sort order in some circumstances.</p> <p>If the domain name includes escape
+         * characters or Punycode, <code>ListHostedZonesByName</code> alphabetizes the
+         * domain name using the escaped or Punycoded value, which is the format that
+         * Amazon Route 53 saves in its database. For example, to create a hosted zone for
+         * exämple.com, you specify ex\344mple.com for the domain name.
+         * <code>ListHostedZonesByName</code> alphabetizes it as:</p> <p>
+         * <code>com.ex\344mple.</code> </p> <p>The labels are reversed and alphabetized
+         * using the escaped value. For more information about valid domain name formats,
+         * including internationalized domain names, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
-         * Domain Name Format</a> in the Amazon Route 53 Developer Guide.</p> <p>Amazon
-         * Route 53 returns up to 100 items in each response. If you have a lot of hosted
-         * zones, use the <code>MaxItems</code> parameter to list them in groups of up to
-         * 100. The response includes values that help navigate from one group of
+         * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+         * <p>Amazon Route 53 returns up to 100 items in each response. If you have a lot
+         * of hosted zones, use the <code>MaxItems</code> parameter to list them in groups
+         * of up to 100. The response includes values that help navigate from one group of
          * <code>MaxItems</code> hosted zones to the next:</p> <ul> <li> <p>The
          * <code>DNSName</code> and <code>HostedZoneId</code> elements in the response
          * contain the values, if any, specified for the <code>dnsname</code> and
@@ -2195,27 +1965,25 @@ namespace Model
         virtual Model::ListHostedZonesByNameOutcome ListHostedZonesByName(const Model::ListHostedZonesByNameRequest& request) const;
 
         /**
-         * <p>Retrieves a list of your hosted zones in lexicographic order. Send a
-         * <code>GET</code> request to the <code>/2013-04-01/hostedzonesbyname</code>
-         * resource. The response includes a <code>HostedZones</code> child element for
-         * each hosted zone created by the current AWS account. </p> <p>
-         * <code>ListHostedZonesByName</code> sorts hosted zones by name with the labels
-         * reversed. For example:</p> <ul> <li> <p> <code>com.example.www.</code> </p>
-         * </li> </ul> <p>Note the trailing dot, which can change the sort order in some
-         * circumstances.</p> <p>If the domain name includes escape characters or Punycode,
-         * <code>ListHostedZonesByName</code> alphabetizes the domain name using the
-         * escaped or Punycoded value, which is the format that Amazon Route 53 saves in
-         * its database. For example, to create a hosted zone for example.com, specify
-         * ex\344mple.com for the domain name. <code>ListHostedZonesByName</code>
-         * alphabetizes it as:</p> <ul> <li> <p> <code>com.ex\344mple.</code> </p> </li>
-         * </ul> <p>The labels are reversed and alphabetized using the escaped value. For
-         * more information about valid domain name formats, including internationalized
-         * domain names, see <a
+         * <p>Retrieves a list of your hosted zones in lexicographic order. The response
+         * includes a <code>HostedZones</code> child element for each hosted zone created
+         * by the current AWS account. </p> <p> <code>ListHostedZonesByName</code> sorts
+         * hosted zones by name with the labels reversed. For example:</p> <p>
+         * <code>com.example.www.</code> </p> <p>Note the trailing dot, which can change
+         * the sort order in some circumstances.</p> <p>If the domain name includes escape
+         * characters or Punycode, <code>ListHostedZonesByName</code> alphabetizes the
+         * domain name using the escaped or Punycoded value, which is the format that
+         * Amazon Route 53 saves in its database. For example, to create a hosted zone for
+         * exämple.com, you specify ex\344mple.com for the domain name.
+         * <code>ListHostedZonesByName</code> alphabetizes it as:</p> <p>
+         * <code>com.ex\344mple.</code> </p> <p>The labels are reversed and alphabetized
+         * using the escaped value. For more information about valid domain name formats,
+         * including internationalized domain names, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
-         * Domain Name Format</a> in the Amazon Route 53 Developer Guide.</p> <p>Amazon
-         * Route 53 returns up to 100 items in each response. If you have a lot of hosted
-         * zones, use the <code>MaxItems</code> parameter to list them in groups of up to
-         * 100. The response includes values that help navigate from one group of
+         * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+         * <p>Amazon Route 53 returns up to 100 items in each response. If you have a lot
+         * of hosted zones, use the <code>MaxItems</code> parameter to list them in groups
+         * of up to 100. The response includes values that help navigate from one group of
          * <code>MaxItems</code> hosted zones to the next:</p> <ul> <li> <p>The
          * <code>DNSName</code> and <code>HostedZoneId</code> elements in the response
          * contain the values, if any, specified for the <code>dnsname</code> and
@@ -2244,27 +2012,25 @@ namespace Model
         virtual Model::ListHostedZonesByNameOutcomeCallable ListHostedZonesByNameCallable(const Model::ListHostedZonesByNameRequest& request) const;
 
         /**
-         * <p>Retrieves a list of your hosted zones in lexicographic order. Send a
-         * <code>GET</code> request to the <code>/2013-04-01/hostedzonesbyname</code>
-         * resource. The response includes a <code>HostedZones</code> child element for
-         * each hosted zone created by the current AWS account. </p> <p>
-         * <code>ListHostedZonesByName</code> sorts hosted zones by name with the labels
-         * reversed. For example:</p> <ul> <li> <p> <code>com.example.www.</code> </p>
-         * </li> </ul> <p>Note the trailing dot, which can change the sort order in some
-         * circumstances.</p> <p>If the domain name includes escape characters or Punycode,
-         * <code>ListHostedZonesByName</code> alphabetizes the domain name using the
-         * escaped or Punycoded value, which is the format that Amazon Route 53 saves in
-         * its database. For example, to create a hosted zone for example.com, specify
-         * ex\344mple.com for the domain name. <code>ListHostedZonesByName</code>
-         * alphabetizes it as:</p> <ul> <li> <p> <code>com.ex\344mple.</code> </p> </li>
-         * </ul> <p>The labels are reversed and alphabetized using the escaped value. For
-         * more information about valid domain name formats, including internationalized
-         * domain names, see <a
+         * <p>Retrieves a list of your hosted zones in lexicographic order. The response
+         * includes a <code>HostedZones</code> child element for each hosted zone created
+         * by the current AWS account. </p> <p> <code>ListHostedZonesByName</code> sorts
+         * hosted zones by name with the labels reversed. For example:</p> <p>
+         * <code>com.example.www.</code> </p> <p>Note the trailing dot, which can change
+         * the sort order in some circumstances.</p> <p>If the domain name includes escape
+         * characters or Punycode, <code>ListHostedZonesByName</code> alphabetizes the
+         * domain name using the escaped or Punycoded value, which is the format that
+         * Amazon Route 53 saves in its database. For example, to create a hosted zone for
+         * exämple.com, you specify ex\344mple.com for the domain name.
+         * <code>ListHostedZonesByName</code> alphabetizes it as:</p> <p>
+         * <code>com.ex\344mple.</code> </p> <p>The labels are reversed and alphabetized
+         * using the escaped value. For more information about valid domain name formats,
+         * including internationalized domain names, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
-         * Domain Name Format</a> in the Amazon Route 53 Developer Guide.</p> <p>Amazon
-         * Route 53 returns up to 100 items in each response. If you have a lot of hosted
-         * zones, use the <code>MaxItems</code> parameter to list them in groups of up to
-         * 100. The response includes values that help navigate from one group of
+         * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+         * <p>Amazon Route 53 returns up to 100 items in each response. If you have a lot
+         * of hosted zones, use the <code>MaxItems</code> parameter to list them in groups
+         * of up to 100. The response includes values that help navigate from one group of
          * <code>MaxItems</code> hosted zones to the next:</p> <ul> <li> <p>The
          * <code>DNSName</code> and <code>HostedZoneId</code> elements in the response
          * contain the values, if any, specified for the <code>dnsname</code> and
@@ -2396,32 +2162,16 @@ namespace Model
         virtual void ListResourceRecordSetsAsync(const Model::ListResourceRecordSetsRequest& request, const ListResourceRecordSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>To retrieve a list of your reusable delegation sets, send a <code>GET</code>
-         * request to the <code>/2013-04-01/delegationset</code> resource. The response to
-         * this request includes a <code>DelegationSets</code> element with zero, one, or
-         * multiple <code>DelegationSet</code> child elements. By default, the list of
-         * delegation sets is displayed on a single page. You can control the length of the
-         * page that is displayed by using the <code>MaxItems</code> parameter. You can use
-         * the <code>Marker</code> parameter to control the delegation set that the list
-         * begins with. </p> <note> <p> Amazon Route 53 returns a maximum of 100 items. If
-         * you set MaxItems to a value greater than 100, Amazon Route 53 returns only the
-         * first 100.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of the reusable delegation sets that are associated with the
+         * current AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets">AWS
          * API Reference</a></p>
          */
         virtual Model::ListReusableDelegationSetsOutcome ListReusableDelegationSets(const Model::ListReusableDelegationSetsRequest& request) const;
 
         /**
-         * <p>To retrieve a list of your reusable delegation sets, send a <code>GET</code>
-         * request to the <code>/2013-04-01/delegationset</code> resource. The response to
-         * this request includes a <code>DelegationSets</code> element with zero, one, or
-         * multiple <code>DelegationSet</code> child elements. By default, the list of
-         * delegation sets is displayed on a single page. You can control the length of the
-         * page that is displayed by using the <code>MaxItems</code> parameter. You can use
-         * the <code>Marker</code> parameter to control the delegation set that the list
-         * begins with. </p> <note> <p> Amazon Route 53 returns a maximum of 100 items. If
-         * you set MaxItems to a value greater than 100, Amazon Route 53 returns only the
-         * first 100.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of the reusable delegation sets that are associated with the
+         * current AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets">AWS
          * API Reference</a></p>
          *
@@ -2430,16 +2180,8 @@ namespace Model
         virtual Model::ListReusableDelegationSetsOutcomeCallable ListReusableDelegationSetsCallable(const Model::ListReusableDelegationSetsRequest& request) const;
 
         /**
-         * <p>To retrieve a list of your reusable delegation sets, send a <code>GET</code>
-         * request to the <code>/2013-04-01/delegationset</code> resource. The response to
-         * this request includes a <code>DelegationSets</code> element with zero, one, or
-         * multiple <code>DelegationSet</code> child elements. By default, the list of
-         * delegation sets is displayed on a single page. You can control the length of the
-         * page that is displayed by using the <code>MaxItems</code> parameter. You can use
-         * the <code>Marker</code> parameter to control the delegation set that the list
-         * begins with. </p> <note> <p> Amazon Route 53 returns a maximum of 100 items. If
-         * you set MaxItems to a value greater than 100, Amazon Route 53 returns only the
-         * first 100.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of the reusable delegation sets that are associated with the
+         * current AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets">AWS
          * API Reference</a></p>
          *
@@ -2523,29 +2265,8 @@ namespace Model
 
         /**
          * <p>Gets information about the latest version for every traffic policy that is
-         * associated with the current AWS account. Send a <code>GET</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code> resource.</p>
-         * <p>Amazon Route 53 returns a maximum of 100 items in each response. If you have
-         * a lot of traffic policies, you can use the <code>maxitems</code> parameter to
-         * list them in groups of up to 100.</p> <p>The response includes three values that
-         * help you navigate from one group of <code>maxitems</code> traffic policies to
-         * the next:</p> <ul> <li> <p> <b>IsTruncated</b> </p> <p>If the value of
-         * <code>IsTruncated</code> in the response is <code>true</code>, there are more
-         * traffic policies associated with the current AWS account.</p> <p>If
-         * <code>IsTruncated</code> is <code>false</code>, this response includes the last
-         * traffic policy that is associated with the current account.</p> </li> <li> <p>
-         * <b>TrafficPolicyIdMarker</b> </p> <p>If <code>IsTruncated</code> is
-         * <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of the first
-         * traffic policy in the next group of <code>MaxItems</code> traffic policies. If
-         * you want to list more traffic policies, make another call to
-         * <code>ListTrafficPolicies</code>, and specify the value of the
-         * <code>TrafficPolicyIdMarker</code> element from the response in the
-         * <code>TrafficPolicyIdMarker</code> request parameter.</p> <p>If
-         * <code>IsTruncated</code> is <code>false</code>, the
-         * <code>TrafficPolicyIdMarker</code> element is omitted from the response.</p>
-         * </li> <li> <p> <b>MaxItems</b> </p> <p>The value that you specified for the
-         * <code>MaxItems</code> parameter in the request that produced the current
-         * response.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * associated with the current AWS account. Policies are listed in the order in
+         * which they were created. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies">AWS
          * API Reference</a></p>
          */
@@ -2553,29 +2274,8 @@ namespace Model
 
         /**
          * <p>Gets information about the latest version for every traffic policy that is
-         * associated with the current AWS account. Send a <code>GET</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code> resource.</p>
-         * <p>Amazon Route 53 returns a maximum of 100 items in each response. If you have
-         * a lot of traffic policies, you can use the <code>maxitems</code> parameter to
-         * list them in groups of up to 100.</p> <p>The response includes three values that
-         * help you navigate from one group of <code>maxitems</code> traffic policies to
-         * the next:</p> <ul> <li> <p> <b>IsTruncated</b> </p> <p>If the value of
-         * <code>IsTruncated</code> in the response is <code>true</code>, there are more
-         * traffic policies associated with the current AWS account.</p> <p>If
-         * <code>IsTruncated</code> is <code>false</code>, this response includes the last
-         * traffic policy that is associated with the current account.</p> </li> <li> <p>
-         * <b>TrafficPolicyIdMarker</b> </p> <p>If <code>IsTruncated</code> is
-         * <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of the first
-         * traffic policy in the next group of <code>MaxItems</code> traffic policies. If
-         * you want to list more traffic policies, make another call to
-         * <code>ListTrafficPolicies</code>, and specify the value of the
-         * <code>TrafficPolicyIdMarker</code> element from the response in the
-         * <code>TrafficPolicyIdMarker</code> request parameter.</p> <p>If
-         * <code>IsTruncated</code> is <code>false</code>, the
-         * <code>TrafficPolicyIdMarker</code> element is omitted from the response.</p>
-         * </li> <li> <p> <b>MaxItems</b> </p> <p>The value that you specified for the
-         * <code>MaxItems</code> parameter in the request that produced the current
-         * response.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * associated with the current AWS account. Policies are listed in the order in
+         * which they were created. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies">AWS
          * API Reference</a></p>
          *
@@ -2585,29 +2285,8 @@ namespace Model
 
         /**
          * <p>Gets information about the latest version for every traffic policy that is
-         * associated with the current AWS account. Send a <code>GET</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code> resource.</p>
-         * <p>Amazon Route 53 returns a maximum of 100 items in each response. If you have
-         * a lot of traffic policies, you can use the <code>maxitems</code> parameter to
-         * list them in groups of up to 100.</p> <p>The response includes three values that
-         * help you navigate from one group of <code>maxitems</code> traffic policies to
-         * the next:</p> <ul> <li> <p> <b>IsTruncated</b> </p> <p>If the value of
-         * <code>IsTruncated</code> in the response is <code>true</code>, there are more
-         * traffic policies associated with the current AWS account.</p> <p>If
-         * <code>IsTruncated</code> is <code>false</code>, this response includes the last
-         * traffic policy that is associated with the current account.</p> </li> <li> <p>
-         * <b>TrafficPolicyIdMarker</b> </p> <p>If <code>IsTruncated</code> is
-         * <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of the first
-         * traffic policy in the next group of <code>MaxItems</code> traffic policies. If
-         * you want to list more traffic policies, make another call to
-         * <code>ListTrafficPolicies</code>, and specify the value of the
-         * <code>TrafficPolicyIdMarker</code> element from the response in the
-         * <code>TrafficPolicyIdMarker</code> request parameter.</p> <p>If
-         * <code>IsTruncated</code> is <code>false</code>, the
-         * <code>TrafficPolicyIdMarker</code> element is omitted from the response.</p>
-         * </li> <li> <p> <b>MaxItems</b> </p> <p>The value that you specified for the
-         * <code>MaxItems</code> parameter in the request that produced the current
-         * response.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * associated with the current AWS account. Policies are listed in the order in
+         * which they were created. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies">AWS
          * API Reference</a></p>
          *
@@ -2621,29 +2300,10 @@ namespace Model
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Send a <code>GET</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code>
-         * resource.</p> <p>Amazon Route 53 returns a maximum of 100 items in each
-         * response. If you have a lot of traffic policy instances, you can use the
-         * <code>MaxItems</code> parameter to list them in groups of up to 100.</p> <p>The
-         * response includes five values that help you navigate from one group of
-         * <code>MaxItems</code> traffic policy instances to the next:</p> <ul> <li> <p>
-         * <b>IsTruncated</b> </p> <p>If the value of <code>IsTruncated</code> in the
-         * response is <code>true</code>, there are more traffic policy instances
-         * associated with the current AWS account.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, this response includes the last traffic policy instance that
-         * is associated with the current account.</p> </li> <li> <p> <b>MaxItems</b> </p>
-         * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-         * request that produced the current response.</p> </li> <li> <p>
-         * <b>HostedZoneIdMarker</b>, <b>TrafficPolicyInstanceNameMarker</b>, and
-         * <b>TrafficPolicyInstanceTypeMarker</b> </p> <p>If <code>IsTruncated</code> is
-         * <code>true</code>, these three values in the response represent the first
-         * traffic policy instance in the next group of <code>MaxItems</code> traffic
-         * policy instances. To list more traffic policy instances, make another call to
-         * <code>ListTrafficPolicyInstances</code>, and specify these values in the
-         * corresponding request parameters.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, all three elements are omitted from the response.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * response element.</p> </note> <p>Amazon Route 53 returns a maximum of 100 items
+         * in each response. If you have a lot of traffic policy instances, you can use the
+         * <code>MaxItems</code> parameter to list them in groups of up to
+         * 100.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstances">AWS
          * API Reference</a></p>
          */
@@ -2655,29 +2315,10 @@ namespace Model
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Send a <code>GET</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code>
-         * resource.</p> <p>Amazon Route 53 returns a maximum of 100 items in each
-         * response. If you have a lot of traffic policy instances, you can use the
-         * <code>MaxItems</code> parameter to list them in groups of up to 100.</p> <p>The
-         * response includes five values that help you navigate from one group of
-         * <code>MaxItems</code> traffic policy instances to the next:</p> <ul> <li> <p>
-         * <b>IsTruncated</b> </p> <p>If the value of <code>IsTruncated</code> in the
-         * response is <code>true</code>, there are more traffic policy instances
-         * associated with the current AWS account.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, this response includes the last traffic policy instance that
-         * is associated with the current account.</p> </li> <li> <p> <b>MaxItems</b> </p>
-         * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-         * request that produced the current response.</p> </li> <li> <p>
-         * <b>HostedZoneIdMarker</b>, <b>TrafficPolicyInstanceNameMarker</b>, and
-         * <b>TrafficPolicyInstanceTypeMarker</b> </p> <p>If <code>IsTruncated</code> is
-         * <code>true</code>, these three values in the response represent the first
-         * traffic policy instance in the next group of <code>MaxItems</code> traffic
-         * policy instances. To list more traffic policy instances, make another call to
-         * <code>ListTrafficPolicyInstances</code>, and specify these values in the
-         * corresponding request parameters.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, all three elements are omitted from the response.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * response element.</p> </note> <p>Amazon Route 53 returns a maximum of 100 items
+         * in each response. If you have a lot of traffic policy instances, you can use the
+         * <code>MaxItems</code> parameter to list them in groups of up to
+         * 100.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstances">AWS
          * API Reference</a></p>
          *
@@ -2691,29 +2332,10 @@ namespace Model
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Send a <code>GET</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code>
-         * resource.</p> <p>Amazon Route 53 returns a maximum of 100 items in each
-         * response. If you have a lot of traffic policy instances, you can use the
-         * <code>MaxItems</code> parameter to list them in groups of up to 100.</p> <p>The
-         * response includes five values that help you navigate from one group of
-         * <code>MaxItems</code> traffic policy instances to the next:</p> <ul> <li> <p>
-         * <b>IsTruncated</b> </p> <p>If the value of <code>IsTruncated</code> in the
-         * response is <code>true</code>, there are more traffic policy instances
-         * associated with the current AWS account.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, this response includes the last traffic policy instance that
-         * is associated with the current account.</p> </li> <li> <p> <b>MaxItems</b> </p>
-         * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-         * request that produced the current response.</p> </li> <li> <p>
-         * <b>HostedZoneIdMarker</b>, <b>TrafficPolicyInstanceNameMarker</b>, and
-         * <b>TrafficPolicyInstanceTypeMarker</b> </p> <p>If <code>IsTruncated</code> is
-         * <code>true</code>, these three values in the response represent the first
-         * traffic policy instance in the next group of <code>MaxItems</code> traffic
-         * policy instances. To list more traffic policy instances, make another call to
-         * <code>ListTrafficPolicyInstances</code>, and specify these values in the
-         * corresponding request parameters.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, all three elements are omitted from the response.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * response element.</p> </note> <p>Amazon Route 53 returns a maximum of 100 items
+         * in each response. If you have a lot of traffic policy instances, you can use the
+         * <code>MaxItems</code> parameter to list them in groups of up to
+         * 100.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstances">AWS
          * API Reference</a></p>
          *
@@ -2723,33 +2345,15 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created in a
-         * specified hosted zone.</p> <note> <p>After you submit an
+         * specified hosted zone.</p> <note> <p>After you submit a
+         * <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Send a <code>GET</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code> resource
-         * and include the ID of the hosted zone.</p> <p>Amazon Route 53 returns a maximum
-         * of 100 items in each response. If you have a lot of traffic policy instances,
-         * you can use the <code>MaxItems</code> parameter to list them in groups of up to
-         * 100.</p> <p>The response includes four values that help you navigate from one
-         * group of <code>MaxItems</code> traffic policy instances to the next:</p> <ul>
-         * <li> <p> <b>IsTruncated</b> </p> <p>If the value of <code/>IsTruncated in the
-         * response is <code>true</code>, there are more traffic policy instances
-         * associated with the current AWS account.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, this response includes the last traffic policy instance that
-         * is associated with the current account.</p> </li> <li> <p> <b>MaxItems</b> </p>
-         * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-         * request that produced the current response.</p> </li> <li> <p>
-         * <b>TrafficPolicyInstanceNameMarker</b> and
-         * <b>TrafficPolicyInstanceTypeMarker</b> </p> <p>If <code>IsTruncated</code> is
-         * <code>true</code>, these two values in the response represent the first traffic
-         * policy instance in the next group of <code>MaxItems</code> traffic policy
-         * instances. To list more traffic policy instances, make another call to
-         * <code>ListTrafficPolicyInstancesByHostedZone</code>, and specify these values in
-         * the corresponding request parameters.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, all three elements are omitted from the response.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * response element.</p> </note> <p>Amazon Route 53 returns a maximum of 100 items
+         * in each response. If you have a lot of traffic policy instances, you can use the
+         * <code>MaxItems</code> parameter to list them in groups of up to
+         * 100.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZone">AWS
          * API Reference</a></p>
          */
@@ -2757,33 +2361,15 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created in a
-         * specified hosted zone.</p> <note> <p>After you submit an
+         * specified hosted zone.</p> <note> <p>After you submit a
+         * <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Send a <code>GET</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code> resource
-         * and include the ID of the hosted zone.</p> <p>Amazon Route 53 returns a maximum
-         * of 100 items in each response. If you have a lot of traffic policy instances,
-         * you can use the <code>MaxItems</code> parameter to list them in groups of up to
-         * 100.</p> <p>The response includes four values that help you navigate from one
-         * group of <code>MaxItems</code> traffic policy instances to the next:</p> <ul>
-         * <li> <p> <b>IsTruncated</b> </p> <p>If the value of <code/>IsTruncated in the
-         * response is <code>true</code>, there are more traffic policy instances
-         * associated with the current AWS account.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, this response includes the last traffic policy instance that
-         * is associated with the current account.</p> </li> <li> <p> <b>MaxItems</b> </p>
-         * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-         * request that produced the current response.</p> </li> <li> <p>
-         * <b>TrafficPolicyInstanceNameMarker</b> and
-         * <b>TrafficPolicyInstanceTypeMarker</b> </p> <p>If <code>IsTruncated</code> is
-         * <code>true</code>, these two values in the response represent the first traffic
-         * policy instance in the next group of <code>MaxItems</code> traffic policy
-         * instances. To list more traffic policy instances, make another call to
-         * <code>ListTrafficPolicyInstancesByHostedZone</code>, and specify these values in
-         * the corresponding request parameters.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, all three elements are omitted from the response.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * response element.</p> </note> <p>Amazon Route 53 returns a maximum of 100 items
+         * in each response. If you have a lot of traffic policy instances, you can use the
+         * <code>MaxItems</code> parameter to list them in groups of up to
+         * 100.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZone">AWS
          * API Reference</a></p>
          *
@@ -2793,33 +2379,15 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created in a
-         * specified hosted zone.</p> <note> <p>After you submit an
+         * specified hosted zone.</p> <note> <p>After you submit a
+         * <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Send a <code>GET</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code> resource
-         * and include the ID of the hosted zone.</p> <p>Amazon Route 53 returns a maximum
-         * of 100 items in each response. If you have a lot of traffic policy instances,
-         * you can use the <code>MaxItems</code> parameter to list them in groups of up to
-         * 100.</p> <p>The response includes four values that help you navigate from one
-         * group of <code>MaxItems</code> traffic policy instances to the next:</p> <ul>
-         * <li> <p> <b>IsTruncated</b> </p> <p>If the value of <code/>IsTruncated in the
-         * response is <code>true</code>, there are more traffic policy instances
-         * associated with the current AWS account.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, this response includes the last traffic policy instance that
-         * is associated with the current account.</p> </li> <li> <p> <b>MaxItems</b> </p>
-         * <p>The value that you specified for the <code>MaxItems</code> parameter in the
-         * request that produced the current response.</p> </li> <li> <p>
-         * <b>TrafficPolicyInstanceNameMarker</b> and
-         * <b>TrafficPolicyInstanceTypeMarker</b> </p> <p>If <code>IsTruncated</code> is
-         * <code>true</code>, these two values in the response represent the first traffic
-         * policy instance in the next group of <code>MaxItems</code> traffic policy
-         * instances. To list more traffic policy instances, make another call to
-         * <code>ListTrafficPolicyInstancesByHostedZone</code>, and specify these values in
-         * the corresponding request parameters.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, all three elements are omitted from the response.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * response element.</p> </note> <p>Amazon Route 53 returns a maximum of 100 items
+         * in each response. If you have a lot of traffic policy instances, you can use the
+         * <code>MaxItems</code> parameter to list them in groups of up to
+         * 100.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZone">AWS
          * API Reference</a></p>
          *
@@ -2834,30 +2402,10 @@ namespace Model
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Send a <code>GET</code> request to the
-         * <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource and
-         * include the ID and version of the traffic policy.</p> <p>Amazon Route 53 returns
-         * a maximum of 100 items in each response. If you have a lot of traffic policy
-         * instances, you can use the <code>MaxItems</code> parameter to list them in
-         * groups of up to 100.</p> <p>The response includes five values that help you
-         * navigate from one group of <code>MaxItems</code> traffic policy instances to the
-         * next:</p> <ul> <li> <p> <b>IsTruncated</b> </p> <p>If the value of
-         * <code>IsTruncated</code> in the response is <code>true</code>, there are more
-         * traffic policy instances associated with the specified traffic policy.</p> <p>If
-         * <code>IsTruncated</code> is <code>false</code>, this response includes the last
-         * traffic policy instance that is associated with the specified traffic
-         * policy.</p> </li> <li> <p> <b>MaxItems</b> </p> <p>The value that you specified
-         * for the <code>MaxItems</code> parameter in the request that produced the current
-         * response.</p> </li> <li> <p> <b>HostedZoneIdMarker</b>,
-         * <b>TrafficPolicyInstanceNameMarker</b>, and
-         * <b>TrafficPolicyInstanceTypeMarker</b> </p> <p>If <code>IsTruncated</code> is
-         * <code>true</code>, these values in the response represent the first traffic
-         * policy instance in the next group of <code>MaxItems</code> traffic policy
-         * instances. To list more traffic policy instances, make another call to
-         * <code>ListTrafficPolicyInstancesByPolicy</code>, and specify these values in the
-         * corresponding request parameters.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, all three elements are omitted from the response.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * response element.</p> </note> <p>Amazon Route 53 returns a maximum of 100 items
+         * in each response. If you have a lot of traffic policy instances, you can use the
+         * <code>MaxItems</code> parameter to list them in groups of up to
+         * 100.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByPolicy">AWS
          * API Reference</a></p>
          */
@@ -2870,30 +2418,10 @@ namespace Model
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Send a <code>GET</code> request to the
-         * <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource and
-         * include the ID and version of the traffic policy.</p> <p>Amazon Route 53 returns
-         * a maximum of 100 items in each response. If you have a lot of traffic policy
-         * instances, you can use the <code>MaxItems</code> parameter to list them in
-         * groups of up to 100.</p> <p>The response includes five values that help you
-         * navigate from one group of <code>MaxItems</code> traffic policy instances to the
-         * next:</p> <ul> <li> <p> <b>IsTruncated</b> </p> <p>If the value of
-         * <code>IsTruncated</code> in the response is <code>true</code>, there are more
-         * traffic policy instances associated with the specified traffic policy.</p> <p>If
-         * <code>IsTruncated</code> is <code>false</code>, this response includes the last
-         * traffic policy instance that is associated with the specified traffic
-         * policy.</p> </li> <li> <p> <b>MaxItems</b> </p> <p>The value that you specified
-         * for the <code>MaxItems</code> parameter in the request that produced the current
-         * response.</p> </li> <li> <p> <b>HostedZoneIdMarker</b>,
-         * <b>TrafficPolicyInstanceNameMarker</b>, and
-         * <b>TrafficPolicyInstanceTypeMarker</b> </p> <p>If <code>IsTruncated</code> is
-         * <code>true</code>, these values in the response represent the first traffic
-         * policy instance in the next group of <code>MaxItems</code> traffic policy
-         * instances. To list more traffic policy instances, make another call to
-         * <code>ListTrafficPolicyInstancesByPolicy</code>, and specify these values in the
-         * corresponding request parameters.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, all three elements are omitted from the response.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * response element.</p> </note> <p>Amazon Route 53 returns a maximum of 100 items
+         * in each response. If you have a lot of traffic policy instances, you can use the
+         * <code>MaxItems</code> parameter to list them in groups of up to
+         * 100.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByPolicy">AWS
          * API Reference</a></p>
          *
@@ -2908,30 +2436,10 @@ namespace Model
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Send a <code>GET</code> request to the
-         * <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource and
-         * include the ID and version of the traffic policy.</p> <p>Amazon Route 53 returns
-         * a maximum of 100 items in each response. If you have a lot of traffic policy
-         * instances, you can use the <code>MaxItems</code> parameter to list them in
-         * groups of up to 100.</p> <p>The response includes five values that help you
-         * navigate from one group of <code>MaxItems</code> traffic policy instances to the
-         * next:</p> <ul> <li> <p> <b>IsTruncated</b> </p> <p>If the value of
-         * <code>IsTruncated</code> in the response is <code>true</code>, there are more
-         * traffic policy instances associated with the specified traffic policy.</p> <p>If
-         * <code>IsTruncated</code> is <code>false</code>, this response includes the last
-         * traffic policy instance that is associated with the specified traffic
-         * policy.</p> </li> <li> <p> <b>MaxItems</b> </p> <p>The value that you specified
-         * for the <code>MaxItems</code> parameter in the request that produced the current
-         * response.</p> </li> <li> <p> <b>HostedZoneIdMarker</b>,
-         * <b>TrafficPolicyInstanceNameMarker</b>, and
-         * <b>TrafficPolicyInstanceTypeMarker</b> </p> <p>If <code>IsTruncated</code> is
-         * <code>true</code>, these values in the response represent the first traffic
-         * policy instance in the next group of <code>MaxItems</code> traffic policy
-         * instances. To list more traffic policy instances, make another call to
-         * <code>ListTrafficPolicyInstancesByPolicy</code>, and specify these values in the
-         * corresponding request parameters.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, all three elements are omitted from the response.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * response element.</p> </note> <p>Amazon Route 53 returns a maximum of 100 items
+         * in each response. If you have a lot of traffic policy instances, you can use the
+         * <code>MaxItems</code> parameter to list them in groups of up to
+         * 100.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByPolicy">AWS
          * API Reference</a></p>
          *
@@ -2941,29 +2449,8 @@ namespace Model
 
         /**
          * <p>Gets information about all of the versions for a specified traffic
-         * policy.</p> <p>Send a <code>GET</code> request to the <code>/<i>Amazon Route 53
-         * API version</i>/trafficpolicy</code> resource and specify the ID of the traffic
-         * policy for which you want to list versions.</p> <p>Amazon Route 53 returns a
-         * maximum of 100 items in each response. If you have a lot of traffic policies,
-         * you can use the <code>maxitems</code> parameter to list them in groups of up to
-         * 100.</p> <p>The response includes three values that help you navigate from one
-         * group of <code>maxitems</code> traffic policies to the next:</p> <ul> <li> <p>
-         * <b>IsTruncated</b> </p> <p>If the value of <code>IsTruncated</code> in the
-         * response is <code>true</code>, there are more traffic policy versions associated
-         * with the specified traffic policy.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, this response includes the last traffic policy version that
-         * is associated with the specified traffic policy.</p> </li> <li> <p>
-         * <b>TrafficPolicyVersionMarker</b> </p> <p>The ID of the next traffic policy
-         * version that is associated with the current AWS account. If you want to list
-         * more traffic policies, make another call to
-         * <code>ListTrafficPolicyVersions</code>, and specify the value of the
-         * <code>TrafficPolicyVersionMarker</code> element in the
-         * <code>TrafficPolicyVersionMarker</code> request parameter.</p> <p>If
-         * <code>IsTruncated</code> is <code>false</code>, Amazon Route 53 omits the
-         * <code>TrafficPolicyVersionMarker</code> element from the response.</p> </li>
-         * <li> <p> <b>MaxItems</b> </p> <p>The value that you specified for the
-         * <code>MaxItems</code> parameter in the request that produced the current
-         * response.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * policy.</p> <p>Traffic policy versions are listed in numerical order by
+         * <code>VersionNumber</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyVersions">AWS
          * API Reference</a></p>
          */
@@ -2971,29 +2458,8 @@ namespace Model
 
         /**
          * <p>Gets information about all of the versions for a specified traffic
-         * policy.</p> <p>Send a <code>GET</code> request to the <code>/<i>Amazon Route 53
-         * API version</i>/trafficpolicy</code> resource and specify the ID of the traffic
-         * policy for which you want to list versions.</p> <p>Amazon Route 53 returns a
-         * maximum of 100 items in each response. If you have a lot of traffic policies,
-         * you can use the <code>maxitems</code> parameter to list them in groups of up to
-         * 100.</p> <p>The response includes three values that help you navigate from one
-         * group of <code>maxitems</code> traffic policies to the next:</p> <ul> <li> <p>
-         * <b>IsTruncated</b> </p> <p>If the value of <code>IsTruncated</code> in the
-         * response is <code>true</code>, there are more traffic policy versions associated
-         * with the specified traffic policy.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, this response includes the last traffic policy version that
-         * is associated with the specified traffic policy.</p> </li> <li> <p>
-         * <b>TrafficPolicyVersionMarker</b> </p> <p>The ID of the next traffic policy
-         * version that is associated with the current AWS account. If you want to list
-         * more traffic policies, make another call to
-         * <code>ListTrafficPolicyVersions</code>, and specify the value of the
-         * <code>TrafficPolicyVersionMarker</code> element in the
-         * <code>TrafficPolicyVersionMarker</code> request parameter.</p> <p>If
-         * <code>IsTruncated</code> is <code>false</code>, Amazon Route 53 omits the
-         * <code>TrafficPolicyVersionMarker</code> element from the response.</p> </li>
-         * <li> <p> <b>MaxItems</b> </p> <p>The value that you specified for the
-         * <code>MaxItems</code> parameter in the request that produced the current
-         * response.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * policy.</p> <p>Traffic policy versions are listed in numerical order by
+         * <code>VersionNumber</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyVersions">AWS
          * API Reference</a></p>
          *
@@ -3003,29 +2469,8 @@ namespace Model
 
         /**
          * <p>Gets information about all of the versions for a specified traffic
-         * policy.</p> <p>Send a <code>GET</code> request to the <code>/<i>Amazon Route 53
-         * API version</i>/trafficpolicy</code> resource and specify the ID of the traffic
-         * policy for which you want to list versions.</p> <p>Amazon Route 53 returns a
-         * maximum of 100 items in each response. If you have a lot of traffic policies,
-         * you can use the <code>maxitems</code> parameter to list them in groups of up to
-         * 100.</p> <p>The response includes three values that help you navigate from one
-         * group of <code>maxitems</code> traffic policies to the next:</p> <ul> <li> <p>
-         * <b>IsTruncated</b> </p> <p>If the value of <code>IsTruncated</code> in the
-         * response is <code>true</code>, there are more traffic policy versions associated
-         * with the specified traffic policy.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, this response includes the last traffic policy version that
-         * is associated with the specified traffic policy.</p> </li> <li> <p>
-         * <b>TrafficPolicyVersionMarker</b> </p> <p>The ID of the next traffic policy
-         * version that is associated with the current AWS account. If you want to list
-         * more traffic policies, make another call to
-         * <code>ListTrafficPolicyVersions</code>, and specify the value of the
-         * <code>TrafficPolicyVersionMarker</code> element in the
-         * <code>TrafficPolicyVersionMarker</code> request parameter.</p> <p>If
-         * <code>IsTruncated</code> is <code>false</code>, Amazon Route 53 omits the
-         * <code>TrafficPolicyVersionMarker</code> element from the response.</p> </li>
-         * <li> <p> <b>MaxItems</b> </p> <p>The value that you specified for the
-         * <code>MaxItems</code> parameter in the request that produced the current
-         * response.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * policy.</p> <p>Traffic policy versions are listed in numerical order by
+         * <code>VersionNumber</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyVersions">AWS
          * API Reference</a></p>
          *
@@ -3036,23 +2481,10 @@ namespace Model
         /**
          * <p>Gets a list of the VPCs that were created by other accounts and that can be
          * associated with a specified hosted zone because you've submitted one or more
-         * <code>CreateVPCAssociationAuthorization</code> requests. </p> <p>Send a
-         * <code>GET</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
-         * ID</i>/authorizevpcassociation</code> resource. The response to this request
+         * <code>CreateVPCAssociationAuthorization</code> requests. </p> <p>The response
          * includes a <code>VPCs</code> element with a <code>VPC</code> child element for
-         * each VPC that can be associated with the hosted zone.</p> <p>Amazon Route 53
-         * returns up to 50 VPCs per page. To return fewer VPCs per page, include the
-         * <code>MaxResults</code> parameter: </p> <p>
-         * <code>/2013-04-01/hostedzone/<i>hosted zone
-         * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i> </code> </p> <p>If
-         * the response includes a <code>NextToken</code> element, there are more VPCs to
-         * list. To get the next page of VPCs, submit another
-         * <code>ListVPCAssociationAuthorizations</code> request, and include the value of
-         * the <code>NextToken</code> element from the response in the
-         * <code>NextToken</code> request parameter:</p> <p>
-         * <code>/2013-04-01/hostedzone/<i>hosted zone
-         * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/>
-         * </code> </p><p><h3>See Also:</h3>   <a
+         * each VPC that can be associated with the hosted zone.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListVPCAssociationAuthorizations">AWS
          * API Reference</a></p>
          */
@@ -3061,23 +2493,10 @@ namespace Model
         /**
          * <p>Gets a list of the VPCs that were created by other accounts and that can be
          * associated with a specified hosted zone because you've submitted one or more
-         * <code>CreateVPCAssociationAuthorization</code> requests. </p> <p>Send a
-         * <code>GET</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
-         * ID</i>/authorizevpcassociation</code> resource. The response to this request
+         * <code>CreateVPCAssociationAuthorization</code> requests. </p> <p>The response
          * includes a <code>VPCs</code> element with a <code>VPC</code> child element for
-         * each VPC that can be associated with the hosted zone.</p> <p>Amazon Route 53
-         * returns up to 50 VPCs per page. To return fewer VPCs per page, include the
-         * <code>MaxResults</code> parameter: </p> <p>
-         * <code>/2013-04-01/hostedzone/<i>hosted zone
-         * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i> </code> </p> <p>If
-         * the response includes a <code>NextToken</code> element, there are more VPCs to
-         * list. To get the next page of VPCs, submit another
-         * <code>ListVPCAssociationAuthorizations</code> request, and include the value of
-         * the <code>NextToken</code> element from the response in the
-         * <code>NextToken</code> request parameter:</p> <p>
-         * <code>/2013-04-01/hostedzone/<i>hosted zone
-         * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/>
-         * </code> </p><p><h3>See Also:</h3>   <a
+         * each VPC that can be associated with the hosted zone.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListVPCAssociationAuthorizations">AWS
          * API Reference</a></p>
          *
@@ -3088,23 +2507,10 @@ namespace Model
         /**
          * <p>Gets a list of the VPCs that were created by other accounts and that can be
          * associated with a specified hosted zone because you've submitted one or more
-         * <code>CreateVPCAssociationAuthorization</code> requests. </p> <p>Send a
-         * <code>GET</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
-         * ID</i>/authorizevpcassociation</code> resource. The response to this request
+         * <code>CreateVPCAssociationAuthorization</code> requests. </p> <p>The response
          * includes a <code>VPCs</code> element with a <code>VPC</code> child element for
-         * each VPC that can be associated with the hosted zone.</p> <p>Amazon Route 53
-         * returns up to 50 VPCs per page. To return fewer VPCs per page, include the
-         * <code>MaxResults</code> parameter: </p> <p>
-         * <code>/2013-04-01/hostedzone/<i>hosted zone
-         * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i> </code> </p> <p>If
-         * the response includes a <code>NextToken</code> element, there are more VPCs to
-         * list. To get the next page of VPCs, submit another
-         * <code>ListVPCAssociationAuthorizations</code> request, and include the value of
-         * the <code>NextToken</code> element from the response in the
-         * <code>NextToken</code> request parameter:</p> <p>
-         * <code>/2013-04-01/hostedzone/<i>hosted zone
-         * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/>
-         * </code> </p><p><h3>See Also:</h3>   <a
+         * each VPC that can be associated with the hosted zone.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListVPCAssociationAuthorizations">AWS
          * API Reference</a></p>
          *
@@ -3147,28 +2553,22 @@ namespace Model
         virtual void TestDNSAnswerAsync(const Model::TestDNSAnswerRequest& request, const TestDNSAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing health check.</p> <p>Send a <code>POST</code> request to
-         * the <code>/2013-04-01/healthcheck/<i>health check ID</i> </code> resource. The
-         * request body must include a document with an
-         * <code>UpdateHealthCheckRequest</code> element. For more information about
-         * updating health checks, see <a
+         * <p>Updates an existing health check. Note that some values can't be updated.
+         * </p> <p>For more information about updating health checks, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
-         * Updating, and Deleting Health Checks</a> in the Amazon Route 53 Developer
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * Updating, and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHealthCheck">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateHealthCheckOutcome UpdateHealthCheck(const Model::UpdateHealthCheckRequest& request) const;
 
         /**
-         * <p>Updates an existing health check.</p> <p>Send a <code>POST</code> request to
-         * the <code>/2013-04-01/healthcheck/<i>health check ID</i> </code> resource. The
-         * request body must include a document with an
-         * <code>UpdateHealthCheckRequest</code> element. For more information about
-         * updating health checks, see <a
+         * <p>Updates an existing health check. Note that some values can't be updated.
+         * </p> <p>For more information about updating health checks, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
-         * Updating, and Deleting Health Checks</a> in the Amazon Route 53 Developer
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * Updating, and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHealthCheck">AWS
          * API Reference</a></p>
          *
@@ -3177,14 +2577,11 @@ namespace Model
         virtual Model::UpdateHealthCheckOutcomeCallable UpdateHealthCheckCallable(const Model::UpdateHealthCheckRequest& request) const;
 
         /**
-         * <p>Updates an existing health check.</p> <p>Send a <code>POST</code> request to
-         * the <code>/2013-04-01/healthcheck/<i>health check ID</i> </code> resource. The
-         * request body must include a document with an
-         * <code>UpdateHealthCheckRequest</code> element. For more information about
-         * updating health checks, see <a
+         * <p>Updates an existing health check. Note that some values can't be updated.
+         * </p> <p>For more information about updating health checks, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
-         * Updating, and Deleting Health Checks</a> in the Amazon Route 53 Developer
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * Updating, and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHealthCheck">AWS
          * API Reference</a></p>
          *
@@ -3193,18 +2590,16 @@ namespace Model
         virtual void UpdateHealthCheckAsync(const Model::UpdateHealthCheckRequest& request, const UpdateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the hosted zone comment. Send a <code>POST</code> request to the
-         * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i> </code> resource.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Updates the comment for a specified hosted zone.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateHostedZoneCommentOutcome UpdateHostedZoneComment(const Model::UpdateHostedZoneCommentRequest& request) const;
 
         /**
-         * <p>Updates the hosted zone comment. Send a <code>POST</code> request to the
-         * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i> </code> resource.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Updates the comment for a specified hosted zone.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment">AWS
          * API Reference</a></p>
          *
@@ -3213,9 +2608,8 @@ namespace Model
         virtual Model::UpdateHostedZoneCommentOutcomeCallable UpdateHostedZoneCommentCallable(const Model::UpdateHostedZoneCommentRequest& request) const;
 
         /**
-         * <p>Updates the hosted zone comment. Send a <code>POST</code> request to the
-         * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i> </code> resource.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Updates the comment for a specified hosted zone.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment">AWS
          * API Reference</a></p>
          *
@@ -3224,22 +2618,16 @@ namespace Model
         virtual void UpdateHostedZoneCommentAsync(const Model::UpdateHostedZoneCommentRequest& request, const UpdateHostedZoneCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the comment for a specified traffic policy version.</p> <p>Send a
-         * <code>POST</code> request to the <code>/2013-04-01/trafficpolicy/</code>
-         * resource.</p> <p>The request body must include a document with an
-         * <code>UpdateTrafficPolicyCommentRequest</code> element.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Updates the comment for a specified traffic policy version.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateTrafficPolicyCommentOutcome UpdateTrafficPolicyComment(const Model::UpdateTrafficPolicyCommentRequest& request) const;
 
         /**
-         * <p>Updates the comment for a specified traffic policy version.</p> <p>Send a
-         * <code>POST</code> request to the <code>/2013-04-01/trafficpolicy/</code>
-         * resource.</p> <p>The request body must include a document with an
-         * <code>UpdateTrafficPolicyCommentRequest</code> element.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Updates the comment for a specified traffic policy version.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment">AWS
          * API Reference</a></p>
          *
@@ -3248,11 +2636,8 @@ namespace Model
         virtual Model::UpdateTrafficPolicyCommentOutcomeCallable UpdateTrafficPolicyCommentCallable(const Model::UpdateTrafficPolicyCommentRequest& request) const;
 
         /**
-         * <p>Updates the comment for a specified traffic policy version.</p> <p>Send a
-         * <code>POST</code> request to the <code>/2013-04-01/trafficpolicy/</code>
-         * resource.</p> <p>The request body must include a document with an
-         * <code>UpdateTrafficPolicyCommentRequest</code> element.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Updates the comment for a specified traffic policy version.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment">AWS
          * API Reference</a></p>
          *
@@ -3262,23 +2647,19 @@ namespace Model
 
         /**
          * <p>Updates the resource record sets in a specified hosted zone that were created
-         * based on the settings in a specified traffic policy version.</p> <p>Send a
-         * <code>POST</code> request to the
-         * <code>/2013-04-01/trafficpolicyinstance/<i>traffic policy ID</i> </code>
-         * resource. The request body must include a document with an
-         * <code>UpdateTrafficPolicyInstanceRequest</code> element.</p> <p>When you update
-         * a traffic policy instance, Amazon Route 53 continues to respond to DNS queries
-         * for the root resource record set name (such as example.com) while it replaces
-         * one group of resource record sets with another. Amazon Route 53 performs the
-         * following operations:</p> <ol> <li> <p>Amazon Route 53 creates a new group of
-         * resource record sets based on the specified traffic policy. This is true
-         * regardless of how substantial the differences are between the existing resource
-         * record sets and the new resource record sets. </p> </li> <li> <p>When all of the
-         * new resource record sets have been created, Amazon Route 53 starts to respond to
-         * DNS queries for the root resource record set name (such as example.com) by using
-         * the new resource record sets.</p> </li> <li> <p>Amazon Route 53 deletes the old
-         * group of resource record sets that are associated with the root resource record
-         * set name.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * based on the settings in a specified traffic policy version.</p> <p>When you
+         * update a traffic policy instance, Amazon Route 53 continues to respond to DNS
+         * queries for the root resource record set name (such as example.com) while it
+         * replaces one group of resource record sets with another. Amazon Route 53
+         * performs the following operations:</p> <ol> <li> <p>Amazon Route 53 creates a
+         * new group of resource record sets based on the specified traffic policy. This is
+         * true regardless of how significant the differences are between the existing
+         * resource record sets and the new resource record sets. </p> </li> <li> <p>When
+         * all of the new resource record sets have been created, Amazon Route 53 starts to
+         * respond to DNS queries for the root resource record set name (such as
+         * example.com) by using the new resource record sets.</p> </li> <li> <p>Amazon
+         * Route 53 deletes the old group of resource record sets that are associated with
+         * the root resource record set name.</p> </li> </ol><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstance">AWS
          * API Reference</a></p>
          */
@@ -3286,23 +2667,19 @@ namespace Model
 
         /**
          * <p>Updates the resource record sets in a specified hosted zone that were created
-         * based on the settings in a specified traffic policy version.</p> <p>Send a
-         * <code>POST</code> request to the
-         * <code>/2013-04-01/trafficpolicyinstance/<i>traffic policy ID</i> </code>
-         * resource. The request body must include a document with an
-         * <code>UpdateTrafficPolicyInstanceRequest</code> element.</p> <p>When you update
-         * a traffic policy instance, Amazon Route 53 continues to respond to DNS queries
-         * for the root resource record set name (such as example.com) while it replaces
-         * one group of resource record sets with another. Amazon Route 53 performs the
-         * following operations:</p> <ol> <li> <p>Amazon Route 53 creates a new group of
-         * resource record sets based on the specified traffic policy. This is true
-         * regardless of how substantial the differences are between the existing resource
-         * record sets and the new resource record sets. </p> </li> <li> <p>When all of the
-         * new resource record sets have been created, Amazon Route 53 starts to respond to
-         * DNS queries for the root resource record set name (such as example.com) by using
-         * the new resource record sets.</p> </li> <li> <p>Amazon Route 53 deletes the old
-         * group of resource record sets that are associated with the root resource record
-         * set name.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * based on the settings in a specified traffic policy version.</p> <p>When you
+         * update a traffic policy instance, Amazon Route 53 continues to respond to DNS
+         * queries for the root resource record set name (such as example.com) while it
+         * replaces one group of resource record sets with another. Amazon Route 53
+         * performs the following operations:</p> <ol> <li> <p>Amazon Route 53 creates a
+         * new group of resource record sets based on the specified traffic policy. This is
+         * true regardless of how significant the differences are between the existing
+         * resource record sets and the new resource record sets. </p> </li> <li> <p>When
+         * all of the new resource record sets have been created, Amazon Route 53 starts to
+         * respond to DNS queries for the root resource record set name (such as
+         * example.com) by using the new resource record sets.</p> </li> <li> <p>Amazon
+         * Route 53 deletes the old group of resource record sets that are associated with
+         * the root resource record set name.</p> </li> </ol><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstance">AWS
          * API Reference</a></p>
          *
@@ -3312,23 +2689,19 @@ namespace Model
 
         /**
          * <p>Updates the resource record sets in a specified hosted zone that were created
-         * based on the settings in a specified traffic policy version.</p> <p>Send a
-         * <code>POST</code> request to the
-         * <code>/2013-04-01/trafficpolicyinstance/<i>traffic policy ID</i> </code>
-         * resource. The request body must include a document with an
-         * <code>UpdateTrafficPolicyInstanceRequest</code> element.</p> <p>When you update
-         * a traffic policy instance, Amazon Route 53 continues to respond to DNS queries
-         * for the root resource record set name (such as example.com) while it replaces
-         * one group of resource record sets with another. Amazon Route 53 performs the
-         * following operations:</p> <ol> <li> <p>Amazon Route 53 creates a new group of
-         * resource record sets based on the specified traffic policy. This is true
-         * regardless of how substantial the differences are between the existing resource
-         * record sets and the new resource record sets. </p> </li> <li> <p>When all of the
-         * new resource record sets have been created, Amazon Route 53 starts to respond to
-         * DNS queries for the root resource record set name (such as example.com) by using
-         * the new resource record sets.</p> </li> <li> <p>Amazon Route 53 deletes the old
-         * group of resource record sets that are associated with the root resource record
-         * set name.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * based on the settings in a specified traffic policy version.</p> <p>When you
+         * update a traffic policy instance, Amazon Route 53 continues to respond to DNS
+         * queries for the root resource record set name (such as example.com) while it
+         * replaces one group of resource record sets with another. Amazon Route 53
+         * performs the following operations:</p> <ol> <li> <p>Amazon Route 53 creates a
+         * new group of resource record sets based on the specified traffic policy. This is
+         * true regardless of how significant the differences are between the existing
+         * resource record sets and the new resource record sets. </p> </li> <li> <p>When
+         * all of the new resource record sets have been created, Amazon Route 53 starts to
+         * respond to DNS queries for the root resource record set name (such as
+         * example.com) by using the new resource record sets.</p> </li> <li> <p>Amazon
+         * Route 53 deletes the old group of resource record sets that are associated with
+         * the root resource record set name.</p> </li> </ol><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstance">AWS
          * API Reference</a></p>
          *

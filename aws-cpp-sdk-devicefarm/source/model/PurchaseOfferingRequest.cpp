@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 PurchaseOfferingRequest::PurchaseOfferingRequest() : 
     m_offeringIdHasBeenSet(false),
     m_quantity(0),
-    m_quantityHasBeenSet(false)
+    m_quantityHasBeenSet(false),
+    m_offeringPromotionIdHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,12 @@ Aws::String PurchaseOfferingRequest::SerializePayload() const
   if(m_quantityHasBeenSet)
   {
    payload.WithInteger("quantity", m_quantity);
+
+  }
+
+  if(m_offeringPromotionIdHasBeenSet)
+  {
+   payload.WithString("offeringPromotionId", m_offeringPromotionId);
 
   }
 

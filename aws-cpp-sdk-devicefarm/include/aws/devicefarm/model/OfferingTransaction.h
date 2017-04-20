@@ -109,6 +109,41 @@ namespace Model
     inline OfferingTransaction& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
 
     /**
+     * <p>The ID that corresponds to a device offering promotion.</p>
+     */
+    inline const Aws::String& GetOfferingPromotionId() const{ return m_offeringPromotionId; }
+
+    /**
+     * <p>The ID that corresponds to a device offering promotion.</p>
+     */
+    inline void SetOfferingPromotionId(const Aws::String& value) { m_offeringPromotionIdHasBeenSet = true; m_offeringPromotionId = value; }
+
+    /**
+     * <p>The ID that corresponds to a device offering promotion.</p>
+     */
+    inline void SetOfferingPromotionId(Aws::String&& value) { m_offeringPromotionIdHasBeenSet = true; m_offeringPromotionId = std::move(value); }
+
+    /**
+     * <p>The ID that corresponds to a device offering promotion.</p>
+     */
+    inline void SetOfferingPromotionId(const char* value) { m_offeringPromotionIdHasBeenSet = true; m_offeringPromotionId.assign(value); }
+
+    /**
+     * <p>The ID that corresponds to a device offering promotion.</p>
+     */
+    inline OfferingTransaction& WithOfferingPromotionId(const Aws::String& value) { SetOfferingPromotionId(value); return *this;}
+
+    /**
+     * <p>The ID that corresponds to a device offering promotion.</p>
+     */
+    inline OfferingTransaction& WithOfferingPromotionId(Aws::String&& value) { SetOfferingPromotionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID that corresponds to a device offering promotion.</p>
+     */
+    inline OfferingTransaction& WithOfferingPromotionId(const char* value) { SetOfferingPromotionId(value); return *this;}
+
+    /**
      * <p>The date on which an offering transaction was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedOn() const{ return m_createdOn; }
@@ -163,6 +198,8 @@ namespace Model
     bool m_offeringStatusHasBeenSet;
     Aws::String m_transactionId;
     bool m_transactionIdHasBeenSet;
+    Aws::String m_offeringPromotionId;
+    bool m_offeringPromotionIdHasBeenSet;
     Aws::Utils::DateTime m_createdOn;
     bool m_createdOnHasBeenSet;
     MonetaryAmount m_cost;

@@ -28,8 +28,13 @@ namespace Model
 {
 
   /**
-   * <p>The UpdateDomainNameserver request includes the following
-   * elements.</p><p><h3>See Also:</h3>   <a
+   * <p>Replaces the current set of name servers for the domain with the specified
+   * set of name servers. If you use Amazon Route 53 as your DNS service, specify the
+   * four name servers in the delegation set for the hosted zone for the domain.</p>
+   * <p>If successful, this operation returns an operation ID that you can use to
+   * track the progress and completion of the action. If the request is not completed
+   * successfully, the domain registrant will be notified by email. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameserversRequest">AWS
    * API Reference</a></p>
    */
@@ -43,58 +48,37 @@ namespace Model
 
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to change name servers for.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to change name servers for.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to change name servers for.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to change name servers for.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to change name servers for.</p>
      */
     inline UpdateDomainNameserversRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to change name servers for.</p>
      */
     inline UpdateDomainNameserversRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
-     * <p>Constraints: The domain name can contain only the letters a through z, the
-     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
-     * supported.</p> <p>Required: Yes</p>
+     * <p>The name of the domain that you want to change name servers for.</p>
      */
     inline UpdateDomainNameserversRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
@@ -134,44 +118,37 @@ namespace Model
     inline UpdateDomainNameserversRequest& WithFIAuthKey(const char* value) { SetFIAuthKey(value); return *this;}
 
     /**
-     * <p>A list of new name servers for the domain.</p> <p>Type: Complex</p>
-     * <p>Children: <code>Name</code>, <code>GlueIps</code></p> <p>Required: Yes</p>
+     * <p>A list of new name servers for the domain.</p>
      */
     inline const Aws::Vector<Nameserver>& GetNameservers() const{ return m_nameservers; }
 
     /**
-     * <p>A list of new name servers for the domain.</p> <p>Type: Complex</p>
-     * <p>Children: <code>Name</code>, <code>GlueIps</code></p> <p>Required: Yes</p>
+     * <p>A list of new name servers for the domain.</p>
      */
     inline void SetNameservers(const Aws::Vector<Nameserver>& value) { m_nameserversHasBeenSet = true; m_nameservers = value; }
 
     /**
-     * <p>A list of new name servers for the domain.</p> <p>Type: Complex</p>
-     * <p>Children: <code>Name</code>, <code>GlueIps</code></p> <p>Required: Yes</p>
+     * <p>A list of new name servers for the domain.</p>
      */
     inline void SetNameservers(Aws::Vector<Nameserver>&& value) { m_nameserversHasBeenSet = true; m_nameservers = std::move(value); }
 
     /**
-     * <p>A list of new name servers for the domain.</p> <p>Type: Complex</p>
-     * <p>Children: <code>Name</code>, <code>GlueIps</code></p> <p>Required: Yes</p>
+     * <p>A list of new name servers for the domain.</p>
      */
     inline UpdateDomainNameserversRequest& WithNameservers(const Aws::Vector<Nameserver>& value) { SetNameservers(value); return *this;}
 
     /**
-     * <p>A list of new name servers for the domain.</p> <p>Type: Complex</p>
-     * <p>Children: <code>Name</code>, <code>GlueIps</code></p> <p>Required: Yes</p>
+     * <p>A list of new name servers for the domain.</p>
      */
     inline UpdateDomainNameserversRequest& WithNameservers(Aws::Vector<Nameserver>&& value) { SetNameservers(std::move(value)); return *this;}
 
     /**
-     * <p>A list of new name servers for the domain.</p> <p>Type: Complex</p>
-     * <p>Children: <code>Name</code>, <code>GlueIps</code></p> <p>Required: Yes</p>
+     * <p>A list of new name servers for the domain.</p>
      */
     inline UpdateDomainNameserversRequest& AddNameservers(const Nameserver& value) { m_nameserversHasBeenSet = true; m_nameservers.push_back(value); return *this; }
 
     /**
-     * <p>A list of new name servers for the domain.</p> <p>Type: Complex</p>
-     * <p>Children: <code>Name</code>, <code>GlueIps</code></p> <p>Required: Yes</p>
+     * <p>A list of new name servers for the domain.</p>
      */
     inline UpdateDomainNameserversRequest& AddNameservers(Nameserver&& value) { m_nameserversHasBeenSet = true; m_nameservers.push_back(std::move(value)); return *this; }
 

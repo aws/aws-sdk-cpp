@@ -93,145 +93,136 @@ namespace Model
     /**
      * <p>For the second and subsequent calls to
      * <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that
-     * you specified for the marker parameter in the request that produced the current
-     * response.</p>
+     * you specified for the <code>marker</code> parameter in the request that produced
+     * the current response.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p>For the second and subsequent calls to
      * <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that
-     * you specified for the marker parameter in the request that produced the current
-     * response.</p>
+     * you specified for the <code>marker</code> parameter in the request that produced
+     * the current response.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
      * <p>For the second and subsequent calls to
      * <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that
-     * you specified for the marker parameter in the request that produced the current
-     * response.</p>
+     * you specified for the <code>marker</code> parameter in the request that produced
+     * the current response.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>For the second and subsequent calls to
      * <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that
-     * you specified for the marker parameter in the request that produced the current
-     * response.</p>
+     * you specified for the <code>marker</code> parameter in the request that produced
+     * the current response.</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
      * <p>For the second and subsequent calls to
      * <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that
-     * you specified for the marker parameter in the request that produced the current
-     * response.</p>
+     * you specified for the <code>marker</code> parameter in the request that produced
+     * the current response.</p>
      */
     inline ListReusableDelegationSetsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p>For the second and subsequent calls to
      * <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that
-     * you specified for the marker parameter in the request that produced the current
-     * response.</p>
+     * you specified for the <code>marker</code> parameter in the request that produced
+     * the current response.</p>
      */
     inline ListReusableDelegationSetsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>For the second and subsequent calls to
      * <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that
-     * you specified for the marker parameter in the request that produced the current
-     * response.</p>
+     * you specified for the <code>marker</code> parameter in the request that produced
+     * the current response.</p>
      */
     inline ListReusableDelegationSetsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
      * <p>A flag that indicates whether there are more reusable delegation sets to be
-     * listed. If the response is truncated, you can get the next group of
-     * <code>maxitems</code> reusable delegation sets by calling
-     * <code>ListReusableDelegationSets</code> again and specifying the value of the
-     * <code>NextMarker</code> element in the <code>marker</code> parameter.</p>
+     * listed.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
      * <p>A flag that indicates whether there are more reusable delegation sets to be
-     * listed. If the response is truncated, you can get the next group of
-     * <code>maxitems</code> reusable delegation sets by calling
-     * <code>ListReusableDelegationSets</code> again and specifying the value of the
-     * <code>NextMarker</code> element in the <code>marker</code> parameter.</p>
+     * listed.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
      * <p>A flag that indicates whether there are more reusable delegation sets to be
-     * listed. If the response is truncated, you can get the next group of
-     * <code>maxitems</code> reusable delegation sets by calling
-     * <code>ListReusableDelegationSets</code> again and specifying the value of the
-     * <code>NextMarker</code> element in the <code>marker</code> parameter.</p>
+     * listed.</p>
      */
     inline ListReusableDelegationSetsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>NextMarker</code> identifies the first reusable delegation set in the next
-     * group of <code>maxitems</code> reusable delegation sets. Call
-     * <code>ListReusableDelegationSets</code> again and specify the value of
+     * <code>NextMarker</code> identifies the next reusable delegation set that Amazon
+     * Route 53 will return if you submit another
+     * <code>ListReusableDelegationSets</code> request and specify the value of
      * <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>NextMarker</code> identifies the first reusable delegation set in the next
-     * group of <code>maxitems</code> reusable delegation sets. Call
-     * <code>ListReusableDelegationSets</code> again and specify the value of
+     * <code>NextMarker</code> identifies the next reusable delegation set that Amazon
+     * Route 53 will return if you submit another
+     * <code>ListReusableDelegationSets</code> request and specify the value of
      * <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>NextMarker</code> identifies the first reusable delegation set in the next
-     * group of <code>maxitems</code> reusable delegation sets. Call
-     * <code>ListReusableDelegationSets</code> again and specify the value of
+     * <code>NextMarker</code> identifies the next reusable delegation set that Amazon
+     * Route 53 will return if you submit another
+     * <code>ListReusableDelegationSets</code> request and specify the value of
      * <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>NextMarker</code> identifies the first reusable delegation set in the next
-     * group of <code>maxitems</code> reusable delegation sets. Call
-     * <code>ListReusableDelegationSets</code> again and specify the value of
+     * <code>NextMarker</code> identifies the next reusable delegation set that Amazon
+     * Route 53 will return if you submit another
+     * <code>ListReusableDelegationSets</code> request and specify the value of
      * <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>NextMarker</code> identifies the first reusable delegation set in the next
-     * group of <code>maxitems</code> reusable delegation sets. Call
-     * <code>ListReusableDelegationSets</code> again and specify the value of
+     * <code>NextMarker</code> identifies the next reusable delegation set that Amazon
+     * Route 53 will return if you submit another
+     * <code>ListReusableDelegationSets</code> request and specify the value of
      * <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline ListReusableDelegationSetsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>NextMarker</code> identifies the first reusable delegation set in the next
-     * group of <code>maxitems</code> reusable delegation sets. Call
-     * <code>ListReusableDelegationSets</code> again and specify the value of
+     * <code>NextMarker</code> identifies the next reusable delegation set that Amazon
+     * Route 53 will return if you submit another
+     * <code>ListReusableDelegationSets</code> request and specify the value of
      * <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline ListReusableDelegationSetsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
-     * <code>NextMarker</code> identifies the first reusable delegation set in the next
-     * group of <code>maxitems</code> reusable delegation sets. Call
-     * <code>ListReusableDelegationSets</code> again and specify the value of
+     * <code>NextMarker</code> identifies the next reusable delegation set that Amazon
+     * Route 53 will return if you submit another
+     * <code>ListReusableDelegationSets</code> request and specify the value of
      * <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline ListReusableDelegationSetsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}

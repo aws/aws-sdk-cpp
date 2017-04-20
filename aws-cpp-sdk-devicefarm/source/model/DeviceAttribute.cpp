@@ -34,6 +34,7 @@ namespace Aws
         static const int FORM_FACTOR_HASH = HashingUtils::HashString("FORM_FACTOR");
         static const int MANUFACTURER_HASH = HashingUtils::HashString("MANUFACTURER");
         static const int REMOTE_ACCESS_ENABLED_HASH = HashingUtils::HashString("REMOTE_ACCESS_ENABLED");
+        static const int APPIUM_VERSION_HASH = HashingUtils::HashString("APPIUM_VERSION");
 
 
         DeviceAttribute GetDeviceAttributeForName(const Aws::String& name)
@@ -59,6 +60,10 @@ namespace Aws
           {
             return DeviceAttribute::REMOTE_ACCESS_ENABLED;
           }
+          else if (hashCode == APPIUM_VERSION_HASH)
+          {
+            return DeviceAttribute::APPIUM_VERSION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "MANUFACTURER";
           case DeviceAttribute::REMOTE_ACCESS_ENABLED:
             return "REMOTE_ACCESS_ENABLED";
+          case DeviceAttribute::APPIUM_VERSION:
+            return "APPIUM_VERSION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

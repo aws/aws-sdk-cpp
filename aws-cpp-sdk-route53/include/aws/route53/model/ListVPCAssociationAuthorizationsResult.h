@@ -88,10 +88,7 @@ namespace Model
      * VPCs that can be associated with the specified hosted zone. To get the next page
      * of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request,
      * and include the value of the <code>NextToken</code> element from the response in
-     * the <code>NextToken</code> request parameter:</p> <p>
-     * <code>/2013-04-01/hostedzone/<i>hosted zone
-     * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/>
-     * </code> </p>
+     * the <code>nexttoken</code> request parameter.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -100,10 +97,7 @@ namespace Model
      * VPCs that can be associated with the specified hosted zone. To get the next page
      * of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request,
      * and include the value of the <code>NextToken</code> element from the response in
-     * the <code>NextToken</code> request parameter:</p> <p>
-     * <code>/2013-04-01/hostedzone/<i>hosted zone
-     * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/>
-     * </code> </p>
+     * the <code>nexttoken</code> request parameter.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
@@ -112,10 +106,7 @@ namespace Model
      * VPCs that can be associated with the specified hosted zone. To get the next page
      * of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request,
      * and include the value of the <code>NextToken</code> element from the response in
-     * the <code>NextToken</code> request parameter:</p> <p>
-     * <code>/2013-04-01/hostedzone/<i>hosted zone
-     * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/>
-     * </code> </p>
+     * the <code>nexttoken</code> request parameter.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
@@ -124,10 +115,7 @@ namespace Model
      * VPCs that can be associated with the specified hosted zone. To get the next page
      * of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request,
      * and include the value of the <code>NextToken</code> element from the response in
-     * the <code>NextToken</code> request parameter:</p> <p>
-     * <code>/2013-04-01/hostedzone/<i>hosted zone
-     * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/>
-     * </code> </p>
+     * the <code>nexttoken</code> request parameter.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
@@ -136,10 +124,7 @@ namespace Model
      * VPCs that can be associated with the specified hosted zone. To get the next page
      * of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request,
      * and include the value of the <code>NextToken</code> element from the response in
-     * the <code>NextToken</code> request parameter:</p> <p>
-     * <code>/2013-04-01/hostedzone/<i>hosted zone
-     * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/>
-     * </code> </p>
+     * the <code>nexttoken</code> request parameter.</p>
      */
     inline ListVPCAssociationAuthorizationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -148,10 +133,7 @@ namespace Model
      * VPCs that can be associated with the specified hosted zone. To get the next page
      * of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request,
      * and include the value of the <code>NextToken</code> element from the response in
-     * the <code>NextToken</code> request parameter:</p> <p>
-     * <code>/2013-04-01/hostedzone/<i>hosted zone
-     * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/>
-     * </code> </p>
+     * the <code>nexttoken</code> request parameter.</p>
      */
     inline ListVPCAssociationAuthorizationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -160,10 +142,7 @@ namespace Model
      * VPCs that can be associated with the specified hosted zone. To get the next page
      * of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request,
      * and include the value of the <code>NextToken</code> element from the response in
-     * the <code>NextToken</code> request parameter:</p> <p>
-     * <code>/2013-04-01/hostedzone/<i>hosted zone
-     * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/>
-     * </code> </p>
+     * the <code>nexttoken</code> request parameter.</p>
      */
     inline ListVPCAssociationAuthorizationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

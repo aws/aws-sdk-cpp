@@ -17,6 +17,7 @@
 #include <aws/devicefarm/DeviceFarmRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/TestType.h>
+#include <aws/devicefarm/model/ScheduleRunTest.h>
 #include <utility>
 
 namespace Aws
@@ -206,6 +207,31 @@ namespace Model
      */
     inline GetDevicePoolCompatibilityRequest& WithTestType(TestType&& value) { SetTestType(std::move(value)); return *this;}
 
+    /**
+     * <p>Information about the uploaded test to be run against the device pool.</p>
+     */
+    inline const ScheduleRunTest& GetTest() const{ return m_test; }
+
+    /**
+     * <p>Information about the uploaded test to be run against the device pool.</p>
+     */
+    inline void SetTest(const ScheduleRunTest& value) { m_testHasBeenSet = true; m_test = value; }
+
+    /**
+     * <p>Information about the uploaded test to be run against the device pool.</p>
+     */
+    inline void SetTest(ScheduleRunTest&& value) { m_testHasBeenSet = true; m_test = std::move(value); }
+
+    /**
+     * <p>Information about the uploaded test to be run against the device pool.</p>
+     */
+    inline GetDevicePoolCompatibilityRequest& WithTest(const ScheduleRunTest& value) { SetTest(value); return *this;}
+
+    /**
+     * <p>Information about the uploaded test to be run against the device pool.</p>
+     */
+    inline GetDevicePoolCompatibilityRequest& WithTest(ScheduleRunTest&& value) { SetTest(std::move(value)); return *this;}
+
   private:
     Aws::String m_devicePoolArn;
     bool m_devicePoolArnHasBeenSet;
@@ -213,6 +239,8 @@ namespace Model
     bool m_appArnHasBeenSet;
     TestType m_testType;
     bool m_testTypeHasBeenSet;
+    ScheduleRunTest m_test;
+    bool m_testHasBeenSet;
   };
 
 } // namespace Model

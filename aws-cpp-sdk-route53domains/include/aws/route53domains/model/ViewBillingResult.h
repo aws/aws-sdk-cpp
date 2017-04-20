@@ -52,7 +52,6 @@ namespace Model
      * <p>If there are more billing records than you specified for
      * <code>MaxItems</code> in the request, submit another request and include the
      * value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-     * <p>Type: String</p> <p>Parent: <code>BillingRecords</code></p>
      */
     inline const Aws::String& GetNextPageMarker() const{ return m_nextPageMarker; }
 
@@ -60,7 +59,6 @@ namespace Model
      * <p>If there are more billing records than you specified for
      * <code>MaxItems</code> in the request, submit another request and include the
      * value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-     * <p>Type: String</p> <p>Parent: <code>BillingRecords</code></p>
      */
     inline void SetNextPageMarker(const Aws::String& value) { m_nextPageMarker = value; }
 
@@ -68,7 +66,6 @@ namespace Model
      * <p>If there are more billing records than you specified for
      * <code>MaxItems</code> in the request, submit another request and include the
      * value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-     * <p>Type: String</p> <p>Parent: <code>BillingRecords</code></p>
      */
     inline void SetNextPageMarker(Aws::String&& value) { m_nextPageMarker = std::move(value); }
 
@@ -76,7 +73,6 @@ namespace Model
      * <p>If there are more billing records than you specified for
      * <code>MaxItems</code> in the request, submit another request and include the
      * value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-     * <p>Type: String</p> <p>Parent: <code>BillingRecords</code></p>
      */
     inline void SetNextPageMarker(const char* value) { m_nextPageMarker.assign(value); }
 
@@ -84,7 +80,6 @@ namespace Model
      * <p>If there are more billing records than you specified for
      * <code>MaxItems</code> in the request, submit another request and include the
      * value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-     * <p>Type: String</p> <p>Parent: <code>BillingRecords</code></p>
      */
     inline ViewBillingResult& WithNextPageMarker(const Aws::String& value) { SetNextPageMarker(value); return *this;}
 
@@ -92,7 +87,6 @@ namespace Model
      * <p>If there are more billing records than you specified for
      * <code>MaxItems</code> in the request, submit another request and include the
      * value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-     * <p>Type: String</p> <p>Parent: <code>BillingRecords</code></p>
      */
     inline ViewBillingResult& WithNextPageMarker(Aws::String&& value) { SetNextPageMarker(std::move(value)); return *this;}
 
@@ -100,63 +94,41 @@ namespace Model
      * <p>If there are more billing records than you specified for
      * <code>MaxItems</code> in the request, submit another request and include the
      * value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-     * <p>Type: String</p> <p>Parent: <code>BillingRecords</code></p>
      */
     inline ViewBillingResult& WithNextPageMarker(const char* value) { SetNextPageMarker(value); return *this;}
 
     /**
-     * <p>A summary of billing records.</p> <p>Type: Complex type containing a list of
-     * billing record summaries.</p> <p>Children: <code>DomainName</code>,
-     * <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code> and
-     * <code>Price</code></p>
+     * <p>A summary of billing records.</p>
      */
     inline const Aws::Vector<BillingRecord>& GetBillingRecords() const{ return m_billingRecords; }
 
     /**
-     * <p>A summary of billing records.</p> <p>Type: Complex type containing a list of
-     * billing record summaries.</p> <p>Children: <code>DomainName</code>,
-     * <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code> and
-     * <code>Price</code></p>
+     * <p>A summary of billing records.</p>
      */
     inline void SetBillingRecords(const Aws::Vector<BillingRecord>& value) { m_billingRecords = value; }
 
     /**
-     * <p>A summary of billing records.</p> <p>Type: Complex type containing a list of
-     * billing record summaries.</p> <p>Children: <code>DomainName</code>,
-     * <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code> and
-     * <code>Price</code></p>
+     * <p>A summary of billing records.</p>
      */
     inline void SetBillingRecords(Aws::Vector<BillingRecord>&& value) { m_billingRecords = std::move(value); }
 
     /**
-     * <p>A summary of billing records.</p> <p>Type: Complex type containing a list of
-     * billing record summaries.</p> <p>Children: <code>DomainName</code>,
-     * <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code> and
-     * <code>Price</code></p>
+     * <p>A summary of billing records.</p>
      */
     inline ViewBillingResult& WithBillingRecords(const Aws::Vector<BillingRecord>& value) { SetBillingRecords(value); return *this;}
 
     /**
-     * <p>A summary of billing records.</p> <p>Type: Complex type containing a list of
-     * billing record summaries.</p> <p>Children: <code>DomainName</code>,
-     * <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code> and
-     * <code>Price</code></p>
+     * <p>A summary of billing records.</p>
      */
     inline ViewBillingResult& WithBillingRecords(Aws::Vector<BillingRecord>&& value) { SetBillingRecords(std::move(value)); return *this;}
 
     /**
-     * <p>A summary of billing records.</p> <p>Type: Complex type containing a list of
-     * billing record summaries.</p> <p>Children: <code>DomainName</code>,
-     * <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code> and
-     * <code>Price</code></p>
+     * <p>A summary of billing records.</p>
      */
     inline ViewBillingResult& AddBillingRecords(const BillingRecord& value) { m_billingRecords.push_back(value); return *this; }
 
     /**
-     * <p>A summary of billing records.</p> <p>Type: Complex type containing a list of
-     * billing record summaries.</p> <p>Children: <code>DomainName</code>,
-     * <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code> and
-     * <code>Price</code></p>
+     * <p>A summary of billing records.</p>
      */
     inline ViewBillingResult& AddBillingRecords(BillingRecord&& value) { m_billingRecords.push_back(std::move(value)); return *this; }
 

@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information about the traffic policy for which
-   * you want to create a new version.</p><p><h3>See Also:</h3>   <a
+   * <p>A complex type that contains information about the traffic policy that you
+   * want to create a new version for.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersionRequest">AWS
    * API Reference</a></p>
    */

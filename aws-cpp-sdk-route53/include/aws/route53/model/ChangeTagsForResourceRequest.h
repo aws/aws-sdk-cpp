@@ -113,57 +113,57 @@ namespace Model
 
     /**
      * <p>A complex type that contains a list of the tags that you want to add to the
-     * specified health check or hosted zone and/or the tags for which you want to edit
-     * the <code>Value</code> element.</p> <p>You can add a maximum of 10 tags to a
-     * health check or a hosted zone.</p>
+     * specified health check or hosted zone and/or the tags that you want to edit
+     * <code>Value</code> for.</p> <p>You can add a maximum of 10 tags to a health
+     * check or a hosted zone.</p>
      */
     inline const Aws::Vector<Tag>& GetAddTags() const{ return m_addTags; }
 
     /**
      * <p>A complex type that contains a list of the tags that you want to add to the
-     * specified health check or hosted zone and/or the tags for which you want to edit
-     * the <code>Value</code> element.</p> <p>You can add a maximum of 10 tags to a
-     * health check or a hosted zone.</p>
+     * specified health check or hosted zone and/or the tags that you want to edit
+     * <code>Value</code> for.</p> <p>You can add a maximum of 10 tags to a health
+     * check or a hosted zone.</p>
      */
     inline void SetAddTags(const Aws::Vector<Tag>& value) { m_addTagsHasBeenSet = true; m_addTags = value; }
 
     /**
      * <p>A complex type that contains a list of the tags that you want to add to the
-     * specified health check or hosted zone and/or the tags for which you want to edit
-     * the <code>Value</code> element.</p> <p>You can add a maximum of 10 tags to a
-     * health check or a hosted zone.</p>
+     * specified health check or hosted zone and/or the tags that you want to edit
+     * <code>Value</code> for.</p> <p>You can add a maximum of 10 tags to a health
+     * check or a hosted zone.</p>
      */
     inline void SetAddTags(Aws::Vector<Tag>&& value) { m_addTagsHasBeenSet = true; m_addTags = std::move(value); }
 
     /**
      * <p>A complex type that contains a list of the tags that you want to add to the
-     * specified health check or hosted zone and/or the tags for which you want to edit
-     * the <code>Value</code> element.</p> <p>You can add a maximum of 10 tags to a
-     * health check or a hosted zone.</p>
+     * specified health check or hosted zone and/or the tags that you want to edit
+     * <code>Value</code> for.</p> <p>You can add a maximum of 10 tags to a health
+     * check or a hosted zone.</p>
      */
     inline ChangeTagsForResourceRequest& WithAddTags(const Aws::Vector<Tag>& value) { SetAddTags(value); return *this;}
 
     /**
      * <p>A complex type that contains a list of the tags that you want to add to the
-     * specified health check or hosted zone and/or the tags for which you want to edit
-     * the <code>Value</code> element.</p> <p>You can add a maximum of 10 tags to a
-     * health check or a hosted zone.</p>
+     * specified health check or hosted zone and/or the tags that you want to edit
+     * <code>Value</code> for.</p> <p>You can add a maximum of 10 tags to a health
+     * check or a hosted zone.</p>
      */
     inline ChangeTagsForResourceRequest& WithAddTags(Aws::Vector<Tag>&& value) { SetAddTags(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that contains a list of the tags that you want to add to the
-     * specified health check or hosted zone and/or the tags for which you want to edit
-     * the <code>Value</code> element.</p> <p>You can add a maximum of 10 tags to a
-     * health check or a hosted zone.</p>
+     * specified health check or hosted zone and/or the tags that you want to edit
+     * <code>Value</code> for.</p> <p>You can add a maximum of 10 tags to a health
+     * check or a hosted zone.</p>
      */
     inline ChangeTagsForResourceRequest& AddAddTags(const Tag& value) { m_addTagsHasBeenSet = true; m_addTags.push_back(value); return *this; }
 
     /**
      * <p>A complex type that contains a list of the tags that you want to add to the
-     * specified health check or hosted zone and/or the tags for which you want to edit
-     * the <code>Value</code> element.</p> <p>You can add a maximum of 10 tags to a
-     * health check or a hosted zone.</p>
+     * specified health check or hosted zone and/or the tags that you want to edit
+     * <code>Value</code> for.</p> <p>You can add a maximum of 10 tags to a health
+     * check or a hosted zone.</p>
      */
     inline ChangeTagsForResourceRequest& AddAddTags(Tag&& value) { m_addTagsHasBeenSet = true; m_addTags.push_back(std::move(value)); return *this; }
 

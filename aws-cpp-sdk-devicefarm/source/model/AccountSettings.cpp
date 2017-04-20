@@ -33,6 +33,8 @@ AccountSettings::AccountSettings() :
     m_unmeteredRemoteAccessDevicesHasBeenSet(false),
     m_maxJobTimeoutMinutes(0),
     m_maxJobTimeoutMinutesHasBeenSet(false),
+    m_trialMinutesHasBeenSet(false),
+    m_maxSlotsHasBeenSet(false),
     m_defaultJobTimeoutMinutes(0),
     m_defaultJobTimeoutMinutesHasBeenSet(false)
 {
@@ -44,6 +46,8 @@ AccountSettings::AccountSettings(const JsonValue& jsonValue) :
     m_unmeteredRemoteAccessDevicesHasBeenSet(false),
     m_maxJobTimeoutMinutes(0),
     m_maxJobTimeoutMinutesHasBeenSet(false),
+    m_trialMinutesHasBeenSet(false),
+    m_maxSlotsHasBeenSet(false),
     m_defaultJobTimeoutMinutes(0),
     m_defaultJobTimeoutMinutesHasBeenSet(false)
 {
@@ -84,6 +88,23 @@ AccountSettings& AccountSettings::operator =(const JsonValue& jsonValue)
     m_maxJobTimeoutMinutes = jsonValue.GetInteger("maxJobTimeoutMinutes");
 
     m_maxJobTimeoutMinutesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("trialMinutes"))
+  {
+    m_trialMinutes = jsonValue.GetObject("trialMinutes");
+
+    m_trialMinutesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("maxSlots"))
+  {
+    Aws::Map<Aws::String, JsonValue> maxSlotsJsonMap = jsonValue.GetObject("maxSlots").GetAllObjects();
+    for(auto& maxSlotsItem : maxSlotsJsonMap)
+    {
+      m_maxSlots[maxSlotsItem.first] = maxSlotsItem.second.AsInteger();
+    }
+    m_maxSlotsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("defaultJobTimeoutMinutes"))
@@ -131,6 +152,23 @@ JsonValue AccountSettings::Jsonize() const
   if(m_maxJobTimeoutMinutesHasBeenSet)
   {
    payload.WithInteger("maxJobTimeoutMinutes", m_maxJobTimeoutMinutes);
+
+  }
+
+  if(m_trialMinutesHasBeenSet)
+  {
+   payload.WithObject("trialMinutes", m_trialMinutes.Jsonize());
+
+  }
+
+  if(m_maxSlotsHasBeenSet)
+  {
+   JsonValue maxSlotsJsonMap;
+   for(auto& maxSlotsItem : m_maxSlots)
+   {
+     maxSlotsJsonMap.WithInteger(maxSlotsItem.first, maxSlotsItem.second);
+   }
+   payload.WithObject("maxSlots", std::move(maxSlotsJsonMap));
 
   }
 

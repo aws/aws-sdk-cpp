@@ -31,7 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>The input for a ListResourceRecordSets request.</p><p><h3>See Also:</h3>   <a
+   * <p>A request for the resource record sets that are associated with a specified
+   * hosted zone.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSetsRequest">AWS
    * API Reference</a></p>
    */
@@ -46,85 +47,85 @@ namespace Model
 
     /**
      * <p>The ID of the hosted zone that contains the resource record sets that you
-     * want to get.</p>
+     * want to list.</p>
      */
     inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
 
     /**
      * <p>The ID of the hosted zone that contains the resource record sets that you
-     * want to get.</p>
+     * want to list.</p>
      */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**
      * <p>The ID of the hosted zone that contains the resource record sets that you
-     * want to get.</p>
+     * want to list.</p>
      */
     inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
 
     /**
      * <p>The ID of the hosted zone that contains the resource record sets that you
-     * want to get.</p>
+     * want to list.</p>
      */
     inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
 
     /**
      * <p>The ID of the hosted zone that contains the resource record sets that you
-     * want to get.</p>
+     * want to list.</p>
      */
     inline ListResourceRecordSetsRequest& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
 
     /**
      * <p>The ID of the hosted zone that contains the resource record sets that you
-     * want to get.</p>
+     * want to list.</p>
      */
     inline ListResourceRecordSetsRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the hosted zone that contains the resource record sets that you
-     * want to get.</p>
+     * want to list.</p>
      */
     inline ListResourceRecordSetsRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 
     /**
-     * <p>The first name in the lexicographic ordering of domain names that you want
-     * the <code>ListResourceRecordSets</code> request to list.</p>
+     * <p>The first name in the lexicographic ordering of resource record sets that you
+     * want to list.</p>
      */
     inline const Aws::String& GetStartRecordName() const{ return m_startRecordName; }
 
     /**
-     * <p>The first name in the lexicographic ordering of domain names that you want
-     * the <code>ListResourceRecordSets</code> request to list.</p>
+     * <p>The first name in the lexicographic ordering of resource record sets that you
+     * want to list.</p>
      */
     inline void SetStartRecordName(const Aws::String& value) { m_startRecordNameHasBeenSet = true; m_startRecordName = value; }
 
     /**
-     * <p>The first name in the lexicographic ordering of domain names that you want
-     * the <code>ListResourceRecordSets</code> request to list.</p>
+     * <p>The first name in the lexicographic ordering of resource record sets that you
+     * want to list.</p>
      */
     inline void SetStartRecordName(Aws::String&& value) { m_startRecordNameHasBeenSet = true; m_startRecordName = std::move(value); }
 
     /**
-     * <p>The first name in the lexicographic ordering of domain names that you want
-     * the <code>ListResourceRecordSets</code> request to list.</p>
+     * <p>The first name in the lexicographic ordering of resource record sets that you
+     * want to list.</p>
      */
     inline void SetStartRecordName(const char* value) { m_startRecordNameHasBeenSet = true; m_startRecordName.assign(value); }
 
     /**
-     * <p>The first name in the lexicographic ordering of domain names that you want
-     * the <code>ListResourceRecordSets</code> request to list.</p>
+     * <p>The first name in the lexicographic ordering of resource record sets that you
+     * want to list.</p>
      */
     inline ListResourceRecordSetsRequest& WithStartRecordName(const Aws::String& value) { SetStartRecordName(value); return *this;}
 
     /**
-     * <p>The first name in the lexicographic ordering of domain names that you want
-     * the <code>ListResourceRecordSets</code> request to list.</p>
+     * <p>The first name in the lexicographic ordering of resource record sets that you
+     * want to list.</p>
      */
     inline ListResourceRecordSetsRequest& WithStartRecordName(Aws::String&& value) { SetStartRecordName(std::move(value)); return *this;}
 
     /**
-     * <p>The first name in the lexicographic ordering of domain names that you want
-     * the <code>ListResourceRecordSets</code> request to list.</p>
+     * <p>The first name in the lexicographic ordering of resource record sets that you
+     * want to list.</p>
      */
     inline ListResourceRecordSetsRequest& WithStartRecordName(const char* value) { SetStartRecordName(value); return *this;}
 

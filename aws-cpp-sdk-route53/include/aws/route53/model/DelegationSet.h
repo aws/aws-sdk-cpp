@@ -33,8 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that describes the name servers for this hosted
-   * zone.</p><p><h3>See Also:</h3>   <a
+   * <p>A complex type that lists the name servers in a delegation set, as well as
+   * the <code>CallerReference</code> and the <code>ID</code> for the delegation
+   * set.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DelegationSet">AWS
    * API Reference</a></p>
    */
@@ -83,120 +84,92 @@ namespace Model
     inline DelegationSet& WithId(const char* value) { SetId(value); return *this;}
 
     /**
-     * <p>A unique string that identifies the request, and that allows you to retry
-     * failed <code>CreateReusableDelegationSet</code> requests without the risk of
-     * executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you submit a
-     * <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code>
-     * can be any unique string, for example, a date/time stamp.</p>
+     * <p>The value that you specified for <code>CallerReference</code> when you
+     * created the reusable delegation set.</p>
      */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
 
     /**
-     * <p>A unique string that identifies the request, and that allows you to retry
-     * failed <code>CreateReusableDelegationSet</code> requests without the risk of
-     * executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you submit a
-     * <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code>
-     * can be any unique string, for example, a date/time stamp.</p>
+     * <p>The value that you specified for <code>CallerReference</code> when you
+     * created the reusable delegation set.</p>
      */
     inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
     /**
-     * <p>A unique string that identifies the request, and that allows you to retry
-     * failed <code>CreateReusableDelegationSet</code> requests without the risk of
-     * executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you submit a
-     * <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code>
-     * can be any unique string, for example, a date/time stamp.</p>
+     * <p>The value that you specified for <code>CallerReference</code> when you
+     * created the reusable delegation set.</p>
      */
     inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
 
     /**
-     * <p>A unique string that identifies the request, and that allows you to retry
-     * failed <code>CreateReusableDelegationSet</code> requests without the risk of
-     * executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you submit a
-     * <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code>
-     * can be any unique string, for example, a date/time stamp.</p>
+     * <p>The value that you specified for <code>CallerReference</code> when you
+     * created the reusable delegation set.</p>
      */
     inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
 
     /**
-     * <p>A unique string that identifies the request, and that allows you to retry
-     * failed <code>CreateReusableDelegationSet</code> requests without the risk of
-     * executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you submit a
-     * <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code>
-     * can be any unique string, for example, a date/time stamp.</p>
+     * <p>The value that you specified for <code>CallerReference</code> when you
+     * created the reusable delegation set.</p>
      */
     inline DelegationSet& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
 
     /**
-     * <p>A unique string that identifies the request, and that allows you to retry
-     * failed <code>CreateReusableDelegationSet</code> requests without the risk of
-     * executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you submit a
-     * <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code>
-     * can be any unique string, for example, a date/time stamp.</p>
+     * <p>The value that you specified for <code>CallerReference</code> when you
+     * created the reusable delegation set.</p>
      */
     inline DelegationSet& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
 
     /**
-     * <p>A unique string that identifies the request, and that allows you to retry
-     * failed <code>CreateReusableDelegationSet</code> requests without the risk of
-     * executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you submit a
-     * <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code>
-     * can be any unique string, for example, a date/time stamp.</p>
+     * <p>The value that you specified for <code>CallerReference</code> when you
+     * created the reusable delegation set.</p>
      */
     inline DelegationSet& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 
     /**
-     * <p>A complex type that contains a list of the authoritative name servers for the
-     * hosted zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for a
+     * hosted zone or for a reusable delegation set.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNameServers() const{ return m_nameServers; }
 
     /**
-     * <p>A complex type that contains a list of the authoritative name servers for the
-     * hosted zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for a
+     * hosted zone or for a reusable delegation set.</p>
      */
     inline void SetNameServers(const Aws::Vector<Aws::String>& value) { m_nameServersHasBeenSet = true; m_nameServers = value; }
 
     /**
-     * <p>A complex type that contains a list of the authoritative name servers for the
-     * hosted zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for a
+     * hosted zone or for a reusable delegation set.</p>
      */
     inline void SetNameServers(Aws::Vector<Aws::String>&& value) { m_nameServersHasBeenSet = true; m_nameServers = std::move(value); }
 
     /**
-     * <p>A complex type that contains a list of the authoritative name servers for the
-     * hosted zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for a
+     * hosted zone or for a reusable delegation set.</p>
      */
     inline DelegationSet& WithNameServers(const Aws::Vector<Aws::String>& value) { SetNameServers(value); return *this;}
 
     /**
-     * <p>A complex type that contains a list of the authoritative name servers for the
-     * hosted zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for a
+     * hosted zone or for a reusable delegation set.</p>
      */
     inline DelegationSet& WithNameServers(Aws::Vector<Aws::String>&& value) { SetNameServers(std::move(value)); return *this;}
 
     /**
-     * <p>A complex type that contains a list of the authoritative name servers for the
-     * hosted zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for a
+     * hosted zone or for a reusable delegation set.</p>
      */
     inline DelegationSet& AddNameServers(const Aws::String& value) { m_nameServersHasBeenSet = true; m_nameServers.push_back(value); return *this; }
 
     /**
-     * <p>A complex type that contains a list of the authoritative name servers for the
-     * hosted zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for a
+     * hosted zone or for a reusable delegation set.</p>
      */
     inline DelegationSet& AddNameServers(Aws::String&& value) { m_nameServersHasBeenSet = true; m_nameServers.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A complex type that contains a list of the authoritative name servers for the
-     * hosted zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for a
+     * hosted zone or for a reusable delegation set.</p>
      */
     inline DelegationSet& AddNameServers(const char* value) { m_nameServersHasBeenSet = true; m_nameServers.push_back(value); return *this; }
 

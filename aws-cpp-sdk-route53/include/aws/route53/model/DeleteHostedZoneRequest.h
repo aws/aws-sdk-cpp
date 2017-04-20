@@ -26,8 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information about the hosted zone that you want
-   * to delete.</p><p><h3>See Also:</h3>   <a
+   * <p>A request to delete a hosted zone.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZoneRequest">AWS
    * API Reference</a></p>
    */

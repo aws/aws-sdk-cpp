@@ -46,170 +46,163 @@ namespace Model
 
 
     /**
-     * <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>, do
-     * not include the <code>TrafficPolicyIdMarker</code> parameter.</p> <p>If you have
-     * more traffic policies than the value of <code>MaxItems</code>,
+     * <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>,
+     * don't include the <code>TrafficPolicyIdMarker</code> parameter.</p> <p>If you
+     * have more traffic policies than the value of <code>MaxItems</code>,
      * <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code>
-     * traffic policies. To get the next group of <code>MaxItems</code> policies,
-     * submit another request to <code>ListTrafficPolicies</code>. For the value of
-     * <code>TrafficPolicyIdMarker</code>, specify the value of the
-     * <code>TrafficPolicyIdMarker</code> element that was returned in the previous
-     * response.</p> <p>Policies are listed in the order in which they were
-     * created.</p>
+     * traffic policies. To get the next group of policies, submit another request to
+     * <code>ListTrafficPolicies</code>. For the value of
+     * <code>TrafficPolicyIdMarker</code>, specify the value of
+     * <code>TrafficPolicyIdMarker</code> that was returned in the previous
+     * response.</p>
      */
     inline const Aws::String& GetTrafficPolicyIdMarker() const{ return m_trafficPolicyIdMarker; }
 
     /**
-     * <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>, do
-     * not include the <code>TrafficPolicyIdMarker</code> parameter.</p> <p>If you have
-     * more traffic policies than the value of <code>MaxItems</code>,
+     * <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>,
+     * don't include the <code>TrafficPolicyIdMarker</code> parameter.</p> <p>If you
+     * have more traffic policies than the value of <code>MaxItems</code>,
      * <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code>
-     * traffic policies. To get the next group of <code>MaxItems</code> policies,
-     * submit another request to <code>ListTrafficPolicies</code>. For the value of
-     * <code>TrafficPolicyIdMarker</code>, specify the value of the
-     * <code>TrafficPolicyIdMarker</code> element that was returned in the previous
-     * response.</p> <p>Policies are listed in the order in which they were
-     * created.</p>
+     * traffic policies. To get the next group of policies, submit another request to
+     * <code>ListTrafficPolicies</code>. For the value of
+     * <code>TrafficPolicyIdMarker</code>, specify the value of
+     * <code>TrafficPolicyIdMarker</code> that was returned in the previous
+     * response.</p>
      */
     inline void SetTrafficPolicyIdMarker(const Aws::String& value) { m_trafficPolicyIdMarkerHasBeenSet = true; m_trafficPolicyIdMarker = value; }
 
     /**
-     * <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>, do
-     * not include the <code>TrafficPolicyIdMarker</code> parameter.</p> <p>If you have
-     * more traffic policies than the value of <code>MaxItems</code>,
+     * <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>,
+     * don't include the <code>TrafficPolicyIdMarker</code> parameter.</p> <p>If you
+     * have more traffic policies than the value of <code>MaxItems</code>,
      * <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code>
-     * traffic policies. To get the next group of <code>MaxItems</code> policies,
-     * submit another request to <code>ListTrafficPolicies</code>. For the value of
-     * <code>TrafficPolicyIdMarker</code>, specify the value of the
-     * <code>TrafficPolicyIdMarker</code> element that was returned in the previous
-     * response.</p> <p>Policies are listed in the order in which they were
-     * created.</p>
+     * traffic policies. To get the next group of policies, submit another request to
+     * <code>ListTrafficPolicies</code>. For the value of
+     * <code>TrafficPolicyIdMarker</code>, specify the value of
+     * <code>TrafficPolicyIdMarker</code> that was returned in the previous
+     * response.</p>
      */
     inline void SetTrafficPolicyIdMarker(Aws::String&& value) { m_trafficPolicyIdMarkerHasBeenSet = true; m_trafficPolicyIdMarker = std::move(value); }
 
     /**
-     * <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>, do
-     * not include the <code>TrafficPolicyIdMarker</code> parameter.</p> <p>If you have
-     * more traffic policies than the value of <code>MaxItems</code>,
+     * <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>,
+     * don't include the <code>TrafficPolicyIdMarker</code> parameter.</p> <p>If you
+     * have more traffic policies than the value of <code>MaxItems</code>,
      * <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code>
-     * traffic policies. To get the next group of <code>MaxItems</code> policies,
-     * submit another request to <code>ListTrafficPolicies</code>. For the value of
-     * <code>TrafficPolicyIdMarker</code>, specify the value of the
-     * <code>TrafficPolicyIdMarker</code> element that was returned in the previous
-     * response.</p> <p>Policies are listed in the order in which they were
-     * created.</p>
+     * traffic policies. To get the next group of policies, submit another request to
+     * <code>ListTrafficPolicies</code>. For the value of
+     * <code>TrafficPolicyIdMarker</code>, specify the value of
+     * <code>TrafficPolicyIdMarker</code> that was returned in the previous
+     * response.</p>
      */
     inline void SetTrafficPolicyIdMarker(const char* value) { m_trafficPolicyIdMarkerHasBeenSet = true; m_trafficPolicyIdMarker.assign(value); }
 
     /**
-     * <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>, do
-     * not include the <code>TrafficPolicyIdMarker</code> parameter.</p> <p>If you have
-     * more traffic policies than the value of <code>MaxItems</code>,
+     * <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>,
+     * don't include the <code>TrafficPolicyIdMarker</code> parameter.</p> <p>If you
+     * have more traffic policies than the value of <code>MaxItems</code>,
      * <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code>
-     * traffic policies. To get the next group of <code>MaxItems</code> policies,
-     * submit another request to <code>ListTrafficPolicies</code>. For the value of
-     * <code>TrafficPolicyIdMarker</code>, specify the value of the
-     * <code>TrafficPolicyIdMarker</code> element that was returned in the previous
-     * response.</p> <p>Policies are listed in the order in which they were
-     * created.</p>
+     * traffic policies. To get the next group of policies, submit another request to
+     * <code>ListTrafficPolicies</code>. For the value of
+     * <code>TrafficPolicyIdMarker</code>, specify the value of
+     * <code>TrafficPolicyIdMarker</code> that was returned in the previous
+     * response.</p>
      */
     inline ListTrafficPoliciesRequest& WithTrafficPolicyIdMarker(const Aws::String& value) { SetTrafficPolicyIdMarker(value); return *this;}
 
     /**
-     * <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>, do
-     * not include the <code>TrafficPolicyIdMarker</code> parameter.</p> <p>If you have
-     * more traffic policies than the value of <code>MaxItems</code>,
+     * <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>,
+     * don't include the <code>TrafficPolicyIdMarker</code> parameter.</p> <p>If you
+     * have more traffic policies than the value of <code>MaxItems</code>,
      * <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code>
-     * traffic policies. To get the next group of <code>MaxItems</code> policies,
-     * submit another request to <code>ListTrafficPolicies</code>. For the value of
-     * <code>TrafficPolicyIdMarker</code>, specify the value of the
-     * <code>TrafficPolicyIdMarker</code> element that was returned in the previous
-     * response.</p> <p>Policies are listed in the order in which they were
-     * created.</p>
+     * traffic policies. To get the next group of policies, submit another request to
+     * <code>ListTrafficPolicies</code>. For the value of
+     * <code>TrafficPolicyIdMarker</code>, specify the value of
+     * <code>TrafficPolicyIdMarker</code> that was returned in the previous
+     * response.</p>
      */
     inline ListTrafficPoliciesRequest& WithTrafficPolicyIdMarker(Aws::String&& value) { SetTrafficPolicyIdMarker(std::move(value)); return *this;}
 
     /**
-     * <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>, do
-     * not include the <code>TrafficPolicyIdMarker</code> parameter.</p> <p>If you have
-     * more traffic policies than the value of <code>MaxItems</code>,
+     * <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>,
+     * don't include the <code>TrafficPolicyIdMarker</code> parameter.</p> <p>If you
+     * have more traffic policies than the value of <code>MaxItems</code>,
      * <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code>
-     * traffic policies. To get the next group of <code>MaxItems</code> policies,
-     * submit another request to <code>ListTrafficPolicies</code>. For the value of
-     * <code>TrafficPolicyIdMarker</code>, specify the value of the
-     * <code>TrafficPolicyIdMarker</code> element that was returned in the previous
-     * response.</p> <p>Policies are listed in the order in which they were
-     * created.</p>
+     * traffic policies. To get the next group of policies, submit another request to
+     * <code>ListTrafficPolicies</code>. For the value of
+     * <code>TrafficPolicyIdMarker</code>, specify the value of
+     * <code>TrafficPolicyIdMarker</code> that was returned in the previous
+     * response.</p>
      */
     inline ListTrafficPoliciesRequest& WithTrafficPolicyIdMarker(const char* value) { SetTrafficPolicyIdMarker(value); return *this;}
 
     /**
-     * <p>(Optional) The maximum number of traffic policies to be included in the
-     * response body for this request. If you have more than <code>MaxItems</code>
-     * traffic policies, the value of the <code>IsTruncated</code> element in the
-     * response is <code>true</code>, and the value of the
-     * <code>TrafficPolicyIdMarker</code> element is the ID of the first traffic policy
-     * in the next group of <code>MaxItems</code> traffic policies.</p>
+     * <p>(Optional) The maximum number of traffic policies that you want Amazon Route
+     * 53 to return in response to this request. If you have more than
+     * <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
+     * the response is <code>true</code>, and the value of
+     * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that
+     * Amazon Route 53 will return if you submit another request.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>(Optional) The maximum number of traffic policies to be included in the
-     * response body for this request. If you have more than <code>MaxItems</code>
-     * traffic policies, the value of the <code>IsTruncated</code> element in the
-     * response is <code>true</code>, and the value of the
-     * <code>TrafficPolicyIdMarker</code> element is the ID of the first traffic policy
-     * in the next group of <code>MaxItems</code> traffic policies.</p>
+     * <p>(Optional) The maximum number of traffic policies that you want Amazon Route
+     * 53 to return in response to this request. If you have more than
+     * <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
+     * the response is <code>true</code>, and the value of
+     * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that
+     * Amazon Route 53 will return if you submit another request.</p>
      */
     inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>(Optional) The maximum number of traffic policies to be included in the
-     * response body for this request. If you have more than <code>MaxItems</code>
-     * traffic policies, the value of the <code>IsTruncated</code> element in the
-     * response is <code>true</code>, and the value of the
-     * <code>TrafficPolicyIdMarker</code> element is the ID of the first traffic policy
-     * in the next group of <code>MaxItems</code> traffic policies.</p>
+     * <p>(Optional) The maximum number of traffic policies that you want Amazon Route
+     * 53 to return in response to this request. If you have more than
+     * <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
+     * the response is <code>true</code>, and the value of
+     * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that
+     * Amazon Route 53 will return if you submit another request.</p>
      */
     inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
     /**
-     * <p>(Optional) The maximum number of traffic policies to be included in the
-     * response body for this request. If you have more than <code>MaxItems</code>
-     * traffic policies, the value of the <code>IsTruncated</code> element in the
-     * response is <code>true</code>, and the value of the
-     * <code>TrafficPolicyIdMarker</code> element is the ID of the first traffic policy
-     * in the next group of <code>MaxItems</code> traffic policies.</p>
+     * <p>(Optional) The maximum number of traffic policies that you want Amazon Route
+     * 53 to return in response to this request. If you have more than
+     * <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
+     * the response is <code>true</code>, and the value of
+     * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that
+     * Amazon Route 53 will return if you submit another request.</p>
      */
     inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
 
     /**
-     * <p>(Optional) The maximum number of traffic policies to be included in the
-     * response body for this request. If you have more than <code>MaxItems</code>
-     * traffic policies, the value of the <code>IsTruncated</code> element in the
-     * response is <code>true</code>, and the value of the
-     * <code>TrafficPolicyIdMarker</code> element is the ID of the first traffic policy
-     * in the next group of <code>MaxItems</code> traffic policies.</p>
+     * <p>(Optional) The maximum number of traffic policies that you want Amazon Route
+     * 53 to return in response to this request. If you have more than
+     * <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
+     * the response is <code>true</code>, and the value of
+     * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that
+     * Amazon Route 53 will return if you submit another request.</p>
      */
     inline ListTrafficPoliciesRequest& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
 
     /**
-     * <p>(Optional) The maximum number of traffic policies to be included in the
-     * response body for this request. If you have more than <code>MaxItems</code>
-     * traffic policies, the value of the <code>IsTruncated</code> element in the
-     * response is <code>true</code>, and the value of the
-     * <code>TrafficPolicyIdMarker</code> element is the ID of the first traffic policy
-     * in the next group of <code>MaxItems</code> traffic policies.</p>
+     * <p>(Optional) The maximum number of traffic policies that you want Amazon Route
+     * 53 to return in response to this request. If you have more than
+     * <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
+     * the response is <code>true</code>, and the value of
+     * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that
+     * Amazon Route 53 will return if you submit another request.</p>
      */
     inline ListTrafficPoliciesRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) The maximum number of traffic policies to be included in the
-     * response body for this request. If you have more than <code>MaxItems</code>
-     * traffic policies, the value of the <code>IsTruncated</code> element in the
-     * response is <code>true</code>, and the value of the
-     * <code>TrafficPolicyIdMarker</code> element is the ID of the first traffic policy
-     * in the next group of <code>MaxItems</code> traffic policies.</p>
+     * <p>(Optional) The maximum number of traffic policies that you want Amazon Route
+     * 53 to return in response to this request. If you have more than
+     * <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
+     * the response is <code>true</code>, and the value of
+     * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that
+     * Amazon Route 53 will return if you submit another request.</p>
      */
     inline ListTrafficPoliciesRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 

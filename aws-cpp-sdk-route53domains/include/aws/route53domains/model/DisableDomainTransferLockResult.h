@@ -48,50 +48,43 @@ namespace Model
 
     /**
      * <p>Identifier for tracking the progress of the request. To use this ID to query
-     * the operation status, use GetOperationDetail.</p> <p>Type: String</p>
-     * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p>
+     * the operation status, use <a>GetOperationDetail</a>.</p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
 
     /**
      * <p>Identifier for tracking the progress of the request. To use this ID to query
-     * the operation status, use GetOperationDetail.</p> <p>Type: String</p>
-     * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p>
+     * the operation status, use <a>GetOperationDetail</a>.</p>
      */
     inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
 
     /**
      * <p>Identifier for tracking the progress of the request. To use this ID to query
-     * the operation status, use GetOperationDetail.</p> <p>Type: String</p>
-     * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p>
+     * the operation status, use <a>GetOperationDetail</a>.</p>
      */
     inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
 
     /**
      * <p>Identifier for tracking the progress of the request. To use this ID to query
-     * the operation status, use GetOperationDetail.</p> <p>Type: String</p>
-     * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p>
+     * the operation status, use <a>GetOperationDetail</a>.</p>
      */
     inline void SetOperationId(const char* value) { m_operationId.assign(value); }
 
     /**
      * <p>Identifier for tracking the progress of the request. To use this ID to query
-     * the operation status, use GetOperationDetail.</p> <p>Type: String</p>
-     * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p>
+     * the operation status, use <a>GetOperationDetail</a>.</p>
      */
     inline DisableDomainTransferLockResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
 
     /**
      * <p>Identifier for tracking the progress of the request. To use this ID to query
-     * the operation status, use GetOperationDetail.</p> <p>Type: String</p>
-     * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p>
+     * the operation status, use <a>GetOperationDetail</a>.</p>
      */
     inline DisableDomainTransferLockResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
 
     /**
      * <p>Identifier for tracking the progress of the request. To use this ID to query
-     * the operation status, use GetOperationDetail.</p> <p>Type: String</p>
-     * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p>
+     * the operation status, use <a>GetOperationDetail</a>.</p>
      */
     inline DisableDomainTransferLockResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 

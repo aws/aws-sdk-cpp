@@ -49,107 +49,86 @@ namespace Model
     ListDomainsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>A summary of domains.</p> <p>Type: Complex type containing a list of domain
-     * summaries.</p> <p>Children: <code>AutoRenew</code>, <code>DomainName</code>,
-     * <code>Expiry</code>, <code>TransferLock</code></p>
+     * <p>A summary of domains.</p>
      */
     inline const Aws::Vector<DomainSummary>& GetDomains() const{ return m_domains; }
 
     /**
-     * <p>A summary of domains.</p> <p>Type: Complex type containing a list of domain
-     * summaries.</p> <p>Children: <code>AutoRenew</code>, <code>DomainName</code>,
-     * <code>Expiry</code>, <code>TransferLock</code></p>
+     * <p>A summary of domains.</p>
      */
     inline void SetDomains(const Aws::Vector<DomainSummary>& value) { m_domains = value; }
 
     /**
-     * <p>A summary of domains.</p> <p>Type: Complex type containing a list of domain
-     * summaries.</p> <p>Children: <code>AutoRenew</code>, <code>DomainName</code>,
-     * <code>Expiry</code>, <code>TransferLock</code></p>
+     * <p>A summary of domains.</p>
      */
     inline void SetDomains(Aws::Vector<DomainSummary>&& value) { m_domains = std::move(value); }
 
     /**
-     * <p>A summary of domains.</p> <p>Type: Complex type containing a list of domain
-     * summaries.</p> <p>Children: <code>AutoRenew</code>, <code>DomainName</code>,
-     * <code>Expiry</code>, <code>TransferLock</code></p>
+     * <p>A summary of domains.</p>
      */
     inline ListDomainsResult& WithDomains(const Aws::Vector<DomainSummary>& value) { SetDomains(value); return *this;}
 
     /**
-     * <p>A summary of domains.</p> <p>Type: Complex type containing a list of domain
-     * summaries.</p> <p>Children: <code>AutoRenew</code>, <code>DomainName</code>,
-     * <code>Expiry</code>, <code>TransferLock</code></p>
+     * <p>A summary of domains.</p>
      */
     inline ListDomainsResult& WithDomains(Aws::Vector<DomainSummary>&& value) { SetDomains(std::move(value)); return *this;}
 
     /**
-     * <p>A summary of domains.</p> <p>Type: Complex type containing a list of domain
-     * summaries.</p> <p>Children: <code>AutoRenew</code>, <code>DomainName</code>,
-     * <code>Expiry</code>, <code>TransferLock</code></p>
+     * <p>A summary of domains.</p>
      */
     inline ListDomainsResult& AddDomains(const DomainSummary& value) { m_domains.push_back(value); return *this; }
 
     /**
-     * <p>A summary of domains.</p> <p>Type: Complex type containing a list of domain
-     * summaries.</p> <p>Children: <code>AutoRenew</code>, <code>DomainName</code>,
-     * <code>Expiry</code>, <code>TransferLock</code></p>
+     * <p>A summary of domains.</p>
      */
     inline ListDomainsResult& AddDomains(DomainSummary&& value) { m_domains.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If there are more domains than you specified for <code>MaxItems</code> in the
      * request, submit another request and include the value of
-     * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p> <p>Type:
-     * String</p> <p>Parent: <code>Operations</code></p>
+     * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
      */
     inline const Aws::String& GetNextPageMarker() const{ return m_nextPageMarker; }
 
     /**
      * <p>If there are more domains than you specified for <code>MaxItems</code> in the
      * request, submit another request and include the value of
-     * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p> <p>Type:
-     * String</p> <p>Parent: <code>Operations</code></p>
+     * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
      */
     inline void SetNextPageMarker(const Aws::String& value) { m_nextPageMarker = value; }
 
     /**
      * <p>If there are more domains than you specified for <code>MaxItems</code> in the
      * request, submit another request and include the value of
-     * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p> <p>Type:
-     * String</p> <p>Parent: <code>Operations</code></p>
+     * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
      */
     inline void SetNextPageMarker(Aws::String&& value) { m_nextPageMarker = std::move(value); }
 
     /**
      * <p>If there are more domains than you specified for <code>MaxItems</code> in the
      * request, submit another request and include the value of
-     * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p> <p>Type:
-     * String</p> <p>Parent: <code>Operations</code></p>
+     * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
      */
     inline void SetNextPageMarker(const char* value) { m_nextPageMarker.assign(value); }
 
     /**
      * <p>If there are more domains than you specified for <code>MaxItems</code> in the
      * request, submit another request and include the value of
-     * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p> <p>Type:
-     * String</p> <p>Parent: <code>Operations</code></p>
+     * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
      */
     inline ListDomainsResult& WithNextPageMarker(const Aws::String& value) { SetNextPageMarker(value); return *this;}
 
     /**
      * <p>If there are more domains than you specified for <code>MaxItems</code> in the
      * request, submit another request and include the value of
-     * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p> <p>Type:
-     * String</p> <p>Parent: <code>Operations</code></p>
+     * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
      */
     inline ListDomainsResult& WithNextPageMarker(Aws::String&& value) { SetNextPageMarker(std::move(value)); return *this;}
 
     /**
      * <p>If there are more domains than you specified for <code>MaxItems</code> in the
      * request, submit another request and include the value of
-     * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p> <p>Type:
-     * String</p> <p>Parent: <code>Operations</code></p>
+     * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
      */
     inline ListDomainsResult& WithNextPageMarker(const char* value) { SetNextPageMarker(value); return *this;}
 

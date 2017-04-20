@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The GetOperationDetail request includes the following element.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The <a>GetOperationDetail</a> request includes the following
+   * element.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetailRequest">AWS
    * API Reference</a></p>
    */
@@ -43,49 +43,42 @@ namespace Model
     /**
      * <p>The identifier for the operation for which you want to get the status. Amazon
      * Route 53 returned the identifier in the response to the original request.</p>
-     * <p>Type: String</p> <p>Default: None</p> <p>Required: Yes</p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
 
     /**
      * <p>The identifier for the operation for which you want to get the status. Amazon
      * Route 53 returned the identifier in the response to the original request.</p>
-     * <p>Type: String</p> <p>Default: None</p> <p>Required: Yes</p>
      */
     inline void SetOperationId(const Aws::String& value) { m_operationIdHasBeenSet = true; m_operationId = value; }
 
     /**
      * <p>The identifier for the operation for which you want to get the status. Amazon
      * Route 53 returned the identifier in the response to the original request.</p>
-     * <p>Type: String</p> <p>Default: None</p> <p>Required: Yes</p>
      */
     inline void SetOperationId(Aws::String&& value) { m_operationIdHasBeenSet = true; m_operationId = std::move(value); }
 
     /**
      * <p>The identifier for the operation for which you want to get the status. Amazon
      * Route 53 returned the identifier in the response to the original request.</p>
-     * <p>Type: String</p> <p>Default: None</p> <p>Required: Yes</p>
      */
     inline void SetOperationId(const char* value) { m_operationIdHasBeenSet = true; m_operationId.assign(value); }
 
     /**
      * <p>The identifier for the operation for which you want to get the status. Amazon
      * Route 53 returned the identifier in the response to the original request.</p>
-     * <p>Type: String</p> <p>Default: None</p> <p>Required: Yes</p>
      */
     inline GetOperationDetailRequest& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
 
     /**
      * <p>The identifier for the operation for which you want to get the status. Amazon
      * Route 53 returned the identifier in the response to the original request.</p>
-     * <p>Type: String</p> <p>Default: None</p> <p>Required: Yes</p>
      */
     inline GetOperationDetailRequest& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the operation for which you want to get the status. Amazon
      * Route 53 returned the identifier in the response to the original request.</p>
-     * <p>Type: String</p> <p>Default: None</p> <p>Required: Yes</p>
      */
     inline GetOperationDetailRequest& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 
