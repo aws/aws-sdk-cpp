@@ -16,6 +16,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appstream/model/SessionState.h>
+#include <aws/appstream/model/AuthenticationType.h>
 #include <utility>
 
 namespace Aws
@@ -211,6 +212,41 @@ namespace Model
      */
     inline Session& WithState(SessionState&& value) { SetState(std::move(value)); return *this;}
 
+    /**
+     * <p>The authentication method of the user for whom the session was created. It
+     * can be <code>API</code> for a user authenticated using a streaming url or
+     * <code>SAML</code> for a SAML federated user.</p>
+     */
+    inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+
+    /**
+     * <p>The authentication method of the user for whom the session was created. It
+     * can be <code>API</code> for a user authenticated using a streaming url or
+     * <code>SAML</code> for a SAML federated user.</p>
+     */
+    inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
+
+    /**
+     * <p>The authentication method of the user for whom the session was created. It
+     * can be <code>API</code> for a user authenticated using a streaming url or
+     * <code>SAML</code> for a SAML federated user.</p>
+     */
+    inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
+
+    /**
+     * <p>The authentication method of the user for whom the session was created. It
+     * can be <code>API</code> for a user authenticated using a streaming url or
+     * <code>SAML</code> for a SAML federated user.</p>
+     */
+    inline Session& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
+
+    /**
+     * <p>The authentication method of the user for whom the session was created. It
+     * can be <code>API</code> for a user authenticated using a streaming url or
+     * <code>SAML</code> for a SAML federated user.</p>
+     */
+    inline Session& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
+
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
@@ -222,6 +258,8 @@ namespace Model
     bool m_fleetNameHasBeenSet;
     SessionState m_state;
     bool m_stateHasBeenSet;
+    AuthenticationType m_authenticationType;
+    bool m_authenticationTypeHasBeenSet;
   };
 
 } // namespace Model

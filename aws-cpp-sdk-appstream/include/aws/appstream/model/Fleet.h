@@ -438,6 +438,21 @@ namespace Model
      */
     inline Fleet& AddFleetErrors(FleetError&& value) { m_fleetErrorsHasBeenSet = true; m_fleetErrors.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>
+     */
+    inline bool GetEnableDefaultInternetAccess() const{ return m_enableDefaultInternetAccess; }
+
+    /**
+     * <p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>
+     */
+    inline void SetEnableDefaultInternetAccess(bool value) { m_enableDefaultInternetAccessHasBeenSet = true; m_enableDefaultInternetAccess = value; }
+
+    /**
+     * <p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>
+     */
+    inline Fleet& WithEnableDefaultInternetAccess(bool value) { SetEnableDefaultInternetAccess(value); return *this;}
+
   private:
     Aws::String m_arn;
     bool m_arnHasBeenSet;
@@ -465,6 +480,8 @@ namespace Model
     bool m_createdTimeHasBeenSet;
     Aws::Vector<FleetError> m_fleetErrors;
     bool m_fleetErrorsHasBeenSet;
+    bool m_enableDefaultInternetAccess;
+    bool m_enableDefaultInternetAccessHasBeenSet;
   };
 
 } // namespace Model

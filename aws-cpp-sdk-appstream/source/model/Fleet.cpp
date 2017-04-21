@@ -43,7 +43,9 @@ Fleet::Fleet() :
     m_stateHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_fleetErrorsHasBeenSet(false)
+    m_fleetErrorsHasBeenSet(false),
+    m_enableDefaultInternetAccess(false),
+    m_enableDefaultInternetAccessHasBeenSet(false)
 {
 }
 
@@ -63,7 +65,9 @@ Fleet::Fleet(const JsonValue& jsonValue) :
     m_stateHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_fleetErrorsHasBeenSet(false)
+    m_fleetErrorsHasBeenSet(false),
+    m_enableDefaultInternetAccess(false),
+    m_enableDefaultInternetAccessHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -164,6 +168,13 @@ Fleet& Fleet::operator =(const JsonValue& jsonValue)
     m_fleetErrorsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnableDefaultInternetAccess"))
+  {
+    m_enableDefaultInternetAccess = jsonValue.GetBool("EnableDefaultInternetAccess");
+
+    m_enableDefaultInternetAccessHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -249,6 +260,12 @@ JsonValue Fleet::Jsonize() const
      fleetErrorsJsonList[fleetErrorsIndex].AsObject(m_fleetErrors[fleetErrorsIndex].Jsonize());
    }
    payload.WithArray("FleetErrors", std::move(fleetErrorsJsonList));
+
+  }
+
+  if(m_enableDefaultInternetAccessHasBeenSet)
+  {
+   payload.WithBool("EnableDefaultInternetAccess", m_enableDefaultInternetAccess);
 
   }
 

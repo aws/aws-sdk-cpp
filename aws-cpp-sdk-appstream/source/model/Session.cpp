@@ -33,7 +33,9 @@ Session::Session() :
     m_stackNameHasBeenSet(false),
     m_fleetNameHasBeenSet(false),
     m_state(SessionState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_authenticationType(AuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false)
 {
 }
 
@@ -43,7 +45,9 @@ Session::Session(const JsonValue& jsonValue) :
     m_stackNameHasBeenSet(false),
     m_fleetNameHasBeenSet(false),
     m_state(SessionState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_authenticationType(AuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +89,13 @@ Session& Session::operator =(const JsonValue& jsonValue)
     m_stateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AuthenticationType"))
+  {
+    m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
+
+    m_authenticationTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -119,6 +130,11 @@ JsonValue Session::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("State", SessionStateMapper::GetNameForSessionState(m_state));
+  }
+
+  if(m_authenticationTypeHasBeenSet)
+  {
+   payload.WithString("AuthenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
   }
 
   return payload;

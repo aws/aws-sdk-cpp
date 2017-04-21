@@ -27,7 +27,9 @@ DescribeSessionsRequest::DescribeSessionsRequest() :
     m_userIdHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_limit(0),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_authenticationType(AuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,11 @@ Aws::String DescribeSessionsRequest::SerializePayload() const
   {
    payload.WithInteger("Limit", m_limit);
 
+  }
+
+  if(m_authenticationTypeHasBeenSet)
+  {
+   payload.WithString("AuthenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
   }
 
   return payload.WriteReadable();

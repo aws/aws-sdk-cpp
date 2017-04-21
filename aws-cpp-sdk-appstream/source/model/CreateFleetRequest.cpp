@@ -32,7 +32,9 @@ CreateFleetRequest::CreateFleetRequest() :
     m_disconnectTimeoutInSeconds(0),
     m_disconnectTimeoutInSecondsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+    m_displayNameHasBeenSet(false),
+    m_enableDefaultInternetAccess(false),
+    m_enableDefaultInternetAccessHasBeenSet(false)
 {
 }
 
@@ -91,6 +93,12 @@ Aws::String CreateFleetRequest::SerializePayload() const
   if(m_displayNameHasBeenSet)
   {
    payload.WithString("DisplayName", m_displayName);
+
+  }
+
+  if(m_enableDefaultInternetAccessHasBeenSet)
+  {
+   payload.WithBool("EnableDefaultInternetAccess", m_enableDefaultInternetAccess);
 
   }
 

@@ -36,6 +36,8 @@ Image::Image() :
     m_stateHasBeenSet(false),
     m_visibility(VisibilityType::NOT_SET),
     m_visibilityHasBeenSet(false),
+    m_imageBuilderSupported(false),
+    m_imageBuilderSupportedHasBeenSet(false),
     m_platform(PlatformType::NOT_SET),
     m_platformHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -54,6 +56,8 @@ Image::Image(const JsonValue& jsonValue) :
     m_stateHasBeenSet(false),
     m_visibility(VisibilityType::NOT_SET),
     m_visibilityHasBeenSet(false),
+    m_imageBuilderSupported(false),
+    m_imageBuilderSupportedHasBeenSet(false),
     m_platform(PlatformType::NOT_SET),
     m_platformHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -106,6 +110,13 @@ Image& Image::operator =(const JsonValue& jsonValue)
     m_visibility = VisibilityTypeMapper::GetVisibilityTypeForName(jsonValue.GetString("Visibility"));
 
     m_visibilityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ImageBuilderSupported"))
+  {
+    m_imageBuilderSupported = jsonValue.GetBool("ImageBuilderSupported");
+
+    m_imageBuilderSupportedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Platform"))
@@ -185,6 +196,12 @@ JsonValue Image::Jsonize() const
   if(m_visibilityHasBeenSet)
   {
    payload.WithString("Visibility", VisibilityTypeMapper::GetNameForVisibilityType(m_visibility));
+  }
+
+  if(m_imageBuilderSupportedHasBeenSet)
+  {
+   payload.WithBool("ImageBuilderSupported", m_imageBuilderSupported);
+
   }
 
   if(m_platformHasBeenSet)

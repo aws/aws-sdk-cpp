@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>The VPC in which the fleet is launched.</p><p><h3>See Also:</h3>   <a
+   * <p>VPC configuration information.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/VpcConfig">AWS
    * API Reference</a></p>
    */

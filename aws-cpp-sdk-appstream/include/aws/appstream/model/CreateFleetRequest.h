@@ -310,6 +310,21 @@ namespace Model
      */
     inline CreateFleetRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
+    /**
+     * <p>Enable/Disable default Internet access from fleet.</p>
+     */
+    inline bool GetEnableDefaultInternetAccess() const{ return m_enableDefaultInternetAccess; }
+
+    /**
+     * <p>Enable/Disable default Internet access from fleet.</p>
+     */
+    inline void SetEnableDefaultInternetAccess(bool value) { m_enableDefaultInternetAccessHasBeenSet = true; m_enableDefaultInternetAccess = value; }
+
+    /**
+     * <p>Enable/Disable default Internet access from fleet.</p>
+     */
+    inline CreateFleetRequest& WithEnableDefaultInternetAccess(bool value) { SetEnableDefaultInternetAccess(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -329,6 +344,8 @@ namespace Model
     bool m_descriptionHasBeenSet;
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
+    bool m_enableDefaultInternetAccess;
+    bool m_enableDefaultInternetAccessHasBeenSet;
   };
 
 } // namespace Model

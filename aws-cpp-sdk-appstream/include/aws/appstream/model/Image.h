@@ -253,6 +253,21 @@ namespace Model
     inline Image& WithVisibility(VisibilityType&& value) { SetVisibility(std::move(value)); return *this;}
 
     /**
+     * <p>Indicates whether an image builder can be launched from this image.</p>
+     */
+    inline bool GetImageBuilderSupported() const{ return m_imageBuilderSupported; }
+
+    /**
+     * <p>Indicates whether an image builder can be launched from this image.</p>
+     */
+    inline void SetImageBuilderSupported(bool value) { m_imageBuilderSupportedHasBeenSet = true; m_imageBuilderSupported = value; }
+
+    /**
+     * <p>Indicates whether an image builder can be launched from this image.</p>
+     */
+    inline Image& WithImageBuilderSupported(bool value) { SetImageBuilderSupported(value); return *this;}
+
+    /**
      * <p>The operating system platform of the image.</p>
      */
     inline const PlatformType& GetPlatform() const{ return m_platform; }
@@ -410,6 +425,8 @@ namespace Model
     bool m_stateHasBeenSet;
     VisibilityType m_visibility;
     bool m_visibilityHasBeenSet;
+    bool m_imageBuilderSupported;
+    bool m_imageBuilderSupportedHasBeenSet;
     PlatformType m_platform;
     bool m_platformHasBeenSet;
     Aws::String m_description;

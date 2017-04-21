@@ -54,7 +54,8 @@ enum class AppStreamErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_ROLE= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_ROLE,
   LIMIT_EXCEEDED,
   OPERATION_NOT_PERMITTED,
   RESOURCE_ALREADY_EXISTS,

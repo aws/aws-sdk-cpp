@@ -34,7 +34,9 @@ UpdateFleetRequest::UpdateFleetRequest() :
     m_deleteVpcConfig(false),
     m_deleteVpcConfigHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+    m_displayNameHasBeenSet(false),
+    m_enableDefaultInternetAccess(false),
+    m_enableDefaultInternetAccessHasBeenSet(false)
 {
 }
 
@@ -99,6 +101,12 @@ Aws::String UpdateFleetRequest::SerializePayload() const
   if(m_displayNameHasBeenSet)
   {
    payload.WithString("DisplayName", m_displayName);
+
+  }
+
+  if(m_enableDefaultInternetAccessHasBeenSet)
+  {
+   payload.WithBool("EnableDefaultInternetAccess", m_enableDefaultInternetAccess);
 
   }
 

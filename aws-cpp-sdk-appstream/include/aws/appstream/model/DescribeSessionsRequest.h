@@ -16,6 +16,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/AppStreamRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appstream/model/AuthenticationType.h>
 #include <utility>
 
 namespace Aws
@@ -208,6 +209,46 @@ namespace Model
      */
     inline DescribeSessionsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
+    /**
+     * <p>The authentication method of the user. It can be <code>API</code> for a user
+     * authenticated using a streaming url or <code>SAML</code> for a SAML federated
+     * user. If an authentication type is not provided, the operation defaults to users
+     * authenticated using a streaming url.</p>
+     */
+    inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+
+    /**
+     * <p>The authentication method of the user. It can be <code>API</code> for a user
+     * authenticated using a streaming url or <code>SAML</code> for a SAML federated
+     * user. If an authentication type is not provided, the operation defaults to users
+     * authenticated using a streaming url.</p>
+     */
+    inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
+
+    /**
+     * <p>The authentication method of the user. It can be <code>API</code> for a user
+     * authenticated using a streaming url or <code>SAML</code> for a SAML federated
+     * user. If an authentication type is not provided, the operation defaults to users
+     * authenticated using a streaming url.</p>
+     */
+    inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
+
+    /**
+     * <p>The authentication method of the user. It can be <code>API</code> for a user
+     * authenticated using a streaming url or <code>SAML</code> for a SAML federated
+     * user. If an authentication type is not provided, the operation defaults to users
+     * authenticated using a streaming url.</p>
+     */
+    inline DescribeSessionsRequest& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
+
+    /**
+     * <p>The authentication method of the user. It can be <code>API</code> for a user
+     * authenticated using a streaming url or <code>SAML</code> for a SAML federated
+     * user. If an authentication type is not provided, the operation defaults to users
+     * authenticated using a streaming url.</p>
+     */
+    inline DescribeSessionsRequest& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
+
   private:
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
@@ -219,6 +260,8 @@ namespace Model
     bool m_nextTokenHasBeenSet;
     int m_limit;
     bool m_limitHasBeenSet;
+    AuthenticationType m_authenticationType;
+    bool m_authenticationTypeHasBeenSet;
   };
 
 } // namespace Model
