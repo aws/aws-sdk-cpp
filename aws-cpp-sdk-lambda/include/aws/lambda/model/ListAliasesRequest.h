@@ -41,37 +41,51 @@ namespace Model
 
 
     /**
-     * <p>Lambda function name for which the alias is created.</p>
+     * <p>Lambda function name for which the alias is created. Note that the length
+     * constraint applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>Lambda function name for which the alias is created.</p>
+     * <p>Lambda function name for which the alias is created. Note that the length
+     * constraint applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>Lambda function name for which the alias is created.</p>
+     * <p>Lambda function name for which the alias is created. Note that the length
+     * constraint applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>Lambda function name for which the alias is created.</p>
+     * <p>Lambda function name for which the alias is created. Note that the length
+     * constraint applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>Lambda function name for which the alias is created.</p>
+     * <p>Lambda function name for which the alias is created. Note that the length
+     * constraint applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline ListAliasesRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>Lambda function name for which the alias is created.</p>
+     * <p>Lambda function name for which the alias is created. Note that the length
+     * constraint applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline ListAliasesRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>Lambda function name for which the alias is created.</p>
+     * <p>Lambda function name for which the alias is created. Note that the length
+     * constraint applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline ListAliasesRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 

@@ -48,6 +48,7 @@
 #include <aws/ec2/model/CreateDhcpOptionsResponse.h>
 #include <aws/ec2/model/CreateEgressOnlyInternetGatewayResponse.h>
 #include <aws/ec2/model/CreateFlowLogsResponse.h>
+#include <aws/ec2/model/CreateFpgaImageResponse.h>
 #include <aws/ec2/model/CreateImageResponse.h>
 #include <aws/ec2/model/CreateInstanceExportTaskResponse.h>
 #include <aws/ec2/model/CreateInternetGatewayResponse.h>
@@ -267,6 +268,7 @@ namespace Model
         class CreateDhcpOptionsRequest;
         class CreateEgressOnlyInternetGatewayRequest;
         class CreateFlowLogsRequest;
+        class CreateFpgaImageRequest;
         class CreateImageRequest;
         class CreateInstanceExportTaskRequest;
         class CreateInternetGatewayRequest;
@@ -495,6 +497,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateDhcpOptionsResponse, Aws::Client::AWSError<EC2Errors>> CreateDhcpOptionsOutcome;
         typedef Aws::Utils::Outcome<CreateEgressOnlyInternetGatewayResponse, Aws::Client::AWSError<EC2Errors>> CreateEgressOnlyInternetGatewayOutcome;
         typedef Aws::Utils::Outcome<CreateFlowLogsResponse, Aws::Client::AWSError<EC2Errors>> CreateFlowLogsOutcome;
+        typedef Aws::Utils::Outcome<CreateFpgaImageResponse, Aws::Client::AWSError<EC2Errors>> CreateFpgaImageOutcome;
         typedef Aws::Utils::Outcome<CreateImageResponse, Aws::Client::AWSError<EC2Errors>> CreateImageOutcome;
         typedef Aws::Utils::Outcome<CreateInstanceExportTaskResponse, Aws::Client::AWSError<EC2Errors>> CreateInstanceExportTaskOutcome;
         typedef Aws::Utils::Outcome<CreateInternetGatewayResponse, Aws::Client::AWSError<EC2Errors>> CreateInternetGatewayOutcome;
@@ -723,6 +726,7 @@ namespace Model
         typedef std::future<CreateDhcpOptionsOutcome> CreateDhcpOptionsOutcomeCallable;
         typedef std::future<CreateEgressOnlyInternetGatewayOutcome> CreateEgressOnlyInternetGatewayOutcomeCallable;
         typedef std::future<CreateFlowLogsOutcome> CreateFlowLogsOutcomeCallable;
+        typedef std::future<CreateFpgaImageOutcome> CreateFpgaImageOutcomeCallable;
         typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
         typedef std::future<CreateInstanceExportTaskOutcome> CreateInstanceExportTaskOutcomeCallable;
         typedef std::future<CreateInternetGatewayOutcome> CreateInternetGatewayOutcomeCallable;
@@ -954,6 +958,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CreateDhcpOptionsRequest&, const Model::CreateDhcpOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDhcpOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateEgressOnlyInternetGatewayRequest&, const Model::CreateEgressOnlyInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEgressOnlyInternetGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateFlowLogsRequest&, const Model::CreateFlowLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFlowLogsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateFpgaImageRequest&, const Model::CreateFpgaImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFpgaImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateImageRequest&, const Model::CreateImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateInstanceExportTaskRequest&, const Model::CreateInstanceExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceExportTaskResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateInternetGatewayRequest&, const Model::CreateInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInternetGatewayResponseReceivedHandler;
@@ -1211,9 +1216,8 @@ namespace Model
         /**
          * <p>Accept a VPC peering connection request. To accept a request, the VPC peering
          * connection must be in the <code>pending-acceptance</code> state, and you must be
-         * the owner of the peer VPC. Use the <code>DescribeVpcPeeringConnections</code>
-         * request to view your outstanding VPC peering connection requests.</p><p><h3>See
-         * Also:</h3>   <a
+         * the owner of the peer VPC. Use <a>DescribeVpcPeeringConnections</a> to view your
+         * outstanding VPC peering connection requests.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcPeeringConnection">AWS
          * API Reference</a></p>
          */
@@ -1222,9 +1226,8 @@ namespace Model
         /**
          * <p>Accept a VPC peering connection request. To accept a request, the VPC peering
          * connection must be in the <code>pending-acceptance</code> state, and you must be
-         * the owner of the peer VPC. Use the <code>DescribeVpcPeeringConnections</code>
-         * request to view your outstanding VPC peering connection requests.</p><p><h3>See
-         * Also:</h3>   <a
+         * the owner of the peer VPC. Use <a>DescribeVpcPeeringConnections</a> to view your
+         * outstanding VPC peering connection requests.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcPeeringConnection">AWS
          * API Reference</a></p>
          *
@@ -1235,9 +1238,8 @@ namespace Model
         /**
          * <p>Accept a VPC peering connection request. To accept a request, the VPC peering
          * connection must be in the <code>pending-acceptance</code> state, and you must be
-         * the owner of the peer VPC. Use the <code>DescribeVpcPeeringConnections</code>
-         * request to view your outstanding VPC peering connection requests.</p><p><h3>See
-         * Also:</h3>   <a
+         * the owner of the peer VPC. Use <a>DescribeVpcPeeringConnections</a> to view your
+         * outstanding VPC peering connection requests.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcPeeringConnection">AWS
          * API Reference</a></p>
          *
@@ -1431,16 +1433,21 @@ namespace Model
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>[EC2-Classic, VPC in an EC2-VPC-only account] If the Elastic IP address is
          * already associated with a different instance, it is disassociated from that
-         * instance and associated with the specified instance.</p> <p>[VPC in an
-         * EC2-Classic account] If you don't specify a private IP address, the Elastic IP
-         * address is associated with the primary IP address. If the Elastic IP address is
-         * already associated with a different instance or a network interface, you get an
-         * error unless you allow reassociation.</p> <important> <p>This is an idempotent
-         * operation. If you perform the operation more than once, Amazon EC2 doesn't
-         * return an error, and you may be charged for each time the Elastic IP address is
-         * remapped to the same instance. For more information, see the <i>Elastic IP
-         * Addresses</i> section of <a href="http://aws.amazon.com/ec2/pricing/">Amazon EC2
-         * Pricing</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * instance and associated with the specified instance. If you associate an Elastic
+         * IP address with an instance that has an existing Elastic IP address, the
+         * existing address is disassociated from the instance, but remains allocated to
+         * your account.</p> <p>[VPC in an EC2-Classic account] If you don't specify a
+         * private IP address, the Elastic IP address is associated with the primary IP
+         * address. If the Elastic IP address is already associated with a different
+         * instance or a network interface, you get an error unless you allow
+         * reassociation. You cannot associate an Elastic IP address with an instance or
+         * network interface that has an existing Elastic IP address.</p> <important>
+         * <p>This is an idempotent operation. If you perform the operation more than once,
+         * Amazon EC2 doesn't return an error, and you may be charged for each time the
+         * Elastic IP address is remapped to the same instance. For more information, see
+         * the <i>Elastic IP Addresses</i> section of <a
+         * href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">AWS
          * API Reference</a></p>
          */
@@ -1454,16 +1461,21 @@ namespace Model
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>[EC2-Classic, VPC in an EC2-VPC-only account] If the Elastic IP address is
          * already associated with a different instance, it is disassociated from that
-         * instance and associated with the specified instance.</p> <p>[VPC in an
-         * EC2-Classic account] If you don't specify a private IP address, the Elastic IP
-         * address is associated with the primary IP address. If the Elastic IP address is
-         * already associated with a different instance or a network interface, you get an
-         * error unless you allow reassociation.</p> <important> <p>This is an idempotent
-         * operation. If you perform the operation more than once, Amazon EC2 doesn't
-         * return an error, and you may be charged for each time the Elastic IP address is
-         * remapped to the same instance. For more information, see the <i>Elastic IP
-         * Addresses</i> section of <a href="http://aws.amazon.com/ec2/pricing/">Amazon EC2
-         * Pricing</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * instance and associated with the specified instance. If you associate an Elastic
+         * IP address with an instance that has an existing Elastic IP address, the
+         * existing address is disassociated from the instance, but remains allocated to
+         * your account.</p> <p>[VPC in an EC2-Classic account] If you don't specify a
+         * private IP address, the Elastic IP address is associated with the primary IP
+         * address. If the Elastic IP address is already associated with a different
+         * instance or a network interface, you get an error unless you allow
+         * reassociation. You cannot associate an Elastic IP address with an instance or
+         * network interface that has an existing Elastic IP address.</p> <important>
+         * <p>This is an idempotent operation. If you perform the operation more than once,
+         * Amazon EC2 doesn't return an error, and you may be charged for each time the
+         * Elastic IP address is remapped to the same instance. For more information, see
+         * the <i>Elastic IP Addresses</i> section of <a
+         * href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">AWS
          * API Reference</a></p>
          *
@@ -1479,16 +1491,21 @@ namespace Model
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>[EC2-Classic, VPC in an EC2-VPC-only account] If the Elastic IP address is
          * already associated with a different instance, it is disassociated from that
-         * instance and associated with the specified instance.</p> <p>[VPC in an
-         * EC2-Classic account] If you don't specify a private IP address, the Elastic IP
-         * address is associated with the primary IP address. If the Elastic IP address is
-         * already associated with a different instance or a network interface, you get an
-         * error unless you allow reassociation.</p> <important> <p>This is an idempotent
-         * operation. If you perform the operation more than once, Amazon EC2 doesn't
-         * return an error, and you may be charged for each time the Elastic IP address is
-         * remapped to the same instance. For more information, see the <i>Elastic IP
-         * Addresses</i> section of <a href="http://aws.amazon.com/ec2/pricing/">Amazon EC2
-         * Pricing</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * instance and associated with the specified instance. If you associate an Elastic
+         * IP address with an instance that has an existing Elastic IP address, the
+         * existing address is disassociated from the instance, but remains allocated to
+         * your account.</p> <p>[VPC in an EC2-Classic account] If you don't specify a
+         * private IP address, the Elastic IP address is associated with the primary IP
+         * address. If the Elastic IP address is already associated with a different
+         * instance or a network interface, you get an error unless you allow
+         * reassociation. You cannot associate an Elastic IP address with an instance or
+         * network interface that has an existing Elastic IP address.</p> <important>
+         * <p>This is an idempotent operation. If you perform the operation more than once,
+         * Amazon EC2 doesn't return an error, and you may be charged for each time the
+         * Elastic IP address is remapped to the same instance. For more information, see
+         * the <i>Elastic IP Addresses</i> section of <a
+         * href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">AWS
          * API Reference</a></p>
          *
@@ -2628,25 +2645,26 @@ namespace Model
          * instance to receive a custom DNS hostname as specified in
          * <code>domain-name</code>, you must set <code>domain-name-servers</code> to a
          * custom DNS server.</p> </li> <li> <p> <code>domain-name</code> - If you're using
-         * AmazonProvidedDNS in "us-east-1", specify "ec2.internal". If you're using
-         * AmazonProvidedDNS in another region, specify "region.compute.internal" (for
-         * example, "ap-northeast-1.compute.internal"). Otherwise, specify a domain name
-         * (for example, "MyCompany.com"). This value is used to complete unqualified DNS
-         * hostnames. <b>Important</b>: Some Linux operating systems accept multiple domain
-         * names separated by spaces. However, Windows and other Linux operating systems
-         * treat the value as a single domain, which results in unexpected behavior. If
-         * your DHCP options set is associated with a VPC that has instances with multiple
-         * operating systems, specify only one domain name.</p> </li> <li> <p>
-         * <code>ntp-servers</code> - The IP addresses of up to four Network Time Protocol
-         * (NTP) servers.</p> </li> <li> <p> <code>netbios-name-servers</code> - The IP
-         * addresses of up to four NetBIOS name servers.</p> </li> <li> <p>
-         * <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We
-         * recommend that you specify 2 (broadcast and multicast are not currently
-         * supported). For more information about these node types, see <a
-         * href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> </li> </ul> <p>Your
-         * VPC automatically starts out with a set of DHCP options that includes only a DNS
-         * server that we provide (AmazonProvidedDNS). If you create a set of options, and
-         * if your VPC has an Internet gateway, make sure to set the
+         * AmazonProvidedDNS in <code>us-east-1</code>, specify <code>ec2.internal</code>.
+         * If you're using AmazonProvidedDNS in another region, specify
+         * <code>region.compute.internal</code> (for example,
+         * <code>ap-northeast-1.compute.internal</code>). Otherwise, specify a domain name
+         * (for example, <code>MyCompany.com</code>). This value is used to complete
+         * unqualified DNS hostnames. <b>Important</b>: Some Linux operating systems accept
+         * multiple domain names separated by spaces. However, Windows and other Linux
+         * operating systems treat the value as a single domain, which results in
+         * unexpected behavior. If your DHCP options set is associated with a VPC that has
+         * instances with multiple operating systems, specify only one domain name.</p>
+         * </li> <li> <p> <code>ntp-servers</code> - The IP addresses of up to four Network
+         * Time Protocol (NTP) servers.</p> </li> <li> <p>
+         * <code>netbios-name-servers</code> - The IP addresses of up to four NetBIOS name
+         * servers.</p> </li> <li> <p> <code>netbios-node-type</code> - The NetBIOS node
+         * type (1, 2, 4, or 8). We recommend that you specify 2 (broadcast and multicast
+         * are not currently supported). For more information about these node types, see
+         * <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> </li> </ul>
+         * <p>Your VPC automatically starts out with a set of DHCP options that includes
+         * only a DNS server that we provide (AmazonProvidedDNS). If you create a set of
+         * options, and if your VPC has an Internet gateway, make sure to set the
          * <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code>
          * or to a domain name server of your choice. For more information about DHCP
          * options, see <a
@@ -2671,25 +2689,26 @@ namespace Model
          * instance to receive a custom DNS hostname as specified in
          * <code>domain-name</code>, you must set <code>domain-name-servers</code> to a
          * custom DNS server.</p> </li> <li> <p> <code>domain-name</code> - If you're using
-         * AmazonProvidedDNS in "us-east-1", specify "ec2.internal". If you're using
-         * AmazonProvidedDNS in another region, specify "region.compute.internal" (for
-         * example, "ap-northeast-1.compute.internal"). Otherwise, specify a domain name
-         * (for example, "MyCompany.com"). This value is used to complete unqualified DNS
-         * hostnames. <b>Important</b>: Some Linux operating systems accept multiple domain
-         * names separated by spaces. However, Windows and other Linux operating systems
-         * treat the value as a single domain, which results in unexpected behavior. If
-         * your DHCP options set is associated with a VPC that has instances with multiple
-         * operating systems, specify only one domain name.</p> </li> <li> <p>
-         * <code>ntp-servers</code> - The IP addresses of up to four Network Time Protocol
-         * (NTP) servers.</p> </li> <li> <p> <code>netbios-name-servers</code> - The IP
-         * addresses of up to four NetBIOS name servers.</p> </li> <li> <p>
-         * <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We
-         * recommend that you specify 2 (broadcast and multicast are not currently
-         * supported). For more information about these node types, see <a
-         * href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> </li> </ul> <p>Your
-         * VPC automatically starts out with a set of DHCP options that includes only a DNS
-         * server that we provide (AmazonProvidedDNS). If you create a set of options, and
-         * if your VPC has an Internet gateway, make sure to set the
+         * AmazonProvidedDNS in <code>us-east-1</code>, specify <code>ec2.internal</code>.
+         * If you're using AmazonProvidedDNS in another region, specify
+         * <code>region.compute.internal</code> (for example,
+         * <code>ap-northeast-1.compute.internal</code>). Otherwise, specify a domain name
+         * (for example, <code>MyCompany.com</code>). This value is used to complete
+         * unqualified DNS hostnames. <b>Important</b>: Some Linux operating systems accept
+         * multiple domain names separated by spaces. However, Windows and other Linux
+         * operating systems treat the value as a single domain, which results in
+         * unexpected behavior. If your DHCP options set is associated with a VPC that has
+         * instances with multiple operating systems, specify only one domain name.</p>
+         * </li> <li> <p> <code>ntp-servers</code> - The IP addresses of up to four Network
+         * Time Protocol (NTP) servers.</p> </li> <li> <p>
+         * <code>netbios-name-servers</code> - The IP addresses of up to four NetBIOS name
+         * servers.</p> </li> <li> <p> <code>netbios-node-type</code> - The NetBIOS node
+         * type (1, 2, 4, or 8). We recommend that you specify 2 (broadcast and multicast
+         * are not currently supported). For more information about these node types, see
+         * <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> </li> </ul>
+         * <p>Your VPC automatically starts out with a set of DHCP options that includes
+         * only a DNS server that we provide (AmazonProvidedDNS). If you create a set of
+         * options, and if your VPC has an Internet gateway, make sure to set the
          * <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code>
          * or to a domain name server of your choice. For more information about DHCP
          * options, see <a
@@ -2716,25 +2735,26 @@ namespace Model
          * instance to receive a custom DNS hostname as specified in
          * <code>domain-name</code>, you must set <code>domain-name-servers</code> to a
          * custom DNS server.</p> </li> <li> <p> <code>domain-name</code> - If you're using
-         * AmazonProvidedDNS in "us-east-1", specify "ec2.internal". If you're using
-         * AmazonProvidedDNS in another region, specify "region.compute.internal" (for
-         * example, "ap-northeast-1.compute.internal"). Otherwise, specify a domain name
-         * (for example, "MyCompany.com"). This value is used to complete unqualified DNS
-         * hostnames. <b>Important</b>: Some Linux operating systems accept multiple domain
-         * names separated by spaces. However, Windows and other Linux operating systems
-         * treat the value as a single domain, which results in unexpected behavior. If
-         * your DHCP options set is associated with a VPC that has instances with multiple
-         * operating systems, specify only one domain name.</p> </li> <li> <p>
-         * <code>ntp-servers</code> - The IP addresses of up to four Network Time Protocol
-         * (NTP) servers.</p> </li> <li> <p> <code>netbios-name-servers</code> - The IP
-         * addresses of up to four NetBIOS name servers.</p> </li> <li> <p>
-         * <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We
-         * recommend that you specify 2 (broadcast and multicast are not currently
-         * supported). For more information about these node types, see <a
-         * href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> </li> </ul> <p>Your
-         * VPC automatically starts out with a set of DHCP options that includes only a DNS
-         * server that we provide (AmazonProvidedDNS). If you create a set of options, and
-         * if your VPC has an Internet gateway, make sure to set the
+         * AmazonProvidedDNS in <code>us-east-1</code>, specify <code>ec2.internal</code>.
+         * If you're using AmazonProvidedDNS in another region, specify
+         * <code>region.compute.internal</code> (for example,
+         * <code>ap-northeast-1.compute.internal</code>). Otherwise, specify a domain name
+         * (for example, <code>MyCompany.com</code>). This value is used to complete
+         * unqualified DNS hostnames. <b>Important</b>: Some Linux operating systems accept
+         * multiple domain names separated by spaces. However, Windows and other Linux
+         * operating systems treat the value as a single domain, which results in
+         * unexpected behavior. If your DHCP options set is associated with a VPC that has
+         * instances with multiple operating systems, specify only one domain name.</p>
+         * </li> <li> <p> <code>ntp-servers</code> - The IP addresses of up to four Network
+         * Time Protocol (NTP) servers.</p> </li> <li> <p>
+         * <code>netbios-name-servers</code> - The IP addresses of up to four NetBIOS name
+         * servers.</p> </li> <li> <p> <code>netbios-node-type</code> - The NetBIOS node
+         * type (1, 2, 4, or 8). We recommend that you specify 2 (broadcast and multicast
+         * are not currently supported). For more information about these node types, see
+         * <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> </li> </ul>
+         * <p>Your VPC automatically starts out with a set of DHCP options that includes
+         * only a DNS server that we provide (AmazonProvidedDNS). If you create a set of
+         * options, and if your VPC has an Internet gateway, make sure to set the
          * <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code>
          * or to a domain name server of your choice. For more information about DHCP
          * options, see <a
@@ -2830,6 +2850,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateFlowLogsAsync(const Model::CreateFlowLogsRequest& request, const CreateFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an Amazon FPGA Image (AFI) from the specified design checkpoint
+         * (DCP).</p> <p>The create operation is asynchronous. To verify that the AFI is
+         * ready for use, check the output logs.</p> <p>An AFI contains the FPGA bitstream
+         * that is ready to download to an FPGA. You can securely deploy an AFI on one or
+         * more FPGA-accelerated instances. For more information, see the <a
+         * href="https://github.com/aws/aws-fpga/">AWS FPGA Hardware Development
+         * Kit</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFpgaImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFpgaImageOutcome CreateFpgaImage(const Model::CreateFpgaImageRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon FPGA Image (AFI) from the specified design checkpoint
+         * (DCP).</p> <p>The create operation is asynchronous. To verify that the AFI is
+         * ready for use, check the output logs.</p> <p>An AFI contains the FPGA bitstream
+         * that is ready to download to an FPGA. You can securely deploy an AFI on one or
+         * more FPGA-accelerated instances. For more information, see the <a
+         * href="https://github.com/aws/aws-fpga/">AWS FPGA Hardware Development
+         * Kit</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFpgaImage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateFpgaImageOutcomeCallable CreateFpgaImageCallable(const Model::CreateFpgaImageRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon FPGA Image (AFI) from the specified design checkpoint
+         * (DCP).</p> <p>The create operation is asynchronous. To verify that the AFI is
+         * ready for use, check the output logs.</p> <p>An AFI contains the FPGA bitstream
+         * that is ready to download to an FPGA. You can securely deploy an AFI on one or
+         * more FPGA-accelerated instances. For more information, see the <a
+         * href="https://github.com/aws/aws-fpga/">AWS FPGA Hardware Development
+         * Kit</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFpgaImage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateFpgaImageAsync(const Model::CreateFpgaImageRequest& request, const CreateFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is
@@ -3673,7 +3736,7 @@ namespace Model
          * largest uses a /16 netmask (65,536 IPv4 addresses).</p> <p>If you've associated
          * an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR
          * block that uses a /64 prefix length. </p> <important> <p>AWS reserves both the
-         * first four and the last IP address in each subnet's CIDR block. They're not
+         * first four and the last IPv4 address in each subnet's CIDR block. They're not
          * available for use.</p> </important> <p>If you add more than one subnet to a VPC,
          * they're set up in a star topology with a logical router in the middle.</p> <p>If
          * you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
@@ -3701,7 +3764,7 @@ namespace Model
          * largest uses a /16 netmask (65,536 IPv4 addresses).</p> <p>If you've associated
          * an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR
          * block that uses a /64 prefix length. </p> <important> <p>AWS reserves both the
-         * first four and the last IP address in each subnet's CIDR block. They're not
+         * first four and the last IPv4 address in each subnet's CIDR block. They're not
          * available for use.</p> </important> <p>If you add more than one subnet to a VPC,
          * they're set up in a star topology with a logical router in the middle.</p> <p>If
          * you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
@@ -3731,7 +3794,7 @@ namespace Model
          * largest uses a /16 netmask (65,536 IPv4 addresses).</p> <p>If you've associated
          * an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR
          * block that uses a /64 prefix length. </p> <important> <p>AWS reserves both the
-         * first four and the last IP address in each subnet's CIDR block. They're not
+         * first four and the last IPv4 address in each subnet's CIDR block. They're not
          * available for use.</p> </important> <p>If you add more than one subnet to a VPC,
          * they're set up in a star topology with a logical router in the middle.</p> <p>If
          * you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
@@ -4012,9 +4075,9 @@ namespace Model
          * to another AWS account. The requester VPC and peer VPC cannot have overlapping
          * CIDR blocks.</p> <p>The owner of the peer VPC must accept the peering request to
          * activate the peering connection. The VPC peering connection request expires
-         * after 7 days, after which it cannot be accepted or rejected.</p> <p>A
-         * <code>CreateVpcPeeringConnection</code> request between VPCs with overlapping
-         * CIDR blocks results in the VPC peering connection having a status of
+         * after 7 days, after which it cannot be accepted or rejected.</p> <p>If you try
+         * to create a VPC peering connection between VPCs that have overlapping CIDR
+         * blocks, the VPC peering connection status goes to
          * <code>failed</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection">AWS
          * API Reference</a></p>
@@ -4027,9 +4090,9 @@ namespace Model
          * to another AWS account. The requester VPC and peer VPC cannot have overlapping
          * CIDR blocks.</p> <p>The owner of the peer VPC must accept the peering request to
          * activate the peering connection. The VPC peering connection request expires
-         * after 7 days, after which it cannot be accepted or rejected.</p> <p>A
-         * <code>CreateVpcPeeringConnection</code> request between VPCs with overlapping
-         * CIDR blocks results in the VPC peering connection having a status of
+         * after 7 days, after which it cannot be accepted or rejected.</p> <p>If you try
+         * to create a VPC peering connection between VPCs that have overlapping CIDR
+         * blocks, the VPC peering connection status goes to
          * <code>failed</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection">AWS
          * API Reference</a></p>
@@ -4044,9 +4107,9 @@ namespace Model
          * to another AWS account. The requester VPC and peer VPC cannot have overlapping
          * CIDR blocks.</p> <p>The owner of the peer VPC must accept the peering request to
          * activate the peering connection. The VPC peering connection request expires
-         * after 7 days, after which it cannot be accepted or rejected.</p> <p>A
-         * <code>CreateVpcPeeringConnection</code> request between VPCs with overlapping
-         * CIDR blocks results in the VPC peering connection having a status of
+         * after 7 days, after which it cannot be accepted or rejected.</p> <p>If you try
+         * to create a VPC peering connection between VPCs that have overlapping CIDR
+         * blocks, the VPC peering connection status goes to
          * <code>failed</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection">AWS
          * API Reference</a></p>
@@ -7653,10 +7716,11 @@ namespace Model
          * the DNS hostname of a linked EC2-Classic instance resolves to its private IP
          * address when addressed from an instance in the VPC to which it's linked.
          * Similarly, the DNS hostname of an instance in a VPC resolves to its private IP
-         * address when addressed from a linked EC2-Classic instance. For more information
-         * about ClassicLink, see <a
+         * address when addressed from a linked EC2-Classic instance. For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-         * in the Amazon Elastic Compute Cloud User Guide.</p><p><h3>See Also:</h3>   <a
+         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLinkDnsSupport">AWS
          * API Reference</a></p>
          */
@@ -7667,10 +7731,11 @@ namespace Model
          * the DNS hostname of a linked EC2-Classic instance resolves to its private IP
          * address when addressed from an instance in the VPC to which it's linked.
          * Similarly, the DNS hostname of an instance in a VPC resolves to its private IP
-         * address when addressed from a linked EC2-Classic instance. For more information
-         * about ClassicLink, see <a
+         * address when addressed from a linked EC2-Classic instance. For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-         * in the Amazon Elastic Compute Cloud User Guide.</p><p><h3>See Also:</h3>   <a
+         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLinkDnsSupport">AWS
          * API Reference</a></p>
          *
@@ -7683,10 +7748,11 @@ namespace Model
          * the DNS hostname of a linked EC2-Classic instance resolves to its private IP
          * address when addressed from an instance in the VPC to which it's linked.
          * Similarly, the DNS hostname of an instance in a VPC resolves to its private IP
-         * address when addressed from a linked EC2-Classic instance. For more information
-         * about ClassicLink, see <a
+         * address when addressed from a linked EC2-Classic instance. For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-         * in the Amazon Elastic Compute Cloud User Guide.</p><p><h3>See Also:</h3>   <a
+         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLinkDnsSupport">AWS
          * API Reference</a></p>
          *
@@ -7911,7 +7977,7 @@ namespace Model
         /**
          * <p>Detaches an Internet gateway from a VPC, disabling connectivity between the
          * Internet and the VPC. The VPC must not contain any running instances with
-         * Elastic IP addresses.</p><p><h3>See Also:</h3>   <a
+         * Elastic IP addresses or public IPv4 addresses.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachInternetGateway">AWS
          * API Reference</a></p>
          */
@@ -7920,7 +7986,7 @@ namespace Model
         /**
          * <p>Detaches an Internet gateway from a VPC, disabling connectivity between the
          * Internet and the VPC. The VPC must not contain any running instances with
-         * Elastic IP addresses.</p><p><h3>See Also:</h3>   <a
+         * Elastic IP addresses or public IPv4 addresses.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachInternetGateway">AWS
          * API Reference</a></p>
          *
@@ -7931,7 +7997,7 @@ namespace Model
         /**
          * <p>Detaches an Internet gateway from a VPC, disabling connectivity between the
          * Internet and the VPC. The VPC must not contain any running instances with
-         * Elastic IP addresses.</p><p><h3>See Also:</h3>   <a
+         * Elastic IP addresses or public IPv4 addresses.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachInternetGateway">AWS
          * API Reference</a></p>
          *
@@ -8130,7 +8196,8 @@ namespace Model
          * instance and instances in the VPC to which it's linked. For more information
          * about ClassicLink, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-         * in the Amazon Elastic Compute Cloud User Guide.</p><p><h3>See Also:</h3>   <a
+         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport">AWS
          * API Reference</a></p>
          */
@@ -8142,7 +8209,8 @@ namespace Model
          * instance and instances in the VPC to which it's linked. For more information
          * about ClassicLink, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-         * in the Amazon Elastic Compute Cloud User Guide.</p><p><h3>See Also:</h3>   <a
+         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport">AWS
          * API Reference</a></p>
          *
@@ -8156,7 +8224,8 @@ namespace Model
          * instance and instances in the VPC to which it's linked. For more information
          * about ClassicLink, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-         * in the Amazon Elastic Compute Cloud User Guide.</p><p><h3>See Also:</h3>   <a
+         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport">AWS
          * API Reference</a></p>
          *
@@ -8416,7 +8485,8 @@ namespace Model
          * address range, excluding local routes for VPCs in the <code>10.0.0.0/16</code>
          * and <code>10.1.0.0/16</code> IP address ranges. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-         * in the Amazon Elastic Compute Cloud User Guide.</p><p><h3>See Also:</h3>   <a
+         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLink">AWS
          * API Reference</a></p>
          */
@@ -8430,7 +8500,8 @@ namespace Model
          * address range, excluding local routes for VPCs in the <code>10.0.0.0/16</code>
          * and <code>10.1.0.0/16</code> IP address ranges. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-         * in the Amazon Elastic Compute Cloud User Guide.</p><p><h3>See Also:</h3>   <a
+         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLink">AWS
          * API Reference</a></p>
          *
@@ -8446,7 +8517,8 @@ namespace Model
          * address range, excluding local routes for VPCs in the <code>10.0.0.0/16</code>
          * and <code>10.1.0.0/16</code> IP address ranges. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-         * in the Amazon Elastic Compute Cloud User Guide.</p><p><h3>See Also:</h3>   <a
+         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLink">AWS
          * API Reference</a></p>
          *
@@ -11496,6 +11568,7 @@ namespace Model
         void CreateDhcpOptionsAsyncHelper(const Model::CreateDhcpOptionsRequest& request, const CreateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEgressOnlyInternetGatewayAsyncHelper(const Model::CreateEgressOnlyInternetGatewayRequest& request, const CreateEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFlowLogsAsyncHelper(const Model::CreateFlowLogsRequest& request, const CreateFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateFpgaImageAsyncHelper(const Model::CreateFpgaImageRequest& request, const CreateFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateImageAsyncHelper(const Model::CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInstanceExportTaskAsyncHelper(const Model::CreateInstanceExportTaskRequest& request, const CreateInstanceExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInternetGatewayAsyncHelper(const Model::CreateInternetGatewayRequest& request, const CreateInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -21,9 +21,16 @@ void ${typeInfo.className}::AddQueryStringParameters(URI& uri) const
 #elseif($memberEntry.value.shape.map)
     ${spaces}for(auto& item : ${memberVarName})
     ${spaces}{
-      ${spaces}ss << item.second;
-      ${spaces}uri.AddQueryStringParameter(item.first.c_str(), ss.str());
-      ${spaces}ss.str("");
+    ${spaces}  ss << item.second;
+    ${spaces}  uri.AddQueryStringParameter(item.first.c_str(), ss.str());
+    ${spaces}  ss.str("");
+    ${spaces}}
+#elseif($memberEntry.value.shape.list)
+    ${spaces}for(const auto& item : $memberVarName)
+    ${spaces}{
+    ${spaces}  ss << item;
+    ${spaces}  uri.AddQueryStringParameter("${memberEntry.value.locationName}", ss.str());
+    ${spaces}  ss.str("");
     ${spaces}}
 #else
     ${spaces}ss << ${memberVarName};

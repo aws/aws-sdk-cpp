@@ -112,15 +112,7 @@ namespace Model
      * setting for an instance running on a Dedicated Host (<code>default</code> |
      * <code>host</code>).</p> </li> <li> <p> <code>architecture</code> - The instance
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
-     * <code>association.public-ip</code> - The address of the Elastic IP address
-     * (IPv4) bound to the network interface.</p> </li> <li> <p>
-     * <code>association.ip-owner-id</code> - The owner of the Elastic IP address
-     * (IPv4) associated with the network interface.</p> </li> <li> <p>
-     * <code>association.allocation-id</code> - The allocation ID returned when you
-     * allocated the Elastic IP address (IPv4) for your network interface.</p> </li>
-     * <li> <p> <code>association.association-id</code> - The association ID returned
-     * when the network interface was associated with an IPv4 address.</p> </li> <li>
-     * <p> <code>availability-zone</code> - The Availability Zone of the instance.</p>
+     * <code>availability-zone</code> - The Availability Zone of the instance.</p>
      * </li> <li> <p> <code>block-device-mapping.attach-time</code> - The attach time
      * for an EBS volume mapped to the instance, for example,
      * <code>2010-09-15T17:15:20.000Z</code>.</p> </li> <li> <p>
@@ -177,8 +169,17 @@ namespace Model
      * </li> <li> <p> <code>network-interface.addresses.association.ip-owner-id</code>
      * - The owner ID of the private IPv4 address associated with the network
      * interface.</p> </li> <li> <p>
-     * <code>network-interface.attachment.attachment-id</code> - The ID of the
-     * interface attachment.</p> </li> <li> <p>
+     * <code>network-interface.association.public-ip</code> - The address of the
+     * Elastic IP address (IPv4) bound to the network interface.</p> </li> <li> <p>
+     * <code>network-interface.association.ip-owner-id</code> - The owner of the
+     * Elastic IP address (IPv4) associated with the network interface.</p> </li> <li>
+     * <p> <code>network-interface.association.allocation-id</code> - The allocation ID
+     * returned when you allocated the Elastic IP address (IPv4) for your network
+     * interface.</p> </li> <li> <p>
+     * <code>network-interface.association.association-id</code> - The association ID
+     * returned when the network interface was associated with an IPv4 address.</p>
+     * </li> <li> <p> <code>network-interface.attachment.attachment-id</code> - The ID
+     * of the interface attachment.</p> </li> <li> <p>
      * <code>network-interface.attachment.instance-id</code> - The ID of the instance
      * to which the network interface is attached.</p> </li> <li> <p>
      * <code>network-interface.attachment.instance-owner-id</code> - The owner ID of
@@ -284,15 +285,7 @@ namespace Model
      * setting for an instance running on a Dedicated Host (<code>default</code> |
      * <code>host</code>).</p> </li> <li> <p> <code>architecture</code> - The instance
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
-     * <code>association.public-ip</code> - The address of the Elastic IP address
-     * (IPv4) bound to the network interface.</p> </li> <li> <p>
-     * <code>association.ip-owner-id</code> - The owner of the Elastic IP address
-     * (IPv4) associated with the network interface.</p> </li> <li> <p>
-     * <code>association.allocation-id</code> - The allocation ID returned when you
-     * allocated the Elastic IP address (IPv4) for your network interface.</p> </li>
-     * <li> <p> <code>association.association-id</code> - The association ID returned
-     * when the network interface was associated with an IPv4 address.</p> </li> <li>
-     * <p> <code>availability-zone</code> - The Availability Zone of the instance.</p>
+     * <code>availability-zone</code> - The Availability Zone of the instance.</p>
      * </li> <li> <p> <code>block-device-mapping.attach-time</code> - The attach time
      * for an EBS volume mapped to the instance, for example,
      * <code>2010-09-15T17:15:20.000Z</code>.</p> </li> <li> <p>
@@ -349,8 +342,17 @@ namespace Model
      * </li> <li> <p> <code>network-interface.addresses.association.ip-owner-id</code>
      * - The owner ID of the private IPv4 address associated with the network
      * interface.</p> </li> <li> <p>
-     * <code>network-interface.attachment.attachment-id</code> - The ID of the
-     * interface attachment.</p> </li> <li> <p>
+     * <code>network-interface.association.public-ip</code> - The address of the
+     * Elastic IP address (IPv4) bound to the network interface.</p> </li> <li> <p>
+     * <code>network-interface.association.ip-owner-id</code> - The owner of the
+     * Elastic IP address (IPv4) associated with the network interface.</p> </li> <li>
+     * <p> <code>network-interface.association.allocation-id</code> - The allocation ID
+     * returned when you allocated the Elastic IP address (IPv4) for your network
+     * interface.</p> </li> <li> <p>
+     * <code>network-interface.association.association-id</code> - The association ID
+     * returned when the network interface was associated with an IPv4 address.</p>
+     * </li> <li> <p> <code>network-interface.attachment.attachment-id</code> - The ID
+     * of the interface attachment.</p> </li> <li> <p>
      * <code>network-interface.attachment.instance-id</code> - The ID of the instance
      * to which the network interface is attached.</p> </li> <li> <p>
      * <code>network-interface.attachment.instance-owner-id</code> - The owner ID of
@@ -456,15 +458,7 @@ namespace Model
      * setting for an instance running on a Dedicated Host (<code>default</code> |
      * <code>host</code>).</p> </li> <li> <p> <code>architecture</code> - The instance
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
-     * <code>association.public-ip</code> - The address of the Elastic IP address
-     * (IPv4) bound to the network interface.</p> </li> <li> <p>
-     * <code>association.ip-owner-id</code> - The owner of the Elastic IP address
-     * (IPv4) associated with the network interface.</p> </li> <li> <p>
-     * <code>association.allocation-id</code> - The allocation ID returned when you
-     * allocated the Elastic IP address (IPv4) for your network interface.</p> </li>
-     * <li> <p> <code>association.association-id</code> - The association ID returned
-     * when the network interface was associated with an IPv4 address.</p> </li> <li>
-     * <p> <code>availability-zone</code> - The Availability Zone of the instance.</p>
+     * <code>availability-zone</code> - The Availability Zone of the instance.</p>
      * </li> <li> <p> <code>block-device-mapping.attach-time</code> - The attach time
      * for an EBS volume mapped to the instance, for example,
      * <code>2010-09-15T17:15:20.000Z</code>.</p> </li> <li> <p>
@@ -521,8 +515,17 @@ namespace Model
      * </li> <li> <p> <code>network-interface.addresses.association.ip-owner-id</code>
      * - The owner ID of the private IPv4 address associated with the network
      * interface.</p> </li> <li> <p>
-     * <code>network-interface.attachment.attachment-id</code> - The ID of the
-     * interface attachment.</p> </li> <li> <p>
+     * <code>network-interface.association.public-ip</code> - The address of the
+     * Elastic IP address (IPv4) bound to the network interface.</p> </li> <li> <p>
+     * <code>network-interface.association.ip-owner-id</code> - The owner of the
+     * Elastic IP address (IPv4) associated with the network interface.</p> </li> <li>
+     * <p> <code>network-interface.association.allocation-id</code> - The allocation ID
+     * returned when you allocated the Elastic IP address (IPv4) for your network
+     * interface.</p> </li> <li> <p>
+     * <code>network-interface.association.association-id</code> - The association ID
+     * returned when the network interface was associated with an IPv4 address.</p>
+     * </li> <li> <p> <code>network-interface.attachment.attachment-id</code> - The ID
+     * of the interface attachment.</p> </li> <li> <p>
      * <code>network-interface.attachment.instance-id</code> - The ID of the instance
      * to which the network interface is attached.</p> </li> <li> <p>
      * <code>network-interface.attachment.instance-owner-id</code> - The owner ID of
@@ -628,15 +631,7 @@ namespace Model
      * setting for an instance running on a Dedicated Host (<code>default</code> |
      * <code>host</code>).</p> </li> <li> <p> <code>architecture</code> - The instance
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
-     * <code>association.public-ip</code> - The address of the Elastic IP address
-     * (IPv4) bound to the network interface.</p> </li> <li> <p>
-     * <code>association.ip-owner-id</code> - The owner of the Elastic IP address
-     * (IPv4) associated with the network interface.</p> </li> <li> <p>
-     * <code>association.allocation-id</code> - The allocation ID returned when you
-     * allocated the Elastic IP address (IPv4) for your network interface.</p> </li>
-     * <li> <p> <code>association.association-id</code> - The association ID returned
-     * when the network interface was associated with an IPv4 address.</p> </li> <li>
-     * <p> <code>availability-zone</code> - The Availability Zone of the instance.</p>
+     * <code>availability-zone</code> - The Availability Zone of the instance.</p>
      * </li> <li> <p> <code>block-device-mapping.attach-time</code> - The attach time
      * for an EBS volume mapped to the instance, for example,
      * <code>2010-09-15T17:15:20.000Z</code>.</p> </li> <li> <p>
@@ -693,8 +688,17 @@ namespace Model
      * </li> <li> <p> <code>network-interface.addresses.association.ip-owner-id</code>
      * - The owner ID of the private IPv4 address associated with the network
      * interface.</p> </li> <li> <p>
-     * <code>network-interface.attachment.attachment-id</code> - The ID of the
-     * interface attachment.</p> </li> <li> <p>
+     * <code>network-interface.association.public-ip</code> - The address of the
+     * Elastic IP address (IPv4) bound to the network interface.</p> </li> <li> <p>
+     * <code>network-interface.association.ip-owner-id</code> - The owner of the
+     * Elastic IP address (IPv4) associated with the network interface.</p> </li> <li>
+     * <p> <code>network-interface.association.allocation-id</code> - The allocation ID
+     * returned when you allocated the Elastic IP address (IPv4) for your network
+     * interface.</p> </li> <li> <p>
+     * <code>network-interface.association.association-id</code> - The association ID
+     * returned when the network interface was associated with an IPv4 address.</p>
+     * </li> <li> <p> <code>network-interface.attachment.attachment-id</code> - The ID
+     * of the interface attachment.</p> </li> <li> <p>
      * <code>network-interface.attachment.instance-id</code> - The ID of the instance
      * to which the network interface is attached.</p> </li> <li> <p>
      * <code>network-interface.attachment.instance-owner-id</code> - The owner ID of
@@ -800,15 +804,7 @@ namespace Model
      * setting for an instance running on a Dedicated Host (<code>default</code> |
      * <code>host</code>).</p> </li> <li> <p> <code>architecture</code> - The instance
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
-     * <code>association.public-ip</code> - The address of the Elastic IP address
-     * (IPv4) bound to the network interface.</p> </li> <li> <p>
-     * <code>association.ip-owner-id</code> - The owner of the Elastic IP address
-     * (IPv4) associated with the network interface.</p> </li> <li> <p>
-     * <code>association.allocation-id</code> - The allocation ID returned when you
-     * allocated the Elastic IP address (IPv4) for your network interface.</p> </li>
-     * <li> <p> <code>association.association-id</code> - The association ID returned
-     * when the network interface was associated with an IPv4 address.</p> </li> <li>
-     * <p> <code>availability-zone</code> - The Availability Zone of the instance.</p>
+     * <code>availability-zone</code> - The Availability Zone of the instance.</p>
      * </li> <li> <p> <code>block-device-mapping.attach-time</code> - The attach time
      * for an EBS volume mapped to the instance, for example,
      * <code>2010-09-15T17:15:20.000Z</code>.</p> </li> <li> <p>
@@ -865,8 +861,17 @@ namespace Model
      * </li> <li> <p> <code>network-interface.addresses.association.ip-owner-id</code>
      * - The owner ID of the private IPv4 address associated with the network
      * interface.</p> </li> <li> <p>
-     * <code>network-interface.attachment.attachment-id</code> - The ID of the
-     * interface attachment.</p> </li> <li> <p>
+     * <code>network-interface.association.public-ip</code> - The address of the
+     * Elastic IP address (IPv4) bound to the network interface.</p> </li> <li> <p>
+     * <code>network-interface.association.ip-owner-id</code> - The owner of the
+     * Elastic IP address (IPv4) associated with the network interface.</p> </li> <li>
+     * <p> <code>network-interface.association.allocation-id</code> - The allocation ID
+     * returned when you allocated the Elastic IP address (IPv4) for your network
+     * interface.</p> </li> <li> <p>
+     * <code>network-interface.association.association-id</code> - The association ID
+     * returned when the network interface was associated with an IPv4 address.</p>
+     * </li> <li> <p> <code>network-interface.attachment.attachment-id</code> - The ID
+     * of the interface attachment.</p> </li> <li> <p>
      * <code>network-interface.attachment.instance-id</code> - The ID of the instance
      * to which the network interface is attached.</p> </li> <li> <p>
      * <code>network-interface.attachment.instance-owner-id</code> - The owner ID of
@@ -972,15 +977,7 @@ namespace Model
      * setting for an instance running on a Dedicated Host (<code>default</code> |
      * <code>host</code>).</p> </li> <li> <p> <code>architecture</code> - The instance
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
-     * <code>association.public-ip</code> - The address of the Elastic IP address
-     * (IPv4) bound to the network interface.</p> </li> <li> <p>
-     * <code>association.ip-owner-id</code> - The owner of the Elastic IP address
-     * (IPv4) associated with the network interface.</p> </li> <li> <p>
-     * <code>association.allocation-id</code> - The allocation ID returned when you
-     * allocated the Elastic IP address (IPv4) for your network interface.</p> </li>
-     * <li> <p> <code>association.association-id</code> - The association ID returned
-     * when the network interface was associated with an IPv4 address.</p> </li> <li>
-     * <p> <code>availability-zone</code> - The Availability Zone of the instance.</p>
+     * <code>availability-zone</code> - The Availability Zone of the instance.</p>
      * </li> <li> <p> <code>block-device-mapping.attach-time</code> - The attach time
      * for an EBS volume mapped to the instance, for example,
      * <code>2010-09-15T17:15:20.000Z</code>.</p> </li> <li> <p>
@@ -1037,8 +1034,17 @@ namespace Model
      * </li> <li> <p> <code>network-interface.addresses.association.ip-owner-id</code>
      * - The owner ID of the private IPv4 address associated with the network
      * interface.</p> </li> <li> <p>
-     * <code>network-interface.attachment.attachment-id</code> - The ID of the
-     * interface attachment.</p> </li> <li> <p>
+     * <code>network-interface.association.public-ip</code> - The address of the
+     * Elastic IP address (IPv4) bound to the network interface.</p> </li> <li> <p>
+     * <code>network-interface.association.ip-owner-id</code> - The owner of the
+     * Elastic IP address (IPv4) associated with the network interface.</p> </li> <li>
+     * <p> <code>network-interface.association.allocation-id</code> - The allocation ID
+     * returned when you allocated the Elastic IP address (IPv4) for your network
+     * interface.</p> </li> <li> <p>
+     * <code>network-interface.association.association-id</code> - The association ID
+     * returned when the network interface was associated with an IPv4 address.</p>
+     * </li> <li> <p> <code>network-interface.attachment.attachment-id</code> - The ID
+     * of the interface attachment.</p> </li> <li> <p>
      * <code>network-interface.attachment.instance-id</code> - The ID of the instance
      * to which the network interface is attached.</p> </li> <li> <p>
      * <code>network-interface.attachment.instance-owner-id</code> - The owner ID of
@@ -1144,15 +1150,7 @@ namespace Model
      * setting for an instance running on a Dedicated Host (<code>default</code> |
      * <code>host</code>).</p> </li> <li> <p> <code>architecture</code> - The instance
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
-     * <code>association.public-ip</code> - The address of the Elastic IP address
-     * (IPv4) bound to the network interface.</p> </li> <li> <p>
-     * <code>association.ip-owner-id</code> - The owner of the Elastic IP address
-     * (IPv4) associated with the network interface.</p> </li> <li> <p>
-     * <code>association.allocation-id</code> - The allocation ID returned when you
-     * allocated the Elastic IP address (IPv4) for your network interface.</p> </li>
-     * <li> <p> <code>association.association-id</code> - The association ID returned
-     * when the network interface was associated with an IPv4 address.</p> </li> <li>
-     * <p> <code>availability-zone</code> - The Availability Zone of the instance.</p>
+     * <code>availability-zone</code> - The Availability Zone of the instance.</p>
      * </li> <li> <p> <code>block-device-mapping.attach-time</code> - The attach time
      * for an EBS volume mapped to the instance, for example,
      * <code>2010-09-15T17:15:20.000Z</code>.</p> </li> <li> <p>
@@ -1209,8 +1207,17 @@ namespace Model
      * </li> <li> <p> <code>network-interface.addresses.association.ip-owner-id</code>
      * - The owner ID of the private IPv4 address associated with the network
      * interface.</p> </li> <li> <p>
-     * <code>network-interface.attachment.attachment-id</code> - The ID of the
-     * interface attachment.</p> </li> <li> <p>
+     * <code>network-interface.association.public-ip</code> - The address of the
+     * Elastic IP address (IPv4) bound to the network interface.</p> </li> <li> <p>
+     * <code>network-interface.association.ip-owner-id</code> - The owner of the
+     * Elastic IP address (IPv4) associated with the network interface.</p> </li> <li>
+     * <p> <code>network-interface.association.allocation-id</code> - The allocation ID
+     * returned when you allocated the Elastic IP address (IPv4) for your network
+     * interface.</p> </li> <li> <p>
+     * <code>network-interface.association.association-id</code> - The association ID
+     * returned when the network interface was associated with an IPv4 address.</p>
+     * </li> <li> <p> <code>network-interface.attachment.attachment-id</code> - The ID
+     * of the interface attachment.</p> </li> <li> <p>
      * <code>network-interface.attachment.instance-id</code> - The ID of the instance
      * to which the network interface is attached.</p> </li> <li> <p>
      * <code>network-interface.attachment.instance-owner-id</code> - The owner ID of

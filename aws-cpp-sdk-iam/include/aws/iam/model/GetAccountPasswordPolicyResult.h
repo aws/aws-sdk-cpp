@@ -48,27 +48,27 @@ namespace Model
     GetAccountPasswordPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Contains information about the account password policy.</p>
+     * <p>A structure that contains details about the account's password policy.</p>
      */
     inline const PasswordPolicy& GetPasswordPolicy() const{ return m_passwordPolicy; }
 
     /**
-     * <p>Contains information about the account password policy.</p>
+     * <p>A structure that contains details about the account's password policy.</p>
      */
     inline void SetPasswordPolicy(const PasswordPolicy& value) { m_passwordPolicy = value; }
 
     /**
-     * <p>Contains information about the account password policy.</p>
+     * <p>A structure that contains details about the account's password policy.</p>
      */
     inline void SetPasswordPolicy(PasswordPolicy&& value) { m_passwordPolicy = std::move(value); }
 
     /**
-     * <p>Contains information about the account password policy.</p>
+     * <p>A structure that contains details about the account's password policy.</p>
      */
     inline GetAccountPasswordPolicyResult& WithPasswordPolicy(const PasswordPolicy& value) { SetPasswordPolicy(value); return *this;}
 
     /**
-     * <p>Contains information about the account password policy.</p>
+     * <p>A structure that contains details about the account's password policy.</p>
      */
     inline GetAccountPasswordPolicyResult& WithPasswordPolicy(PasswordPolicy&& value) { SetPasswordPolicy(std::move(value)); return *this;}
 

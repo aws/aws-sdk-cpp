@@ -30,6 +30,7 @@ namespace Model
     nodejs6_10,
     java8,
     python2_7,
+    python3_6,
     dotnetcore1_0,
     nodejs4_3_edge
   };

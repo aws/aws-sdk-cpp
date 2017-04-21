@@ -34,10 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an IAM role.</p> <p>This data type is used as a
-   * response element in the following actions:</p> <ul> <li> <p> <a>CreateRole</a>
-   * </p> </li> <li> <p> <a>GetRole</a> </p> </li> <li> <p> <a>ListRoles</a> </p>
-   * </li> </ul><p><h3>See Also:</h3>   <a
+   * <p>Contains information about an IAM role. This structure is returned as a
+   * response element in several APIs that interact with roles.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Role">AWS API
    * Reference</a></p>
    */
@@ -195,7 +194,7 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) specifying the role. For more information
      * about ARNs and how to use them in policies, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i> guide. </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
@@ -203,7 +202,7 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) specifying the role. For more information
      * about ARNs and how to use them in policies, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i> guide. </p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
@@ -211,7 +210,7 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) specifying the role. For more information
      * about ARNs and how to use them in policies, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i> guide. </p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
@@ -219,7 +218,7 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) specifying the role. For more information
      * about ARNs and how to use them in policies, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i> guide. </p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
@@ -227,7 +226,7 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) specifying the role. For more information
      * about ARNs and how to use them in policies, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i> guide. </p>
      */
     inline Role& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
@@ -235,7 +234,7 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) specifying the role. For more information
      * about ARNs and how to use them in policies, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i> guide. </p>
      */
     inline Role& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
@@ -243,7 +242,7 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) specifying the role. For more information
      * about ARNs and how to use them in policies, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i> guide. </p>
      */
     inline Role& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -312,6 +311,41 @@ namespace Model
      */
     inline Role& WithAssumeRolePolicyDocument(const char* value) { SetAssumeRolePolicyDocument(value); return *this;}
 
+    /**
+     * <p>A description of the role that you provide.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the role that you provide.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description of the role that you provide.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description of the role that you provide.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description of the role that you provide.</p>
+     */
+    inline Role& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description of the role that you provide.</p>
+     */
+    inline Role& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description of the role that you provide.</p>
+     */
+    inline Role& WithDescription(const char* value) { SetDescription(value); return *this;}
+
   private:
     Aws::String m_path;
     bool m_pathHasBeenSet;
@@ -325,6 +359,8 @@ namespace Model
     bool m_createDateHasBeenSet;
     Aws::String m_assumeRolePolicyDocument;
     bool m_assumeRolePolicyDocumentHasBeenSet;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
   };
 
 } // namespace Model

@@ -103,27 +103,27 @@ namespace Model
     inline DescribeNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
     /**
-     * <p>The attribute of the network interface.</p>
+     * <p>The attribute of the network interface. This parameter is required.</p>
      */
     inline const NetworkInterfaceAttribute& GetAttribute() const{ return m_attribute; }
 
     /**
-     * <p>The attribute of the network interface.</p>
+     * <p>The attribute of the network interface. This parameter is required.</p>
      */
     inline void SetAttribute(const NetworkInterfaceAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>The attribute of the network interface.</p>
+     * <p>The attribute of the network interface. This parameter is required.</p>
      */
     inline void SetAttribute(NetworkInterfaceAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
-     * <p>The attribute of the network interface.</p>
+     * <p>The attribute of the network interface. This parameter is required.</p>
      */
     inline DescribeNetworkInterfaceAttributeRequest& WithAttribute(const NetworkInterfaceAttribute& value) { SetAttribute(value); return *this;}
 
     /**
-     * <p>The attribute of the network interface.</p>
+     * <p>The attribute of the network interface. This parameter is required.</p>
      */
     inline DescribeNetworkInterfaceAttributeRequest& WithAttribute(NetworkInterfaceAttribute&& value) { SetAttribute(std::move(value)); return *this;}
 

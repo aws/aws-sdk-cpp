@@ -78,9 +78,11 @@ namespace Model
      * specify Amazon Resource Name (ARN) of the function (for example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
      * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). </p> <p>If you are using versioning, you can
-     * also provide a qualified function ARN (ARN that is qualified with function
-     * version or alias name as suffix). For more information about versioning, see <a
+     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * characters in length. </p> <p>If you are using versioning, you can also provide
+     * a qualified function ARN (ARN that is qualified with function version or alias
+     * name as suffix). For more information about versioning, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
      * Lambda Function Versioning and Aliases</a> </p> <p>Note that the length
      * constraint applies only to the ARN. If you specify only the function name, it is
@@ -94,9 +96,11 @@ namespace Model
      * specify Amazon Resource Name (ARN) of the function (for example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
      * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). </p> <p>If you are using versioning, you can
-     * also provide a qualified function ARN (ARN that is qualified with function
-     * version or alias name as suffix). For more information about versioning, see <a
+     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * characters in length. </p> <p>If you are using versioning, you can also provide
+     * a qualified function ARN (ARN that is qualified with function version or alias
+     * name as suffix). For more information about versioning, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
      * Lambda Function Versioning and Aliases</a> </p> <p>Note that the length
      * constraint applies only to the ARN. If you specify only the function name, it is
@@ -110,9 +114,11 @@ namespace Model
      * specify Amazon Resource Name (ARN) of the function (for example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
      * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). </p> <p>If you are using versioning, you can
-     * also provide a qualified function ARN (ARN that is qualified with function
-     * version or alias name as suffix). For more information about versioning, see <a
+     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * characters in length. </p> <p>If you are using versioning, you can also provide
+     * a qualified function ARN (ARN that is qualified with function version or alias
+     * name as suffix). For more information about versioning, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
      * Lambda Function Versioning and Aliases</a> </p> <p>Note that the length
      * constraint applies only to the ARN. If you specify only the function name, it is
@@ -126,9 +132,11 @@ namespace Model
      * specify Amazon Resource Name (ARN) of the function (for example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
      * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). </p> <p>If you are using versioning, you can
-     * also provide a qualified function ARN (ARN that is qualified with function
-     * version or alias name as suffix). For more information about versioning, see <a
+     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * characters in length. </p> <p>If you are using versioning, you can also provide
+     * a qualified function ARN (ARN that is qualified with function version or alias
+     * name as suffix). For more information about versioning, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
      * Lambda Function Versioning and Aliases</a> </p> <p>Note that the length
      * constraint applies only to the ARN. If you specify only the function name, it is
@@ -142,9 +150,11 @@ namespace Model
      * specify Amazon Resource Name (ARN) of the function (for example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
      * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). </p> <p>If you are using versioning, you can
-     * also provide a qualified function ARN (ARN that is qualified with function
-     * version or alias name as suffix). For more information about versioning, see <a
+     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * characters in length. </p> <p>If you are using versioning, you can also provide
+     * a qualified function ARN (ARN that is qualified with function version or alias
+     * name as suffix). For more information about versioning, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
      * Lambda Function Versioning and Aliases</a> </p> <p>Note that the length
      * constraint applies only to the ARN. If you specify only the function name, it is
@@ -158,9 +168,11 @@ namespace Model
      * specify Amazon Resource Name (ARN) of the function (for example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
      * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). </p> <p>If you are using versioning, you can
-     * also provide a qualified function ARN (ARN that is qualified with function
-     * version or alias name as suffix). For more information about versioning, see <a
+     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * characters in length. </p> <p>If you are using versioning, you can also provide
+     * a qualified function ARN (ARN that is qualified with function version or alias
+     * name as suffix). For more information about versioning, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
      * Lambda Function Versioning and Aliases</a> </p> <p>Note that the length
      * constraint applies only to the ARN. If you specify only the function name, it is
@@ -174,9 +186,11 @@ namespace Model
      * specify Amazon Resource Name (ARN) of the function (for example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
      * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). </p> <p>If you are using versioning, you can
-     * also provide a qualified function ARN (ARN that is qualified with function
-     * version or alias name as suffix). For more information about versioning, see <a
+     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64
+     * characters in length. </p> <p>If you are using versioning, you can also provide
+     * a qualified function ARN (ARN that is qualified with function version or alias
+     * name as suffix). For more information about versioning, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
      * Lambda Function Versioning and Aliases</a> </p> <p>Note that the length
      * constraint applies only to the ARN. If you specify only the function name, it is

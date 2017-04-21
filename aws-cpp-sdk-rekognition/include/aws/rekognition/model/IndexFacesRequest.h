@@ -40,43 +40,43 @@ namespace Model
 
 
     /**
-     * <p>ID of an existing collection to which you want to add the faces that are
+     * <p>The ID of an existing collection to which you want to add the faces that are
      * detected in the input images.</p>
      */
     inline const Aws::String& GetCollectionId() const{ return m_collectionId; }
 
     /**
-     * <p>ID of an existing collection to which you want to add the faces that are
+     * <p>The ID of an existing collection to which you want to add the faces that are
      * detected in the input images.</p>
      */
     inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
 
     /**
-     * <p>ID of an existing collection to which you want to add the faces that are
+     * <p>The ID of an existing collection to which you want to add the faces that are
      * detected in the input images.</p>
      */
     inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::move(value); }
 
     /**
-     * <p>ID of an existing collection to which you want to add the faces that are
+     * <p>The ID of an existing collection to which you want to add the faces that are
      * detected in the input images.</p>
      */
     inline void SetCollectionId(const char* value) { m_collectionIdHasBeenSet = true; m_collectionId.assign(value); }
 
     /**
-     * <p>ID of an existing collection to which you want to add the faces that are
+     * <p>The ID of an existing collection to which you want to add the faces that are
      * detected in the input images.</p>
      */
     inline IndexFacesRequest& WithCollectionId(const Aws::String& value) { SetCollectionId(value); return *this;}
 
     /**
-     * <p>ID of an existing collection to which you want to add the faces that are
+     * <p>The ID of an existing collection to which you want to add the faces that are
      * detected in the input images.</p>
      */
     inline IndexFacesRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of an existing collection to which you want to add the faces that are
+     * <p>The ID of an existing collection to which you want to add the faces that are
      * detected in the input images.</p>
      */
     inline IndexFacesRequest& WithCollectionId(const char* value) { SetCollectionId(value); return *this;}
@@ -132,8 +132,8 @@ namespace Model
     inline IndexFacesRequest& WithExternalImageId(const char* value) { SetExternalImageId(value); return *this;}
 
     /**
-     * <p>A list of facial attributes you want to be returned. This can be the default
-     * list of attributes or all attributes. If you don't specify a value for
+     * <p>A list of facial attributes that you want to be returned. This can be the
+     * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
      * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
@@ -146,8 +146,8 @@ namespace Model
     inline const Aws::Vector<Attribute>& GetDetectionAttributes() const{ return m_detectionAttributes; }
 
     /**
-     * <p>A list of facial attributes you want to be returned. This can be the default
-     * list of attributes or all attributes. If you don't specify a value for
+     * <p>A list of facial attributes that you want to be returned. This can be the
+     * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
      * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
@@ -160,8 +160,8 @@ namespace Model
     inline void SetDetectionAttributes(const Aws::Vector<Attribute>& value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes = value; }
 
     /**
-     * <p>A list of facial attributes you want to be returned. This can be the default
-     * list of attributes or all attributes. If you don't specify a value for
+     * <p>A list of facial attributes that you want to be returned. This can be the
+     * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
      * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
@@ -174,8 +174,8 @@ namespace Model
     inline void SetDetectionAttributes(Aws::Vector<Attribute>&& value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes = std::move(value); }
 
     /**
-     * <p>A list of facial attributes you want to be returned. This can be the default
-     * list of attributes or all attributes. If you don't specify a value for
+     * <p>A list of facial attributes that you want to be returned. This can be the
+     * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
      * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
@@ -188,8 +188,8 @@ namespace Model
     inline IndexFacesRequest& WithDetectionAttributes(const Aws::Vector<Attribute>& value) { SetDetectionAttributes(value); return *this;}
 
     /**
-     * <p>A list of facial attributes you want to be returned. This can be the default
-     * list of attributes or all attributes. If you don't specify a value for
+     * <p>A list of facial attributes that you want to be returned. This can be the
+     * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
      * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
@@ -202,8 +202,8 @@ namespace Model
     inline IndexFacesRequest& WithDetectionAttributes(Aws::Vector<Attribute>&& value) { SetDetectionAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of facial attributes you want to be returned. This can be the default
-     * list of attributes or all attributes. If you don't specify a value for
+     * <p>A list of facial attributes that you want to be returned. This can be the
+     * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
      * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
@@ -216,8 +216,8 @@ namespace Model
     inline IndexFacesRequest& AddDetectionAttributes(const Attribute& value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes.push_back(value); return *this; }
 
     /**
-     * <p>A list of facial attributes you want to be returned. This can be the default
-     * list of attributes or all attributes. If you don't specify a value for
+     * <p>A list of facial attributes that you want to be returned. This can be the
+     * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
      * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and

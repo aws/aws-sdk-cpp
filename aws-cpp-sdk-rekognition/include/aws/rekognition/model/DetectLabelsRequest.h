@@ -82,7 +82,7 @@ namespace Model
     /**
      * <p>Specifies the minimum confidence level for the labels to return. Amazon
      * Rekognition doesn't return any labels with confidence lower than this specified
-     * value.</p> <p>If <code>minConfidence</code> is not specified, the operation
+     * value.</p> <p>If <code>MinConfidence</code> is not specified, the operation
      * returns labels with a confidence values greater than or equal to 50 percent.</p>
      */
     inline double GetMinConfidence() const{ return m_minConfidence; }
@@ -90,7 +90,7 @@ namespace Model
     /**
      * <p>Specifies the minimum confidence level for the labels to return. Amazon
      * Rekognition doesn't return any labels with confidence lower than this specified
-     * value.</p> <p>If <code>minConfidence</code> is not specified, the operation
+     * value.</p> <p>If <code>MinConfidence</code> is not specified, the operation
      * returns labels with a confidence values greater than or equal to 50 percent.</p>
      */
     inline void SetMinConfidence(double value) { m_minConfidenceHasBeenSet = true; m_minConfidence = value; }
@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>Specifies the minimum confidence level for the labels to return. Amazon
      * Rekognition doesn't return any labels with confidence lower than this specified
-     * value.</p> <p>If <code>minConfidence</code> is not specified, the operation
+     * value.</p> <p>If <code>MinConfidence</code> is not specified, the operation
      * returns labels with a confidence values greater than or equal to 50 percent.</p>
      */
     inline DetectLabelsRequest& WithMinConfidence(double value) { SetMinConfidence(value); return *this;}
