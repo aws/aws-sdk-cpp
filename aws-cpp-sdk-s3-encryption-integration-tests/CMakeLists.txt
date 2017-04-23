@@ -14,11 +14,11 @@ file(GLOB S3ENCRYPTION_INT_TEST_SRC
 )
 
 set(S3ECRYPTION_INT_TEST_APPLICATION_INCLUDES
-  "${CMAKE_SOURCE_DIR}/aws-cpp-sdk-core/include/"
-  "${CMAKE_SOURCE_DIR}/aws-cpp-sdk-s3/include/"
-  "${CMAKE_SOURCE_DIR}/aws-cpp-sdk-s3-encryption/include/"
-  "${CMAKE_SOURCE_DIR}/testing-resources/include/"
-  "${CMAKE_SOURCE_DIR}/aws-cpp-sdk-kms/include"
+  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-core/include/"
+  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-s3/include/"
+  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-s3-encryption/include/"
+  "${AWS_NATIVE_SDK_ROOT}/testing-resources/include/"
+  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-kms/include"
 )
 
 include_directories(${S3ECRYPTION_INT_TEST_APPLICATION_INCLUDES})

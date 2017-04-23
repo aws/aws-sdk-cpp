@@ -407,7 +407,7 @@ else()
 endif()
 
 if(SIMPLE_INSTALL)
-    configure_file("${CMAKE_SOURCE_DIR}/toolchains/pkg-config.pc.in" "${PROJECT_NAME}.pc" @ONLY)
+    configure_file("${AWS_NATIVE_SDK_ROOT}/toolchains/pkg-config.pc.in" "${PROJECT_NAME}.pc" @ONLY)
 
     if(BUILD_SHARED_LIBS)
         install(
