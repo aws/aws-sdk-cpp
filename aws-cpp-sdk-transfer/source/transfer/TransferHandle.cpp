@@ -229,6 +229,7 @@ namespace Aws
 
             if(IsTransitionAllowed(currentStatus, value))
             {
+                std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
                 m_status.store(static_cast<long>(value));
 
                 if (IsFinishedStatus(value))
@@ -238,7 +239,6 @@ namespace Aws
                         CleanupDownloadStream();
                     }
 
-                    std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
                     m_waitUntilFinishedSignal.notify_all();
                 }
             }
