@@ -878,6 +878,24 @@ namespace Model
      */
     inline DBSnapshot& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 
+    /**
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled; otherwise false.</p>
+     */
+    inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
+
+    /**
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled; otherwise false.</p>
+     */
+    inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
+
+    /**
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled; otherwise false.</p>
+     */
+    inline DBSnapshot& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
+
   private:
     Aws::String m_dBSnapshotIdentifier;
     bool m_dBSnapshotIdentifierHasBeenSet;
@@ -929,6 +947,8 @@ namespace Model
     bool m_dBSnapshotArnHasBeenSet;
     Aws::String m_timezone;
     bool m_timezoneHasBeenSet;
+    bool m_iAMDatabaseAuthenticationEnabled;
+    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet;
   };
 
 } // namespace Model

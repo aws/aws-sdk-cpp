@@ -1307,6 +1307,27 @@ namespace Model
      */
     inline CreateDBClusterRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 
+    /**
+     * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts, and otherwise false.</p>
+     * <p>Default: <code>false</code> </p>
+     */
+    inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
+
+    /**
+     * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts, and otherwise false.</p>
+     * <p>Default: <code>false</code> </p>
+     */
+    inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
+
+    /**
+     * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts, and otherwise false.</p>
+     * <p>Default: <code>false</code> </p>
+     */
+    inline CreateDBClusterRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
+
   private:
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
@@ -1350,6 +1371,8 @@ namespace Model
     bool m_kmsKeyIdHasBeenSet;
     Aws::String m_preSignedUrl;
     bool m_preSignedUrlHasBeenSet;
+    bool m_enableIAMDatabaseAuthentication;
+    bool m_enableIAMDatabaseAuthenticationHasBeenSet;
   };
 
 } // namespace Model

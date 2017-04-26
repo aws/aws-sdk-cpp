@@ -3062,3 +3062,15 @@ void RDSClient::RevokeDBSecurityGroupIngressAsyncHelper(const RevokeDBSecurityGr
 
 
 
+Aws::String RDSClient::GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName) const
+{
+    Aws::StringStream ss;
+    ss << "http://" << dbHostName << ":" << port;
+    URI uri(ss.str());
+    uri.AddQueryStringParameter("Action", "connect");
+    uri.AddQueryStringParameter("DBUser", dbUserName);
+    auto url = GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, dbRegion, "rds-db", 3600);
+    Aws::Utils::StringUtils::Replace(url, "http://", "");
+
+    return url;
+}

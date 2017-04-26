@@ -354,6 +354,24 @@ namespace Model
      */
     inline OrderableDBInstanceOption& WithSupportsEnhancedMonitoring(bool value) { SetSupportsEnhancedMonitoring(value); return *this;}
 
+    /**
+     * <p>Indicates whether this orderable DB instance supports IAM database
+     * authentication.</p>
+     */
+    inline bool GetSupportsIAMDatabaseAuthentication() const{ return m_supportsIAMDatabaseAuthentication; }
+
+    /**
+     * <p>Indicates whether this orderable DB instance supports IAM database
+     * authentication.</p>
+     */
+    inline void SetSupportsIAMDatabaseAuthentication(bool value) { m_supportsIAMDatabaseAuthenticationHasBeenSet = true; m_supportsIAMDatabaseAuthentication = value; }
+
+    /**
+     * <p>Indicates whether this orderable DB instance supports IAM database
+     * authentication.</p>
+     */
+    inline OrderableDBInstanceOption& WithSupportsIAMDatabaseAuthentication(bool value) { SetSupportsIAMDatabaseAuthentication(value); return *this;}
+
   private:
     Aws::String m_engine;
     bool m_engineHasBeenSet;
@@ -379,6 +397,8 @@ namespace Model
     bool m_supportsIopsHasBeenSet;
     bool m_supportsEnhancedMonitoring;
     bool m_supportsEnhancedMonitoringHasBeenSet;
+    bool m_supportsIAMDatabaseAuthentication;
+    bool m_supportsIAMDatabaseAuthenticationHasBeenSet;
   };
 
 } // namespace Model

@@ -88,7 +88,9 @@ DBInstance::DBInstance() :
     m_promotionTier(0),
     m_promotionTierHasBeenSet(false),
     m_dBInstanceArnHasBeenSet(false),
-    m_timezoneHasBeenSet(false)
+    m_timezoneHasBeenSet(false),
+    m_iAMDatabaseAuthenticationEnabled(false),
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
 {
 }
 
@@ -151,7 +153,9 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_promotionTier(0),
     m_promotionTierHasBeenSet(false),
     m_dBInstanceArnHasBeenSet(false),
-    m_timezoneHasBeenSet(false)
+    m_timezoneHasBeenSet(false),
+    m_iAMDatabaseAuthenticationEnabled(false),
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -498,6 +502,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_timezone = StringUtils::Trim(timezoneNode.GetText().c_str());
       m_timezoneHasBeenSet = true;
     }
+    XmlNode iAMDatabaseAuthenticationEnabledNode = resultNode.FirstChild("IAMDatabaseAuthenticationEnabled");
+    if(!iAMDatabaseAuthenticationEnabledNode.IsNull())
+    {
+      m_iAMDatabaseAuthenticationEnabled = StringUtils::ConvertToBool(StringUtils::Trim(iAMDatabaseAuthenticationEnabledNode.GetText().c_str()).c_str());
+      m_iAMDatabaseAuthenticationEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -795,6 +805,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".Timezone=" << StringUtils::URLEncode(m_timezone.c_str()) << "&";
   }
 
+  if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1040,6 +1055,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_timezoneHasBeenSet)
   {
       oStream << location << ".Timezone=" << StringUtils::URLEncode(m_timezone.c_str()) << "&";
+  }
+  if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
+  {
+      oStream << location << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
   }
 }
 

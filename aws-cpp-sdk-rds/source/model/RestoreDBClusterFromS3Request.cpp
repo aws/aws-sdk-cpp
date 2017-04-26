@@ -42,6 +42,8 @@ RestoreDBClusterFromS3Request::RestoreDBClusterFromS3Request() :
     m_storageEncrypted(false),
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
+    m_enableIAMDatabaseAuthentication(false),
+    m_enableIAMDatabaseAuthenticationHasBeenSet(false),
     m_sourceEngineHasBeenSet(false),
     m_sourceEngineVersionHasBeenSet(false),
     m_s3BucketNameHasBeenSet(false),
@@ -164,6 +166,11 @@ Aws::String RestoreDBClusterFromS3Request::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
+  if(m_enableIAMDatabaseAuthenticationHasBeenSet)
+  {
+    ss << "EnableIAMDatabaseAuthentication=" << std::boolalpha << m_enableIAMDatabaseAuthentication << "&";
   }
 
   if(m_sourceEngineHasBeenSet)
