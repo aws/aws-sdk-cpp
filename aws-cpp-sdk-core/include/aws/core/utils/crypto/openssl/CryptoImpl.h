@@ -31,7 +31,7 @@ namespace Aws
     {
         namespace Crypto
         {
-            #define OPENSSL_VERSION_LESS_1_1_CONDITION (OPENSSL_VERSION_NUMBER < 0x10100003L)
+            #define OPENSSL_VERSION_LESS_1_1 (OPENSSL_VERSION_NUMBER < 0x10100003L)
             namespace OpenSSL
             {
                 extern GetTheLights getTheLights;
@@ -193,7 +193,7 @@ namespace Aws
                 virtual size_t GetKeyLengthBits() const = 0;
 
                 EVP_CIPHER_CTX *m_ctx;
-#if OPENSSL_VERSION_LESS_1_1_CONDITION
+#if OPENSSL_VERSION_LESS_1_1
                 EVP_CIPHER_CTX _m_ctx;
 #endif
 

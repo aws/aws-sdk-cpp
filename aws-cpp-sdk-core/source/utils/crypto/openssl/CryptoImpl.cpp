@@ -35,7 +35,7 @@ namespace Aws
         {
             namespace OpenSSL
             {
-#if OPENSSL_VERSION_NUMBER < 0x10100003L
+#if OPENSSL_VERSION_LESS_1_1
                 static const char* OPENSSL_INTERNALS_TAG = "OpenSSLCallbackState";
                 static std::mutex* locks(nullptr);
 
@@ -47,7 +47,7 @@ namespace Aws
                     ERR_load_CRYPTO_strings();
                     OPENSSL_add_all_algorithms_noconf();
 
-#if OPENSSL_VERSION_NUMBER < 0x10100003L
+#if OPENSSL_VERSION_LESS_1_1
                     if (!CRYPTO_get_locking_callback())
                     {
                         locks = Aws::NewArray<std::mutex>(static_cast<size_t>(CRYPTO_num_locks()),
@@ -66,7 +66,7 @@ namespace Aws
 
                 void cleanup_static_state()
                 {
-#if OPENSSL_VERSION_NUMBER < 0x10100003L
+#if OPENSSL_VERSION_LESS_1_1
                     if (CRYPTO_get_locking_callback() == &locking_fn)
                     {
                         CRYPTO_set_locking_callback(nullptr);
@@ -82,7 +82,7 @@ namespace Aws
 #endif
                 }
 
-#if OPENSSL_VERSION_NUMBER < 0x10100003L
+#if OPENSSL_VERSION_LESS_1_1
                 void locking_fn(int mode, int n, const char*, int)
                 {
                     if (mode & CRYPTO_LOCK)
@@ -213,7 +213,7 @@ namespace Aws
                 memset(digest.GetUnderlyingData(), 0, length);
 
                 HMAC_CTX *ctx;
-#if OPENSSL_VERSION_NUMBER < 0x10100003L
+#if OPENSSL_VERSION_LESS_1_1
                 HMAC_CTX _ctx;
                 ctx = &_ctx;
                 HMAC_CTX_init(ctx);
@@ -225,7 +225,7 @@ namespace Aws
                              NULL);
                 HMAC_Update(ctx, toSign.GetUnderlyingData(), toSign.GetLength());
                 HMAC_Final(ctx, digest.GetUnderlyingData(), &length);
-#if OPENSSL_VERSION_NUMBER < 0x10100003L
+#if OPENSSL_VERSION_LESS_1_1
                 HMAC_CTX_cleanup(ctx);
 #else
                 HMAC_CTX_free(ctx);
@@ -257,7 +257,7 @@ namespace Aws
                                                                    m_encDecInitialized(false)
             {
                 EVP_CIPHER_CTX_copy(m_ctx, toMove.m_ctx);
-
+                EVP_CIPHER_CTX_cleanup(toMove.m_ctx);
                 m_encDecInitialized = toMove.m_encDecInitialized;
                 m_encryptionMode = toMove.m_encryptionMode;
                 m_decryptionMode = toMove.m_decryptionMode;
@@ -286,7 +286,7 @@ namespace Aws
 
             void OpenSSLCipher::Init()
             {
-#if OPENSSL_VERSION_NUMBER < 0x10100003L
+#if OPENSSL_VERSION_LESS_1_1
                 m_ctx = &_m_ctx;
                 EVP_CIPHER_CTX_init(m_ctx);
 #else
@@ -432,7 +432,7 @@ namespace Aws
                 m_encryptionMode = false;
                 m_decryptionMode = false;
 
-#if OPENSSL_VERSION_NUMBER < 0x10100003L
+#if OPENSSL_VERSION_LESS_1_1
                 EVP_CIPHER_CTX_cleanup(m_ctx);
 #else
                 EVP_CIPHER_CTX_free(m_ctx);
