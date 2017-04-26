@@ -191,7 +191,10 @@ namespace Aws
 
                 virtual size_t GetKeyLengthBits() const = 0;
 
-                EVP_CIPHER_CTX m_ctx;
+                EVP_CIPHER_CTX *m_ctx;
+#if OPENSSL_VERSION_NUMBER < 0x10100003L
+                EVP_CIPHER_CTX _m_ctx;
+#endif
 
                 void CheckInitEncryptor();
                 void CheckInitDecryptor();
