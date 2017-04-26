@@ -377,14 +377,17 @@ endif()
 
 if(USE_GCC_FLAGS)
     target_compile_options(${PROJECT_NAME} PUBLIC -std=c++${CPP_STANDARD})
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++${CPP_STANDARD}")
 
     if(NOT ENABLE_RTTI)
         target_compile_options(${PROJECT_NAME} PUBLIC -fno-rtti)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
     endif()
 else()
 
     if(NOT ENABLE_RTTI)
         target_compile_options(${PROJECT_NAME} PUBLIC /GR-)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /GR-")
     endif()
 endif()
 

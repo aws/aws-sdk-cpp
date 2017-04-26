@@ -1,18 +1,18 @@
 # Compiler recognition
-SET(COMPILER_MSVC 0)
-SET(COMPILER_GCC 0)
-SET(COMPILER_CLANG 0)
+set(COMPILER_MSVC 0)
+set(COMPILER_GCC 0)
+set(COMPILER_CLANG 0)
 
 # ToDo: extend as necessary and remove common assumptions
 if(MSVC)
-    SET(COMPILER_MSVC 1)
+    set(COMPILER_MSVC 1)
 else()
     if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-        SET(COMPILER_CLANG 1)
+        set(COMPILER_CLANG 1)
     else()
-        SET(COMPILER_GCC 1)
+        set(COMPILER_GCC 1)
     endif()
-    SET(USE_GCC_FLAGS 1)
+    set(USE_GCC_FLAGS 1)
 endif()
 
 # Based on the FORCE_SHARED_CRT and BUILD_SHARED_LIBS options, make sure our compile/link flags bring in the right CRT library
@@ -137,10 +137,10 @@ if(MSVC)
         set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /O1 /Ob0 /Os")
     endif()
 elseif(USE_GCC_FLAGS)
-    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
 
     if(NOT BUILD_SHARED_LIBS)
-        SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
     endif()
 
     if(MINIMIZE_SIZE AND COMPILER_GCC)
