@@ -74,3 +74,5 @@ if(PLATFORM_WINDOWS AND MSVC)
 endif()
 
 do_packaging()
+
+
