@@ -33,7 +33,9 @@ ModifyDBClusterRequest::ModifyDBClusterRequest() :
     m_masterUserPasswordHasBeenSet(false),
     m_optionGroupNameHasBeenSet(false),
     m_preferredBackupWindowHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false)
+    m_preferredMaintenanceWindowHasBeenSet(false),
+    m_enableIAMDatabaseAuthentication(false),
+    m_enableIAMDatabaseAuthenticationHasBeenSet(false)
 {
 }
 
@@ -100,6 +102,11 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
   if(m_preferredMaintenanceWindowHasBeenSet)
   {
     ss << "PreferredMaintenanceWindow=" << StringUtils::URLEncode(m_preferredMaintenanceWindow.c_str()) << "&";
+  }
+
+  if(m_enableIAMDatabaseAuthenticationHasBeenSet)
+  {
+    ss << "EnableIAMDatabaseAuthentication=" << std::boolalpha << m_enableIAMDatabaseAuthentication << "&";
   }
 
   ss << "Version=2014-10-31";

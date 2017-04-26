@@ -22,6 +22,7 @@ import com.amazonaws.util.awsclientgenerator.generators.cpp.QueryCppClientGenera
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
+
 public class RDSCppClientGenerator extends QueryCppClientGenerator {
 
     public RDSCppClientGenerator() throws Exception {

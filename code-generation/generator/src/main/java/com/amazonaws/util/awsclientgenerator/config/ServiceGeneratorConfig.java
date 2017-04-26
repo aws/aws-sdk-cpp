@@ -69,7 +69,7 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-route53", new Route53CppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-budgets", new BudgetsCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-polly", new PollyCppClientGenerator());
-//            SPEC_OVERRIDE_MAPPING.put("cpp-rds", new RDSCppClientGenerator()); 
+            SPEC_OVERRIDE_MAPPING.put("cpp-rds", new RDSCppClientGenerator());
 
         } catch (Exception e) {
             e.printStackTrace();

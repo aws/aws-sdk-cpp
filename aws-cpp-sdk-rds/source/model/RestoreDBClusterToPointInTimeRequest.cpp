@@ -31,7 +31,9 @@ RestoreDBClusterToPointInTimeRequest::RestoreDBClusterToPointInTimeRequest() :
     m_optionGroupNameHasBeenSet(false),
     m_vpcSecurityGroupIdsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_enableIAMDatabaseAuthentication(false),
+    m_enableIAMDatabaseAuthenticationHasBeenSet(false)
 {
 }
 
@@ -98,6 +100,11 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
+  if(m_enableIAMDatabaseAuthenticationHasBeenSet)
+  {
+    ss << "EnableIAMDatabaseAuthentication=" << std::boolalpha << m_enableIAMDatabaseAuthentication << "&";
   }
 
   ss << "Version=2014-10-31";

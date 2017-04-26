@@ -623,6 +623,24 @@ namespace Model
      */
     inline DBClusterSnapshot& WithDBClusterSnapshotArn(const char* value) { SetDBClusterSnapshotArn(value); return *this;}
 
+    /**
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled; otherwise false.</p>
+     */
+    inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
+
+    /**
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled; otherwise false.</p>
+     */
+    inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
+
+    /**
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled; otherwise false.</p>
+     */
+    inline DBClusterSnapshot& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
+
   private:
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
@@ -660,6 +678,8 @@ namespace Model
     bool m_kmsKeyIdHasBeenSet;
     Aws::String m_dBClusterSnapshotArn;
     bool m_dBClusterSnapshotArnHasBeenSet;
+    bool m_iAMDatabaseAuthenticationEnabled;
+    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet;
   };
 
 } // namespace Model

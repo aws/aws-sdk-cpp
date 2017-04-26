@@ -59,7 +59,9 @@ DBSnapshot::DBSnapshot() :
     m_encryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_dBSnapshotArnHasBeenSet(false),
-    m_timezoneHasBeenSet(false)
+    m_timezoneHasBeenSet(false),
+    m_iAMDatabaseAuthenticationEnabled(false),
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
 {
 }
 
@@ -93,7 +95,9 @@ DBSnapshot::DBSnapshot(const XmlNode& xmlNode) :
     m_encryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_dBSnapshotArnHasBeenSet(false),
-    m_timezoneHasBeenSet(false)
+    m_timezoneHasBeenSet(false),
+    m_iAMDatabaseAuthenticationEnabled(false),
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -254,6 +258,12 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
       m_timezone = StringUtils::Trim(timezoneNode.GetText().c_str());
       m_timezoneHasBeenSet = true;
     }
+    XmlNode iAMDatabaseAuthenticationEnabledNode = resultNode.FirstChild("IAMDatabaseAuthenticationEnabled");
+    if(!iAMDatabaseAuthenticationEnabledNode.IsNull())
+    {
+      m_iAMDatabaseAuthenticationEnabled = StringUtils::ConvertToBool(StringUtils::Trim(iAMDatabaseAuthenticationEnabledNode.GetText().c_str()).c_str());
+      m_iAMDatabaseAuthenticationEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -386,6 +396,11 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".Timezone=" << StringUtils::URLEncode(m_timezone.c_str()) << "&";
   }
 
+  if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
+  }
+
 }
 
 void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -489,6 +504,10 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_timezoneHasBeenSet)
   {
       oStream << location << ".Timezone=" << StringUtils::URLEncode(m_timezone.c_str()) << "&";
+  }
+  if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
+  {
+      oStream << location << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
   }
 }
 

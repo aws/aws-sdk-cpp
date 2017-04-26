@@ -290,42 +290,42 @@ namespace Model
     inline ModifyDBClusterRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
-     * <p>A lst of VPC security groups that the DB cluster will belong to.</p>
+     * <p>A list of VPC security groups that the DB cluster will belong to.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
 
     /**
-     * <p>A lst of VPC security groups that the DB cluster will belong to.</p>
+     * <p>A list of VPC security groups that the DB cluster will belong to.</p>
      */
     inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
 
     /**
-     * <p>A lst of VPC security groups that the DB cluster will belong to.</p>
+     * <p>A list of VPC security groups that the DB cluster will belong to.</p>
      */
     inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
     /**
-     * <p>A lst of VPC security groups that the DB cluster will belong to.</p>
+     * <p>A list of VPC security groups that the DB cluster will belong to.</p>
      */
     inline ModifyDBClusterRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>A lst of VPC security groups that the DB cluster will belong to.</p>
+     * <p>A list of VPC security groups that the DB cluster will belong to.</p>
      */
     inline ModifyDBClusterRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>A lst of VPC security groups that the DB cluster will belong to.</p>
+     * <p>A list of VPC security groups that the DB cluster will belong to.</p>
      */
     inline ModifyDBClusterRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>A lst of VPC security groups that the DB cluster will belong to.</p>
+     * <p>A list of VPC security groups that the DB cluster will belong to.</p>
      */
     inline ModifyDBClusterRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A lst of VPC security groups that the DB cluster will belong to.</p>
+     * <p>A list of VPC security groups that the DB cluster will belong to.</p>
      */
     inline ModifyDBClusterRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
@@ -693,6 +693,27 @@ namespace Model
      */
     inline ModifyDBClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+    /**
+     * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts, and otherwise false.</p>
+     * <p>Default: <code>false</code> </p>
+     */
+    inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
+
+    /**
+     * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts, and otherwise false.</p>
+     * <p>Default: <code>false</code> </p>
+     */
+    inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
+
+    /**
+     * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts, and otherwise false.</p>
+     * <p>Default: <code>false</code> </p>
+     */
+    inline ModifyDBClusterRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
+
   private:
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet;
@@ -716,6 +737,8 @@ namespace Model
     bool m_preferredBackupWindowHasBeenSet;
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_enableIAMDatabaseAuthentication;
+    bool m_enableIAMDatabaseAuthenticationHasBeenSet;
   };
 
 } // namespace Model

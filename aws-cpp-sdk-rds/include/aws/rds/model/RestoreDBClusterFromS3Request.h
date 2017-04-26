@@ -1010,6 +1010,27 @@ namespace Model
     inline RestoreDBClusterFromS3Request& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
     /**
+     * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts, and otherwise false.</p>
+     * <p>Default: <code>false</code> </p>
+     */
+    inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
+
+    /**
+     * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts, and otherwise false.</p>
+     * <p>Default: <code>false</code> </p>
+     */
+    inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
+
+    /**
+     * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts, and otherwise false.</p>
+     * <p>Default: <code>false</code> </p>
+     */
+    inline RestoreDBClusterFromS3Request& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
+
+    /**
      * <p>The identifier for the database engine that was backed up to create the files
      * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
      */
@@ -1286,6 +1307,8 @@ namespace Model
     bool m_storageEncryptedHasBeenSet;
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+    bool m_enableIAMDatabaseAuthentication;
+    bool m_enableIAMDatabaseAuthenticationHasBeenSet;
     Aws::String m_sourceEngine;
     bool m_sourceEngineHasBeenSet;
     Aws::String m_sourceEngineVersion;

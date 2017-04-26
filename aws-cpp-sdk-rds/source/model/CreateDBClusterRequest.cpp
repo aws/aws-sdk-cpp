@@ -43,7 +43,9 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_storageEncrypted(false),
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_preSignedUrlHasBeenSet(false)
+    m_preSignedUrlHasBeenSet(false),
+    m_enableIAMDatabaseAuthentication(false),
+    m_enableIAMDatabaseAuthenticationHasBeenSet(false)
 {
 }
 
@@ -171,6 +173,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_preSignedUrlHasBeenSet)
   {
     ss << "PreSignedUrl=" << StringUtils::URLEncode(m_preSignedUrl.c_str()) << "&";
+  }
+
+  if(m_enableIAMDatabaseAuthenticationHasBeenSet)
+  {
+    ss << "EnableIAMDatabaseAuthentication=" << std::boolalpha << m_enableIAMDatabaseAuthentication << "&";
   }
 
   ss << "Version=2014-10-31";

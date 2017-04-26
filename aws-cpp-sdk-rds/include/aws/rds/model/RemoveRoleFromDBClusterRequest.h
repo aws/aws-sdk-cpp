@@ -39,37 +39,37 @@ namespace Model
 
   public:
     /**
-     * <p>The name of the DB cluster to disassociate the IAM role rom.</p>
+     * <p>The name of the DB cluster to disassociate the IAM role from.</p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
-     * <p>The name of the DB cluster to disassociate the IAM role rom.</p>
+     * <p>The name of the DB cluster to disassociate the IAM role from.</p>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
-     * <p>The name of the DB cluster to disassociate the IAM role rom.</p>
+     * <p>The name of the DB cluster to disassociate the IAM role from.</p>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
-     * <p>The name of the DB cluster to disassociate the IAM role rom.</p>
+     * <p>The name of the DB cluster to disassociate the IAM role from.</p>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
-     * <p>The name of the DB cluster to disassociate the IAM role rom.</p>
+     * <p>The name of the DB cluster to disassociate the IAM role from.</p>
      */
     inline RemoveRoleFromDBClusterRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
-     * <p>The name of the DB cluster to disassociate the IAM role rom.</p>
+     * <p>The name of the DB cluster to disassociate the IAM role from.</p>
      */
     inline RemoveRoleFromDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the DB cluster to disassociate the IAM role rom.</p>
+     * <p>The name of the DB cluster to disassociate the IAM role from.</p>
      */
     inline RemoveRoleFromDBClusterRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
