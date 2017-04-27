@@ -45,64 +45,120 @@ namespace Model
   public:
     /**
      * <p>The identifier of the DB cluster snapshot to copy. This parameter is not
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
+     * case-sensitive.</p> <p>You cannot copy an encrypted, shared DB cluster snapshot
+     * from one AWS region to another.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> <li> <p>Must specify a valid system
+     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
+     * in the same region as the copy, specify a valid DB snapshot identifier.</p>
+     * </li> <li> <p>If the source snapshot is in a different region than the copy,
+     * specify a valid DB cluster snapshot ARN. For more information, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
+     * Copying a DB Snapshot or DB Cluster Snapshot</a>.</p> </li> </ul> <p>Example:
+     * <code>my-cluster-snapshot1</code> </p>
      */
     inline const Aws::String& GetSourceDBClusterSnapshotIdentifier() const{ return m_sourceDBClusterSnapshotIdentifier; }
 
     /**
      * <p>The identifier of the DB cluster snapshot to copy. This parameter is not
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
+     * case-sensitive.</p> <p>You cannot copy an encrypted, shared DB cluster snapshot
+     * from one AWS region to another.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> <li> <p>Must specify a valid system
+     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
+     * in the same region as the copy, specify a valid DB snapshot identifier.</p>
+     * </li> <li> <p>If the source snapshot is in a different region than the copy,
+     * specify a valid DB cluster snapshot ARN. For more information, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
+     * Copying a DB Snapshot or DB Cluster Snapshot</a>.</p> </li> </ul> <p>Example:
+     * <code>my-cluster-snapshot1</code> </p>
      */
     inline void SetSourceDBClusterSnapshotIdentifier(const Aws::String& value) { m_sourceDBClusterSnapshotIdentifierHasBeenSet = true; m_sourceDBClusterSnapshotIdentifier = value; }
 
     /**
      * <p>The identifier of the DB cluster snapshot to copy. This parameter is not
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
+     * case-sensitive.</p> <p>You cannot copy an encrypted, shared DB cluster snapshot
+     * from one AWS region to another.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> <li> <p>Must specify a valid system
+     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
+     * in the same region as the copy, specify a valid DB snapshot identifier.</p>
+     * </li> <li> <p>If the source snapshot is in a different region than the copy,
+     * specify a valid DB cluster snapshot ARN. For more information, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
+     * Copying a DB Snapshot or DB Cluster Snapshot</a>.</p> </li> </ul> <p>Example:
+     * <code>my-cluster-snapshot1</code> </p>
      */
     inline void SetSourceDBClusterSnapshotIdentifier(Aws::String&& value) { m_sourceDBClusterSnapshotIdentifierHasBeenSet = true; m_sourceDBClusterSnapshotIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the DB cluster snapshot to copy. This parameter is not
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
+     * case-sensitive.</p> <p>You cannot copy an encrypted, shared DB cluster snapshot
+     * from one AWS region to another.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> <li> <p>Must specify a valid system
+     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
+     * in the same region as the copy, specify a valid DB snapshot identifier.</p>
+     * </li> <li> <p>If the source snapshot is in a different region than the copy,
+     * specify a valid DB cluster snapshot ARN. For more information, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
+     * Copying a DB Snapshot or DB Cluster Snapshot</a>.</p> </li> </ul> <p>Example:
+     * <code>my-cluster-snapshot1</code> </p>
      */
     inline void SetSourceDBClusterSnapshotIdentifier(const char* value) { m_sourceDBClusterSnapshotIdentifierHasBeenSet = true; m_sourceDBClusterSnapshotIdentifier.assign(value); }
 
     /**
      * <p>The identifier of the DB cluster snapshot to copy. This parameter is not
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
+     * case-sensitive.</p> <p>You cannot copy an encrypted, shared DB cluster snapshot
+     * from one AWS region to another.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> <li> <p>Must specify a valid system
+     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
+     * in the same region as the copy, specify a valid DB snapshot identifier.</p>
+     * </li> <li> <p>If the source snapshot is in a different region than the copy,
+     * specify a valid DB cluster snapshot ARN. For more information, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
+     * Copying a DB Snapshot or DB Cluster Snapshot</a>.</p> </li> </ul> <p>Example:
+     * <code>my-cluster-snapshot1</code> </p>
      */
     inline CopyDBClusterSnapshotRequest& WithSourceDBClusterSnapshotIdentifier(const Aws::String& value) { SetSourceDBClusterSnapshotIdentifier(value); return *this;}
 
     /**
      * <p>The identifier of the DB cluster snapshot to copy. This parameter is not
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
+     * case-sensitive.</p> <p>You cannot copy an encrypted, shared DB cluster snapshot
+     * from one AWS region to another.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> <li> <p>Must specify a valid system
+     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
+     * in the same region as the copy, specify a valid DB snapshot identifier.</p>
+     * </li> <li> <p>If the source snapshot is in a different region than the copy,
+     * specify a valid DB cluster snapshot ARN. For more information, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
+     * Copying a DB Snapshot or DB Cluster Snapshot</a>.</p> </li> </ul> <p>Example:
+     * <code>my-cluster-snapshot1</code> </p>
      */
     inline CopyDBClusterSnapshotRequest& WithSourceDBClusterSnapshotIdentifier(Aws::String&& value) { SetSourceDBClusterSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the DB cluster snapshot to copy. This parameter is not
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
+     * case-sensitive.</p> <p>You cannot copy an encrypted, shared DB cluster snapshot
+     * from one AWS region to another.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> <li> <p>Must specify a valid system
+     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
+     * in the same region as the copy, specify a valid DB snapshot identifier.</p>
+     * </li> <li> <p>If the source snapshot is in a different region than the copy,
+     * specify a valid DB cluster snapshot ARN. For more information, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
+     * Copying a DB Snapshot or DB Cluster Snapshot</a>.</p> </li> </ul> <p>Example:
+     * <code>my-cluster-snapshot1</code> </p>
      */
     inline CopyDBClusterSnapshotRequest& WithSourceDBClusterSnapshotIdentifier(const char* value) { SetSourceDBClusterSnapshotIdentifier(value); return *this;}
 
@@ -540,13 +596,22 @@ namespace Model
      */
     inline CopyDBClusterSnapshotRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 
-    
+    /**
+     * <p>True to copy all tags from the source DB cluster snapshot to the target DB
+     * cluster snapshot; otherwise false. The default is false.</p>
+     */
     inline bool GetCopyTags() const{ return m_copyTags; }
 
-    
+    /**
+     * <p>True to copy all tags from the source DB cluster snapshot to the target DB
+     * cluster snapshot; otherwise false. The default is false.</p>
+     */
     inline void SetCopyTags(bool value) { m_copyTagsHasBeenSet = true; m_copyTags = value; }
 
-    
+    /**
+     * <p>True to copy all tags from the source DB cluster snapshot to the target DB
+     * cluster snapshot; otherwise false. The default is false.</p>
+     */
     inline CopyDBClusterSnapshotRequest& WithCopyTags(bool value) { SetCopyTags(value); return *this;}
 
     

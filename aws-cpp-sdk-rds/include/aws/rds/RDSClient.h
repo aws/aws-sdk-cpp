@@ -103,49 +103,49 @@
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
-#include <functional>
+    #include <functional>
 
-namespace Aws
-{
+    namespace Aws
+    {
 
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
+    namespace Http
+    {
+    class HttpClient;
+    class HttpClientFactory;
+    } // namespace Http
 
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
+    namespace Utils
+    {
+    template< typename R, typename E> class Outcome;
 
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
+    namespace Threading
+    {
+    class Executor;
+    } // namespace Threading
 
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
+    namespace Xml
+    {
+    class XmlDocument;
+    } // namespace Xml
+    } // namespace Utils
 
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
+    namespace Auth
+    {
+    class AWSCredentials;
+    class AWSCredentialsProvider;
+    } // namespace Auth
 
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
+    namespace Client
+    {
+    class RetryStrategy;
+    } // namespace Client
 
-namespace RDS
-{
+    namespace RDS
+    {
 
-namespace Model
-{
-        class AddRoleToDBClusterRequest;
+    namespace Model
+    {
+            class AddRoleToDBClusterRequest;
         class AddSourceIdentifierToSubscriptionRequest;
         class AddTagsToResourceRequest;
         class ApplyPendingMaintenanceActionRequest;
@@ -408,11 +408,11 @@ namespace Model
         typedef std::future<RestoreDBInstanceFromDBSnapshotOutcome> RestoreDBInstanceFromDBSnapshotOutcomeCallable;
         typedef std::future<RestoreDBInstanceToPointInTimeOutcome> RestoreDBInstanceToPointInTimeOutcomeCallable;
         typedef std::future<RevokeDBSecurityGroupIngressOutcome> RevokeDBSecurityGroupIngressOutcomeCallable;
-} // namespace Model
+    } // namespace Model
 
-  class RDSClient;
+        class RDSClient;
 
-    typedef std::function<void(const RDSClient*, const Model::AddRoleToDBClusterRequest&, const Model::AddRoleToDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddRoleToDBClusterResponseReceivedHandler;
+        typedef std::function<void(const RDSClient*, const Model::AddRoleToDBClusterRequest&, const Model::AddRoleToDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddRoleToDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::AddSourceIdentifierToSubscriptionRequest&, const Model::AddSourceIdentifierToSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddSourceIdentifierToSubscriptionResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToResourceResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ApplyPendingMaintenanceActionRequest&, const Model::ApplyPendingMaintenanceActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ApplyPendingMaintenanceActionResponseReceivedHandler;
@@ -500,11 +500,11 @@ namespace Model
     typedef std::function<void(const RDSClient*, const Model::RestoreDBInstanceToPointInTimeRequest&, const Model::RestoreDBInstanceToPointInTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreDBInstanceToPointInTimeResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::RevokeDBSecurityGroupIngressRequest&, const Model::RevokeDBSecurityGroupIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeDBSecurityGroupIngressResponseReceivedHandler;
 
-  /**
-   * <fullname>Amazon Relational Database Service</fullname> <p> </p> <p>Amazon
+            /**
+        * <fullname>Amazon Relational Database Service</fullname> <p> </p> <p>Amazon
    * Relational Database Service (Amazon RDS) is a web service that makes it easier
    * to set up, operate, and scale a relational database in the cloud. It provides
-   * cost-efficient, resizeable capacity for an industry-standard relational database
+   * cost-efficient, resizable capacity for an industry-standard relational database
    * and manages common database administration tasks, freeing up developers to focus
    * on what makes their applications and businesses unique.</p> <p>Amazon RDS gives
    * you access to the capabilities of a MySQL, MariaDB, PostgreSQL, Microsoft SQL
@@ -539,13 +539,13 @@ namespace Model
    * Query API, see <a
    * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Using_the_Query_API.html">Using
    * the Query API</a>.</p> </li> </ul>
-   */
-  class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient
-  {
+        */
+        class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient
+    {
     public:
-      typedef Aws::Client::AWSXMLClient BASECLASS;
+    typedef Aws::Client::AWSXMLClient BASECLASS;
 
-       /**
+           /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
@@ -565,13 +565,18 @@ namespace Model
             const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
         virtual ~RDSClient();
-
-       /**
+    
+        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
         Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 
+        /**
+        * Generates an auth token for connecting to an rds instance.
+        */
+        Aws::String GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName) const;
 
+        
         /**
          * <p>Associates an Identity and Access Management (IAM) role from an Aurora DB
          * cluster. For more information, see <a
@@ -1014,7 +1019,7 @@ namespace Model
          * "available" state.</p> <p>To copy a DB snapshot from a shared manual DB
          * snapshot, <code>SourceDBSnapshotIdentifier</code> must be the Amazon Resource
          * Name (ARN) of the shared DB snapshot.</p> <p>You can copy an encrypted DB
-         * snapshot from another AWS Region. In that case, the region where you call the
+         * snapshot from another AWS region. In that case, the region where you call the
          * <code>CopyDBSnapshot</code> action is the destination region for the encrypted
          * DB snapshot to be copied to. To copy an encrypted DB snapshot from another
          * region, you must provide the following values:</p> <ul> <li> <p>
@@ -1060,9 +1065,9 @@ namespace Model
          * <code>SourceDBSnapshotIdentifier</code> in the presigned URL. </p> </li> </ul>
          * <p>For more information on copying encrypted snapshots from one region to
          * another, see <a
-         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Encrypted.CrossRegion">
-         * Copying an Encrypted DB Snapshot to Another Region</a> in the Amazon RDS User
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">
+         * Copying a DB Snapshot</a> in the Amazon RDS User Guide.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">AWS
          * API Reference</a></p>
          */
@@ -1073,7 +1078,7 @@ namespace Model
          * "available" state.</p> <p>To copy a DB snapshot from a shared manual DB
          * snapshot, <code>SourceDBSnapshotIdentifier</code> must be the Amazon Resource
          * Name (ARN) of the shared DB snapshot.</p> <p>You can copy an encrypted DB
-         * snapshot from another AWS Region. In that case, the region where you call the
+         * snapshot from another AWS region. In that case, the region where you call the
          * <code>CopyDBSnapshot</code> action is the destination region for the encrypted
          * DB snapshot to be copied to. To copy an encrypted DB snapshot from another
          * region, you must provide the following values:</p> <ul> <li> <p>
@@ -1119,9 +1124,9 @@ namespace Model
          * <code>SourceDBSnapshotIdentifier</code> in the presigned URL. </p> </li> </ul>
          * <p>For more information on copying encrypted snapshots from one region to
          * another, see <a
-         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Encrypted.CrossRegion">
-         * Copying an Encrypted DB Snapshot to Another Region</a> in the Amazon RDS User
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">
+         * Copying a DB Snapshot</a> in the Amazon RDS User Guide.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1134,7 +1139,7 @@ namespace Model
          * "available" state.</p> <p>To copy a DB snapshot from a shared manual DB
          * snapshot, <code>SourceDBSnapshotIdentifier</code> must be the Amazon Resource
          * Name (ARN) of the shared DB snapshot.</p> <p>You can copy an encrypted DB
-         * snapshot from another AWS Region. In that case, the region where you call the
+         * snapshot from another AWS region. In that case, the region where you call the
          * <code>CopyDBSnapshot</code> action is the destination region for the encrypted
          * DB snapshot to be copied to. To copy an encrypted DB snapshot from another
          * region, you must provide the following values:</p> <ul> <li> <p>
@@ -1180,9 +1185,9 @@ namespace Model
          * <code>SourceDBSnapshotIdentifier</code> in the presigned URL. </p> </li> </ul>
          * <p>For more information on copying encrypted snapshots from one region to
          * another, see <a
-         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Encrypted.CrossRegion">
-         * Copying an Encrypted DB Snapshot to Another Region</a> in the Amazon RDS User
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">
+         * Copying a DB Snapshot</a> in the Amazon RDS User Guide.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1428,28 +1433,31 @@ namespace Model
 
         /**
          * <p>Creates a DB instance for a DB instance running MySQL, MariaDB, or PostgreSQL
-         * that acts as a Read Replica of a source DB instance.</p> <p>All Read Replica DB
-         * instances are created as Single-AZ deployments with backups disabled. All other
-         * DB instance attributes (including DB security groups and DB parameter groups)
-         * are inherited from the source DB instance, except as specified below.</p>
-         * <important> <p>The source DB instance must have backup retention enabled.</p>
-         * </important> <p>You can create an encrypted Read Replica in a different AWS
-         * Region than the source DB instance. In that case, the region where you call the
-         * <code>CreateDBInstanceReadReplica</code> action is the destination region of the
-         * encrypted Read Replica. The source DB instance must be encrypted.</p> <p>To
-         * create an encrypted Read Replica in another AWS Region, you must provide the
-         * following values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS Key
-         * Management System (KMS) key identifier for the key to use to encrypt the Read
-         * Replica in the destination region.</p> </li> <li> <p> <code>PreSignedUrl</code>
-         * - A URL that contains a Signature Version 4 signed request for the <code>
-         * CreateDBInstanceReadReplica</code> API action in the AWS region that contains
-         * the source DB instance. The <code>PreSignedUrl</code> parameter must be used
-         * when encrypting a Read Replica from another AWS region.</p> <p>The presigned URL
-         * must be a valid request for the <code>CreateDBInstanceReadReplica</code> API
-         * action that can be executed in the source region that contains the encrypted DB
-         * instance. The presigned URL request must contain the following parameter
-         * values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS Region that
-         * the Read Replica is created in. This region is the same one where the
+         * that acts as a Read Replica of a source DB instance.</p> <note> <p>Amazon Aurora
+         * does not support this action. You must call the <code>CreateDBInstance</code>
+         * action to create a DB instance for an Aurora DB cluster.</p> </note> <p>All Read
+         * Replica DB instances are created as Single-AZ deployments with backups disabled.
+         * All other DB instance attributes (including DB security groups and DB parameter
+         * groups) are inherited from the source DB instance, except as specified
+         * below.</p> <important> <p>The source DB instance must have backup retention
+         * enabled.</p> </important> <p>You can create an encrypted Read Replica in a
+         * different AWS Region than the source DB instance. In that case, the region where
+         * you call the <code>CreateDBInstanceReadReplica</code> action is the destination
+         * region of the encrypted Read Replica. The source DB instance must be
+         * encrypted.</p> <p>To create an encrypted Read Replica in another AWS Region, you
+         * must provide the following values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The
+         * AWS Key Management System (KMS) key identifier for the key to use to encrypt the
+         * Read Replica in the destination region.</p> </li> <li> <p>
+         * <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed
+         * request for the <code> CreateDBInstanceReadReplica</code> API action in the AWS
+         * region that contains the source DB instance. The <code>PreSignedUrl</code>
+         * parameter must be used when encrypting a Read Replica from another AWS
+         * region.</p> <p>The presigned URL must be a valid request for the
+         * <code>CreateDBInstanceReadReplica</code> API action that can be executed in the
+         * source region that contains the encrypted DB instance. The presigned URL request
+         * must contain the following parameter values:</p> <ul> <li> <p>
+         * <code>DestinationRegion</code> - The AWS Region that the Read Replica is created
+         * in. This region is the same one where the
          * <code>CreateDBInstanceReadReplica</code> action is called that contains this
          * presigned URL. </p> <p> For example, if you create an encrypted Read Replica in
          * the us-east-1 region, and the source DB instance is in the west-2 region, then
@@ -1489,28 +1497,31 @@ namespace Model
 
         /**
          * <p>Creates a DB instance for a DB instance running MySQL, MariaDB, or PostgreSQL
-         * that acts as a Read Replica of a source DB instance.</p> <p>All Read Replica DB
-         * instances are created as Single-AZ deployments with backups disabled. All other
-         * DB instance attributes (including DB security groups and DB parameter groups)
-         * are inherited from the source DB instance, except as specified below.</p>
-         * <important> <p>The source DB instance must have backup retention enabled.</p>
-         * </important> <p>You can create an encrypted Read Replica in a different AWS
-         * Region than the source DB instance. In that case, the region where you call the
-         * <code>CreateDBInstanceReadReplica</code> action is the destination region of the
-         * encrypted Read Replica. The source DB instance must be encrypted.</p> <p>To
-         * create an encrypted Read Replica in another AWS Region, you must provide the
-         * following values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS Key
-         * Management System (KMS) key identifier for the key to use to encrypt the Read
-         * Replica in the destination region.</p> </li> <li> <p> <code>PreSignedUrl</code>
-         * - A URL that contains a Signature Version 4 signed request for the <code>
-         * CreateDBInstanceReadReplica</code> API action in the AWS region that contains
-         * the source DB instance. The <code>PreSignedUrl</code> parameter must be used
-         * when encrypting a Read Replica from another AWS region.</p> <p>The presigned URL
-         * must be a valid request for the <code>CreateDBInstanceReadReplica</code> API
-         * action that can be executed in the source region that contains the encrypted DB
-         * instance. The presigned URL request must contain the following parameter
-         * values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS Region that
-         * the Read Replica is created in. This region is the same one where the
+         * that acts as a Read Replica of a source DB instance.</p> <note> <p>Amazon Aurora
+         * does not support this action. You must call the <code>CreateDBInstance</code>
+         * action to create a DB instance for an Aurora DB cluster.</p> </note> <p>All Read
+         * Replica DB instances are created as Single-AZ deployments with backups disabled.
+         * All other DB instance attributes (including DB security groups and DB parameter
+         * groups) are inherited from the source DB instance, except as specified
+         * below.</p> <important> <p>The source DB instance must have backup retention
+         * enabled.</p> </important> <p>You can create an encrypted Read Replica in a
+         * different AWS Region than the source DB instance. In that case, the region where
+         * you call the <code>CreateDBInstanceReadReplica</code> action is the destination
+         * region of the encrypted Read Replica. The source DB instance must be
+         * encrypted.</p> <p>To create an encrypted Read Replica in another AWS Region, you
+         * must provide the following values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The
+         * AWS Key Management System (KMS) key identifier for the key to use to encrypt the
+         * Read Replica in the destination region.</p> </li> <li> <p>
+         * <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed
+         * request for the <code> CreateDBInstanceReadReplica</code> API action in the AWS
+         * region that contains the source DB instance. The <code>PreSignedUrl</code>
+         * parameter must be used when encrypting a Read Replica from another AWS
+         * region.</p> <p>The presigned URL must be a valid request for the
+         * <code>CreateDBInstanceReadReplica</code> API action that can be executed in the
+         * source region that contains the encrypted DB instance. The presigned URL request
+         * must contain the following parameter values:</p> <ul> <li> <p>
+         * <code>DestinationRegion</code> - The AWS Region that the Read Replica is created
+         * in. This region is the same one where the
          * <code>CreateDBInstanceReadReplica</code> action is called that contains this
          * presigned URL. </p> <p> For example, if you create an encrypted Read Replica in
          * the us-east-1 region, and the source DB instance is in the west-2 region, then
@@ -1552,28 +1563,31 @@ namespace Model
 
         /**
          * <p>Creates a DB instance for a DB instance running MySQL, MariaDB, or PostgreSQL
-         * that acts as a Read Replica of a source DB instance.</p> <p>All Read Replica DB
-         * instances are created as Single-AZ deployments with backups disabled. All other
-         * DB instance attributes (including DB security groups and DB parameter groups)
-         * are inherited from the source DB instance, except as specified below.</p>
-         * <important> <p>The source DB instance must have backup retention enabled.</p>
-         * </important> <p>You can create an encrypted Read Replica in a different AWS
-         * Region than the source DB instance. In that case, the region where you call the
-         * <code>CreateDBInstanceReadReplica</code> action is the destination region of the
-         * encrypted Read Replica. The source DB instance must be encrypted.</p> <p>To
-         * create an encrypted Read Replica in another AWS Region, you must provide the
-         * following values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS Key
-         * Management System (KMS) key identifier for the key to use to encrypt the Read
-         * Replica in the destination region.</p> </li> <li> <p> <code>PreSignedUrl</code>
-         * - A URL that contains a Signature Version 4 signed request for the <code>
-         * CreateDBInstanceReadReplica</code> API action in the AWS region that contains
-         * the source DB instance. The <code>PreSignedUrl</code> parameter must be used
-         * when encrypting a Read Replica from another AWS region.</p> <p>The presigned URL
-         * must be a valid request for the <code>CreateDBInstanceReadReplica</code> API
-         * action that can be executed in the source region that contains the encrypted DB
-         * instance. The presigned URL request must contain the following parameter
-         * values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS Region that
-         * the Read Replica is created in. This region is the same one where the
+         * that acts as a Read Replica of a source DB instance.</p> <note> <p>Amazon Aurora
+         * does not support this action. You must call the <code>CreateDBInstance</code>
+         * action to create a DB instance for an Aurora DB cluster.</p> </note> <p>All Read
+         * Replica DB instances are created as Single-AZ deployments with backups disabled.
+         * All other DB instance attributes (including DB security groups and DB parameter
+         * groups) are inherited from the source DB instance, except as specified
+         * below.</p> <important> <p>The source DB instance must have backup retention
+         * enabled.</p> </important> <p>You can create an encrypted Read Replica in a
+         * different AWS Region than the source DB instance. In that case, the region where
+         * you call the <code>CreateDBInstanceReadReplica</code> action is the destination
+         * region of the encrypted Read Replica. The source DB instance must be
+         * encrypted.</p> <p>To create an encrypted Read Replica in another AWS Region, you
+         * must provide the following values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The
+         * AWS Key Management System (KMS) key identifier for the key to use to encrypt the
+         * Read Replica in the destination region.</p> </li> <li> <p>
+         * <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed
+         * request for the <code> CreateDBInstanceReadReplica</code> API action in the AWS
+         * region that contains the source DB instance. The <code>PreSignedUrl</code>
+         * parameter must be used when encrypting a Read Replica from another AWS
+         * region.</p> <p>The presigned URL must be a valid request for the
+         * <code>CreateDBInstanceReadReplica</code> API action that can be executed in the
+         * source region that contains the encrypted DB instance. The presigned URL request
+         * must contain the following parameter values:</p> <ul> <li> <p>
+         * <code>DestinationRegion</code> - The AWS Region that the Read Replica is created
+         * in. This region is the same one where the
          * <code>CreateDBInstanceReadReplica</code> action is called that contains this
          * presigned URL. </p> <p> For example, if you create an encrypted Read Replica in
          * the us-east-1 region, and the source DB instance is in the west-2 region, then
@@ -3445,11 +3459,13 @@ namespace Model
          * snapshot public, which means that it can be copied or restored by all AWS
          * accounts. Do not add the <code>all</code> value for any manual DB cluster
          * snapshots that contain private information that you don't want available to all
-         * AWS accounts.</p> <p>To view which AWS accounts have access to copy or restore a
-         * manual DB cluster snapshot, or whether a manual DB cluster snapshot public or
-         * private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p>
-         * <p>If a manual DB cluster snapshot is encrypted, it cannot be
-         * shared.</p><p><h3>See Also:</h3>   <a
+         * AWS accounts. If a manual DB cluster snapshot is encrypted, it can be shared,
+         * but only by specifying a list of authorized AWS account IDs for the
+         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
+         * for that parameter in this case.</p> <p>To view which AWS accounts have access
+         * to copy or restore a manual DB cluster snapshot, or whether a manual DB cluster
+         * snapshot public or private, use the <a>DescribeDBClusterSnapshotAttributes</a>
+         * API action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterSnapshotAttribute">AWS
          * API Reference</a></p>
          */
@@ -3465,11 +3481,13 @@ namespace Model
          * snapshot public, which means that it can be copied or restored by all AWS
          * accounts. Do not add the <code>all</code> value for any manual DB cluster
          * snapshots that contain private information that you don't want available to all
-         * AWS accounts.</p> <p>To view which AWS accounts have access to copy or restore a
-         * manual DB cluster snapshot, or whether a manual DB cluster snapshot public or
-         * private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p>
-         * <p>If a manual DB cluster snapshot is encrypted, it cannot be
-         * shared.</p><p><h3>See Also:</h3>   <a
+         * AWS accounts. If a manual DB cluster snapshot is encrypted, it can be shared,
+         * but only by specifying a list of authorized AWS account IDs for the
+         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
+         * for that parameter in this case.</p> <p>To view which AWS accounts have access
+         * to copy or restore a manual DB cluster snapshot, or whether a manual DB cluster
+         * snapshot public or private, use the <a>DescribeDBClusterSnapshotAttributes</a>
+         * API action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterSnapshotAttribute">AWS
          * API Reference</a></p>
          *
@@ -3487,11 +3505,13 @@ namespace Model
          * snapshot public, which means that it can be copied or restored by all AWS
          * accounts. Do not add the <code>all</code> value for any manual DB cluster
          * snapshots that contain private information that you don't want available to all
-         * AWS accounts.</p> <p>To view which AWS accounts have access to copy or restore a
-         * manual DB cluster snapshot, or whether a manual DB cluster snapshot public or
-         * private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p>
-         * <p>If a manual DB cluster snapshot is encrypted, it cannot be
-         * shared.</p><p><h3>See Also:</h3>   <a
+         * AWS accounts. If a manual DB cluster snapshot is encrypted, it can be shared,
+         * but only by specifying a list of authorized AWS account IDs for the
+         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
+         * for that parameter in this case.</p> <p>To view which AWS accounts have access
+         * to copy or restore a manual DB cluster snapshot, or whether a manual DB cluster
+         * snapshot public or private, use the <a>DescribeDBClusterSnapshotAttributes</a>
+         * API action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterSnapshotAttribute">AWS
          * API Reference</a></p>
          *
@@ -3649,11 +3669,13 @@ namespace Model
          * <code>all</code> to make the manual DB snapshot public, which means it can be
          * copied or restored by all AWS accounts. Do not add the <code>all</code> value
          * for any manual DB snapshots that contain private information that you don't want
-         * available to all AWS accounts.</p> <p>To view which AWS accounts have access to
-         * copy or restore a manual DB snapshot, or whether a manual DB snapshot public or
-         * private, use the <a>DescribeDBSnapshotAttributes</a> API action.</p> <p>If the
-         * manual DB snapshot is encrypted, it cannot be shared.</p><p><h3>See Also:</h3>  
-         * <a
+         * available to all AWS accounts. If the manual DB snapshot is encrypted, it can be
+         * shared, but only by specifying a list of authorized AWS account IDs for the
+         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
+         * for that parameter in this case.</p> <p>To view which AWS accounts have access
+         * to copy or restore a manual DB snapshot, or whether a manual DB snapshot public
+         * or private, use the <a>DescribeDBSnapshotAttributes</a> API
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshotAttribute">AWS
          * API Reference</a></p>
          */
@@ -3668,11 +3690,13 @@ namespace Model
          * <code>all</code> to make the manual DB snapshot public, which means it can be
          * copied or restored by all AWS accounts. Do not add the <code>all</code> value
          * for any manual DB snapshots that contain private information that you don't want
-         * available to all AWS accounts.</p> <p>To view which AWS accounts have access to
-         * copy or restore a manual DB snapshot, or whether a manual DB snapshot public or
-         * private, use the <a>DescribeDBSnapshotAttributes</a> API action.</p> <p>If the
-         * manual DB snapshot is encrypted, it cannot be shared.</p><p><h3>See Also:</h3>  
-         * <a
+         * available to all AWS accounts. If the manual DB snapshot is encrypted, it can be
+         * shared, but only by specifying a list of authorized AWS account IDs for the
+         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
+         * for that parameter in this case.</p> <p>To view which AWS accounts have access
+         * to copy or restore a manual DB snapshot, or whether a manual DB snapshot public
+         * or private, use the <a>DescribeDBSnapshotAttributes</a> API
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshotAttribute">AWS
          * API Reference</a></p>
          *
@@ -3689,11 +3713,13 @@ namespace Model
          * <code>all</code> to make the manual DB snapshot public, which means it can be
          * copied or restored by all AWS accounts. Do not add the <code>all</code> value
          * for any manual DB snapshots that contain private information that you don't want
-         * available to all AWS accounts.</p> <p>To view which AWS accounts have access to
-         * copy or restore a manual DB snapshot, or whether a manual DB snapshot public or
-         * private, use the <a>DescribeDBSnapshotAttributes</a> API action.</p> <p>If the
-         * manual DB snapshot is encrypted, it cannot be shared.</p><p><h3>See Also:</h3>  
-         * <a
+         * available to all AWS accounts. If the manual DB snapshot is encrypted, it can be
+         * shared, but only by specifying a list of authorized AWS account IDs for the
+         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
+         * for that parameter in this case.</p> <p>To view which AWS accounts have access
+         * to copy or restore a manual DB snapshot, or whether a manual DB snapshot public
+         * or private, use the <a>DescribeDBSnapshotAttributes</a> API
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshotAttribute">AWS
          * API Reference</a></p>
          *
@@ -4119,7 +4145,7 @@ namespace Model
 
         /**
          * <p> Modifies the parameters of a DB parameter group to the engine/system default
-         * value. To reset specific parameters submit a list of the following:
+         * value. To reset specific parameters, provide a list of the following:
          * <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB
          * parameter group, specify the <code>DBParameterGroup</code> name and
          * <code>ResetAllParameters</code> parameters. When resetting the entire group,
@@ -4133,7 +4159,7 @@ namespace Model
 
         /**
          * <p> Modifies the parameters of a DB parameter group to the engine/system default
-         * value. To reset specific parameters submit a list of the following:
+         * value. To reset specific parameters, provide a list of the following:
          * <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB
          * parameter group, specify the <code>DBParameterGroup</code> name and
          * <code>ResetAllParameters</code> parameters. When resetting the entire group,
@@ -4149,7 +4175,7 @@ namespace Model
 
         /**
          * <p> Modifies the parameters of a DB parameter group to the engine/system default
-         * value. To reset specific parameters submit a list of the following:
+         * value. To reset specific parameters, provide a list of the following:
          * <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB
          * parameter group, specify the <code>DBParameterGroup</code> name and
          * <code>ResetAllParameters</code> parameters. When resetting the entire group,
@@ -4167,7 +4193,7 @@ namespace Model
          * <p>Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket.
          * Amazon RDS must be authorized to access the Amazon S3 bucket and the data must
          * be created using the Percona XtraBackup utility as described in <a
-         * href="AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
          * Data from MySQL by Using an Amazon S3 Bucket</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">AWS
          * API Reference</a></p>
@@ -4178,7 +4204,7 @@ namespace Model
          * <p>Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket.
          * Amazon RDS must be authorized to access the Amazon S3 bucket and the data must
          * be created using the Percona XtraBackup utility as described in <a
-         * href="AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
          * Data from MySQL by Using an Amazon S3 Bucket</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">AWS
          * API Reference</a></p>
@@ -4191,7 +4217,7 @@ namespace Model
          * <p>Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket.
          * Amazon RDS must be authorized to access the Amazon S3 bucket and the data must
          * be created using the Percona XtraBackup utility as described in <a
-         * href="AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
          * Data from MySQL by Using an Amazon S3 Bucket</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">AWS
          * API Reference</a></p>
@@ -4455,10 +4481,10 @@ namespace Model
         virtual void RevokeDBSecurityGroupIngressAsync(const Model::RevokeDBSecurityGroupIngressRequest& request, const RevokeDBSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
-  private:
+    private:
     void init(const Client::ClientConfiguration& clientConfiguration);
 
-        /**Async helpers**/
+            /**Async helpers**/
         void AddRoleToDBClusterAsyncHelper(const Model::AddRoleToDBClusterRequest& request, const AddRoleToDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddSourceIdentifierToSubscriptionAsyncHelper(const Model::AddSourceIdentifierToSubscriptionRequest& request, const AddSourceIdentifierToSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4549,7 +4575,7 @@ namespace Model
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;
-  };
+    };
 
-} // namespace RDS
-} // namespace Aws
+    } // namespace RDS
+    } // namespace Aws
