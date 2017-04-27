@@ -69,14 +69,14 @@ namespace
     }
 
     static const char* ALLOCATION_TAG = "BucketAndObjectOperationTest";
-    static const char* BASE_CREATE_BUCKET_TEST_NAME = "awsnativesdkcreatebuckettestbucket";
-    static const char* BASE_LOCATION_BUCKET_TEST_NAME = "awsnativesdklocbuckettest";
-    static const char* BASE_PUT_OBJECTS_BUCKET_NAME = "awsnativesdkputobjectstestbucket";
-    static const char* BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "awsnativesdkcharsetstestbucket";
-    static const char* BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "awsnativesdkpresignedtestbucket";
-    static const char* BASE_PUT_MULTIPART_BUCKET_NAME = "awsnativesdkputobjectmultiparttestbucket";
-    static const char* BASE_ERRORS_TESTING_BUCKET = "awsnativesdkerrorsbucket";
-    static const char* BASE_INTERRUPT_TESTING_BUCKET = "awsnativesdkinterruptbucket";
+    static const char* BASE_CREATE_BUCKET_TEST_NAME = "awsnativesdkcreatebuckettestbucketa";
+    static const char* BASE_LOCATION_BUCKET_TEST_NAME = "awsnativesdklocbuckettesta";
+    static const char* BASE_PUT_OBJECTS_BUCKET_NAME = "awsnativesdkputobjectstestbucketa";
+    static const char* BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "awsnativesdkcharsetstestbucketa";
+    static const char* BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "awsnativesdkpresignedtestbucketa";
+    static const char* BASE_PUT_MULTIPART_BUCKET_NAME = "awsnativesdkputobjectmultiparttestbucketa";
+    static const char* BASE_ERRORS_TESTING_BUCKET = "awsnativesdkerrorsbucketa";
+    static const char* BASE_INTERRUPT_TESTING_BUCKET = "awsnativesdkinterruptbucketa";
     static const char* TEST_OBJ_KEY = "TestObjectKey";
     //windows won't let you hard code unicode strings in a source file and assign them to a char*. Every other compiler does and I need to test this.
     //to get around this, this string is url encoded version of "TestUnicode中国Key". At test time, we'll convert it to the unicode string
@@ -207,7 +207,7 @@ namespace
                     return true;
                 }
 
-                std::this_thread::sleep_for(std::chrono::seconds(1));
+                std::this_thread::sleep_for(std::chrono::seconds(10));
             }
 
             return false;
@@ -894,7 +894,7 @@ namespace
         Aws::String fullBucketName = CalculateBucketName(BASE_ERRORS_TESTING_BUCKET);
 
         ListObjectsRequest listObjectsRequest;
-        listObjectsRequest.SetBucket("Non-Existent");
+        listObjectsRequest.SetBucket("abcdedoikengi");
 
         ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
         ASSERT_FALSE(listObjectsOutcome.IsSuccess());

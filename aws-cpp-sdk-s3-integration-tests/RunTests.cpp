@@ -21,7 +21,7 @@
 int main(int argc, char** argv)
 {
     Aws::SDKOptions options;
-
+    options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
     Aws::Testing::InitPlatformTest(options);
     if(argc > 1)
     {

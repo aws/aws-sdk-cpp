@@ -3,23 +3,28 @@
 #else
 #set($signPayloads = "")
 #end
+#if($virtualAddressingSupported)
+    #set($virtualAddressing = ", bool useVirtualAdressing = true")
+#else
+    #set($virtualAddressing = "")
+#end
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ${className}(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration()${signPayloads});
+        ${className}(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration()${signPayloads}${virtualAddressing});
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ${className}(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration()${signPayloads});
+        ${className}(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration()${signPayloads}${virtualAddressing});
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ${className}(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration()${signPayloads});
+            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration()${signPayloads}${virtualAddressing});
 
         virtual ~${className}();

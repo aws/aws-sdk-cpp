@@ -10,34 +10,41 @@
 #else
 #set($doubleEncodeValue = "")
 #end
+#if($virtualAddressingSupported)
+#set($virtualAddressing = ", bool useVirtualAdressing")
+#set($virtualAddressingInit = ", m_useVirtualAdressing(useVirtualAdressing)")
+#else
+#set($virtualAddressing = "")
+#set($virtualAddressingInit = "")
+#end
 
-${className}::${className}(const Client::ClientConfiguration& clientConfiguration${signPayloads}) :
+${className}::${className}(const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
         SERVICE_NAME, clientConfiguration.region${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor)${virtualAddressingInit}
 {
   init(clientConfiguration);
 }
 
-${className}::${className}(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration${signPayloads}) :
+${className}::${className}(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
          SERVICE_NAME, clientConfiguration.region${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor)${virtualAddressingInit}
 {
   init(clientConfiguration);
 }
 
 ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration${signPayloads}) :
+  const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
          SERVICE_NAME, clientConfiguration.region${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor)${virtualAddressingInit}
 {
   init(clientConfiguration);
 }
@@ -48,6 +55,17 @@ ${className}::~${className}()
 
 void ${className}::init(const ClientConfiguration& config)
 {
+#if($virtualAddressingSupported)
+    if(config.endpointOverride.empty())
+    {
+        m_baseUri = ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack);
+    }
+    else
+    {
+        m_baseUri = config.endpointOverride;
+    }
+    m_scheme = SchemeMapper::ToString(config.scheme);
+#else
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
@@ -61,4 +79,5 @@ void ${className}::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+#end
 }
