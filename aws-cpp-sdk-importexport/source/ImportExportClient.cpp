@@ -111,7 +111,8 @@ Aws::String ImportExportClient::ConvertRequestToPresignedUrl(const AmazonSeriali
 CancelJobOutcome ImportExportClient::CancelJob(const CancelJobRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/?Operation=CancelJob";
+  ss << m_uri;
+  ss << "/?Operation=CancelJob";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -144,7 +145,8 @@ void ImportExportClient::CancelJobAsyncHelper(const CancelJobRequest& request, c
 CreateJobOutcome ImportExportClient::CreateJob(const CreateJobRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/?Operation=CreateJob";
+  ss << m_uri;
+  ss << "/?Operation=CreateJob";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -177,7 +179,8 @@ void ImportExportClient::CreateJobAsyncHelper(const CreateJobRequest& request, c
 GetShippingLabelOutcome ImportExportClient::GetShippingLabel(const GetShippingLabelRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/?Operation=GetShippingLabel";
+  ss << m_uri;
+  ss << "/?Operation=GetShippingLabel";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -210,7 +213,8 @@ void ImportExportClient::GetShippingLabelAsyncHelper(const GetShippingLabelReque
 GetStatusOutcome ImportExportClient::GetStatus(const GetStatusRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/?Operation=GetStatus";
+  ss << m_uri;
+  ss << "/?Operation=GetStatus";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -243,7 +247,8 @@ void ImportExportClient::GetStatusAsyncHelper(const GetStatusRequest& request, c
 ListJobsOutcome ImportExportClient::ListJobs(const ListJobsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/?Operation=ListJobs";
+  ss << m_uri;
+  ss << "/?Operation=ListJobs";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -276,7 +281,8 @@ void ImportExportClient::ListJobsAsyncHelper(const ListJobsRequest& request, con
 UpdateJobOutcome ImportExportClient::UpdateJob(const UpdateJobRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/?Operation=UpdateJob";
+  ss << m_uri;
+  ss << "/?Operation=UpdateJob";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
