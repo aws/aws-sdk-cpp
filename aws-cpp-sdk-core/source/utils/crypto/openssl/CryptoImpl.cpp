@@ -15,11 +15,11 @@
 
 #include <cstring>
 
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/crypto/openssl/CryptoImpl.h>
 #include <aws/core/utils/Outcome.h>
 #include <openssl/md5.h>
 #include <openssl/sha.h>
-#include <openssl/hmac.h>
 #include <openssl/err.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <thread>
@@ -35,11 +35,26 @@ namespace Aws
         {
             namespace OpenSSL
             {
+                //http://stackoverflow.com/questions/25796126/static-assert-that-template-typename-t-is-not-complete
+                template<typename T>
+                    constexpr auto is_complete(int=0) -> decltype(!sizeof(T)) {return true;}
+
+                template<typename T>
+                    constexpr bool is_complete(...) {return false;}
+
+                bool OPENSSL_TYPE_INCOMPLETE = is_complete<HMAC_CTX>(0);
+
+                // openssl with OPENSSL_VERSION_NUMBER < 0x10100003L made data type details unavailable
+                // libressl use openssl with data type details available, but mandatorily set 
+                // OPENSSL_VERSION_NUMBER = 0x20000000L, insane!
+#define OPENSSL_VERSION_LESS_1_1 (OPENSSL_TYPE_INCOMPLETE)
+
+
 #if OPENSSL_VERSION_LESS_1_1
                 static const char* OPENSSL_INTERNALS_TAG = "OpenSSLCallbackState";
                 static std::mutex* locks(nullptr);
-
 #endif
+
                 GetTheLights getTheLights;
 
                 void init_static_state()
@@ -206,29 +221,46 @@ namespace Aws
                 return HashResult(std::move(hash));
             }
 
+            Sha256HMACOpenSSLImpl::Sha256HMACOpenSSLImpl() : HMAC(), m_ctx(nullptr)
+            {
+#if OPENSSL_VERSION_LESS_1_1
+                m_ctx = Aws::New<HMAC_CTX>("AllocSha256HAMCOpenSSLContext");
+#else
+                m_ctx = HMAC_CTX_new();
+#endif
+                assert(m_ctx != nullptr);
+            }
+
+            Sha256HMACOpenSSLImpl::~Sha256HMACOpenSSLImpl()
+            {
+#if OPENSSL_VERSION_LESS_1_1
+                Aws::Delete<HMAC_CTX>(m_ctx);
+#else
+                HMAC_CTX_free(m_ctx);
+#endif
+                m_ctx = nullptr;
+            }
+
+
             HashResult Sha256HMACOpenSSLImpl::Calculate(const ByteBuffer& toSign, const ByteBuffer& secret)
             {
                 unsigned int length = SHA256_DIGEST_LENGTH;
                 ByteBuffer digest(length);
                 memset(digest.GetUnderlyingData(), 0, length);
 
-                HMAC_CTX *ctx;
 #if OPENSSL_VERSION_LESS_1_1
-                HMAC_CTX _ctx;
-                ctx = &_ctx;
-                HMAC_CTX_init(ctx);
-#else
-                ctx=HMAC_CTX_new();
+                HMAC_CTX_init(m_ctx);
 #endif
 
-                HMAC_Init_ex(ctx, secret.GetUnderlyingData(), static_cast<int>(secret.GetLength()), EVP_sha256(),
+                HMAC_Init_ex(m_ctx, secret.GetUnderlyingData(), static_cast<int>(secret.GetLength()), EVP_sha256(),
                              NULL);
-                HMAC_Update(ctx, toSign.GetUnderlyingData(), toSign.GetLength());
-                HMAC_Final(ctx, digest.GetUnderlyingData(), &length);
+                HMAC_Update(m_ctx, toSign.GetUnderlyingData(), toSign.GetLength());
+                HMAC_Final(m_ctx, digest.GetUnderlyingData(), &length);
+
 #if OPENSSL_VERSION_LESS_1_1
-                HMAC_CTX_cleanup(ctx);
+                HMAC_CTX_cleanup(m_ctx);
 #else
-                HMAC_CTX_free(ctx);
+                HMAC_CTX_reset(m_ctx);
 #endif
 
                 return HashResult(std::move(digest));
@@ -247,15 +279,16 @@ namespace Aws
 
 
             OpenSSLCipher::OpenSSLCipher(const CryptoBuffer& key, size_t blockSizeBytes, bool ctrMode) :
-                    SymmetricCipher(key, blockSizeBytes, ctrMode), m_encDecInitialized(false), m_encryptionMode(false),
-                    m_decryptionMode(false)
+                    SymmetricCipher(key, blockSizeBytes, ctrMode), m_ctx(nullptr),
+                    m_encDecInitialized(false), m_encryptionMode(false), m_decryptionMode(false)
             {
                 Init();
             }
 
             OpenSSLCipher::OpenSSLCipher(OpenSSLCipher&& toMove) : SymmetricCipher(std::move(toMove)),
-                                                                   m_encDecInitialized(false)
+                                                                   m_ctx(nullptr), m_encDecInitialized(false)
             {
+                Init();
                 EVP_CIPHER_CTX_copy(m_ctx, toMove.m_ctx);
                 EVP_CIPHER_CTX_cleanup(toMove.m_ctx);
                 m_encDecInitialized = toMove.m_encDecInitialized;
@@ -265,16 +298,15 @@ namespace Aws
 
             OpenSSLCipher::OpenSSLCipher(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag) :
                     SymmetricCipher(std::move(key), std::move(initializationVector), std::move(tag)),
-                    m_encDecInitialized(false),
-                    m_encryptionMode(false), m_decryptionMode(false)
+                    m_ctx(nullptr), m_encDecInitialized(false), m_encryptionMode(false), m_decryptionMode(false)
             {
                 Init();
             }
 
             OpenSSLCipher::OpenSSLCipher(const CryptoBuffer& key, const CryptoBuffer& initializationVector,
                                          const CryptoBuffer& tag) :
-                    SymmetricCipher(key, initializationVector, tag), m_encDecInitialized(false),
-                    m_encryptionMode(false), m_decryptionMode(false)
+                    SymmetricCipher(key, initializationVector, tag), m_ctx(nullptr),
+                    m_encDecInitialized(false), m_encryptionMode(false), m_decryptionMode(false)
             {
                 Init();
             }
@@ -282,17 +314,24 @@ namespace Aws
             OpenSSLCipher::~OpenSSLCipher()
             {
                 Cleanup();
+                if (m_ctx)
+                {
+                    EVP_CIPHER_CTX_free(m_ctx);
+                    m_ctx = nullptr;
+                }
             }
 
             void OpenSSLCipher::Init()
             {
-#if OPENSSL_VERSION_LESS_1_1
-                m_ctx = &_m_ctx;
-                EVP_CIPHER_CTX_init(m_ctx);
-#else
-                m_ctx = EVP_CIPHER_CTX_new();
-                EVP_CIPHER_CTX_init(m_ctx);
-#endif
+                if (!m_ctx)
+                {
+                    m_ctx = EVP_CIPHER_CTX_new();
+                    assert(m_ctx != nullptr);
+                }
+                else
+                {   // init after1.1 is the same as reset
+                    EVP_CIPHER_CTX_init(m_ctx);
+                }
             }
 
             void OpenSSLCipher::CheckInitEncryptor()
@@ -432,13 +471,7 @@ namespace Aws
                 m_encryptionMode = false;
                 m_decryptionMode = false;
 
-#if OPENSSL_VERSION_LESS_1_1
                 EVP_CIPHER_CTX_cleanup(m_ctx);
-#else
-                EVP_CIPHER_CTX_free(m_ctx);
-#endif
-
-                m_ctx = nullptr;
             }
 
             size_t AES_CBC_Cipher_OpenSSL::BlockSizeBytes = 16;

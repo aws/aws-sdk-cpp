@@ -21,6 +21,7 @@
 #include <aws/core/utils/GetTheLights.h>
 #include <openssl/ossl_typ.h>
 #include <openssl/evp.h>
+#include <openssl/hmac.h>
 #include <openssl/rand.h>
 #include <atomic>
 #include <mutex>
@@ -31,7 +32,6 @@ namespace Aws
     {
         namespace Crypto
         {
-            #define OPENSSL_VERSION_LESS_1_1 (OPENSSL_VERSION_NUMBER < 0x10100003L)
             namespace OpenSSL
             {
                 extern GetTheLights getTheLights;
@@ -97,12 +97,14 @@ namespace Aws
             {
             public:
 
-                Sha256HMACOpenSSLImpl()
-                { }
+                Sha256HMACOpenSSLImpl();
 
-                virtual ~Sha256HMACOpenSSLImpl() = default;
+                virtual ~Sha256HMACOpenSSLImpl();
 
                 virtual HashResult Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) override;
+
+            private:
+                HMAC_CTX *m_ctx;
             };
 
             /**
@@ -193,9 +195,6 @@ namespace Aws
                 virtual size_t GetKeyLengthBits() const = 0;
 
                 EVP_CIPHER_CTX *m_ctx;
-#if OPENSSL_VERSION_LESS_1_1
-                EVP_CIPHER_CTX _m_ctx;
-#endif
 
                 void CheckInitEncryptor();
                 void CheckInitDecryptor();
