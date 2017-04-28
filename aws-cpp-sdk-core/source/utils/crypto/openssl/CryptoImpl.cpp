@@ -35,20 +35,14 @@ namespace Aws
         {
             namespace OpenSSL
             {
-                //http://stackoverflow.com/questions/25796126/static-assert-that-template-typename-t-is-not-complete
-                template<typename T>
-                    constexpr auto is_complete(int=0) -> decltype(!sizeof(T)) {return true;}
-
-                template<typename T>
-                    constexpr bool is_complete(...) {return false;}
-
-                bool OPENSSL_TYPE_INCOMPLETE = is_complete<HMAC_CTX>(0);
-
                 // openssl with OPENSSL_VERSION_NUMBER < 0x10100003L made data type details unavailable
                 // libressl use openssl with data type details available, but mandatorily set 
                 // OPENSSL_VERSION_NUMBER = 0x20000000L, insane!
-#define OPENSSL_VERSION_LESS_1_1 (OPENSSL_TYPE_INCOMPLETE)
-
+#if defined(LIBRESSL_VERSION_NUMBER) && (OPENSSL_VERSION_NUMBER == 0x20000000L)
+#undef OPENSSL_VERSION_NUMBER
+#define OPENSSL_VERSION_NUMBER 0x1000107fL
+#endif
+#define OPENSSL_VERSION_LESS_1_1 (OPENSSL_VERSION_NUMBER < 0x10100003L)
 
 #if OPENSSL_VERSION_LESS_1_1
                 static const char* OPENSSL_INTERNALS_TAG = "OpenSSLCallbackState";
