@@ -34,7 +34,7 @@ namespace Model
 
   /**
    * <p>Encloses the <code>Id</code> of an entry in <code>
-   * <a>ChangeMessageVisibilityBatch</a> </code>.</p><p><h3>See Also:</h3>   <a
+   * <a>ChangeMessageVisibilityBatch</a>.</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatchResultEntry">AWS
    * API Reference</a></p>
    */

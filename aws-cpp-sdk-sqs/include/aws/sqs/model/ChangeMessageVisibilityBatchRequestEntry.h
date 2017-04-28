@@ -34,7 +34,7 @@ namespace Model
 
   /**
    * <p>Encloses a receipt handle and an entry id for each message in <code>
-   * <a>ChangeMessageVisibilityBatch</a> </code>.</p> <important> <p>All of the
+   * <a>ChangeMessageVisibilityBatch</a>.</code> </p> <important> <p>All of the
    * following list parameters must be prefixed with
    * <code>ChangeMessageVisibilityBatchRequestEntry.n</code>, where <code>n</code> is
    * an integer value starting with <code>1</code>. For example, a parameter list for

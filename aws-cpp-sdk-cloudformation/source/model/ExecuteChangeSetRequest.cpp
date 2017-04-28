@@ -21,7 +21,8 @@ using namespace Aws::Utils;
 
 ExecuteChangeSetRequest::ExecuteChangeSetRequest() : 
     m_changeSetNameHasBeenSet(false),
-    m_stackNameHasBeenSet(false)
+    m_stackNameHasBeenSet(false),
+    m_clientRequestTokenHasBeenSet(false)
 {
 }
 
@@ -37,6 +38,11 @@ Aws::String ExecuteChangeSetRequest::SerializePayload() const
   if(m_stackNameHasBeenSet)
   {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
+  }
+
+  if(m_clientRequestTokenHasBeenSet)
+  {
+    ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
   }
 
   ss << "Version=2010-05-15";

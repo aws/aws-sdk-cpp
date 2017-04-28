@@ -41,6 +41,8 @@ namespace Model
     RedrivePolicy,
     FifoQueue,
     ContentBasedDeduplication,
+    KmsMasterKeyId,
+    KmsDataKeyReusePeriodSeconds,
     SentTimestamp,
     ApproximateFirstReceiveTimestamp,
     ApproximateReceiveCount,

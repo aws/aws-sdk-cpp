@@ -43,7 +43,8 @@ ClusterMetadata::ClusterMetadata() :
     m_addressIdHasBeenSet(false),
     m_shippingOption(ShippingOption::NOT_SET),
     m_shippingOptionHasBeenSet(false),
-    m_notificationHasBeenSet(false)
+    m_notificationHasBeenSet(false),
+    m_forwardingAddressIdHasBeenSet(false)
 {
 }
 
@@ -63,7 +64,8 @@ ClusterMetadata::ClusterMetadata(const JsonValue& jsonValue) :
     m_addressIdHasBeenSet(false),
     m_shippingOption(ShippingOption::NOT_SET),
     m_shippingOptionHasBeenSet(false),
-    m_notificationHasBeenSet(false)
+    m_notificationHasBeenSet(false),
+    m_forwardingAddressIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -154,6 +156,13 @@ ClusterMetadata& ClusterMetadata::operator =(const JsonValue& jsonValue)
     m_notificationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ForwardingAddressId"))
+  {
+    m_forwardingAddressId = jsonValue.GetString("ForwardingAddressId");
+
+    m_forwardingAddressIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -225,6 +234,12 @@ JsonValue ClusterMetadata::Jsonize() const
   if(m_notificationHasBeenSet)
   {
    payload.WithObject("Notification", m_notification.Jsonize());
+
+  }
+
+  if(m_forwardingAddressIdHasBeenSet)
+  {
+   payload.WithString("ForwardingAddressId", m_forwardingAddressId);
 
   }
 

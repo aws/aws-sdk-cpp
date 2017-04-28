@@ -135,8 +135,8 @@ namespace Model
     inline SendMessageBatchRequestEntry& WithMessageBody(const char* value) { SetMessageBody(value); return *this;}
 
     /**
-     * <p>The number of seconds for which a specific message is delayed. Valid values:
-     * 0 to 900. Maximum: 15 minutes. Messages with a positive
+     * <p>The length of time, in seconds, for which a specific message is delayed.
+     * Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive
      * <code>DelaySeconds</code> value become available for processing after the delay
      * period is finished. If you don't specify a value, the default value for the
      * queue is applied. </p> <note> <p>When you set <code>FifoQueue</code>, you can't
@@ -146,8 +146,8 @@ namespace Model
     inline int GetDelaySeconds() const{ return m_delaySeconds; }
 
     /**
-     * <p>The number of seconds for which a specific message is delayed. Valid values:
-     * 0 to 900. Maximum: 15 minutes. Messages with a positive
+     * <p>The length of time, in seconds, for which a specific message is delayed.
+     * Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive
      * <code>DelaySeconds</code> value become available for processing after the delay
      * period is finished. If you don't specify a value, the default value for the
      * queue is applied. </p> <note> <p>When you set <code>FifoQueue</code>, you can't
@@ -157,8 +157,8 @@ namespace Model
     inline void SetDelaySeconds(int value) { m_delaySecondsHasBeenSet = true; m_delaySeconds = value; }
 
     /**
-     * <p>The number of seconds for which a specific message is delayed. Valid values:
-     * 0 to 900. Maximum: 15 minutes. Messages with a positive
+     * <p>The length of time, in seconds, for which a specific message is delayed.
+     * Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive
      * <code>DelaySeconds</code> value become available for processing after the delay
      * period is finished. If you don't specify a value, the default value for the
      * queue is applied. </p> <note> <p>When you set <code>FifoQueue</code>, you can't
@@ -277,19 +277,18 @@ namespace Model
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
-     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>You
-     * can also use <code>ContentBasedDeduplication</code> for messages with identical
-     * content to be treated as duplicates.</p> </li> <li> <p>If you send one message
-     * with <code>ContentBasedDeduplication</code> enabled and then another message
-     * with a <code>MessageDeduplicationId</code> that is the same as the one generated
-     * for the first <code>MessageDeduplicationId</code>, the two messages are treated
-     * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
-     * <note> <p>The <code>MessageDeduplicationId</code> is available to the recipient
-     * of the message (this can be useful for troubleshooting delivery issues).</p>
-     * <p>If a message is sent successfully but the acknowledgement is lost and the
-     * message is resent with the same <code>MessageDeduplicationId</code> after the
-     * deduplication interval, Amazon SQS can't detect duplicate messages.</p> </note>
-     * <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
+     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>If
+     * you send one message with <code>ContentBasedDeduplication</code> enabled and
+     * then another message with a <code>MessageDeduplicationId</code> that is the same
+     * as the one generated for the first <code>MessageDeduplicationId</code>, the two
+     * messages are treated as duplicates and only one copy of the message is
+     * delivered. </p> </li> </ul> <note> <p>The <code>MessageDeduplicationId</code> is
+     * available to the recipient of the message (this can be useful for
+     * troubleshooting delivery issues).</p> <p>If a message is sent successfully but
+     * the acknowledgement is lost and the message is resent with the same
+     * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
+     * can't detect duplicate messages.</p> </note> <p>The length of
+     * <code>MessageDeduplicationId</code> is 128 characters.
      * <code>MessageDeduplicationId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
@@ -322,19 +321,18 @@ namespace Model
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
-     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>You
-     * can also use <code>ContentBasedDeduplication</code> for messages with identical
-     * content to be treated as duplicates.</p> </li> <li> <p>If you send one message
-     * with <code>ContentBasedDeduplication</code> enabled and then another message
-     * with a <code>MessageDeduplicationId</code> that is the same as the one generated
-     * for the first <code>MessageDeduplicationId</code>, the two messages are treated
-     * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
-     * <note> <p>The <code>MessageDeduplicationId</code> is available to the recipient
-     * of the message (this can be useful for troubleshooting delivery issues).</p>
-     * <p>If a message is sent successfully but the acknowledgement is lost and the
-     * message is resent with the same <code>MessageDeduplicationId</code> after the
-     * deduplication interval, Amazon SQS can't detect duplicate messages.</p> </note>
-     * <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
+     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>If
+     * you send one message with <code>ContentBasedDeduplication</code> enabled and
+     * then another message with a <code>MessageDeduplicationId</code> that is the same
+     * as the one generated for the first <code>MessageDeduplicationId</code>, the two
+     * messages are treated as duplicates and only one copy of the message is
+     * delivered. </p> </li> </ul> <note> <p>The <code>MessageDeduplicationId</code> is
+     * available to the recipient of the message (this can be useful for
+     * troubleshooting delivery issues).</p> <p>If a message is sent successfully but
+     * the acknowledgement is lost and the message is resent with the same
+     * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
+     * can't detect duplicate messages.</p> </note> <p>The length of
+     * <code>MessageDeduplicationId</code> is 128 characters.
      * <code>MessageDeduplicationId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
@@ -367,19 +365,18 @@ namespace Model
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
-     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>You
-     * can also use <code>ContentBasedDeduplication</code> for messages with identical
-     * content to be treated as duplicates.</p> </li> <li> <p>If you send one message
-     * with <code>ContentBasedDeduplication</code> enabled and then another message
-     * with a <code>MessageDeduplicationId</code> that is the same as the one generated
-     * for the first <code>MessageDeduplicationId</code>, the two messages are treated
-     * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
-     * <note> <p>The <code>MessageDeduplicationId</code> is available to the recipient
-     * of the message (this can be useful for troubleshooting delivery issues).</p>
-     * <p>If a message is sent successfully but the acknowledgement is lost and the
-     * message is resent with the same <code>MessageDeduplicationId</code> after the
-     * deduplication interval, Amazon SQS can't detect duplicate messages.</p> </note>
-     * <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
+     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>If
+     * you send one message with <code>ContentBasedDeduplication</code> enabled and
+     * then another message with a <code>MessageDeduplicationId</code> that is the same
+     * as the one generated for the first <code>MessageDeduplicationId</code>, the two
+     * messages are treated as duplicates and only one copy of the message is
+     * delivered. </p> </li> </ul> <note> <p>The <code>MessageDeduplicationId</code> is
+     * available to the recipient of the message (this can be useful for
+     * troubleshooting delivery issues).</p> <p>If a message is sent successfully but
+     * the acknowledgement is lost and the message is resent with the same
+     * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
+     * can't detect duplicate messages.</p> </note> <p>The length of
+     * <code>MessageDeduplicationId</code> is 128 characters.
      * <code>MessageDeduplicationId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
@@ -412,19 +409,18 @@ namespace Model
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
-     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>You
-     * can also use <code>ContentBasedDeduplication</code> for messages with identical
-     * content to be treated as duplicates.</p> </li> <li> <p>If you send one message
-     * with <code>ContentBasedDeduplication</code> enabled and then another message
-     * with a <code>MessageDeduplicationId</code> that is the same as the one generated
-     * for the first <code>MessageDeduplicationId</code>, the two messages are treated
-     * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
-     * <note> <p>The <code>MessageDeduplicationId</code> is available to the recipient
-     * of the message (this can be useful for troubleshooting delivery issues).</p>
-     * <p>If a message is sent successfully but the acknowledgement is lost and the
-     * message is resent with the same <code>MessageDeduplicationId</code> after the
-     * deduplication interval, Amazon SQS can't detect duplicate messages.</p> </note>
-     * <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
+     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>If
+     * you send one message with <code>ContentBasedDeduplication</code> enabled and
+     * then another message with a <code>MessageDeduplicationId</code> that is the same
+     * as the one generated for the first <code>MessageDeduplicationId</code>, the two
+     * messages are treated as duplicates and only one copy of the message is
+     * delivered. </p> </li> </ul> <note> <p>The <code>MessageDeduplicationId</code> is
+     * available to the recipient of the message (this can be useful for
+     * troubleshooting delivery issues).</p> <p>If a message is sent successfully but
+     * the acknowledgement is lost and the message is resent with the same
+     * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
+     * can't detect duplicate messages.</p> </note> <p>The length of
+     * <code>MessageDeduplicationId</code> is 128 characters.
      * <code>MessageDeduplicationId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
@@ -457,19 +453,18 @@ namespace Model
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
-     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>You
-     * can also use <code>ContentBasedDeduplication</code> for messages with identical
-     * content to be treated as duplicates.</p> </li> <li> <p>If you send one message
-     * with <code>ContentBasedDeduplication</code> enabled and then another message
-     * with a <code>MessageDeduplicationId</code> that is the same as the one generated
-     * for the first <code>MessageDeduplicationId</code>, the two messages are treated
-     * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
-     * <note> <p>The <code>MessageDeduplicationId</code> is available to the recipient
-     * of the message (this can be useful for troubleshooting delivery issues).</p>
-     * <p>If a message is sent successfully but the acknowledgement is lost and the
-     * message is resent with the same <code>MessageDeduplicationId</code> after the
-     * deduplication interval, Amazon SQS can't detect duplicate messages.</p> </note>
-     * <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
+     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>If
+     * you send one message with <code>ContentBasedDeduplication</code> enabled and
+     * then another message with a <code>MessageDeduplicationId</code> that is the same
+     * as the one generated for the first <code>MessageDeduplicationId</code>, the two
+     * messages are treated as duplicates and only one copy of the message is
+     * delivered. </p> </li> </ul> <note> <p>The <code>MessageDeduplicationId</code> is
+     * available to the recipient of the message (this can be useful for
+     * troubleshooting delivery issues).</p> <p>If a message is sent successfully but
+     * the acknowledgement is lost and the message is resent with the same
+     * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
+     * can't detect duplicate messages.</p> </note> <p>The length of
+     * <code>MessageDeduplicationId</code> is 128 characters.
      * <code>MessageDeduplicationId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
@@ -502,19 +497,18 @@ namespace Model
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
-     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>You
-     * can also use <code>ContentBasedDeduplication</code> for messages with identical
-     * content to be treated as duplicates.</p> </li> <li> <p>If you send one message
-     * with <code>ContentBasedDeduplication</code> enabled and then another message
-     * with a <code>MessageDeduplicationId</code> that is the same as the one generated
-     * for the first <code>MessageDeduplicationId</code>, the two messages are treated
-     * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
-     * <note> <p>The <code>MessageDeduplicationId</code> is available to the recipient
-     * of the message (this can be useful for troubleshooting delivery issues).</p>
-     * <p>If a message is sent successfully but the acknowledgement is lost and the
-     * message is resent with the same <code>MessageDeduplicationId</code> after the
-     * deduplication interval, Amazon SQS can't detect duplicate messages.</p> </note>
-     * <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
+     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>If
+     * you send one message with <code>ContentBasedDeduplication</code> enabled and
+     * then another message with a <code>MessageDeduplicationId</code> that is the same
+     * as the one generated for the first <code>MessageDeduplicationId</code>, the two
+     * messages are treated as duplicates and only one copy of the message is
+     * delivered. </p> </li> </ul> <note> <p>The <code>MessageDeduplicationId</code> is
+     * available to the recipient of the message (this can be useful for
+     * troubleshooting delivery issues).</p> <p>If a message is sent successfully but
+     * the acknowledgement is lost and the message is resent with the same
+     * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
+     * can't detect duplicate messages.</p> </note> <p>The length of
+     * <code>MessageDeduplicationId</code> is 128 characters.
      * <code>MessageDeduplicationId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
@@ -547,19 +541,18 @@ namespace Model
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
-     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>You
-     * can also use <code>ContentBasedDeduplication</code> for messages with identical
-     * content to be treated as duplicates.</p> </li> <li> <p>If you send one message
-     * with <code>ContentBasedDeduplication</code> enabled and then another message
-     * with a <code>MessageDeduplicationId</code> that is the same as the one generated
-     * for the first <code>MessageDeduplicationId</code>, the two messages are treated
-     * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
-     * <note> <p>The <code>MessageDeduplicationId</code> is available to the recipient
-     * of the message (this can be useful for troubleshooting delivery issues).</p>
-     * <p>If a message is sent successfully but the acknowledgement is lost and the
-     * message is resent with the same <code>MessageDeduplicationId</code> after the
-     * deduplication interval, Amazon SQS can't detect duplicate messages.</p> </note>
-     * <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
+     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>If
+     * you send one message with <code>ContentBasedDeduplication</code> enabled and
+     * then another message with a <code>MessageDeduplicationId</code> that is the same
+     * as the one generated for the first <code>MessageDeduplicationId</code>, the two
+     * messages are treated as duplicates and only one copy of the message is
+     * delivered. </p> </li> </ul> <note> <p>The <code>MessageDeduplicationId</code> is
+     * available to the recipient of the message (this can be useful for
+     * troubleshooting delivery issues).</p> <p>If a message is sent successfully but
+     * the acknowledgement is lost and the message is resent with the same
+     * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
+     * can't detect duplicate messages.</p> </note> <p>The length of
+     * <code>MessageDeduplicationId</code> is 128 characters.
      * <code>MessageDeduplicationId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
@@ -591,7 +584,8 @@ namespace Model
      * practices of using <code>MessageGroupId</code>, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
+     * queues. You can't use it for Standard queues.</p> </important>
      */
     inline const Aws::String& GetMessageGroupId() const{ return m_messageGroupId; }
 
@@ -616,7 +610,8 @@ namespace Model
      * practices of using <code>MessageGroupId</code>, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
+     * queues. You can't use it for Standard queues.</p> </important>
      */
     inline void SetMessageGroupId(const Aws::String& value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId = value; }
 
@@ -641,7 +636,8 @@ namespace Model
      * practices of using <code>MessageGroupId</code>, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
+     * queues. You can't use it for Standard queues.</p> </important>
      */
     inline void SetMessageGroupId(Aws::String&& value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId = std::move(value); }
 
@@ -666,7 +662,8 @@ namespace Model
      * practices of using <code>MessageGroupId</code>, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
+     * queues. You can't use it for Standard queues.</p> </important>
      */
     inline void SetMessageGroupId(const char* value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId.assign(value); }
 
@@ -691,7 +688,8 @@ namespace Model
      * practices of using <code>MessageGroupId</code>, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
+     * queues. You can't use it for Standard queues.</p> </important>
      */
     inline SendMessageBatchRequestEntry& WithMessageGroupId(const Aws::String& value) { SetMessageGroupId(value); return *this;}
 
@@ -716,7 +714,8 @@ namespace Model
      * practices of using <code>MessageGroupId</code>, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
+     * queues. You can't use it for Standard queues.</p> </important>
      */
     inline SendMessageBatchRequestEntry& WithMessageGroupId(Aws::String&& value) { SetMessageGroupId(std::move(value)); return *this;}
 
@@ -741,7 +740,8 @@ namespace Model
      * practices of using <code>MessageGroupId</code>, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
+     * queues. You can't use it for Standard queues.</p> </important>
      */
     inline SendMessageBatchRequestEntry& WithMessageGroupId(const char* value) { SetMessageGroupId(value); return *this;}
 

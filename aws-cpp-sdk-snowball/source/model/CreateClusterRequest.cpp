@@ -33,7 +33,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_snowballTypeHasBeenSet(false),
     m_shippingOption(ShippingOption::NOT_SET),
     m_shippingOptionHasBeenSet(false),
-    m_notificationHasBeenSet(false)
+    m_notificationHasBeenSet(false),
+    m_forwardingAddressIdHasBeenSet(false)
 {
 }
 
@@ -89,6 +90,12 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_notificationHasBeenSet)
   {
    payload.WithObject("Notification", m_notification.Jsonize());
+
+  }
+
+  if(m_forwardingAddressIdHasBeenSet)
+  {
+   payload.WithString("ForwardingAddressId", m_forwardingAddressId);
 
   }
 

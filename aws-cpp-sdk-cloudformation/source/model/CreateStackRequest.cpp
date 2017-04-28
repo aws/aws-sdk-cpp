@@ -36,7 +36,8 @@ CreateStackRequest::CreateStackRequest() :
     m_onFailureHasBeenSet(false),
     m_stackPolicyBodyHasBeenSet(false),
     m_stackPolicyURLHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_clientRequestTokenHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,11 @@ Aws::String CreateStackRequest::SerializePayload() const
       item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
+  }
+
+  if(m_clientRequestTokenHasBeenSet)
+  {
+    ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
   }
 
   ss << "Version=2010-05-15";

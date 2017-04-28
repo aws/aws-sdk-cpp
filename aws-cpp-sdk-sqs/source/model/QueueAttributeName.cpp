@@ -45,6 +45,8 @@ namespace Aws
         static const int RedrivePolicy_HASH = HashingUtils::HashString("RedrivePolicy");
         static const int FifoQueue_HASH = HashingUtils::HashString("FifoQueue");
         static const int ContentBasedDeduplication_HASH = HashingUtils::HashString("ContentBasedDeduplication");
+        static const int KmsMasterKeyId_HASH = HashingUtils::HashString("KmsMasterKeyId");
+        static const int KmsDataKeyReusePeriodSeconds_HASH = HashingUtils::HashString("KmsDataKeyReusePeriodSeconds");
         static const int SentTimestamp_HASH = HashingUtils::HashString("SentTimestamp");
         static const int ApproximateFirstReceiveTimestamp_HASH = HashingUtils::HashString("ApproximateFirstReceiveTimestamp");
         static const int ApproximateReceiveCount_HASH = HashingUtils::HashString("ApproximateReceiveCount");
@@ -118,6 +120,14 @@ namespace Aws
           {
             return QueueAttributeName::ContentBasedDeduplication;
           }
+          else if (hashCode == KmsMasterKeyId_HASH)
+          {
+            return QueueAttributeName::KmsMasterKeyId;
+          }
+          else if (hashCode == KmsDataKeyReusePeriodSeconds_HASH)
+          {
+            return QueueAttributeName::KmsDataKeyReusePeriodSeconds;
+          }
           else if (hashCode == SentTimestamp_HASH)
           {
             return QueueAttributeName::SentTimestamp;
@@ -180,6 +190,10 @@ namespace Aws
             return "FifoQueue";
           case QueueAttributeName::ContentBasedDeduplication:
             return "ContentBasedDeduplication";
+          case QueueAttributeName::KmsMasterKeyId:
+            return "KmsMasterKeyId";
+          case QueueAttributeName::KmsDataKeyReusePeriodSeconds:
+            return "KmsDataKeyReusePeriodSeconds";
           case QueueAttributeName::SentTimestamp:
             return "SentTimestamp";
           case QueueAttributeName::ApproximateFirstReceiveTimestamp:

@@ -435,6 +435,48 @@ namespace Model
      */
     inline CreateClusterRequest& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
 
+    /**
+     * <p>The forwarding address ID for a cluster. This field is not supported in most
+     * regions.</p>
+     */
+    inline const Aws::String& GetForwardingAddressId() const{ return m_forwardingAddressId; }
+
+    /**
+     * <p>The forwarding address ID for a cluster. This field is not supported in most
+     * regions.</p>
+     */
+    inline void SetForwardingAddressId(const Aws::String& value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId = value; }
+
+    /**
+     * <p>The forwarding address ID for a cluster. This field is not supported in most
+     * regions.</p>
+     */
+    inline void SetForwardingAddressId(Aws::String&& value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId = std::move(value); }
+
+    /**
+     * <p>The forwarding address ID for a cluster. This field is not supported in most
+     * regions.</p>
+     */
+    inline void SetForwardingAddressId(const char* value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId.assign(value); }
+
+    /**
+     * <p>The forwarding address ID for a cluster. This field is not supported in most
+     * regions.</p>
+     */
+    inline CreateClusterRequest& WithForwardingAddressId(const Aws::String& value) { SetForwardingAddressId(value); return *this;}
+
+    /**
+     * <p>The forwarding address ID for a cluster. This field is not supported in most
+     * regions.</p>
+     */
+    inline CreateClusterRequest& WithForwardingAddressId(Aws::String&& value) { SetForwardingAddressId(std::move(value)); return *this;}
+
+    /**
+     * <p>The forwarding address ID for a cluster. This field is not supported in most
+     * regions.</p>
+     */
+    inline CreateClusterRequest& WithForwardingAddressId(const char* value) { SetForwardingAddressId(value); return *this;}
+
   private:
     JobType m_jobType;
     bool m_jobTypeHasBeenSet;
@@ -454,6 +496,8 @@ namespace Model
     bool m_shippingOptionHasBeenSet;
     Notification m_notification;
     bool m_notificationHasBeenSet;
+    Aws::String m_forwardingAddressId;
+    bool m_forwardingAddressIdHasBeenSet;
   };
 
 } // namespace Model

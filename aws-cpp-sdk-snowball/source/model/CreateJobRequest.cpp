@@ -36,7 +36,8 @@ CreateJobRequest::CreateJobRequest() :
     m_notificationHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_snowballType(SnowballType::NOT_SET),
-    m_snowballTypeHasBeenSet(false)
+    m_snowballTypeHasBeenSet(false),
+    m_forwardingAddressIdHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,12 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_snowballTypeHasBeenSet)
   {
    payload.WithString("SnowballType", SnowballTypeMapper::GetNameForSnowballType(m_snowballType));
+  }
+
+  if(m_forwardingAddressIdHasBeenSet)
+  {
+   payload.WithString("ForwardingAddressId", m_forwardingAddressId);
+
   }
 
   return payload.WriteReadable();

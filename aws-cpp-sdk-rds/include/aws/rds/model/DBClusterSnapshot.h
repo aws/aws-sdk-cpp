@@ -624,6 +624,55 @@ namespace Model
     inline DBClusterSnapshot& WithDBClusterSnapshotArn(const char* value) { SetDBClusterSnapshotArn(value); return *this;}
 
     /**
+     * <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the
+     * Amazon Resource Name (ARN) for the source DB cluster snapshot; otherwise, a null
+     * value.</p>
+     */
+    inline const Aws::String& GetSourceDBClusterSnapshotArn() const{ return m_sourceDBClusterSnapshotArn; }
+
+    /**
+     * <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the
+     * Amazon Resource Name (ARN) for the source DB cluster snapshot; otherwise, a null
+     * value.</p>
+     */
+    inline void SetSourceDBClusterSnapshotArn(const Aws::String& value) { m_sourceDBClusterSnapshotArnHasBeenSet = true; m_sourceDBClusterSnapshotArn = value; }
+
+    /**
+     * <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the
+     * Amazon Resource Name (ARN) for the source DB cluster snapshot; otherwise, a null
+     * value.</p>
+     */
+    inline void SetSourceDBClusterSnapshotArn(Aws::String&& value) { m_sourceDBClusterSnapshotArnHasBeenSet = true; m_sourceDBClusterSnapshotArn = std::move(value); }
+
+    /**
+     * <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the
+     * Amazon Resource Name (ARN) for the source DB cluster snapshot; otherwise, a null
+     * value.</p>
+     */
+    inline void SetSourceDBClusterSnapshotArn(const char* value) { m_sourceDBClusterSnapshotArnHasBeenSet = true; m_sourceDBClusterSnapshotArn.assign(value); }
+
+    /**
+     * <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the
+     * Amazon Resource Name (ARN) for the source DB cluster snapshot; otherwise, a null
+     * value.</p>
+     */
+    inline DBClusterSnapshot& WithSourceDBClusterSnapshotArn(const Aws::String& value) { SetSourceDBClusterSnapshotArn(value); return *this;}
+
+    /**
+     * <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the
+     * Amazon Resource Name (ARN) for the source DB cluster snapshot; otherwise, a null
+     * value.</p>
+     */
+    inline DBClusterSnapshot& WithSourceDBClusterSnapshotArn(Aws::String&& value) { SetSourceDBClusterSnapshotArn(std::move(value)); return *this;}
+
+    /**
+     * <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the
+     * Amazon Resource Name (ARN) for the source DB cluster snapshot; otherwise, a null
+     * value.</p>
+     */
+    inline DBClusterSnapshot& WithSourceDBClusterSnapshotArn(const char* value) { SetSourceDBClusterSnapshotArn(value); return *this;}
+
+    /**
      * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
      * database accounts is enabled; otherwise false.</p>
      */
@@ -678,6 +727,8 @@ namespace Model
     bool m_kmsKeyIdHasBeenSet;
     Aws::String m_dBClusterSnapshotArn;
     bool m_dBClusterSnapshotArnHasBeenSet;
+    Aws::String m_sourceDBClusterSnapshotArn;
+    bool m_sourceDBClusterSnapshotArnHasBeenSet;
     bool m_iAMDatabaseAuthenticationEnabled;
     bool m_iAMDatabaseAuthenticationEnabledHasBeenSet;
   };

@@ -22,7 +22,8 @@ using namespace Aws::Utils;
 ContinueUpdateRollbackRequest::ContinueUpdateRollbackRequest() : 
     m_stackNameHasBeenSet(false),
     m_roleARNHasBeenSet(false),
-    m_resourcesToSkipHasBeenSet(false)
+    m_resourcesToSkipHasBeenSet(false),
+    m_clientRequestTokenHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,11 @@ Aws::String ContinueUpdateRollbackRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       resourcesToSkipCount++;
     }
+  }
+
+  if(m_clientRequestTokenHasBeenSet)
+  {
+    ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
   }
 
   ss << "Version=2010-05-15";

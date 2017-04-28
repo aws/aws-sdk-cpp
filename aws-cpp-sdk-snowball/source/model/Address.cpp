@@ -40,7 +40,9 @@ Address::Address() :
     m_landmarkHasBeenSet(false),
     m_countryHasBeenSet(false),
     m_postalCodeHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false)
+    m_phoneNumberHasBeenSet(false),
+    m_isRestricted(false),
+    m_isRestrictedHasBeenSet(false)
 {
 }
 
@@ -57,7 +59,9 @@ Address::Address(const JsonValue& jsonValue) :
     m_landmarkHasBeenSet(false),
     m_countryHasBeenSet(false),
     m_postalCodeHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false)
+    m_phoneNumberHasBeenSet(false),
+    m_isRestricted(false),
+    m_isRestrictedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -155,6 +159,13 @@ Address& Address::operator =(const JsonValue& jsonValue)
     m_phoneNumberHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IsRestricted"))
+  {
+    m_isRestricted = jsonValue.GetBool("IsRestricted");
+
+    m_isRestrictedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -237,6 +248,12 @@ JsonValue Address::Jsonize() const
   if(m_phoneNumberHasBeenSet)
   {
    payload.WithString("PhoneNumber", m_phoneNumber);
+
+  }
+
+  if(m_isRestrictedHasBeenSet)
+  {
+   payload.WithBool("IsRestricted", m_isRestricted);
 
   }
 

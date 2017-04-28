@@ -85,8 +85,9 @@ namespace Model
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
+     * <code>true</code>.</p>
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
 
@@ -95,8 +96,9 @@ namespace Model
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
+     * <code>true</code>.</p>
      */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
 
@@ -105,8 +107,9 @@ namespace Model
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
+     * <code>true</code>.</p>
      */
     inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
 
@@ -115,8 +118,9 @@ namespace Model
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
+     * <code>true</code>.</p>
      */
     inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
 
@@ -125,8 +129,9 @@ namespace Model
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
+     * <code>true</code>.</p>
      */
     inline UpdateStackRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
 
@@ -135,8 +140,9 @@ namespace Model
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
+     * <code>true</code>.</p>
      */
     inline UpdateStackRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
 
@@ -145,8 +151,9 @@ namespace Model
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
+     * <code>true</code>.</p>
      */
     inline UpdateStackRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
 
@@ -155,8 +162,9 @@ namespace Model
      * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
+     * <code>true</code>.</p>
      */
     inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
 
@@ -165,8 +173,9 @@ namespace Model
      * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
+     * <code>true</code>.</p>
      */
     inline void SetTemplateURL(const Aws::String& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
 
@@ -175,8 +184,9 @@ namespace Model
      * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
+     * <code>true</code>.</p>
      */
     inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::move(value); }
 
@@ -185,8 +195,9 @@ namespace Model
      * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
+     * <code>true</code>.</p>
      */
     inline void SetTemplateURL(const char* value) { m_templateURLHasBeenSet = true; m_templateURL.assign(value); }
 
@@ -195,8 +206,9 @@ namespace Model
      * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
+     * <code>true</code>.</p>
      */
     inline UpdateStackRequest& WithTemplateURL(const Aws::String& value) { SetTemplateURL(value); return *this;}
 
@@ -205,8 +217,9 @@ namespace Model
      * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
+     * <code>true</code>.</p>
      */
     inline UpdateStackRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(std::move(value)); return *this;}
 
@@ -215,26 +228,33 @@ namespace Model
      * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
+     * <code>true</code>.</p>
      */
     inline UpdateStackRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
 
     /**
      * <p>Reuse the existing template that is associated with the stack that you are
-     * updating.</p>
+     * updating.</p> <p>Conditional: You must specify only one of the following
+     * parameters: <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
+     * <code>UsePreviousTemplate</code> to <code>true</code>.</p>
      */
     inline bool GetUsePreviousTemplate() const{ return m_usePreviousTemplate; }
 
     /**
      * <p>Reuse the existing template that is associated with the stack that you are
-     * updating.</p>
+     * updating.</p> <p>Conditional: You must specify only one of the following
+     * parameters: <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
+     * <code>UsePreviousTemplate</code> to <code>true</code>.</p>
      */
     inline void SetUsePreviousTemplate(bool value) { m_usePreviousTemplateHasBeenSet = true; m_usePreviousTemplate = value; }
 
     /**
      * <p>Reuse the existing template that is associated with the stack that you are
-     * updating.</p>
+     * updating.</p> <p>Conditional: You must specify only one of the following
+     * parameters: <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
+     * <code>UsePreviousTemplate</code> to <code>true</code>.</p>
      */
     inline UpdateStackRequest& WithUsePreviousTemplate(bool value) { SetUsePreviousTemplate(value); return *this;}
 
@@ -1155,6 +1175,69 @@ namespace Model
      */
     inline UpdateStackRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>A unique identifier for this <code>UpdateStack</code> request. Specify this
+     * token if you plan to retry requests so that AWS CloudFormation knows that you're
+     * not attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully
+     * received them.</p>
+     */
+    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A unique identifier for this <code>UpdateStack</code> request. Specify this
+     * token if you plan to retry requests so that AWS CloudFormation knows that you're
+     * not attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully
+     * received them.</p>
+     */
+    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
+
+    /**
+     * <p>A unique identifier for this <code>UpdateStack</code> request. Specify this
+     * token if you plan to retry requests so that AWS CloudFormation knows that you're
+     * not attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully
+     * received them.</p>
+     */
+    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
+
+    /**
+     * <p>A unique identifier for this <code>UpdateStack</code> request. Specify this
+     * token if you plan to retry requests so that AWS CloudFormation knows that you're
+     * not attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully
+     * received them.</p>
+     */
+    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
+
+    /**
+     * <p>A unique identifier for this <code>UpdateStack</code> request. Specify this
+     * token if you plan to retry requests so that AWS CloudFormation knows that you're
+     * not attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully
+     * received them.</p>
+     */
+    inline UpdateStackRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
+
+    /**
+     * <p>A unique identifier for this <code>UpdateStack</code> request. Specify this
+     * token if you plan to retry requests so that AWS CloudFormation knows that you're
+     * not attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully
+     * received them.</p>
+     */
+    inline UpdateStackRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique identifier for this <code>UpdateStack</code> request. Specify this
+     * token if you plan to retry requests so that AWS CloudFormation knows that you're
+     * not attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully
+     * received them.</p>
+     */
+    inline UpdateStackRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+
   private:
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
@@ -1184,6 +1267,8 @@ namespace Model
     bool m_notificationARNsHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+    Aws::String m_clientRequestToken;
+    bool m_clientRequestTokenHasBeenSet;
   };
 
 } // namespace Model

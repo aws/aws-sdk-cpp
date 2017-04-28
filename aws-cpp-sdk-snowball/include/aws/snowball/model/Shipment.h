@@ -46,44 +46,37 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Status information for a shipment. Valid statuses include <code>NEW</code>,
-     * <code>IN_TRANSIT</code>, and <code>DELIVERED</code>.</p>
+     * <p>Status information for a shipment.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Status information for a shipment. Valid statuses include <code>NEW</code>,
-     * <code>IN_TRANSIT</code>, and <code>DELIVERED</code>.</p>
+     * <p>Status information for a shipment.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Status information for a shipment. Valid statuses include <code>NEW</code>,
-     * <code>IN_TRANSIT</code>, and <code>DELIVERED</code>.</p>
+     * <p>Status information for a shipment.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Status information for a shipment. Valid statuses include <code>NEW</code>,
-     * <code>IN_TRANSIT</code>, and <code>DELIVERED</code>.</p>
+     * <p>Status information for a shipment.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>Status information for a shipment. Valid statuses include <code>NEW</code>,
-     * <code>IN_TRANSIT</code>, and <code>DELIVERED</code>.</p>
+     * <p>Status information for a shipment.</p>
      */
     inline Shipment& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Status information for a shipment. Valid statuses include <code>NEW</code>,
-     * <code>IN_TRANSIT</code>, and <code>DELIVERED</code>.</p>
+     * <p>Status information for a shipment.</p>
      */
     inline Shipment& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>Status information for a shipment. Valid statuses include <code>NEW</code>,
-     * <code>IN_TRANSIT</code>, and <code>DELIVERED</code>.</p>
+     * <p>Status information for a shipment.</p>
      */
     inline Shipment& WithStatus(const char* value) { SetStatus(value); return *this;}
 

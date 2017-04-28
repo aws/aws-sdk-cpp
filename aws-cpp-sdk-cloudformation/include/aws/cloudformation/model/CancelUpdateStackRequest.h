@@ -77,9 +77,74 @@ namespace Model
      */
     inline CancelUpdateStackRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
+    /**
+     * <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify
+     * this token if you plan to retry requests so that AWS CloudFormation knows that
+     * you're not attempting to cancel an update on a stack with the same name. You
+     * might retry <code>CancelUpdateStack</code> requests to ensure that AWS
+     * CloudFormation successfully received them.</p>
+     */
+    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify
+     * this token if you plan to retry requests so that AWS CloudFormation knows that
+     * you're not attempting to cancel an update on a stack with the same name. You
+     * might retry <code>CancelUpdateStack</code> requests to ensure that AWS
+     * CloudFormation successfully received them.</p>
+     */
+    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
+
+    /**
+     * <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify
+     * this token if you plan to retry requests so that AWS CloudFormation knows that
+     * you're not attempting to cancel an update on a stack with the same name. You
+     * might retry <code>CancelUpdateStack</code> requests to ensure that AWS
+     * CloudFormation successfully received them.</p>
+     */
+    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
+
+    /**
+     * <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify
+     * this token if you plan to retry requests so that AWS CloudFormation knows that
+     * you're not attempting to cancel an update on a stack with the same name. You
+     * might retry <code>CancelUpdateStack</code> requests to ensure that AWS
+     * CloudFormation successfully received them.</p>
+     */
+    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
+
+    /**
+     * <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify
+     * this token if you plan to retry requests so that AWS CloudFormation knows that
+     * you're not attempting to cancel an update on a stack with the same name. You
+     * might retry <code>CancelUpdateStack</code> requests to ensure that AWS
+     * CloudFormation successfully received them.</p>
+     */
+    inline CancelUpdateStackRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
+
+    /**
+     * <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify
+     * this token if you plan to retry requests so that AWS CloudFormation knows that
+     * you're not attempting to cancel an update on a stack with the same name. You
+     * might retry <code>CancelUpdateStack</code> requests to ensure that AWS
+     * CloudFormation successfully received them.</p>
+     */
+    inline CancelUpdateStackRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify
+     * this token if you plan to retry requests so that AWS CloudFormation knows that
+     * you're not attempting to cancel an update on a stack with the same name. You
+     * might retry <code>CancelUpdateStack</code> requests to ensure that AWS
+     * CloudFormation successfully received them.</p>
+     */
+    inline CancelUpdateStackRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+
   private:
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+    Aws::String m_clientRequestToken;
+    bool m_clientRequestTokenHasBeenSet;
   };
 
 } // namespace Model

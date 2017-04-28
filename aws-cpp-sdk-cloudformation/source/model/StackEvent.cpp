@@ -40,7 +40,8 @@ StackEvent::StackEvent() :
     m_resourceStatus(ResourceStatus::NOT_SET),
     m_resourceStatusHasBeenSet(false),
     m_resourceStatusReasonHasBeenSet(false),
-    m_resourcePropertiesHasBeenSet(false)
+    m_resourcePropertiesHasBeenSet(false),
+    m_clientRequestTokenHasBeenSet(false)
 {
 }
 
@@ -55,7 +56,8 @@ StackEvent::StackEvent(const XmlNode& xmlNode) :
     m_resourceStatus(ResourceStatus::NOT_SET),
     m_resourceStatusHasBeenSet(false),
     m_resourceStatusReasonHasBeenSet(false),
-    m_resourcePropertiesHasBeenSet(false)
+    m_resourcePropertiesHasBeenSet(false),
+    m_clientRequestTokenHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -126,6 +128,12 @@ StackEvent& StackEvent::operator =(const XmlNode& xmlNode)
       m_resourceProperties = StringUtils::Trim(resourcePropertiesNode.GetText().c_str());
       m_resourcePropertiesHasBeenSet = true;
     }
+    XmlNode clientRequestTokenNode = resultNode.FirstChild("ClientRequestToken");
+    if(!clientRequestTokenNode.IsNull())
+    {
+      m_clientRequestToken = StringUtils::Trim(clientRequestTokenNode.GetText().c_str());
+      m_clientRequestTokenHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -183,6 +191,11 @@ void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".ResourceProperties=" << StringUtils::URLEncode(m_resourceProperties.c_str()) << "&";
   }
 
+  if(m_clientRequestTokenHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
+  }
+
 }
 
 void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -226,6 +239,10 @@ void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_resourcePropertiesHasBeenSet)
   {
       oStream << location << ".ResourceProperties=" << StringUtils::URLEncode(m_resourceProperties.c_str()) << "&";
+  }
+  if(m_clientRequestTokenHasBeenSet)
+  {
+      oStream << location << ".ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
   }
 }
 

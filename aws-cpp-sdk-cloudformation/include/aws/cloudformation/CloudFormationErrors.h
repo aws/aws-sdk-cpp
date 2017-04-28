@@ -58,7 +58,8 @@ enum class CloudFormationErrors
   CHANGE_SET_NOT_FOUND,
   INSUFFICIENT_CAPABILITIES,
   INVALID_CHANGE_SET_STATUS,
-  LIMIT_EXCEEDED
+  LIMIT_EXCEEDED,
+  TOKEN_ALREADY_EXISTS
 };
 namespace CloudFormationErrorMapper
 {

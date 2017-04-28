@@ -52,6 +52,7 @@ DBClusterSnapshot::DBClusterSnapshot() :
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_dBClusterSnapshotArnHasBeenSet(false),
+    m_sourceDBClusterSnapshotArnHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
 {
@@ -80,6 +81,7 @@ DBClusterSnapshot::DBClusterSnapshot(const XmlNode& xmlNode) :
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_dBClusterSnapshotArnHasBeenSet(false),
+    m_sourceDBClusterSnapshotArnHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
 {
@@ -206,6 +208,12 @@ DBClusterSnapshot& DBClusterSnapshot::operator =(const XmlNode& xmlNode)
       m_dBClusterSnapshotArn = StringUtils::Trim(dBClusterSnapshotArnNode.GetText().c_str());
       m_dBClusterSnapshotArnHasBeenSet = true;
     }
+    XmlNode sourceDBClusterSnapshotArnNode = resultNode.FirstChild("SourceDBClusterSnapshotArn");
+    if(!sourceDBClusterSnapshotArnNode.IsNull())
+    {
+      m_sourceDBClusterSnapshotArn = StringUtils::Trim(sourceDBClusterSnapshotArnNode.GetText().c_str());
+      m_sourceDBClusterSnapshotArnHasBeenSet = true;
+    }
     XmlNode iAMDatabaseAuthenticationEnabledNode = resultNode.FirstChild("IAMDatabaseAuthenticationEnabled");
     if(!iAMDatabaseAuthenticationEnabledNode.IsNull())
     {
@@ -313,6 +321,11 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".DBClusterSnapshotArn=" << StringUtils::URLEncode(m_dBClusterSnapshotArn.c_str()) << "&";
   }
 
+  if(m_sourceDBClusterSnapshotArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SourceDBClusterSnapshotArn=" << StringUtils::URLEncode(m_sourceDBClusterSnapshotArn.c_str()) << "&";
+  }
+
   if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
@@ -397,6 +410,10 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_dBClusterSnapshotArnHasBeenSet)
   {
       oStream << location << ".DBClusterSnapshotArn=" << StringUtils::URLEncode(m_dBClusterSnapshotArn.c_str()) << "&";
+  }
+  if(m_sourceDBClusterSnapshotArnHasBeenSet)
+  {
+      oStream << location << ".SourceDBClusterSnapshotArn=" << StringUtils::URLEncode(m_sourceDBClusterSnapshotArn.c_str()) << "&";
   }
   if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
   {

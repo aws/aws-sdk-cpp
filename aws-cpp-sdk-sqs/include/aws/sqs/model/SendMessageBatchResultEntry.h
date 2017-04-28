@@ -34,7 +34,7 @@ namespace Model
 
   /**
    * <p>Encloses a <code>MessageId</code> for a successfully-enqueued message in a
-   * <code> <a>SendMessageBatch</a> </code>.</p><p><h3>See Also:</h3>   <a
+   * <code> <a>SendMessageBatch</a>.</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatchResultEntry">AWS
    * API Reference</a></p>
    */
@@ -121,117 +121,117 @@ namespace Model
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
      * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information on
-     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * SQS URL-decodes the message before creating the MD5 digest. For information
+     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline const Aws::String& GetMD5OfMessageBody() const{ return m_mD5OfMessageBody; }
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
      * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information on
-     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * SQS URL-decodes the message before creating the MD5 digest. For information
+     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline void SetMD5OfMessageBody(const Aws::String& value) { m_mD5OfMessageBodyHasBeenSet = true; m_mD5OfMessageBody = value; }
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
      * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information on
-     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * SQS URL-decodes the message before creating the MD5 digest. For information
+     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline void SetMD5OfMessageBody(Aws::String&& value) { m_mD5OfMessageBodyHasBeenSet = true; m_mD5OfMessageBody = std::move(value); }
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
      * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information on
-     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * SQS URL-decodes the message before creating the MD5 digest. For information
+     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline void SetMD5OfMessageBody(const char* value) { m_mD5OfMessageBodyHasBeenSet = true; m_mD5OfMessageBody.assign(value); }
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
      * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information on
-     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * SQS URL-decodes the message before creating the MD5 digest. For information
+     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline SendMessageBatchResultEntry& WithMD5OfMessageBody(const Aws::String& value) { SetMD5OfMessageBody(value); return *this;}
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
      * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information on
-     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * SQS URL-decodes the message before creating the MD5 digest. For information
+     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline SendMessageBatchResultEntry& WithMD5OfMessageBody(Aws::String&& value) { SetMD5OfMessageBody(std::move(value)); return *this;}
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
      * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information on
-     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * SQS URL-decodes the message before creating the MD5 digest. For information
+     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline SendMessageBatchResultEntry& WithMD5OfMessageBody(const char* value) { SetMD5OfMessageBody(value); return *this;}
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
      * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information on
-     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * SQS URL-decodes the message before creating the MD5 digest. For information
+     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline const Aws::String& GetMD5OfMessageAttributes() const{ return m_mD5OfMessageAttributes; }
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
      * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information on
-     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * SQS URL-decodes the message before creating the MD5 digest. For information
+     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline void SetMD5OfMessageAttributes(const Aws::String& value) { m_mD5OfMessageAttributesHasBeenSet = true; m_mD5OfMessageAttributes = value; }
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
      * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information on
-     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * SQS URL-decodes the message before creating the MD5 digest. For information
+     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline void SetMD5OfMessageAttributes(Aws::String&& value) { m_mD5OfMessageAttributesHasBeenSet = true; m_mD5OfMessageAttributes = std::move(value); }
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
      * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information on
-     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * SQS URL-decodes the message before creating the MD5 digest. For information
+     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline void SetMD5OfMessageAttributes(const char* value) { m_mD5OfMessageAttributesHasBeenSet = true; m_mD5OfMessageAttributes.assign(value); }
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
      * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information on
-     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * SQS URL-decodes the message before creating the MD5 digest. For information
+     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline SendMessageBatchResultEntry& WithMD5OfMessageAttributes(const Aws::String& value) { SetMD5OfMessageAttributes(value); return *this;}
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
      * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information on
-     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * SQS URL-decodes the message before creating the MD5 digest. For information
+     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline SendMessageBatchResultEntry& WithMD5OfMessageAttributes(Aws::String&& value) { SetMD5OfMessageAttributes(std::move(value)); return *this;}
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
      * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information on
-     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * SQS URL-decodes the message before creating the MD5 digest. For information
+     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline SendMessageBatchResultEntry& WithMD5OfMessageAttributes(const char* value) { SetMD5OfMessageAttributes(value); return *this;}
 
     /**
-     * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>A
+     * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
      * large, non-consecutive number that Amazon SQS assigns to each message.</p>
      * <p>The length of <code>SequenceNumber</code> is 128 bits. As
      * <code>SequenceNumber</code> continues to increase for a particular
@@ -240,7 +240,7 @@ namespace Model
     inline const Aws::String& GetSequenceNumber() const{ return m_sequenceNumber; }
 
     /**
-     * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>A
+     * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
      * large, non-consecutive number that Amazon SQS assigns to each message.</p>
      * <p>The length of <code>SequenceNumber</code> is 128 bits. As
      * <code>SequenceNumber</code> continues to increase for a particular
@@ -249,7 +249,7 @@ namespace Model
     inline void SetSequenceNumber(const Aws::String& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = value; }
 
     /**
-     * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>A
+     * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
      * large, non-consecutive number that Amazon SQS assigns to each message.</p>
      * <p>The length of <code>SequenceNumber</code> is 128 bits. As
      * <code>SequenceNumber</code> continues to increase for a particular
@@ -258,7 +258,7 @@ namespace Model
     inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = std::move(value); }
 
     /**
-     * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>A
+     * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
      * large, non-consecutive number that Amazon SQS assigns to each message.</p>
      * <p>The length of <code>SequenceNumber</code> is 128 bits. As
      * <code>SequenceNumber</code> continues to increase for a particular
@@ -267,7 +267,7 @@ namespace Model
     inline void SetSequenceNumber(const char* value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber.assign(value); }
 
     /**
-     * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>A
+     * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
      * large, non-consecutive number that Amazon SQS assigns to each message.</p>
      * <p>The length of <code>SequenceNumber</code> is 128 bits. As
      * <code>SequenceNumber</code> continues to increase for a particular
@@ -276,7 +276,7 @@ namespace Model
     inline SendMessageBatchResultEntry& WithSequenceNumber(const Aws::String& value) { SetSequenceNumber(value); return *this;}
 
     /**
-     * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>A
+     * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
      * large, non-consecutive number that Amazon SQS assigns to each message.</p>
      * <p>The length of <code>SequenceNumber</code> is 128 bits. As
      * <code>SequenceNumber</code> continues to increase for a particular
@@ -285,7 +285,7 @@ namespace Model
     inline SendMessageBatchResultEntry& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(std::move(value)); return *this;}
 
     /**
-     * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>A
+     * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
      * large, non-consecutive number that Amazon SQS assigns to each message.</p>
      * <p>The length of <code>SequenceNumber</code> is 128 bits. As
      * <code>SequenceNumber</code> continues to increase for a particular

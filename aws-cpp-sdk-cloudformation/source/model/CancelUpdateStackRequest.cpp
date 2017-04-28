@@ -20,7 +20,8 @@ using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
 CancelUpdateStackRequest::CancelUpdateStackRequest() : 
-    m_stackNameHasBeenSet(false)
+    m_stackNameHasBeenSet(false),
+    m_clientRequestTokenHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,11 @@ Aws::String CancelUpdateStackRequest::SerializePayload() const
   if(m_stackNameHasBeenSet)
   {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
+  }
+
+  if(m_clientRequestTokenHasBeenSet)
+  {
+    ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
   }
 
   ss << "Version=2010-05-15";

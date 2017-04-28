@@ -47,7 +47,8 @@ JobMetadata::JobMetadata() :
     m_notificationHasBeenSet(false),
     m_dataTransferProgressHasBeenSet(false),
     m_jobLogInfoHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_forwardingAddressIdHasBeenSet(false)
 {
 }
 
@@ -71,7 +72,8 @@ JobMetadata::JobMetadata(const JsonValue& jsonValue) :
     m_notificationHasBeenSet(false),
     m_dataTransferProgressHasBeenSet(false),
     m_jobLogInfoHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_forwardingAddressIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -190,6 +192,13 @@ JobMetadata& JobMetadata::operator =(const JsonValue& jsonValue)
     m_clusterIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ForwardingAddressId"))
+  {
+    m_forwardingAddressId = jsonValue.GetString("ForwardingAddressId");
+
+    m_forwardingAddressIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -285,6 +294,12 @@ JsonValue JobMetadata::Jsonize() const
   if(m_clusterIdHasBeenSet)
   {
    payload.WithString("ClusterId", m_clusterId);
+
+  }
+
+  if(m_forwardingAddressIdHasBeenSet)
+  {
+   payload.WithString("ForwardingAddressId", m_forwardingAddressId);
 
   }
 

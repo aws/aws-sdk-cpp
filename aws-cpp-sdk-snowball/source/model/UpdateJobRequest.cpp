@@ -31,7 +31,8 @@ UpdateJobRequest::UpdateJobRequest() :
     m_shippingOptionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_snowballCapacityPreference(SnowballCapacity::NOT_SET),
-    m_snowballCapacityPreferenceHasBeenSet(false)
+    m_snowballCapacityPreferenceHasBeenSet(false),
+    m_forwardingAddressIdHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,12 @@ Aws::String UpdateJobRequest::SerializePayload() const
   if(m_snowballCapacityPreferenceHasBeenSet)
   {
    payload.WithString("SnowballCapacityPreference", SnowballCapacityMapper::GetNameForSnowballCapacity(m_snowballCapacityPreference));
+  }
+
+  if(m_forwardingAddressIdHasBeenSet)
+  {
+   payload.WithString("ForwardingAddressId", m_forwardingAddressId);
+
   }
 
   return payload.WriteReadable();

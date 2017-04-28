@@ -22,7 +22,8 @@ using namespace Aws::Utils;
 DeleteStackRequest::DeleteStackRequest() : 
     m_stackNameHasBeenSet(false),
     m_retainResourcesHasBeenSet(false),
-    m_roleARNHasBeenSet(false)
+    m_roleARNHasBeenSet(false),
+    m_clientRequestTokenHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,11 @@ Aws::String DeleteStackRequest::SerializePayload() const
   if(m_roleARNHasBeenSet)
   {
     ss << "RoleARN=" << StringUtils::URLEncode(m_roleARN.c_str()) << "&";
+  }
+
+  if(m_clientRequestTokenHasBeenSet)
+  {
+    ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
   }
 
   ss << "Version=2010-05-15";
