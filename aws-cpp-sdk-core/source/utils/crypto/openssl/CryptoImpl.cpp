@@ -227,10 +227,13 @@ namespace Aws
 
             Sha256HMACOpenSSLImpl::~Sha256HMACOpenSSLImpl()
             {
+                if (m_ctx)
+                {
 #if OPENSSL_VERSION_LESS_1_1
-                Aws::Delete<HMAC_CTX>(m_ctx);
+                    Aws::Delete<HMAC_CTX>(m_ctx);
 #else
-                HMAC_CTX_free(m_ctx);
+                    HMAC_CTX_free(m_ctx);
+                }
 #endif
                 m_ctx = nullptr;
             }
