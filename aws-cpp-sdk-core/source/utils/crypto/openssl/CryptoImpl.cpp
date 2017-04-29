@@ -235,8 +235,8 @@ namespace Aws
                     Aws::Delete<HMAC_CTX>(m_ctx);
 #else
                     HMAC_CTX_free(m_ctx);
-                }
 #endif
+                }
                 m_ctx = nullptr;
             }
 
