@@ -42,8 +42,6 @@ namespace Aws
                 Aws::Utils::Logging::InitializeAWSLogging(
                         Aws::MakeShared<Aws::Utils::Logging::DefaultLogSystem>(ALLOCATION_TAG, options.loggingOptions.logLevel, options.loggingOptions.defaultLogPrefix));
             }
-            // For users to better debugging in case multiple versions of SDK installed
-            AWS_LOGSTREAM_INFO(ALLOCATION_TAG, "Initiate AWS SDK for C++ with Version:" << Aws::String(Aws::Version::GetVersionString()));
         }
 
         if(options.cryptoOptions.aes_CBCFactory_create_fn)
