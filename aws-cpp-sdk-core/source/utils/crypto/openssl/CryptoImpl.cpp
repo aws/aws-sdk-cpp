@@ -35,7 +35,7 @@ namespace Aws
         {
             namespace OpenSSL
             {
-		/**
+				/**
                  * openssl with OPENSSL_VERSION_NUMBER < 0x10100003L made data type details unavailable
                  * libressl use openssl with data type details available, but mandatorily set 
                  * OPENSSL_VERSION_NUMBER = 0x20000000L, insane!
