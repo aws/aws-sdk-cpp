@@ -324,7 +324,7 @@ namespace Aws
             {
                 if (!m_ctx)
                 {
-                    // EVP_CIPHER_CTX_init() will be called inside EVP_CIPHER_CTX_init().
+                    // EVP_CIPHER_CTX_init() will be called inside EVP_CIPHER_CTX_new().
                     m_ctx = EVP_CIPHER_CTX_new();
                     assert(m_ctx != nullptr);
                 }
