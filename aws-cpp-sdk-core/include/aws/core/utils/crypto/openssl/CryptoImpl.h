@@ -104,7 +104,7 @@ namespace Aws
                 virtual HashResult Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) override;
 
             private:
-                HMAC_CTX *m_ctx;
+                HMAC_CTX* m_ctx;
             };
 
             /**
@@ -194,7 +194,7 @@ namespace Aws
 
                 virtual size_t GetKeyLengthBits() const = 0;
 
-                EVP_CIPHER_CTX *m_ctx;
+                EVP_CIPHER_CTX* m_ctx;
 
                 void CheckInitEncryptor();
                 void CheckInitDecryptor();

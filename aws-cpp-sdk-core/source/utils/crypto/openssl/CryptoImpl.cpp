@@ -324,11 +324,12 @@ namespace Aws
             {
                 if (!m_ctx)
                 {
+                    // EVP_CIPHER_CTX_init() will be called inside EVP_CIPHER_CTX_init().
                     m_ctx = EVP_CIPHER_CTX_new();
                     assert(m_ctx != nullptr);
                 }
                 else
-                {   // init after1.1 is the same as reset
+                {   // _init is the same as _reset after openssl 1.1
                     EVP_CIPHER_CTX_init(m_ctx);
                 }
             }
