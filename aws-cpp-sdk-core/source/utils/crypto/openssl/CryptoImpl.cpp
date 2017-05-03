@@ -237,8 +237,7 @@ namespace Aws
                     m_ctx = nullptr;
                 }
 
-            public:
-                inline HMAC_CTX* getResource() {
+                HMAC_CTX* getResource() {
                     return m_ctx;
                 }
             private:
