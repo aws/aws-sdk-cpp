@@ -217,35 +217,41 @@ namespace Aws
                 return HashResult(std::move(hash));
             }
 
-            Sha256HMACOpenSSLImpl::Sha256HMACOpenSSLImpl() : HMAC(), m_ctx(nullptr)
-            {
+            class HMACRAIIGuard {
+            public:
+                HMACRAIIGuard() {
 #if OPENSSL_VERSION_LESS_1_1
-                m_ctx = Aws::New<HMAC_CTX>("AllocSha256HAMCOpenSSLContext");
+                    m_ctx = Aws::New<HMAC_CTX>("AllocSha256HAMCOpenSSLContext");
 #else
-                m_ctx = HMAC_CTX_new();
+                    m_ctx = HMAC_CTX_new();
 #endif
-                assert(m_ctx != nullptr);
-            }
+                    assert(m_ctx != nullptr);
+                }
 
-            Sha256HMACOpenSSLImpl::~Sha256HMACOpenSSLImpl()
-            {
-                if (m_ctx)
-                {
+                ~HMACRAIIGuard() {
 #if OPENSSL_VERSION_LESS_1_1
                     Aws::Delete<HMAC_CTX>(m_ctx);
 #else
                     HMAC_CTX_free(m_ctx);
 #endif
+                    m_ctx = nullptr;
                 }
-                m_ctx = nullptr;
-            }
 
+                HMAC_CTX* getResource() {
+                    return m_ctx;
+                }
+            private:
+                HMAC_CTX *m_ctx;
+            };
 
             HashResult Sha256HMACOpenSSLImpl::Calculate(const ByteBuffer& toSign, const ByteBuffer& secret)
             {
                 unsigned int length = SHA256_DIGEST_LENGTH;
                 ByteBuffer digest(length);
                 memset(digest.GetUnderlyingData(), 0, length);
+                
+                HMACRAIIGuard guard;
+                HMAC_CTX* m_ctx = guard.getResource();
 
 #if OPENSSL_VERSION_LESS_1_1
                 HMAC_CTX_init(m_ctx);
@@ -261,7 +267,6 @@ namespace Aws
 #else
                 HMAC_CTX_reset(m_ctx);
 #endif
-
                 return HashResult(std::move(digest));
             }
 
@@ -275,7 +280,6 @@ namespace Aws
 
                 AWS_LOGSTREAM_ERROR(logTag, errStr);
             }
-
 
             OpenSSLCipher::OpenSSLCipher(const CryptoBuffer& key, size_t blockSizeBytes, bool ctrMode) :
                     SymmetricCipher(key, blockSizeBytes, ctrMode), m_ctx(nullptr),
