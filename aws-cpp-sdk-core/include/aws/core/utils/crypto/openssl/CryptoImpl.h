@@ -96,9 +96,6 @@ namespace Aws
             class Sha256HMACOpenSSLImpl : public HMAC
             {
             public:
-
-                Sha256HMACOpenSSLImpl() {}
-
                 virtual ~Sha256HMACOpenSSLImpl() = default;
 
                 virtual HashResult Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) override;
