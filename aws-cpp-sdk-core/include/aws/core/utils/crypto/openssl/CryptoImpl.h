@@ -97,14 +97,11 @@ namespace Aws
             {
             public:
 
-                Sha256HMACOpenSSLImpl();
+                Sha256HMACOpenSSLImpl() {}
 
-                virtual ~Sha256HMACOpenSSLImpl();
+                virtual ~Sha256HMACOpenSSLImpl() = default;
 
                 virtual HashResult Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) override;
-
-            private:
-                HMAC_CTX* m_ctx;
             };
 
             /**
