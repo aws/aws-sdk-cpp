@@ -455,7 +455,7 @@ You can use the AWSCredentialProvider interface to provide login credentials to 
 The default credential provider chain does the following:
 * Checks your environment variables for AWS Credentials
 * Checks your $HOME/.aws/credentials file for a profile and credentials
-* Contacts the EC2MetadataInstanceProfile service to request credentials
+* Contacts the ECS TaskRoleCredentialsProvider service to request credentials if Environment variable AWS_CONTAINER_CREDENTIALS_RELATIVE_URI has been set. Otherwise contacts the EC2MetadataInstanceProfileCredentialsProvider service to request credentials
 
 The simplest way to communicate with AWS is to ensure we can find your credentials in one of these locations.
 
