@@ -78,6 +78,7 @@ namespace
     static const char* BASE_ERRORS_TESTING_BUCKET = "awsnativesdkerrorsbucketa";
     static const char* BASE_INTERRUPT_TESTING_BUCKET = "awsnativesdkinterruptbucketa";
     static const char* TEST_OBJ_KEY = "TestObjectKey";
+    static const char* TEST_NOT_MODIFIED_OBJ_KEY = "TestNotModifiedObjectKey";
     //windows won't let you hard code unicode strings in a source file and assign them to a char*. Every other compiler does and I need to test this.
     //to get around this, this string is url encoded version of "TestUnicode中国Key". At test time, we'll convert it to the unicode string
     static const char* URLENCODED_UNICODE_KEY = "TestUnicode%E4%B8%AD%E5%9B%BDKey";
@@ -916,7 +917,38 @@ namespace
         ASSERT_EQ(S3Errors::NO_SUCH_KEY, getObjectOutcome.GetError().GetErrorType());
     }
 
+    TEST_F(BucketAndObjectOperationTest, TestNotModifiedIsSuccess)
+    {
+        Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME);
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        ASSERT_TRUE(createBucketOutcome.IsSuccess());
 
+        PutObjectRequest putObjectRequest;
+        putObjectRequest.SetBucket(fullBucketName);
+
+        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("BucketAndObjectOperationTest");
+        *objectStream << "Test never modified!";
+        objectStream->flush();
+        putObjectRequest.SetBody(objectStream);
+        putObjectRequest.SetContentLength(static_cast<long>(putObjectRequest.GetBody()->tellp()));
+        putObjectRequest.SetContentType("text/plain");
+        putObjectRequest.WithKey(TEST_NOT_MODIFIED_OBJ_KEY);
+
+        PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        GetObjectRequest getObjectRequest;
+        getObjectRequest.WithBucket(fullBucketName)
+            .WithKey(TEST_NOT_MODIFIED_OBJ_KEY)
+            .WithIfNoneMatch(putObjectOutcome.GetResult().GetETag());
+
+        GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
+        ASSERT_FALSE(getObjectOutcome.IsSuccess());
+        ASSERT_EQ(Aws::Http::HttpResponseCode::NOT_MODIFIED, getObjectOutcome.GetError().GetResponseCode());
+    }
 }
 
 

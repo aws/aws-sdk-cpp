@@ -191,6 +191,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::String& uri,
                 auto newError = AWSError<CoreErrors>(
                     outcome.GetError().GetErrorType(), outcome.GetError().GetExceptionName(), outcome.GetError().GetMessage(), true);
                 newError.SetResponseHeaders(outcome.GetError().GetResponseHeaders());
+                newError.SetResponseCode(outcome.GetError().GetResponseCode());
                 outcome = newError;
                 //don't sleep at all if clock skew was the problem.
                 sleepMillis = 0;
@@ -598,6 +599,7 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
     }
 
     error.SetResponseHeaders(httpResponse->GetHeaders());
+    error.SetResponseCode(httpResponse->GetResponseCode());
 
     return error;
 }
@@ -733,5 +735,6 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
     }
 
     error.SetResponseHeaders(httpResponse->GetHeaders());
+    error.SetResponseCode(httpResponse->GetResponseCode());
     return error;
 }
