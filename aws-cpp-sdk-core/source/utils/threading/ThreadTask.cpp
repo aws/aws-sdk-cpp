@@ -15,9 +15,11 @@
 
 #include <aws/core/utils/threading/ThreadTask.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <chrono>
 
 using namespace Aws::Utils;
 using namespace Aws::Utils::Threading;
+using namespace std::chrono_literals;
 
 ThreadTask::ThreadTask(PooledThreadExecutor& executor) : m_continue(true), m_executor(executor), m_thread(std::bind(&ThreadTask::MainTaskRunner, this))
 {
@@ -44,9 +46,10 @@ void ThreadTask::MainTaskRunner()
         }
      
         std::unique_lock<std::mutex> locker(m_executor.m_syncPointLock);
-        if(m_continue)
+		
+        if(m_continue && !m_executor.HasTasks())
         {
-            m_executor.m_syncPoint.wait(locker);    
+            m_executor.m_syncPoint.wait_for(locker, 5s);    
         }
     }
 }
