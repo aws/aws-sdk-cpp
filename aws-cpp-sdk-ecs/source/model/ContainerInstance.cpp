@@ -44,7 +44,8 @@ ContainerInstance::ContainerInstance() :
     m_pendingTasksCountHasBeenSet(false),
     m_agentUpdateStatus(AgentUpdateStatus::NOT_SET),
     m_agentUpdateStatusHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+    m_attributesHasBeenSet(false),
+    m_registeredAtHasBeenSet(false)
 {
 }
 
@@ -65,7 +66,8 @@ ContainerInstance::ContainerInstance(const JsonValue& jsonValue) :
     m_pendingTasksCountHasBeenSet(false),
     m_agentUpdateStatus(AgentUpdateStatus::NOT_SET),
     m_agentUpdateStatusHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+    m_attributesHasBeenSet(false),
+    m_registeredAtHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -165,6 +167,13 @@ ContainerInstance& ContainerInstance::operator =(const JsonValue& jsonValue)
     m_attributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("registeredAt"))
+  {
+    m_registeredAt = jsonValue.GetDouble("registeredAt");
+
+    m_registeredAtHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -256,6 +265,11 @@ JsonValue ContainerInstance::Jsonize() const
    }
    payload.WithArray("attributes", std::move(attributesJsonList));
 
+  }
+
+  if(m_registeredAtHasBeenSet)
+  {
+   payload.WithDouble("registeredAt", m_registeredAt.SecondsWithMSPrecision());
   }
 
   return payload;

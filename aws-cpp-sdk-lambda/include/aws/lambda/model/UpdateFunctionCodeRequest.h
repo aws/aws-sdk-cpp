@@ -316,6 +316,36 @@ namespace Model
      */
     inline UpdateFunctionCodeRequest& WithPublish(bool value) { SetPublish(value); return *this;}
 
+    /**
+     * <p>This boolean parameter can be used to test your request to AWS Lambda to
+     * update the Lambda function and publish a version as an atomic operation. It will
+     * do all necessary computation and validation of your code but will not upload it
+     * or a publish a version. Each time this operation is invoked, the
+     * <code>CodeSha256</code> hash value the provided code will also be computed and
+     * returned in the response.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>This boolean parameter can be used to test your request to AWS Lambda to
+     * update the Lambda function and publish a version as an atomic operation. It will
+     * do all necessary computation and validation of your code but will not upload it
+     * or a publish a version. Each time this operation is invoked, the
+     * <code>CodeSha256</code> hash value the provided code will also be computed and
+     * returned in the response.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>This boolean parameter can be used to test your request to AWS Lambda to
+     * update the Lambda function and publish a version as an atomic operation. It will
+     * do all necessary computation and validation of your code but will not upload it
+     * or a publish a version. Each time this operation is invoked, the
+     * <code>CodeSha256</code> hash value the provided code will also be computed and
+     * returned in the response.</p>
+     */
+    inline UpdateFunctionCodeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
   private:
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
@@ -329,6 +359,8 @@ namespace Model
     bool m_s3ObjectVersionHasBeenSet;
     bool m_publish;
     bool m_publishHasBeenSet;
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

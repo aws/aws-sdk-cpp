@@ -273,47 +273,52 @@ namespace Model
     inline ListContainerInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
-     * <p>The container instance status with which to filter the
-     * <code>ListContainerInstances</code> results. Specifying a container instance
-     * status of <code>DRAINING</code> limits the results to container instances that
-     * have been set to drain with the <a>UpdateContainerInstancesState</a>
-     * operation.</p>
+     * <p>Filters the container instances by status. For example, if you specify the
+     * <code>DRAINING</code> status, the results include only container instances that
+     * have been set to <code>DRAINING</code> using
+     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the
+     * default is to include container instances set to <code>ACTIVE</code> and
+     * <code>DRAINING</code>.</p>
      */
     inline const ContainerInstanceStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The container instance status with which to filter the
-     * <code>ListContainerInstances</code> results. Specifying a container instance
-     * status of <code>DRAINING</code> limits the results to container instances that
-     * have been set to drain with the <a>UpdateContainerInstancesState</a>
-     * operation.</p>
+     * <p>Filters the container instances by status. For example, if you specify the
+     * <code>DRAINING</code> status, the results include only container instances that
+     * have been set to <code>DRAINING</code> using
+     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the
+     * default is to include container instances set to <code>ACTIVE</code> and
+     * <code>DRAINING</code>.</p>
      */
     inline void SetStatus(const ContainerInstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The container instance status with which to filter the
-     * <code>ListContainerInstances</code> results. Specifying a container instance
-     * status of <code>DRAINING</code> limits the results to container instances that
-     * have been set to drain with the <a>UpdateContainerInstancesState</a>
-     * operation.</p>
+     * <p>Filters the container instances by status. For example, if you specify the
+     * <code>DRAINING</code> status, the results include only container instances that
+     * have been set to <code>DRAINING</code> using
+     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the
+     * default is to include container instances set to <code>ACTIVE</code> and
+     * <code>DRAINING</code>.</p>
      */
     inline void SetStatus(ContainerInstanceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The container instance status with which to filter the
-     * <code>ListContainerInstances</code> results. Specifying a container instance
-     * status of <code>DRAINING</code> limits the results to container instances that
-     * have been set to drain with the <a>UpdateContainerInstancesState</a>
-     * operation.</p>
+     * <p>Filters the container instances by status. For example, if you specify the
+     * <code>DRAINING</code> status, the results include only container instances that
+     * have been set to <code>DRAINING</code> using
+     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the
+     * default is to include container instances set to <code>ACTIVE</code> and
+     * <code>DRAINING</code>.</p>
      */
     inline ListContainerInstancesRequest& WithStatus(const ContainerInstanceStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The container instance status with which to filter the
-     * <code>ListContainerInstances</code> results. Specifying a container instance
-     * status of <code>DRAINING</code> limits the results to container instances that
-     * have been set to drain with the <a>UpdateContainerInstancesState</a>
-     * operation.</p>
+     * <p>Filters the container instances by status. For example, if you specify the
+     * <code>DRAINING</code> status, the results include only container instances that
+     * have been set to <code>DRAINING</code> using
+     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the
+     * default is to include container instances set to <code>ACTIVE</code> and
+     * <code>DRAINING</code>.</p>
      */
     inline ListContainerInstancesRequest& WithStatus(ContainerInstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
 

@@ -29,7 +29,9 @@ UpdateFunctionCodeRequest::UpdateFunctionCodeRequest() :
     m_s3KeyHasBeenSet(false),
     m_s3ObjectVersionHasBeenSet(false),
     m_publish(false),
-    m_publishHasBeenSet(false)
+    m_publishHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,12 @@ Aws::String UpdateFunctionCodeRequest::SerializePayload() const
   if(m_publishHasBeenSet)
   {
    payload.WithBool("Publish", m_publish);
+
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+   payload.WithBool("DryRun", m_dryRun);
 
   }
 
