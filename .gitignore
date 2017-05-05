@@ -8,6 +8,7 @@ Release
 *~
 *#
 *.iml
+tags
 
 #compiled python files
 *.pyc

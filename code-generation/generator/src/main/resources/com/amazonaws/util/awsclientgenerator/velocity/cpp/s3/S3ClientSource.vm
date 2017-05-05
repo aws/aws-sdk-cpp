@@ -14,7 +14,7 @@ Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucketName, co
 Aws::String ${className}::ComputeEndpointString(const Aws::String& bucket) const
 {
     Aws::StringStream ss;
-    if(m_useVirtualAdressing)
+    if(m_useVirtualAdressing && Aws::Utils::IsValidDnsLabel(bucket))
     {
         ss << m_scheme << "://" << bucket << "." << m_baseUri;
     }

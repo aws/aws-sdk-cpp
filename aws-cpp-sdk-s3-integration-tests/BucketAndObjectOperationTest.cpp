@@ -70,6 +70,7 @@ namespace
 
     static const char* ALLOCATION_TAG = "BucketAndObjectOperationTest";
     static const char* BASE_CREATE_BUCKET_TEST_NAME = "awsnativesdkcreatebuckettestbucketa";
+    static const char* BASE_DNS_UNFRIENDLY_TEST_NAME = "aws.native.sdk.create.bucket.test.bucketa";
     static const char* BASE_LOCATION_BUCKET_TEST_NAME = "awsnativesdklocbuckettesta";
     static const char* BASE_PUT_OBJECTS_BUCKET_NAME = "awsnativesdkputobjectstestbucketa";
     static const char* BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "awsnativesdkcharsetstestbucketa";
@@ -79,6 +80,7 @@ namespace
     static const char* BASE_INTERRUPT_TESTING_BUCKET = "awsnativesdkinterruptbucketa";
     static const char* TEST_OBJ_KEY = "TestObjectKey";
     static const char* TEST_NOT_MODIFIED_OBJ_KEY = "TestNotModifiedObjectKey";
+    static const char* TEST_DNS_UNFRIENDLY_OBJ_KEY = "WhySoHostile";
     //windows won't let you hard code unicode strings in a source file and assign them to a char*. Every other compiler does and I need to test this.
     //to get around this, this string is url encoded version of "TestUnicode中国Key". At test time, we'll convert it to the unicode string
     static const char* URLENCODED_UNICODE_KEY = "TestUnicode%E4%B8%AD%E5%9B%BDKey";
@@ -118,16 +120,21 @@ namespace
                 config.proxyPort = PROXY_PORT;
             }
 
-            Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, false);
+            Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, 
+                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, 
+                        false /*signPayloads*/, true /*useVirtualAddressing*/);
             config.region = Aws::Region::US_WEST_2;
             config.useDualStack = true;
-            oregonClient = Aws::MakeShared<S3Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, false);
+            oregonClient = Aws::MakeShared<S3Client>(ALLOCATION_TAG, 
+                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, 
+                        false /*signPayloads*/, true /*useVirtualAddressing*/);
             m_HttpClient = Aws::Http::CreateHttpClient(config);
         }
 
         static void TearDownTestCase()
         {
             DeleteBucket(CalculateBucketName(BASE_CREATE_BUCKET_TEST_NAME));
+            DeleteBucket(CalculateBucketName(BASE_DNS_UNFRIENDLY_TEST_NAME));
             DeleteBucket(CalculateBucketName(BASE_LOCATION_BUCKET_TEST_NAME));
             DeleteBucket(CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME));
             DeleteBucket(CalculateBucketName(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME));
@@ -948,6 +955,33 @@ namespace
         GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
         ASSERT_FALSE(getObjectOutcome.IsSuccess());
         ASSERT_EQ(Aws::Http::HttpResponseCode::NOT_MODIFIED, getObjectOutcome.GetError().GetResponseCode());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestVirtualAddressingWithUnfriendlyBucketName)
+    {
+        Aws::String fullBucketName = CalculateBucketName(BASE_DNS_UNFRIENDLY_TEST_NAME);
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+
+        PutObjectRequest putObjectRequest;
+        putObjectRequest.SetBucket(fullBucketName);
+
+        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("BucketAndObjectOperationTest");
+        *objectStream << "'A program that has not been tested does not work'-- Bjarne Stroustrup";
+        objectStream->flush();
+        putObjectRequest.SetBody(objectStream);
+        putObjectRequest.SetContentLength(static_cast<long>(putObjectRequest.GetBody()->tellp()));
+        putObjectRequest.SetContentType("text/plain");
+        putObjectRequest.WithKey(TEST_DNS_UNFRIENDLY_OBJ_KEY);
+
+        PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        Aws::String presignedUrlPut = Client->GeneratePresignedUrl(fullBucketName, TEST_DNS_UNFRIENDLY_OBJ_KEY, HttpMethod::HTTP_PUT);
+        ASSERT_EQ(0ul, presignedUrlPut.find("https://s3.amazonaws.com/" + fullBucketName + "/" + TEST_DNS_UNFRIENDLY_OBJ_KEY));
     }
 }
 

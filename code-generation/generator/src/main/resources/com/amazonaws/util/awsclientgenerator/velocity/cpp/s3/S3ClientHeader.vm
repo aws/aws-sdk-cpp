@@ -9,6 +9,7 @@
 \#include <aws/core/client/AWSClient.h>
 \#include <aws/core/utils/memory/stl/AWSString.h>
 \#include <aws/core/utils/xml/XmlSerializer.h>
+\#include <aws/core/utils/DNS.h>
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderModelIncludes.vm")
 \#include <aws/core/client/AsyncCallerContext.h>
 \#include <aws/core/http/HttpTypes.h>
