@@ -15,7 +15,7 @@
 */
 
 #include <aws/external/gtest.h>
-#include <aws/core/utils/Dns.h>
+#include <aws/core/utils/DNS.h>
 
 using namespace Aws::Utils;
 
