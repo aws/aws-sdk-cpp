@@ -501,9 +501,9 @@ namespace Aws
             }
             else
             {
-                transferContext->handle->UpdateStatus(DetermineIfFailedOrCanceled(*transferContext->handle));
                 transferContext->handle->ChangePartToFailed(transferContext->partState);
                 transferContext->handle->SetError(outcome.GetError());
+                transferContext->handle->UpdateStatus(DetermineIfFailedOrCanceled(*transferContext->handle));
                 TriggerErrorCallback(*transferContext->handle, outcome.GetError());
             }
 
