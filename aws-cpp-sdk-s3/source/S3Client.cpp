@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
@@ -2574,7 +2575,7 @@ Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucketName, const 
 Aws::String S3Client::ComputeEndpointString(const Aws::String& bucket) const
 {
     Aws::StringStream ss;
-    if(m_useVirtualAdressing)
+    if(m_useVirtualAdressing && Aws::Utils::IsValidDnsLabel(bucket))
     {
         ss << m_scheme << "://" << bucket << "." << m_baseUri;
     }
