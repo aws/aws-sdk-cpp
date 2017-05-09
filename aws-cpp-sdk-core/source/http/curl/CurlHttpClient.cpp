@@ -413,7 +413,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
             curl_easy_setopt(connectionHandle, CURLOPT_PROXYUSERNAME, m_proxyUserName.c_str());
             curl_easy_setopt(connectionHandle, CURLOPT_PROXYPASSWORD, m_proxyPassword.c_str());
         }
-		else
+        else
         {
             curl_easy_setopt(connectionHandle, CURLOPT_PROXY, "");
         }
