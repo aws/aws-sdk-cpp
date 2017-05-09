@@ -99,7 +99,7 @@ namespace Aws
             }
 
             /**
-             * casts the underlying result to an r-value so that caller can't take ownership of underlying resources.
+             * casts the underlying result to an r-value so that caller can take ownership of underlying resources.
              * this is necessary when streams are involved.
              */
             inline R&& GetResultWithOwnership()

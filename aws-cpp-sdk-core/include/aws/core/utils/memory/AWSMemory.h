@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -66,7 +66,7 @@ namespace Aws
     T* New(const char* allocationTag, ArgTypes&&... args)
     {
         void *rawMemory = Malloc(allocationTag, sizeof(T));
-
+        // http://stackoverflow.com/questions/6783993/placement-new-and-delete
         T *constructedMemory = new (rawMemory) T(std::forward<ArgTypes>(args)...);
         return constructedMemory;
     }
@@ -82,7 +82,7 @@ namespace Aws
         {
             return;
         }
-
+        //http://stackoverflow.com/questions/6783993/placement-new-and-delete
         pointerToT->~T();
         Free(pointerToT);
     }
