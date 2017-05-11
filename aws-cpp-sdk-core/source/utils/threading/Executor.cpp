@@ -39,13 +39,15 @@ PooledThreadExecutor::PooledThreadExecutor(size_t poolSize, OverflowPolicy overf
 
 PooledThreadExecutor::~PooledThreadExecutor()
 {
-    for(auto threadTask : m_threadTaskHandles)
-    {
-        threadTask->StopProcessingWork();       
-    }
+	{
+		std::unique_lock<std::mutex> locker(m_syncPointLock);
+		for(auto threadTask : m_threadTaskHandles)
+		{
+			threadTask->StopProcessingWork();       
+		}
 
-    m_syncPoint.notify_all();
-
+		m_syncPoint.notify_all();
+	}
     for (auto threadTask : m_threadTaskHandles)
     {
         Aws::Delete(threadTask);
@@ -67,6 +69,8 @@ PooledThreadExecutor::~PooledThreadExecutor()
 bool PooledThreadExecutor::SubmitToThread(std::function<void()>&& fn)
 {
     //avoid the need to do copies inside the lock. Instead lets do a pointer push.
+
+
     std::function<void()>* fnCpy = Aws::New<std::function<void()>>(POOLED_CLASS_TAG, std::forward<std::function<void()>>(fn));
 
     {
@@ -80,6 +84,7 @@ bool PooledThreadExecutor::SubmitToThread(std::function<void()>&& fn)
         m_tasks.push(fnCpy);
     }
 
+	std::unique_lock<std::mutex> locker(m_syncPointLock);
     m_syncPoint.notify_one();
   
     return true;
