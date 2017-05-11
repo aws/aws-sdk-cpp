@@ -33,6 +33,7 @@ namespace Aws
         static const int ACCOUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ACCOUNT_LIMIT_EXCEEDED");
         static const int EMAIL_ALREADY_EXISTS_HASH = HashingUtils::HashString("EMAIL_ALREADY_EXISTS");
         static const int INVALID_ADDRESS_HASH = HashingUtils::HashString("INVALID_ADDRESS");
+        static const int INVALID_EMAIL_HASH = HashingUtils::HashString("INVALID_EMAIL");
         static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
 
 
@@ -50,6 +51,10 @@ namespace Aws
           else if (hashCode == INVALID_ADDRESS_HASH)
           {
             return CreateAccountFailureReason::INVALID_ADDRESS;
+          }
+          else if (hashCode == INVALID_EMAIL_HASH)
+          {
+            return CreateAccountFailureReason::INVALID_EMAIL;
           }
           else if (hashCode == INTERNAL_FAILURE_HASH)
           {
@@ -75,6 +80,8 @@ namespace Aws
             return "EMAIL_ALREADY_EXISTS";
           case CreateAccountFailureReason::INVALID_ADDRESS:
             return "INVALID_ADDRESS";
+          case CreateAccountFailureReason::INVALID_EMAIL:
+            return "INVALID_EMAIL";
           case CreateAccountFailureReason::INTERNAL_FAILURE:
             return "INTERNAL_FAILURE";
           default:

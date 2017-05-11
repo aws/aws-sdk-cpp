@@ -40,6 +40,7 @@
 #include <aws/elasticloadbalancing/model/DeleteLoadBalancerListenersRequest.h>
 #include <aws/elasticloadbalancing/model/DeleteLoadBalancerPolicyRequest.h>
 #include <aws/elasticloadbalancing/model/DeregisterInstancesFromLoadBalancerRequest.h>
+#include <aws/elasticloadbalancing/model/DescribeAccountLimitsRequest.h>
 #include <aws/elasticloadbalancing/model/DescribeInstanceHealthRequest.h>
 #include <aws/elasticloadbalancing/model/DescribeLoadBalancerAttributesRequest.h>
 #include <aws/elasticloadbalancing/model/DescribeLoadBalancerPoliciesRequest.h>
@@ -571,6 +572,40 @@ void ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancerAsync(const 
 void ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancerAsyncHelper(const DeregisterInstancesFromLoadBalancerRequest& request, const DeregisterInstancesFromLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeregisterInstancesFromLoadBalancer(request), context);
+}
+
+DescribeAccountLimitsOutcome ElasticLoadBalancingClient::DescribeAccountLimits(const DescribeAccountLimitsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri;
+  ss << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeAccountLimitsOutcome(DescribeAccountLimitsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeAccountLimitsOutcome(outcome.GetError());
+  }
+}
+
+DescribeAccountLimitsOutcomeCallable ElasticLoadBalancingClient::DescribeAccountLimitsCallable(const DescribeAccountLimitsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAccountLimitsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAccountLimits(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticLoadBalancingClient::DescribeAccountLimitsAsync(const DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountLimitsAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticLoadBalancingClient::DescribeAccountLimitsAsyncHelper(const DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAccountLimits(request), context);
 }
 
 DescribeInstanceHealthOutcome ElasticLoadBalancingClient::DescribeInstanceHealth(const DescribeInstanceHealthRequest& request) const

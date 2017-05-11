@@ -31,6 +31,7 @@ namespace Model
 Account::Account() : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
+    m_emailHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(AccountStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -43,6 +44,7 @@ Account::Account() :
 Account::Account(const JsonValue& jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
+    m_emailHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(AccountStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -67,6 +69,13 @@ Account& Account::operator =(const JsonValue& jsonValue)
     m_arn = jsonValue.GetString("Arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Email"))
+  {
+    m_email = jsonValue.GetString("Email");
+
+    m_emailHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Name"))
@@ -113,6 +122,12 @@ JsonValue Account::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("Arn", m_arn);
+
+  }
+
+  if(m_emailHasBeenSet)
+  {
+   payload.WithString("Email", m_email);
 
   }
 

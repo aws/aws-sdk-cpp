@@ -84,19 +84,29 @@ namespace Model
      */
     inline ModifyLoadBalancerAttributesResult& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
-    
+    /**
+     * <p>Information about the load balancer attributes.</p>
+     */
     inline const LoadBalancerAttributes& GetLoadBalancerAttributes() const{ return m_loadBalancerAttributes; }
 
-    
+    /**
+     * <p>Information about the load balancer attributes.</p>
+     */
     inline void SetLoadBalancerAttributes(const LoadBalancerAttributes& value) { m_loadBalancerAttributes = value; }
 
-    
+    /**
+     * <p>Information about the load balancer attributes.</p>
+     */
     inline void SetLoadBalancerAttributes(LoadBalancerAttributes&& value) { m_loadBalancerAttributes = std::move(value); }
 
-    
+    /**
+     * <p>Information about the load balancer attributes.</p>
+     */
     inline ModifyLoadBalancerAttributesResult& WithLoadBalancerAttributes(const LoadBalancerAttributes& value) { SetLoadBalancerAttributes(value); return *this;}
 
-    
+    /**
+     * <p>Information about the load balancer attributes.</p>
+     */
     inline ModifyLoadBalancerAttributesResult& WithLoadBalancerAttributes(LoadBalancerAttributes&& value) { SetLoadBalancerAttributes(std::move(value)); return *this;}
 
     

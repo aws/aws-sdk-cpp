@@ -80,27 +80,27 @@ namespace Model
     inline ModifyLoadBalancerAttributesRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
     /**
-     * <p>The attributes of the load balancer.</p>
+     * <p>The attributes for the load balancer.</p>
      */
     inline const LoadBalancerAttributes& GetLoadBalancerAttributes() const{ return m_loadBalancerAttributes; }
 
     /**
-     * <p>The attributes of the load balancer.</p>
+     * <p>The attributes for the load balancer.</p>
      */
     inline void SetLoadBalancerAttributes(const LoadBalancerAttributes& value) { m_loadBalancerAttributesHasBeenSet = true; m_loadBalancerAttributes = value; }
 
     /**
-     * <p>The attributes of the load balancer.</p>
+     * <p>The attributes for the load balancer.</p>
      */
     inline void SetLoadBalancerAttributes(LoadBalancerAttributes&& value) { m_loadBalancerAttributesHasBeenSet = true; m_loadBalancerAttributes = std::move(value); }
 
     /**
-     * <p>The attributes of the load balancer.</p>
+     * <p>The attributes for the load balancer.</p>
      */
     inline ModifyLoadBalancerAttributesRequest& WithLoadBalancerAttributes(const LoadBalancerAttributes& value) { SetLoadBalancerAttributes(value); return *this;}
 
     /**
-     * <p>The attributes of the load balancer.</p>
+     * <p>The attributes for the load balancer.</p>
      */
     inline ModifyLoadBalancerAttributesRequest& WithLoadBalancerAttributes(LoadBalancerAttributes&& value) { SetLoadBalancerAttributes(std::move(value)); return *this;}
 

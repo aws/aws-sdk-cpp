@@ -262,7 +262,9 @@ namespace Model
      * account billing information. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
      * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
-     * Cost Management User Guide</i>.</p>
+     * Cost Management User Guide</i>.</p> <p>If you do not specify this parameter, the
+     * value defaults to ALLOW, and IAM users and roles with the required permissions
+     * can access billing information for the new account.</p>
      */
     inline const IAMUserAccessToBilling& GetIamUserAccessToBilling() const{ return m_iamUserAccessToBilling; }
 
@@ -273,7 +275,9 @@ namespace Model
      * account billing information. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
      * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
-     * Cost Management User Guide</i>.</p>
+     * Cost Management User Guide</i>.</p> <p>If you do not specify this parameter, the
+     * value defaults to ALLOW, and IAM users and roles with the required permissions
+     * can access billing information for the new account.</p>
      */
     inline void SetIamUserAccessToBilling(const IAMUserAccessToBilling& value) { m_iamUserAccessToBillingHasBeenSet = true; m_iamUserAccessToBilling = value; }
 
@@ -284,7 +288,9 @@ namespace Model
      * account billing information. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
      * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
-     * Cost Management User Guide</i>.</p>
+     * Cost Management User Guide</i>.</p> <p>If you do not specify this parameter, the
+     * value defaults to ALLOW, and IAM users and roles with the required permissions
+     * can access billing information for the new account.</p>
      */
     inline void SetIamUserAccessToBilling(IAMUserAccessToBilling&& value) { m_iamUserAccessToBillingHasBeenSet = true; m_iamUserAccessToBilling = std::move(value); }
 
@@ -295,7 +301,9 @@ namespace Model
      * account billing information. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
      * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
-     * Cost Management User Guide</i>.</p>
+     * Cost Management User Guide</i>.</p> <p>If you do not specify this parameter, the
+     * value defaults to ALLOW, and IAM users and roles with the required permissions
+     * can access billing information for the new account.</p>
      */
     inline CreateAccountRequest& WithIamUserAccessToBilling(const IAMUserAccessToBilling& value) { SetIamUserAccessToBilling(value); return *this;}
 
@@ -306,7 +314,9 @@ namespace Model
      * account billing information. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
      * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
-     * Cost Management User Guide</i>.</p>
+     * Cost Management User Guide</i>.</p> <p>If you do not specify this parameter, the
+     * value defaults to ALLOW, and IAM users and roles with the required permissions
+     * can access billing information for the new account.</p>
      */
     inline CreateAccountRequest& WithIamUserAccessToBilling(IAMUserAccessToBilling&& value) { SetIamUserAccessToBilling(std::move(value)); return *this;}
 

@@ -50,19 +50,29 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    
+    /**
+     * <p>The listener.</p>
+     */
     inline const Listener& GetListener() const{ return m_listener; }
 
-    
+    /**
+     * <p>The listener.</p>
+     */
     inline void SetListener(const Listener& value) { m_listenerHasBeenSet = true; m_listener = value; }
 
-    
+    /**
+     * <p>The listener.</p>
+     */
     inline void SetListener(Listener&& value) { m_listenerHasBeenSet = true; m_listener = std::move(value); }
 
-    
+    /**
+     * <p>The listener.</p>
+     */
     inline ListenerDescription& WithListener(const Listener& value) { SetListener(value); return *this;}
 
-    
+    /**
+     * <p>The listener.</p>
+     */
     inline ListenerDescription& WithListener(Listener&& value) { SetListener(std::move(value)); return *this;}
 
     /**
