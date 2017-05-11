@@ -246,9 +246,9 @@ namespace Aws
 
         void TransferHandle::WaitUntilFinished() const
         {
+            std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
             if (!IsFinishedStatus(static_cast<TransferStatus>(m_status.load())) || HasPendingParts())
             {
-                std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
                 m_waitUntilFinishedSignal.wait(semaphoreLock, [this]()
                     { return IsFinishedStatus(static_cast<TransferStatus>(m_status.load())) && !HasPendingParts(); });
                 semaphoreLock.unlock();
