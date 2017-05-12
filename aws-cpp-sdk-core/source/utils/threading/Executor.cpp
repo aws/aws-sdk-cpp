@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   * 
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -106,4 +106,61 @@ bool PooledThreadExecutor::HasTasks()
 {
     std::lock_guard<std::mutex> locker(m_queueLock);
     return m_tasks.size() > 0;
+}
+
+BlockingExecutor::BlockingExecutor(std::shared_ptr<Executor> executor, size_t poolSize) :
+    m_executor(executor), m_poolSize(poolSize), m_numTasksRunning(0)
+{
+}
+
+BlockingExecutor::~BlockingExecutor()
+{
+    WaitForCompletion();
+}
+
+bool BlockingExecutor::SubmitToThread(std::function<void()>&& fn)
+{
+    std::unique_lock<std::recursive_mutex> locker(m_syncPointLock);
+    if (m_numTasksRunning >= m_poolSize)
+    {
+        m_syncPoint.wait(locker, [&]{
+            return m_numTasksRunning < m_poolSize;
+        });
+    }
+    m_numTasksRunning++;
+    locker.unlock();
+    
+    m_executor->Submit(&BlockingExecutor::ExecuteTask, this, fn);
+    return true;
+}
+
+void BlockingExecutor::ExecuteTask(std::function<void()> fn)
+{
+    fn();
+    OnTaskComplete();
+}
+
+void BlockingExecutor::OnTaskComplete()
+{
+    std::unique_lock<std::recursive_mutex> locker(m_syncPointLock);
+    m_numTasksRunning--;
+    m_syncPoint.notify_one();
+    locker.unlock();
+}
+
+void BlockingExecutor::WaitForCompletion()
+{
+    while (m_numTasksRunning != 0)
+    {
+        std::this_thread::yield();
+        if (m_numTasksRunning == 0)
+        {
+            // Make sure the condition actually does hold under the lock
+            std::lock_guard<std::recursive_mutex> locker(m_syncPointLock);
+            if (m_numTasksRunning == 0)
+            {
+                break;
+            }
+        }
+    }
 }
