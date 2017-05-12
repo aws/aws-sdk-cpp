@@ -45,6 +45,7 @@ ClientConfiguration::ClientConfiguration() :
     requestTimeoutMs(3000), 
     connectTimeoutMs(1000),
     retryStrategy(Aws::MakeShared<DefaultRetryStrategy>(CLIENT_CONFIGURATION_ALLOCATION_TAG)),
+    proxyScheme(Aws::Http::Scheme::HTTPS),
     proxyPort(0),
     executor(Aws::MakeShared<Aws::Utils::Threading::DefaultExecutor>(CLIENT_CONFIGURATION_ALLOCATION_TAG)),
     verifySSL(true),

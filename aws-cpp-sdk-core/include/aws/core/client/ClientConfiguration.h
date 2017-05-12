@@ -86,6 +86,10 @@ namespace Aws
              */
             Aws::String endpointOverride;
             /**
+             * If you have users going through a proxy, set the proxy scheme here. Default HTTPS
+             */
+            Aws::Http::Scheme proxyScheme;
+            /**
              * If you have users going through a proxy, set the host here.
              */
             Aws::String proxyHost;
