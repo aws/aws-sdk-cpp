@@ -564,9 +564,9 @@ size_t CurlHttpClient::ReadBody(char* ptr, size_t size, size_t nmemb, void* user
     HttpRequest* request = context->m_request;
     std::shared_ptr<Aws::IOStream> ioStream = request->GetContentBody();
 
-    if (ioStream != nullptr && size * nmemb)
+    const size_t amountToRead = size * nmemb;
+    if (ioStream != nullptr && amountToRead > 0)
     {
-        size_t amountToRead = size * nmemb;
         ioStream->read(ptr, amountToRead);
         size_t amountRead = static_cast<size_t>(ioStream->gcount());
         auto& sentHandler = request->GetDataSentEventHandler();
