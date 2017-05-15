@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-CloudSearchDomain;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20130101.120;
+        version : 1.0.20130101.121;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon CloudSearch Domain);
