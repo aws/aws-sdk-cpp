@@ -517,17 +517,18 @@ namespace Model
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. Tags are
-         * metadata that you assign to your managed instances. Tags enable you to
-         * categorize your managed instances in different ways, for example, by purpose,
-         * owner, or environment. Each tag consists of a key and an optional value, both of
-         * which you define. For example, you could define a set of tags for your account's
-         * managed instances that helps you track each instance's owner and stack level.
-         * For example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and
-         * Value=Production, Pre-Production, or Test. Each resource can have a maximum of
-         * 10 tags. </p> <p>We recommend that you devise a set of tag keys that meets your
-         * needs for each resource type. Using a consistent set of tag keys makes it easier
-         * for you to manage your resources. You can search and filter the resources based
-         * on the tags you add. Tags don't have any semantic meaning to Amazon EC2 and are
+         * metadata that you assign to your managed instances, Maintenance Windows, or
+         * Parameter Store parameters. Tags enable you to categorize your resources in
+         * different ways, for example, by purpose, owner, or environment. Each tag
+         * consists of a key and an optional value, both of which you define. For example,
+         * you could define a set of tags for your account's managed instances that helps
+         * you track each instance's owner and stack level. For example: Key=Owner and
+         * Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production,
+         * Pre-Production, or Test.</p> <p>Each resource can have a maximum of 10 tags.
+         * </p> <p>We recommend that you devise a set of tag keys that meets your needs for
+         * each resource type. Using a consistent set of tag keys makes it easier for you
+         * to manage your resources. You can search and filter the resources based on the
+         * tags you add. Tags don't have any semantic meaning to Amazon EC2 and are
          * interpreted strictly as a string of characters. </p> <p>For more information
          * about tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
@@ -540,17 +541,18 @@ namespace Model
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. Tags are
-         * metadata that you assign to your managed instances. Tags enable you to
-         * categorize your managed instances in different ways, for example, by purpose,
-         * owner, or environment. Each tag consists of a key and an optional value, both of
-         * which you define. For example, you could define a set of tags for your account's
-         * managed instances that helps you track each instance's owner and stack level.
-         * For example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and
-         * Value=Production, Pre-Production, or Test. Each resource can have a maximum of
-         * 10 tags. </p> <p>We recommend that you devise a set of tag keys that meets your
-         * needs for each resource type. Using a consistent set of tag keys makes it easier
-         * for you to manage your resources. You can search and filter the resources based
-         * on the tags you add. Tags don't have any semantic meaning to Amazon EC2 and are
+         * metadata that you assign to your managed instances, Maintenance Windows, or
+         * Parameter Store parameters. Tags enable you to categorize your resources in
+         * different ways, for example, by purpose, owner, or environment. Each tag
+         * consists of a key and an optional value, both of which you define. For example,
+         * you could define a set of tags for your account's managed instances that helps
+         * you track each instance's owner and stack level. For example: Key=Owner and
+         * Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production,
+         * Pre-Production, or Test.</p> <p>Each resource can have a maximum of 10 tags.
+         * </p> <p>We recommend that you devise a set of tag keys that meets your needs for
+         * each resource type. Using a consistent set of tag keys makes it easier for you
+         * to manage your resources. You can search and filter the resources based on the
+         * tags you add. Tags don't have any semantic meaning to Amazon EC2 and are
          * interpreted strictly as a string of characters. </p> <p>For more information
          * about tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
@@ -565,17 +567,18 @@ namespace Model
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. Tags are
-         * metadata that you assign to your managed instances. Tags enable you to
-         * categorize your managed instances in different ways, for example, by purpose,
-         * owner, or environment. Each tag consists of a key and an optional value, both of
-         * which you define. For example, you could define a set of tags for your account's
-         * managed instances that helps you track each instance's owner and stack level.
-         * For example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and
-         * Value=Production, Pre-Production, or Test. Each resource can have a maximum of
-         * 10 tags. </p> <p>We recommend that you devise a set of tag keys that meets your
-         * needs for each resource type. Using a consistent set of tag keys makes it easier
-         * for you to manage your resources. You can search and filter the resources based
-         * on the tags you add. Tags don't have any semantic meaning to Amazon EC2 and are
+         * metadata that you assign to your managed instances, Maintenance Windows, or
+         * Parameter Store parameters. Tags enable you to categorize your resources in
+         * different ways, for example, by purpose, owner, or environment. Each tag
+         * consists of a key and an optional value, both of which you define. For example,
+         * you could define a set of tags for your account's managed instances that helps
+         * you track each instance's owner and stack level. For example: Key=Owner and
+         * Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production,
+         * Pre-Production, or Test.</p> <p>Each resource can have a maximum of 10 tags.
+         * </p> <p>We recommend that you devise a set of tag keys that meets your needs for
+         * each resource type. Using a consistent set of tag keys makes it easier for you
+         * to manage your resources. You can search and filter the resources based on the
+         * tags you add. Tags don't have any semantic meaning to Amazon EC2 and are
          * interpreted strictly as a string of characters. </p> <p>For more information
          * about tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
@@ -1011,7 +1014,7 @@ namespace Model
 
         /**
          * <p>Removes the server or virtual machine from the list of registered servers.
-         * You can reregister the instance again at any time. If you don’t plan to use Run
+         * You can reregister the instance again at any time. If you don't plan to use Run
          * Command on the server, we suggest uninstalling the SSM Agent
          * first.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">AWS
@@ -1021,7 +1024,7 @@ namespace Model
 
         /**
          * <p>Removes the server or virtual machine from the list of registered servers.
-         * You can reregister the instance again at any time. If you don’t plan to use Run
+         * You can reregister the instance again at any time. If you don't plan to use Run
          * Command on the server, we suggest uninstalling the SSM Agent
          * first.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">AWS
@@ -1033,7 +1036,7 @@ namespace Model
 
         /**
          * <p>Removes the server or virtual machine from the list of registered servers.
-         * You can reregister the instance again at any time. If you don’t plan to use Run
+         * You can reregister the instance again at any time. If you don't plan to use Run
          * Command on the server, we suggest uninstalling the SSM Agent
          * first.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">AWS
@@ -1264,7 +1267,7 @@ namespace Model
         /**
          * <p>Describes the permissions for a Systems Manager document. If you created the
          * document, you are the owner. If a document is shared, it can either be shared
-         * privately (by specifying a user’s AWS account ID) or publicly (<i>All</i>).
+         * privately (by specifying a user's AWS account ID) or publicly (<i>All</i>).
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">AWS
          * API Reference</a></p>
@@ -1274,7 +1277,7 @@ namespace Model
         /**
          * <p>Describes the permissions for a Systems Manager document. If you created the
          * document, you are the owner. If a document is shared, it can either be shared
-         * privately (by specifying a user’s AWS account ID) or publicly (<i>All</i>).
+         * privately (by specifying a user's AWS account ID) or publicly (<i>All</i>).
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">AWS
          * API Reference</a></p>
@@ -1286,7 +1289,7 @@ namespace Model
         /**
          * <p>Describes the permissions for a Systems Manager document. If you created the
          * document, you are the owner. If a document is shared, it can either be shared
-         * privately (by specifying a user’s AWS account ID) or publicly (<i>All</i>).
+         * privately (by specifying a user's AWS account ID) or publicly (<i>All</i>).
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">AWS
          * API Reference</a></p>

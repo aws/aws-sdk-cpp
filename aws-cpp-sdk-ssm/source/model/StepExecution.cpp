@@ -39,7 +39,8 @@ StepExecution::StepExecution() :
     m_inputsHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_responseHasBeenSet(false),
-    m_failureMessageHasBeenSet(false)
+    m_failureMessageHasBeenSet(false),
+    m_failureDetailsHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ StepExecution::StepExecution(const JsonValue& jsonValue) :
     m_inputsHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_responseHasBeenSet(false),
-    m_failureMessageHasBeenSet(false)
+    m_failureMessageHasBeenSet(false),
+    m_failureDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -144,6 +146,13 @@ StepExecution& StepExecution::operator =(const JsonValue& jsonValue)
     m_failureMessageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FailureDetails"))
+  {
+    m_failureDetails = jsonValue.GetObject("FailureDetails");
+
+    m_failureDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -220,6 +229,12 @@ JsonValue StepExecution::Jsonize() const
   if(m_failureMessageHasBeenSet)
   {
    payload.WithString("FailureMessage", m_failureMessage);
+
+  }
+
+  if(m_failureDetailsHasBeenSet)
+  {
+   payload.WithObject("FailureDetails", m_failureDetails.Jsonize());
 
   }
 

@@ -40,7 +40,7 @@ namespace Model
 {
 
   /**
-   * <p> Describes an SSM document. </p><p><h3>See Also:</h3>   <a
+   * <p>Describes an SSM document. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentDescription">AWS
    * API Reference</a></p>
    */
@@ -232,27 +232,27 @@ namespace Model
     inline DocumentDescription& WithOwner(const char* value) { SetOwner(value); return *this;}
 
     /**
-     * <p> The date when the document was created.</p>
+     * <p>The date when the document was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
 
     /**
-     * <p> The date when the document was created.</p>
+     * <p>The date when the document was created.</p>
      */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
-     * <p> The date when the document was created.</p>
+     * <p>The date when the document was created.</p>
      */
     inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
 
     /**
-     * <p> The date when the document was created.</p>
+     * <p>The date when the document was created.</p>
      */
     inline DocumentDescription& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
 
     /**
-     * <p> The date when the document was created.</p>
+     * <p>The date when the document was created.</p>
      */
     inline DocumentDescription& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
@@ -317,37 +317,37 @@ namespace Model
     inline DocumentDescription& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p> A description of the document. </p>
+     * <p>A description of the document. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p> A description of the document. </p>
+     * <p>A description of the document. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p> A description of the document. </p>
+     * <p>A description of the document. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p> A description of the document. </p>
+     * <p>A description of the document. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p> A description of the document. </p>
+     * <p>A description of the document. </p>
      */
     inline DocumentDescription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> A description of the document. </p>
+     * <p>A description of the document. </p>
      */
     inline DocumentDescription& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p> A description of the document. </p>
+     * <p>A description of the document. </p>
      */
     inline DocumentDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
 

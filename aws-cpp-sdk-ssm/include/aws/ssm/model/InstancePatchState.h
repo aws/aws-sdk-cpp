@@ -284,19 +284,19 @@ namespace Model
 
     /**
      * <p>The number of patches from the patch baseline that are applicable for the
-     * instance but aren’t currently installed.</p>
+     * instance but aren't currently installed.</p>
      */
     inline int GetMissingCount() const{ return m_missingCount; }
 
     /**
      * <p>The number of patches from the patch baseline that are applicable for the
-     * instance but aren’t currently installed.</p>
+     * instance but aren't currently installed.</p>
      */
     inline void SetMissingCount(int value) { m_missingCountHasBeenSet = true; m_missingCount = value; }
 
     /**
      * <p>The number of patches from the patch baseline that are applicable for the
-     * instance but aren’t currently installed.</p>
+     * instance but aren't currently installed.</p>
      */
     inline InstancePatchState& WithMissingCount(int value) { SetMissingCount(value); return *this;}
 
@@ -319,20 +319,20 @@ namespace Model
     inline InstancePatchState& WithFailedCount(int value) { SetFailedCount(value); return *this;}
 
     /**
-     * <p>The number of patches from the patch baseline that aren’t applicable for the
-     * instance and hence aren’t installed on the instance.</p>
+     * <p>The number of patches from the patch baseline that aren't applicable for the
+     * instance and hence aren't installed on the instance.</p>
      */
     inline int GetNotApplicableCount() const{ return m_notApplicableCount; }
 
     /**
-     * <p>The number of patches from the patch baseline that aren’t applicable for the
-     * instance and hence aren’t installed on the instance.</p>
+     * <p>The number of patches from the patch baseline that aren't applicable for the
+     * instance and hence aren't installed on the instance.</p>
      */
     inline void SetNotApplicableCount(int value) { m_notApplicableCountHasBeenSet = true; m_notApplicableCount = value; }
 
     /**
-     * <p>The number of patches from the patch baseline that aren’t applicable for the
-     * instance and hence aren’t installed on the instance.</p>
+     * <p>The number of patches from the patch baseline that aren't applicable for the
+     * instance and hence aren't installed on the instance.</p>
      */
     inline InstancePatchState& WithNotApplicableCount(int value) { SetNotApplicableCount(value); return *this;}
 

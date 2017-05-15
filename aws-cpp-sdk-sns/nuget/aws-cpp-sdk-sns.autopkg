@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-SNS;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20100331.119;
+        version : 1.0.20100331.120;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Simple Notification Service);

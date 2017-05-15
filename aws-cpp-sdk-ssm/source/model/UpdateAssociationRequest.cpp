@@ -27,7 +27,9 @@ UpdateAssociationRequest::UpdateAssociationRequest() :
     m_parametersHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
     m_scheduleExpressionHasBeenSet(false),
-    m_outputLocationHasBeenSet(false)
+    m_outputLocationHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_targetsHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,23 @@ Aws::String UpdateAssociationRequest::SerializePayload() const
   if(m_outputLocationHasBeenSet)
   {
    payload.WithObject("OutputLocation", m_outputLocation.Jsonize());
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
+  if(m_targetsHasBeenSet)
+  {
+   Array<JsonValue> targetsJsonList(m_targets.size());
+   for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
+   {
+     targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
+   }
+   payload.WithArray("Targets", std::move(targetsJsonList));
 
   }
 

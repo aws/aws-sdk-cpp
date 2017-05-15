@@ -39,43 +39,43 @@ namespace Model
 
 
     /**
-     * <p>A user-defined description of the resource that you want to register with
+     * <p>A userdefined description of the resource that you want to register with
      * Amazon EC2. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A user-defined description of the resource that you want to register with
+     * <p>A userdefined description of the resource that you want to register with
      * Amazon EC2. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A user-defined description of the resource that you want to register with
+     * <p>A userdefined description of the resource that you want to register with
      * Amazon EC2. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A user-defined description of the resource that you want to register with
+     * <p>A userdefined description of the resource that you want to register with
      * Amazon EC2. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A user-defined description of the resource that you want to register with
+     * <p>A userdefined description of the resource that you want to register with
      * Amazon EC2. </p>
      */
     inline CreateActivationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A user-defined description of the resource that you want to register with
+     * <p>A userdefined description of the resource that you want to register with
      * Amazon EC2. </p>
      */
     inline CreateActivationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A user-defined description of the resource that you want to register with
+     * <p>A userdefined description of the resource that you want to register with
      * Amazon EC2. </p>
      */
     inline CreateActivationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}

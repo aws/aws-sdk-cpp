@@ -70,19 +70,19 @@ namespace Model
     inline DescribePatchGroupStateResult& WithInstancesWithInstalledPatches(int value) { SetInstancesWithInstalledPatches(value); return *this;}
 
     /**
-     * <p>The number of instances with patches installed that aren’t defined in the
+     * <p>The number of instances with patches installed that aren't defined in the
      * patch baseline.</p>
      */
     inline int GetInstancesWithInstalledOtherPatches() const{ return m_instancesWithInstalledOtherPatches; }
 
     /**
-     * <p>The number of instances with patches installed that aren’t defined in the
+     * <p>The number of instances with patches installed that aren't defined in the
      * patch baseline.</p>
      */
     inline void SetInstancesWithInstalledOtherPatches(int value) { m_instancesWithInstalledOtherPatches = value; }
 
     /**
-     * <p>The number of instances with patches installed that aren’t defined in the
+     * <p>The number of instances with patches installed that aren't defined in the
      * patch baseline.</p>
      */
     inline DescribePatchGroupStateResult& WithInstancesWithInstalledOtherPatches(int value) { SetInstancesWithInstalledOtherPatches(value); return *this;}
@@ -121,17 +121,17 @@ namespace Model
     inline DescribePatchGroupStateResult& WithInstancesWithFailedPatches(int value) { SetInstancesWithFailedPatches(value); return *this;}
 
     /**
-     * <p>The number of instances with patches that aren’t applicable.</p>
+     * <p>The number of instances with patches that aren't applicable.</p>
      */
     inline int GetInstancesWithNotApplicablePatches() const{ return m_instancesWithNotApplicablePatches; }
 
     /**
-     * <p>The number of instances with patches that aren’t applicable.</p>
+     * <p>The number of instances with patches that aren't applicable.</p>
      */
     inline void SetInstancesWithNotApplicablePatches(int value) { m_instancesWithNotApplicablePatches = value; }
 
     /**
-     * <p>The number of instances with patches that aren’t applicable.</p>
+     * <p>The number of instances with patches that aren't applicable.</p>
      */
     inline DescribePatchGroupStateResult& WithInstancesWithNotApplicablePatches(int value) { SetInstancesWithNotApplicablePatches(value); return *this;}
 

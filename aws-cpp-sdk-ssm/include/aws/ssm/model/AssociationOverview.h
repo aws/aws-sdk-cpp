@@ -47,44 +47,44 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The status of the association. Status can be: <code>Pending</code>,
-     * <code>Success</code>, or <code>Failed</code>.</p>
+     * <p>The status of the association. Status can be: Pending, Success, or
+     * Failed.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the association. Status can be: <code>Pending</code>,
-     * <code>Success</code>, or <code>Failed</code>.</p>
+     * <p>The status of the association. Status can be: Pending, Success, or
+     * Failed.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the association. Status can be: <code>Pending</code>,
-     * <code>Success</code>, or <code>Failed</code>.</p>
+     * <p>The status of the association. Status can be: Pending, Success, or
+     * Failed.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the association. Status can be: <code>Pending</code>,
-     * <code>Success</code>, or <code>Failed</code>.</p>
+     * <p>The status of the association. Status can be: Pending, Success, or
+     * Failed.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the association. Status can be: <code>Pending</code>,
-     * <code>Success</code>, or <code>Failed</code>.</p>
+     * <p>The status of the association. Status can be: Pending, Success, or
+     * Failed.</p>
      */
     inline AssociationOverview& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the association. Status can be: <code>Pending</code>,
-     * <code>Success</code>, or <code>Failed</code>.</p>
+     * <p>The status of the association. Status can be: Pending, Success, or
+     * Failed.</p>
      */
     inline AssociationOverview& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the association. Status can be: <code>Pending</code>,
-     * <code>Success</code>, or <code>Failed</code>.</p>
+     * <p>The status of the association. Status can be: Pending, Success, or
+     * Failed.</p>
      */
     inline AssociationOverview& WithStatus(const char* value) { SetStatus(value); return *this;}
 

@@ -43,58 +43,74 @@ namespace Model
 
 
     /**
-     * <p>Required. The instance IDs where the command should execute. You can specify
-     * a maximum of 50 IDs.</p>
+     * <p>The instance IDs where the command should execute. You can specify a maximum
+     * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
+     * send commands to a fleet of instances using the Targets parameter, which accepts
+     * EC2 tags.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute. You can specify
-     * a maximum of 50 IDs.</p>
+     * <p>The instance IDs where the command should execute. You can specify a maximum
+     * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
+     * send commands to a fleet of instances using the Targets parameter, which accepts
+     * EC2 tags.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute. You can specify
-     * a maximum of 50 IDs.</p>
+     * <p>The instance IDs where the command should execute. You can specify a maximum
+     * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
+     * send commands to a fleet of instances using the Targets parameter, which accepts
+     * EC2 tags.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
-     * <p>Required. The instance IDs where the command should execute. You can specify
-     * a maximum of 50 IDs.</p>
+     * <p>The instance IDs where the command should execute. You can specify a maximum
+     * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
+     * send commands to a fleet of instances using the Targets parameter, which accepts
+     * EC2 tags.</p>
      */
     inline SendCommandRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>Required. The instance IDs where the command should execute. You can specify
-     * a maximum of 50 IDs.</p>
+     * <p>The instance IDs where the command should execute. You can specify a maximum
+     * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
+     * send commands to a fleet of instances using the Targets parameter, which accepts
+     * EC2 tags.</p>
      */
     inline SendCommandRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
-     * <p>Required. The instance IDs where the command should execute. You can specify
-     * a maximum of 50 IDs.</p>
+     * <p>The instance IDs where the command should execute. You can specify a maximum
+     * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
+     * send commands to a fleet of instances using the Targets parameter, which accepts
+     * EC2 tags.</p>
      */
     inline SendCommandRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute. You can specify
-     * a maximum of 50 IDs.</p>
+     * <p>The instance IDs where the command should execute. You can specify a maximum
+     * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
+     * send commands to a fleet of instances using the Targets parameter, which accepts
+     * EC2 tags.</p>
      */
     inline SendCommandRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute. You can specify
-     * a maximum of 50 IDs.</p>
+     * <p>The instance IDs where the command should execute. You can specify a maximum
+     * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
+     * send commands to a fleet of instances using the Targets parameter, which accepts
+     * EC2 tags.</p>
      */
     inline SendCommandRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
      * <p>(Optional) An array of search criteria that targets instances using a
-     * <code>Key</code>,<code>Value</code> combination that you specify.
-     * <code>Targets</code> is required if you don't provide one or more instance IDs
-     * in the call. For more information about how to use <code>Targets</code>, see <a
+     * Key,Value combination that you specify. Targets is required if you don't provide
+     * one or more instance IDs in the call. For more information about how to use
+     * Targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -102,9 +118,9 @@ namespace Model
 
     /**
      * <p>(Optional) An array of search criteria that targets instances using a
-     * <code>Key</code>,<code>Value</code> combination that you specify.
-     * <code>Targets</code> is required if you don't provide one or more instance IDs
-     * in the call. For more information about how to use <code>Targets</code>, see <a
+     * Key,Value combination that you specify. Targets is required if you don't provide
+     * one or more instance IDs in the call. For more information about how to use
+     * Targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -112,9 +128,9 @@ namespace Model
 
     /**
      * <p>(Optional) An array of search criteria that targets instances using a
-     * <code>Key</code>,<code>Value</code> combination that you specify.
-     * <code>Targets</code> is required if you don't provide one or more instance IDs
-     * in the call. For more information about how to use <code>Targets</code>, see <a
+     * Key,Value combination that you specify. Targets is required if you don't provide
+     * one or more instance IDs in the call. For more information about how to use
+     * Targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -122,9 +138,9 @@ namespace Model
 
     /**
      * <p>(Optional) An array of search criteria that targets instances using a
-     * <code>Key</code>,<code>Value</code> combination that you specify.
-     * <code>Targets</code> is required if you don't provide one or more instance IDs
-     * in the call. For more information about how to use <code>Targets</code>, see <a
+     * Key,Value combination that you specify. Targets is required if you don't provide
+     * one or more instance IDs in the call. For more information about how to use
+     * Targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -132,9 +148,9 @@ namespace Model
 
     /**
      * <p>(Optional) An array of search criteria that targets instances using a
-     * <code>Key</code>,<code>Value</code> combination that you specify.
-     * <code>Targets</code> is required if you don't provide one or more instance IDs
-     * in the call. For more information about how to use <code>Targets</code>, see <a
+     * Key,Value combination that you specify. Targets is required if you don't provide
+     * one or more instance IDs in the call. For more information about how to use
+     * Targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -142,9 +158,9 @@ namespace Model
 
     /**
      * <p>(Optional) An array of search criteria that targets instances using a
-     * <code>Key</code>,<code>Value</code> combination that you specify.
-     * <code>Targets</code> is required if you don't provide one or more instance IDs
-     * in the call. For more information about how to use <code>Targets</code>, see <a
+     * Key,Value combination that you specify. Targets is required if you don't provide
+     * one or more instance IDs in the call. For more information about how to use
+     * Targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -152,9 +168,9 @@ namespace Model
 
     /**
      * <p>(Optional) An array of search criteria that targets instances using a
-     * <code>Key</code>,<code>Value</code> combination that you specify.
-     * <code>Targets</code> is required if you don't provide one or more instance IDs
-     * in the call. For more information about how to use <code>Targets</code>, see <a
+     * Key,Value combination that you specify. Targets is required if you don't provide
+     * one or more instance IDs in the call. For more information about how to use
+     * Targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -530,9 +546,9 @@ namespace Model
 
     /**
      * <p>(Optional) The maximum number of instances that are allowed to execute the
-     * command at the same time. You can specify a number such as “10” or a percentage
-     * such as “10%”. The default value is 50. For more information about how to use
-     * <code>MaxConcurrency</code>, see <a
+     * command at the same time. You can specify a number such as 10 or a percentage
+     * such as 10%. The default value is 50. For more information about how to use
+     * MaxConcurrency, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -540,9 +556,9 @@ namespace Model
 
     /**
      * <p>(Optional) The maximum number of instances that are allowed to execute the
-     * command at the same time. You can specify a number such as “10” or a percentage
-     * such as “10%”. The default value is 50. For more information about how to use
-     * <code>MaxConcurrency</code>, see <a
+     * command at the same time. You can specify a number such as 10 or a percentage
+     * such as 10%. The default value is 50. For more information about how to use
+     * MaxConcurrency, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -550,9 +566,9 @@ namespace Model
 
     /**
      * <p>(Optional) The maximum number of instances that are allowed to execute the
-     * command at the same time. You can specify a number such as “10” or a percentage
-     * such as “10%”. The default value is 50. For more information about how to use
-     * <code>MaxConcurrency</code>, see <a
+     * command at the same time. You can specify a number such as 10 or a percentage
+     * such as 10%. The default value is 50. For more information about how to use
+     * MaxConcurrency, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -560,9 +576,9 @@ namespace Model
 
     /**
      * <p>(Optional) The maximum number of instances that are allowed to execute the
-     * command at the same time. You can specify a number such as “10” or a percentage
-     * such as “10%”. The default value is 50. For more information about how to use
-     * <code>MaxConcurrency</code>, see <a
+     * command at the same time. You can specify a number such as 10 or a percentage
+     * such as 10%. The default value is 50. For more information about how to use
+     * MaxConcurrency, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -570,9 +586,9 @@ namespace Model
 
     /**
      * <p>(Optional) The maximum number of instances that are allowed to execute the
-     * command at the same time. You can specify a number such as “10” or a percentage
-     * such as “10%”. The default value is 50. For more information about how to use
-     * <code>MaxConcurrency</code>, see <a
+     * command at the same time. You can specify a number such as 10 or a percentage
+     * such as 10%. The default value is 50. For more information about how to use
+     * MaxConcurrency, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -580,9 +596,9 @@ namespace Model
 
     /**
      * <p>(Optional) The maximum number of instances that are allowed to execute the
-     * command at the same time. You can specify a number such as “10” or a percentage
-     * such as “10%”. The default value is 50. For more information about how to use
-     * <code>MaxConcurrency</code>, see <a
+     * command at the same time. You can specify a number such as 10 or a percentage
+     * such as 10%. The default value is 50. For more information about how to use
+     * MaxConcurrency, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -590,9 +606,9 @@ namespace Model
 
     /**
      * <p>(Optional) The maximum number of instances that are allowed to execute the
-     * command at the same time. You can specify a number such as “10” or a percentage
-     * such as “10%”. The default value is 50. For more information about how to use
-     * <code>MaxConcurrency</code>, see <a
+     * command at the same time. You can specify a number such as 10 or a percentage
+     * such as 10%. The default value is 50. For more information about how to use
+     * MaxConcurrency, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -600,10 +616,10 @@ namespace Model
 
     /**
      * <p>The maximum number of errors allowed without the command failing. When the
-     * command fails one more time beyond the value of <code>MaxErrors</code>, the
-     * systems stops sending the command to additional targets. You can specify a
-     * number like “10” or a percentage like “10%”. The default value is 50. For more
-     * information about how to use <code>MaxErrors</code>, see <a
+     * command fails one more time beyond the value of MaxErrors, the systems stops
+     * sending the command to additional targets. You can specify a number like 10 or a
+     * percentage like 10%. The default value is 50. For more information about how to
+     * use MaxErrors, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -611,10 +627,10 @@ namespace Model
 
     /**
      * <p>The maximum number of errors allowed without the command failing. When the
-     * command fails one more time beyond the value of <code>MaxErrors</code>, the
-     * systems stops sending the command to additional targets. You can specify a
-     * number like “10” or a percentage like “10%”. The default value is 50. For more
-     * information about how to use <code>MaxErrors</code>, see <a
+     * command fails one more time beyond the value of MaxErrors, the systems stops
+     * sending the command to additional targets. You can specify a number like 10 or a
+     * percentage like 10%. The default value is 50. For more information about how to
+     * use MaxErrors, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -622,10 +638,10 @@ namespace Model
 
     /**
      * <p>The maximum number of errors allowed without the command failing. When the
-     * command fails one more time beyond the value of <code>MaxErrors</code>, the
-     * systems stops sending the command to additional targets. You can specify a
-     * number like “10” or a percentage like “10%”. The default value is 50. For more
-     * information about how to use <code>MaxErrors</code>, see <a
+     * command fails one more time beyond the value of MaxErrors, the systems stops
+     * sending the command to additional targets. You can specify a number like 10 or a
+     * percentage like 10%. The default value is 50. For more information about how to
+     * use MaxErrors, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -633,10 +649,10 @@ namespace Model
 
     /**
      * <p>The maximum number of errors allowed without the command failing. When the
-     * command fails one more time beyond the value of <code>MaxErrors</code>, the
-     * systems stops sending the command to additional targets. You can specify a
-     * number like “10” or a percentage like “10%”. The default value is 50. For more
-     * information about how to use <code>MaxErrors</code>, see <a
+     * command fails one more time beyond the value of MaxErrors, the systems stops
+     * sending the command to additional targets. You can specify a number like 10 or a
+     * percentage like 10%. The default value is 50. For more information about how to
+     * use MaxErrors, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -644,10 +660,10 @@ namespace Model
 
     /**
      * <p>The maximum number of errors allowed without the command failing. When the
-     * command fails one more time beyond the value of <code>MaxErrors</code>, the
-     * systems stops sending the command to additional targets. You can specify a
-     * number like “10” or a percentage like “10%”. The default value is 50. For more
-     * information about how to use <code>MaxErrors</code>, see <a
+     * command fails one more time beyond the value of MaxErrors, the systems stops
+     * sending the command to additional targets. You can specify a number like 10 or a
+     * percentage like 10%. The default value is 50. For more information about how to
+     * use MaxErrors, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -655,10 +671,10 @@ namespace Model
 
     /**
      * <p>The maximum number of errors allowed without the command failing. When the
-     * command fails one more time beyond the value of <code>MaxErrors</code>, the
-     * systems stops sending the command to additional targets. You can specify a
-     * number like “10” or a percentage like “10%”. The default value is 50. For more
-     * information about how to use <code>MaxErrors</code>, see <a
+     * command fails one more time beyond the value of MaxErrors, the systems stops
+     * sending the command to additional targets. You can specify a number like 10 or a
+     * percentage like 10%. The default value is 50. For more information about how to
+     * use MaxErrors, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -666,10 +682,10 @@ namespace Model
 
     /**
      * <p>The maximum number of errors allowed without the command failing. When the
-     * command fails one more time beyond the value of <code>MaxErrors</code>, the
-     * systems stops sending the command to additional targets. You can specify a
-     * number like “10” or a percentage like “10%”. The default value is 50. For more
-     * information about how to use <code>MaxErrors</code>, see <a
+     * command fails one more time beyond the value of MaxErrors, the systems stops
+     * sending the command to additional targets. You can specify a number like 10 or a
+     * percentage like 10%. The default value is 50. For more information about how to
+     * use MaxErrors, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */

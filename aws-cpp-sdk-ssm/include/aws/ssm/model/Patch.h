@@ -478,37 +478,37 @@ namespace Model
     inline Patch& WithMsrcNumber(const char* value) { SetMsrcNumber(value); return *this;}
 
     /**
-     * <p>The language of the patch if it’s language-specific.</p>
+     * <p>The language of the patch if it's language-specific.</p>
      */
     inline const Aws::String& GetLanguage() const{ return m_language; }
 
     /**
-     * <p>The language of the patch if it’s language-specific.</p>
+     * <p>The language of the patch if it's language-specific.</p>
      */
     inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
 
     /**
-     * <p>The language of the patch if it’s language-specific.</p>
+     * <p>The language of the patch if it's language-specific.</p>
      */
     inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
 
     /**
-     * <p>The language of the patch if it’s language-specific.</p>
+     * <p>The language of the patch if it's language-specific.</p>
      */
     inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
 
     /**
-     * <p>The language of the patch if it’s language-specific.</p>
+     * <p>The language of the patch if it's language-specific.</p>
      */
     inline Patch& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
 
     /**
-     * <p>The language of the patch if it’s language-specific.</p>
+     * <p>The language of the patch if it's language-specific.</p>
      */
     inline Patch& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
 
     /**
-     * <p>The language of the patch if it’s language-specific.</p>
+     * <p>The language of the patch if it's language-specific.</p>
      */
     inline Patch& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 

@@ -242,37 +242,37 @@ namespace Model
     inline CreatePatchBaselineRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Caller-provided idempotency token.</p>
+     * <p>User-provided idempotency token.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>Caller-provided idempotency token.</p>
+     * <p>User-provided idempotency token.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>Caller-provided idempotency token.</p>
+     * <p>User-provided idempotency token.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>Caller-provided idempotency token.</p>
+     * <p>User-provided idempotency token.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>Caller-provided idempotency token.</p>
+     * <p>User-provided idempotency token.</p>
      */
     inline CreatePatchBaselineRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>Caller-provided idempotency token.</p>
+     * <p>User-provided idempotency token.</p>
      */
     inline CreatePatchBaselineRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>Caller-provided idempotency token.</p>
+     * <p>User-provided idempotency token.</p>
      */
     inline CreatePatchBaselineRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

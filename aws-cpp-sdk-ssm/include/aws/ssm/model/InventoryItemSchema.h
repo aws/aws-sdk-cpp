@@ -50,71 +50,57 @@ namespace Model
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * <code>AWS</code>. Custom inventory type names will start with
-     * <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
-     * <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and
-     * <code>AWS:WindowsUpdate</code>.</p>
+     * AWS. Custom inventory type names will start with Custom. Default inventory item
+     * types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * <code>AWS</code>. Custom inventory type names will start with
-     * <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
-     * <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and
-     * <code>AWS:WindowsUpdate</code>.</p>
+     * AWS. Custom inventory type names will start with Custom. Default inventory item
+     * types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * <code>AWS</code>. Custom inventory type names will start with
-     * <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
-     * <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and
-     * <code>AWS:WindowsUpdate</code>.</p>
+     * AWS. Custom inventory type names will start with Custom. Default inventory item
+     * types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * <code>AWS</code>. Custom inventory type names will start with
-     * <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
-     * <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and
-     * <code>AWS:WindowsUpdate</code>.</p>
+     * AWS. Custom inventory type names will start with Custom. Default inventory item
+     * types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * <code>AWS</code>. Custom inventory type names will start with
-     * <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
-     * <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and
-     * <code>AWS:WindowsUpdate</code>.</p>
+     * AWS. Custom inventory type names will start with Custom. Default inventory item
+     * types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
      */
     inline InventoryItemSchema& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * <code>AWS</code>. Custom inventory type names will start with
-     * <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
-     * <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and
-     * <code>AWS:WindowsUpdate</code>.</p>
+     * AWS. Custom inventory type names will start with Custom. Default inventory item
+     * types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
      */
     inline InventoryItemSchema& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * <code>AWS</code>. Custom inventory type names will start with
-     * <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
-     * <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and
-     * <code>AWS:WindowsUpdate</code>.</p>
+     * AWS. Custom inventory type names will start with Custom. Default inventory item
+     * types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
      */
     inline InventoryItemSchema& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 

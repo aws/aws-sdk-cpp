@@ -49,50 +49,50 @@ namespace Model
 
     /**
      * <p>The filter key name to describe your instances. For example:</p>
-     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|”AssociationStatus”|”Tag
-     * Key”</p>
+     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
+     * Key"</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
      * <p>The filter key name to describe your instances. For example:</p>
-     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|”AssociationStatus”|”Tag
-     * Key”</p>
+     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
+     * Key"</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>The filter key name to describe your instances. For example:</p>
-     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|”AssociationStatus”|”Tag
-     * Key”</p>
+     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
+     * Key"</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The filter key name to describe your instances. For example:</p>
-     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|”AssociationStatus”|”Tag
-     * Key”</p>
+     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
+     * Key"</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
      * <p>The filter key name to describe your instances. For example:</p>
-     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|”AssociationStatus”|”Tag
-     * Key”</p>
+     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
+     * Key"</p>
      */
     inline InstanceInformationStringFilter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
      * <p>The filter key name to describe your instances. For example:</p>
-     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|”AssociationStatus”|”Tag
-     * Key”</p>
+     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
+     * Key"</p>
      */
     inline InstanceInformationStringFilter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The filter key name to describe your instances. For example:</p>
-     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|”AssociationStatus”|”Tag
-     * Key”</p>
+     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
+     * Key"</p>
      */
     inline InstanceInformationStringFilter& WithKey(const char* value) { SetKey(value); return *this;}
 

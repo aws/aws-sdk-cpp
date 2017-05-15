@@ -282,67 +282,67 @@ namespace Model
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * <code>StartAutomationExecution</code>.</p>
+     * StartAutomationExecution.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * <code>StartAutomationExecution</code>.</p>
+     * StartAutomationExecution.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * <code>StartAutomationExecution</code>.</p>
+     * StartAutomationExecution.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * <code>StartAutomationExecution</code>.</p>
+     * StartAutomationExecution.</p>
      */
     inline AutomationExecution& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * <code>StartAutomationExecution</code>.</p>
+     * StartAutomationExecution.</p>
      */
     inline AutomationExecution& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * <code>StartAutomationExecution</code>.</p>
+     * StartAutomationExecution.</p>
      */
     inline AutomationExecution& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * <code>StartAutomationExecution</code>.</p>
+     * StartAutomationExecution.</p>
      */
     inline AutomationExecution& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * <code>StartAutomationExecution</code>.</p>
+     * StartAutomationExecution.</p>
      */
     inline AutomationExecution& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * <code>StartAutomationExecution</code>.</p>
+     * StartAutomationExecution.</p>
      */
     inline AutomationExecution& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * <code>StartAutomationExecution</code>.</p>
+     * StartAutomationExecution.</p>
      */
     inline AutomationExecution& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * <code>StartAutomationExecution</code>.</p>
+     * StartAutomationExecution.</p>
      */
     inline AutomationExecution& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

@@ -41,50 +41,50 @@ namespace Model
 
     /**
      * <p>Each element in the array is a structure containing: </p> <p>Key: (string,
-     * “NAME_PREFIX” or “OWNER”)</p> <p>Value: (array of strings, exactly 1 entry, 1 ≤
-     * length ≤ 255)</p>
+     * "NAME_PREFIX" or "OWNER")</p> <p>Value: (array of strings, exactly 1 entry,
+     * between 1 and 255 characters)</p>
      */
     inline const Aws::Vector<PatchOrchestratorFilter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>Each element in the array is a structure containing: </p> <p>Key: (string,
-     * “NAME_PREFIX” or “OWNER”)</p> <p>Value: (array of strings, exactly 1 entry, 1 ≤
-     * length ≤ 255)</p>
+     * "NAME_PREFIX" or "OWNER")</p> <p>Value: (array of strings, exactly 1 entry,
+     * between 1 and 255 characters)</p>
      */
     inline void SetFilters(const Aws::Vector<PatchOrchestratorFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Each element in the array is a structure containing: </p> <p>Key: (string,
-     * “NAME_PREFIX” or “OWNER”)</p> <p>Value: (array of strings, exactly 1 entry, 1 ≤
-     * length ≤ 255)</p>
+     * "NAME_PREFIX" or "OWNER")</p> <p>Value: (array of strings, exactly 1 entry,
+     * between 1 and 255 characters)</p>
      */
     inline void SetFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Each element in the array is a structure containing: </p> <p>Key: (string,
-     * “NAME_PREFIX” or “OWNER”)</p> <p>Value: (array of strings, exactly 1 entry, 1 ≤
-     * length ≤ 255)</p>
+     * "NAME_PREFIX" or "OWNER")</p> <p>Value: (array of strings, exactly 1 entry,
+     * between 1 and 255 characters)</p>
      */
     inline DescribePatchBaselinesRequest& WithFilters(const Aws::Vector<PatchOrchestratorFilter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Each element in the array is a structure containing: </p> <p>Key: (string,
-     * “NAME_PREFIX” or “OWNER”)</p> <p>Value: (array of strings, exactly 1 entry, 1 ≤
-     * length ≤ 255)</p>
+     * "NAME_PREFIX" or "OWNER")</p> <p>Value: (array of strings, exactly 1 entry,
+     * between 1 and 255 characters)</p>
      */
     inline DescribePatchBaselinesRequest& WithFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Each element in the array is a structure containing: </p> <p>Key: (string,
-     * “NAME_PREFIX” or “OWNER”)</p> <p>Value: (array of strings, exactly 1 entry, 1 ≤
-     * length ≤ 255)</p>
+     * "NAME_PREFIX" or "OWNER")</p> <p>Value: (array of strings, exactly 1 entry,
+     * between 1 and 255 characters)</p>
      */
     inline DescribePatchBaselinesRequest& AddFilters(const PatchOrchestratorFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>Each element in the array is a structure containing: </p> <p>Key: (string,
-     * “NAME_PREFIX” or “OWNER”)</p> <p>Value: (array of strings, exactly 1 entry, 1 ≤
-     * length ≤ 255)</p>
+     * "NAME_PREFIX" or "OWNER")</p> <p>Value: (array of strings, exactly 1 entry,
+     * between 1 and 255 characters)</p>
      */
     inline DescribePatchBaselinesRequest& AddFilters(PatchOrchestratorFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
