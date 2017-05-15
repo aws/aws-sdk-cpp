@@ -30,6 +30,7 @@
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UUID.h>
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/DeleteObjectRequest.h>
 #include <aws/s3/model/HeadObjectRequest.h>
@@ -63,21 +64,16 @@ using namespace Aws::Utils;
 namespace
 {
 
-    Aws::String BuildResourceName(const char* baseName)
-    {
-        return Aws::Testing::GetAwsResourcePrefix() + baseName;
-    }
-
+    Aws::String BASE_CREATE_BUCKET_TEST_NAME = "createbuckettest";
+    Aws::String BASE_DNS_UNFRIENDLY_TEST_NAME = "dns.unfriendly";
+    Aws::String BASE_LOCATION_BUCKET_TEST_NAME = "locbuckettest";
+    Aws::String BASE_PUT_OBJECTS_BUCKET_NAME = "putobjecttest";
+    Aws::String BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "charsetstest";
+    Aws::String BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "presignedtest";
+    Aws::String BASE_PUT_MULTIPART_BUCKET_NAME = "putobjectmultiparttest";
+    Aws::String BASE_ERRORS_TESTING_BUCKET = "errorstest";
+    Aws::String BASE_INTERRUPT_TESTING_BUCKET = "interrupttest";
     static const char* ALLOCATION_TAG = "BucketAndObjectOperationTest";
-    static const char* BASE_CREATE_BUCKET_TEST_NAME = "awsnativesdkcreatebuckettestbucketa";
-    static const char* BASE_DNS_UNFRIENDLY_TEST_NAME = "aws.native.sdk.create.bucket.test.bucketa";
-    static const char* BASE_LOCATION_BUCKET_TEST_NAME = "awsnativesdklocbuckettesta";
-    static const char* BASE_PUT_OBJECTS_BUCKET_NAME = "awsnativesdkputobjectstestbucketa";
-    static const char* BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "awsnativesdkcharsetstestbucketa";
-    static const char* BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "awsnativesdkpresignedtestbucketa";
-    static const char* BASE_PUT_MULTIPART_BUCKET_NAME = "awsnativesdkputobjectmultiparttestbucketa";
-    static const char* BASE_ERRORS_TESTING_BUCKET = "awsnativesdkerrorsbucketa";
-    static const char* BASE_INTERRUPT_TESTING_BUCKET = "awsnativesdkinterruptbucketa";
     static const char* TEST_OBJ_KEY = "TestObjectKey";
     static const char* TEST_NOT_MODIFIED_OBJ_KEY = "TestNotModifiedObjectKey";
     static const char* TEST_DNS_UNFRIENDLY_OBJ_KEY = "WhySoHostile";
@@ -87,6 +83,28 @@ namespace
     static const char* URIESCAPE_KEY = "Esc ape+Me$";
 
     static const int TIMEOUT_MAX = 10;
+
+    void AppendUUID(Aws::String& bucketName)
+    {
+        using Aws::Utils::UUID;
+        Aws::StringStream s;
+        s << bucketName << "-" << static_cast<Aws::String>(UUID::RandomUUID());
+        bucketName = Aws::Utils::StringUtils::ToLower(s.str().c_str());
+
+    }
+
+    void EnsureUniqueBucketNames()
+    {
+        AppendUUID(BASE_CREATE_BUCKET_TEST_NAME);
+        AppendUUID(BASE_DNS_UNFRIENDLY_TEST_NAME);
+        AppendUUID(BASE_LOCATION_BUCKET_TEST_NAME);
+        AppendUUID(BASE_PUT_OBJECTS_BUCKET_NAME);
+        AppendUUID(BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME);
+        AppendUUID(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME);
+        AppendUUID(BASE_PUT_MULTIPART_BUCKET_NAME);
+        AppendUUID(BASE_ERRORS_TESTING_BUCKET);
+        AppendUUID(BASE_INTERRUPT_TESTING_BUCKET);
+    }
 
     class BucketAndObjectOperationTest : public ::testing::Test
     {
@@ -101,6 +119,8 @@ namespace
 
         static void SetUpTestCase()
         {
+            EnsureUniqueBucketNames();
+
             Limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 50000000);
 
             // Create a client
@@ -301,11 +321,12 @@ namespace
             }
         }
 
-        static Aws::String CalculateBucketName(const char* bucketPrefix)
+        static Aws::String CalculateBucketName(const Aws::String& bucketPrefix)
         {
-            return BuildResourceName(bucketPrefix);
+            return Aws::Testing::GetAwsResourcePrefix() + bucketPrefix;
         }
     };
+
 
     std::shared_ptr<S3Client> BucketAndObjectOperationTest::Client(nullptr);
     std::shared_ptr<S3Client> BucketAndObjectOperationTest::oregonClient(nullptr);
