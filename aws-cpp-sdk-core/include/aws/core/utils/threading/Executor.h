@@ -22,7 +22,7 @@
 #include <functional>
 #include <future>
 #include <mutex>
-#include <condition_variable>
+#include <aws/core/utils/threading/Semaphore.h>
 
 namespace Aws
 {
@@ -99,8 +99,7 @@ namespace Aws
             private:
                 Aws::Queue<std::function<void()>*> m_tasks;
                 std::mutex m_queueLock;
-                std::mutex m_syncPointLock;
-                std::condition_variable m_syncPoint;
+                Aws::Utils::Threading::Semaphore m_sync;
                 Aws::Vector<ThreadTask*> m_threadTaskHandles;
                 size_t m_poolSize;
                 OverflowPolicy m_overflowPolicy;

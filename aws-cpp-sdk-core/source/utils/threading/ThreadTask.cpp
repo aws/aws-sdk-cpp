@@ -43,10 +43,9 @@ void ThreadTask::MainTaskRunner()
             }
         }
      
-        std::unique_lock<std::mutex> locker(m_executor.m_syncPointLock);
         if(m_continue)
         {
-            m_executor.m_syncPoint.wait(locker);    
+            m_executor.m_sync.WaitOne();
         }
     }
 }

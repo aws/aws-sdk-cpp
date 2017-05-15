@@ -29,7 +29,7 @@ bool DefaultExecutor::SubmitToThread(std::function<void()>&&  fx)
 }
 
 PooledThreadExecutor::PooledThreadExecutor(size_t poolSize, OverflowPolicy overflowPolicy) :
-    m_poolSize(poolSize), m_overflowPolicy(overflowPolicy)
+    m_sync(0, poolSize), m_poolSize(poolSize), m_overflowPolicy(overflowPolicy)
 {
     for (size_t index = 0; index < m_poolSize; ++index)
     {
@@ -41,10 +41,10 @@ PooledThreadExecutor::~PooledThreadExecutor()
 {
     for(auto threadTask : m_threadTaskHandles)
     {
-        threadTask->StopProcessingWork();       
+        threadTask->StopProcessingWork();
     }
 
-    m_syncPoint.notify_all();
+    m_sync.ReleaseAll();
 
     for (auto threadTask : m_threadTaskHandles)
     {
@@ -80,7 +80,7 @@ bool PooledThreadExecutor::SubmitToThread(std::function<void()>&& fn)
         m_tasks.push(fnCpy);
     }
 
-    m_syncPoint.notify_one();
+    m_sync.Release();
   
     return true;
 }
