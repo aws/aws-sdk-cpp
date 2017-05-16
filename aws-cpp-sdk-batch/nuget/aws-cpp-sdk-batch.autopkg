@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Batch;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20160810.121;
+        version : 1.0.20160810.122;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Batch);
