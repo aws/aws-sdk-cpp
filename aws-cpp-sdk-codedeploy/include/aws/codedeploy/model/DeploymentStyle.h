@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about the type of deployment, either standard or blue/green, you
+   * <p>Information about the type of deployment, either in-place or blue/green, you
    * want to run and whether to route deployment traffic behind a load
    * balancer.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeploymentStyle">AWS
@@ -49,31 +49,31 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Indicates whether to run a standard deployment or a blue/green
+     * <p>Indicates whether to run an in-place deployment or a blue/green
      * deployment.</p>
      */
     inline const DeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
-     * <p>Indicates whether to run a standard deployment or a blue/green
+     * <p>Indicates whether to run an in-place deployment or a blue/green
      * deployment.</p>
      */
     inline void SetDeploymentType(const DeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
-     * <p>Indicates whether to run a standard deployment or a blue/green
+     * <p>Indicates whether to run an in-place deployment or a blue/green
      * deployment.</p>
      */
     inline void SetDeploymentType(DeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
-     * <p>Indicates whether to run a standard deployment or a blue/green
+     * <p>Indicates whether to run an in-place deployment or a blue/green
      * deployment.</p>
      */
     inline DeploymentStyle& WithDeploymentType(const DeploymentType& value) { SetDeploymentType(value); return *this;}
 
     /**
-     * <p>Indicates whether to run a standard deployment or a blue/green
+     * <p>Indicates whether to run an in-place deployment or a blue/green
      * deployment.</p>
      */
     inline DeploymentStyle& WithDeploymentType(DeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}

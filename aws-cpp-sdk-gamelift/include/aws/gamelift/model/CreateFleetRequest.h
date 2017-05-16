@@ -654,6 +654,70 @@ namespace Model
      */
     inline CreateFleetRequest& WithResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { SetResourceCreationLimitPolicy(std::move(value)); return *this;}
 
+    /**
+     * <p>Names of metric groups to add this fleet to. Use an existing metric group
+     * name to add this fleet to the group, or use a new name to create a new metric
+     * group. Currently, a fleet can only be included in one metric group at a
+     * time.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetMetricGroups() const{ return m_metricGroups; }
+
+    /**
+     * <p>Names of metric groups to add this fleet to. Use an existing metric group
+     * name to add this fleet to the group, or use a new name to create a new metric
+     * group. Currently, a fleet can only be included in one metric group at a
+     * time.</p>
+     */
+    inline void SetMetricGroups(const Aws::Vector<Aws::String>& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = value; }
+
+    /**
+     * <p>Names of metric groups to add this fleet to. Use an existing metric group
+     * name to add this fleet to the group, or use a new name to create a new metric
+     * group. Currently, a fleet can only be included in one metric group at a
+     * time.</p>
+     */
+    inline void SetMetricGroups(Aws::Vector<Aws::String>&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = std::move(value); }
+
+    /**
+     * <p>Names of metric groups to add this fleet to. Use an existing metric group
+     * name to add this fleet to the group, or use a new name to create a new metric
+     * group. Currently, a fleet can only be included in one metric group at a
+     * time.</p>
+     */
+    inline CreateFleetRequest& WithMetricGroups(const Aws::Vector<Aws::String>& value) { SetMetricGroups(value); return *this;}
+
+    /**
+     * <p>Names of metric groups to add this fleet to. Use an existing metric group
+     * name to add this fleet to the group, or use a new name to create a new metric
+     * group. Currently, a fleet can only be included in one metric group at a
+     * time.</p>
+     */
+    inline CreateFleetRequest& WithMetricGroups(Aws::Vector<Aws::String>&& value) { SetMetricGroups(std::move(value)); return *this;}
+
+    /**
+     * <p>Names of metric groups to add this fleet to. Use an existing metric group
+     * name to add this fleet to the group, or use a new name to create a new metric
+     * group. Currently, a fleet can only be included in one metric group at a
+     * time.</p>
+     */
+    inline CreateFleetRequest& AddMetricGroups(const Aws::String& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
+
+    /**
+     * <p>Names of metric groups to add this fleet to. Use an existing metric group
+     * name to add this fleet to the group, or use a new name to create a new metric
+     * group. Currently, a fleet can only be included in one metric group at a
+     * time.</p>
+     */
+    inline CreateFleetRequest& AddMetricGroups(Aws::String&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Names of metric groups to add this fleet to. Use an existing metric group
+     * name to add this fleet to the group, or use a new name to create a new metric
+     * group. Currently, a fleet can only be included in one metric group at a
+     * time.</p>
+     */
+    inline CreateFleetRequest& AddMetricGroups(const char* value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -677,6 +741,8 @@ namespace Model
     bool m_runtimeConfigurationHasBeenSet;
     ResourceCreationLimitPolicy m_resourceCreationLimitPolicy;
     bool m_resourceCreationLimitPolicyHasBeenSet;
+    Aws::Vector<Aws::String> m_metricGroups;
+    bool m_metricGroupsHasBeenSet;
   };
 
 } // namespace Model

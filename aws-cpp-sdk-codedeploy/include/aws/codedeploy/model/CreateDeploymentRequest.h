@@ -20,6 +20,7 @@
 #include <aws/codedeploy/model/RevisionLocation.h>
 #include <aws/codedeploy/model/TargetInstances.h>
 #include <aws/codedeploy/model/AutoRollbackConfiguration.h>
+#include <aws/codedeploy/model/FileExistsBehavior.h>
 #include <utility>
 
 namespace Aws
@@ -355,6 +356,71 @@ namespace Model
      */
     inline CreateDeploymentRequest& WithUpdateOutdatedInstancesOnly(bool value) { SetUpdateOutdatedInstancesOnly(value); return *this;}
 
+    /**
+     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * deployment target location but weren't part of the previous successful
+     * deployment.</p> <p>The fileExistsBehavior parameter takes any of the following
+     * values:</p> <ul> <li> <p>DISALLOW: The deployment fails. This is also the
+     * default behavior if no option is specified.</p> </li> <li> <p>OVERWRITE: The
+     * version of the file from the application revision currently being deployed
+     * replaces the version already on the instance.</p> </li> <li> <p>RETAIN: The
+     * version of the file already on the instance is kept and used as part of the new
+     * deployment.</p> </li> </ul>
+     */
+    inline const FileExistsBehavior& GetFileExistsBehavior() const{ return m_fileExistsBehavior; }
+
+    /**
+     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * deployment target location but weren't part of the previous successful
+     * deployment.</p> <p>The fileExistsBehavior parameter takes any of the following
+     * values:</p> <ul> <li> <p>DISALLOW: The deployment fails. This is also the
+     * default behavior if no option is specified.</p> </li> <li> <p>OVERWRITE: The
+     * version of the file from the application revision currently being deployed
+     * replaces the version already on the instance.</p> </li> <li> <p>RETAIN: The
+     * version of the file already on the instance is kept and used as part of the new
+     * deployment.</p> </li> </ul>
+     */
+    inline void SetFileExistsBehavior(const FileExistsBehavior& value) { m_fileExistsBehaviorHasBeenSet = true; m_fileExistsBehavior = value; }
+
+    /**
+     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * deployment target location but weren't part of the previous successful
+     * deployment.</p> <p>The fileExistsBehavior parameter takes any of the following
+     * values:</p> <ul> <li> <p>DISALLOW: The deployment fails. This is also the
+     * default behavior if no option is specified.</p> </li> <li> <p>OVERWRITE: The
+     * version of the file from the application revision currently being deployed
+     * replaces the version already on the instance.</p> </li> <li> <p>RETAIN: The
+     * version of the file already on the instance is kept and used as part of the new
+     * deployment.</p> </li> </ul>
+     */
+    inline void SetFileExistsBehavior(FileExistsBehavior&& value) { m_fileExistsBehaviorHasBeenSet = true; m_fileExistsBehavior = std::move(value); }
+
+    /**
+     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * deployment target location but weren't part of the previous successful
+     * deployment.</p> <p>The fileExistsBehavior parameter takes any of the following
+     * values:</p> <ul> <li> <p>DISALLOW: The deployment fails. This is also the
+     * default behavior if no option is specified.</p> </li> <li> <p>OVERWRITE: The
+     * version of the file from the application revision currently being deployed
+     * replaces the version already on the instance.</p> </li> <li> <p>RETAIN: The
+     * version of the file already on the instance is kept and used as part of the new
+     * deployment.</p> </li> </ul>
+     */
+    inline CreateDeploymentRequest& WithFileExistsBehavior(const FileExistsBehavior& value) { SetFileExistsBehavior(value); return *this;}
+
+    /**
+     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * deployment target location but weren't part of the previous successful
+     * deployment.</p> <p>The fileExistsBehavior parameter takes any of the following
+     * values:</p> <ul> <li> <p>DISALLOW: The deployment fails. This is also the
+     * default behavior if no option is specified.</p> </li> <li> <p>OVERWRITE: The
+     * version of the file from the application revision currently being deployed
+     * replaces the version already on the instance.</p> </li> <li> <p>RETAIN: The
+     * version of the file already on the instance is kept and used as part of the new
+     * deployment.</p> </li> </ul>
+     */
+    inline CreateDeploymentRequest& WithFileExistsBehavior(FileExistsBehavior&& value) { SetFileExistsBehavior(std::move(value)); return *this;}
+
   private:
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
@@ -374,6 +440,8 @@ namespace Model
     bool m_autoRollbackConfigurationHasBeenSet;
     bool m_updateOutdatedInstancesOnly;
     bool m_updateOutdatedInstancesOnlyHasBeenSet;
+    FileExistsBehavior m_fileExistsBehavior;
+    bool m_fileExistsBehaviorHasBeenSet;
   };
 
 } // namespace Model

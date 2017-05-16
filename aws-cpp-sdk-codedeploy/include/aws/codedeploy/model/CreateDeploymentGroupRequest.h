@@ -134,7 +134,7 @@ namespace Model
      * operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
      * or the deployment group.</p> <p>For more information about the predefined
-     * deployment configurations in AWS CodeDeploy, see see <a
+     * deployment configurations in AWS CodeDeploy, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
@@ -148,7 +148,7 @@ namespace Model
      * operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
      * or the deployment group.</p> <p>For more information about the predefined
-     * deployment configurations in AWS CodeDeploy, see see <a
+     * deployment configurations in AWS CodeDeploy, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
@@ -162,7 +162,7 @@ namespace Model
      * operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
      * or the deployment group.</p> <p>For more information about the predefined
-     * deployment configurations in AWS CodeDeploy, see see <a
+     * deployment configurations in AWS CodeDeploy, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
@@ -176,7 +176,7 @@ namespace Model
      * operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
      * or the deployment group.</p> <p>For more information about the predefined
-     * deployment configurations in AWS CodeDeploy, see see <a
+     * deployment configurations in AWS CodeDeploy, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
@@ -190,7 +190,7 @@ namespace Model
      * operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
      * or the deployment group.</p> <p>For more information about the predefined
-     * deployment configurations in AWS CodeDeploy, see see <a
+     * deployment configurations in AWS CodeDeploy, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
@@ -204,7 +204,7 @@ namespace Model
      * operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
      * or the deployment group.</p> <p>For more information about the predefined
-     * deployment configurations in AWS CodeDeploy, see see <a
+     * deployment configurations in AWS CodeDeploy, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
@@ -218,7 +218,7 @@ namespace Model
      * operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
      * or the deployment group.</p> <p>For more information about the predefined
-     * deployment configurations in AWS CodeDeploy, see see <a
+     * deployment configurations in AWS CodeDeploy, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
@@ -226,72 +226,86 @@ namespace Model
     inline CreateDeploymentGroupRequest& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 tags on which to filter.</p>
+     * <p>The Amazon EC2 tags on which to filter. The deployment group will include EC2
+     * instances with any of the specified tags.</p>
      */
     inline const Aws::Vector<EC2TagFilter>& GetEc2TagFilters() const{ return m_ec2TagFilters; }
 
     /**
-     * <p>The Amazon EC2 tags on which to filter.</p>
+     * <p>The Amazon EC2 tags on which to filter. The deployment group will include EC2
+     * instances with any of the specified tags.</p>
      */
     inline void SetEc2TagFilters(const Aws::Vector<EC2TagFilter>& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters = value; }
 
     /**
-     * <p>The Amazon EC2 tags on which to filter.</p>
+     * <p>The Amazon EC2 tags on which to filter. The deployment group will include EC2
+     * instances with any of the specified tags.</p>
      */
     inline void SetEc2TagFilters(Aws::Vector<EC2TagFilter>&& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters = std::move(value); }
 
     /**
-     * <p>The Amazon EC2 tags on which to filter.</p>
+     * <p>The Amazon EC2 tags on which to filter. The deployment group will include EC2
+     * instances with any of the specified tags.</p>
      */
     inline CreateDeploymentGroupRequest& WithEc2TagFilters(const Aws::Vector<EC2TagFilter>& value) { SetEc2TagFilters(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 tags on which to filter.</p>
+     * <p>The Amazon EC2 tags on which to filter. The deployment group will include EC2
+     * instances with any of the specified tags.</p>
      */
     inline CreateDeploymentGroupRequest& WithEc2TagFilters(Aws::Vector<EC2TagFilter>&& value) { SetEc2TagFilters(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon EC2 tags on which to filter.</p>
+     * <p>The Amazon EC2 tags on which to filter. The deployment group will include EC2
+     * instances with any of the specified tags.</p>
      */
     inline CreateDeploymentGroupRequest& AddEc2TagFilters(const EC2TagFilter& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon EC2 tags on which to filter.</p>
+     * <p>The Amazon EC2 tags on which to filter. The deployment group will include EC2
+     * instances with any of the specified tags.</p>
      */
     inline CreateDeploymentGroupRequest& AddEc2TagFilters(EC2TagFilter&& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The on-premises instance tags on which to filter.</p>
+     * <p>The on-premises instance tags on which to filter. The deployment group will
+     * include on-premises instances with any of the specified tags.</p>
      */
     inline const Aws::Vector<TagFilter>& GetOnPremisesInstanceTagFilters() const{ return m_onPremisesInstanceTagFilters; }
 
     /**
-     * <p>The on-premises instance tags on which to filter.</p>
+     * <p>The on-premises instance tags on which to filter. The deployment group will
+     * include on-premises instances with any of the specified tags.</p>
      */
     inline void SetOnPremisesInstanceTagFilters(const Aws::Vector<TagFilter>& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters = value; }
 
     /**
-     * <p>The on-premises instance tags on which to filter.</p>
+     * <p>The on-premises instance tags on which to filter. The deployment group will
+     * include on-premises instances with any of the specified tags.</p>
      */
     inline void SetOnPremisesInstanceTagFilters(Aws::Vector<TagFilter>&& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters = std::move(value); }
 
     /**
-     * <p>The on-premises instance tags on which to filter.</p>
+     * <p>The on-premises instance tags on which to filter. The deployment group will
+     * include on-premises instances with any of the specified tags.</p>
      */
     inline CreateDeploymentGroupRequest& WithOnPremisesInstanceTagFilters(const Aws::Vector<TagFilter>& value) { SetOnPremisesInstanceTagFilters(value); return *this;}
 
     /**
-     * <p>The on-premises instance tags on which to filter.</p>
+     * <p>The on-premises instance tags on which to filter. The deployment group will
+     * include on-premises instances with any of the specified tags.</p>
      */
     inline CreateDeploymentGroupRequest& WithOnPremisesInstanceTagFilters(Aws::Vector<TagFilter>&& value) { SetOnPremisesInstanceTagFilters(std::move(value)); return *this;}
 
     /**
-     * <p>The on-premises instance tags on which to filter.</p>
+     * <p>The on-premises instance tags on which to filter. The deployment group will
+     * include on-premises instances with any of the specified tags.</p>
      */
     inline CreateDeploymentGroupRequest& AddOnPremisesInstanceTagFilters(const TagFilter& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters.push_back(value); return *this; }
 
     /**
-     * <p>The on-premises instance tags on which to filter.</p>
+     * <p>The on-premises instance tags on which to filter. The deployment group will
+     * include on-premises instances with any of the specified tags.</p>
      */
     inline CreateDeploymentGroupRequest& AddOnPremisesInstanceTagFilters(TagFilter&& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters.push_back(std::move(value)); return *this; }
 
@@ -435,31 +449,31 @@ namespace Model
 
     /**
      * <p>Information to add about Amazon CloudWatch alarms when the deployment group
-     * is created. </p>
+     * is created.</p>
      */
     inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
 
     /**
      * <p>Information to add about Amazon CloudWatch alarms when the deployment group
-     * is created. </p>
+     * is created.</p>
      */
     inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
 
     /**
      * <p>Information to add about Amazon CloudWatch alarms when the deployment group
-     * is created. </p>
+     * is created.</p>
      */
     inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
 
     /**
      * <p>Information to add about Amazon CloudWatch alarms when the deployment group
-     * is created. </p>
+     * is created.</p>
      */
     inline CreateDeploymentGroupRequest& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
 
     /**
      * <p>Information to add about Amazon CloudWatch alarms when the deployment group
-     * is created. </p>
+     * is created.</p>
      */
     inline CreateDeploymentGroupRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
 
@@ -494,31 +508,31 @@ namespace Model
     inline CreateDeploymentGroupRequest& WithAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { SetAutoRollbackConfiguration(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the type of deployment, standard or blue/green, that you
+     * <p>Information about the type of deployment, in-place or blue/green, that you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
     inline const DeploymentStyle& GetDeploymentStyle() const{ return m_deploymentStyle; }
 
     /**
-     * <p>Information about the type of deployment, standard or blue/green, that you
+     * <p>Information about the type of deployment, in-place or blue/green, that you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
     inline void SetDeploymentStyle(const DeploymentStyle& value) { m_deploymentStyleHasBeenSet = true; m_deploymentStyle = value; }
 
     /**
-     * <p>Information about the type of deployment, standard or blue/green, that you
+     * <p>Information about the type of deployment, in-place or blue/green, that you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
     inline void SetDeploymentStyle(DeploymentStyle&& value) { m_deploymentStyleHasBeenSet = true; m_deploymentStyle = std::move(value); }
 
     /**
-     * <p>Information about the type of deployment, standard or blue/green, that you
+     * <p>Information about the type of deployment, in-place or blue/green, that you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
     inline CreateDeploymentGroupRequest& WithDeploymentStyle(const DeploymentStyle& value) { SetDeploymentStyle(value); return *this;}
 
     /**
-     * <p>Information about the type of deployment, standard or blue/green, that you
+     * <p>Information about the type of deployment, in-place or blue/green, that you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
     inline CreateDeploymentGroupRequest& WithDeploymentStyle(DeploymentStyle&& value) { SetDeploymentStyle(std::move(value)); return *this;}
@@ -549,27 +563,27 @@ namespace Model
     inline CreateDeploymentGroupRequest& WithBlueGreenDeploymentConfiguration(BlueGreenDeploymentConfiguration&& value) { SetBlueGreenDeploymentConfiguration(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the load balancer used in a blue/green deployment.</p>
+     * <p>Information about the load balancer used in a deployment.</p>
      */
     inline const LoadBalancerInfo& GetLoadBalancerInfo() const{ return m_loadBalancerInfo; }
 
     /**
-     * <p>Information about the load balancer used in a blue/green deployment.</p>
+     * <p>Information about the load balancer used in a deployment.</p>
      */
     inline void SetLoadBalancerInfo(const LoadBalancerInfo& value) { m_loadBalancerInfoHasBeenSet = true; m_loadBalancerInfo = value; }
 
     /**
-     * <p>Information about the load balancer used in a blue/green deployment.</p>
+     * <p>Information about the load balancer used in a deployment.</p>
      */
     inline void SetLoadBalancerInfo(LoadBalancerInfo&& value) { m_loadBalancerInfoHasBeenSet = true; m_loadBalancerInfo = std::move(value); }
 
     /**
-     * <p>Information about the load balancer used in a blue/green deployment.</p>
+     * <p>Information about the load balancer used in a deployment.</p>
      */
     inline CreateDeploymentGroupRequest& WithLoadBalancerInfo(const LoadBalancerInfo& value) { SetLoadBalancerInfo(value); return *this;}
 
     /**
-     * <p>Information about the load balancer used in a blue/green deployment.</p>
+     * <p>Information about the load balancer used in a deployment.</p>
      */
     inline CreateDeploymentGroupRequest& WithLoadBalancerInfo(LoadBalancerInfo&& value) { SetLoadBalancerInfo(std::move(value)); return *this;}
 

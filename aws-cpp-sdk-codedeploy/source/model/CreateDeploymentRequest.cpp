@@ -33,7 +33,9 @@ CreateDeploymentRequest::CreateDeploymentRequest() :
     m_targetInstancesHasBeenSet(false),
     m_autoRollbackConfigurationHasBeenSet(false),
     m_updateOutdatedInstancesOnly(false),
-    m_updateOutdatedInstancesOnlyHasBeenSet(false)
+    m_updateOutdatedInstancesOnlyHasBeenSet(false),
+    m_fileExistsBehavior(FileExistsBehavior::NOT_SET),
+    m_fileExistsBehaviorHasBeenSet(false)
 {
 }
 
@@ -93,6 +95,11 @@ Aws::String CreateDeploymentRequest::SerializePayload() const
   {
    payload.WithBool("updateOutdatedInstancesOnly", m_updateOutdatedInstancesOnly);
 
+  }
+
+  if(m_fileExistsBehaviorHasBeenSet)
+  {
+   payload.WithString("fileExistsBehavior", FileExistsBehaviorMapper::GetNameForFileExistsBehavior(m_fileExistsBehavior));
   }
 
   return payload.WriteReadable();

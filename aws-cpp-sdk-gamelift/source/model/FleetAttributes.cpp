@@ -45,7 +45,8 @@ FleetAttributes::FleetAttributes() :
     m_newGameSessionProtectionPolicyHasBeenSet(false),
     m_operatingSystem(OperatingSystem::NOT_SET),
     m_operatingSystemHasBeenSet(false),
-    m_resourceCreationLimitPolicyHasBeenSet(false)
+    m_resourceCreationLimitPolicyHasBeenSet(false),
+    m_metricGroupsHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ FleetAttributes::FleetAttributes(const JsonValue& jsonValue) :
     m_newGameSessionProtectionPolicyHasBeenSet(false),
     m_operatingSystem(OperatingSystem::NOT_SET),
     m_operatingSystemHasBeenSet(false),
-    m_resourceCreationLimitPolicyHasBeenSet(false)
+    m_resourceCreationLimitPolicyHasBeenSet(false),
+    m_metricGroupsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -174,6 +176,16 @@ FleetAttributes& FleetAttributes::operator =(const JsonValue& jsonValue)
     m_resourceCreationLimitPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MetricGroups"))
+  {
+    Array<JsonValue> metricGroupsJsonList = jsonValue.GetArray("MetricGroups");
+    for(unsigned metricGroupsIndex = 0; metricGroupsIndex < metricGroupsJsonList.GetLength(); ++metricGroupsIndex)
+    {
+      m_metricGroups.push_back(metricGroupsJsonList[metricGroupsIndex].AsString());
+    }
+    m_metricGroupsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -262,6 +274,17 @@ JsonValue FleetAttributes::Jsonize() const
   if(m_resourceCreationLimitPolicyHasBeenSet)
   {
    payload.WithObject("ResourceCreationLimitPolicy", m_resourceCreationLimitPolicy.Jsonize());
+
+  }
+
+  if(m_metricGroupsHasBeenSet)
+  {
+   Array<JsonValue> metricGroupsJsonList(m_metricGroups.size());
+   for(unsigned metricGroupsIndex = 0; metricGroupsIndex < metricGroupsJsonList.GetLength(); ++metricGroupsIndex)
+   {
+     metricGroupsJsonList[metricGroupsIndex].AsString(m_metricGroups[metricGroupsIndex]);
+   }
+   payload.WithArray("MetricGroups", std::move(metricGroupsJsonList));
 
   }
 

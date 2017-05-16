@@ -33,9 +33,12 @@ namespace Aws
         static const int ActivatingGameSessions_HASH = HashingUtils::HashString("ActivatingGameSessions");
         static const int ActiveGameSessions_HASH = HashingUtils::HashString("ActiveGameSessions");
         static const int ActiveInstances_HASH = HashingUtils::HashString("ActiveInstances");
+        static const int AvailableGameSessions_HASH = HashingUtils::HashString("AvailableGameSessions");
         static const int AvailablePlayerSessions_HASH = HashingUtils::HashString("AvailablePlayerSessions");
         static const int CurrentPlayerSessions_HASH = HashingUtils::HashString("CurrentPlayerSessions");
         static const int IdleInstances_HASH = HashingUtils::HashString("IdleInstances");
+        static const int PercentAvailableGameSessions_HASH = HashingUtils::HashString("PercentAvailableGameSessions");
+        static const int PercentIdleInstances_HASH = HashingUtils::HashString("PercentIdleInstances");
         static const int QueueDepth_HASH = HashingUtils::HashString("QueueDepth");
         static const int WaitTime_HASH = HashingUtils::HashString("WaitTime");
 
@@ -55,6 +58,10 @@ namespace Aws
           {
             return MetricName::ActiveInstances;
           }
+          else if (hashCode == AvailableGameSessions_HASH)
+          {
+            return MetricName::AvailableGameSessions;
+          }
           else if (hashCode == AvailablePlayerSessions_HASH)
           {
             return MetricName::AvailablePlayerSessions;
@@ -66,6 +73,14 @@ namespace Aws
           else if (hashCode == IdleInstances_HASH)
           {
             return MetricName::IdleInstances;
+          }
+          else if (hashCode == PercentAvailableGameSessions_HASH)
+          {
+            return MetricName::PercentAvailableGameSessions;
+          }
+          else if (hashCode == PercentIdleInstances_HASH)
+          {
+            return MetricName::PercentIdleInstances;
           }
           else if (hashCode == QueueDepth_HASH)
           {
@@ -95,12 +110,18 @@ namespace Aws
             return "ActiveGameSessions";
           case MetricName::ActiveInstances:
             return "ActiveInstances";
+          case MetricName::AvailableGameSessions:
+            return "AvailableGameSessions";
           case MetricName::AvailablePlayerSessions:
             return "AvailablePlayerSessions";
           case MetricName::CurrentPlayerSessions:
             return "CurrentPlayerSessions";
           case MetricName::IdleInstances:
             return "IdleInstances";
+          case MetricName::PercentAvailableGameSessions:
+            return "PercentAvailableGameSessions";
+          case MetricName::PercentIdleInstances:
+            return "PercentIdleInstances";
           case MetricName::QueueDepth:
             return "QueueDepth";
           case MetricName::WaitTime:

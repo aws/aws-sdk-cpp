@@ -62,50 +62,96 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet</p>
+     * <p>Collection of server process configurations that describe which server
+     * processes to run on each instance in a fleet.</p>
      */
     inline const Aws::Vector<ServerProcess>& GetServerProcesses() const{ return m_serverProcesses; }
 
     /**
-     * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet</p>
+     * <p>Collection of server process configurations that describe which server
+     * processes to run on each instance in a fleet.</p>
      */
     inline void SetServerProcesses(const Aws::Vector<ServerProcess>& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses = value; }
 
     /**
-     * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet</p>
+     * <p>Collection of server process configurations that describe which server
+     * processes to run on each instance in a fleet.</p>
      */
     inline void SetServerProcesses(Aws::Vector<ServerProcess>&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses = std::move(value); }
 
     /**
-     * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet</p>
+     * <p>Collection of server process configurations that describe which server
+     * processes to run on each instance in a fleet.</p>
      */
     inline RuntimeConfiguration& WithServerProcesses(const Aws::Vector<ServerProcess>& value) { SetServerProcesses(value); return *this;}
 
     /**
-     * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet</p>
+     * <p>Collection of server process configurations that describe which server
+     * processes to run on each instance in a fleet.</p>
      */
     inline RuntimeConfiguration& WithServerProcesses(Aws::Vector<ServerProcess>&& value) { SetServerProcesses(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet</p>
+     * <p>Collection of server process configurations that describe which server
+     * processes to run on each instance in a fleet.</p>
      */
     inline RuntimeConfiguration& AddServerProcesses(const ServerProcess& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses.push_back(value); return *this; }
 
     /**
-     * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet</p>
+     * <p>Collection of server process configurations that describe which server
+     * processes to run on each instance in a fleet.</p>
      */
     inline RuntimeConfiguration& AddServerProcesses(ServerProcess&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Maximum number of game sessions with status ACTIVATING to allow on an
+     * instance simultaneously. This setting limits the amount of instance resources
+     * that can be used for new game activations at any one time.</p>
+     */
+    inline int GetMaxConcurrentGameSessionActivations() const{ return m_maxConcurrentGameSessionActivations; }
+
+    /**
+     * <p>Maximum number of game sessions with status ACTIVATING to allow on an
+     * instance simultaneously. This setting limits the amount of instance resources
+     * that can be used for new game activations at any one time.</p>
+     */
+    inline void SetMaxConcurrentGameSessionActivations(int value) { m_maxConcurrentGameSessionActivationsHasBeenSet = true; m_maxConcurrentGameSessionActivations = value; }
+
+    /**
+     * <p>Maximum number of game sessions with status ACTIVATING to allow on an
+     * instance simultaneously. This setting limits the amount of instance resources
+     * that can be used for new game activations at any one time.</p>
+     */
+    inline RuntimeConfiguration& WithMaxConcurrentGameSessionActivations(int value) { SetMaxConcurrentGameSessionActivations(value); return *this;}
+
+    /**
+     * <p>Maximum amount of time (in seconds) that a game session can remain in status
+     * ACTIVATING. If the game session is not active before the timeout, activation is
+     * terminated and the game session status is changed to TERMINATED.</p>
+     */
+    inline int GetGameSessionActivationTimeoutSeconds() const{ return m_gameSessionActivationTimeoutSeconds; }
+
+    /**
+     * <p>Maximum amount of time (in seconds) that a game session can remain in status
+     * ACTIVATING. If the game session is not active before the timeout, activation is
+     * terminated and the game session status is changed to TERMINATED.</p>
+     */
+    inline void SetGameSessionActivationTimeoutSeconds(int value) { m_gameSessionActivationTimeoutSecondsHasBeenSet = true; m_gameSessionActivationTimeoutSeconds = value; }
+
+    /**
+     * <p>Maximum amount of time (in seconds) that a game session can remain in status
+     * ACTIVATING. If the game session is not active before the timeout, activation is
+     * terminated and the game session status is changed to TERMINATED.</p>
+     */
+    inline RuntimeConfiguration& WithGameSessionActivationTimeoutSeconds(int value) { SetGameSessionActivationTimeoutSeconds(value); return *this;}
 
   private:
     Aws::Vector<ServerProcess> m_serverProcesses;
     bool m_serverProcessesHasBeenSet;
+    int m_maxConcurrentGameSessionActivations;
+    bool m_maxConcurrentGameSessionActivationsHasBeenSet;
+    int m_gameSessionActivationTimeoutSeconds;
+    bool m_gameSessionActivationTimeoutSecondsHasBeenSet;
   };
 
 } // namespace Model

@@ -679,6 +679,70 @@ namespace Model
      */
     inline FleetAttributes& WithResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { SetResourceCreationLimitPolicy(std::move(value)); return *this;}
 
+    /**
+     * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
+     * you can view metrics for an individual fleet or aggregated metrics for a fleets
+     * that are in a fleet metric group. Currently, a fleet can be included in only one
+     * metric group at a time.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetMetricGroups() const{ return m_metricGroups; }
+
+    /**
+     * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
+     * you can view metrics for an individual fleet or aggregated metrics for a fleets
+     * that are in a fleet metric group. Currently, a fleet can be included in only one
+     * metric group at a time.</p>
+     */
+    inline void SetMetricGroups(const Aws::Vector<Aws::String>& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = value; }
+
+    /**
+     * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
+     * you can view metrics for an individual fleet or aggregated metrics for a fleets
+     * that are in a fleet metric group. Currently, a fleet can be included in only one
+     * metric group at a time.</p>
+     */
+    inline void SetMetricGroups(Aws::Vector<Aws::String>&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = std::move(value); }
+
+    /**
+     * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
+     * you can view metrics for an individual fleet or aggregated metrics for a fleets
+     * that are in a fleet metric group. Currently, a fleet can be included in only one
+     * metric group at a time.</p>
+     */
+    inline FleetAttributes& WithMetricGroups(const Aws::Vector<Aws::String>& value) { SetMetricGroups(value); return *this;}
+
+    /**
+     * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
+     * you can view metrics for an individual fleet or aggregated metrics for a fleets
+     * that are in a fleet metric group. Currently, a fleet can be included in only one
+     * metric group at a time.</p>
+     */
+    inline FleetAttributes& WithMetricGroups(Aws::Vector<Aws::String>&& value) { SetMetricGroups(std::move(value)); return *this;}
+
+    /**
+     * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
+     * you can view metrics for an individual fleet or aggregated metrics for a fleets
+     * that are in a fleet metric group. Currently, a fleet can be included in only one
+     * metric group at a time.</p>
+     */
+    inline FleetAttributes& AddMetricGroups(const Aws::String& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
+
+    /**
+     * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
+     * you can view metrics for an individual fleet or aggregated metrics for a fleets
+     * that are in a fleet metric group. Currently, a fleet can be included in only one
+     * metric group at a time.</p>
+     */
+    inline FleetAttributes& AddMetricGroups(Aws::String&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
+     * you can view metrics for an individual fleet or aggregated metrics for a fleets
+     * that are in a fleet metric group. Currently, a fleet can be included in only one
+     * metric group at a time.</p>
+     */
+    inline FleetAttributes& AddMetricGroups(const char* value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
+
   private:
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
@@ -708,6 +772,8 @@ namespace Model
     bool m_operatingSystemHasBeenSet;
     ResourceCreationLimitPolicy m_resourceCreationLimitPolicy;
     bool m_resourceCreationLimitPolicyHasBeenSet;
+    Aws::Vector<Aws::String> m_metricGroups;
+    bool m_metricGroupsHasBeenSet;
   };
 
 } // namespace Model

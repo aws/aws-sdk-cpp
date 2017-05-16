@@ -14,37 +14,29 @@
 */
 
 #pragma once
-#include <aws/gamelift/GameLift_EXPORTS.h>
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace GameLift
+namespace CodeDeploy
 {
 namespace Model
 {
-  enum class MetricName
+  enum class FileExistsBehavior
   {
     NOT_SET,
-    ActivatingGameSessions,
-    ActiveGameSessions,
-    ActiveInstances,
-    AvailableGameSessions,
-    AvailablePlayerSessions,
-    CurrentPlayerSessions,
-    IdleInstances,
-    PercentAvailableGameSessions,
-    PercentIdleInstances,
-    QueueDepth,
-    WaitTime
+    DISALLOW,
+    OVERWRITE,
+    RETAIN
   };
 
-namespace MetricNameMapper
+namespace FileExistsBehaviorMapper
 {
-AWS_GAMELIFT_API MetricName GetMetricNameForName(const Aws::String& name);
+AWS_CODEDEPLOY_API FileExistsBehavior GetFileExistsBehaviorForName(const Aws::String& name);
 
-AWS_GAMELIFT_API Aws::String GetNameForMetricName(MetricName value);
-} // namespace MetricNameMapper
+AWS_CODEDEPLOY_API Aws::String GetNameForFileExistsBehavior(FileExistsBehavior value);
+} // namespace FileExistsBehaviorMapper
 } // namespace Model
-} // namespace GameLift
+} // namespace CodeDeploy
 } // namespace Aws

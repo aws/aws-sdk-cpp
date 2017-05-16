@@ -28,7 +28,8 @@ UpdateFleetAttributesRequest::UpdateFleetAttributesRequest() :
     m_descriptionHasBeenSet(false),
     m_newGameSessionProtectionPolicy(ProtectionPolicy::NOT_SET),
     m_newGameSessionProtectionPolicyHasBeenSet(false),
-    m_resourceCreationLimitPolicyHasBeenSet(false)
+    m_resourceCreationLimitPolicyHasBeenSet(false),
+    m_metricGroupsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,17 @@ Aws::String UpdateFleetAttributesRequest::SerializePayload() const
   if(m_resourceCreationLimitPolicyHasBeenSet)
   {
    payload.WithObject("ResourceCreationLimitPolicy", m_resourceCreationLimitPolicy.Jsonize());
+
+  }
+
+  if(m_metricGroupsHasBeenSet)
+  {
+   Array<JsonValue> metricGroupsJsonList(m_metricGroups.size());
+   for(unsigned metricGroupsIndex = 0; metricGroupsIndex < metricGroupsJsonList.GetLength(); ++metricGroupsIndex)
+   {
+     metricGroupsJsonList[metricGroupsIndex].AsString(m_metricGroups[metricGroupsIndex]);
+   }
+   payload.WithArray("MetricGroups", std::move(metricGroupsJsonList));
 
   }
 
