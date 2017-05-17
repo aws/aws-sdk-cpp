@@ -54,7 +54,7 @@ WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) 
     //setup initial proxy config.
     if (isUsingProxy)
     {
-        const char *const proxySchemeString = Aws::Http::SchemeMapper::ToString(config.proxyScheme);
+        const char* const proxySchemeString = Aws::Http::SchemeMapper::ToString(config.proxyScheme);
         AWS_LOGSTREAM_INFO(GetLogTag(), "Http Client is using a proxy. Setting up proxy with settings scheme " << proxySchemeString
             << ", host " << config.proxyHost << ", port " << config.proxyPort << ", username " << config.proxyUserName << ".");
 
