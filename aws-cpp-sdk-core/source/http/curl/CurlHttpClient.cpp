@@ -292,7 +292,7 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     Base(),   
     m_curlHandleContainer(clientConfig.maxConnections, clientConfig.requestTimeoutMs, clientConfig.connectTimeoutMs),
     m_isUsingProxy(!clientConfig.proxyHost.empty()), m_proxyUserName(clientConfig.proxyUserName),
-    m_proxyPassword(clientConfig.proxyPassword), m_proxyHost(clientConfig.proxyHost),
+    m_proxyPassword(clientConfig.proxyPassword), m_proxyScheme(SchemeMapper::ToString(clientConfig.proxyScheme)), m_proxyHost(clientConfig.proxyHost),
     m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_caPath(clientConfig.caPath),
     m_caFile(clientConfig.caFile), m_allowRedirects(clientConfig.followRedirects)
 {
@@ -408,7 +408,9 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
 
         if (m_isUsingProxy)
         {
-            curl_easy_setopt(connectionHandle, CURLOPT_PROXY, m_proxyHost.c_str());
+            Aws::StringStream ss;
+            ss << m_proxyScheme << "://" << m_proxyHost;
+            curl_easy_setopt(connectionHandle, CURLOPT_PROXY, ss.str().c_str());
             curl_easy_setopt(connectionHandle, CURLOPT_PROXYPORT, (long) m_proxyPort);
             curl_easy_setopt(connectionHandle, CURLOPT_PROXYUSERNAME, m_proxyUserName.c_str());
             curl_easy_setopt(connectionHandle, CURLOPT_PROXYPASSWORD, m_proxyPassword.c_str());

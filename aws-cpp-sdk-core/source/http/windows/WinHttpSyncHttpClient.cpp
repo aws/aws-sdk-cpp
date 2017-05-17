@@ -58,14 +58,14 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
 
     if (isUsingProxy)
     {
-        AWS_LOGSTREAM_INFO(GetLogTag(), "Http Client is using a proxy. Setting up proxy with settings host " << config.proxyHost
-             << ", port " << config.proxyPort << ", username " << config.proxyUserName);
-
+        const char *const proxySchemeString = Aws::Http::SchemeMapper::ToString(config.proxyScheme);
+        AWS_LOGSTREAM_INFO(GetLogTag(), "Http Client is using a proxy. Setting up proxy with settings scheme " << proxySchemeString
+             << ", host " << config.proxyHost << ", port " << config.proxyPort << ", username " << config.proxyUserName);
 
         winhttpFlags = WINHTTP_ACCESS_TYPE_NAMED_PROXY;
         Aws::StringStream ss;
         const char* schemeString = Aws::Http::SchemeMapper::ToString(config.scheme);
-        ss << StringUtils::ToUpper(schemeString) << "=" << schemeString << "://" << config.proxyHost << ":" << config.proxyPort;
+        ss << StringUtils::ToUpper(schemeString) << "=" << proxySchemeString << "://" << config.proxyHost << ":" << config.proxyPort;
         strProxyHosts.assign(ss.str());
         proxyHosts = strProxyHosts.c_str();
 
