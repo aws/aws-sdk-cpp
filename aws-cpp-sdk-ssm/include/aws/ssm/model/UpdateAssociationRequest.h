@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
@@ -19,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm/model/InstanceAssociationOutputLocation.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/Target.h>
 #include <utility>
 
 namespace Aws
@@ -187,107 +189,141 @@ namespace Model
     inline UpdateAssociationRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>The cron expression used to schedule the association that you want to update.
-     * Supported expressions are every half, 1, 2, 4, 8 or 12 hour(s); every specified
-     * day and time of the week. For example: cron(0 0/30 * 1/1 * ? *) to run every
-     * thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10
-     * ? * SUN *) to run every Sunday at 10 a.m.</p>
+     * <p>The cron expression used to schedule the association that you want to
+     * update.</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
 
     /**
-     * <p>The cron expression used to schedule the association that you want to update.
-     * Supported expressions are every half, 1, 2, 4, 8 or 12 hour(s); every specified
-     * day and time of the week. For example: cron(0 0/30 * 1/1 * ? *) to run every
-     * thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10
-     * ? * SUN *) to run every Sunday at 10 a.m.</p>
+     * <p>The cron expression used to schedule the association that you want to
+     * update.</p>
      */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
 
     /**
-     * <p>The cron expression used to schedule the association that you want to update.
-     * Supported expressions are every half, 1, 2, 4, 8 or 12 hour(s); every specified
-     * day and time of the week. For example: cron(0 0/30 * 1/1 * ? *) to run every
-     * thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10
-     * ? * SUN *) to run every Sunday at 10 a.m.</p>
+     * <p>The cron expression used to schedule the association that you want to
+     * update.</p>
      */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
 
     /**
-     * <p>The cron expression used to schedule the association that you want to update.
-     * Supported expressions are every half, 1, 2, 4, 8 or 12 hour(s); every specified
-     * day and time of the week. For example: cron(0 0/30 * 1/1 * ? *) to run every
-     * thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10
-     * ? * SUN *) to run every Sunday at 10 a.m.</p>
+     * <p>The cron expression used to schedule the association that you want to
+     * update.</p>
      */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
 
     /**
-     * <p>The cron expression used to schedule the association that you want to update.
-     * Supported expressions are every half, 1, 2, 4, 8 or 12 hour(s); every specified
-     * day and time of the week. For example: cron(0 0/30 * 1/1 * ? *) to run every
-     * thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10
-     * ? * SUN *) to run every Sunday at 10 a.m.</p>
+     * <p>The cron expression used to schedule the association that you want to
+     * update.</p>
      */
     inline UpdateAssociationRequest& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
 
     /**
-     * <p>The cron expression used to schedule the association that you want to update.
-     * Supported expressions are every half, 1, 2, 4, 8 or 12 hour(s); every specified
-     * day and time of the week. For example: cron(0 0/30 * 1/1 * ? *) to run every
-     * thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10
-     * ? * SUN *) to run every Sunday at 10 a.m.</p>
+     * <p>The cron expression used to schedule the association that you want to
+     * update.</p>
      */
     inline UpdateAssociationRequest& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
-     * <p>The cron expression used to schedule the association that you want to update.
-     * Supported expressions are every half, 1, 2, 4, 8 or 12 hour(s); every specified
-     * day and time of the week. For example: cron(0 0/30 * 1/1 * ? *) to run every
-     * thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10
-     * ? * SUN *) to run every Sunday at 10 a.m.</p>
+     * <p>The cron expression used to schedule the association that you want to
+     * update.</p>
      */
     inline UpdateAssociationRequest& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 
     /**
      * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
-     * <p> <code>"{ \"S3Location\": { \"OutputS3Region\": \"&lt;region&gt;\",
-     * \"OutputS3BucketName\": \"bucket name\", \"OutputS3KeyPrefix\": \"folder name\"
-     * } }"</code> </p>
      */
     inline const InstanceAssociationOutputLocation& GetOutputLocation() const{ return m_outputLocation; }
 
     /**
      * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
-     * <p> <code>"{ \"S3Location\": { \"OutputS3Region\": \"&lt;region&gt;\",
-     * \"OutputS3BucketName\": \"bucket name\", \"OutputS3KeyPrefix\": \"folder name\"
-     * } }"</code> </p>
      */
     inline void SetOutputLocation(const InstanceAssociationOutputLocation& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
 
     /**
      * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
-     * <p> <code>"{ \"S3Location\": { \"OutputS3Region\": \"&lt;region&gt;\",
-     * \"OutputS3BucketName\": \"bucket name\", \"OutputS3KeyPrefix\": \"folder name\"
-     * } }"</code> </p>
      */
     inline void SetOutputLocation(InstanceAssociationOutputLocation&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
 
     /**
      * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
-     * <p> <code>"{ \"S3Location\": { \"OutputS3Region\": \"&lt;region&gt;\",
-     * \"OutputS3BucketName\": \"bucket name\", \"OutputS3KeyPrefix\": \"folder name\"
-     * } }"</code> </p>
      */
     inline UpdateAssociationRequest& WithOutputLocation(const InstanceAssociationOutputLocation& value) { SetOutputLocation(value); return *this;}
 
     /**
      * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
-     * <p> <code>"{ \"S3Location\": { \"OutputS3Region\": \"&lt;region&gt;\",
-     * \"OutputS3BucketName\": \"bucket name\", \"OutputS3KeyPrefix\": \"folder name\"
-     * } }"</code> </p>
      */
     inline UpdateAssociationRequest& WithOutputLocation(InstanceAssociationOutputLocation&& value) { SetOutputLocation(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the association document.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the association document.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The name of the association document.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The name of the association document.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The name of the association document.</p>
+     */
+    inline UpdateAssociationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The name of the association document.</p>
+     */
+    inline UpdateAssociationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the association document.</p>
+     */
+    inline UpdateAssociationRequest& WithName(const char* value) { SetName(value); return *this;}
+
+    /**
+     * <p>The targets of the association.</p>
+     */
+    inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+
+    /**
+     * <p>The targets of the association.</p>
+     */
+    inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
+
+    /**
+     * <p>The targets of the association.</p>
+     */
+    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
+
+    /**
+     * <p>The targets of the association.</p>
+     */
+    inline UpdateAssociationRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
+
+    /**
+     * <p>The targets of the association.</p>
+     */
+    inline UpdateAssociationRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
+
+    /**
+     * <p>The targets of the association.</p>
+     */
+    inline UpdateAssociationRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+
+    /**
+     * <p>The targets of the association.</p>
+     */
+    inline UpdateAssociationRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_associationId;
@@ -300,6 +336,10 @@ namespace Model
     bool m_scheduleExpressionHasBeenSet;
     InstanceAssociationOutputLocation m_outputLocation;
     bool m_outputLocationHasBeenSet;
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+    Aws::Vector<Target> m_targets;
+    bool m_targetsHasBeenSet;
   };
 
 } // namespace Model

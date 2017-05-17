@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
@@ -37,7 +38,7 @@ namespace Model
   /**
    * <p>The user-specified message attribute value. For string data types, the
    * <code>Value</code> attribute has the same restrictions on the content as the
-   * message body. For more information, see <code> <a>SendMessage</a> </code>.</p>
+   * message body. For more information, see <code> <a>SendMessage</a>.</code> </p>
    * <p> <code>Name</code>, <code>type</code>, <code>value</code> and the message
    * body must not be empty or null. All parts of the message attribute, including
    * <code>Name</code>, <code>Type</code>, and <code>Value</code>, are part of the

@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import java.util.Set;
 public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
     private static Set<String> opsThatNeedMd5 = new HashSet<>();
+    private static Set<String> opsThatDoNotSupportVirtualAddressing = new HashSet<>();
 
     static {
         opsThatNeedMd5.add("DeleteObjects");
@@ -40,6 +41,9 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         opsThatNeedMd5.add("PutBucketLifecycleConfiguration");
         opsThatNeedMd5.add("PutBucketPolicy");
         opsThatNeedMd5.add("PutBucketTagging");
+
+        opsThatDoNotSupportVirtualAddressing.add("CreateBucket");
+        opsThatDoNotSupportVirtualAddressing.add("ListBuckets");
     }
 
     public S3RestXmlCppClientGenerator() throws Exception {
@@ -58,6 +62,16 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         //size and content length should ALWAYS be 64 bit integers, if they aren't set them as that now.
         serviceModel.getShapes().entrySet().stream().filter(shapeEntry -> shapeEntry.getKey().toLowerCase().equals("contentlength") || shapeEntry.getKey().toLowerCase().equals("size"))
                 .forEach(shapeEntry -> shapeEntry.getValue().setType("long"));
+
+        serviceModel.getOperations().values().stream()
+                .filter(operationEntry ->
+                        !opsThatDoNotSupportVirtualAddressing.contains(operationEntry.getName()))
+                .forEach(operationEntry -> operationEntry.setVirtualAddressAllowed(true));
+
+        serviceModel.getOperations().values().stream()
+                .filter(operationEntry ->
+                        !opsThatDoNotSupportVirtualAddressing.contains(operationEntry.getName()))
+                .forEach(operationEntry -> operationEntry.setVirtualAddressMemberName("Bucket"));
 
         return super.generateSourceFiles(serviceModel);
     }

@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -34,7 +35,9 @@ namespace Model
     MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED,
     ACCOUNT_CANNOT_LEAVE_ORGANIZATION,
     MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED,
-    ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED
+    MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED,
+    ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED,
+    MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE
   };
 
 namespace ConstraintViolationExceptionReasonMapper

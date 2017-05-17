@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -75,10 +75,16 @@ namespace Aws
             virtual bool PresignRequest(Aws::Http::HttpRequest& request, long long expirationInSeconds) const = 0;
 
             /**
-            * Generates a signed Uri using the injected signer. for the supplied uri and http method and region. expirationInSecodns defaults
+            * Generates a signed Uri using the injected signer. for the supplied uri and http method and region. expirationInSeconds defaults
             * to 0 which is the default 7 days.
             */
             virtual bool PresignRequest(Aws::Http::HttpRequest& request, const char* region, long long expirationInSeconds = 0) const = 0;
+
+            /**
+            * Generates a signed Uri using the injected signer. for the supplied uri and http method, region, and service name. expirationInSeconds defaults
+            * to 0 which is the default 7 days.
+            */
+            virtual bool PresignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, long long expirationInSeconds = 0) const = 0;
 
             /**
              * This handles detection of clock skew between clients and the server and adjusts the clock so that the next request will not
@@ -140,6 +146,14 @@ namespace Aws
             * expirationInSeconds defaults to 0 which provides a URI good for 7 days.
             */
             bool PresignRequest(Aws::Http::HttpRequest& request, const char* region, long long expirationInSeconds = 0) const override;
+
+            /**
+            * Takes a request and signs the URI based on the HttpMethod, URI and other info from the request.
+            * The URI can then be used in a normal HTTP call until expiration.
+            * Uses AWS Auth V4 signing method with SHA256 HMAC algorithm.
+            * expirationInSeconds defaults to 0 which provides a URI good for 7 days.
+            */
+            bool PresignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, long long expirationInSeconds = 0) const override;
 
         protected:
             bool m_includeSha256HashHeader;

@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancingRequest.h>
@@ -79,27 +80,27 @@ namespace Model
     inline ModifyLoadBalancerAttributesRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
     /**
-     * <p>The attributes of the load balancer.</p>
+     * <p>The attributes for the load balancer.</p>
      */
     inline const LoadBalancerAttributes& GetLoadBalancerAttributes() const{ return m_loadBalancerAttributes; }
 
     /**
-     * <p>The attributes of the load balancer.</p>
+     * <p>The attributes for the load balancer.</p>
      */
     inline void SetLoadBalancerAttributes(const LoadBalancerAttributes& value) { m_loadBalancerAttributesHasBeenSet = true; m_loadBalancerAttributes = value; }
 
     /**
-     * <p>The attributes of the load balancer.</p>
+     * <p>The attributes for the load balancer.</p>
      */
     inline void SetLoadBalancerAttributes(LoadBalancerAttributes&& value) { m_loadBalancerAttributesHasBeenSet = true; m_loadBalancerAttributes = std::move(value); }
 
     /**
-     * <p>The attributes of the load balancer.</p>
+     * <p>The attributes for the load balancer.</p>
      */
     inline ModifyLoadBalancerAttributesRequest& WithLoadBalancerAttributes(const LoadBalancerAttributes& value) { SetLoadBalancerAttributes(value); return *this;}
 
     /**
-     * <p>The attributes of the load balancer.</p>
+     * <p>The attributes for the load balancer.</p>
      */
     inline ModifyLoadBalancerAttributesRequest& WithLoadBalancerAttributes(LoadBalancerAttributes&& value) { SetLoadBalancerAttributes(std::move(value)); return *this;}
 

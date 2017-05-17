@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
@@ -116,7 +117,8 @@ Aws::String CloudWatchClient::ConvertRequestToPresignedUrl(const AmazonSerializa
 DeleteAlarmsOutcome CloudWatchClient::DeleteAlarms(const DeleteAlarmsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -149,7 +151,8 @@ void CloudWatchClient::DeleteAlarmsAsyncHelper(const DeleteAlarmsRequest& reques
 DescribeAlarmHistoryOutcome CloudWatchClient::DescribeAlarmHistory(const DescribeAlarmHistoryRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -182,7 +185,8 @@ void CloudWatchClient::DescribeAlarmHistoryAsyncHelper(const DescribeAlarmHistor
 DescribeAlarmsOutcome CloudWatchClient::DescribeAlarms(const DescribeAlarmsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -215,7 +219,8 @@ void CloudWatchClient::DescribeAlarmsAsyncHelper(const DescribeAlarmsRequest& re
 DescribeAlarmsForMetricOutcome CloudWatchClient::DescribeAlarmsForMetric(const DescribeAlarmsForMetricRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -248,7 +253,8 @@ void CloudWatchClient::DescribeAlarmsForMetricAsyncHelper(const DescribeAlarmsFo
 DisableAlarmActionsOutcome CloudWatchClient::DisableAlarmActions(const DisableAlarmActionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -281,7 +287,8 @@ void CloudWatchClient::DisableAlarmActionsAsyncHelper(const DisableAlarmActionsR
 EnableAlarmActionsOutcome CloudWatchClient::EnableAlarmActions(const EnableAlarmActionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -314,7 +321,8 @@ void CloudWatchClient::EnableAlarmActionsAsyncHelper(const EnableAlarmActionsReq
 GetMetricStatisticsOutcome CloudWatchClient::GetMetricStatistics(const GetMetricStatisticsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -347,7 +355,8 @@ void CloudWatchClient::GetMetricStatisticsAsyncHelper(const GetMetricStatisticsR
 ListMetricsOutcome CloudWatchClient::ListMetrics(const ListMetricsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -380,7 +389,8 @@ void CloudWatchClient::ListMetricsAsyncHelper(const ListMetricsRequest& request,
 PutMetricAlarmOutcome CloudWatchClient::PutMetricAlarm(const PutMetricAlarmRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -413,7 +423,8 @@ void CloudWatchClient::PutMetricAlarmAsyncHelper(const PutMetricAlarmRequest& re
 PutMetricDataOutcome CloudWatchClient::PutMetricData(const PutMetricDataRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -446,7 +457,8 @@ void CloudWatchClient::PutMetricDataAsyncHelper(const PutMetricDataRequest& requ
 SetAlarmStateOutcome CloudWatchClient::SetAlarmState(const SetAlarmStateRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {

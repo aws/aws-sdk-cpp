@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -69,7 +69,7 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-route53", new Route53CppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-budgets", new BudgetsCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-polly", new PollyCppClientGenerator());
-//            SPEC_OVERRIDE_MAPPING.put("cpp-rds", new RDSCppClientGenerator()); 
+            SPEC_OVERRIDE_MAPPING.put("cpp-rds", new RDSCppClientGenerator());
 
         } catch (Exception e) {
             e.printStackTrace();

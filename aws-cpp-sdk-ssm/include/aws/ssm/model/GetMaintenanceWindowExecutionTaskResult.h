@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -220,50 +221,50 @@ namespace Model
 
     /**
      * <p>The parameters passed to the task when it was executed. The map has the
-     * following format:</p> <p>Key: string, 1 ≤ length ≤ 255</p> <p>Value: an array of
-     * strings where each string 1 ≤ length ≤ 255</p>
+     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
+     * an array of strings, each string is between 1 and 255 characters</p>
      */
     inline const Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>& GetTaskParameters() const{ return m_taskParameters; }
 
     /**
      * <p>The parameters passed to the task when it was executed. The map has the
-     * following format:</p> <p>Key: string, 1 ≤ length ≤ 255</p> <p>Value: an array of
-     * strings where each string 1 ≤ length ≤ 255</p>
+     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
+     * an array of strings, each string is between 1 and 255 characters</p>
      */
     inline void SetTaskParameters(const Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>& value) { m_taskParameters = value; }
 
     /**
      * <p>The parameters passed to the task when it was executed. The map has the
-     * following format:</p> <p>Key: string, 1 ≤ length ≤ 255</p> <p>Value: an array of
-     * strings where each string 1 ≤ length ≤ 255</p>
+     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
+     * an array of strings, each string is between 1 and 255 characters</p>
      */
     inline void SetTaskParameters(Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>&& value) { m_taskParameters = std::move(value); }
 
     /**
      * <p>The parameters passed to the task when it was executed. The map has the
-     * following format:</p> <p>Key: string, 1 ≤ length ≤ 255</p> <p>Value: an array of
-     * strings where each string 1 ≤ length ≤ 255</p>
+     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
+     * an array of strings, each string is between 1 and 255 characters</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithTaskParameters(const Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>& value) { SetTaskParameters(value); return *this;}
 
     /**
      * <p>The parameters passed to the task when it was executed. The map has the
-     * following format:</p> <p>Key: string, 1 ≤ length ≤ 255</p> <p>Value: an array of
-     * strings where each string 1 ≤ length ≤ 255</p>
+     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
+     * an array of strings, each string is between 1 and 255 characters</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithTaskParameters(Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>&& value) { SetTaskParameters(std::move(value)); return *this;}
 
     /**
      * <p>The parameters passed to the task when it was executed. The map has the
-     * following format:</p> <p>Key: string, 1 ≤ length ≤ 255</p> <p>Value: an array of
-     * strings where each string 1 ≤ length ≤ 255</p>
+     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
+     * an array of strings, each string is between 1 and 255 characters</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& AddTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { m_taskParameters.push_back(value); return *this; }
 
     /**
      * <p>The parameters passed to the task when it was executed. The map has the
-     * following format:</p> <p>Key: string, 1 ≤ length ≤ 255</p> <p>Value: an array of
-     * strings where each string 1 ≤ length ≤ 255</p>
+     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
+     * an array of strings, each string is between 1 and 255 characters</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& AddTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { m_taskParameters.push_back(std::move(value)); return *this; }
 

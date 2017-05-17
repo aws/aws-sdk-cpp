@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/cloudformation/CloudFormationErrors.h>
@@ -29,6 +30,7 @@ namespace CloudFormationErrorMapper
 
 static const int INVALID_CHANGE_SET_STATUS_HASH = HashingUtils::HashString("InvalidChangeSetStatus");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int TOKEN_ALREADY_EXISTS_HASH = HashingUtils::HashString("TokenAlreadyExistsException");
 static const int INSUFFICIENT_CAPABILITIES_HASH = HashingUtils::HashString("InsufficientCapabilitiesException");
 static const int CHANGE_SET_NOT_FOUND_HASH = HashingUtils::HashString("ChangeSetNotFound");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
@@ -45,6 +47,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == TOKEN_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::TOKEN_ALREADY_EXISTS), false);
   }
   else if (hashCode == INSUFFICIENT_CAPABILITIES_HASH)
   {

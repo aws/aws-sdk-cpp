@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/CloudFormationRequest.h>
@@ -356,65 +357,57 @@ namespace Model
 
     /**
      * <p>The Simple Notification Service (SNS) topic ARNs to publish stack related
-     * events. You can find your SNS topic ARNs using the <a
-     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
-     * Interface (CLI).</p>
+     * events. You can find your SNS topic ARNs using the SNS console or your Command
+     * Line Interface (CLI).</p>
      */
     inline const Aws::Vector<Aws::String>& GetNotificationARNs() const{ return m_notificationARNs; }
 
     /**
      * <p>The Simple Notification Service (SNS) topic ARNs to publish stack related
-     * events. You can find your SNS topic ARNs using the <a
-     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
-     * Interface (CLI).</p>
+     * events. You can find your SNS topic ARNs using the SNS console or your Command
+     * Line Interface (CLI).</p>
      */
     inline void SetNotificationARNs(const Aws::Vector<Aws::String>& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = value; }
 
     /**
      * <p>The Simple Notification Service (SNS) topic ARNs to publish stack related
-     * events. You can find your SNS topic ARNs using the <a
-     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
-     * Interface (CLI).</p>
+     * events. You can find your SNS topic ARNs using the SNS console or your Command
+     * Line Interface (CLI).</p>
      */
     inline void SetNotificationARNs(Aws::Vector<Aws::String>&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = std::move(value); }
 
     /**
      * <p>The Simple Notification Service (SNS) topic ARNs to publish stack related
-     * events. You can find your SNS topic ARNs using the <a
-     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
-     * Interface (CLI).</p>
+     * events. You can find your SNS topic ARNs using the SNS console or your Command
+     * Line Interface (CLI).</p>
      */
     inline CreateStackRequest& WithNotificationARNs(const Aws::Vector<Aws::String>& value) { SetNotificationARNs(value); return *this;}
 
     /**
      * <p>The Simple Notification Service (SNS) topic ARNs to publish stack related
-     * events. You can find your SNS topic ARNs using the <a
-     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
-     * Interface (CLI).</p>
+     * events. You can find your SNS topic ARNs using the SNS console or your Command
+     * Line Interface (CLI).</p>
      */
     inline CreateStackRequest& WithNotificationARNs(Aws::Vector<Aws::String>&& value) { SetNotificationARNs(std::move(value)); return *this;}
 
     /**
      * <p>The Simple Notification Service (SNS) topic ARNs to publish stack related
-     * events. You can find your SNS topic ARNs using the <a
-     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
-     * Interface (CLI).</p>
+     * events. You can find your SNS topic ARNs using the SNS console or your Command
+     * Line Interface (CLI).</p>
      */
     inline CreateStackRequest& AddNotificationARNs(const Aws::String& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
 
     /**
      * <p>The Simple Notification Service (SNS) topic ARNs to publish stack related
-     * events. You can find your SNS topic ARNs using the <a
-     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
-     * Interface (CLI).</p>
+     * events. You can find your SNS topic ARNs using the SNS console or your Command
+     * Line Interface (CLI).</p>
      */
     inline CreateStackRequest& AddNotificationARNs(Aws::String&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The Simple Notification Service (SNS) topic ARNs to publish stack related
-     * events. You can find your SNS topic ARNs using the <a
-     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
-     * Interface (CLI).</p>
+     * events. You can find your SNS topic ARNs using the SNS console or your Command
+     * Line Interface (CLI).</p>
      */
     inline CreateStackRequest& AddNotificationARNs(const char* value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
 
@@ -1107,6 +1100,69 @@ namespace Model
      */
     inline CreateStackRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>A unique identifier for this <code>CreateStack</code> request. Specify this
+     * token if you plan to retry requests so that AWS CloudFormation knows that you're
+     * not attempting to create a stack with the same name. You might retry
+     * <code>CreateStack</code> requests to ensure that AWS CloudFormation successfully
+     * received them.</p>
+     */
+    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A unique identifier for this <code>CreateStack</code> request. Specify this
+     * token if you plan to retry requests so that AWS CloudFormation knows that you're
+     * not attempting to create a stack with the same name. You might retry
+     * <code>CreateStack</code> requests to ensure that AWS CloudFormation successfully
+     * received them.</p>
+     */
+    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
+
+    /**
+     * <p>A unique identifier for this <code>CreateStack</code> request. Specify this
+     * token if you plan to retry requests so that AWS CloudFormation knows that you're
+     * not attempting to create a stack with the same name. You might retry
+     * <code>CreateStack</code> requests to ensure that AWS CloudFormation successfully
+     * received them.</p>
+     */
+    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
+
+    /**
+     * <p>A unique identifier for this <code>CreateStack</code> request. Specify this
+     * token if you plan to retry requests so that AWS CloudFormation knows that you're
+     * not attempting to create a stack with the same name. You might retry
+     * <code>CreateStack</code> requests to ensure that AWS CloudFormation successfully
+     * received them.</p>
+     */
+    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
+
+    /**
+     * <p>A unique identifier for this <code>CreateStack</code> request. Specify this
+     * token if you plan to retry requests so that AWS CloudFormation knows that you're
+     * not attempting to create a stack with the same name. You might retry
+     * <code>CreateStack</code> requests to ensure that AWS CloudFormation successfully
+     * received them.</p>
+     */
+    inline CreateStackRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
+
+    /**
+     * <p>A unique identifier for this <code>CreateStack</code> request. Specify this
+     * token if you plan to retry requests so that AWS CloudFormation knows that you're
+     * not attempting to create a stack with the same name. You might retry
+     * <code>CreateStack</code> requests to ensure that AWS CloudFormation successfully
+     * received them.</p>
+     */
+    inline CreateStackRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique identifier for this <code>CreateStack</code> request. Specify this
+     * token if you plan to retry requests so that AWS CloudFormation knows that you're
+     * not attempting to create a stack with the same name. You might retry
+     * <code>CreateStack</code> requests to ensure that AWS CloudFormation successfully
+     * received them.</p>
+     */
+    inline CreateStackRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+
   private:
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
@@ -1136,6 +1192,8 @@ namespace Model
     bool m_stackPolicyURLHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+    Aws::String m_clientRequestToken;
+    bool m_clientRequestTokenHasBeenSet;
   };
 
 } // namespace Model

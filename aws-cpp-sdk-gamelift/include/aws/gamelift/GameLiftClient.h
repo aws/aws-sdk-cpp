@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftErrors.h>
@@ -628,21 +629,25 @@ namespace Model
          * for more information), and deploy a specified game build to each instance. A
          * newly created fleet passes through several statuses; once it reaches the
          * <code>ACTIVE</code> status, it can begin hosting game sessions.</p> <p>To create
-         * a new fleet, provide a fleet name, an EC2 instance type, and a build ID of the
-         * game build to deploy. You can also configure the new fleet with the following
-         * settings: (1) a runtime configuration describing what server processes to run on
-         * each instance in the fleet (required to create fleet), (2) access permissions
-         * for inbound traffic, (3) fleet-wide game session protection, and (4) the
-         * location of default log files for Amazon GameLift to upload and store.</p> <p>If
-         * the CreateFleet call is successful, Amazon GameLift performs the following
-         * tasks:</p> <ul> <li> <p>Creates a fleet record and sets the status to
-         * <code>NEW</code> (followed by other statuses as the fleet is activated).</p>
-         * </li> <li> <p>Sets the fleet's capacity to 1 "desired", which causes Amazon
-         * GameLift to start one new EC2 instance.</p> </li> <li> <p>Starts launching
-         * server processes on the instance. If the fleet is configured to run multiple
-         * server processes per instance, Amazon GameLift staggers each launch by a few
-         * seconds.</p> </li> <li> <p>Begins writing events to the fleet event log, which
-         * can be accessed in the Amazon GameLift console.</p> </li> <li> <p>Sets the
+         * a new fleet, you must specify the following: (1) fleet name, (2) build ID of an
+         * uploaded game build, (3) an EC2 instance type, and (4) a runtime configuration
+         * that describes which server processes to run on each instance in the fleet.
+         * (Although the runtime configuration is not a required parameter, the fleet
+         * cannot be successfully created without it.) You can also configure the new fleet
+         * with the following settings: fleet description, access permissions for inbound
+         * traffic, fleet-wide game session protection, and resource creation limit. If you
+         * use Amazon CloudWatch for metrics, you can add the new fleet to a metric group,
+         * which allows you to view aggregated metrics for a set of fleets. Once you
+         * specify a metric group, the new fleet's metrics are included in the metric
+         * group's data.</p> <p>If the CreateFleet call is successful, Amazon GameLift
+         * performs the following tasks:</p> <ul> <li> <p>Creates a fleet record and sets
+         * the status to <code>NEW</code> (followed by other statuses as the fleet is
+         * activated).</p> </li> <li> <p>Sets the fleet's capacity to 1 "desired", which
+         * causes Amazon GameLift to start one new EC2 instance.</p> </li> <li> <p>Starts
+         * launching server processes on the instance. If the fleet is configured to run
+         * multiple server processes per instance, Amazon GameLift staggers each launch by
+         * a few seconds.</p> </li> <li> <p>Begins writing events to the fleet event log,
+         * which can be accessed in the Amazon GameLift console.</p> </li> <li> <p>Sets the
          * fleet's status to <code>ACTIVE</code> once one server process in the fleet is
          * ready to host a game session.</p> </li> </ul> <p>After a fleet is created, use
          * the following actions to change fleet properties and configuration:</p> <ul>
@@ -670,21 +675,25 @@ namespace Model
          * for more information), and deploy a specified game build to each instance. A
          * newly created fleet passes through several statuses; once it reaches the
          * <code>ACTIVE</code> status, it can begin hosting game sessions.</p> <p>To create
-         * a new fleet, provide a fleet name, an EC2 instance type, and a build ID of the
-         * game build to deploy. You can also configure the new fleet with the following
-         * settings: (1) a runtime configuration describing what server processes to run on
-         * each instance in the fleet (required to create fleet), (2) access permissions
-         * for inbound traffic, (3) fleet-wide game session protection, and (4) the
-         * location of default log files for Amazon GameLift to upload and store.</p> <p>If
-         * the CreateFleet call is successful, Amazon GameLift performs the following
-         * tasks:</p> <ul> <li> <p>Creates a fleet record and sets the status to
-         * <code>NEW</code> (followed by other statuses as the fleet is activated).</p>
-         * </li> <li> <p>Sets the fleet's capacity to 1 "desired", which causes Amazon
-         * GameLift to start one new EC2 instance.</p> </li> <li> <p>Starts launching
-         * server processes on the instance. If the fleet is configured to run multiple
-         * server processes per instance, Amazon GameLift staggers each launch by a few
-         * seconds.</p> </li> <li> <p>Begins writing events to the fleet event log, which
-         * can be accessed in the Amazon GameLift console.</p> </li> <li> <p>Sets the
+         * a new fleet, you must specify the following: (1) fleet name, (2) build ID of an
+         * uploaded game build, (3) an EC2 instance type, and (4) a runtime configuration
+         * that describes which server processes to run on each instance in the fleet.
+         * (Although the runtime configuration is not a required parameter, the fleet
+         * cannot be successfully created without it.) You can also configure the new fleet
+         * with the following settings: fleet description, access permissions for inbound
+         * traffic, fleet-wide game session protection, and resource creation limit. If you
+         * use Amazon CloudWatch for metrics, you can add the new fleet to a metric group,
+         * which allows you to view aggregated metrics for a set of fleets. Once you
+         * specify a metric group, the new fleet's metrics are included in the metric
+         * group's data.</p> <p>If the CreateFleet call is successful, Amazon GameLift
+         * performs the following tasks:</p> <ul> <li> <p>Creates a fleet record and sets
+         * the status to <code>NEW</code> (followed by other statuses as the fleet is
+         * activated).</p> </li> <li> <p>Sets the fleet's capacity to 1 "desired", which
+         * causes Amazon GameLift to start one new EC2 instance.</p> </li> <li> <p>Starts
+         * launching server processes on the instance. If the fleet is configured to run
+         * multiple server processes per instance, Amazon GameLift staggers each launch by
+         * a few seconds.</p> </li> <li> <p>Begins writing events to the fleet event log,
+         * which can be accessed in the Amazon GameLift console.</p> </li> <li> <p>Sets the
          * fleet's status to <code>ACTIVE</code> once one server process in the fleet is
          * ready to host a game session.</p> </li> </ul> <p>After a fleet is created, use
          * the following actions to change fleet properties and configuration:</p> <ul>
@@ -714,21 +723,25 @@ namespace Model
          * for more information), and deploy a specified game build to each instance. A
          * newly created fleet passes through several statuses; once it reaches the
          * <code>ACTIVE</code> status, it can begin hosting game sessions.</p> <p>To create
-         * a new fleet, provide a fleet name, an EC2 instance type, and a build ID of the
-         * game build to deploy. You can also configure the new fleet with the following
-         * settings: (1) a runtime configuration describing what server processes to run on
-         * each instance in the fleet (required to create fleet), (2) access permissions
-         * for inbound traffic, (3) fleet-wide game session protection, and (4) the
-         * location of default log files for Amazon GameLift to upload and store.</p> <p>If
-         * the CreateFleet call is successful, Amazon GameLift performs the following
-         * tasks:</p> <ul> <li> <p>Creates a fleet record and sets the status to
-         * <code>NEW</code> (followed by other statuses as the fleet is activated).</p>
-         * </li> <li> <p>Sets the fleet's capacity to 1 "desired", which causes Amazon
-         * GameLift to start one new EC2 instance.</p> </li> <li> <p>Starts launching
-         * server processes on the instance. If the fleet is configured to run multiple
-         * server processes per instance, Amazon GameLift staggers each launch by a few
-         * seconds.</p> </li> <li> <p>Begins writing events to the fleet event log, which
-         * can be accessed in the Amazon GameLift console.</p> </li> <li> <p>Sets the
+         * a new fleet, you must specify the following: (1) fleet name, (2) build ID of an
+         * uploaded game build, (3) an EC2 instance type, and (4) a runtime configuration
+         * that describes which server processes to run on each instance in the fleet.
+         * (Although the runtime configuration is not a required parameter, the fleet
+         * cannot be successfully created without it.) You can also configure the new fleet
+         * with the following settings: fleet description, access permissions for inbound
+         * traffic, fleet-wide game session protection, and resource creation limit. If you
+         * use Amazon CloudWatch for metrics, you can add the new fleet to a metric group,
+         * which allows you to view aggregated metrics for a set of fleets. Once you
+         * specify a metric group, the new fleet's metrics are included in the metric
+         * group's data.</p> <p>If the CreateFleet call is successful, Amazon GameLift
+         * performs the following tasks:</p> <ul> <li> <p>Creates a fleet record and sets
+         * the status to <code>NEW</code> (followed by other statuses as the fleet is
+         * activated).</p> </li> <li> <p>Sets the fleet's capacity to 1 "desired", which
+         * causes Amazon GameLift to start one new EC2 instance.</p> </li> <li> <p>Starts
+         * launching server processes on the instance. If the fleet is configured to run
+         * multiple server processes per instance, Amazon GameLift staggers each launch by
+         * a few seconds.</p> </li> <li> <p>Begins writing events to the fleet event log,
+         * which can be accessed in the Amazon GameLift console.</p> </li> <li> <p>Sets the
          * fleet's status to <code>ACTIVE</code> once one server process in the fleet is
          * ready to host a game session.</p> </li> </ul> <p>After a fleet is created, use
          * the following actions to change fleet properties and configuration:</p> <ul>
@@ -2377,31 +2390,32 @@ namespace Model
          * <p>Places a request for a new game session in a queue (see
          * <a>CreateGameSessionQueue</a>). When processing a placement request, Amazon
          * GameLift searches for available resources on the queue's destinations, scanning
-         * each until it finds resources or the placement request times out. A game session
-         * placement request can also request player sessions. When a new game session is
-         * successfully created, Amazon GameLift creates a player session for each player
-         * included in the request.</p> <p>When placing a game session, by default Amazon
-         * GameLift tries each fleet in the order they are listed in the queue
-         * configuration. Ideally, a queue's destinations are listed in preference order.
-         * Alternatively, when requesting a game session with players, you can also provide
-         * latency data for each player in relevant regions. Latency data indicates the
-         * performance lag a player experiences when connected to a fleet in the region.
-         * Amazon GameLift uses latency data to reorder the list of destinations to place
-         * the game session in a region with minimal lag. If latency data is provided for
-         * multiple players, Amazon GameLift calculates each region's average lag for all
-         * players and reorders to get the best game play across all players. </p> <p>To
-         * place a new game session request, specify the queue name and a set of game
-         * session properties and settings. Also provide a unique ID (such as a UUID) for
-         * the placement. You'll use this ID to track the status of the placement request.
-         * Optionally, provide a set of IDs and player data for each player you want to
-         * join to the new game session. To optimize game play for the players, also
-         * provide latency data for all players. If successful, a new game session
-         * placement is created. To track the status of a placement request, call
-         * <a>DescribeGameSessionPlacement</a> and check the request's status. If the
-         * status is Fulfilled, a new game session has been created and a game session ARN
-         * and region are referenced. If the placement request times out, you have the
-         * option of resubmitting the request or retrying it with a different queue.
-         * </p><p><h3>See Also:</h3>   <a
+         * each until it finds resources or the placement request times out.</p> <p>A game
+         * session placement request can also request player sessions. When a new game
+         * session is successfully created, Amazon GameLift creates a player session for
+         * each player included in the request.</p> <p>When placing a game session, by
+         * default Amazon GameLift tries each fleet in the order they are listed in the
+         * queue configuration. Ideally, a queue's destinations are listed in preference
+         * order.</p> <p>Alternatively, when requesting a game session with players, you
+         * can also provide latency data for each player in relevant regions. Latency data
+         * indicates the performance lag a player experiences when connected to a fleet in
+         * the region. Amazon GameLift uses latency data to reorder the list of
+         * destinations to place the game session in a region with minimal lag. If latency
+         * data is provided for multiple players, Amazon GameLift calculates each region's
+         * average lag for all players and reorders to get the best game play across all
+         * players. </p> <p>To place a new game session request, specify the following:</p>
+         * <ul> <li> <p>The queue name and a set of game session properties and
+         * settings</p> </li> <li> <p>A unique ID (such as a UUID) for the placement. You
+         * use this ID to track the status of the placement request</p> </li> <li>
+         * <p>(Optional) A set of IDs and player data for each player you want to join to
+         * the new game session</p> </li> <li> <p>Latency data for all players (if you want
+         * to optimize game play for the players)</p> </li> </ul> <p>If successful, a new
+         * game session placement is created.</p> <p>To track the status of a placement
+         * request, call <a>DescribeGameSessionPlacement</a> and check the request's
+         * status. If the status is <code>Fulfilled</code>, a new game session has been
+         * created and a game session ARN and region are referenced. If the placement
+         * request times out, you can resubmit the request or retry it with a different
+         * queue. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">AWS
          * API Reference</a></p>
          */
@@ -2411,31 +2425,32 @@ namespace Model
          * <p>Places a request for a new game session in a queue (see
          * <a>CreateGameSessionQueue</a>). When processing a placement request, Amazon
          * GameLift searches for available resources on the queue's destinations, scanning
-         * each until it finds resources or the placement request times out. A game session
-         * placement request can also request player sessions. When a new game session is
-         * successfully created, Amazon GameLift creates a player session for each player
-         * included in the request.</p> <p>When placing a game session, by default Amazon
-         * GameLift tries each fleet in the order they are listed in the queue
-         * configuration. Ideally, a queue's destinations are listed in preference order.
-         * Alternatively, when requesting a game session with players, you can also provide
-         * latency data for each player in relevant regions. Latency data indicates the
-         * performance lag a player experiences when connected to a fleet in the region.
-         * Amazon GameLift uses latency data to reorder the list of destinations to place
-         * the game session in a region with minimal lag. If latency data is provided for
-         * multiple players, Amazon GameLift calculates each region's average lag for all
-         * players and reorders to get the best game play across all players. </p> <p>To
-         * place a new game session request, specify the queue name and a set of game
-         * session properties and settings. Also provide a unique ID (such as a UUID) for
-         * the placement. You'll use this ID to track the status of the placement request.
-         * Optionally, provide a set of IDs and player data for each player you want to
-         * join to the new game session. To optimize game play for the players, also
-         * provide latency data for all players. If successful, a new game session
-         * placement is created. To track the status of a placement request, call
-         * <a>DescribeGameSessionPlacement</a> and check the request's status. If the
-         * status is Fulfilled, a new game session has been created and a game session ARN
-         * and region are referenced. If the placement request times out, you have the
-         * option of resubmitting the request or retrying it with a different queue.
-         * </p><p><h3>See Also:</h3>   <a
+         * each until it finds resources or the placement request times out.</p> <p>A game
+         * session placement request can also request player sessions. When a new game
+         * session is successfully created, Amazon GameLift creates a player session for
+         * each player included in the request.</p> <p>When placing a game session, by
+         * default Amazon GameLift tries each fleet in the order they are listed in the
+         * queue configuration. Ideally, a queue's destinations are listed in preference
+         * order.</p> <p>Alternatively, when requesting a game session with players, you
+         * can also provide latency data for each player in relevant regions. Latency data
+         * indicates the performance lag a player experiences when connected to a fleet in
+         * the region. Amazon GameLift uses latency data to reorder the list of
+         * destinations to place the game session in a region with minimal lag. If latency
+         * data is provided for multiple players, Amazon GameLift calculates each region's
+         * average lag for all players and reorders to get the best game play across all
+         * players. </p> <p>To place a new game session request, specify the following:</p>
+         * <ul> <li> <p>The queue name and a set of game session properties and
+         * settings</p> </li> <li> <p>A unique ID (such as a UUID) for the placement. You
+         * use this ID to track the status of the placement request</p> </li> <li>
+         * <p>(Optional) A set of IDs and player data for each player you want to join to
+         * the new game session</p> </li> <li> <p>Latency data for all players (if you want
+         * to optimize game play for the players)</p> </li> </ul> <p>If successful, a new
+         * game session placement is created.</p> <p>To track the status of a placement
+         * request, call <a>DescribeGameSessionPlacement</a> and check the request's
+         * status. If the status is <code>Fulfilled</code>, a new game session has been
+         * created and a game session ARN and region are referenced. If the placement
+         * request times out, you can resubmit the request or retry it with a different
+         * queue. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">AWS
          * API Reference</a></p>
          *
@@ -2447,31 +2462,32 @@ namespace Model
          * <p>Places a request for a new game session in a queue (see
          * <a>CreateGameSessionQueue</a>). When processing a placement request, Amazon
          * GameLift searches for available resources on the queue's destinations, scanning
-         * each until it finds resources or the placement request times out. A game session
-         * placement request can also request player sessions. When a new game session is
-         * successfully created, Amazon GameLift creates a player session for each player
-         * included in the request.</p> <p>When placing a game session, by default Amazon
-         * GameLift tries each fleet in the order they are listed in the queue
-         * configuration. Ideally, a queue's destinations are listed in preference order.
-         * Alternatively, when requesting a game session with players, you can also provide
-         * latency data for each player in relevant regions. Latency data indicates the
-         * performance lag a player experiences when connected to a fleet in the region.
-         * Amazon GameLift uses latency data to reorder the list of destinations to place
-         * the game session in a region with minimal lag. If latency data is provided for
-         * multiple players, Amazon GameLift calculates each region's average lag for all
-         * players and reorders to get the best game play across all players. </p> <p>To
-         * place a new game session request, specify the queue name and a set of game
-         * session properties and settings. Also provide a unique ID (such as a UUID) for
-         * the placement. You'll use this ID to track the status of the placement request.
-         * Optionally, provide a set of IDs and player data for each player you want to
-         * join to the new game session. To optimize game play for the players, also
-         * provide latency data for all players. If successful, a new game session
-         * placement is created. To track the status of a placement request, call
-         * <a>DescribeGameSessionPlacement</a> and check the request's status. If the
-         * status is Fulfilled, a new game session has been created and a game session ARN
-         * and region are referenced. If the placement request times out, you have the
-         * option of resubmitting the request or retrying it with a different queue.
-         * </p><p><h3>See Also:</h3>   <a
+         * each until it finds resources or the placement request times out.</p> <p>A game
+         * session placement request can also request player sessions. When a new game
+         * session is successfully created, Amazon GameLift creates a player session for
+         * each player included in the request.</p> <p>When placing a game session, by
+         * default Amazon GameLift tries each fleet in the order they are listed in the
+         * queue configuration. Ideally, a queue's destinations are listed in preference
+         * order.</p> <p>Alternatively, when requesting a game session with players, you
+         * can also provide latency data for each player in relevant regions. Latency data
+         * indicates the performance lag a player experiences when connected to a fleet in
+         * the region. Amazon GameLift uses latency data to reorder the list of
+         * destinations to place the game session in a region with minimal lag. If latency
+         * data is provided for multiple players, Amazon GameLift calculates each region's
+         * average lag for all players and reorders to get the best game play across all
+         * players. </p> <p>To place a new game session request, specify the following:</p>
+         * <ul> <li> <p>The queue name and a set of game session properties and
+         * settings</p> </li> <li> <p>A unique ID (such as a UUID) for the placement. You
+         * use this ID to track the status of the placement request</p> </li> <li>
+         * <p>(Optional) A set of IDs and player data for each player you want to join to
+         * the new game session</p> </li> <li> <p>Latency data for all players (if you want
+         * to optimize game play for the players)</p> </li> </ul> <p>If successful, a new
+         * game session placement is created.</p> <p>To track the status of a placement
+         * request, call <a>DescribeGameSessionPlacement</a> and check the request's
+         * status. If the status is <code>Fulfilled</code>, a new game session has been
+         * created and a game session ARN and region are referenced. If the placement
+         * request times out, you can resubmit the request or retry it with a different
+         * queue. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">AWS
          * API Reference</a></p>
          *

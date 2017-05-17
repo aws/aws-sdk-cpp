@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/CloudFormationErrors.h>
@@ -214,8 +215,9 @@ namespace Model
    * dependencies between the resources for you.</p> <p>For more information about
    * AWS CloudFormation, see the <a href="http://aws.amazon.com/cloudformation/">AWS
    * CloudFormation Product Page</a>.</p> <p>Amazon CloudFormation makes use of other
-   * AWS products. For additional technical information about a specific AWS product,
-   * see its <a href="http://docs.aws.amazon.com/">technical documentation</a>.</p>
+   * AWS products. If you need additional technical information about a specific AWS
+   * product, you can find the product's technical documentation at <a
+   * href="http://docs.aws.amazon.com/">docs.aws.amazon.com</a>.</p>
    */
   class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLClient
   {
@@ -345,34 +347,50 @@ namespace Model
         virtual void ContinueUpdateRollbackAsync(const Model::ContinueUpdateRollbackRequest& request, const ContinueUpdateRollbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a list of changes for a stack. AWS CloudFormation generates the
-         * change set by comparing the template's information with the information that you
-         * submit. A change set can help you understand which resources AWS CloudFormation
-         * will change, and how it will change them, before you update your stack. Change
-         * sets allow you to check before making a change to avoid deleting or replacing
-         * critical resources.</p> <p>AWS CloudFormation doesn't make any changes to the
-         * stack when you create a change set. To make the specified changes, you must
-         * execute the change set by using the <a>ExecuteChangeSet</a> action.</p> <p>After
-         * the call successfully completes, AWS CloudFormation starts creating the change
-         * set. To check the status of the change set, use the <a>DescribeChangeSet</a>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a list of changes that will be applied to a stack so that you can
+         * review the changes before executing them. You can create a change set for a
+         * stack that doesn't exist or an existing stack. If you create a change set for a
+         * stack that doesn't exist, the change set shows all of the resources that AWS
+         * CloudFormation will create. If you create a change set for an existing stack,
+         * AWS CloudFormation compares the stack's information with the information that
+         * you submit in the change set and lists the differences. Use change sets to
+         * understand which resources AWS CloudFormation will create or change, and how it
+         * will change resources in an existing stack, before you create or update a
+         * stack.</p> <p>To create a change set for a stack that doesn't exist, for the
+         * <code>ChangeSetType</code> parameter, specify <code>CREATE</code>. To create a
+         * change set for an existing stack, specify <code>UPDATE</code> for the
+         * <code>ChangeSetType</code> parameter. After the <code>CreateChangeSet</code>
+         * call successfully completes, AWS CloudFormation starts creating the change set.
+         * To check the status of the change set or to review it, use the
+         * <a>DescribeChangeSet</a> action.</p> <p>When you are satisfied with the changes
+         * the change set will make, execute the change set by using the
+         * <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make changes until
+         * you execute the change set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateChangeSetOutcome CreateChangeSet(const Model::CreateChangeSetRequest& request) const;
 
         /**
-         * <p>Creates a list of changes for a stack. AWS CloudFormation generates the
-         * change set by comparing the template's information with the information that you
-         * submit. A change set can help you understand which resources AWS CloudFormation
-         * will change, and how it will change them, before you update your stack. Change
-         * sets allow you to check before making a change to avoid deleting or replacing
-         * critical resources.</p> <p>AWS CloudFormation doesn't make any changes to the
-         * stack when you create a change set. To make the specified changes, you must
-         * execute the change set by using the <a>ExecuteChangeSet</a> action.</p> <p>After
-         * the call successfully completes, AWS CloudFormation starts creating the change
-         * set. To check the status of the change set, use the <a>DescribeChangeSet</a>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a list of changes that will be applied to a stack so that you can
+         * review the changes before executing them. You can create a change set for a
+         * stack that doesn't exist or an existing stack. If you create a change set for a
+         * stack that doesn't exist, the change set shows all of the resources that AWS
+         * CloudFormation will create. If you create a change set for an existing stack,
+         * AWS CloudFormation compares the stack's information with the information that
+         * you submit in the change set and lists the differences. Use change sets to
+         * understand which resources AWS CloudFormation will create or change, and how it
+         * will change resources in an existing stack, before you create or update a
+         * stack.</p> <p>To create a change set for a stack that doesn't exist, for the
+         * <code>ChangeSetType</code> parameter, specify <code>CREATE</code>. To create a
+         * change set for an existing stack, specify <code>UPDATE</code> for the
+         * <code>ChangeSetType</code> parameter. After the <code>CreateChangeSet</code>
+         * call successfully completes, AWS CloudFormation starts creating the change set.
+         * To check the status of the change set or to review it, use the
+         * <a>DescribeChangeSet</a> action.</p> <p>When you are satisfied with the changes
+         * the change set will make, execute the change set by using the
+         * <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make changes until
+         * you execute the change set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">AWS
          * API Reference</a></p>
          *
@@ -381,17 +399,25 @@ namespace Model
         virtual Model::CreateChangeSetOutcomeCallable CreateChangeSetCallable(const Model::CreateChangeSetRequest& request) const;
 
         /**
-         * <p>Creates a list of changes for a stack. AWS CloudFormation generates the
-         * change set by comparing the template's information with the information that you
-         * submit. A change set can help you understand which resources AWS CloudFormation
-         * will change, and how it will change them, before you update your stack. Change
-         * sets allow you to check before making a change to avoid deleting or replacing
-         * critical resources.</p> <p>AWS CloudFormation doesn't make any changes to the
-         * stack when you create a change set. To make the specified changes, you must
-         * execute the change set by using the <a>ExecuteChangeSet</a> action.</p> <p>After
-         * the call successfully completes, AWS CloudFormation starts creating the change
-         * set. To check the status of the change set, use the <a>DescribeChangeSet</a>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a list of changes that will be applied to a stack so that you can
+         * review the changes before executing them. You can create a change set for a
+         * stack that doesn't exist or an existing stack. If you create a change set for a
+         * stack that doesn't exist, the change set shows all of the resources that AWS
+         * CloudFormation will create. If you create a change set for an existing stack,
+         * AWS CloudFormation compares the stack's information with the information that
+         * you submit in the change set and lists the differences. Use change sets to
+         * understand which resources AWS CloudFormation will create or change, and how it
+         * will change resources in an existing stack, before you create or update a
+         * stack.</p> <p>To create a change set for a stack that doesn't exist, for the
+         * <code>ChangeSetType</code> parameter, specify <code>CREATE</code>. To create a
+         * change set for an existing stack, specify <code>UPDATE</code> for the
+         * <code>ChangeSetType</code> parameter. After the <code>CreateChangeSet</code>
+         * call successfully completes, AWS CloudFormation starts creating the change set.
+         * To check the status of the change set or to review it, use the
+         * <a>DescribeChangeSet</a> action.</p> <p>When you are satisfied with the changes
+         * the change set will make, execute the change set by using the
+         * <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make changes until
+         * you execute the change set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">AWS
          * API Reference</a></p>
          *

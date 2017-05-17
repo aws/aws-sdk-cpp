@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/cloudformation/model/StackEvent.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
@@ -40,7 +41,8 @@ StackEvent::StackEvent() :
     m_resourceStatus(ResourceStatus::NOT_SET),
     m_resourceStatusHasBeenSet(false),
     m_resourceStatusReasonHasBeenSet(false),
-    m_resourcePropertiesHasBeenSet(false)
+    m_resourcePropertiesHasBeenSet(false),
+    m_clientRequestTokenHasBeenSet(false)
 {
 }
 
@@ -55,7 +57,8 @@ StackEvent::StackEvent(const XmlNode& xmlNode) :
     m_resourceStatus(ResourceStatus::NOT_SET),
     m_resourceStatusHasBeenSet(false),
     m_resourceStatusReasonHasBeenSet(false),
-    m_resourcePropertiesHasBeenSet(false)
+    m_resourcePropertiesHasBeenSet(false),
+    m_clientRequestTokenHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -126,6 +129,12 @@ StackEvent& StackEvent::operator =(const XmlNode& xmlNode)
       m_resourceProperties = StringUtils::Trim(resourcePropertiesNode.GetText().c_str());
       m_resourcePropertiesHasBeenSet = true;
     }
+    XmlNode clientRequestTokenNode = resultNode.FirstChild("ClientRequestToken");
+    if(!clientRequestTokenNode.IsNull())
+    {
+      m_clientRequestToken = StringUtils::Trim(clientRequestTokenNode.GetText().c_str());
+      m_clientRequestTokenHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -183,6 +192,11 @@ void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".ResourceProperties=" << StringUtils::URLEncode(m_resourceProperties.c_str()) << "&";
   }
 
+  if(m_clientRequestTokenHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
+  }
+
 }
 
 void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -226,6 +240,10 @@ void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_resourcePropertiesHasBeenSet)
   {
       oStream << location << ".ResourceProperties=" << StringUtils::URLEncode(m_resourceProperties.c_str()) << "&";
+  }
+  if(m_clientRequestTokenHasBeenSet)
+  {
+      oStream << location << ".ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
   }
 }
 

@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/rds/model/DBCluster.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
@@ -67,6 +68,8 @@ DBCluster::DBCluster() :
     m_dbClusterResourceIdHasBeenSet(false),
     m_dBClusterArnHasBeenSet(false),
     m_associatedRolesHasBeenSet(false),
+    m_iAMDatabaseAuthenticationEnabled(false),
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
     m_clusterCreateTimeHasBeenSet(false)
 {
 }
@@ -109,6 +112,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_dbClusterResourceIdHasBeenSet(false),
     m_dBClusterArnHasBeenSet(false),
     m_associatedRolesHasBeenSet(false),
+    m_iAMDatabaseAuthenticationEnabled(false),
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
     m_clusterCreateTimeHasBeenSet(false)
 {
   *this = xmlNode;
@@ -348,6 +353,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
 
       m_associatedRolesHasBeenSet = true;
     }
+    XmlNode iAMDatabaseAuthenticationEnabledNode = resultNode.FirstChild("IAMDatabaseAuthenticationEnabled");
+    if(!iAMDatabaseAuthenticationEnabledNode.IsNull())
+    {
+      m_iAMDatabaseAuthenticationEnabled = StringUtils::ConvertToBool(StringUtils::Trim(iAMDatabaseAuthenticationEnabledNode.GetText().c_str()).c_str());
+      m_iAMDatabaseAuthenticationEnabledHasBeenSet = true;
+    }
     XmlNode clusterCreateTimeNode = resultNode.FirstChild("ClusterCreateTime");
     if(!clusterCreateTimeNode.IsNull())
     {
@@ -553,6 +564,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       }
   }
 
+  if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
+  }
+
   if(m_clusterCreateTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
@@ -721,6 +737,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
         associatedRolesSs << location <<  ".DBClusterRole." << associatedRolesIdx++;
         item.OutputToStream(oStream, associatedRolesSs.str().c_str());
       }
+  }
+  if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
+  {
+      oStream << location << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
   }
   if(m_clusterCreateTimeHasBeenSet)
   {

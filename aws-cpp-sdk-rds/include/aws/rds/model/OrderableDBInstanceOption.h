@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
@@ -354,6 +355,24 @@ namespace Model
      */
     inline OrderableDBInstanceOption& WithSupportsEnhancedMonitoring(bool value) { SetSupportsEnhancedMonitoring(value); return *this;}
 
+    /**
+     * <p>Indicates whether this orderable DB instance supports IAM database
+     * authentication.</p>
+     */
+    inline bool GetSupportsIAMDatabaseAuthentication() const{ return m_supportsIAMDatabaseAuthentication; }
+
+    /**
+     * <p>Indicates whether this orderable DB instance supports IAM database
+     * authentication.</p>
+     */
+    inline void SetSupportsIAMDatabaseAuthentication(bool value) { m_supportsIAMDatabaseAuthenticationHasBeenSet = true; m_supportsIAMDatabaseAuthentication = value; }
+
+    /**
+     * <p>Indicates whether this orderable DB instance supports IAM database
+     * authentication.</p>
+     */
+    inline OrderableDBInstanceOption& WithSupportsIAMDatabaseAuthentication(bool value) { SetSupportsIAMDatabaseAuthentication(value); return *this;}
+
   private:
     Aws::String m_engine;
     bool m_engineHasBeenSet;
@@ -379,6 +398,8 @@ namespace Model
     bool m_supportsIopsHasBeenSet;
     bool m_supportsEnhancedMonitoring;
     bool m_supportsEnhancedMonitoringHasBeenSet;
+    bool m_supportsIAMDatabaseAuthentication;
+    bool m_supportsIAMDatabaseAuthenticationHasBeenSet;
   };
 
 } // namespace Model

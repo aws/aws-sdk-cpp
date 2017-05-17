@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
@@ -241,37 +242,37 @@ namespace Model
     inline CreatePatchBaselineRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Caller-provided idempotency token.</p>
+     * <p>User-provided idempotency token.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>Caller-provided idempotency token.</p>
+     * <p>User-provided idempotency token.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>Caller-provided idempotency token.</p>
+     * <p>User-provided idempotency token.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>Caller-provided idempotency token.</p>
+     * <p>User-provided idempotency token.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>Caller-provided idempotency token.</p>
+     * <p>User-provided idempotency token.</p>
      */
     inline CreatePatchBaselineRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>Caller-provided idempotency token.</p>
+     * <p>User-provided idempotency token.</p>
      */
     inline CreatePatchBaselineRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>Caller-provided idempotency token.</p>
+     * <p>User-provided idempotency token.</p>
      */
     inline CreatePatchBaselineRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

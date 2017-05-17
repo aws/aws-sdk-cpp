@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -27,6 +28,7 @@
 #include <aws/codedeploy/model/TargetInstances.h>
 #include <aws/codedeploy/model/BlueGreenDeploymentConfiguration.h>
 #include <aws/codedeploy/model/LoadBalancerInfo.h>
+#include <aws/codedeploy/model/FileExistsBehavior.h>
 #include <utility>
 
 namespace Aws
@@ -195,6 +197,36 @@ namespace Model
      * <p>The deployment ID.</p>
      */
     inline DeploymentInfo& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+
+    /**
+     * <p>Information about the application revision that was deployed to the
+     * deployment group before the most recent successful deployment.</p>
+     */
+    inline const RevisionLocation& GetPreviousRevision() const{ return m_previousRevision; }
+
+    /**
+     * <p>Information about the application revision that was deployed to the
+     * deployment group before the most recent successful deployment.</p>
+     */
+    inline void SetPreviousRevision(const RevisionLocation& value) { m_previousRevisionHasBeenSet = true; m_previousRevision = value; }
+
+    /**
+     * <p>Information about the application revision that was deployed to the
+     * deployment group before the most recent successful deployment.</p>
+     */
+    inline void SetPreviousRevision(RevisionLocation&& value) { m_previousRevisionHasBeenSet = true; m_previousRevision = std::move(value); }
+
+    /**
+     * <p>Information about the application revision that was deployed to the
+     * deployment group before the most recent successful deployment.</p>
+     */
+    inline DeploymentInfo& WithPreviousRevision(const RevisionLocation& value) { SetPreviousRevision(value); return *this;}
+
+    /**
+     * <p>Information about the application revision that was deployed to the
+     * deployment group before the most recent successful deployment.</p>
+     */
+    inline DeploymentInfo& WithPreviousRevision(RevisionLocation&& value) { SetPreviousRevision(std::move(value)); return *this;}
 
     /**
      * <p>Information about the location of stored application artifacts and the
@@ -573,31 +605,31 @@ namespace Model
     inline DeploymentInfo& WithRollbackInfo(RollbackInfo&& value) { SetRollbackInfo(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the type of deployment, either standard or blue/green, you
+     * <p>Information about the type of deployment, either in-place or blue/green, you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
     inline const DeploymentStyle& GetDeploymentStyle() const{ return m_deploymentStyle; }
 
     /**
-     * <p>Information about the type of deployment, either standard or blue/green, you
+     * <p>Information about the type of deployment, either in-place or blue/green, you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
     inline void SetDeploymentStyle(const DeploymentStyle& value) { m_deploymentStyleHasBeenSet = true; m_deploymentStyle = value; }
 
     /**
-     * <p>Information about the type of deployment, either standard or blue/green, you
+     * <p>Information about the type of deployment, either in-place or blue/green, you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
     inline void SetDeploymentStyle(DeploymentStyle&& value) { m_deploymentStyleHasBeenSet = true; m_deploymentStyle = std::move(value); }
 
     /**
-     * <p>Information about the type of deployment, either standard or blue/green, you
+     * <p>Information about the type of deployment, either in-place or blue/green, you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
     inline DeploymentInfo& WithDeploymentStyle(const DeploymentStyle& value) { SetDeploymentStyle(value); return *this;}
 
     /**
-     * <p>Information about the type of deployment, either standard or blue/green, you
+     * <p>Information about the type of deployment, either in-place or blue/green, you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
     inline DeploymentInfo& WithDeploymentStyle(DeploymentStyle&& value) { SetDeploymentStyle(std::move(value)); return *this;}
@@ -679,27 +711,27 @@ namespace Model
     inline DeploymentInfo& WithBlueGreenDeploymentConfiguration(BlueGreenDeploymentConfiguration&& value) { SetBlueGreenDeploymentConfiguration(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the load balancer used in this blue/green deployment.</p>
+     * <p>Information about the load balancer used in the deployment.</p>
      */
     inline const LoadBalancerInfo& GetLoadBalancerInfo() const{ return m_loadBalancerInfo; }
 
     /**
-     * <p>Information about the load balancer used in this blue/green deployment.</p>
+     * <p>Information about the load balancer used in the deployment.</p>
      */
     inline void SetLoadBalancerInfo(const LoadBalancerInfo& value) { m_loadBalancerInfoHasBeenSet = true; m_loadBalancerInfo = value; }
 
     /**
-     * <p>Information about the load balancer used in this blue/green deployment.</p>
+     * <p>Information about the load balancer used in the deployment.</p>
      */
     inline void SetLoadBalancerInfo(LoadBalancerInfo&& value) { m_loadBalancerInfoHasBeenSet = true; m_loadBalancerInfo = std::move(value); }
 
     /**
-     * <p>Information about the load balancer used in this blue/green deployment.</p>
+     * <p>Information about the load balancer used in the deployment.</p>
      */
     inline DeploymentInfo& WithLoadBalancerInfo(const LoadBalancerInfo& value) { SetLoadBalancerInfo(value); return *this;}
 
     /**
-     * <p>Information about the load balancer used in this blue/green deployment.</p>
+     * <p>Information about the load balancer used in the deployment.</p>
      */
     inline DeploymentInfo& WithLoadBalancerInfo(LoadBalancerInfo&& value) { SetLoadBalancerInfo(std::move(value)); return *this;}
 
@@ -752,6 +784,66 @@ namespace Model
      */
     inline DeploymentInfo& WithAdditionalDeploymentStatusInfo(const char* value) { SetAdditionalDeploymentStatusInfo(value); return *this;}
 
+    /**
+     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * deployment target location but weren't part of the previous successful
+     * deployment.</p> <ul> <li> <p>DISALLOW: The deployment fails. This is also the
+     * default behavior if no option is specified.</p> </li> <li> <p>OVERWRITE: The
+     * version of the file from the application revision currently being deployed
+     * replaces the version already on the instance.</p> </li> <li> <p>RETAIN: The
+     * version of the file already on the instance is kept and used as part of the new
+     * deployment.</p> </li> </ul>
+     */
+    inline const FileExistsBehavior& GetFileExistsBehavior() const{ return m_fileExistsBehavior; }
+
+    /**
+     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * deployment target location but weren't part of the previous successful
+     * deployment.</p> <ul> <li> <p>DISALLOW: The deployment fails. This is also the
+     * default behavior if no option is specified.</p> </li> <li> <p>OVERWRITE: The
+     * version of the file from the application revision currently being deployed
+     * replaces the version already on the instance.</p> </li> <li> <p>RETAIN: The
+     * version of the file already on the instance is kept and used as part of the new
+     * deployment.</p> </li> </ul>
+     */
+    inline void SetFileExistsBehavior(const FileExistsBehavior& value) { m_fileExistsBehaviorHasBeenSet = true; m_fileExistsBehavior = value; }
+
+    /**
+     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * deployment target location but weren't part of the previous successful
+     * deployment.</p> <ul> <li> <p>DISALLOW: The deployment fails. This is also the
+     * default behavior if no option is specified.</p> </li> <li> <p>OVERWRITE: The
+     * version of the file from the application revision currently being deployed
+     * replaces the version already on the instance.</p> </li> <li> <p>RETAIN: The
+     * version of the file already on the instance is kept and used as part of the new
+     * deployment.</p> </li> </ul>
+     */
+    inline void SetFileExistsBehavior(FileExistsBehavior&& value) { m_fileExistsBehaviorHasBeenSet = true; m_fileExistsBehavior = std::move(value); }
+
+    /**
+     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * deployment target location but weren't part of the previous successful
+     * deployment.</p> <ul> <li> <p>DISALLOW: The deployment fails. This is also the
+     * default behavior if no option is specified.</p> </li> <li> <p>OVERWRITE: The
+     * version of the file from the application revision currently being deployed
+     * replaces the version already on the instance.</p> </li> <li> <p>RETAIN: The
+     * version of the file already on the instance is kept and used as part of the new
+     * deployment.</p> </li> </ul>
+     */
+    inline DeploymentInfo& WithFileExistsBehavior(const FileExistsBehavior& value) { SetFileExistsBehavior(value); return *this;}
+
+    /**
+     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * deployment target location but weren't part of the previous successful
+     * deployment.</p> <ul> <li> <p>DISALLOW: The deployment fails. This is also the
+     * default behavior if no option is specified.</p> </li> <li> <p>OVERWRITE: The
+     * version of the file from the application revision currently being deployed
+     * replaces the version already on the instance.</p> </li> <li> <p>RETAIN: The
+     * version of the file already on the instance is kept and used as part of the new
+     * deployment.</p> </li> </ul>
+     */
+    inline DeploymentInfo& WithFileExistsBehavior(FileExistsBehavior&& value) { SetFileExistsBehavior(std::move(value)); return *this;}
+
   private:
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
@@ -761,6 +853,8 @@ namespace Model
     bool m_deploymentConfigNameHasBeenSet;
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+    RevisionLocation m_previousRevision;
+    bool m_previousRevisionHasBeenSet;
     RevisionLocation m_revision;
     bool m_revisionHasBeenSet;
     DeploymentStatus m_status;
@@ -799,6 +893,8 @@ namespace Model
     bool m_loadBalancerInfoHasBeenSet;
     Aws::String m_additionalDeploymentStatusInfo;
     bool m_additionalDeploymentStatusInfoHasBeenSet;
+    FileExistsBehavior m_fileExistsBehavior;
+    bool m_fileExistsBehaviorHasBeenSet;
   };
 
 } // namespace Model

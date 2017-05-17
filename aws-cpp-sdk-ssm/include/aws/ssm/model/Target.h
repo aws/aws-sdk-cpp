@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -33,10 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>An array of search criteria that targets instances using a
-   * <code>Key</code>,<code>Value</code> combination that you specify.
-   * <code>Targets</code> is required if you don't provide one or more instance IDs
-   * in the call.</p><p><h3>See Also:</h3>   <a
+   * <p>An array of search criteria that targets instances using a Key,Value
+   * combination that you specify. Targets is required if you don't provide one or
+   * more instance IDs in the call.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Target">AWS API
    * Reference</a></p>
    */
@@ -50,9 +50,9 @@ namespace Model
 
     /**
      * <p>User-defined criteria for sending commands that target instances that meet
-     * the criteria. <code>Key</code> can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or
-     * <code>InstanceIds</code>. For more information about how to send commands that
-     * target instances using <code>Key</code>,<code>Value</code> parameters, see <a
+     * the criteria. Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more
+     * information about how to send commands that target instances using Key,Value
+     * parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -60,9 +60,9 @@ namespace Model
 
     /**
      * <p>User-defined criteria for sending commands that target instances that meet
-     * the criteria. <code>Key</code> can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or
-     * <code>InstanceIds</code>. For more information about how to send commands that
-     * target instances using <code>Key</code>,<code>Value</code> parameters, see <a
+     * the criteria. Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more
+     * information about how to send commands that target instances using Key,Value
+     * parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -70,9 +70,9 @@ namespace Model
 
     /**
      * <p>User-defined criteria for sending commands that target instances that meet
-     * the criteria. <code>Key</code> can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or
-     * <code>InstanceIds</code>. For more information about how to send commands that
-     * target instances using <code>Key</code>,<code>Value</code> parameters, see <a
+     * the criteria. Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more
+     * information about how to send commands that target instances using Key,Value
+     * parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -80,9 +80,9 @@ namespace Model
 
     /**
      * <p>User-defined criteria for sending commands that target instances that meet
-     * the criteria. <code>Key</code> can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or
-     * <code>InstanceIds</code>. For more information about how to send commands that
-     * target instances using <code>Key</code>,<code>Value</code> parameters, see <a
+     * the criteria. Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more
+     * information about how to send commands that target instances using Key,Value
+     * parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -90,9 +90,9 @@ namespace Model
 
     /**
      * <p>User-defined criteria for sending commands that target instances that meet
-     * the criteria. <code>Key</code> can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or
-     * <code>InstanceIds</code>. For more information about how to send commands that
-     * target instances using <code>Key</code>,<code>Value</code> parameters, see <a
+     * the criteria. Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more
+     * information about how to send commands that target instances using Key,Value
+     * parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -100,9 +100,9 @@ namespace Model
 
     /**
      * <p>User-defined criteria for sending commands that target instances that meet
-     * the criteria. <code>Key</code> can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or
-     * <code>InstanceIds</code>. For more information about how to send commands that
-     * target instances using <code>Key</code>,<code>Value</code> parameters, see <a
+     * the criteria. Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more
+     * information about how to send commands that target instances using Key,Value
+     * parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
@@ -110,20 +110,19 @@ namespace Model
 
     /**
      * <p>User-defined criteria for sending commands that target instances that meet
-     * the criteria. <code>Key</code> can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or
-     * <code>InstanceIds</code>. For more information about how to send commands that
-     * target instances using <code>Key</code>,<code>Value</code> parameters, see <a
+     * the criteria. Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more
+     * information about how to send commands that target instances using Key,Value
+     * parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
      */
     inline Target& WithKey(const char* value) { SetKey(value); return *this;}
 
     /**
-     * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
-     * specified <code>tag:ServerRole</code>, you could specify
-     * <code>value:WebServer</code> to execute a command on instances that include
-     * Amazon EC2 tags of ServerRole,WebServer. For more information about how to send
-     * commands that target instances using <code>Key</code>,<code>Value</code>
+     * <p>User-defined criteria that maps to Key. For example, if you specified
+     * tag:ServerRole, you could specify value:WebServer to execute a command on
+     * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
+     * information about how to send commands that target instances using Key,Value
      * parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
@@ -131,11 +130,10 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
-     * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
-     * specified <code>tag:ServerRole</code>, you could specify
-     * <code>value:WebServer</code> to execute a command on instances that include
-     * Amazon EC2 tags of ServerRole,WebServer. For more information about how to send
-     * commands that target instances using <code>Key</code>,<code>Value</code>
+     * <p>User-defined criteria that maps to Key. For example, if you specified
+     * tag:ServerRole, you could specify value:WebServer to execute a command on
+     * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
+     * information about how to send commands that target instances using Key,Value
      * parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
@@ -143,11 +141,10 @@ namespace Model
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
-     * specified <code>tag:ServerRole</code>, you could specify
-     * <code>value:WebServer</code> to execute a command on instances that include
-     * Amazon EC2 tags of ServerRole,WebServer. For more information about how to send
-     * commands that target instances using <code>Key</code>,<code>Value</code>
+     * <p>User-defined criteria that maps to Key. For example, if you specified
+     * tag:ServerRole, you could specify value:WebServer to execute a command on
+     * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
+     * information about how to send commands that target instances using Key,Value
      * parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
@@ -155,11 +152,10 @@ namespace Model
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
-     * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
-     * specified <code>tag:ServerRole</code>, you could specify
-     * <code>value:WebServer</code> to execute a command on instances that include
-     * Amazon EC2 tags of ServerRole,WebServer. For more information about how to send
-     * commands that target instances using <code>Key</code>,<code>Value</code>
+     * <p>User-defined criteria that maps to Key. For example, if you specified
+     * tag:ServerRole, you could specify value:WebServer to execute a command on
+     * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
+     * information about how to send commands that target instances using Key,Value
      * parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
@@ -167,11 +163,10 @@ namespace Model
     inline Target& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
-     * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
-     * specified <code>tag:ServerRole</code>, you could specify
-     * <code>value:WebServer</code> to execute a command on instances that include
-     * Amazon EC2 tags of ServerRole,WebServer. For more information about how to send
-     * commands that target instances using <code>Key</code>,<code>Value</code>
+     * <p>User-defined criteria that maps to Key. For example, if you specified
+     * tag:ServerRole, you could specify value:WebServer to execute a command on
+     * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
+     * information about how to send commands that target instances using Key,Value
      * parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
@@ -179,11 +174,10 @@ namespace Model
     inline Target& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
-     * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
-     * specified <code>tag:ServerRole</code>, you could specify
-     * <code>value:WebServer</code> to execute a command on instances that include
-     * Amazon EC2 tags of ServerRole,WebServer. For more information about how to send
-     * commands that target instances using <code>Key</code>,<code>Value</code>
+     * <p>User-defined criteria that maps to Key. For example, if you specified
+     * tag:ServerRole, you could specify value:WebServer to execute a command on
+     * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
+     * information about how to send commands that target instances using Key,Value
      * parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
@@ -191,11 +185,10 @@ namespace Model
     inline Target& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
-     * specified <code>tag:ServerRole</code>, you could specify
-     * <code>value:WebServer</code> to execute a command on instances that include
-     * Amazon EC2 tags of ServerRole,WebServer. For more information about how to send
-     * commands that target instances using <code>Key</code>,<code>Value</code>
+     * <p>User-defined criteria that maps to Key. For example, if you specified
+     * tag:ServerRole, you could specify value:WebServer to execute a command on
+     * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
+     * information about how to send commands that target instances using Key,Value
      * parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>
@@ -203,11 +196,10 @@ namespace Model
     inline Target& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
-     * specified <code>tag:ServerRole</code>, you could specify
-     * <code>value:WebServer</code> to execute a command on instances that include
-     * Amazon EC2 tags of ServerRole,WebServer. For more information about how to send
-     * commands that target instances using <code>Key</code>,<code>Value</code>
+     * <p>User-defined criteria that maps to Key. For example, if you specified
+     * tag:ServerRole, you could specify value:WebServer to execute a command on
+     * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
+     * information about how to send commands that target instances using Key,Value
      * parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
      * a Command Using Systems Manager Run Command</a>.</p>

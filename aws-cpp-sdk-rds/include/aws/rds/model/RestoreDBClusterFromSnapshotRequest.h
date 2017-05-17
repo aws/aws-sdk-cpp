@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
@@ -642,6 +643,27 @@ namespace Model
      */
     inline RestoreDBClusterFromSnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+    /**
+     * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts, and otherwise false.</p>
+     * <p>Default: <code>false</code> </p>
+     */
+    inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
+
+    /**
+     * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts, and otherwise false.</p>
+     * <p>Default: <code>false</code> </p>
+     */
+    inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
+
+    /**
+     * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts, and otherwise false.</p>
+     * <p>Default: <code>false</code> </p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
+
   private:
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
@@ -667,6 +689,8 @@ namespace Model
     bool m_tagsHasBeenSet;
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+    bool m_enableIAMDatabaseAuthentication;
+    bool m_enableIAMDatabaseAuthenticationHasBeenSet;
   };
 
 } // namespace Model

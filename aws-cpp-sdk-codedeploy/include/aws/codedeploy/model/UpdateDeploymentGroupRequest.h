@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/CodeDeployRequest.h>
@@ -458,31 +459,31 @@ namespace Model
 
     /**
      * <p>Information to add or change about Amazon CloudWatch alarms when the
-     * deployment group is updated. </p>
+     * deployment group is updated.</p>
      */
     inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
 
     /**
      * <p>Information to add or change about Amazon CloudWatch alarms when the
-     * deployment group is updated. </p>
+     * deployment group is updated.</p>
      */
     inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
 
     /**
      * <p>Information to add or change about Amazon CloudWatch alarms when the
-     * deployment group is updated. </p>
+     * deployment group is updated.</p>
      */
     inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
 
     /**
      * <p>Information to add or change about Amazon CloudWatch alarms when the
-     * deployment group is updated. </p>
+     * deployment group is updated.</p>
      */
     inline UpdateDeploymentGroupRequest& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
 
     /**
      * <p>Information to add or change about Amazon CloudWatch alarms when the
-     * deployment group is updated. </p>
+     * deployment group is updated.</p>
      */
     inline UpdateDeploymentGroupRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
 
@@ -517,31 +518,31 @@ namespace Model
     inline UpdateDeploymentGroupRequest& WithAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { SetAutoRollbackConfiguration(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the type of deployment, either standard or blue/green, you
+     * <p>Information about the type of deployment, either in-place or blue/green, you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
     inline const DeploymentStyle& GetDeploymentStyle() const{ return m_deploymentStyle; }
 
     /**
-     * <p>Information about the type of deployment, either standard or blue/green, you
+     * <p>Information about the type of deployment, either in-place or blue/green, you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
     inline void SetDeploymentStyle(const DeploymentStyle& value) { m_deploymentStyleHasBeenSet = true; m_deploymentStyle = value; }
 
     /**
-     * <p>Information about the type of deployment, either standard or blue/green, you
+     * <p>Information about the type of deployment, either in-place or blue/green, you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
     inline void SetDeploymentStyle(DeploymentStyle&& value) { m_deploymentStyleHasBeenSet = true; m_deploymentStyle = std::move(value); }
 
     /**
-     * <p>Information about the type of deployment, either standard or blue/green, you
+     * <p>Information about the type of deployment, either in-place or blue/green, you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
     inline UpdateDeploymentGroupRequest& WithDeploymentStyle(const DeploymentStyle& value) { SetDeploymentStyle(value); return *this;}
 
     /**
-     * <p>Information about the type of deployment, either standard or blue/green, you
+     * <p>Information about the type of deployment, either in-place or blue/green, you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
     inline UpdateDeploymentGroupRequest& WithDeploymentStyle(DeploymentStyle&& value) { SetDeploymentStyle(std::move(value)); return *this;}
@@ -572,27 +573,27 @@ namespace Model
     inline UpdateDeploymentGroupRequest& WithBlueGreenDeploymentConfiguration(BlueGreenDeploymentConfiguration&& value) { SetBlueGreenDeploymentConfiguration(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the load balancer used in a blue/green deployment.</p>
+     * <p>Information about the load balancer used in a deployment.</p>
      */
     inline const LoadBalancerInfo& GetLoadBalancerInfo() const{ return m_loadBalancerInfo; }
 
     /**
-     * <p>Information about the load balancer used in a blue/green deployment.</p>
+     * <p>Information about the load balancer used in a deployment.</p>
      */
     inline void SetLoadBalancerInfo(const LoadBalancerInfo& value) { m_loadBalancerInfoHasBeenSet = true; m_loadBalancerInfo = value; }
 
     /**
-     * <p>Information about the load balancer used in a blue/green deployment.</p>
+     * <p>Information about the load balancer used in a deployment.</p>
      */
     inline void SetLoadBalancerInfo(LoadBalancerInfo&& value) { m_loadBalancerInfoHasBeenSet = true; m_loadBalancerInfo = std::move(value); }
 
     /**
-     * <p>Information about the load balancer used in a blue/green deployment.</p>
+     * <p>Information about the load balancer used in a deployment.</p>
      */
     inline UpdateDeploymentGroupRequest& WithLoadBalancerInfo(const LoadBalancerInfo& value) { SetLoadBalancerInfo(value); return *this;}
 
     /**
-     * <p>Information about the load balancer used in a blue/green deployment.</p>
+     * <p>Information about the load balancer used in a deployment.</p>
      */
     inline UpdateDeploymentGroupRequest& WithLoadBalancerInfo(LoadBalancerInfo&& value) { SetLoadBalancerInfo(std::move(value)); return *this;}
 

@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   * 
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -146,7 +146,7 @@ public:
 class DefaultSHA256HmacFactory : public HMACFactory
 {
 public:
-    std::shared_ptr<HMAC> CreateImplementation() const override
+    std::shared_ptr<Aws::Utils::Crypto::HMAC> CreateImplementation() const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<Sha256HMACBcryptImpl>(s_allocationTag);
@@ -750,7 +750,7 @@ std::shared_ptr<Hash> Aws::Utils::Crypto::CreateSha256Implementation()
     return s_Sha256Factory->CreateImplementation();
 }
 
-std::shared_ptr<HMAC> Aws::Utils::Crypto::CreateSha256HMACImplementation()
+std::shared_ptr<Aws::Utils::Crypto::HMAC> Aws::Utils::Crypto::CreateSha256HMACImplementation()
 {
     return s_Sha256HMACFactory->CreateImplementation();
 }

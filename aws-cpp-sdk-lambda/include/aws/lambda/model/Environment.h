@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -47,74 +48,74 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The key-value pairs that represent your environment's configuration settings.
-     * The value you specify cannot contain a ",".</p>
+     * <p>The key-value pairs that represent your environment's configuration
+     * settings.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetVariables() const{ return m_variables; }
 
     /**
-     * <p>The key-value pairs that represent your environment's configuration settings.
-     * The value you specify cannot contain a ",".</p>
+     * <p>The key-value pairs that represent your environment's configuration
+     * settings.</p>
      */
     inline void SetVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_variablesHasBeenSet = true; m_variables = value; }
 
     /**
-     * <p>The key-value pairs that represent your environment's configuration settings.
-     * The value you specify cannot contain a ",".</p>
+     * <p>The key-value pairs that represent your environment's configuration
+     * settings.</p>
      */
     inline void SetVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
 
     /**
-     * <p>The key-value pairs that represent your environment's configuration settings.
-     * The value you specify cannot contain a ",".</p>
+     * <p>The key-value pairs that represent your environment's configuration
+     * settings.</p>
      */
     inline Environment& WithVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetVariables(value); return *this;}
 
     /**
-     * <p>The key-value pairs that represent your environment's configuration settings.
-     * The value you specify cannot contain a ",".</p>
+     * <p>The key-value pairs that represent your environment's configuration
+     * settings.</p>
      */
     inline Environment& WithVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetVariables(std::move(value)); return *this;}
 
     /**
-     * <p>The key-value pairs that represent your environment's configuration settings.
-     * The value you specify cannot contain a ",".</p>
+     * <p>The key-value pairs that represent your environment's configuration
+     * settings.</p>
      */
     inline Environment& AddVariables(const Aws::String& key, const Aws::String& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
 
     /**
-     * <p>The key-value pairs that represent your environment's configuration settings.
-     * The value you specify cannot contain a ",".</p>
+     * <p>The key-value pairs that represent your environment's configuration
+     * settings.</p>
      */
     inline Environment& AddVariables(Aws::String&& key, const Aws::String& value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The key-value pairs that represent your environment's configuration settings.
-     * The value you specify cannot contain a ",".</p>
+     * <p>The key-value pairs that represent your environment's configuration
+     * settings.</p>
      */
     inline Environment& AddVariables(const Aws::String& key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The key-value pairs that represent your environment's configuration settings.
-     * The value you specify cannot contain a ",".</p>
+     * <p>The key-value pairs that represent your environment's configuration
+     * settings.</p>
      */
     inline Environment& AddVariables(Aws::String&& key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The key-value pairs that represent your environment's configuration settings.
-     * The value you specify cannot contain a ",".</p>
+     * <p>The key-value pairs that represent your environment's configuration
+     * settings.</p>
      */
     inline Environment& AddVariables(const char* key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The key-value pairs that represent your environment's configuration settings.
-     * The value you specify cannot contain a ",".</p>
+     * <p>The key-value pairs that represent your environment's configuration
+     * settings.</p>
      */
     inline Environment& AddVariables(Aws::String&& key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The key-value pairs that represent your environment's configuration settings.
-     * The value you specify cannot contain a ",".</p>
+     * <p>The key-value pairs that represent your environment's configuration
+     * settings.</p>
      */
     inline Environment& AddVariables(const char* key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
 

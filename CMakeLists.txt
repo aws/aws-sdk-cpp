@@ -1,5 +1,5 @@
 #
-# Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # 
 # Licensed under the Apache License, Version 2.0 (the "License").
 # You may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ find_package(Git)
 
 # Cmake invocation variables:
 #   CUSTOM_MEMORY_MANAGEMENT - if set to 1, generates the sdk project files with custom memory management enabled, otherwise disables it
-#   BUILD_ONLY - a semi-colon delimited list, if this is set we will build only the projects listed. Core will always be built as will its unit tests.
+#   BUILD_ONLY - only build project identified by this variable, a semi-colon delimited list, if this is set we will build only the projects listed. Core will always be built as will its unit tests.
 #                    Also if a high level client is specified then we will build its dependencies as well. If a project has tests, the tests will be built.
 #   REGENERATE_CLIENTS - all clients being built on this run will be regenerated from the api definitions, this option involves some setup of python, java 8, jdk 1.8, and maven
 #   ADD_CUSTOM_CLIENTS - semi-colon delimited list of format serviceName=<yourserviceName>,version=<theVersionNumber>;serviceName2=<yourOtherServiceName>,version=<versionNumber2>
@@ -57,25 +57,29 @@ set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The d
 
 # backwards compatibility with old command line params
 if("${STATIC_LINKING}" STREQUAL "1")
-    SET(BUILD_SHARED_LIBS OFF)
+    set(BUILD_SHARED_LIBS OFF)
 endif()
 
 if(MINIMIZE_SIZE)
     message(STATUS "MINIMIZE_SIZE enabled")
-    SET(ENABLE_UNITY_BUILD ON) # MINIMIZE_SIZE always implies UNITY_BUILD
+    set(ENABLE_UNITY_BUILD ON) # MINIMIZE_SIZE always implies UNITY_BUILD
 endif()
 
-SET(PYTHON_CMD "python")
+set(PYTHON_CMD "python")
 
+# CMAKE_MODULE_PATH is a CMAKE variable. It contains a list of paths 
+# which could be used to search CMAKE modules by "include()" or "find_package()", but the default value is empty.
+# Add cmake dir to search list
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
+# include() will "load and run" cmake script
 include(resolve_platform)
 include(CMakePackageConfigHelpers)
 
 # use response files to prevent command-line-too-big errors for large libraries like iam
-SET(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS 1)
-SET(CMAKE_CXX_USE_RESPONSE_FILE_FOR_INCLUDES 1)
-SET(CMAKE_CXX_RESPONSE_FILE_LINK_FLAG "@")
+set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS 1)
+set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_INCLUDES 1)
+set(CMAKE_CXX_RESPONSE_FILE_LINK_FLAG "@")
 
 if(COMMAND apply_pre_project_platform_settings)
     apply_pre_project_platform_settings()
@@ -125,19 +129,48 @@ include(build_external)
 
 if(ENABLE_BCRYPT_ENCRYPTION)
     set(CRYPTO_LIBS Bcrypt)
+    set(CRYPTO_LIBS_ABSTRACT_NAME Bcrypt)
 elseif(ENABLE_OPENSSL_ENCRYPTION)
     set(CRYPTO_LIBS ${OPENSSL_LIBRARIES} ${ZLIB_LIBRARIES})
+    set(CRYPTO_LIBS_ABSTRACT_NAME ssl z)
 endif()
 
 if(ENABLE_CURL_CLIENT)
     set(CLIENT_LIBS ${CURL_LIBRARIES})
+    set(CLIENT_LIBS_ABSTRACT_NAME curl)
 elseif(ENABLE_WINDOWS_CLIENT)
     if(USE_IXML_HTTP_REQUEST_2)
         set(CLIENT_LIBS msxml6 runtimeobject)
+        set(CLIENT_LIBS_ABSTRACT_NAME msxml6 runtimeobject)
     else()
         set(CLIENT_LIBS Wininet winhttp)
+        set(CLIENT_LIBS_ABSTRACT_NAME Wininet winhttp)
     endif()
+endif()
+
+# setup user specified installation directory if any, regardless previous platform default settings
+if (CMAKE_INSTALL_BINDIR)
+    set(BINARY_DIRECTORY "${CMAKE_INSTALL_BINDIR}")
+endif()
+
+if (CMAKE_INSTALL_LIBDIR)
+    set(LIBRARY_DIRECTORY "${CMAKE_INSTALL_LIBDIR}")
+endif()
+
+if (CMAKE_INSTALL_INCLUDEDIR)
+    set(INCLUDE_DIRECTORY "${CMAKE_INSTALL_INCLUDEDIR}")
+endif()
+
+if(BUILD_SHARED_LIBS)
+    set(ARCHIVE_DIRECTORY "${BINARY_DIRECTORY}")
+else()
+    set(ARCHIVE_DIRECTORY "${LIBRARY_DIRECTORY}")
 endif()
 
 add_sdks()
 
+# for user friendly cmake usage
+include(setup_cmake_find_module)
+
+# for generating make unstaill target
+ADD_CUSTOM_TARGET(uninstall "${CMAKE_COMMAND}" -P "${CMAKE_SOURCE_DIR}/cmake/make_uninstall.cmake") 

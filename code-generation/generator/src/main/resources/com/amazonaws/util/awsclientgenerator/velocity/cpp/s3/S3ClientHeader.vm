@@ -9,12 +9,14 @@
 \#include <aws/core/client/AWSClient.h>
 \#include <aws/core/utils/memory/stl/AWSString.h>
 \#include <aws/core/utils/xml/XmlSerializer.h>
+\#include <aws/core/utils/DNS.h>
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderModelIncludes.vm")
 \#include <aws/core/client/AsyncCallerContext.h>
 \#include <aws/core/http/HttpTypes.h>
 \#include <future>
 \#include <functional>
 #set($signPayloadsOptional = true)
+#set($virtualAddressingSupported = true)
 namespace Aws
 {
 
@@ -83,11 +85,15 @@ namespace Aws
 
     private:
         void init(const Client::ClientConfiguration& clientConfiguration);
+        Aws::String ComputeEndpointString(const Aws::String& bucket) const;
+        Aws::String ComputeEndpointString() const;
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderAsyncHelpers.vm")
 
-        Aws::String m_uri;
+        Aws::String m_baseUri;
+        Aws::String m_scheme;
         std::shared_ptr<Utils::Threading::Executor> m_executor;
+        bool m_useVirtualAdressing;
     };
 
   } // namespace ${metadata.namespace}

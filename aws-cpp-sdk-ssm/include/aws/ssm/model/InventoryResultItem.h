@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -153,57 +154,57 @@ namespace Model
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
-     * determine whether to update inventory information. The <code>PutInventory</code>
-     * API does not update the inventory item type contents if the MD5 hash has not
-     * changed since last update. </p>
+     * determine whether to update inventory information. The PutInventory API does not
+     * update the inventory item type contents if the MD5 hash has not changed since
+     * last update. </p>
      */
     inline const Aws::String& GetContentHash() const{ return m_contentHash; }
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
-     * determine whether to update inventory information. The <code>PutInventory</code>
-     * API does not update the inventory item type contents if the MD5 hash has not
-     * changed since last update. </p>
+     * determine whether to update inventory information. The PutInventory API does not
+     * update the inventory item type contents if the MD5 hash has not changed since
+     * last update. </p>
      */
     inline void SetContentHash(const Aws::String& value) { m_contentHashHasBeenSet = true; m_contentHash = value; }
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
-     * determine whether to update inventory information. The <code>PutInventory</code>
-     * API does not update the inventory item type contents if the MD5 hash has not
-     * changed since last update. </p>
+     * determine whether to update inventory information. The PutInventory API does not
+     * update the inventory item type contents if the MD5 hash has not changed since
+     * last update. </p>
      */
     inline void SetContentHash(Aws::String&& value) { m_contentHashHasBeenSet = true; m_contentHash = std::move(value); }
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
-     * determine whether to update inventory information. The <code>PutInventory</code>
-     * API does not update the inventory item type contents if the MD5 hash has not
-     * changed since last update. </p>
+     * determine whether to update inventory information. The PutInventory API does not
+     * update the inventory item type contents if the MD5 hash has not changed since
+     * last update. </p>
      */
     inline void SetContentHash(const char* value) { m_contentHashHasBeenSet = true; m_contentHash.assign(value); }
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
-     * determine whether to update inventory information. The <code>PutInventory</code>
-     * API does not update the inventory item type contents if the MD5 hash has not
-     * changed since last update. </p>
+     * determine whether to update inventory information. The PutInventory API does not
+     * update the inventory item type contents if the MD5 hash has not changed since
+     * last update. </p>
      */
     inline InventoryResultItem& WithContentHash(const Aws::String& value) { SetContentHash(value); return *this;}
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
-     * determine whether to update inventory information. The <code>PutInventory</code>
-     * API does not update the inventory item type contents if the MD5 hash has not
-     * changed since last update. </p>
+     * determine whether to update inventory information. The PutInventory API does not
+     * update the inventory item type contents if the MD5 hash has not changed since
+     * last update. </p>
      */
     inline InventoryResultItem& WithContentHash(Aws::String&& value) { SetContentHash(std::move(value)); return *this;}
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
-     * determine whether to update inventory information. The <code>PutInventory</code>
-     * API does not update the inventory item type contents if the MD5 hash has not
-     * changed since last update. </p>
+     * determine whether to update inventory information. The PutInventory API does not
+     * update the inventory item type contents if the MD5 hash has not changed since
+     * last update. </p>
      */
     inline InventoryResultItem& WithContentHash(const char* value) { SetContentHash(value); return *this;}
 

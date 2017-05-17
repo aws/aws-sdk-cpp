@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/S3Errors.h>
@@ -20,6 +21,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/DNS.h>
 #include <aws/s3/model/AbortMultipartUploadResult.h>
 #include <aws/s3/model/CompleteMultipartUploadResult.h>
 #include <aws/s3/model/CopyObjectResult.h>
@@ -406,20 +408,20 @@ namespace Aws
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        S3Client(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = false);
+        S3Client(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = false, bool useVirtualAdressing = true);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        S3Client(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = false);
+        S3Client(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = false, bool useVirtualAdressing = true);
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         S3Client(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = false);
+            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = false, bool useVirtualAdressing = true);
 
         virtual ~S3Client();
 
@@ -2369,6 +2371,8 @@ namespace Aws
 
     private:
         void init(const Client::ClientConfiguration& clientConfiguration);
+        Aws::String ComputeEndpointString(const Aws::String& bucket) const;
+        Aws::String ComputeEndpointString() const;
 
         /**Async helpers**/
         void AbortMultipartUploadAsyncHelper(const Model::AbortMultipartUploadRequest& request, const AbortMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2442,8 +2446,10 @@ namespace Aws
         void UploadPartAsyncHelper(const Model::UploadPartRequest& request, const UploadPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UploadPartCopyAsyncHelper(const Model::UploadPartCopyRequest& request, const UploadPartCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
-        Aws::String m_uri;
+        Aws::String m_baseUri;
+        Aws::String m_scheme;
         std::shared_ptr<Utils::Threading::Executor> m_executor;
+        bool m_useVirtualAdressing;
     };
 
   } // namespace S3

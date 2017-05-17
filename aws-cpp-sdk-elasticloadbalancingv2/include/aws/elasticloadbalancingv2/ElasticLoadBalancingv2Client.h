@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2Errors.h>
@@ -31,6 +32,7 @@
 #include <aws/elasticloadbalancingv2/model/DeleteRuleResult.h>
 #include <aws/elasticloadbalancingv2/model/DeleteTargetGroupResult.h>
 #include <aws/elasticloadbalancingv2/model/DeregisterTargetsResult.h>
+#include <aws/elasticloadbalancingv2/model/DescribeAccountLimitsResult.h>
 #include <aws/elasticloadbalancingv2/model/DescribeListenersResult.h>
 #include <aws/elasticloadbalancingv2/model/DescribeLoadBalancerAttributesResult.h>
 #include <aws/elasticloadbalancingv2/model/DescribeLoadBalancersResult.h>
@@ -106,6 +108,7 @@ namespace Model
         class DeleteRuleRequest;
         class DeleteTargetGroupRequest;
         class DeregisterTargetsRequest;
+        class DescribeAccountLimitsRequest;
         class DescribeListenersRequest;
         class DescribeLoadBalancerAttributesRequest;
         class DescribeLoadBalancersRequest;
@@ -137,6 +140,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteRuleResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DeleteRuleOutcome;
         typedef Aws::Utils::Outcome<DeleteTargetGroupResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DeleteTargetGroupOutcome;
         typedef Aws::Utils::Outcome<DeregisterTargetsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DeregisterTargetsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeAccountLimitsOutcome;
         typedef Aws::Utils::Outcome<DescribeListenersResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeListenersOutcome;
         typedef Aws::Utils::Outcome<DescribeLoadBalancerAttributesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeLoadBalancerAttributesOutcome;
         typedef Aws::Utils::Outcome<DescribeLoadBalancersResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeLoadBalancersOutcome;
@@ -168,6 +172,7 @@ namespace Model
         typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
         typedef std::future<DeleteTargetGroupOutcome> DeleteTargetGroupOutcomeCallable;
         typedef std::future<DeregisterTargetsOutcome> DeregisterTargetsOutcomeCallable;
+        typedef std::future<DescribeAccountLimitsOutcome> DescribeAccountLimitsOutcomeCallable;
         typedef std::future<DescribeListenersOutcome> DescribeListenersOutcomeCallable;
         typedef std::future<DescribeLoadBalancerAttributesOutcome> DescribeLoadBalancerAttributesOutcomeCallable;
         typedef std::future<DescribeLoadBalancersOutcome> DescribeLoadBalancersOutcomeCallable;
@@ -202,6 +207,7 @@ namespace Model
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DeleteRuleRequest&, const Model::DeleteRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DeleteTargetGroupRequest&, const Model::DeleteTargetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTargetGroupResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DeregisterTargetsRequest&, const Model::DeregisterTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTargetsResponseReceivedHandler;
+    typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeAccountLimitsRequest&, const Model::DescribeAccountLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountLimitsResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeListenersRequest&, const Model::DescribeListenersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeListenersResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeLoadBalancerAttributesRequest&, const Model::DescribeLoadBalancerAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoadBalancerAttributesResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeLoadBalancersRequest&, const Model::DescribeLoadBalancersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoadBalancersResponseReceivedHandler;
@@ -717,6 +723,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeregisterTargetsAsync(const Model::DeregisterTargetsRequest& request, const DeregisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the current Elastic Load Balancing resource limits for your AWS
+         * account.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
+         * for Your Application Load Balancer</a> in the <i>Application Load Balancer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeAccountLimits">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAccountLimitsOutcome DescribeAccountLimits(const Model::DescribeAccountLimitsRequest& request) const;
+
+        /**
+         * <p>Describes the current Elastic Load Balancing resource limits for your AWS
+         * account.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
+         * for Your Application Load Balancer</a> in the <i>Application Load Balancer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeAccountLimits">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAccountLimitsOutcomeCallable DescribeAccountLimitsCallable(const Model::DescribeAccountLimitsRequest& request) const;
+
+        /**
+         * <p>Describes the current Elastic Load Balancing resource limits for your AWS
+         * account.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
+         * for Your Application Load Balancer</a> in the <i>Application Load Balancer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeAccountLimits">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAccountLimitsAsync(const Model::DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified listeners or the listeners for the specified
@@ -1386,6 +1429,7 @@ namespace Model
         void DeleteRuleAsyncHelper(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTargetGroupAsyncHelper(const Model::DeleteTargetGroupRequest& request, const DeleteTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterTargetsAsyncHelper(const Model::DeregisterTargetsRequest& request, const DeregisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAccountLimitsAsyncHelper(const Model::DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeListenersAsyncHelper(const Model::DescribeListenersRequest& request, const DescribeListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLoadBalancerAttributesAsyncHelper(const Model::DescribeLoadBalancerAttributesRequest& request, const DescribeLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLoadBalancersAsyncHelper(const Model::DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

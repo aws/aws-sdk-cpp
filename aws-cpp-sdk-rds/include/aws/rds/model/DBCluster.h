@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
@@ -60,17 +61,26 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>Specifies the allocated storage size in gigabytes (GB).</p>
+     * <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code>
+     * specifies the allocated storage size in gigabytes (GB). For Aurora,
+     * <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster
+     * storage size is not fixed, but instead automatically adjusts as needed.</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p>Specifies the allocated storage size in gigabytes (GB).</p>
+     * <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code>
+     * specifies the allocated storage size in gigabytes (GB). For Aurora,
+     * <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster
+     * storage size is not fixed, but instead automatically adjusts as needed.</p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p>Specifies the allocated storage size in gigabytes (GB).</p>
+     * <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code>
+     * specifies the allocated storage size in gigabytes (GB). For Aurora,
+     * <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster
+     * storage size is not fixed, but instead automatically adjusts as needed.</p>
      */
     inline DBCluster& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
@@ -501,7 +511,7 @@ namespace Model
      * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
      * Replica that you are connected to is promoted to be the primary instance, your
      * connection will be dropped. To continue sending your read workload to other
-     * Aurora Replicas in the cluster, you can then recoonect to the reader
+     * Aurora Replicas in the cluster, you can then reconnect to the reader
      * endpoint.</p>
      */
     inline const Aws::String& GetReaderEndpoint() const{ return m_readerEndpoint; }
@@ -515,7 +525,7 @@ namespace Model
      * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
      * Replica that you are connected to is promoted to be the primary instance, your
      * connection will be dropped. To continue sending your read workload to other
-     * Aurora Replicas in the cluster, you can then recoonect to the reader
+     * Aurora Replicas in the cluster, you can then reconnect to the reader
      * endpoint.</p>
      */
     inline void SetReaderEndpoint(const Aws::String& value) { m_readerEndpointHasBeenSet = true; m_readerEndpoint = value; }
@@ -529,7 +539,7 @@ namespace Model
      * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
      * Replica that you are connected to is promoted to be the primary instance, your
      * connection will be dropped. To continue sending your read workload to other
-     * Aurora Replicas in the cluster, you can then recoonect to the reader
+     * Aurora Replicas in the cluster, you can then reconnect to the reader
      * endpoint.</p>
      */
     inline void SetReaderEndpoint(Aws::String&& value) { m_readerEndpointHasBeenSet = true; m_readerEndpoint = std::move(value); }
@@ -543,7 +553,7 @@ namespace Model
      * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
      * Replica that you are connected to is promoted to be the primary instance, your
      * connection will be dropped. To continue sending your read workload to other
-     * Aurora Replicas in the cluster, you can then recoonect to the reader
+     * Aurora Replicas in the cluster, you can then reconnect to the reader
      * endpoint.</p>
      */
     inline void SetReaderEndpoint(const char* value) { m_readerEndpointHasBeenSet = true; m_readerEndpoint.assign(value); }
@@ -557,7 +567,7 @@ namespace Model
      * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
      * Replica that you are connected to is promoted to be the primary instance, your
      * connection will be dropped. To continue sending your read workload to other
-     * Aurora Replicas in the cluster, you can then recoonect to the reader
+     * Aurora Replicas in the cluster, you can then reconnect to the reader
      * endpoint.</p>
      */
     inline DBCluster& WithReaderEndpoint(const Aws::String& value) { SetReaderEndpoint(value); return *this;}
@@ -571,7 +581,7 @@ namespace Model
      * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
      * Replica that you are connected to is promoted to be the primary instance, your
      * connection will be dropped. To continue sending your read workload to other
-     * Aurora Replicas in the cluster, you can then recoonect to the reader
+     * Aurora Replicas in the cluster, you can then reconnect to the reader
      * endpoint.</p>
      */
     inline DBCluster& WithReaderEndpoint(Aws::String&& value) { SetReaderEndpoint(std::move(value)); return *this;}
@@ -585,7 +595,7 @@ namespace Model
      * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
      * Replica that you are connected to is promoted to be the primary instance, your
      * connection will be dropped. To continue sending your read workload to other
-     * Aurora Replicas in the cluster, you can then recoonect to the reader
+     * Aurora Replicas in the cluster, you can then reconnect to the reader
      * endpoint.</p>
      */
     inline DBCluster& WithReaderEndpoint(const char* value) { SetReaderEndpoint(value); return *this;}
@@ -1284,6 +1294,24 @@ namespace Model
     inline DBCluster& AddAssociatedRoles(DBClusterRole&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(std::move(value)); return *this; }
 
     /**
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled; otherwise false.</p>
+     */
+    inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
+
+    /**
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled; otherwise false.</p>
+     */
+    inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
+
+    /**
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled; otherwise false.</p>
+     */
+    inline DBCluster& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
+
+    /**
      * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
      * Time (UTC).</p>
      */
@@ -1378,6 +1406,8 @@ namespace Model
     bool m_dBClusterArnHasBeenSet;
     Aws::Vector<DBClusterRole> m_associatedRoles;
     bool m_associatedRolesHasBeenSet;
+    bool m_iAMDatabaseAuthenticationEnabled;
+    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet;
     Aws::Utils::DateTime m_clusterCreateTime;
     bool m_clusterCreateTimeHasBeenSet;
   };

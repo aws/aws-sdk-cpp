@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/OrganizationsErrors.h>
@@ -608,12 +609,12 @@ namespace Model
          * Guide</i>.</p> <important> <p>You cannot remove accounts that are created with
          * this operation from an organization. That also means that you cannot delete an
          * organization that contains an account that is created with this operation.</p>
-         * </important> <note> <p>When you create a member account with this operation, the
-         * account is created with the <b>IAM User and Role Access to Billing
-         * Information</b> switch enabled. This allows IAM users and roles that are granted
-         * appropriate permissions to view billing information. If this is disabled, then
-         * only the account root user can access billing information. For information about
-         * how to disable this for an account, see <a
+         * </important> <note> <p>When you create a member account with this operation, you
+         * can choose whether to create the account with the <b>IAM User and Role Access to
+         * Billing Information</b> switch enabled. If you enable it, IAM users and roles
+         * that have appropriate permissions can view billing information for the account.
+         * If you disable this, then only the account root user can access billing
+         * information. For information about how to disable this for an account, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
          * Access to Your Billing Information and Tools</a>.</p> </note> <p>This operation
          * can be called only from the organization's master account.</p><p><h3>See
@@ -640,12 +641,12 @@ namespace Model
          * Guide</i>.</p> <important> <p>You cannot remove accounts that are created with
          * this operation from an organization. That also means that you cannot delete an
          * organization that contains an account that is created with this operation.</p>
-         * </important> <note> <p>When you create a member account with this operation, the
-         * account is created with the <b>IAM User and Role Access to Billing
-         * Information</b> switch enabled. This allows IAM users and roles that are granted
-         * appropriate permissions to view billing information. If this is disabled, then
-         * only the account root user can access billing information. For information about
-         * how to disable this for an account, see <a
+         * </important> <note> <p>When you create a member account with this operation, you
+         * can choose whether to create the account with the <b>IAM User and Role Access to
+         * Billing Information</b> switch enabled. If you enable it, IAM users and roles
+         * that have appropriate permissions can view billing information for the account.
+         * If you disable this, then only the account root user can access billing
+         * information. For information about how to disable this for an account, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
          * Access to Your Billing Information and Tools</a>.</p> </note> <p>This operation
          * can be called only from the organization's master account.</p><p><h3>See
@@ -674,12 +675,12 @@ namespace Model
          * Guide</i>.</p> <important> <p>You cannot remove accounts that are created with
          * this operation from an organization. That also means that you cannot delete an
          * organization that contains an account that is created with this operation.</p>
-         * </important> <note> <p>When you create a member account with this operation, the
-         * account is created with the <b>IAM User and Role Access to Billing
-         * Information</b> switch enabled. This allows IAM users and roles that are granted
-         * appropriate permissions to view billing information. If this is disabled, then
-         * only the account root user can access billing information. For information about
-         * how to disable this for an account, see <a
+         * </important> <note> <p>When you create a member account with this operation, you
+         * can choose whether to create the account with the <b>IAM User and Role Access to
+         * Billing Information</b> switch enabled. If you enable it, IAM users and roles
+         * that have appropriate permissions can view billing information for the account.
+         * If you disable this, then only the account root user can access billing
+         * information. For information about how to disable this for an account, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
          * Access to Your Billing Information and Tools</a>.</p> </note> <p>This operation
          * can be called only from the organization's master account.</p><p><h3>See

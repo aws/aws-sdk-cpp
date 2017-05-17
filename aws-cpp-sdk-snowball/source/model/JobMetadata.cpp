@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/snowball/model/JobMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
@@ -47,7 +48,8 @@ JobMetadata::JobMetadata() :
     m_notificationHasBeenSet(false),
     m_dataTransferProgressHasBeenSet(false),
     m_jobLogInfoHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_forwardingAddressIdHasBeenSet(false)
 {
 }
 
@@ -71,7 +73,8 @@ JobMetadata::JobMetadata(const JsonValue& jsonValue) :
     m_notificationHasBeenSet(false),
     m_dataTransferProgressHasBeenSet(false),
     m_jobLogInfoHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_forwardingAddressIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -190,6 +193,13 @@ JobMetadata& JobMetadata::operator =(const JsonValue& jsonValue)
     m_clusterIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ForwardingAddressId"))
+  {
+    m_forwardingAddressId = jsonValue.GetString("ForwardingAddressId");
+
+    m_forwardingAddressIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -285,6 +295,12 @@ JsonValue JobMetadata::Jsonize() const
   if(m_clusterIdHasBeenSet)
   {
    payload.WithString("ClusterId", m_clusterId);
+
+  }
+
+  if(m_forwardingAddressIdHasBeenSet)
+  {
+   payload.WithString("ForwardingAddressId", m_forwardingAddressId);
 
   }
 

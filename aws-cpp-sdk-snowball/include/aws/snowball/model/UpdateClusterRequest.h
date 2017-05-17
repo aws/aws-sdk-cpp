@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/SnowballRequest.h>
@@ -292,6 +293,48 @@ namespace Model
      */
     inline UpdateClusterRequest& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
 
+    /**
+     * <p>The updated ID for the forwarding address for a cluster. This field is not
+     * supported in most regions.</p>
+     */
+    inline const Aws::String& GetForwardingAddressId() const{ return m_forwardingAddressId; }
+
+    /**
+     * <p>The updated ID for the forwarding address for a cluster. This field is not
+     * supported in most regions.</p>
+     */
+    inline void SetForwardingAddressId(const Aws::String& value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId = value; }
+
+    /**
+     * <p>The updated ID for the forwarding address for a cluster. This field is not
+     * supported in most regions.</p>
+     */
+    inline void SetForwardingAddressId(Aws::String&& value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId = std::move(value); }
+
+    /**
+     * <p>The updated ID for the forwarding address for a cluster. This field is not
+     * supported in most regions.</p>
+     */
+    inline void SetForwardingAddressId(const char* value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId.assign(value); }
+
+    /**
+     * <p>The updated ID for the forwarding address for a cluster. This field is not
+     * supported in most regions.</p>
+     */
+    inline UpdateClusterRequest& WithForwardingAddressId(const Aws::String& value) { SetForwardingAddressId(value); return *this;}
+
+    /**
+     * <p>The updated ID for the forwarding address for a cluster. This field is not
+     * supported in most regions.</p>
+     */
+    inline UpdateClusterRequest& WithForwardingAddressId(Aws::String&& value) { SetForwardingAddressId(std::move(value)); return *this;}
+
+    /**
+     * <p>The updated ID for the forwarding address for a cluster. This field is not
+     * supported in most regions.</p>
+     */
+    inline UpdateClusterRequest& WithForwardingAddressId(const char* value) { SetForwardingAddressId(value); return *this;}
+
   private:
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
@@ -307,6 +350,8 @@ namespace Model
     bool m_shippingOptionHasBeenSet;
     Notification m_notification;
     bool m_notificationHasBeenSet;
+    Aws::String m_forwardingAddressId;
+    bool m_forwardingAddressIdHasBeenSet;
   };
 
 } // namespace Model

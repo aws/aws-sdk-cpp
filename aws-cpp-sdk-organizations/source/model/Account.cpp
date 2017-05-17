@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/organizations/model/Account.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
@@ -30,6 +31,7 @@ namespace Model
 Account::Account() : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
+    m_emailHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(AccountStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -42,6 +44,7 @@ Account::Account() :
 Account::Account(const JsonValue& jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
+    m_emailHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(AccountStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -66,6 +69,13 @@ Account& Account::operator =(const JsonValue& jsonValue)
     m_arn = jsonValue.GetString("Arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Email"))
+  {
+    m_email = jsonValue.GetString("Email");
+
+    m_emailHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Name"))
@@ -112,6 +122,12 @@ JsonValue Account::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("Arn", m_arn);
+
+  }
+
+  if(m_emailHasBeenSet)
+  {
+   payload.WithString("Email", m_email);
 
   }
 

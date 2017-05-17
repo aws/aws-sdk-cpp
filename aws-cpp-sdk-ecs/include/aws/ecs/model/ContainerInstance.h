@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,12 +12,14 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/VersionInfo.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/AgentUpdateStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ecs/model/Resource.h>
 #include <aws/ecs/model/Attribute.h>
 #include <utility>
@@ -346,50 +348,92 @@ namespace Model
 
     /**
      * <p>The status of the container instance. The valid values are
-     * <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code> indicates that
-     * the container instance can accept tasks.</p>
+     * <code>ACTIVE</code>, <code>INACTIVE</code>, or <code>DRAINING</code>.
+     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     * <code>DRAINING</code> indicates that new tasks are not placed on the container
+     * instance and any service tasks running on the container instance are removed if
+     * possible. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the container instance. The valid values are
-     * <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code> indicates that
-     * the container instance can accept tasks.</p>
+     * <code>ACTIVE</code>, <code>INACTIVE</code>, or <code>DRAINING</code>.
+     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     * <code>DRAINING</code> indicates that new tasks are not placed on the container
+     * instance and any service tasks running on the container instance are removed if
+     * possible. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the container instance. The valid values are
-     * <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code> indicates that
-     * the container instance can accept tasks.</p>
+     * <code>ACTIVE</code>, <code>INACTIVE</code>, or <code>DRAINING</code>.
+     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     * <code>DRAINING</code> indicates that new tasks are not placed on the container
+     * instance and any service tasks running on the container instance are removed if
+     * possible. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the container instance. The valid values are
-     * <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code> indicates that
-     * the container instance can accept tasks.</p>
+     * <code>ACTIVE</code>, <code>INACTIVE</code>, or <code>DRAINING</code>.
+     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     * <code>DRAINING</code> indicates that new tasks are not placed on the container
+     * instance and any service tasks running on the container instance are removed if
+     * possible. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
      * <p>The status of the container instance. The valid values are
-     * <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code> indicates that
-     * the container instance can accept tasks.</p>
+     * <code>ACTIVE</code>, <code>INACTIVE</code>, or <code>DRAINING</code>.
+     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     * <code>DRAINING</code> indicates that new tasks are not placed on the container
+     * instance and any service tasks running on the container instance are removed if
+     * possible. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline ContainerInstance& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the container instance. The valid values are
-     * <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code> indicates that
-     * the container instance can accept tasks.</p>
+     * <code>ACTIVE</code>, <code>INACTIVE</code>, or <code>DRAINING</code>.
+     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     * <code>DRAINING</code> indicates that new tasks are not placed on the container
+     * instance and any service tasks running on the container instance are removed if
+     * possible. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline ContainerInstance& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the container instance. The valid values are
-     * <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code> indicates that
-     * the container instance can accept tasks.</p>
+     * <code>ACTIVE</code>, <code>INACTIVE</code>, or <code>DRAINING</code>.
+     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     * <code>DRAINING</code> indicates that new tasks are not placed on the container
+     * instance and any service tasks running on the container instance are removed if
+     * possible. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline ContainerInstance& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -532,6 +576,31 @@ namespace Model
      */
     inline ContainerInstance& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
+    /**
+     * <p>The Unix timestamp for when the container instance was registered.</p>
+     */
+    inline const Aws::Utils::DateTime& GetRegisteredAt() const{ return m_registeredAt; }
+
+    /**
+     * <p>The Unix timestamp for when the container instance was registered.</p>
+     */
+    inline void SetRegisteredAt(const Aws::Utils::DateTime& value) { m_registeredAtHasBeenSet = true; m_registeredAt = value; }
+
+    /**
+     * <p>The Unix timestamp for when the container instance was registered.</p>
+     */
+    inline void SetRegisteredAt(Aws::Utils::DateTime&& value) { m_registeredAtHasBeenSet = true; m_registeredAt = std::move(value); }
+
+    /**
+     * <p>The Unix timestamp for when the container instance was registered.</p>
+     */
+    inline ContainerInstance& WithRegisteredAt(const Aws::Utils::DateTime& value) { SetRegisteredAt(value); return *this;}
+
+    /**
+     * <p>The Unix timestamp for when the container instance was registered.</p>
+     */
+    inline ContainerInstance& WithRegisteredAt(Aws::Utils::DateTime&& value) { SetRegisteredAt(std::move(value)); return *this;}
+
   private:
     Aws::String m_containerInstanceArn;
     bool m_containerInstanceArnHasBeenSet;
@@ -557,6 +626,8 @@ namespace Model
     bool m_agentUpdateStatusHasBeenSet;
     Aws::Vector<Attribute> m_attributes;
     bool m_attributesHasBeenSet;
+    Aws::Utils::DateTime m_registeredAt;
+    bool m_registeredAtHasBeenSet;
   };
 
 } // namespace Model

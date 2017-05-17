@@ -377,14 +377,17 @@ endif()
 
 if(USE_GCC_FLAGS)
     target_compile_options(${PROJECT_NAME} PUBLIC -std=c++${CPP_STANDARD})
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++${CPP_STANDARD}")
 
     if(NOT ENABLE_RTTI)
         target_compile_options(${PROJECT_NAME} PUBLIC -fno-rtti)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
     endif()
 else()
 
     if(NOT ENABLE_RTTI)
         target_compile_options(${PROJECT_NAME} PUBLIC /GR-)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /GR-")
     endif()
 endif()
 
@@ -422,6 +425,7 @@ install (FILES ${AWS_CLIENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/c
 install (FILES ${AWS_INTERNAL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/internal)
 install (FILES ${HTTP_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http)
 install (FILES ${HTTP_STANDARD_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http/standard)
+install (FILES ${CONFIG_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/config/)
 install (FILES ${PLATFORM_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/platform)
 install (FILES ${UTILS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils)
 install (FILES ${UTILS_EVENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/event)

@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -32,9 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Details on a data volume from another container.</p><p><h3>See Also:</h3>  
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/VolumeFrom">AWS
-   * API Reference</a></p>
+   * <p>Details on a data volume from another container in the same task
+   * definition.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/VolumeFrom">AWS API
+   * Reference</a></p>
    */
   class AWS_ECS_API VolumeFrom
   {
@@ -45,37 +47,44 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The name of the container to mount volumes from.</p>
+     * <p>The name of another container within the same task definition to mount
+     * volumes from.</p>
      */
     inline const Aws::String& GetSourceContainer() const{ return m_sourceContainer; }
 
     /**
-     * <p>The name of the container to mount volumes from.</p>
+     * <p>The name of another container within the same task definition to mount
+     * volumes from.</p>
      */
     inline void SetSourceContainer(const Aws::String& value) { m_sourceContainerHasBeenSet = true; m_sourceContainer = value; }
 
     /**
-     * <p>The name of the container to mount volumes from.</p>
+     * <p>The name of another container within the same task definition to mount
+     * volumes from.</p>
      */
     inline void SetSourceContainer(Aws::String&& value) { m_sourceContainerHasBeenSet = true; m_sourceContainer = std::move(value); }
 
     /**
-     * <p>The name of the container to mount volumes from.</p>
+     * <p>The name of another container within the same task definition to mount
+     * volumes from.</p>
      */
     inline void SetSourceContainer(const char* value) { m_sourceContainerHasBeenSet = true; m_sourceContainer.assign(value); }
 
     /**
-     * <p>The name of the container to mount volumes from.</p>
+     * <p>The name of another container within the same task definition to mount
+     * volumes from.</p>
      */
     inline VolumeFrom& WithSourceContainer(const Aws::String& value) { SetSourceContainer(value); return *this;}
 
     /**
-     * <p>The name of the container to mount volumes from.</p>
+     * <p>The name of another container within the same task definition to mount
+     * volumes from.</p>
      */
     inline VolumeFrom& WithSourceContainer(Aws::String&& value) { SetSourceContainer(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the container to mount volumes from.</p>
+     * <p>The name of another container within the same task definition to mount
+     * volumes from.</p>
      */
     inline VolumeFrom& WithSourceContainer(const char* value) { SetSourceContainer(value); return *this;}
 

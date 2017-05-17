@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -82,27 +83,27 @@ namespace Model
     inline DocumentParameter& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The type of parameter. The type can be either “String” or “StringList”.</p>
+     * <p>The type of parameter. The type can be either String or StringList.</p>
      */
     inline const DocumentParameterType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of parameter. The type can be either “String” or “StringList”.</p>
+     * <p>The type of parameter. The type can be either String or StringList.</p>
      */
     inline void SetType(const DocumentParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of parameter. The type can be either “String” or “StringList”.</p>
+     * <p>The type of parameter. The type can be either String or StringList.</p>
      */
     inline void SetType(DocumentParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of parameter. The type can be either “String” or “StringList”.</p>
+     * <p>The type of parameter. The type can be either String or StringList.</p>
      */
     inline DocumentParameter& WithType(const DocumentParameterType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of parameter. The type can be either “String” or “StringList”.</p>
+     * <p>The type of parameter. The type can be either String or StringList.</p>
      */
     inline DocumentParameter& WithType(DocumentParameterType&& value) { SetType(std::move(value)); return *this;}
 

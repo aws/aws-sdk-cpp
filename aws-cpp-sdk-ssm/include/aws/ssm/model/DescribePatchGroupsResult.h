@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -43,51 +44,51 @@ namespace Model
     DescribePatchGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Each entry in the array contains:</p> <p>PatchGroup: string (1 ≤ length ≤
-     * 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</p> <p>PatchBaselineIdentity: A
-     * PatchBaselineIdentity element. </p>
+     * <p>Each entry in the array contains:</p> <p>PatchGroup: string (between 1 and
+     * 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</p>
+     * <p>PatchBaselineIdentity: A PatchBaselineIdentity element. </p>
      */
     inline const Aws::Vector<PatchGroupPatchBaselineMapping>& GetMappings() const{ return m_mappings; }
 
     /**
-     * <p>Each entry in the array contains:</p> <p>PatchGroup: string (1 ≤ length ≤
-     * 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</p> <p>PatchBaselineIdentity: A
-     * PatchBaselineIdentity element. </p>
+     * <p>Each entry in the array contains:</p> <p>PatchGroup: string (between 1 and
+     * 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</p>
+     * <p>PatchBaselineIdentity: A PatchBaselineIdentity element. </p>
      */
     inline void SetMappings(const Aws::Vector<PatchGroupPatchBaselineMapping>& value) { m_mappings = value; }
 
     /**
-     * <p>Each entry in the array contains:</p> <p>PatchGroup: string (1 ≤ length ≤
-     * 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</p> <p>PatchBaselineIdentity: A
-     * PatchBaselineIdentity element. </p>
+     * <p>Each entry in the array contains:</p> <p>PatchGroup: string (between 1 and
+     * 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</p>
+     * <p>PatchBaselineIdentity: A PatchBaselineIdentity element. </p>
      */
     inline void SetMappings(Aws::Vector<PatchGroupPatchBaselineMapping>&& value) { m_mappings = std::move(value); }
 
     /**
-     * <p>Each entry in the array contains:</p> <p>PatchGroup: string (1 ≤ length ≤
-     * 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</p> <p>PatchBaselineIdentity: A
-     * PatchBaselineIdentity element. </p>
+     * <p>Each entry in the array contains:</p> <p>PatchGroup: string (between 1 and
+     * 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</p>
+     * <p>PatchBaselineIdentity: A PatchBaselineIdentity element. </p>
      */
     inline DescribePatchGroupsResult& WithMappings(const Aws::Vector<PatchGroupPatchBaselineMapping>& value) { SetMappings(value); return *this;}
 
     /**
-     * <p>Each entry in the array contains:</p> <p>PatchGroup: string (1 ≤ length ≤
-     * 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</p> <p>PatchBaselineIdentity: A
-     * PatchBaselineIdentity element. </p>
+     * <p>Each entry in the array contains:</p> <p>PatchGroup: string (between 1 and
+     * 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</p>
+     * <p>PatchBaselineIdentity: A PatchBaselineIdentity element. </p>
      */
     inline DescribePatchGroupsResult& WithMappings(Aws::Vector<PatchGroupPatchBaselineMapping>&& value) { SetMappings(std::move(value)); return *this;}
 
     /**
-     * <p>Each entry in the array contains:</p> <p>PatchGroup: string (1 ≤ length ≤
-     * 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</p> <p>PatchBaselineIdentity: A
-     * PatchBaselineIdentity element. </p>
+     * <p>Each entry in the array contains:</p> <p>PatchGroup: string (between 1 and
+     * 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</p>
+     * <p>PatchBaselineIdentity: A PatchBaselineIdentity element. </p>
      */
     inline DescribePatchGroupsResult& AddMappings(const PatchGroupPatchBaselineMapping& value) { m_mappings.push_back(value); return *this; }
 
     /**
-     * <p>Each entry in the array contains:</p> <p>PatchGroup: string (1 ≤ length ≤
-     * 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</p> <p>PatchBaselineIdentity: A
-     * PatchBaselineIdentity element. </p>
+     * <p>Each entry in the array contains:</p> <p>PatchGroup: string (between 1 and
+     * 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</p>
+     * <p>PatchBaselineIdentity: A PatchBaselineIdentity element. </p>
      */
     inline DescribePatchGroupsResult& AddMappings(PatchGroupPatchBaselineMapping&& value) { m_mappings.push_back(std::move(value)); return *this; }
 

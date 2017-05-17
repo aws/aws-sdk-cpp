@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/snowball/model/ClusterMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
@@ -43,7 +44,8 @@ ClusterMetadata::ClusterMetadata() :
     m_addressIdHasBeenSet(false),
     m_shippingOption(ShippingOption::NOT_SET),
     m_shippingOptionHasBeenSet(false),
-    m_notificationHasBeenSet(false)
+    m_notificationHasBeenSet(false),
+    m_forwardingAddressIdHasBeenSet(false)
 {
 }
 
@@ -63,7 +65,8 @@ ClusterMetadata::ClusterMetadata(const JsonValue& jsonValue) :
     m_addressIdHasBeenSet(false),
     m_shippingOption(ShippingOption::NOT_SET),
     m_shippingOptionHasBeenSet(false),
-    m_notificationHasBeenSet(false)
+    m_notificationHasBeenSet(false),
+    m_forwardingAddressIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -154,6 +157,13 @@ ClusterMetadata& ClusterMetadata::operator =(const JsonValue& jsonValue)
     m_notificationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ForwardingAddressId"))
+  {
+    m_forwardingAddressId = jsonValue.GetString("ForwardingAddressId");
+
+    m_forwardingAddressIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -225,6 +235,12 @@ JsonValue ClusterMetadata::Jsonize() const
   if(m_notificationHasBeenSet)
   {
    payload.WithObject("Notification", m_notification.Jsonize());
+
+  }
+
+  if(m_forwardingAddressIdHasBeenSet)
+  {
+   payload.WithString("ForwardingAddressId", m_forwardingAddressId);
 
   }
 

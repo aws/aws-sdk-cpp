@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
@@ -129,7 +130,8 @@ Aws::String CloudSearchClient::ConvertRequestToPresignedUrl(const AmazonSerializ
 BuildSuggestersOutcome CloudSearchClient::BuildSuggesters(const BuildSuggestersRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -162,7 +164,8 @@ void CloudSearchClient::BuildSuggestersAsyncHelper(const BuildSuggestersRequest&
 CreateDomainOutcome CloudSearchClient::CreateDomain(const CreateDomainRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -195,7 +198,8 @@ void CloudSearchClient::CreateDomainAsyncHelper(const CreateDomainRequest& reque
 DefineAnalysisSchemeOutcome CloudSearchClient::DefineAnalysisScheme(const DefineAnalysisSchemeRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -228,7 +232,8 @@ void CloudSearchClient::DefineAnalysisSchemeAsyncHelper(const DefineAnalysisSche
 DefineExpressionOutcome CloudSearchClient::DefineExpression(const DefineExpressionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -261,7 +266,8 @@ void CloudSearchClient::DefineExpressionAsyncHelper(const DefineExpressionReques
 DefineIndexFieldOutcome CloudSearchClient::DefineIndexField(const DefineIndexFieldRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -294,7 +300,8 @@ void CloudSearchClient::DefineIndexFieldAsyncHelper(const DefineIndexFieldReques
 DefineSuggesterOutcome CloudSearchClient::DefineSuggester(const DefineSuggesterRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -327,7 +334,8 @@ void CloudSearchClient::DefineSuggesterAsyncHelper(const DefineSuggesterRequest&
 DeleteAnalysisSchemeOutcome CloudSearchClient::DeleteAnalysisScheme(const DeleteAnalysisSchemeRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -360,7 +368,8 @@ void CloudSearchClient::DeleteAnalysisSchemeAsyncHelper(const DeleteAnalysisSche
 DeleteDomainOutcome CloudSearchClient::DeleteDomain(const DeleteDomainRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -393,7 +402,8 @@ void CloudSearchClient::DeleteDomainAsyncHelper(const DeleteDomainRequest& reque
 DeleteExpressionOutcome CloudSearchClient::DeleteExpression(const DeleteExpressionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -426,7 +436,8 @@ void CloudSearchClient::DeleteExpressionAsyncHelper(const DeleteExpressionReques
 DeleteIndexFieldOutcome CloudSearchClient::DeleteIndexField(const DeleteIndexFieldRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -459,7 +470,8 @@ void CloudSearchClient::DeleteIndexFieldAsyncHelper(const DeleteIndexFieldReques
 DeleteSuggesterOutcome CloudSearchClient::DeleteSuggester(const DeleteSuggesterRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -492,7 +504,8 @@ void CloudSearchClient::DeleteSuggesterAsyncHelper(const DeleteSuggesterRequest&
 DescribeAnalysisSchemesOutcome CloudSearchClient::DescribeAnalysisSchemes(const DescribeAnalysisSchemesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -525,7 +538,8 @@ void CloudSearchClient::DescribeAnalysisSchemesAsyncHelper(const DescribeAnalysi
 DescribeAvailabilityOptionsOutcome CloudSearchClient::DescribeAvailabilityOptions(const DescribeAvailabilityOptionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -558,7 +572,8 @@ void CloudSearchClient::DescribeAvailabilityOptionsAsyncHelper(const DescribeAva
 DescribeDomainsOutcome CloudSearchClient::DescribeDomains(const DescribeDomainsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -591,7 +606,8 @@ void CloudSearchClient::DescribeDomainsAsyncHelper(const DescribeDomainsRequest&
 DescribeExpressionsOutcome CloudSearchClient::DescribeExpressions(const DescribeExpressionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -624,7 +640,8 @@ void CloudSearchClient::DescribeExpressionsAsyncHelper(const DescribeExpressions
 DescribeIndexFieldsOutcome CloudSearchClient::DescribeIndexFields(const DescribeIndexFieldsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -657,7 +674,8 @@ void CloudSearchClient::DescribeIndexFieldsAsyncHelper(const DescribeIndexFields
 DescribeScalingParametersOutcome CloudSearchClient::DescribeScalingParameters(const DescribeScalingParametersRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -690,7 +708,8 @@ void CloudSearchClient::DescribeScalingParametersAsyncHelper(const DescribeScali
 DescribeServiceAccessPoliciesOutcome CloudSearchClient::DescribeServiceAccessPolicies(const DescribeServiceAccessPoliciesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -723,7 +742,8 @@ void CloudSearchClient::DescribeServiceAccessPoliciesAsyncHelper(const DescribeS
 DescribeSuggestersOutcome CloudSearchClient::DescribeSuggesters(const DescribeSuggestersRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -756,7 +776,8 @@ void CloudSearchClient::DescribeSuggestersAsyncHelper(const DescribeSuggestersRe
 IndexDocumentsOutcome CloudSearchClient::IndexDocuments(const IndexDocumentsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -789,7 +810,8 @@ void CloudSearchClient::IndexDocumentsAsyncHelper(const IndexDocumentsRequest& r
 ListDomainNamesOutcome CloudSearchClient::ListDomainNames(const ListDomainNamesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -822,7 +844,8 @@ void CloudSearchClient::ListDomainNamesAsyncHelper(const ListDomainNamesRequest&
 UpdateAvailabilityOptionsOutcome CloudSearchClient::UpdateAvailabilityOptions(const UpdateAvailabilityOptionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -855,7 +878,8 @@ void CloudSearchClient::UpdateAvailabilityOptionsAsyncHelper(const UpdateAvailab
 UpdateScalingParametersOutcome CloudSearchClient::UpdateScalingParameters(const UpdateScalingParametersRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -888,7 +912,8 @@ void CloudSearchClient::UpdateScalingParametersAsyncHelper(const UpdateScalingPa
 UpdateServiceAccessPoliciesOutcome CloudSearchClient::UpdateServiceAccessPolicies(const UpdateServiceAccessPoliciesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {

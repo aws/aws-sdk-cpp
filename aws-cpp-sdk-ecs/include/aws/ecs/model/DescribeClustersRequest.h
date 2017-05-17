@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/ECSRequest.h>
@@ -38,58 +39,50 @@ namespace Model
 
 
     /**
-     * <p>A space-separated list of up to 100 cluster names or full cluster Amazon
-     * Resource Name (ARN) entries. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
+     * <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN)
+     * entries. If you do not specify a cluster, the default cluster is assumed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClusters() const{ return m_clusters; }
 
     /**
-     * <p>A space-separated list of up to 100 cluster names or full cluster Amazon
-     * Resource Name (ARN) entries. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
+     * <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN)
+     * entries. If you do not specify a cluster, the default cluster is assumed.</p>
      */
     inline void SetClusters(const Aws::Vector<Aws::String>& value) { m_clustersHasBeenSet = true; m_clusters = value; }
 
     /**
-     * <p>A space-separated list of up to 100 cluster names or full cluster Amazon
-     * Resource Name (ARN) entries. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
+     * <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN)
+     * entries. If you do not specify a cluster, the default cluster is assumed.</p>
      */
     inline void SetClusters(Aws::Vector<Aws::String>&& value) { m_clustersHasBeenSet = true; m_clusters = std::move(value); }
 
     /**
-     * <p>A space-separated list of up to 100 cluster names or full cluster Amazon
-     * Resource Name (ARN) entries. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
+     * <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN)
+     * entries. If you do not specify a cluster, the default cluster is assumed.</p>
      */
     inline DescribeClustersRequest& WithClusters(const Aws::Vector<Aws::String>& value) { SetClusters(value); return *this;}
 
     /**
-     * <p>A space-separated list of up to 100 cluster names or full cluster Amazon
-     * Resource Name (ARN) entries. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
+     * <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN)
+     * entries. If you do not specify a cluster, the default cluster is assumed.</p>
      */
     inline DescribeClustersRequest& WithClusters(Aws::Vector<Aws::String>&& value) { SetClusters(std::move(value)); return *this;}
 
     /**
-     * <p>A space-separated list of up to 100 cluster names or full cluster Amazon
-     * Resource Name (ARN) entries. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
+     * <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN)
+     * entries. If you do not specify a cluster, the default cluster is assumed.</p>
      */
     inline DescribeClustersRequest& AddClusters(const Aws::String& value) { m_clustersHasBeenSet = true; m_clusters.push_back(value); return *this; }
 
     /**
-     * <p>A space-separated list of up to 100 cluster names or full cluster Amazon
-     * Resource Name (ARN) entries. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
+     * <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN)
+     * entries. If you do not specify a cluster, the default cluster is assumed.</p>
      */
     inline DescribeClustersRequest& AddClusters(Aws::String&& value) { m_clustersHasBeenSet = true; m_clusters.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A space-separated list of up to 100 cluster names or full cluster Amazon
-     * Resource Name (ARN) entries. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
+     * <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN)
+     * entries. If you do not specify a cluster, the default cluster is assumed.</p>
      */
     inline DescribeClustersRequest& AddClusters(const char* value) { m_clustersHasBeenSet = true; m_clusters.push_back(value); return *this; }
 

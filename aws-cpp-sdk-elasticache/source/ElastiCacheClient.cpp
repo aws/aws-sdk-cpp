@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
@@ -144,7 +145,8 @@ Aws::String ElastiCacheClient::ConvertRequestToPresignedUrl(const AmazonSerializ
 AddTagsToResourceOutcome ElastiCacheClient::AddTagsToResource(const AddTagsToResourceRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -177,7 +179,8 @@ void ElastiCacheClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequ
 AuthorizeCacheSecurityGroupIngressOutcome ElastiCacheClient::AuthorizeCacheSecurityGroupIngress(const AuthorizeCacheSecurityGroupIngressRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -210,7 +213,8 @@ void ElastiCacheClient::AuthorizeCacheSecurityGroupIngressAsyncHelper(const Auth
 CopySnapshotOutcome ElastiCacheClient::CopySnapshot(const CopySnapshotRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -243,7 +247,8 @@ void ElastiCacheClient::CopySnapshotAsyncHelper(const CopySnapshotRequest& reque
 CreateCacheClusterOutcome ElastiCacheClient::CreateCacheCluster(const CreateCacheClusterRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -276,7 +281,8 @@ void ElastiCacheClient::CreateCacheClusterAsyncHelper(const CreateCacheClusterRe
 CreateCacheParameterGroupOutcome ElastiCacheClient::CreateCacheParameterGroup(const CreateCacheParameterGroupRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -309,7 +315,8 @@ void ElastiCacheClient::CreateCacheParameterGroupAsyncHelper(const CreateCachePa
 CreateCacheSecurityGroupOutcome ElastiCacheClient::CreateCacheSecurityGroup(const CreateCacheSecurityGroupRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -342,7 +349,8 @@ void ElastiCacheClient::CreateCacheSecurityGroupAsyncHelper(const CreateCacheSec
 CreateCacheSubnetGroupOutcome ElastiCacheClient::CreateCacheSubnetGroup(const CreateCacheSubnetGroupRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -375,7 +383,8 @@ void ElastiCacheClient::CreateCacheSubnetGroupAsyncHelper(const CreateCacheSubne
 CreateReplicationGroupOutcome ElastiCacheClient::CreateReplicationGroup(const CreateReplicationGroupRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -408,7 +417,8 @@ void ElastiCacheClient::CreateReplicationGroupAsyncHelper(const CreateReplicatio
 CreateSnapshotOutcome ElastiCacheClient::CreateSnapshot(const CreateSnapshotRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -441,7 +451,8 @@ void ElastiCacheClient::CreateSnapshotAsyncHelper(const CreateSnapshotRequest& r
 DeleteCacheClusterOutcome ElastiCacheClient::DeleteCacheCluster(const DeleteCacheClusterRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -474,7 +485,8 @@ void ElastiCacheClient::DeleteCacheClusterAsyncHelper(const DeleteCacheClusterRe
 DeleteCacheParameterGroupOutcome ElastiCacheClient::DeleteCacheParameterGroup(const DeleteCacheParameterGroupRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -507,7 +519,8 @@ void ElastiCacheClient::DeleteCacheParameterGroupAsyncHelper(const DeleteCachePa
 DeleteCacheSecurityGroupOutcome ElastiCacheClient::DeleteCacheSecurityGroup(const DeleteCacheSecurityGroupRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -540,7 +553,8 @@ void ElastiCacheClient::DeleteCacheSecurityGroupAsyncHelper(const DeleteCacheSec
 DeleteCacheSubnetGroupOutcome ElastiCacheClient::DeleteCacheSubnetGroup(const DeleteCacheSubnetGroupRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -573,7 +587,8 @@ void ElastiCacheClient::DeleteCacheSubnetGroupAsyncHelper(const DeleteCacheSubne
 DeleteReplicationGroupOutcome ElastiCacheClient::DeleteReplicationGroup(const DeleteReplicationGroupRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -606,7 +621,8 @@ void ElastiCacheClient::DeleteReplicationGroupAsyncHelper(const DeleteReplicatio
 DeleteSnapshotOutcome ElastiCacheClient::DeleteSnapshot(const DeleteSnapshotRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -639,7 +655,8 @@ void ElastiCacheClient::DeleteSnapshotAsyncHelper(const DeleteSnapshotRequest& r
 DescribeCacheClustersOutcome ElastiCacheClient::DescribeCacheClusters(const DescribeCacheClustersRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -672,7 +689,8 @@ void ElastiCacheClient::DescribeCacheClustersAsyncHelper(const DescribeCacheClus
 DescribeCacheEngineVersionsOutcome ElastiCacheClient::DescribeCacheEngineVersions(const DescribeCacheEngineVersionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -705,7 +723,8 @@ void ElastiCacheClient::DescribeCacheEngineVersionsAsyncHelper(const DescribeCac
 DescribeCacheParameterGroupsOutcome ElastiCacheClient::DescribeCacheParameterGroups(const DescribeCacheParameterGroupsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -738,7 +757,8 @@ void ElastiCacheClient::DescribeCacheParameterGroupsAsyncHelper(const DescribeCa
 DescribeCacheParametersOutcome ElastiCacheClient::DescribeCacheParameters(const DescribeCacheParametersRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -771,7 +791,8 @@ void ElastiCacheClient::DescribeCacheParametersAsyncHelper(const DescribeCachePa
 DescribeCacheSecurityGroupsOutcome ElastiCacheClient::DescribeCacheSecurityGroups(const DescribeCacheSecurityGroupsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -804,7 +825,8 @@ void ElastiCacheClient::DescribeCacheSecurityGroupsAsyncHelper(const DescribeCac
 DescribeCacheSubnetGroupsOutcome ElastiCacheClient::DescribeCacheSubnetGroups(const DescribeCacheSubnetGroupsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -837,7 +859,8 @@ void ElastiCacheClient::DescribeCacheSubnetGroupsAsyncHelper(const DescribeCache
 DescribeEngineDefaultParametersOutcome ElastiCacheClient::DescribeEngineDefaultParameters(const DescribeEngineDefaultParametersRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -870,7 +893,8 @@ void ElastiCacheClient::DescribeEngineDefaultParametersAsyncHelper(const Describ
 DescribeEventsOutcome ElastiCacheClient::DescribeEvents(const DescribeEventsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -903,7 +927,8 @@ void ElastiCacheClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& r
 DescribeReplicationGroupsOutcome ElastiCacheClient::DescribeReplicationGroups(const DescribeReplicationGroupsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -936,7 +961,8 @@ void ElastiCacheClient::DescribeReplicationGroupsAsyncHelper(const DescribeRepli
 DescribeReservedCacheNodesOutcome ElastiCacheClient::DescribeReservedCacheNodes(const DescribeReservedCacheNodesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -969,7 +995,8 @@ void ElastiCacheClient::DescribeReservedCacheNodesAsyncHelper(const DescribeRese
 DescribeReservedCacheNodesOfferingsOutcome ElastiCacheClient::DescribeReservedCacheNodesOfferings(const DescribeReservedCacheNodesOfferingsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1002,7 +1029,8 @@ void ElastiCacheClient::DescribeReservedCacheNodesOfferingsAsyncHelper(const Des
 DescribeSnapshotsOutcome ElastiCacheClient::DescribeSnapshots(const DescribeSnapshotsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1035,7 +1063,8 @@ void ElastiCacheClient::DescribeSnapshotsAsyncHelper(const DescribeSnapshotsRequ
 ListAllowedNodeTypeModificationsOutcome ElastiCacheClient::ListAllowedNodeTypeModifications(const ListAllowedNodeTypeModificationsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1068,7 +1097,8 @@ void ElastiCacheClient::ListAllowedNodeTypeModificationsAsyncHelper(const ListAl
 ListTagsForResourceOutcome ElastiCacheClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1101,7 +1131,8 @@ void ElastiCacheClient::ListTagsForResourceAsyncHelper(const ListTagsForResource
 ModifyCacheClusterOutcome ElastiCacheClient::ModifyCacheCluster(const ModifyCacheClusterRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1134,7 +1165,8 @@ void ElastiCacheClient::ModifyCacheClusterAsyncHelper(const ModifyCacheClusterRe
 ModifyCacheParameterGroupOutcome ElastiCacheClient::ModifyCacheParameterGroup(const ModifyCacheParameterGroupRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1167,7 +1199,8 @@ void ElastiCacheClient::ModifyCacheParameterGroupAsyncHelper(const ModifyCachePa
 ModifyCacheSubnetGroupOutcome ElastiCacheClient::ModifyCacheSubnetGroup(const ModifyCacheSubnetGroupRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1200,7 +1233,8 @@ void ElastiCacheClient::ModifyCacheSubnetGroupAsyncHelper(const ModifyCacheSubne
 ModifyReplicationGroupOutcome ElastiCacheClient::ModifyReplicationGroup(const ModifyReplicationGroupRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1233,7 +1267,8 @@ void ElastiCacheClient::ModifyReplicationGroupAsyncHelper(const ModifyReplicatio
 PurchaseReservedCacheNodesOfferingOutcome ElastiCacheClient::PurchaseReservedCacheNodesOffering(const PurchaseReservedCacheNodesOfferingRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1266,7 +1301,8 @@ void ElastiCacheClient::PurchaseReservedCacheNodesOfferingAsyncHelper(const Purc
 RebootCacheClusterOutcome ElastiCacheClient::RebootCacheCluster(const RebootCacheClusterRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1299,7 +1335,8 @@ void ElastiCacheClient::RebootCacheClusterAsyncHelper(const RebootCacheClusterRe
 RemoveTagsFromResourceOutcome ElastiCacheClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1332,7 +1369,8 @@ void ElastiCacheClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromRe
 ResetCacheParameterGroupOutcome ElastiCacheClient::ResetCacheParameterGroup(const ResetCacheParameterGroupRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1365,7 +1403,8 @@ void ElastiCacheClient::ResetCacheParameterGroupAsyncHelper(const ResetCachePara
 RevokeCacheSecurityGroupIngressOutcome ElastiCacheClient::RevokeCacheSecurityGroupIngress(const RevokeCacheSecurityGroupIngressRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1398,7 +1437,8 @@ void ElastiCacheClient::RevokeCacheSecurityGroupIngressAsyncHelper(const RevokeC
 TestFailoverOutcome ElastiCacheClient::TestFailover(const TestFailoverRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {

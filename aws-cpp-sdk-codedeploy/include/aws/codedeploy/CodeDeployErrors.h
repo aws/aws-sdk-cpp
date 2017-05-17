@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 
 #include <aws/core/client/CoreErrors.h>
@@ -97,9 +98,11 @@ enum class CodeDeployErrors
   INVALID_DEPLOYMENT_CONFIG_NAME,
   INVALID_DEPLOYMENT_GROUP_NAME,
   INVALID_DEPLOYMENT_ID,
+  INVALID_DEPLOYMENT_INSTANCE_TYPE,
   INVALID_DEPLOYMENT_STATUS,
   INVALID_DEPLOYMENT_STYLE,
   INVALID_E_C2_TAG,
+  INVALID_FILE_EXISTS_BEHAVIOR,
   INVALID_IAM_SESSION_ARN,
   INVALID_IAM_USER_ARN,
   INVALID_INSTANCE_NAME,

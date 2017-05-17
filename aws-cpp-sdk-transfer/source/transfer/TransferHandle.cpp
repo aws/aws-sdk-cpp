@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -229,6 +229,7 @@ namespace Aws
 
             if(IsTransitionAllowed(currentStatus, value))
             {
+                std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
                 m_status.store(static_cast<long>(value));
 
                 if (IsFinishedStatus(value))
@@ -238,7 +239,6 @@ namespace Aws
                         CleanupDownloadStream();
                     }
 
-                    std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
                     m_waitUntilFinishedSignal.notify_all();
                 }
             }
@@ -246,12 +246,11 @@ namespace Aws
 
         void TransferHandle::WaitUntilFinished() const
         {
+            std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
             if (!IsFinishedStatus(static_cast<TransferStatus>(m_status.load())) || HasPendingParts())
             {
-                std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
                 m_waitUntilFinishedSignal.wait(semaphoreLock, [this]()
                     { return IsFinishedStatus(static_cast<TransferStatus>(m_status.load())) && !HasPendingParts(); });
-                semaphoreLock.unlock();
             }
         }
 

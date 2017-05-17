@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/SnowballRequest.h>
@@ -535,6 +536,48 @@ namespace Model
      */
     inline CreateJobRequest& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 
+    /**
+     * <p>The forwarding address ID for a job. This field is not supported in most
+     * regions.</p>
+     */
+    inline const Aws::String& GetForwardingAddressId() const{ return m_forwardingAddressId; }
+
+    /**
+     * <p>The forwarding address ID for a job. This field is not supported in most
+     * regions.</p>
+     */
+    inline void SetForwardingAddressId(const Aws::String& value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId = value; }
+
+    /**
+     * <p>The forwarding address ID for a job. This field is not supported in most
+     * regions.</p>
+     */
+    inline void SetForwardingAddressId(Aws::String&& value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId = std::move(value); }
+
+    /**
+     * <p>The forwarding address ID for a job. This field is not supported in most
+     * regions.</p>
+     */
+    inline void SetForwardingAddressId(const char* value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId.assign(value); }
+
+    /**
+     * <p>The forwarding address ID for a job. This field is not supported in most
+     * regions.</p>
+     */
+    inline CreateJobRequest& WithForwardingAddressId(const Aws::String& value) { SetForwardingAddressId(value); return *this;}
+
+    /**
+     * <p>The forwarding address ID for a job. This field is not supported in most
+     * regions.</p>
+     */
+    inline CreateJobRequest& WithForwardingAddressId(Aws::String&& value) { SetForwardingAddressId(std::move(value)); return *this;}
+
+    /**
+     * <p>The forwarding address ID for a job. This field is not supported in most
+     * regions.</p>
+     */
+    inline CreateJobRequest& WithForwardingAddressId(const char* value) { SetForwardingAddressId(value); return *this;}
+
   private:
     JobType m_jobType;
     bool m_jobTypeHasBeenSet;
@@ -558,6 +601,8 @@ namespace Model
     bool m_clusterIdHasBeenSet;
     SnowballType m_snowballType;
     bool m_snowballTypeHasBeenSet;
+    Aws::String m_forwardingAddressId;
+    bool m_forwardingAddressIdHasBeenSet;
   };
 
 } // namespace Model

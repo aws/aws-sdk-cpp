@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
@@ -256,9 +257,9 @@ namespace Model
      * use. For example, this value returns MySQL, MariaDB, or PostgreSQL information
      * when returning values from CreateDBInstanceReadReplica since Read Replicas are
      * only supported for these engines.</p> <p> <b>MySQL, MariaDB, SQL Server,
-     * PostgreSQL, Amazon Aurora</b> </p> <p>Contains the name of the initial database
-     * of this instance that was provided at create time, if one was specified when the
-     * DB instance was created. This same name is returned for the life of the DB
+     * PostgreSQL</b> </p> <p>Contains the name of the initial database of this
+     * instance that was provided at create time, if one was specified when the DB
+     * instance was created. This same name is returned for the life of the DB
      * instance.</p> <p>Type: String</p> <p> <b>Oracle</b> </p> <p>Contains the Oracle
      * System ID (SID) of the created DB instance. Not shown when the returned
      * parameters do not apply to an Oracle DB instance.</p>
@@ -270,9 +271,9 @@ namespace Model
      * use. For example, this value returns MySQL, MariaDB, or PostgreSQL information
      * when returning values from CreateDBInstanceReadReplica since Read Replicas are
      * only supported for these engines.</p> <p> <b>MySQL, MariaDB, SQL Server,
-     * PostgreSQL, Amazon Aurora</b> </p> <p>Contains the name of the initial database
-     * of this instance that was provided at create time, if one was specified when the
-     * DB instance was created. This same name is returned for the life of the DB
+     * PostgreSQL</b> </p> <p>Contains the name of the initial database of this
+     * instance that was provided at create time, if one was specified when the DB
+     * instance was created. This same name is returned for the life of the DB
      * instance.</p> <p>Type: String</p> <p> <b>Oracle</b> </p> <p>Contains the Oracle
      * System ID (SID) of the created DB instance. Not shown when the returned
      * parameters do not apply to an Oracle DB instance.</p>
@@ -284,9 +285,9 @@ namespace Model
      * use. For example, this value returns MySQL, MariaDB, or PostgreSQL information
      * when returning values from CreateDBInstanceReadReplica since Read Replicas are
      * only supported for these engines.</p> <p> <b>MySQL, MariaDB, SQL Server,
-     * PostgreSQL, Amazon Aurora</b> </p> <p>Contains the name of the initial database
-     * of this instance that was provided at create time, if one was specified when the
-     * DB instance was created. This same name is returned for the life of the DB
+     * PostgreSQL</b> </p> <p>Contains the name of the initial database of this
+     * instance that was provided at create time, if one was specified when the DB
+     * instance was created. This same name is returned for the life of the DB
      * instance.</p> <p>Type: String</p> <p> <b>Oracle</b> </p> <p>Contains the Oracle
      * System ID (SID) of the created DB instance. Not shown when the returned
      * parameters do not apply to an Oracle DB instance.</p>
@@ -298,9 +299,9 @@ namespace Model
      * use. For example, this value returns MySQL, MariaDB, or PostgreSQL information
      * when returning values from CreateDBInstanceReadReplica since Read Replicas are
      * only supported for these engines.</p> <p> <b>MySQL, MariaDB, SQL Server,
-     * PostgreSQL, Amazon Aurora</b> </p> <p>Contains the name of the initial database
-     * of this instance that was provided at create time, if one was specified when the
-     * DB instance was created. This same name is returned for the life of the DB
+     * PostgreSQL</b> </p> <p>Contains the name of the initial database of this
+     * instance that was provided at create time, if one was specified when the DB
+     * instance was created. This same name is returned for the life of the DB
      * instance.</p> <p>Type: String</p> <p> <b>Oracle</b> </p> <p>Contains the Oracle
      * System ID (SID) of the created DB instance. Not shown when the returned
      * parameters do not apply to an Oracle DB instance.</p>
@@ -312,9 +313,9 @@ namespace Model
      * use. For example, this value returns MySQL, MariaDB, or PostgreSQL information
      * when returning values from CreateDBInstanceReadReplica since Read Replicas are
      * only supported for these engines.</p> <p> <b>MySQL, MariaDB, SQL Server,
-     * PostgreSQL, Amazon Aurora</b> </p> <p>Contains the name of the initial database
-     * of this instance that was provided at create time, if one was specified when the
-     * DB instance was created. This same name is returned for the life of the DB
+     * PostgreSQL</b> </p> <p>Contains the name of the initial database of this
+     * instance that was provided at create time, if one was specified when the DB
+     * instance was created. This same name is returned for the life of the DB
      * instance.</p> <p>Type: String</p> <p> <b>Oracle</b> </p> <p>Contains the Oracle
      * System ID (SID) of the created DB instance. Not shown when the returned
      * parameters do not apply to an Oracle DB instance.</p>
@@ -326,9 +327,9 @@ namespace Model
      * use. For example, this value returns MySQL, MariaDB, or PostgreSQL information
      * when returning values from CreateDBInstanceReadReplica since Read Replicas are
      * only supported for these engines.</p> <p> <b>MySQL, MariaDB, SQL Server,
-     * PostgreSQL, Amazon Aurora</b> </p> <p>Contains the name of the initial database
-     * of this instance that was provided at create time, if one was specified when the
-     * DB instance was created. This same name is returned for the life of the DB
+     * PostgreSQL</b> </p> <p>Contains the name of the initial database of this
+     * instance that was provided at create time, if one was specified when the DB
+     * instance was created. This same name is returned for the life of the DB
      * instance.</p> <p>Type: String</p> <p> <b>Oracle</b> </p> <p>Contains the Oracle
      * System ID (SID) of the created DB instance. Not shown when the returned
      * parameters do not apply to an Oracle DB instance.</p>
@@ -340,9 +341,9 @@ namespace Model
      * use. For example, this value returns MySQL, MariaDB, or PostgreSQL information
      * when returning values from CreateDBInstanceReadReplica since Read Replicas are
      * only supported for these engines.</p> <p> <b>MySQL, MariaDB, SQL Server,
-     * PostgreSQL, Amazon Aurora</b> </p> <p>Contains the name of the initial database
-     * of this instance that was provided at create time, if one was specified when the
-     * DB instance was created. This same name is returned for the life of the DB
+     * PostgreSQL</b> </p> <p>Contains the name of the initial database of this
+     * instance that was provided at create time, if one was specified when the DB
+     * instance was created. This same name is returned for the life of the DB
      * instance.</p> <p>Type: String</p> <p> <b>Oracle</b> </p> <p>Contains the Oracle
      * System ID (SID) of the created DB instance. Not shown when the returned
      * parameters do not apply to an Oracle DB instance.</p>
@@ -1799,6 +1800,39 @@ namespace Model
      */
     inline DBInstance& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 
+    /**
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled; otherwise false.</p> <p>IAM database
+     * authentication can be enabled for the following database engines</p> <ul> <li>
+     * <p>For MySQL 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL
+     * 5.7, minor version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher. To
+     * enable IAM database authentication for Aurora, see DBCluster Type.</p> </li>
+     * </ul>
+     */
+    inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
+
+    /**
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled; otherwise false.</p> <p>IAM database
+     * authentication can be enabled for the following database engines</p> <ul> <li>
+     * <p>For MySQL 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL
+     * 5.7, minor version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher. To
+     * enable IAM database authentication for Aurora, see DBCluster Type.</p> </li>
+     * </ul>
+     */
+    inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
+
+    /**
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled; otherwise false.</p> <p>IAM database
+     * authentication can be enabled for the following database engines</p> <ul> <li>
+     * <p>For MySQL 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL
+     * 5.7, minor version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher. To
+     * enable IAM database authentication for Aurora, see DBCluster Type.</p> </li>
+     * </ul>
+     */
+    inline DBInstance& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
+
   private:
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
@@ -1896,6 +1930,8 @@ namespace Model
     bool m_dBInstanceArnHasBeenSet;
     Aws::String m_timezone;
     bool m_timezoneHasBeenSet;
+    bool m_iAMDatabaseAuthenticationEnabled;
+    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet;
   };
 
 } // namespace Model

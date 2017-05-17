@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/cloudformation/model/CancelUpdateStackRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -20,7 +21,8 @@ using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
 CancelUpdateStackRequest::CancelUpdateStackRequest() : 
-    m_stackNameHasBeenSet(false)
+    m_stackNameHasBeenSet(false),
+    m_clientRequestTokenHasBeenSet(false)
 {
 }
 
@@ -31,6 +33,11 @@ Aws::String CancelUpdateStackRequest::SerializePayload() const
   if(m_stackNameHasBeenSet)
   {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
+  }
+
+  if(m_clientRequestTokenHasBeenSet)
+  {
+    ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
   }
 
   ss << "Version=2010-05-15";

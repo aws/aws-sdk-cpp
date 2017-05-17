@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/organizations/model/CreateAccountFailureReason.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
@@ -32,6 +33,7 @@ namespace Aws
         static const int ACCOUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ACCOUNT_LIMIT_EXCEEDED");
         static const int EMAIL_ALREADY_EXISTS_HASH = HashingUtils::HashString("EMAIL_ALREADY_EXISTS");
         static const int INVALID_ADDRESS_HASH = HashingUtils::HashString("INVALID_ADDRESS");
+        static const int INVALID_EMAIL_HASH = HashingUtils::HashString("INVALID_EMAIL");
         static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
 
 
@@ -49,6 +51,10 @@ namespace Aws
           else if (hashCode == INVALID_ADDRESS_HASH)
           {
             return CreateAccountFailureReason::INVALID_ADDRESS;
+          }
+          else if (hashCode == INVALID_EMAIL_HASH)
+          {
+            return CreateAccountFailureReason::INVALID_EMAIL;
           }
           else if (hashCode == INTERNAL_FAILURE_HASH)
           {
@@ -74,6 +80,8 @@ namespace Aws
             return "EMAIL_ALREADY_EXISTS";
           case CreateAccountFailureReason::INVALID_ADDRESS:
             return "INVALID_ADDRESS";
+          case CreateAccountFailureReason::INVALID_EMAIL:
+            return "INVALID_EMAIL";
           case CreateAccountFailureReason::INTERNAL_FAILURE:
             return "INTERNAL_FAILURE";
           default:

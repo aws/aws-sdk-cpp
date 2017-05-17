@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   * 
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -413,6 +413,10 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
             curl_easy_setopt(connectionHandle, CURLOPT_PROXYUSERNAME, m_proxyUserName.c_str());
             curl_easy_setopt(connectionHandle, CURLOPT_PROXYPASSWORD, m_proxyPassword.c_str());
         }
+        else
+        {
+            curl_easy_setopt(connectionHandle, CURLOPT_PROXY, "");
+        }
 
         if (request.GetContentBody())
         {
@@ -560,9 +564,9 @@ size_t CurlHttpClient::ReadBody(char* ptr, size_t size, size_t nmemb, void* user
     HttpRequest* request = context->m_request;
     std::shared_ptr<Aws::IOStream> ioStream = request->GetContentBody();
 
-    if (ioStream != nullptr && size * nmemb)
+    const size_t amountToRead = size * nmemb;
+    if (ioStream != nullptr && amountToRead > 0)
     {
-        size_t amountToRead = size * nmemb;
         ioStream->read(ptr, amountToRead);
         size_t amountRead = static_cast<size_t>(ioStream->gcount());
         auto& sentHandler = request->GetDataSentEventHandler();

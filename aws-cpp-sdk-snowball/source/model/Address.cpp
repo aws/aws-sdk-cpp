@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/snowball/model/Address.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
@@ -40,7 +41,9 @@ Address::Address() :
     m_landmarkHasBeenSet(false),
     m_countryHasBeenSet(false),
     m_postalCodeHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false)
+    m_phoneNumberHasBeenSet(false),
+    m_isRestricted(false),
+    m_isRestrictedHasBeenSet(false)
 {
 }
 
@@ -57,7 +60,9 @@ Address::Address(const JsonValue& jsonValue) :
     m_landmarkHasBeenSet(false),
     m_countryHasBeenSet(false),
     m_postalCodeHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false)
+    m_phoneNumberHasBeenSet(false),
+    m_isRestricted(false),
+    m_isRestrictedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -155,6 +160,13 @@ Address& Address::operator =(const JsonValue& jsonValue)
     m_phoneNumberHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IsRestricted"))
+  {
+    m_isRestricted = jsonValue.GetBool("IsRestricted");
+
+    m_isRestrictedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -237,6 +249,12 @@ JsonValue Address::Jsonize() const
   if(m_phoneNumberHasBeenSet)
   {
    payload.WithString("PhoneNumber", m_phoneNumber);
+
+  }
+
+  if(m_isRestrictedHasBeenSet)
+  {
+   payload.WithBool("IsRestricted", m_isRestricted);
 
   }
 

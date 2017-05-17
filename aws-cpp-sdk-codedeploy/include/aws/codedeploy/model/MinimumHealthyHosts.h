@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/MinimumHealthyHostsType.h>
@@ -78,7 +79,9 @@ namespace Model
      * instances but one are kept in a healthy state during the deployment. Although
      * this allows one instance at a time to be taken offline for a new deployment, it
      * also means that if the deployment to the last instance fails, the overall
-     * deployment still succeeds.</p> </note>
+     * deployment still succeeds.</p> </note> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
+     * CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
      */
     inline const MinimumHealthyHostsType& GetType() const{ return m_type; }
 
@@ -101,7 +104,9 @@ namespace Model
      * instances but one are kept in a healthy state during the deployment. Although
      * this allows one instance at a time to be taken offline for a new deployment, it
      * also means that if the deployment to the last instance fails, the overall
-     * deployment still succeeds.</p> </note>
+     * deployment still succeeds.</p> </note> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
+     * CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
      */
     inline void SetType(const MinimumHealthyHostsType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -124,7 +129,9 @@ namespace Model
      * instances but one are kept in a healthy state during the deployment. Although
      * this allows one instance at a time to be taken offline for a new deployment, it
      * also means that if the deployment to the last instance fails, the overall
-     * deployment still succeeds.</p> </note>
+     * deployment still succeeds.</p> </note> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
+     * CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
      */
     inline void SetType(MinimumHealthyHostsType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -147,7 +154,9 @@ namespace Model
      * instances but one are kept in a healthy state during the deployment. Although
      * this allows one instance at a time to be taken offline for a new deployment, it
      * also means that if the deployment to the last instance fails, the overall
-     * deployment still succeeds.</p> </note>
+     * deployment still succeeds.</p> </note> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
+     * CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
      */
     inline MinimumHealthyHosts& WithType(const MinimumHealthyHostsType& value) { SetType(value); return *this;}
 
@@ -170,7 +179,9 @@ namespace Model
      * instances but one are kept in a healthy state during the deployment. Although
      * this allows one instance at a time to be taken offline for a new deployment, it
      * also means that if the deployment to the last instance fails, the overall
-     * deployment still succeeds.</p> </note>
+     * deployment still succeeds.</p> </note> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
+     * CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
      */
     inline MinimumHealthyHosts& WithType(MinimumHealthyHostsType&& value) { SetType(std::move(value)); return *this;}
 

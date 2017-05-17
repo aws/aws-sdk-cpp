@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/CloudFormationRequest.h>
@@ -226,9 +227,9 @@ namespace Model
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
      * resources. </p> <p>To specify resources in a nested stack, use the following
-     * format: <code>NestedStackName.ResourceLogicalID</code>. You can specify a nested
-     * stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code>
-     * resource) only if it's in one of the following states:
+     * format: <code>NestedStackName.ResourceLogicalID</code>. If the
+     * <code>ResourceLogicalID</code> is a stack resource (<code>Type:
+     * AWS::CloudFormation::Stack</code>), it must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
      * <code>DELETE_FAILED</code>. </p>
      */
@@ -256,9 +257,9 @@ namespace Model
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
      * resources. </p> <p>To specify resources in a nested stack, use the following
-     * format: <code>NestedStackName.ResourceLogicalID</code>. You can specify a nested
-     * stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code>
-     * resource) only if it's in one of the following states:
+     * format: <code>NestedStackName.ResourceLogicalID</code>. If the
+     * <code>ResourceLogicalID</code> is a stack resource (<code>Type:
+     * AWS::CloudFormation::Stack</code>), it must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
      * <code>DELETE_FAILED</code>. </p>
      */
@@ -286,9 +287,9 @@ namespace Model
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
      * resources. </p> <p>To specify resources in a nested stack, use the following
-     * format: <code>NestedStackName.ResourceLogicalID</code>. You can specify a nested
-     * stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code>
-     * resource) only if it's in one of the following states:
+     * format: <code>NestedStackName.ResourceLogicalID</code>. If the
+     * <code>ResourceLogicalID</code> is a stack resource (<code>Type:
+     * AWS::CloudFormation::Stack</code>), it must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
      * <code>DELETE_FAILED</code>. </p>
      */
@@ -316,9 +317,9 @@ namespace Model
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
      * resources. </p> <p>To specify resources in a nested stack, use the following
-     * format: <code>NestedStackName.ResourceLogicalID</code>. You can specify a nested
-     * stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code>
-     * resource) only if it's in one of the following states:
+     * format: <code>NestedStackName.ResourceLogicalID</code>. If the
+     * <code>ResourceLogicalID</code> is a stack resource (<code>Type:
+     * AWS::CloudFormation::Stack</code>), it must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
      * <code>DELETE_FAILED</code>. </p>
      */
@@ -346,9 +347,9 @@ namespace Model
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
      * resources. </p> <p>To specify resources in a nested stack, use the following
-     * format: <code>NestedStackName.ResourceLogicalID</code>. You can specify a nested
-     * stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code>
-     * resource) only if it's in one of the following states:
+     * format: <code>NestedStackName.ResourceLogicalID</code>. If the
+     * <code>ResourceLogicalID</code> is a stack resource (<code>Type:
+     * AWS::CloudFormation::Stack</code>), it must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
      * <code>DELETE_FAILED</code>. </p>
      */
@@ -376,9 +377,9 @@ namespace Model
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
      * resources. </p> <p>To specify resources in a nested stack, use the following
-     * format: <code>NestedStackName.ResourceLogicalID</code>. You can specify a nested
-     * stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code>
-     * resource) only if it's in one of the following states:
+     * format: <code>NestedStackName.ResourceLogicalID</code>. If the
+     * <code>ResourceLogicalID</code> is a stack resource (<code>Type:
+     * AWS::CloudFormation::Stack</code>), it must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
      * <code>DELETE_FAILED</code>. </p>
      */
@@ -406,9 +407,9 @@ namespace Model
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
      * resources. </p> <p>To specify resources in a nested stack, use the following
-     * format: <code>NestedStackName.ResourceLogicalID</code>. You can specify a nested
-     * stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code>
-     * resource) only if it's in one of the following states:
+     * format: <code>NestedStackName.ResourceLogicalID</code>. If the
+     * <code>ResourceLogicalID</code> is a stack resource (<code>Type:
+     * AWS::CloudFormation::Stack</code>), it must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
      * <code>DELETE_FAILED</code>. </p>
      */
@@ -436,13 +437,76 @@ namespace Model
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
      * resources. </p> <p>To specify resources in a nested stack, use the following
-     * format: <code>NestedStackName.ResourceLogicalID</code>. You can specify a nested
-     * stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code>
-     * resource) only if it's in one of the following states:
+     * format: <code>NestedStackName.ResourceLogicalID</code>. If the
+     * <code>ResourceLogicalID</code> is a stack resource (<code>Type:
+     * AWS::CloudFormation::Stack</code>), it must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
      * <code>DELETE_FAILED</code>. </p>
      */
     inline ContinueUpdateRollbackRequest& AddResourcesToSkip(const char* value) { m_resourcesToSkipHasBeenSet = true; m_resourcesToSkip.push_back(value); return *this; }
+
+    /**
+     * <p>A unique identifier for this <code>ContinueUpdateRollback</code> request.
+     * Specify this token if you plan to retry requests so that AWS CloudFormation
+     * knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to
+     * ensure that AWS CloudFormation successfully received them.</p>
+     */
+    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A unique identifier for this <code>ContinueUpdateRollback</code> request.
+     * Specify this token if you plan to retry requests so that AWS CloudFormation
+     * knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to
+     * ensure that AWS CloudFormation successfully received them.</p>
+     */
+    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
+
+    /**
+     * <p>A unique identifier for this <code>ContinueUpdateRollback</code> request.
+     * Specify this token if you plan to retry requests so that AWS CloudFormation
+     * knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to
+     * ensure that AWS CloudFormation successfully received them.</p>
+     */
+    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
+
+    /**
+     * <p>A unique identifier for this <code>ContinueUpdateRollback</code> request.
+     * Specify this token if you plan to retry requests so that AWS CloudFormation
+     * knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to
+     * ensure that AWS CloudFormation successfully received them.</p>
+     */
+    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
+
+    /**
+     * <p>A unique identifier for this <code>ContinueUpdateRollback</code> request.
+     * Specify this token if you plan to retry requests so that AWS CloudFormation
+     * knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to
+     * ensure that AWS CloudFormation successfully received them.</p>
+     */
+    inline ContinueUpdateRollbackRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
+
+    /**
+     * <p>A unique identifier for this <code>ContinueUpdateRollback</code> request.
+     * Specify this token if you plan to retry requests so that AWS CloudFormation
+     * knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to
+     * ensure that AWS CloudFormation successfully received them.</p>
+     */
+    inline ContinueUpdateRollbackRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique identifier for this <code>ContinueUpdateRollback</code> request.
+     * Specify this token if you plan to retry requests so that AWS CloudFormation
+     * knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to
+     * ensure that AWS CloudFormation successfully received them.</p>
+     */
+    inline ContinueUpdateRollbackRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
   private:
     Aws::String m_stackName;
@@ -451,6 +515,8 @@ namespace Model
     bool m_roleARNHasBeenSet;
     Aws::Vector<Aws::String> m_resourcesToSkip;
     bool m_resourcesToSkipHasBeenSet;
+    Aws::String m_clientRequestToken;
+    bool m_clientRequestTokenHasBeenSet;
   };
 
 } // namespace Model

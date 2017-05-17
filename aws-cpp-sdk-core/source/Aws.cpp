@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,8 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+#include <aws/core/Version.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/Aws.h>
 #include <aws/core/utils/logging/AWSLogging.h>
 #include <aws/core/utils/logging/DefaultLogSystem.h>
@@ -40,6 +42,8 @@ namespace Aws
                 Aws::Utils::Logging::InitializeAWSLogging(
                         Aws::MakeShared<Aws::Utils::Logging::DefaultLogSystem>(ALLOCATION_TAG, options.loggingOptions.logLevel, options.loggingOptions.defaultLogPrefix));
             }
+            // For users to better debugging in case multiple versions of SDK installed
+            AWS_LOGSTREAM_INFO(ALLOCATION_TAG, "Initiate AWS SDK for C++ with Version:" << Aws::String(Aws::Version::GetVersionString()));
         }
 
         if(options.cryptoOptions.aes_CBCFactory_create_fn)

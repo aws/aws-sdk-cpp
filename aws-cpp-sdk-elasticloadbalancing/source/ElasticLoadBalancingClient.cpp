@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
@@ -39,6 +40,7 @@
 #include <aws/elasticloadbalancing/model/DeleteLoadBalancerListenersRequest.h>
 #include <aws/elasticloadbalancing/model/DeleteLoadBalancerPolicyRequest.h>
 #include <aws/elasticloadbalancing/model/DeregisterInstancesFromLoadBalancerRequest.h>
+#include <aws/elasticloadbalancing/model/DescribeAccountLimitsRequest.h>
 #include <aws/elasticloadbalancing/model/DescribeInstanceHealthRequest.h>
 #include <aws/elasticloadbalancing/model/DescribeLoadBalancerAttributesRequest.h>
 #include <aws/elasticloadbalancing/model/DescribeLoadBalancerPoliciesRequest.h>
@@ -133,7 +135,8 @@ Aws::String ElasticLoadBalancingClient::ConvertRequestToPresignedUrl(const Amazo
 AddTagsOutcome ElasticLoadBalancingClient::AddTags(const AddTagsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -166,7 +169,8 @@ void ElasticLoadBalancingClient::AddTagsAsyncHelper(const AddTagsRequest& reques
 ApplySecurityGroupsToLoadBalancerOutcome ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancer(const ApplySecurityGroupsToLoadBalancerRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -199,7 +203,8 @@ void ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancerAsyncHelper(co
 AttachLoadBalancerToSubnetsOutcome ElasticLoadBalancingClient::AttachLoadBalancerToSubnets(const AttachLoadBalancerToSubnetsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -232,7 +237,8 @@ void ElasticLoadBalancingClient::AttachLoadBalancerToSubnetsAsyncHelper(const At
 ConfigureHealthCheckOutcome ElasticLoadBalancingClient::ConfigureHealthCheck(const ConfigureHealthCheckRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -265,7 +271,8 @@ void ElasticLoadBalancingClient::ConfigureHealthCheckAsyncHelper(const Configure
 CreateAppCookieStickinessPolicyOutcome ElasticLoadBalancingClient::CreateAppCookieStickinessPolicy(const CreateAppCookieStickinessPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -298,7 +305,8 @@ void ElasticLoadBalancingClient::CreateAppCookieStickinessPolicyAsyncHelper(cons
 CreateLBCookieStickinessPolicyOutcome ElasticLoadBalancingClient::CreateLBCookieStickinessPolicy(const CreateLBCookieStickinessPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -331,7 +339,8 @@ void ElasticLoadBalancingClient::CreateLBCookieStickinessPolicyAsyncHelper(const
 CreateLoadBalancerOutcome ElasticLoadBalancingClient::CreateLoadBalancer(const CreateLoadBalancerRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -364,7 +373,8 @@ void ElasticLoadBalancingClient::CreateLoadBalancerAsyncHelper(const CreateLoadB
 CreateLoadBalancerListenersOutcome ElasticLoadBalancingClient::CreateLoadBalancerListeners(const CreateLoadBalancerListenersRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -397,7 +407,8 @@ void ElasticLoadBalancingClient::CreateLoadBalancerListenersAsyncHelper(const Cr
 CreateLoadBalancerPolicyOutcome ElasticLoadBalancingClient::CreateLoadBalancerPolicy(const CreateLoadBalancerPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -430,7 +441,8 @@ void ElasticLoadBalancingClient::CreateLoadBalancerPolicyAsyncHelper(const Creat
 DeleteLoadBalancerOutcome ElasticLoadBalancingClient::DeleteLoadBalancer(const DeleteLoadBalancerRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -463,7 +475,8 @@ void ElasticLoadBalancingClient::DeleteLoadBalancerAsyncHelper(const DeleteLoadB
 DeleteLoadBalancerListenersOutcome ElasticLoadBalancingClient::DeleteLoadBalancerListeners(const DeleteLoadBalancerListenersRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -496,7 +509,8 @@ void ElasticLoadBalancingClient::DeleteLoadBalancerListenersAsyncHelper(const De
 DeleteLoadBalancerPolicyOutcome ElasticLoadBalancingClient::DeleteLoadBalancerPolicy(const DeleteLoadBalancerPolicyRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -529,7 +543,8 @@ void ElasticLoadBalancingClient::DeleteLoadBalancerPolicyAsyncHelper(const Delet
 DeregisterInstancesFromLoadBalancerOutcome ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancer(const DeregisterInstancesFromLoadBalancerRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -559,10 +574,45 @@ void ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancerAsyncHelper(
   handler(this, request, DeregisterInstancesFromLoadBalancer(request), context);
 }
 
+DescribeAccountLimitsOutcome ElasticLoadBalancingClient::DescribeAccountLimits(const DescribeAccountLimitsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri;
+  ss << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeAccountLimitsOutcome(DescribeAccountLimitsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeAccountLimitsOutcome(outcome.GetError());
+  }
+}
+
+DescribeAccountLimitsOutcomeCallable ElasticLoadBalancingClient::DescribeAccountLimitsCallable(const DescribeAccountLimitsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAccountLimitsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAccountLimits(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticLoadBalancingClient::DescribeAccountLimitsAsync(const DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountLimitsAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticLoadBalancingClient::DescribeAccountLimitsAsyncHelper(const DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAccountLimits(request), context);
+}
+
 DescribeInstanceHealthOutcome ElasticLoadBalancingClient::DescribeInstanceHealth(const DescribeInstanceHealthRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -595,7 +645,8 @@ void ElasticLoadBalancingClient::DescribeInstanceHealthAsyncHelper(const Describ
 DescribeLoadBalancerAttributesOutcome ElasticLoadBalancingClient::DescribeLoadBalancerAttributes(const DescribeLoadBalancerAttributesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -628,7 +679,8 @@ void ElasticLoadBalancingClient::DescribeLoadBalancerAttributesAsyncHelper(const
 DescribeLoadBalancerPoliciesOutcome ElasticLoadBalancingClient::DescribeLoadBalancerPolicies(const DescribeLoadBalancerPoliciesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -661,7 +713,8 @@ void ElasticLoadBalancingClient::DescribeLoadBalancerPoliciesAsyncHelper(const D
 DescribeLoadBalancerPolicyTypesOutcome ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypes(const DescribeLoadBalancerPolicyTypesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -694,7 +747,8 @@ void ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypesAsyncHelper(cons
 DescribeLoadBalancersOutcome ElasticLoadBalancingClient::DescribeLoadBalancers(const DescribeLoadBalancersRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -727,7 +781,8 @@ void ElasticLoadBalancingClient::DescribeLoadBalancersAsyncHelper(const Describe
 DescribeTagsOutcome ElasticLoadBalancingClient::DescribeTags(const DescribeTagsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -760,7 +815,8 @@ void ElasticLoadBalancingClient::DescribeTagsAsyncHelper(const DescribeTagsReque
 DetachLoadBalancerFromSubnetsOutcome ElasticLoadBalancingClient::DetachLoadBalancerFromSubnets(const DetachLoadBalancerFromSubnetsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -793,7 +849,8 @@ void ElasticLoadBalancingClient::DetachLoadBalancerFromSubnetsAsyncHelper(const 
 DisableAvailabilityZonesForLoadBalancerOutcome ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancer(const DisableAvailabilityZonesForLoadBalancerRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -826,7 +883,8 @@ void ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancerAsyncHel
 EnableAvailabilityZonesForLoadBalancerOutcome ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancer(const EnableAvailabilityZonesForLoadBalancerRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -859,7 +917,8 @@ void ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancerAsyncHelp
 ModifyLoadBalancerAttributesOutcome ElasticLoadBalancingClient::ModifyLoadBalancerAttributes(const ModifyLoadBalancerAttributesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -892,7 +951,8 @@ void ElasticLoadBalancingClient::ModifyLoadBalancerAttributesAsyncHelper(const M
 RegisterInstancesWithLoadBalancerOutcome ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancer(const RegisterInstancesWithLoadBalancerRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -925,7 +985,8 @@ void ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancerAsyncHelper(co
 RemoveTagsOutcome ElasticLoadBalancingClient::RemoveTags(const RemoveTagsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -958,7 +1019,8 @@ void ElasticLoadBalancingClient::RemoveTagsAsyncHelper(const RemoveTagsRequest& 
 SetLoadBalancerListenerSSLCertificateOutcome ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificate(const SetLoadBalancerListenerSSLCertificateRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -991,7 +1053,8 @@ void ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificateAsyncHelpe
 SetLoadBalancerPoliciesForBackendServerOutcome ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServer(const SetLoadBalancerPoliciesForBackendServerRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1024,7 +1087,8 @@ void ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServerAsyncHel
 SetLoadBalancerPoliciesOfListenerOutcome ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListener(const SetLoadBalancerPoliciesOfListenerRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {

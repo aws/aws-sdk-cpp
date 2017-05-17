@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -271,27 +272,77 @@ namespace Model
     inline CreateAccountStatus& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>If the request failed, a description of the reason for the failure.</p>
+     * <p>If the request failed, a description of the reason for the failure.</p> <ul>
+     * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you
+     * have reached the limit on the number of accounts in your organization.</p> </li>
+     * <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another
+     * AWS account with that email address already exists.</p> </li> <li>
+     * <p>INVALID_ADDRESS: The account could not be created because the address you
+     * provided is not valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be
+     * created because the email address you provided is not valid.</p> </li> <li>
+     * <p>INTERNAL_FAILURE: The account could not be created because of an internal
+     * failure. Try again later. If the problem persists, contact Customer Support.</p>
+     * </li> </ul>
      */
     inline const CreateAccountFailureReason& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p>If the request failed, a description of the reason for the failure.</p>
+     * <p>If the request failed, a description of the reason for the failure.</p> <ul>
+     * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you
+     * have reached the limit on the number of accounts in your organization.</p> </li>
+     * <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another
+     * AWS account with that email address already exists.</p> </li> <li>
+     * <p>INVALID_ADDRESS: The account could not be created because the address you
+     * provided is not valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be
+     * created because the email address you provided is not valid.</p> </li> <li>
+     * <p>INTERNAL_FAILURE: The account could not be created because of an internal
+     * failure. Try again later. If the problem persists, contact Customer Support.</p>
+     * </li> </ul>
      */
     inline void SetFailureReason(const CreateAccountFailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
     /**
-     * <p>If the request failed, a description of the reason for the failure.</p>
+     * <p>If the request failed, a description of the reason for the failure.</p> <ul>
+     * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you
+     * have reached the limit on the number of accounts in your organization.</p> </li>
+     * <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another
+     * AWS account with that email address already exists.</p> </li> <li>
+     * <p>INVALID_ADDRESS: The account could not be created because the address you
+     * provided is not valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be
+     * created because the email address you provided is not valid.</p> </li> <li>
+     * <p>INTERNAL_FAILURE: The account could not be created because of an internal
+     * failure. Try again later. If the problem persists, contact Customer Support.</p>
+     * </li> </ul>
      */
     inline void SetFailureReason(CreateAccountFailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
     /**
-     * <p>If the request failed, a description of the reason for the failure.</p>
+     * <p>If the request failed, a description of the reason for the failure.</p> <ul>
+     * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you
+     * have reached the limit on the number of accounts in your organization.</p> </li>
+     * <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another
+     * AWS account with that email address already exists.</p> </li> <li>
+     * <p>INVALID_ADDRESS: The account could not be created because the address you
+     * provided is not valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be
+     * created because the email address you provided is not valid.</p> </li> <li>
+     * <p>INTERNAL_FAILURE: The account could not be created because of an internal
+     * failure. Try again later. If the problem persists, contact Customer Support.</p>
+     * </li> </ul>
      */
     inline CreateAccountStatus& WithFailureReason(const CreateAccountFailureReason& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p>If the request failed, a description of the reason for the failure.</p>
+     * <p>If the request failed, a description of the reason for the failure.</p> <ul>
+     * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you
+     * have reached the limit on the number of accounts in your organization.</p> </li>
+     * <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another
+     * AWS account with that email address already exists.</p> </li> <li>
+     * <p>INVALID_ADDRESS: The account could not be created because the address you
+     * provided is not valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be
+     * created because the email address you provided is not valid.</p> </li> <li>
+     * <p>INTERNAL_FAILURE: The account could not be created because of an internal
+     * failure. Try again later. If the problem persists, contact Customer Support.</p>
+     * </li> </ul>
      */
     inline CreateAccountStatus& WithFailureReason(CreateAccountFailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
 

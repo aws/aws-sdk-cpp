@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/rds/model/DBClusterSnapshot.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
@@ -51,7 +52,10 @@ DBClusterSnapshot::DBClusterSnapshot() :
     m_storageEncrypted(false),
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_dBClusterSnapshotArnHasBeenSet(false)
+    m_dBClusterSnapshotArnHasBeenSet(false),
+    m_sourceDBClusterSnapshotArnHasBeenSet(false),
+    m_iAMDatabaseAuthenticationEnabled(false),
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
 {
 }
 
@@ -77,7 +81,10 @@ DBClusterSnapshot::DBClusterSnapshot(const XmlNode& xmlNode) :
     m_storageEncrypted(false),
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_dBClusterSnapshotArnHasBeenSet(false)
+    m_dBClusterSnapshotArnHasBeenSet(false),
+    m_sourceDBClusterSnapshotArnHasBeenSet(false),
+    m_iAMDatabaseAuthenticationEnabled(false),
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -202,6 +209,18 @@ DBClusterSnapshot& DBClusterSnapshot::operator =(const XmlNode& xmlNode)
       m_dBClusterSnapshotArn = StringUtils::Trim(dBClusterSnapshotArnNode.GetText().c_str());
       m_dBClusterSnapshotArnHasBeenSet = true;
     }
+    XmlNode sourceDBClusterSnapshotArnNode = resultNode.FirstChild("SourceDBClusterSnapshotArn");
+    if(!sourceDBClusterSnapshotArnNode.IsNull())
+    {
+      m_sourceDBClusterSnapshotArn = StringUtils::Trim(sourceDBClusterSnapshotArnNode.GetText().c_str());
+      m_sourceDBClusterSnapshotArnHasBeenSet = true;
+    }
+    XmlNode iAMDatabaseAuthenticationEnabledNode = resultNode.FirstChild("IAMDatabaseAuthenticationEnabled");
+    if(!iAMDatabaseAuthenticationEnabledNode.IsNull())
+    {
+      m_iAMDatabaseAuthenticationEnabled = StringUtils::ConvertToBool(StringUtils::Trim(iAMDatabaseAuthenticationEnabledNode.GetText().c_str()).c_str());
+      m_iAMDatabaseAuthenticationEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -303,6 +322,16 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".DBClusterSnapshotArn=" << StringUtils::URLEncode(m_dBClusterSnapshotArn.c_str()) << "&";
   }
 
+  if(m_sourceDBClusterSnapshotArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SourceDBClusterSnapshotArn=" << StringUtils::URLEncode(m_sourceDBClusterSnapshotArn.c_str()) << "&";
+  }
+
+  if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
+  }
+
 }
 
 void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -382,6 +411,14 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_dBClusterSnapshotArnHasBeenSet)
   {
       oStream << location << ".DBClusterSnapshotArn=" << StringUtils::URLEncode(m_dBClusterSnapshotArn.c_str()) << "&";
+  }
+  if(m_sourceDBClusterSnapshotArnHasBeenSet)
+  {
+      oStream << location << ".SourceDBClusterSnapshotArn=" << StringUtils::URLEncode(m_sourceDBClusterSnapshotArn.c_str()) << "&";
+  }
+  if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
+  {
+      oStream << location << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
   }
 }
 

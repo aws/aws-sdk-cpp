@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
@@ -146,7 +147,8 @@ Aws::String ElasticBeanstalkClient::ConvertRequestToPresignedUrl(const AmazonSer
 AbortEnvironmentUpdateOutcome ElasticBeanstalkClient::AbortEnvironmentUpdate(const AbortEnvironmentUpdateRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -179,7 +181,8 @@ void ElasticBeanstalkClient::AbortEnvironmentUpdateAsyncHelper(const AbortEnviro
 ApplyEnvironmentManagedActionOutcome ElasticBeanstalkClient::ApplyEnvironmentManagedAction(const ApplyEnvironmentManagedActionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -212,7 +215,8 @@ void ElasticBeanstalkClient::ApplyEnvironmentManagedActionAsyncHelper(const Appl
 CheckDNSAvailabilityOutcome ElasticBeanstalkClient::CheckDNSAvailability(const CheckDNSAvailabilityRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -245,7 +249,8 @@ void ElasticBeanstalkClient::CheckDNSAvailabilityAsyncHelper(const CheckDNSAvail
 ComposeEnvironmentsOutcome ElasticBeanstalkClient::ComposeEnvironments(const ComposeEnvironmentsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -278,7 +283,8 @@ void ElasticBeanstalkClient::ComposeEnvironmentsAsyncHelper(const ComposeEnviron
 CreateApplicationOutcome ElasticBeanstalkClient::CreateApplication(const CreateApplicationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -311,7 +317,8 @@ void ElasticBeanstalkClient::CreateApplicationAsyncHelper(const CreateApplicatio
 CreateApplicationVersionOutcome ElasticBeanstalkClient::CreateApplicationVersion(const CreateApplicationVersionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -344,7 +351,8 @@ void ElasticBeanstalkClient::CreateApplicationVersionAsyncHelper(const CreateApp
 CreateConfigurationTemplateOutcome ElasticBeanstalkClient::CreateConfigurationTemplate(const CreateConfigurationTemplateRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -377,7 +385,8 @@ void ElasticBeanstalkClient::CreateConfigurationTemplateAsyncHelper(const Create
 CreateEnvironmentOutcome ElasticBeanstalkClient::CreateEnvironment(const CreateEnvironmentRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -410,7 +419,8 @@ void ElasticBeanstalkClient::CreateEnvironmentAsyncHelper(const CreateEnvironmen
 CreatePlatformVersionOutcome ElasticBeanstalkClient::CreatePlatformVersion(const CreatePlatformVersionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -443,7 +453,8 @@ void ElasticBeanstalkClient::CreatePlatformVersionAsyncHelper(const CreatePlatfo
 CreateStorageLocationOutcome ElasticBeanstalkClient::CreateStorageLocation(const CreateStorageLocationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -476,7 +487,8 @@ void ElasticBeanstalkClient::CreateStorageLocationAsyncHelper(const CreateStorag
 DeleteApplicationOutcome ElasticBeanstalkClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -509,7 +521,8 @@ void ElasticBeanstalkClient::DeleteApplicationAsyncHelper(const DeleteApplicatio
 DeleteApplicationVersionOutcome ElasticBeanstalkClient::DeleteApplicationVersion(const DeleteApplicationVersionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -542,7 +555,8 @@ void ElasticBeanstalkClient::DeleteApplicationVersionAsyncHelper(const DeleteApp
 DeleteConfigurationTemplateOutcome ElasticBeanstalkClient::DeleteConfigurationTemplate(const DeleteConfigurationTemplateRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -575,7 +589,8 @@ void ElasticBeanstalkClient::DeleteConfigurationTemplateAsyncHelper(const Delete
 DeleteEnvironmentConfigurationOutcome ElasticBeanstalkClient::DeleteEnvironmentConfiguration(const DeleteEnvironmentConfigurationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -608,7 +623,8 @@ void ElasticBeanstalkClient::DeleteEnvironmentConfigurationAsyncHelper(const Del
 DeletePlatformVersionOutcome ElasticBeanstalkClient::DeletePlatformVersion(const DeletePlatformVersionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -641,7 +657,8 @@ void ElasticBeanstalkClient::DeletePlatformVersionAsyncHelper(const DeletePlatfo
 DescribeApplicationVersionsOutcome ElasticBeanstalkClient::DescribeApplicationVersions(const DescribeApplicationVersionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -674,7 +691,8 @@ void ElasticBeanstalkClient::DescribeApplicationVersionsAsyncHelper(const Descri
 DescribeApplicationsOutcome ElasticBeanstalkClient::DescribeApplications(const DescribeApplicationsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -707,7 +725,8 @@ void ElasticBeanstalkClient::DescribeApplicationsAsyncHelper(const DescribeAppli
 DescribeConfigurationOptionsOutcome ElasticBeanstalkClient::DescribeConfigurationOptions(const DescribeConfigurationOptionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -740,7 +759,8 @@ void ElasticBeanstalkClient::DescribeConfigurationOptionsAsyncHelper(const Descr
 DescribeConfigurationSettingsOutcome ElasticBeanstalkClient::DescribeConfigurationSettings(const DescribeConfigurationSettingsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -773,7 +793,8 @@ void ElasticBeanstalkClient::DescribeConfigurationSettingsAsyncHelper(const Desc
 DescribeEnvironmentHealthOutcome ElasticBeanstalkClient::DescribeEnvironmentHealth(const DescribeEnvironmentHealthRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -806,7 +827,8 @@ void ElasticBeanstalkClient::DescribeEnvironmentHealthAsyncHelper(const Describe
 DescribeEnvironmentManagedActionHistoryOutcome ElasticBeanstalkClient::DescribeEnvironmentManagedActionHistory(const DescribeEnvironmentManagedActionHistoryRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -839,7 +861,8 @@ void ElasticBeanstalkClient::DescribeEnvironmentManagedActionHistoryAsyncHelper(
 DescribeEnvironmentManagedActionsOutcome ElasticBeanstalkClient::DescribeEnvironmentManagedActions(const DescribeEnvironmentManagedActionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -872,7 +895,8 @@ void ElasticBeanstalkClient::DescribeEnvironmentManagedActionsAsyncHelper(const 
 DescribeEnvironmentResourcesOutcome ElasticBeanstalkClient::DescribeEnvironmentResources(const DescribeEnvironmentResourcesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -905,7 +929,8 @@ void ElasticBeanstalkClient::DescribeEnvironmentResourcesAsyncHelper(const Descr
 DescribeEnvironmentsOutcome ElasticBeanstalkClient::DescribeEnvironments(const DescribeEnvironmentsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -938,7 +963,8 @@ void ElasticBeanstalkClient::DescribeEnvironmentsAsyncHelper(const DescribeEnvir
 DescribeEventsOutcome ElasticBeanstalkClient::DescribeEvents(const DescribeEventsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -971,7 +997,8 @@ void ElasticBeanstalkClient::DescribeEventsAsyncHelper(const DescribeEventsReque
 DescribeInstancesHealthOutcome ElasticBeanstalkClient::DescribeInstancesHealth(const DescribeInstancesHealthRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1004,7 +1031,8 @@ void ElasticBeanstalkClient::DescribeInstancesHealthAsyncHelper(const DescribeIn
 DescribePlatformVersionOutcome ElasticBeanstalkClient::DescribePlatformVersion(const DescribePlatformVersionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1037,7 +1065,8 @@ void ElasticBeanstalkClient::DescribePlatformVersionAsyncHelper(const DescribePl
 ListAvailableSolutionStacksOutcome ElasticBeanstalkClient::ListAvailableSolutionStacks(const ListAvailableSolutionStacksRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1070,7 +1099,8 @@ void ElasticBeanstalkClient::ListAvailableSolutionStacksAsyncHelper(const ListAv
 ListPlatformVersionsOutcome ElasticBeanstalkClient::ListPlatformVersions(const ListPlatformVersionsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1103,7 +1133,8 @@ void ElasticBeanstalkClient::ListPlatformVersionsAsyncHelper(const ListPlatformV
 RebuildEnvironmentOutcome ElasticBeanstalkClient::RebuildEnvironment(const RebuildEnvironmentRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1136,7 +1167,8 @@ void ElasticBeanstalkClient::RebuildEnvironmentAsyncHelper(const RebuildEnvironm
 RequestEnvironmentInfoOutcome ElasticBeanstalkClient::RequestEnvironmentInfo(const RequestEnvironmentInfoRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1169,7 +1201,8 @@ void ElasticBeanstalkClient::RequestEnvironmentInfoAsyncHelper(const RequestEnvi
 RestartAppServerOutcome ElasticBeanstalkClient::RestartAppServer(const RestartAppServerRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1202,7 +1235,8 @@ void ElasticBeanstalkClient::RestartAppServerAsyncHelper(const RestartAppServerR
 RetrieveEnvironmentInfoOutcome ElasticBeanstalkClient::RetrieveEnvironmentInfo(const RetrieveEnvironmentInfoRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1235,7 +1269,8 @@ void ElasticBeanstalkClient::RetrieveEnvironmentInfoAsyncHelper(const RetrieveEn
 SwapEnvironmentCNAMEsOutcome ElasticBeanstalkClient::SwapEnvironmentCNAMEs(const SwapEnvironmentCNAMEsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1268,7 +1303,8 @@ void ElasticBeanstalkClient::SwapEnvironmentCNAMEsAsyncHelper(const SwapEnvironm
 TerminateEnvironmentOutcome ElasticBeanstalkClient::TerminateEnvironment(const TerminateEnvironmentRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1301,7 +1337,8 @@ void ElasticBeanstalkClient::TerminateEnvironmentAsyncHelper(const TerminateEnvi
 UpdateApplicationOutcome ElasticBeanstalkClient::UpdateApplication(const UpdateApplicationRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1334,7 +1371,8 @@ void ElasticBeanstalkClient::UpdateApplicationAsyncHelper(const UpdateApplicatio
 UpdateApplicationResourceLifecycleOutcome ElasticBeanstalkClient::UpdateApplicationResourceLifecycle(const UpdateApplicationResourceLifecycleRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1367,7 +1405,8 @@ void ElasticBeanstalkClient::UpdateApplicationResourceLifecycleAsyncHelper(const
 UpdateApplicationVersionOutcome ElasticBeanstalkClient::UpdateApplicationVersion(const UpdateApplicationVersionRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1400,7 +1439,8 @@ void ElasticBeanstalkClient::UpdateApplicationVersionAsyncHelper(const UpdateApp
 UpdateConfigurationTemplateOutcome ElasticBeanstalkClient::UpdateConfigurationTemplate(const UpdateConfigurationTemplateRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1433,7 +1473,8 @@ void ElasticBeanstalkClient::UpdateConfigurationTemplateAsyncHelper(const Update
 UpdateEnvironmentOutcome ElasticBeanstalkClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -1466,7 +1507,8 @@ void ElasticBeanstalkClient::UpdateEnvironmentAsyncHelper(const UpdateEnvironmen
 ValidateConfigurationSettingsOutcome ElasticBeanstalkClient::ValidateConfigurationSettings(const ValidateConfigurationSettingsRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+  ss << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {

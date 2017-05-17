@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -191,6 +191,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::String& uri,
                 auto newError = AWSError<CoreErrors>(
                     outcome.GetError().GetErrorType(), outcome.GetError().GetExceptionName(), outcome.GetError().GetMessage(), true);
                 newError.SetResponseHeaders(outcome.GetError().GetResponseHeaders());
+                newError.SetResponseCode(outcome.GetError().GetResponseCode());
                 outcome = newError;
                 //don't sleep at all if clock skew was the problem.
                 sleepMillis = 0;
@@ -363,7 +364,7 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
     if (needsContentMd5 && body && !httpRequest->HasHeader(Http::CONTENT_MD5_HEADER))
     {
         AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Found body, and content-md5 needs to be set" <<
-           ", attempting to compute content-md5");
+            ", attempting to compute content-md5");
 
         //changing the internal state of the hash computation is not a logical state
         //change as far as constness goes for this class. Due to the platform specificness
@@ -371,7 +372,7 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
         //state on some platforms such as windows (but that isn't a concern of this class.
         auto md5HashResult = const_cast<AWSClient*>(this)->m_hash->Calculate(*body);
         body->clear();
-        if(md5HashResult.IsSuccess())
+        if (md5HashResult.IsSuccess())
         {
             httpRequest->SetHeaderValue(Http::CONTENT_MD5_HEADER, HashingUtils::Base64Encode(md5HashResult.GetResult()));
         }
@@ -408,6 +409,16 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, long lo
 
     return "";
 }
+Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, long long expirationInSeconds) const
+{
+    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    if (m_signer->PresignRequest(*request, region, serviceName, expirationInSeconds))
+    {
+        return request->GetURIString();
+    }
+
+    return "";
+}
 
 Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const char* region, long long expirationInSeconds) const
 {
@@ -426,6 +437,19 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& 
     std::shared_ptr<HttpRequest> httpRequest =
         ConvertToRequestForPresigning(request, uri, method, extraParams);
     if (m_signer->PresignRequest(*httpRequest, region, expirationInSeconds))
+    {
+        return httpRequest->GetURIString();
+    }
+
+    return "";
+}
+
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName,
+const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds) const
+{
+    std::shared_ptr<HttpRequest> httpRequest =
+        ConvertToRequestForPresigning(request, uri, method, extraParams);
+    if (m_signer->PresignRequest(*httpRequest, region, serviceName, expirationInSeconds))
     {
         return httpRequest->GetURIString();
     }
@@ -575,6 +599,7 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
     }
 
     error.SetResponseHeaders(httpResponse->GetHeaders());
+    error.SetResponseCode(httpResponse->GetResponseCode());
 
     return error;
 }
@@ -710,5 +735,6 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
     }
 
     error.SetResponseHeaders(httpResponse->GetHeaders());
+    error.SetResponseCode(httpResponse->GetResponseCode());
     return error;
 }

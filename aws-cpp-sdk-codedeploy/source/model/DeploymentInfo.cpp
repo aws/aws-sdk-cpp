@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/codedeploy/model/DeploymentInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
@@ -32,6 +33,7 @@ DeploymentInfo::DeploymentInfo() :
     m_deploymentGroupNameHasBeenSet(false),
     m_deploymentConfigNameHasBeenSet(false),
     m_deploymentIdHasBeenSet(false),
+    m_previousRevisionHasBeenSet(false),
     m_revisionHasBeenSet(false),
     m_status(DeploymentStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -55,7 +57,9 @@ DeploymentInfo::DeploymentInfo() :
     m_instanceTerminationWaitTimeStartedHasBeenSet(false),
     m_blueGreenDeploymentConfigurationHasBeenSet(false),
     m_loadBalancerInfoHasBeenSet(false),
-    m_additionalDeploymentStatusInfoHasBeenSet(false)
+    m_additionalDeploymentStatusInfoHasBeenSet(false),
+    m_fileExistsBehavior(FileExistsBehavior::NOT_SET),
+    m_fileExistsBehaviorHasBeenSet(false)
 {
 }
 
@@ -64,6 +68,7 @@ DeploymentInfo::DeploymentInfo(const JsonValue& jsonValue) :
     m_deploymentGroupNameHasBeenSet(false),
     m_deploymentConfigNameHasBeenSet(false),
     m_deploymentIdHasBeenSet(false),
+    m_previousRevisionHasBeenSet(false),
     m_revisionHasBeenSet(false),
     m_status(DeploymentStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -87,7 +92,9 @@ DeploymentInfo::DeploymentInfo(const JsonValue& jsonValue) :
     m_instanceTerminationWaitTimeStartedHasBeenSet(false),
     m_blueGreenDeploymentConfigurationHasBeenSet(false),
     m_loadBalancerInfoHasBeenSet(false),
-    m_additionalDeploymentStatusInfoHasBeenSet(false)
+    m_additionalDeploymentStatusInfoHasBeenSet(false),
+    m_fileExistsBehavior(FileExistsBehavior::NOT_SET),
+    m_fileExistsBehaviorHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -120,6 +127,13 @@ DeploymentInfo& DeploymentInfo::operator =(const JsonValue& jsonValue)
     m_deploymentId = jsonValue.GetString("deploymentId");
 
     m_deploymentIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("previousRevision"))
+  {
+    m_previousRevision = jsonValue.GetObject("previousRevision");
+
+    m_previousRevisionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("revision"))
@@ -255,6 +269,13 @@ DeploymentInfo& DeploymentInfo::operator =(const JsonValue& jsonValue)
     m_additionalDeploymentStatusInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("fileExistsBehavior"))
+  {
+    m_fileExistsBehavior = FileExistsBehaviorMapper::GetFileExistsBehaviorForName(jsonValue.GetString("fileExistsBehavior"));
+
+    m_fileExistsBehaviorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -283,6 +304,12 @@ JsonValue DeploymentInfo::Jsonize() const
   if(m_deploymentIdHasBeenSet)
   {
    payload.WithString("deploymentId", m_deploymentId);
+
+  }
+
+  if(m_previousRevisionHasBeenSet)
+  {
+   payload.WithObject("previousRevision", m_previousRevision.Jsonize());
 
   }
 
@@ -393,6 +420,11 @@ JsonValue DeploymentInfo::Jsonize() const
   {
    payload.WithString("additionalDeploymentStatusInfo", m_additionalDeploymentStatusInfo);
 
+  }
+
+  if(m_fileExistsBehaviorHasBeenSet)
+  {
+   payload.WithString("fileExistsBehavior", FileExistsBehaviorMapper::GetNameForFileExistsBehavior(m_fileExistsBehavior));
   }
 
   return payload;

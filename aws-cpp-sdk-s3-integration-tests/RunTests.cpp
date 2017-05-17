@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 int main(int argc, char** argv)
 {
     Aws::SDKOptions options;
-
+    options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
     Aws::Testing::InitPlatformTest(options);
     if(argc > 1)
     {

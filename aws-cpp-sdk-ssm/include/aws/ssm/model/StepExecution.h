@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,12 +12,14 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/AutomationExecutionStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/ssm/model/FailureDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
@@ -128,31 +130,31 @@ namespace Model
 
     /**
      * <p>If a step has begun execution, this contains the time the step started. If
-     * the step is in <code>Pending</code> status, this field is not populated.</p>
+     * the step is in Pending status, this field is not populated.</p>
      */
     inline const Aws::Utils::DateTime& GetExecutionStartTime() const{ return m_executionStartTime; }
 
     /**
      * <p>If a step has begun execution, this contains the time the step started. If
-     * the step is in <code>Pending</code> status, this field is not populated.</p>
+     * the step is in Pending status, this field is not populated.</p>
      */
     inline void SetExecutionStartTime(const Aws::Utils::DateTime& value) { m_executionStartTimeHasBeenSet = true; m_executionStartTime = value; }
 
     /**
      * <p>If a step has begun execution, this contains the time the step started. If
-     * the step is in <code>Pending</code> status, this field is not populated.</p>
+     * the step is in Pending status, this field is not populated.</p>
      */
     inline void SetExecutionStartTime(Aws::Utils::DateTime&& value) { m_executionStartTimeHasBeenSet = true; m_executionStartTime = std::move(value); }
 
     /**
      * <p>If a step has begun execution, this contains the time the step started. If
-     * the step is in <code>Pending</code> status, this field is not populated.</p>
+     * the step is in Pending status, this field is not populated.</p>
      */
     inline StepExecution& WithExecutionStartTime(const Aws::Utils::DateTime& value) { SetExecutionStartTime(value); return *this;}
 
     /**
      * <p>If a step has begun execution, this contains the time the step started. If
-     * the step is in <code>Pending</code> status, this field is not populated.</p>
+     * the step is in Pending status, this field is not populated.</p>
      */
     inline StepExecution& WithExecutionStartTime(Aws::Utils::DateTime&& value) { SetExecutionStartTime(std::move(value)); return *this;}
 
@@ -187,37 +189,32 @@ namespace Model
     inline StepExecution& WithExecutionEndTime(Aws::Utils::DateTime&& value) { SetExecutionEndTime(std::move(value)); return *this;}
 
     /**
-     * <p>The execution status for this step. Valid values include:
-     * <code>Pending</code>, <code>InProgress</code>, <code>Success</code>,
-     * <code>Cancelled</code>, <code>Failed</code>, and <code>TimedOut</code>.</p>
+     * <p>The execution status for this step. Valid values include: Pending,
+     * InProgress, Success, Cancelled, Failed, and TimedOut.</p>
      */
     inline const AutomationExecutionStatus& GetStepStatus() const{ return m_stepStatus; }
 
     /**
-     * <p>The execution status for this step. Valid values include:
-     * <code>Pending</code>, <code>InProgress</code>, <code>Success</code>,
-     * <code>Cancelled</code>, <code>Failed</code>, and <code>TimedOut</code>.</p>
+     * <p>The execution status for this step. Valid values include: Pending,
+     * InProgress, Success, Cancelled, Failed, and TimedOut.</p>
      */
     inline void SetStepStatus(const AutomationExecutionStatus& value) { m_stepStatusHasBeenSet = true; m_stepStatus = value; }
 
     /**
-     * <p>The execution status for this step. Valid values include:
-     * <code>Pending</code>, <code>InProgress</code>, <code>Success</code>,
-     * <code>Cancelled</code>, <code>Failed</code>, and <code>TimedOut</code>.</p>
+     * <p>The execution status for this step. Valid values include: Pending,
+     * InProgress, Success, Cancelled, Failed, and TimedOut.</p>
      */
     inline void SetStepStatus(AutomationExecutionStatus&& value) { m_stepStatusHasBeenSet = true; m_stepStatus = std::move(value); }
 
     /**
-     * <p>The execution status for this step. Valid values include:
-     * <code>Pending</code>, <code>InProgress</code>, <code>Success</code>,
-     * <code>Cancelled</code>, <code>Failed</code>, and <code>TimedOut</code>.</p>
+     * <p>The execution status for this step. Valid values include: Pending,
+     * InProgress, Success, Cancelled, Failed, and TimedOut.</p>
      */
     inline StepExecution& WithStepStatus(const AutomationExecutionStatus& value) { SetStepStatus(value); return *this;}
 
     /**
-     * <p>The execution status for this step. Valid values include:
-     * <code>Pending</code>, <code>InProgress</code>, <code>Success</code>,
-     * <code>Cancelled</code>, <code>Failed</code>, and <code>TimedOut</code>.</p>
+     * <p>The execution status for this step. Valid values include: Pending,
+     * InProgress, Success, Cancelled, Failed, and TimedOut.</p>
      */
     inline StepExecution& WithStepStatus(AutomationExecutionStatus&& value) { SetStepStatus(std::move(value)); return *this;}
 
@@ -441,6 +438,31 @@ namespace Model
      */
     inline StepExecution& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
 
+    /**
+     * <p>Information about the Automation failure.</p>
+     */
+    inline const FailureDetails& GetFailureDetails() const{ return m_failureDetails; }
+
+    /**
+     * <p>Information about the Automation failure.</p>
+     */
+    inline void SetFailureDetails(const FailureDetails& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = value; }
+
+    /**
+     * <p>Information about the Automation failure.</p>
+     */
+    inline void SetFailureDetails(FailureDetails&& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = std::move(value); }
+
+    /**
+     * <p>Information about the Automation failure.</p>
+     */
+    inline StepExecution& WithFailureDetails(const FailureDetails& value) { SetFailureDetails(value); return *this;}
+
+    /**
+     * <p>Information about the Automation failure.</p>
+     */
+    inline StepExecution& WithFailureDetails(FailureDetails&& value) { SetFailureDetails(std::move(value)); return *this;}
+
   private:
     Aws::String m_stepName;
     bool m_stepNameHasBeenSet;
@@ -462,6 +484,8 @@ namespace Model
     bool m_responseHasBeenSet;
     Aws::String m_failureMessage;
     bool m_failureMessageHasBeenSet;
+    FailureDetails m_failureDetails;
+    bool m_failureDetailsHasBeenSet;
   };
 
 } // namespace Model

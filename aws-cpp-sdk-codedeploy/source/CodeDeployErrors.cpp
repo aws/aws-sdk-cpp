@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/codedeploy/CodeDeployErrors.h>
@@ -45,6 +46,7 @@ static const int INVALID_REVISION_HASH = HashingUtils::HashString("InvalidRevisi
 static const int INVALID_DEPLOYMENT_CONFIG_NAME_HASH = HashingUtils::HashString("InvalidDeploymentConfigNameException");
 static const int ALARMS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AlarmsLimitExceededException");
 static const int DEPLOYMENT_ID_REQUIRED_HASH = HashingUtils::HashString("DeploymentIdRequiredException");
+static const int INVALID_DEPLOYMENT_INSTANCE_TYPE_HASH = HashingUtils::HashString("InvalidDeploymentInstanceTypeException");
 static const int APPLICATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ApplicationDoesNotExistException");
 static const int INVALID_LOAD_BALANCER_INFO_HASH = HashingUtils::HashString("InvalidLoadBalancerInfoException");
 static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
@@ -83,6 +85,7 @@ static const int ROLE_REQUIRED_HASH = HashingUtils::HashString("RoleRequiredExce
 static const int DEPLOYMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DeploymentLimitExceededException");
 static const int LIFECYCLE_HOOK_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LifecycleHookLimitExceededException");
 static const int DEPLOYMENT_DOES_NOT_EXIST_HASH = HashingUtils::HashString("DeploymentDoesNotExistException");
+static const int INVALID_FILE_EXISTS_BEHAVIOR_HASH = HashingUtils::HashString("InvalidFileExistsBehaviorException");
 static const int IAM_USER_ARN_REQUIRED_HASH = HashingUtils::HashString("IamUserArnRequiredException");
 static const int INVALID_TIME_RANGE_HASH = HashingUtils::HashString("InvalidTimeRangeException");
 static const int DEPLOYMENT_GROUP_NAME_REQUIRED_HASH = HashingUtils::HashString("DeploymentGroupNameRequiredException");
@@ -179,6 +182,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DEPLOYMENT_ID_REQUIRED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_ID_REQUIRED), false);
+  }
+  else if (hashCode == INVALID_DEPLOYMENT_INSTANCE_TYPE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_DEPLOYMENT_INSTANCE_TYPE), false);
   }
   else if (hashCode == APPLICATION_DOES_NOT_EXIST_HASH)
   {
@@ -331,6 +338,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DEPLOYMENT_DOES_NOT_EXIST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_DOES_NOT_EXIST), false);
+  }
+  else if (hashCode == INVALID_FILE_EXISTS_BEHAVIOR_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_FILE_EXISTS_BEHAVIOR), false);
   }
   else if (hashCode == IAM_USER_ARN_REQUIRED_HASH)
   {

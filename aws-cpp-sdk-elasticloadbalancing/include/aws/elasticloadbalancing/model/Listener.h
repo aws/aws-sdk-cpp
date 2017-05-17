@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
@@ -36,7 +37,7 @@ namespace Model
    * <p>Information about a listener.</p> <p>For information about the protocols and
    * the ports supported by Elastic Load Balancing, see <a
    * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
-   * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
+   * for Your Classic Load Balancer</a> in the <i>Classic Load Balancer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/Listener">AWS
    * API Reference</a></p>

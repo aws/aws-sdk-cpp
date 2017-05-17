@@ -8,6 +8,10 @@ Release
 *~
 *#
 *.iml
+tags
+
+#vim swap file
+*.swp
 
 #compiled python files
 *.pyc

@@ -1,9 +1,9 @@
 add_project(aws-cpp-sdk-s3-encryption-tests 
     "Unit tests for the Amazon S3 Encryption Client"
     testing-resources 
-    aws-cpp-sdk-core 
-    aws-cpp-sdk-s3 
-    aws-cpp-sdk-kms 
+    aws-cpp-sdk-core
+    aws-cpp-sdk-s3
+    aws-cpp-sdk-kms
     aws-cpp-sdk-s3-encryption)
 
 # Headers are included in the source so that they show up in Visual Studio.

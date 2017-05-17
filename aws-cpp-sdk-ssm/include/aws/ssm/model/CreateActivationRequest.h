@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
@@ -38,43 +39,43 @@ namespace Model
 
 
     /**
-     * <p>A user-defined description of the resource that you want to register with
+     * <p>A userdefined description of the resource that you want to register with
      * Amazon EC2. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A user-defined description of the resource that you want to register with
+     * <p>A userdefined description of the resource that you want to register with
      * Amazon EC2. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A user-defined description of the resource that you want to register with
+     * <p>A userdefined description of the resource that you want to register with
      * Amazon EC2. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A user-defined description of the resource that you want to register with
+     * <p>A userdefined description of the resource that you want to register with
      * Amazon EC2. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A user-defined description of the resource that you want to register with
+     * <p>A userdefined description of the resource that you want to register with
      * Amazon EC2. </p>
      */
     inline CreateActivationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A user-defined description of the resource that you want to register with
+     * <p>A userdefined description of the resource that you want to register with
      * Amazon EC2. </p>
      */
     inline CreateActivationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A user-defined description of the resource that you want to register with
+     * <p>A userdefined description of the resource that you want to register with
      * Amazon EC2. </p>
      */
     inline CreateActivationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}

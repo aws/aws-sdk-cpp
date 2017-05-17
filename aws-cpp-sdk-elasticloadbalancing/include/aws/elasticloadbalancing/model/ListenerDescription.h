@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
@@ -49,19 +50,29 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    
+    /**
+     * <p>The listener.</p>
+     */
     inline const Listener& GetListener() const{ return m_listener; }
 
-    
+    /**
+     * <p>The listener.</p>
+     */
     inline void SetListener(const Listener& value) { m_listenerHasBeenSet = true; m_listener = value; }
 
-    
+    /**
+     * <p>The listener.</p>
+     */
     inline void SetListener(Listener&& value) { m_listenerHasBeenSet = true; m_listener = std::move(value); }
 
-    
+    /**
+     * <p>The listener.</p>
+     */
     inline ListenerDescription& WithListener(const Listener& value) { SetListener(value); return *this;}
 
-    
+    /**
+     * <p>The listener.</p>
+     */
     inline ListenerDescription& WithListener(Listener&& value) { SetListener(std::move(value)); return *this;}
 
     /**

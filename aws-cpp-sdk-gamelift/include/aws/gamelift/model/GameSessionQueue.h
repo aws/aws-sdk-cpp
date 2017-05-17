@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -106,7 +107,7 @@ namespace Model
 
     /**
      * <p>Amazon Resource Name (<a
-     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
@@ -114,7 +115,7 @@ namespace Model
 
     /**
      * <p>Amazon Resource Name (<a
-     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
@@ -122,7 +123,7 @@ namespace Model
 
     /**
      * <p>Amazon Resource Name (<a
-     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
@@ -130,7 +131,7 @@ namespace Model
 
     /**
      * <p>Amazon Resource Name (<a
-     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
@@ -138,7 +139,7 @@ namespace Model
 
     /**
      * <p>Amazon Resource Name (<a
-     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
@@ -146,7 +147,7 @@ namespace Model
 
     /**
      * <p>Amazon Resource Name (<a
-     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
@@ -154,7 +155,7 @@ namespace Model
 
     /**
      * <p>Amazon Resource Name (<a
-     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */

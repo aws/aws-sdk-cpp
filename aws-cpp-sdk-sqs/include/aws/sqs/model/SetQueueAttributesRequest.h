@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/sqs/SQSRequest.h>
@@ -89,25 +90,25 @@ namespace Model
      * <p>A map of attributes to set.</p> <p>The following lists the names,
      * descriptions, and values of the special request parameters that the
      * <code>SetQueueAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DelaySeconds</code> - The number of seconds for which the delivery of all
-     * messages in the queue is delayed. Valid values: An integer from 0 to 900 (15
-     * minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * <code>DelaySeconds</code> - The length of time, in seconds, for which the
+     * delivery of all messages in the queue is delayed. Valid values: An integer from
+     * 0 to 900 (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
      * (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p>
-     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The number of seconds for
-     * which Amazon SQS retains a message. Valid values: An integer representing
-     * seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600 (4
-     * days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
-     * policy. For more information about policy structure, see <a
+     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in
+     * seconds, for which Amazon SQS retains a message. Valid values: An integer
+     * representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is
+     * 345,600 (4 days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy.
+     * A valid AWS policy. For more information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
-     * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid
-     * values: an integer from 0 to 20 (seconds). The default is 0. </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> - The parameters for the dead letter queue
-     * functionality of the source queue. For more information about the redrive policy
-     * and dead letter queues, see <a
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
+     * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
+     * arrive. Valid values: an integer from 0 to 20 (seconds). The default is 0. </p>
+     * </li> <li> <p> <code>RedrivePolicy</code> - The parameters for the dead letter
+     * queue functionality of the source queue. For more information about the redrive
+     * policy and dead letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
@@ -118,7 +119,27 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * following attributes apply only to <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
+     * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
+     * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
+     * <code>alias/aws/sqs</code>. For more examples, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
+     * which Amazon SQS can reuse a <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
+     * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
+     * hours). The default is 300 (5 minutes). A shorter time period provides better
+     * security but results in more calls to KMS which incur charges after Free Tier.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
+     * attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
@@ -138,15 +159,13 @@ namespace Model
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
-     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>You
-     * can also use <code>ContentBasedDeduplication</code> for messages with identical
-     * content to be treated as duplicates.</p> </li> <li> <p>If you send one message
-     * with <code>ContentBasedDeduplication</code> enabled and then another message
-     * with a <code>MessageDeduplicationId</code> that is the same as the one generated
-     * for the first <code>MessageDeduplicationId</code>, the two messages are treated
-     * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
-     * </li> </ul> <p>Any other valid special request parameters (such as the
-     * following) are ignored:</p> <ul> <li> <p>
+     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>If
+     * you send one message with <code>ContentBasedDeduplication</code> enabled and
+     * then another message with a <code>MessageDeduplicationId</code> that is the same
+     * as the one generated for the first <code>MessageDeduplicationId</code>, the two
+     * messages are treated as duplicates and only one copy of the message is
+     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
+     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
      * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
@@ -160,25 +179,25 @@ namespace Model
      * <p>A map of attributes to set.</p> <p>The following lists the names,
      * descriptions, and values of the special request parameters that the
      * <code>SetQueueAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DelaySeconds</code> - The number of seconds for which the delivery of all
-     * messages in the queue is delayed. Valid values: An integer from 0 to 900 (15
-     * minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * <code>DelaySeconds</code> - The length of time, in seconds, for which the
+     * delivery of all messages in the queue is delayed. Valid values: An integer from
+     * 0 to 900 (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
      * (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p>
-     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The number of seconds for
-     * which Amazon SQS retains a message. Valid values: An integer representing
-     * seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600 (4
-     * days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
-     * policy. For more information about policy structure, see <a
+     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in
+     * seconds, for which Amazon SQS retains a message. Valid values: An integer
+     * representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is
+     * 345,600 (4 days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy.
+     * A valid AWS policy. For more information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
-     * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid
-     * values: an integer from 0 to 20 (seconds). The default is 0. </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> - The parameters for the dead letter queue
-     * functionality of the source queue. For more information about the redrive policy
-     * and dead letter queues, see <a
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
+     * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
+     * arrive. Valid values: an integer from 0 to 20 (seconds). The default is 0. </p>
+     * </li> <li> <p> <code>RedrivePolicy</code> - The parameters for the dead letter
+     * queue functionality of the source queue. For more information about the redrive
+     * policy and dead letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
@@ -189,7 +208,27 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * following attributes apply only to <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
+     * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
+     * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
+     * <code>alias/aws/sqs</code>. For more examples, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
+     * which Amazon SQS can reuse a <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
+     * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
+     * hours). The default is 300 (5 minutes). A shorter time period provides better
+     * security but results in more calls to KMS which incur charges after Free Tier.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
+     * attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
@@ -209,15 +248,13 @@ namespace Model
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
-     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>You
-     * can also use <code>ContentBasedDeduplication</code> for messages with identical
-     * content to be treated as duplicates.</p> </li> <li> <p>If you send one message
-     * with <code>ContentBasedDeduplication</code> enabled and then another message
-     * with a <code>MessageDeduplicationId</code> that is the same as the one generated
-     * for the first <code>MessageDeduplicationId</code>, the two messages are treated
-     * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
-     * </li> </ul> <p>Any other valid special request parameters (such as the
-     * following) are ignored:</p> <ul> <li> <p>
+     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>If
+     * you send one message with <code>ContentBasedDeduplication</code> enabled and
+     * then another message with a <code>MessageDeduplicationId</code> that is the same
+     * as the one generated for the first <code>MessageDeduplicationId</code>, the two
+     * messages are treated as duplicates and only one copy of the message is
+     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
+     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
      * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
@@ -231,25 +268,25 @@ namespace Model
      * <p>A map of attributes to set.</p> <p>The following lists the names,
      * descriptions, and values of the special request parameters that the
      * <code>SetQueueAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DelaySeconds</code> - The number of seconds for which the delivery of all
-     * messages in the queue is delayed. Valid values: An integer from 0 to 900 (15
-     * minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * <code>DelaySeconds</code> - The length of time, in seconds, for which the
+     * delivery of all messages in the queue is delayed. Valid values: An integer from
+     * 0 to 900 (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
      * (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p>
-     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The number of seconds for
-     * which Amazon SQS retains a message. Valid values: An integer representing
-     * seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600 (4
-     * days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
-     * policy. For more information about policy structure, see <a
+     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in
+     * seconds, for which Amazon SQS retains a message. Valid values: An integer
+     * representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is
+     * 345,600 (4 days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy.
+     * A valid AWS policy. For more information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
-     * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid
-     * values: an integer from 0 to 20 (seconds). The default is 0. </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> - The parameters for the dead letter queue
-     * functionality of the source queue. For more information about the redrive policy
-     * and dead letter queues, see <a
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
+     * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
+     * arrive. Valid values: an integer from 0 to 20 (seconds). The default is 0. </p>
+     * </li> <li> <p> <code>RedrivePolicy</code> - The parameters for the dead letter
+     * queue functionality of the source queue. For more information about the redrive
+     * policy and dead letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
@@ -260,7 +297,27 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * following attributes apply only to <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
+     * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
+     * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
+     * <code>alias/aws/sqs</code>. For more examples, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
+     * which Amazon SQS can reuse a <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
+     * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
+     * hours). The default is 300 (5 minutes). A shorter time period provides better
+     * security but results in more calls to KMS which incur charges after Free Tier.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
+     * attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
@@ -280,15 +337,13 @@ namespace Model
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
-     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>You
-     * can also use <code>ContentBasedDeduplication</code> for messages with identical
-     * content to be treated as duplicates.</p> </li> <li> <p>If you send one message
-     * with <code>ContentBasedDeduplication</code> enabled and then another message
-     * with a <code>MessageDeduplicationId</code> that is the same as the one generated
-     * for the first <code>MessageDeduplicationId</code>, the two messages are treated
-     * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
-     * </li> </ul> <p>Any other valid special request parameters (such as the
-     * following) are ignored:</p> <ul> <li> <p>
+     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>If
+     * you send one message with <code>ContentBasedDeduplication</code> enabled and
+     * then another message with a <code>MessageDeduplicationId</code> that is the same
+     * as the one generated for the first <code>MessageDeduplicationId</code>, the two
+     * messages are treated as duplicates and only one copy of the message is
+     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
+     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
      * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
@@ -302,25 +357,25 @@ namespace Model
      * <p>A map of attributes to set.</p> <p>The following lists the names,
      * descriptions, and values of the special request parameters that the
      * <code>SetQueueAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DelaySeconds</code> - The number of seconds for which the delivery of all
-     * messages in the queue is delayed. Valid values: An integer from 0 to 900 (15
-     * minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * <code>DelaySeconds</code> - The length of time, in seconds, for which the
+     * delivery of all messages in the queue is delayed. Valid values: An integer from
+     * 0 to 900 (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
      * (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p>
-     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The number of seconds for
-     * which Amazon SQS retains a message. Valid values: An integer representing
-     * seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600 (4
-     * days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
-     * policy. For more information about policy structure, see <a
+     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in
+     * seconds, for which Amazon SQS retains a message. Valid values: An integer
+     * representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is
+     * 345,600 (4 days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy.
+     * A valid AWS policy. For more information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
-     * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid
-     * values: an integer from 0 to 20 (seconds). The default is 0. </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> - The parameters for the dead letter queue
-     * functionality of the source queue. For more information about the redrive policy
-     * and dead letter queues, see <a
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
+     * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
+     * arrive. Valid values: an integer from 0 to 20 (seconds). The default is 0. </p>
+     * </li> <li> <p> <code>RedrivePolicy</code> - The parameters for the dead letter
+     * queue functionality of the source queue. For more information about the redrive
+     * policy and dead letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
@@ -331,7 +386,27 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * following attributes apply only to <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
+     * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
+     * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
+     * <code>alias/aws/sqs</code>. For more examples, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
+     * which Amazon SQS can reuse a <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
+     * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
+     * hours). The default is 300 (5 minutes). A shorter time period provides better
+     * security but results in more calls to KMS which incur charges after Free Tier.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
+     * attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
@@ -351,15 +426,13 @@ namespace Model
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
-     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>You
-     * can also use <code>ContentBasedDeduplication</code> for messages with identical
-     * content to be treated as duplicates.</p> </li> <li> <p>If you send one message
-     * with <code>ContentBasedDeduplication</code> enabled and then another message
-     * with a <code>MessageDeduplicationId</code> that is the same as the one generated
-     * for the first <code>MessageDeduplicationId</code>, the two messages are treated
-     * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
-     * </li> </ul> <p>Any other valid special request parameters (such as the
-     * following) are ignored:</p> <ul> <li> <p>
+     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>If
+     * you send one message with <code>ContentBasedDeduplication</code> enabled and
+     * then another message with a <code>MessageDeduplicationId</code> that is the same
+     * as the one generated for the first <code>MessageDeduplicationId</code>, the two
+     * messages are treated as duplicates and only one copy of the message is
+     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
+     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
      * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
@@ -373,25 +446,25 @@ namespace Model
      * <p>A map of attributes to set.</p> <p>The following lists the names,
      * descriptions, and values of the special request parameters that the
      * <code>SetQueueAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DelaySeconds</code> - The number of seconds for which the delivery of all
-     * messages in the queue is delayed. Valid values: An integer from 0 to 900 (15
-     * minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * <code>DelaySeconds</code> - The length of time, in seconds, for which the
+     * delivery of all messages in the queue is delayed. Valid values: An integer from
+     * 0 to 900 (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
      * (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p>
-     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The number of seconds for
-     * which Amazon SQS retains a message. Valid values: An integer representing
-     * seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600 (4
-     * days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
-     * policy. For more information about policy structure, see <a
+     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in
+     * seconds, for which Amazon SQS retains a message. Valid values: An integer
+     * representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is
+     * 345,600 (4 days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy.
+     * A valid AWS policy. For more information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
-     * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid
-     * values: an integer from 0 to 20 (seconds). The default is 0. </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> - The parameters for the dead letter queue
-     * functionality of the source queue. For more information about the redrive policy
-     * and dead letter queues, see <a
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
+     * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
+     * arrive. Valid values: an integer from 0 to 20 (seconds). The default is 0. </p>
+     * </li> <li> <p> <code>RedrivePolicy</code> - The parameters for the dead letter
+     * queue functionality of the source queue. For more information about the redrive
+     * policy and dead letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
@@ -402,7 +475,27 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * following attributes apply only to <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
+     * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
+     * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
+     * <code>alias/aws/sqs</code>. For more examples, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
+     * which Amazon SQS can reuse a <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
+     * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
+     * hours). The default is 300 (5 minutes). A shorter time period provides better
+     * security but results in more calls to KMS which incur charges after Free Tier.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
+     * attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
@@ -422,15 +515,13 @@ namespace Model
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
-     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>You
-     * can also use <code>ContentBasedDeduplication</code> for messages with identical
-     * content to be treated as duplicates.</p> </li> <li> <p>If you send one message
-     * with <code>ContentBasedDeduplication</code> enabled and then another message
-     * with a <code>MessageDeduplicationId</code> that is the same as the one generated
-     * for the first <code>MessageDeduplicationId</code>, the two messages are treated
-     * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
-     * </li> </ul> <p>Any other valid special request parameters (such as the
-     * following) are ignored:</p> <ul> <li> <p>
+     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>If
+     * you send one message with <code>ContentBasedDeduplication</code> enabled and
+     * then another message with a <code>MessageDeduplicationId</code> that is the same
+     * as the one generated for the first <code>MessageDeduplicationId</code>, the two
+     * messages are treated as duplicates and only one copy of the message is
+     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
+     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
      * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
@@ -444,25 +535,25 @@ namespace Model
      * <p>A map of attributes to set.</p> <p>The following lists the names,
      * descriptions, and values of the special request parameters that the
      * <code>SetQueueAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DelaySeconds</code> - The number of seconds for which the delivery of all
-     * messages in the queue is delayed. Valid values: An integer from 0 to 900 (15
-     * minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * <code>DelaySeconds</code> - The length of time, in seconds, for which the
+     * delivery of all messages in the queue is delayed. Valid values: An integer from
+     * 0 to 900 (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
      * (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p>
-     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The number of seconds for
-     * which Amazon SQS retains a message. Valid values: An integer representing
-     * seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600 (4
-     * days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
-     * policy. For more information about policy structure, see <a
+     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in
+     * seconds, for which Amazon SQS retains a message. Valid values: An integer
+     * representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is
+     * 345,600 (4 days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy.
+     * A valid AWS policy. For more information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
-     * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid
-     * values: an integer from 0 to 20 (seconds). The default is 0. </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> - The parameters for the dead letter queue
-     * functionality of the source queue. For more information about the redrive policy
-     * and dead letter queues, see <a
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
+     * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
+     * arrive. Valid values: an integer from 0 to 20 (seconds). The default is 0. </p>
+     * </li> <li> <p> <code>RedrivePolicy</code> - The parameters for the dead letter
+     * queue functionality of the source queue. For more information about the redrive
+     * policy and dead letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
@@ -473,7 +564,27 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * following attributes apply only to <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
+     * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
+     * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
+     * <code>alias/aws/sqs</code>. For more examples, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
+     * which Amazon SQS can reuse a <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
+     * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
+     * hours). The default is 300 (5 minutes). A shorter time period provides better
+     * security but results in more calls to KMS which incur charges after Free Tier.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
+     * attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
@@ -493,15 +604,13 @@ namespace Model
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
-     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>You
-     * can also use <code>ContentBasedDeduplication</code> for messages with identical
-     * content to be treated as duplicates.</p> </li> <li> <p>If you send one message
-     * with <code>ContentBasedDeduplication</code> enabled and then another message
-     * with a <code>MessageDeduplicationId</code> that is the same as the one generated
-     * for the first <code>MessageDeduplicationId</code>, the two messages are treated
-     * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
-     * </li> </ul> <p>Any other valid special request parameters (such as the
-     * following) are ignored:</p> <ul> <li> <p>
+     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>If
+     * you send one message with <code>ContentBasedDeduplication</code> enabled and
+     * then another message with a <code>MessageDeduplicationId</code> that is the same
+     * as the one generated for the first <code>MessageDeduplicationId</code>, the two
+     * messages are treated as duplicates and only one copy of the message is
+     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
+     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
      * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
@@ -515,25 +624,25 @@ namespace Model
      * <p>A map of attributes to set.</p> <p>The following lists the names,
      * descriptions, and values of the special request parameters that the
      * <code>SetQueueAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DelaySeconds</code> - The number of seconds for which the delivery of all
-     * messages in the queue is delayed. Valid values: An integer from 0 to 900 (15
-     * minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * <code>DelaySeconds</code> - The length of time, in seconds, for which the
+     * delivery of all messages in the queue is delayed. Valid values: An integer from
+     * 0 to 900 (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
      * (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p>
-     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The number of seconds for
-     * which Amazon SQS retains a message. Valid values: An integer representing
-     * seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600 (4
-     * days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
-     * policy. For more information about policy structure, see <a
+     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in
+     * seconds, for which Amazon SQS retains a message. Valid values: An integer
+     * representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is
+     * 345,600 (4 days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy.
+     * A valid AWS policy. For more information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
-     * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid
-     * values: an integer from 0 to 20 (seconds). The default is 0. </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> - The parameters for the dead letter queue
-     * functionality of the source queue. For more information about the redrive policy
-     * and dead letter queues, see <a
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
+     * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
+     * arrive. Valid values: an integer from 0 to 20 (seconds). The default is 0. </p>
+     * </li> <li> <p> <code>RedrivePolicy</code> - The parameters for the dead letter
+     * queue functionality of the source queue. For more information about the redrive
+     * policy and dead letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
@@ -544,7 +653,27 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * following attributes apply only to <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
+     * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
+     * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
+     * <code>alias/aws/sqs</code>. For more examples, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
+     * which Amazon SQS can reuse a <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
+     * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
+     * hours). The default is 300 (5 minutes). A shorter time period provides better
+     * security but results in more calls to KMS which incur charges after Free Tier.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
+     * attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
@@ -564,15 +693,13 @@ namespace Model
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
-     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>You
-     * can also use <code>ContentBasedDeduplication</code> for messages with identical
-     * content to be treated as duplicates.</p> </li> <li> <p>If you send one message
-     * with <code>ContentBasedDeduplication</code> enabled and then another message
-     * with a <code>MessageDeduplicationId</code> that is the same as the one generated
-     * for the first <code>MessageDeduplicationId</code>, the two messages are treated
-     * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
-     * </li> </ul> <p>Any other valid special request parameters (such as the
-     * following) are ignored:</p> <ul> <li> <p>
+     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>If
+     * you send one message with <code>ContentBasedDeduplication</code> enabled and
+     * then another message with a <code>MessageDeduplicationId</code> that is the same
+     * as the one generated for the first <code>MessageDeduplicationId</code>, the two
+     * messages are treated as duplicates and only one copy of the message is
+     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
+     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
      * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
@@ -586,25 +713,25 @@ namespace Model
      * <p>A map of attributes to set.</p> <p>The following lists the names,
      * descriptions, and values of the special request parameters that the
      * <code>SetQueueAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DelaySeconds</code> - The number of seconds for which the delivery of all
-     * messages in the queue is delayed. Valid values: An integer from 0 to 900 (15
-     * minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * <code>DelaySeconds</code> - The length of time, in seconds, for which the
+     * delivery of all messages in the queue is delayed. Valid values: An integer from
+     * 0 to 900 (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
      * (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p>
-     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The number of seconds for
-     * which Amazon SQS retains a message. Valid values: An integer representing
-     * seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600 (4
-     * days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
-     * policy. For more information about policy structure, see <a
+     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in
+     * seconds, for which Amazon SQS retains a message. Valid values: An integer
+     * representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is
+     * 345,600 (4 days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy.
+     * A valid AWS policy. For more information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
-     * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid
-     * values: an integer from 0 to 20 (seconds). The default is 0. </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> - The parameters for the dead letter queue
-     * functionality of the source queue. For more information about the redrive policy
-     * and dead letter queues, see <a
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
+     * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
+     * arrive. Valid values: an integer from 0 to 20 (seconds). The default is 0. </p>
+     * </li> <li> <p> <code>RedrivePolicy</code> - The parameters for the dead letter
+     * queue functionality of the source queue. For more information about the redrive
+     * policy and dead letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
@@ -615,7 +742,27 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * following attributes apply only to <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
+     * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
+     * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
+     * <code>alias/aws/sqs</code>. For more examples, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
+     * which Amazon SQS can reuse a <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
+     * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
+     * hours). The default is 300 (5 minutes). A shorter time period provides better
+     * security but results in more calls to KMS which incur charges after Free Tier.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
+     * attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
@@ -635,15 +782,13 @@ namespace Model
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
-     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>You
-     * can also use <code>ContentBasedDeduplication</code> for messages with identical
-     * content to be treated as duplicates.</p> </li> <li> <p>If you send one message
-     * with <code>ContentBasedDeduplication</code> enabled and then another message
-     * with a <code>MessageDeduplicationId</code> that is the same as the one generated
-     * for the first <code>MessageDeduplicationId</code>, the two messages are treated
-     * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
-     * </li> </ul> <p>Any other valid special request parameters (such as the
-     * following) are ignored:</p> <ul> <li> <p>
+     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>If
+     * you send one message with <code>ContentBasedDeduplication</code> enabled and
+     * then another message with a <code>MessageDeduplicationId</code> that is the same
+     * as the one generated for the first <code>MessageDeduplicationId</code>, the two
+     * messages are treated as duplicates and only one copy of the message is
+     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
+     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
      * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
@@ -657,25 +802,25 @@ namespace Model
      * <p>A map of attributes to set.</p> <p>The following lists the names,
      * descriptions, and values of the special request parameters that the
      * <code>SetQueueAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DelaySeconds</code> - The number of seconds for which the delivery of all
-     * messages in the queue is delayed. Valid values: An integer from 0 to 900 (15
-     * minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * <code>DelaySeconds</code> - The length of time, in seconds, for which the
+     * delivery of all messages in the queue is delayed. Valid values: An integer from
+     * 0 to 900 (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
      * (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p>
-     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The number of seconds for
-     * which Amazon SQS retains a message. Valid values: An integer representing
-     * seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600 (4
-     * days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
-     * policy. For more information about policy structure, see <a
+     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in
+     * seconds, for which Amazon SQS retains a message. Valid values: An integer
+     * representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is
+     * 345,600 (4 days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy.
+     * A valid AWS policy. For more information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
-     * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid
-     * values: an integer from 0 to 20 (seconds). The default is 0. </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> - The parameters for the dead letter queue
-     * functionality of the source queue. For more information about the redrive policy
-     * and dead letter queues, see <a
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
+     * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
+     * arrive. Valid values: an integer from 0 to 20 (seconds). The default is 0. </p>
+     * </li> <li> <p> <code>RedrivePolicy</code> - The parameters for the dead letter
+     * queue functionality of the source queue. For more information about the redrive
+     * policy and dead letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
@@ -686,7 +831,27 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * following attributes apply only to <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
+     * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
+     * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
+     * <code>alias/aws/sqs</code>. For more examples, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
+     * which Amazon SQS can reuse a <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
+     * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
+     * hours). The default is 300 (5 minutes). A shorter time period provides better
+     * security but results in more calls to KMS which incur charges after Free Tier.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
+     * attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
@@ -706,15 +871,13 @@ namespace Model
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
-     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>You
-     * can also use <code>ContentBasedDeduplication</code> for messages with identical
-     * content to be treated as duplicates.</p> </li> <li> <p>If you send one message
-     * with <code>ContentBasedDeduplication</code> enabled and then another message
-     * with a <code>MessageDeduplicationId</code> that is the same as the one generated
-     * for the first <code>MessageDeduplicationId</code>, the two messages are treated
-     * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
-     * </li> </ul> <p>Any other valid special request parameters (such as the
-     * following) are ignored:</p> <ul> <li> <p>
+     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>If
+     * you send one message with <code>ContentBasedDeduplication</code> enabled and
+     * then another message with a <code>MessageDeduplicationId</code> that is the same
+     * as the one generated for the first <code>MessageDeduplicationId</code>, the two
+     * messages are treated as duplicates and only one copy of the message is
+     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
+     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
      * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
@@ -728,25 +891,25 @@ namespace Model
      * <p>A map of attributes to set.</p> <p>The following lists the names,
      * descriptions, and values of the special request parameters that the
      * <code>SetQueueAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DelaySeconds</code> - The number of seconds for which the delivery of all
-     * messages in the queue is delayed. Valid values: An integer from 0 to 900 (15
-     * minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * <code>DelaySeconds</code> - The length of time, in seconds, for which the
+     * delivery of all messages in the queue is delayed. Valid values: An integer from
+     * 0 to 900 (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
      * (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p>
-     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The number of seconds for
-     * which Amazon SQS retains a message. Valid values: An integer representing
-     * seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600 (4
-     * days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
-     * policy. For more information about policy structure, see <a
+     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in
+     * seconds, for which Amazon SQS retains a message. Valid values: An integer
+     * representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is
+     * 345,600 (4 days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy.
+     * A valid AWS policy. For more information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
-     * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid
-     * values: an integer from 0 to 20 (seconds). The default is 0. </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> - The parameters for the dead letter queue
-     * functionality of the source queue. For more information about the redrive policy
-     * and dead letter queues, see <a
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
+     * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
+     * arrive. Valid values: an integer from 0 to 20 (seconds). The default is 0. </p>
+     * </li> <li> <p> <code>RedrivePolicy</code> - The parameters for the dead letter
+     * queue functionality of the source queue. For more information about the redrive
+     * policy and dead letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
@@ -757,7 +920,27 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * following attributes apply only to <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
+     * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
+     * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
+     * <code>alias/aws/sqs</code>. For more examples, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
+     * which Amazon SQS can reuse a <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
+     * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
+     * hours). The default is 300 (5 minutes). A shorter time period provides better
+     * security but results in more calls to KMS which incur charges after Free Tier.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
+     * attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
@@ -777,15 +960,13 @@ namespace Model
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
-     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>You
-     * can also use <code>ContentBasedDeduplication</code> for messages with identical
-     * content to be treated as duplicates.</p> </li> <li> <p>If you send one message
-     * with <code>ContentBasedDeduplication</code> enabled and then another message
-     * with a <code>MessageDeduplicationId</code> that is the same as the one generated
-     * for the first <code>MessageDeduplicationId</code>, the two messages are treated
-     * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
-     * </li> </ul> <p>Any other valid special request parameters (such as the
-     * following) are ignored:</p> <ul> <li> <p>
+     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>If
+     * you send one message with <code>ContentBasedDeduplication</code> enabled and
+     * then another message with a <code>MessageDeduplicationId</code> that is the same
+     * as the one generated for the first <code>MessageDeduplicationId</code>, the two
+     * messages are treated as duplicates and only one copy of the message is
+     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
+     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
      * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
@@ -799,25 +980,25 @@ namespace Model
      * <p>A map of attributes to set.</p> <p>The following lists the names,
      * descriptions, and values of the special request parameters that the
      * <code>SetQueueAttributes</code> action uses:</p> <ul> <li> <p>
-     * <code>DelaySeconds</code> - The number of seconds for which the delivery of all
-     * messages in the queue is delayed. Valid values: An integer from 0 to 900 (15
-     * minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * <code>DelaySeconds</code> - The length of time, in seconds, for which the
+     * delivery of all messages in the queue is delayed. Valid values: An integer from
+     * 0 to 900 (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
      * (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p>
-     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The number of seconds for
-     * which Amazon SQS retains a message. Valid values: An integer representing
-     * seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600 (4
-     * days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
-     * policy. For more information about policy structure, see <a
+     * </li> <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in
+     * seconds, for which Amazon SQS retains a message. Valid values: An integer
+     * representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is
+     * 345,600 (4 days). </p> </li> <li> <p> <code>Policy</code> - The queue's policy.
+     * A valid AWS policy. For more information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
-     * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid
-     * values: an integer from 0 to 20 (seconds). The default is 0. </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> - The parameters for the dead letter queue
-     * functionality of the source queue. For more information about the redrive policy
-     * and dead letter queues, see <a
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
+     * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
+     * arrive. Valid values: an integer from 0 to 20 (seconds). The default is 0. </p>
+     * </li> <li> <p> <code>RedrivePolicy</code> - The parameters for the dead letter
+     * queue functionality of the source queue. For more information about the redrive
+     * policy and dead letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
@@ -828,7 +1009,27 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * following attributes apply only to <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
+     * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
+     * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
+     * <code>alias/aws/sqs</code>. For more examples, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
+     * which Amazon SQS can reuse a <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
+     * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
+     * hours). The default is 300 (5 minutes). A shorter time period provides better
+     * security but results in more calls to KMS which incur charges after Free Tier.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
+     * attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
@@ -848,15 +1049,13 @@ namespace Model
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
-     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>You
-     * can also use <code>ContentBasedDeduplication</code> for messages with identical
-     * content to be treated as duplicates.</p> </li> <li> <p>If you send one message
-     * with <code>ContentBasedDeduplication</code> enabled and then another message
-     * with a <code>MessageDeduplicationId</code> that is the same as the one generated
-     * for the first <code>MessageDeduplicationId</code>, the two messages are treated
-     * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
-     * </li> </ul> <p>Any other valid special request parameters (such as the
-     * following) are ignored:</p> <ul> <li> <p>
+     * duplicates and only one copy of the message is delivered.</p> </li> <li> <p>If
+     * you send one message with <code>ContentBasedDeduplication</code> enabled and
+     * then another message with a <code>MessageDeduplicationId</code> that is the same
+     * as the one generated for the first <code>MessageDeduplicationId</code>, the two
+     * messages are treated as duplicates and only one copy of the message is
+     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
+     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
      * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>

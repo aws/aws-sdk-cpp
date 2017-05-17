@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/CodeDeployErrors.h>
@@ -249,39 +250,47 @@ namespace Model
     typedef std::function<void(const CodeDeployClient*, const Model::UpdateDeploymentGroupRequest&, const Model::UpdateDeploymentGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeploymentGroupResponseReceivedHandler;
 
   /**
-   * <fullname>AWS CodeDeploy</fullname> <p> <b>Overview</b> </p> <p>This reference
-   * guide provides descriptions of the AWS CodeDeploy APIs. For more information
-   * about AWS CodeDeploy, see the <a
+   * <fullname>AWS CodeDeploy</fullname> <p>AWS CodeDeploy is a deployment service
+   * that automates application deployments to Amazon EC2 instances or on-premises
+   * instances running in your own facility.</p> <p>You can deploy a nearly unlimited
+   * variety of application content, such as code, web and configuration files,
+   * executables, packages, scripts, multimedia files, and so on. AWS CodeDeploy can
+   * deploy application content stored in Amazon S3 buckets, GitHub repositories, or
+   * Bitbucket repositories. You do not need to make changes to your existing code
+   * before you can use AWS CodeDeploy.</p> <p>AWS CodeDeploy makes it easier for you
+   * to rapidly release new features, helps you avoid downtime during application
+   * deployment, and handles the complexity of updating your applications, without
+   * many of the risks associated with error-prone manual deployments.</p> <p> <b>AWS
+   * CodeDeploy Components</b> </p> <p>Use the information in this guide to help you
+   * work with the following AWS CodeDeploy components:</p> <ul> <li> <p>
+   * <b>Application</b>: A name that uniquely identifies the application you want to
+   * deploy. AWS CodeDeploy uses this name, which functions as a container, to ensure
+   * the correct combination of revision, deployment configuration, and deployment
+   * group are referenced during a deployment.</p> </li> <li> <p> <b>Deployment
+   * group</b>: A set of individual instances. A deployment group contains
+   * individually tagged instances, Amazon EC2 instances in Auto Scaling groups, or
+   * both. </p> </li> <li> <p> <b>Deployment configuration</b>: A set of deployment
+   * rules and deployment success and failure conditions used by AWS CodeDeploy
+   * during a deployment.</p> </li> <li> <p> <b>Deployment</b>: The process, and the
+   * components involved in the process, of installing content on one or more
+   * instances. </p> </li> <li> <p> <b>Application revisions</b>: An archive file
+   * containing source content—source code, web pages, executable files, and
+   * deployment scripts—along with an application specification file (AppSpec file).
+   * Revisions are stored in Amazon S3 buckets or GitHub repositories. For Amazon S3,
+   * a revision is uniquely identified by its Amazon S3 object key and its ETag,
+   * version, or both. For GitHub, a revision is uniquely identified by its commit
+   * ID.</p> </li> </ul> <p>This guide also contains information to help you get
+   * details about the instances in your deployments and to make on-premises
+   * instances available for AWS CodeDeploy deployments.</p> <p> <b>AWS CodeDeploy
+   * Information Resources</b> </p> <ul> <li> <p> <a
    * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
-   * User Guide</a>.</p> <p> <b>Using the APIs</b> </p> <p>You can use the AWS
-   * CodeDeploy APIs to work with the following:</p> <ul> <li> <p>Applications are
-   * unique identifiers used by AWS CodeDeploy to ensure the correct combinations of
-   * revisions, deployment configurations, and deployment groups are being referenced
-   * during deployments.</p> <p>You can use the AWS CodeDeploy APIs to create,
-   * delete, get, list, and update applications.</p> </li> <li> <p>Deployment
-   * configurations are sets of deployment rules and success and failure conditions
-   * used by AWS CodeDeploy during deployments.</p> <p>You can use the AWS CodeDeploy
-   * APIs to create, delete, get, and list deployment configurations.</p> </li> <li>
-   * <p>Deployment groups are groups of instances to which application revisions can
-   * be deployed.</p> <p>You can use the AWS CodeDeploy APIs to create, delete, get,
-   * list, and update deployment groups.</p> </li> <li> <p>Instances represent Amazon
-   * EC2 instances to which application revisions are deployed. Instances are
-   * identified by their Amazon EC2 tags or Auto Scaling group names. Instances
-   * belong to deployment groups.</p> <p>You can use the AWS CodeDeploy APIs to get
-   * and list instance.</p> </li> <li> <p>Deployments represent the process of
-   * deploying revisions to instances.</p> <p>You can use the AWS CodeDeploy APIs to
-   * create, get, list, and stop deployments.</p> </li> <li> <p>Application revisions
-   * are archive files stored in Amazon S3 buckets or GitHub repositories. These
-   * revisions contain source content (such as source code, web pages, executable
-   * files, and deployment scripts) along with an application specification (AppSpec)
-   * file. (The AppSpec file is unique to AWS CodeDeploy; it defines the deployment
-   * actions you want AWS CodeDeploy to execute.) For application revisions stored in
-   * Amazon S3 buckets, an application revision is uniquely identified by its Amazon
-   * S3 object key and its ETag, version, or both. For application revisions stored
-   * in GitHub repositories, an application revision is uniquely identified by its
-   * repository name and commit ID. Application revisions are deployed through
-   * deployment groups.</p> <p>You can use the AWS CodeDeploy APIs to get, list, and
-   * register application revisions.</p> </li> </ul>
+   * User Guide</a> </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS CodeDeploy
+   * API Reference Guide</a> </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">AWS CLI
+   * Reference for AWS CodeDeploy</a> </p> </li> <li> <p> <a
+   * href="https://forums.aws.amazon.com/forum.jspa?forumID=179">AWS CodeDeploy
+   * Developer Forum</a> </p> </li> </ul>
    */
   class AWS_CODEDEPLOY_API CodeDeployClient : public Aws::Client::AWSJsonClient
   {
@@ -500,24 +509,24 @@ namespace Model
         virtual void BatchGetOnPremisesInstancesAsync(const Model::BatchGetOnPremisesInstancesRequest& request, const BatchGetOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts the process of rerouting traffic from instances in the original
-         * environment to instances in thereplacement environment without waiting for a
-         * specified wait time to elapse. (Traffic rerouting, which is achieved by
-         * registering instances in the replacement environment with the load balancer, can
-         * start as soon as all instances have a status of Ready.) </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>For a blue/green deployment, starts the process of rerouting traffic from
+         * instances in the original environment to instances in the replacement
+         * environment without waiting for a specified wait time to elapse. (Traffic
+         * rerouting, which is achieved by registering instances in the replacement
+         * environment with the load balancer, can start as soon as all instances have a
+         * status of Ready.) </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ContinueDeployment">AWS
          * API Reference</a></p>
          */
         virtual Model::ContinueDeploymentOutcome ContinueDeployment(const Model::ContinueDeploymentRequest& request) const;
 
         /**
-         * <p>Starts the process of rerouting traffic from instances in the original
-         * environment to instances in thereplacement environment without waiting for a
-         * specified wait time to elapse. (Traffic rerouting, which is achieved by
-         * registering instances in the replacement environment with the load balancer, can
-         * start as soon as all instances have a status of Ready.) </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>For a blue/green deployment, starts the process of rerouting traffic from
+         * instances in the original environment to instances in the replacement
+         * environment without waiting for a specified wait time to elapse. (Traffic
+         * rerouting, which is achieved by registering instances in the replacement
+         * environment with the load balancer, can start as soon as all instances have a
+         * status of Ready.) </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ContinueDeployment">AWS
          * API Reference</a></p>
          *
@@ -526,12 +535,12 @@ namespace Model
         virtual Model::ContinueDeploymentOutcomeCallable ContinueDeploymentCallable(const Model::ContinueDeploymentRequest& request) const;
 
         /**
-         * <p>Starts the process of rerouting traffic from instances in the original
-         * environment to instances in thereplacement environment without waiting for a
-         * specified wait time to elapse. (Traffic rerouting, which is achieved by
-         * registering instances in the replacement environment with the load balancer, can
-         * start as soon as all instances have a status of Ready.) </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>For a blue/green deployment, starts the process of rerouting traffic from
+         * instances in the original environment to instances in the replacement
+         * environment without waiting for a specified wait time to elapse. (Traffic
+         * rerouting, which is achieved by registering instances in the replacement
+         * environment with the load balancer, can start as soon as all instances have a
+         * status of Ready.) </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ContinueDeployment">AWS
          * API Reference</a></p>
          *

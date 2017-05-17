@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/gamelift/model/CreateFleetRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
@@ -34,7 +35,8 @@ CreateFleetRequest::CreateFleetRequest() :
     m_newGameSessionProtectionPolicy(ProtectionPolicy::NOT_SET),
     m_newGameSessionProtectionPolicyHasBeenSet(false),
     m_runtimeConfigurationHasBeenSet(false),
-    m_resourceCreationLimitPolicyHasBeenSet(false)
+    m_resourceCreationLimitPolicyHasBeenSet(false),
+    m_metricGroupsHasBeenSet(false)
 {
 }
 
@@ -113,6 +115,17 @@ Aws::String CreateFleetRequest::SerializePayload() const
   if(m_resourceCreationLimitPolicyHasBeenSet)
   {
    payload.WithObject("ResourceCreationLimitPolicy", m_resourceCreationLimitPolicy.Jsonize());
+
+  }
+
+  if(m_metricGroupsHasBeenSet)
+  {
+   Array<JsonValue> metricGroupsJsonList(m_metricGroups.size());
+   for(unsigned metricGroupsIndex = 0; metricGroupsIndex < metricGroupsJsonList.GetLength(); ++metricGroupsIndex)
+   {
+     metricGroupsJsonList[metricGroupsIndex].AsString(m_metricGroups[metricGroupsIndex]);
+   }
+   payload.WithArray("MetricGroups", std::move(metricGroupsJsonList));
 
   }
 

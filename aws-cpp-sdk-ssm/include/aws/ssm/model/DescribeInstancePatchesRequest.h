@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
@@ -74,44 +75,51 @@ namespace Model
     inline DescribeInstancePatchesRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string, 1 ≤
-     * length ≤ 128)</p> <p>Values (array of strings 1 ≤ length ≤ 256)</p>
+     * <p>Each entry in the array is a structure containing:</p> <p>Key (string,
+     * between 1 and 128 characters)</p> <p>Values (array of strings, each string
+     * between 1 and 256 characters)</p>
      */
     inline const Aws::Vector<PatchOrchestratorFilter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string, 1 ≤
-     * length ≤ 128)</p> <p>Values (array of strings 1 ≤ length ≤ 256)</p>
+     * <p>Each entry in the array is a structure containing:</p> <p>Key (string,
+     * between 1 and 128 characters)</p> <p>Values (array of strings, each string
+     * between 1 and 256 characters)</p>
      */
     inline void SetFilters(const Aws::Vector<PatchOrchestratorFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string, 1 ≤
-     * length ≤ 128)</p> <p>Values (array of strings 1 ≤ length ≤ 256)</p>
+     * <p>Each entry in the array is a structure containing:</p> <p>Key (string,
+     * between 1 and 128 characters)</p> <p>Values (array of strings, each string
+     * between 1 and 256 characters)</p>
      */
     inline void SetFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string, 1 ≤
-     * length ≤ 128)</p> <p>Values (array of strings 1 ≤ length ≤ 256)</p>
+     * <p>Each entry in the array is a structure containing:</p> <p>Key (string,
+     * between 1 and 128 characters)</p> <p>Values (array of strings, each string
+     * between 1 and 256 characters)</p>
      */
     inline DescribeInstancePatchesRequest& WithFilters(const Aws::Vector<PatchOrchestratorFilter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string, 1 ≤
-     * length ≤ 128)</p> <p>Values (array of strings 1 ≤ length ≤ 256)</p>
+     * <p>Each entry in the array is a structure containing:</p> <p>Key (string,
+     * between 1 and 128 characters)</p> <p>Values (array of strings, each string
+     * between 1 and 256 characters)</p>
      */
     inline DescribeInstancePatchesRequest& WithFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string, 1 ≤
-     * length ≤ 128)</p> <p>Values (array of strings 1 ≤ length ≤ 256)</p>
+     * <p>Each entry in the array is a structure containing:</p> <p>Key (string,
+     * between 1 and 128 characters)</p> <p>Values (array of strings, each string
+     * between 1 and 256 characters)</p>
      */
     inline DescribeInstancePatchesRequest& AddFilters(const PatchOrchestratorFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string, 1 ≤
-     * length ≤ 128)</p> <p>Values (array of strings 1 ≤ length ≤ 256)</p>
+     * <p>Each entry in the array is a structure containing:</p> <p>Key (string,
+     * between 1 and 128 characters)</p> <p>Values (array of strings, each string
+     * between 1 and 256 characters)</p>
      */
     inline DescribeInstancePatchesRequest& AddFilters(PatchOrchestratorFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

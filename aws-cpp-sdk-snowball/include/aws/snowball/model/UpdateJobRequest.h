@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/SnowballRequest.h>
@@ -85,56 +86,56 @@ namespace Model
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * job. To create a role ARN, use the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * AWS Identity and Access Management (IAM) API action.</p>
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
+     * Identity and Access Management (IAM) API action.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * job. To create a role ARN, use the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * AWS Identity and Access Management (IAM) API action.</p>
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
+     * Identity and Access Management (IAM) API action.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * job. To create a role ARN, use the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * AWS Identity and Access Management (IAM) API action.</p>
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
+     * Identity and Access Management (IAM) API action.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * job. To create a role ARN, use the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * AWS Identity and Access Management (IAM) API action.</p>
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
+     * Identity and Access Management (IAM) API action.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * job. To create a role ARN, use the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * AWS Identity and Access Management (IAM) API action.</p>
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
+     * Identity and Access Management (IAM) API action.</p>
      */
     inline UpdateJobRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * job. To create a role ARN, use the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * AWS Identity and Access Management (IAM) API action.</p>
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
+     * Identity and Access Management (IAM) API action.</p>
      */
     inline UpdateJobRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * job. To create a role ARN, use the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * AWS Identity and Access Management (IAM) API action.</p>
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
+     * Identity and Access Management (IAM) API action.</p>
      */
     inline UpdateJobRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
@@ -333,6 +334,48 @@ namespace Model
      */
     inline UpdateJobRequest& WithSnowballCapacityPreference(SnowballCapacity&& value) { SetSnowballCapacityPreference(std::move(value)); return *this;}
 
+    /**
+     * <p>The updated ID for the forwarding address for a job. This field is not
+     * supported in most regions.</p>
+     */
+    inline const Aws::String& GetForwardingAddressId() const{ return m_forwardingAddressId; }
+
+    /**
+     * <p>The updated ID for the forwarding address for a job. This field is not
+     * supported in most regions.</p>
+     */
+    inline void SetForwardingAddressId(const Aws::String& value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId = value; }
+
+    /**
+     * <p>The updated ID for the forwarding address for a job. This field is not
+     * supported in most regions.</p>
+     */
+    inline void SetForwardingAddressId(Aws::String&& value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId = std::move(value); }
+
+    /**
+     * <p>The updated ID for the forwarding address for a job. This field is not
+     * supported in most regions.</p>
+     */
+    inline void SetForwardingAddressId(const char* value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId.assign(value); }
+
+    /**
+     * <p>The updated ID for the forwarding address for a job. This field is not
+     * supported in most regions.</p>
+     */
+    inline UpdateJobRequest& WithForwardingAddressId(const Aws::String& value) { SetForwardingAddressId(value); return *this;}
+
+    /**
+     * <p>The updated ID for the forwarding address for a job. This field is not
+     * supported in most regions.</p>
+     */
+    inline UpdateJobRequest& WithForwardingAddressId(Aws::String&& value) { SetForwardingAddressId(std::move(value)); return *this;}
+
+    /**
+     * <p>The updated ID for the forwarding address for a job. This field is not
+     * supported in most regions.</p>
+     */
+    inline UpdateJobRequest& WithForwardingAddressId(const char* value) { SetForwardingAddressId(value); return *this;}
+
   private:
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
@@ -350,6 +393,8 @@ namespace Model
     bool m_descriptionHasBeenSet;
     SnowballCapacity m_snowballCapacityPreference;
     bool m_snowballCapacityPreferenceHasBeenSet;
+    Aws::String m_forwardingAddressId;
+    bool m_forwardingAddressIdHasBeenSet;
   };
 
 } // namespace Model

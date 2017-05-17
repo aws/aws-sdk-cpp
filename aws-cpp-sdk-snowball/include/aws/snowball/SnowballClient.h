@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/SnowballErrors.h>
@@ -264,9 +265,9 @@ namespace Model
         virtual void CancelJobAsync(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an address for a Snowball to be shipped to. </p> <p>Addresses are
-         * validated at the time of creation. The address you provide must be located
-         * within the serviceable area of your region. If the address is invalid or
+         * <p>Creates an address for a Snowball to be shipped to. In most regions,
+         * addresses are validated at the time of creation. The address you provide must be
+         * located within the serviceable area of your region. If the address is invalid or
          * unsupported, then an exception is thrown.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">AWS
          * API Reference</a></p>
@@ -274,9 +275,9 @@ namespace Model
         virtual Model::CreateAddressOutcome CreateAddress(const Model::CreateAddressRequest& request) const;
 
         /**
-         * <p>Creates an address for a Snowball to be shipped to. </p> <p>Addresses are
-         * validated at the time of creation. The address you provide must be located
-         * within the serviceable area of your region. If the address is invalid or
+         * <p>Creates an address for a Snowball to be shipped to. In most regions,
+         * addresses are validated at the time of creation. The address you provide must be
+         * located within the serviceable area of your region. If the address is invalid or
          * unsupported, then an exception is thrown.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">AWS
          * API Reference</a></p>
@@ -286,9 +287,9 @@ namespace Model
         virtual Model::CreateAddressOutcomeCallable CreateAddressCallable(const Model::CreateAddressRequest& request) const;
 
         /**
-         * <p>Creates an address for a Snowball to be shipped to. </p> <p>Addresses are
-         * validated at the time of creation. The address you provide must be located
-         * within the serviceable area of your region. If the address is invalid or
+         * <p>Creates an address for a Snowball to be shipped to. In most regions,
+         * addresses are validated at the time of creation. The address you provide must be
+         * located within the serviceable area of your region. If the address is invalid or
          * unsupported, then an exception is thrown.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">AWS
          * API Reference</a></p>
@@ -336,7 +337,7 @@ namespace Model
          * data center. Your AWS account must have the right trust policies and permissions
          * in place to create a job for Snowball. If you're creating a job for a node in a
          * cluster, you only need to provide the <code>clusterId</code> value; the other
-         * job attributes are inherited from the cluster. .</p><p><h3>See Also:</h3>   <a
+         * job attributes are inherited from the cluster. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">AWS
          * API Reference</a></p>
          */
@@ -347,7 +348,7 @@ namespace Model
          * data center. Your AWS account must have the right trust policies and permissions
          * in place to create a job for Snowball. If you're creating a job for a node in a
          * cluster, you only need to provide the <code>clusterId</code> value; the other
-         * job attributes are inherited from the cluster. .</p><p><h3>See Also:</h3>   <a
+         * job attributes are inherited from the cluster. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">AWS
          * API Reference</a></p>
          *
@@ -360,7 +361,7 @@ namespace Model
          * data center. Your AWS account must have the right trust policies and permissions
          * in place to create a job for Snowball. If you're creating a job for a node in a
          * cluster, you only need to provide the <code>clusterId</code> value; the other
-         * job attributes are inherited from the cluster. .</p><p><h3>See Also:</h3>   <a
+         * job attributes are inherited from the cluster. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">AWS
          * API Reference</a></p>
          *
@@ -460,7 +461,7 @@ namespace Model
 
         /**
          * <p>Returns information about a specific job including shipping information, job
-         * status, and other important metadata. .</p><p><h3>See Also:</h3>   <a
+         * status, and other important metadata. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob">AWS
          * API Reference</a></p>
          */
@@ -468,7 +469,7 @@ namespace Model
 
         /**
          * <p>Returns information about a specific job including shipping information, job
-         * status, and other important metadata. .</p><p><h3>See Also:</h3>   <a
+         * status, and other important metadata. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob">AWS
          * API Reference</a></p>
          *
@@ -478,7 +479,7 @@ namespace Model
 
         /**
          * <p>Returns information about a specific job including shipping information, job
-         * status, and other important metadata. .</p><p><h3>See Also:</h3>   <a
+         * status, and other important metadata. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob">AWS
          * API Reference</a></p>
          *

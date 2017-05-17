@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -344,79 +345,72 @@ namespace Model
     inline Address& WithStateOrProvince(const char* value) { SetStateOrProvince(value); return *this;}
 
     /**
-     * <p>The prefecture or district that the appliance will be shipped to.</p>
+     * <p>This field is no longer used and the value is ignored.</p>
      */
     inline const Aws::String& GetPrefectureOrDistrict() const{ return m_prefectureOrDistrict; }
 
     /**
-     * <p>The prefecture or district that the appliance will be shipped to.</p>
+     * <p>This field is no longer used and the value is ignored.</p>
      */
     inline void SetPrefectureOrDistrict(const Aws::String& value) { m_prefectureOrDistrictHasBeenSet = true; m_prefectureOrDistrict = value; }
 
     /**
-     * <p>The prefecture or district that the appliance will be shipped to.</p>
+     * <p>This field is no longer used and the value is ignored.</p>
      */
     inline void SetPrefectureOrDistrict(Aws::String&& value) { m_prefectureOrDistrictHasBeenSet = true; m_prefectureOrDistrict = std::move(value); }
 
     /**
-     * <p>The prefecture or district that the appliance will be shipped to.</p>
+     * <p>This field is no longer used and the value is ignored.</p>
      */
     inline void SetPrefectureOrDistrict(const char* value) { m_prefectureOrDistrictHasBeenSet = true; m_prefectureOrDistrict.assign(value); }
 
     /**
-     * <p>The prefecture or district that the appliance will be shipped to.</p>
+     * <p>This field is no longer used and the value is ignored.</p>
      */
     inline Address& WithPrefectureOrDistrict(const Aws::String& value) { SetPrefectureOrDistrict(value); return *this;}
 
     /**
-     * <p>The prefecture or district that the appliance will be shipped to.</p>
+     * <p>This field is no longer used and the value is ignored.</p>
      */
     inline Address& WithPrefectureOrDistrict(Aws::String&& value) { SetPrefectureOrDistrict(std::move(value)); return *this;}
 
     /**
-     * <p>The prefecture or district that the appliance will be shipped to.</p>
+     * <p>This field is no longer used and the value is ignored.</p>
      */
     inline Address& WithPrefectureOrDistrict(const char* value) { SetPrefectureOrDistrict(value); return *this;}
 
     /**
-     * <p>The landmark identifying the address that the appliance will be shipped
-     * to.</p>
+     * <p>This field is no longer used and the value is ignored.</p>
      */
     inline const Aws::String& GetLandmark() const{ return m_landmark; }
 
     /**
-     * <p>The landmark identifying the address that the appliance will be shipped
-     * to.</p>
+     * <p>This field is no longer used and the value is ignored.</p>
      */
     inline void SetLandmark(const Aws::String& value) { m_landmarkHasBeenSet = true; m_landmark = value; }
 
     /**
-     * <p>The landmark identifying the address that the appliance will be shipped
-     * to.</p>
+     * <p>This field is no longer used and the value is ignored.</p>
      */
     inline void SetLandmark(Aws::String&& value) { m_landmarkHasBeenSet = true; m_landmark = std::move(value); }
 
     /**
-     * <p>The landmark identifying the address that the appliance will be shipped
-     * to.</p>
+     * <p>This field is no longer used and the value is ignored.</p>
      */
     inline void SetLandmark(const char* value) { m_landmarkHasBeenSet = true; m_landmark.assign(value); }
 
     /**
-     * <p>The landmark identifying the address that the appliance will be shipped
-     * to.</p>
+     * <p>This field is no longer used and the value is ignored.</p>
      */
     inline Address& WithLandmark(const Aws::String& value) { SetLandmark(value); return *this;}
 
     /**
-     * <p>The landmark identifying the address that the appliance will be shipped
-     * to.</p>
+     * <p>This field is no longer used and the value is ignored.</p>
      */
     inline Address& WithLandmark(Aws::String&& value) { SetLandmark(std::move(value)); return *this;}
 
     /**
-     * <p>The landmark identifying the address that the appliance will be shipped
-     * to.</p>
+     * <p>This field is no longer used and the value is ignored.</p>
      */
     inline Address& WithLandmark(const char* value) { SetLandmark(value); return *this;}
 
@@ -532,6 +526,24 @@ namespace Model
      */
     inline Address& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
 
+    /**
+     * <p>If the address you are creating is a primary address, then set this option to
+     * true. This field is not supported in most regions.</p>
+     */
+    inline bool GetIsRestricted() const{ return m_isRestricted; }
+
+    /**
+     * <p>If the address you are creating is a primary address, then set this option to
+     * true. This field is not supported in most regions.</p>
+     */
+    inline void SetIsRestricted(bool value) { m_isRestrictedHasBeenSet = true; m_isRestricted = value; }
+
+    /**
+     * <p>If the address you are creating is a primary address, then set this option to
+     * true. This field is not supported in most regions.</p>
+     */
+    inline Address& WithIsRestricted(bool value) { SetIsRestricted(value); return *this;}
+
   private:
     Aws::String m_addressId;
     bool m_addressIdHasBeenSet;
@@ -559,6 +571,8 @@ namespace Model
     bool m_postalCodeHasBeenSet;
     Aws::String m_phoneNumber;
     bool m_phoneNumberHasBeenSet;
+    bool m_isRestricted;
+    bool m_isRestrictedHasBeenSet;
   };
 
 } // namespace Model

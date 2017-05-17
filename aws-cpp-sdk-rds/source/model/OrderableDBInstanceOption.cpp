@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/rds/model/OrderableDBInstanceOption.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
@@ -47,7 +48,9 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_supportsIops(false),
     m_supportsIopsHasBeenSet(false),
     m_supportsEnhancedMonitoring(false),
-    m_supportsEnhancedMonitoringHasBeenSet(false)
+    m_supportsEnhancedMonitoringHasBeenSet(false),
+    m_supportsIAMDatabaseAuthentication(false),
+    m_supportsIAMDatabaseAuthenticationHasBeenSet(false)
 {
 }
 
@@ -69,7 +72,9 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_supportsIops(false),
     m_supportsIopsHasBeenSet(false),
     m_supportsEnhancedMonitoring(false),
-    m_supportsEnhancedMonitoringHasBeenSet(false)
+    m_supportsEnhancedMonitoringHasBeenSet(false),
+    m_supportsIAMDatabaseAuthentication(false),
+    m_supportsIAMDatabaseAuthenticationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -158,6 +163,12 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
       m_supportsEnhancedMonitoring = StringUtils::ConvertToBool(StringUtils::Trim(supportsEnhancedMonitoringNode.GetText().c_str()).c_str());
       m_supportsEnhancedMonitoringHasBeenSet = true;
     }
+    XmlNode supportsIAMDatabaseAuthenticationNode = resultNode.FirstChild("SupportsIAMDatabaseAuthentication");
+    if(!supportsIAMDatabaseAuthenticationNode.IsNull())
+    {
+      m_supportsIAMDatabaseAuthentication = StringUtils::ConvertToBool(StringUtils::Trim(supportsIAMDatabaseAuthenticationNode.GetText().c_str()).c_str());
+      m_supportsIAMDatabaseAuthenticationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -231,6 +242,11 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".SupportsEnhancedMonitoring=" << std::boolalpha << m_supportsEnhancedMonitoring << "&";
   }
 
+  if(m_supportsIAMDatabaseAuthenticationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsIAMDatabaseAuthentication=" << std::boolalpha << m_supportsIAMDatabaseAuthentication << "&";
+  }
+
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -288,6 +304,10 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if(m_supportsEnhancedMonitoringHasBeenSet)
   {
       oStream << location << ".SupportsEnhancedMonitoring=" << std::boolalpha << m_supportsEnhancedMonitoring << "&";
+  }
+  if(m_supportsIAMDatabaseAuthenticationHasBeenSet)
+  {
+      oStream << location << ".SupportsIAMDatabaseAuthentication=" << std::boolalpha << m_supportsIAMDatabaseAuthentication << "&";
   }
 }
 

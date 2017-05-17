@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
@@ -2120,6 +2121,33 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 
+    /**
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts; otherwise false.</p> <p> You can enable IAM database
+     * authentication for the following database engines</p> <ul> <li> <p>For MySQL
+     * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
+     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
+     */
+    inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
+
+    /**
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts; otherwise false.</p> <p> You can enable IAM database
+     * authentication for the following database engines</p> <ul> <li> <p>For MySQL
+     * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
+     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
+     */
+    inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
+
+    /**
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts; otherwise false.</p> <p> You can enable IAM database
+     * authentication for the following database engines</p> <ul> <li> <p>For MySQL
+     * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
+     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
+     */
+    inline ModifyDBInstanceRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
+
   private:
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
@@ -2185,6 +2213,8 @@ namespace Model
     bool m_domainIAMRoleNameHasBeenSet;
     int m_promotionTier;
     bool m_promotionTierHasBeenSet;
+    bool m_enableIAMDatabaseAuthentication;
+    bool m_enableIAMDatabaseAuthenticationHasBeenSet;
   };
 
 } // namespace Model

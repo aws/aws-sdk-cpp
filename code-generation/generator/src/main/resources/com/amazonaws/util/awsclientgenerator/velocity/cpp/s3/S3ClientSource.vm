@@ -1,11 +1,33 @@
 #set($signPayloadsOptional = true)
 #set($doNotDoubleUrlEncode = true)
+#set($virtualAddressingSupported = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientSource.vm")
 
 Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, long long expirationInSeconds)
 {
     Aws::StringStream ss;
-    ss << m_uri << "/" << bucketName << "/" << key;
+    ss << ComputeEndpointString(bucketName) << "/" << key;
     URI uri(ss.str());
     return AWSClient::GeneratePresignedUrl(uri, method, expirationInSeconds);
+}
+
+Aws::String ${className}::ComputeEndpointString(const Aws::String& bucket) const
+{
+    Aws::StringStream ss;
+    if(m_useVirtualAdressing && Aws::Utils::IsValidDnsLabel(bucket))
+    {
+        ss << m_scheme << "://" << bucket << "." << m_baseUri;
+    }
+    else
+    {
+        ss << m_scheme << "://" << m_baseUri << "/" << bucket;
+    }
+    return ss.str();
+}
+
+Aws::String  ${className}::ComputeEndpointString() const
+{
+    Aws::StringStream ss;
+    ss << m_scheme << "://" << m_baseUri;
+    return ss.str();
 }

@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/ECSRequest.h>
@@ -88,50 +89,50 @@ namespace Model
     inline UpdateContainerInstancesStateRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
     /**
-     * <p>A space-separated list of container instance IDs or full Amazon Resource Name
-     * (ARN) entries.</p>
+     * <p>A list of container instance IDs or full Amazon Resource Name (ARN)
+     * entries.</p>
      */
     inline const Aws::Vector<Aws::String>& GetContainerInstances() const{ return m_containerInstances; }
 
     /**
-     * <p>A space-separated list of container instance IDs or full Amazon Resource Name
-     * (ARN) entries.</p>
+     * <p>A list of container instance IDs or full Amazon Resource Name (ARN)
+     * entries.</p>
      */
     inline void SetContainerInstances(const Aws::Vector<Aws::String>& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = value; }
 
     /**
-     * <p>A space-separated list of container instance IDs or full Amazon Resource Name
-     * (ARN) entries.</p>
+     * <p>A list of container instance IDs or full Amazon Resource Name (ARN)
+     * entries.</p>
      */
     inline void SetContainerInstances(Aws::Vector<Aws::String>&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = std::move(value); }
 
     /**
-     * <p>A space-separated list of container instance IDs or full Amazon Resource Name
-     * (ARN) entries.</p>
+     * <p>A list of container instance IDs or full Amazon Resource Name (ARN)
+     * entries.</p>
      */
     inline UpdateContainerInstancesStateRequest& WithContainerInstances(const Aws::Vector<Aws::String>& value) { SetContainerInstances(value); return *this;}
 
     /**
-     * <p>A space-separated list of container instance IDs or full Amazon Resource Name
-     * (ARN) entries.</p>
+     * <p>A list of container instance IDs or full Amazon Resource Name (ARN)
+     * entries.</p>
      */
     inline UpdateContainerInstancesStateRequest& WithContainerInstances(Aws::Vector<Aws::String>&& value) { SetContainerInstances(std::move(value)); return *this;}
 
     /**
-     * <p>A space-separated list of container instance IDs or full Amazon Resource Name
-     * (ARN) entries.</p>
+     * <p>A list of container instance IDs or full Amazon Resource Name (ARN)
+     * entries.</p>
      */
     inline UpdateContainerInstancesStateRequest& AddContainerInstances(const Aws::String& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
 
     /**
-     * <p>A space-separated list of container instance IDs or full Amazon Resource Name
-     * (ARN) entries.</p>
+     * <p>A list of container instance IDs or full Amazon Resource Name (ARN)
+     * entries.</p>
      */
     inline UpdateContainerInstancesStateRequest& AddContainerInstances(Aws::String&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A space-separated list of container instance IDs or full Amazon Resource Name
-     * (ARN) entries.</p>
+     * <p>A list of container instance IDs or full Amazon Resource Name (ARN)
+     * entries.</p>
      */
     inline UpdateContainerInstancesStateRequest& AddContainerInstances(const char* value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
 

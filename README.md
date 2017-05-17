@@ -143,7 +143,7 @@ CMake options are variables that can either be ON or OFF, with a controllable de
 ##### NO_HTTP_CLIENT
 (Defaults to OFF) If enabled, prevents the default platform-specific http client from being built into the library.  Turn this ON if you wish to inject your own http client implementation.
 
-#####NO_ENCRYPTION
+##### NO_ENCRYPTION
 (Defaults to OFF) If enabled, prevents the default platform-specific cryptography implementation from being built into the library.  Turn this ON if you wish to inject your own cryptography implementation.
 
 ##### ENABLE_RTTI
@@ -180,10 +180,10 @@ An override path for where the build system should find the Android NDK.  By def
 Several directories are appended with \*integration-tests. After building your project, you can run these executables to ensure everything works properly.
 
 #### Dependencies:
-To compile in Linux, you must have the header files for libcurl, libopenssl, and libuuid. The packages are typically available in your package manager.
+To compile in Linux, you must have the header files for libcurl, libopenssl. The packages are typically available in your package manager.
 
 Debian example:
-   `sudo apt-get install libcurl-dev uuid-dev`
+   `sudo apt-get install libcurl-dev`
 
 ### Using the SDK
 After they are constructed, individual service clients are very similar to other SDKs, such as Java and .NET. This section explains how core works, how to use each feature, and how to construct an individual client.
@@ -455,7 +455,7 @@ You can use the AWSCredentialProvider interface to provide login credentials to 
 The default credential provider chain does the following:
 * Checks your environment variables for AWS Credentials
 * Checks your $HOME/.aws/credentials file for a profile and credentials
-* Contacts the EC2MetadataInstanceProfile service to request credentials
+* Contacts the ECS TaskRoleCredentialsProvider service to request credentials if Environment variable AWS_CONTAINER_CREDENTIALS_RELATIVE_URI has been set. Otherwise contacts the EC2MetadataInstanceProfileCredentialsProvider service to request credentials
 
 The simplest way to communicate with AWS is to ensure we can find your credentials in one of these locations.
 

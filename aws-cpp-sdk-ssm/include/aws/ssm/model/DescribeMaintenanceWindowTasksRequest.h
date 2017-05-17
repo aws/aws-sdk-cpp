@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
@@ -75,50 +76,43 @@ namespace Model
 
     /**
      * <p>Optional filters used to narrow down the scope of the returned tasks. The
-     * supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>,
-     * <code>Priority</code>, and <code>TaskType</code>.</p>
+     * supported filter keys are WindowTaskId, TaskArn, Priority, and TaskType.</p>
      */
     inline const Aws::Vector<MaintenanceWindowFilter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>Optional filters used to narrow down the scope of the returned tasks. The
-     * supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>,
-     * <code>Priority</code>, and <code>TaskType</code>.</p>
+     * supported filter keys are WindowTaskId, TaskArn, Priority, and TaskType.</p>
      */
     inline void SetFilters(const Aws::Vector<MaintenanceWindowFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Optional filters used to narrow down the scope of the returned tasks. The
-     * supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>,
-     * <code>Priority</code>, and <code>TaskType</code>.</p>
+     * supported filter keys are WindowTaskId, TaskArn, Priority, and TaskType.</p>
      */
     inline void SetFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Optional filters used to narrow down the scope of the returned tasks. The
-     * supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>,
-     * <code>Priority</code>, and <code>TaskType</code>.</p>
+     * supported filter keys are WindowTaskId, TaskArn, Priority, and TaskType.</p>
      */
     inline DescribeMaintenanceWindowTasksRequest& WithFilters(const Aws::Vector<MaintenanceWindowFilter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Optional filters used to narrow down the scope of the returned tasks. The
-     * supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>,
-     * <code>Priority</code>, and <code>TaskType</code>.</p>
+     * supported filter keys are WindowTaskId, TaskArn, Priority, and TaskType.</p>
      */
     inline DescribeMaintenanceWindowTasksRequest& WithFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Optional filters used to narrow down the scope of the returned tasks. The
-     * supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>,
-     * <code>Priority</code>, and <code>TaskType</code>.</p>
+     * supported filter keys are WindowTaskId, TaskArn, Priority, and TaskType.</p>
      */
     inline DescribeMaintenanceWindowTasksRequest& AddFilters(const MaintenanceWindowFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>Optional filters used to narrow down the scope of the returned tasks. The
-     * supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>,
-     * <code>Priority</code>, and <code>TaskType</code>.</p>
+     * supported filter keys are WindowTaskId, TaskArn, Priority, and TaskType.</p>
      */
     inline DescribeMaintenanceWindowTasksRequest& AddFilters(MaintenanceWindowFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

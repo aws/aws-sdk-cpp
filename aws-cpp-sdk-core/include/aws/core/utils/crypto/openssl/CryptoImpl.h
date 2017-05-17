@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 #include <aws/core/utils/GetTheLights.h>
 #include <openssl/ossl_typ.h>
 #include <openssl/evp.h>
+#include <openssl/hmac.h>
 #include <openssl/rand.h>
 #include <atomic>
 #include <mutex>
@@ -95,10 +96,6 @@ namespace Aws
             class Sha256HMACOpenSSLImpl : public HMAC
             {
             public:
-
-                Sha256HMACOpenSSLImpl()
-                { }
-
                 virtual ~Sha256HMACOpenSSLImpl() = default;
 
                 virtual HashResult Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) override;
@@ -191,7 +188,7 @@ namespace Aws
 
                 virtual size_t GetKeyLengthBits() const = 0;
 
-                EVP_CIPHER_CTX m_ctx;
+                EVP_CIPHER_CTX* m_ctx;
 
                 void CheckInitEncryptor();
                 void CheckInitDecryptor();

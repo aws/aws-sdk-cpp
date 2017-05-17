@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/rds/model/RestoreDBInstanceFromDBSnapshotRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -46,7 +47,9 @@ RestoreDBInstanceFromDBSnapshotRequest::RestoreDBInstanceFromDBSnapshotRequest()
     m_domainHasBeenSet(false),
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false),
-    m_domainIAMRoleNameHasBeenSet(false)
+    m_domainIAMRoleNameHasBeenSet(false),
+    m_enableIAMDatabaseAuthentication(false),
+    m_enableIAMDatabaseAuthenticationHasBeenSet(false)
 {
 }
 
@@ -162,6 +165,11 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
   if(m_domainIAMRoleNameHasBeenSet)
   {
     ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
+  }
+
+  if(m_enableIAMDatabaseAuthenticationHasBeenSet)
+  {
+    ss << "EnableIAMDatabaseAuthentication=" << std::boolalpha << m_enableIAMDatabaseAuthentication << "&";
   }
 
   ss << "Version=2014-10-31";

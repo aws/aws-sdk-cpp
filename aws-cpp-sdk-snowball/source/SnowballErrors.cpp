@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/snowball/SnowballErrors.h>
@@ -29,6 +30,7 @@ namespace SnowballErrorMapper
 
 static const int K_M_S_REQUEST_FAILED_HASH = HashingUtils::HashString("KMSRequestFailedException");
 static const int UNSUPPORTED_ADDRESS_HASH = HashingUtils::HashString("UnsupportedAddressException");
+static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int CLUSTER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ClusterLimitExceededException");
 static const int INVALID_JOB_STATE_HASH = HashingUtils::HashString("InvalidJobStateException");
 static const int INVALID_ADDRESS_HASH = HashingUtils::HashString("InvalidAddressException");
@@ -47,6 +49,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == UNSUPPORTED_ADDRESS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::UNSUPPORTED_ADDRESS), false);
+  }
+  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::INVALID_NEXT_TOKEN), false);
   }
   else if (hashCode == CLUSTER_LIMIT_EXCEEDED_HASH)
   {

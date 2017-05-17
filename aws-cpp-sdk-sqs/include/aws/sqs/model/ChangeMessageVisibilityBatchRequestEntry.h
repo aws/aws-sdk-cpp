@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
@@ -34,7 +35,7 @@ namespace Model
 
   /**
    * <p>Encloses a receipt handle and an entry id for each message in <code>
-   * <a>ChangeMessageVisibilityBatch</a> </code>.</p> <important> <p>All of the
+   * <a>ChangeMessageVisibilityBatch</a>.</code> </p> <important> <p>All of the
    * following list parameters must be prefixed with
    * <code>ChangeMessageVisibilityBatchRequestEntry.n</code>, where <code>n</code> is
    * an integer value starting with <code>1</code>. For example, a parameter list for

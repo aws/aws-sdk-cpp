@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #include <aws/gamelift/model/MetricName.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
@@ -32,9 +33,12 @@ namespace Aws
         static const int ActivatingGameSessions_HASH = HashingUtils::HashString("ActivatingGameSessions");
         static const int ActiveGameSessions_HASH = HashingUtils::HashString("ActiveGameSessions");
         static const int ActiveInstances_HASH = HashingUtils::HashString("ActiveInstances");
+        static const int AvailableGameSessions_HASH = HashingUtils::HashString("AvailableGameSessions");
         static const int AvailablePlayerSessions_HASH = HashingUtils::HashString("AvailablePlayerSessions");
         static const int CurrentPlayerSessions_HASH = HashingUtils::HashString("CurrentPlayerSessions");
         static const int IdleInstances_HASH = HashingUtils::HashString("IdleInstances");
+        static const int PercentAvailableGameSessions_HASH = HashingUtils::HashString("PercentAvailableGameSessions");
+        static const int PercentIdleInstances_HASH = HashingUtils::HashString("PercentIdleInstances");
         static const int QueueDepth_HASH = HashingUtils::HashString("QueueDepth");
         static const int WaitTime_HASH = HashingUtils::HashString("WaitTime");
 
@@ -54,6 +58,10 @@ namespace Aws
           {
             return MetricName::ActiveInstances;
           }
+          else if (hashCode == AvailableGameSessions_HASH)
+          {
+            return MetricName::AvailableGameSessions;
+          }
           else if (hashCode == AvailablePlayerSessions_HASH)
           {
             return MetricName::AvailablePlayerSessions;
@@ -65,6 +73,14 @@ namespace Aws
           else if (hashCode == IdleInstances_HASH)
           {
             return MetricName::IdleInstances;
+          }
+          else if (hashCode == PercentAvailableGameSessions_HASH)
+          {
+            return MetricName::PercentAvailableGameSessions;
+          }
+          else if (hashCode == PercentIdleInstances_HASH)
+          {
+            return MetricName::PercentIdleInstances;
           }
           else if (hashCode == QueueDepth_HASH)
           {
@@ -94,12 +110,18 @@ namespace Aws
             return "ActiveGameSessions";
           case MetricName::ActiveInstances:
             return "ActiveInstances";
+          case MetricName::AvailableGameSessions:
+            return "AvailableGameSessions";
           case MetricName::AvailablePlayerSessions:
             return "AvailablePlayerSessions";
           case MetricName::CurrentPlayerSessions:
             return "CurrentPlayerSessions";
           case MetricName::IdleInstances:
             return "IdleInstances";
+          case MetricName::PercentAvailableGameSessions:
+            return "PercentAvailableGameSessions";
+          case MetricName::PercentIdleInstances:
+            return "PercentIdleInstances";
           case MetricName::QueueDepth:
             return "QueueDepth";
           case MetricName::WaitTime:
