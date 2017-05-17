@@ -44,100 +44,79 @@ namespace Model
     ListTargetsByRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <zonbook> <simpara>The targets assigned to the rule.</simpara> </zonbook>
-     * <xhtml> <p>The targets assigned to the rule.</p> </xhtml>
+     * <p>The targets assigned to the rule.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <zonbook> <simpara>The targets assigned to the rule.</simpara> </zonbook>
-     * <xhtml> <p>The targets assigned to the rule.</p> </xhtml>
+     * <p>The targets assigned to the rule.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targets = value; }
 
     /**
-     * <zonbook> <simpara>The targets assigned to the rule.</simpara> </zonbook>
-     * <xhtml> <p>The targets assigned to the rule.</p> </xhtml>
+     * <p>The targets assigned to the rule.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targets = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The targets assigned to the rule.</simpara> </zonbook>
-     * <xhtml> <p>The targets assigned to the rule.</p> </xhtml>
+     * <p>The targets assigned to the rule.</p>
      */
     inline ListTargetsByRuleResult& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The targets assigned to the rule.</simpara> </zonbook>
-     * <xhtml> <p>The targets assigned to the rule.</p> </xhtml>
+     * <p>The targets assigned to the rule.</p>
      */
     inline ListTargetsByRuleResult& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The targets assigned to the rule.</simpara> </zonbook>
-     * <xhtml> <p>The targets assigned to the rule.</p> </xhtml>
+     * <p>The targets assigned to the rule.</p>
      */
     inline ListTargetsByRuleResult& AddTargets(const Target& value) { m_targets.push_back(value); return *this; }
 
     /**
-     * <zonbook> <simpara>The targets assigned to the rule.</simpara> </zonbook>
-     * <xhtml> <p>The targets assigned to the rule.</p> </xhtml>
+     * <p>The targets assigned to the rule.</p>
      */
     inline ListTargetsByRuleResult& AddTargets(Target&& value) { m_targets.push_back(std::move(value)); return *this; }
 
     /**
-     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
-     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
      * <p>Indicates whether there are additional results to retrieve. If there are no
-     * more results, the value is null.</p> </xhtml>
+     * more results, the value is null.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
-     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
      * <p>Indicates whether there are additional results to retrieve. If there are no
-     * more results, the value is null.</p> </xhtml>
+     * more results, the value is null.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
-     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
      * <p>Indicates whether there are additional results to retrieve. If there are no
-     * more results, the value is null.</p> </xhtml>
+     * more results, the value is null.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
-     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
      * <p>Indicates whether there are additional results to retrieve. If there are no
-     * more results, the value is null.</p> </xhtml>
+     * more results, the value is null.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
-     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
      * <p>Indicates whether there are additional results to retrieve. If there are no
-     * more results, the value is null.</p> </xhtml>
+     * more results, the value is null.</p>
      */
     inline ListTargetsByRuleResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
-     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
      * <p>Indicates whether there are additional results to retrieve. If there are no
-     * more results, the value is null.</p> </xhtml>
+     * more results, the value is null.</p>
      */
     inline ListTargetsByRuleResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
-     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
      * <p>Indicates whether there are additional results to retrieve. If there are no
-     * more results, the value is null.</p> </xhtml>
+     * more results, the value is null.</p>
      */
     inline ListTargetsByRuleResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

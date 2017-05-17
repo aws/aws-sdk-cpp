@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the state of a Classic load balancer.</p> <p>If you specify a load
+   * <p>Describes the state of a Classic Load Balancer.</p> <p>If you specify a load
    * balancer when creating the Auto Scaling group, the state of the load balancer is
    * <code>InService</code>.</p> <p>If you attach a load balancer to an existing Auto
    * Scaling group, the initial state is <code>Adding</code>. The state transitions

@@ -33,9 +33,10 @@ namespace Model
 {
 
   /**
-   * <zonbook> <simpara>Represents an event that failed to be submitted.</simpara>
-   * </zonbook> <xhtml> <p>Represents an event that failed to be submitted.</p>
-   * </xhtml>
+   * <p>Represents an event that failed to be submitted.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEventsResultEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHEVENTS_API PutEventsResultEntry
   {
@@ -46,142 +47,107 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <zonbook> <simpara>The ID of the event.</simpara> </zonbook> <xhtml> <p>The ID
-     * of the event.</p> </xhtml>
+     * <p>The ID of the event.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
 
     /**
-     * <zonbook> <simpara>The ID of the event.</simpara> </zonbook> <xhtml> <p>The ID
-     * of the event.</p> </xhtml>
+     * <p>The ID of the event.</p>
      */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /**
-     * <zonbook> <simpara>The ID of the event.</simpara> </zonbook> <xhtml> <p>The ID
-     * of the event.</p> </xhtml>
+     * <p>The ID of the event.</p>
      */
     inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The ID of the event.</simpara> </zonbook> <xhtml> <p>The ID
-     * of the event.</p> </xhtml>
+     * <p>The ID of the event.</p>
      */
     inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
 
     /**
-     * <zonbook> <simpara>The ID of the event.</simpara> </zonbook> <xhtml> <p>The ID
-     * of the event.</p> </xhtml>
+     * <p>The ID of the event.</p>
      */
     inline PutEventsResultEntry& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The ID of the event.</simpara> </zonbook> <xhtml> <p>The ID
-     * of the event.</p> </xhtml>
+     * <p>The ID of the event.</p>
      */
     inline PutEventsResultEntry& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The ID of the event.</simpara> </zonbook> <xhtml> <p>The ID
-     * of the event.</p> </xhtml>
+     * <p>The ID of the event.</p>
      */
     inline PutEventsResultEntry& WithEventId(const char* value) { SetEventId(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The error code that indicates why the event submission
-     * failed.</simpara> </zonbook> <xhtml> <p>The error code that indicates why the
-     * event submission failed.</p> </xhtml>
+     * <p>The error code that indicates why the event submission failed.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
 
     /**
-     * <zonbook> <simpara>The error code that indicates why the event submission
-     * failed.</simpara> </zonbook> <xhtml> <p>The error code that indicates why the
-     * event submission failed.</p> </xhtml>
+     * <p>The error code that indicates why the event submission failed.</p>
      */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
-     * <zonbook> <simpara>The error code that indicates why the event submission
-     * failed.</simpara> </zonbook> <xhtml> <p>The error code that indicates why the
-     * event submission failed.</p> </xhtml>
+     * <p>The error code that indicates why the event submission failed.</p>
      */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The error code that indicates why the event submission
-     * failed.</simpara> </zonbook> <xhtml> <p>The error code that indicates why the
-     * event submission failed.</p> </xhtml>
+     * <p>The error code that indicates why the event submission failed.</p>
      */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
 
     /**
-     * <zonbook> <simpara>The error code that indicates why the event submission
-     * failed.</simpara> </zonbook> <xhtml> <p>The error code that indicates why the
-     * event submission failed.</p> </xhtml>
+     * <p>The error code that indicates why the event submission failed.</p>
      */
     inline PutEventsResultEntry& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The error code that indicates why the event submission
-     * failed.</simpara> </zonbook> <xhtml> <p>The error code that indicates why the
-     * event submission failed.</p> </xhtml>
+     * <p>The error code that indicates why the event submission failed.</p>
      */
     inline PutEventsResultEntry& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The error code that indicates why the event submission
-     * failed.</simpara> </zonbook> <xhtml> <p>The error code that indicates why the
-     * event submission failed.</p> </xhtml>
+     * <p>The error code that indicates why the event submission failed.</p>
      */
     inline PutEventsResultEntry& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The error message that explains why the event submission
-     * failed.</simpara> </zonbook> <xhtml> <p>The error message that explains why the
-     * event submission failed.</p> </xhtml>
+     * <p>The error message that explains why the event submission failed.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
     /**
-     * <zonbook> <simpara>The error message that explains why the event submission
-     * failed.</simpara> </zonbook> <xhtml> <p>The error message that explains why the
-     * event submission failed.</p> </xhtml>
+     * <p>The error message that explains why the event submission failed.</p>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**
-     * <zonbook> <simpara>The error message that explains why the event submission
-     * failed.</simpara> </zonbook> <xhtml> <p>The error message that explains why the
-     * event submission failed.</p> </xhtml>
+     * <p>The error message that explains why the event submission failed.</p>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The error message that explains why the event submission
-     * failed.</simpara> </zonbook> <xhtml> <p>The error message that explains why the
-     * event submission failed.</p> </xhtml>
+     * <p>The error message that explains why the event submission failed.</p>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
 
     /**
-     * <zonbook> <simpara>The error message that explains why the event submission
-     * failed.</simpara> </zonbook> <xhtml> <p>The error message that explains why the
-     * event submission failed.</p> </xhtml>
+     * <p>The error message that explains why the event submission failed.</p>
      */
     inline PutEventsResultEntry& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The error message that explains why the event submission
-     * failed.</simpara> </zonbook> <xhtml> <p>The error message that explains why the
-     * event submission failed.</p> </xhtml>
+     * <p>The error message that explains why the event submission failed.</p>
      */
     inline PutEventsResultEntry& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The error message that explains why the event submission
-     * failed.</simpara> </zonbook> <xhtml> <p>The error message that explains why the
-     * event submission failed.</p> </xhtml>
+     * <p>The error message that explains why the event submission failed.</p>
      */
     inline PutEventsResultEntry& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 

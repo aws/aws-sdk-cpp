@@ -35,8 +35,9 @@ namespace Model
 {
 
   /**
-   * <zonbook> <simpara>Represents an event to be submitted.</simpara> </zonbook>
-   * <xhtml> <p>Represents an event to be submitted.</p> </xhtml>
+   * <p>Represents an event to be submitted.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEventsRequestEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHEVENTS_API PutEventsRequestEntry
   {
@@ -47,278 +48,204 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <zonbook> <simpara>The timestamp of the event, per <ulink
-     * url="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</ulink>. If no
-     * timestamp is provided, the timestamp of the <xref linkend="PutEvents"></xref>
-     * call is used.</simpara> </zonbook> <xhtml> <p>The timestamp of the event, per <a
+     * <p>The timestamp of the event, per <a
      * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     * is provided, the timestamp of the <a>PutEvents</a> call is used.</p> </xhtml>
+     * is provided, the timestamp of the <a>PutEvents</a> call is used.</p>
      */
     inline const Aws::Utils::DateTime& GetTime() const{ return m_time; }
 
     /**
-     * <zonbook> <simpara>The timestamp of the event, per <ulink
-     * url="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</ulink>. If no
-     * timestamp is provided, the timestamp of the <xref linkend="PutEvents"></xref>
-     * call is used.</simpara> </zonbook> <xhtml> <p>The timestamp of the event, per <a
+     * <p>The timestamp of the event, per <a
      * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     * is provided, the timestamp of the <a>PutEvents</a> call is used.</p> </xhtml>
+     * is provided, the timestamp of the <a>PutEvents</a> call is used.</p>
      */
     inline void SetTime(const Aws::Utils::DateTime& value) { m_timeHasBeenSet = true; m_time = value; }
 
     /**
-     * <zonbook> <simpara>The timestamp of the event, per <ulink
-     * url="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</ulink>. If no
-     * timestamp is provided, the timestamp of the <xref linkend="PutEvents"></xref>
-     * call is used.</simpara> </zonbook> <xhtml> <p>The timestamp of the event, per <a
+     * <p>The timestamp of the event, per <a
      * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     * is provided, the timestamp of the <a>PutEvents</a> call is used.</p> </xhtml>
+     * is provided, the timestamp of the <a>PutEvents</a> call is used.</p>
      */
     inline void SetTime(Aws::Utils::DateTime&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The timestamp of the event, per <ulink
-     * url="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</ulink>. If no
-     * timestamp is provided, the timestamp of the <xref linkend="PutEvents"></xref>
-     * call is used.</simpara> </zonbook> <xhtml> <p>The timestamp of the event, per <a
+     * <p>The timestamp of the event, per <a
      * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     * is provided, the timestamp of the <a>PutEvents</a> call is used.</p> </xhtml>
+     * is provided, the timestamp of the <a>PutEvents</a> call is used.</p>
      */
     inline PutEventsRequestEntry& WithTime(const Aws::Utils::DateTime& value) { SetTime(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The timestamp of the event, per <ulink
-     * url="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</ulink>. If no
-     * timestamp is provided, the timestamp of the <xref linkend="PutEvents"></xref>
-     * call is used.</simpara> </zonbook> <xhtml> <p>The timestamp of the event, per <a
+     * <p>The timestamp of the event, per <a
      * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     * is provided, the timestamp of the <a>PutEvents</a> call is used.</p> </xhtml>
+     * is provided, the timestamp of the <a>PutEvents</a> call is used.</p>
      */
     inline PutEventsRequestEntry& WithTime(Aws::Utils::DateTime&& value) { SetTime(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The source of the event.</simpara> </zonbook> <xhtml> <p>The
-     * source of the event.</p> </xhtml>
+     * <p>The source of the event.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
-     * <zonbook> <simpara>The source of the event.</simpara> </zonbook> <xhtml> <p>The
-     * source of the event.</p> </xhtml>
+     * <p>The source of the event.</p>
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <zonbook> <simpara>The source of the event.</simpara> </zonbook> <xhtml> <p>The
-     * source of the event.</p> </xhtml>
+     * <p>The source of the event.</p>
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The source of the event.</simpara> </zonbook> <xhtml> <p>The
-     * source of the event.</p> </xhtml>
+     * <p>The source of the event.</p>
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
-     * <zonbook> <simpara>The source of the event.</simpara> </zonbook> <xhtml> <p>The
-     * source of the event.</p> </xhtml>
+     * <p>The source of the event.</p>
      */
     inline PutEventsRequestEntry& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The source of the event.</simpara> </zonbook> <xhtml> <p>The
-     * source of the event.</p> </xhtml>
+     * <p>The source of the event.</p>
      */
     inline PutEventsRequestEntry& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The source of the event.</simpara> </zonbook> <xhtml> <p>The
-     * source of the event.</p> </xhtml>
+     * <p>The source of the event.</p>
      */
     inline PutEventsRequestEntry& WithSource(const char* value) { SetSource(value); return *this;}
 
     /**
-     * <zonbook> <simpara>AWS resources, identified by Amazon Resource Name (ARN),
-     * which the event primarily concerns. Any number, including zero, may be
-     * present.</simpara> </zonbook> <xhtml> <p>AWS resources, identified by Amazon
-     * Resource Name (ARN), which the event primarily concerns. Any number, including
-     * zero, may be present.</p> </xhtml>
+     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
+     * primarily concerns. Any number, including zero, may be present.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
 
     /**
-     * <zonbook> <simpara>AWS resources, identified by Amazon Resource Name (ARN),
-     * which the event primarily concerns. Any number, including zero, may be
-     * present.</simpara> </zonbook> <xhtml> <p>AWS resources, identified by Amazon
-     * Resource Name (ARN), which the event primarily concerns. Any number, including
-     * zero, may be present.</p> </xhtml>
+     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
+     * primarily concerns. Any number, including zero, may be present.</p>
      */
     inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
     /**
-     * <zonbook> <simpara>AWS resources, identified by Amazon Resource Name (ARN),
-     * which the event primarily concerns. Any number, including zero, may be
-     * present.</simpara> </zonbook> <xhtml> <p>AWS resources, identified by Amazon
-     * Resource Name (ARN), which the event primarily concerns. Any number, including
-     * zero, may be present.</p> </xhtml>
+     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
+     * primarily concerns. Any number, including zero, may be present.</p>
      */
     inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
-     * <zonbook> <simpara>AWS resources, identified by Amazon Resource Name (ARN),
-     * which the event primarily concerns. Any number, including zero, may be
-     * present.</simpara> </zonbook> <xhtml> <p>AWS resources, identified by Amazon
-     * Resource Name (ARN), which the event primarily concerns. Any number, including
-     * zero, may be present.</p> </xhtml>
+     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
+     * primarily concerns. Any number, including zero, may be present.</p>
      */
     inline PutEventsRequestEntry& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
 
     /**
-     * <zonbook> <simpara>AWS resources, identified by Amazon Resource Name (ARN),
-     * which the event primarily concerns. Any number, including zero, may be
-     * present.</simpara> </zonbook> <xhtml> <p>AWS resources, identified by Amazon
-     * Resource Name (ARN), which the event primarily concerns. Any number, including
-     * zero, may be present.</p> </xhtml>
+     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
+     * primarily concerns. Any number, including zero, may be present.</p>
      */
     inline PutEventsRequestEntry& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>AWS resources, identified by Amazon Resource Name (ARN),
-     * which the event primarily concerns. Any number, including zero, may be
-     * present.</simpara> </zonbook> <xhtml> <p>AWS resources, identified by Amazon
-     * Resource Name (ARN), which the event primarily concerns. Any number, including
-     * zero, may be present.</p> </xhtml>
+     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
+     * primarily concerns. Any number, including zero, may be present.</p>
      */
     inline PutEventsRequestEntry& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
     /**
-     * <zonbook> <simpara>AWS resources, identified by Amazon Resource Name (ARN),
-     * which the event primarily concerns. Any number, including zero, may be
-     * present.</simpara> </zonbook> <xhtml> <p>AWS resources, identified by Amazon
-     * Resource Name (ARN), which the event primarily concerns. Any number, including
-     * zero, may be present.</p> </xhtml>
+     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
+     * primarily concerns. Any number, including zero, may be present.</p>
      */
     inline PutEventsRequestEntry& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 
     /**
-     * <zonbook> <simpara>AWS resources, identified by Amazon Resource Name (ARN),
-     * which the event primarily concerns. Any number, including zero, may be
-     * present.</simpara> </zonbook> <xhtml> <p>AWS resources, identified by Amazon
-     * Resource Name (ARN), which the event primarily concerns. Any number, including
-     * zero, may be present.</p> </xhtml>
+     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
+     * primarily concerns. Any number, including zero, may be present.</p>
      */
     inline PutEventsRequestEntry& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
     /**
-     * <zonbook> <simpara>Free-form string used to decide what fields to expect in the
-     * event detail.</simpara> </zonbook> <xhtml> <p>Free-form string used to decide
-     * what fields to expect in the event detail.</p> </xhtml>
+     * <p>Free-form string used to decide what fields to expect in the event
+     * detail.</p>
      */
     inline const Aws::String& GetDetailType() const{ return m_detailType; }
 
     /**
-     * <zonbook> <simpara>Free-form string used to decide what fields to expect in the
-     * event detail.</simpara> </zonbook> <xhtml> <p>Free-form string used to decide
-     * what fields to expect in the event detail.</p> </xhtml>
+     * <p>Free-form string used to decide what fields to expect in the event
+     * detail.</p>
      */
     inline void SetDetailType(const Aws::String& value) { m_detailTypeHasBeenSet = true; m_detailType = value; }
 
     /**
-     * <zonbook> <simpara>Free-form string used to decide what fields to expect in the
-     * event detail.</simpara> </zonbook> <xhtml> <p>Free-form string used to decide
-     * what fields to expect in the event detail.</p> </xhtml>
+     * <p>Free-form string used to decide what fields to expect in the event
+     * detail.</p>
      */
     inline void SetDetailType(Aws::String&& value) { m_detailTypeHasBeenSet = true; m_detailType = std::move(value); }
 
     /**
-     * <zonbook> <simpara>Free-form string used to decide what fields to expect in the
-     * event detail.</simpara> </zonbook> <xhtml> <p>Free-form string used to decide
-     * what fields to expect in the event detail.</p> </xhtml>
+     * <p>Free-form string used to decide what fields to expect in the event
+     * detail.</p>
      */
     inline void SetDetailType(const char* value) { m_detailTypeHasBeenSet = true; m_detailType.assign(value); }
 
     /**
-     * <zonbook> <simpara>Free-form string used to decide what fields to expect in the
-     * event detail.</simpara> </zonbook> <xhtml> <p>Free-form string used to decide
-     * what fields to expect in the event detail.</p> </xhtml>
+     * <p>Free-form string used to decide what fields to expect in the event
+     * detail.</p>
      */
     inline PutEventsRequestEntry& WithDetailType(const Aws::String& value) { SetDetailType(value); return *this;}
 
     /**
-     * <zonbook> <simpara>Free-form string used to decide what fields to expect in the
-     * event detail.</simpara> </zonbook> <xhtml> <p>Free-form string used to decide
-     * what fields to expect in the event detail.</p> </xhtml>
+     * <p>Free-form string used to decide what fields to expect in the event
+     * detail.</p>
      */
     inline PutEventsRequestEntry& WithDetailType(Aws::String&& value) { SetDetailType(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>Free-form string used to decide what fields to expect in the
-     * event detail.</simpara> </zonbook> <xhtml> <p>Free-form string used to decide
-     * what fields to expect in the event detail.</p> </xhtml>
+     * <p>Free-form string used to decide what fields to expect in the event
+     * detail.</p>
      */
     inline PutEventsRequestEntry& WithDetailType(const char* value) { SetDetailType(value); return *this;}
 
     /**
-     * <zonbook> <simpara>In the JSON sense, an object containing fields, which may
-     * also contain nested subobjects. No constraints are imposed on its
-     * contents.</simpara> </zonbook> <xhtml> <p>In the JSON sense, an object
-     * containing fields, which may also contain nested subobjects. No constraints are
-     * imposed on its contents.</p> </xhtml>
+     * <p>In the JSON sense, an object containing fields, which may also contain nested
+     * subobjects. No constraints are imposed on its contents.</p>
      */
     inline const Aws::String& GetDetail() const{ return m_detail; }
 
     /**
-     * <zonbook> <simpara>In the JSON sense, an object containing fields, which may
-     * also contain nested subobjects. No constraints are imposed on its
-     * contents.</simpara> </zonbook> <xhtml> <p>In the JSON sense, an object
-     * containing fields, which may also contain nested subobjects. No constraints are
-     * imposed on its contents.</p> </xhtml>
+     * <p>In the JSON sense, an object containing fields, which may also contain nested
+     * subobjects. No constraints are imposed on its contents.</p>
      */
     inline void SetDetail(const Aws::String& value) { m_detailHasBeenSet = true; m_detail = value; }
 
     /**
-     * <zonbook> <simpara>In the JSON sense, an object containing fields, which may
-     * also contain nested subobjects. No constraints are imposed on its
-     * contents.</simpara> </zonbook> <xhtml> <p>In the JSON sense, an object
-     * containing fields, which may also contain nested subobjects. No constraints are
-     * imposed on its contents.</p> </xhtml>
+     * <p>In the JSON sense, an object containing fields, which may also contain nested
+     * subobjects. No constraints are imposed on its contents.</p>
      */
     inline void SetDetail(Aws::String&& value) { m_detailHasBeenSet = true; m_detail = std::move(value); }
 
     /**
-     * <zonbook> <simpara>In the JSON sense, an object containing fields, which may
-     * also contain nested subobjects. No constraints are imposed on its
-     * contents.</simpara> </zonbook> <xhtml> <p>In the JSON sense, an object
-     * containing fields, which may also contain nested subobjects. No constraints are
-     * imposed on its contents.</p> </xhtml>
+     * <p>In the JSON sense, an object containing fields, which may also contain nested
+     * subobjects. No constraints are imposed on its contents.</p>
      */
     inline void SetDetail(const char* value) { m_detailHasBeenSet = true; m_detail.assign(value); }
 
     /**
-     * <zonbook> <simpara>In the JSON sense, an object containing fields, which may
-     * also contain nested subobjects. No constraints are imposed on its
-     * contents.</simpara> </zonbook> <xhtml> <p>In the JSON sense, an object
-     * containing fields, which may also contain nested subobjects. No constraints are
-     * imposed on its contents.</p> </xhtml>
+     * <p>In the JSON sense, an object containing fields, which may also contain nested
+     * subobjects. No constraints are imposed on its contents.</p>
      */
     inline PutEventsRequestEntry& WithDetail(const Aws::String& value) { SetDetail(value); return *this;}
 
     /**
-     * <zonbook> <simpara>In the JSON sense, an object containing fields, which may
-     * also contain nested subobjects. No constraints are imposed on its
-     * contents.</simpara> </zonbook> <xhtml> <p>In the JSON sense, an object
-     * containing fields, which may also contain nested subobjects. No constraints are
-     * imposed on its contents.</p> </xhtml>
+     * <p>In the JSON sense, an object containing fields, which may also contain nested
+     * subobjects. No constraints are imposed on its contents.</p>
      */
     inline PutEventsRequestEntry& WithDetail(Aws::String&& value) { SetDetail(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>In the JSON sense, an object containing fields, which may
-     * also contain nested subobjects. No constraints are imposed on its
-     * contents.</simpara> </zonbook> <xhtml> <p>In the JSON sense, an object
-     * containing fields, which may also contain nested subobjects. No constraints are
-     * imposed on its contents.</p> </xhtml>
+     * <p>In the JSON sense, an object containing fields, which may also contain nested
+     * subobjects. No constraints are imposed on its contents.</p>
      */
     inline PutEventsRequestEntry& WithDetail(const char* value) { SetDetail(value); return *this;}
 

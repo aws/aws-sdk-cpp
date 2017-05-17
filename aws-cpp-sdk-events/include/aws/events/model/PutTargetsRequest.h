@@ -40,86 +40,72 @@ namespace Model
 
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline const Aws::String& GetRule() const{ return m_rule; }
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline void SetRule(const Aws::String& value) { m_ruleHasBeenSet = true; m_rule = value; }
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline void SetRule(Aws::String&& value) { m_ruleHasBeenSet = true; m_rule = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline void SetRule(const char* value) { m_ruleHasBeenSet = true; m_rule.assign(value); }
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline PutTargetsRequest& WithRule(const Aws::String& value) { SetRule(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline PutTargetsRequest& WithRule(Aws::String&& value) { SetRule(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline PutTargetsRequest& WithRule(const char* value) { SetRule(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
-     * </zonbook> <xhtml> <p>The targets to update or add to the rule.</p> </xhtml>
+     * <p>The targets to update or add to the rule.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
-     * </zonbook> <xhtml> <p>The targets to update or add to the rule.</p> </xhtml>
+     * <p>The targets to update or add to the rule.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
-     * </zonbook> <xhtml> <p>The targets to update or add to the rule.</p> </xhtml>
+     * <p>The targets to update or add to the rule.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
-     * </zonbook> <xhtml> <p>The targets to update or add to the rule.</p> </xhtml>
+     * <p>The targets to update or add to the rule.</p>
      */
     inline PutTargetsRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
-     * </zonbook> <xhtml> <p>The targets to update or add to the rule.</p> </xhtml>
+     * <p>The targets to update or add to the rule.</p>
      */
     inline PutTargetsRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
-     * </zonbook> <xhtml> <p>The targets to update or add to the rule.</p> </xhtml>
+     * <p>The targets to update or add to the rule.</p>
      */
     inline PutTargetsRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
-     * </zonbook> <xhtml> <p>The targets to update or add to the rule.</p> </xhtml>
+     * <p>The targets to update or add to the rule.</p>
      */
     inline PutTargetsRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 

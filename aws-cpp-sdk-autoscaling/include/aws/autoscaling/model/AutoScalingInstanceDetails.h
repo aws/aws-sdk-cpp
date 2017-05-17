@@ -253,37 +253,44 @@ namespace Model
     inline AutoScalingInstanceDetails& WithHealthStatus(const char* value) { SetHealthStatus(value); return *this;}
 
     /**
-     * <p>The launch configuration associated with the instance.</p>
+     * <p>The launch configuration used to launch the instance. This value is not
+     * available if you attached the instance to the Auto Scaling group.</p>
      */
     inline const Aws::String& GetLaunchConfigurationName() const{ return m_launchConfigurationName; }
 
     /**
-     * <p>The launch configuration associated with the instance.</p>
+     * <p>The launch configuration used to launch the instance. This value is not
+     * available if you attached the instance to the Auto Scaling group.</p>
      */
     inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /**
-     * <p>The launch configuration associated with the instance.</p>
+     * <p>The launch configuration used to launch the instance. This value is not
+     * available if you attached the instance to the Auto Scaling group.</p>
      */
     inline void SetLaunchConfigurationName(Aws::String&& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = std::move(value); }
 
     /**
-     * <p>The launch configuration associated with the instance.</p>
+     * <p>The launch configuration used to launch the instance. This value is not
+     * available if you attached the instance to the Auto Scaling group.</p>
      */
     inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName.assign(value); }
 
     /**
-     * <p>The launch configuration associated with the instance.</p>
+     * <p>The launch configuration used to launch the instance. This value is not
+     * available if you attached the instance to the Auto Scaling group.</p>
      */
     inline AutoScalingInstanceDetails& WithLaunchConfigurationName(const Aws::String& value) { SetLaunchConfigurationName(value); return *this;}
 
     /**
-     * <p>The launch configuration associated with the instance.</p>
+     * <p>The launch configuration used to launch the instance. This value is not
+     * available if you attached the instance to the Auto Scaling group.</p>
      */
     inline AutoScalingInstanceDetails& WithLaunchConfigurationName(Aws::String&& value) { SetLaunchConfigurationName(std::move(value)); return *this;}
 
     /**
-     * <p>The launch configuration associated with the instance.</p>
+     * <p>The launch configuration used to launch the instance. This value is not
+     * available if you attached the instance to the Auto Scaling group.</p>
      */
     inline AutoScalingInstanceDetails& WithLaunchConfigurationName(const char* value) { SetLaunchConfigurationName(value); return *this;}
 

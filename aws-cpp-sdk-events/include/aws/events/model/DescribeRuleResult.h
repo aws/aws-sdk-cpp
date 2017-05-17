@@ -43,303 +43,258 @@ namespace Model
     DescribeRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline DescribeRuleResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline DescribeRuleResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline DescribeRuleResult& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
-     * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
-     * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
-     * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
-     * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
-     * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline DescribeRuleResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
-     * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline DescribeRuleResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
-     * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline DescribeRuleResult& WithArn(const char* value) { SetArn(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
-     * pattern.</p> </xhtml>
+     * <p>The event pattern. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline const Aws::String& GetEventPattern() const{ return m_eventPattern; }
 
     /**
-     * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
-     * pattern.</p> </xhtml>
+     * <p>The event pattern. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline void SetEventPattern(const Aws::String& value) { m_eventPattern = value; }
 
     /**
-     * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
-     * pattern.</p> </xhtml>
+     * <p>The event pattern. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline void SetEventPattern(Aws::String&& value) { m_eventPattern = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
-     * pattern.</p> </xhtml>
+     * <p>The event pattern. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline void SetEventPattern(const char* value) { m_eventPattern.assign(value); }
 
     /**
-     * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
-     * pattern.</p> </xhtml>
+     * <p>The event pattern. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline DescribeRuleResult& WithEventPattern(const Aws::String& value) { SetEventPattern(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
-     * pattern.</p> </xhtml>
+     * <p>The event pattern. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline DescribeRuleResult& WithEventPattern(Aws::String&& value) { SetEventPattern(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
-     * pattern.</p> </xhtml>
+     * <p>The event pattern. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline DescribeRuleResult& WithEventPattern(const char* value) { SetEventPattern(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The scheduling expression. For example, "cron(0 20 * * ? *)",
-     * "rate(5 minutes)".</simpara> </zonbook> <xhtml> <p>The scheduling expression.
-     * For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p> </xhtml>
+     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
+     * minutes)".</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
 
     /**
-     * <zonbook> <simpara>The scheduling expression. For example, "cron(0 20 * * ? *)",
-     * "rate(5 minutes)".</simpara> </zonbook> <xhtml> <p>The scheduling expression.
-     * For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p> </xhtml>
+     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
+     * minutes)".</p>
      */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpression = value; }
 
     /**
-     * <zonbook> <simpara>The scheduling expression. For example, "cron(0 20 * * ? *)",
-     * "rate(5 minutes)".</simpara> </zonbook> <xhtml> <p>The scheduling expression.
-     * For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p> </xhtml>
+     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
+     * minutes)".</p>
      */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpression = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The scheduling expression. For example, "cron(0 20 * * ? *)",
-     * "rate(5 minutes)".</simpara> </zonbook> <xhtml> <p>The scheduling expression.
-     * For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p> </xhtml>
+     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
+     * minutes)".</p>
      */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpression.assign(value); }
 
     /**
-     * <zonbook> <simpara>The scheduling expression. For example, "cron(0 20 * * ? *)",
-     * "rate(5 minutes)".</simpara> </zonbook> <xhtml> <p>The scheduling expression.
-     * For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p> </xhtml>
+     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
+     * minutes)".</p>
      */
     inline DescribeRuleResult& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The scheduling expression. For example, "cron(0 20 * * ? *)",
-     * "rate(5 minutes)".</simpara> </zonbook> <xhtml> <p>The scheduling expression.
-     * For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p> </xhtml>
+     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
+     * minutes)".</p>
      */
     inline DescribeRuleResult& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The scheduling expression. For example, "cron(0 20 * * ? *)",
-     * "rate(5 minutes)".</simpara> </zonbook> <xhtml> <p>The scheduling expression.
-     * For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p> </xhtml>
+     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
+     * minutes)".</p>
      */
     inline DescribeRuleResult& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 
     /**
-     * <zonbook> <simpara>Specifies whether the rule is enabled or disabled.</simpara>
-     * </zonbook> <xhtml> <p>Specifies whether the rule is enabled or disabled.</p>
-     * </xhtml>
+     * <p>Specifies whether the rule is enabled or disabled.</p>
      */
     inline const RuleState& GetState() const{ return m_state; }
 
     /**
-     * <zonbook> <simpara>Specifies whether the rule is enabled or disabled.</simpara>
-     * </zonbook> <xhtml> <p>Specifies whether the rule is enabled or disabled.</p>
-     * </xhtml>
+     * <p>Specifies whether the rule is enabled or disabled.</p>
      */
     inline void SetState(const RuleState& value) { m_state = value; }
 
     /**
-     * <zonbook> <simpara>Specifies whether the rule is enabled or disabled.</simpara>
-     * </zonbook> <xhtml> <p>Specifies whether the rule is enabled or disabled.</p>
-     * </xhtml>
+     * <p>Specifies whether the rule is enabled or disabled.</p>
      */
     inline void SetState(RuleState&& value) { m_state = std::move(value); }
 
     /**
-     * <zonbook> <simpara>Specifies whether the rule is enabled or disabled.</simpara>
-     * </zonbook> <xhtml> <p>Specifies whether the rule is enabled or disabled.</p>
-     * </xhtml>
+     * <p>Specifies whether the rule is enabled or disabled.</p>
      */
     inline DescribeRuleResult& WithState(const RuleState& value) { SetState(value); return *this;}
 
     /**
-     * <zonbook> <simpara>Specifies whether the rule is enabled or disabled.</simpara>
-     * </zonbook> <xhtml> <p>Specifies whether the rule is enabled or disabled.</p>
-     * </xhtml>
+     * <p>Specifies whether the rule is enabled or disabled.</p>
      */
     inline DescribeRuleResult& WithState(RuleState&& value) { SetState(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The description of the rule.</simpara> </zonbook> <xhtml>
-     * <p>The description of the rule.</p> </xhtml>
+     * <p>The description of the rule.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <zonbook> <simpara>The description of the rule.</simpara> </zonbook> <xhtml>
-     * <p>The description of the rule.</p> </xhtml>
+     * <p>The description of the rule.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
 
     /**
-     * <zonbook> <simpara>The description of the rule.</simpara> </zonbook> <xhtml>
-     * <p>The description of the rule.</p> </xhtml>
+     * <p>The description of the rule.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The description of the rule.</simpara> </zonbook> <xhtml>
-     * <p>The description of the rule.</p> </xhtml>
+     * <p>The description of the rule.</p>
      */
     inline void SetDescription(const char* value) { m_description.assign(value); }
 
     /**
-     * <zonbook> <simpara>The description of the rule.</simpara> </zonbook> <xhtml>
-     * <p>The description of the rule.</p> </xhtml>
+     * <p>The description of the rule.</p>
      */
     inline DescribeRuleResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The description of the rule.</simpara> </zonbook> <xhtml>
-     * <p>The description of the rule.</p> </xhtml>
+     * <p>The description of the rule.</p>
      */
     inline DescribeRuleResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The description of the rule.</simpara> </zonbook> <xhtml>
-     * <p>The description of the rule.</p> </xhtml>
+     * <p>The description of the rule.</p>
      */
     inline DescribeRuleResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the IAM role associated
-     * with the rule.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of
-     * the IAM role associated with the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the IAM role associated
-     * with the rule.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of
-     * the IAM role associated with the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the IAM role associated
-     * with the rule.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of
-     * the IAM role associated with the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the IAM role associated
-     * with the rule.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of
-     * the IAM role associated with the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the IAM role associated
-     * with the rule.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of
-     * the IAM role associated with the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
      */
     inline DescribeRuleResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the IAM role associated
-     * with the rule.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of
-     * the IAM role associated with the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
      */
     inline DescribeRuleResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the IAM role associated
-     * with the rule.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of
-     * the IAM role associated with the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
      */
     inline DescribeRuleResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

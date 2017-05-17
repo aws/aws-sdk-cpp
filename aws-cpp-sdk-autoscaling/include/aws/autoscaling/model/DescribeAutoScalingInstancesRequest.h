@@ -28,10 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeAutoScalingInstances.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstancesType">AWS
-   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API DescribeAutoScalingInstancesRequest : public AutoScalingRequest
   {
@@ -101,17 +97,20 @@ namespace Model
     inline DescribeAutoScalingInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>The maximum number of items to return with this call.</p>
+     * <p>The maximum number of items to return with this call. The default value is 50
+     * and the maximum value is 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p>The maximum number of items to return with this call.</p>
+     * <p>The maximum number of items to return with this call. The default value is 50
+     * and the maximum value is 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p>The maximum number of items to return with this call.</p>
+     * <p>The maximum number of items to return with this call. The default value is 50
+     * and the maximum value is 100.</p>
      */
     inline DescribeAutoScalingInstancesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 

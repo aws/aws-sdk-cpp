@@ -42,44 +42,37 @@ namespace Model
     PutRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
-     * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline const Aws::String& GetRuleArn() const{ return m_ruleArn; }
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
-     * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline void SetRuleArn(const Aws::String& value) { m_ruleArn = value; }
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
-     * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline void SetRuleArn(Aws::String&& value) { m_ruleArn = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
-     * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline void SetRuleArn(const char* value) { m_ruleArn.assign(value); }
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
-     * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline PutRuleResult& WithRuleArn(const Aws::String& value) { SetRuleArn(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
-     * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline PutRuleResult& WithRuleArn(Aws::String&& value) { SetRuleArn(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>
-     * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the rule.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline PutRuleResult& WithRuleArn(const char* value) { SetRuleArn(value); return *this;}
 

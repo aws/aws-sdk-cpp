@@ -74,37 +74,65 @@ namespace Model
     inline PutSubscriptionFilterRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>A name for the subscription filter.</p>
+     * <p>A name for the subscription filter. If you are updating an existing filter,
+     * you must specify the correct name in <code>filterName</code>. Otherwise, the
+     * call will fail because you cannot associate a second filter with a log group. To
+     * find the name of the filter currently associated with a log group, use
+     * <a>DescribeSubscriptionFilters</a>.</p>
      */
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
 
     /**
-     * <p>A name for the subscription filter.</p>
+     * <p>A name for the subscription filter. If you are updating an existing filter,
+     * you must specify the correct name in <code>filterName</code>. Otherwise, the
+     * call will fail because you cannot associate a second filter with a log group. To
+     * find the name of the filter currently associated with a log group, use
+     * <a>DescribeSubscriptionFilters</a>.</p>
      */
     inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
     /**
-     * <p>A name for the subscription filter.</p>
+     * <p>A name for the subscription filter. If you are updating an existing filter,
+     * you must specify the correct name in <code>filterName</code>. Otherwise, the
+     * call will fail because you cannot associate a second filter with a log group. To
+     * find the name of the filter currently associated with a log group, use
+     * <a>DescribeSubscriptionFilters</a>.</p>
      */
     inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = std::move(value); }
 
     /**
-     * <p>A name for the subscription filter.</p>
+     * <p>A name for the subscription filter. If you are updating an existing filter,
+     * you must specify the correct name in <code>filterName</code>. Otherwise, the
+     * call will fail because you cannot associate a second filter with a log group. To
+     * find the name of the filter currently associated with a log group, use
+     * <a>DescribeSubscriptionFilters</a>.</p>
      */
     inline void SetFilterName(const char* value) { m_filterNameHasBeenSet = true; m_filterName.assign(value); }
 
     /**
-     * <p>A name for the subscription filter.</p>
+     * <p>A name for the subscription filter. If you are updating an existing filter,
+     * you must specify the correct name in <code>filterName</code>. Otherwise, the
+     * call will fail because you cannot associate a second filter with a log group. To
+     * find the name of the filter currently associated with a log group, use
+     * <a>DescribeSubscriptionFilters</a>.</p>
      */
     inline PutSubscriptionFilterRequest& WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
 
     /**
-     * <p>A name for the subscription filter.</p>
+     * <p>A name for the subscription filter. If you are updating an existing filter,
+     * you must specify the correct name in <code>filterName</code>. Otherwise, the
+     * call will fail because you cannot associate a second filter with a log group. To
+     * find the name of the filter currently associated with a log group, use
+     * <a>DescribeSubscriptionFilters</a>.</p>
      */
     inline PutSubscriptionFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(std::move(value)); return *this;}
 
     /**
-     * <p>A name for the subscription filter.</p>
+     * <p>A name for the subscription filter. If you are updating an existing filter,
+     * you must specify the correct name in <code>filterName</code>. Otherwise, the
+     * call will fail because you cannot associate a second filter with a log group. To
+     * find the name of the filter currently associated with a log group, use
+     * <a>DescribeSubscriptionFilters</a>.</p>
      */
     inline PutSubscriptionFilterRequest& WithFilterName(const char* value) { SetFilterName(value); return *this;}
 

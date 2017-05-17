@@ -44,32 +44,38 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The creation time of the export task.</p>
+     * <p>The creation time of the export task, expressed as the number of milliseconds
+     * since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The creation time of the export task.</p>
+     * <p>The creation time of the export task, expressed as the number of milliseconds
+     * since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The creation time of the export task.</p>
+     * <p>The creation time of the export task, expressed as the number of milliseconds
+     * since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline ExportTaskExecutionInfo& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The completion time of the export task.</p>
+     * <p>The completion time of the export task, expressed as the number of
+     * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetCompletionTime() const{ return m_completionTime; }
 
     /**
-     * <p>The completion time of the export task.</p>
+     * <p>The completion time of the export task, expressed as the number of
+     * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetCompletionTime(long long value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
 
     /**
-     * <p>The completion time of the export task.</p>
+     * <p>The completion time of the export task, expressed as the number of
+     * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline ExportTaskExecutionInfo& WithCompletionTime(long long value) { SetCompletionTime(value); return *this;}
 

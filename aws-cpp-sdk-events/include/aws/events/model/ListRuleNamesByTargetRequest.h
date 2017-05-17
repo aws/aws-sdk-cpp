@@ -38,118 +38,94 @@ namespace Model
 
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the target
-     * resource.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the
-     * target resource.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the target resource.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the target
-     * resource.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the
-     * target resource.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the target resource.</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the target
-     * resource.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the
-     * target resource.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the target resource.</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the target
-     * resource.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the
-     * target resource.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the target resource.</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the target
-     * resource.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the
-     * target resource.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the target resource.</p>
      */
     inline ListRuleNamesByTargetRequest& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the target
-     * resource.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the
-     * target resource.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the target resource.</p>
      */
     inline ListRuleNamesByTargetRequest& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The Amazon Resource Name (ARN) of the target
-     * resource.</simpara> </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the
-     * target resource.</p> </xhtml>
+     * <p>The Amazon Resource Name (ARN) of the target resource.</p>
      */
     inline ListRuleNamesByTargetRequest& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
-     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
-     * call to retrieve the next set of results.</p> </xhtml>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
-     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
-     * call to retrieve the next set of results.</p> </xhtml>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
-     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
-     * call to retrieve the next set of results.</p> </xhtml>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
-     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
-     * call to retrieve the next set of results.</p> </xhtml>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
-     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
-     * call to retrieve the next set of results.</p> </xhtml>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline ListRuleNamesByTargetRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
-     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
-     * call to retrieve the next set of results.</p> </xhtml>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline ListRuleNamesByTargetRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
-     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
-     * call to retrieve the next set of results.</p> </xhtml>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline ListRuleNamesByTargetRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The maximum number of results to return.</simpara> </zonbook>
-     * <xhtml> <p>The maximum number of results to return.</p> </xhtml>
+     * <p>The maximum number of results to return.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <zonbook> <simpara>The maximum number of results to return.</simpara> </zonbook>
-     * <xhtml> <p>The maximum number of results to return.</p> </xhtml>
+     * <p>The maximum number of results to return.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <zonbook> <simpara>The maximum number of results to return.</simpara> </zonbook>
-     * <xhtml> <p>The maximum number of results to return.</p> </xhtml>
+     * <p>The maximum number of results to return.</p>
      */
     inline ListRuleNamesByTargetRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
