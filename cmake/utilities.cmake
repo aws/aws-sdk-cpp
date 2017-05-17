@@ -49,7 +49,7 @@ macro(setup_install)
         generate_pkgconfig_link_flags(ALL_DEP_LIBS ALL_DEP_LIBS_LINK_FLAGS)
         set(ALL_DEP_LIBS_LINK_FLAGS "${ALL_DEP_LIBS_LINK_FLAGS}" PARENT_SCOPE)
 
-        configure_file("${CMAKE_SOURCE_DIR}/toolchains/pkg-config.pc.in" "${PROJECT_NAME}.pc" @ONLY)
+        configure_file("${AWS_NATIVE_SDK_ROOT}/toolchains/pkg-config.pc.in" "${PROJECT_NAME}.pc" @ONLY)
 
         install( TARGETS ${PROJECT_NAME}
                 EXPORT "${PROJECT_NAME}-targets"
@@ -91,7 +91,7 @@ macro(do_packaging)
         )
 
         configure_file(
-            "${CMAKE_SOURCE_DIR}/toolchains/cmakeProjectConfig.cmake"
+            "${AWS_NATIVE_SDK_ROOT}/toolchains/cmakeProjectConfig.cmake"
             "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake"
             @ONLY)
 

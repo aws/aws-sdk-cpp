@@ -201,7 +201,7 @@ endmacro()
 macro(apply_pre_project_platform_settings)
     verify_tools()
 
-    set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/platform/android.toolchain.cmake)
+    set(CMAKE_TOOLCHAIN_FILE ${AWS_NATIVE_SDK_ROOT}/cmake/platform/android.toolchain.cmake)
 
     # android-specific required overrrides
     if (NOT DEFINED CUSTOM_MEMORY_MANAGEMENT)

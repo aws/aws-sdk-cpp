@@ -75,7 +75,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
             GIT_REPOSITORY https://github.com/openssl/openssl.git
             GIT_TAG e216bf9d7ca761718f34e8b3094fcb32c7a143e4 # 1.0.2j
 	    UPDATE_COMMAND ""
-            PATCH_COMMAND cd ${CMAKE_BINARY_DIR} && python ${CMAKE_SOURCE_DIR}/android-build/configure_openssl_cmake.py --source ${CMAKE_SOURCE_DIR} --dest ${OPENSSL_SOURCE_DIR}
+            PATCH_COMMAND cd ${CMAKE_BINARY_DIR} && python ${AWS_NATIVE_SDK_ROOT}/android-build/configure_openssl_cmake.py --source ${AWS_NATIVE_SDK_ROOT} --dest ${OPENSSL_SOURCE_DIR}
             CMAKE_ARGS
             -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
             -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
@@ -128,7 +128,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
                 UPDATE_COMMAND ""
                 PATCH_COMMAND ""
                 CMAKE_ARGS
-                -C ${CMAKE_SOURCE_DIR}/android-build/CurlAndroidCrossCompile.cmake
+                -C ${AWS_NATIVE_SDK_ROOT}/android-build/CurlAndroidCrossCompile.cmake
                 -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
                 -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
                 -DANDROID_ABI=${ANDROID_ABI}

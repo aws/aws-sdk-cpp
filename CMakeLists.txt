@@ -21,6 +21,8 @@ if(CMAKE_MAJOR_VERSION LESS 3)
     message(WARNING "Building with CMake 3.0 or higher is strongly suggested; current version is ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}.${CMAKE_PATCH_VERSION}")
 endif()
 
+get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
+
 # git is required for Android builds and optional for all other platforms
 find_package(Git)
 
@@ -123,8 +125,6 @@ include(sdks)
 
 include(utilities)
 
-get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
-
 include(build_external)
 
 if(ENABLE_BCRYPT_ENCRYPTION)
@@ -173,4 +173,4 @@ add_sdks()
 include(setup_cmake_find_module)
 
 # for generating make unstaill target
-ADD_CUSTOM_TARGET(uninstall "${CMAKE_COMMAND}" -P "${CMAKE_SOURCE_DIR}/cmake/make_uninstall.cmake") 
+ADD_CUSTOM_TARGET(uninstall "${CMAKE_COMMAND}" -P "${AWS_NATIVE_SDK_ROOT}/cmake/make_uninstall.cmake") 

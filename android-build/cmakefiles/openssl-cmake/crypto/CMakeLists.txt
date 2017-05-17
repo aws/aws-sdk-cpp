@@ -50,7 +50,7 @@ set( CONF "
 #define OPENSSL_NO_UNIT_TEST
 #define OPENSSL_THREADS
 ${CONF}" )
-file( WRITE ${CMAKE_SOURCE_DIR}/tmp/opensslconf.h.cmake "${CONF}" )
+file( WRITE ${AWS_NATIVE_SDK_ROOT}/tmp/opensslconf.h.cmake "${CONF}" )
 
 #~2DO: set BUILDINF_DATE to `date LC_ALL=C LC_TIME=C`
 configure_file ( buildinf.h.cmake buildinf.h )
@@ -58,8 +58,8 @@ configure_file ( buildinf.h.cmake buildinf.h )
 if( WIN32 AND MINGW AND NOT CYGWIN )
   set( OPENSSL_EXPORT_VAR_AS_FUNCTION true )
 endif()
-configure_file( ${CMAKE_SOURCE_DIR}/tmp/opensslconf.h.cmake ${CMAKE_SOURCE_DIR}/include/openssl/opensslconf.h )
-configure_file( ${CMAKE_SOURCE_DIR}/tmp/opensslconf.h.cmake ${CMAKE_SOURCE_DIR}/crypto/opensslconf.h )
+configure_file( ${AWS_NATIVE_SDK_ROOT}/tmp/opensslconf.h.cmake ${AWS_NATIVE_SDK_ROOT}/include/openssl/opensslconf.h )
+configure_file( ${AWS_NATIVE_SDK_ROOT}/tmp/opensslconf.h.cmake ${AWS_NATIVE_SDK_ROOT}/crypto/opensslconf.h )
 
 set( LIBSRC cryptlib.c mem.c mem_clr.c mem_dbg.c cversion.c ex_data.c cpt_err.c
   ebcdic.c uid.c o_time.c o_str.c o_dir.c o_init.c)
