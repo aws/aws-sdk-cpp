@@ -81,17 +81,20 @@ namespace Model
     inline LogGroup& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The creation time of the log group.</p>
+     * <p>The creation time of the log group, expressed as the number of milliseconds
+     * since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The creation time of the log group.</p>
+     * <p>The creation time of the log group, expressed as the number of milliseconds
+     * since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The creation time of the log group.</p>
+     * <p>The creation time of the log group, expressed as the number of milliseconds
+     * since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline LogGroup& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 

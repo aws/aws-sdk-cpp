@@ -72,7 +72,8 @@ namespace Model
     Maxim,
     Tatyana,
     Astrid,
-    Filiz
+    Filiz,
+    Vicki
   };
 
 namespace VoiceIdMapper

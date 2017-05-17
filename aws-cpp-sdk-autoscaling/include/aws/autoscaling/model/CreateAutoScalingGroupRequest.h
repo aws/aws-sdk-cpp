@@ -29,10 +29,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateAutoScalingGroup.</p><p><h3>See Also:</h3> 
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroupType">AWS
-   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API CreateAutoScalingGroupRequest : public AutoScalingRequest
   {
@@ -253,21 +249,24 @@ namespace Model
     /**
      * <p>The number of EC2 instances that should be running in the group. This number
      * must be greater than or equal to the minimum size of the group and less than or
-     * equal to the maximum size of the group.</p>
+     * equal to the maximum size of the group. If you do not specify a desired
+     * capacity, the default is the minimum size of the group.</p>
      */
     inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
 
     /**
      * <p>The number of EC2 instances that should be running in the group. This number
      * must be greater than or equal to the minimum size of the group and less than or
-     * equal to the maximum size of the group.</p>
+     * equal to the maximum size of the group. If you do not specify a desired
+     * capacity, the default is the minimum size of the group.</p>
      */
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /**
      * <p>The number of EC2 instances that should be running in the group. This number
      * must be greater than or equal to the minimum size of the group and less than or
-     * equal to the maximum size of the group.</p>
+     * equal to the maximum size of the group. If you do not specify a desired
+     * capacity, the default is the minimum size of the group.</p>
      */
     inline CreateAutoScalingGroupRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 
@@ -347,7 +346,7 @@ namespace Model
     inline CreateAutoScalingGroupRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>One or more Classic load balancers. To specify an Application load balancer,
+     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer,
      * use <code>TargetGroupARNs</code> instead.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Using
      * a Load Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User
@@ -356,7 +355,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetLoadBalancerNames() const{ return m_loadBalancerNames; }
 
     /**
-     * <p>One or more Classic load balancers. To specify an Application load balancer,
+     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer,
      * use <code>TargetGroupARNs</code> instead.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Using
      * a Load Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User
@@ -365,7 +364,7 @@ namespace Model
     inline void SetLoadBalancerNames(const Aws::Vector<Aws::String>& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = value; }
 
     /**
-     * <p>One or more Classic load balancers. To specify an Application load balancer,
+     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer,
      * use <code>TargetGroupARNs</code> instead.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Using
      * a Load Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User
@@ -374,7 +373,7 @@ namespace Model
     inline void SetLoadBalancerNames(Aws::Vector<Aws::String>&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = std::move(value); }
 
     /**
-     * <p>One or more Classic load balancers. To specify an Application load balancer,
+     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer,
      * use <code>TargetGroupARNs</code> instead.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Using
      * a Load Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User
@@ -383,7 +382,7 @@ namespace Model
     inline CreateAutoScalingGroupRequest& WithLoadBalancerNames(const Aws::Vector<Aws::String>& value) { SetLoadBalancerNames(value); return *this;}
 
     /**
-     * <p>One or more Classic load balancers. To specify an Application load balancer,
+     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer,
      * use <code>TargetGroupARNs</code> instead.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Using
      * a Load Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User
@@ -392,7 +391,7 @@ namespace Model
     inline CreateAutoScalingGroupRequest& WithLoadBalancerNames(Aws::Vector<Aws::String>&& value) { SetLoadBalancerNames(std::move(value)); return *this;}
 
     /**
-     * <p>One or more Classic load balancers. To specify an Application load balancer,
+     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer,
      * use <code>TargetGroupARNs</code> instead.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Using
      * a Load Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User
@@ -401,7 +400,7 @@ namespace Model
     inline CreateAutoScalingGroupRequest& AddLoadBalancerNames(const Aws::String& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 
     /**
-     * <p>One or more Classic load balancers. To specify an Application load balancer,
+     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer,
      * use <code>TargetGroupARNs</code> instead.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Using
      * a Load Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User
@@ -410,7 +409,7 @@ namespace Model
     inline CreateAutoScalingGroupRequest& AddLoadBalancerNames(Aws::String&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more Classic load balancers. To specify an Application load balancer,
+     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer,
      * use <code>TargetGroupARNs</code> instead.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Using
      * a Load Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User

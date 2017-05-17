@@ -33,15 +33,13 @@ namespace Model
 {
 
   /**
-   * <zonbook> <simpara>This object enables you to specify a JSON path to extract
-   * from the event and use as the partition key for the Amazon Kinesis stream, so
-   * that you can control the shard to which the event goes. If you do not include
-   * this parameter, the default is to use the <code>eventId</code> as the partition
-   * key.</simpara> </zonbook> <xhtml> <p>This object enables you to specify a JSON
-   * path to extract from the event and use as the partition key for the Amazon
-   * Kinesis stream, so that you can control the shard to which the event goes. If
-   * you do not include this parameter, the default is to use the
-   * <code>eventId</code> as the partition key.</p> </xhtml>
+   * <p>This object enables you to specify a JSON path to extract from the event and
+   * use as the partition key for the Amazon Kinesis stream, so that you can control
+   * the shard to which the event goes. If you do not include this parameter, the
+   * default is to use the <code>eventId</code> as the partition key.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/KinesisParameters">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHEVENTS_API KinesisParameters
   {
@@ -52,93 +50,65 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <zonbook> <simpara>The JSON path to be extracted from the event and used as the
-     * partition key. For more information, see <ulink type="documentation"
-     * url="streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams
-     * Key Concepts</ulink> in the <emphasis>Amazon Kinesis Streams Developer
-     * Guide</emphasis>.</simpara> </zonbook> <xhtml> <p>The JSON path to be extracted
-     * from the event and used as the partition key. For more information, see <a
+     * <p>The JSON path to be extracted from the event and used as the partition key.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon
      * Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer
-     * Guide</i>.</p> </xhtml>
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetPartitionKeyPath() const{ return m_partitionKeyPath; }
 
     /**
-     * <zonbook> <simpara>The JSON path to be extracted from the event and used as the
-     * partition key. For more information, see <ulink type="documentation"
-     * url="streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams
-     * Key Concepts</ulink> in the <emphasis>Amazon Kinesis Streams Developer
-     * Guide</emphasis>.</simpara> </zonbook> <xhtml> <p>The JSON path to be extracted
-     * from the event and used as the partition key. For more information, see <a
+     * <p>The JSON path to be extracted from the event and used as the partition key.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon
      * Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer
-     * Guide</i>.</p> </xhtml>
+     * Guide</i>.</p>
      */
     inline void SetPartitionKeyPath(const Aws::String& value) { m_partitionKeyPathHasBeenSet = true; m_partitionKeyPath = value; }
 
     /**
-     * <zonbook> <simpara>The JSON path to be extracted from the event and used as the
-     * partition key. For more information, see <ulink type="documentation"
-     * url="streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams
-     * Key Concepts</ulink> in the <emphasis>Amazon Kinesis Streams Developer
-     * Guide</emphasis>.</simpara> </zonbook> <xhtml> <p>The JSON path to be extracted
-     * from the event and used as the partition key. For more information, see <a
+     * <p>The JSON path to be extracted from the event and used as the partition key.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon
      * Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer
-     * Guide</i>.</p> </xhtml>
+     * Guide</i>.</p>
      */
     inline void SetPartitionKeyPath(Aws::String&& value) { m_partitionKeyPathHasBeenSet = true; m_partitionKeyPath = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The JSON path to be extracted from the event and used as the
-     * partition key. For more information, see <ulink type="documentation"
-     * url="streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams
-     * Key Concepts</ulink> in the <emphasis>Amazon Kinesis Streams Developer
-     * Guide</emphasis>.</simpara> </zonbook> <xhtml> <p>The JSON path to be extracted
-     * from the event and used as the partition key. For more information, see <a
+     * <p>The JSON path to be extracted from the event and used as the partition key.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon
      * Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer
-     * Guide</i>.</p> </xhtml>
+     * Guide</i>.</p>
      */
     inline void SetPartitionKeyPath(const char* value) { m_partitionKeyPathHasBeenSet = true; m_partitionKeyPath.assign(value); }
 
     /**
-     * <zonbook> <simpara>The JSON path to be extracted from the event and used as the
-     * partition key. For more information, see <ulink type="documentation"
-     * url="streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams
-     * Key Concepts</ulink> in the <emphasis>Amazon Kinesis Streams Developer
-     * Guide</emphasis>.</simpara> </zonbook> <xhtml> <p>The JSON path to be extracted
-     * from the event and used as the partition key. For more information, see <a
+     * <p>The JSON path to be extracted from the event and used as the partition key.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon
      * Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer
-     * Guide</i>.</p> </xhtml>
+     * Guide</i>.</p>
      */
     inline KinesisParameters& WithPartitionKeyPath(const Aws::String& value) { SetPartitionKeyPath(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The JSON path to be extracted from the event and used as the
-     * partition key. For more information, see <ulink type="documentation"
-     * url="streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams
-     * Key Concepts</ulink> in the <emphasis>Amazon Kinesis Streams Developer
-     * Guide</emphasis>.</simpara> </zonbook> <xhtml> <p>The JSON path to be extracted
-     * from the event and used as the partition key. For more information, see <a
+     * <p>The JSON path to be extracted from the event and used as the partition key.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon
      * Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer
-     * Guide</i>.</p> </xhtml>
+     * Guide</i>.</p>
      */
     inline KinesisParameters& WithPartitionKeyPath(Aws::String&& value) { SetPartitionKeyPath(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The JSON path to be extracted from the event and used as the
-     * partition key. For more information, see <ulink type="documentation"
-     * url="streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams
-     * Key Concepts</ulink> in the <emphasis>Amazon Kinesis Streams Developer
-     * Guide</emphasis>.</simpara> </zonbook> <xhtml> <p>The JSON path to be extracted
-     * from the event and used as the partition key. For more information, see <a
+     * <p>The JSON path to be extracted from the event and used as the partition key.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon
      * Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer
-     * Guide</i>.</p> </xhtml>
+     * Guide</i>.</p>
      */
     inline KinesisParameters& WithPartitionKeyPath(const char* value) { SetPartitionKeyPath(value); return *this;}
 

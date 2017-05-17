@@ -40,23 +40,17 @@ namespace Model
     TestEventPatternResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <zonbook> <simpara>Indicates whether the event matches the event
-     * pattern.</simpara> </zonbook> <xhtml> <p>Indicates whether the event matches the
-     * event pattern.</p> </xhtml>
+     * <p>Indicates whether the event matches the event pattern.</p>
      */
     inline bool GetResult() const{ return m_result; }
 
     /**
-     * <zonbook> <simpara>Indicates whether the event matches the event
-     * pattern.</simpara> </zonbook> <xhtml> <p>Indicates whether the event matches the
-     * event pattern.</p> </xhtml>
+     * <p>Indicates whether the event matches the event pattern.</p>
      */
     inline void SetResult(bool value) { m_result = value; }
 
     /**
-     * <zonbook> <simpara>Indicates whether the event matches the event
-     * pattern.</simpara> </zonbook> <xhtml> <p>Indicates whether the event matches the
-     * event pattern.</p> </xhtml>
+     * <p>Indicates whether the event matches the event pattern.</p>
      */
     inline TestEventPatternResult& WithResult(bool value) { SetResult(value); return *this;}
 

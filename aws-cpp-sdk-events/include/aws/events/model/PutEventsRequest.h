@@ -39,72 +39,51 @@ namespace Model
 
 
     /**
-     * <zonbook> <simpara>The entry that defines an event in your system. You can
-     * specify several parameters for the entry such as the source and type of the
-     * event, resources associated with the event, and so on.</simpara> </zonbook>
-     * <xhtml> <p>The entry that defines an event in your system. You can specify
-     * several parameters for the entry such as the source and type of the event,
-     * resources associated with the event, and so on.</p> </xhtml>
+     * <p>The entry that defines an event in your system. You can specify several
+     * parameters for the entry such as the source and type of the event, resources
+     * associated with the event, and so on.</p>
      */
     inline const Aws::Vector<PutEventsRequestEntry>& GetEntries() const{ return m_entries; }
 
     /**
-     * <zonbook> <simpara>The entry that defines an event in your system. You can
-     * specify several parameters for the entry such as the source and type of the
-     * event, resources associated with the event, and so on.</simpara> </zonbook>
-     * <xhtml> <p>The entry that defines an event in your system. You can specify
-     * several parameters for the entry such as the source and type of the event,
-     * resources associated with the event, and so on.</p> </xhtml>
+     * <p>The entry that defines an event in your system. You can specify several
+     * parameters for the entry such as the source and type of the event, resources
+     * associated with the event, and so on.</p>
      */
     inline void SetEntries(const Aws::Vector<PutEventsRequestEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
 
     /**
-     * <zonbook> <simpara>The entry that defines an event in your system. You can
-     * specify several parameters for the entry such as the source and type of the
-     * event, resources associated with the event, and so on.</simpara> </zonbook>
-     * <xhtml> <p>The entry that defines an event in your system. You can specify
-     * several parameters for the entry such as the source and type of the event,
-     * resources associated with the event, and so on.</p> </xhtml>
+     * <p>The entry that defines an event in your system. You can specify several
+     * parameters for the entry such as the source and type of the event, resources
+     * associated with the event, and so on.</p>
      */
     inline void SetEntries(Aws::Vector<PutEventsRequestEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The entry that defines an event in your system. You can
-     * specify several parameters for the entry such as the source and type of the
-     * event, resources associated with the event, and so on.</simpara> </zonbook>
-     * <xhtml> <p>The entry that defines an event in your system. You can specify
-     * several parameters for the entry such as the source and type of the event,
-     * resources associated with the event, and so on.</p> </xhtml>
+     * <p>The entry that defines an event in your system. You can specify several
+     * parameters for the entry such as the source and type of the event, resources
+     * associated with the event, and so on.</p>
      */
     inline PutEventsRequest& WithEntries(const Aws::Vector<PutEventsRequestEntry>& value) { SetEntries(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The entry that defines an event in your system. You can
-     * specify several parameters for the entry such as the source and type of the
-     * event, resources associated with the event, and so on.</simpara> </zonbook>
-     * <xhtml> <p>The entry that defines an event in your system. You can specify
-     * several parameters for the entry such as the source and type of the event,
-     * resources associated with the event, and so on.</p> </xhtml>
+     * <p>The entry that defines an event in your system. You can specify several
+     * parameters for the entry such as the source and type of the event, resources
+     * associated with the event, and so on.</p>
      */
     inline PutEventsRequest& WithEntries(Aws::Vector<PutEventsRequestEntry>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The entry that defines an event in your system. You can
-     * specify several parameters for the entry such as the source and type of the
-     * event, resources associated with the event, and so on.</simpara> </zonbook>
-     * <xhtml> <p>The entry that defines an event in your system. You can specify
-     * several parameters for the entry such as the source and type of the event,
-     * resources associated with the event, and so on.</p> </xhtml>
+     * <p>The entry that defines an event in your system. You can specify several
+     * parameters for the entry such as the source and type of the event, resources
+     * associated with the event, and so on.</p>
      */
     inline PutEventsRequest& AddEntries(const PutEventsRequestEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
 
     /**
-     * <zonbook> <simpara>The entry that defines an event in your system. You can
-     * specify several parameters for the entry such as the source and type of the
-     * event, resources associated with the event, and so on.</simpara> </zonbook>
-     * <xhtml> <p>The entry that defines an event in your system. You can specify
-     * several parameters for the entry such as the source and type of the event,
-     * resources associated with the event, and so on.</p> </xhtml>
+     * <p>The entry that defines an event in your system. You can specify several
+     * parameters for the entry such as the source and type of the event, resources
+     * associated with the event, and so on.</p>
      */
     inline PutEventsRequest& AddEntries(PutEventsRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
 

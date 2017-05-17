@@ -43,62 +43,52 @@ namespace Model
     PutTargetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <zonbook> <simpara>The number of failed entries.</simpara> </zonbook> <xhtml>
-     * <p>The number of failed entries.</p> </xhtml>
+     * <p>The number of failed entries.</p>
      */
     inline int GetFailedEntryCount() const{ return m_failedEntryCount; }
 
     /**
-     * <zonbook> <simpara>The number of failed entries.</simpara> </zonbook> <xhtml>
-     * <p>The number of failed entries.</p> </xhtml>
+     * <p>The number of failed entries.</p>
      */
     inline void SetFailedEntryCount(int value) { m_failedEntryCount = value; }
 
     /**
-     * <zonbook> <simpara>The number of failed entries.</simpara> </zonbook> <xhtml>
-     * <p>The number of failed entries.</p> </xhtml>
+     * <p>The number of failed entries.</p>
      */
     inline PutTargetsResult& WithFailedEntryCount(int value) { SetFailedEntryCount(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
-     * <p>The failed target entries.</p> </xhtml>
+     * <p>The failed target entries.</p>
      */
     inline const Aws::Vector<PutTargetsResultEntry>& GetFailedEntries() const{ return m_failedEntries; }
 
     /**
-     * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
-     * <p>The failed target entries.</p> </xhtml>
+     * <p>The failed target entries.</p>
      */
     inline void SetFailedEntries(const Aws::Vector<PutTargetsResultEntry>& value) { m_failedEntries = value; }
 
     /**
-     * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
-     * <p>The failed target entries.</p> </xhtml>
+     * <p>The failed target entries.</p>
      */
     inline void SetFailedEntries(Aws::Vector<PutTargetsResultEntry>&& value) { m_failedEntries = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
-     * <p>The failed target entries.</p> </xhtml>
+     * <p>The failed target entries.</p>
      */
     inline PutTargetsResult& WithFailedEntries(const Aws::Vector<PutTargetsResultEntry>& value) { SetFailedEntries(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
-     * <p>The failed target entries.</p> </xhtml>
+     * <p>The failed target entries.</p>
      */
     inline PutTargetsResult& WithFailedEntries(Aws::Vector<PutTargetsResultEntry>&& value) { SetFailedEntries(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
-     * <p>The failed target entries.</p> </xhtml>
+     * <p>The failed target entries.</p>
      */
     inline PutTargetsResult& AddFailedEntries(const PutTargetsResultEntry& value) { m_failedEntries.push_back(value); return *this; }
 
     /**
-     * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
-     * <p>The failed target entries.</p> </xhtml>
+     * <p>The failed target entries.</p>
      */
     inline PutTargetsResult& AddFailedEntries(PutTargetsResultEntry&& value) { m_failedEntries.push_back(std::move(value)); return *this; }
 

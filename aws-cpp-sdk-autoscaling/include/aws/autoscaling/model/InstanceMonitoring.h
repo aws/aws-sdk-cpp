@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes whether instance monitoring is enabled.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Describes whether detailed monitoring is enabled for the Auto Scaling
+   * instances.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceMonitoring">AWS
    * API Reference</a></p>
    */
@@ -48,17 +48,20 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>If <code>True</code>, instance monitoring is enabled.</p>
+     * <p>If <code>true</code>, detailed monitoring is enabled. Otherwise, basic
+     * monitoring is enabled.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>If <code>True</code>, instance monitoring is enabled.</p>
+     * <p>If <code>true</code>, detailed monitoring is enabled. Otherwise, basic
+     * monitoring is enabled.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>If <code>True</code>, instance monitoring is enabled.</p>
+     * <p>If <code>true</code>, detailed monitoring is enabled. Otherwise, basic
+     * monitoring is enabled.</p>
      */
     inline InstanceMonitoring& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

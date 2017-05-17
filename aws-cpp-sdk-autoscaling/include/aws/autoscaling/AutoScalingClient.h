@@ -358,7 +358,7 @@ namespace Model
          * <p>When you attach instances, Auto Scaling increases the desired capacity of the
          * group by the number of instances being attached. If the number of instances
          * being attached plus the desired capacity of the group exceeds the maximum size
-         * of the group, the operation fails.</p> <p>If there is a Classic load balancer
+         * of the group, the operation fails.</p> <p>If there is a Classic Load Balancer
          * attached to your Auto Scaling group, the instances are also registered with the
          * load balancer. If there are target groups attached to your Auto Scaling group,
          * the instances are also registered with the target groups.</p> <p>For more
@@ -376,7 +376,7 @@ namespace Model
          * <p>When you attach instances, Auto Scaling increases the desired capacity of the
          * group by the number of instances being attached. If the number of instances
          * being attached plus the desired capacity of the group exceeds the maximum size
-         * of the group, the operation fails.</p> <p>If there is a Classic load balancer
+         * of the group, the operation fails.</p> <p>If there is a Classic Load Balancer
          * attached to your Auto Scaling group, the instances are also registered with the
          * load balancer. If there are target groups attached to your Auto Scaling group,
          * the instances are also registered with the target groups.</p> <p>For more
@@ -396,7 +396,7 @@ namespace Model
          * <p>When you attach instances, Auto Scaling increases the desired capacity of the
          * group by the number of instances being attached. If the number of instances
          * being attached plus the desired capacity of the group exceeds the maximum size
-         * of the group, the operation fails.</p> <p>If there is a Classic load balancer
+         * of the group, the operation fails.</p> <p>If there is a Classic Load Balancer
          * attached to your Auto Scaling group, the instances are also registered with the
          * load balancer. If there are target groups attached to your Auto Scaling group,
          * the instances are also registered with the target groups.</p> <p>For more
@@ -458,8 +458,8 @@ namespace Model
         virtual void AttachLoadBalancerTargetGroupsAsync(const Model::AttachLoadBalancerTargetGroupsRequest& request, const AttachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches one or more Classic load balancers to the specified Auto Scaling
-         * group.</p> <p>To attach an Application load balancer instead, see
+         * <p>Attaches one or more Classic Load Balancers to the specified Auto Scaling
+         * group.</p> <p>To attach an Application Load Balancer instead, see
          * <a>AttachLoadBalancerTargetGroups</a>.</p> <p>To describe the load balancers for
          * an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load
          * balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.</p> <p>For
@@ -473,8 +473,8 @@ namespace Model
         virtual Model::AttachLoadBalancersOutcome AttachLoadBalancers(const Model::AttachLoadBalancersRequest& request) const;
 
         /**
-         * <p>Attaches one or more Classic load balancers to the specified Auto Scaling
-         * group.</p> <p>To attach an Application load balancer instead, see
+         * <p>Attaches one or more Classic Load Balancers to the specified Auto Scaling
+         * group.</p> <p>To attach an Application Load Balancer instead, see
          * <a>AttachLoadBalancerTargetGroups</a>.</p> <p>To describe the load balancers for
          * an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load
          * balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.</p> <p>For
@@ -490,8 +490,8 @@ namespace Model
         virtual Model::AttachLoadBalancersOutcomeCallable AttachLoadBalancersCallable(const Model::AttachLoadBalancersRequest& request) const;
 
         /**
-         * <p>Attaches one or more Classic load balancers to the specified Auto Scaling
-         * group.</p> <p>To attach an Application load balancer instead, see
+         * <p>Attaches one or more Classic Load Balancers to the specified Auto Scaling
+         * group.</p> <p>To attach an Application Load Balancer instead, see
          * <a>AttachLoadBalancerTargetGroups</a>.</p> <p>To describe the load balancers for
          * an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load
          * balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.</p> <p>For
@@ -1188,8 +1188,8 @@ namespace Model
 
         /**
          * <p>Describes the load balancers for the specified Auto Scaling group.</p>
-         * <p>Note that this operation describes only Classic load balancers. If you have
-         * Application load balancers, use <a>DescribeLoadBalancerTargetGroups</a>
+         * <p>Note that this operation describes only Classic Load Balancers. If you have
+         * Application Load Balancers, use <a>DescribeLoadBalancerTargetGroups</a>
          * instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers">AWS
          * API Reference</a></p>
@@ -1198,8 +1198,8 @@ namespace Model
 
         /**
          * <p>Describes the load balancers for the specified Auto Scaling group.</p>
-         * <p>Note that this operation describes only Classic load balancers. If you have
-         * Application load balancers, use <a>DescribeLoadBalancerTargetGroups</a>
+         * <p>Note that this operation describes only Classic Load Balancers. If you have
+         * Application Load Balancers, use <a>DescribeLoadBalancerTargetGroups</a>
          * instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers">AWS
          * API Reference</a></p>
@@ -1210,8 +1210,8 @@ namespace Model
 
         /**
          * <p>Describes the load balancers for the specified Auto Scaling group.</p>
-         * <p>Note that this operation describes only Classic load balancers. If you have
-         * Application load balancers, use <a>DescribeLoadBalancerTargetGroups</a>
+         * <p>Note that this operation describes only Classic Load Balancers. If you have
+         * Application Load Balancers, use <a>DescribeLoadBalancerTargetGroups</a>
          * instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers">AWS
          * API Reference</a></p>
@@ -1470,12 +1470,12 @@ namespace Model
 
         /**
          * <p>Removes one or more instances from the specified Auto Scaling group.</p>
-         * <p>After the instances are detached, you can manage them independently from the
-         * rest of the Auto Scaling group.</p> <p>If you do not specify the option to
-         * decrement the desired capacity, Auto Scaling launches instances to replace the
-         * ones that are detached.</p> <p>If there is a Classic load balancer attached to
-         * the Auto Scaling group, the instances are deregistered from the load balancer.
-         * If there are target groups attached to the Auto Scaling group, the instances are
+         * <p>After the instances are detached, you can manage them independent of the Auto
+         * Scaling group.</p> <p>If you do not specify the option to decrement the desired
+         * capacity, Auto Scaling launches instances to replace the ones that are
+         * detached.</p> <p>If there is a Classic Load Balancer attached to the Auto
+         * Scaling group, the instances are deregistered from the load balancer. If there
+         * are target groups attached to the Auto Scaling group, the instances are
          * deregistered from the target groups.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/detach-instance-asg.html">Detach
          * EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User
@@ -1487,12 +1487,12 @@ namespace Model
 
         /**
          * <p>Removes one or more instances from the specified Auto Scaling group.</p>
-         * <p>After the instances are detached, you can manage them independently from the
-         * rest of the Auto Scaling group.</p> <p>If you do not specify the option to
-         * decrement the desired capacity, Auto Scaling launches instances to replace the
-         * ones that are detached.</p> <p>If there is a Classic load balancer attached to
-         * the Auto Scaling group, the instances are deregistered from the load balancer.
-         * If there are target groups attached to the Auto Scaling group, the instances are
+         * <p>After the instances are detached, you can manage them independent of the Auto
+         * Scaling group.</p> <p>If you do not specify the option to decrement the desired
+         * capacity, Auto Scaling launches instances to replace the ones that are
+         * detached.</p> <p>If there is a Classic Load Balancer attached to the Auto
+         * Scaling group, the instances are deregistered from the load balancer. If there
+         * are target groups attached to the Auto Scaling group, the instances are
          * deregistered from the target groups.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/detach-instance-asg.html">Detach
          * EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User
@@ -1506,12 +1506,12 @@ namespace Model
 
         /**
          * <p>Removes one or more instances from the specified Auto Scaling group.</p>
-         * <p>After the instances are detached, you can manage them independently from the
-         * rest of the Auto Scaling group.</p> <p>If you do not specify the option to
-         * decrement the desired capacity, Auto Scaling launches instances to replace the
-         * ones that are detached.</p> <p>If there is a Classic load balancer attached to
-         * the Auto Scaling group, the instances are deregistered from the load balancer.
-         * If there are target groups attached to the Auto Scaling group, the instances are
+         * <p>After the instances are detached, you can manage them independent of the Auto
+         * Scaling group.</p> <p>If you do not specify the option to decrement the desired
+         * capacity, Auto Scaling launches instances to replace the ones that are
+         * detached.</p> <p>If there is a Classic Load Balancer attached to the Auto
+         * Scaling group, the instances are deregistered from the load balancer. If there
+         * are target groups attached to the Auto Scaling group, the instances are
          * deregistered from the target groups.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/detach-instance-asg.html">Detach
          * EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User
@@ -1552,9 +1552,9 @@ namespace Model
         virtual void DetachLoadBalancerTargetGroupsAsync(const Model::DetachLoadBalancerTargetGroupsRequest& request, const DetachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Detaches one or more Classic load balancers from the specified Auto Scaling
-         * group.</p> <p>Note that this operation detaches only Classic load balancers. If
-         * you have Application load balancers, use <a>DetachLoadBalancerTargetGroups</a>
+         * <p>Detaches one or more Classic Load Balancers from the specified Auto Scaling
+         * group.</p> <p>Note that this operation detaches only Classic Load Balancers. If
+         * you have Application Load Balancers, use <a>DetachLoadBalancerTargetGroups</a>
          * instead.</p> <p>When you detach a load balancer, it enters the
          * <code>Removing</code> state while deregistering the instances in the group. When
          * all instances are deregistered, then you can no longer describe the load
@@ -1566,9 +1566,9 @@ namespace Model
         virtual Model::DetachLoadBalancersOutcome DetachLoadBalancers(const Model::DetachLoadBalancersRequest& request) const;
 
         /**
-         * <p>Detaches one or more Classic load balancers from the specified Auto Scaling
-         * group.</p> <p>Note that this operation detaches only Classic load balancers. If
-         * you have Application load balancers, use <a>DetachLoadBalancerTargetGroups</a>
+         * <p>Detaches one or more Classic Load Balancers from the specified Auto Scaling
+         * group.</p> <p>Note that this operation detaches only Classic Load Balancers. If
+         * you have Application Load Balancers, use <a>DetachLoadBalancerTargetGroups</a>
          * instead.</p> <p>When you detach a load balancer, it enters the
          * <code>Removing</code> state while deregistering the instances in the group. When
          * all instances are deregistered, then you can no longer describe the load
@@ -1582,9 +1582,9 @@ namespace Model
         virtual Model::DetachLoadBalancersOutcomeCallable DetachLoadBalancersCallable(const Model::DetachLoadBalancersRequest& request) const;
 
         /**
-         * <p>Detaches one or more Classic load balancers from the specified Auto Scaling
-         * group.</p> <p>Note that this operation detaches only Classic load balancers. If
-         * you have Application load balancers, use <a>DetachLoadBalancerTargetGroups</a>
+         * <p>Detaches one or more Classic Load Balancers from the specified Auto Scaling
+         * group.</p> <p>Note that this operation detaches only Classic Load Balancers. If
+         * you have Application Load Balancers, use <a>DetachLoadBalancerTargetGroups</a>
          * instead.</p> <p>When you detach a load balancer, it enters the
          * <code>Removing</code> state while deregistering the instances in the group. When
          * all instances are deregistered, then you can no longer describe the load
@@ -1663,22 +1663,22 @@ namespace Model
         virtual void EnableMetricsCollectionAsync(const Model::EnableMetricsCollectionRequest& request, const EnableMetricsCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Moves the specified instances into <code>Standby</code> mode.</p> <p>For more
+         * <p>Moves the specified instances into the standby state.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily
+         * Removing Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby">AWS
          * API Reference</a></p>
          */
         virtual Model::EnterStandbyOutcome EnterStandby(const Model::EnterStandbyRequest& request) const;
 
         /**
-         * <p>Moves the specified instances into <code>Standby</code> mode.</p> <p>For more
+         * <p>Moves the specified instances into the standby state.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily
+         * Removing Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby">AWS
          * API Reference</a></p>
          *
@@ -1687,11 +1687,11 @@ namespace Model
         virtual Model::EnterStandbyOutcomeCallable EnterStandbyCallable(const Model::EnterStandbyRequest& request) const;
 
         /**
-         * <p>Moves the specified instances into <code>Standby</code> mode.</p> <p>For more
+         * <p>Moves the specified instances into the standby state.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily
+         * Removing Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby">AWS
          * API Reference</a></p>
          *
@@ -1725,22 +1725,22 @@ namespace Model
         virtual void ExecutePolicyAsync(const Model::ExecutePolicyRequest& request, const ExecutePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Moves the specified instances out of <code>Standby</code> mode.</p> <p>For
-         * more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Moves the specified instances out of the standby state.</p> <p>For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily
+         * Removing Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby">AWS
          * API Reference</a></p>
          */
         virtual Model::ExitStandbyOutcome ExitStandby(const Model::ExitStandbyRequest& request) const;
 
         /**
-         * <p>Moves the specified instances out of <code>Standby</code> mode.</p> <p>For
-         * more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Moves the specified instances out of the standby state.</p> <p>For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily
+         * Removing Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby">AWS
          * API Reference</a></p>
          *
@@ -1749,11 +1749,11 @@ namespace Model
         virtual Model::ExitStandbyOutcomeCallable ExitStandbyCallable(const Model::ExitStandbyRequest& request) const;
 
         /**
-         * <p>Moves the specified instances out of <code>Standby</code> mode.</p> <p>For
-         * more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Moves the specified instances out of the standby state.</p> <p>For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily
+         * Removing Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby">AWS
          * API Reference</a></p>
          *
@@ -2280,50 +2280,50 @@ namespace Model
         virtual void TerminateInstanceInAutoScalingGroupAsync(const Model::TerminateInstanceInAutoScalingGroupRequest& request, const TerminateInstanceInAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the configuration for the specified Auto Scaling group.</p> <p>To
+         * <p>Updates the configuration for the specified Auto Scaling group.</p> <p>The
+         * new settings take effect on any scaling activities after this call returns.
+         * Scaling activities that are currently in progress aren't affected.</p> <p>To
          * update an Auto Scaling group with a launch configuration with
-         * <code>InstanceMonitoring</code> set to <code>False</code>, you must first
+         * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
          * disable the collection of group metrics. Otherwise, you will get an error. If
          * you have previously enabled the collection of group metrics, you can disable it
-         * using <a>DisableMetricsCollection</a>.</p> <p>The new settings are registered
-         * upon the completion of this call. Any launch configuration settings take effect
-         * on any triggers after this call returns. Scaling activities that are currently
-         * in progress aren't affected.</p> <p>Note the following:</p> <ul> <li> <p>If you
-         * specify a new value for <code>MinSize</code> without specifying a value for
-         * <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger than
-         * the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to
-         * set the size of the group to the new value of <code>MinSize</code>.</p> </li>
-         * <li> <p>If you specify a new value for <code>MaxSize</code> without specifying a
-         * value for <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is
-         * smaller than the current size of the group, we implicitly call
+         * using <a>DisableMetricsCollection</a>.</p> <p>Note the following:</p> <ul> <li>
+         * <p>If you specify a new value for <code>MinSize</code> without specifying a
+         * value for <code>DesiredCapacity</code>, and the new <code>MinSize</code> is
+         * larger than the current size of the group, we implicitly call
          * <a>SetDesiredCapacity</a> to set the size of the group to the new value of
-         * <code>MaxSize</code>.</p> </li> <li> <p>All other optional parameters are left
-         * unchanged if not specified.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>MinSize</code>.</p> </li> <li> <p>If you specify a new value for
+         * <code>MaxSize</code> without specifying a value for
+         * <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller than
+         * the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to
+         * set the size of the group to the new value of <code>MaxSize</code>.</p> </li>
+         * <li> <p>All other optional parameters are left unchanged if not specified.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateAutoScalingGroupOutcome UpdateAutoScalingGroup(const Model::UpdateAutoScalingGroupRequest& request) const;
 
         /**
-         * <p>Updates the configuration for the specified Auto Scaling group.</p> <p>To
+         * <p>Updates the configuration for the specified Auto Scaling group.</p> <p>The
+         * new settings take effect on any scaling activities after this call returns.
+         * Scaling activities that are currently in progress aren't affected.</p> <p>To
          * update an Auto Scaling group with a launch configuration with
-         * <code>InstanceMonitoring</code> set to <code>False</code>, you must first
+         * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
          * disable the collection of group metrics. Otherwise, you will get an error. If
          * you have previously enabled the collection of group metrics, you can disable it
-         * using <a>DisableMetricsCollection</a>.</p> <p>The new settings are registered
-         * upon the completion of this call. Any launch configuration settings take effect
-         * on any triggers after this call returns. Scaling activities that are currently
-         * in progress aren't affected.</p> <p>Note the following:</p> <ul> <li> <p>If you
-         * specify a new value for <code>MinSize</code> without specifying a value for
-         * <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger than
-         * the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to
-         * set the size of the group to the new value of <code>MinSize</code>.</p> </li>
-         * <li> <p>If you specify a new value for <code>MaxSize</code> without specifying a
-         * value for <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is
-         * smaller than the current size of the group, we implicitly call
+         * using <a>DisableMetricsCollection</a>.</p> <p>Note the following:</p> <ul> <li>
+         * <p>If you specify a new value for <code>MinSize</code> without specifying a
+         * value for <code>DesiredCapacity</code>, and the new <code>MinSize</code> is
+         * larger than the current size of the group, we implicitly call
          * <a>SetDesiredCapacity</a> to set the size of the group to the new value of
-         * <code>MaxSize</code>.</p> </li> <li> <p>All other optional parameters are left
-         * unchanged if not specified.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>MinSize</code>.</p> </li> <li> <p>If you specify a new value for
+         * <code>MaxSize</code> without specifying a value for
+         * <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller than
+         * the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to
+         * set the size of the group to the new value of <code>MaxSize</code>.</p> </li>
+         * <li> <p>All other optional parameters are left unchanged if not specified.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup">AWS
          * API Reference</a></p>
          *
@@ -2332,25 +2332,25 @@ namespace Model
         virtual Model::UpdateAutoScalingGroupOutcomeCallable UpdateAutoScalingGroupCallable(const Model::UpdateAutoScalingGroupRequest& request) const;
 
         /**
-         * <p>Updates the configuration for the specified Auto Scaling group.</p> <p>To
+         * <p>Updates the configuration for the specified Auto Scaling group.</p> <p>The
+         * new settings take effect on any scaling activities after this call returns.
+         * Scaling activities that are currently in progress aren't affected.</p> <p>To
          * update an Auto Scaling group with a launch configuration with
-         * <code>InstanceMonitoring</code> set to <code>False</code>, you must first
+         * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
          * disable the collection of group metrics. Otherwise, you will get an error. If
          * you have previously enabled the collection of group metrics, you can disable it
-         * using <a>DisableMetricsCollection</a>.</p> <p>The new settings are registered
-         * upon the completion of this call. Any launch configuration settings take effect
-         * on any triggers after this call returns. Scaling activities that are currently
-         * in progress aren't affected.</p> <p>Note the following:</p> <ul> <li> <p>If you
-         * specify a new value for <code>MinSize</code> without specifying a value for
-         * <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger than
-         * the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to
-         * set the size of the group to the new value of <code>MinSize</code>.</p> </li>
-         * <li> <p>If you specify a new value for <code>MaxSize</code> without specifying a
-         * value for <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is
-         * smaller than the current size of the group, we implicitly call
+         * using <a>DisableMetricsCollection</a>.</p> <p>Note the following:</p> <ul> <li>
+         * <p>If you specify a new value for <code>MinSize</code> without specifying a
+         * value for <code>DesiredCapacity</code>, and the new <code>MinSize</code> is
+         * larger than the current size of the group, we implicitly call
          * <a>SetDesiredCapacity</a> to set the size of the group to the new value of
-         * <code>MaxSize</code>.</p> </li> <li> <p>All other optional parameters are left
-         * unchanged if not specified.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>MinSize</code>.</p> </li> <li> <p>If you specify a new value for
+         * <code>MaxSize</code> without specifying a value for
+         * <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller than
+         * the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to
+         * set the size of the group to the new value of <code>MaxSize</code>.</p> </li>
+         * <li> <p>All other optional parameters are left unchanged if not specified.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup">AWS
          * API Reference</a></p>
          *

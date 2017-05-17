@@ -39,100 +39,77 @@ namespace Model
 
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline const Aws::String& GetRule() const{ return m_rule; }
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline void SetRule(const Aws::String& value) { m_ruleHasBeenSet = true; m_rule = value; }
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline void SetRule(Aws::String&& value) { m_ruleHasBeenSet = true; m_rule = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline void SetRule(const char* value) { m_ruleHasBeenSet = true; m_rule.assign(value); }
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline RemoveTargetsRequest& WithRule(const Aws::String& value) { SetRule(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline RemoveTargetsRequest& WithRule(Aws::String&& value) { SetRule(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline RemoveTargetsRequest& WithRule(const char* value) { SetRule(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The IDs of the targets to remove from the rule.</simpara>
-     * </zonbook> <xhtml> <p>The IDs of the targets to remove from the rule.</p>
-     * </xhtml>
+     * <p>The IDs of the targets to remove from the rule.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIds() const{ return m_ids; }
 
     /**
-     * <zonbook> <simpara>The IDs of the targets to remove from the rule.</simpara>
-     * </zonbook> <xhtml> <p>The IDs of the targets to remove from the rule.</p>
-     * </xhtml>
+     * <p>The IDs of the targets to remove from the rule.</p>
      */
     inline void SetIds(const Aws::Vector<Aws::String>& value) { m_idsHasBeenSet = true; m_ids = value; }
 
     /**
-     * <zonbook> <simpara>The IDs of the targets to remove from the rule.</simpara>
-     * </zonbook> <xhtml> <p>The IDs of the targets to remove from the rule.</p>
-     * </xhtml>
+     * <p>The IDs of the targets to remove from the rule.</p>
      */
     inline void SetIds(Aws::Vector<Aws::String>&& value) { m_idsHasBeenSet = true; m_ids = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The IDs of the targets to remove from the rule.</simpara>
-     * </zonbook> <xhtml> <p>The IDs of the targets to remove from the rule.</p>
-     * </xhtml>
+     * <p>The IDs of the targets to remove from the rule.</p>
      */
     inline RemoveTargetsRequest& WithIds(const Aws::Vector<Aws::String>& value) { SetIds(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The IDs of the targets to remove from the rule.</simpara>
-     * </zonbook> <xhtml> <p>The IDs of the targets to remove from the rule.</p>
-     * </xhtml>
+     * <p>The IDs of the targets to remove from the rule.</p>
      */
     inline RemoveTargetsRequest& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The IDs of the targets to remove from the rule.</simpara>
-     * </zonbook> <xhtml> <p>The IDs of the targets to remove from the rule.</p>
-     * </xhtml>
+     * <p>The IDs of the targets to remove from the rule.</p>
      */
     inline RemoveTargetsRequest& AddIds(const Aws::String& value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
 
     /**
-     * <zonbook> <simpara>The IDs of the targets to remove from the rule.</simpara>
-     * </zonbook> <xhtml> <p>The IDs of the targets to remove from the rule.</p>
-     * </xhtml>
+     * <p>The IDs of the targets to remove from the rule.</p>
      */
     inline RemoveTargetsRequest& AddIds(Aws::String&& value) { m_idsHasBeenSet = true; m_ids.push_back(std::move(value)); return *this; }
 
     /**
-     * <zonbook> <simpara>The IDs of the targets to remove from the rule.</simpara>
-     * </zonbook> <xhtml> <p>The IDs of the targets to remove from the rule.</p>
-     * </xhtml>
+     * <p>The IDs of the targets to remove from the rule.</p>
      */
     inline RemoveTargetsRequest& AddIds(const char* value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
 

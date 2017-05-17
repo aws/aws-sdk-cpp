@@ -34,13 +34,12 @@ namespace Model
 {
 
   /**
-   * <zonbook> <simpara>Information about the EC2 instances that are to be sent the
-   * command, specified as key-value pairs. Each <code>RunCommandTarget</code> block
-   * can include only one key, but this key may specify multiple values.</simpara>
-   * </zonbook> <xhtml> <p>Information about the EC2 instances that are to be sent
-   * the command, specified as key-value pairs. Each <code>RunCommandTarget</code>
-   * block can include only one key, but this key may specify multiple values.</p>
-   * </xhtml>
+   * <p>Information about the EC2 instances that are to be sent the command,
+   * specified as key-value pairs. Each <code>RunCommandTarget</code> block can
+   * include only one key, but this key may specify multiple values.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RunCommandTarget">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHEVENTS_API RunCommandTarget
   {
@@ -51,139 +50,100 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <zonbook> <simpara>Can be either <code>tag:</code> <emphasis>tag-key</emphasis>
-     * or <code>InstanceIds</code>.</simpara> </zonbook> <xhtml> <p>Can be either
-     * <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p> </xhtml>
+     * <p>Can be either <code>tag:</code> <i>tag-key</i> or
+     * <code>InstanceIds</code>.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <zonbook> <simpara>Can be either <code>tag:</code> <emphasis>tag-key</emphasis>
-     * or <code>InstanceIds</code>.</simpara> </zonbook> <xhtml> <p>Can be either
-     * <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p> </xhtml>
+     * <p>Can be either <code>tag:</code> <i>tag-key</i> or
+     * <code>InstanceIds</code>.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <zonbook> <simpara>Can be either <code>tag:</code> <emphasis>tag-key</emphasis>
-     * or <code>InstanceIds</code>.</simpara> </zonbook> <xhtml> <p>Can be either
-     * <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p> </xhtml>
+     * <p>Can be either <code>tag:</code> <i>tag-key</i> or
+     * <code>InstanceIds</code>.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <zonbook> <simpara>Can be either <code>tag:</code> <emphasis>tag-key</emphasis>
-     * or <code>InstanceIds</code>.</simpara> </zonbook> <xhtml> <p>Can be either
-     * <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p> </xhtml>
+     * <p>Can be either <code>tag:</code> <i>tag-key</i> or
+     * <code>InstanceIds</code>.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <zonbook> <simpara>Can be either <code>tag:</code> <emphasis>tag-key</emphasis>
-     * or <code>InstanceIds</code>.</simpara> </zonbook> <xhtml> <p>Can be either
-     * <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p> </xhtml>
+     * <p>Can be either <code>tag:</code> <i>tag-key</i> or
+     * <code>InstanceIds</code>.</p>
      */
     inline RunCommandTarget& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <zonbook> <simpara>Can be either <code>tag:</code> <emphasis>tag-key</emphasis>
-     * or <code>InstanceIds</code>.</simpara> </zonbook> <xhtml> <p>Can be either
-     * <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p> </xhtml>
+     * <p>Can be either <code>tag:</code> <i>tag-key</i> or
+     * <code>InstanceIds</code>.</p>
      */
     inline RunCommandTarget& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>Can be either <code>tag:</code> <emphasis>tag-key</emphasis>
-     * or <code>InstanceIds</code>.</simpara> </zonbook> <xhtml> <p>Can be either
-     * <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p> </xhtml>
+     * <p>Can be either <code>tag:</code> <i>tag-key</i> or
+     * <code>InstanceIds</code>.</p>
      */
     inline RunCommandTarget& WithKey(const char* value) { SetKey(value); return *this;}
 
     /**
-     * <zonbook> <simpara>If <code>Key</code> is <code>tag:</code>
-     * <emphasis>tag-key</emphasis>, <code>Values</code> is a list of tag values. If
-     * <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of
-     * Amazon EC2 instance IDs.</simpara> </zonbook> <xhtml> <p>If <code>Key</code> is
-     * <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values.
-     * If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list
-     * of Amazon EC2 instance IDs.</p> </xhtml>
+     * <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code>
+     * is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>,
+     * <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
-     * <zonbook> <simpara>If <code>Key</code> is <code>tag:</code>
-     * <emphasis>tag-key</emphasis>, <code>Values</code> is a list of tag values. If
-     * <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of
-     * Amazon EC2 instance IDs.</simpara> </zonbook> <xhtml> <p>If <code>Key</code> is
-     * <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values.
-     * If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list
-     * of Amazon EC2 instance IDs.</p> </xhtml>
+     * <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code>
+     * is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>,
+     * <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * <zonbook> <simpara>If <code>Key</code> is <code>tag:</code>
-     * <emphasis>tag-key</emphasis>, <code>Values</code> is a list of tag values. If
-     * <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of
-     * Amazon EC2 instance IDs.</simpara> </zonbook> <xhtml> <p>If <code>Key</code> is
-     * <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values.
-     * If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list
-     * of Amazon EC2 instance IDs.</p> </xhtml>
+     * <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code>
+     * is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>,
+     * <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
-     * <zonbook> <simpara>If <code>Key</code> is <code>tag:</code>
-     * <emphasis>tag-key</emphasis>, <code>Values</code> is a list of tag values. If
-     * <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of
-     * Amazon EC2 instance IDs.</simpara> </zonbook> <xhtml> <p>If <code>Key</code> is
-     * <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values.
-     * If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list
-     * of Amazon EC2 instance IDs.</p> </xhtml>
+     * <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code>
+     * is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>,
+     * <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
      */
     inline RunCommandTarget& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
-     * <zonbook> <simpara>If <code>Key</code> is <code>tag:</code>
-     * <emphasis>tag-key</emphasis>, <code>Values</code> is a list of tag values. If
-     * <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of
-     * Amazon EC2 instance IDs.</simpara> </zonbook> <xhtml> <p>If <code>Key</code> is
-     * <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values.
-     * If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list
-     * of Amazon EC2 instance IDs.</p> </xhtml>
+     * <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code>
+     * is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>,
+     * <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
      */
     inline RunCommandTarget& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>If <code>Key</code> is <code>tag:</code>
-     * <emphasis>tag-key</emphasis>, <code>Values</code> is a list of tag values. If
-     * <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of
-     * Amazon EC2 instance IDs.</simpara> </zonbook> <xhtml> <p>If <code>Key</code> is
-     * <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values.
-     * If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list
-     * of Amazon EC2 instance IDs.</p> </xhtml>
+     * <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code>
+     * is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>,
+     * <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
      */
     inline RunCommandTarget& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * <zonbook> <simpara>If <code>Key</code> is <code>tag:</code>
-     * <emphasis>tag-key</emphasis>, <code>Values</code> is a list of tag values. If
-     * <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of
-     * Amazon EC2 instance IDs.</simpara> </zonbook> <xhtml> <p>If <code>Key</code> is
-     * <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values.
-     * If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list
-     * of Amazon EC2 instance IDs.</p> </xhtml>
+     * <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code>
+     * is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>,
+     * <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
      */
     inline RunCommandTarget& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
-     * <zonbook> <simpara>If <code>Key</code> is <code>tag:</code>
-     * <emphasis>tag-key</emphasis>, <code>Values</code> is a list of tag values. If
-     * <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of
-     * Amazon EC2 instance IDs.</simpara> </zonbook> <xhtml> <p>If <code>Key</code> is
-     * <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values.
-     * If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list
-     * of Amazon EC2 instance IDs.</p> </xhtml>
+     * <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code>
+     * is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>,
+     * <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
      */
     inline RunCommandTarget& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 

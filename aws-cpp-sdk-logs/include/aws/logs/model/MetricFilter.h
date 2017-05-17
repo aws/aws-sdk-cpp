@@ -141,17 +141,20 @@ namespace Model
     inline MetricFilter& AddMetricTransformations(MetricTransformation&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The creation time of the metric filter.</p>
+     * <p>The creation time of the metric filter, expressed as the number of
+     * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The creation time of the metric filter.</p>
+     * <p>The creation time of the metric filter, expressed as the number of
+     * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The creation time of the metric filter.</p>
+     * <p>The creation time of the metric filter, expressed as the number of
+     * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline MetricFilter& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 

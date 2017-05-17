@@ -99,17 +99,20 @@ namespace Model
     inline OutputLogEvent& WithMessage(const char* value) { SetMessage(value); return *this;}
 
     /**
-     * <p>The time the event was ingested.</p>
+     * <p>The time the event was ingested, expressed as the number of milliseconds
+     * since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetIngestionTime() const{ return m_ingestionTime; }
 
     /**
-     * <p>The time the event was ingested.</p>
+     * <p>The time the event was ingested, expressed as the number of milliseconds
+     * since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetIngestionTime(long long value) { m_ingestionTimeHasBeenSet = true; m_ingestionTime = value; }
 
     /**
-     * <p>The time the event was ingested.</p>
+     * <p>The time the event was ingested, expressed as the number of milliseconds
+     * since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline OutputLogEvent& WithIngestionTime(long long value) { SetIngestionTime(value); return *this;}
 

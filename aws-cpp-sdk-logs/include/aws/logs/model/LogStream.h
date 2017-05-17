@@ -82,17 +82,20 @@ namespace Model
     inline LogStream& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
     /**
-     * <p>The creation time of the stream.</p>
+     * <p>The creation time of the stream, expressed as the number of milliseconds
+     * since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The creation time of the stream.</p>
+     * <p>The creation time of the stream, expressed as the number of milliseconds
+     * since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The creation time of the stream.</p>
+     * <p>The creation time of the stream, expressed as the number of milliseconds
+     * since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline LogStream& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
@@ -115,35 +118,47 @@ namespace Model
     inline LogStream& WithFirstEventTimestamp(long long value) { SetFirstEventTimestamp(value); return *this;}
 
     /**
-     * <p>The time of the last event, expressed as the number of milliseconds since Jan
-     * 1, 1970 00:00:00 UTC.</p>
+     * <p> the time of the most recent log event in the log stream in CloudWatch Logs.
+     * This number is expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
+     * typically updates in less than an hour from ingestion, but may take longer in
+     * some rare situations.</p>
      */
     inline long long GetLastEventTimestamp() const{ return m_lastEventTimestamp; }
 
     /**
-     * <p>The time of the last event, expressed as the number of milliseconds since Jan
-     * 1, 1970 00:00:00 UTC.</p>
+     * <p> the time of the most recent log event in the log stream in CloudWatch Logs.
+     * This number is expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
+     * typically updates in less than an hour from ingestion, but may take longer in
+     * some rare situations.</p>
      */
     inline void SetLastEventTimestamp(long long value) { m_lastEventTimestampHasBeenSet = true; m_lastEventTimestamp = value; }
 
     /**
-     * <p>The time of the last event, expressed as the number of milliseconds since Jan
-     * 1, 1970 00:00:00 UTC.</p>
+     * <p> the time of the most recent log event in the log stream in CloudWatch Logs.
+     * This number is expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
+     * typically updates in less than an hour from ingestion, but may take longer in
+     * some rare situations.</p>
      */
     inline LogStream& WithLastEventTimestamp(long long value) { SetLastEventTimestamp(value); return *this;}
 
     /**
-     * <p>The ingestion time.</p>
+     * <p>The ingestion time, expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC.</p>
      */
     inline long long GetLastIngestionTime() const{ return m_lastIngestionTime; }
 
     /**
-     * <p>The ingestion time.</p>
+     * <p>The ingestion time, expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC.</p>
      */
     inline void SetLastIngestionTime(long long value) { m_lastIngestionTimeHasBeenSet = true; m_lastIngestionTime = value; }
 
     /**
-     * <p>The ingestion time.</p>
+     * <p>The ingestion time, expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC.</p>
      */
     inline LogStream& WithLastIngestionTime(long long value) { SetLastIngestionTime(value); return *this;}
 

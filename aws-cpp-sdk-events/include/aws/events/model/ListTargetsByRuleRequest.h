@@ -38,111 +38,94 @@ namespace Model
 
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline const Aws::String& GetRule() const{ return m_rule; }
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline void SetRule(const Aws::String& value) { m_ruleHasBeenSet = true; m_rule = value; }
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline void SetRule(Aws::String&& value) { m_ruleHasBeenSet = true; m_rule = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline void SetRule(const char* value) { m_ruleHasBeenSet = true; m_rule.assign(value); }
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline ListTargetsByRuleRequest& WithRule(const Aws::String& value) { SetRule(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline ListTargetsByRuleRequest& WithRule(Aws::String&& value) { SetRule(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
-     * name of the rule.</p> </xhtml>
+     * <p>The name of the rule.</p>
      */
     inline ListTargetsByRuleRequest& WithRule(const char* value) { SetRule(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
-     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
-     * call to retrieve the next set of results.</p> </xhtml>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
-     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
-     * call to retrieve the next set of results.</p> </xhtml>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
-     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
-     * call to retrieve the next set of results.</p> </xhtml>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
-     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
-     * call to retrieve the next set of results.</p> </xhtml>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
-     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
-     * call to retrieve the next set of results.</p> </xhtml>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline ListTargetsByRuleRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
-     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
-     * call to retrieve the next set of results.</p> </xhtml>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline ListTargetsByRuleRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
-     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
-     * call to retrieve the next set of results.</p> </xhtml>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline ListTargetsByRuleRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The maximum number of results to return.</simpara> </zonbook>
-     * <xhtml> <p>The maximum number of results to return.</p> </xhtml>
+     * <p>The maximum number of results to return.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <zonbook> <simpara>The maximum number of results to return.</simpara> </zonbook>
-     * <xhtml> <p>The maximum number of results to return.</p> </xhtml>
+     * <p>The maximum number of results to return.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <zonbook> <simpara>The maximum number of results to return.</simpara> </zonbook>
-     * <xhtml> <p>The maximum number of results to return.</p> </xhtml>
+     * <p>The maximum number of results to return.</p>
      */
     inline ListTargetsByRuleRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

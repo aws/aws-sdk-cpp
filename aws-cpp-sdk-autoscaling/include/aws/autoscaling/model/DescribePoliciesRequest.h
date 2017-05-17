@@ -28,9 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribePolicies.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePoliciesType">AWS
-   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API DescribePoliciesRequest : public AutoScalingRequest
   {
@@ -233,17 +230,20 @@ namespace Model
     inline DescribePoliciesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The maximum number of items to be returned with each call.</p>
+     * <p>The maximum number of items to be returned with each call. The default value
+     * is 50 and the maximum value is 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p>The maximum number of items to be returned with each call.</p>
+     * <p>The maximum number of items to be returned with each call. The default value
+     * is 50 and the maximum value is 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p>The maximum number of items to be returned with each call.</p>
+     * <p>The maximum number of items to be returned with each call. The default value
+     * is 50 and the maximum value is 100.</p>
      */
     inline DescribePoliciesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 

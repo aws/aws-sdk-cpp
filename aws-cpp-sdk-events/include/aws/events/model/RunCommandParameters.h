@@ -34,11 +34,11 @@ namespace Model
 {
 
   /**
-   * <zonbook> <simpara>This parameter contains the criteria (either InstanceIds or a
-   * tag) used to specify which EC2 instances are to be sent the command. </simpara>
-   * </zonbook> <xhtml> <p>This parameter contains the criteria (either InstanceIds
-   * or a tag) used to specify which EC2 instances are to be sent the command. </p>
-   * </xhtml>
+   * <p>This parameter contains the criteria (either InstanceIds or a tag) used to
+   * specify which EC2 instances are to be sent the command. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RunCommandParameters">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHEVENTS_API RunCommandParameters
   {
@@ -49,58 +49,44 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <zonbook> <simpara>Currently, we support including only one RunCommandTarget
-     * block, which specifies either an array of InstanceIds or a tag.</simpara>
-     * </zonbook> <xhtml> <p>Currently, we support including only one RunCommandTarget
-     * block, which specifies either an array of InstanceIds or a tag.</p> </xhtml>
+     * <p>Currently, we support including only one RunCommandTarget block, which
+     * specifies either an array of InstanceIds or a tag.</p>
      */
     inline const Aws::Vector<RunCommandTarget>& GetRunCommandTargets() const{ return m_runCommandTargets; }
 
     /**
-     * <zonbook> <simpara>Currently, we support including only one RunCommandTarget
-     * block, which specifies either an array of InstanceIds or a tag.</simpara>
-     * </zonbook> <xhtml> <p>Currently, we support including only one RunCommandTarget
-     * block, which specifies either an array of InstanceIds or a tag.</p> </xhtml>
+     * <p>Currently, we support including only one RunCommandTarget block, which
+     * specifies either an array of InstanceIds or a tag.</p>
      */
     inline void SetRunCommandTargets(const Aws::Vector<RunCommandTarget>& value) { m_runCommandTargetsHasBeenSet = true; m_runCommandTargets = value; }
 
     /**
-     * <zonbook> <simpara>Currently, we support including only one RunCommandTarget
-     * block, which specifies either an array of InstanceIds or a tag.</simpara>
-     * </zonbook> <xhtml> <p>Currently, we support including only one RunCommandTarget
-     * block, which specifies either an array of InstanceIds or a tag.</p> </xhtml>
+     * <p>Currently, we support including only one RunCommandTarget block, which
+     * specifies either an array of InstanceIds or a tag.</p>
      */
     inline void SetRunCommandTargets(Aws::Vector<RunCommandTarget>&& value) { m_runCommandTargetsHasBeenSet = true; m_runCommandTargets = std::move(value); }
 
     /**
-     * <zonbook> <simpara>Currently, we support including only one RunCommandTarget
-     * block, which specifies either an array of InstanceIds or a tag.</simpara>
-     * </zonbook> <xhtml> <p>Currently, we support including only one RunCommandTarget
-     * block, which specifies either an array of InstanceIds or a tag.</p> </xhtml>
+     * <p>Currently, we support including only one RunCommandTarget block, which
+     * specifies either an array of InstanceIds or a tag.</p>
      */
     inline RunCommandParameters& WithRunCommandTargets(const Aws::Vector<RunCommandTarget>& value) { SetRunCommandTargets(value); return *this;}
 
     /**
-     * <zonbook> <simpara>Currently, we support including only one RunCommandTarget
-     * block, which specifies either an array of InstanceIds or a tag.</simpara>
-     * </zonbook> <xhtml> <p>Currently, we support including only one RunCommandTarget
-     * block, which specifies either an array of InstanceIds or a tag.</p> </xhtml>
+     * <p>Currently, we support including only one RunCommandTarget block, which
+     * specifies either an array of InstanceIds or a tag.</p>
      */
     inline RunCommandParameters& WithRunCommandTargets(Aws::Vector<RunCommandTarget>&& value) { SetRunCommandTargets(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>Currently, we support including only one RunCommandTarget
-     * block, which specifies either an array of InstanceIds or a tag.</simpara>
-     * </zonbook> <xhtml> <p>Currently, we support including only one RunCommandTarget
-     * block, which specifies either an array of InstanceIds or a tag.</p> </xhtml>
+     * <p>Currently, we support including only one RunCommandTarget block, which
+     * specifies either an array of InstanceIds or a tag.</p>
      */
     inline RunCommandParameters& AddRunCommandTargets(const RunCommandTarget& value) { m_runCommandTargetsHasBeenSet = true; m_runCommandTargets.push_back(value); return *this; }
 
     /**
-     * <zonbook> <simpara>Currently, we support including only one RunCommandTarget
-     * block, which specifies either an array of InstanceIds or a tag.</simpara>
-     * </zonbook> <xhtml> <p>Currently, we support including only one RunCommandTarget
-     * block, which specifies either an array of InstanceIds or a tag.</p> </xhtml>
+     * <p>Currently, we support including only one RunCommandTarget block, which
+     * specifies either an array of InstanceIds or a tag.</p>
      */
     inline RunCommandParameters& AddRunCommandTargets(RunCommandTarget&& value) { m_runCommandTargetsHasBeenSet = true; m_runCommandTargets.push_back(std::move(value)); return *this; }
 

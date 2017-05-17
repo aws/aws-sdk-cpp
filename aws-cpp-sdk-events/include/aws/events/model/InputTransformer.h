@@ -34,11 +34,11 @@ namespace Model
 {
 
   /**
-   * <zonbook> <simpara>Contains the parameters needed for you to provide custom
-   * input to a target based on one or more pieces of data extracted from the
-   * event.</simpara> </zonbook> <xhtml> <p>Contains the parameters needed for you to
-   * provide custom input to a target based on one or more pieces of data extracted
-   * from the event.</p> </xhtml>
+   * <p>Contains the parameters needed for you to provide custom input to a target
+   * based on one or more pieces of data extracted from the event.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/InputTransformer">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHEVENTS_API InputTransformer
   {
@@ -49,161 +49,128 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
-     * key-value pairs, where each value is a JSON path.</simpara> </zonbook> <xhtml>
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
-     * where each value is a JSON path.</p> </xhtml>
+     * where each value is a JSON path. You must use JSON dot notation, not bracket
+     * notation.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetInputPathsMap() const{ return m_inputPathsMap; }
 
     /**
-     * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
-     * key-value pairs, where each value is a JSON path.</simpara> </zonbook> <xhtml>
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
-     * where each value is a JSON path.</p> </xhtml>
+     * where each value is a JSON path. You must use JSON dot notation, not bracket
+     * notation.</p>
      */
     inline void SetInputPathsMap(const Aws::Map<Aws::String, Aws::String>& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap = value; }
 
     /**
-     * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
-     * key-value pairs, where each value is a JSON path.</simpara> </zonbook> <xhtml>
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
-     * where each value is a JSON path.</p> </xhtml>
+     * where each value is a JSON path. You must use JSON dot notation, not bracket
+     * notation.</p>
      */
     inline void SetInputPathsMap(Aws::Map<Aws::String, Aws::String>&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap = std::move(value); }
 
     /**
-     * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
-     * key-value pairs, where each value is a JSON path.</simpara> </zonbook> <xhtml>
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
-     * where each value is a JSON path.</p> </xhtml>
+     * where each value is a JSON path. You must use JSON dot notation, not bracket
+     * notation.</p>
      */
     inline InputTransformer& WithInputPathsMap(const Aws::Map<Aws::String, Aws::String>& value) { SetInputPathsMap(value); return *this;}
 
     /**
-     * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
-     * key-value pairs, where each value is a JSON path.</simpara> </zonbook> <xhtml>
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
-     * where each value is a JSON path.</p> </xhtml>
+     * where each value is a JSON path. You must use JSON dot notation, not bracket
+     * notation.</p>
      */
     inline InputTransformer& WithInputPathsMap(Aws::Map<Aws::String, Aws::String>&& value) { SetInputPathsMap(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
-     * key-value pairs, where each value is a JSON path.</simpara> </zonbook> <xhtml>
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
-     * where each value is a JSON path.</p> </xhtml>
+     * where each value is a JSON path. You must use JSON dot notation, not bracket
+     * notation.</p>
      */
     inline InputTransformer& AddInputPathsMap(const Aws::String& key, const Aws::String& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, value); return *this; }
 
     /**
-     * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
-     * key-value pairs, where each value is a JSON path.</simpara> </zonbook> <xhtml>
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
-     * where each value is a JSON path.</p> </xhtml>
+     * where each value is a JSON path. You must use JSON dot notation, not bracket
+     * notation.</p>
      */
     inline InputTransformer& AddInputPathsMap(Aws::String&& key, const Aws::String& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(std::move(key), value); return *this; }
 
     /**
-     * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
-     * key-value pairs, where each value is a JSON path.</simpara> </zonbook> <xhtml>
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
-     * where each value is a JSON path.</p> </xhtml>
+     * where each value is a JSON path. You must use JSON dot notation, not bracket
+     * notation.</p>
      */
     inline InputTransformer& AddInputPathsMap(const Aws::String& key, Aws::String&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
-     * key-value pairs, where each value is a JSON path.</simpara> </zonbook> <xhtml>
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
-     * where each value is a JSON path.</p> </xhtml>
+     * where each value is a JSON path. You must use JSON dot notation, not bracket
+     * notation.</p>
      */
     inline InputTransformer& AddInputPathsMap(Aws::String&& key, Aws::String&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
-     * key-value pairs, where each value is a JSON path.</simpara> </zonbook> <xhtml>
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
-     * where each value is a JSON path.</p> </xhtml>
+     * where each value is a JSON path. You must use JSON dot notation, not bracket
+     * notation.</p>
      */
     inline InputTransformer& AddInputPathsMap(const char* key, Aws::String&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
-     * key-value pairs, where each value is a JSON path.</simpara> </zonbook> <xhtml>
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
-     * where each value is a JSON path.</p> </xhtml>
+     * where each value is a JSON path. You must use JSON dot notation, not bracket
+     * notation.</p>
      */
     inline InputTransformer& AddInputPathsMap(Aws::String&& key, const char* value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(std::move(key), value); return *this; }
 
     /**
-     * <zonbook> <simpara>Map of JSON paths to be extracted from the event. These are
-     * key-value pairs, where each value is a JSON path.</simpara> </zonbook> <xhtml>
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
-     * where each value is a JSON path.</p> </xhtml>
+     * where each value is a JSON path. You must use JSON dot notation, not bracket
+     * notation.</p>
      */
     inline InputTransformer& AddInputPathsMap(const char* key, const char* value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, value); return *this; }
 
     /**
-     * <zonbook> <simpara>Input template where you can use the values of the keys from
-     * <code>InputPathsMap</code> to customize the data sent to the target.</simpara>
-     * </zonbook> <xhtml> <p>Input template where you can use the values of the keys
-     * from <code>InputPathsMap</code> to customize the data sent to the target.</p>
-     * </xhtml>
+     * <p>Input template where you can use the values of the keys from
+     * <code>InputPathsMap</code> to customize the data sent to the target.</p>
      */
     inline const Aws::String& GetInputTemplate() const{ return m_inputTemplate; }
 
     /**
-     * <zonbook> <simpara>Input template where you can use the values of the keys from
-     * <code>InputPathsMap</code> to customize the data sent to the target.</simpara>
-     * </zonbook> <xhtml> <p>Input template where you can use the values of the keys
-     * from <code>InputPathsMap</code> to customize the data sent to the target.</p>
-     * </xhtml>
+     * <p>Input template where you can use the values of the keys from
+     * <code>InputPathsMap</code> to customize the data sent to the target.</p>
      */
     inline void SetInputTemplate(const Aws::String& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = value; }
 
     /**
-     * <zonbook> <simpara>Input template where you can use the values of the keys from
-     * <code>InputPathsMap</code> to customize the data sent to the target.</simpara>
-     * </zonbook> <xhtml> <p>Input template where you can use the values of the keys
-     * from <code>InputPathsMap</code> to customize the data sent to the target.</p>
-     * </xhtml>
+     * <p>Input template where you can use the values of the keys from
+     * <code>InputPathsMap</code> to customize the data sent to the target.</p>
      */
     inline void SetInputTemplate(Aws::String&& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = std::move(value); }
 
     /**
-     * <zonbook> <simpara>Input template where you can use the values of the keys from
-     * <code>InputPathsMap</code> to customize the data sent to the target.</simpara>
-     * </zonbook> <xhtml> <p>Input template where you can use the values of the keys
-     * from <code>InputPathsMap</code> to customize the data sent to the target.</p>
-     * </xhtml>
+     * <p>Input template where you can use the values of the keys from
+     * <code>InputPathsMap</code> to customize the data sent to the target.</p>
      */
     inline void SetInputTemplate(const char* value) { m_inputTemplateHasBeenSet = true; m_inputTemplate.assign(value); }
 
     /**
-     * <zonbook> <simpara>Input template where you can use the values of the keys from
-     * <code>InputPathsMap</code> to customize the data sent to the target.</simpara>
-     * </zonbook> <xhtml> <p>Input template where you can use the values of the keys
-     * from <code>InputPathsMap</code> to customize the data sent to the target.</p>
-     * </xhtml>
+     * <p>Input template where you can use the values of the keys from
+     * <code>InputPathsMap</code> to customize the data sent to the target.</p>
      */
     inline InputTransformer& WithInputTemplate(const Aws::String& value) { SetInputTemplate(value); return *this;}
 
     /**
-     * <zonbook> <simpara>Input template where you can use the values of the keys from
-     * <code>InputPathsMap</code> to customize the data sent to the target.</simpara>
-     * </zonbook> <xhtml> <p>Input template where you can use the values of the keys
-     * from <code>InputPathsMap</code> to customize the data sent to the target.</p>
-     * </xhtml>
+     * <p>Input template where you can use the values of the keys from
+     * <code>InputPathsMap</code> to customize the data sent to the target.</p>
      */
     inline InputTransformer& WithInputTemplate(Aws::String&& value) { SetInputTemplate(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>Input template where you can use the values of the keys from
-     * <code>InputPathsMap</code> to customize the data sent to the target.</simpara>
-     * </zonbook> <xhtml> <p>Input template where you can use the values of the keys
-     * from <code>InputPathsMap</code> to customize the data sent to the target.</p>
-     * </xhtml>
+     * <p>Input template where you can use the values of the keys from
+     * <code>InputPathsMap</code> to customize the data sent to the target.</p>
      */
     inline InputTransformer& WithInputTemplate(const char* value) { SetInputTemplate(value); return *this;}
 

@@ -33,9 +33,10 @@ namespace Model
 {
 
   /**
-   * <zonbook> <simpara>The custom parameters to be used when the target is an Amazon
-   * ECS cluster.</simpara> </zonbook> <xhtml> <p>The custom parameters to be used
-   * when the target is an Amazon ECS cluster.</p> </xhtml>
+   * <p>The custom parameters to be used when the target is an Amazon ECS
+   * cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EcsParameters">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHEVENTS_API EcsParameters
   {
@@ -46,75 +47,62 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <zonbook> <simpara>The ARN of the task definition to use if the event target is
-     * an Amazon ECS cluster. </simpara> </zonbook> <xhtml> <p>The ARN of the task
-     * definition to use if the event target is an Amazon ECS cluster. </p> </xhtml>
+     * <p>The ARN of the task definition to use if the event target is an Amazon ECS
+     * cluster. </p>
      */
     inline const Aws::String& GetTaskDefinitionArn() const{ return m_taskDefinitionArn; }
 
     /**
-     * <zonbook> <simpara>The ARN of the task definition to use if the event target is
-     * an Amazon ECS cluster. </simpara> </zonbook> <xhtml> <p>The ARN of the task
-     * definition to use if the event target is an Amazon ECS cluster. </p> </xhtml>
+     * <p>The ARN of the task definition to use if the event target is an Amazon ECS
+     * cluster. </p>
      */
     inline void SetTaskDefinitionArn(const Aws::String& value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn = value; }
 
     /**
-     * <zonbook> <simpara>The ARN of the task definition to use if the event target is
-     * an Amazon ECS cluster. </simpara> </zonbook> <xhtml> <p>The ARN of the task
-     * definition to use if the event target is an Amazon ECS cluster. </p> </xhtml>
+     * <p>The ARN of the task definition to use if the event target is an Amazon ECS
+     * cluster. </p>
      */
     inline void SetTaskDefinitionArn(Aws::String&& value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn = std::move(value); }
 
     /**
-     * <zonbook> <simpara>The ARN of the task definition to use if the event target is
-     * an Amazon ECS cluster. </simpara> </zonbook> <xhtml> <p>The ARN of the task
-     * definition to use if the event target is an Amazon ECS cluster. </p> </xhtml>
+     * <p>The ARN of the task definition to use if the event target is an Amazon ECS
+     * cluster. </p>
      */
     inline void SetTaskDefinitionArn(const char* value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn.assign(value); }
 
     /**
-     * <zonbook> <simpara>The ARN of the task definition to use if the event target is
-     * an Amazon ECS cluster. </simpara> </zonbook> <xhtml> <p>The ARN of the task
-     * definition to use if the event target is an Amazon ECS cluster. </p> </xhtml>
+     * <p>The ARN of the task definition to use if the event target is an Amazon ECS
+     * cluster. </p>
      */
     inline EcsParameters& WithTaskDefinitionArn(const Aws::String& value) { SetTaskDefinitionArn(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The ARN of the task definition to use if the event target is
-     * an Amazon ECS cluster. </simpara> </zonbook> <xhtml> <p>The ARN of the task
-     * definition to use if the event target is an Amazon ECS cluster. </p> </xhtml>
+     * <p>The ARN of the task definition to use if the event target is an Amazon ECS
+     * cluster. </p>
      */
     inline EcsParameters& WithTaskDefinitionArn(Aws::String&& value) { SetTaskDefinitionArn(std::move(value)); return *this;}
 
     /**
-     * <zonbook> <simpara>The ARN of the task definition to use if the event target is
-     * an Amazon ECS cluster. </simpara> </zonbook> <xhtml> <p>The ARN of the task
-     * definition to use if the event target is an Amazon ECS cluster. </p> </xhtml>
+     * <p>The ARN of the task definition to use if the event target is an Amazon ECS
+     * cluster. </p>
      */
     inline EcsParameters& WithTaskDefinitionArn(const char* value) { SetTaskDefinitionArn(value); return *this;}
 
     /**
-     * <zonbook> <simpara>The number of tasks to create based on the
-     * <code>TaskDefinition</code>. The default is one.</simpara> </zonbook> <xhtml>
      * <p>The number of tasks to create based on the <code>TaskDefinition</code>. The
-     * default is one.</p> </xhtml>
+     * default is one.</p>
      */
     inline int GetTaskCount() const{ return m_taskCount; }
 
     /**
-     * <zonbook> <simpara>The number of tasks to create based on the
-     * <code>TaskDefinition</code>. The default is one.</simpara> </zonbook> <xhtml>
      * <p>The number of tasks to create based on the <code>TaskDefinition</code>. The
-     * default is one.</p> </xhtml>
+     * default is one.</p>
      */
     inline void SetTaskCount(int value) { m_taskCountHasBeenSet = true; m_taskCount = value; }
 
     /**
-     * <zonbook> <simpara>The number of tasks to create based on the
-     * <code>TaskDefinition</code>. The default is one.</simpara> </zonbook> <xhtml>
      * <p>The number of tasks to create based on the <code>TaskDefinition</code>. The
-     * default is one.</p> </xhtml>
+     * default is one.</p>
      */
     inline EcsParameters& WithTaskCount(int value) { SetTaskCount(value); return *this;}
 

@@ -1133,7 +1133,10 @@ namespace Model
          * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
          * function that belongs to the same account as the subscription filter, for
          * same-account delivery.</p> </li> </ul> <p>There can only be one subscription
-         * filter associated with a log group.</p><p><h3>See Also:</h3>   <a
+         * filter associated with a log group. If you are updating an existing filter, you
+         * must specify the correct name in <code>filterName</code>. Otherwise, the call
+         * will fail because you cannot associate a second filter with a log
+         * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">AWS
          * API Reference</a></p>
          */
@@ -1151,7 +1154,10 @@ namespace Model
          * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
          * function that belongs to the same account as the subscription filter, for
          * same-account delivery.</p> </li> </ul> <p>There can only be one subscription
-         * filter associated with a log group.</p><p><h3>See Also:</h3>   <a
+         * filter associated with a log group. If you are updating an existing filter, you
+         * must specify the correct name in <code>filterName</code>. Otherwise, the call
+         * will fail because you cannot associate a second filter with a log
+         * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">AWS
          * API Reference</a></p>
          *
@@ -1171,7 +1177,10 @@ namespace Model
          * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
          * function that belongs to the same account as the subscription filter, for
          * same-account delivery.</p> </li> </ul> <p>There can only be one subscription
-         * filter associated with a log group.</p><p><h3>See Also:</h3>   <a
+         * filter associated with a log group. If you are updating an existing filter, you
+         * must specify the correct name in <code>filterName</code>. Otherwise, the call
+         * will fail because you cannot associate a second filter with a log
+         * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">AWS
          * API Reference</a></p>
          *

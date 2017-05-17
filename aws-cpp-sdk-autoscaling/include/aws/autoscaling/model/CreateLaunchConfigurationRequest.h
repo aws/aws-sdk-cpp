@@ -30,10 +30,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateLaunchConfiguration.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfigurationType">AWS
-   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API CreateLaunchConfigurationRequest : public AutoScalingRequest
   {
@@ -89,56 +85,63 @@ namespace Model
     inline CreateLaunchConfigurationRequest& WithLaunchConfigurationName(const char* value) { SetLaunchConfigurationName(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * For more information, see <a
+     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2
+     * instances.</p> <p>If you do not specify <code>InstanceId</code>, you must
+     * specify <code>ImageId</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * For more information, see <a
+     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2
+     * instances.</p> <p>If you do not specify <code>InstanceId</code>, you must
+     * specify <code>ImageId</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * For more information, see <a
+     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2
+     * instances.</p> <p>If you do not specify <code>InstanceId</code>, you must
+     * specify <code>ImageId</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * For more information, see <a
+     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2
+     * instances.</p> <p>If you do not specify <code>InstanceId</code>, you must
+     * specify <code>ImageId</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * For more information, see <a
+     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2
+     * instances.</p> <p>If you do not specify <code>InstanceId</code>, you must
+     * specify <code>ImageId</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * For more information, see <a
+     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2
+     * instances.</p> <p>If you do not specify <code>InstanceId</code>, you must
+     * specify <code>ImageId</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * For more information, see <a
+     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2
+     * instances.</p> <p>If you do not specify <code>InstanceId</code>, you must
+     * specify <code>ImageId</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
@@ -512,11 +515,13 @@ namespace Model
     inline CreateLaunchConfigurationRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The ID of the instance to use to create the launch configuration.</p> <p>The
-     * new launch configuration derives attributes from the instance, with the
-     * exception of the block device mapping.</p> <p>To create a launch configuration
-     * with a block device mapping or override any other instance attributes, specify
-     * them as part of the same request.</p> <p>For more information, see <a
+     * <p>The ID of the instance to use to create the launch configuration. The new
+     * launch configuration derives attributes from the instance, with the exception of
+     * the block device mapping.</p> <p>If you do not specify <code>InstanceId</code>,
+     * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
+     * <p>To create a launch configuration with a block device mapping or override any
+     * other instance attributes, specify them as part of the same request.</p> <p>For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
@@ -524,11 +529,13 @@ namespace Model
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The ID of the instance to use to create the launch configuration.</p> <p>The
-     * new launch configuration derives attributes from the instance, with the
-     * exception of the block device mapping.</p> <p>To create a launch configuration
-     * with a block device mapping or override any other instance attributes, specify
-     * them as part of the same request.</p> <p>For more information, see <a
+     * <p>The ID of the instance to use to create the launch configuration. The new
+     * launch configuration derives attributes from the instance, with the exception of
+     * the block device mapping.</p> <p>If you do not specify <code>InstanceId</code>,
+     * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
+     * <p>To create a launch configuration with a block device mapping or override any
+     * other instance attributes, specify them as part of the same request.</p> <p>For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
@@ -536,11 +543,13 @@ namespace Model
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The ID of the instance to use to create the launch configuration.</p> <p>The
-     * new launch configuration derives attributes from the instance, with the
-     * exception of the block device mapping.</p> <p>To create a launch configuration
-     * with a block device mapping or override any other instance attributes, specify
-     * them as part of the same request.</p> <p>For more information, see <a
+     * <p>The ID of the instance to use to create the launch configuration. The new
+     * launch configuration derives attributes from the instance, with the exception of
+     * the block device mapping.</p> <p>If you do not specify <code>InstanceId</code>,
+     * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
+     * <p>To create a launch configuration with a block device mapping or override any
+     * other instance attributes, specify them as part of the same request.</p> <p>For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
@@ -548,11 +557,13 @@ namespace Model
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The ID of the instance to use to create the launch configuration.</p> <p>The
-     * new launch configuration derives attributes from the instance, with the
-     * exception of the block device mapping.</p> <p>To create a launch configuration
-     * with a block device mapping or override any other instance attributes, specify
-     * them as part of the same request.</p> <p>For more information, see <a
+     * <p>The ID of the instance to use to create the launch configuration. The new
+     * launch configuration derives attributes from the instance, with the exception of
+     * the block device mapping.</p> <p>If you do not specify <code>InstanceId</code>,
+     * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
+     * <p>To create a launch configuration with a block device mapping or override any
+     * other instance attributes, specify them as part of the same request.</p> <p>For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
@@ -560,11 +571,13 @@ namespace Model
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The ID of the instance to use to create the launch configuration.</p> <p>The
-     * new launch configuration derives attributes from the instance, with the
-     * exception of the block device mapping.</p> <p>To create a launch configuration
-     * with a block device mapping or override any other instance attributes, specify
-     * them as part of the same request.</p> <p>For more information, see <a
+     * <p>The ID of the instance to use to create the launch configuration. The new
+     * launch configuration derives attributes from the instance, with the exception of
+     * the block device mapping.</p> <p>If you do not specify <code>InstanceId</code>,
+     * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
+     * <p>To create a launch configuration with a block device mapping or override any
+     * other instance attributes, specify them as part of the same request.</p> <p>For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
@@ -572,11 +585,13 @@ namespace Model
     inline CreateLaunchConfigurationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the instance to use to create the launch configuration.</p> <p>The
-     * new launch configuration derives attributes from the instance, with the
-     * exception of the block device mapping.</p> <p>To create a launch configuration
-     * with a block device mapping or override any other instance attributes, specify
-     * them as part of the same request.</p> <p>For more information, see <a
+     * <p>The ID of the instance to use to create the launch configuration. The new
+     * launch configuration derives attributes from the instance, with the exception of
+     * the block device mapping.</p> <p>If you do not specify <code>InstanceId</code>,
+     * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
+     * <p>To create a launch configuration with a block device mapping or override any
+     * other instance attributes, specify them as part of the same request.</p> <p>For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
@@ -584,11 +599,13 @@ namespace Model
     inline CreateLaunchConfigurationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the instance to use to create the launch configuration.</p> <p>The
-     * new launch configuration derives attributes from the instance, with the
-     * exception of the block device mapping.</p> <p>To create a launch configuration
-     * with a block device mapping or override any other instance attributes, specify
-     * them as part of the same request.</p> <p>For more information, see <a
+     * <p>The ID of the instance to use to create the launch configuration. The new
+     * launch configuration derives attributes from the instance, with the exception of
+     * the block device mapping.</p> <p>If you do not specify <code>InstanceId</code>,
+     * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
+     * <p>To create a launch configuration with a block device mapping or override any
+     * other instance attributes, specify them as part of the same request.</p> <p>For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
@@ -596,65 +613,65 @@ namespace Model
     inline CreateLaunchConfigurationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The instance type of the EC2 instance. For information about available
-     * instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
-     * Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide.</i> </p>
+     * <p>The instance type of the EC2 instance.</p> <p>If you do not specify
+     * <code>InstanceId</code>, you must specify <code>InstanceType</code>.</p> <p>For
+     * information about available instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> </p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type of the EC2 instance. For information about available
-     * instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
-     * Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide.</i> </p>
+     * <p>The instance type of the EC2 instance.</p> <p>If you do not specify
+     * <code>InstanceId</code>, you must specify <code>InstanceType</code>.</p> <p>For
+     * information about available instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> </p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type of the EC2 instance. For information about available
-     * instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
-     * Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide.</i> </p>
+     * <p>The instance type of the EC2 instance.</p> <p>If you do not specify
+     * <code>InstanceId</code>, you must specify <code>InstanceType</code>.</p> <p>For
+     * information about available instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> </p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type of the EC2 instance. For information about available
-     * instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
-     * Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide.</i> </p>
+     * <p>The instance type of the EC2 instance.</p> <p>If you do not specify
+     * <code>InstanceId</code>, you must specify <code>InstanceType</code>.</p> <p>For
+     * information about available instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> </p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The instance type of the EC2 instance. For information about available
-     * instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
-     * Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide.</i> </p>
+     * <p>The instance type of the EC2 instance.</p> <p>If you do not specify
+     * <code>InstanceId</code>, you must specify <code>InstanceType</code>.</p> <p>For
+     * information about available instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> </p>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type of the EC2 instance. For information about available
-     * instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
-     * Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide.</i> </p>
+     * <p>The instance type of the EC2 instance.</p> <p>If you do not specify
+     * <code>InstanceId</code>, you must specify <code>InstanceType</code>.</p> <p>For
+     * information about available instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> </p>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The instance type of the EC2 instance. For information about available
-     * instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
-     * Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide.</i> </p>
+     * <p>The instance type of the EC2 instance.</p> <p>If you do not specify
+     * <code>InstanceId</code>, you must specify <code>InstanceType</code>.</p> <p>For
+     * information about available instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> </p>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
@@ -786,31 +803,36 @@ namespace Model
 
     /**
      * <p>Enables detailed monitoring (<code>true</code>) or basic monitoring
-     * (<code>false</code>) for the Auto Scaling instances.</p>
+     * (<code>false</code>) for the Auto Scaling instances. The default is
+     * <code>true</code>.</p>
      */
     inline const InstanceMonitoring& GetInstanceMonitoring() const{ return m_instanceMonitoring; }
 
     /**
      * <p>Enables detailed monitoring (<code>true</code>) or basic monitoring
-     * (<code>false</code>) for the Auto Scaling instances.</p>
+     * (<code>false</code>) for the Auto Scaling instances. The default is
+     * <code>true</code>.</p>
      */
     inline void SetInstanceMonitoring(const InstanceMonitoring& value) { m_instanceMonitoringHasBeenSet = true; m_instanceMonitoring = value; }
 
     /**
      * <p>Enables detailed monitoring (<code>true</code>) or basic monitoring
-     * (<code>false</code>) for the Auto Scaling instances.</p>
+     * (<code>false</code>) for the Auto Scaling instances. The default is
+     * <code>true</code>.</p>
      */
     inline void SetInstanceMonitoring(InstanceMonitoring&& value) { m_instanceMonitoringHasBeenSet = true; m_instanceMonitoring = std::move(value); }
 
     /**
      * <p>Enables detailed monitoring (<code>true</code>) or basic monitoring
-     * (<code>false</code>) for the Auto Scaling instances.</p>
+     * (<code>false</code>) for the Auto Scaling instances. The default is
+     * <code>true</code>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceMonitoring(const InstanceMonitoring& value) { SetInstanceMonitoring(value); return *this;}
 
     /**
      * <p>Enables detailed monitoring (<code>true</code>) or basic monitoring
-     * (<code>false</code>) for the Auto Scaling instances.</p>
+     * (<code>false</code>) for the Auto Scaling instances. The default is
+     * <code>true</code>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceMonitoring(InstanceMonitoring&& value) { SetInstanceMonitoring(std::move(value)); return *this;}
 
