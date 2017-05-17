@@ -397,6 +397,7 @@ struct AWS_CORE_API ClientConfiguration
     long connectTimeoutMs;
     std::shared_ptr<RetryStrategy> retryStrategy;
     Aws::String endpointOverride;
+    Aws::Http::Scheme proxyScheme;
     Aws::String proxyHost;
     unsigned proxyPort;
     Aws::String proxyUserName;
@@ -433,7 +434,7 @@ The retry strategy defaults to exponential backoff. You can override this defaul
 ##### Endpoint Override
 Do not alter the endpoint.
 
-##### Proxy Host, Port, User Name, and Password
+##### Proxy Scheme, Host, Port, User Name, and Password
 These settings allow you to configure a proxy for all communication with AWS. Examples of when this functionality might be useful include debugging in conjunction with the Burp suite, or using a proxy to connect to the internet.
 
 ##### Executor
