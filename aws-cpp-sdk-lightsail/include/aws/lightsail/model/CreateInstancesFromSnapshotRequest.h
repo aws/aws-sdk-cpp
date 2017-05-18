@@ -80,43 +80,71 @@ namespace Model
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
-     * following formatting: <code>us-east-1a</code> (case sensitive).</p>
+     * following formatting: <code>us-east-1a</code> (case sensitive). You can get a
+     * list of availability zones by using the <a
+     * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
+     * regions</a> operation. Be sure to add the <code>include availability
+     * zones</code> parameter to your request.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
-     * following formatting: <code>us-east-1a</code> (case sensitive).</p>
+     * following formatting: <code>us-east-1a</code> (case sensitive). You can get a
+     * list of availability zones by using the <a
+     * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
+     * regions</a> operation. Be sure to add the <code>include availability
+     * zones</code> parameter to your request.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
-     * following formatting: <code>us-east-1a</code> (case sensitive).</p>
+     * following formatting: <code>us-east-1a</code> (case sensitive). You can get a
+     * list of availability zones by using the <a
+     * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
+     * regions</a> operation. Be sure to add the <code>include availability
+     * zones</code> parameter to your request.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
-     * following formatting: <code>us-east-1a</code> (case sensitive).</p>
+     * following formatting: <code>us-east-1a</code> (case sensitive). You can get a
+     * list of availability zones by using the <a
+     * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
+     * regions</a> operation. Be sure to add the <code>include availability
+     * zones</code> parameter to your request.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
-     * following formatting: <code>us-east-1a</code> (case sensitive).</p>
+     * following formatting: <code>us-east-1a</code> (case sensitive). You can get a
+     * list of availability zones by using the <a
+     * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
+     * regions</a> operation. Be sure to add the <code>include availability
+     * zones</code> parameter to your request.</p>
      */
     inline CreateInstancesFromSnapshotRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
-     * following formatting: <code>us-east-1a</code> (case sensitive).</p>
+     * following formatting: <code>us-east-1a</code> (case sensitive). You can get a
+     * list of availability zones by using the <a
+     * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
+     * regions</a> operation. Be sure to add the <code>include availability
+     * zones</code> parameter to your request.</p>
      */
     inline CreateInstancesFromSnapshotRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
-     * following formatting: <code>us-east-1a</code> (case sensitive).</p>
+     * following formatting: <code>us-east-1a</code> (case sensitive). You can get a
+     * list of availability zones by using the <a
+     * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
+     * regions</a> operation. Be sure to add the <code>include availability
+     * zones</code> parameter to your request.</p>
      */
     inline CreateInstancesFromSnapshotRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 

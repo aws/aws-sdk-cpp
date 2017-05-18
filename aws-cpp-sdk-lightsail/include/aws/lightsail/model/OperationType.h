@@ -32,6 +32,7 @@ namespace Model
     StartInstance,
     RebootInstance,
     OpenInstancePublicPorts,
+    PutInstancePublicPorts,
     CloseInstancePublicPorts,
     AllocateStaticIp,
     ReleaseStaticIp,

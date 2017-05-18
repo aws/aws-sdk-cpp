@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/lightsail/model/GetInstancePortStatesResult.h>
+#include <aws/lightsail/model/PutInstancePublicPortsResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/UnreferencedParam.h>
@@ -25,25 +25,22 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetInstancePortStatesResult::GetInstancePortStatesResult()
+PutInstancePublicPortsResult::PutInstancePublicPortsResult()
 {
 }
 
-GetInstancePortStatesResult::GetInstancePortStatesResult(const AmazonWebServiceResult<JsonValue>& result)
+PutInstancePublicPortsResult::PutInstancePublicPortsResult(const AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetInstancePortStatesResult& GetInstancePortStatesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutInstancePublicPortsResult& PutInstancePublicPortsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("portStates"))
+  if(jsonValue.ValueExists("operation"))
   {
-    Array<JsonValue> portStatesJsonList = jsonValue.GetArray("portStates");
-    for(unsigned portStatesIndex = 0; portStatesIndex < portStatesJsonList.GetLength(); ++portStatesIndex)
-    {
-      m_portStates.push_back(portStatesJsonList[portStatesIndex].AsObject());
-    }
+    m_operation = jsonValue.GetObject("operation");
+
   }
 
 

@@ -186,37 +186,44 @@ namespace Model
     inline Region& WithName(RegionName&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The Availability Zones.</p>
+     * <p>The Availability Zones. Follows the format <code>us-east-1a</code>
+     * (case-sensitive).</p>
      */
     inline const Aws::Vector<AvailabilityZone>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
     /**
-     * <p>The Availability Zones.</p>
+     * <p>The Availability Zones. Follows the format <code>us-east-1a</code>
+     * (case-sensitive).</p>
      */
     inline void SetAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
-     * <p>The Availability Zones.</p>
+     * <p>The Availability Zones. Follows the format <code>us-east-1a</code>
+     * (case-sensitive).</p>
      */
     inline void SetAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
-     * <p>The Availability Zones.</p>
+     * <p>The Availability Zones. Follows the format <code>us-east-1a</code>
+     * (case-sensitive).</p>
      */
     inline Region& WithAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { SetAvailabilityZones(value); return *this;}
 
     /**
-     * <p>The Availability Zones.</p>
+     * <p>The Availability Zones. Follows the format <code>us-east-1a</code>
+     * (case-sensitive).</p>
      */
     inline Region& WithAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
-     * <p>The Availability Zones.</p>
+     * <p>The Availability Zones. Follows the format <code>us-east-1a</code>
+     * (case-sensitive).</p>
      */
     inline Region& AddAvailabilityZones(const AvailabilityZone& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>The Availability Zones.</p>
+     * <p>The Availability Zones. Follows the format <code>us-east-1a</code>
+     * (case-sensitive).</p>
      */
     inline Region& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 

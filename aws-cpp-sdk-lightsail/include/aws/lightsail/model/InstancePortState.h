@@ -16,9 +16,7 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/model/NetworkProtocol.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/lightsail/model/PortAccessType.h>
-#include <aws/lightsail/model/AccessDirection.h>
+#include <aws/lightsail/model/PortState.h>
 #include <utility>
 
 namespace Aws
@@ -36,16 +34,16 @@ namespace Model
 {
 
   /**
-   * <p>Describes information about the instance ports.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstancePortInfo">AWS
+   * <p>Describes the port state.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstancePortState">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API InstancePortInfo
+  class AWS_LIGHTSAIL_API InstancePortState
   {
   public:
-    InstancePortInfo();
-    InstancePortInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    InstancePortInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InstancePortState();
+    InstancePortState(const Aws::Utils::Json::JsonValue& jsonValue);
+    InstancePortState& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
@@ -61,7 +59,7 @@ namespace Model
     /**
      * <p>The first port in the range.</p>
      */
-    inline InstancePortInfo& WithFromPort(int value) { SetFromPort(value); return *this;}
+    inline InstancePortState& WithFromPort(int value) { SetFromPort(value); return *this;}
 
     /**
      * <p>The last port in the range.</p>
@@ -76,7 +74,7 @@ namespace Model
     /**
      * <p>The last port in the range.</p>
      */
-    inline InstancePortInfo& WithToPort(int value) { SetToPort(value); return *this;}
+    inline InstancePortState& WithToPort(int value) { SetToPort(value); return *this;}
 
     /**
      * <p>The protocol being used. Can be one of the following.</p> <ul> <li> <p>
@@ -152,7 +150,7 @@ namespace Model
      * service that emphasizes reduced latency over reliability. If you do require
      * reliable data stream service, use TCP instead.</p> </li> </ul>
      */
-    inline InstancePortInfo& WithProtocol(const NetworkProtocol& value) { SetProtocol(value); return *this;}
+    inline InstancePortState& WithProtocol(const NetworkProtocol& value) { SetProtocol(value); return *this;}
 
     /**
      * <p>The protocol being used. Can be one of the following.</p> <ul> <li> <p>
@@ -171,134 +169,37 @@ namespace Model
      * service that emphasizes reduced latency over reliability. If you do require
      * reliable data stream service, use TCP instead.</p> </li> </ul>
      */
-    inline InstancePortInfo& WithProtocol(NetworkProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline InstancePortState& WithProtocol(NetworkProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
-     * <p>The location from which access is allowed (e.g., <code>Anywhere
-     * (0.0.0.0/0)</code>).</p>
+     * <p>Specifies whether the instance port is <code>open</code> or
+     * <code>closed</code>.</p>
      */
-    inline const Aws::String& GetAccessFrom() const{ return m_accessFrom; }
+    inline const PortState& GetState() const{ return m_state; }
 
     /**
-     * <p>The location from which access is allowed (e.g., <code>Anywhere
-     * (0.0.0.0/0)</code>).</p>
+     * <p>Specifies whether the instance port is <code>open</code> or
+     * <code>closed</code>.</p>
      */
-    inline void SetAccessFrom(const Aws::String& value) { m_accessFromHasBeenSet = true; m_accessFrom = value; }
+    inline void SetState(const PortState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The location from which access is allowed (e.g., <code>Anywhere
-     * (0.0.0.0/0)</code>).</p>
+     * <p>Specifies whether the instance port is <code>open</code> or
+     * <code>closed</code>.</p>
      */
-    inline void SetAccessFrom(Aws::String&& value) { m_accessFromHasBeenSet = true; m_accessFrom = std::move(value); }
+    inline void SetState(PortState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The location from which access is allowed (e.g., <code>Anywhere
-     * (0.0.0.0/0)</code>).</p>
+     * <p>Specifies whether the instance port is <code>open</code> or
+     * <code>closed</code>.</p>
      */
-    inline void SetAccessFrom(const char* value) { m_accessFromHasBeenSet = true; m_accessFrom.assign(value); }
+    inline InstancePortState& WithState(const PortState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The location from which access is allowed (e.g., <code>Anywhere
-     * (0.0.0.0/0)</code>).</p>
+     * <p>Specifies whether the instance port is <code>open</code> or
+     * <code>closed</code>.</p>
      */
-    inline InstancePortInfo& WithAccessFrom(const Aws::String& value) { SetAccessFrom(value); return *this;}
-
-    /**
-     * <p>The location from which access is allowed (e.g., <code>Anywhere
-     * (0.0.0.0/0)</code>).</p>
-     */
-    inline InstancePortInfo& WithAccessFrom(Aws::String&& value) { SetAccessFrom(std::move(value)); return *this;}
-
-    /**
-     * <p>The location from which access is allowed (e.g., <code>Anywhere
-     * (0.0.0.0/0)</code>).</p>
-     */
-    inline InstancePortInfo& WithAccessFrom(const char* value) { SetAccessFrom(value); return *this;}
-
-    /**
-     * <p>The type of access (<code>Public</code> or <code>Private</code>).</p>
-     */
-    inline const PortAccessType& GetAccessType() const{ return m_accessType; }
-
-    /**
-     * <p>The type of access (<code>Public</code> or <code>Private</code>).</p>
-     */
-    inline void SetAccessType(const PortAccessType& value) { m_accessTypeHasBeenSet = true; m_accessType = value; }
-
-    /**
-     * <p>The type of access (<code>Public</code> or <code>Private</code>).</p>
-     */
-    inline void SetAccessType(PortAccessType&& value) { m_accessTypeHasBeenSet = true; m_accessType = std::move(value); }
-
-    /**
-     * <p>The type of access (<code>Public</code> or <code>Private</code>).</p>
-     */
-    inline InstancePortInfo& WithAccessType(const PortAccessType& value) { SetAccessType(value); return *this;}
-
-    /**
-     * <p>The type of access (<code>Public</code> or <code>Private</code>).</p>
-     */
-    inline InstancePortInfo& WithAccessType(PortAccessType&& value) { SetAccessType(std::move(value)); return *this;}
-
-    /**
-     * <p>The common name.</p>
-     */
-    inline const Aws::String& GetCommonName() const{ return m_commonName; }
-
-    /**
-     * <p>The common name.</p>
-     */
-    inline void SetCommonName(const Aws::String& value) { m_commonNameHasBeenSet = true; m_commonName = value; }
-
-    /**
-     * <p>The common name.</p>
-     */
-    inline void SetCommonName(Aws::String&& value) { m_commonNameHasBeenSet = true; m_commonName = std::move(value); }
-
-    /**
-     * <p>The common name.</p>
-     */
-    inline void SetCommonName(const char* value) { m_commonNameHasBeenSet = true; m_commonName.assign(value); }
-
-    /**
-     * <p>The common name.</p>
-     */
-    inline InstancePortInfo& WithCommonName(const Aws::String& value) { SetCommonName(value); return *this;}
-
-    /**
-     * <p>The common name.</p>
-     */
-    inline InstancePortInfo& WithCommonName(Aws::String&& value) { SetCommonName(std::move(value)); return *this;}
-
-    /**
-     * <p>The common name.</p>
-     */
-    inline InstancePortInfo& WithCommonName(const char* value) { SetCommonName(value); return *this;}
-
-    /**
-     * <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>
-     */
-    inline const AccessDirection& GetAccessDirection() const{ return m_accessDirection; }
-
-    /**
-     * <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>
-     */
-    inline void SetAccessDirection(const AccessDirection& value) { m_accessDirectionHasBeenSet = true; m_accessDirection = value; }
-
-    /**
-     * <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>
-     */
-    inline void SetAccessDirection(AccessDirection&& value) { m_accessDirectionHasBeenSet = true; m_accessDirection = std::move(value); }
-
-    /**
-     * <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>
-     */
-    inline InstancePortInfo& WithAccessDirection(const AccessDirection& value) { SetAccessDirection(value); return *this;}
-
-    /**
-     * <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>
-     */
-    inline InstancePortInfo& WithAccessDirection(AccessDirection&& value) { SetAccessDirection(std::move(value)); return *this;}
+    inline InstancePortState& WithState(PortState&& value) { SetState(std::move(value)); return *this;}
 
   private:
     int m_fromPort;
@@ -307,14 +208,8 @@ namespace Model
     bool m_toPortHasBeenSet;
     NetworkProtocol m_protocol;
     bool m_protocolHasBeenSet;
-    Aws::String m_accessFrom;
-    bool m_accessFromHasBeenSet;
-    PortAccessType m_accessType;
-    bool m_accessTypeHasBeenSet;
-    Aws::String m_commonName;
-    bool m_commonNameHasBeenSet;
-    AccessDirection m_accessDirection;
-    bool m_accessDirectionHasBeenSet;
+    PortState m_state;
+    bool m_stateHasBeenSet;
   };
 
 } // namespace Model

@@ -68,6 +68,7 @@
 #include <aws/lightsail/model/IsVpcPeeredRequest.h>
 #include <aws/lightsail/model/OpenInstancePublicPortsRequest.h>
 #include <aws/lightsail/model/PeerVpcRequest.h>
+#include <aws/lightsail/model/PutInstancePublicPortsRequest.h>
 #include <aws/lightsail/model/RebootInstanceRequest.h>
 #include <aws/lightsail/model/ReleaseStaticIpRequest.h>
 #include <aws/lightsail/model/StartInstanceRequest.h>
@@ -1531,6 +1532,40 @@ void LightsailClient::PeerVpcAsync(const PeerVpcRequest& request, const PeerVpcR
 void LightsailClient::PeerVpcAsyncHelper(const PeerVpcRequest& request, const PeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PeerVpc(request), context);
+}
+
+PutInstancePublicPortsOutcome LightsailClient::PutInstancePublicPorts(const PutInstancePublicPortsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PutInstancePublicPortsOutcome(PutInstancePublicPortsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutInstancePublicPortsOutcome(outcome.GetError());
+  }
+}
+
+PutInstancePublicPortsOutcomeCallable LightsailClient::PutInstancePublicPortsCallable(const PutInstancePublicPortsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutInstancePublicPortsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutInstancePublicPorts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::PutInstancePublicPortsAsync(const PutInstancePublicPortsRequest& request, const PutInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutInstancePublicPortsAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::PutInstancePublicPortsAsyncHelper(const PutInstancePublicPortsRequest& request, const PutInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutInstancePublicPorts(request), context);
 }
 
 RebootInstanceOutcome LightsailClient::RebootInstance(const RebootInstanceRequest& request) const

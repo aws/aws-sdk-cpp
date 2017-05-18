@@ -36,6 +36,7 @@ namespace Aws
         static const int StartInstance_HASH = HashingUtils::HashString("StartInstance");
         static const int RebootInstance_HASH = HashingUtils::HashString("RebootInstance");
         static const int OpenInstancePublicPorts_HASH = HashingUtils::HashString("OpenInstancePublicPorts");
+        static const int PutInstancePublicPorts_HASH = HashingUtils::HashString("PutInstancePublicPorts");
         static const int CloseInstancePublicPorts_HASH = HashingUtils::HashString("CloseInstancePublicPorts");
         static const int AllocateStaticIp_HASH = HashingUtils::HashString("AllocateStaticIp");
         static const int ReleaseStaticIp_HASH = HashingUtils::HashString("ReleaseStaticIp");
@@ -76,6 +77,10 @@ namespace Aws
           else if (hashCode == OpenInstancePublicPorts_HASH)
           {
             return OperationType::OpenInstancePublicPorts;
+          }
+          else if (hashCode == PutInstancePublicPorts_HASH)
+          {
+            return OperationType::PutInstancePublicPorts;
           }
           else if (hashCode == CloseInstancePublicPorts_HASH)
           {
@@ -151,6 +156,8 @@ namespace Aws
             return "RebootInstance";
           case OperationType::OpenInstancePublicPorts:
             return "OpenInstancePublicPorts";
+          case OperationType::PutInstancePublicPorts:
+            return "PutInstancePublicPorts";
           case OperationType::CloseInstancePublicPorts:
             return "CloseInstancePublicPorts";
           case OperationType::AllocateStaticIp:
