@@ -33,6 +33,7 @@
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UUID.h>
 #include <aws/core/platform/Platform.h>
 #include <aws/testing/TestingEnvironment.h>
 
@@ -73,7 +74,7 @@ static const char* BIG_FILE_KEY = "BigFileKey";
 static const char* CANCEL_TEST_FILE_NAME = "CancelTestFile.txt";
 static const char* CANCEL_FILE_KEY = "CancelFileKey";
 
-static const char* TEST_BUCKET_NAME_BASE = "awstransferintegrationtestbucket";
+static const char* TEST_BUCKET_NAME_BASE = "transferintegrationtest";
 static const unsigned SMALL_TEST_SIZE = MB5 / 2;
 static const unsigned MEDIUM_TEST_SIZE = MB5 * 3 / 2;
 
@@ -148,7 +149,8 @@ protected:
 
     static Aws::String GetTestBucketName()
     {
-        return Aws::Testing::GetAwsResourcePrefix() + TEST_BUCKET_NAME_BASE;
+        static const Aws::String suffix = Aws::Utils::UUID::RandomUUID();
+        return Aws::Testing::GetAwsResourcePrefix() + TEST_BUCKET_NAME_BASE + suffix;
     }
 
     static bool AreFilesSame(const Aws::String& fileName, const Aws::String& fileName2)
