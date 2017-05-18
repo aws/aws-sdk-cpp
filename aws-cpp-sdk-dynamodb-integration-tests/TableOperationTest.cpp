@@ -41,6 +41,7 @@
 #include <aws/dynamodb/model/UpdateItemRequest.h>
 #include <aws/dynamodb/model/DeleteItemRequest.h>
 #include <aws/testing/TestingEnvironment.h>
+#include <aws/core/utils/UUID.h>
 
 #include <algorithm>
 
@@ -56,25 +57,27 @@ using namespace Aws::DynamoDB::Model;
 static const char* HASH_KEY_NAME = "HashKey";
 static const char* ENDPOINT_OVERRIDE = ""; // Use localhost:8000 for DynamoDb Local
 
-static const char* BASE_SIMPLE_TABLE = TEST_TABLE_PREFIX "Simple";
-static const char* BASE_CRUD_TEST_TABLE = TEST_TABLE_PREFIX "Crud";
-static const char* BASE_CRUD_CALLBACKS_TEST_TABLE = TEST_TABLE_PREFIX "Crud_WithCallbacks";
-static const char* BASE_THROTTLED_TEST_TABLE = TEST_TABLE_PREFIX "Throttled";
-static const char* BASE_LIMITER_TEST_TABLE = TEST_TABLE_PREFIX "Limiter";
-static const char* BASE_ATTRIBUTEVALUE_TEST_TABLE = TEST_TABLE_PREFIX "AttributeValue";
+static const char* BASE_SIMPLE_TABLE = "Simple";
+static const char* BASE_CRUD_TEST_TABLE = "Crud";
+static const char* BASE_CRUD_CALLBACKS_TEST_TABLE = "Crud_WithCallbacks";
+static const char* BASE_THROTTLED_TEST_TABLE = "Throttled";
+static const char* BASE_LIMITER_TEST_TABLE = "Limiter";
+static const char* BASE_ATTRIBUTEVALUE_TEST_TABLE = "AttributeValue";
 
 static const char* ALLOCATION_TAG = "TableOperationTest";
 
 namespace {
 
-Aws::String BuildTableName(const char* baseName)
-{
-    return Aws::Testing::GetAwsResourcePrefix() + baseName;
-}
+Aws::String DYNAMODB_INTEGRATION_TEST_ID = "";
 
 Aws::String GetTablePrefix()
 {
-    return Aws::Testing::GetAwsResourcePrefix() + TEST_TABLE_PREFIX;
+    return Aws::Testing::GetAwsResourcePrefix() + TEST_TABLE_PREFIX + DYNAMODB_INTEGRATION_TEST_ID + "_";
+}
+
+Aws::String BuildTableName(const char* baseName)
+{
+    return GetTablePrefix() + baseName;
 }
 
 class TableOperationTest : public ::testing::Test {
@@ -188,7 +191,7 @@ protected:
     {
         m_limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 200000);
         SetUpClient(Aws::Http::TransferLibType::DEFAULT_CLIENT);
-
+        DYNAMODB_INTEGRATION_TEST_ID = Aws::Utils::UUID::RandomUUID();
         // delete all tables, just in case
         DeleteAllTables();
     }
