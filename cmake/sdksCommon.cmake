@@ -108,6 +108,7 @@ list(APPEND C2J_LIST "xray:2016-04-12")
 list(APPEND C2J_LIST "cognito-idp:2016-04-18")
 list(APPEND C2J_LIST "application-autoscaling:2016-02-06")
 list(APPEND C2J_LIST "servicecatalog:2015-12-10")
+list(APPEND C2J_LIST "resourcegroupstaggingapi:2017-01-26")
 
 set(SDK_TEST_PROJECT_LIST "")
 list(APPEND SDK_TEST_PROJECT_LIST "cognito-identity:aws-cpp-sdk-cognitoidentity-integration-tests")
