@@ -1,0 +1,121 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
+#include <aws/dms/DatabaseMigrationServiceRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/dms/model/TableToReload.h>
+#include <utility>
+
+namespace Aws
+{
+namespace DatabaseMigrationService
+{
+namespace Model
+{
+
+  /**
+   */
+  class AWS_DATABASEMIGRATIONSERVICE_API ReloadTablesRequest : public DatabaseMigrationServiceRequest
+  {
+  public:
+    ReloadTablesRequest();
+    Aws::String SerializePayload() const override;
+
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication instance. </p>
+     */
+    inline const Aws::String& GetReplicationTaskArn() const{ return m_replicationTaskArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication instance. </p>
+     */
+    inline void SetReplicationTaskArn(const Aws::String& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication instance. </p>
+     */
+    inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication instance. </p>
+     */
+    inline void SetReplicationTaskArn(const char* value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication instance. </p>
+     */
+    inline ReloadTablesRequest& WithReplicationTaskArn(const Aws::String& value) { SetReplicationTaskArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication instance. </p>
+     */
+    inline ReloadTablesRequest& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication instance. </p>
+     */
+    inline ReloadTablesRequest& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
+
+    /**
+     * <p>The name and schema of the table to be reloaded. </p>
+     */
+    inline const Aws::Vector<TableToReload>& GetTablesToReload() const{ return m_tablesToReload; }
+
+    /**
+     * <p>The name and schema of the table to be reloaded. </p>
+     */
+    inline void SetTablesToReload(const Aws::Vector<TableToReload>& value) { m_tablesToReloadHasBeenSet = true; m_tablesToReload = value; }
+
+    /**
+     * <p>The name and schema of the table to be reloaded. </p>
+     */
+    inline void SetTablesToReload(Aws::Vector<TableToReload>&& value) { m_tablesToReloadHasBeenSet = true; m_tablesToReload = std::move(value); }
+
+    /**
+     * <p>The name and schema of the table to be reloaded. </p>
+     */
+    inline ReloadTablesRequest& WithTablesToReload(const Aws::Vector<TableToReload>& value) { SetTablesToReload(value); return *this;}
+
+    /**
+     * <p>The name and schema of the table to be reloaded. </p>
+     */
+    inline ReloadTablesRequest& WithTablesToReload(Aws::Vector<TableToReload>&& value) { SetTablesToReload(std::move(value)); return *this;}
+
+    /**
+     * <p>The name and schema of the table to be reloaded. </p>
+     */
+    inline ReloadTablesRequest& AddTablesToReload(const TableToReload& value) { m_tablesToReloadHasBeenSet = true; m_tablesToReload.push_back(value); return *this; }
+
+    /**
+     * <p>The name and schema of the table to be reloaded. </p>
+     */
+    inline ReloadTablesRequest& AddTablesToReload(TableToReload&& value) { m_tablesToReloadHasBeenSet = true; m_tablesToReload.push_back(std::move(value)); return *this; }
+
+  private:
+    Aws::String m_replicationTaskArn;
+    bool m_replicationTaskArnHasBeenSet;
+    Aws::Vector<TableToReload> m_tablesToReload;
+    bool m_tablesToReloadHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace DatabaseMigrationService
+} // namespace Aws

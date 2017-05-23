@@ -34,8 +34,10 @@ static const int ACCESS_DENIED_FAULT_HASH = HashingUtils::HashString("AccessDeni
 static const int SUBNET_ALREADY_IN_USE_HASH = HashingUtils::HashString("SubnetAlreadyInUse");
 static const int RESOURCE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ResourceAlreadyExistsFault");
 static const int K_M_S_KEY_NOT_ACCESSIBLE_FAULT_HASH = HashingUtils::HashString("KMSKeyNotAccessibleFault");
+static const int S_N_S_INVALID_TOPIC_FAULT_HASH = HashingUtils::HashString("SNSInvalidTopicFault");
 static const int REPLICATION_SUBNET_GROUP_DOES_NOT_COVER_ENOUGH_A_ZS_HASH = HashingUtils::HashString("ReplicationSubnetGroupDoesNotCoverEnoughAZs");
 static const int RESOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ResourceNotFoundFault");
+static const int S_N_S_NO_AUTHORIZATION_FAULT_HASH = HashingUtils::HashString("SNSNoAuthorizationFault");
 static const int INSUFFICIENT_RESOURCE_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientResourceCapacityFault");
 static const int INVALID_CERTIFICATE_FAULT_HASH = HashingUtils::HashString("InvalidCertificateFault");
 static const int UPGRADE_DEPENDENCY_FAILURE_FAULT_HASH = HashingUtils::HashString("UpgradeDependencyFailureFault");
@@ -71,6 +73,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::K_M_S_KEY_NOT_ACCESSIBLE_FAULT), false);
   }
+  else if (hashCode == S_N_S_INVALID_TOPIC_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::S_N_S_INVALID_TOPIC_FAULT), false);
+  }
   else if (hashCode == REPLICATION_SUBNET_GROUP_DOES_NOT_COVER_ENOUGH_A_ZS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::REPLICATION_SUBNET_GROUP_DOES_NOT_COVER_ENOUGH_A_ZS), false);
@@ -78,6 +84,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == RESOURCE_NOT_FOUND_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::RESOURCE_NOT_FOUND_FAULT), false);
+  }
+  else if (hashCode == S_N_S_NO_AUTHORIZATION_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::S_N_S_NO_AUTHORIZATION_FAULT), false);
   }
   else if (hashCode == INSUFFICIENT_RESOURCE_CAPACITY_FAULT_HASH)
   {

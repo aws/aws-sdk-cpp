@@ -23,11 +23,13 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dms/model/AddTagsToResourceResult.h>
 #include <aws/dms/model/CreateEndpointResult.h>
+#include <aws/dms/model/CreateEventSubscriptionResult.h>
 #include <aws/dms/model/CreateReplicationInstanceResult.h>
 #include <aws/dms/model/CreateReplicationSubnetGroupResult.h>
 #include <aws/dms/model/CreateReplicationTaskResult.h>
 #include <aws/dms/model/DeleteCertificateResult.h>
 #include <aws/dms/model/DeleteEndpointResult.h>
+#include <aws/dms/model/DeleteEventSubscriptionResult.h>
 #include <aws/dms/model/DeleteReplicationInstanceResult.h>
 #include <aws/dms/model/DeleteReplicationSubnetGroupResult.h>
 #include <aws/dms/model/DeleteReplicationTaskResult.h>
@@ -36,6 +38,9 @@
 #include <aws/dms/model/DescribeConnectionsResult.h>
 #include <aws/dms/model/DescribeEndpointTypesResult.h>
 #include <aws/dms/model/DescribeEndpointsResult.h>
+#include <aws/dms/model/DescribeEventCategoriesResult.h>
+#include <aws/dms/model/DescribeEventSubscriptionsResult.h>
+#include <aws/dms/model/DescribeEventsResult.h>
 #include <aws/dms/model/DescribeOrderableReplicationInstancesResult.h>
 #include <aws/dms/model/DescribeRefreshSchemasStatusResult.h>
 #include <aws/dms/model/DescribeReplicationInstancesResult.h>
@@ -46,10 +51,12 @@
 #include <aws/dms/model/ImportCertificateResult.h>
 #include <aws/dms/model/ListTagsForResourceResult.h>
 #include <aws/dms/model/ModifyEndpointResult.h>
+#include <aws/dms/model/ModifyEventSubscriptionResult.h>
 #include <aws/dms/model/ModifyReplicationInstanceResult.h>
 #include <aws/dms/model/ModifyReplicationSubnetGroupResult.h>
 #include <aws/dms/model/ModifyReplicationTaskResult.h>
 #include <aws/dms/model/RefreshSchemasResult.h>
+#include <aws/dms/model/ReloadTablesResult.h>
 #include <aws/dms/model/RemoveTagsFromResourceResult.h>
 #include <aws/dms/model/StartReplicationTaskResult.h>
 #include <aws/dms/model/StopReplicationTaskResult.h>
@@ -101,11 +108,13 @@ namespace Model
 {
         class AddTagsToResourceRequest;
         class CreateEndpointRequest;
+        class CreateEventSubscriptionRequest;
         class CreateReplicationInstanceRequest;
         class CreateReplicationSubnetGroupRequest;
         class CreateReplicationTaskRequest;
         class DeleteCertificateRequest;
         class DeleteEndpointRequest;
+        class DeleteEventSubscriptionRequest;
         class DeleteReplicationInstanceRequest;
         class DeleteReplicationSubnetGroupRequest;
         class DeleteReplicationTaskRequest;
@@ -114,6 +123,9 @@ namespace Model
         class DescribeConnectionsRequest;
         class DescribeEndpointTypesRequest;
         class DescribeEndpointsRequest;
+        class DescribeEventCategoriesRequest;
+        class DescribeEventSubscriptionsRequest;
+        class DescribeEventsRequest;
         class DescribeOrderableReplicationInstancesRequest;
         class DescribeRefreshSchemasStatusRequest;
         class DescribeReplicationInstancesRequest;
@@ -124,10 +136,12 @@ namespace Model
         class ImportCertificateRequest;
         class ListTagsForResourceRequest;
         class ModifyEndpointRequest;
+        class ModifyEventSubscriptionRequest;
         class ModifyReplicationInstanceRequest;
         class ModifyReplicationSubnetGroupRequest;
         class ModifyReplicationTaskRequest;
         class RefreshSchemasRequest;
+        class ReloadTablesRequest;
         class RemoveTagsFromResourceRequest;
         class StartReplicationTaskRequest;
         class StopReplicationTaskRequest;
@@ -135,11 +149,13 @@ namespace Model
 
         typedef Aws::Utils::Outcome<AddTagsToResourceResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> AddTagsToResourceOutcome;
         typedef Aws::Utils::Outcome<CreateEndpointResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> CreateEndpointOutcome;
+        typedef Aws::Utils::Outcome<CreateEventSubscriptionResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> CreateEventSubscriptionOutcome;
         typedef Aws::Utils::Outcome<CreateReplicationInstanceResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> CreateReplicationInstanceOutcome;
         typedef Aws::Utils::Outcome<CreateReplicationSubnetGroupResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> CreateReplicationSubnetGroupOutcome;
         typedef Aws::Utils::Outcome<CreateReplicationTaskResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> CreateReplicationTaskOutcome;
         typedef Aws::Utils::Outcome<DeleteCertificateResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DeleteCertificateOutcome;
         typedef Aws::Utils::Outcome<DeleteEndpointResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DeleteEndpointOutcome;
+        typedef Aws::Utils::Outcome<DeleteEventSubscriptionResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DeleteEventSubscriptionOutcome;
         typedef Aws::Utils::Outcome<DeleteReplicationInstanceResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DeleteReplicationInstanceOutcome;
         typedef Aws::Utils::Outcome<DeleteReplicationSubnetGroupResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DeleteReplicationSubnetGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteReplicationTaskResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DeleteReplicationTaskOutcome;
@@ -148,6 +164,9 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeConnectionsResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DescribeConnectionsOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointTypesResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DescribeEndpointTypesOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointsResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DescribeEndpointsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventCategoriesResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DescribeEventCategoriesOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventSubscriptionsResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DescribeEventSubscriptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventsResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DescribeEventsOutcome;
         typedef Aws::Utils::Outcome<DescribeOrderableReplicationInstancesResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DescribeOrderableReplicationInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribeRefreshSchemasStatusResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DescribeRefreshSchemasStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeReplicationInstancesResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DescribeReplicationInstancesOutcome;
@@ -158,10 +177,12 @@ namespace Model
         typedef Aws::Utils::Outcome<ImportCertificateResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> ImportCertificateOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ModifyEndpointResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> ModifyEndpointOutcome;
+        typedef Aws::Utils::Outcome<ModifyEventSubscriptionResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> ModifyEventSubscriptionOutcome;
         typedef Aws::Utils::Outcome<ModifyReplicationInstanceResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> ModifyReplicationInstanceOutcome;
         typedef Aws::Utils::Outcome<ModifyReplicationSubnetGroupResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> ModifyReplicationSubnetGroupOutcome;
         typedef Aws::Utils::Outcome<ModifyReplicationTaskResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> ModifyReplicationTaskOutcome;
         typedef Aws::Utils::Outcome<RefreshSchemasResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> RefreshSchemasOutcome;
+        typedef Aws::Utils::Outcome<ReloadTablesResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> ReloadTablesOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsFromResourceResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> RemoveTagsFromResourceOutcome;
         typedef Aws::Utils::Outcome<StartReplicationTaskResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> StartReplicationTaskOutcome;
         typedef Aws::Utils::Outcome<StopReplicationTaskResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> StopReplicationTaskOutcome;
@@ -169,11 +190,13 @@ namespace Model
 
         typedef std::future<AddTagsToResourceOutcome> AddTagsToResourceOutcomeCallable;
         typedef std::future<CreateEndpointOutcome> CreateEndpointOutcomeCallable;
+        typedef std::future<CreateEventSubscriptionOutcome> CreateEventSubscriptionOutcomeCallable;
         typedef std::future<CreateReplicationInstanceOutcome> CreateReplicationInstanceOutcomeCallable;
         typedef std::future<CreateReplicationSubnetGroupOutcome> CreateReplicationSubnetGroupOutcomeCallable;
         typedef std::future<CreateReplicationTaskOutcome> CreateReplicationTaskOutcomeCallable;
         typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
         typedef std::future<DeleteEndpointOutcome> DeleteEndpointOutcomeCallable;
+        typedef std::future<DeleteEventSubscriptionOutcome> DeleteEventSubscriptionOutcomeCallable;
         typedef std::future<DeleteReplicationInstanceOutcome> DeleteReplicationInstanceOutcomeCallable;
         typedef std::future<DeleteReplicationSubnetGroupOutcome> DeleteReplicationSubnetGroupOutcomeCallable;
         typedef std::future<DeleteReplicationTaskOutcome> DeleteReplicationTaskOutcomeCallable;
@@ -182,6 +205,9 @@ namespace Model
         typedef std::future<DescribeConnectionsOutcome> DescribeConnectionsOutcomeCallable;
         typedef std::future<DescribeEndpointTypesOutcome> DescribeEndpointTypesOutcomeCallable;
         typedef std::future<DescribeEndpointsOutcome> DescribeEndpointsOutcomeCallable;
+        typedef std::future<DescribeEventCategoriesOutcome> DescribeEventCategoriesOutcomeCallable;
+        typedef std::future<DescribeEventSubscriptionsOutcome> DescribeEventSubscriptionsOutcomeCallable;
+        typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
         typedef std::future<DescribeOrderableReplicationInstancesOutcome> DescribeOrderableReplicationInstancesOutcomeCallable;
         typedef std::future<DescribeRefreshSchemasStatusOutcome> DescribeRefreshSchemasStatusOutcomeCallable;
         typedef std::future<DescribeReplicationInstancesOutcome> DescribeReplicationInstancesOutcomeCallable;
@@ -192,10 +218,12 @@ namespace Model
         typedef std::future<ImportCertificateOutcome> ImportCertificateOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ModifyEndpointOutcome> ModifyEndpointOutcomeCallable;
+        typedef std::future<ModifyEventSubscriptionOutcome> ModifyEventSubscriptionOutcomeCallable;
         typedef std::future<ModifyReplicationInstanceOutcome> ModifyReplicationInstanceOutcomeCallable;
         typedef std::future<ModifyReplicationSubnetGroupOutcome> ModifyReplicationSubnetGroupOutcomeCallable;
         typedef std::future<ModifyReplicationTaskOutcome> ModifyReplicationTaskOutcomeCallable;
         typedef std::future<RefreshSchemasOutcome> RefreshSchemasOutcomeCallable;
+        typedef std::future<ReloadTablesOutcome> ReloadTablesOutcomeCallable;
         typedef std::future<RemoveTagsFromResourceOutcome> RemoveTagsFromResourceOutcomeCallable;
         typedef std::future<StartReplicationTaskOutcome> StartReplicationTaskOutcomeCallable;
         typedef std::future<StopReplicationTaskOutcome> StopReplicationTaskOutcomeCallable;
@@ -206,11 +234,13 @@ namespace Model
 
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToResourceResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CreateEndpointRequest&, const Model::CreateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEndpointResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CreateEventSubscriptionRequest&, const Model::CreateEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventSubscriptionResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CreateReplicationInstanceRequest&, const Model::CreateReplicationInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationInstanceResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CreateReplicationSubnetGroupRequest&, const Model::CreateReplicationSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationSubnetGroupResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CreateReplicationTaskRequest&, const Model::CreateReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationTaskResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteCertificateRequest&, const Model::DeleteCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCertificateResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteEndpointRequest&, const Model::DeleteEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteEventSubscriptionRequest&, const Model::DeleteEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventSubscriptionResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteReplicationInstanceRequest&, const Model::DeleteReplicationInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReplicationInstanceResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteReplicationSubnetGroupRequest&, const Model::DeleteReplicationSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReplicationSubnetGroupResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteReplicationTaskRequest&, const Model::DeleteReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReplicationTaskResponseReceivedHandler;
@@ -219,6 +249,9 @@ namespace Model
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeConnectionsRequest&, const Model::DescribeConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectionsResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEndpointTypesRequest&, const Model::DescribeEndpointTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointTypesResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEndpointsRequest&, const Model::DescribeEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointsResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEventCategoriesRequest&, const Model::DescribeEventCategoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventCategoriesResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEventSubscriptionsRequest&, const Model::DescribeEventSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventSubscriptionsResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventsResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeOrderableReplicationInstancesRequest&, const Model::DescribeOrderableReplicationInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrderableReplicationInstancesResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeRefreshSchemasStatusRequest&, const Model::DescribeRefreshSchemasStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRefreshSchemasStatusResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeReplicationInstancesRequest&, const Model::DescribeReplicationInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReplicationInstancesResponseReceivedHandler;
@@ -229,10 +262,12 @@ namespace Model
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ImportCertificateRequest&, const Model::ImportCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportCertificateResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ModifyEndpointRequest&, const Model::ModifyEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyEndpointResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ModifyEventSubscriptionRequest&, const Model::ModifyEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyEventSubscriptionResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ModifyReplicationInstanceRequest&, const Model::ModifyReplicationInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReplicationInstanceResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ModifyReplicationSubnetGroupRequest&, const Model::ModifyReplicationSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReplicationSubnetGroupResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ModifyReplicationTaskRequest&, const Model::ModifyReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReplicationTaskResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::RefreshSchemasRequest&, const Model::RefreshSchemasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RefreshSchemasResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ReloadTablesRequest&, const Model::ReloadTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReloadTablesResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromResourceResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartReplicationTaskRequest&, const Model::StartReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartReplicationTaskResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StopReplicationTaskRequest&, const Model::StopReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopReplicationTaskResponseReceivedHandler;
@@ -245,7 +280,10 @@ namespace Model
    * Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server
    * Enterprise (ASE). The service supports homogeneous migrations such as Oracle to
    * Oracle, as well as heterogeneous migrations between different database
-   * platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p>
+   * platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more
+   * information about AWS DMS, see the AWS DMS user guide at <a
+   * href="http://docs.aws.amazon.com/dms/latest/userguide/Welcome.html"> What Is AWS
+   * Database Migration Service? </a> </p>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -334,6 +372,79 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateEndpointAsync(const Model::CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Creates an AWS DMS event notification subscription. </p> <p>You can specify
+         * the type of source (<code>SourceType</code>) you want to be notified of, provide
+         * a list of AWS DMS source IDs (<code>SourceIds</code>) that triggers the events,
+         * and provide a list of event categories (<code>EventCategories</code>) for events
+         * you want to be notified of. If you specify both the <code>SourceType</code> and
+         * <code>SourceIds</code>, such as <code>SourceType = replication-instance</code>
+         * and <code>SourceIdentifier = my-replinstance</code>, you will be notified of all
+         * the replication instance events for the specified source. If you specify a
+         * <code>SourceType</code> but don't specify a <code>SourceIdentifier</code>, you
+         * receive notice of the events for that source type for all your AWS DMS sources.
+         * If you don't specify either <code>SourceType</code> nor
+         * <code>SourceIdentifier</code>, you will be notified of events generated from all
+         * AWS DMS sources belonging to your customer account.</p> <p>For more information
+         * about AWS DMS events, see <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
+         * with Events and Notifications </a> in the AWS Database MIgration Service User
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEventSubscriptionOutcome CreateEventSubscription(const Model::CreateEventSubscriptionRequest& request) const;
+
+        /**
+         * <p> Creates an AWS DMS event notification subscription. </p> <p>You can specify
+         * the type of source (<code>SourceType</code>) you want to be notified of, provide
+         * a list of AWS DMS source IDs (<code>SourceIds</code>) that triggers the events,
+         * and provide a list of event categories (<code>EventCategories</code>) for events
+         * you want to be notified of. If you specify both the <code>SourceType</code> and
+         * <code>SourceIds</code>, such as <code>SourceType = replication-instance</code>
+         * and <code>SourceIdentifier = my-replinstance</code>, you will be notified of all
+         * the replication instance events for the specified source. If you specify a
+         * <code>SourceType</code> but don't specify a <code>SourceIdentifier</code>, you
+         * receive notice of the events for that source type for all your AWS DMS sources.
+         * If you don't specify either <code>SourceType</code> nor
+         * <code>SourceIdentifier</code>, you will be notified of events generated from all
+         * AWS DMS sources belonging to your customer account.</p> <p>For more information
+         * about AWS DMS events, see <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
+         * with Events and Notifications </a> in the AWS Database MIgration Service User
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateEventSubscriptionOutcomeCallable CreateEventSubscriptionCallable(const Model::CreateEventSubscriptionRequest& request) const;
+
+        /**
+         * <p> Creates an AWS DMS event notification subscription. </p> <p>You can specify
+         * the type of source (<code>SourceType</code>) you want to be notified of, provide
+         * a list of AWS DMS source IDs (<code>SourceIds</code>) that triggers the events,
+         * and provide a list of event categories (<code>EventCategories</code>) for events
+         * you want to be notified of. If you specify both the <code>SourceType</code> and
+         * <code>SourceIds</code>, such as <code>SourceType = replication-instance</code>
+         * and <code>SourceIdentifier = my-replinstance</code>, you will be notified of all
+         * the replication instance events for the specified source. If you specify a
+         * <code>SourceType</code> but don't specify a <code>SourceIdentifier</code>, you
+         * receive notice of the events for that source type for all your AWS DMS sources.
+         * If you don't specify either <code>SourceType</code> nor
+         * <code>SourceIdentifier</code>, you will be notified of events generated from all
+         * AWS DMS sources belonging to your customer account.</p> <p>For more information
+         * about AWS DMS events, see <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
+         * with Events and Notifications </a> in the AWS Database MIgration Service User
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateEventSubscriptionAsync(const Model::CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the replication instance using the specified
@@ -474,6 +585,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEndpointAsync(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Deletes an AWS DMS event subscription. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEventSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEventSubscriptionOutcome DeleteEventSubscription(const Model::DeleteEventSubscriptionRequest& request) const;
+
+        /**
+         * <p> Deletes an AWS DMS event subscription. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEventSubscription">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteEventSubscriptionOutcomeCallable DeleteEventSubscriptionCallable(const Model::DeleteEventSubscriptionRequest& request) const;
+
+        /**
+         * <p> Deletes an AWS DMS event subscription. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEventSubscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteEventSubscriptionAsync(const Model::DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified replication instance.</p> <note> <p>You must delete any
@@ -704,6 +840,120 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeEndpointsAsync(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists categories for all event source types, or, if specified, for a
+         * specified source type. You can see a list of the event categories and source
+         * types in <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
+         * with Events and Notifications </a> in the AWS Database Migration Service User
+         * Guide. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventCategories">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEventCategoriesOutcome DescribeEventCategories(const Model::DescribeEventCategoriesRequest& request) const;
+
+        /**
+         * <p>Lists categories for all event source types, or, if specified, for a
+         * specified source type. You can see a list of the event categories and source
+         * types in <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
+         * with Events and Notifications </a> in the AWS Database Migration Service User
+         * Guide. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventCategories">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEventCategoriesOutcomeCallable DescribeEventCategoriesCallable(const Model::DescribeEventCategoriesRequest& request) const;
+
+        /**
+         * <p>Lists categories for all event source types, or, if specified, for a
+         * specified source type. You can see a list of the event categories and source
+         * types in <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
+         * with Events and Notifications </a> in the AWS Database Migration Service User
+         * Guide. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventCategories">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEventCategoriesAsync(const Model::DescribeEventCategoriesRequest& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all the event subscriptions for a customer account. The description of
+         * a subscription includes <code>SubscriptionName</code>, <code>SNSTopicARN</code>,
+         * <code>CustomerID</code>, <code>SourceType</code>, <code>SourceID</code>,
+         * <code>CreationTime</code>, and <code>Status</code>. </p> <p>If you specify
+         * <code>SubscriptionName</code>, this action lists the description for that
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventSubscriptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEventSubscriptionsOutcome DescribeEventSubscriptions(const Model::DescribeEventSubscriptionsRequest& request) const;
+
+        /**
+         * <p>Lists all the event subscriptions for a customer account. The description of
+         * a subscription includes <code>SubscriptionName</code>, <code>SNSTopicARN</code>,
+         * <code>CustomerID</code>, <code>SourceType</code>, <code>SourceID</code>,
+         * <code>CreationTime</code>, and <code>Status</code>. </p> <p>If you specify
+         * <code>SubscriptionName</code>, this action lists the description for that
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventSubscriptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEventSubscriptionsOutcomeCallable DescribeEventSubscriptionsCallable(const Model::DescribeEventSubscriptionsRequest& request) const;
+
+        /**
+         * <p>Lists all the event subscriptions for a customer account. The description of
+         * a subscription includes <code>SubscriptionName</code>, <code>SNSTopicARN</code>,
+         * <code>CustomerID</code>, <code>SourceType</code>, <code>SourceID</code>,
+         * <code>CreationTime</code>, and <code>Status</code>. </p> <p>If you specify
+         * <code>SubscriptionName</code>, this action lists the description for that
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventSubscriptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEventSubscriptionsAsync(const Model::DescribeEventSubscriptionsRequest& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Lists events for a given source identifier and source type. You can also
+         * specify a start and end time. For more information on AWS DMS events, see <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
+         * with Events and Notifications </a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
+
+        /**
+         * <p> Lists events for a given source identifier and source type. You can also
+         * specify a start and end time. For more information on AWS DMS events, see <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
+         * with Events and Notifications </a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEvents">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const Model::DescribeEventsRequest& request) const;
+
+        /**
+         * <p> Lists events for a given source identifier and source type. You can also
+         * specify a start and end time. For more information on AWS DMS events, see <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
+         * with Events and Notifications </a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEvents">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the replication instance types that can be created
@@ -980,6 +1230,34 @@ namespace Model
         virtual void ModifyEndpointAsync(const Model::ModifyEndpointRequest& request, const ModifyEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies an existing AWS DMS event notification subscription. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEventSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyEventSubscriptionOutcome ModifyEventSubscription(const Model::ModifyEventSubscriptionRequest& request) const;
+
+        /**
+         * <p>Modifies an existing AWS DMS event notification subscription. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEventSubscription">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyEventSubscriptionOutcomeCallable ModifyEventSubscriptionCallable(const Model::ModifyEventSubscriptionRequest& request) const;
+
+        /**
+         * <p>Modifies an existing AWS DMS event notification subscription. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEventSubscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyEventSubscriptionAsync(const Model::ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the replication instance to apply new settings. You can change one
          * or more parameters by specifying these parameters and the new values in the
          * request.</p> <p>Some settings are applied during the maintenance window.</p>
@@ -1043,8 +1321,10 @@ namespace Model
 
         /**
          * <p>Modifies the specified replication task.</p> <p>You can't modify the task
-         * endpoints. The task must be stopped before you can modify it. </p><p><h3>See
-         * Also:</h3>   <a
+         * endpoints. The task must be stopped before you can modify it. </p> <p>For more
+         * information about AWS DMS tasks, see the AWS DMS user guide at <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working
+         * with Migration Tasks </a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask">AWS
          * API Reference</a></p>
          */
@@ -1052,8 +1332,10 @@ namespace Model
 
         /**
          * <p>Modifies the specified replication task.</p> <p>You can't modify the task
-         * endpoints. The task must be stopped before you can modify it. </p><p><h3>See
-         * Also:</h3>   <a
+         * endpoints. The task must be stopped before you can modify it. </p> <p>For more
+         * information about AWS DMS tasks, see the AWS DMS user guide at <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working
+         * with Migration Tasks </a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask">AWS
          * API Reference</a></p>
          *
@@ -1063,8 +1345,10 @@ namespace Model
 
         /**
          * <p>Modifies the specified replication task.</p> <p>You can't modify the task
-         * endpoints. The task must be stopped before you can modify it. </p><p><h3>See
-         * Also:</h3>   <a
+         * endpoints. The task must be stopped before you can modify it. </p> <p>For more
+         * information about AWS DMS tasks, see the AWS DMS user guide at <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working
+         * with Migration Tasks </a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask">AWS
          * API Reference</a></p>
          *
@@ -1107,6 +1391,34 @@ namespace Model
         virtual void RefreshSchemasAsync(const Model::RefreshSchemasRequest& request, const RefreshSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Reloads the target database table with the source data. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ReloadTablesOutcome ReloadTables(const Model::ReloadTablesRequest& request) const;
+
+        /**
+         * <p>Reloads the target database table with the source data. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ReloadTablesOutcomeCallable ReloadTablesCallable(const Model::ReloadTablesRequest& request) const;
+
+        /**
+         * <p>Reloads the target database table with the source data. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ReloadTablesAsync(const Model::ReloadTablesRequest& request, const ReloadTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Removes metadata tags from a DMS resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RemoveTagsFromResource">AWS
          * API Reference</a></p>
@@ -1132,14 +1444,20 @@ namespace Model
         virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts the replication task.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the replication task.</p> <p>For more information about AWS DMS tasks,
+         * see the AWS DMS user guide at <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working
+         * with Migration Tasks </a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask">AWS
          * API Reference</a></p>
          */
         virtual Model::StartReplicationTaskOutcome StartReplicationTask(const Model::StartReplicationTaskRequest& request) const;
 
         /**
-         * <p>Starts the replication task.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the replication task.</p> <p>For more information about AWS DMS tasks,
+         * see the AWS DMS user guide at <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working
+         * with Migration Tasks </a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask">AWS
          * API Reference</a></p>
          *
@@ -1148,7 +1466,10 @@ namespace Model
         virtual Model::StartReplicationTaskOutcomeCallable StartReplicationTaskCallable(const Model::StartReplicationTaskRequest& request) const;
 
         /**
-         * <p>Starts the replication task.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the replication task.</p> <p>For more information about AWS DMS tasks,
+         * see the AWS DMS user guide at <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working
+         * with Migration Tasks </a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask">AWS
          * API Reference</a></p>
          *
@@ -1216,11 +1537,13 @@ namespace Model
         /**Async helpers**/
         void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEndpointAsyncHelper(const Model::CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateEventSubscriptionAsyncHelper(const Model::CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReplicationInstanceAsyncHelper(const Model::CreateReplicationInstanceRequest& request, const CreateReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReplicationSubnetGroupAsyncHelper(const Model::CreateReplicationSubnetGroupRequest& request, const CreateReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReplicationTaskAsyncHelper(const Model::CreateReplicationTaskRequest& request, const CreateReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCertificateAsyncHelper(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEndpointAsyncHelper(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteEventSubscriptionAsyncHelper(const Model::DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteReplicationInstanceAsyncHelper(const Model::DeleteReplicationInstanceRequest& request, const DeleteReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteReplicationSubnetGroupAsyncHelper(const Model::DeleteReplicationSubnetGroupRequest& request, const DeleteReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteReplicationTaskAsyncHelper(const Model::DeleteReplicationTaskRequest& request, const DeleteReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1229,6 +1552,9 @@ namespace Model
         void DescribeConnectionsAsyncHelper(const Model::DescribeConnectionsRequest& request, const DescribeConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointTypesAsyncHelper(const Model::DescribeEndpointTypesRequest& request, const DescribeEndpointTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointsAsyncHelper(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeEventCategoriesAsyncHelper(const Model::DescribeEventCategoriesRequest& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeEventSubscriptionsAsyncHelper(const Model::DescribeEventSubscriptionsRequest& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeEventsAsyncHelper(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeOrderableReplicationInstancesAsyncHelper(const Model::DescribeOrderableReplicationInstancesRequest& request, const DescribeOrderableReplicationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRefreshSchemasStatusAsyncHelper(const Model::DescribeRefreshSchemasStatusRequest& request, const DescribeRefreshSchemasStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReplicationInstancesAsyncHelper(const Model::DescribeReplicationInstancesRequest& request, const DescribeReplicationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1239,10 +1565,12 @@ namespace Model
         void ImportCertificateAsyncHelper(const Model::ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyEndpointAsyncHelper(const Model::ModifyEndpointRequest& request, const ModifyEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyEventSubscriptionAsyncHelper(const Model::ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyReplicationInstanceAsyncHelper(const Model::ModifyReplicationInstanceRequest& request, const ModifyReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyReplicationSubnetGroupAsyncHelper(const Model::ModifyReplicationSubnetGroupRequest& request, const ModifyReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyReplicationTaskAsyncHelper(const Model::ModifyReplicationTaskRequest& request, const ModifyReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RefreshSchemasAsyncHelper(const Model::RefreshSchemasRequest& request, const RefreshSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ReloadTablesAsyncHelper(const Model::ReloadTablesRequest& request, const ReloadTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartReplicationTaskAsyncHelper(const Model::StartReplicationTaskRequest& request, const StartReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopReplicationTaskAsyncHelper(const Model::StopReplicationTaskRequest& request, const StopReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -38,7 +38,10 @@ CreateEndpointRequest::CreateEndpointRequest() :
     m_tagsHasBeenSet(false),
     m_certificateArnHasBeenSet(false),
     m_sslMode(DmsSslModeValue::NOT_SET),
-    m_sslModeHasBeenSet(false)
+    m_sslModeHasBeenSet(false),
+    m_dynamoDbSettingsHasBeenSet(false),
+    m_s3SettingsHasBeenSet(false),
+    m_mongoDbSettingsHasBeenSet(false)
 {
 }
 
@@ -125,6 +128,24 @@ Aws::String CreateEndpointRequest::SerializePayload() const
   if(m_sslModeHasBeenSet)
   {
    payload.WithString("SslMode", DmsSslModeValueMapper::GetNameForDmsSslModeValue(m_sslMode));
+  }
+
+  if(m_dynamoDbSettingsHasBeenSet)
+  {
+   payload.WithObject("DynamoDbSettings", m_dynamoDbSettings.Jsonize());
+
+  }
+
+  if(m_s3SettingsHasBeenSet)
+  {
+   payload.WithObject("S3Settings", m_s3Settings.Jsonize());
+
+  }
+
+  if(m_mongoDbSettingsHasBeenSet)
+  {
+   payload.WithObject("MongoDbSettings", m_mongoDbSettings.Jsonize());
+
   }
 
   return payload.WriteReadable();

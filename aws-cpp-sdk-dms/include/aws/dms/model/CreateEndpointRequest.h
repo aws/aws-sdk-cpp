@@ -20,6 +20,9 @@
 #include <aws/dms/model/ReplicationEndpointTypeValue.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/model/DmsSslModeValue.h>
+#include <aws/dms/model/DynamoDbSettings.h>
+#include <aws/dms/model/S3Settings.h>
+#include <aws/dms/model/MongoDbSettings.h>
 #include <aws/dms/model/Tag.h>
 #include <utility>
 
@@ -119,44 +122,51 @@ namespace Model
     inline CreateEndpointRequest& WithEndpointType(ReplicationEndpointTypeValue&& value) { SetEndpointType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
+     * <p>The type of engine for the endpoint. Valid values, depending on the
+     * EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3,
+     * SYBASE, DYNAMODB, MONGODB, and SQLSERVER.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
-     * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
+     * <p>The type of engine for the endpoint. Valid values, depending on the
+     * EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3,
+     * SYBASE, DYNAMODB, MONGODB, and SQLSERVER.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
+     * <p>The type of engine for the endpoint. Valid values, depending on the
+     * EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3,
+     * SYBASE, DYNAMODB, MONGODB, and SQLSERVER.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
-     * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
+     * <p>The type of engine for the endpoint. Valid values, depending on the
+     * EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3,
+     * SYBASE, DYNAMODB, MONGODB, and SQLSERVER.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
-     * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
+     * <p>The type of engine for the endpoint. Valid values, depending on the
+     * EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3,
+     * SYBASE, DYNAMODB, MONGODB, and SQLSERVER.</p>
      */
     inline CreateEndpointRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
+     * <p>The type of engine for the endpoint. Valid values, depending on the
+     * EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3,
+     * SYBASE, DYNAMODB, MONGODB, and SQLSERVER.</p>
      */
     inline CreateEndpointRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
-     * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
+     * <p>The type of engine for the endpoint. Valid values, depending on the
+     * EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3,
+     * SYBASE, DYNAMODB, MONGODB, and SQLSERVER.</p>
      */
     inline CreateEndpointRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
@@ -518,6 +528,146 @@ namespace Model
      */
     inline CreateEndpointRequest& WithSslMode(DmsSslModeValue&& value) { SetSslMode(std::move(value)); return *this;}
 
+    /**
+     * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
+     * information about the available settings, see the <b>Using Object Mapping to
+     * Migrate Data to DynamoDB</b> section at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">
+     * Using an Amazon DynamoDB Database as a Target for AWS Database Migration
+     * Service</a>. </p>
+     */
+    inline const DynamoDbSettings& GetDynamoDbSettings() const{ return m_dynamoDbSettings; }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
+     * information about the available settings, see the <b>Using Object Mapping to
+     * Migrate Data to DynamoDB</b> section at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">
+     * Using an Amazon DynamoDB Database as a Target for AWS Database Migration
+     * Service</a>. </p>
+     */
+    inline void SetDynamoDbSettings(const DynamoDbSettings& value) { m_dynamoDbSettingsHasBeenSet = true; m_dynamoDbSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
+     * information about the available settings, see the <b>Using Object Mapping to
+     * Migrate Data to DynamoDB</b> section at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">
+     * Using an Amazon DynamoDB Database as a Target for AWS Database Migration
+     * Service</a>. </p>
+     */
+    inline void SetDynamoDbSettings(DynamoDbSettings&& value) { m_dynamoDbSettingsHasBeenSet = true; m_dynamoDbSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
+     * information about the available settings, see the <b>Using Object Mapping to
+     * Migrate Data to DynamoDB</b> section at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">
+     * Using an Amazon DynamoDB Database as a Target for AWS Database Migration
+     * Service</a>. </p>
+     */
+    inline CreateEndpointRequest& WithDynamoDbSettings(const DynamoDbSettings& value) { SetDynamoDbSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
+     * information about the available settings, see the <b>Using Object Mapping to
+     * Migrate Data to DynamoDB</b> section at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">
+     * Using an Amazon DynamoDB Database as a Target for AWS Database Migration
+     * Service</a>. </p>
+     */
+    inline CreateEndpointRequest& WithDynamoDbSettings(DynamoDbSettings&& value) { SetDynamoDbSettings(std::move(value)); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the target S3 endpoint. For more information
+     * about the available settings, see the <b>Extra Connection Attributes</b> section
+     * at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
+     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     */
+    inline const S3Settings& GetS3Settings() const{ return m_s3Settings; }
+
+    /**
+     * <p>Settings in JSON format for the target S3 endpoint. For more information
+     * about the available settings, see the <b>Extra Connection Attributes</b> section
+     * at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
+     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     */
+    inline void SetS3Settings(const S3Settings& value) { m_s3SettingsHasBeenSet = true; m_s3Settings = value; }
+
+    /**
+     * <p>Settings in JSON format for the target S3 endpoint. For more information
+     * about the available settings, see the <b>Extra Connection Attributes</b> section
+     * at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
+     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     */
+    inline void SetS3Settings(S3Settings&& value) { m_s3SettingsHasBeenSet = true; m_s3Settings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the target S3 endpoint. For more information
+     * about the available settings, see the <b>Extra Connection Attributes</b> section
+     * at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
+     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     */
+    inline CreateEndpointRequest& WithS3Settings(const S3Settings& value) { SetS3Settings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the target S3 endpoint. For more information
+     * about the available settings, see the <b>Extra Connection Attributes</b> section
+     * at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
+     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     */
+    inline CreateEndpointRequest& WithS3Settings(S3Settings&& value) { SetS3Settings(std::move(value)); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the source MongoDB endpoint. For more information
+     * about the available settings, see the <b>Configuration Properties When Using
+     * MongoDB as a Source for AWS Database Migration Service</b> section at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
+     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     */
+    inline const MongoDbSettings& GetMongoDbSettings() const{ return m_mongoDbSettings; }
+
+    /**
+     * <p>Settings in JSON format for the source MongoDB endpoint. For more information
+     * about the available settings, see the <b>Configuration Properties When Using
+     * MongoDB as a Source for AWS Database Migration Service</b> section at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
+     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     */
+    inline void SetMongoDbSettings(const MongoDbSettings& value) { m_mongoDbSettingsHasBeenSet = true; m_mongoDbSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the source MongoDB endpoint. For more information
+     * about the available settings, see the <b>Configuration Properties When Using
+     * MongoDB as a Source for AWS Database Migration Service</b> section at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
+     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     */
+    inline void SetMongoDbSettings(MongoDbSettings&& value) { m_mongoDbSettingsHasBeenSet = true; m_mongoDbSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the source MongoDB endpoint. For more information
+     * about the available settings, see the <b>Configuration Properties When Using
+     * MongoDB as a Source for AWS Database Migration Service</b> section at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
+     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     */
+    inline CreateEndpointRequest& WithMongoDbSettings(const MongoDbSettings& value) { SetMongoDbSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the source MongoDB endpoint. For more information
+     * about the available settings, see the <b>Configuration Properties When Using
+     * MongoDB as a Source for AWS Database Migration Service</b> section at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
+     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     */
+    inline CreateEndpointRequest& WithMongoDbSettings(MongoDbSettings&& value) { SetMongoDbSettings(std::move(value)); return *this;}
+
   private:
     Aws::String m_endpointIdentifier;
     bool m_endpointIdentifierHasBeenSet;
@@ -545,6 +695,12 @@ namespace Model
     bool m_certificateArnHasBeenSet;
     DmsSslModeValue m_sslMode;
     bool m_sslModeHasBeenSet;
+    DynamoDbSettings m_dynamoDbSettings;
+    bool m_dynamoDbSettingsHasBeenSet;
+    S3Settings m_s3Settings;
+    bool m_s3SettingsHasBeenSet;
+    MongoDbSettings m_mongoDbSettings;
+    bool m_mongoDbSettingsHasBeenSet;
   };
 
 } // namespace Model

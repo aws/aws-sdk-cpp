@@ -79,57 +79,57 @@ namespace Model
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul>
+     * contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline const Aws::String& GetReplicationTaskIdentifier() const{ return m_replicationTaskIdentifier; }
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul>
+     * contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline void SetReplicationTaskIdentifier(const Aws::String& value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier = value; }
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul>
+     * contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline void SetReplicationTaskIdentifier(Aws::String&& value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier = std::move(value); }
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul>
+     * contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline void SetReplicationTaskIdentifier(const char* value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier.assign(value); }
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul>
+     * contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline ModifyReplicationTaskRequest& WithReplicationTaskIdentifier(const Aws::String& value) { SetReplicationTaskIdentifier(value); return *this;}
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul>
+     * contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline ModifyReplicationTaskRequest& WithReplicationTaskIdentifier(Aws::String&& value) { SetReplicationTaskIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul>
+     * contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline ModifyReplicationTaskRequest& WithReplicationTaskIdentifier(const char* value) { SetReplicationTaskIdentifier(value); return *this;}
 
@@ -164,44 +164,58 @@ namespace Model
     inline ModifyReplicationTaskRequest& WithMigrationType(MigrationTypeValue&& value) { SetMigrationType(std::move(value)); return *this;}
 
     /**
-     * <p>The path of the JSON file that contains the table mappings. Preceed the path
-     * with "file://".</p> <p>For example, --table-mappings file://mappingfile.json</p>
+     * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
+     * contains the table mappings. Precede the path with "file://". When working with
+     * the DMS API, provide the JSON as the parameter value.</p> <p>For example,
+     * --table-mappings file://mappingfile.json</p>
      */
     inline const Aws::String& GetTableMappings() const{ return m_tableMappings; }
 
     /**
-     * <p>The path of the JSON file that contains the table mappings. Preceed the path
-     * with "file://".</p> <p>For example, --table-mappings file://mappingfile.json</p>
+     * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
+     * contains the table mappings. Precede the path with "file://". When working with
+     * the DMS API, provide the JSON as the parameter value.</p> <p>For example,
+     * --table-mappings file://mappingfile.json</p>
      */
     inline void SetTableMappings(const Aws::String& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = value; }
 
     /**
-     * <p>The path of the JSON file that contains the table mappings. Preceed the path
-     * with "file://".</p> <p>For example, --table-mappings file://mappingfile.json</p>
+     * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
+     * contains the table mappings. Precede the path with "file://". When working with
+     * the DMS API, provide the JSON as the parameter value.</p> <p>For example,
+     * --table-mappings file://mappingfile.json</p>
      */
     inline void SetTableMappings(Aws::String&& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = std::move(value); }
 
     /**
-     * <p>The path of the JSON file that contains the table mappings. Preceed the path
-     * with "file://".</p> <p>For example, --table-mappings file://mappingfile.json</p>
+     * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
+     * contains the table mappings. Precede the path with "file://". When working with
+     * the DMS API, provide the JSON as the parameter value.</p> <p>For example,
+     * --table-mappings file://mappingfile.json</p>
      */
     inline void SetTableMappings(const char* value) { m_tableMappingsHasBeenSet = true; m_tableMappings.assign(value); }
 
     /**
-     * <p>The path of the JSON file that contains the table mappings. Preceed the path
-     * with "file://".</p> <p>For example, --table-mappings file://mappingfile.json</p>
+     * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
+     * contains the table mappings. Precede the path with "file://". When working with
+     * the DMS API, provide the JSON as the parameter value.</p> <p>For example,
+     * --table-mappings file://mappingfile.json</p>
      */
     inline ModifyReplicationTaskRequest& WithTableMappings(const Aws::String& value) { SetTableMappings(value); return *this;}
 
     /**
-     * <p>The path of the JSON file that contains the table mappings. Preceed the path
-     * with "file://".</p> <p>For example, --table-mappings file://mappingfile.json</p>
+     * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
+     * contains the table mappings. Precede the path with "file://". When working with
+     * the DMS API, provide the JSON as the parameter value.</p> <p>For example,
+     * --table-mappings file://mappingfile.json</p>
      */
     inline ModifyReplicationTaskRequest& WithTableMappings(Aws::String&& value) { SetTableMappings(std::move(value)); return *this;}
 
     /**
-     * <p>The path of the JSON file that contains the table mappings. Preceed the path
-     * with "file://".</p> <p>For example, --table-mappings file://mappingfile.json</p>
+     * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
+     * contains the table mappings. Precede the path with "file://". When working with
+     * the DMS API, provide the JSON as the parameter value.</p> <p>For example,
+     * --table-mappings file://mappingfile.json</p>
      */
     inline ModifyReplicationTaskRequest& WithTableMappings(const char* value) { SetTableMappings(value); return *this;}
 
