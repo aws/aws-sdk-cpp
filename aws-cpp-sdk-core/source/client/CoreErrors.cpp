@@ -48,6 +48,7 @@ static const int SERVICE_UNAVAILABLE_EXCEPTION_HASH = HashingUtils::HashString("
 static const int SERVICE_UNAVAILABLE_ERROR_HASH = HashingUtils::HashString("ServiceUnavailableError");
 static const int THROTTLING_HASH = HashingUtils::HashString("Throttling");
 static const int THROTTLING_EXCEPTION_HASH = HashingUtils::HashString("ThrottlingException");
+static const int THROTTLED_EXCEPTION_HASH = HashingUtils::HashString("ThrottledException");
 static const int VALIDATION_ERROR_HASH = HashingUtils::HashString("ValidationError");
 static const int VALIDATION_ERROR_EXCEPTION_HASH = HashingUtils::HashString("ValidationErrorException");
 static const int VALIDATION_EXCEPTION_HASH = HashingUtils::HashString("ValidationException");
@@ -126,7 +127,7 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(CoreErrors::SERVICE_UNAVAILABLE, true);
   }
-  else if (errorHash == THROTTLING_HASH || errorHash == THROTTLING_EXCEPTION_HASH)
+  else if (errorHash == THROTTLING_HASH || errorHash == THROTTLING_EXCEPTION_HASH || errorHash == THROTTLED_EXCEPTION_HASH)
   {
     return AWSError<CoreErrors>(CoreErrors::THROTTLING, true);
   }
