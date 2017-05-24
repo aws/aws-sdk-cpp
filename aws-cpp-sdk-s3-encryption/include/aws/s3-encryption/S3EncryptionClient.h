@@ -60,6 +60,8 @@ namespace Aws
             */
             Aws::S3::Model::GetObjectOutcome GetObject(const Aws::S3::Model::GetObjectRequest& request) const override;
 
+            bool MultipartUploadSupported() const override;
+
         private:
             /*
             * Function to get the instruction file object of a encrypted object from S3. This instruction file object will be used to assist decryption.

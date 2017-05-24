@@ -2368,6 +2368,7 @@ namespace Aws
 
 
         Aws::String GeneratePresignedUrl(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, long long expirationInSeconds = MAX_EXPIRATION_SECONDS);
+        virtual bool MultipartUploadSupported() const;
 
     private:
         void init(const Client::ClientConfiguration& clientConfiguration);

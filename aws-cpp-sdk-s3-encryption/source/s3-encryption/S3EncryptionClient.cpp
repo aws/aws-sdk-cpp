@@ -124,6 +124,11 @@ namespace Aws
             return instructionOutcome;
         }
 
+        bool S3EncryptionClient::MultipartUploadSupported() const
+        {
+            return false;
+        }
+
     }
 }
 

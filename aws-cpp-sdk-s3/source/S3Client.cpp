@@ -2586,9 +2586,14 @@ Aws::String S3Client::ComputeEndpointString(const Aws::String& bucket) const
     return ss.str();
 }
 
-Aws::String  S3Client::ComputeEndpointString() const
+Aws::String S3Client::ComputeEndpointString() const
 {
     Aws::StringStream ss;
     ss << m_scheme << "://" << m_baseUri;
     return ss.str();
+}
+
+bool S3Client::MultipartUploadSupported() const
+{
+    return true;
 }

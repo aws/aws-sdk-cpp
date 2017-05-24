@@ -35,7 +35,6 @@ namespace Aws
     namespace Transfer
     {
         static const char* const CLASS_TAG = "Aws::Transfer::TransferManager";
-
         struct TransferHandleAsyncContext : public Aws::Client::AsyncCallerContext
         {
             std::shared_ptr<TransferHandle> handle;
@@ -84,7 +83,7 @@ namespace Aws
 
             if(fileStream->good())
             {
-                if (length > m_transferConfig.bufferSize)
+                if (MultipartUploadSupported(length))
                 {
                     m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
                 }
@@ -114,7 +113,7 @@ namespace Aws
 
             if(fileStream->good())
             {
-                if (length > m_transferConfig.bufferSize)
+                if (MultipartUploadSupported(length))
                 {
                     m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
                 }
@@ -180,7 +179,7 @@ namespace Aws
             retryHandle->UpdateStatus(TransferStatus::NOT_STARTED);
             retryHandle->Restart();
             
-            if (retryHandle->GetBytesTotalSize() > m_transferConfig.bufferSize)
+            if (MultipartUploadSupported(retryHandle->GetBytesTotalSize()))
             {
                 m_transferConfig.transferExecutor->Submit([this, stream, retryHandle] { DoMultipartUpload(stream, retryHandle); });
             }
@@ -934,6 +933,13 @@ namespace Aws
             {
                 m_transferConfig.errorCallback(this, handle, error);
             }
+        }
+
+        bool TransferManager::MultipartUploadSupported(size_t length) const
+        {
+            return length > m_transferConfig.bufferSize && 
+                   m_transferConfig.s3Client            && 
+                   m_transferConfig.s3Client->MultipartUploadSupported();
         }
     }
 }

@@ -206,6 +206,7 @@ namespace Aws
             void DownloadToDirectory(const Aws::String& directory, const Aws::String& bucketName, const Aws::String& prefix = Aws::String());
 
         private:
+            bool MultipartUploadSupported(size_t length) const;
             bool InitializePartsForDownload(const std::shared_ptr<TransferHandle>& handle);
 
             void DoMultipartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle);
