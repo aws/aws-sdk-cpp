@@ -20,5 +20,4 @@
 TEST(SignalHandlerTest, RaisingSIGPIPEShouldNotTerminateProcess)
 {
     ASSERT_EQ(0, raise(SIGPIPE));
-
 }
