@@ -95,6 +95,7 @@ namespace Aws
         }
 
         Aws::Http::SetInitCleanupCurlFlag(options.httpOptions.initAndCleanupCurl);
+        Aws::Http::SetInstallSigPipeHandlerFlag(options.httpOptions.installSigPipeHandler);
         Aws::Http::InitHttp();
     }
 

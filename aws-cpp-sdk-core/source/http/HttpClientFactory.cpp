@@ -30,6 +30,7 @@
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <cassert>
+#include <signal.h>
 
 using namespace Aws::Client;
 using namespace Aws::Http;
@@ -41,8 +42,20 @@ namespace Aws
     {
         static std::shared_ptr<HttpClientFactory> s_HttpClientFactory(nullptr);
         static bool s_InitCleanupCurlFlag(false);
+        static bool s_InstallSigPipeHandler(false);
 
         static const char* HTTP_CLIENT_FACTORY_ALLOCATION_TAG = "HttpClientFactory";
+
+        static void LogAndSwallowHandler(int signal)
+        {
+            switch(signal)
+            {
+                case SIGPIPE:
+                    AWS_LOG_ERROR(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, "Received a SIGPIPE error");
+                default:
+                    AWS_LOGSTREAM_ERROR(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, "Unhandled system SIGNAL error"  << signal);
+            }
+        }
 
         class DefaultHttpClientFactory : public HttpClientFactory
         {
@@ -96,6 +109,10 @@ namespace Aws
                 {
                     CurlHttpClient::InitGlobalState();
                 }
+                if(s_InstallSigPipeHandler)
+                {
+                    ::signal(SIGPIPE, LogAndSwallowHandler);
+                }
 #elif ENABLE_WINDOWS_IXML_HTTP_REQUEST_2_CLIENT
                 IXmlHttpRequest2HttpClient::InitCOM();
 #endif
@@ -115,6 +132,11 @@ namespace Aws
         void SetInitCleanupCurlFlag(bool initCleanupFlag)
         {
             s_InitCleanupCurlFlag = initCleanupFlag;
+        }
+
+        void SetInstallSigPipeHandlerFlag(bool install)
+        {
+            s_InstallSigPipeHandler = install;
         }
 
         void InitHttp()

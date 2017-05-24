@@ -71,7 +71,7 @@ namespace Aws
      */
     struct HttpOptions
     {
-        HttpOptions() : initAndCleanupCurl(true)
+        HttpOptions() : initAndCleanupCurl(true), installSigPipeHandler(false)
         { }
 
         /**
@@ -83,6 +83,14 @@ namespace Aws
         * If this is a problem for you, set this to false. If you manually initialize libcurl please add the option CURL_GLOBAL_ALL to your init call.
         */
         bool initAndCleanupCurl;
+        /**
+         * Installs a global SIGPIPE handler that logs the error and prevents it from terminating the current process.
+         * This can be used on operating systems on which CURL is being used. In some situations CURL cannot avoid 
+         * triggering a SIGPIPE.
+         * For more information see: https://curl.haxx.se/libcurl/c/CURLOPT_NOSIGNAL.html
+         * NOTE: CURLOPT_NOSIGNAL is already being set.
+         */
+        bool installSigPipeHandler;
     };
 
     /**

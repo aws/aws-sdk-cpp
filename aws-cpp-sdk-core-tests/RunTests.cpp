@@ -33,6 +33,7 @@ int main(int argc, char** argv)
     Aws::Testing::InitPlatformTest(options);
 
 	options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
+    options.httpOptions.installSigPipeHandler = true;
 
     Aws::InitAPI(options);
     ::testing::InitGoogleTest(&argc, argv);
