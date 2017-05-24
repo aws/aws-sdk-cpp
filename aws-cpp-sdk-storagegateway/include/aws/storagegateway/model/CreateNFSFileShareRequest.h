@@ -254,37 +254,37 @@ namespace Model
     inline CreateNFSFileShareRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
     /**
-     * <p>The ARN of the backend storage used for storing file data. </p>
+     * <p>The ARN of the backed storage used for storing file data. </p>
      */
     inline const Aws::String& GetLocationARN() const{ return m_locationARN; }
 
     /**
-     * <p>The ARN of the backend storage used for storing file data. </p>
+     * <p>The ARN of the backed storage used for storing file data. </p>
      */
     inline void SetLocationARN(const Aws::String& value) { m_locationARNHasBeenSet = true; m_locationARN = value; }
 
     /**
-     * <p>The ARN of the backend storage used for storing file data. </p>
+     * <p>The ARN of the backed storage used for storing file data. </p>
      */
     inline void SetLocationARN(Aws::String&& value) { m_locationARNHasBeenSet = true; m_locationARN = std::move(value); }
 
     /**
-     * <p>The ARN of the backend storage used for storing file data. </p>
+     * <p>The ARN of the backed storage used for storing file data. </p>
      */
     inline void SetLocationARN(const char* value) { m_locationARNHasBeenSet = true; m_locationARN.assign(value); }
 
     /**
-     * <p>The ARN of the backend storage used for storing file data. </p>
+     * <p>The ARN of the backed storage used for storing file data. </p>
      */
     inline CreateNFSFileShareRequest& WithLocationARN(const Aws::String& value) { SetLocationARN(value); return *this;}
 
     /**
-     * <p>The ARN of the backend storage used for storing file data. </p>
+     * <p>The ARN of the backed storage used for storing file data. </p>
      */
     inline CreateNFSFileShareRequest& WithLocationARN(Aws::String&& value) { SetLocationARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the backend storage used for storing file data. </p>
+     * <p>The ARN of the backed storage used for storing file data. </p>
      */
     inline CreateNFSFileShareRequest& WithLocationARN(const char* value) { SetLocationARN(value); return *this;}
 
@@ -386,69 +386,76 @@ namespace Model
     inline CreateNFSFileShareRequest& AddClientList(const char* value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
 
     /**
-     * <p>Maps a user to anonymous user. Valid options: "RootSquash" - Only root is
-     * mapped to anonymous user, "NoSquash" - No one is mapped to anonymous user or
-     * "AllSquash" - Everyone is mapped to anonymous user. </p>
+     * <p>Maps a user to anonymous user. Valid options are the following: </p> <ul>
+     * <li> <p>"RootSquash" - Only root is mapped to anonymous user.</p> </li> <li>
+     * <p>"NoSquash" - No one is mapped to anonymous user.</p> </li> <li>
+     * <p>"AllSquash" - Everyone is mapped to anonymous user.</p> </li> </ul>
      */
     inline const Aws::String& GetSquash() const{ return m_squash; }
 
     /**
-     * <p>Maps a user to anonymous user. Valid options: "RootSquash" - Only root is
-     * mapped to anonymous user, "NoSquash" - No one is mapped to anonymous user or
-     * "AllSquash" - Everyone is mapped to anonymous user. </p>
+     * <p>Maps a user to anonymous user. Valid options are the following: </p> <ul>
+     * <li> <p>"RootSquash" - Only root is mapped to anonymous user.</p> </li> <li>
+     * <p>"NoSquash" - No one is mapped to anonymous user.</p> </li> <li>
+     * <p>"AllSquash" - Everyone is mapped to anonymous user.</p> </li> </ul>
      */
     inline void SetSquash(const Aws::String& value) { m_squashHasBeenSet = true; m_squash = value; }
 
     /**
-     * <p>Maps a user to anonymous user. Valid options: "RootSquash" - Only root is
-     * mapped to anonymous user, "NoSquash" - No one is mapped to anonymous user or
-     * "AllSquash" - Everyone is mapped to anonymous user. </p>
+     * <p>Maps a user to anonymous user. Valid options are the following: </p> <ul>
+     * <li> <p>"RootSquash" - Only root is mapped to anonymous user.</p> </li> <li>
+     * <p>"NoSquash" - No one is mapped to anonymous user.</p> </li> <li>
+     * <p>"AllSquash" - Everyone is mapped to anonymous user.</p> </li> </ul>
      */
     inline void SetSquash(Aws::String&& value) { m_squashHasBeenSet = true; m_squash = std::move(value); }
 
     /**
-     * <p>Maps a user to anonymous user. Valid options: "RootSquash" - Only root is
-     * mapped to anonymous user, "NoSquash" - No one is mapped to anonymous user or
-     * "AllSquash" - Everyone is mapped to anonymous user. </p>
+     * <p>Maps a user to anonymous user. Valid options are the following: </p> <ul>
+     * <li> <p>"RootSquash" - Only root is mapped to anonymous user.</p> </li> <li>
+     * <p>"NoSquash" - No one is mapped to anonymous user.</p> </li> <li>
+     * <p>"AllSquash" - Everyone is mapped to anonymous user.</p> </li> </ul>
      */
     inline void SetSquash(const char* value) { m_squashHasBeenSet = true; m_squash.assign(value); }
 
     /**
-     * <p>Maps a user to anonymous user. Valid options: "RootSquash" - Only root is
-     * mapped to anonymous user, "NoSquash" - No one is mapped to anonymous user or
-     * "AllSquash" - Everyone is mapped to anonymous user. </p>
+     * <p>Maps a user to anonymous user. Valid options are the following: </p> <ul>
+     * <li> <p>"RootSquash" - Only root is mapped to anonymous user.</p> </li> <li>
+     * <p>"NoSquash" - No one is mapped to anonymous user.</p> </li> <li>
+     * <p>"AllSquash" - Everyone is mapped to anonymous user.</p> </li> </ul>
      */
     inline CreateNFSFileShareRequest& WithSquash(const Aws::String& value) { SetSquash(value); return *this;}
 
     /**
-     * <p>Maps a user to anonymous user. Valid options: "RootSquash" - Only root is
-     * mapped to anonymous user, "NoSquash" - No one is mapped to anonymous user or
-     * "AllSquash" - Everyone is mapped to anonymous user. </p>
+     * <p>Maps a user to anonymous user. Valid options are the following: </p> <ul>
+     * <li> <p>"RootSquash" - Only root is mapped to anonymous user.</p> </li> <li>
+     * <p>"NoSquash" - No one is mapped to anonymous user.</p> </li> <li>
+     * <p>"AllSquash" - Everyone is mapped to anonymous user.</p> </li> </ul>
      */
     inline CreateNFSFileShareRequest& WithSquash(Aws::String&& value) { SetSquash(std::move(value)); return *this;}
 
     /**
-     * <p>Maps a user to anonymous user. Valid options: "RootSquash" - Only root is
-     * mapped to anonymous user, "NoSquash" - No one is mapped to anonymous user or
-     * "AllSquash" - Everyone is mapped to anonymous user. </p>
+     * <p>Maps a user to anonymous user. Valid options are the following: </p> <ul>
+     * <li> <p>"RootSquash" - Only root is mapped to anonymous user.</p> </li> <li>
+     * <p>"NoSquash" - No one is mapped to anonymous user.</p> </li> <li>
+     * <p>"AllSquash" - Everyone is mapped to anonymous user.</p> </li> </ul>
      */
     inline CreateNFSFileShareRequest& WithSquash(const char* value) { SetSquash(value); return *this;}
 
     /**
-     * <p>Sets the write status of a file share. "true", if the write status is
-     * read-only; otherwise "false.</p>
+     * <p>Sets the write status of a file share: "true" if the write status is
+     * read-only, and otherwise "false".</p>
      */
     inline bool GetReadOnly() const{ return m_readOnly; }
 
     /**
-     * <p>Sets the write status of a file share. "true", if the write status is
-     * read-only; otherwise "false.</p>
+     * <p>Sets the write status of a file share: "true" if the write status is
+     * read-only, and otherwise "false".</p>
      */
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
 
     /**
-     * <p>Sets the write status of a file share. "true", if the write status is
-     * read-only; otherwise "false.</p>
+     * <p>Sets the write status of a file share: "true" if the write status is
+     * read-only, and otherwise "false".</p>
      */
     inline CreateNFSFileShareRequest& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
 

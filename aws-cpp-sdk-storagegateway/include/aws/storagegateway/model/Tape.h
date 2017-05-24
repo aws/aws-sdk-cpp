@@ -116,33 +116,43 @@ namespace Model
      */
     inline Tape& WithTapeBarcode(const char* value) { SetTapeBarcode(value); return *this;}
 
-    
+    /**
+     * <p>The date the virtual tape was created.</p>
+     */
     inline const Aws::Utils::DateTime& GetTapeCreatedDate() const{ return m_tapeCreatedDate; }
 
-    
+    /**
+     * <p>The date the virtual tape was created.</p>
+     */
     inline void SetTapeCreatedDate(const Aws::Utils::DateTime& value) { m_tapeCreatedDateHasBeenSet = true; m_tapeCreatedDate = value; }
 
-    
+    /**
+     * <p>The date the virtual tape was created.</p>
+     */
     inline void SetTapeCreatedDate(Aws::Utils::DateTime&& value) { m_tapeCreatedDateHasBeenSet = true; m_tapeCreatedDate = std::move(value); }
 
-    
+    /**
+     * <p>The date the virtual tape was created.</p>
+     */
     inline Tape& WithTapeCreatedDate(const Aws::Utils::DateTime& value) { SetTapeCreatedDate(value); return *this;}
 
-    
+    /**
+     * <p>The date the virtual tape was created.</p>
+     */
     inline Tape& WithTapeCreatedDate(Aws::Utils::DateTime&& value) { SetTapeCreatedDate(std::move(value)); return *this;}
 
     /**
-     * <p>The size, in bytes, of the virtual tape.</p>
+     * <p>The size, in bytes, of the virtual tape capacity.</p>
      */
     inline long long GetTapeSizeInBytes() const{ return m_tapeSizeInBytes; }
 
     /**
-     * <p>The size, in bytes, of the virtual tape.</p>
+     * <p>The size, in bytes, of the virtual tape capacity.</p>
      */
     inline void SetTapeSizeInBytes(long long value) { m_tapeSizeInBytesHasBeenSet = true; m_tapeSizeInBytes = value; }
 
     /**
-     * <p>The size, in bytes, of the virtual tape.</p>
+     * <p>The size, in bytes, of the virtual tape capacity.</p>
      */
     inline Tape& WithTapeSizeInBytes(long long value) { SetTapeSizeInBytes(value); return *this;}
 
@@ -244,6 +254,24 @@ namespace Model
      */
     inline Tape& WithProgress(double value) { SetProgress(value); return *this;}
 
+    /**
+     * <p>The size, in bytes, of data written to the virtual tape.</p> <note> <p>This
+     * value is not available for tapes created prior to May,13 2015.</p> </note>
+     */
+    inline long long GetTapeUsedInBytes() const{ return m_tapeUsedInBytes; }
+
+    /**
+     * <p>The size, in bytes, of data written to the virtual tape.</p> <note> <p>This
+     * value is not available for tapes created prior to May,13 2015.</p> </note>
+     */
+    inline void SetTapeUsedInBytes(long long value) { m_tapeUsedInBytesHasBeenSet = true; m_tapeUsedInBytes = value; }
+
+    /**
+     * <p>The size, in bytes, of data written to the virtual tape.</p> <note> <p>This
+     * value is not available for tapes created prior to May,13 2015.</p> </note>
+     */
+    inline Tape& WithTapeUsedInBytes(long long value) { SetTapeUsedInBytes(value); return *this;}
+
   private:
     Aws::String m_tapeARN;
     bool m_tapeARNHasBeenSet;
@@ -259,6 +287,8 @@ namespace Model
     bool m_vTLDeviceHasBeenSet;
     double m_progress;
     bool m_progressHasBeenSet;
+    long long m_tapeUsedInBytes;
+    bool m_tapeUsedInBytesHasBeenSet;
   };
 
 } // namespace Model

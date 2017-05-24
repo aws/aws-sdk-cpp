@@ -37,7 +37,9 @@ Tape::Tape() :
     m_tapeStatusHasBeenSet(false),
     m_vTLDeviceHasBeenSet(false),
     m_progress(0.0),
-    m_progressHasBeenSet(false)
+    m_progressHasBeenSet(false),
+    m_tapeUsedInBytes(0),
+    m_tapeUsedInBytesHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ Tape::Tape(const JsonValue& jsonValue) :
     m_tapeStatusHasBeenSet(false),
     m_vTLDeviceHasBeenSet(false),
     m_progress(0.0),
-    m_progressHasBeenSet(false)
+    m_progressHasBeenSet(false),
+    m_tapeUsedInBytes(0),
+    m_tapeUsedInBytesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -106,6 +110,13 @@ Tape& Tape::operator =(const JsonValue& jsonValue)
     m_progressHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TapeUsedInBytes"))
+  {
+    m_tapeUsedInBytes = jsonValue.GetInt64("TapeUsedInBytes");
+
+    m_tapeUsedInBytesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -151,6 +162,12 @@ JsonValue Tape::Jsonize() const
   if(m_progressHasBeenSet)
   {
    payload.WithDouble("Progress", m_progress);
+
+  }
+
+  if(m_tapeUsedInBytesHasBeenSet)
+  {
+   payload.WithInt64("TapeUsedInBytes", m_tapeUsedInBytes);
 
   }
 

@@ -312,19 +312,34 @@ namespace Model
      */
     inline CachediSCSIVolume& WithVolumeiSCSIAttributes(VolumeiSCSIAttributes&& value) { SetVolumeiSCSIAttributes(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The date the volume was created. Volumes created prior to March 28, 2017
+     * don’t have this time stamp.</p>
+     */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
 
-    
+    /**
+     * <p>The date the volume was created. Volumes created prior to March 28, 2017
+     * don’t have this time stamp.</p>
+     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
-    
+    /**
+     * <p>The date the volume was created. Volumes created prior to March 28, 2017
+     * don’t have this time stamp.</p>
+     */
     inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
 
-    
+    /**
+     * <p>The date the volume was created. Volumes created prior to March 28, 2017
+     * don’t have this time stamp.</p>
+     */
     inline CachediSCSIVolume& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
 
-    
+    /**
+     * <p>The date the volume was created. Volumes created prior to March 28, 2017
+     * don’t have this time stamp.</p>
+     */
     inline CachediSCSIVolume& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
   private:

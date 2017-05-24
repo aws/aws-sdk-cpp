@@ -162,141 +162,155 @@ namespace Model
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
-     * time zone is used, for example, for scheduling snapshots and your gateway's
-     * maintenance schedule.</p>
+     * time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00
+     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours
+     * ahead of GMT. The time zone is used, for example, for scheduling snapshots and
+     * your gateway's maintenance schedule.</p>
      */
     inline const Aws::String& GetGatewayTimezone() const{ return m_gatewayTimezone; }
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
-     * time zone is used, for example, for scheduling snapshots and your gateway's
-     * maintenance schedule.</p>
+     * time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00
+     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours
+     * ahead of GMT. The time zone is used, for example, for scheduling snapshots and
+     * your gateway's maintenance schedule.</p>
      */
     inline void SetGatewayTimezone(const Aws::String& value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone = value; }
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
-     * time zone is used, for example, for scheduling snapshots and your gateway's
-     * maintenance schedule.</p>
+     * time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00
+     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours
+     * ahead of GMT. The time zone is used, for example, for scheduling snapshots and
+     * your gateway's maintenance schedule.</p>
      */
     inline void SetGatewayTimezone(Aws::String&& value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone = std::move(value); }
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
-     * time zone is used, for example, for scheduling snapshots and your gateway's
-     * maintenance schedule.</p>
+     * time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00
+     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours
+     * ahead of GMT. The time zone is used, for example, for scheduling snapshots and
+     * your gateway's maintenance schedule.</p>
      */
     inline void SetGatewayTimezone(const char* value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone.assign(value); }
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
-     * time zone is used, for example, for scheduling snapshots and your gateway's
-     * maintenance schedule.</p>
+     * time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00
+     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours
+     * ahead of GMT. The time zone is used, for example, for scheduling snapshots and
+     * your gateway's maintenance schedule.</p>
      */
     inline ActivateGatewayRequest& WithGatewayTimezone(const Aws::String& value) { SetGatewayTimezone(value); return *this;}
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
-     * time zone is used, for example, for scheduling snapshots and your gateway's
-     * maintenance schedule.</p>
+     * time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00
+     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours
+     * ahead of GMT. The time zone is used, for example, for scheduling snapshots and
+     * your gateway's maintenance schedule.</p>
      */
     inline ActivateGatewayRequest& WithGatewayTimezone(Aws::String&& value) { SetGatewayTimezone(std::move(value)); return *this;}
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
-     * time zone is used, for example, for scheduling snapshots and your gateway's
-     * maintenance schedule.</p>
+     * time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00
+     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours
+     * ahead of GMT. The time zone is used, for example, for scheduling snapshots and
+     * your gateway's maintenance schedule.</p>
      */
     inline ActivateGatewayRequest& WithGatewayTimezone(const char* value) { SetGatewayTimezone(value); return *this;}
 
     /**
-     * <p>A value that indicates the region where you want to store the snapshot
-     * backups. The gateway region specified must be the same region as the region in
-     * your <code>Host</code> header in the request. For more information about
-     * available regions and endpoints for AWS Storage Gateway, see <a
+     * <p>A value that indicates the region where you want to store your data. The
+     * gateway region specified must be the same region as the region in your
+     * <code>Host</code> header in the request. For more information about available
+     * regions and endpoints for AWS Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
      * Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1",
      * "eu-west-1", "eu-central-1", "eu-west-2", "ap-northeast-1", "ap-northeast-2",
-     * "ap-southeast-1", "ap-southeast-2", "sa-east-1"</p>
+     * "ap-southeast-1", "ap-southeast-2", "ap-south-1", "sa-east-1"</p>
      */
     inline const Aws::String& GetGatewayRegion() const{ return m_gatewayRegion; }
 
     /**
-     * <p>A value that indicates the region where you want to store the snapshot
-     * backups. The gateway region specified must be the same region as the region in
-     * your <code>Host</code> header in the request. For more information about
-     * available regions and endpoints for AWS Storage Gateway, see <a
+     * <p>A value that indicates the region where you want to store your data. The
+     * gateway region specified must be the same region as the region in your
+     * <code>Host</code> header in the request. For more information about available
+     * regions and endpoints for AWS Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
      * Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1",
      * "eu-west-1", "eu-central-1", "eu-west-2", "ap-northeast-1", "ap-northeast-2",
-     * "ap-southeast-1", "ap-southeast-2", "sa-east-1"</p>
+     * "ap-southeast-1", "ap-southeast-2", "ap-south-1", "sa-east-1"</p>
      */
     inline void SetGatewayRegion(const Aws::String& value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion = value; }
 
     /**
-     * <p>A value that indicates the region where you want to store the snapshot
-     * backups. The gateway region specified must be the same region as the region in
-     * your <code>Host</code> header in the request. For more information about
-     * available regions and endpoints for AWS Storage Gateway, see <a
+     * <p>A value that indicates the region where you want to store your data. The
+     * gateway region specified must be the same region as the region in your
+     * <code>Host</code> header in the request. For more information about available
+     * regions and endpoints for AWS Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
      * Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1",
      * "eu-west-1", "eu-central-1", "eu-west-2", "ap-northeast-1", "ap-northeast-2",
-     * "ap-southeast-1", "ap-southeast-2", "sa-east-1"</p>
+     * "ap-southeast-1", "ap-southeast-2", "ap-south-1", "sa-east-1"</p>
      */
     inline void SetGatewayRegion(Aws::String&& value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion = std::move(value); }
 
     /**
-     * <p>A value that indicates the region where you want to store the snapshot
-     * backups. The gateway region specified must be the same region as the region in
-     * your <code>Host</code> header in the request. For more information about
-     * available regions and endpoints for AWS Storage Gateway, see <a
+     * <p>A value that indicates the region where you want to store your data. The
+     * gateway region specified must be the same region as the region in your
+     * <code>Host</code> header in the request. For more information about available
+     * regions and endpoints for AWS Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
      * Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1",
      * "eu-west-1", "eu-central-1", "eu-west-2", "ap-northeast-1", "ap-northeast-2",
-     * "ap-southeast-1", "ap-southeast-2", "sa-east-1"</p>
+     * "ap-southeast-1", "ap-southeast-2", "ap-south-1", "sa-east-1"</p>
      */
     inline void SetGatewayRegion(const char* value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion.assign(value); }
 
     /**
-     * <p>A value that indicates the region where you want to store the snapshot
-     * backups. The gateway region specified must be the same region as the region in
-     * your <code>Host</code> header in the request. For more information about
-     * available regions and endpoints for AWS Storage Gateway, see <a
+     * <p>A value that indicates the region where you want to store your data. The
+     * gateway region specified must be the same region as the region in your
+     * <code>Host</code> header in the request. For more information about available
+     * regions and endpoints for AWS Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
      * Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1",
      * "eu-west-1", "eu-central-1", "eu-west-2", "ap-northeast-1", "ap-northeast-2",
-     * "ap-southeast-1", "ap-southeast-2", "sa-east-1"</p>
+     * "ap-southeast-1", "ap-southeast-2", "ap-south-1", "sa-east-1"</p>
      */
     inline ActivateGatewayRequest& WithGatewayRegion(const Aws::String& value) { SetGatewayRegion(value); return *this;}
 
     /**
-     * <p>A value that indicates the region where you want to store the snapshot
-     * backups. The gateway region specified must be the same region as the region in
-     * your <code>Host</code> header in the request. For more information about
-     * available regions and endpoints for AWS Storage Gateway, see <a
+     * <p>A value that indicates the region where you want to store your data. The
+     * gateway region specified must be the same region as the region in your
+     * <code>Host</code> header in the request. For more information about available
+     * regions and endpoints for AWS Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
      * Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1",
      * "eu-west-1", "eu-central-1", "eu-west-2", "ap-northeast-1", "ap-northeast-2",
-     * "ap-southeast-1", "ap-southeast-2", "sa-east-1"</p>
+     * "ap-southeast-1", "ap-southeast-2", "ap-south-1", "sa-east-1"</p>
      */
     inline ActivateGatewayRequest& WithGatewayRegion(Aws::String&& value) { SetGatewayRegion(std::move(value)); return *this;}
 
     /**
-     * <p>A value that indicates the region where you want to store the snapshot
-     * backups. The gateway region specified must be the same region as the region in
-     * your <code>Host</code> header in the request. For more information about
-     * available regions and endpoints for AWS Storage Gateway, see <a
+     * <p>A value that indicates the region where you want to store your data. The
+     * gateway region specified must be the same region as the region in your
+     * <code>Host</code> header in the request. For more information about available
+     * regions and endpoints for AWS Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
      * Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1",
      * "eu-west-1", "eu-central-1", "eu-west-2", "ap-northeast-1", "ap-northeast-2",
-     * "ap-southeast-1", "ap-southeast-2", "sa-east-1"</p>
+     * "ap-southeast-1", "ap-southeast-2", "ap-south-1", "sa-east-1"</p>
      */
     inline ActivateGatewayRequest& WithGatewayRegion(const char* value) { SetGatewayRegion(value); return *this;}
 

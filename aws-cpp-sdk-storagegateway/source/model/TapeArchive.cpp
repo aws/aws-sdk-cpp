@@ -36,7 +36,9 @@ TapeArchive::TapeArchive() :
     m_tapeSizeInBytesHasBeenSet(false),
     m_completionTimeHasBeenSet(false),
     m_retrievedToHasBeenSet(false),
-    m_tapeStatusHasBeenSet(false)
+    m_tapeStatusHasBeenSet(false),
+    m_tapeUsedInBytes(0),
+    m_tapeUsedInBytesHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ TapeArchive::TapeArchive(const JsonValue& jsonValue) :
     m_tapeSizeInBytesHasBeenSet(false),
     m_completionTimeHasBeenSet(false),
     m_retrievedToHasBeenSet(false),
-    m_tapeStatusHasBeenSet(false)
+    m_tapeStatusHasBeenSet(false),
+    m_tapeUsedInBytes(0),
+    m_tapeUsedInBytesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +108,13 @@ TapeArchive& TapeArchive::operator =(const JsonValue& jsonValue)
     m_tapeStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TapeUsedInBytes"))
+  {
+    m_tapeUsedInBytes = jsonValue.GetInt64("TapeUsedInBytes");
+
+    m_tapeUsedInBytesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +159,12 @@ JsonValue TapeArchive::Jsonize() const
   if(m_tapeStatusHasBeenSet)
   {
    payload.WithString("TapeStatus", m_tapeStatus);
+
+  }
+
+  if(m_tapeUsedInBytesHasBeenSet)
+  {
+   payload.WithInt64("TapeUsedInBytes", m_tapeUsedInBytes);
 
   }
 

@@ -405,7 +405,7 @@ namespace Model
      * Party</a> in the <i>IAM User Guide</i>.</p> <p>The regex used to validated this
      * parameter is a string of characters consisting of upper- and lower-case
      * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@:\/-</p>
+     * of the following characters: =,.@:/-</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
@@ -422,7 +422,7 @@ namespace Model
      * Party</a> in the <i>IAM User Guide</i>.</p> <p>The regex used to validated this
      * parameter is a string of characters consisting of upper- and lower-case
      * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@:\/-</p>
+     * of the following characters: =,.@:/-</p>
      */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
@@ -439,7 +439,7 @@ namespace Model
      * Party</a> in the <i>IAM User Guide</i>.</p> <p>The regex used to validated this
      * parameter is a string of characters consisting of upper- and lower-case
      * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@:\/-</p>
+     * of the following characters: =,.@:/-</p>
      */
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
 
@@ -456,7 +456,7 @@ namespace Model
      * Party</a> in the <i>IAM User Guide</i>.</p> <p>The regex used to validated this
      * parameter is a string of characters consisting of upper- and lower-case
      * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@:\/-</p>
+     * of the following characters: =,.@:/-</p>
      */
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
 
@@ -473,7 +473,7 @@ namespace Model
      * Party</a> in the <i>IAM User Guide</i>.</p> <p>The regex used to validated this
      * parameter is a string of characters consisting of upper- and lower-case
      * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@:\/-</p>
+     * of the following characters: =,.@:/-</p>
      */
     inline AssumeRoleRequest& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
@@ -490,7 +490,7 @@ namespace Model
      * Party</a> in the <i>IAM User Guide</i>.</p> <p>The regex used to validated this
      * parameter is a string of characters consisting of upper- and lower-case
      * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@:\/-</p>
+     * of the following characters: =,.@:/-</p>
      */
     inline AssumeRoleRequest& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
@@ -507,7 +507,7 @@ namespace Model
      * Party</a> in the <i>IAM User Guide</i>.</p> <p>The regex used to validated this
      * parameter is a string of characters consisting of upper- and lower-case
      * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@:\/-</p>
+     * of the following characters: =,.@:/-</p>
      */
     inline AssumeRoleRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 

@@ -64,65 +64,65 @@ namespace Model
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
-     * virtual tapes you want to describe. If this parameter is not specified, AWS
-     * Storage Gateway returns a description of all virtual tapes associated with the
-     * specified gateway.</p>
+     * virtual tapes you want to describe. If this parameter is not specified, Tape
+     * gateway returns a description of all virtual tapes associated with the specified
+     * gateway.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTapeARNs() const{ return m_tapeARNs; }
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
-     * virtual tapes you want to describe. If this parameter is not specified, AWS
-     * Storage Gateway returns a description of all virtual tapes associated with the
-     * specified gateway.</p>
+     * virtual tapes you want to describe. If this parameter is not specified, Tape
+     * gateway returns a description of all virtual tapes associated with the specified
+     * gateway.</p>
      */
     inline void SetTapeARNs(const Aws::Vector<Aws::String>& value) { m_tapeARNsHasBeenSet = true; m_tapeARNs = value; }
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
-     * virtual tapes you want to describe. If this parameter is not specified, AWS
-     * Storage Gateway returns a description of all virtual tapes associated with the
-     * specified gateway.</p>
+     * virtual tapes you want to describe. If this parameter is not specified, Tape
+     * gateway returns a description of all virtual tapes associated with the specified
+     * gateway.</p>
      */
     inline void SetTapeARNs(Aws::Vector<Aws::String>&& value) { m_tapeARNsHasBeenSet = true; m_tapeARNs = std::move(value); }
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
-     * virtual tapes you want to describe. If this parameter is not specified, AWS
-     * Storage Gateway returns a description of all virtual tapes associated with the
-     * specified gateway.</p>
+     * virtual tapes you want to describe. If this parameter is not specified, Tape
+     * gateway returns a description of all virtual tapes associated with the specified
+     * gateway.</p>
      */
     inline DescribeTapesRequest& WithTapeARNs(const Aws::Vector<Aws::String>& value) { SetTapeARNs(value); return *this;}
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
-     * virtual tapes you want to describe. If this parameter is not specified, AWS
-     * Storage Gateway returns a description of all virtual tapes associated with the
-     * specified gateway.</p>
+     * virtual tapes you want to describe. If this parameter is not specified, Tape
+     * gateway returns a description of all virtual tapes associated with the specified
+     * gateway.</p>
      */
     inline DescribeTapesRequest& WithTapeARNs(Aws::Vector<Aws::String>&& value) { SetTapeARNs(std::move(value)); return *this;}
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
-     * virtual tapes you want to describe. If this parameter is not specified, AWS
-     * Storage Gateway returns a description of all virtual tapes associated with the
-     * specified gateway.</p>
+     * virtual tapes you want to describe. If this parameter is not specified, Tape
+     * gateway returns a description of all virtual tapes associated with the specified
+     * gateway.</p>
      */
     inline DescribeTapesRequest& AddTapeARNs(const Aws::String& value) { m_tapeARNsHasBeenSet = true; m_tapeARNs.push_back(value); return *this; }
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
-     * virtual tapes you want to describe. If this parameter is not specified, AWS
-     * Storage Gateway returns a description of all virtual tapes associated with the
-     * specified gateway.</p>
+     * virtual tapes you want to describe. If this parameter is not specified, Tape
+     * gateway returns a description of all virtual tapes associated with the specified
+     * gateway.</p>
      */
     inline DescribeTapesRequest& AddTapeARNs(Aws::String&& value) { m_tapeARNsHasBeenSet = true; m_tapeARNs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
-     * virtual tapes you want to describe. If this parameter is not specified, AWS
-     * Storage Gateway returns a description of all virtual tapes associated with the
-     * specified gateway.</p>
+     * virtual tapes you want to describe. If this parameter is not specified, Tape
+     * gateway returns a description of all virtual tapes associated with the specified
+     * gateway.</p>
      */
     inline DescribeTapesRequest& AddTapeARNs(const char* value) { m_tapeARNsHasBeenSet = true; m_tapeARNs.push_back(value); return *this; }
 

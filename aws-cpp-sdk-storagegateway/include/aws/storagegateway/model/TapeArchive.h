@@ -266,6 +266,24 @@ namespace Model
      */
     inline TapeArchive& WithTapeStatus(const char* value) { SetTapeStatus(value); return *this;}
 
+    /**
+     * <p>The size, in bytes, of data written to the virtual tape.</p> <note> <p>This
+     * value is not available for tapes created prior to May,13 2015.</p> </note>
+     */
+    inline long long GetTapeUsedInBytes() const{ return m_tapeUsedInBytes; }
+
+    /**
+     * <p>The size, in bytes, of data written to the virtual tape.</p> <note> <p>This
+     * value is not available for tapes created prior to May,13 2015.</p> </note>
+     */
+    inline void SetTapeUsedInBytes(long long value) { m_tapeUsedInBytesHasBeenSet = true; m_tapeUsedInBytes = value; }
+
+    /**
+     * <p>The size, in bytes, of data written to the virtual tape.</p> <note> <p>This
+     * value is not available for tapes created prior to May,13 2015.</p> </note>
+     */
+    inline TapeArchive& WithTapeUsedInBytes(long long value) { SetTapeUsedInBytes(value); return *this;}
+
   private:
     Aws::String m_tapeARN;
     bool m_tapeARNHasBeenSet;
@@ -281,6 +299,8 @@ namespace Model
     bool m_retrievedToHasBeenSet;
     Aws::String m_tapeStatus;
     bool m_tapeStatusHasBeenSet;
+    long long m_tapeUsedInBytes;
+    bool m_tapeUsedInBytesHasBeenSet;
   };
 
 } // namespace Model

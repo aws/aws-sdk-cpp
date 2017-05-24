@@ -36,8 +36,8 @@ namespace Model
 
   /**
    * <p>The Unix file permissions and ownership information assigned, by default, to
-   * native S3 objects when Storage Gateway discovers them in S3 buckets. This
-   * operation is only supported in file gateways.</p><p><h3>See Also:</h3>   <a
+   * native S3 objects when file gateway discovers them in S3 buckets. This operation
+   * is only supported in file gateways.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NFSFileShareInfo">AWS
    * API Reference</a></p>
    */
