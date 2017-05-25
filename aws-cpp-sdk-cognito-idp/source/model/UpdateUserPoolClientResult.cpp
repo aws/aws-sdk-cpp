@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/model/UpdateUserPoolClientResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>

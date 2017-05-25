@@ -16,6 +16,7 @@
 #include <aws/opsworks/model/DescribeRaidArraysResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
