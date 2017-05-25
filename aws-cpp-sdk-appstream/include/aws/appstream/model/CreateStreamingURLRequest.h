@@ -178,20 +178,20 @@ namespace Model
     inline CreateStreamingURLRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The validity duration of the URL in seconds. After this duration, the URL
-     * returned by this operation becomes invalid.</p>
+     * <p>The duration up to which the URL returned by this action is valid. The input
+     * can be any numeric value in seconds between 1 and 604800 seconds.</p>
      */
     inline long long GetValidity() const{ return m_validity; }
 
     /**
-     * <p>The validity duration of the URL in seconds. After this duration, the URL
-     * returned by this operation becomes invalid.</p>
+     * <p>The duration up to which the URL returned by this action is valid. The input
+     * can be any numeric value in seconds between 1 and 604800 seconds.</p>
      */
     inline void SetValidity(long long value) { m_validityHasBeenSet = true; m_validity = value; }
 
     /**
-     * <p>The validity duration of the URL in seconds. After this duration, the URL
-     * returned by this operation becomes invalid.</p>
+     * <p>The duration up to which the URL returned by this action is valid. The input
+     * can be any numeric value in seconds between 1 and 604800 seconds.</p>
      */
     inline CreateStreamingURLRequest& WithValidity(long long value) { SetValidity(value); return *this;}
 

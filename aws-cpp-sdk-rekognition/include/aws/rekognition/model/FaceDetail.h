@@ -393,62 +393,62 @@ namespace Model
     inline FaceDetail& AddEmotions(Emotion&& value) { m_emotionsHasBeenSet = true; m_emotions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Indicates the location of the landmark on the face.</p>
+     * <p>Indicates the location of landmarks on the face.</p>
      */
     inline const Aws::Vector<Landmark>& GetLandmarks() const{ return m_landmarks; }
 
     /**
-     * <p>Indicates the location of the landmark on the face.</p>
+     * <p>Indicates the location of landmarks on the face.</p>
      */
     inline void SetLandmarks(const Aws::Vector<Landmark>& value) { m_landmarksHasBeenSet = true; m_landmarks = value; }
 
     /**
-     * <p>Indicates the location of the landmark on the face.</p>
+     * <p>Indicates the location of landmarks on the face.</p>
      */
     inline void SetLandmarks(Aws::Vector<Landmark>&& value) { m_landmarksHasBeenSet = true; m_landmarks = std::move(value); }
 
     /**
-     * <p>Indicates the location of the landmark on the face.</p>
+     * <p>Indicates the location of landmarks on the face.</p>
      */
     inline FaceDetail& WithLandmarks(const Aws::Vector<Landmark>& value) { SetLandmarks(value); return *this;}
 
     /**
-     * <p>Indicates the location of the landmark on the face.</p>
+     * <p>Indicates the location of landmarks on the face.</p>
      */
     inline FaceDetail& WithLandmarks(Aws::Vector<Landmark>&& value) { SetLandmarks(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates the location of the landmark on the face.</p>
+     * <p>Indicates the location of landmarks on the face.</p>
      */
     inline FaceDetail& AddLandmarks(const Landmark& value) { m_landmarksHasBeenSet = true; m_landmarks.push_back(value); return *this; }
 
     /**
-     * <p>Indicates the location of the landmark on the face.</p>
+     * <p>Indicates the location of landmarks on the face.</p>
      */
     inline FaceDetail& AddLandmarks(Landmark&& value) { m_landmarksHasBeenSet = true; m_landmarks.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Indicates the pose of the face as determined by pitch, roll, and the yaw.</p>
+     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
      */
     inline const Pose& GetPose() const{ return m_pose; }
 
     /**
-     * <p>Indicates the pose of the face as determined by pitch, roll, and the yaw.</p>
+     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
      */
     inline void SetPose(const Pose& value) { m_poseHasBeenSet = true; m_pose = value; }
 
     /**
-     * <p>Indicates the pose of the face as determined by pitch, roll, and the yaw.</p>
+     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
      */
     inline void SetPose(Pose&& value) { m_poseHasBeenSet = true; m_pose = std::move(value); }
 
     /**
-     * <p>Indicates the pose of the face as determined by pitch, roll, and the yaw.</p>
+     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
      */
     inline FaceDetail& WithPose(const Pose& value) { SetPose(value); return *this;}
 
     /**
-     * <p>Indicates the pose of the face as determined by pitch, roll, and the yaw.</p>
+     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
      */
     inline FaceDetail& WithPose(Pose&& value) { SetPose(std::move(value)); return *this;}
 

@@ -423,7 +423,7 @@ namespace Model
          * this value for the <code>nextToken</code> parameter in a subsequent call to this
          * operation to retrieve the next set of items. If an authentication type is not
          * provided, the operation defaults to users authenticated using a streaming
-         * url.</p><p><h3>See Also:</h3>   <a
+         * URL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">AWS
          * API Reference</a></p>
          */
@@ -435,7 +435,7 @@ namespace Model
          * this value for the <code>nextToken</code> parameter in a subsequent call to this
          * operation to retrieve the next set of items. If an authentication type is not
          * provided, the operation defaults to users authenticated using a streaming
-         * url.</p><p><h3>See Also:</h3>   <a
+         * URL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">AWS
          * API Reference</a></p>
          *
@@ -449,7 +449,7 @@ namespace Model
          * this value for the <code>nextToken</code> parameter in a subsequent call to this
          * operation to retrieve the next set of items. If an authentication type is not
          * provided, the operation defaults to users authenticated using a streaming
-         * url.</p><p><h3>See Also:</h3>   <a
+         * URL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">AWS
          * API Reference</a></p>
          *

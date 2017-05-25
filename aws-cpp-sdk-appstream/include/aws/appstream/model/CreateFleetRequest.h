@@ -206,38 +206,44 @@ namespace Model
     inline CreateFleetRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum time up to which a streaming session can run.</p>
+     * <p>The maximum time for which a streaming session can run. The input can be any
+     * numeric value in seconds between 600 and 57600.</p>
      */
     inline int GetMaxUserDurationInSeconds() const{ return m_maxUserDurationInSeconds; }
 
     /**
-     * <p>The maximum time up to which a streaming session can run.</p>
+     * <p>The maximum time for which a streaming session can run. The input can be any
+     * numeric value in seconds between 600 and 57600.</p>
      */
     inline void SetMaxUserDurationInSeconds(int value) { m_maxUserDurationInSecondsHasBeenSet = true; m_maxUserDurationInSeconds = value; }
 
     /**
-     * <p>The maximum time up to which a streaming session can run.</p>
+     * <p>The maximum time for which a streaming session can run. The input can be any
+     * numeric value in seconds between 600 and 57600.</p>
      */
     inline CreateFleetRequest& WithMaxUserDurationInSeconds(int value) { SetMaxUserDurationInSeconds(value); return *this;}
 
     /**
      * <p>The time after disconnection when a session is considered to have ended. If a
      * user who got disconnected reconnects within this timeout interval, the user is
-     * connected back to his/her previous session. </p>
+     * connected back to their previous session. The input can be any numeric value in
+     * seconds between 60 and 57600. </p>
      */
     inline int GetDisconnectTimeoutInSeconds() const{ return m_disconnectTimeoutInSeconds; }
 
     /**
      * <p>The time after disconnection when a session is considered to have ended. If a
      * user who got disconnected reconnects within this timeout interval, the user is
-     * connected back to his/her previous session. </p>
+     * connected back to their previous session. The input can be any numeric value in
+     * seconds between 60 and 57600. </p>
      */
     inline void SetDisconnectTimeoutInSeconds(int value) { m_disconnectTimeoutInSecondsHasBeenSet = true; m_disconnectTimeoutInSeconds = value; }
 
     /**
      * <p>The time after disconnection when a session is considered to have ended. If a
      * user who got disconnected reconnects within this timeout interval, the user is
-     * connected back to his/her previous session. </p>
+     * connected back to their previous session. The input can be any numeric value in
+     * seconds between 60 and 57600. </p>
      */
     inline CreateFleetRequest& WithDisconnectTimeoutInSeconds(int value) { SetDisconnectTimeoutInSeconds(value); return *this;}
 
@@ -312,17 +318,17 @@ namespace Model
     inline CreateFleetRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>Enable/Disable default Internet access from fleet.</p>
+     * <p>Enables or disables default Internet access for the fleet.</p>
      */
     inline bool GetEnableDefaultInternetAccess() const{ return m_enableDefaultInternetAccess; }
 
     /**
-     * <p>Enable/Disable default Internet access from fleet.</p>
+     * <p>Enables or disables default Internet access for the fleet.</p>
      */
     inline void SetEnableDefaultInternetAccess(bool value) { m_enableDefaultInternetAccessHasBeenSet = true; m_enableDefaultInternetAccess = value; }
 
     /**
-     * <p>Enable/Disable default Internet access from fleet.</p>
+     * <p>Enables or disables default Internet access for the fleet.</p>
      */
     inline CreateFleetRequest& WithEnableDefaultInternetAccess(bool value) { SetEnableDefaultInternetAccess(value); return *this;}
 

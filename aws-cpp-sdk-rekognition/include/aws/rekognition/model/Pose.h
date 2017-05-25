@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Indicates the pose of the face as determined by pitch, roll, and the
+   * <p>Indicates the pose of the face as determined by its pitch, roll, and
    * yaw.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Pose">AWS
    * API Reference</a></p>

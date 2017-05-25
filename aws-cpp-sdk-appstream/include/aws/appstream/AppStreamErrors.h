@@ -56,6 +56,7 @@ enum class AppStreamErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONCURRENT_MODIFICATION= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INCOMPATIBLE_IMAGE,
   INVALID_ROLE,
   LIMIT_EXCEEDED,
   OPERATION_NOT_PERMITTED,

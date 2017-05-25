@@ -215,35 +215,35 @@ namespace Model
 
     /**
      * <p>The authentication method of the user for whom the session was created. It
-     * can be <code>API</code> for a user authenticated using a streaming url or
+     * can be <code>API</code> for a user authenticated using a streaming URL or
      * <code>SAML</code> for a SAML federated user.</p>
      */
     inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
 
     /**
      * <p>The authentication method of the user for whom the session was created. It
-     * can be <code>API</code> for a user authenticated using a streaming url or
+     * can be <code>API</code> for a user authenticated using a streaming URL or
      * <code>SAML</code> for a SAML federated user.</p>
      */
     inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
 
     /**
      * <p>The authentication method of the user for whom the session was created. It
-     * can be <code>API</code> for a user authenticated using a streaming url or
+     * can be <code>API</code> for a user authenticated using a streaming URL or
      * <code>SAML</code> for a SAML federated user.</p>
      */
     inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
 
     /**
      * <p>The authentication method of the user for whom the session was created. It
-     * can be <code>API</code> for a user authenticated using a streaming url or
+     * can be <code>API</code> for a user authenticated using a streaming URL or
      * <code>SAML</code> for a SAML federated user.</p>
      */
     inline Session& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
 
     /**
      * <p>The authentication method of the user for whom the session was created. It
-     * can be <code>API</code> for a user authenticated using a streaming url or
+     * can be <code>API</code> for a user authenticated using a streaming URL or
      * <code>SAML</code> for a SAML federated user.</p>
      */
     inline Session& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}

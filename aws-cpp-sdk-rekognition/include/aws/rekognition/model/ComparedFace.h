@@ -16,6 +16,10 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/BoundingBox.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rekognition/model/Pose.h>
+#include <aws/rekognition/model/ImageQuality.h>
+#include <aws/rekognition/model/Landmark.h>
 #include <utility>
 
 namespace Aws
@@ -33,8 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides face metadata (bounding box and confidence that the bounding box
-   * actually contains a face).</p><p><h3>See Also:</h3>   <a
+   * <p>Provides face metadata for target image faces that are analysed by
+   * <code>CompareFaces</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ComparedFace">AWS
    * API Reference</a></p>
    */
@@ -76,11 +80,102 @@ namespace Model
      */
     inline ComparedFace& WithConfidence(double value) { SetConfidence(value); return *this;}
 
+    /**
+     * <p>An array of facial landmarks.</p>
+     */
+    inline const Aws::Vector<Landmark>& GetLandmarks() const{ return m_landmarks; }
+
+    /**
+     * <p>An array of facial landmarks.</p>
+     */
+    inline void SetLandmarks(const Aws::Vector<Landmark>& value) { m_landmarksHasBeenSet = true; m_landmarks = value; }
+
+    /**
+     * <p>An array of facial landmarks.</p>
+     */
+    inline void SetLandmarks(Aws::Vector<Landmark>&& value) { m_landmarksHasBeenSet = true; m_landmarks = std::move(value); }
+
+    /**
+     * <p>An array of facial landmarks.</p>
+     */
+    inline ComparedFace& WithLandmarks(const Aws::Vector<Landmark>& value) { SetLandmarks(value); return *this;}
+
+    /**
+     * <p>An array of facial landmarks.</p>
+     */
+    inline ComparedFace& WithLandmarks(Aws::Vector<Landmark>&& value) { SetLandmarks(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of facial landmarks.</p>
+     */
+    inline ComparedFace& AddLandmarks(const Landmark& value) { m_landmarksHasBeenSet = true; m_landmarks.push_back(value); return *this; }
+
+    /**
+     * <p>An array of facial landmarks.</p>
+     */
+    inline ComparedFace& AddLandmarks(Landmark&& value) { m_landmarksHasBeenSet = true; m_landmarks.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
+     */
+    inline const Pose& GetPose() const{ return m_pose; }
+
+    /**
+     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
+     */
+    inline void SetPose(const Pose& value) { m_poseHasBeenSet = true; m_pose = value; }
+
+    /**
+     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
+     */
+    inline void SetPose(Pose&& value) { m_poseHasBeenSet = true; m_pose = std::move(value); }
+
+    /**
+     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
+     */
+    inline ComparedFace& WithPose(const Pose& value) { SetPose(value); return *this;}
+
+    /**
+     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
+     */
+    inline ComparedFace& WithPose(Pose&& value) { SetPose(std::move(value)); return *this;}
+
+    /**
+     * <p>Identifies face image brightness and sharpness. </p>
+     */
+    inline const ImageQuality& GetQuality() const{ return m_quality; }
+
+    /**
+     * <p>Identifies face image brightness and sharpness. </p>
+     */
+    inline void SetQuality(const ImageQuality& value) { m_qualityHasBeenSet = true; m_quality = value; }
+
+    /**
+     * <p>Identifies face image brightness and sharpness. </p>
+     */
+    inline void SetQuality(ImageQuality&& value) { m_qualityHasBeenSet = true; m_quality = std::move(value); }
+
+    /**
+     * <p>Identifies face image brightness and sharpness. </p>
+     */
+    inline ComparedFace& WithQuality(const ImageQuality& value) { SetQuality(value); return *this;}
+
+    /**
+     * <p>Identifies face image brightness and sharpness. </p>
+     */
+    inline ComparedFace& WithQuality(ImageQuality&& value) { SetQuality(std::move(value)); return *this;}
+
   private:
     BoundingBox m_boundingBox;
     bool m_boundingBoxHasBeenSet;
     double m_confidence;
     bool m_confidenceHasBeenSet;
+    Aws::Vector<Landmark> m_landmarks;
+    bool m_landmarksHasBeenSet;
+    Pose m_pose;
+    bool m_poseHasBeenSet;
+    ImageQuality m_quality;
+    bool m_qualityHasBeenSet;
   };
 
 } // namespace Model

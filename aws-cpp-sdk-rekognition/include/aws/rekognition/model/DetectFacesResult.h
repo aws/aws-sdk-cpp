@@ -79,67 +79,77 @@ namespace Model
     inline DetectFacesResult& AddFaceDetails(FaceDetail&& value) { m_faceDetails.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The algorithm detects the image orientation. If it detects that the image was
-     * rotated, it returns the degrees of rotation. If your application is displaying
-     * the image, you can use this value to adjust the orientation. </p> <p>For
-     * example, if the service detects that the input image was rotated by 90 degrees,
-     * it corrects orientation, performs face detection, and then returns the faces.
-     * That is, the bounding box coordinates in the response are based on the corrected
-     * orientation. </p> <note> <p>If the source image Exif metadata populates the
-     * orientation field, Amazon Rekognition does not perform orientation correction
-     * and the value of OrientationCorrection will be nil.</p> </note>
+     * <p> The orientation of the input image (counter-clockwise direction). If your
+     * application displays the image, you can use this value to correct image
+     * orientation. The bounding box coordinates returned in <code>FaceDetails</code>
+     * represent face locations before the image orientation is corrected. </p> <note>
+     * <p>If the source image is in .jpeg format, it might contain exchangeable image
+     * (Exif) metadata that includes the image's orientation. If so, and the Exif
+     * metadata for the source image populates the orientation field, the value of
+     * <code>OrientationCorrection</code> is nil and the <code>FaceDetails</code>
+     * bounding box coordinates represent face locations after Exif metadata is used to
+     * correct the image orientation. Images in .png format don't contain Exif
+     * metadata.</p> </note>
      */
     inline const OrientationCorrection& GetOrientationCorrection() const{ return m_orientationCorrection; }
 
     /**
-     * <p>The algorithm detects the image orientation. If it detects that the image was
-     * rotated, it returns the degrees of rotation. If your application is displaying
-     * the image, you can use this value to adjust the orientation. </p> <p>For
-     * example, if the service detects that the input image was rotated by 90 degrees,
-     * it corrects orientation, performs face detection, and then returns the faces.
-     * That is, the bounding box coordinates in the response are based on the corrected
-     * orientation. </p> <note> <p>If the source image Exif metadata populates the
-     * orientation field, Amazon Rekognition does not perform orientation correction
-     * and the value of OrientationCorrection will be nil.</p> </note>
+     * <p> The orientation of the input image (counter-clockwise direction). If your
+     * application displays the image, you can use this value to correct image
+     * orientation. The bounding box coordinates returned in <code>FaceDetails</code>
+     * represent face locations before the image orientation is corrected. </p> <note>
+     * <p>If the source image is in .jpeg format, it might contain exchangeable image
+     * (Exif) metadata that includes the image's orientation. If so, and the Exif
+     * metadata for the source image populates the orientation field, the value of
+     * <code>OrientationCorrection</code> is nil and the <code>FaceDetails</code>
+     * bounding box coordinates represent face locations after Exif metadata is used to
+     * correct the image orientation. Images in .png format don't contain Exif
+     * metadata.</p> </note>
      */
     inline void SetOrientationCorrection(const OrientationCorrection& value) { m_orientationCorrection = value; }
 
     /**
-     * <p>The algorithm detects the image orientation. If it detects that the image was
-     * rotated, it returns the degrees of rotation. If your application is displaying
-     * the image, you can use this value to adjust the orientation. </p> <p>For
-     * example, if the service detects that the input image was rotated by 90 degrees,
-     * it corrects orientation, performs face detection, and then returns the faces.
-     * That is, the bounding box coordinates in the response are based on the corrected
-     * orientation. </p> <note> <p>If the source image Exif metadata populates the
-     * orientation field, Amazon Rekognition does not perform orientation correction
-     * and the value of OrientationCorrection will be nil.</p> </note>
+     * <p> The orientation of the input image (counter-clockwise direction). If your
+     * application displays the image, you can use this value to correct image
+     * orientation. The bounding box coordinates returned in <code>FaceDetails</code>
+     * represent face locations before the image orientation is corrected. </p> <note>
+     * <p>If the source image is in .jpeg format, it might contain exchangeable image
+     * (Exif) metadata that includes the image's orientation. If so, and the Exif
+     * metadata for the source image populates the orientation field, the value of
+     * <code>OrientationCorrection</code> is nil and the <code>FaceDetails</code>
+     * bounding box coordinates represent face locations after Exif metadata is used to
+     * correct the image orientation. Images in .png format don't contain Exif
+     * metadata.</p> </note>
      */
     inline void SetOrientationCorrection(OrientationCorrection&& value) { m_orientationCorrection = std::move(value); }
 
     /**
-     * <p>The algorithm detects the image orientation. If it detects that the image was
-     * rotated, it returns the degrees of rotation. If your application is displaying
-     * the image, you can use this value to adjust the orientation. </p> <p>For
-     * example, if the service detects that the input image was rotated by 90 degrees,
-     * it corrects orientation, performs face detection, and then returns the faces.
-     * That is, the bounding box coordinates in the response are based on the corrected
-     * orientation. </p> <note> <p>If the source image Exif metadata populates the
-     * orientation field, Amazon Rekognition does not perform orientation correction
-     * and the value of OrientationCorrection will be nil.</p> </note>
+     * <p> The orientation of the input image (counter-clockwise direction). If your
+     * application displays the image, you can use this value to correct image
+     * orientation. The bounding box coordinates returned in <code>FaceDetails</code>
+     * represent face locations before the image orientation is corrected. </p> <note>
+     * <p>If the source image is in .jpeg format, it might contain exchangeable image
+     * (Exif) metadata that includes the image's orientation. If so, and the Exif
+     * metadata for the source image populates the orientation field, the value of
+     * <code>OrientationCorrection</code> is nil and the <code>FaceDetails</code>
+     * bounding box coordinates represent face locations after Exif metadata is used to
+     * correct the image orientation. Images in .png format don't contain Exif
+     * metadata.</p> </note>
      */
     inline DetectFacesResult& WithOrientationCorrection(const OrientationCorrection& value) { SetOrientationCorrection(value); return *this;}
 
     /**
-     * <p>The algorithm detects the image orientation. If it detects that the image was
-     * rotated, it returns the degrees of rotation. If your application is displaying
-     * the image, you can use this value to adjust the orientation. </p> <p>For
-     * example, if the service detects that the input image was rotated by 90 degrees,
-     * it corrects orientation, performs face detection, and then returns the faces.
-     * That is, the bounding box coordinates in the response are based on the corrected
-     * orientation. </p> <note> <p>If the source image Exif metadata populates the
-     * orientation field, Amazon Rekognition does not perform orientation correction
-     * and the value of OrientationCorrection will be nil.</p> </note>
+     * <p> The orientation of the input image (counter-clockwise direction). If your
+     * application displays the image, you can use this value to correct image
+     * orientation. The bounding box coordinates returned in <code>FaceDetails</code>
+     * represent face locations before the image orientation is corrected. </p> <note>
+     * <p>If the source image is in .jpeg format, it might contain exchangeable image
+     * (Exif) metadata that includes the image's orientation. If so, and the Exif
+     * metadata for the source image populates the orientation field, the value of
+     * <code>OrientationCorrection</code> is nil and the <code>FaceDetails</code>
+     * bounding box coordinates represent face locations after Exif metadata is used to
+     * correct the image orientation. Images in .png format don't contain Exif
+     * metadata.</p> </note>
      */
     inline DetectFacesResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(std::move(value)); return *this;}
 

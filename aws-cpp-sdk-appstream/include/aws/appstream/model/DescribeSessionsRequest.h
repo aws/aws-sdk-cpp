@@ -212,41 +212,41 @@ namespace Model
 
     /**
      * <p>The authentication method of the user. It can be <code>API</code> for a user
-     * authenticated using a streaming url or <code>SAML</code> for a SAML federated
+     * authenticated using a streaming URL, or <code>SAML</code> for a SAML federated
      * user. If an authentication type is not provided, the operation defaults to users
-     * authenticated using a streaming url.</p>
+     * authenticated using a streaming URL.</p>
      */
     inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
 
     /**
      * <p>The authentication method of the user. It can be <code>API</code> for a user
-     * authenticated using a streaming url or <code>SAML</code> for a SAML federated
+     * authenticated using a streaming URL, or <code>SAML</code> for a SAML federated
      * user. If an authentication type is not provided, the operation defaults to users
-     * authenticated using a streaming url.</p>
+     * authenticated using a streaming URL.</p>
      */
     inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
 
     /**
      * <p>The authentication method of the user. It can be <code>API</code> for a user
-     * authenticated using a streaming url or <code>SAML</code> for a SAML federated
+     * authenticated using a streaming URL, or <code>SAML</code> for a SAML federated
      * user. If an authentication type is not provided, the operation defaults to users
-     * authenticated using a streaming url.</p>
+     * authenticated using a streaming URL.</p>
      */
     inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
 
     /**
      * <p>The authentication method of the user. It can be <code>API</code> for a user
-     * authenticated using a streaming url or <code>SAML</code> for a SAML federated
+     * authenticated using a streaming URL, or <code>SAML</code> for a SAML federated
      * user. If an authentication type is not provided, the operation defaults to users
-     * authenticated using a streaming url.</p>
+     * authenticated using a streaming URL.</p>
      */
     inline DescribeSessionsRequest& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
 
     /**
      * <p>The authentication method of the user. It can be <code>API</code> for a user
-     * authenticated using a streaming url or <code>SAML</code> for a SAML federated
+     * authenticated using a streaming URL, or <code>SAML</code> for a SAML federated
      * user. If an authentication type is not provided, the operation defaults to users
-     * authenticated using a streaming url.</p>
+     * authenticated using a streaming URL.</p>
      */
     inline DescribeSessionsRequest& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
 

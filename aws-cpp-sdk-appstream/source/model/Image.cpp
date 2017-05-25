@@ -44,7 +44,8 @@ Image::Image() :
     m_descriptionHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
     m_applicationsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_publicBaseImageReleasedDateHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ Image::Image(const JsonValue& jsonValue) :
     m_descriptionHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
     m_applicationsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_publicBaseImageReleasedDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -158,6 +160,13 @@ Image& Image::operator =(const JsonValue& jsonValue)
     m_createdTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PublicBaseImageReleasedDate"))
+  {
+    m_publicBaseImageReleasedDate = jsonValue.GetDouble("PublicBaseImageReleasedDate");
+
+    m_publicBaseImageReleasedDateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -236,6 +245,11 @@ JsonValue Image::Jsonize() const
   if(m_createdTimeHasBeenSet)
   {
    payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
+  }
+
+  if(m_publicBaseImageReleasedDateHasBeenSet)
+  {
+   payload.WithDouble("PublicBaseImageReleasedDate", m_publicBaseImageReleasedDate.SecondsWithMSPrecision());
   }
 
   return payload;

@@ -17,6 +17,9 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appstream/model/StorageConnector.h>
+#include <aws/appstream/model/StackError.h>
 #include <utility>
 
 namespace Aws
@@ -211,6 +214,76 @@ namespace Model
      */
     inline Stack& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
+    /**
+     * <p>The storage connectors to be enabled for the stack.</p>
+     */
+    inline const Aws::Vector<StorageConnector>& GetStorageConnectors() const{ return m_storageConnectors; }
+
+    /**
+     * <p>The storage connectors to be enabled for the stack.</p>
+     */
+    inline void SetStorageConnectors(const Aws::Vector<StorageConnector>& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors = value; }
+
+    /**
+     * <p>The storage connectors to be enabled for the stack.</p>
+     */
+    inline void SetStorageConnectors(Aws::Vector<StorageConnector>&& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors = std::move(value); }
+
+    /**
+     * <p>The storage connectors to be enabled for the stack.</p>
+     */
+    inline Stack& WithStorageConnectors(const Aws::Vector<StorageConnector>& value) { SetStorageConnectors(value); return *this;}
+
+    /**
+     * <p>The storage connectors to be enabled for the stack.</p>
+     */
+    inline Stack& WithStorageConnectors(Aws::Vector<StorageConnector>&& value) { SetStorageConnectors(std::move(value)); return *this;}
+
+    /**
+     * <p>The storage connectors to be enabled for the stack.</p>
+     */
+    inline Stack& AddStorageConnectors(const StorageConnector& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors.push_back(value); return *this; }
+
+    /**
+     * <p>The storage connectors to be enabled for the stack.</p>
+     */
+    inline Stack& AddStorageConnectors(StorageConnector&& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of errors associated with the stack.</p>
+     */
+    inline const Aws::Vector<StackError>& GetStackErrors() const{ return m_stackErrors; }
+
+    /**
+     * <p>The list of errors associated with the stack.</p>
+     */
+    inline void SetStackErrors(const Aws::Vector<StackError>& value) { m_stackErrorsHasBeenSet = true; m_stackErrors = value; }
+
+    /**
+     * <p>The list of errors associated with the stack.</p>
+     */
+    inline void SetStackErrors(Aws::Vector<StackError>&& value) { m_stackErrorsHasBeenSet = true; m_stackErrors = std::move(value); }
+
+    /**
+     * <p>The list of errors associated with the stack.</p>
+     */
+    inline Stack& WithStackErrors(const Aws::Vector<StackError>& value) { SetStackErrors(value); return *this;}
+
+    /**
+     * <p>The list of errors associated with the stack.</p>
+     */
+    inline Stack& WithStackErrors(Aws::Vector<StackError>&& value) { SetStackErrors(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of errors associated with the stack.</p>
+     */
+    inline Stack& AddStackErrors(const StackError& value) { m_stackErrorsHasBeenSet = true; m_stackErrors.push_back(value); return *this; }
+
+    /**
+     * <p>The list of errors associated with the stack.</p>
+     */
+    inline Stack& AddStackErrors(StackError&& value) { m_stackErrorsHasBeenSet = true; m_stackErrors.push_back(std::move(value)); return *this; }
+
   private:
     Aws::String m_arn;
     bool m_arnHasBeenSet;
@@ -222,6 +295,10 @@ namespace Model
     bool m_displayNameHasBeenSet;
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
+    Aws::Vector<StorageConnector> m_storageConnectors;
+    bool m_storageConnectorsHasBeenSet;
+    Aws::Vector<StackError> m_stackErrors;
+    bool m_stackErrorsHasBeenSet;
   };
 
 } // namespace Model

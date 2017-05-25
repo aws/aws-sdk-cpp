@@ -254,17 +254,17 @@ namespace Model
     inline Image& WithVisibility(VisibilityType&& value) { SetVisibility(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates whether an image builder can be launched from this image.</p>
+     * <p>Whether an image builder can be launched from this image.</p>
      */
     inline bool GetImageBuilderSupported() const{ return m_imageBuilderSupported; }
 
     /**
-     * <p>Indicates whether an image builder can be launched from this image.</p>
+     * <p>Whether an image builder can be launched from this image.</p>
      */
     inline void SetImageBuilderSupported(bool value) { m_imageBuilderSupportedHasBeenSet = true; m_imageBuilderSupported = value; }
 
     /**
-     * <p>Indicates whether an image builder can be launched from this image.</p>
+     * <p>Whether an image builder can be launched from this image.</p>
      */
     inline Image& WithImageBuilderSupported(bool value) { SetImageBuilderSupported(value); return *this;}
 
@@ -413,6 +413,36 @@ namespace Model
      */
     inline Image& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
+    /**
+     * <p>The AWS release date of the public base image. For private images, this date
+     * is the release date of the base image from which the image was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetPublicBaseImageReleasedDate() const{ return m_publicBaseImageReleasedDate; }
+
+    /**
+     * <p>The AWS release date of the public base image. For private images, this date
+     * is the release date of the base image from which the image was created.</p>
+     */
+    inline void SetPublicBaseImageReleasedDate(const Aws::Utils::DateTime& value) { m_publicBaseImageReleasedDateHasBeenSet = true; m_publicBaseImageReleasedDate = value; }
+
+    /**
+     * <p>The AWS release date of the public base image. For private images, this date
+     * is the release date of the base image from which the image was created.</p>
+     */
+    inline void SetPublicBaseImageReleasedDate(Aws::Utils::DateTime&& value) { m_publicBaseImageReleasedDateHasBeenSet = true; m_publicBaseImageReleasedDate = std::move(value); }
+
+    /**
+     * <p>The AWS release date of the public base image. For private images, this date
+     * is the release date of the base image from which the image was created.</p>
+     */
+    inline Image& WithPublicBaseImageReleasedDate(const Aws::Utils::DateTime& value) { SetPublicBaseImageReleasedDate(value); return *this;}
+
+    /**
+     * <p>The AWS release date of the public base image. For private images, this date
+     * is the release date of the base image from which the image was created.</p>
+     */
+    inline Image& WithPublicBaseImageReleasedDate(Aws::Utils::DateTime&& value) { SetPublicBaseImageReleasedDate(std::move(value)); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -438,6 +468,8 @@ namespace Model
     bool m_applicationsHasBeenSet;
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
+    Aws::Utils::DateTime m_publicBaseImageReleasedDate;
+    bool m_publicBaseImageReleasedDateHasBeenSet;
   };
 
 } // namespace Model

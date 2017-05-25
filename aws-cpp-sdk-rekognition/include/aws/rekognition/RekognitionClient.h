@@ -165,20 +165,27 @@ namespace Model
         /**
          * <p>Compares a face in the <i>source</i> input image with each face detected in
          * the <i>target</i> input image. </p> <note> <p> If the source image contains
-         * multiple faces, the service detects the largest face and uses it to compare with
-         * each face detected in the target image. </p> </note> <p>In response, the
-         * operation returns an array of face matches ordered by similarity score with the
-         * highest similarity scores first. For each face match, the response provides a
-         * bounding box of the face and <code>confidence</code> value (indicating the level
-         * of confidence that the bounding box contains a face). The response also provides
-         * a <code>similarity</code> score, which indicates how closely the faces match.
-         * </p> <note> <p>By default, only faces with the similarity score of greater than
-         * or equal to 80% are returned in the response. You can change this value.</p>
-         * </note> <p>In addition to the face matches, the response returns information
+         * multiple faces, the service detects the largest face and compares it with each
+         * face detected in the target image. </p> </note> <p>In response, the operation
+         * returns an array of face matches ordered by similarity score in descending
+         * order. For each face match, the response provides a bounding box of the face,
+         * facial landmarks, pose details (pitch, role, and yaw), quality (brightness and
+         * sharpness), and confidence value (indicating the level of confidence that the
+         * bounding box contains a face). The response also provides a similarity score,
+         * which indicates how closely the faces match. </p> <note> <p>By default, only
+         * faces with a similarity score of greater than or equal to 80% are returned in
+         * the response. You can change this value by specifying the
+         * <code>SimilarityThreshold</code> parameter.</p> </note> <p>
+         * <code>CompareFaces</code> also returns an array of faces that don't match the
+         * source image. For each face, it returns a bounding box, confidence value,
+         * landmarks, pose details, and quality. The response also returns information
          * about the face in the source image, including the bounding box of the face and
-         * confidence value.</p> <note> <p> This is a stateless API operation. That is, the
-         * operation does not persist any data.</p> </note> <p>For an example, see
-         * <a>get-started-exercise-compare-faces</a> </p> <p>This operation requires
+         * confidence value.</p> <p>If the image doesn't contain Exif metadata,
+         * <code>CompareFaces</code> returns orientation information for the source and
+         * target images. Use these values to display the images with the correct image
+         * orientation.</p> <note> <p> This is a stateless API operation. That is, data
+         * returned by this operation doesn't persist.</p> </note> <p>For an example, see
+         * <a>get-started-exercise-compare-faces</a>.</p> <p>This operation requires
          * permissions to perform the <code>rekognition:CompareFaces</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">AWS
@@ -189,20 +196,27 @@ namespace Model
         /**
          * <p>Compares a face in the <i>source</i> input image with each face detected in
          * the <i>target</i> input image. </p> <note> <p> If the source image contains
-         * multiple faces, the service detects the largest face and uses it to compare with
-         * each face detected in the target image. </p> </note> <p>In response, the
-         * operation returns an array of face matches ordered by similarity score with the
-         * highest similarity scores first. For each face match, the response provides a
-         * bounding box of the face and <code>confidence</code> value (indicating the level
-         * of confidence that the bounding box contains a face). The response also provides
-         * a <code>similarity</code> score, which indicates how closely the faces match.
-         * </p> <note> <p>By default, only faces with the similarity score of greater than
-         * or equal to 80% are returned in the response. You can change this value.</p>
-         * </note> <p>In addition to the face matches, the response returns information
+         * multiple faces, the service detects the largest face and compares it with each
+         * face detected in the target image. </p> </note> <p>In response, the operation
+         * returns an array of face matches ordered by similarity score in descending
+         * order. For each face match, the response provides a bounding box of the face,
+         * facial landmarks, pose details (pitch, role, and yaw), quality (brightness and
+         * sharpness), and confidence value (indicating the level of confidence that the
+         * bounding box contains a face). The response also provides a similarity score,
+         * which indicates how closely the faces match. </p> <note> <p>By default, only
+         * faces with a similarity score of greater than or equal to 80% are returned in
+         * the response. You can change this value by specifying the
+         * <code>SimilarityThreshold</code> parameter.</p> </note> <p>
+         * <code>CompareFaces</code> also returns an array of faces that don't match the
+         * source image. For each face, it returns a bounding box, confidence value,
+         * landmarks, pose details, and quality. The response also returns information
          * about the face in the source image, including the bounding box of the face and
-         * confidence value.</p> <note> <p> This is a stateless API operation. That is, the
-         * operation does not persist any data.</p> </note> <p>For an example, see
-         * <a>get-started-exercise-compare-faces</a> </p> <p>This operation requires
+         * confidence value.</p> <p>If the image doesn't contain Exif metadata,
+         * <code>CompareFaces</code> returns orientation information for the source and
+         * target images. Use these values to display the images with the correct image
+         * orientation.</p> <note> <p> This is a stateless API operation. That is, data
+         * returned by this operation doesn't persist.</p> </note> <p>For an example, see
+         * <a>get-started-exercise-compare-faces</a>.</p> <p>This operation requires
          * permissions to perform the <code>rekognition:CompareFaces</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">AWS
@@ -215,20 +229,27 @@ namespace Model
         /**
          * <p>Compares a face in the <i>source</i> input image with each face detected in
          * the <i>target</i> input image. </p> <note> <p> If the source image contains
-         * multiple faces, the service detects the largest face and uses it to compare with
-         * each face detected in the target image. </p> </note> <p>In response, the
-         * operation returns an array of face matches ordered by similarity score with the
-         * highest similarity scores first. For each face match, the response provides a
-         * bounding box of the face and <code>confidence</code> value (indicating the level
-         * of confidence that the bounding box contains a face). The response also provides
-         * a <code>similarity</code> score, which indicates how closely the faces match.
-         * </p> <note> <p>By default, only faces with the similarity score of greater than
-         * or equal to 80% are returned in the response. You can change this value.</p>
-         * </note> <p>In addition to the face matches, the response returns information
+         * multiple faces, the service detects the largest face and compares it with each
+         * face detected in the target image. </p> </note> <p>In response, the operation
+         * returns an array of face matches ordered by similarity score in descending
+         * order. For each face match, the response provides a bounding box of the face,
+         * facial landmarks, pose details (pitch, role, and yaw), quality (brightness and
+         * sharpness), and confidence value (indicating the level of confidence that the
+         * bounding box contains a face). The response also provides a similarity score,
+         * which indicates how closely the faces match. </p> <note> <p>By default, only
+         * faces with a similarity score of greater than or equal to 80% are returned in
+         * the response. You can change this value by specifying the
+         * <code>SimilarityThreshold</code> parameter.</p> </note> <p>
+         * <code>CompareFaces</code> also returns an array of faces that don't match the
+         * source image. For each face, it returns a bounding box, confidence value,
+         * landmarks, pose details, and quality. The response also returns information
          * about the face in the source image, including the bounding box of the face and
-         * confidence value.</p> <note> <p> This is a stateless API operation. That is, the
-         * operation does not persist any data.</p> </note> <p>For an example, see
-         * <a>get-started-exercise-compare-faces</a> </p> <p>This operation requires
+         * confidence value.</p> <p>If the image doesn't contain Exif metadata,
+         * <code>CompareFaces</code> returns orientation information for the source and
+         * target images. Use these values to display the images with the correct image
+         * orientation.</p> <note> <p> This is a stateless API operation. That is, data
+         * returned by this operation doesn't persist.</p> </note> <p>For an example, see
+         * <a>get-started-exercise-compare-faces</a>.</p> <p>This operation requires
          * permissions to perform the <code>rekognition:CompareFaces</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">AWS
@@ -244,9 +265,10 @@ namespace Model
          * each of your application users. A user can then index faces using the
          * <code>IndexFaces</code> operation and persist results in a specific collection.
          * Then, a user can search the collection for faces in the user-specific container.
-         * </p> <p>For an example, see <a>example1</a>. </p> <p>This operation requires
-         * permissions to perform the <code>rekognition:CreateCollection</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * </p> <note> <p>Collection names are case-sensitive.</p> </note> <p>For an
+         * example, see <a>example1</a>. </p> <p>This operation requires permissions to
+         * perform the <code>rekognition:CreateCollection</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">AWS
          * API Reference</a></p>
          */
@@ -258,9 +280,10 @@ namespace Model
          * each of your application users. A user can then index faces using the
          * <code>IndexFaces</code> operation and persist results in a specific collection.
          * Then, a user can search the collection for faces in the user-specific container.
-         * </p> <p>For an example, see <a>example1</a>. </p> <p>This operation requires
-         * permissions to perform the <code>rekognition:CreateCollection</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * </p> <note> <p>Collection names are case-sensitive.</p> </note> <p>For an
+         * example, see <a>example1</a>. </p> <p>This operation requires permissions to
+         * perform the <code>rekognition:CreateCollection</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">AWS
          * API Reference</a></p>
          *
@@ -274,9 +297,10 @@ namespace Model
          * each of your application users. A user can then index faces using the
          * <code>IndexFaces</code> operation and persist results in a specific collection.
          * Then, a user can search the collection for faces in the user-specific container.
-         * </p> <p>For an example, see <a>example1</a>. </p> <p>This operation requires
-         * permissions to perform the <code>rekognition:CreateCollection</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * </p> <note> <p>Collection names are case-sensitive.</p> </note> <p>For an
+         * example, see <a>example1</a>. </p> <p>This operation requires permissions to
+         * perform the <code>rekognition:CreateCollection</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">AWS
          * API Reference</a></p>
          *
@@ -520,26 +544,28 @@ namespace Model
         virtual void DetectLabelsAsync(const Model::DetectLabelsRequest& request, const DetectLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Detects explicit or suggestive adult content in a specified .jpeg or .png
-         * image. Use <code>DetectModerationLabels</code> to moderate images depending on
-         * your requirements. For example, you might want to filter images that contain
-         * nudity, but not images containing suggestive content.</p> <p>To filter images,
-         * use the labels returned by <code>DetectModerationLabels</code> to determine
-         * which types of content are appropriate. For information about moderation labels,
-         * see <a>howitworks-moderateimage</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Detects explicit or suggestive adult content in a specified JPEG or PNG
+         * format image. Use <code>DetectModerationLabels</code> to moderate images
+         * depending on your requirements. For example, you might want to filter images
+         * that contain nudity, but not images containing suggestive content.</p> <p>To
+         * filter images, use the labels returned by <code>DetectModerationLabels</code> to
+         * determine which types of content are appropriate. For information about
+         * moderation labels, see <a>howitworks-moderateimage</a>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">AWS
          * API Reference</a></p>
          */
         virtual Model::DetectModerationLabelsOutcome DetectModerationLabels(const Model::DetectModerationLabelsRequest& request) const;
 
         /**
-         * <p>Detects explicit or suggestive adult content in a specified .jpeg or .png
-         * image. Use <code>DetectModerationLabels</code> to moderate images depending on
-         * your requirements. For example, you might want to filter images that contain
-         * nudity, but not images containing suggestive content.</p> <p>To filter images,
-         * use the labels returned by <code>DetectModerationLabels</code> to determine
-         * which types of content are appropriate. For information about moderation labels,
-         * see <a>howitworks-moderateimage</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Detects explicit or suggestive adult content in a specified JPEG or PNG
+         * format image. Use <code>DetectModerationLabels</code> to moderate images
+         * depending on your requirements. For example, you might want to filter images
+         * that contain nudity, but not images containing suggestive content.</p> <p>To
+         * filter images, use the labels returned by <code>DetectModerationLabels</code> to
+         * determine which types of content are appropriate. For information about
+         * moderation labels, see <a>howitworks-moderateimage</a>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">AWS
          * API Reference</a></p>
          *
@@ -548,13 +574,14 @@ namespace Model
         virtual Model::DetectModerationLabelsOutcomeCallable DetectModerationLabelsCallable(const Model::DetectModerationLabelsRequest& request) const;
 
         /**
-         * <p>Detects explicit or suggestive adult content in a specified .jpeg or .png
-         * image. Use <code>DetectModerationLabels</code> to moderate images depending on
-         * your requirements. For example, you might want to filter images that contain
-         * nudity, but not images containing suggestive content.</p> <p>To filter images,
-         * use the labels returned by <code>DetectModerationLabels</code> to determine
-         * which types of content are appropriate. For information about moderation labels,
-         * see <a>howitworks-moderateimage</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Detects explicit or suggestive adult content in a specified JPEG or PNG
+         * format image. Use <code>DetectModerationLabels</code> to moderate images
+         * depending on your requirements. For example, you might want to filter images
+         * that contain nudity, but not images containing suggestive content.</p> <p>To
+         * filter images, use the labels returned by <code>DetectModerationLabels</code> to
+         * determine which types of content are appropriate. For information about
+         * moderation labels, see <a>howitworks-moderateimage</a>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">AWS
          * API Reference</a></p>
          *

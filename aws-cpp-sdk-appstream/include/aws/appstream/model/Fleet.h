@@ -294,38 +294,44 @@ namespace Model
     inline Fleet& WithComputeCapacityStatus(ComputeCapacityStatus&& value) { SetComputeCapacityStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum time during which a streaming session can run.</p>
+     * <p>The maximum time for which a streaming session can run. The value can be any
+     * numeric value in seconds between 600 and 57600.</p>
      */
     inline int GetMaxUserDurationInSeconds() const{ return m_maxUserDurationInSeconds; }
 
     /**
-     * <p>The maximum time during which a streaming session can run.</p>
+     * <p>The maximum time for which a streaming session can run. The value can be any
+     * numeric value in seconds between 600 and 57600.</p>
      */
     inline void SetMaxUserDurationInSeconds(int value) { m_maxUserDurationInSecondsHasBeenSet = true; m_maxUserDurationInSeconds = value; }
 
     /**
-     * <p>The maximum time during which a streaming session can run.</p>
+     * <p>The maximum time for which a streaming session can run. The value can be any
+     * numeric value in seconds between 600 and 57600.</p>
      */
     inline Fleet& WithMaxUserDurationInSeconds(int value) { SetMaxUserDurationInSeconds(value); return *this;}
 
     /**
-     * <p>The time after disconnection when a session is considered to have ended. When
-     * a user reconnects after a disconnection, the user is connected to the same
-     * session and instance within this time interval.</p>
+     * <p>The time after disconnection when a session is considered to have ended. If a
+     * user who got disconnected reconnects within this timeout interval, the user is
+     * connected back to their previous session. The input can be any numeric value in
+     * seconds between 60 and 57600.</p>
      */
     inline int GetDisconnectTimeoutInSeconds() const{ return m_disconnectTimeoutInSeconds; }
 
     /**
-     * <p>The time after disconnection when a session is considered to have ended. When
-     * a user reconnects after a disconnection, the user is connected to the same
-     * session and instance within this time interval.</p>
+     * <p>The time after disconnection when a session is considered to have ended. If a
+     * user who got disconnected reconnects within this timeout interval, the user is
+     * connected back to their previous session. The input can be any numeric value in
+     * seconds between 60 and 57600.</p>
      */
     inline void SetDisconnectTimeoutInSeconds(int value) { m_disconnectTimeoutInSecondsHasBeenSet = true; m_disconnectTimeoutInSeconds = value; }
 
     /**
-     * <p>The time after disconnection when a session is considered to have ended. When
-     * a user reconnects after a disconnection, the user is connected to the same
-     * session and instance within this time interval.</p>
+     * <p>The time after disconnection when a session is considered to have ended. If a
+     * user who got disconnected reconnects within this timeout interval, the user is
+     * connected back to their previous session. The input can be any numeric value in
+     * seconds between 60 and 57600.</p>
      */
     inline Fleet& WithDisconnectTimeoutInSeconds(int value) { SetDisconnectTimeoutInSeconds(value); return *this;}
 
@@ -440,17 +446,17 @@ namespace Model
     inline Fleet& AddFleetErrors(FleetError&& value) { m_fleetErrorsHasBeenSet = true; m_fleetErrors.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>
+     * <p>Whether default Internet access is enabled for the fleet. </p>
      */
     inline bool GetEnableDefaultInternetAccess() const{ return m_enableDefaultInternetAccess; }
 
     /**
-     * <p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>
+     * <p>Whether default Internet access is enabled for the fleet. </p>
      */
     inline void SetEnableDefaultInternetAccess(bool value) { m_enableDefaultInternetAccessHasBeenSet = true; m_enableDefaultInternetAccess = value; }
 
     /**
-     * <p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>
+     * <p>Whether default Internet access is enabled for the fleet. </p>
      */
     inline Fleet& WithEnableDefaultInternetAccess(bool value) { SetEnableDefaultInternetAccess(value); return *this;}
 

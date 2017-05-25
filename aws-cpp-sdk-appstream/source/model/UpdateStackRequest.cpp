@@ -25,7 +25,10 @@ using namespace Aws::Utils;
 UpdateStackRequest::UpdateStackRequest() : 
     m_displayNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_storageConnectorsHasBeenSet(false),
+    m_deleteStorageConnectors(false),
+    m_deleteStorageConnectorsHasBeenSet(false)
 {
 }
 
@@ -48,6 +51,23 @@ Aws::String UpdateStackRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_storageConnectorsHasBeenSet)
+  {
+   Array<JsonValue> storageConnectorsJsonList(m_storageConnectors.size());
+   for(unsigned storageConnectorsIndex = 0; storageConnectorsIndex < storageConnectorsJsonList.GetLength(); ++storageConnectorsIndex)
+   {
+     storageConnectorsJsonList[storageConnectorsIndex].AsObject(m_storageConnectors[storageConnectorsIndex].Jsonize());
+   }
+   payload.WithArray("StorageConnectors", std::move(storageConnectorsJsonList));
+
+  }
+
+  if(m_deleteStorageConnectorsHasBeenSet)
+  {
+   payload.WithBool("DeleteStorageConnectors", m_deleteStorageConnectors);
 
   }
 

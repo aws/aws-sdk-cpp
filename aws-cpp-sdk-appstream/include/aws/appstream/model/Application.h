@@ -241,62 +241,62 @@ namespace Model
     inline Application& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
     /**
-     * <p>Additional attributes that describes the application.</p>
+     * <p>Additional attributes that describe the application.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p>Additional attributes that describes the application.</p>
+     * <p>Additional attributes that describe the application.</p>
      */
     inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     /**
-     * <p>Additional attributes that describes the application.</p>
+     * <p>Additional attributes that describe the application.</p>
      */
     inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
     /**
-     * <p>Additional attributes that describes the application.</p>
+     * <p>Additional attributes that describe the application.</p>
      */
     inline Application& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>Additional attributes that describes the application.</p>
+     * <p>Additional attributes that describe the application.</p>
      */
     inline Application& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
 
     /**
-     * <p>Additional attributes that describes the application.</p>
+     * <p>Additional attributes that describe the application.</p>
      */
     inline Application& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 
     /**
-     * <p>Additional attributes that describes the application.</p>
+     * <p>Additional attributes that describe the application.</p>
      */
     inline Application& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Additional attributes that describes the application.</p>
+     * <p>Additional attributes that describe the application.</p>
      */
     inline Application& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Additional attributes that describes the application.</p>
+     * <p>Additional attributes that describe the application.</p>
      */
     inline Application& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Additional attributes that describes the application.</p>
+     * <p>Additional attributes that describe the application.</p>
      */
     inline Application& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Additional attributes that describes the application.</p>
+     * <p>Additional attributes that describe the application.</p>
      */
     inline Application& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Additional attributes that describes the application.</p>
+     * <p>Additional attributes that describe the application.</p>
      */
     inline Application& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 

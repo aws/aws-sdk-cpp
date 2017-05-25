@@ -70,8 +70,8 @@ namespace Model
     inline DetectFacesRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
 
     /**
-     * <p>A list of facial attributes you want to be returned. This can be the default
-     * list of attributes or all attributes. If you don't specify a value for
+     * <p>An array of facial attributes you want to be returned. This can be the
+     * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
      * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
@@ -84,8 +84,8 @@ namespace Model
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>A list of facial attributes you want to be returned. This can be the default
-     * list of attributes or all attributes. If you don't specify a value for
+     * <p>An array of facial attributes you want to be returned. This can be the
+     * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
      * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
@@ -98,8 +98,8 @@ namespace Model
     inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>A list of facial attributes you want to be returned. This can be the default
-     * list of attributes or all attributes. If you don't specify a value for
+     * <p>An array of facial attributes you want to be returned. This can be the
+     * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
      * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
@@ -112,8 +112,8 @@ namespace Model
     inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * <p>A list of facial attributes you want to be returned. This can be the default
-     * list of attributes or all attributes. If you don't specify a value for
+     * <p>An array of facial attributes you want to be returned. This can be the
+     * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
      * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
@@ -126,8 +126,8 @@ namespace Model
     inline DetectFacesRequest& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>A list of facial attributes you want to be returned. This can be the default
-     * list of attributes or all attributes. If you don't specify a value for
+     * <p>An array of facial attributes you want to be returned. This can be the
+     * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
      * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
@@ -140,8 +140,8 @@ namespace Model
     inline DetectFacesRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of facial attributes you want to be returned. This can be the default
-     * list of attributes or all attributes. If you don't specify a value for
+     * <p>An array of facial attributes you want to be returned. This can be the
+     * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
      * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
@@ -154,8 +154,8 @@ namespace Model
     inline DetectFacesRequest& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     /**
-     * <p>A list of facial attributes you want to be returned. This can be the default
-     * list of attributes or all attributes. If you don't specify a value for
+     * <p>An array of facial attributes you want to be returned. This can be the
+     * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
      * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and

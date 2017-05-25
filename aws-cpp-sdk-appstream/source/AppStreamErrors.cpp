@@ -33,6 +33,7 @@ static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("Resour
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INVALID_ROLE_HASH = HashingUtils::HashString("InvalidRoleException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
+static const int INCOMPATIBLE_IMAGE_HASH = HashingUtils::HashString("IncompatibleImageException");
 static const int RESOURCE_NOT_AVAILABLE_HASH = HashingUtils::HashString("ResourceNotAvailableException");
 static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermittedException");
 
@@ -60,6 +61,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AppStreamErrors::CONCURRENT_MODIFICATION), false);
+  }
+  else if (hashCode == INCOMPATIBLE_IMAGE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppStreamErrors::INCOMPATIBLE_IMAGE), false);
   }
   else if (hashCode == RESOURCE_NOT_AVAILABLE_HASH)
   {

@@ -17,6 +17,8 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/AppStreamRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appstream/model/StorageConnector.h>
 #include <utility>
 
 namespace Aws
@@ -142,6 +144,56 @@ namespace Model
      */
     inline UpdateStackRequest& WithName(const char* value) { SetName(value); return *this;}
 
+    /**
+     * <p>The storage connectors to be enabled for the stack.</p>
+     */
+    inline const Aws::Vector<StorageConnector>& GetStorageConnectors() const{ return m_storageConnectors; }
+
+    /**
+     * <p>The storage connectors to be enabled for the stack.</p>
+     */
+    inline void SetStorageConnectors(const Aws::Vector<StorageConnector>& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors = value; }
+
+    /**
+     * <p>The storage connectors to be enabled for the stack.</p>
+     */
+    inline void SetStorageConnectors(Aws::Vector<StorageConnector>&& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors = std::move(value); }
+
+    /**
+     * <p>The storage connectors to be enabled for the stack.</p>
+     */
+    inline UpdateStackRequest& WithStorageConnectors(const Aws::Vector<StorageConnector>& value) { SetStorageConnectors(value); return *this;}
+
+    /**
+     * <p>The storage connectors to be enabled for the stack.</p>
+     */
+    inline UpdateStackRequest& WithStorageConnectors(Aws::Vector<StorageConnector>&& value) { SetStorageConnectors(std::move(value)); return *this;}
+
+    /**
+     * <p>The storage connectors to be enabled for the stack.</p>
+     */
+    inline UpdateStackRequest& AddStorageConnectors(const StorageConnector& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors.push_back(value); return *this; }
+
+    /**
+     * <p>The storage connectors to be enabled for the stack.</p>
+     */
+    inline UpdateStackRequest& AddStorageConnectors(StorageConnector&& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Remove all the storage connectors currently enabled for the stack.</p>
+     */
+    inline bool GetDeleteStorageConnectors() const{ return m_deleteStorageConnectors; }
+
+    /**
+     * <p>Remove all the storage connectors currently enabled for the stack.</p>
+     */
+    inline void SetDeleteStorageConnectors(bool value) { m_deleteStorageConnectorsHasBeenSet = true; m_deleteStorageConnectors = value; }
+
+    /**
+     * <p>Remove all the storage connectors currently enabled for the stack.</p>
+     */
+    inline UpdateStackRequest& WithDeleteStorageConnectors(bool value) { SetDeleteStorageConnectors(value); return *this;}
+
   private:
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
@@ -149,6 +201,10 @@ namespace Model
     bool m_descriptionHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
+    Aws::Vector<StorageConnector> m_storageConnectors;
+    bool m_storageConnectorsHasBeenSet;
+    bool m_deleteStorageConnectors;
+    bool m_deleteStorageConnectorsHasBeenSet;
   };
 
 } // namespace Model

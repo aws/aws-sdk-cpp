@@ -26,11 +26,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CompareFacesResult::CompareFacesResult()
+CompareFacesResult::CompareFacesResult() : 
+    m_sourceImageOrientationCorrection(OrientationCorrection::NOT_SET),
+    m_targetImageOrientationCorrection(OrientationCorrection::NOT_SET)
 {
 }
 
-CompareFacesResult::CompareFacesResult(const AmazonWebServiceResult<JsonValue>& result)
+CompareFacesResult::CompareFacesResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_sourceImageOrientationCorrection(OrientationCorrection::NOT_SET),
+    m_targetImageOrientationCorrection(OrientationCorrection::NOT_SET)
 {
   *this = result;
 }
@@ -51,6 +55,27 @@ CompareFacesResult& CompareFacesResult::operator =(const AmazonWebServiceResult<
     {
       m_faceMatches.push_back(faceMatchesJsonList[faceMatchesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("UnmatchedFaces"))
+  {
+    Array<JsonValue> unmatchedFacesJsonList = jsonValue.GetArray("UnmatchedFaces");
+    for(unsigned unmatchedFacesIndex = 0; unmatchedFacesIndex < unmatchedFacesJsonList.GetLength(); ++unmatchedFacesIndex)
+    {
+      m_unmatchedFaces.push_back(unmatchedFacesJsonList[unmatchedFacesIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("SourceImageOrientationCorrection"))
+  {
+    m_sourceImageOrientationCorrection = OrientationCorrectionMapper::GetOrientationCorrectionForName(jsonValue.GetString("SourceImageOrientationCorrection"));
+
+  }
+
+  if(jsonValue.ValueExists("TargetImageOrientationCorrection"))
+  {
+    m_targetImageOrientationCorrection = OrientationCorrectionMapper::GetOrientationCorrectionForName(jsonValue.GetString("TargetImageOrientationCorrection"));
+
   }
 
 
