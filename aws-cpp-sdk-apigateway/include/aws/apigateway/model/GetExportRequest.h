@@ -47,7 +47,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The identifier of the <a>RestApi</a> to be exported.</p>
      */

@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The names to use for your new Lightsail instances. Separate multiple values
      * using quotation marks and commas, for example:

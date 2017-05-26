@@ -40,7 +40,6 @@ namespace Model
     UpdateClientCertificateRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of the <a>ClientCertificate</a> resource to be updated.</p>
      */

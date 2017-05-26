@@ -40,7 +40,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The Amazon Resource Name (ARN) of the sesssion for which you want to delete
      * remote access.</p>

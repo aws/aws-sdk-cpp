@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The ARN specifying the assessment to which you want to attach a rules
      * package.</p>

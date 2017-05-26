@@ -43,7 +43,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The creation date and time beginning value filter for listing clusters.</p>
      */

@@ -40,7 +40,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>The Lambda function to delete.</p> <p> You can specify the function name (for
      * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)

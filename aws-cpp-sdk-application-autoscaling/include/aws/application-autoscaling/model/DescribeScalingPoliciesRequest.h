@@ -39,7 +39,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The names of the scaling policies to describe.</p>
      */

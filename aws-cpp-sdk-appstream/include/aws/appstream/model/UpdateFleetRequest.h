@@ -38,7 +38,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The image name from which a fleet is created.</p>
      */

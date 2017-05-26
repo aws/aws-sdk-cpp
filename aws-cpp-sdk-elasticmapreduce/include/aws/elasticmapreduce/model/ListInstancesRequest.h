@@ -43,7 +43,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The identifier of the cluster for which to list the instances.</p>
      */

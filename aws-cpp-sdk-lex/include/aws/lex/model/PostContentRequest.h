@@ -35,6 +35,7 @@ namespace Model
     PostContentRequest();
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    bool SignBody() const override { return false; }
 
     /**
      * <p>Name of the Amazon Lex bot.</p>

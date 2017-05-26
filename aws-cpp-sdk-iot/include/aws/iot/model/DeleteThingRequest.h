@@ -43,7 +43,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>The name of the thing to delete.</p>
      */

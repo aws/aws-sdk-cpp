@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     
     inline const Aws::Vector<Aws::String>& GetVolumeARNs() const{ return m_volumeARNs; }
 

@@ -40,7 +40,6 @@ namespace Model
     CreateHostedZoneRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the domain. For resource record types that include a domain name,
      * specify a fully qualified domain name, for example, <i>www.example.com</i>. The

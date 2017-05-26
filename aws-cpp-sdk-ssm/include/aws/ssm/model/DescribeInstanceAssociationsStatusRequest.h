@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The instance IDs for which you want association status information.</p>
      */

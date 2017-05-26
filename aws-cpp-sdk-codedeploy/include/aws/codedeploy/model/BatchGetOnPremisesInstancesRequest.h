@@ -41,7 +41,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The names of the on-premises instances about which to get information.</p>
      */

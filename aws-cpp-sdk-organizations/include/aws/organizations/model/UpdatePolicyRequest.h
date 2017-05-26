@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The unique identifier (ID) of the policy that you want to update.</p> <p>The
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID

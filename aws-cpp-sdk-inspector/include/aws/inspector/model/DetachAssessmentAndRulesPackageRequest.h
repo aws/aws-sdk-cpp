@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The ARN specifying the assessment from which you want to detach a rules
      * package.</p>

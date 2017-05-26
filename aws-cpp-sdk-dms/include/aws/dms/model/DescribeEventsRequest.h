@@ -43,7 +43,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p> The identifier of the event source. An identifier must begin with a letter
      * and must contain only ASCII letters, digits, and hyphens. It cannot end with a

@@ -38,7 +38,6 @@ namespace Model
     GetBasePathMappingRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The domain name of the <a>BasePathMapping</a> resource to be described.</p>
      */

@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
      */

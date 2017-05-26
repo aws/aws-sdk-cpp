@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The unique identifier (ID) for the <a>Protection</a> object that is
      * described.</p>

@@ -37,7 +37,6 @@ namespace Model
     UpdateEventSourceMappingRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The event source mapping identifier.</p>
      */

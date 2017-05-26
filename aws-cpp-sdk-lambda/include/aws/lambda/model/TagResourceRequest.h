@@ -35,7 +35,6 @@ namespace Model
     TagResourceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ARN (Amazon Resource Name) of the Lambda function.</p>
      */

@@ -41,7 +41,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Unique identifier for a fleet to update port settings for.</p>
      */

@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The policy content to add to the new policy. For example, if you create a <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service

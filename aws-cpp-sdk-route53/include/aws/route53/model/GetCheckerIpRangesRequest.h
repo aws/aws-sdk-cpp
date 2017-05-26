@@ -32,7 +32,6 @@ namespace Model
     GetCheckerIpRangesRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

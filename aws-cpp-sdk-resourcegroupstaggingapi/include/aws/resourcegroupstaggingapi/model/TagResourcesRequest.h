@@ -38,7 +38,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
      * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to tag. An

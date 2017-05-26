@@ -39,7 +39,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The access token from a request to delete a user.</p>
      */

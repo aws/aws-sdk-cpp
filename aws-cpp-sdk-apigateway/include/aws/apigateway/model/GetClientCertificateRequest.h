@@ -38,7 +38,6 @@ namespace Model
     GetClientCertificateRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of the <a>ClientCertificate</a> resource to be described.</p>
      */

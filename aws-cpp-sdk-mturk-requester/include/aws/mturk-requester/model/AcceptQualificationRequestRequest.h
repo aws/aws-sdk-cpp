@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The ID of the Qualification request, as returned by the
      * <code>GetQualificationRequests</code> operation.</p>

@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The unique identifier (ID) of the OU or account whose parent containers you
      * want to list. Do not specify a root.</p> <p>The <a

@@ -40,7 +40,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The ARN of the directory that the index exists in.</p>
      */

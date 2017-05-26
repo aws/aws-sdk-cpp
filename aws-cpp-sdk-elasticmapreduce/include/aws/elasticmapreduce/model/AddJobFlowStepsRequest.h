@@ -42,7 +42,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>A string that uniquely identifies the job flow. This identifier is returned
      * by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>. </p>

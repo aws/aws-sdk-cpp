@@ -41,7 +41,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The name of the table to be configured.</p>
      */

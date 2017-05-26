@@ -41,7 +41,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>An array of strings that contains the identifiers of the bundles to retrieve.
      * This parameter cannot be combined with any other filter parameter.</p>

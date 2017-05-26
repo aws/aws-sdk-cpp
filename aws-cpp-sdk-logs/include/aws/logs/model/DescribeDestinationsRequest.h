@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The prefix to match. If you don't specify a value, no prefix filter is
      * applied.</p>

@@ -38,7 +38,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The name of the patch group for which the patch state information should be
      * retrieved.</p>

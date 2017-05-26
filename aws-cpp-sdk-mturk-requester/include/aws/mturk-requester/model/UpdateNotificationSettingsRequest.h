@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p> The ID of the HIT type whose notification specification is being updated.
      * </p>

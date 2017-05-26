@@ -38,7 +38,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Filters applied to the certificate described in the form of key-value
      * pairs.</p>

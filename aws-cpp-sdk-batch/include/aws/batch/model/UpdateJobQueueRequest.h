@@ -37,7 +37,6 @@ namespace Model
     UpdateJobQueueRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
      */

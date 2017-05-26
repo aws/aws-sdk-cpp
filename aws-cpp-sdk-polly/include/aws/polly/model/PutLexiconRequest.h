@@ -34,7 +34,6 @@ namespace Model
     PutLexiconRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>Name of the lexicon. The name must follow the regular express format
      * [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up

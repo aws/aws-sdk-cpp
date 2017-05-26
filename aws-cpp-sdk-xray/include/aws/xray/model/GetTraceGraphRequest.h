@@ -35,7 +35,6 @@ namespace Model
     GetTraceGraphRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>Trace IDs of requests for which to generate a service graph.</p>
      */

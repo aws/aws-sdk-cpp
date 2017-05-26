@@ -38,7 +38,6 @@ namespace Model
     DeleteUsagePlanRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The Id of the to-be-deleted usage plan.</p>
      */

@@ -40,7 +40,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Build status to filter results by. To retrieve all builds, leave this
      * parameter empty.</p> <p>Possible build statuses include the following:</p> <ul>

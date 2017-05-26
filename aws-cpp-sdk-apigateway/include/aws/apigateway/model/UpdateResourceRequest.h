@@ -40,7 +40,6 @@ namespace Model
     UpdateResourceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Resource</a> resource.</p>
      */

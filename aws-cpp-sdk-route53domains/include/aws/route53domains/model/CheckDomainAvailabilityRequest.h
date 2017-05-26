@@ -40,7 +40,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The name of the domain that you want to get availability for.</p>
      * <p>Constraints: The domain name can contain only the letters a through z, the

@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The unique identifier (ID) of the parent root or OU in which you want to
      * create the new OU.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex

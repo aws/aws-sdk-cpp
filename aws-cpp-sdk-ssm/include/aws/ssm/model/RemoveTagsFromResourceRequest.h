@@ -38,7 +38,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The type of resource of which you want to remove a tag.</p>
      */

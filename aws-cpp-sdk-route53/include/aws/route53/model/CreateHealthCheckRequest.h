@@ -39,7 +39,6 @@ namespace Model
     CreateHealthCheckRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A unique string that identifies the request and that allows you to retry a
      * failed <code>CreateHealthCheck</code> request without the risk of creating two

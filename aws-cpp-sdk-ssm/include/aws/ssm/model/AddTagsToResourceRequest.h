@@ -39,7 +39,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Specifies the type of resource you are tagging.</p>
      */

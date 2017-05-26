@@ -38,7 +38,6 @@ namespace Model
     GetHealthCheckLastFailureReasonRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID for the health check for which you want the last failure reason. When
      * you created the health check, <code>CreateHealthCheck</code> returned the ID in

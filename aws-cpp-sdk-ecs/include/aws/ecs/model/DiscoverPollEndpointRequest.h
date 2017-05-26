@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The container instance ID or full Amazon Resource Name (ARN) of the container
      * instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by

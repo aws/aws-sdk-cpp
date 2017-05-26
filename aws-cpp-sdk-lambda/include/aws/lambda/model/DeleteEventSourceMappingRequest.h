@@ -37,7 +37,6 @@ namespace Model
     DeleteEventSourceMappingRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The event source mapping ID.</p>
      */

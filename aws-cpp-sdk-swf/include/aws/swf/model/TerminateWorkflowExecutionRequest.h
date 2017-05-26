@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The domain of the workflow execution to terminate.</p>
      */

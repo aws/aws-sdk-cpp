@@ -43,7 +43,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>A map of one or more table names and, for each table, a map that describes
      * one or more items to retrieve from that table. Each table name can be used only

@@ -40,7 +40,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>Lambda function name for which the alias is created. Note that the length
      * constraint applies only to the ARN. If you specify only the function name, it is

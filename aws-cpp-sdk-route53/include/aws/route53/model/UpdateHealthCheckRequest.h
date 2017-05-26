@@ -42,7 +42,6 @@ namespace Model
     UpdateHealthCheckRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID for the health check for which you want detailed information. When you
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the

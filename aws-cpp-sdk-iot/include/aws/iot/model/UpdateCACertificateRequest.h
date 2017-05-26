@@ -45,7 +45,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>The CA certificate identifier.</p>
      */

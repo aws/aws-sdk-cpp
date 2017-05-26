@@ -41,7 +41,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The connection ID on which the private virtual interface is provisioned.</p>
      * <p>Default: None</p>

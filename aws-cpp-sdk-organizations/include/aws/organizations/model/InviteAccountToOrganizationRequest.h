@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The identifier (ID) of the AWS account that you want to invite to join your
      * organization. This is a JSON object that contains the following elements: </p>

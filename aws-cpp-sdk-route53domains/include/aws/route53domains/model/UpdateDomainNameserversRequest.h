@@ -47,7 +47,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The name of the domain that you want to change name servers for.</p>
      */

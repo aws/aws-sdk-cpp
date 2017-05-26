@@ -44,7 +44,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
      */

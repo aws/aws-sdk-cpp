@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions will be
      * listed.</p>

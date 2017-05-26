@@ -40,7 +40,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     
     inline const Aws::String& GetInterconnectId() const{ return m_interconnectId; }
 

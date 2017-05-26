@@ -34,7 +34,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
   };
 
 } // namespace Model

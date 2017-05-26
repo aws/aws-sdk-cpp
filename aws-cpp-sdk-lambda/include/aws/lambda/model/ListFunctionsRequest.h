@@ -43,7 +43,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>Optional string. An opaque pagination token returned from a previous
      * <code>ListFunctions</code> operation. If present, indicates where to continue

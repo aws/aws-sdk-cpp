@@ -39,7 +39,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Unique identifier for a fleet alias. Specify the alias you want to
      * retrieve.</p>

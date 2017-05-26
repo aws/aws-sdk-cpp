@@ -45,7 +45,6 @@ namespace Model
     PutRestApiRequest();
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>The identifier of the <a>RestApi</a> to be updated. </p>
      */

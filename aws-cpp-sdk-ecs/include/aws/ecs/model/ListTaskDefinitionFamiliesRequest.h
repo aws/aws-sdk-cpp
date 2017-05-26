@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The <code>familyPrefix</code> is a string that is used to filter the results
      * of <code>ListTaskDefinitionFamilies</code>. If you specify a

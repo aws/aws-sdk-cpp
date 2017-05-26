@@ -40,7 +40,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p> The number of times the HIT can be accepted and completed before the HIT
      * becomes unavailable. </p>

@@ -34,7 +34,6 @@ namespace Model
     GetLexiconRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>Name of the lexicon.</p>
      */

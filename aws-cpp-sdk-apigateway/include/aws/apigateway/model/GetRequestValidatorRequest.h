@@ -38,7 +38,6 @@ namespace Model
     GetRequestValidatorRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>[Required] The identifier of the <a>RestApi</a> to which the specified
      * <a>RequestValidator</a> belongs.</p>

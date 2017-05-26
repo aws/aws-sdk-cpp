@@ -39,7 +39,6 @@ namespace Model
     TestInvokeAuthorizerRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>Specifies a test invoke authorizer request's <a>RestApi</a> identifier.</p>
      */

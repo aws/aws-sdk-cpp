@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p> The ID of the HIT type of the HITs to consider for the query. If not
      * specified, all HITs for the Reviewer are considered </p>

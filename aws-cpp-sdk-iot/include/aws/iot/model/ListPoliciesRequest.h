@@ -43,7 +43,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>The marker for the next set of results.</p>
      */

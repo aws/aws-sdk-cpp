@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Published schema ARN that needs to be copied. For more information, see
      * <a>arns</a>.</p>

@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     
     inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
 

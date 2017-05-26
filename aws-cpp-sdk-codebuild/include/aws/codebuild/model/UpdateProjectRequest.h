@@ -41,7 +41,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The name of the build project.</p> <note> <p>You cannot change a build
      * project's name.</p> </note>

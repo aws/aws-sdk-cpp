@@ -41,7 +41,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not
      * specified, a new attachment set is created, and the ID of the set is returned in

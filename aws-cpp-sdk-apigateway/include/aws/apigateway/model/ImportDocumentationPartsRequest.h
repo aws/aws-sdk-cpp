@@ -44,7 +44,6 @@ namespace Model
     ImportDocumentationPartsRequest();
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>[Required] The identifier of an API of the to-be-imported documentation
      * parts.</p>

@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The Amazon DyanamoDB resource the tags will be removed from. This value is an
      * Amazon Resource Name (ARN).</p>

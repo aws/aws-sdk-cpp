@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The unique identifier (ID) for the parent root or organization unit (OU)
      * whose accounts you want to list.</p>

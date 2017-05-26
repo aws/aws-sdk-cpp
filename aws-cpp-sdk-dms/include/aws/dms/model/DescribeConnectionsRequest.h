@@ -41,7 +41,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The filters applied to the connection.</p> <p>Valid filter names:
      * endpoint-arn | replication-instance-arn</p>

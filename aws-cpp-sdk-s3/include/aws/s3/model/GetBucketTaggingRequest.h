@@ -34,7 +34,6 @@ namespace Model
     GetBucketTaggingRequest();
     Aws::String SerializePayload() const override;
 
-
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 

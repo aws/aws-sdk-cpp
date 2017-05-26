@@ -37,7 +37,6 @@ namespace Model
     GetDocumentationVersionRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>[Required] The identifier of the API of the to-be-retrieved documentation
      * snapshot.</p>

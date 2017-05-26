@@ -42,7 +42,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The name of the Amazon Kinesis stream for which to disable enhanced
      * monitoring.</p>

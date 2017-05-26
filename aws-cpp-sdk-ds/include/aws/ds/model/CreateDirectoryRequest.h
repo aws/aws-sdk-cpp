@@ -42,7 +42,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The fully qualified name for the directory, such as
      * <code>corp.example.com</code>.</p>

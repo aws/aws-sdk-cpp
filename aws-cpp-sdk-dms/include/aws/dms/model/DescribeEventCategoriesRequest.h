@@ -41,7 +41,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p> The type of AWS DMS resource that generates events. </p> <p>Valid values:
      * replication-instance | migration-task</p>

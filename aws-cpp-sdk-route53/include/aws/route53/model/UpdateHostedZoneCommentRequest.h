@@ -38,7 +38,6 @@ namespace Model
     UpdateHostedZoneCommentRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID for the hosted zone that you want to update the comment for.</p>
      */

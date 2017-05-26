@@ -38,7 +38,6 @@ namespace Model
     DeleteDocumentationVersionRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>[Required] The identifier of an API of a to-be-deleted documentation
      * snapshot.</p>

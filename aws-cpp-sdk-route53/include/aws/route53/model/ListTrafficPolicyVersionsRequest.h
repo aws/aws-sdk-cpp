@@ -44,7 +44,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>Specify the value of <code>Id</code> of the traffic policy for which you want
      * to list all versions.</p>

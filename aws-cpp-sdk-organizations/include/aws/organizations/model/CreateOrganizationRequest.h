@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Specifies the feature set supported by the new organization. Each feature set
      * supports different levels of functionality.</p> <ul> <li> <p>

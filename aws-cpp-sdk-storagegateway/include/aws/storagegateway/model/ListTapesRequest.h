@@ -43,7 +43,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     
     inline const Aws::Vector<Aws::String>& GetTapeARNs() const{ return m_tapeARNs; }
 

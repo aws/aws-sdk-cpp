@@ -39,7 +39,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     
     inline const ReportDefinition& GetReportDefinition() const{ return m_reportDefinition; }
 

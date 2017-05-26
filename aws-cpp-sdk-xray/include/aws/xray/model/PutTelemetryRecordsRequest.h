@@ -36,7 +36,6 @@ namespace Model
     PutTelemetryRecordsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p></p>
      */

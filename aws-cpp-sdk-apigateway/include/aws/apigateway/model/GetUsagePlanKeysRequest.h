@@ -44,7 +44,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>The Id of the <a>UsagePlan</a> resource representing the usage plan
      * containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan

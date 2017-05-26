@@ -39,7 +39,6 @@ namespace Model
     SubmitJobRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the job. A name must be 1 to 128 characters in length.</p>
      * <p>Pattern: ^[a-zA-Z0-9_]+$</p>

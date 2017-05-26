@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The unique identifier for the customer master key (CMK) for which to cancel
      * deletion.</p> <p>To specify this value, use the unique key ID or the Amazon

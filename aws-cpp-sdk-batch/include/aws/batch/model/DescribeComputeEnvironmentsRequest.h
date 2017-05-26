@@ -35,7 +35,6 @@ namespace Model
     DescribeComputeEnvironmentsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A list of up to 100 compute environment names or full Amazon Resource Name
      * (ARN) entries. </p>

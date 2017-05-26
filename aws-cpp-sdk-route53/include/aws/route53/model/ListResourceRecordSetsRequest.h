@@ -45,7 +45,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>The ID of the hosted zone that contains the resource record sets that you
      * want to list.</p>

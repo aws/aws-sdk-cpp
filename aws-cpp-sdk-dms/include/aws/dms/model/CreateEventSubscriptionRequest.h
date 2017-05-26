@@ -41,7 +41,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The name of the DMS event notification subscription. </p> <p>Constraints: The
      * name must be less than 255 characters. </p>

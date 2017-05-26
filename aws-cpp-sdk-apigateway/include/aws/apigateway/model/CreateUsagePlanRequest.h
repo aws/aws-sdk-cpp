@@ -43,7 +43,6 @@ namespace Model
     CreateUsagePlanRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the usage plan.</p>
      */

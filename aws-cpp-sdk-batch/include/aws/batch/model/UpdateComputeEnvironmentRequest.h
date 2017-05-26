@@ -36,7 +36,6 @@ namespace Model
     UpdateComputeEnvironmentRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the compute environment to
      * update.</p>

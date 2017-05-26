@@ -37,7 +37,6 @@ namespace Model
     GetIntegrationRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>Specifies a get integration request's API identifier.</p>
      */

@@ -38,7 +38,6 @@ namespace Model
     ListEndpointsByPlatformApplicationRequest();
     Aws::String SerializePayload() const override;
 
-
   protected:
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 

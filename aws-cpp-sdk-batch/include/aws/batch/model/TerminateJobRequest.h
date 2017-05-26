@@ -34,7 +34,6 @@ namespace Model
     TerminateJobRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>Job IDs to be terminated. Up to 100 jobs can be specified.</p>
      */

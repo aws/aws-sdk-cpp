@@ -43,7 +43,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p> Specifies the data set type to be written to the output csv file. The data
      * set types customer_support_contacts_data and test_customer_support_contacts_data

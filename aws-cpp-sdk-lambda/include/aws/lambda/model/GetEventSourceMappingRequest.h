@@ -37,7 +37,6 @@ namespace Model
     GetEventSourceMappingRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The AWS Lambda assigned ID of the event source mapping.</p>
      */

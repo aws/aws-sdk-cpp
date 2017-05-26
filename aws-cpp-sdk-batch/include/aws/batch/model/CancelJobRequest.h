@@ -34,7 +34,6 @@ namespace Model
     CancelJobRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A list of up to 100 job IDs to cancel.</p>
      */

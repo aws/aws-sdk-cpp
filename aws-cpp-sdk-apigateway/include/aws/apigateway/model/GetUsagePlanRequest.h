@@ -38,7 +38,6 @@ namespace Model
     GetUsagePlanRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of the <a>UsagePlan</a> resource to be retrieved.</p>
      */

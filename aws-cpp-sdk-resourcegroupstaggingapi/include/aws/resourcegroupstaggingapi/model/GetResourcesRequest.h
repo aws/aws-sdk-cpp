@@ -38,7 +38,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>A string that indicates that additional data is available. Leave this value
      * empty for your initial request. If the response includes a

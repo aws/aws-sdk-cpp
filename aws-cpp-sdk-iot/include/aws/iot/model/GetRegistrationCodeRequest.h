@@ -35,7 +35,6 @@ namespace Model
     GetRegistrationCodeRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

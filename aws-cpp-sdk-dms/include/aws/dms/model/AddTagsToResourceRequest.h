@@ -41,7 +41,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be added
      * to. AWS DMS resources include a replication instance, endpoint, and a

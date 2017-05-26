@@ -35,7 +35,6 @@ namespace Model
     DescribeJobQueuesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A list of up to 100 queue names or full queue Amazon Resource Name (ARN)
      * entries.</p>

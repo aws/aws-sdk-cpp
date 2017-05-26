@@ -38,7 +38,6 @@ namespace Model
     GetCognitoEventsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The Cognito Identity Pool ID for the request</p>
      */

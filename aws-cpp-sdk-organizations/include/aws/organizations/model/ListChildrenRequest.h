@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The unique identifier (ID) for the parent root or OU whose children you want
      * to list.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>

@@ -34,7 +34,6 @@ namespace Model
     DeregisterJobDefinitionRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name and revision (<code>name:revision</code>) or full Amazon Resource
      * Name (ARN) of the job definition to deregister. </p>

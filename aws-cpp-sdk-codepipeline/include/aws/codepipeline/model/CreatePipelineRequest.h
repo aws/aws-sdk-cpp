@@ -40,7 +40,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     
     inline const PipelineDeclaration& GetPipeline() const{ return m_pipeline; }
 

@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
      * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:

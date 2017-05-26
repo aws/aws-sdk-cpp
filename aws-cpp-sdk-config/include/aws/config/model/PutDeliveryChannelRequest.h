@@ -40,7 +40,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The configuration delivery channel object that delivers the configuration
      * information to an Amazon S3 bucket, and to an Amazon SNS topic.</p>

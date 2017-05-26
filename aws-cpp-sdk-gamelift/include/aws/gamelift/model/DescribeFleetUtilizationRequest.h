@@ -40,7 +40,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Unique identifier for a fleet(s) to retrieve utilization data for. To request
      * utilization data for all fleets, leave this parameter empty.</p>

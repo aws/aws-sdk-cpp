@@ -45,7 +45,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>(Optional) For your first request to <code>ListHostedZonesByName</code>,
      * include the <code>dnsname</code> parameter only if you want to specify the name

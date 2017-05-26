@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>A domain name that you want to use as the basis for a list of possible domain
      * names. The domain name must contain a top-level domain (TLD), such as .com, that

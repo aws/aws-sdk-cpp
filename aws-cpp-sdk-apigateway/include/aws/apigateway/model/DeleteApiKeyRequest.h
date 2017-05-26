@@ -37,7 +37,6 @@ namespace Model
     DeleteApiKeyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of the <a>ApiKey</a> resource to be deleted.</p>
      */

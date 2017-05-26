@@ -38,7 +38,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>A list of one or more states that you want included in the response. If this
      * parameter is not present, then all requests are included in the response.</p>

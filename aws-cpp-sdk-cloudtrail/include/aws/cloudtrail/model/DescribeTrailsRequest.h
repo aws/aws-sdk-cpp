@@ -40,7 +40,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
      * describe. The format of a trail ARN is:</p> <p>

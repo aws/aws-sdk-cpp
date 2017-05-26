@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The unique identifier for an existing automation execution to examine. The
      * execution ID is returned by StartAutomationExecution when the execution of an

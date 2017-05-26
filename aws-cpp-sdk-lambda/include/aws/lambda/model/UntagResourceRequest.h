@@ -41,7 +41,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>The ARN (Amazon Resource Name) of the function.</p>
      */

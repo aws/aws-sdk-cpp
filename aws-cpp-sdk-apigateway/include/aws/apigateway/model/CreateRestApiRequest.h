@@ -39,7 +39,6 @@ namespace Model
     CreateRestApiRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the <a>RestApi</a>.</p>
      */

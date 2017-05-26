@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The order to list build IDs. Valid values include:</p> <ul> <li> <p>
      * <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p>

@@ -38,7 +38,6 @@ namespace Model
     DeletePipelineRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of the pipeline that you want to delete.</p>
      */

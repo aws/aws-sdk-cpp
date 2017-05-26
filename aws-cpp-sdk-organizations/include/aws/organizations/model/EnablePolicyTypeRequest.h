@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The unique identifier (ID) of the root in which you want to enable a policy
      * type. You can get the ID from the <a>ListRoots</a> operation.</p> <p>The <a

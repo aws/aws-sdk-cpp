@@ -37,7 +37,6 @@ namespace Model
     DeprecateThingTypeRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the thing type to deprecate.</p>
      */

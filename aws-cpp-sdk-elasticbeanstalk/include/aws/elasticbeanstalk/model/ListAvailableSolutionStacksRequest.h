@@ -32,6 +32,7 @@ namespace Model
     ListAvailableSolutionStacksRequest();
     Aws::String SerializePayload() const override;
 
+    bool SignBody() const override { return false; }
 
   protected:
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;

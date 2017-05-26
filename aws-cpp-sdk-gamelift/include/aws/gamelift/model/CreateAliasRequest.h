@@ -40,7 +40,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>

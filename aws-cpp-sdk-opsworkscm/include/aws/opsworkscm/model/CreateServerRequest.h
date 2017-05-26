@@ -38,7 +38,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p> Associate a public IP address with a server that you are launching. Valid
      * values are <code>true</code> or <code>false</code>. The default value is

@@ -41,7 +41,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The domain name that you want to register.</p> <p>Constraints: The domain
      * name can contain only the letters a through z, the numbers 0 through 9, and

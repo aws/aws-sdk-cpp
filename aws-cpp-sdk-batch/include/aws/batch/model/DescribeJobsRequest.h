@@ -35,7 +35,6 @@ namespace Model
     DescribeJobsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A space-separated list of up to 100 job IDs.</p>
      */

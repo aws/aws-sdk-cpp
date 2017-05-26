@@ -51,7 +51,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>A string used to name the user pool.</p>
      */

@@ -39,7 +39,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Specifies the name of the trail. The name must meet the following
      * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers

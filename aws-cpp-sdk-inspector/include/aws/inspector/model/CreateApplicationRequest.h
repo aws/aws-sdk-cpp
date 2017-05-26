@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The user-defined name identifying the application that you want to create.
      * The name must be unique within the AWS account.</p>

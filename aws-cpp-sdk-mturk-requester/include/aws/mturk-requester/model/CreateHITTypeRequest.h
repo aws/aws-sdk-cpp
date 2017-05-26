@@ -38,7 +38,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p> The number of seconds after an assignment for the HIT has been submitted,
      * after which the assignment is considered Approved automatically unless the

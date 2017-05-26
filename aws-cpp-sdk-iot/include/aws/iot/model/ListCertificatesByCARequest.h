@@ -44,7 +44,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>The ID of the CA certificate. This operation will list all registered device
      * certificate that were signed by this CA certificate. </p>

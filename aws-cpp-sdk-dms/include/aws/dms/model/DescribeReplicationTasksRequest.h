@@ -41,7 +41,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-task-arn | replication-task-id | migration-type | endpoint-arn |

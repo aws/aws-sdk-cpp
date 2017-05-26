@@ -45,7 +45,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>Amazon Route 53 supports the following continent codes:</p> <ul> <li> <p>
      * <b>AF</b>: Africa</p> </li> <li> <p> <b>AN</b>: Antarctica</p> </li> <li> <p>

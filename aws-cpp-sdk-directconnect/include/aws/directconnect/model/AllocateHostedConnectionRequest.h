@@ -40,7 +40,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The ID of the interconnect or LAG on which the connection will be
      * provisioned.</p> <p>Example: dxcon-456abc78 or dxlag-abc123</p> <p>Default:

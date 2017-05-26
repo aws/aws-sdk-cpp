@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
      * product code should be the same as the one used during the publishing of a new

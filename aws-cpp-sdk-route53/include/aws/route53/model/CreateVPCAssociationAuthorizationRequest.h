@@ -41,7 +41,6 @@ namespace Model
     CreateVPCAssociationAuthorizationRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the private hosted zone that you want to authorize associating a
      * VPC with.</p>

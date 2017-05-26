@@ -38,7 +38,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>ARN associated with the <a>Directory</a>. For more information, see
      * <a>arns</a>.</p>

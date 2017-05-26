@@ -32,7 +32,6 @@ namespace Model
     GetAccountSettingsRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

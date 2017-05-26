@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>If you specify a value for <code>Limit</code> and you have more
      * <code>ByteMatchSets</code> than the value of <code>Limit</code>, AWS WAF returns

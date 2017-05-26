@@ -44,7 +44,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>[Required] The identifier of a <a>RestApi</a> to which the
      * <a>RequestValidators</a> collection belongs.</p>

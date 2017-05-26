@@ -40,7 +40,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * The name of the bucket containing the inventory configurations to retrieve.
      */

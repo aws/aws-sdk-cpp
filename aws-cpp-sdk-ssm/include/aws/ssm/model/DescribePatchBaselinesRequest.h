@@ -38,7 +38,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Each element in the array is a structure containing: </p> <p>Key: (string,
      * "NAME_PREFIX" or "OWNER")</p> <p>Value: (array of strings, exactly 1 entry,

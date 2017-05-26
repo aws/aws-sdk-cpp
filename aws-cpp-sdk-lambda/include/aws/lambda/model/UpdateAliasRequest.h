@@ -34,7 +34,6 @@ namespace Model
     UpdateAliasRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The function name for which the alias is created. Note that the length
      * constraint applies only to the ARN. If you specify only the function name, it is

@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>An array of stack IDs that specify the stacks to be described. If you omit
      * this parameter, <code>DescribeStacks</code> returns a description of every

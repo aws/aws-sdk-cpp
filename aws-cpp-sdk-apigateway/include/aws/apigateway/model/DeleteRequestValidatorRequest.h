@@ -38,7 +38,6 @@ namespace Model
     DeleteRequestValidatorRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>[Required] The identifier of the <a>RestApi</a> from which the given
      * <a>RequestValidator</a> is deleted.</p>

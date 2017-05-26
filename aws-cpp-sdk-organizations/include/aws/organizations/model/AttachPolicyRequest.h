@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The unique identifier (ID) of the policy that you want to attach to the
      * target. You can get the ID for the policy by calling the <a>ListPolicies</a>

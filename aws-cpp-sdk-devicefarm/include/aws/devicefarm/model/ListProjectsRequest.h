@@ -40,7 +40,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
      * returns a list of all projects for the AWS account. You can also specify a

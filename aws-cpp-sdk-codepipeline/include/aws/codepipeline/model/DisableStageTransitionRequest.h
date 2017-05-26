@@ -41,7 +41,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The name of the pipeline in which you want to disable the flow of artifacts
      * from one stage to another.</p>

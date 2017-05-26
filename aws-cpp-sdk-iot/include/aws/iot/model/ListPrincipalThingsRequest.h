@@ -46,7 +46,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The token for the next set of results, or <b>null</b> if there are no
      * additional results.</p>

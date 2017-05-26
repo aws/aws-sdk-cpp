@@ -37,7 +37,6 @@ namespace Model
     DeleteThingTypeRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the thing type.</p>
      */

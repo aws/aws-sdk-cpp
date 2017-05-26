@@ -34,7 +34,6 @@ namespace Model
     CreateSchemaRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>Name associated with the schema. This is unique to each account and in each
      * region.</p>

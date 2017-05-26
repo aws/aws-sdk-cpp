@@ -38,7 +38,6 @@ namespace Model
     FlushStageCacheRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The API identifier of the stage to flush its cache.</p>
      */

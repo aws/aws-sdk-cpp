@@ -42,7 +42,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25
      * UsageRecords at a time.</p>

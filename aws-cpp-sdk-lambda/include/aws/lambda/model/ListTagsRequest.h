@@ -34,7 +34,6 @@ namespace Model
     ListTagsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ARN (Amazon Resource Name) of the function.</p>
      */

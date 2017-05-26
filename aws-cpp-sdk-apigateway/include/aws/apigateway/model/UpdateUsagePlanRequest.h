@@ -40,7 +40,6 @@ namespace Model
     UpdateUsagePlanRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The Id of the to-be-updated usage plan.</p>
      */

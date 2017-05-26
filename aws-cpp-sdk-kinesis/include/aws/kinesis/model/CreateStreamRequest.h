@@ -40,7 +40,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>A name to identify the stream. The stream name is scoped to the AWS account
      * used by the application that creates the stream. It is also scoped by region.

@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The stack names to describe. Use null to describe all the stacks for the AWS
      * account.</p>

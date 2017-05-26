@@ -36,7 +36,6 @@ namespace Model
     GetHostedZoneCountRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

@@ -37,7 +37,6 @@ namespace Model
     GetSdkTypeRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of the queried <a>SdkType</a> instance.</p>
      */

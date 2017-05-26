@@ -40,7 +40,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The key policy to attach to the CMK.</p> <p>If you specify a policy and do
      * not set <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must

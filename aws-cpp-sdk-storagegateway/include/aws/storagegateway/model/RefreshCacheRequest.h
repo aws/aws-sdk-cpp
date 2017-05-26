@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     
     inline const Aws::String& GetFileShareARN() const{ return m_fileShareARN; }
 

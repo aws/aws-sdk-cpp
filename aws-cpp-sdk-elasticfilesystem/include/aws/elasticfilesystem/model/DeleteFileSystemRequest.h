@@ -37,7 +37,6 @@ namespace Model
     DeleteFileSystemRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>ID of the file system you want to delete.</p>
      */

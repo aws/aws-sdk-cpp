@@ -40,7 +40,6 @@ namespace Model
     UpdateRequestValidatorRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>[Required] The identifier of the <a>RestApi</a> for which the given
      * <a>RequestValidator</a> is updated.</p>

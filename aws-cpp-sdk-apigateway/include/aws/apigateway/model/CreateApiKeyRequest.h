@@ -39,7 +39,6 @@ namespace Model
     CreateApiKeyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the <a>ApiKey</a>.</p>
      */

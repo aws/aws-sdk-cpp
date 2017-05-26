@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>A user-supplied identifier that uniquely identifies the
      * <code>DataSource</code>. </p>

@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>A stack ID. The action describes the stack's Elastic Load Balancing
      * instances.</p>

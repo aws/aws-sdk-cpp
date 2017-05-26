@@ -46,7 +46,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p> DomainName represents the name of the Domain that we are trying to modify.
      * This should be present only if we are querying for Elasticsearch <code>

@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p> The ID of the assignment. The assignment must correspond to a HIT created by
      * the Requester. </p>

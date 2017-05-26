@@ -40,7 +40,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     
     inline const Aws::String& GetVirtualInterfaceId() const{ return m_virtualInterfaceId; }
 

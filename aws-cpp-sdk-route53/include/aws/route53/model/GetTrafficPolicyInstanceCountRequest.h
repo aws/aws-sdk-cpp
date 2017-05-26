@@ -36,7 +36,6 @@ namespace Model
     GetTrafficPolicyInstanceCountRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

@@ -34,7 +34,6 @@ namespace Model
     GetBucketRequestPaymentRequest();
     Aws::String SerializePayload() const override;
 
-
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 

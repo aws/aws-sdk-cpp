@@ -38,7 +38,6 @@ namespace Model
     GetReusableDelegationSetRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the reusable delegation set that you want to get a list of name
      * servers for.</p>

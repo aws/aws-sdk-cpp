@@ -37,7 +37,6 @@ namespace Model
     DeletePresetRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of the preset for which you want to get detailed
      * information.</p>
