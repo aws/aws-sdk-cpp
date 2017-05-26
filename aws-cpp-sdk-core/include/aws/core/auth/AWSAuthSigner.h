@@ -160,6 +160,7 @@ namespace Aws
 
         private:
             Aws::String GenerateSignature(const Aws::Auth::AWSCredentials& credentials, const Aws::String& stringToSign, const Aws::String& simpleDate) const;
+            Aws::String GetPayloadHash(Aws::Http::HttpRequest&) const;
             Aws::String ComputePayloadHash(Aws::Http::HttpRequest&) const;
             Aws::String GenerateStringToSign(const Aws::String& dateValue, const Aws::String& simpleDate, const Aws::String& canonicalRequestHash) const;
             const Aws::Utils::ByteBuffer& ComputeLongLivedHash(const Aws::String& secretKey, const Aws::String& simpleDate) const;

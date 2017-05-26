@@ -163,19 +163,10 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
         request.SetAwsSessionToken(credentials.GetSessionToken());
     }
 
-    Aws::String payloadHash(UNSIGNED_PAYLOAD);
-    if(m_signPayloads || request.GetUri().GetScheme() != Http::Scheme::HTTPS)
+    auto payloadHash = GetPayloadHash(request);
+    if (payloadHash.empty())
     {
-        payloadHash.assign(ComputePayloadHash(request));
-        if (payloadHash.empty())
-        {
-            return false;
-        }
-    }
-    else
-    {
-        AWS_LOGSTREAM_DEBUG(v4LogTag, "Note: Http payloads are not being signed. signPayloads=" << m_signPayloads
-                << " http scheme=" << Http::SchemeMapper::ToString(request.GetUri().GetScheme()));
+        return false;
     }
 
     if(m_includeSha256HashHeader)
@@ -268,6 +259,12 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
         return true;
     }
 
+    auto payloadHash = GetPayloadHash(request);
+    if (payloadHash.empty())
+    {
+        return false;
+    }
+
     Aws::StringStream intConversionStream;
     intConversionStream << expirationTimeInSeconds;
     request.AddQueryStringParameter(Http::X_AMZ_EXPIRES_HEADER, intConversionStream.str());
@@ -311,7 +308,7 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
     canonicalRequestString.append(NEWLINE);
     canonicalRequestString.append(signedHeadersValue);
     canonicalRequestString.append(NEWLINE);
-    canonicalRequestString.append(UNSIGNED_PAYLOAD);
+    canonicalRequestString.append(payloadHash);
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Canonical Request String: " << canonicalRequestString);
 
     //now compute sha256 on that request string
@@ -361,6 +358,18 @@ Aws::String AWSAuthV4Signer::GenerateSignature(const AWSCredentials& credentials
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Final computed signing hash: " << finalSigningHash);
 
     return finalSigningHash;
+}
+
+Aws::String AWSAuthV4Signer::GetPayloadHash(Aws::Http::HttpRequest& request) const
+{
+    if (m_signPayloads || request.GetUri().GetScheme() != Http::Scheme::HTTPS)
+    {
+        return ComputePayloadHash(request);
+    }
+
+    AWS_LOGSTREAM_DEBUG(v4LogTag, "Note: Http payloads are not being signed. signPayloads=" << m_signPayloads
+        << " http scheme=" << Http::SchemeMapper::ToString(request.GetUri().GetScheme()));
+    return Aws::String(UNSIGNED_PAYLOAD);;
 }
 
 Aws::String AWSAuthV4Signer::ComputePayloadHash(Aws::Http::HttpRequest& request) const
