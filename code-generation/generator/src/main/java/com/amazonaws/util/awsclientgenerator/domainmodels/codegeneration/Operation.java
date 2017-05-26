@@ -30,4 +30,5 @@ public class Operation {
     private boolean supportsPresigning;
     private boolean virtualAddressAllowed;
     private String virtualAddressMemberName;
+    private String authtype;
 }

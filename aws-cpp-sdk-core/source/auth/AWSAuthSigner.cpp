@@ -150,6 +150,11 @@ bool AWSAuthV4Signer::ShouldSignHeader(const Aws::String& header) const
 
 bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
 {
+    return SignRequest(request, m_signPayloads);
+}
+
+bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, bool signBody) const
+{
     AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
 
     //don't sign anonymous requests
@@ -164,7 +169,7 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
     }
 
     Aws::String payloadHash(UNSIGNED_PAYLOAD);
-    if(m_signPayloads || request.GetUri().GetScheme() != Http::Scheme::HTTPS)
+    if(signBody || request.GetUri().GetScheme() != Http::Scheme::HTTPS)
     {
         payloadHash.assign(ComputePayloadHash(request));
         if (payloadHash.empty())

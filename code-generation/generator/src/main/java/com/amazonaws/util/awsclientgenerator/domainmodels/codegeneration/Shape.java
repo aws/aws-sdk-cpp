@@ -43,6 +43,7 @@ public class Shape {
     private boolean flattened;
     private boolean computeContentMd5;
     private boolean supportsPresigning;
+    private boolean signBody;
 
     public boolean isMap() {
         return "map".equals(type.toLowerCase());

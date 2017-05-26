@@ -261,6 +261,7 @@ public class C2jModelToGeneratorModelTransformer {
                 addDocCrossLinks(c2jOperation.getDocumentation(), c2jServiceModel.getMetadata().getUid(), c2jOperation.getName());
 
         operation.setDocumentation(formatDocumentation(crossLinkedShapeDocs, 9));
+        operation.setAuthtype(c2jOperation.getAuthtype());
 
         // input
         if (c2jOperation.getInput() != null) {
@@ -274,6 +275,11 @@ public class C2jModelToGeneratorModelTransformer {
             if(requestShape.getLocationName() != null && requestShape.getLocationName().length() > 0 &&
                     (requestShape.getPayload() == null || requestShape.getPayload().length() == 0) ) {
                 requestShape.setPayload(requestName);
+            }
+
+            requestShape.setSignBody(true);
+            if(operation.getAuthtype() != null && operation.getAuthtype().equals("v4-unsigned-body")) {
+                requestShape.setSignBody(false);
             }
 
             ShapeMember requestMember = new ShapeMember();
