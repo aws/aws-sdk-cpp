@@ -48,7 +48,10 @@ namespace Model
     inline bool ShouldComputeContentMd5() const override { return true; }
 
 #end
+#if(!$shape.signBody)
+    bool SignBody() const override { return false; }
 
+#end
 #if($shape.supportsPresigning)
   protected:
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;

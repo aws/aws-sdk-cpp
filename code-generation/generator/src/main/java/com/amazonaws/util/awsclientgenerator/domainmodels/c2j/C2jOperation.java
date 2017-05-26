@@ -23,6 +23,7 @@ import java.util.List;
 @Data
 public class C2jOperation {
     private String name;
+    private String authtype;
     private C2jHttp http;
     private C2jShapeMember input;
     private C2jShapeMember output;

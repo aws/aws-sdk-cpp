@@ -69,6 +69,13 @@ namespace Aws
             virtual bool SignRequest(Aws::Http::HttpRequest& request) const = 0;
 
             /**
+             * Signs the request itself (usually by adding a signature header) based on info in the request and uri.
+             *  If signBody is false and https is being used then the body of the payload will not be signed. 
+             * The default virtual function, just calls SignRequest.
+             */
+            virtual bool SignRequest(Aws::Http::HttpRequest& request, bool signBody) const { AWS_UNREFERENCED_PARAM(signBody); return SignRequest(request); }
+
+            /**
              * Takes a request and signs the URI based on the HttpMethod, URI and other info from the request.
              * The URI can then be used in a normal HTTP call until expiration.
              */
@@ -124,11 +131,18 @@ namespace Aws
 
             virtual ~AWSAuthV4Signer();
 
-            /**
+           /**
             * Signs the request itself based on info in the request and uri.
             * Uses AWS Auth V4 signing method with SHA256 HMAC algorithm.
             */
             bool SignRequest(Aws::Http::HttpRequest& request) const override;
+
+            /**
+            * Signs the request itself based on info in the request and uri.
+            * Uses AWS Auth V4 signing method with SHA256 HMAC algorithm. If signBody is false
+            * and https is being used then the body of the payload will not be signed.
+            */
+            bool SignRequest(Aws::Http::HttpRequest& request, bool signBody) const override;
 
             /**
             * Takes a request and signs the URI based on the HttpMethod, URI and other info from the request.

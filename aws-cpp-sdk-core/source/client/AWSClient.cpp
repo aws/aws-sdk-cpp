@@ -250,7 +250,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::String& uri,
     std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, request.GetResponseStreamFactory()));
     BuildHttpRequest(request, httpRequest);
 
-    if (!m_signer->SignRequest(*httpRequest))
+    if (!m_signer->SignRequest(*httpRequest, request.SignBody()))
     {
         AWS_LOG_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
         return HttpResponseOutcome(); // TODO: make a real error when error revamp reaches branch (SIGNING_ERROR)
