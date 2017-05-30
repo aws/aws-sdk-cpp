@@ -46,6 +46,7 @@ namespace Aws
 
         static const char* HTTP_CLIENT_FACTORY_ALLOCATION_TAG = "HttpClientFactory";
 
+#if ENABLE_CURL_CLIENT
         static void LogAndSwallowHandler(int signal)
         {
             switch(signal)
@@ -56,6 +57,7 @@ namespace Aws
                     AWS_LOGSTREAM_ERROR(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, "Unhandled system SIGNAL error"  << signal);
             }
         }
+#endif
 
         class DefaultHttpClientFactory : public HttpClientFactory
         {
