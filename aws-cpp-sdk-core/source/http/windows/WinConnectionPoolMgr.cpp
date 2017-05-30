@@ -128,7 +128,7 @@ bool WinConnectionPoolMgr::CheckAndGrowPool(const Aws::String& host, HostConnect
     if (connectionContainer.currentPoolSize < m_maxConnectionsPerHost)
     {
         unsigned multiplier = connectionContainer.currentPoolSize > 0 ? connectionContainer.currentPoolSize : 1;
-        unsigned amountToAdd = min(multiplier * 2, m_maxConnectionsPerHost - connectionContainer.currentPoolSize);
+        unsigned amountToAdd = std::min(multiplier * 2, m_maxConnectionsPerHost - connectionContainer.currentPoolSize);
         connectionContainer.currentPoolSize += amountToAdd;
 
         for (unsigned i = 0; i < amountToAdd; ++i)
