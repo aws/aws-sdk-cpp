@@ -73,62 +73,13 @@ namespace Aws
             const Aws::Map<Aws::String, Aws::String>& metadata)
         {
             auto fileStream = Aws::MakeShared<Aws::FStream>(CLASS_TAG, fileName.c_str(), std::ios_base::in | std::ios_base::binary);
-
-            fileStream->seekg(0, std::ios_base::end);
-            size_t length = static_cast<size_t>(fileStream->tellg());
-            fileStream->seekg(0, std::ios_base::beg);
-            auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, length, fileName);
-            handle->SetContentType(contentType);
-            handle->SetMetadata(metadata);
-
-            if(fileStream->good())
-            {
-                if (MultipartUploadSupported(length))
-                {
-                    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
-                }
-                else
-                {
-                    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoSinglePartUpload(fileStream, handle); });
-                }
-            }
-            else
-            {
-                handle->SetError(Aws::Client::AWSError<Aws::Client::CoreErrors>(static_cast<Aws::Client::CoreErrors>(Aws::S3::S3Errors::NO_SUCH_UPLOAD), "NoSuchUpload", "The requested file could not be opened.", false));
-                handle->UpdateStatus(Aws::Transfer::TransferStatus::FAILED);
-            }
-
-            return handle;
+            return this->DoUploadFile(fileStream, bucketName, keyName, contentType, metadata, fileName);
         }
 
         std::shared_ptr<TransferHandle> TransferManager::UploadFile(const std::shared_ptr<Aws::IOStream>& fileStream, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType,
             const Aws::Map<Aws::String, Aws::String>& metadata)
         {
-            fileStream->seekg(0, std::ios_base::end);
-            size_t length = static_cast<size_t>(fileStream->tellg());
-            fileStream->seekg(0, std::ios_base::beg);
-            auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, length);
-            handle->SetContentType(contentType);
-            handle->SetMetadata(metadata);
-
-            if(fileStream->good())
-            {
-                if (MultipartUploadSupported(length))
-                {
-                    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
-                }
-                else
-                {
-                    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoSinglePartUpload(fileStream, handle); });
-                }
-            }
-            else
-            {
-                handle->SetError(Aws::Client::AWSError<Aws::Client::CoreErrors>(static_cast<Aws::Client::CoreErrors>(Aws::S3::S3Errors::NO_SUCH_UPLOAD), "NoSuchUpload", "The requested file could not be opened.", false));
-                handle->UpdateStatus(Aws::Transfer::TransferStatus::FAILED);
-            }
-
-            return handle;
+            return this->DoUploadFile(fileStream, bucketName, keyName, contentType, metadata);
         }
 
         std::shared_ptr<TransferHandle> TransferManager::DownloadFile(const Aws::String& bucketName, 
@@ -940,6 +891,36 @@ namespace Aws
             return length > m_transferConfig.bufferSize && 
                    m_transferConfig.s3Client            && 
                    m_transferConfig.s3Client->MultipartUploadSupported();
+        }
+
+        std::shared_ptr<TransferHandle> TransferManager::DoUploadFile(const std::shared_ptr<Aws::IOStream>& fileStream, const Aws::String& bucketName, const Aws::String& keyName, 
+                const Aws::String& contentType, const Aws::Map<Aws::String, Aws::String>& metadata, const Aws::String& fileName)
+        {
+            fileStream->seekg(0, std::ios_base::end);
+            size_t length = static_cast<size_t>(fileStream->tellg());
+            fileStream->seekg(0, std::ios_base::beg);
+            auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, length, fileName);
+            handle->SetContentType(contentType);
+            handle->SetMetadata(metadata);
+
+            if(fileStream->good())
+            {
+                if (MultipartUploadSupported(length))
+                {
+                    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
+                }
+                else
+                {
+                    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoSinglePartUpload(fileStream, handle); });
+                }
+            }
+            else
+            {
+                handle->SetError(Aws::Client::AWSError<Aws::Client::CoreErrors>(static_cast<Aws::Client::CoreErrors>(Aws::S3::S3Errors::NO_SUCH_UPLOAD), "NoSuchUpload", "The requested file could not be opened.", false));
+                handle->UpdateStatus(Aws::Transfer::TransferStatus::FAILED);
+            }
+
+            return handle;
         }
     }
 }

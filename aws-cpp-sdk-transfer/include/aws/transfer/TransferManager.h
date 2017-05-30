@@ -138,14 +138,14 @@ namespace Aws
              * then a multi-part upload will be performed.
              */
             std::shared_ptr<TransferHandle> UploadFile(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, 
-                                                            const Aws::Map<Aws::String, Aws::String>& metadata);
+                    const Aws::Map<Aws::String, Aws::String>& metadata);
 
             /**
              * Uploads the contents of stream, to bucketName/keyName in S3. contentType and metadata will be added to the object. If the object is larger than the configured bufferSize,
              * then a multi-part upload will be performed.
              */
-            std::shared_ptr<TransferHandle> UploadFile(const std::shared_ptr<Aws::IOStream>& stream, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType,
-                                                            const Aws::Map<Aws::String, Aws::String>& metadata);
+            std::shared_ptr<TransferHandle> UploadFile(const std::shared_ptr<Aws::IOStream>& stream, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, 
+                    const Aws::Map<Aws::String, Aws::String>& metadata);
 
             /**
              * Downloads the contents of bucketName/keyName in S3 to the file specified by writeToFile. This will perform a GetObject operation.
@@ -206,6 +206,13 @@ namespace Aws
             void DownloadToDirectory(const Aws::String& directory, const Aws::String& bucketName, const Aws::String& prefix = Aws::String());
 
         private:
+            /**
+             * Uploads the contents of stream, to bucketName/keyName in S3. contentType and metadata will be added to the object. If the object is larger than the configured bufferSize,
+             * then a multi-part upload will be performed. If fileName is not empty, it will be set to the TransferHandle.
+             */
+            std::shared_ptr<TransferHandle> DoUploadFile(const std::shared_ptr<Aws::IOStream>& stream, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, 
+                    const Aws::Map<Aws::String, Aws::String>& metadata, const Aws::String& fileName = "");
+
             bool MultipartUploadSupported(size_t length) const;
             bool InitializePartsForDownload(const std::shared_ptr<TransferHandle>& handle);
 
