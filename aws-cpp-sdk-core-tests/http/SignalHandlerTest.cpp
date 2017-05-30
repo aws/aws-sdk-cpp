@@ -19,5 +19,7 @@
 
 TEST(SignalHandlerTest, RaisingSIGPIPEShouldNotTerminateProcess)
 {
+#if ENABLE_CURL_CLIENT
     ASSERT_EQ(0, raise(SIGPIPE));
+#endif
 }
