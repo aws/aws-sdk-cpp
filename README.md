@@ -291,7 +291,7 @@ In Main:
 int main(void)
 {
   MyMemoryManager sdkMemoryManager;
-  SDKOptions options;
+  Aws::SDKOptions options;
   options.memoryManagementOptions.memoryManager = &sdkMemoryManager;
   Aws::InitAPI(options);
 
@@ -372,7 +372,7 @@ You can provide your own logger. However, it is incredibly simple to use the def
 In your main function:
 
 ```
-    SDKOptions options;
+    Aws::SDKOptions options;
     options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Info;
     Aws::InitAPI(options);
     //do SDK stuff;
