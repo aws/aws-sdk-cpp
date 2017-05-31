@@ -2123,7 +2123,7 @@
         "InvalidParameters",
         "InvalidSchedule",
         "LocalStorageLimitExceeded",
-        "LunAlreadyAllocated ",
+        "LunAlreadyAllocated",
         "LunInvalid",
         "MaximumContentLengthExceeded",
         "MaximumTapeCartridgeCountExceeded",
